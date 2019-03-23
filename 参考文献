@@ -1,10 +1,10 @@
 1	《知识图谱技术综述》
-2	《Semantics empowered Web 3.0:managing enterprise, social, sensor, and cloud-based data and service for advanced applications》
+2	《知识图谱技术综述》----参考文献1
 3	《知识图谱在广电网络运营大数据分析中的应用》
 4	《文本向量化方法对文本分类效果影响的改进研究_赵政》
 5	《基于语义相似度的中文文本聚类算法研究_杨开平》----参考文献35
 6	《基于Spark的文本分类的研究》
-7	《基于词向量的文本分类 研究》
+7	《基于词向量的文本分类研究》
 8	《词向量与 LDA 相融合的短文本分类方法》
 9	《基于词向量特征的文本分类模型研究》
 10	《基于Spark的SVM算法优化及其应用_赛金辰》
@@ -16,4 +16,4 @@
 16	《基于 CiteSpace 的大数据文献可视化分析》
 17	《CiteSpace知识图谱的方法论功能_陈悦》
 18	《Pathfinder算法优化研究_汤天波》
-
+19	《Spark框架下利用分布式NBC的大数据文本分类方法_臧艳辉》
