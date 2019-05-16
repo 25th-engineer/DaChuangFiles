@@ -3,3 +3,4 @@
 -安装beautifulsoup4-4.1.0。
 -安装LXML4.1.0。
 -测试网页源码扒取解析(urllib3+lxml)。
+-安装certifi软件包令urllib3使用Mozilla的证书。
