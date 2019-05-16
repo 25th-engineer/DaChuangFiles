@@ -2,3 +2,4 @@
 
 -安装beautifulsoup4-4.1.0。
 -安装LXML4.1.0。
+-测试网页源码扒取解析(urllib3+lxml)。
