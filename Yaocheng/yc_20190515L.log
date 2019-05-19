@@ -6,4 +6,4 @@
 -安装certifi软件包令urllib3使用Mozilla的证书。
 -学习HTML框架。
 -获取并数据清洗单网页超链接与文本存本地txt文件。
--BFS方式获取并清洗100个网页超链接与文本内容存至本地TXT文件（起点URL="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/5162711?fromtitle=%E7%88%AC%E8%99%AB&fromid=22046949&fr=aladdin/		text大小1.5MB	url大小432.3 K	用时30秒）。
+-BFS方式获取并清洗100个网页超链接与文本内容存至本地TXT文件（起点URL="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/5162711?fromtitle=%E7%88%AC%E8%99%AB&fromid=22046949&fr=aladdin/"		text大小1.5MB	url大小432.3 K	用时30秒）。
