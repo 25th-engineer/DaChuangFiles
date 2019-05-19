@@ -5,3 +5,4 @@
 -测试网页源码扒取解析(urllib3+lxml)。
 -安装certifi软件包令urllib3使用Mozilla的证书。
 -学习HTML框架。
+-获取并数据清洗单网页超链接与文本存本地txt文件。
