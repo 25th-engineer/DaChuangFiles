@@ -1,3 +1,4 @@
 第十三周
 
 -安装pymysql。
+-爬取的URL+TEXT数据存MYSQL数据库。
