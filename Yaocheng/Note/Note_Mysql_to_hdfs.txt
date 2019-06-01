@@ -1,0 +1,23 @@
+package TEST3
+
+import org.apache.spark.sql.SparkSession
+
+object MAIN {
+    def main(args: Array[String]): Unit ={
+        //初始化SPARKSESSION
+        val spark = SparkSession.builder().appName("MysqlDemo").master("local[2]").getOrCreate()
+        //取得MYSQL表
+        val jdbcDF = spark.read.format("jdbc")
+          .option("delimiter", ",") .option("heard", true)
+          .option("url", "jdbc:mysql://localhost:3306/to_hdfs?useUnicode=true&characterEncoding=utf-8")
+          .option("dbtable","baidu")
+          .option("user", "root")
+          .option("password", "123").load()
+        //转存HDFS
+        val res=jdbcDF.write.format("csv")
+          .option("delimiter", ",")
+          .option("heard", true)
+          .save("hdfs://localhost:8020/a.txt")
+    }
+}
+
