@@ -1,0 +1,11 @@
+	lhx 0530 
+实战环境：
+	１）安装配置idea-IU-183.5429.30
+	２）安装配置apache-maven-3.3.9
+	３）开始学习scala语言
+	４）汉化IDEA并开始学习SQLContext的使用
+	
+理论知识:
+	Spark SQL:基本概念、常用框架、Spark SQL的架构等
+	scala:编程范式基本概念、基本数据类型、条件循环语句等控制结构、输入输出等
+	maven:创建项目、学习基于scala语言的简单maven项目
