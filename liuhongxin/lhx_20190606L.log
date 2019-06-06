@@ -1,0 +1,13 @@
+	lhx 0606 
+实战环境：
+	配置idea下的scala、maven环境
+	开始创建scala语言简单的maven项目了解Context
+	了解SQLContext、HiveContext的使用(已经过时)
+	用spark-shell和spark-sql处理打印简单的tables
+	学习区分HiveSQL和SparkSQL的使用（Spark明显比Hive速度快许多）
+	thriftserver配合beeline的使用（处理简单的tables）
+理论知识:
+	学习SparkSession的使用
+	spark-shell和spark-sql的了解
+	spark-sql的执行计划（解析、分析、优化、逻辑、sparksql实现等过程）
+	scala:开始简单的代码编写	
