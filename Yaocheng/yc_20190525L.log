@@ -1,5 +1,0 @@
-第十三周
-
--安装pymysql。
--爬取的URL+TEXT数据存MYSQL数据库。
--SPARK程序实现将MYSQL中的数据导入到HDFS，准备后期处理。
