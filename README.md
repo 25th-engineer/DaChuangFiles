@@ -5,7 +5,9 @@
 >> * 在自己的文件夹里，爱咋整咋整；
 >> * 大创是咋们的大创，一起勉励哈～
 ## 吉祥物
-
-	![](https://github.com/25thengineer/DaChuangFiles/blob/master/Utah/preparingAndLearning/miao.jpg)
+<!--
+<img src='http://img2.imgtn.bdimg.com/it/u=4076814747,12025271&fm=26&gp=0.jpg' align='right' style=' width:300px;height:100 px'/>
+-->
+<img src='https://github.com/25thengineer/DaChuangFiles/blob/master/Utah/preparingAndLearning/miao.jpg' align='center' />
 
 >>>					* 图1 *吉祥物*丸嘻嘻～～～
