@@ -3,9 +3,9 @@
 ## 注意
 >> * 不要**轻易删除**他人的文件夹或文件，最好“各自为政”、互不干扰；
 >> * 在自己的文件夹里，爱咋整咋整；
->> * 大创是咋们的大创，勉励啊！
+>> * 大创是咋们的大创，一起勉励哈～
 ## 吉祥物
 
-[]()
+![](https://github.com/25thengineer/DaChuangFiles/blob/master/Utah/preparingAndLearning/miao.jpg)
 
->>>					*
+>>>					* 图1 *吉祥物*丸嘻嘻～～～
