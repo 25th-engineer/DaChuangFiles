@@ -6,6 +6,6 @@
 >> * 大创是咋们的大创，一起勉励哈～
 ## 吉祥物
 
-<div align=center> ![LSD](https://github.com/25thengineer/DaChuangFiles/blob/master/Utah/preparingAndLearning/miao.jpg) </div>
+	![](https://github.com/25thengineer/DaChuangFiles/blob/master/Utah/preparingAndLearning/miao.jpg)
 
 >>>					* 图1 *吉祥物*丸嘻嘻～～～
