@@ -8,5 +8,5 @@
 <div align ='center'>图1 <i><b>吉祥物</b></i>丸嘻嘻～～～</div>
 
 <div align="center">
-<img src='https://github.com/25thengineer/DaChuangFiles/blob/master/Utah/preparingAndLearning/miao.jpg' align='center'  width="800" height="700"></img>
+<img src='https://github.com/25thengineer/DaChuangFiles/blob/master/Utah/preparingAndLearning/miao.jpg' align='center'  width="700" height="800"></img>
 </div>
