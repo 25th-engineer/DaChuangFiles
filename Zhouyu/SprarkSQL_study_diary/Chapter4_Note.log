@@ -1,0 +1,52 @@
+为什么需要SQL(关系型数据库)
+	--事实上的标准
+	--易学易用
+	--受众面大
+	
+Spark : hive on spark ==>shark
+
+Shark ：
+	--优点 : 基于spark，基于内存的列式存储，与hive能够兼容
+	--缺点 : hive ql的解析，逻辑执行计划生成，执行计划的优化是依赖于hive的
+			 仅仅只是把物理执行计划从mr作业替换成spark作业
+			
+Shark终止以后，产生了2个分支
+		1)hive on spark
+			--Hive社区，源码是在Hive中
+		2)Spark SQL
+			--Spark社区，源码是在Spark中
+			--支持多种数据源，多种优化技术，扩展性好很多
+			
+SQL on Hadoop常用框架介绍
+	1)Hive
+		--sql ==> mapreduce
+		--metastore : 元数据
+		--sql : database,table,view
+		facebook开源
+	2)impala
+		--cloudera : cdh(建议使用的hadoop系列),cm
+		--sql : 自己的守护进程执行的,非mr
+		--metastore
+	3)presto
+		--facebook
+		--京东
+		--sql
+	4)drill
+		--sql
+		--访问 : hdfs,rdbms,json,hbase,mangodb,s3,hive
+	5)Spark SQL
+		--sql
+		--dataframe/dataset api
+		--metastore
+		--访问 : hdfs,rdbms,json,hbase,mangodb,s3,hive ==> 数据源
+	
+Spark SQL is Apache Spark's module for working with structured data
+
+Spark SQL它不仅仅有访问或者操作SQL的功能，还提供了其他的非常丰富的操作: 外部数据源，优化
+
+Spark SQL概述小结：
+	--Spark SQL的应用并不局限于SQL
+	--访问hive,json,parquet等文件的数据
+	--SQL只是Spark SQL的7一个功能而已
+	==> Spark SQL这个名字起的并不恰当
+	--Spark SQL提供了SQL的api，DataFrame和Dataset的API
