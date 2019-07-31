@@ -1,0 +1,12 @@
+1. Programming in Scala Third Edition看到了6.9节DEFINING OPERATORS，第1到6章：
+	Chap1: A Scalable Language
+	Chap2: First Steps in Scala
+	Chap3: Next Steps in Scala
+	Chap4: Classes and Objects
+	Chap5: Basic Types and Operations
+	Chap6: Functional Objects
+2. 数据预处理：
+	完成删除空行；
+	完成删除无用标签；
+	开始敏感词过滤。
+2. 准备下一步工作，是分词还是先构建VSM。
