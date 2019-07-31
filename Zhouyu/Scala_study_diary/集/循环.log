@@ -1,0 +1,53 @@
+if 表达式 :
+	--Scala中的if语句可以作为表达式使用，表达式具有返回值可以直接赋值给变量的功能
+		eg.scala> var x = if("A" == "B") 1 else 0
+		   x: Int = 0
+		   
+	
+基础for循环 :
+	--循环语法格式:
+		for (i <- 表达式){
+			//执行循环中的语句
+		}
+		eg.scala> for (i <- 1 to 5){
+					println("i="+i)
+					}
+			i=1
+			i=2
+			i=3
+			i=4
+			i=5
+			
+	--1 to 5生成的集合包含了元素5，如果希望集合时右开的，则使用1 until 5
+		eg.scala> for (i <- 1 until 5){
+					println("i="+i)
+					}
+			i=1
+			i=2
+			i=3
+			i=4
+	
+	--如果在循环时需要设定步长，则可使用带带步长的方法
+		eg.scala> for (i <- 1 until (10,2)){
+					println("i="+i)
+					}
+			i=1
+			i=3
+			i=5
+			i=7
+			i-9
+			
+	--有过滤条件的for循环
+		--语法格式
+			for(x <- 表达式;if 条件判断1;if 条件判断2.。。){
+				//所有条件判断都满足时才执行循环中的语句
+			}
+			eg.scala> for (i <- 2 to (50,2) if(i%4==0);if(i%5==0)){
+						println("i="+i)
+						}
+			i=20
+			i=40
+			
+	--作为表达式的for循环
+		eg.scala> var x = for(i <- 1 to (5,2)) yield i
+		x: scala.collection.immutable.IndexedSeq[Int] = Vector(1, 3, 5)

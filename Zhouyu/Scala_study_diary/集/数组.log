@@ -1,0 +1,98 @@
+集合  ：
+	--默认使用的都是immutable集合，如果需要使用mutable集合，需要在集合中引入相关库，同时对于集合的任何操作返回的都是新的集合
+	
+	--包含数组，列表，集，映射，队列，栈
+	
+
+数组 :
+	--定长数组指的是数组长度在定义时被确定，数组占有的内存空间在程序运行时不会被改变
+		-基本定义:
+			eg1.scala> val nArray = new Array[Int](10)
+			   nArray: Array[Int] = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+			eg2.scala> val nArray = new Array[String](10)
+				nArray: Array[String] = Array(null, null, null, null, null, null, null, null, null, null)
+		-数组的内容可以改变
+			eg.scala> val nArray = new Array[String](10)
+			   nArray(0)="Jerry"
+			   scala> res19: Array[String] = Array(Jerry, null, null, null, null, null, null, null, null, null)
+		-无需new的定义法
+			eg.scala> val nArray = Array("Hello","World")
+			   nArray: Array[String] = Array(Hello, World)
+
+	--变长数组ArrayBuffer，其数组长度可以随程序运行的需要而增加
+		-声明创建数组 : 
+			eg.scala> import scala.collection.mutable.ArrayBuffer
+				val str = ArrayBuffer[String]()
+				scala> str: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer()
+		-在尾部添加元素
+			eg1. scala> str += "Hellp"
+				res0: str.type = ArrayBuffer(Hellp)
+			eg2.scala> str += ("World","Champion")
+				res1: str.type = ArrayBuffer(Hellp, World, Champion)
+		-追加Array数组
+			eg.scala> str ++= Array("A","B")
+			   res3: str.type = ArrayBuffer(Hellp, World, Champion, A, B)
+		-追加List
+			eg. scala> str ++= List("C","D")
+				res4: str.type = ArrayBuffer(Hellp, World, Champion, A, B, C, D)
+		-删除末尾几个元素
+			eg. scala> val str = ArrayBuffer("a","B","C")
+				str: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(a, B, C)
+
+				scala> str.trimEnd(1)	
+
+				scala> str
+				res1: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(a, B)
+		-在数组索引为0的位置插入元素3
+			-eg.scala> val intstr = ArrayBuffer(1,1,2)
+				scala> intstr.insert(0,3)
+		-在数组索引为0的位置插入元素1，1，2
+			-eg.scala> intstr.insert(0,1,1,2)
+				scala> intstr
+				res8: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 1, 2, 3, 1, 1, 2, 1)
+		-从索引0开始，删除4个元素
+			-eg.scala> intstr
+				res13: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 3, 1, 1, 2, 1)
+				scala> intstr.remove(0,4)
+				scala> intstr
+				res15: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 1)
+	--数组的遍历
+		-索引遍历数组 :
+			eg.scala> for (i <- 0 until (intstr.length,2))  println("number=" + intstr(i))
+				number=1
+				number=1
+		-直接数组遍历 :
+			eg. scala> for (i <- instr) println("number =" + i)
+				number =1
+				number =2
+				number =3
+	--遍历生成数组 :
+			eg. scala> val instr_2 = for (i <- instr if i >2 ) yield i * 2
+				instr_2: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(6, 8, 6)
+	--常用函数 :
+		-整数数组求和 :
+			eg. scala> instr.sum
+				res3: Int = 16
+		-整数数组求最大值 :
+			eg. scala> instr.max
+				res4: Int = 4
+		-整数数组求最小值 :
+			eg. scala> instr.min
+				res5: Int = 1
+		-toString()方法 :
+			eg. scala> instr.toString()
+				res6: String = ArrayBuffer(1, 2, 3, 4, 1, 2, 3)
+		-mkString()方法 :
+			eg. scala> instr.mkString("<")
+				res8: String = 1<2<3<4<1<2<3
+	--多维数组 :
+		-实现多维数组的定义
+			eg. scala> val newArray = Array(Array(1,2,3),Array(2,3,4))
+				newArray: Array[Array[Int]] = Array(Array(1, 2, 3), Array(2, 3, 4))	
+		-通过索引访问数组元素:
+			eg.	scala> newArray(0)(1)
+				res9: Int = 2
+		-通过for循环遍历数组
+			eg.scala> for (i <- newArray)  
+				for (j <- i) print(j + " ")
+				| 1 2 3 2 3 4 

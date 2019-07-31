@@ -1,0 +1,13 @@
+栈(Stack) 
+	--可变的栈(mutable Stack)
+		-初始化
+			eg. scala> val stack = Stack(1,2,3)
+				stack: scala.collection.mutable.Stack[Int] = Stack(1, 2, 3)
+		-出栈
+			eg. scala> stack.pop
+				res22: Int = 1
+				scala> stack
+				res23: scala.collection.mutable.Stack[Int] = Stack(2, 3)
+		-入栈
+			eg. scala> stack.push(4)
+				res24: stack.type = Stack(4, 2, 3)

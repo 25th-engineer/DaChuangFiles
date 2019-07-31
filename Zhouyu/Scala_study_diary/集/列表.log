@@ -1,0 +1,82 @@
+
+列表 :
+	--列表的创建 :
+		-方法一 :
+			eg. scala> val Str = List("A","B","C")
+				Str: List[String] = List(A, B, C)
+				scala> val Str_1 = List(1,2,3,4)
+				Str_1: List[Int] = List(1, 2, 3, 4)
+		-方法二 :
+			eg. scala> val Str_2 = List.apply("A","B","C")
+				Str_2: List[String] = List(A, B, C)
+		-方法三 :
+			eg. scala> val Str_4 = 1 :: 2 :: 3 :: 4 :: Nil
+				Str_4: List[Int] = List(1, 2, 3, 4)
+	--多重List :
+		eg. scala> val Str_3 = List(List(1,2,3),List(4,5,6))
+			Str_3: List[List[Int]] = List(List(1, 2, 3), List(4, 5, 6))
+	--遍历List :
+		eg. scala> for (i <- Str_3) println(i)
+			List(1, 2, 3)
+			List(4, 5, 6)
+	--常用函数 :
+		-判断是否为空 :
+			eg. scala> Str_4.isEmpty
+				res13: Boolean = false
+		-取第一个元素
+			eg. scala> Str_4.head
+				res14: Int = 1
+		-取除第一个元素外剩余的元素，返回的是列表
+			eg. scala> Str_4.tail
+				res15: List[Int] = List(2, 3, 4)
+		-取列表第二个元素
+			eg. scala> Str_4.tail.head
+				res16: Int = 2
+		-List连接操作符 :::
+			eg. scala> List(1,2,3) ::: List(4,5,6)
+				res17: List[Int] = List(1, 2, 3, 4, 5, 6)
+		-去除最后一个元素外的元素，返回的是列表
+			eg. scala> Str_4.init
+				res18: List[Int] = List(1, 2, 3)
+		-取列表最后一个元素
+			eg. scala> Str_4.last
+				res20: Int = 4
+		-列表元素倒置
+			eg. scala> Str_4.reverse
+				res21: List[Int] = List(4, 3, 2, 1)
+		-丢弃前n个元素
+			eg. scala> Str_4 drop(1)
+				res22: List[Int] = List(2, 3, 4)
+		-获取前n个元素
+			eg. scala> Str_4.take(3)
+				res23: List[Int] = List(1, 2, 3)
+		-将列表进行分割 
+			eg. scala> Str_4.splitAt(2)
+				res24: (List[Int], List[Int]) = (List(1, 2),List(3, 4))
+		-上面操作与下列语句相同 :
+			eg. scala> (Str_4.take(2),Str_4.drop(2))
+				res25: (List[Int], List[Int]) = (List(1, 2),List(3, 4))
+		-zip操作,返回的是List类型的元组 ：
+			eg. scala> val nums = List(1,2,3,4)
+				val chars = List("A","B","C","D")
+				scala> nums zip chars
+				res26: List[(Int, String)] = List((1,A), (2,B), (3,C), (4,D))
+		-List toString 方法 
+			eg. scala> Str_4.toString()
+				res27: String = List(1, 2, 3, 4)
+		-List mkString 方法
+			eg. scala> Str_4.mkString
+				res29: String = 1234
+		-转换成数组 
+			eg. scala> Str_4.toArray
+				res30: Array[Int] = Array(1, 2, 3, 4)
+	-List伴生对象方法
+		-apply方法
+			eg. scala> List.apply(1,2,3)
+				res31: List[Int] = List(1, 2, 3)
+		-range方法，构建某一值范围内的List
+			eg. scala> List.range(2,6,2)
+				res32: List[Int] = List(2, 4)
+		-列表连接
+			eg. scala> List.concat(List("A","B"),List("C"))
+				res36: List[String] = List(A, B, C)
