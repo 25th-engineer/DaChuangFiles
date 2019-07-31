@@ -1,0 +1,32 @@
+队列 :
+	--不可变队列(immutable queue)
+		-创建队列
+			eg. scala> var queue = scala.collection.immutable.Queue(1,2,3)
+				queue: scala.collection.immutable.Queue[Int] = Queue(1, 2, 3)
+		-出队
+			eg. scala> queue.dequeue
+				res5: (Int, scala.collection.immutable.Queue[Int]) = (1,Queue(2, 3))
+				scala> queue
+				res6: scala.collection.immutable.Queue[Int] = Queue(1, 2, 3)
+		-入队
+			eg. scala> queue.enqueue(4)
+				res9: scala.collection.immutable.Queue[Int] = Queue(1, 2, 3, 4)
+	--可变队列(mutable queue)
+		-创建队列
+			eg. scala> var mqueue = scala.collection.mutable.Queue(1,2,3)
+				mqueue: scala.collection.mutable.Queue[Int] = Queue(1, 2, 3)
+		-出队	
+			eg. scala> mqueue.dequeue
+				res13: Int = 1
+				scala> mqueue
+				res14: scala.collection.mutable.Queue[Int] = Queue(2, 3)
+		-入队	
+			eg. scala> mqueue +=4
+				res15: scala.collection.mutable.Queue[Int] = Queue(2, 3, 4)
+				scala> mqueue
+				res16: scala.collection.mutable.Queue[Int] = Queue(2, 3, 4)
+		-集合方式
+			eg. scala> mqueue ++= List(5,6,7)
+				res17: scala.collection.mutable.Queue[Int] = Queue(2, 3, 4, 5, 6, 7)
+				scala> mqueue
+				res18: scala.collection.mutable.Queue[Int] = Queue(2, 3, 4, 5, 6, 7)

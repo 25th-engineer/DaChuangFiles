@@ -1,0 +1,15 @@
+集(Set)
+	--Set是一种不存在重复元素的集合
+	--定义一个集合，这里使用的是mutable
+		eg. scala> val numset = Set(1,2,3)
+			numset: scala.collection.mutable.Set[Int] = Set(1, 2, 3)
+	--向集中添加一个元素，同列表和数组不一样的是，set在插入元素时并不保证元素的顺序
+		eg. scala> numset + 4
+			res38: scala.collection.mutable.Set[Int] = Set(1, 2, 3, 4)
+	--遍历集
+		eg.scala> for (i <- res38) println(i)
+			1
+			2
+			3
+			4
+	

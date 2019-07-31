@@ -1,0 +1,41 @@
+映射(Map) :
+	--初始化 :
+		eg. scala> val map_1 = Map("A" -> 1,"B" -> 2)
+			map_1: scala.collection.immutable.Map[String,Int] = Map(A -> 1, B -> 2)
+	--创建可变的Map ：
+		eg. scala> val map_2 = scala.collection.mutable.Map("A" -> 1,"B" -> 2)
+			map_2: scala.collection.mutable.Map[String,Int] = Map(A -> 1, B -> 2)
+	--可变的Map，可将其内容清空 :
+		eg. scala> map_2.clear()
+			scala> map_2
+			res41: scala.collection.mutable.Map[String,Int] = Map()
+	--遍历操作1
+		eg.  scala> for(i <- map_1) println(i)
+			(A,1)
+			(B,2)
+	--遍历操作2
+		eg.scala> map_1.foreach(e=>{val (k,v)=e; println(k+":"+v)})
+			A:1
+			B:2
+	--遍历操作3
+		eg.scala> map_1.foreach(e => println(e._1 + ":" + e._2))
+			A:1
+			B:2
+	--定义一个空的HashMap值
+		eg. scala> import scala.collection.mutable
+			val xmap = new mutable.HashMap[String,Int]()
+	--往里面填充值
+		eg. scala> xmap.put("A",1)
+			scala> xmap
+			res46: scala.collection.mutable.HashMap[String,Int] = Map(A -> 1)
+	--判断是否包含A字符串
+		eg. scala> xmap.contains("A")
+			res2: Boolean = true
+	--初始化的另一种方式，也可以通过("A","1")这种方式实现(元组的形式)
+		eg. scala> val map = scala.collection.mutable.Map(("A",1),("B",2))
+			map: scala.collection.mutable.Map[String,Int] = Map(A -> 1, B -> 2)
+	--获取元素
+		eg1. scala> map.get("B")
+			 res3: Option[Int] = Some(2)
+		eg2.scala> map.get("c")
+			res4: Option[Int] = None

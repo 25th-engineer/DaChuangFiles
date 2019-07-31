@@ -1,0 +1,19 @@
+Spark 特点
+	--Speed 
+	--Ease of Use 
+	--Generality
+	--Runs Everywhere
+	
+MapReduce的局限性
+	--代码繁琐
+	--只能够支持map和reduce方法
+	--执行效率低下
+	--不适合迭代多次，交互式，流式的处理
+	
+框架多样化:
+	--批处理(离线) : MapReduce,Hive,Pig
+	--流式处理(实时) : Storm,JStorm
+	--交互式计算 : Impala
+ ========》产生Spark的背景
+ 
+ BDAS： Berkeley Data Analytics Stank

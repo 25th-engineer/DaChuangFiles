@@ -1,0 +1,87 @@
+println函数将传入的字符串打印到标准输出，并会在末尾加一个换行符：
+	--println("Hello,World")
+	
+print函数将传入的字符串打印到标准输出
+	--print("Hello")
+	
+	
+定义变量 ：
+	--val 定义后的变量，初始化后不能被重新赋值
+		eg.val msg = “Hello，world！”
+		eg.val mas : String = "Hello"
+	
+	--var 在整个生命周期内var可被重新赋值
+		eg.var msg = "Jerry"
+		
+	--Scala中的变量在定义时必须初始化赋值
+	
+	--定义时使用占位符"_"
+		eg.var s2 : String = _
+	
+	--基本类型String使用"_"初始化时变量为null，其他如Float，Int，Double等基本数据类型则被初始化为0，Char类型被初始化为？。
+	
+	--lazy变量，只有在真正使用时才会被赋值，且只能修饰val类型的变量
+		
+	--Char变量，用单引号将字符包裹起来，部分特殊字符如双引号，换行符以及反斜杠等的定义需要加转义符\或使用对应的Unicode编码
+		--eg.var y ='\"'
+		
+	--String类型，用双引号""将字符串包裹起来。用三个双引号"""将字符串包裹起来，即可原样输出字符串内容，即不翻译转义符
+		--eg.println("""hello,\n \\\\ \b \\""")
+		
+		
+基本类型操作
+	--逻辑运算操作 :逻辑与(&&),逻辑或(||)
+	
+	--位运算操作:位与(&),位或(|),位异或(^),取反(~),左移位(<<),右移位(>>),无符号左移位(<<<),无符号右移位(>>>)操作
+
+	--字符串运算操作:
+		--得到指定字符的index
+			eg.scala> str.indexOf("e")
+			   res0: Int = 1
+		--反转符
+			eg1.scala> str.toUpperCase
+			    res1: String = HELLO
+			
+			eg2.scala> str.toLowerCase
+			    res2: String = hello
+		--换位符
+			eg.scala> str.reverse
+			   res3: String = olleH
+		--丢弃字符
+			eg.scala> str.drop(3)
+			   res6: String = lo
+		--获取一定范围内的字串
+			eg.scala>  str slice(1,4)
+			   res8: String = ell
+			   
+			   
+函数定义 :
+	--Scala的Unit类型与Java的void类型类似，表示该函数并不返回任何有实际意义的结果
+		eg。def greet() = println("Hello,World")
+
+
+创建并初始化一个数组:
+	--val numNames = Array("zero","one","two")
+
+	
+创建并初始化一个列表 :
+	--val oneTwoThree = List(1,2,3)
+	--List是不可变的
+	--当调用列表的某个方法，而这个方法的名字看上去像是会改变列表的时候，它实际上是创建并返回一个带有新值的新列表
+
+	
+元组 ：
+	--可以同时包含整数和数组
+	
+	--创建并使用一个元组
+		eg. val pair = (99,"Luftballons")
+	
+	--访问元组中的元素
+		eg.println(pair._1)
+		eg.println(pair,_2)
+		
+	--可以将元组的内容进行提取，对变量进行初始化
+		
+		
+符号类型:
+	--符号(Symbol)类型，符号类型的定义需要使用'符号
