@@ -1,0 +1,91 @@
+函数/方法的定义
+	--	def 方法名(参数名:参数类型): 返回值类型 = {
+					
+				// 括号内的叫做方法体
+				
+				// 方法体内的最后一行为返回值，不需要使用return
+		}
+
+没有参数的函数，调用时括号是可以省略的
+	--	object Text1 {
+		def main(args: Array[String]): Unit = {
+			println(add(2,3))
+			println(sum)
+		}
+		def add(x : Int,y : Int)={
+			x + y
+		}
+		def sum()=1+2
+	}
+
+默认参数 : 在函数定义时，允许指定参数的默认值
+	--	object Text1 {
+			def main(args: Array[String]): Unit = {
+				printname()
+				printname("name")
+			}
+			def printname (name : String="PK"): Unit ={
+				println(name)
+			}
+		}
+
+命名参数 : 在给函数传入参数时，不必按照顺序传入，但必须得包含名字 (不建议)
+	--	object Text1 {
+			def main(args: Array[String]): Unit = {
+
+				println(speed(100,10))
+				println(speed(time = 10,dis=100))
+			}
+			def speed(dis : Float,time:Float)={
+				dis/time
+			}
+		}
+
+可变参数 : 函数传入的参数时可以变化的
+	--	object Text1 {
+			def main(args: Array[String]): Unit = {
+
+				println(sum(1,2))
+				println(sum(1,2,3))
+				println(sum(1,2,3,4))
+			}
+			def sum(nums : Int*)={
+				var results = 0
+				for(num <- nums){
+					results += num
+				}
+				results
+			}
+		}
+		
+循环表达式 : 
+	--to :
+			1 to 10 ：res0: scala.collection.immutable.Range.Inclusive = Range 1 to 10 (1，2，3，4，5，6，7，8，9，10)
+			1.to (10) : res1: scala.collection.immutable.Range.Inclusive = Range 1 to 10 (1，2，3，4，5，6，7，8，9，10)
+	--Range :
+			Range(1,10) :res2: scala.collection.immutable.Range = Range 1 until 10(1,2,3,4,5,6,7,8,9)
+			Range(1,10,2) :res3: scala.collection.immutable.Range = inexact Range 1 until 10 by 2(1,3,5,7,9)
+	--until :
+			1 until 10 :res4: scala.collection.immutable.Range = Range 1 until 10(1,2,3,4,5,6,7,8,9)
+			1.until(10) :res4: scala.collection.immutable.Range = Range 1 until 10(1,2,3,4,5,6,7,8,9)
+			
+循环遍历数组 :
+	--方法一			
+			       object Text1 {
+						def main(args: Array[String]): Unit = {
+							var courses = Array("A","B","C","D")
+							for (course <- courses){
+								println(course)
+							}
+						}
+					}
+	--方法二
+			// x其实就是courses里面的每个函数
+			// => 就是将左边的作用上一个函数，变成另外一个结果
+			// println 就是作用到x上的函数
+					object Text1 {
+						def main(args: Array[String]): Unit = {
+							var courses = Array("A", "B", "C", "D")
+							courses.foreach(x => println(x))
+						}
+					}

@@ -1,0 +1,31 @@
+val vs var
+	--val 值
+		val 值名称 : 类型 =xxx
+	--var 变量
+		var 变量名称 : 类型 =xxx
+		
+Scala 基本数据类型
+	--Byte/Char(不常用)
+	--Short/Int/Long/Float/Double(常用)
+		-Float 类型定义 : val d = 1.2f
+	--Boolean(常用)
+	
+Scala 基本类型之间的转换
+	--函数 : asInstanceOf[]
+		eg. scala> val g = 10.asInstanceOf[Double]
+			g: Double = 10.0
+
+Scala 判断是不是某一类型
+	--函数 : isInstanceOf[]
+		eg. scala> val a = g.isInstanceOf[Double]
+			a: Boolean = true
+
+Scala lazy运用:
+	--在写大型项目中，定义了一个大型文件，但后面的代码并没有使用，就可以使用lazy，在第一次运用时才赋值
+	
+定义变量时可同时赋值 :
+	var (num,sum)=(100,0)
+	
+	
+val 常量不能使用占位符_ 
+var 变量才行，同时在使用占位符时，必须加上变量类型
