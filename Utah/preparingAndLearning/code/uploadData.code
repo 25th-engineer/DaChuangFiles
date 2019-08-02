@@ -1,0 +1,25 @@
+#将数据导入hive：#
+
+scala> val dataDF1 = spark.read.format("json").load("file:///home/hadoop001/hadoop/data/Spider-Data/cnblog_computer_version.json")
+scala> dataDF1.select(dataDF1.col("author"),dataDF1.col("content"),dataDF1.col("date"),dataDF1.col("title")).write.saveAsTable("dachuangppreprocessingdata.cnblog_computer_version")
+
+scala> val dataDF2 = spark.read.format("json").load("file:///home/hadoop001/hadoop/data/Spider-Data/cnblog_machine_learning.json")
+scala> dataDF2.select(dataDF1.col("author"),dataDF1.col("content"),dataDF1.col("date"),dataDF1.col("title")).write.saveAsTable("dachuangppreprocessingdata.cnblog_machine_learning")
+scala> val dataDF3 = spark.read.format("json").load("file:///home/hadoop001/hadoop/data/Spider-Data/cnblog_natural_language.json")
+scala> dataDF3.select(dataDF3.col("author"),dataDF3.col("content"),dataDF3.col("date"),dataDF3.col("title")).write.saveAsTable("dachuangppreprocessingdata.cnblog_natural_language")
+scala> val dataDF4 = spark.read.format("json").load("file:///home/hadoop001/hadoop/data/Spider-Data/csdn_computer_version.json")
+scala> dataDF4.select(dataDF4.col("author"),dataDF4.col("content"),dataDF4.col("date"),dataDF4.col("title")).write.saveAsTable("dachuangppreprocessingdata.csdn_computer_version")
+scala> val dataDF5 = spark.read.format("json").load("file:///home/hadoop001/hadoop/data/Spider-Data/csdn_machine_learning.json")
+scala> dataDF5.select(dataDF5.col("author"),dataDF5.col("content"),dataDF5.col("date"),dataDF5.col("title")).write.saveAsTable("dachuangppreprocessingdata.csdn_machine_learning")
+scala> val dataDF6 = spark.read.format("json").load("file:///home/hadoop001/hadoop/data/Spider-Data/csdn_natural_language.json")
+scala> dataDF6.select(dataDF6.col("author"),dataDF6.col("content"),dataDF6.col("data"),dataDF6.col("date"),dataDF6.col("title")).write.saveAsTable("dachuangppreprocessingdata.csdn_natural_language")
+
+
+
+
+scala> spark.sql("select content from dachuangppreprocessingdata.cnblog_computer_version").write.saveAsTable("dachuangppreprocessingdata.cnblog_computer_version_OnlyContent")
+scala> spark.sql("select content from dachuangppreprocessingdata.cnblog_machine_learning").write.saveAsTable("dachuangppreprocessingdata.cnblog_machine_learning_OnlyContent")
+scala> spark.sql("select content from dachuangppreprocessingdata.cnblog_natural_language").write.saveAsTable("dachuangppreprocessingdata.cnblog_natural_language_OnlyContent")
+scala> spark.sql("select content from dachuangppreprocessingdata.csdn_computer_version").write.saveAsTable("dachuangppreprocessingdata.csdn_computer_version_OnlyContent")
+scala> spark.sql("select content from dachuangppreprocessingdata.csdn_machine_learning").write.saveAsTable("dachuangppreprocessingdata.csdn_machine_learning_OnlyContent")
+scala> spark.sql("select content from dachuangppreprocessingdata.csdn_natural_language").write.saveAsTable("dachuangppreprocessingdata.csdn_natural_language_OnlyContent")
