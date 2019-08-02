@@ -1,0 +1,20 @@
+>>	* pornographic
+create EXTERNAL table pornographicList(name_ string)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\n' STORED AS TEXTFILE;
+
+load data local inpath '/home/hadoop001/hadoop/data/funNLP-master/data/sensitive_Words_List/pornographic.txt' into table pornographicList;
+>>	* reactionary
+create EXTERNAL table reactionaryList(name_ string)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\n' STORED AS TEXTFILE;
+
+load data local inpath '/home/hadoop001/hadoop/data/funNLP-master/data/sensitive_Words_List/reactionary.txt' into table reactionaryList;
+>>	* sensitive
+create EXTERNAL table sensitiveList(name_ string)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\n' STORED AS TEXTFILE;
+
+load data local inpath '/home/hadoop001/hadoop/data/funNLP-master/data/sensitive_Words_List/sensitive.txt' into table sensitiveList;
+>>	* society
+create EXTERNAL table societyList(name_ string)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\n' STORED AS TEXTFILE;
+
+load data local inpath '/home/hadoop001/hadoop/data/funNLP-master/data/sensitive_Words_List/society.txt' into table societyList;
+>>	* terroristic
+create EXTERNAL table terroristicList(name_ string)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\n' STORED AS TEXTFILE;
+
+load data local inpath '/home/hadoop001/hadoop/data/funNLP-master/data/sensitive_Words_List/terroristic.txt' into table terroristicList;
