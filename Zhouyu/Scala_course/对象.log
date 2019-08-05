@@ -1,0 +1,201 @@
+Java/Scala 00
+	封装: 属性，方法封装到类中
+		Person(类):
+			private Int id,String name,Date birthady..... getter/setter
+			eat,sleep...
+	继承: 父类和子类之间的关系
+		User extends Person
+			exam
+	多态: ***** 父类引用指向子类对象    精髓所在    开发框架的基石
+			Person person = new Person();
+			User user = new User();
+			Person person = new User();
+			
+类的定义和使用 :
+	--		object Text1 {
+				def main(args: Array[String]): Unit = {
+						val person = new Person
+						person.name = "Zayn"
+						person.Getgender("male")
+						person.Getinfo()
+				}
+				class Person{
+					var name : String =_
+					val age = 10
+					private [this] var gender : String =_  //private 主函数不可直接访问,只能在类的内部进行访问以及相关操作
+
+					def Getgender(gen : String)={
+						gender = gen
+						println(name + " is " + gender)
+					}
+					def  Getinfo()={
+						println(name + " is " + age +" years old ")
+					}
+				}
+			}
+
+主构造器与附属构造器 :
+	--		object Text1 {
+				def main(args: Array[String]): Unit = {
+						val person = new Person("Petter",10)
+					println(person.name+":"+person.age+":"+person.uni)
+						val person_1 = new Person("Zayn",23,"Male")
+					println(person_1.name+":"
+					  +person_1.age+":"
+					  +person_1.uni+":"
+					  +person_1.gender)
+				}
+
+			}
+
+			//主构造器(变量必须有val或var)
+			class Person(val name :String,var age : Int){
+
+				val uni = "HFU"
+				var gender : String = _
+				//附属构造器
+				def this(name : String,age : Int,gen : String){
+					this(name,age) //附属构造器的第一行代码必须调用主构造器或其他的附属构造器
+					this.gender = gen
+				}
+			}
+			
+继承 :父类有的变量，子类使用无需在变量前加var或val，没有则需添加，子类可以改变父类的所有非私有变量
+	---		object Text1 {
+				def main(args: Array[String]): Unit = {
+						val student = new Student("Peter",10,"cs")
+					println(student.name+":"+student.age+":"+student.major+":"+student.gender)
+
+				}
+
+			}
+
+			//主构造器(变量必须有val或var)
+			class Person(val name :String,var age : Int){
+
+				val uni = "HFU"
+				var gender : String = _
+				//附属构造器
+				def this(name : String,age : Int,gen : String){
+					this(name,age) //附属构造器的第一行代码必须调用主构造器或其他的附属构造器
+					this.gender = gen
+				}
+			}
+
+			class Student(name : String,age : Int,var major : String) extends Person(name,age){
+					gender = "male"
+			}
+	
+重写 :子类对父类的val元素进行重写，需在元素前加关键字override
+	---		object Text1 {
+				def main(args: Array[String]): Unit = {
+						val student = new Student("Peter",10,"cs")
+					println(student.name+":"+student.age+":"+student.major+":"+student.gender+":"+student.uni)
+
+				}
+
+			}
+
+			//主构造器(变量必须有val或var)
+			class Person(val name :String,var age : Int){
+
+				val uni = "HFU"
+				var gender : String = _
+				//附属构造器
+				def this(name : String,age : Int,gen : String){
+					this(name,age) //附属构造器的第一行代码必须调用主构造器或其他的附属构造器
+					this.gender = gen
+				}
+			}
+
+			class Student(name : String,age : Int,var major : String) extends Person(name,age){
+				override val uni: String = "Qinghua"
+				gender = "male"
+			}
+			
+抽象类 :类的一个或者多个方法以及属性没有完整的实现(只有定义，没有实现)
+	---		object Text1 {
+				def main(args: Array[String]): Unit = {
+					val student = new Student("Peter",10)
+					println(student.name)
+					println(student.age)
+					student.printname
+
+				}
+
+			}
+
+			abstract class Person {
+				def printname
+				val name : String
+				val age : Int
+			}
+
+			class Student (Name : String,Age : Int )extends Person {
+				override def printname ={
+					println(name+":"+age)
+				}
+
+				override val name: String = Name
+				override val age: Int = Age
+			}
+			
+伴生类和伴生对象 : 如果有一个class,还有一个与class同名的object，那就就称这个object是class的伴生对象，class是object的伴生类
+	---		class AppText{
+				
+			}
+			object AppText{
+				
+			}
+			
+apply用法 :
+	---		object Text1 {
+				def main(args: Array[String]): Unit = {
+					val b = AppText()  // ==> 直接调用Object.apply()
+					println("~~~~~~~~~~")
+					val a = new AppText
+					a() // ==> 直接调用AppText.apply()
+				}
+
+			}
+
+			// 类名() ==> Object.apply()
+			// 对象() ==> Class.apply()
+
+
+
+			class AppText{
+				println("Enter class AppText")
+				def apply()={
+					println("Enter class AppText")
+				}
+			}
+			object AppText{
+				println("Enter Object AppText")
+				var count = 0
+				def sum ={
+					count += 1
+					println("Enter sum")
+				}
+				// 最佳实践 : 在Object的apply方法中去new class
+				def apply()={
+					println("Enter apply")
+				}
+				println("Leave Object AppText")
+			}
+			
+case class : 和普通的类没有本质区别，只是不用new
+	---		object Text1 {
+				def main(args: Array[String]): Unit = {
+					Dog("Wangcai").printname
+				}
+
+			}
+
+			case class Dog(Name:String) {
+				var name = Name
+
+				def printname = {
+					println("Dog's name is" + name)
+				}
+			}

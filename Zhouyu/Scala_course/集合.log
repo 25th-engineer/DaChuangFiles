@@ -1,0 +1,89 @@
+数组
+	-不可变		object Text1 {
+				def main(args: Array[String]): Unit = {
+					val a = new Array[String](5)
+					a.length
+					a(1) = "JEllpo"
+					a(1)
+					a
+					val b = Array("Hadoop","spark","storm")
+					b(1)="linux"
+					b.length
+					b
+					val c =Array(1,2,3,4)
+					c.sum
+					c.max
+					c.min
+					println(c.mkString("<",",",">"))
+
+				}
+
+			}
+
+	--可变			object Text1 {
+					import scala.collection.mutable.ArrayBuffer
+					def main(args: Array[String]): Unit = {
+						val a = scala.collection.mutable.ArrayBuffer[Int]()
+						 a += 1
+						 a += 2
+						a +=(3,4,5)
+						a ++= Array(6,7,8)
+						a.insert(0,0)//在index为0的位置插入元素0
+						a.remove(2) //删除index为2的位置上的元素
+						a.remove(0,3) //从index为0的位置开始删除三个元素
+						a.trimEnd(2)//从末尾开始删除两个元素
+						println(a.toArray.mkString)//转化成不可变数组
+
+						for(i <- 0 until a.length){   //第一种不太常用遍历方式
+							println(a(i))
+						}
+
+						for(i <- a){     //第二种常用遍历方式
+							println(i)
+						}
+
+						for(i <- (0 until a.length ).reverse){
+							println(a(i))
+						}
+
+						println(a)
+					}
+
+				}
+				
+				
+列表 :
+	---					object Text1 {
+							import scala.collection.mutable.ListBuffer
+							def main(args: Array[String]): Unit = {
+								val l1 = List(1,2,3,4)
+								println("l1's head is :" + l1.head)
+								println("l1's tail is :" + l1.tail)
+								val l2 = 5::l1::Nil
+								println("l2 is :"+l2)
+								val l3 = 1::2::3::4::Nil
+								println("l3 is :"+l3)
+
+								val l4 = scala.collection.mutable.ListBuffer[Int]()
+								l4 += 2
+								l4 += (3,4,5)
+								l4 ++= List(6,7,8,9)
+
+								l4 -=2
+								l4 -= (1,2,3)
+								l4 --= List(4,5)
+								println("l4 is :"+l4)
+								def sum(nums : Int*) : Int = {
+									if(nums.length == 0){
+										0
+									}else{
+										nums.head + sum(nums.tail:_*) // :_将seq转化为可变参数
+									}
+								}
+								println(sum(1,2,3,4))
+
+							}
+
+						}
+
+Set :与List类似，只是里面的内容不可重复
