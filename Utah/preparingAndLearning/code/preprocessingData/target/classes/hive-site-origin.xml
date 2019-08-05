@@ -1,0 +1,50 @@
+<configuration>
+
+
+	<property>
+  		<name>javax.jdo.option.ConnectionURL</name>
+    	<value>jdbc:mysql://localhost:3306/hive?createDatabaseIfNotExist=true&amp;useSSL=false</value>
+    </property>
+		
+<!--
+		<value>jdbc:mysql://localhost:3306/hive;createDatabaseIfNotExist=true</value>
+	<property>  
+		  <name>javax.jdo.option.ConnectionURL</name>  
+		  <value>jdbc:mysql://127.0.0.1:3306/metastore_db?createDatabaseIfNotExist=true</value>  
+		  <description>JDBC connect string for a JDBC metastore</description>  
+	</property> 
+-->
+			
+	<property>
+    	<name>javax.jdo.option.ConnectionDriverName</name>
+        <value>com.mysql.jdbc.Driver</value>
+   	</property>
+
+	<property>
+  		<name>javax.jdo.option.ConnectionUserName</name>
+    	<value>root</value>
+    </property>
+
+    <property>
+  		<name>javax.jdo.option.ConnectionPassword</name>
+    	<value>123</value>
+    </property>
+
+	<property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+	</property>
+
+<!--
+	<property>
+        <name>datanucleus.autoCreateSchema</name>
+        <value>false</value>
+	</property>
+-->		
+	<property>  
+	  <name>hive.metastore.uris</name>  
+	  <value>thrift://MasterT:9083</value>  
+	  <description>Thrift uri for the remote metastore. Used by metastore client to connect to remote metastore.</description>  
+	</property>
+
+</configuration>

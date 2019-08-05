@@ -1,0 +1,41 @@
+<configuration>
+
+	<property>
+  		<name>javax.jdo.option.ConnectionURL</name>
+    	<value>jdbc:mysql://localhost:3306/hive?createDatabaseIfNotExist=true&amp;useSSL=false</value>
+    </property>
+    
+	<property>
+    	<name>javax.jdo.option.ConnectionDriverName</name>
+        <value>com.mysql.jdbc.Driver</value>
+   	</property>
+
+	<property>
+  		<name>javax.jdo.option.ConnectionUserName</name>
+    	<value>root</value>
+    </property>
+
+    <property>
+  		<name>javax.jdo.option.ConnectionPassword</name>
+    	<value>123</value>
+    </property>
+
+	<property>
+		<name>hive.metastore.schema.verification</name>
+		<value>false</value>
+	</property>
+
+<!--
+    <property>
+        <name>hive.metastrore.local</name>
+        <value>false</value>
+    </property>
+
+    <property>
+        <name>hive.metastrore.uris</name>
+        <value>thrift://192.168.10.10:9083</value>
+        <description>Thrift URI for the remote metastore clicent to connect to remote metastore.</description>
+    </property>
+
+-->
+</configuration>
