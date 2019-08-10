@@ -1,0 +1,166 @@
+模式匹配 
+	Java：对一个值进行条件判断，返回针对不同的条件进行不同的处理
+
+Scala中模式匹配的语法 :
+	变量 match{
+		case value1 => 代码1
+		case value2 => 代码2
+		.....
+		case _ => 代码N 
+	
+	}
+	
+基本匹配 :
+	---		import scala.util.Random
+
+			object Try {
+			  def main(args: Array[String]): Unit = {
+				val names = Array("A","B","C")
+				val name = names(Random.nextInt(names.length)) // 随机数从0到names.length-1
+				name match {
+				  case "A" => println("A")
+				  case "B" => println("B")
+				  case _ => println("C")
+
+				}
+				def Getgrade(score : String ) : Unit= {
+				  score match {
+					case "A" => println("Good job!..")
+					case "B" => println("Well..")
+					case "C" => println("Just so so....")
+					case _ => println("Work harder")
+
+				  }
+				}
+				Getgrade("A")
+				Getgrade("B")
+				Getgrade("C")
+			  }
+			}
+
+基本匹配 + 条件 :
+	---		object Try {
+			  def main(args: Array[String]): Unit = {
+				def Getgrade(score : String ,name :String) : Unit= {
+				  score match {
+					case "A" => println("Good job!..")
+					case "B" => println("Well..")
+					case "C" => println("Just so so....")
+					case _ if(name == "Li")=> println(name +"You are a good boy,but should Work harder")
+					case _=> println("Work harder")
+
+				  }
+				}
+				Getgrade("B","Li")
+				Getgrade("D","Li")
+				Getgrade("D","Zhang")
+			  }
+			}
+
+数组匹配
+	---		import scala.util.Random
+
+			object Try {
+			  def main(args: Array[String]): Unit = {
+				  def greeting (array: Array[String]) : Unit={
+					array match {
+					  case Array("A") => println("hi,A")
+					  case Array(x, y) => println("hello " + x + "," + y)
+					  case Array("A", _*) => println("hi,A and others")
+					  case _ => println("hi,everybody")
+
+					}
+				  }
+				greeting(Array("A"))
+				greeting(Array("A","B"))
+				greeting(Array("A","B","C","D"))
+				greeting(Array("B","A","C"))
+
+			  }
+			}
+
+List匹配
+	---		import scala.util.Random
+
+			object Try {
+			  def main(args: Array[String]): Unit = {
+					def greeting(list: List[String])={
+					  list match {
+						case "A"::Nil => println("Hi,A")
+						case x::y::Nil => println("Hi,"+x+"and"+y)
+						case "A"::tail => println("Hi,A and other friends")
+						case _ =>println("Hi,others")
+
+					  }
+					}
+				greeting(List("A"))
+				greeting(List("B","A"))
+				greeting(List("A","B","C"))
+				greeting(List("B","C","D"))
+
+			  }
+			}
+			
+类型匹配
+	---		import scala.util.Random
+
+			object Try {
+			  def main(args: Array[String]): Unit = {
+				  def matchtype(obj : Any)={
+					 obj match {
+					   case x:Int => println(obj + " is Int ")
+					   case y:String => println(obj + " is String")
+					   case z:Map[_,_] => println(obj + " is map")
+					   case _ => println(obj +"is other types")
+					 }
+				  }
+				matchtype(1)
+				matchtype("A")
+				matchtype(Map("name" -> "Zhangsan","age" -> 13))
+			  }
+			}
+
+scala 异常处理(使用匹配)
+	---			import scala.util.Random
+
+				object Try {
+				  def main(args: Array[String]): Unit = {
+					  val file = "test.txt"
+					try{
+						// open file
+						// use file
+
+						val i = 10/0
+					  println(i)
+					}catch {
+					  case e:Exception => println(e.getMessage)
+					}finally {
+					  // 释放资源，一定能执行:close file
+					}
+				  }
+				}
+
+case class 匹配
+	---			import scala.util.Random
+
+				object Try {
+				  def main(args: Array[String]): Unit = {
+					  def caseclassmatch(person: Person): Unit = {
+						person match {
+						  case CTO(name: String, floor: Int) => println("CTO's name:" + name + " floor: " + floor)
+						  case Employee(name: String, floor: Int) => println("Employee's name:" + name + " floor: " + floor)
+						  case Others(name: String) => println("Others'name:" + name)
+
+						}
+					  }
+					  class Person
+					  case class CTO(name : String,floor : Int) extends Person
+					  case class Employee(name : String,floor : Int) extends Person
+					  case class Others(name : String) extends Person
+
+					  caseclassmatch(CTO("A",13))
+					  caseclassmatch(Employee("B",10))
+					  caseclassmatch(Others("D"))
+				  }
+				}
+

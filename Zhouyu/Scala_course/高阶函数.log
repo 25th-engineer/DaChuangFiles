@@ -1,0 +1,114 @@
+字符串高级操作 :
+	---		import scala.util.Random
+
+			object Try {
+			  def main(args: Array[String]): Unit = {
+				  val r = "Hello"
+				  val name ="Peter"
+				  val team = "Milan"
+				  //插值
+				  println(s"$r,$name.Weclome to $team") // s必不可少
+
+				  val b=
+					"""
+					  |这是一个多行字符串
+					  |Have a try~~~
+					  |""".stripMargin
+				  println(b)
+			  }
+			}
+
+匿名函数
+	---		import scala.util.Random
+
+			object Try {
+			  def main(args: Array[String]): Unit = {
+				  //匿名函数 : 函数是可以命名的，也可以不命名
+				  //（参数名: 参数类型...） =>函数体
+				  val m = (x:Int) => x+1
+				  println(m(10))
+				  def add = (x:Int,y:Int) => x+y
+				  println(add(1,2))
+			  }
+			}
+
+Curry 函数
+	---		import scala.util.Random
+
+			object Try {
+			  def main(args: Array[String]): Unit = {
+				  //将原来接收两个参数的一个函数，转换成一个
+				  def sum1(a:Int,b:Int) = a+b
+				  def sum2(a:Int)(b:Int) = a+b
+				  println(sum1(2,3))
+				  println(sum2(2)(3))
+			  }
+			}
+
+高阶函数 
+	---				import scala.util.Random
+
+					object Try {
+					  def main(args: Array[String]): Unit = {
+						  val l =List(1,2,3,4,5,6,7,8)
+
+						//map :逐个去操作集合中的每个元素
+						println(l.map((x:Int)=>x+1))
+						println(l.map((x)=>x+1))
+						println(l.map(x=>x+1))
+						println(l.map(_ * 2)) //_表示l中的每一个元素
+
+						//打印每一个元素
+						l.map(_ *2).foreach(println)
+						println("---------------------")
+
+						//filter 加条件过滤元素，并打印
+						l.map(_ *2).filter(_>8).foreach(println)
+						println("---------------------")
+
+						//取列表的前四个元素
+						l.take(4).foreach(println)
+						println("---------------------")
+
+						//列表里的元素两两相加1+2 3+3 6+4..
+						println(l.reduce(_+_))
+						println("---------------------")
+
+						//列表里的元素从左边开始两两相减((((((1-2)-3)-4)-5)-6)-7)-8
+						println(l.reduceLeft(_-_))
+						println("---------------------")
+
+						//列表里的元素从右边开始两两相减(1-(2-(3-(4-(5-(6-(7-8)))))))
+						println(l.reduceRight(_-_))
+						println("---------------------")
+
+						//fold有一个初始值，开始进行操作
+						println(l.fold(1)(_+_))
+						println(l.foldLeft(1)(_-_))
+						println(l.foldRight(1)(_-_))
+						println("---------------------")
+
+						//基本的操作
+						println(l.max)
+						println(l.min)
+						println(l.sum)
+						println("---------------------")
+
+						val m = List(List(1,2),List(3,4),List(5,6))
+						//flattern将列表元素压扁
+						println(m.flatten)
+						println("---------------------")
+
+						//flatmap = map + flattern
+						println(m.map(_.map(_*2)))
+						println(m.map(_.map(_*2)).flatten)
+						println(m.flatMap(_.map(_*2)))
+						
+						    //
+							val x= "hello!hello!hello"
+							val t = List(x)
+							println(t.flatMap(_.split("!")))
+							t.flatMap(_.split("!")).map(x=>(x,1)).foreach(println)
+
+					  }
+					}
