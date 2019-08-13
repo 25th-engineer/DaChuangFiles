@@ -1,0 +1,1 @@
+{"content2":"[机器学习入门] 李宏毅机器学习笔记-8（Backpropagation；反向传播算法）\nPDF\nVIDEO\n当我们要用gradient descent来train一个neural network，要怎么做？\nGradient Descent\nbackpropagation就是Gradient Descent。\nChain Rule（连锁法）\nBackpropagation主要用到了Chain Rule\nBackpropagation\nForward pass\nBackward pass\nSummary"}

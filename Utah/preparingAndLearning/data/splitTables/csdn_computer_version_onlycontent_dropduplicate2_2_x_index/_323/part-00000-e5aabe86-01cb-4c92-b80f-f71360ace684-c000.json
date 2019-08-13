@@ -1,0 +1,1 @@
+{"content2":"第二届人工智能竞赛——题目五、FaceRank\n文章目录\n第二届人工智能竞赛——题目五、FaceRank\n一、简介\n二、题目要求\n三、参考资料\n一、简介\n我们常看到用机器学习识别字体，自动驾驶等项目，但是这题有个非常有趣的项目：FaceRank，它基于 TensorFlow CNN 模型，提供了一些图片处理的工具集，能够利用模型，为你的颜值打分。\n二、题目要求\n利用现有的深度学习模型实现“颜值打分”。\n利用 QT 设计 UI 界面，界面要求:友好、功能完善、简介。\n三、参考资料\nhttps://github.com/fendouai/FaceRank/\nhttps://github.com/pwfee/FaceRank\nUI界面可用QT编写"}

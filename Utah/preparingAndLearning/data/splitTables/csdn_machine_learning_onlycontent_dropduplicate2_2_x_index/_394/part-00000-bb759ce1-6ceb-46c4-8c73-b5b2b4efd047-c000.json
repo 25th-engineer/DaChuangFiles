@@ -1,0 +1,1 @@
+{"content2":"机器学习算法有哪些？\n1、分层聚类\n2、KNN\n3、基于密度的聚类DBSCAN\n4、K-means\n5、自组织映射SOM\n6、PCA\n7、LDA\n8、MDS\n9、朴素贝叶斯\n10、数据降维\n11、感知机\n12、GMM\n13、EM\n14、LVQ\n15、HMM\n16、熵，条件熵\n17、决策树\n18、CART算法\n19、梯度下降\n20、logistics回归\n21、Adaboost\n22、SMO\n23、随机森林\n分类\n1、分类问题：决策树、KNN、SVM、神经网络\n2、回归问题：简单线性回归、多元回归、非线性回归、相关系数、R平方值\n3、非监督学习-聚类：K-means，层次聚类"}

@@ -17,7 +17,7 @@ object processRegex {
 		spark.sql("use dachuangppreprocessingdata")
 		//spark.sql("select * from cnblog_computer_version_onlycontent").show(false)
 
-		val tableName = "cnblog_computer_version_onlycontent_dropduplicate2_2_x_index"
+		val tableName = "cnblog_computer_version_onlycontent_dropduplicate2_2"
 
 		val rdd = spark.sql("select * from " + tableName  )
 
@@ -28,10 +28,11 @@ object processRegex {
 
 		//filterPrecessDF.show(false)
 
-/*
-		val pattern = "图\\d{1,3}" + " " +"[\u4e00-\u9fa5].*"
-		val pattern1 = "图\\d{1,3}" + " " + "*"
-		val pattern2 = "图\\d{1,3}" + " ." + "*"
+
+		val pattern = "图\\d{1,9}" + " " +"[\u4e00-\u9fa5].*"
+		val pattern1 = "图\\d{1,9}" + " " + "*"
+		val pattern2 = "图\\d{1,9}" + " ." + "*"
+		val pattern3 = "\\n{1,9}"
 						// "图\\d{1,3}" + " " + "*"
 						//"图\\d{1,3}" + " " +"[\u4e00-\u9fa5].*"
 						//"图\\d{1,3}" + " ." + "*"
@@ -43,16 +44,18 @@ object processRegex {
 
 		val data2 = data1.select(regexp_replace(data1("content2"), pattern2, "").alias("content2"))
 
-		data2.write.saveAsTable(tableName + "_X")
 
-		//data.write.format("json").save("file:///home/hadoop001/hadoop/data/regexOutput" + tableName + "_X")
+		val data3 = data2.select(regexp_replace(data2("content2"), pattern3, "").alias("content2"))
+		data3.write.saveAsTable(tableName + "_X")
+
+		data3.write.format("json").save("file:///home/hadoop001/hadoop/data/regexOutput" + tableName + "_X")
 		//filterData.write.saveAsTable(tableName + "_X")
-*/
+		/**/
 
 
 
 
-
+/*
 		val pattern1 = "\\n{2,9}" //matching the empty line
 						//^(\s*)\n
 						//^[\\s&&[^\\n]*\\n$]*
@@ -63,13 +66,13 @@ object processRegex {
 		data.write.format("json").save("file:///home/hadoop001/hadoop/data/regexOutput" + tableName + "_666")
 		filterData.write.saveAsTable( tableName + "_2")
 		//filterData.write.saveAsTable("cnblog_computer_version_onlycontent_dropduplicate2_2_X")
-/**/
+*/
 
 
 		//table1  --> duplicate
 		//table2  --> remove pattern
 		//table2_1  --> remove pattern2
-		//table2_2  --> remove pattern1
+		//table2_2  --> remove empty lines
 
 		//filterData.show(100,false)
 
