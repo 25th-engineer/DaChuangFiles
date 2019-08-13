@@ -7,10 +7,9 @@ import org.apache.spark.sql.functions.regexp_extract
 import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.functions.row_number
 
-import org.apache.spark.ml.Transformer
-import org.apache.spark.ml.param.shared.{HasInputCol, HasOutputCol}
-import org.apache.spark.ml.param.{ParamMap, BooleanParam, Param}
-import org.apache.spark.ml.util.Identifiable
+
+
+
 
 object removeDuplicateContent {
 	def main(args: Array[String]): Unit = {

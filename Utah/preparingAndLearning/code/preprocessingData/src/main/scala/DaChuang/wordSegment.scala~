@@ -1,0 +1,66 @@
+package DaChuang
+
+import java.io.PrintWriter
+import java.util
+
+import org.ansj.util.Counter.Result
+import org.ansj.domain.{Result, Term}
+
+import scala.io.Source
+import org.ansj.recognition.impl.StopRecognition
+import org.ansj.splitWord.analysis.{NlpAnalysis, ToAnalysis}
+import org.apache.avro.generic.GenericData
+import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.sql.{DataFrame, SparkSession}
+
+
+
+object wordSegment {
+	def main(args: Array[String]): Unit = {
+
+		val conf = new SparkConf().setAppName("wordSegment").setMaster("local[4]")
+		val sc = new SparkContext(conf)
+
+		val filter = new StopRecognition()
+
+
+		filter.insertStopNatures("w") //过滤掉标点
+
+
+		//val originPath = "000000_0.out3"
+		//val testData = new PrintWriter(originPath)
+		val path = "file:///home/hadoop001/Downloads/Documents/000000_0.out3"
+		val file = sc.textFile(path)
+		val rdd = sc.textFile(path)
+				.map { x =>
+					var str = if (x.length > 0)
+						NlpAnalysis.parse(x).recognition(filter).toStringWithOutNature(" ")
+					/*
+					if(str.toString().length == 0) {
+						testData.write(str.toString)
+						testData.write("\n")
+						testData.flush()
+					}else {
+						;
+					}
+					*/
+					str.toString
+				//if( str.length )
+
+
+
+
+				}.top(0).foreach(println)
+
+
+		//val data1 = NlpAnalysis.parse(file.toString).recognition(filter).toStringWithOutNature(" ")
+		//data1.foreach(print)
+		//val file1 = Source.fromFile("/home/hadoop001/hadoop/data/cnblog_computer_version_onlycontent_dropduplicate2_2_x/000000_0")
+		//NlpAnalysis.parse(file1.toString).toString.split("\n").foreach(println)
+
+	}
+
+
+
+
+}

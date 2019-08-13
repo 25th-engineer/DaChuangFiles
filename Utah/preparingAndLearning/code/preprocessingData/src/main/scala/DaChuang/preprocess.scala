@@ -14,15 +14,15 @@ object preprocess {
 		val spark = SparkSession.builder().enableHiveSupport().config(conf).getOrCreate()
 		spark.sql("use dachuangppreprocessingdata")
 		//spark.sql("select * from cnblog_computer_version_onlycontent").show(false)
-		val rdd = spark.sql("select * from cnblog_computer_version_onlycontent")
+		val rdd = spark.sql("select * from cnblog_computer_version_onlycontent_dropduplicate2_2_x")
 		//rdd.show(false)
 
-		/*
+/*
 		//added the index column
-		val w = Window.orderBy("content")
+		val w = Window.orderBy("content2")
 		val result = rdd.withColumn("index", row_number().over(w))
-		result.write.saveAsTable("csdn_natural_language_onlycontent1")
-		*/
+		result.write.saveAsTable("cnblog_computer_version_onlycontent_dropduplicate2_2_x_index")
+*/
 
 		/*
 		import spark.implicits._
