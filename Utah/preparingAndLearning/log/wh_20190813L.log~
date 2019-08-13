@@ -2,5 +2,4 @@
 2. 修改分词方法，目前使用word的NLP；
 3. 成功将hive中的表格数据按行分开并存储为文本；
 4. 接下来一周把Scala搞熟；
-5. 建立码云（gitee.com）仓库并导入DaChuang仓库；
-6. 学习完Programming in Scala Third Edition第7章；当前的项目所用到的Scala语法都游刃有余。
+5. 建立码云（gitee.com）仓库并导入数据。
