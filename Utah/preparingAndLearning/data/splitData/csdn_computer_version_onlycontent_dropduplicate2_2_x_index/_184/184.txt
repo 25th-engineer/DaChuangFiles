@@ -1,0 +1,61 @@
+博主github：https://github.com/MichaelBeechan
+博主CSDN：https://blog.csdn.net/u011344545
+计算机视觉数据集：https://github.com/MichaelBeechan/CV-Datasets
+Image Motion and Tracking
+数据集
+功能
+解释
+链接
+ALOV300++ Dataset
+Visual Tracking
+Videos for evaluating visual trackers robustness
+ALOV300++
+VOT2015 Benchmark
+Visual Tracking
+The dataset comprises 60 short sequences showing various objects in challenging backgrounds.
+VOT2015
+MOT Benchmark
+The Multiple Object Tracking Benchmark
+including object detection, pedestrian detection, 3D reconstruction, optical flow, single-object short-term tracking, and stereo estimation
+MOTChallenge
+THUMOS
+Temporal action localization(动作定位)
+UCF101、Pre-computed low-level Features (Improved DTF [1])、List of action classes and their numerical index
+THUMOS Challenge 2014
+ActivityNet
+Large Scale Activity Recognition
+Untrimmed Classification Challenge、Detection Challenge
+ActivityNet
+Scene Flow Datasets
+Optical Flow
+A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation
+Scene Flow
+KITTI Vision Benchmark
+Optical Flow
+stereo 2012, flow 2012, odometry, object detection or tracking benchmarks
+KITTI
+MPI Sintel Dataset
+Optical Flow Training & Test Data
+New training data is available! Please see the dedicated pages for Stereo and disparity, Depth and camera motion, and Segmentation.
+MPI
+3D Computer Vision
+数据集
+功能
+解释
+链接
+NYU Depth V2 dataset
+关于RGBD 图像场景理解的数据库
+The NYU-Depth V2 data set is comprised of video sequences from a variety of indoor scenes as recorded by both the RGB and Depth cameras from the Microsoft Kinect.
+NYU Depth Dataset V2
+SUN RGBD dataset
+3D bounding boxes和room layouts的标注
+Dataset for IKEA 3D models and aligned images
+VOT2015
+(Beyond PASCAL: A Benchmark for 3D Object Detection in the Wild)PASCAL3D+ :http://cvgl.stanford.edu/projects/pascal3d.html
+SUN RGB-D: A RGB-D Scene Understanding Benchmark Suite : http://rgbd.cs.princeton.edu/
+New Tsukuba Dataset：http://www.cvlab.cs.tsukuba.ac.jp/dataset/tsukubastereo.php
+DTU Robot Image Data Sets：http://roboimagedata.compute.dtu.dk/
+OXFORD ROBOTCAR DATASET：https://robotcar-dataset.robots.ox.ac.uk/
+ShapeNet ：https://www.shapenet.org/
+middlebury：http://vision.middlebury.edu/stereo/
+Other Datasets you can find in https://github.com/MichaelBeechan/CV-Datasets

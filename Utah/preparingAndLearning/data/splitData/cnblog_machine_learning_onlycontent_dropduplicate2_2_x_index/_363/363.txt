@@ -1,0 +1,35 @@
+刚面完 AI 岗，这几点分享给你！- AI科技大本营
+https://mp.weixin.qq.com/s/05G5HKSkZwhwnmskijToLQ
+1.训练决策树时的参数是什么？
+2.在决策树的节点处分割的标准是什么？
+3.基尼系数的公式是什么？
+4.熵的公式是什么？
+5.决策树如何决定在哪个特征处分割？
+6.你如何用数学计算收集来的信息？你确定吗？
+7.随机森林的优点有哪些？
+8.介绍一下boosting算法。
+9.gradient boosting如何工作？
+10.关于AdaBoost算法，你了解多少？它如何工作？
+11.SVM中用到了哪些核？SVM中的优化技术有哪些？
+12.SVM如何学习超平面？用数学方法详细解释一下。
+13.介绍一下无监督学习，算法有哪些？
+14.在K-Means聚类算法中，如何定义K？
+15.告诉我至少3中定义K的方法。
+推荐这份GitHub万星的ML算法面试大全 - 机器学习算法与自然语言处理
+https://mp.weixin.qq.com/s/qUOkjHjE3yCTw17mqGbbLw
+https://github.com/imhuay/Algorithm_Interview_Notes-Chinese
+75道常见AI面试题，看看你的知识盲点在哪？（附解析）- AI科技大本营
+https://mp.weixin.qq.com/s/14SS0G397wTyRFRFQ4ydeA
+https://www.tinymind.cn/articles/139
+从写简历到面试，这是一份AI公司应聘全面指南 - 机器学习算法与Python学习
+https://mp.weixin.qq.com/s/KA_Kd-YxVLKpss8jougxfw
+1000面试题，BAT机器学习面试刷题宝典 - 机器学习算法与自然语言处理
+https://mp.weixin.qq.com/s/exHB6SkIOpxJDChUoa4oTw
+机器学习 / 数据挖掘类岗位面试主要考察哪些方面？
+https://mp.weixin.qq.com/s/G7fO0Zp3ldTtQ9s14zV3Xg
+资源|机器学习/算法工程师面试考点汇总(一)
+https://mp.weixin.qq.com/s/CLecjSReW8iM_wd5UGsTEw
+从小白到入门算法，经验分享
+https://mp.weixin.qq.com/s/JhArzWYEsOYuwM1mzqXG6g
+给机器学习面试者的十项建议 | 面试官角度
+https://mp.weixin.qq.com/s/ZMtREH7WaKIRulYsMwNqTQ

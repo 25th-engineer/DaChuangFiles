@@ -1,0 +1,141 @@
+决定 系统 学习 下 机器学习 了 以 stanford 课件 为 
+主线 notes1 是 关于 回归 的 部分 http / / 
+www . stanford . edu / class / cs229 / 
+notes / cs229 notes1 . pdf1 . 线性 回归 举例 
+是 对于 房子 价格 的 预测 它 这个 数据 很 
+遗憾 网上 找 不到 那么 就 暂时 用 5 个数 
+据点 做 下 实验 吧 准备 house . txt 5个 
+数据 记录 大小 卧室 数目 价格 area       
+bedrooms       price2104       3   
+    4001600       3       
+3302400       3       3691416   
+    2       2323000       
+4       540 用 R 展示 下 数据 
+house = read . table house . txt header = 
+T housearea bedrooms price1 2104           
+    3     4002 1600       
+        3     3303 2400   
+            3     3694 
+1416               2   
+  2325 3000               
+4     540 house $ area 1 2104 1600 
+2400 1416 3000 plot house $ area house $ price 
+fit = lm house $ price ~ house $ area 
+  / / 尝试 线性 回归 price = w * 
+area + b abline fit summary fit Call lm formula 
+= house $ price ~ house $ area Residuals 1 
+          2         
+  3           4     
+      525.80   39.02 54.08 28.60   17 
+. 85Coefficients Estimate Std . Error t value Pr | 
+t | Intercept 26.78988     78.20681     0.343 
+    0 . 7545house $ area     0.16512 
+      0.03588     4.602     0.0193 
+* Signif . codes   0 * * * 0.001 
+* * 0.01 * 0.05 . 0.1 1Residual standard error 
+45.64 on 3 degrees of freedomMultiple R squared 0.8759   
+      Adjusted R squared 0.8345 F statistic 21.18 
+on 1 and 3 DF   p value 0.01929 因此 
+R 解 出来 的 拟合 公式 是 price = 26.78988 
++ 0.16512 * area 如果 我们 同时 考虑 area bedrooms 
+两个 因素 对 房价 造成 的 影响 利用 R 的 
+多元 回归 fit = lm house $ price ~ house 
+$ area + house $ bedrooms summary fit Call lm 
+formula = house $ price ~ house $ area + 
+house $ bedrooms Residuals 1           
+2           3       
+    4           525.80 12.02 
+24.10     5.16     5 . 16Coefficients Estimate 
+Std . Error t value Pr | t | Intercept 
+      70.43460     59.50462   1.184   
+    0 . 358house $ area       
+      0.06384       0.04458     
+1.432       0 . 288house $ bedrooms 103.43605 
+    40.09826     2.580       0 
+. 123Residual standard error 26.87 on 2 degrees of freedomMultiple 
+R squared 0.9713         Adjusted R squared 
+0.9426 F statistic 33.87 on 2 and 2 DF   
+p value 0 . 02868price = – 70.43 + 0.06384 
+* area + 103.43605 * bedrooms/w 这个/r 和/c 课件/n 上/f 
+出入/v 都/d 很大/a 主要 还是 这边 数据 集合 太小 了 
+只有 5 个数 据点 C + + 实验 考虑 到 
+上面 的 回归 其实 本质上 都是 最小二乘 问题 如果 从 
+线性代数 角度 求解 最小二乘 AX = b 这里 用 eigen 
+做 下 实验 分别 对应 上面 的 1元 和 多元 
+线性 回归 两个 例子 始终 是 1 对 应试 area 
+如果 是 二元 回归 对应 price / * * * 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = * * 
+\ file stanford1 . cc * * \ author chenghuige 
+* * \ date 2011 02 27 15 27 07.614842 
+* * \ Description stanford 机器学习 实验 * area bedrooms 
+price 2104 3 400 1600 3 330 2400 3 369 
+1416 2 232 3000 4 540 * = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = = = * / # define private 
+public # define protected public # include iostream # include 
+string # include vector # include fstream # include algorithm 
+# include boost / progress . hpp # include glog 
+/ logging . h # include gflags / gflags . 
+h # include debug _ help . h # include 
+utils / matrix _ help . h using namespace std 
+DEFINE _ string type simple vec linear _ regression const 
+mat & A const vec & b { / / 
+Ax = b least squar sort or other method return 
+x return A . jacobiSvd ComputeThinU | ComputeThinV . solve 
+b } void run { mat data 5 4 / 
+/ 5data points each with 3 attrib with a const 
+attrib data 1 2104 3 400 1 1600 3 330 
+1 2400 3 369 1 1416 2 232 1 3000 
+4 540 cout 实验 数据 如下 \ n data endl 
+cout 一元 线性 回归 结果 如下 对应/vn 常/d 系数/n 和/c 
+area/w 系数/n endl cout linear _ regression data . leftCols 
+2 data . col 3 endl / / 一元 线性 
+回归 cout 二元 线性 回归 结果 如下 对应/vn 常/d 系数/n 
+和/c area/w 系数/n 和/c bedrooms/w 系数/n endl cout linear _ 
+regression data . leftCols 3 data . col 3 endl 
+/ / 二元 线性 回归 } int main int argc 
+char * argv { FLAGS _ logtostderr = true google 
+I n i t G o o g l e 
+L o g g i n g argv 0 google 
+I n s t a l l F a i 
+l u r e i g n a l H 
+a n d l e r int s = google 
+P a r s e C o m m a 
+n d L i n e F l a g 
+s & argc & argv false boost progress _ timer 
+timer run return 0 } chg @ localhost bin $ 
+. / stanford1 实验 数据 如下 1 2104     
+  3   4001 1600       3   
+3301 2400       3   3691 1416   
+    2   2321 3000       4 
+  540 一元 线性 回归 结果 如下 对应/vn 常/d 系数/n 
+和/c area/w 系数/n 26 . 78990.165119 二元 线性 回归 结果 
+如下 对应/vn 常/d 系数/n 和/c area/w 系数/n 和/c bedrooms/w 系数/n 
+70 . 43460.0638434103 . 4360.00 s 可以 看到 和R的/nr 结果 
+是 一致 的 . csharpcode . csharpcode pre { font 
+size small color black font family consolas Courier New courier 
+monospace background color # ffffff / * white space pre 
+* / } . csharpcode pre { margin 0em } 
+. csharpcode . rem { color # 008000 } . 
+csharpcode . kwrd { color # 0000ff } . csharpcode 
+. str { color # 006080 } . csharpcode . 
+op { color # 0000c0 } . csharpcode . preproc 
+{ color # cc6633 } . csharpcode . asp { 
+background color # ffff00 } . csharpcode . html { 
+color # 800000 } . csharpcode . attr { color 
+# ff0000 } . csharpcode . alt { background color 
+# f4f4f4 width 100% margin 0em } . csharpcode . 
+lnum { color # 606060 } 

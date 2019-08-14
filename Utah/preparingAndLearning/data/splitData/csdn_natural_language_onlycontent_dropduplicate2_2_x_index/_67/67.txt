@@ -1,0 +1,50 @@
+What Is Natural Language Processing?
+本文将学习自然语言处理，当给予计算机一篇文章，它并不知道这篇文章的含义。为了让计算机可以从文章中做出推断，我们需要将文章转化为数值表示。这个过程使得计算机能够凭语法规则去识别它。那么首先就要学会如何将文章变为数值表示。
+Looking At The Data
+Hacker News网站是一个可以提交文章的社区网站，并且其他的人可以对文章进行投票。投票最高的文章会被放到首页，这样就有更多的人可以看到它。我们的数据集就是 Hacker News网站2006年到2015年提交的文章集合。Arnaud Drizard利用Hacker News API爬取到了这些数据。我们从中随机抽取了3000个样本，删除了所有多余的列，最终数据的属性如下：
+submission_time – when the article was submitted.
+upvotes – number of upvotes the article got.
+url – the base url of the article.
+headline – the headline of the article.
+我们将通过文章的标题来预测文章会收到多少投票（换句话就是哪种文章更受欢迎），首先将数据中的元素值为NA的行删除掉。
+import pandas as pd submissions = pd.read_csv("sel_hn_stories.csv") submissions.columns = ["submission_time", "upvotes", "url", "headline"] submissions = submissions.dropna()
+Tokenization
+我们为了预测某个标题会得到多少个投票，那么首先需要将标题转换为数值表示。可以用词袋模型（ bag of words model）来完成这个转换，词袋模型中将每个文本表示为一个数值型向量。看个例子：
+词袋模型的第一步就是分词，将一个句子根据空格将其分散为一个个不相连的单词。
+tokenized_headlines = [] for item in submissions["headline"]: tokenized_headlines.append(item.split(" "))
+Preprocessing
+由于大小写代表的意思相同，因此我们需要将所有的单词都转换为小写
+剔除掉标点符号
+punctuation = [",", ":", ";", ".", "'", '"', "’", "?", "/", "-", "+", "&", "(", ")"] clean_tokenized = [] for item in tokenized_headlines: tokens = [] for token in item: token = token.lower() for punc in punctuation: token = token.replace(punc, "") tokens.append(token) clean_tokenized.append(tokens)
+Assembling A Matrix
+现在获取了每个文本的词袋，下一步就是将这些词袋求并集。
+利用single_tokens 剔除掉了只出现一次的单词，这样的单词没有多大意义。unique_tokens 自然就是存储的大于一次的单词。
+counts是个值全为0的DataFrame，其中列标签为unique_tokens 中的单词，行标签为标题序号。
+import numpy as np unique_tokens = [] single_tokens = [] for tokens in clean_tokenized: for token in tokens: if token not in single_tokens: single_tokens.append(token) elif token in single_tokens and token not in unique_tokens: unique_tokens.append(token) counts = pd.DataFrame(0, index=np.arange(len(clean_tokenized)), columns=unique_tokens)
+Counting Tokens
+填充上面构造的全零DataFrame，遍历每个token 中的所有单词，进行计数：
+for i, item in enumerate(clean_tokenized): for token in item: if token in unique_tokens: counts.iloc[i][token] += 1
+Removing Extraneous Columns
+我们的属性高达2309，并且其中绝大部分取值为0，这样不便于分析。较多的属性只会让模型更加拟合噪音而不是真正的信息，因此容易导致过拟合问题。
+print(len(unique_tokens)) ''' 2309 '''
+有两类特征会降低模型的精度
+第一种：只出现过几次，这样的特征会导致过拟合。因为模型没有更多的信息来精确的确定这个特征是否重要，因为它就只出现了几次。并且它们在训练集和测试集中对于目标变量的影响也会有很大的差异，因为出现太少，因此属性分布不平衡。
+第二种：出现的次数太多，比如像and和to这样的特征根本不能给模型带来任何有意义的信息，这些词被称为停顿词，应当剔除掉。
+因此最终确定保留那些属性值大于5小于100的属性：
+word_counts = counts.sum(axis=0) ''' word_counts Series (<class 'pandas.core.series.Series'>) 418 and 289 for 298 as 47 you 100 is 158 ''' counts = counts.loc[:,(word_counts >= 5) & (word_counts <= 100)]
+Splitting The Data
+sklearn.cross_validation中有专门划分训练集和测试集的函数train_test_split。
+counts中存储的是分类数据，而submissions[“upvotes”]是类标签数据，分别对其进行划分。
+from sklearn.cross_validation import train_test_split X_train, X_test, y_train, y_test = train_test_split(counts, submissions["upvotes"], test_size=0.2, random_state=1)
+Making Predictions
+from sklearn.linear_model import LinearRegression clf = LinearRegression() clf.fit(X_train, y_train) predictions = clf.predict(X_test)
+Calculating Error
+计算MSE，也就是平均平方误差（mean squared error(MSE)）
+mse = sum((y_test - predictions) ** 2) / len(predictions) print(mse) ''' 2652.6082512522867 '''
+Next Steps
+得到的模型的mse是2652.6082512522867，这是一个很大的值，但是关于什么是好的错误率这个没有硬性规定，因为它取决于具体的问题。在这个问题中，投票的平均值是10，标准差是39.5。MSE的平方根是大约是51。这意味着我们的平均误差是远离真正的值的，所以我们预测时有很大偏差的。
+可以采取以下措施来降低预测的偏差问题：
+利用整个数据集进行模型的创建，因为在这个实验中我们只是抽样了3000个文章。如果利用全部的数据集将大大减少出错率。
+添加元特征（ “meta” features），比如标题的长度，单词的平均长度等等。
+利用随机森林或者其它更强大的机器学习算法。
+在剔除那些少见或者常见单词的时候，要尝试不同的阈值，找到最佳的为止。

@@ -1,0 +1,47 @@
+ACL文章链接
+http://www.aclweb.org/anthology/
+2016年ACL-WMT机器翻译数据集
+PaperWeekly
+http://rsarxiv.github.io/
+中国NLP联盟（墙裂推荐）
+https://github.com/NLPchina
+中文NLP工具大全
+https://github.com/NLPchina/Awesome-Chinese-NLP
+中文Embedding
+https://github.com/Embedding/Chinese-Word-Vectors
+更多优秀文章
+http://blog.csdn.net/leyounger/article/details/78085905
+NLP 工具
+(1) NLTK : http://www.nltk.org
+提供了常用的文本预处理函数和算法
+(2) HIT LTP汉语分词系统
+模型库百度Pan：
+https://pan.baidu.com/share/link?shareid=1988562907&uk=2738088569#list/path=%2Fltp-models
+(3) Sklearn :
+用于分类相关的还是很好用的， 不仅提供小数据集搜索，对于大数据环境下也提供了支持partial_fit方法的模型来获得相对好的结果
+http://scikit-learn.org/stable/modules/scaling_strategies.html
+NLP工作
+http://www.nlpjob.com/
+Stanford cs224d
+http://blog.csdn.net/neighborhoodguo/article/details/46868143
+可爱的数据集
+https://zhuanlan.zhihu.com/p/25138563
+https://blog.csdn.net/tMb8Z9Vdm66wH68VX1/article/details/78153519
+优秀NLP系统
+(1) 腾讯Peacock推荐系统
+http://www.flickering.cn/nlp/2015/03/peacock：大规模主题模型及其在腾讯业务中的应用/
+神经网络相关
+(1) 深度学习与计算机视觉系列
+http://blog.csdn.net/xiaopihaierletian/article/details/74688643
+(2) 用深度学习（CNN RNN Attention）解决大规模文本分类问题 - 综述和实践
+https://zhuanlan.zhihu.com/p/25928551
+深度学习相关
+(1) 深度学习中文版书籍
+https://github.com/exacity/deeplearningbook-chinese
+(2) 深度学习CrossEntropy导数推导
+http://www.cnblogs.com/python27/p/MachineLearningWeek05.html
+NLP比赛经验
+(1) 知乎“看山杯” 夺冠记
+https://zhuanlan.zhihu.com/p/28923961
+还有一个用TensorFlow做的版本：
+http://blog.csdn.net/jerr__y/article/details/77751885

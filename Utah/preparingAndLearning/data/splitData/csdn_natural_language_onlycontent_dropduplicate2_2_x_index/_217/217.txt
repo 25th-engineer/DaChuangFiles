@@ -1,0 +1,69 @@
+微信公众号
+关键字全网搜索最新排名
+【机器学习算法】：排名第一
+【机器学习】：排名第一
+【Python】：排名第三
+【算法】：排名第四
+源 | AI深入浅出
+最近几个月小编遨游在税务行业的智能问答调研和开发中，里面涉及到了很多的自然语言处理NLP的功能点。虽然接触NLP也有近两年的时间了，现在真正要应用到问答中，避免不了还是需要再重新熟识并深入研究理解。
+下面是与NLP相关的一些书籍推荐、课件推荐和开源工具推荐。
+主要是记录下入门的资料，由于资料的存储位置没有做规整，所以本文没有附带资源下载链接。如果有同学需要其中的资源，可以在公众号上给我留言，回头我把资源链接反馈给您。
+部分开源工具和语料资源
+1、NLTK官方提供的语料库资源列表
+2、OpenNLP上的开源自然语言处理工具列表
+3、斯坦福大学自然语言处理组维护的“统计自然语言处理及基于语料库的计算语言学资源列表”
+4、LDC上免费的中文信息处理资源
+课件
+1、哈工大刘挺老师的“统计自然语言处理”课件；
+2、哈工大刘秉权老师的“自然语言处理”课件；
+3、中科院计算所刘群老师的“计算语言学讲义“课件；
+4、中科院自动化所宗成庆老师的“自然语言理解”课件；
+5、北大常宝宝老师的“计算语言学”课件；
+6、北大詹卫东老师的“中文信息处理基础”的课件及相关代码；
+7、MIT大牛Michael Collins的“Machine Learning Approaches for Natural Language Processing(面向自然语言处理的机器学习方法)”课件；
+8、Michael Collins的“Machine Learning （机器学习）”课件；
+9、SMT牛人Philipp Koehn “Advanced Natural Language Processing（高级自然语言处理）”课件；
+10、Philipp Koehn “Empirical Methods in Natural Language Processing”课件；
+11、Philipp Koehn“Machine Translation（机器翻译）”课件。
+书籍
+1、《自然语言处理综论》英文版第二版
+2、《统计自然语言处理基础》英文版
+3、《用Python进行自然语言处理》，NLTK配套书
+4、《Learning Python第三版》，Python入门经典书籍，详细而不厌其烦
+5、《自然语言处理中的模式识别》
+6、《EM算法及其扩展》
+7、《统计学习基础》
+8、《自然语言理解》英文版（似乎只有前9章）
+9、《Fundamentals of Speech Recognition》，质量不太好，不过第6章关于HMM的部分比较详细，作者之一便是Lawrence Rabiner；
+10、概率统计经典入门书：
+《概率论及其应用》（英文版，威廉*费勒著） 第一卷　　第二卷　　DjVuLibre阅读器（阅读前两卷书需要）
+11、一本利用Perl和Prolog进行自然语言处理的介绍书籍：《An Introduction to Language Processing with Perl and Prolog》
+12、国外机器学习书籍之：
+1) “Programming Collective Intelligence“，中文译名《集体智慧编程》，机器学习&数据挖掘领域”近年出的入门好书，培养兴趣是最重要的一环，一上来看大部头很容易被吓走的”
+2) “Machine Learning“,机器学习领域无可争议的经典书籍，下载完毕将后缀改为pdf即可。
+豆瓣评论 by 王宁）：老书，牛人。现在看来内容并不算深，很多章节有点到为止的感觉，但是很适合新手（当然，不能”新”到连算法和概率都不知道）入门。比如决策树部分就很精彩，并且这几年没有特别大的进展，所以并不过时。另外，这本书算是对97年前数十年机器学习工作的大综述，参考文献列表极有价值。国内有翻译和影印版，不知道绝版否。
+3) “Introduction to Machine Learning”
+13、国外数据挖掘书籍之：
+1) “Data.Mining.Concepts.and.Techniques.2nd“，数据挖掘经典书籍。华裔科学家写的书，相当深入浅出。
+2) Data Mining:Practical Machine Learning Tools and Techniques
+3) Beautiful Data: The Stories Behind Elegant Data Solutions（ Toby Segaran, Jeff Hammerbacher）
+14、国外模式识别书籍之：
+1）“Pattern Recognition”
+2）“Pattern Recongnition Technologies and Applications”
+3）“An Introduction to Pattern Recognition”
+4）“Introduction to Statistical Pattern Recognition”
+5）“Statistical Pattern Recognition 2nd Edition”
+6）“Supervised and Unsupervised Pattern Recognition”
+7）“Support Vector Machines for Pattern Classification”
+15、国外人工智能书籍之：
+1）Artificial Intelligence: A Modern Approach (2nd Edition) 人工智能领域无争议的经典。
+2）“Paradigms of Artificial Intelligence Programming: Case Studies in Common LISP”
+16、其他相关书籍：
+1）Programming the Semantic Web，Toby Segaran , Colin Evans, Jamie Taylor
+2）Learning.Python第四版，英文
+加入微信机器学习交流群
+请添加微信：guodongwe1991
+备注姓名-单位-研究方向
+广告、商业合作
+请添加微信：guodongwe1991
+（备注：商务合作）

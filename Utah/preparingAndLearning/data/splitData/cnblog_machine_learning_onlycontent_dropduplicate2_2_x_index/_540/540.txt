@@ -1,0 +1,130 @@
+接触机器学习1年多了，由于只会用C#堆代码，所以只关注.NET平台的资源，一边积累，一边收集，一边学习，所以在本站第101篇博客到来之际，分享给大家。部分用过的 ，会有稍微详细点的说明，其他没用过的，也是我关注的，说不定以后会用上。机器学习并不等于大数据或者数据挖掘，还有有些区别，有些东西可以用来处理大数据的问题或者数据挖掘的问题，他们之间也是有部分想通的，所以这些组件不仅仅可以用于机器学习，也可以用于数据挖掘相关的。
+按照功能把资源分为3个部分，开源综合与非综合类，以及其他网站博客等资料。都是能够在.NET平台使用的。谢谢大家支持，这些组件我日后肯定也会研究其使用，到时候有心得再分享上来。如果有兴趣，可以关注本博客。
+本文原文地址：http://www.cnblogs.com/asxinyu/p/4422050.html
+1.开源综合类
+1.1 AForge.NET
+AForge.NET是一个专门为开发者和研究者基于C#框架设计的，他包括计算机视觉与人工智能，图像处理，神经网络，遗传算法，机器学习，模糊系统，机器人控制等领域。这个框架由一系列的类库组成。主要包括有：
+AForge.Imaging —— 一些日常的图像处理和过滤器
+AForge.Vision —— 计算机视觉应用类库
+AForge.Neuro —— 神经网络计算库AForge.Genetic -进化算法编程库
+AForge.MachineLearning —— 机器学习类库
+AForge.Robotics —— 提供一些机器学习的工具类库
+AForge.Video —— 一系列的视频处理类库
+AForge.Fuzzy —— 模糊推理系统类库
+AForge.Controls—— 图像，三维，图表显示控件
+来自：http://baike.haosou.com/doc/1786119-1888850.html
+官方网站：http://www.aforgenet.com/
+我个人认为这个是.NET平台机器学习和数据挖掘发展时间最长，最好，最全面的开源.NET组件之一。博客园有很多园友写过专门的使用文章。我本人也只是关注，还没有使用，因为方向和处理的问题不一样，暂时还没有实际应用。源代码，案例等都非常全面。
+1.2 Accord.NET Framework
+Accord.NET Framework是在AForge.NET基础上封装和进一步开发来的。功能也很强大，因为AForge.NET更注重与一些底层和广度，而Accord.NET Framework更注重与机器学习这个专业，在其基础上提供了更多统计分析和处理函数，包括图像处理和计算机视觉算法，所以侧重点不同，但都非常有用。
+官方网站：http://accord-framework.net/
+1.3 Math.NET
+不管是机器学习还是数据挖掘，都与数学离不开关系，既然是在.NET平台，那么这个组件以后你也许用得上。Math.NET是.NET平台下最全面的数学计算组件之一，基础功能非常完善。我的博客有对这个组件的详细研究：http://www.cnblogs.com/asxinyu/p/4329737.html 。当然更多的功能还得大家自己使用中发掘，毕竟提供了源代码。Math.NET初衷是开源建立一个稳定并持续维护的先进的基础数学工具箱，以满足.NET开发者的日常需求。目前该组件主要分为以下几个子项目，该组件同时也支持Mono，而且支持的平台也非常广泛。Math.NET Numerics是核心功能是数值计算。主要是提供日常科学工程计算相关的算法，包括一些特殊函数，线性代数，概率论，随机函数，微积分，插值，最优化等相关计算功能。详细的介绍和使用可以参考本站的菜单“Math.NET”，查看目录。
+官方网站：http://www.mathdotnet.com/
+1.4 Infer.NET
+好吧，上面说的那些很强大，强大一方面是说包括的面广，一方面是代码，注释，资源，案例也很完善。如果说上面那些是大炮，那么我认为这个Infer.NET就是战斗机，零零散散接触和研究，以及翻译它的文档代码已经有5个月了，时间越久，越感觉到它的火力之强大。我博客已经发表了2篇翻译的文档：http://www.cnblogs.com/asxinyu/p/4329742.html，请关注。
+Infer.NET是微软剑桥研究院基于.NET平台开发的一款机器推理组件，该组件的采用的是Microsoft Research License Agreement 授权，Non-Commercial Use Only.Infer.NET是一个概率图模型中(graphical models)用于运行贝叶斯推理机(Bayesian inference)的框架。如果对概率图模型或者贝叶斯推理的意义不了解，你可以参考一下相关资源文件，在Resources and References page页面。Infer.NET为各种应用程序所需要推理提供了先进的消息传递算法和统计程序。Infer.NET更关注与概率图编程或者贝叶斯理论的相关应用。这个随机因素和不确定世界中的很多问题，都可以适用，所以他的强大一方面是专注，另一方面是提供的建模语言。与其他的组件不同，其他组件是算法级，而Infer.NET是建模级别，附带了各种通用和常见的推理算法。可以通过简单的代码来创建模型，按照微软的话说是MSL建模语言，这也是这个组件让我肃然起敬的地方，估计也只有微软的研究人员才会想到这么干一劳永逸的事情。
+官方网站：http://research.microsoft.com/en-us/um/cambridge/projects/infernet/default.aspx
+1.5 numl
+另外一个小巧的，包含比较多的机器学习算法类库，支持监督式和非监督式学习。支持很多常见的机器学习算法，文档资源还不错。包括Cluster,KMeans,PCA,DecisionTree,KNN,NaiveBayes,NeuralNetwork等学习算法，内容也非常丰富，功能强大，同时也包括一些数值计算的实现。这个组件个人认为没有以上的那么复杂，结构小巧合理，代码也很优雅。看看下面这段代码，很快就可以构建一个决策树学习器进行预测：
+1 var generator = new DecisionTreeGenerator(); 2 generator.Descriptor = Descriptor.Create<Tennis>(); 3 generator.SetHint(false); 4 5 Tennis[] tennis = TennisData.GetData(); 6 7 var learned = Learner.Learn(tennis, 0.80, 1000, generator); 8 9 IModel model = learned.Model; 10 double accuracy = learned.Accuracy; 11 12 Tennis t = new Tennis 13 { 14 Outlook = Outlook.Sunny, 15 Temperature = Temperature.High, 16 Windy = false 17 }; 18 19 Tennis predictedVal = model.Predict(t);
+numl的入门案例和文档比较全面，如果本身对算法比较了解，熟悉C#，那入门应该不是问题。并且可以通过组件本身构建和解决更加复杂的问题。
+官方网站：http://numl.net/
+1.6 Alglib
+ALGLIB是一个跨平台的数值分析和数据处理函数库，该函数库包括开源版本和商业版本。它支持多种编程语言，如C++，C#，Pascal，VBA等，可以在多个操作系统平台上运行，如：Windows，Linux和Solaris。ALGLIB有以下特点：
+（1）线性代数（包括矩阵分析）；
+（2）方程求解（线性和非线性）；
+（3）插值；
+（4）最优化；
+（5）快速傅里叶变换；
+（6）数值积分；
+（7）线性和非线性最小二乘拟合；
+（8）常微分方程求解；
+（9）特殊函数；
+（10）统计（描述统计、假设检验）；
+（11）数据分析（分类、回归、神经网络）；
+官方网站：http://www.alglib.net/
+2.开源.NET平台非综合类
+2.1 Adaboost算法
+1.https://github.com/bgorven/Classifier
+2.https://github.com/ElmerNing/Adaboost
+2.2 Apriori算法
+1.https://github.com/Omar-Salem/Apriori-Algorithm
+2.https://github.com/simonesalvo/apriori
+2.3 PageRank算法
+https://github.com/archgold/pagerank
+2.4 NativeBayes(朴素贝叶斯)算法
+1.https://github.com/Rekin/Naive-Bayes-Classifier
+2.https://github.com/ArdaXi/Bayes.NET
+3.https://github.com/amrishdeep/Dragon
+4.https://github.com/joelmartinez/nBayes
+2.5 kmeans算法
+http://visualstudiomagazine.com/articles/2013/12/01/k-means-data-clustering-using-c.aspx
+3.其他资源与技术博客
+【资源】108个大数据文档PDF开放下载-整理后打包下载，虽然是大数据的相关资料，主要是PPT等，但也有和机器学习有一点关系，需要的看看；
+白话贝叶斯理论及在足球比赛结果预测中的应用和C#实现【附资料】 里面有贝叶斯相关的论文资料，文章本身对朴素贝叶斯的原理也介绍得非常清楚；
+数据挖掘领域十大经典算法初探
+机器学习10大经典算法
+支持向量机通俗导论（理解SVM的三层境界）
+从决策树学习谈到贝叶斯分类算法、EM、HMM
+自然语言处理博客 ，包含的内容非常多，可能理论性有点强 http://www.52nlp.cn/
+西北工业大学博导聂飞平博客：http://www.escience.cn/people/fpnie/index.html
+一个机器学习数据挖掘的博客，有不少资源链接：http://www.zhizhihu.com/
+http://mlg.eng.cam.ac.uk/mlss09/schedule.htm
+一个机器学习资源集中平台  http://www.kernel-machines.org/software
+算法杂货铺——分类算法之朴素贝叶斯分类(Naive Bayesian classification)
+最大熵模型介绍
+概率图模型
+博客园Bobby0322的博客：http://www.cnblogs.com/Bobby0322/p/4052495.html 中的商务智能与数据挖掘应用系列文章:
+《BI那点儿事》数据挖掘初探
+《BI那点儿事》数据挖掘的主要方法
+《BI那点儿事》浅析十三种常用的数据挖掘的技术
+《BI那点儿事》数据挖掘与相关领域的关系
+《BI那点儿事》Microsoft 关联算法
+《BI那点儿事》Microsoft 聚类分析算法
+《BI那点儿事》Microsoft 聚类分析算法——三国人物身份划分
+《BI那点儿事》Microsoft 决策树算法
+《BI那点儿事》Microsoft 决策树算法——找出三国武将特性分布，献给广大的三国爱好者们
+《BI那点儿事》Microsoft 线性回归算法
+《BI那点儿事》Microsoft 逻辑回归算法
+《BI那点儿事》Microsoft 逻辑回归算法——预测股票的涨跌
+《BI那点儿事》Microsoft Naive Bayes 算法
+《BI那点儿事》Microsoft Naive Bayes 算法——三国人物身份划分
+《BI那点儿事》Microsoft 神经网络算法
+《BI那点儿事》Microsoft 顺序分析和聚类分析算法
+《BI那点儿事》Microsoft 时序算法
+《BI那点儿事》Microsoft 时序算法——验证神奇的斐波那契数列
+《BI那点儿事》数据挖掘各类算法——准确性验证
+4.我的100篇博客之路
+从2009年8月1日注册博客园开始，已经有5年多的时间了。这是博客的第100篇正式随笔文章。在2015年元旦的时候，看着自己的博客很久没有更新，只有40多篇文章，然后列出了一个写作计划，初期是至少完成高质量的文章50篇左右。而到现在只有4个月，没想到我几乎完成了全年的目标。当然发表的50多篇文章中，我认为高质量和有意义的可能只有40篇，但丝毫没关系，至少还有很多时间。这些文章是对自己经历和知识的总结，也是一个提高。在这100篇博客里程碑到来的时候，我简单的回顾了一下这100篇文章。
+第1篇首日浏览量到1000的文章：
+XCode使用记录—使用XCode自动向数据库插入测试数据(2012-04-25 09:11)
+第1篇首日浏览量到3000的文章：
+拥有自己的代码生成器—Newlife.XCode模板编写教程 (2012-05-11 08:35)
+第1篇 上博客园头条的文章：
+挑战ORM性能——Newlife.XCode下500万sqlite数据库的分页(2012-08-22 12:22)
+第1篇 推荐超过60的文章：
+【原创】开源Word读写组件DocX介绍与入门 (2013-02-22 10:35)  24
+第1篇 推荐超过80的文章：
+【5.1送礼】国内第一部Matlab和C#.Net混合编程视频教程【免费】 (2014-04-29 08:02)
+第1篇 总浏览量超1.6万的文章：
+【吐槽】VS2012的安装项目只能用InstallShield Limited Edition (2013-09-07 11:20)
+在所有的100篇随笔中，有13篇是目录和链接汇总，不能算是写的随笔，还有9篇文章是刚开始来博客园的时候，还在学习，技术含量不高。但我也没删除，毕竟是一段历史。加上有2篇关于比特币和源码的文章，准确的说不是我写的，大部分是@大石头的内容，还有2篇资源和百度吐槽是很随意临时写的，根本没打算发表在首页，只是做一个记录。所以实际比较有技术一点的文章或者心得数量是73篇。这73篇文章中:
+在个人认为还不错的文章中有至少15 篇上了博客园头条(包括“最多推荐”和“最多评论”以及“编辑推荐”)
+1.白话贝叶斯理论及在足球比赛结果预测中的应用和C#实现【附资料】
+2.你用过这种奇葩的C#注释吗？如何看待 (2015-04-17 10:04)
+3.【原创】C#玩高频数字彩快3的一点体会 (2015-04-11 09:03)
+4.【踩坑经历】一次Asp.NET小网站部署踩坑和解决经历 (2015-04-01 06:10)
+5.【分享】博客美化(4)为博客添加一个智能的文章推荐插件 (2015-03-24 07:55)
+6.【原创】Newlife.XCode的常见功能使用(一）查询与数据初始化 (2015-01-26 08:52)
+7.【原创】开源Math.NET基础数学类库使用(13)C#实现其他随机数生成器 (2015-03-18 08:32)
+8.【反传销】传销故事总结—如何尽可能保护自身和家人安全 (2015-03-09 07:37)
+9.【反传销】春节一个短暂误入传销和脱身的真实故事以及对技术的思考 (2015-03-03 06:10)
+10.App乱世，3721离我们有多远 (2015-02-10 09:24)
+11.【原创】开源Word读写组件DocX介绍与入门 (2013-02-22 10:35)
+12.【原创】C#开源轻量级对象数据库NDatabase介绍 (2013-02-20 09:35)
+13.【原创】.NET开源压缩组件介绍与入门 (2013-03-05 07:59)
+14.【5.1送礼】国内第一部Matlab和C#.Net混合编程视频教程【免费】 (2014-04-29 08:02)
+另外还有一篇文章被博客园作为编辑推荐文章：
+15.【原创】Matlab.NET混合编程技巧之直接调用Matlab内置函数
+总的来说，文章是非常高效和得到大家的认可的，虽然技术含量不是特别高级，但可能基础的技术更多的能引起共鸣吧。我想说的是，每一篇文章都是经过很用心的编辑和写出来的，结果也是非常理想的，得到了很多人的支持和理解，所以才有了如此高效的访问量和推荐以及评论。

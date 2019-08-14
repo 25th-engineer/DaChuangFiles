@@ -1,0 +1,25 @@
+不多说，直接上干货！
+但是呢，作为博主的我而言，一般不用免费版，喜欢用专业版，具体原因，你懂得。
+下载，得到
+需要破解安装包的，进 对应本平台的讨论和答疑QQ群：大数据和人工智能躺过的坑（总群）（161156071）
+1、解压压缩文件,得到"Listary.Pro.5.00.2410.fix"文件夹,双击"Listry.exe"进行安装
+以下是默认的
+我一般不用默认的安装路径，改为自定义，如下
+2、安装完毕之后选择中文语言，之后完全退出软件(包括关闭进程里面的服务”ListaryService.exe(32位)”)
+以下是默认的
+然后，一直点击继续，直到安装完成。
+注意：如果你不会的话，卸载该软件重启电脑重装,在安装的完成的最后一个界面”取消运行Listary”(即是取消选择上面的那个按钮)。
+3.打开"gen.crack"文件夹，将其中的"MSVCP140.dll"到你安装该软件的目录
+4.打开桌面"Listary",对其右键选择"关于"-"升级到Listary Pro"出现注册框
+5.打开"key.txt",将相关信息对应输入第四部的注册框中完成注册;
+Name: Mike Rountree Email: soft@instant-demo.com JE4V8T3M96PWT4SUCNZNVZ37XKLBU2QW N64LEJQ3VHY7MPL6KY2R5SQZ76QFFTKP VVE8JBVEAME8MMBRHRGF2P6MAJG7ZSQY MUY2PGTQ2EG3W2YHTU2CFWL7SE6THU3Q TAL3U894S2BWA9629EFCXYYYG3S65WEQ 5R234G26AT52UWD27PNENP4GR2EKKDK6
+6.关闭升级
+简单使用：
+双击ctrl
+欢迎大家，加入我的微信公众号：大数据躺过的坑        人工智能躺过的坑
+同时，大家可以关注我的个人博客：
+http://www.cnblogs.com/zlslch/   和     http://www.cnblogs.com/lchzls/      http://www.cnblogs.com/sunnyDream/
+详情请见：http://www.cnblogs.com/zlslch/p/7473861.html
+人生苦短，我愿分享。本公众号将秉持活到老学到老学习无休止的交流分享开源精神，汇聚于互联网和个人学习工作的精华干货知识，一切来于互联网，反馈回互联网。
+目前研究领域：大数据、机器学习、深度学习、人工智能、数据挖掘、数据分析。 语言涉及：Java、Scala、Python、Shell、Linux等 。同时还涉及平常所使用的手机、电脑和互联网上的使用技巧、问题和实用软件。 只要你一直关注和呆在群里，每天必须有收获
+对应本平台的讨论和答疑QQ群：大数据和人工智能躺过的坑（总群）（161156071）

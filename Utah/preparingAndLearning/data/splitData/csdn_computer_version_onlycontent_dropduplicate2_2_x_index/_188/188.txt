@@ -1,0 +1,87 @@
+原理：
+直线：
+一条直线在图像中是一系列离散点的集合，通过一个直线的离散极坐标公式，可以表达出直线的离散点几何等式如下：
+X
+∗
+c
+o
+s
+(
+t
+h
+e
+t
+a
+)
++
+y
+∗
+s
+i
+n
+(
+t
+h
+e
+t
+a
+)
+=
+r
+X *cos(theta) + y * sin(theta) = r
+X∗cos(theta)+y∗sin(theta)=r
+其中角度theta指r与X轴之间的夹角，r为到直线几何垂直距离。任何在直线上点，x, y都可以表达，其中 r， theta是常量。我们接下来要绘制每个(r, theta)值根据像素点坐标P(x, y)值，那么图像就从图像笛卡尔坐标系统转换到极坐标霍夫空间系统，这种从点到曲线的变换称为直线的霍夫变换。变换通过量化霍夫参数空间为有限个值间隔等分或者累加格子。当霍夫变换算法开始，每个像素坐标点P(x, y)被转换到(r, theta)的曲线点上面，累加到对应的格子数据点，当一个波峰出现时候，说明有直线存在。
+圆
+同以上一样的原理，我们可以用来检测圆，只是对于圆的参数方程变为如下等式：
+(
+x
+–
+a
+)
+2
++
+(
+y
+−
+b
+)
+2
+=
+r
+2
+(x –a ) ^2 + (y-b) ^ 2 = r^2
+(x–a)2+(y−b)2=r2
+其中(a, b)为圆的中心点坐标，r圆的半径。这样霍夫的参数空间就变成一个三维参数空间。给定圆半径转为二维霍夫参数空间。
+实现过程：
+实验基于上一次代码的实现，用sobel算子先实现边缘检测，然后再在边缘检测的基础上通过调节高斯滤波的内核size、标准差以及双阈值检测的阈值大小来实现对图像检测的效果。
+效果基本实现，缺点是直线检测中的图片4侧面两条边因为过亮所以干扰比较强，没有实现很好的能直接检测四条边，而是通过检测出的直线后排除较短的两条直线剩下中间的纸张。还有一个问题就是圆检测是做不到智能地检测出图像中圆的数量，而是要一个预估数量值(其实也可以通过设置一个很大的检测值来通过设置投票值的大小实现数量检测，不过算法复杂度要很高)。
+没办法实现用一套边缘检测参数测出所有的图像，干扰程度大的图片需要调参来实现。
+直线：
+过程中用到的类成员：
+CImg<int> HoughImg; //直线的霍夫空间图像 vector<lineParameter> HoughLine; //直线检测得出的直线的参数 vector<lineParameter> Hough_Line; //临时存储直线参数 vector<int> nums; //用于筛选出最长的四条边 vector<parameter> HoughPoint; //直线检测的角点
+过程中用到的类成员函数：
+//将直线变换为极坐标 void Polar_Line(); //霍夫直线检测 CImg<unsigned char> LineDetect(int, int, int); //描绘角点 CImg<unsigned char> drawPoint(); //直线检测操作 void LineDetect_Image(string, int, double, int, int, int, int, int);
+**将直角坐标转到极坐标并统计“票数”： **
+void Hough::Polar_Line() { CImg<int> pic = thres; int rows = pic.width(); int cols = pic.height(); int maxLength = (int)sqrt(pow(rows, 2) + pow(cols, 2)); HoughImg.resize(360, maxLength, 1, 1, 0); HoughImg.fill(0); cimg_forXY(pic, x, y) { if (pic(x,y) != 0) { for (int i = 0; i < 360; i++) { int r = (int)x * cos(M_PI*i / 180) + y * sin(M_PI*i / 180); if (r >= 0 && r < maxLength) { HoughImg(i, r)++; } } } } }
+筛选出得票数最高的我们需求数量的直线，并剔除干扰直线：
+(其中的三个参数分别表示要检测出的直线数量（都是4），干扰直线的数量，以及认为是同一条直线需要剔除掉的检测距离)
+CImg<unsigned char> Hough::LineDetect(int lineNum, int linedisturb, int distance) { int linenum = lineNum; const int Num = lineNum; CImg<unsigned char> pic = thres; pic.resize(pic.width(),pic.height(),1,3); vector<parameter> Lines; vector<parameter> result; vector<int> lineweight; cimg_forXY(HoughImg, x, y) { parameter a; a.x = x; a.y = y; Lines.push_back(a); lineweight.push_back(HoughImg(x, y)); } vector<int> sortlineweight = lineweight; sort(sortlineweight.begin(), sortlineweight.end(), greater<int>()); int fnums = lineNum + linedisturb; for (int i = 0; i < fnums; i++) { int weight = sortlineweight[i], index; vector<int>::iterator iter = find(lineweight.begin(), lineweight.end(), weight); index = iter - lineweight.begin(); int x1 = Lines[index].x, y1 = Lines[index].y; //cout << x1 << " " << y1 << endl; bool flag = 1; for (int k = 0; k < i; k++) { int x0 = result[k].x; int y0 = result[k].y; if (sqrt(pow(x1-x0,2)+pow(y1-y0,2)) < distance) { flag = 0; break; } } if (flag == 1) { result.push_back(Lines[index]); } else { fnums++; } } const unsigned char red[] = { 255, 0, 0 }; //cout << result.size() << endl; for (int i = 0; i < result.size(); i++) { int a0 = 0; nums.push_back(a0); } for (int i = 0; i < result.size(); i++) { //cout << result[i].x << " " << result[i].y << endl; //此时sin角度值为0，k为无穷，单独讨论 if (result[i].x == 0 || result[i].x == 180) { int r = 0; if (result[i].x == 0) { r = result[i].y; //cout << "Line " << i+1 << ": x=" << r << endl; } else { r -= (result[i].y); //cout << "Line " << i+1 << ": x=" << r << endl; } //const int x_min = 0; //const int x_max = pic.width() - 1; const int y_min = 0; const int y_max = pic.height() - 1; lineParameter temp; temp.k = DBL_MAX; temp.b = r; Hough_Line.push_back(temp); for (int yi = y_min; yi < y_max; yi++) { if (thres.atXY(r, yi) != 0) { nums[i]++; } } //pic.draw_line(r , y_min, r, y_max, red); } else { double theta = double(result[i].x)*M_PI/180; int r = result[i].y; //cout << "Line " << i << " " << theta << " " << r << endl; double k = (double)(-cos(theta) / sin(theta)); double b = (double) r / sin(theta); lineParameter temp; temp.k = k; temp.b = b; Hough_Line.push_back(temp); const int x_min = 0; const int x_max = pic.width() - 1; const int y_min = 0; const int y_max = pic.height() - 1; const int x0 = (double)(y_min - b) / k; const int x1 = (double)(y_max - b) / k; const int y0 = x_min * k + b; const int y1 = x_max * k + b; if (abs(k) > 1) { for (int yi = y1; yi < y_max; yi++) { int xi = (double)(yi - b) / k; if (thres.atXY(xi,yi) != 0 || thres.atXY(xi+1,yi) != 0 || thres.atXY(xi,yi+1) != 0 || thres.atXY(xi+1,yi+1) != 0) nums[i]++; } //pic.draw_line(x0, y_min, x1, y_max, red); } else { for (int xi = x_min; xi < x_max; xi++) { int yi = k*xi + b; if (thres.atXY(xi,yi) != 0 || thres.atXY(xi+1,yi) != 0 || thres.atXY(xi,yi+1) != 0 || thres.atXY(xi+1,yi+1) != 0) nums[i]++; } //pic.draw_line(x_min, y0, x_max, y1, red); } } //cout << nums[i] << endl; } vector<int> sortnums = nums; sort(sortnums.begin(), sortnums.end(), greater<int>()); for (int i = 0; i < lineNum; i++) { int weight1 = sortnums[i], index1; vector<int>::iterator iter1 = find(nums.begin(), nums.end(), weight1); index1 = iter1 - nums.begin(); HoughLine.push_back(Hough_Line[index1]); } for (int i = 0; i < HoughLine.size(); i++) { const int x_min = 0; const int x_max = pic.width() - 1; const int y_min = 0; const int y_max = pic.height() - 1; double b = HoughLine[i].b; if (HoughLine[i].k < DBL_MAX) { double k = HoughLine[i].k; const int x0 = (double)(y_min - b) / k; const int x1 = (double)(y_max - b) / k; const int y0 = x_min * k + b; const int y1 = x_max * k + b; if (b > 0) cout << "Line " << i+1 << ": y=" << k << "*x+" << b << endl; else if (b == 0) cout << "Line " << i+1 << ": y=" << k << "*x" << endl; else cout << "Line " << i+1 << ": y=" << k << "*x" << b << endl; if (abs(k) > 1) { pic.draw_line(x0, y_min, x1, y_max, red); } else { pic.draw_line(x_min, y0, x_max, y1, red); } } else { cout << "Line " << i+1 << ": x=" << b << endl; pic.draw_line(b , y_min, b, y_max, red); } } //pic.display(); sort(HoughLine.begin(), HoughLine.end()); //得出四个角点的坐标 for (int i = 0; i < lineNum; i++) { double k0 = HoughLine[i].k; double b0 = HoughLine[i].b; for (int j = i+1; j < lineNum; j++) { int x = 0, y = 0; if (HoughLine[j].k < DBL_MAX) { x = (double)(HoughLine[j].b - b0) / (double)(k0 - HoughLine[j].k); y = (double)(k0*HoughLine[j].b - HoughLine[j].k*b0) / (double)(k0 - HoughLine[j].k); } //K无穷大时的取值 else { x = HoughLine[j].b; y = k0*x+b0; } parameter p; p.x = x; p.y = y; if (p.x > 0 && p.x < img.width() && p.y > 0 && p.y < img.height()) { bool flag1 = 1; for (int k = 0; k < HoughPoint.size();k++) { if (p.x == HoughPoint[k].x && p.y == HoughPoint[k].y) { flag1 = 0; break; } } if (flag1) { HoughPoint.push_back(p); } } } } return pic; }
+**绘制直线相交的角点： **
+CImg<unsigned char> Hough::drawPoint() { /*for (int i = 0; i < HoughLine.size(); i++) { cout << HoughLine[i].k << " " << HoughLine[i].b << endl; }*/ const unsigned char blue[] = { 0, 0, 255 }; CImg<unsigned char> pic = img; for (int i = 0; i < HoughPoint.size(); i++) { cout << HoughPoint[i].x << " " << HoughPoint[i].y << endl; pic.draw_circle(HoughPoint[i].x, HoughPoint[i].y, 50, blue); } return pic; }
+**整合到一起： **
+void Hough::LineDetect_Image(string name, int scale, double sigma, int thresh_low, int thresh_high, int lineNum, int linedisturb, int distance) { const char *names = name.c_str(); img.load_bmp(names); toGrayScale(); useFilter(scale, sigma); sobel(); nonMaxSupp(); threshold(thresh_low, thresh_high); Polar_Line(); CImg<unsigned char> pic = LineDetect(lineNum, linedisturb, distance); CImg<unsigned char> pic1 = drawPoint(); string path = "result1/" + name.substr(9,1) + "_a.bmp"; string path1 = "result1/" + name.substr(9,1) + "_b.bmp"; pic.save(path.c_str()); pic1.save(path1.c_str()); }
+检测效果：
+圆：
+用到的类成员：
+CImg<unsigned char> HoughImg_Circle; //霍夫空间圆图像 CImg<unsigned char> CircleImg; //在霍夫圆图像上生成的像素点 CImg<unsigned char> thres_img; //边缘检测图像的圆检测图
+用到的类成员函数：
+//霍夫圆检测 void CircleDetect(int, int, int); //查找圆对应的像素点 void findpixelCircle(); //圆检测操作 void CircleDetect_Image(string, int, double, int, int, int, int, int);
+将半径分梯度映射到极坐标并投票筛选出图中存在的半径值并进一步以该值映射到极坐标确定圆心：
+void Hough::CircleDetect(int Nums, int min_r, int max_r) { thres_img = thres; thres_img.resize(thres.width(), thres.height(), 1, 3); //thres_img.display(); vector<int> sortCircleWeight; vector<pair<int,int>> Circle; vector<int> Circleweight; vector<pair<int,int>> center; int max = 0; int width = thres_img.width(); int height = thres_img.height(); CImg<int> pic = thres; //pic.display(); vector<pair<int,int>> vote; for (int r = min_r; r < max_r; r+=5) { HoughImg_Circle.resize(width, height, 1, 1, 0); HoughImg_Circle.fill(0); max = 0; cimg_forXY(pic,x,y) { if (pic(x,y) != 0) { for (int i = 0; i < 360; i++) { int x0 = x - r*cos(i*M_PI/180); int y0 = y - r*sin(i*M_PI/180); if (x0 > 0 && x0 < width && y0 > 0 && y0 < height) HoughImg_Circle(x0,y0)++; } } } cimg_forXY(HoughImg_Circle,x,y) { if (HoughImg_Circle(x,y) > max) { max = HoughImg_Circle(x,y); } } vote.push_back(make_pair(max, r)); } sort(vote.begin(), vote.end(), [](const pair<int, int>& x, const pair<int, int>& y) -> int { return x.first > y.first; }); //int Nums = 1; int knums = 0; for (int num = 0; num < Nums; num++) { int i = 0; HoughImg_Circle.resize(width, height, 1, 1, 0); HoughImg_Circle.fill(0); int r = vote[num].second; cimg_forXY(pic,x,y) { if (pic(x,y) != 0) { for (int i = 0; i < 360; i++) { int x0 = x - r*cos(i*M_PI/180); int y0 = y - r*sin(i*M_PI/180); if (x0 > 0 && x0 < width && y0 > 0 && y0 < height) HoughImg_Circle(x0,y0)++; } } } Circle.clear(); Circleweight.clear(); cimg_forXY(HoughImg_Circle,x,y) { if (HoughImg_Circle(x,y) != 0) { Circle.push_back(make_pair(x,y)); Circleweight.push_back(HoughImg_Circle(x,y)); } } unsigned char blue[3] = { 0, 0, 255 }; sortCircleWeight = Circleweight; sort(sortCircleWeight.begin(), sortCircleWeight.end(), greater<int>()); // 将累加矩阵从大到小进行排序 //同个半径圆的检测 int count = 0; while (1) { int weight = sortCircleWeight[count], index; vector<int>::iterator iter = find(Circleweight.begin(), Circleweight.end(), weight); index = iter - Circleweight.begin(); int a = Circle[index].first, b = Circle[index].second; count++; int ii; for (ii = 0; ii < center.size(); ii++) { // 判断检测出来的圆心坐标是否跟已检测的圆心坐标的距离，如果距离过小，默认是同个圆 if (sqrt(pow((center[ii].first - a), 2) + pow((center[ii].second - b), 2)) < minRadius) { break; } } if (ii == center.size()) { center.push_back(make_pair(a, b)); thres_img.draw_circle(a, b, r, blue, 1, 1); knums++; break; } } } cout << "the number of the coins is: " << knums << endl; }
+寻找检测出的圆在原图中对应的像素点：
+void Hough::findpixelCircle() { CircleImg = img; CircleImg.resize(thres.width(), thres.height()); cimg_forXY(CircleImg, x, y) { if (thres_img(x,y,0) == 0 && thres_img(x,y,1) == 0 && thres_img(x,y,2) == 255 && thres(x,y) == 0) { CircleImg(x,y,0) = 255; CircleImg(x,y,1) = 0; CircleImg(x,y,2) = 0; } } //CircleImg.display(); }
+整合到一起：
+void Hough::CircleDetect_Image(string name, int scale, double sigma, int thresh_low, int thresh_high, int Nums, int min_r, int max_r) { const char *names = name.c_str(); img.load_bmp(names); toGrayScale(); useFilter(scale, sigma); sobel(); nonMaxSupp(); threshold(thresh_low, thresh_high); CircleDetect(Nums, min_r, max_r); findpixelCircle(); string path = "result2/" + name.substr(9,1) + "_a.bmp"; string path1 = "result2/" + name.substr(9,1) + "_b.bmp"; thres_img.save(path.c_str()); CircleImg.save(path1.c_str()); }
+检测效果：
+完整代码参见
+https://github.com/WangPerryWPY/Computer-Version/tree/master/Exp3

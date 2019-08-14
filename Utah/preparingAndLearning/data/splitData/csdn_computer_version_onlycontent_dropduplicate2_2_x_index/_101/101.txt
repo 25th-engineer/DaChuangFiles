@@ -1,0 +1,44 @@
+一、经典任务
+计算机视觉领域中和目标有关的经典任务有三种：分类、检测和分割。其中分类是为了告诉你「是什么」，后面两个任务的目标是为了告诉你「在哪里」，而分割任务将在像素级别上回答这个问题。
+二、几种专业名词的含义
+目标检测，搜索系统感兴趣的目标区域；
+目标跟踪，捕获感兴趣区域的运动轨迹；
+目标分类，將被跟踪目标分为人，汽车或其他移动物体；
+目标行为识别，对跟踪目标进行行为识别。
+立体视觉匹配，是一种从平面图像中恢复深度信息的技术。
+光流，是指图像灰度模式的表面运动，是三维运动场在二维图像平面上的投影。
+场景流，是空间中场景运动形成的三维运动场。两者在视频跟踪与监控，自主机器人导航，三维视频压缩与显示等领域有着广泛的应用。
+三、KITTI数据集（非常重要）
+对于KITTI数据集，该数据集用于评测立体图像(stereo)，光流(optical flow)，视觉测距(visual odometry)，3D物体检测(object detection)和3D跟踪(tracking)等计算机视觉技术在车载环境下的性能。
+四、几种深度学习算法含义
+FCNN：全卷积网络：并行，迭代
+CNN：FCNN基础上加入空间结构参数共享
+RNN：FCNN基础上加入时间结构参数共享
+五、论文汇总总结
+1、机器学习，深度学习在图像，语音等富媒体的分类和识别上取得了非常好的效果，所以各大研究机构和公司都投入了大量的人力做相关的研究和开发。值得我们学习。
+2、光流法，场景流法，立体视觉匹配对于视频处理有至关重要的功能。
+3、KITTI官网上有大量关于光流，场景流和立体视觉匹配算法以及对比，我们可以借鉴并加以引用。
+六、论文以及源码常用网站
+CVPR2017 http://openaccess.thecvf.com/CVPR2017.py
+ICCV2017 http://openaccess.thecvf.com/ICCV2017.py
+KITTI算法 http://www.cvlibs.net/datasets/kitti/eval_scene_flow.php
+七、几个搜源码的国内网站：
+1、http://blog.sina.com.cn/s/blog_72d206b7010105v5.html
+2https://ymcn.org/search.php?keyword=%E5%85%89%E6%B5%81%E5%9C%BA&cateid=0&sort=&sortby=&sm=0&os=0&platform=0&language=0&file=0&page=4
+3、http://www.tk4479.net/yf0811240333/article/details/42076677
+4、http://blog.sciencenet.cn/blog-4099-638485.html
+5、https://lmb.informatik.uni-freiburg.de/resources/binaries/
+八、有关人工智能比较好的开源社区
+极市 http://cvmart.net/community
+机器之心 https://www.jiqizhixin.com/
+https://zhuanlan.zhihu.com/jiqizhixin
+无痛的机器学习 https://zhuanlan.zhihu.com/hsmyy
+深度学习整理笔记系列 http://blog.csdn.net/zouxy09/article/details/8775360
+廖雪峰Python教程：
+https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000
+光流法：http://blog.csdn.net/zouxy09/article/details/8683859
+http://blog.csdn.net/crzy_sparrow/article/details/7407604
+http://bbs.elecfans.com/jishu_485979_1_1.html
+场景流：http://www.doc88.com/p-2344567483739.html
+http://paopaorobot.org/2017/04/30/%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%B8%80%E8%AF%BE%EF%BC%9A%E8%A7%86%E8%A7%89%E5%9C%BA%E6%99%AF%E6%B5%81-%E9%99%88%E9%BE%99/
+http://www.rosclub.cn/post-963.html

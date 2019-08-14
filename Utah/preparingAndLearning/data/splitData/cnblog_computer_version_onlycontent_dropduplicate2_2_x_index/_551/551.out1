@@ -1,0 +1,157 @@
+机器学习 笔记 一 名词解释 ILP Inductive Logic Programming 的 简称 
+即 归纳逻辑 程序设计 发展 历程 n   二十世纪 五十 年代 
+初 出现 机器 学习 的 相关 研究 n   二十 
+世纪 五十年代 中期 基于 神经 网络 的 连接 主义 学习 
+开始 出现 n   在 二十 世纪 六 七十 年代 
+基于 逻辑表示 的 符号 主义 学习 技术 蓬勃发展 n   
+二十 世纪 五十年代 到 七十 年代 初 人工智能 处于 推理 
+期 为 只要能 赋予 机器 逻辑推理 能力 机器 就能 具有 
+智能 n   二十 世纪 七十 年代 中期 人工智能 进入 
+知识 期 大量 专家 系统 问世 但 渐渐 意识到 面临 
+知识 功能 瓶颈 n   二十 世纪 八十 年代 机器学习 
+成为 一个 独立 的 学科 领域 各种 机器 学习 技术 
+百 花绽放 机器学习 作为 解决 知识工程 瓶颈 问题 的 关键 
+而 走上 人工智能 的 主 舞台 n   二十 世纪 
+九十 年代 中期 之前 从 样例 中 学习 的 另一 
+个 主流 技术 基于 神经 网络 的 连接 主义 学习 
+得到 重视 n   二十 世纪 九十 年代 中期 统计 
+学习 闪亮 登场 迅速 占领 主流 舞台 n   二十一 
+世纪 初 连接 主义 学习 卷土重来 掀起 了 以 深度 
+学习 为名 的 热潮 原因 是 数据 大了 计算能力 强了 
+相关 材料 推荐 1             
+    第一本 机器学习 专业 期刊 Machine Learning2     
+            人工智能 领域 的 权威 
+期刊 Artificial   Intelligence3             
+    第一本 机器学习 专门性 教材 Mitchell 19974     
+            出色 的 入门 读物 
+Duda et al . 2001   Alpaydin 2004   Flach 
+2012 5                 
+进阶 读物 Hastie et al . 2009 6     
+            适合 贝叶斯 学习 偏 
+爱者 Bishop 20067               
+  基于 WEKA 撰写 的 入门 读物 有助于 初学者 通过 
+WEKA 实践 快速 掌握 常用 的 机器学习 算法 Witten et 
+al . 20118               
+  国际 机器学习 会议 ICML9           
+      国际 神经 信息处理系统 会议 NIPS10     
+    国际 学习理论 会议 COLT11         
+国际 学术 期刊 Journal of Machine Learning Research 和 Machine 
+Learning12         人工智能 领域 的 重要 会议 
+IJCAI AAAI13         人工智能 领域 重要 期刊 
+Artifical Intelligence   Journal of Artifical Intelligence Research14     
+    数据挖掘 领域 重要 会议 KDD ICDM15     
+    数据挖掘 领域 重要 期刊 ACM Transactions on Knowledge 
+Discovery from Data   Data Mining and Knowledge Discovery16   
+      计算机 视觉 和 模式识别 领域 的 重要 
+会议 CVPR17         计算机 视觉 与 模式识别 
+领域 的 重要 期刊 IEEE Transactions on Pattern   Analysis 
+and Machine Intelligence18         神经网络 领域 的 
+重要 期刊 Neural Computation IEEE Transactions on Neural Networks and 
+Learning System19         统计学 领域 的 重要 
+期刊 Annals of Statistics20         中国 机器学习 
+大会 CCML21         中国 机器学习 及其 应用 
+研讨会 MLA 机器学习 笔记 一 名词解释 ILP Inductive Logic Programming 的 简称 
+即 归纳逻辑 程序设计 发展 历程 n   二十世纪 五十 年代 
+初 出现 机器 学习 的 相关 研究 n   二十 
+世纪 五十年代 中期 基于 神经 网络 的 连接 主义 学习 
+开始 出现 n   在 二十 世纪 六 七十 年代 
+基于 逻辑表示 的 符号 主义 学习 技术 蓬勃发展 n   
+二十 世纪 五十年代 到 七十 年代 初 人工智能 处于 推理 
+期 为 只要能 赋予 机器 逻辑推理 能力 机器 就能 具有 
+智能 n   二十 世纪 七十 年代 中期 人工智能 进入 
+知识 期 大量 专家 系统 问世 但 渐渐 意识到 面临 
+知识 功能 瓶颈 n   二十 世纪 八十 年代 机器学习 
+成为 一个 独立 的 学科 领域 各种 机器 学习 技术 
+百 花绽放 机器学习 作为 解决 知识工程 瓶颈 问题 的 关键 
+而 走上 人工智能 的 主 舞台 n   二十 世纪 
+九十 年代 中期 之前 从 样例 中 学习 的 另一 
+个 主流 技术 基于 神经 网络 的 连接 主义 学习 
+得到 重视 n   二十 世纪 九十 年代 中期 统计 
+学习 闪亮 登场 迅速 占领 主流 舞台 n   二十一 
+世纪 初 连接 主义 学习 卷土重来 掀起 了 以 深度 
+学习 为名 的 热潮 原因 是 数据 大了 计算能力 强了 
+相关 材料 推荐 1             
+    第一本 机器学习 专业 期刊 Machine Learning2     
+            人工智能 领域 的 权威 
+期刊 Artificial   Intelligence3             
+    第一本 机器学习 专门性 教材 Mitchell 19974     
+            出色 的 入门 读物 
+Duda et al . 2001   Alpaydin 2004   Flach 
+2012 5                 
+进阶 读物 Hastie et al . 2009 6     
+            适合 贝叶斯 学习 偏 
+爱者 Bishop 20067               
+  基于 WEKA 撰写 的 入门 读物 有助于 初学者 通过 
+WEKA 实践 快速 掌握 常用 的 机器学习 算法 Witten et 
+al . 20118               
+  国际 机器学习 会议 ICML9           
+      国际 神经 信息处理系统 会议 NIPS10     
+    国际 学习理论 会议 COLT11         
+国际 学术 期刊 Journal of Machine Learning Research 和 Machine 
+Learning12         人工智能 领域 的 重要 会议 
+IJCAI AAAI13         人工智能 领域 重要 期刊 
+Artifical Intelligence   Journal of Artifical Intelligence Research14     
+    数据挖掘 领域 重要 会议 KDD ICDM15     
+    数据挖掘 领域 重要 期刊 ACM Transactions on Knowledge 
+Discovery from Data   Data Mining and Knowledge Discovery16   
+      计算机 视觉 和 模式识别 领域 的 重要 
+会议 CVPR17         计算机 视觉 与 模式识别 
+领域 的 重要 期刊 IEEE Transactions on Pattern   Analysis 
+and Machine Intelligence18         神经网络 领域 的 
+重要 期刊 Neural Computation IEEE Transactions on Neural Networks and 
+Learning System19         统计学 领域 的 重要 
+期刊 Annals of Statistics20         中国 机器学习 
+大会 CCML21         中国 机器学习 及其 应用 
+研讨会 MLA 机器学习 笔记 一 名词解释 ILP Inductive Logic Programming 的 简称 
+即 归纳逻辑 程序设计 发展 历程 n   二十世纪 五十 年代 
+初 出现 机器 学习 的 相关 研究 n   二十 
+世纪 五十年代 中期 基于 神经 网络 的 连接 主义 学习 
+开始 出现 n   在 二十 世纪 六 七十 年代 
+基于 逻辑表示 的 符号 主义 学习 技术 蓬勃发展 n   
+二十 世纪 五十年代 到 七十 年代 初 人工智能 处于 推理 
+期 为 只要能 赋予 机器 逻辑推理 能力 机器 就能 具有 
+智能 n   二十 世纪 七十 年代 中期 人工智能 进入 
+知识 期 大量 专家 系统 问世 但 渐渐 意识到 面临 
+知识 功能 瓶颈 n   二十 世纪 八十 年代 机器学习 
+成为 一个 独立 的 学科 领域 各种 机器 学习 技术 
+百 花绽放 机器学习 作为 解决 知识工程 瓶颈 问题 的 关键 
+而 走上 人工智能 的 主 舞台 n   二十 世纪 
+九十 年代 中期 之前 从 样例 中 学习 的 另一 
+个 主流 技术 基于 神经 网络 的 连接 主义 学习 
+得到 重视 n   二十 世纪 九十 年代 中期 统计 
+学习 闪亮 登场 迅速 占领 主流 舞台 n   二十一 
+世纪 初 连接 主义 学习 卷土重来 掀起 了 以 深度 
+学习 为名 的 热潮 原因 是 数据 大了 计算能力 强了 
+相关 材料 推荐 1             
+    第一本 机器学习 专业 期刊 Machine Learning2     
+            人工智能 领域 的 权威 
+期刊 Artificial   Intelligence3             
+    第一本 机器学习 专门性 教材 Mitchell 19974     
+            出色 的 入门 读物 
+Duda et al . 2001   Alpaydin 2004   Flach 
+2012 5                 
+进阶 读物 Hastie et al . 2009 6     
+            适合 贝叶斯 学习 偏 
+爱者 Bishop 20067               
+  基于 WEKA 撰写 的 入门 读物 有助于 初学者 通过 
+WEKA 实践 快速 掌握 常用 的 机器学习 算法 Witten et 
+al . 20118               
+  国际 机器学习 会议 ICML9           
+      国际 神经 信息处理系统 会议 NIPS10     
+    国际 学习理论 会议 COLT11         
+国际 学术 期刊 Journal of Machine Learning Research 和 Machine 
+Learning12         人工智能 领域 的 重要 会议 
+IJCAI AAAI13         人工智能 领域 重要 期刊 
+Artifical Intelligence   Journal of Artifical Intelligence Research14     
+    数据挖掘 领域 重要 会议 KDD ICDM15     
+    数据挖掘 领域 重要 期刊 ACM Transactions on Knowledge 
+Discovery from Data   Data Mining and Knowledge Discovery16   
+      计算机 视觉 和 模式识别 领域 的 重要 
+会议 CVPR17         计算机 视觉 与 模式识别 
+领域 的 重要 期刊 IEEE Transactions on Pattern   Analysis 
+and Machine Intelligence18         神经网络 领域 的 
+重要 期刊 Neural Computation IEEE Transactions on Neural Networks and 
+Learning System19         统计学 领域 的 重要 
+期刊 Annals of Statistics20         中国 机器学习 
+大会 CCML21         中国 机器学习 及其 应用 
+研讨会 MLA 

@@ -1,0 +1,33 @@
+从AlphaGo大胜柯洁后，谷歌的人工智能备受关注。人工智能好像离我们好远，深度学习算法貌似非常复杂。但其实看看你的手机上的语音助手，相机上的人脸识别，今日头条上帮你自动筛选出来的新闻，还有各大音乐软件的歌曲“每日推荐”……形形色色的AI早已进入我们生活的方方面面。深刻的影响了着我们，可以说，这是一个AI的时代。
+其实早在去年年底，谷歌就开源了其用来制作AlphaGo的深度学习系统TensorFlow，相信有不少同学曾经对着这款强大的机器学习系统蠢蠢欲动，官方的Tensorflow的教程其实不少，但苦于门槛较高，还需要FQ。安装TensorFlow变得麻烦起来。
+本教程引用了牛头大神的帖子，在Firefly-RK3399上装上的TensorFlow。并将过程做了一个新手向的教程，想动手玩玩人工智能的朋友不妨试试。
+1，安装Ubuntu系统
+烧录Ubunu系统镜像到Firefly-RK3399，我升级的是ubuntu单系统：Firefly-RK3399_xubuntu1604_201707041527.img，可到官网下载此固件：
+http://www.t-firefly.com/zh/firenow/Firefly-rk3399/download/
+注意：如果你的Firefly-RK3399是默认的双系统固件，可以直接切换到Ubuntu系统，跳过此步骤：
+切换教程：http://wiki.t-firefly.com/index.php/Firefly-RK3399/Starter_guide
+升级成功：
+2，安装pip3
+进入系统后使用ALT+CTRL+T调出终端，输入
+sudo apt install python3-pip
+3，使用git下载tensorflow-1.1.0rc1-cp35-cp35m-linux_aarch64.whl
+安装git
+sudo apt-get install git-core
+下载tensorflow-1.1.0rc1-cp35-cp35m-linux_aarch64.whl
+git clone https://github.com/JohnnyChan8/TensorFlow4FireflyRK3399.git
+4，使用pip3安装TensorFlow
+cd TensorFlow4FireflyRK3399
+pip3 install tensorflow-1.1.0rc1-cp35-cp35m-linux_aarch64.whl
+安装完成！
+5，测试TensorFlow
+完成上面的步骤后，TensorFlow已经安装到Firefly-RK3399了，这个时通过简单的例程来测试程序输入
+python3
+import tensorflow as tf
+hello = tf.constant('Hello world!')
+sess = tf.Session()
+print(sess.run(hello))
+此时会打印
+b'Hello world!'
+总结：
+TensorFlow作为机器学习工具已经开源了一年，借助Google的影响力TensorFlow成为了热门的开源机器学习，在短短的一年多的时间，在GitHub上已经产生了众多的基于TensorFlow的案例，如图像识别，自然语言处理，小型AlphaGo，机器编写音乐等等有趣的项目。
+人工智能真得离我们不远，TensorFlow的开源让我们有创造属于自己的人工智能的机会。

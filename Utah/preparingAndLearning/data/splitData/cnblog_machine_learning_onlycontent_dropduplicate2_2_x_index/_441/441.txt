@@ -1,0 +1,90 @@
+在理解了我们需要解决的机器学习问题之后，我们可以思考一下我们需要收集什么数据以及我们可以用什么算法。本文我们会过一遍最流行的机器学习算法，大致了解哪些方法可用，很有帮助。
+机器学习领域有很多算法，然后每种算法又有很多延伸，所以对于一个特定问题，如何确定一个正确的算法是很困难的。本文中我想给你们两种方法来归纳在现实中会遇到的算法。
+学习方式
+根据如何处理经验、环境或者任何我们称之为输入的数据，算法分为不同种类。机器学习和人工智能课本通常先考虑算法可以适应的学习方式。
+这里只讨论几个主要的学习风格或学习模型，并且有几个基本的例子。这种分类或者组织的方法很好，因为它迫使你去思考输入数据的角色和模型准备的过程，然后选择一个最适合你的问题的算法，从而得到最佳的结果。
+监督学习：输入数据被称为训练数据，并且有已知的结果或被标记。比如说一封邮件是否是垃圾邮件，或者说一段时间内的股价。模型做出预测，如果错了就会被修正，这个过程一直持续到对于训练数据它能够达到一定的正确标准。问题例子包括分类和回归问题，算法例子包括逻辑回归和反向神经网络。
+无监督学习：输入数据没有被标记，也没有确定的结果。模型对数据的结构和数值进行归纳。问题例子包括Association rule learning和聚类问题，算法例子包括 Apriori 算法和K-均值算法。
+半监督学习：输入数据是被标记的和不被标记的数据的混合，有一些预测问题但是模型也必须学习数据的结构和组成。问题例子包括分类和回归问题，算法例子基本上是无监督学习算法的延伸。
+增强学习：输入数据可以刺激模型并且使模型做出反应。反馈不仅从监督学习的学习过程中得到，还从环境中的奖励或惩罚中得到。问题例子是机器人控制，算法例子包括Q-learning以及Temporal difference learning。
+当整合数据模拟商业决策时，大多数会用到监督学习和无监督学习的方法。当下一个热门话题是半监督学习，比如图像分类问题，这中问题中有一个大的数据库，但是只有一小部分图片做了标记。增强学习多半还是用在机器人控制和其他控制系统的开发上。
+算法相似性
+算法基本上从功能或者形式上来分类。比如，基于树的算法，神经网络算法。这是一个很有用的分类方式，但并不完美。因为有许多算法可以轻易地被分到两类中去，比如说Learning Vector Quantization就同时是神经网络类的算法和基于实例的方法。正如机器学习算法本身没有完美的模型一样，算法的分类方法也没有完美的。
+在这一部分我列出了我认为最直观的方法归类的算法。我并没有穷尽算法或者分类方法，但是我想对于让读者有一个大致了解很有帮助。如果有你了解的我没有列出来，欢迎留言分享。现在我们开始！
+Regression
+Regression(回归分析)关心的是变量之间的关系。它应用的是统计方法，几个算法的例子包括：
+Ordinary Least Squares
+Logistic Regression
+Stepwise Regression
+Multivariate Adaptive Regression Splines (MARS)
+Locally Estimated Scatterplot Smoothing (LOESS)
+Instance-based Methods
+Instance based learning(基于实例的学习)模拟了一个决策问题，所使用的实例或者例子是对模型非常重要的。这种方法对现有数据建立一个数据库然后把新数据加进去，再用一个相似性测量方法从而在数据库里找出一个最优匹配，进行一个预测。由于这个原因，这种方法也被称为胜者为王方法和基于内存的方法。现在关注的焦点在存储数据的表现形式和相似性测量方法。
+k-Nearest Neighbour (kNN)
+Learning Vector Quantization (LVQ)
+Self-Organizing Map (SOM)
+Regularization Methods
+这是一个对其他方法的延伸（通常是回归方法），这个延伸对越简单的模型越有利，并且更擅长归纳。我在这里列出它是因为它的流行和强大。
+Ridge Regression
+Least Absolute Shrinkage and Selection Operator (LASSO)
+Elastic Net
+Decision Tree Learning
+Decision tree methods(决策树方法)建立了一个根据数据中实际值决策的模型。决策树用来解决归纳和回归问题。
+Classification and Regression Tree (CART)
+Iterative Dichotomiser 3 (ID3)
+C4.5
+Chi-squared Automatic Interaction Detection (CHAID)
+Decision Stump
+Random Forest
+Multivariate Adaptive Regression Splines (MARS)
+Gradient Boosting Machines (GBM)
+Bayesian
+Bayesian method(贝叶斯方法)是在解决归类和回归问题中应用了贝叶斯定理的方法。
+Naive Bayes
+Averaged One-Dependence Estimators (AODE)
+Bayesian Belief Network (BBN)
+Kernel Methods
+Kernel Method(核方法)中最有名的是Support Vector Machines(支持向量机)。这种方法把输入数据映射到更高维度上，是的一些归类和回归问题更容易建模。
+Support Vector Machines (SVM)
+Radial Basis Function (RBF)
+Linear Discriminate Analysis (LDA)
+Clustering Methods
+Clustering(聚类)，本身就形容了问题和方法。聚类方法通常是由建模方式分类的。所有的聚类方法都是用统一的数据结构来组织数据，使得每组内有最多的共同点。
+K-Means
+Expectation Maximisation (EM)
+Association Rule Learning
+Association rule learning(联合规则学习)是用来对数据间提取规律的方法，通过这些规律可以发现巨量多维空间数据之间的联系，而这些重要的联系可以被组织拿来使用。
+Apriori algorithm
+Eclat algorithm
+Artificial Neural Networks
+Artificial Neural Networks(人工神经网络)是从生物神经网络的结构和功能得到启发的。它属于模式匹配一类，经常被用于回归和分类问题，但是它存在上百个算法和变种组成。其中有一些是经典流行的算法（我把深度学习拿出来单独讲）：
+Perceptron
+Back-Propagation
+Hopfield Network
+Self-Organizing Map (SOM)
+Learning Vector Quantization (LVQ)
+Deep Learning
+Deep Learning(深度学习)方法是人工神经网络的一种现代的更新。相比传统的神经网络，它有更多更复杂的网络构成，许多方法都是关心半监督学习，这种学习的问题中有很大的数据，但是其中很少是被标记的数据。
+Restricted Boltzmann Machine (RBM)
+Deep Belief Networks (DBN)
+Convolutional Network
+Stacked Auto-encoders
+Dimensionality Reduction
+Dimensionality Reduction(维度缩减)，像聚类方法一样，追求和利用数据中的统一的结构，但是它用更少的信息来对数据做归纳和形容。这对于对数据进行可视化或者简化数据很有用。
+Principal Component Analysis (PCA)
+Partial Least Squares Regression (PLS)
+Sammon Mapping
+Multidimensional Scaling (MDS)
+Projection Pursuit
+Ensemble Methods
+Ensemble methods(组合方法)由许多小的模型组成，这些模型经过独立训练，做出独立的结论，最后组成一个总的预测。很多研究集中在使用什么模型以及这些模型怎么被组合起来。这是一个非常强大且流行的技术。
+Boosting
+BootStrapped Aggregation (Bagging)
+AdaBoost
+Stacked Generalization (blending)
+Gradient Boosting Machines (GBM)
+Random Forest
+这是一个用组合方法进行拟合的例子（来自维基），每个消防法用灰色表示，最后合成的最终预测是红色的。
+其他资源
+这趟机器学习算法之旅意在让你对有什么算法和关联算法的一些工具给你一个总体了解。
+下面是一些其他资源， 请不要觉得太多，了解越多算法对你越有好处，但是对某些算法有深层次的了解也会很有用。

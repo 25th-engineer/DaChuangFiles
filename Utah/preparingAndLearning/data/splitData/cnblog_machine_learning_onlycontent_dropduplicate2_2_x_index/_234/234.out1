@@ -1,0 +1,53 @@
+不多 说 直接 上 干货 如何 自己 编译 生成 Eclipse 
+插件 如 hadoop eclipse plugin 2 . 6.0 . jar 
+一 相关 软件 的 安装 和 配置 一 JDK 的 
+安装 和 配置 Jdk 1.7 * 安装 并 配置 二 
+Eclipse 的 安装 和 配置 Eclipse 的 下载 安装 和 
+WordCount 的 初步 使用 本地 模式 和 集群 模式 三 
+Ant 的 安装 和 配置 1 Ant 的 下载 下载 
+地址 如下 如果 想要 下载 老 版本 可以 点击 here 
+选择 自己 需要 的 版本 点击 下载 即可 2 解压 
+到 一个 目 录下 比如 在 D 盘 新建 一个 
+ant 目录 然后/c 把/p 第一/m 步/n 下载/v 的/uj 压缩包/n 解/v 
+压到/v ant/w 目/t 录下/v so easy 的 例如 如下 图 
+所示 3 环境变量 的 配置 点击 计算机 属性 高级 系统 
+设置 环境变量 然后 新建 一个 变量名 ANT _ HOME 变量值 
+是 ant 的 安装 路径 如 下图 配置 path 路径 
+即把 ant 安装 目 录下 的 bin 目录 配置 到 
+path 路径 下 4 cmd 测试 一下 是否 配置 正确 
+点击 开始 运行 cmd 确定 然后 在 命令提示符 后面 输入 
+ant version 当 出现 ant 的 版本 的 时候 就 
+表示 ant 安装 成功 如 下图 二 编译 hadoop eclipse 
+plugin 插件 1 首先 下载 hadoop eclipse plugin 源代码 地址 
+如下 https / / github . com / winghc / 
+hadoop2x eclipse plugin2 在 Windows 下 输入 cmd 打开 命令行 
+窗口 切换 到 插件 安装 的 对应 目 录下 比如 
+D \ hadoop2x eclipse plugin master \ src \ contrib 
+\ eclipse plugin3 执行 ant jar Dversion = 2 . 
+6.0 Declipse . home = D \ Eclipse \ eclipse 
+Dhadoop . home = D \ hadoop \ hadoop 2 
+. 6.0 OK 接下来 就 将会 进行 插件 的 编译 
+4 编译 成功 生成 的 hadoop eclipse plugin 2 . 
+6.0 . jar 在 D \ hadoop2x eclipse plugin master 
+\ build \ contrib \ eclipse plugin 路径 下 到此为止 
+hadoop eclipse plugin 插件 就 编译 成功 了 赶紧 练练 
+吧 欢迎 大家 加入 我 的 微信 公众 号 大 
+数据 躺过 的 坑         人工智能 躺过 
+的 坑 同时 大家 可以 关注 我 的 个人 博客 
+http / / www . cnblogs . com / zlslch 
+/       和 /nr       http / 
+/ www . cnblogs . com / lchzls /   
+        http / / www . cnblogs 
+. com / sunnyDream / 详情 请见 http / / 
+www . cnblogs . com / zlslch / p / 
+7473861 . html 人生 苦短 我 愿 分享 本 公众 
+号 将 秉持 活到老 学到老 学习 无休止 的 交流 分享 
+开源 精神 汇聚/v 于/p 互联网/n 和/c 个人/n 学习/v 工作/vn 的/uj 
+精华/nz 干货/n 知识/v 一切 来 于 互联网 反馈 回 互联网 
+目前 研究 领域 大 数据 机器学习 深度 学习 人工智能 数据挖掘 
+数据分析 语言 涉及 Java Scala Python Shell Linux 等 同时 
+还 涉及 平常 所 使用 的 手机 电脑 和 互联 
+网上 的 使用 技巧 问题 和 实用软件 只要 你 一直 
+关注 和 呆在 群 里 每天/r 必须/d 有/v 收获/v 对应/vn 
+本/r 平台/n 的/uj 讨论/v 和/c 答疑/v QQ/w 群/n 大 数据 
+和 人工智能 躺过 的 坑 总 群 161156071 

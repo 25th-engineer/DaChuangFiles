@@ -1,0 +1,116 @@
+4.2   Sequences 序列
+So far, we have seen two kinds of sequence object: strings and lists. Another kind of sequence is called a tuple. Tuples are formed with the comma operator , and typically enclosed using parentheses. We've actually seen them in the previous chapters, and sometimes referred to them as "pairs"（有时把它们叫做为“对”）, since there were always two members. However, tuples can have any number of members. Like lists and strings, tuples can be indexed  and sliced , and have a length .
+>>> t = 'walk', 'fem', 3
+>>> t
+('walk', 'fem', 3)
+>>> t[0]
+'walk'
+>>> t[1:]
+('fem', 3)
+>>> len(t)
+Caution!
+Tuples are constructed using the comma operator. Parentheses are a more general feature of Python syntax, designed for grouping. A tuple containing the single element'snark' is defined by adding a trailing comma（拖尾的逗号）, like this: "'snark',". The empty tuple is a special case, and is defined using empty parentheses ().
+Let's compare strings, lists and tuples directly, and do the indexing, slice, and length operation on each type:
+>>> raw = 'I turned off the spectroroute'
+>>> text = ['I', 'turned', 'off', 'the', 'spectroroute']
+>>> pair = (6, 'turned')
+>>> raw[2], text[3], pair[1]
+('t', 'the', 'turned')
+>>> raw[-3:], text[-3:], pair[-3:]
+('ute', ['off', 'the', 'spectroroute'], (6, 'turned'))
+>>> len(raw), len(text), len(pair)
+(29, 5, 2)
+Notice in this code sample that we computed multiple values on a single line, separated by commas. These comma-separated expressions are actually just tuples — Python allows us to omit the parentheses around tuples if there is no ambiguity. When we print a tuple, the parentheses are always displayed. By using tuples in this way, we are implicitly aggregating（聚集） items together.
+Note
+Your Turn: Define a set, e.g. using set(text) and see what happens when you convert it to a list or iterate over its members.   无序
+Operating on Sequence Types 序列类型上的操作
+We can iterate over the items in a sequence s in a variety of useful ways, as shown in Table 4.1.
+Table 4.1:
+Various ways to iterate over sequences
+Python Expression
+Comment
+for item in s
+iterate over the items of s
+for item in sorted(s)
+iterate over the items of s in order
+for item in set(s)
+iterate over unique elements of s
+for item in reversed(s)
+iterate over elements of s in reverse
+for item in set(s).difference(t)
+iterate over elements of s not in t
+for item in random.shuffle(s)
+iterate over elements of s in random order
+The sequence functions illustrated in Table 4.1 can be combined in various ways; for example, to get unique elements of s sorted in reverse, use reversed(sorted(set(s))).
+We can convert between these sequence types. For example, tuple(s) converts any kind of sequence into a tuple, and list(s) converts any kind of sequence into a list. We can convert a list of strings to a single string using the join() function, e.g. ':'.join(words).
+Some other objects, such as a FreqDist, can be converted into a sequence (using list()) and support iteration, e.g.
+>>> raw = 'Red lorry, yellow lorry, red lorry, yellow lorry.'
+>>> text = nltk.word_tokenize(raw)
+>>> fdist = nltk.FreqDist(text)
+>>> list(fdist)
+['lorry', ',', 'yellow', '.', 'Red', 'red']
+>>> for key in fdist:
+...     print fdist[key],
+...
+4 3 2 1 1 1
+In the next example, we use tuples to re-arrange the contents of our list. (We can omit the parentheses because the comma has higher precedence than assignment.)
+>>> words = ['I', 'turned', 'off', 'the', 'spectroroute']
+>>> words[2], words[3], words[4] = words[3], words[4], words[2]
+>>> words
+['I', 'turned', 'the', 'spectroroute', 'off']
+This is an idiomatic and readable way to move items inside a list. It is equivalent to the following traditional way of doing such tasks that does not use tuples (notice that this method needs a temporary variable tmp).
+>>> tmp = words[2]
+>>> words[2] = words[3]
+>>> words[3] = words[4]
+>>> words[4] = tmp
+As we have seen, Python has sequence functions such as sorted() and reversed() that rearrange the items of a sequence. There are also functions that modify the a structure of a sequence and which can be handy(方便) for language processing. Thus, zip() takes the items of two or more sequences and "zips" them together into a single list of pairs. Given a sequence s, enumerate(s) returns pairs consisting of an index and the item at that index.
+>>> words = ['I', 'turned', 'off', 'the', 'spectroroute']
+>>> tags = ['noun', 'verb', 'prep', 'det', 'noun']
+>>> zip(words, tags)
+[('I', 'noun'), ('turned', 'verb'), ('off', 'prep'),
+('the', 'det'), ('spectroroute', 'noun')]
+>>> list(enumerate(words))
+[(0, 'I'), (1, 'turned'), (2, 'off'), (3, 'the'), (4, 'spectroroute')]
+For some NLP tasks it is necessary to cut up a sequence into two or more parts. For instance, we might want to "train" a system on 90% of the data and test it on the remaining 10%. To do this we decide the location where we want to cut the data , then cut the sequence at that location .
+>>> text = nltk.corpus.nps_chat.words()
+>>> cut = int(0.9 * len(text))
+>>> training_data, test_data = text[:cut], text[cut:]
+>>> text == training_data + test_data
+True
+>>> len(training_data) / len(test_data)
+9
+We can verify that none of the original data is lost during this process, nor is it duplicated . We can also verify that the ratio of the sizes of the two pieces is what we intended .
+Combining Different Sequence Types 合并不同的序列类型
+Let's combine our knowledge of these three sequence types, together with list comprehensions, to perform the task of sorting the words in a string by their length.
+>>> words = 'I turned off the spectroroute'.split()
+>>> wordlens = [(len(word), word) for word in words]
+>>> wordlens.sort()
+>>> ' '.join(w for (_, w) in wordlens)
+'I off the turned spectroroute'
+Each of the above lines of code contains a significant feature. A simple string is actually an object with methods defined on it such as split() . We use a list comprehension(列表解析) to build a list of tuples , where each tuple consists of a number (the word length) and the word, e.g. (3, 'the'). We use the sort() method  to sort the list in-place. Finally, we discard the length information and join the words back into a single string . (The underscore  is just a regular Python variable, but we can use underscore by convention to indicate that we will not use its value.下划线只是一个正则Python变量，但是按照惯例我们可以使用下划线来指出我们将不使用它的值)
+We began by talking about the commonalities（共性） in these sequence types, but the above code illustrates important differences in their roles. First, strings appear at the beginning and the end: this is typical in the context where our program is reading in some text and producing output for us to read. Lists and tuples are used in the middle, but for different purposes. A list is typically a sequence of objects all having the same type, of arbitrary length. We often use lists to hold sequences of words. In contrast, a tuple is typically a collection of objects of different types, of fixed length. We often use a tuple to hold a record, a collection of different fields relating to some entity. This distinction between the use of lists and tuples takes some getting used to（习惯于）, so here is another example:
+>>> lexicon = [
+...     ('the', 'det', ['Di:', 'D@']),
+...     ('off', 'prep', ['Qf', 'O:f'])
+... ]
+Here, a lexicon is represented as a list because it is a collection of objects of a single type — lexical entries — of no predetermined（预先决定的） length. An individual entry is represented as a tuple because it is a collection of objects with different interpretations, such as the orthographic form, the part of speech, and the pronunciations (represented in the SAMPA computer-readable phonetic alphabet（音标字母） http://www.phon.ucl.ac.uk/home/sampa/ ). Note that these pronunciations are stored using a list. (Why? 长度可变啊！)
+Note
+A good way to decide when to use tuples vs lists is to ask whether the interpretation of an item depends on its position（一个好的决定何时使用元组还是列表的方式是询问一个词条的解释是否取决于它的位置）. For example, a tagged token combines two strings having different interpretation, and we choose to interpret the first item as the token and the second item as the tag. Thus we use tuples like this: ('grail', 'noun'); a tuple of the form ('noun', 'grail') would be nonsensical（无意义的） since it would be a word noun tagged grail. In contrast, the elements of a text are all tokens, and position is not significant. Thus we use lists like this: ['venetian', 'blind']; a list of the form ['blind', 'venetian'] would be equally valid. The linguistic meaning of the words might be different, but the interpretation of list items as tokens is unchanged.
+The distinction between lists and tuples has been described in terms of usage. However, there is a more fundamental difference: in Python, lists are mutable, while tuples are immutable（分清楚列表是可变的，元组是不可变的）. In other words, lists can be modified, while tuples cannot. Here are some of the operations on lists that do in-place modification of the list.
+>>> lexicon.sort()
+>>> lexicon[1] = ('turned', 'VBD', ['t3:nd', 't3`nd'])
+>>> del lexicon[0]
+Note
+Your Turn: Convert lexicon to a tuple, using lexicon = tuple(lexicon), then try each of the above operations, to confirm that none of them is permitted on tuples.
+Generator Expressions 产生器表达式
+We've been making heavy use of list comprehensions, for compact and readable processing of texts. Here's an example where we tokenize and normalize a text:
+>>> text = '''"When I use a word," Humpty Dumpty said in rather a scornful tone,
+... "it means just what I choose it to mean - neither more nor less."'''
+>>> [w.lower() for w in nltk.word_tokenize(text)]
+['"', 'when', 'i', 'use', 'a', 'word', ',', '"', 'humpty', 'dumpty', 'said', ...]
+Suppose we now want to process these words further. We can do this by inserting the above expression inside a call to some other function , but Python allows us to omit the brackets .
+>>> max([w.lower() for w in nltk.word_tokenize(text)])
+'word'
+>>> max(w.lower() for w in nltk.word_tokenize(text))
+'word'
+The second line uses a generator expression. This is more than a notational convenience（这是为了记数的方便，因为它不用像列表解析那样在内存中生成包含所有元素的列表）: in many language processing situations, generator expressions will be more efficient. In the first one , storage for the list object must be allocated before the value of max() is computed. If the text is very large, this could be slow. In the second, the data is streamed to the calling function. Since the calling function simply has to find the maximum value — the word which comes latest in lexicographic sort order(按字母顺序的排序方式) — it can process the stream of data without having to store anything more than the maximum value seen so far.

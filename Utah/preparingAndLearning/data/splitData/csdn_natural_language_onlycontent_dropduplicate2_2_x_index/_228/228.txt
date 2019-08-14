@@ -1,0 +1,14 @@
+搜狗实验室数据资源
+http://www.sogou.com/labs/resource/list_pingce.php
+自然语言处理与信息检索共享平台
+http://www.nlpir.org/?action-category-catid-28
+Chinese Word Vectors：目前最全的中文预训练词向量集合
+https://www.toutiao.com/a6555683864981799427/?tt_from=mobile_qq&utm_campaign=client_share&timestamp=1526372845&app=news_article&utm_source=mobile_qq&iid=32264431851&utm_medium=toutiao_android
+图像分类数据集：
+CIFAR10(The Canadian Institute For Advanced Research)是衡量机器学习模型好坏的一个公共数据集，主要目的是将32x32的RGB图片分类成以下的10个类型：
+airplane, automobile, bird, cat, deer, dog, frog, horse, ship, and truck
+http://academictorrents.com/details/463ba7ec7f37ed414c12fbb71ebf6431eada2d7a
+参考：
+http://blog.csdn.net/u012052268/article/details/78035272
+其它语料：
+http://mp.weixin.qq.com/s?__biz=MzIxODM4MjA5MA==&mid=2247486225&idx=1&sn=080dfcedbdc9522f919e67e32d550250&chksm=97ea2174a09da8623b8f94466d495cd98e54259891a3eee58586d3ec1f963e4e68df80387e88&mpshare=1&scene=23&srcid=0408i5wriTkN6FUyZpOXovPo#rd

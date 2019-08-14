@@ -1,0 +1,71 @@
+整理的部分网络资源文章，后续会持续补充。
+1、综述博客
+我爱自然语言处理
+http://www.52nlp.cn/
+码农场
+http://www.hankcs.com/
+
+2、书籍和入门
+自然语言相关资源入门
+http://www.52nlp.cn/about
+自然语言处理书籍推荐
+http://www.52nlp.cn/%E4%B9%A6%E7%B1%8D
+水木论坛自然语言处理版
+http://www.newsmth.net/bbsdoc.php?board=NLP
+我爱自然语言处理整理的资源
+http://www.52nlp.cn/resources
+知乎上推荐入门
+http://www.zhihu.com/question/19895141
+北京大学中文系应用语言学专业课程安排
+http://ccl.pku.edu.cn/all/info.asp?item=2&page=1&expand=6
+3、研究主题
+分词
+Aho-Corasick算法的Java实现与分析
+http://www.hankcs.com/program/algorithm/implementation-and-analysis-of-aho-corasick-algorithm-in-java.html
+Trie树分词
+http://www.hankcs.com/program/java/tire-tree-participle.html
+Ansj分词双数组Trie树实现与arrays.dic词典格式
+http://www.hankcs.com/nlp/ansj-word-pairs-array-tire-tree-achieved-with-arrays-dic-dictionary-format.html
+双数组Trie树(DoubleArrayTrie)Java实现
+http://www.hankcs.com/program/java/%E5%8F%8C%E6%95%B0%E7%BB%84trie%E6%A0%91doublearraytriejava%E5%AE%9E%E7%8E%B0.html
+基于深度学习的分词系统：采用tensorflow
+https://github.com/koth/kcws   训练
+主题分类：
+LDA入门与Java实现
+http://www.hankcs.com/nlp/lda-java-introduction-and-implementation.html
+LDA数学八卦
+http://www.52nlp.cn/lda-math-%E6%B1%87%E6%80%BB-lda%E6%95%B0%E5%AD%A6%E5%85%AB%E5%8D%A6
+深度学习
+tensorflow相关：
+英文官方网站：
+http://tensorflow.org/
+官方GitHub仓库：
+https://github.com/tensorflow/tensorflow
+中文版 GitHub 仓库：
+https://github.com/jikexueyuanwiki/tensorflow-zh
+4、语料库
+【汇总】语料库资源
+https://www.douban.com/note/269081724/
+
+中文文本语料库整理(不定时更新2015-10-24).md
+http://www.jianshu.com/p/206caa232ded
+中文文本分类的新闻语料库
+http://www.52nlp.cn/opencorpus
+搜狗实验室语料库
+http://www.sogou.com/labs/resource/list_yuliao.php
+
+5、论坛
+语料库语言学在线
+http://www.corpus4u.org/
+
+国内语料库建设一览表
+http://blog.csdn.net/yujun00/article/details/541633
+6、新增加的地址
+自然语言一个微信号
+https://mp.weixin.qq.com/s?__biz=MzI3ODgwODA2MA==&mid=2247484260&idx=1&sn=3df8f915c7aed6038d50436381cc8e5b&chksm=eb5017f7dc279ee12a6f324e332aa54d1b01102725add8cf1bac2d620870200d1dce0288a749&mpshare=1&scene=23&srcid=0412DvqQp9Nj5OC8925qDLRs#rd
+中文信息学报核定刊物：
+https://item.taobao.com/item.htm?spm=a230r.1.14.16.b6e73fc2I1NRvB&id=567299675084&ns=1&abbucket=5#detail
+中文信息学报高引用文章： http://jcip.cipsc.org.cn/CN/column/column35.shtml
+oxford-cs-deepnlp-2017/lectures  https://github.com/oxford-cs-deepnlp-2017/lectures
+深度与自然语言处理书： https://zhuanlan.zhihu.com/p/25612011
+NLP进阶书籍说明： http://www.sohu.com/a/211831610_473283

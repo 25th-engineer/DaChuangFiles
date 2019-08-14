@@ -1,0 +1,568 @@
+尽管 在 上篇 文章 中 有了 原文 的 链接 但是 
+吸取 以往 的 经验 教训 还是 全部 拿来主义 比较好 担心 
+哪天 原文 链接 就不能 查看 了 那 岂不 是 让人 
+心痛 的 碎了 一 地 梨花 一 仿射变换 仿射变换 的 
+性质 平面 上 任意 两条 直线 经 仿射变换 后 仍然 
+保持 平行 仿射变换 的 功能 是 一种 二维 坐标 到 
+二维 坐标 之间 的 线性变换 保持 二维 图形 的 平 
+直性 straightness 即 变换 后 直线 还是 直线 不会 打弯 
+圆弧 还是 圆弧 和 平 行性 parallelness 其实 是 指 
+保 二维 图形 间 的 相对位置 关系 不变 平行线 还是 
+平行线 相交 直线 的 交角 不变 仿射变换 可以 通过 一 
+系列 的 原子 变换 的 复合 来 实现 包括 平移 
+Translation 缩放 Scale 翻转 Flip 旋转 Rotation 和 剪切 Shear 
+此类 变换 可以 用 一个 3 × 3 的 矩阵 
+来 表示 其 最后 一 行为 0 0 1 该 
+变换 矩阵 将 原 坐标 x y 变换 为 新 
+坐标 x y 这里 原 坐标 和新/nr 坐标 皆 视为 
+最末 一 行为 1 的 三维 列 向量 原 列 
+向量 左乘/nr 变换 矩阵 得到 新的 列 向量 x   
+    a00 a01             
+a02 x         a00 * x + 
+a01 * y + a02 y = a10 a11 a12 
+y = a10 * x + a11 * y + 
+a12 1                 
+0       0 1 1       
+  1               仿射变换 
+的 矩阵 由 图像 上 不 共线 的 三个点 的 
+坐标 确定 看做 2 * 3 的 矩阵 几种 典型 
+的 仿射变换 平移变换 将 每 一点 移动 到 x + 
+tx y + ty 变换 矩阵 为 1 0 tx 
+    0 1 ty     0 0 1 
+平移变换 是 一种 刚体 变换 就是 不会 产生 形变 的 
+理想 物体 平移 当然 不会 改变 二维 图形 的 形状 
+同理 下面 的 旋转变换 也是 刚体 变换 而 缩放 错 
+切 都是 会 改变 图形 形状 的 缩放 变换 将 
+每 一点 的 横坐标 放大 缩小 至 sx 倍 纵坐标 
+放大 缩小 至 sy 倍 变换 矩阵 为 sx 0 
+0 0 sy 0 0 0 1 剪切 变换 变换 
+矩阵 为 1 shx 0     shy 1 0 
+0       0 1 相当于 一个 横向 剪切 
+与 一个 纵向 剪切 的 复合 即 1     
+0 0 1 shx 0     shy 1 0 
+0       1       0 0 
+    0 1 0 0       1 
+剪切 变换 又称 错 切 变换 指 的 是 类似于 
+四边形 不稳定性 那种 性质 街边 小商店 那种 铁 拉门 都 
+见过 吧 想象 一下 上面 铁条 构成 的 菱形 拉动 
+的 过程 那 就是 错 切 的 过程 旋转变换 原点 
+目标 图形 围绕 原点 顺时针 旋转 theta 弧度 变换 矩阵 
+为 cos theta sin theta 0 sin theta     
+  cos theta 0     0       
+      0             
+1 旋转变换 目标 图形 以 x y 为 轴心 顺时针 
+旋转 theta 弧度 变换 矩阵 为 cos theta sin theta 
+x x * cos + y * sin sin theta 
+      cos theta y x * sin y 
+* cos     0           
+            0       
+        1         相当于 
+两次 平移变换 与 一次 原点 旋转变换 的 复合 1   
+  0     x cos theta     sin 
+theta     0 1     0     
+x 0     1     y sin theta 
+cos theta     0 0     1   
+  y 0     0     1   
+    0             0 
+          1 0     0 
+    1 opencv 中的 实现 函数 void cvWarpAffine const 
+CvArr * src CvArr * dst const CvMat * map 
+_ matrix int flags = CV _ INTER _ LINEAR 
++ CV _ WARP _ FILL _ OUTLIERS CvScalar fillval 
+= cvScalarAll 0 实现 图像 的 仿射变换 map _ matrix 
+是 2 * 3 的 仿射 矩阵 要求/v 输入/v 和/c 
+输出/v 图像/n 有/v 相同/d 的/uj 数据类型/n 通过 下面 两个 函数 
+得到 仿射 矩阵 CvMat * c v G e t 
+A f f i n e T r a n 
+s f o r m const CvPoint2D32f * src const 
+CvPoint2D32f * dst CvMat * map _ matrix / / 
+由 三个 不 共线 的 点 得到 这样 才 具有 
+唯一性 CvMat * c v 2 D R o t 
+a t i o n M a t r i 
+x CvPoint2D32f center double angle double scale CvMat * map 
+_ matrix / / 由 旋转 中心 旋转 角度 和 
+各向 通行 因子 矩阵 如下 a b 1 a * 
+center . x b * center . y b a 
+b * center . x 1 a * center . 
+y 其中 a = scale * cos angle b = 
+scale * sin angle void c v G e t 
+Q u a d r a n g l e 
+u b P i x const CvArr * src CvArr 
+* dst const CvMat * map _ matrix 实现 图像 
+的 仿射变换 使用 于亚/nr 像素 实现 图像 旋转 的 例子 
+# include stdafx . h # include cv . h 
+# include highgui . h # include math . h 
+int main int argc char * argv { IplImage * 
+src = 0 IplImage * dst = 0 IplImage * 
+dst1 = 0 / * the first command line parameter 
+must be image file name * / if argc = 
+= 2 & & src = cvLoadImage argv 1 1 
+= 0 { int delta = 1 int angle = 
+0 int opt = 0           
+            / / 1 旋转 
+加 缩放 / / 0 仅仅 旋转 double factor dst 
+= cvCloneImage src dst1 = cvCloneImage src cvNamedWindow src 1 
+cvShowImage src src for { float m 6 / / 
+Matrix m looks like / / / / m0 m1 
+m2 = = = A11 A12     b1 / 
+/ m3 m4 m5             
+A21 A22     b2 / / CvMat M = 
+cvMat 2 3 CV _ 32F m int w = 
+src width int h = src height if opt   
+                  / 
+/ 旋转 加 缩放 factor = cos angle * CV 
+_ PI / 180 . + 1.0 * 2 else 
+                    
+          / / 仅仅 旋转 factor 
+= 1 m 0 = float factor * cos angle 
+* 2 * CV _ PI / 180 . m 
+1 = float factor * sin angle * 2 * 
+CV _ PI / 180 . m 3 = m 
+1 m 4 = m 0 / / 将 旋转 
+中心 移至 图像 中间 m 2 = w * 0.5 
+f m 5 = h * 0.5 f / / 
+dst x y = A * src x y + 
+bcvZero dst c v G e t Q u a 
+d r a n g l e u b P 
+i x src dst & M cvNamedWindow dst 1 cvShowImage 
+dst dst if cvWaitKey 1 = = 27     
+        / / ESCbreak angle = int 
+angle + delta % 360 }         
+                    
+        / / for loop } return 
+0 } 两个 函数 的 区别 前者 要求 输入 和 
+输出 图像 具有 相同 的 数据类型 有 更大 的 资源 
+开销 因此 对 小 图像 不 太 合适 且 部分 
+输出 图像 可以 保持 不变 后者 可以 精确 的 从 
+8位 图像 中 提取 四边形 到 浮点数 缓 存区 中 
+具有 比 较小 的 系统 开销 且 总是 全部 改变 
+输出 图像 的 内容 实验 使用 例子 中的 仿射 矩阵 
+使用 前 者 进行 仿射变换 效果 是 不 一样 的 
+对于 前者 m0 m1 m2 m3 m4 m5 m0 = 
+factor * cos angle m1 = factor * sin angle 
+m3 = factor * sin angle m4 = factor * 
+cos angle m2 = x * 1 factor * cos 
+angle – y * factor * sin angle / / 
+x * 1 m0 – y * m1m5 = y 
+* 1 factor * cos angle + x * factor 
+* sin angle / / y * 1 m0 + 
+x * m1 图像 逆时针 旋转 Angle 弧度 如果 factor 
+= 1 图像 不 进行 缩放 factor 1 图像 会 
+放大 显示 factor 1 图像 缩小 显示 m2 m5 由 
+x y 确定 表示 源 图像 以 x y 位置 
+为 中心 对 图像 进行 缩放 和 旋转 部分 没有 
+灰度 值 的 区域 的 元素 灰度 值 置 0 
+以上 矩阵 可以 通过 函数 c v 2 D R 
+o t a t i o n M a t 
+r i x cvPoint2D32f x y angle factor map _ 
+matrix 其中 CvMat * map _ matrix 直 观上 先将 
+变换 后的/nr 图像 保存为 与 源 图像 一样 大小 的 
+然后 从 左上角 开始 取出 与 目的 图像 一样 大小 
+的 图像 作为 输出 结果 没有 灰度 值 的 置 
+为 0 对于 后者 m0 m1 m2 m3 m4 m5 
+m0 = factor * cos angle / / 同前 m1 
+= factor * sin angle / / 同前 m3 = 
+factor * sin angle / / 同前 m4 = factor 
+* cos angle / / 同前 m2 = x m5 
+= y 以上 表示 图像 顺时针 旋转 Angle 弧度 如果 
+factor = 1 图像 不 进行 缩放 factor 1 图像 
+会 缩小 显示 factor 1 图像 放大 显示 m2 m5 
+表示 将 源 图像 中的 m2 m5 位置 移动 到 
+新 图像 的 中心 位置 然后 在 新 图像 的 
+中心 位置 处 对 图像 进行 缩放 和 旋转 部分 
+没有 灰度 值 的 区域 会 使用 附近 的 边界 
+灰度 值 进行 插值 根据 输出 图像 的 大小 直 
+观上 输出 前面 旋 转好 后 图像 中心 位置 向外 
+扩展 的 输出 图像 大小 的 图像 部分 没有 灰度 
+值 的 部分 进行 插值 二 透视 变换 opencv 中的 
+实现 函数 void c v W a r p P 
+e r s p e c t i v e 
+const CvArr * src CvArr * dst const CvMat * 
+map _ matrix int flags = CV _ INTER _ 
+LINEAR + CV _ WARP _ FILL _ OUTLIERS CvScalar 
+fillval = cvScalarAll 0 实现 透视 变换 map _ matrix 
+是 3 * 3 的 变换 矩阵 有 下面 函数 
+可得到 CvMat * c v G e t P e 
+r s p e c t i v e T 
+r a n s f o r m const CvPoint2D32f 
+* src const CvPoint2D32f * dst CvMat * map _ 
+matrix / / 用 四边形 的 四个 点 得到 三 
+二次 线性变换 目前 为止 还 没使 用过 尽管 在 上篇 文章 中 有了 原文 的 链接 但是 
+吸取 以往 的 经验 教训 还是 全部 拿来主义 比较好 担心 
+哪天 原文 链接 就不能 查看 了 那 岂不 是 让人 
+心痛 的 碎了 一 地 梨花 一 仿射变换 仿射变换 的 
+性质 平面 上 任意 两条 直线 经 仿射变换 后 仍然 
+保持 平行 仿射变换 的 功能 是 一种 二维 坐标 到 
+二维 坐标 之间 的 线性变换 保持 二维 图形 的 平 
+直性 straightness 即 变换 后 直线 还是 直线 不会 打弯 
+圆弧 还是 圆弧 和 平 行性 parallelness 其实 是 指 
+保 二维 图形 间 的 相对位置 关系 不变 平行线 还是 
+平行线 相交 直线 的 交角 不变 仿射变换 可以 通过 一 
+系列 的 原子 变换 的 复合 来 实现 包括 平移 
+Translation 缩放 Scale 翻转 Flip 旋转 Rotation 和 剪切 Shear 
+此类 变换 可以 用 一个 3 × 3 的 矩阵 
+来 表示 其 最后 一 行为 0 0 1 该 
+变换 矩阵 将 原 坐标 x y 变换 为 新 
+坐标 x y 这里 原 坐标 和新/nr 坐标 皆 视为 
+最末 一 行为 1 的 三维 列 向量 原 列 
+向量 左乘/nr 变换 矩阵 得到 新的 列 向量 x   
+    a00 a01             
+a02 x         a00 * x + 
+a01 * y + a02 y = a10 a11 a12 
+y = a10 * x + a11 * y + 
+a12 1                 
+0       0 1 1       
+  1               仿射变换 
+的 矩阵 由 图像 上 不 共线 的 三个点 的 
+坐标 确定 看做 2 * 3 的 矩阵 几种 典型 
+的 仿射变换 平移变换 将 每 一点 移动 到 x + 
+tx y + ty 变换 矩阵 为 1 0 tx 
+    0 1 ty     0 0 1 
+平移变换 是 一种 刚体 变换 就是 不会 产生 形变 的 
+理想 物体 平移 当然 不会 改变 二维 图形 的 形状 
+同理 下面 的 旋转变换 也是 刚体 变换 而 缩放 错 
+切 都是 会 改变 图形 形状 的 缩放 变换 将 
+每 一点 的 横坐标 放大 缩小 至 sx 倍 纵坐标 
+放大 缩小 至 sy 倍 变换 矩阵 为 sx 0 
+0 0 sy 0 0 0 1 剪切 变换 变换 
+矩阵 为 1 shx 0     shy 1 0 
+0       0 1 相当于 一个 横向 剪切 
+与 一个 纵向 剪切 的 复合 即 1     
+0 0 1 shx 0     shy 1 0 
+0       1       0 0 
+    0 1 0 0       1 
+剪切 变换 又称 错 切 变换 指 的 是 类似于 
+四边形 不稳定性 那种 性质 街边 小商店 那种 铁 拉门 都 
+见过 吧 想象 一下 上面 铁条 构成 的 菱形 拉动 
+的 过程 那 就是 错 切 的 过程 旋转变换 原点 
+目标 图形 围绕 原点 顺时针 旋转 theta 弧度 变换 矩阵 
+为 cos theta sin theta 0 sin theta     
+  cos theta 0     0       
+      0             
+1 旋转变换 目标 图形 以 x y 为 轴心 顺时针 
+旋转 theta 弧度 变换 矩阵 为 cos theta sin theta 
+x x * cos + y * sin sin theta 
+      cos theta y x * sin y 
+* cos     0           
+            0       
+        1         相当于 
+两次 平移变换 与 一次 原点 旋转变换 的 复合 1   
+  0     x cos theta     sin 
+theta     0 1     0     
+x 0     1     y sin theta 
+cos theta     0 0     1   
+  y 0     0     1   
+    0             0 
+          1 0     0 
+    1 opencv 中的 实现 函数 void cvWarpAffine const 
+CvArr * src CvArr * dst const CvMat * map 
+_ matrix int flags = CV _ INTER _ LINEAR 
++ CV _ WARP _ FILL _ OUTLIERS CvScalar fillval 
+= cvScalarAll 0 实现 图像 的 仿射变换 map _ matrix 
+是 2 * 3 的 仿射 矩阵 要求/v 输入/v 和/c 
+输出/v 图像/n 有/v 相同/d 的/uj 数据类型/n 通过 下面 两个 函数 
+得到 仿射 矩阵 CvMat * c v G e t 
+A f f i n e T r a n 
+s f o r m const CvPoint2D32f * src const 
+CvPoint2D32f * dst CvMat * map _ matrix / / 
+由 三个 不 共线 的 点 得到 这样 才 具有 
+唯一性 CvMat * c v 2 D R o t 
+a t i o n M a t r i 
+x CvPoint2D32f center double angle double scale CvMat * map 
+_ matrix / / 由 旋转 中心 旋转 角度 和 
+各向 通行 因子 矩阵 如下 a b 1 a * 
+center . x b * center . y b a 
+b * center . x 1 a * center . 
+y 其中 a = scale * cos angle b = 
+scale * sin angle void c v G e t 
+Q u a d r a n g l e 
+u b P i x const CvArr * src CvArr 
+* dst const CvMat * map _ matrix 实现 图像 
+的 仿射变换 使用 于亚/nr 像素 实现 图像 旋转 的 例子 
+# include stdafx . h # include cv . h 
+# include highgui . h # include math . h 
+int main int argc char * argv { IplImage * 
+src = 0 IplImage * dst = 0 IplImage * 
+dst1 = 0 / * the first command line parameter 
+must be image file name * / if argc = 
+= 2 & & src = cvLoadImage argv 1 1 
+= 0 { int delta = 1 int angle = 
+0 int opt = 0           
+            / / 1 旋转 
+加 缩放 / / 0 仅仅 旋转 double factor dst 
+= cvCloneImage src dst1 = cvCloneImage src cvNamedWindow src 1 
+cvShowImage src src for { float m 6 / / 
+Matrix m looks like / / / / m0 m1 
+m2 = = = A11 A12     b1 / 
+/ m3 m4 m5             
+A21 A22     b2 / / CvMat M = 
+cvMat 2 3 CV _ 32F m int w = 
+src width int h = src height if opt   
+                  / 
+/ 旋转 加 缩放 factor = cos angle * CV 
+_ PI / 180 . + 1.0 * 2 else 
+                    
+          / / 仅仅 旋转 factor 
+= 1 m 0 = float factor * cos angle 
+* 2 * CV _ PI / 180 . m 
+1 = float factor * sin angle * 2 * 
+CV _ PI / 180 . m 3 = m 
+1 m 4 = m 0 / / 将 旋转 
+中心 移至 图像 中间 m 2 = w * 0.5 
+f m 5 = h * 0.5 f / / 
+dst x y = A * src x y + 
+bcvZero dst c v G e t Q u a 
+d r a n g l e u b P 
+i x src dst & M cvNamedWindow dst 1 cvShowImage 
+dst dst if cvWaitKey 1 = = 27     
+        / / ESCbreak angle = int 
+angle + delta % 360 }         
+                    
+        / / for loop } return 
+0 } 两个 函数 的 区别 前者 要求 输入 和 
+输出 图像 具有 相同 的 数据类型 有 更大 的 资源 
+开销 因此 对 小 图像 不 太 合适 且 部分 
+输出 图像 可以 保持 不变 后者 可以 精确 的 从 
+8位 图像 中 提取 四边形 到 浮点数 缓 存区 中 
+具有 比 较小 的 系统 开销 且 总是 全部 改变 
+输出 图像 的 内容 实验 使用 例子 中的 仿射 矩阵 
+使用 前 者 进行 仿射变换 效果 是 不 一样 的 
+对于 前者 m0 m1 m2 m3 m4 m5 m0 = 
+factor * cos angle m1 = factor * sin angle 
+m3 = factor * sin angle m4 = factor * 
+cos angle m2 = x * 1 factor * cos 
+angle – y * factor * sin angle / / 
+x * 1 m0 – y * m1m5 = y 
+* 1 factor * cos angle + x * factor 
+* sin angle / / y * 1 m0 + 
+x * m1 图像 逆时针 旋转 Angle 弧度 如果 factor 
+= 1 图像 不 进行 缩放 factor 1 图像 会 
+放大 显示 factor 1 图像 缩小 显示 m2 m5 由 
+x y 确定 表示 源 图像 以 x y 位置 
+为 中心 对 图像 进行 缩放 和 旋转 部分 没有 
+灰度 值 的 区域 的 元素 灰度 值 置 0 
+以上 矩阵 可以 通过 函数 c v 2 D R 
+o t a t i o n M a t 
+r i x cvPoint2D32f x y angle factor map _ 
+matrix 其中 CvMat * map _ matrix 直 观上 先将 
+变换 后的/nr 图像 保存为 与 源 图像 一样 大小 的 
+然后 从 左上角 开始 取出 与 目的 图像 一样 大小 
+的 图像 作为 输出 结果 没有 灰度 值 的 置 
+为 0 对于 后者 m0 m1 m2 m3 m4 m5 
+m0 = factor * cos angle / / 同前 m1 
+= factor * sin angle / / 同前 m3 = 
+factor * sin angle / / 同前 m4 = factor 
+* cos angle / / 同前 m2 = x m5 
+= y 以上 表示 图像 顺时针 旋转 Angle 弧度 如果 
+factor = 1 图像 不 进行 缩放 factor 1 图像 
+会 缩小 显示 factor 1 图像 放大 显示 m2 m5 
+表示 将 源 图像 中的 m2 m5 位置 移动 到 
+新 图像 的 中心 位置 然后 在 新 图像 的 
+中心 位置 处 对 图像 进行 缩放 和 旋转 部分 
+没有 灰度 值 的 区域 会 使用 附近 的 边界 
+灰度 值 进行 插值 根据 输出 图像 的 大小 直 
+观上 输出 前面 旋 转好 后 图像 中心 位置 向外 
+扩展 的 输出 图像 大小 的 图像 部分 没有 灰度 
+值 的 部分 进行 插值 二 透视 变换 opencv 中的 
+实现 函数 void c v W a r p P 
+e r s p e c t i v e 
+const CvArr * src CvArr * dst const CvMat * 
+map _ matrix int flags = CV _ INTER _ 
+LINEAR + CV _ WARP _ FILL _ OUTLIERS CvScalar 
+fillval = cvScalarAll 0 实现 透视 变换 map _ matrix 
+是 3 * 3 的 变换 矩阵 有 下面 函数 
+可得到 CvMat * c v G e t P e 
+r s p e c t i v e T 
+r a n s f o r m const CvPoint2D32f 
+* src const CvPoint2D32f * dst CvMat * map _ 
+matrix / / 用 四边形 的 四个 点 得到 三 
+二次 线性变换 目前 为止 还 没使 用过 尽管 在 上篇 文章 中 有了 原文 的 链接 但是 
+吸取 以往 的 经验 教训 还是 全部 拿来主义 比较好 担心 
+哪天 原文 链接 就不能 查看 了 那 岂不 是 让人 
+心痛 的 碎了 一 地 梨花 一 仿射变换 仿射变换 的 
+性质 平面 上 任意 两条 直线 经 仿射变换 后 仍然 
+保持 平行 仿射变换 的 功能 是 一种 二维 坐标 到 
+二维 坐标 之间 的 线性变换 保持 二维 图形 的 平 
+直性 straightness 即 变换 后 直线 还是 直线 不会 打弯 
+圆弧 还是 圆弧 和 平 行性 parallelness 其实 是 指 
+保 二维 图形 间 的 相对位置 关系 不变 平行线 还是 
+平行线 相交 直线 的 交角 不变 仿射变换 可以 通过 一 
+系列 的 原子 变换 的 复合 来 实现 包括 平移 
+Translation 缩放 Scale 翻转 Flip 旋转 Rotation 和 剪切 Shear 
+此类 变换 可以 用 一个 3 × 3 的 矩阵 
+来 表示 其 最后 一 行为 0 0 1 该 
+变换 矩阵 将 原 坐标 x y 变换 为 新 
+坐标 x y 这里 原 坐标 和新/nr 坐标 皆 视为 
+最末 一 行为 1 的 三维 列 向量 原 列 
+向量 左乘/nr 变换 矩阵 得到 新的 列 向量 x   
+    a00 a01             
+a02 x         a00 * x + 
+a01 * y + a02 y = a10 a11 a12 
+y = a10 * x + a11 * y + 
+a12 1                 
+0       0 1 1       
+  1               仿射变换 
+的 矩阵 由 图像 上 不 共线 的 三个点 的 
+坐标 确定 看做 2 * 3 的 矩阵 几种 典型 
+的 仿射变换 平移变换 将 每 一点 移动 到 x + 
+tx y + ty 变换 矩阵 为 1 0 tx 
+    0 1 ty     0 0 1 
+平移变换 是 一种 刚体 变换 就是 不会 产生 形变 的 
+理想 物体 平移 当然 不会 改变 二维 图形 的 形状 
+同理 下面 的 旋转变换 也是 刚体 变换 而 缩放 错 
+切 都是 会 改变 图形 形状 的 缩放 变换 将 
+每 一点 的 横坐标 放大 缩小 至 sx 倍 纵坐标 
+放大 缩小 至 sy 倍 变换 矩阵 为 sx 0 
+0 0 sy 0 0 0 1 剪切 变换 变换 
+矩阵 为 1 shx 0     shy 1 0 
+0       0 1 相当于 一个 横向 剪切 
+与 一个 纵向 剪切 的 复合 即 1     
+0 0 1 shx 0     shy 1 0 
+0       1       0 0 
+    0 1 0 0       1 
+剪切 变换 又称 错 切 变换 指 的 是 类似于 
+四边形 不稳定性 那种 性质 街边 小商店 那种 铁 拉门 都 
+见过 吧 想象 一下 上面 铁条 构成 的 菱形 拉动 
+的 过程 那 就是 错 切 的 过程 旋转变换 原点 
+目标 图形 围绕 原点 顺时针 旋转 theta 弧度 变换 矩阵 
+为 cos theta sin theta 0 sin theta     
+  cos theta 0     0       
+      0             
+1 旋转变换 目标 图形 以 x y 为 轴心 顺时针 
+旋转 theta 弧度 变换 矩阵 为 cos theta sin theta 
+x x * cos + y * sin sin theta 
+      cos theta y x * sin y 
+* cos     0           
+            0       
+        1         相当于 
+两次 平移变换 与 一次 原点 旋转变换 的 复合 1   
+  0     x cos theta     sin 
+theta     0 1     0     
+x 0     1     y sin theta 
+cos theta     0 0     1   
+  y 0     0     1   
+    0             0 
+          1 0     0 
+    1 opencv 中的 实现 函数 void cvWarpAffine const 
+CvArr * src CvArr * dst const CvMat * map 
+_ matrix int flags = CV _ INTER _ LINEAR 
++ CV _ WARP _ FILL _ OUTLIERS CvScalar fillval 
+= cvScalarAll 0 实现 图像 的 仿射变换 map _ matrix 
+是 2 * 3 的 仿射 矩阵 要求/v 输入/v 和/c 
+输出/v 图像/n 有/v 相同/d 的/uj 数据类型/n 通过 下面 两个 函数 
+得到 仿射 矩阵 CvMat * c v G e t 
+A f f i n e T r a n 
+s f o r m const CvPoint2D32f * src const 
+CvPoint2D32f * dst CvMat * map _ matrix / / 
+由 三个 不 共线 的 点 得到 这样 才 具有 
+唯一性 CvMat * c v 2 D R o t 
+a t i o n M a t r i 
+x CvPoint2D32f center double angle double scale CvMat * map 
+_ matrix / / 由 旋转 中心 旋转 角度 和 
+各向 通行 因子 矩阵 如下 a b 1 a * 
+center . x b * center . y b a 
+b * center . x 1 a * center . 
+y 其中 a = scale * cos angle b = 
+scale * sin angle void c v G e t 
+Q u a d r a n g l e 
+u b P i x const CvArr * src CvArr 
+* dst const CvMat * map _ matrix 实现 图像 
+的 仿射变换 使用 于亚/nr 像素 实现 图像 旋转 的 例子 
+# include stdafx . h # include cv . h 
+# include highgui . h # include math . h 
+int main int argc char * argv { IplImage * 
+src = 0 IplImage * dst = 0 IplImage * 
+dst1 = 0 / * the first command line parameter 
+must be image file name * / if argc = 
+= 2 & & src = cvLoadImage argv 1 1 
+= 0 { int delta = 1 int angle = 
+0 int opt = 0           
+            / / 1 旋转 
+加 缩放 / / 0 仅仅 旋转 double factor dst 
+= cvCloneImage src dst1 = cvCloneImage src cvNamedWindow src 1 
+cvShowImage src src for { float m 6 / / 
+Matrix m looks like / / / / m0 m1 
+m2 = = = A11 A12     b1 / 
+/ m3 m4 m5             
+A21 A22     b2 / / CvMat M = 
+cvMat 2 3 CV _ 32F m int w = 
+src width int h = src height if opt   
+                  / 
+/ 旋转 加 缩放 factor = cos angle * CV 
+_ PI / 180 . + 1.0 * 2 else 
+                    
+          / / 仅仅 旋转 factor 
+= 1 m 0 = float factor * cos angle 
+* 2 * CV _ PI / 180 . m 
+1 = float factor * sin angle * 2 * 
+CV _ PI / 180 . m 3 = m 
+1 m 4 = m 0 / / 将 旋转 
+中心 移至 图像 中间 m 2 = w * 0.5 
+f m 5 = h * 0.5 f / / 
+dst x y = A * src x y + 
+bcvZero dst c v G e t Q u a 
+d r a n g l e u b P 
+i x src dst & M cvNamedWindow dst 1 cvShowImage 
+dst dst if cvWaitKey 1 = = 27     
+        / / ESCbreak angle = int 
+angle + delta % 360 }         
+                    
+        / / for loop } return 
+0 } 两个 函数 的 区别 前者 要求 输入 和 
+输出 图像 具有 相同 的 数据类型 有 更大 的 资源 
+开销 因此 对 小 图像 不 太 合适 且 部分 
+输出 图像 可以 保持 不变 后者 可以 精确 的 从 
+8位 图像 中 提取 四边形 到 浮点数 缓 存区 中 
+具有 比 较小 的 系统 开销 且 总是 全部 改变 
+输出 图像 的 内容 实验 使用 例子 中的 仿射 矩阵 
+使用 前 者 进行 仿射变换 效果 是 不 一样 的 
+对于 前者 m0 m1 m2 m3 m4 m5 m0 = 
+factor * cos angle m1 = factor * sin angle 
+m3 = factor * sin angle m4 = factor * 
+cos angle m2 = x * 1 factor * cos 
+angle – y * factor * sin angle / / 
+x * 1 m0 – y * m1m5 = y 
+* 1 factor * cos angle + x * factor 
+* sin angle / / y * 1 m0 + 
+x * m1 图像 逆时针 旋转 Angle 弧度 如果 factor 
+= 1 图像 不 进行 缩放 factor 1 图像 会 
+放大 显示 factor 1 图像 缩小 显示 m2 m5 由 
+x y 确定 表示 源 图像 以 x y 位置 
+为 中心 对 图像 进行 缩放 和 旋转 部分 没有 
+灰度 值 的 区域 的 元素 灰度 值 置 0 
+以上 矩阵 可以 通过 函数 c v 2 D R 
+o t a t i o n M a t 
+r i x cvPoint2D32f x y angle factor map _ 
+matrix 其中 CvMat * map _ matrix 直 观上 先将 
+变换 后的/nr 图像 保存为 与 源 图像 一样 大小 的 
+然后 从 左上角 开始 取出 与 目的 图像 一样 大小 
+的 图像 作为 输出 结果 没有 灰度 值 的 置 
+为 0 对于 后者 m0 m1 m2 m3 m4 m5 
+m0 = factor * cos angle / / 同前 m1 
+= factor * sin angle / / 同前 m3 = 
+factor * sin angle / / 同前 m4 = factor 
+* cos angle / / 同前 m2 = x m5 
+= y 以上 表示 图像 顺时针 旋转 Angle 弧度 如果 
+factor = 1 图像 不 进行 缩放 factor 1 图像 
+会 缩小 显示 factor 1 图像 放大 显示 m2 m5 
+表示 将 源 图像 中的 m2 m5 位置 移动 到 
+新 图像 的 中心 位置 然后 在 新 图像 的 
+中心 位置 处 对 图像 进行 缩放 和 旋转 部分 
+没有 灰度 值 的 区域 会 使用 附近 的 边界 
+灰度 值 进行 插值 根据 输出 图像 的 大小 直 
+观上 输出 前面 旋 转好 后 图像 中心 位置 向外 
+扩展 的 输出 图像 大小 的 图像 部分 没有 灰度 
+值 的 部分 进行 插值 二 透视 变换 opencv 中的 
+实现 函数 void c v W a r p P 
+e r s p e c t i v e 
+const CvArr * src CvArr * dst const CvMat * 
+map _ matrix int flags = CV _ INTER _ 
+LINEAR + CV _ WARP _ FILL _ OUTLIERS CvScalar 
+fillval = cvScalarAll 0 实现 透视 变换 map _ matrix 
+是 3 * 3 的 变换 矩阵 有 下面 函数 
+可得到 CvMat * c v G e t P e 
+r s p e c t i v e T 
+r a n s f o r m const CvPoint2D32f 
+* src const CvPoint2D32f * dst CvMat * map _ 
+matrix / / 用 四边形 的 四个 点 得到 三 
+二次 线性变换 目前 为止 还 没使 用过 

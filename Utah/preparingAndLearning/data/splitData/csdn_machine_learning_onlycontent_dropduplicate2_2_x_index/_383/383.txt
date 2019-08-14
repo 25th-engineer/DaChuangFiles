@@ -1,0 +1,22 @@
+机器学习的三种不同方法：
+一、监督学习（supervised learning）——对未来事件进行预测。使用有类标的数据构建数据模型。然后使用经训练得到的模型对未来的数据进行预测。
+主要分为两类：
+1.利用分类对类标进行预测
+2.使用回归预测连续输出值
+二、无监督学习（unsupervised learning）——发现数据本身潜在的结构。分为两类：
+1.通过聚类发现数据的子群
+2.数据压缩中的降维
+三、强化学习（reinforecement learning）——解决交互式问题。构建一个系统，在与环境交互的过程中提高系统的性能。
+四、基本术语
+机器学习的十大经典算法
+https://www.toutiao.com/i6610271910351602184/?tt_from=weixin&utm_campaign=client_share&wxshare_count=2&from=singlemessage&timestamp=1539183202&app=news_article&utm_source=weixin&iid=11612498513&utm_medium=toutiao_ios&group_id=6610271910351602184&pbid=6610741823151982087
+一、决策树
+二、随机森林算法
+三、逻辑回归
+四、SVM
+五、朴素贝叶斯
+六、k最邻近算法
+七、k均值算法
+八、Adaboost算法
+九、神经网络
+十、马尔可夫

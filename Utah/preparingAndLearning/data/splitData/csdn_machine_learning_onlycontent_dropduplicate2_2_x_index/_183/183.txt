@@ -1,0 +1,170 @@
+今天收到了第一笔赞赏，非常感谢，也很惊喜，o(￣▽￣)ブ
+时间
+赞赏者
+赞赏留言
+赞赏数额
+2019.7.18
+奔跑
+感谢你整理Hong-yi Lee老师讲解的机器学习的资料~
+5元
+TOPIC
+CONTENTS
+BLOG
+PDF
+VIDEO
+【1】Learning Map（学习导图）
+blog
+pdf
+video
+【2】Regression：Case Study ；回归：案例研究
+blog
+pdf
+video
+【3】Gradient Descent ；梯度下降
+blog
+pdf
+video
+【4】Where does the error come from? ；误差分析
+blog
+pdf
+video
+【5】Classification: Probabilistic Generative Model；分类：概率生成模型
+blog
+pdf
+video
+【6】Classification: Logistic Regression；Logistic回归
+blog
+pdf
+video
+【7】Brief Introduction of Deep Learning；深度学习简介
+blog
+pdf
+video
+【8】Backpropagation；反向传播算法
+blog
+pdf
+video
+【9】“Hello world” of deep learning；初探深度学习
+blog
+pdf
+video
+【10】Tips for Deep Learning；深度学习小贴士
+blog
+pdf
+video
+【11】Convolutional Neural Network；卷积神经网络
+blog
+pdf
+video
+【12】Why Deep Learning? ; 为什么是深度学习？
+blog
+pdf
+video
+【13】Semi-supervised Learning ;半监督学习
+blog
+pdf
+video
+【14】Unsupervised Learning: Linear Dimension Reduction；线性降维
+blog
+pdf
+video
+【15】Unsupervised Learning: Word Embedding；无监督学习：词嵌入
+blog
+pdf
+video
+【16】Unsupervised Learning: Neighbor Embedding；无监督学习：邻域嵌套
+blog
+pdf
+video
+【17】Unsupervised Learning: Deep Auto-encoder；无监督学习：深度自动编码器
+blog
+pdf
+video
+【18】Deep Generative Model-part 1：深度生成模型-part 1
+blog
+pdf
+video
+【19】Deep Generative Model-part 2：深度生成模型-part 2
+blog
+pdf
+video
+【20】Deep Generative Model-part 3：深度生成模型-part 3
+blog
+pdf
+video
+【21】Transfer Learning part 1 ; 迁移学习 part 1
+blog
+pdf
+video
+【22】Transfer Learning part 2；迁移学习 part 2
+blog
+pdf
+video
+【23】Support Vector Machine；支持向量机
+blog
+pdf
+video
+【24】introduction of Structured Learning;结构化学习介绍
+blog
+pdf
+video
+【25】Structured Linear Model；结构化预测-线性模型
+blog
+pdf
+video
+【26】Structured Support Vector Machine part 1;结构化支持向量机part 1
+blog
+pdf
+video
+【27】Structured SVM part 2；结构化支持向量机 part 2
+blog
+pdf
+video
+【28】Structured SVM part 3 ;结构化支持向量机 part 3
+blog
+pdf
+video
+【29】Sequence Labeling Problem part 1;结构化预测-序列标记 part 1
+blog
+pdf
+video
+【30】Sequence Labeling Problem part 2 ;结构化预测-序列标记 part 2
+blog
+pdf
+video
+【31】Sequence Labeling Problem part 3 ;结构化预测-序列标记 part 3
+blog
+pdf
+video
+【32】Recurrent Neural Network part 1;循环神经网络 part 1
+blog
+pdf
+video
+【33】Recurrent Neural Network part 2;循环神经网络 part 2
+blog
+pdf
+video
+【34】Recurrent Neural Network part 3;循环神经网络 part 3
+blog
+pdf
+video
+【35】Ensemble；集成方法
+blog
+pdf
+video
+【36】Ensemble part 2；集成方法 part 2
+blog
+pdf
+video
+【37】Deep Reinforcement Learning;深度增强学习入门
+blog
+pdf
+video
+【38】李宏毅机器学习课程回顾 + 接下来的学习声明
+blog
+【39】李宏毅机器学习课程从这里开始
+本文
+blog
+相关链接：
+课程主页：http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML16.html
+PPT打包下载：http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/all.rar

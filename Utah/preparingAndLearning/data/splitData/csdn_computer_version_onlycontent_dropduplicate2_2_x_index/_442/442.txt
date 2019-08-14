@@ -1,0 +1,136 @@
+这是很久以前在prfans论坛上有人总结的贴子，现翻出来，a tree stucture of cv guys.
+David Marr
+—–>Shimon Ullman (Weizmann)
+—–>Eric Grimson (MIT)
+—–>Daniel Huttenlocher (Cornell)
+—–> Pedro Felzenszwalb (Chicago)
+Thomas Binford (Stanford)
+—–>David Lowe (UBC)
+—–>Jitendra Malik (UC Berkeley)
+—–> Pietro Perona (Caltech)
+—–>Stefano Soatto (UCLA)
+—–>Fei-Fei Li (Princeton)
+—–>Jianbo Shi (UPenn)
+—–>Yizhou Yu (UIUC)
+—–>Christoph Bregler (NYU)
+—–>Serge Belongie (UCSD)
+—–>Alyosha Efros (CMU)
+Andrew Blake (Microsoft Research Cambridge)
+—–>Andrew Zisserman (Oxford)
+—–>Andrew Fitzgibbon (Microsoft Research Cambridge)
+—–>Roberto Cipolla (Cambridge)
+—–>Alan Yuille (UCLA)
+(UK这个学派的师承关系不太清楚, 这是我听说加上自己猜测的. 事实上, 几个非常优秀的researcher如Vladimir Kolmogorov虽然不是Andrew Blake的学生, 但是也属于这个学派. )
+Thomas Huang (UIUC)
+—–>Yong Rui (Microsoft Research Redmond)
+—–>Nebojsa Jojic (Microsoft Research Redmond)
+—–>Ying Wu (Northwestern University)
+—–>Hai Tao (UCSC)
+—–>Yuncai Liu (SJTU)
+(Huang这个系的人太多, 而且很怪的是, UIUC的web上信息不全, 在此仅列出我知道的.)
+此外, 还有Takeo Kanade等非常有名的大牛, 囿于篇幅, 不一一列举. 从上得知, 加州派基本占了cv的半壁江山. 最近几年, 特别活跃的cv guys是
+USA
+Jitendra Malik, UC Berkeley
+Pietro Perona, Caltech
+Serge Belongie, UCSD
+Jianbo Shi, UPenn
+Stefano Soatto, UCLA
+Fei-Fei Li, Princeton
+William Freeman, MIT
+Trevor Darrell, MIT
+Simon Baker, CMU
+Yanxi Liu, CMU
+Songchun Zhu, UCLA
+Alan Yuille, UCLA
+Yi Ma, UIUC
+Michael Black, Brown
+Carlo Tomasi, Duke
+Ramin Zabih, Cornell
+Shree Nayar, Columbia
+Rama Chellappa, Maryland
+Steve Seitz, University of Washington
+Europe
+Andrew Zisserman, Oxford, UK
+Andrew Fitzgibbon, Microsoft Research Cambridge, UK
+Roberto Cipolla, Cambridge, UK
+Jean Ponce, INRIA, France
+Cordelia Schmid, INRIA, France
+Bill Triggs, LEAR, France
+Yair Weiss, Hebrew University, Israel
+Anat Levin, Hebrew University, Israel
+Michal Irani, Weizmann, Israel
+Luc van Gool, University of Leuven/ETH Zurich, Czechic
+China
+Songde Ma, NLPR CASIA,
+Tieniu Tan, NLPR CASIA,
+Stan Z. Li, NLPR CASIA,
+Harry Shum, MSRA
+Xiaoou Tang, MSRA/CUHK
+Jian Sun, MSRA
+Steve Lin, MSRA
+Yasuyuki Matsushita, MSRA
+Zhouchen Lin, MSRA
+Long Quan, HKUST
+Chi-Keung Tang, HKUST
+就写到这, 希望这些信息对大家有用.
+补充一下那个tree，一个法国大牛
+Olivier Faugeras
+—-Ponce  UIUC
+—lazebnik
+—-Zhengyou Zhang    MSR
+—-Martial Hebert  CMU
+—Songde Ma, NLPR CASIA
+Mit AI lab
+poggio
+—Oliva
+—serre
+Freeman 80年代还来太原理工扶贫了
+—Y. Weiss
+—– Levin
+—Antonio Torralba （research scientist）
+Trevor Darrell
+—Grauman
+补充一下
+Zisserman还有一个不错的学生
+lifeifei的合作者Rob Fergus
+按研究方向分分， 应该更合理一些。
+现在计算机视觉， 计算机图形图像， 机器学习开始融合到一起了吧。
+J. Malik，Zhu Songchu偏segmentation;
+D. Lowe, S. Ullman, Poggio 偏于从生物视觉的启发来研究视觉；
+Zisserman, Schmid, Lowe研究局部特征；
+Luc Van Goo， Long Quanl三维重建；
+Perona, Li Feife， Freeman视觉i学习， 物体分类；
+还有运动分析， 视觉跟踪，纹理分析………….
+MIT的Brain & Cognitive Science Dept和CSAIL里面聚集了一帮人，有的作low level有的作mid level to high level的。他们的工作是值得关注的。
+当然说视觉还是要从伟大的David Marr开始。Tomaso Poggio, Richard Whitman是Marr的同事，传承了其理念，一直往下走。Poggio最近几年比较重点的工作放在他那个hierarchical model上。
+T. Poggio的第一个PhD学生是Christof Koch （kLab at Caltech）。哦，顺便说一下Koch的另外一个导师是Valentino Breitenberg——同样是影响了一个时代的大人物。Koch研究重点兴趣在consciousness上，在Nature上的很多文章体现了他的
+研究思想。不过他们也做不少初级的视觉问题，诸如attention。
+Koch比较知名的弟子比如Laurent Itti和Li Feifei。
+Richard Whitman 年纪比较大了，个人不是很关注他现在做的东西。不过他所在的Perceptual Science Group，是一个非常有影响力的地方，这个组其他大家比较熟悉的老师有Aude Oliva和EH Adelson。Adelson最著名的一个事儿是色彩恒常相关的视错觉，93年发在Science上的那篇。
+关于Oliva，前面的帖子错了，她不是Poggio的学生，这家伙和Torralba是老 乡，同在法国念书，主要从心理学那条路子开始做，成名之役是hybrid image，和Antonio Torrralba一起搞的。这个Hybrid Image 其实80年代就有了，但是最开始从心理学方向上探讨，没有非常有影响力的文章。后来开始靠谱作自然图像统计，得到Gist
+theory，当然这个illusion本身后来转投SIGGRAPH，其影响是深远的。嗯，这个和CV关系不大。
+Perceptual Science Group出了不少牛人，他们的alumni list可谓超豪华阵容：Yair Weiss, Josh Tenenbaum, Pawan Sinha, Bill Freeman……
+这一派的工作跟我比较相关，大概八卦的关系也能总结出一些。
+希望对大家有所帮助
+Van 那个组也做局部特征和物体识别分类。现在Olivier Faugeras也从三维重建转到计算认知学了。
+ctozlm, 现在不研究局部特征的很少啊，因为局部特征方法克服了以前方法的很多缺陷。
+局部特征方法本就是从三维重建发展出来的。所以他们研究局部特征也就不奇怪了。
+INRIA 的 Faugeras 是 IJCV 的 主编，在欧洲  Computer Vision 届是老大，他的弟子Ayach 现在 Medical Image Analysis
+领域有超过其师之势。
+以下是计算机视觉常用的网络资源，包括实验室网页，比上学校数据库资源更精、更有启发性。排名不分先后，如果有更好的请补充，呵呵~~~
+（1）微软公司的文献：http://research.microsoft.com/research/pubs
+（2）微软亚洲研究院：http://research.microsoft.com/asia/，值得关注Harry
+Shum, Jian Sun, Steven Lin, Long Quan(兼职HKUST)etc.
+（3）瑞典隆德大学数学系视觉组：http://www.maths.lth.se/matematiklth/personal/andersp/
+感觉国外搞视觉的好多是数学系出身，大约做计算机视觉对数学要求很高吧。
+（4）澳大利亚国立大学：http://users.rsise.anu.edu.au/~hartley/
+（5）美国北卡大学：http://www.cs.unc.edu/~marc/
+（6）加州大学伯克利分校David A. Forsyth：http://www.cs.berkeley.edu/~daf/
+（7）CMU的视觉组：http://www.cs.cmu.edu/~cil/vision.html
+著名的有Tomasi, Kanade等，CMU不愧是美国计算机牛校，仅视觉就好猛。
+（8）法国INRIA：http://www-sop.inria.fr/odyssee/team/
+由Olivier.Faugeras领衔的牛人众多。
+（9）英国牛津的A.Zisserman：http://www.robots.ox.ac.uk/~az/
+(10)比利时鲁汶大学的L.Van Gool： www.esat.kuleuven.ac.be/psi/visics/
+(11)中国科学院自动化研究所 模式识别国家重点实验室(CASIA NLPR)： http://www.nlpr.ia.ac.cn/
+from: http://www.sigvc.org/bbs/thread-60-1-1.html

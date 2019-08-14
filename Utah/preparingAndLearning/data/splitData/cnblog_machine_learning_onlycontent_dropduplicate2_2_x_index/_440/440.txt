@@ -1,0 +1,47 @@
+在现今的推荐技术和算法中，最被大家广泛认可和采用的就是基于协同过滤的推荐方法。本文将带你深入了解协同过滤的秘密。下面直接进入正题.
+1. 什么是推荐算法
+推荐算法最早在1992年就提出来了，但是火起来实际上是最近这些年的事情，因为互联网的爆发，有了更大的数据量可以供我们使用，推荐算法才有了很大的用武之地。
+最开始，所以我们在网上找资料，都是进yahoo，然后分门别类的点进去，找到你想要的东西，这是一个人工过程，到后来，我们用google，直接搜索自己需要的内容，这些都可以比较精准的找到你想要的东西，但是，如果我自己都不知道自己要找什么肿么办？最典型的例子就是，如果我打开豆瓣找电影，或者我去买说，我实际上不知道我想要买什么或者看什么，这时候推荐系统就可以派上用场了。
+2. 推荐算法的条件
+现在的各种各样的推荐算法，但是不管怎么样，都绕不开几个条件，这是推荐的基本条件
+1.根据和你共同喜好的人来给你推荐
+2.根据你喜欢的物品找出和它相似的来给你推荐
+3.根据你给出的关键字来给你推荐，这实际上就退化成搜索算法了
+4.根据上面的几种条件组合起来给你推荐
+3. 推荐算法分类
+推荐算法大致可以分为三类：
+3.1 基于内容的推荐算法
+基于内容的推荐算法，原理是用户喜欢和自己关注过的Item在内容上类似的Item，比如你看了哈利波特I，基于内容的推荐算法发现哈利波特II-VI，与你以前观看的在内容上面（共有很多关键词）有很大关联性，就把后者推荐给你，这种方法可以避免Item的冷启动问题（冷启动：如果一个Item从没有被关注过，其他推荐算法则很少会去推荐，但是基于内容的推荐算法可以分析Item之间的关系，实现推荐），弊端在于推荐的Item可能会重复，典型的就是新闻推荐，如果你看了一则关于MH370的新闻，很可能推荐的新闻和你浏览过的，内容一致；另外一个弊端则是对于一些多媒体的推荐（比如音乐、电影、图片等)由于很难提内容特征，则很难进行推荐，一种解决方式则是人工给这些Item打标签。
+3.2 协同过滤推荐算法
+协同过滤算法，原理是用户喜欢那些具有相似兴趣的用户喜欢过的商品，比如你的朋友喜欢电影哈利波特I，那么就会推荐给你，这是最简单的基于用户的协同过滤算法（user-based collaboratIve filtering），还有一种是基于Item的协同过滤算法（item-based collaborative filtering），这两种方法都是将用户的所有数据读入到内存中进行运算的，因此成为Memory-based Collaborative Filtering，另一种则是Model-based collaborative filtering，包括Aspect Model，pLSA，LDA，聚类，SVD，Matrix Factorization等，这种方法训练过程比较长，但是训练完成后，推荐过程比较快。
+3.3基于知识的推荐算法。
+最后一种方法是基于知识的推荐算法，也有人将这种方法归为基于内容的推荐，这种方法比较典型的是构建领域本体，或者是建立一定的规则，进行推荐。 混合推荐算法，则会融合以上方法，以加权或者串联、并联等方式尽心融合。 当然，推荐系统还包括很多方法，其实机器学习或者数据挖掘里面的方法，很多都可以应用在推荐系统中，比如说LR、GBDT、RF（这三种方法在一些电商推荐里面经常用到），社交网络里面的图结构等，都可以说是推荐方法。
+今天这篇文章要讲的基于用户的协同过滤算法.
+3 什么是协同过滤
+协同过滤是利用集体智慧的一个典型方法。要理解什么是协同过滤 (Collaborative Filtering, 简称 CF)，首先想一个简单的问题，如果你现在想看个电影，但你不知道具体看哪部，你会怎么做？大部分的人会问问周围的朋友，看看最近有什么好看的电影推荐，而我们一般更倾向于从口味比较类似的朋友那里得到推荐。这就是协同过滤的核心思想。
+换句话说，就是借鉴和你相关人群的观点来进行推荐，很好理解。
+4 协同过滤的实现
+要实现协同过滤的推荐算法，要进行以下三个步骤：
+4.1)收集数据
+4.2)找到相似用户和物品
+4.3进行推荐
+4.1 收集数据
+这里的数据指的都是用户的历史行为数据，比如用户的购买历史，关注，收藏行为，或者发表了某些评论，给某个物品打了多少分等等，这些都可以用来作为数据供推荐算法使用，服务于推荐算法。需要特别指出的在于，不同的数据准确性不同，粒度也不同，在使用时需要考虑到噪音所带来的影响。
+4.2找到相似用户和物品
+这一步也很简单，其实就是计算用户间以及物品间的相似度。以下是几种计算相似度的方法：
+4.3 进行推荐
+在知道了如何计算相似度后，就可以进行推荐了。
+在协同过滤中，有两种主流方法：
+1)基于用户的协同过滤
+2)基于物品的协同过滤
+具体怎么来阐述他们的原理呢，看个图大家就明白了
+基于用户的 CF 的基本思想相当简单，基于用户对物品的偏好找到相邻邻居用户，然后将邻居用户喜欢的推荐给当前用户。计算上，就是将一个用户对所有物品的偏好作为一个向量来计算用户之间的相似度，找到 K 邻居后，根据邻居的相似度权重以及他们对物品的偏好，预测当前用户没有偏好的未涉及物品，计算得到一个排序的物品列表作为推荐。 下图给出了一个例子，对于用户 A，根据用户的历史偏好，这里只计算得到一个邻居 - 用户 C，然后将用户 C 喜欢的物品 D 推荐给用户 A。
+基于物品的 CF 的原理和基于用户的 CF 类似，只是在计算邻居时采用物品本身，而不是从用户的角度，即基于用户对物品的偏好找到相似的物品，然后根据用户的历史偏好，推荐相似的物品给他。从计算的角度看，就是将所有用户对某个物品的偏好作为一个向量来计算物品之间的相似度，得到物品的相似物品后，根据用户历史的偏好预测当前用户还没有表示偏好的物品，计算得到一个排序的物品列表作为推荐。下图给出了一个例子，对于物品 A，根据所有用户的历史偏好，喜欢物品 A 的用户都喜欢物品 C，得出物品 A 和物品 C 比较相似，而用户 C 喜欢物品 A，那么可以推断出用户 C 可能也喜欢物品 C。
+算法存在的问题
+这个算法实现起来也比较简单，但是在实际应用中有时候也会有问题的。
+比如一些非常流行的商品可能很多人都喜欢，这种商品推荐给你就没什么意义了，所以计算的时候需要对这种商品加一个权重或者把这种商品完全去掉也行。
+再有，对于一些通用的东西，比如买书的时候的工具书，如现代汉语词典，新华字典神马的，通用性太强了，推荐也没什么必要了。
+适用场景
+在非社交网络的网站中，内容内在的联系是很重要的推荐原则，它比基于相似用户的推荐原则更加有效。比如在购书网站上，当你看一本书的时候，推荐引擎会给你推荐相关的书籍，这个推荐的重要性远远超过了网站首页对该用户的综合推荐。可以看到，在这种情况下，Item CF 的推荐成为了引导用户浏览的重要手段。同时 Item CF 便于为推荐做出解释，在一个非社交网络的网站中，给某个用户推荐一本书，同时给出的解释是某某和你有相似兴趣的人也看了这本书，这很难让用户信服，因为用户可能根本不认识那个人；但如果解释说是因为这本书和你以前看的某本书相似，用户可能就觉得合理而采纳了此推荐。
+具体实现
+# -*- coding=utf-8 -*- import math import sys from texttable import Texttable # # 使用 |A&B|/sqrt(|A || B |)计算余弦距离 # # # def calcCosDistSpe(user1,user2): avg_x=0.0 avg_y=0.0 for key in user1: avg_x+=key[1] avg_x=avg_x/len(user1) for key in user2: avg_y+=key[1] avg_y=avg_y/len(user2) u1_u2=0.0 for key1 in user1: for key2 in user2: if key1[1] > avg_x and key2[1]>avg_y and key1[0]==key2[0]: u1_u2+=1 u1u2=len(user1)*len(user2)*1.0 sx_sy=u1_u2/math.sqrt(u1u2) return sx_sy # # 计算余弦距离 # # def calcCosDist(user1,user2): sum_x=0.0 sum_y=0.0 sum_xy=0.0 for key1 in user1: for key2 in user2: if key1[0]==key2[0] : sum_xy+=key1[1]*key2[1] sum_y+=key2[1]*key2[1] sum_x+=key1[1]*key1[1] if sum_xy == 0.0 : return 0 sx_sy=math.sqrt(sum_x*sum_y) return sum_xy/sx_sy # # # 相似余弦距离 # # # def calcSimlaryCosDist(user1,user2): sum_x=0.0 sum_y=0.0 sum_xy=0.0 avg_x=0.0 avg_y=0.0 for key in user1: avg_x+=key[1] avg_x=avg_x/len(user1) for key in user2: avg_y+=key[1] avg_y=avg_y/len(user2) for key1 in user1: for key2 in user2: if key1[0]==key2[0] : sum_xy+=(key1[1]-avg_x)*(key2[1]-avg_y) sum_y+=(key2[1]-avg_y)*(key2[1]-avg_y) sum_x+=(key1[1]-avg_x)*(key1[1]-avg_x) if sum_xy == 0.0 : return 0 sx_sy=math.sqrt(sum_x*sum_y) return sum_xy/sx_sy # # 读取文件 # # def readFile(file_name): contents_lines=[] f=open(file_name,"r") contents_lines=f.readlines() f.close() return contents_lines # # 解压rating信息，格式：用户id\t硬盘id\t用户rating\t时间 # 输入：数据集合 # 输出:已经解压的排名信息 # def getRatingInformation(ratings): rates=[] for line in ratings: rate=line.split("\t") rates.append([int(rate[0]),int(rate[1]),int(rate[2])]) return rates # # 生成用户评分的数据结构 # # 输入:所以数据 [[2,1,5],[2,4,2]...] # 输出:1.用户打分字典 2.电影字典 # 使用字典，key是用户id，value是用户对电影的评价， # rate_dic[2]=[(1,5),(4,2)].... 表示用户2对电影1的评分是5，对电影4的评分是2 # def createUserRankDic(rates): user_rate_dic={} item_to_user={} for i in rates: user_rank=(i[1],i[2]) if i[0] in user_rate_dic: user_rate_dic[i[0]].append(user_rank) else: user_rate_dic[i[0]]=[user_rank] if i[1] in item_to_user: item_to_user[i[1]].append(i[0]) else: item_to_user[i[1]]=[i[0]] return user_rate_dic,item_to_user # # 计算与指定用户最相近的邻居 # 输入:指定用户ID，所以用户数据，所以物品数据 # 输出:与指定用户最相邻的邻居列表 # def calcNearestNeighbor(userid,users_dic,item_dic): neighbors=[] #neighbors.append(userid) for item in users_dic[userid]: for neighbor in item_dic[item[0]]: if neighbor != userid and neighbor not in neighbors: neighbors.append(neighbor) neighbors_dist=[] for neighbor in neighbors: dist=calcSimlaryCosDist(users_dic[userid],users_dic[neighbor]) #calcSimlaryCosDist calcCosDist calcCosDistSpe neighbors_dist.append([dist,neighbor]) neighbors_dist.sort(reverse=True) #print neighbors_dist return neighbors_dist # # 使用UserFC进行推荐 # 输入：文件名,用户ID,邻居数量 # 输出：推荐的电影ID,输入用户的电影列表,电影对应用户的反序表，邻居列表 # def recommendByUserFC(file_name,userid,k=5): #读取文件数据 test_contents=readFile(file_name) #文件数据格式化成二维数组 List[[用户id,电影id,电影评分]...] test_rates=getRatingInformation(test_contents) #格式化成字典数据 # 1.用户字典：dic[用户id]=[(电影id,电影评分)...] # 2.电影字典：dic[电影id]=[用户id1,用户id2...] test_dic,test_item_to_user=createUserRankDic(test_rates) #寻找邻居 neighbors=calcNearestNeighbor(userid,test_dic,test_item_to_user)[:k] recommend_dic={} for neighbor in neighbors: neighbor_user_id=neighbor[1] movies=test_dic[neighbor_user_id] for movie in movies: #print movie if movie[0] not in recommend_dic: recommend_dic[movie[0]]=neighbor[0] else: recommend_dic[movie[0]]+=neighbor[0] #print len(recommend_dic) #建立推荐列表 recommend_list=[] for key in recommend_dic: #print key recommend_list.append([recommend_dic[key],key]) recommend_list.sort(reverse=True) #print recommend_list user_movies = [ i[0] for i in test_dic[userid]] return [i[1] for i in recommend_list],user_movies,test_item_to_user,neighbors # # # 获取电影的列表 # # # def getMoviesList(file_name): #print sys.getdefaultencoding() movies_contents=readFile(file_name) movies_info={} for movie

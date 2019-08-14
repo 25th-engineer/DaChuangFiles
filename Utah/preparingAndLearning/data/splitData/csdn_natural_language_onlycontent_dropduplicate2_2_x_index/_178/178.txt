@@ -1,0 +1,117 @@
+原文题目：NLP in Python
+翻译： 陈之炎
+校对： 和中华
+本文共2700字，建议阅读6分钟。
+自然语言处理是数据科学中的一大难题。在这篇文章中，我们会介绍一个工业级的python库。
+自然语言处理（NLP）是数据科学中最有趣的子领域之一，越来越多的数据科学家希望能够开发出涉及非结构化文本数据的解决方案。尽管如此，许多应用数据科学家（均具有STEM和社会科学背景）依然缺乏NLP（自然语言处理）经验。
+在这篇文章中，我将探讨一些基本的NLP概念，并展示如何使用日益流行的Python spaCy包来实现这些概念。这篇文章适合NLP初学者阅读，但前提是假设读者具备Python的知识。
+你是在说spaCy吗？
+spaCy是一个相对较新的包，“工业级的Python自然语言工具包”，由Matt Honnibal在Explosion AI.开发。它在设计时目标用户以应用数据科学家为主，这也意味着它不需要用户来决定使用哪个算法来处理常见任务，而且它非常地快—快得难以置信（它用Cython来实现）。如果你熟悉Python数据科学栈，spaCy就是NLP的numpy，它虽然理所当然地位于底层，但是却很直观，性能也相当地高。
+那么，它能做什么呢？
+spaCy为任何NLP项目中常用的任务提供一站式服务.包括：
+符号化(Tokenizatioin)
+词干提取(Lemmatization)
+词性标注(Part-of-speech tagging)
+实体识别(Entity recognition)
+依存句法分析(Dependency parsing)
+句子的识别(Sentence recognition)
+字-向量变换(Word-to-vector transformation)
+许多方便的清除文本和标准化文本的方法(cleaning and normalizing text)
+我会对这些功能做一个高层次的概述，并说明如何利用spaCy访问它们。
+那我们就开始吧。
+首先，我们加载spaCy的管线，按照约定，它存储在一个名为nlp的变量中。需要花几秒钟时间声明该变量，因为spaCy预先将模型和数据加载到前端，以节省时间。实际上，这样做可以提前完成一些繁重的工作，使得nlp解析数据时开销不至于过大。 请注意，在这里，我们使用的语言模型是英语，同时也有一个功能齐全的德语模型，在多种语言中均可实现标记化（将在下面讨论）。
+我们在示例文本中调用NLP来创建Doc对象。Doc 对象是文本本身NLP任务容器，将文本切分成文字(Span 对象)和元素(Token 对象)，这些对象实际上不包含数据。值得注意的是Token 和 Span对象实际上没有数据。相反，它们包含Doc对象中的数据的指针，并且被惰性求值（即根据请求）。绝大多数spaCy的核心功能是通过对Doc (n=33), Span (n=29),和 Token (n=78)对象的方法来实现的。
+In[1]:import spacy
+...: nlp = spacy.load("en")
+...: doc = nlp("The big grey dog ate all of the chocolate, but fortunately he wasn't sick!")
+分词(tokenization)
+分词是许多自然语言处理任务中的一个基本步骤。分词就是将一段文本拆分为单词、符号、标点符号、空格和其他元素的过程，从而创建token。这样做的一个简单方法是在空格上拆分字符串：
+In[2]:doc.text.split()
+...: Out[2]: ['The', 'big', 'grey', 'dog', 'ate', 'all', 'of', 'the', 'chocolate,', 'but', 'fortunately', 'he', "wasn't", 'sick!']
+从表面上，直接以空格进行分词效果还不错。但是请注意， 它忽略了标点符号，且没有将动词和副词分开("was", "n't")。换句话说，它太天真了，它无法识别出帮助我们（和机器）理解其结构和含义的文本元素。让我们来看看spaCy如何处理这个问题：
+In[3]:[token.orth_ for token in doc]
+...:
+Out[3]: ['The', 'big', 'grey', 'dog', 'ate', 'all', 'of', 'the', 'chocolate', ',', 'but', 'fortunately', 'he', 'was', "n't", ' ', 'sick', '!']
+这里，我们访问的每个token的.orth_方法，它返回一个代表token的字符串，而不是一个SpaCytoken对象。这可能并不总是可取的，但值得注意。SpaCy能够识别标点符号，并能够将这些标点符号与单词的token分开。许多SpaCy的token方法为待处理的文字同时提供了字符串和整数的返回值：带有下划线后缀的方法返回字符串而没有下划线后缀的方法返回的是整数。例如:
+In[4]:[(token, token.orth_, token.orth) for token in doc]
+...:
+Out[4]:[(The, 'The', 517), (big, 'big', 742), (grey, 'grey', 4623), (dog, 'dog', 1175), (ate, 'ate', 3469), (all, 'all', 516), (of, 'of', 471), (the, 'the', 466), (chocolate, 'chocolate', 3593), (,, ',', 416), (but, 'but', 494), (fortunately, 'fortunately', 15520), (he, 'he', 514), (was, 'was', 491), (n't, "n't", 479), ( , ' ', 483), (sick, 'sick', 1698), (!, '!', 495)]
+In[5]: [token.orth_ for token in doc if not token.is_punct | token.is_space]
+...:
+Out[5]: ['The', 'big', 'grey', 'dog', 'ate', 'all', 'of', 'the', 'chocolate', 'but', 'fortunately', 'he', 'was', "n't", 'sick']
+很酷，对吧？
+词干提取
+和分词相关的任务是词干提取。词干提取是将一个单词还原成它的基本形式--母词的过程。不同用法的单词往往具有相同意义的词根。例如，practice（练习）, practiced（熟练的）,和 practising（实习）这三个单词实质上指的是同一件事情。通常需要将相似意义的单词进行标准化，标准化到其基本的形式。使用SpaCy，我们利用标记的.lemma_ 方法访问到每个单词的基本形式。
+In[6]:practice = "practice practiced practicing"
+...: nlp_practice = nlp(practice)
+...: [word.lemma_ for word in nlp_practice]
+...:
+Out[6]: ['practice', 'practice', 'practice']
+为什么这个会有用？一个即时用例便是机器学习，特别是文本分类。例如：在创建“单词袋”之前需对文本进行词干提取，避免了单词的重复，因此，该模型可以更清晰地描述跨多个文档的单词使用模式。
+词性标注(POS Tagging)
+词性标注是将语法属性（如名词、动词、副词、形容词等）赋值给词的过程。共享相同词性标记的单词往往遵循类似的句法结构，在基于规则的处理过程中非常有用。
+例如，在给定的事件描述中，我们可能希望确定谁拥有什么。通过利用所有格，我们可以做到这一点（提供文本的语法）。SpaCy采用流行的Penn Treebank POS标记（参见这里)。利用SpaCy，可以分别使用.pos_ 和 .tag_方法访问粗粒度POS标记和细粒度POS标记。在这里，我访问细粒度的POS标记：
+In[7]:doc2 = nlp("Conor's dog's toy was hidden under the man's sofa in the woman's house")
+...: pos_tags = [(i, i.tag_) fori indoc2]
+...: pos_tags
+...:
+Out[7]:
+[(Conor,'NNP'),
+('s, 'POS'),
+(dog,'NN'),
+('s, 'POS'),
+(toy,'NN'),
+(was,'VBD'),
+(hidden,'VBN'),
+(under,'IN'),
+(the,'DT'),
+(man,'NN'),
+('s, 'POS'),
+(sofa,'NN'),
+(in,'IN'),
+(the,'DT'),
+(woman,'NN'),
+('s, 'POS'),
+(house,'NN')]
+我们可以看到，'s 的标签被标记为 POS.我们可以利用这个标记提取所有者和他们拥有的东西：
+In[8]:owners_possessions = []
+...: for i in pos_tags: ...: if i[1] == "POS":
+...: owner = i[0].nbor(-1)
+...: possession = i[0].nbor(1)
+...: owners_possessions.append((owner, possession))
+...:
+...: owners_possessions
+...:
+Out[8]: [(Conor, dog), (dog, toy), (man, sofa), (woman, house)]
+这将返回所有者拥有元组的列表。如果你想在这件事上表现成为超级Python能手的话，你可以把它写成一个完整的列表（我认为这是最好的！）：
+In[9]: [(i[0].nbor(-1), i[0].nbor(+1)) for i in pos_tags if i[1] == "POS"]
+...: Out[9]: [(Conor, dog), (dog, toy), (man, sofa), (woman, house)]
+在这里，我们使用的是每个标记的.nbor 方法，它返回一个和这个标记相邻的标记。
+实体识别
+实体识别是将文本中的指定实体分类为预先定义的类别的过程，如个人、地点、组织、日期等。spaCy使用统计模型对各种模型进行分类，包括个人、事件、艺术作品和国籍/宗教(参见完整列表文件）)
+例如，让我们从贝拉克·奥巴马的维基百科条目中选出前两句话。我们将解析此文本，然后使用Doc 对象的 .ents方法访问标识的实体。通过调用Doc 的这个方法，我们可以访问其他的标记方法 ，特别是 .label_ 和 .label两个方法:
+In[10]:wiki_obama = """Barack Obama is an American politician who served as
+...: the 44th President of the United States from 2009 to 2017.He is the first
+...: African American to have served as president,
+...: as well as the first born outside the contiguous United States."""
+…：
+…：nlp_obama = NLP（wiki_obama）
+…：[(i, i.label_, i.label) for i in nlp_obama.ents]
+...:
+Out[10]: [(Barack Obama, 'PERSON', 346), (American, 'NORP', 347), (the United States, 'GPE', 350), (2009 to 2017, 'DATE', 356), (first, 'ORDINAL', 361), (African, 'NORP', 347), (American, 'NORP', 347), (first, 'ORDINAL', 361), (United States, 'GPE', 350)]
+您可以看到在本例中，模型所识别的实体以及它们的精确程度。PERSON 是不言自明的；NORP是国籍或宗教团体；GGPE标识位置（城市、国家等等）；DATE 标识特定的日期或日期范围， ORDINAL标识一个表示某种类型的顺序的单词或数字。
+在我们讨论Doc方法的主题时，值得一提的是spaCy的句子标识符。NLP任务希望将文档拆分成句子的情况并不少见。利用SpaCy访问Doc's.sents 方法并不难做到：
+In[11]:for ix, sent in enumerate(nlp_obama.sents, 1):
+...: print("Sentence number {}: {}".format(ix, sent))
+...: Sentence number 1: Barack Obama is an American politician who served as the 44th President of the United States from 2009 to 2017.Sentence number 2: He is the first African American to have served as president, as well as the first born outside the contiguous United States.
+目前就是这样。在以后的文章中，我将展示如何在复杂的数据挖掘和ML的任务中使用spaCy。
+TrueSight是一个AIOps平台,由机器学习和分析提供动力支持，它解决了多个云的复杂性，并且提高了数字转化的速度，从而提升了IT运­作的效率。
+原文链接：https://dzone.com/articles/nlp-in-python
+译者简介
+陈炎之，北京交通大学通信与控制工程专业毕业，获得工学硕士学位，历任长城计算机软件与系统公司工程师，大唐微电子公司工程师，现任北京吾译超群科技有限公司技术支持。目前从事智能化翻译教学系统的运营和维护，在人工智能深度学习和自然语言处理（NLP）方面积累有一定的经验。业余时间喜爱翻译创作，翻译作品主要有：IEC-ISO 7816、伊拉克石油工程项目、新财税主义宣言等等，其中中译英作品“新财税主义宣言”在GLOBAL TIMES正式发表。能够利用业余时间加入到THU 数据派平台的翻译志愿者小组，希望能和大家一起交流分享，共同进步。
+翻译组招募信息
+工作内容：需要一颗细致的心，将选取好的外文文章翻译成流畅的中文。如果你是数据科学/统计学/计算机类的留学生，或在海外从事相关工作，或对自己外语水平有信心的朋友欢迎加入翻译小组。
+你能得到：定期的翻译培训提高志愿者的翻译水平，提高对于数据科学前沿的认知，海外的朋友可以和国内技术应用发展保持联系，THU数据派产学研的背景为志愿者带来好的发展机遇。
+其他福利：来自于名企的数据科学工作者，北大清华以及海外等名校学生他们都将成为你在翻译小组的伙伴。
+点击文末“阅读原文”加入数据派团队~
+点击“阅读原文”拥抱组织

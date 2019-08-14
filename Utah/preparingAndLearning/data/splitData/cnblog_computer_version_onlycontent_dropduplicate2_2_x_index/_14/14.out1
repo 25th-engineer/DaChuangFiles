@@ -1,0 +1,286 @@
+1 . PETS2001 的 测试 视频 内容 如下 可以 得到 
+如下 所示 5个 DATASET 有/v 训练/vn 和/c 测试/vn 视频/n ftp 
+/ / ftp . cs . rdg . ac . 
+uk / pub / PETS2001 /   direct532 B   
+2001 07 25welcome . msg   5 mirrors6 B   
+2006 10 24WWW   2 mirrors532 B   2001 07 
+25PETS2001 _ README   2 mirrors0   2001 12 1 
+1 D o N o t D o w n 
+L o a d T h i s F i 
+l e   2 mirrors DIR DATASET5 /   direct 
+  2 twin directories DIR DATASET4 /   direct   
+2 twin directories DIR DATASET3 /   direct   6 
+twin directories DIR DATASET2 /   direct   6 twin 
+directories DIR DATASET1 /   direct   6 twin directories0 
+  2001 06 23 . chunkdesc   2 mirrors0   
+2001 06 23 . bufferloc   2 mirrors2 . 阴影 
+检测 Shadow Detection 测试 视频 及 CVPR ATON 阴影 检测 
+相关 论文 http / / cvrr . ucsd . edu 
+/ aton / shadow / 在下面 原始 movie 可以 下 
+载到 Highway Campus Laboratory Intelligent Room 这些 视频 Technical PapersA 
+. Prati I . Mikic M . Trivedi R . 
+Cucchiara Detecting Moving Shadows Formulation Algorithms and Evaluation Under Review 
+June 2001 SurveyI . Mikic P . Cosman G . 
+. Kogut M . Trivedi Moving Shadow and Object Detection 
+in Traffic Scenes I 260px pnce on Pattern Recognition September 
+2000 pp . 321 324 vol . 1R . Cucchiara 
+C . Grana M . Piccardi A . Prati Detecting 
+objects shadows and ghosts in video streams by exploiting color 
+and motion information Appearing in Proceedings of 11th International Conference 
+on Image Analysis and Processing ICIAP 2001 September 2001 . 
+M . Trivedi I . Mikic G . Kogut Distributed 
+Video Networks for Incident Detection and Management IEEE Conference on 
+Intelligent Transportation Systems Dearborn Michigan October 2000 . Testbed DataComparative 
+Movies Highway I Intelligent Room AVIs Raw Movies Highway I 
+Highway II Campus Laboratory Intelligent Room AVIs Manually Segmented Images 
+Ground Truth Zipped BMPs 3 . IBM 人类 视觉 研究中心 
+监视 系统 性能 评价 提供 的 视频 http / / 
+www . research . ibm . com / peoplevision / 
+p e r f o r m a n c 
+e e v a l u a t i o 
+n . html 这个 你 看了 一定 欣喜若狂 一大 票 
+的 视频 任你/nr 选择 不用 再 发愁 找不到 视频 了 
+Performance Evaluation of Surveillance y s t e m s 
+E f f e c t i v e l 
+y evaluating the performance of moving object detection and tracking 
+algorithms is in an important step towards attaining robust digital 
+video surveillance systems with sufficient accuracy for practical applications . 
+As systems be5 � kc � j . 6d achieve 
+greater robustness the ability to quantitatively assess performance is needed 
+in order to continuously improve performance . To this end 
+we are providing video sequences and ground truth annotations for 
+performance evaluation . Ground Truth sequences have extension . pvann 
+and are xml files . An explanation of the ground 
+truth procedure can be found in thepaper 1 . Performance 
+metrics and an evaluation of the IBM Smart Surveillance System 
+can also be found in this publication . 1 . 
+Outdoor Sequences 4 videos from PET2001 with ground truth PetsD1TeC1 
+. aviPetsD1TeC1 . pvann       PetsD1TeC2 . aviPetsD1TeC2 
+. pvann       PetsD2TeC1 . aviPetsD2TeC1 . pvann 
+      PetsD2TeC2 . aviPetsD2TeC2 . pvann2 . Indoor 
+Sequences   11 videoswith ground truth IndoorGTTest1 . aviIndoorGTTest1 . 
+p v a n n I n d o o 
+r G T T e s t 2 . aviIndoorGTTest2 
+. pvannThreePerson _ Circles _ Comp _ 0 _ Quad0 
+. aviThreePerson _ Circles _ Comp _ 0 _ Quad0 
+. pvannThreePerson _ Circles _ Comp _ 0 _ Quad2 
+. aviThreePerson _ Circles _ Comp _ 0 _ Quad2 
+. pvannThreePerson _ Circles _ Comp _ 0 _ Quad3 
+. aviThreePerson _ Circles _ Comp _ 0 _ Quad3 
+. pvannThreePerson _ Together _ Split _ Comp _ 0 
+_ Quad0 . aviThreePerson _ Together _ Split _ Comp 
+_ 0 _ Quad0 . pvannThreePerson _ Together _ Split 
+_ Comp _ 0 _ Quad2 . aviThreePerson _ Together 
+_ Split _ Comp _ 0 _ Quad2 . pvannThreePerson 
+_ Together _ Split _ Comp _ 0 _ Quad3 
+. aviThreePerson _ Together _ Split _ Comp _ 0 
+_ Quad3 . pvannTwoPerson _ Line _ Circle _ Comp 
+_ 0 _ Quad0 . aviTwoPerson _ Line _ Circle 
+_ Comp _ 0 _ Quad0 . pvannTwoPerson _ Line 
+_ Circle _ Comp _ 0 _ Quad2 . aviTwoPerson 
+_ Line _ Circle _ Comp _ 0 _ Quad2 
+. pvannTwoPerson _ Line _ Circle _ Comp _ 0 
+_ Quad3 . aviTwoPerson _ Line _ Circle _ Comp 
+_ 0 _ Quad3 . pvann 1 Performance Evaluation of 
+Surveillance Systems Under Varying ConditionsLisa M . Brown Andrew W 
+. Senior Ying li Tian Jonathan Connell Arun Hampapur Chiao 
+fe Shu Hans Merkl and Max LuIEEE Int l Workshop 
+on Performance Evaluation of Tracking and Surveillance ColoradoJan . 2005 
+.   PDFOther Research Areas Robust Background u b t 
+r a c t i o n a l i 
+e n t Motion DetectionObject Classification2D Tracking3D Multi Persoculated Human 
+Body TrackingActive Head TrackingCoarse Head Pose E s t i 
+m a t i o n P o s i 
+t i o n Independent Absolute Head Pose EstimationFace CatalogerVideo 
+PrivacyMulti scale Tracking & Index BrowserReal Time AlertsMiddleware for Large 
+Scale Surveillance MILS 1 . PETS2001 的 测试 视频 内容 如下 可以 得到 
+如下 所示 5个 DATASET 有/v 训练/vn 和/c 测试/vn 视频/n ftp 
+/ / ftp . cs . rdg . ac . 
+uk / pub / PETS2001 /   direct532 B   
+2001 07 25welcome . msg   5 mirrors6 B   
+2006 10 24WWW   2 mirrors532 B   2001 07 
+25PETS2001 _ README   2 mirrors0   2001 12 1 
+1 D o N o t D o w n 
+L o a d T h i s F i 
+l e   2 mirrors DIR DATASET5 /   direct 
+  2 twin directories DIR DATASET4 /   direct   
+2 twin directories DIR DATASET3 /   direct   6 
+twin directories DIR DATASET2 /   direct   6 twin 
+directories DIR DATASET1 /   direct   6 twin directories0 
+  2001 06 23 . chunkdesc   2 mirrors0   
+2001 06 23 . bufferloc   2 mirrors2 . 阴影 
+检测 Shadow Detection 测试 视频 及 CVPR ATON 阴影 检测 
+相关 论文 http / / cvrr . ucsd . edu 
+/ aton / shadow / 在下面 原始 movie 可以 下 
+载到 Highway Campus Laboratory Intelligent Room 这些 视频 Technical PapersA 
+. Prati I . Mikic M . Trivedi R . 
+Cucchiara Detecting Moving Shadows Formulation Algorithms and Evaluation Under Review 
+June 2001 SurveyI . Mikic P . Cosman G . 
+. Kogut M . Trivedi Moving Shadow and Object Detection 
+in Traffic Scenes I 260px pnce on Pattern Recognition September 
+2000 pp . 321 324 vol . 1R . Cucchiara 
+C . Grana M . Piccardi A . Prati Detecting 
+objects shadows and ghosts in video streams by exploiting color 
+and motion information Appearing in Proceedings of 11th International Conference 
+on Image Analysis and Processing ICIAP 2001 September 2001 . 
+M . Trivedi I . Mikic G . Kogut Distributed 
+Video Networks for Incident Detection and Management IEEE Conference on 
+Intelligent Transportation Systems Dearborn Michigan October 2000 . Testbed DataComparative 
+Movies Highway I Intelligent Room AVIs Raw Movies Highway I 
+Highway II Campus Laboratory Intelligent Room AVIs Manually Segmented Images 
+Ground Truth Zipped BMPs 3 . IBM 人类 视觉 研究中心 
+监视 系统 性能 评价 提供 的 视频 http / / 
+www . research . ibm . com / peoplevision / 
+p e r f o r m a n c 
+e e v a l u a t i o 
+n . html 这个 你 看了 一定 欣喜若狂 一大 票 
+的 视频 任你/nr 选择 不用 再 发愁 找不到 视频 了 
+Performance Evaluation of Surveillance y s t e m s 
+E f f e c t i v e l 
+y evaluating the performance of moving object detection and tracking 
+algorithms is in an important step towards attaining robust digital 
+video surveillance systems with sufficient accuracy for practical applications . 
+As systems be5 � kc � j . 6d achieve 
+greater robustness the ability to quantitatively assess performance is needed 
+in order to continuously improve performance . To this end 
+we are providing video sequences and ground truth annotations for 
+performance evaluation . Ground Truth sequences have extension . pvann 
+and are xml files . An explanation of the ground 
+truth procedure can be found in thepaper 1 . Performance 
+metrics and an evaluation of the IBM Smart Surveillance System 
+can also be found in this publication . 1 . 
+Outdoor Sequences 4 videos from PET2001 with ground truth PetsD1TeC1 
+. aviPetsD1TeC1 . pvann       PetsD1TeC2 . aviPetsD1TeC2 
+. pvann       PetsD2TeC1 . aviPetsD2TeC1 . pvann 
+      PetsD2TeC2 . aviPetsD2TeC2 . pvann2 . Indoor 
+Sequences   11 videoswith ground truth IndoorGTTest1 . aviIndoorGTTest1 . 
+p v a n n I n d o o 
+r G T T e s t 2 . aviIndoorGTTest2 
+. pvannThreePerson _ Circles _ Comp _ 0 _ Quad0 
+. aviThreePerson _ Circles _ Comp _ 0 _ Quad0 
+. pvannThreePerson _ Circles _ Comp _ 0 _ Quad2 
+. aviThreePerson _ Circles _ Comp _ 0 _ Quad2 
+. pvannThreePerson _ Circles _ Comp _ 0 _ Quad3 
+. aviThreePerson _ Circles _ Comp _ 0 _ Quad3 
+. pvannThreePerson _ Together _ Split _ Comp _ 0 
+_ Quad0 . aviThreePerson _ Together _ Split _ Comp 
+_ 0 _ Quad0 . pvannThreePerson _ Together _ Split 
+_ Comp _ 0 _ Quad2 . aviThreePerson _ Together 
+_ Split _ Comp _ 0 _ Quad2 . pvannThreePerson 
+_ Together _ Split _ Comp _ 0 _ Quad3 
+. aviThreePerson _ Together _ Split _ Comp _ 0 
+_ Quad3 . pvannTwoPerson _ Line _ Circle _ Comp 
+_ 0 _ Quad0 . aviTwoPerson _ Line _ Circle 
+_ Comp _ 0 _ Quad0 . pvannTwoPerson _ Line 
+_ Circle _ Comp _ 0 _ Quad2 . aviTwoPerson 
+_ Line _ Circle _ Comp _ 0 _ Quad2 
+. pvannTwoPerson _ Line _ Circle _ Comp _ 0 
+_ Quad3 . aviTwoPerson _ Line _ Circle _ Comp 
+_ 0 _ Quad3 . pvann 1 Performance Evaluation of 
+Surveillance Systems Under Varying ConditionsLisa M . Brown Andrew W 
+. Senior Ying li Tian Jonathan Connell Arun Hampapur Chiao 
+fe Shu Hans Merkl and Max LuIEEE Int l Workshop 
+on Performance Evaluation of Tracking and Surveillance ColoradoJan . 2005 
+.   PDFOther Research Areas Robust Background u b t 
+r a c t i o n a l i 
+e n t Motion DetectionObject Classification2D Tracking3D Multi Persoculated Human 
+Body TrackingActive Head TrackingCoarse Head Pose E s t i 
+m a t i o n P o s i 
+t i o n Independent Absolute Head Pose EstimationFace CatalogerVideo 
+PrivacyMulti scale Tracking & Index BrowserReal Time AlertsMiddleware for Large 
+Scale Surveillance MILS 1 . PETS2001 的 测试 视频 内容 如下 可以 得到 
+如下 所示 5个 DATASET 有/v 训练/vn 和/c 测试/vn 视频/n ftp 
+/ / ftp . cs . rdg . ac . 
+uk / pub / PETS2001 /   direct532 B   
+2001 07 25welcome . msg   5 mirrors6 B   
+2006 10 24WWW   2 mirrors532 B   2001 07 
+25PETS2001 _ README   2 mirrors0   2001 12 1 
+1 D o N o t D o w n 
+L o a d T h i s F i 
+l e   2 mirrors DIR DATASET5 /   direct 
+  2 twin directories DIR DATASET4 /   direct   
+2 twin directories DIR DATASET3 /   direct   6 
+twin directories DIR DATASET2 /   direct   6 twin 
+directories DIR DATASET1 /   direct   6 twin directories0 
+  2001 06 23 . chunkdesc   2 mirrors0   
+2001 06 23 . bufferloc   2 mirrors2 . 阴影 
+检测 Shadow Detection 测试 视频 及 CVPR ATON 阴影 检测 
+相关 论文 http / / cvrr . ucsd . edu 
+/ aton / shadow / 在下面 原始 movie 可以 下 
+载到 Highway Campus Laboratory Intelligent Room 这些 视频 Technical PapersA 
+. Prati I . Mikic M . Trivedi R . 
+Cucchiara Detecting Moving Shadows Formulation Algorithms and Evaluation Under Review 
+June 2001 SurveyI . Mikic P . Cosman G . 
+. Kogut M . Trivedi Moving Shadow and Object Detection 
+in Traffic Scenes I 260px pnce on Pattern Recognition September 
+2000 pp . 321 324 vol . 1R . Cucchiara 
+C . Grana M . Piccardi A . Prati Detecting 
+objects shadows and ghosts in video streams by exploiting color 
+and motion information Appearing in Proceedings of 11th International Conference 
+on Image Analysis and Processing ICIAP 2001 September 2001 . 
+M . Trivedi I . Mikic G . Kogut Distributed 
+Video Networks for Incident Detection and Management IEEE Conference on 
+Intelligent Transportation Systems Dearborn Michigan October 2000 . Testbed DataComparative 
+Movies Highway I Intelligent Room AVIs Raw Movies Highway I 
+Highway II Campus Laboratory Intelligent Room AVIs Manually Segmented Images 
+Ground Truth Zipped BMPs 3 . IBM 人类 视觉 研究中心 
+监视 系统 性能 评价 提供 的 视频 http / / 
+www . research . ibm . com / peoplevision / 
+p e r f o r m a n c 
+e e v a l u a t i o 
+n . html 这个 你 看了 一定 欣喜若狂 一大 票 
+的 视频 任你/nr 选择 不用 再 发愁 找不到 视频 了 
+Performance Evaluation of Surveillance y s t e m s 
+E f f e c t i v e l 
+y evaluating the performance of moving object detection and tracking 
+algorithms is in an important step towards attaining robust digital 
+video surveillance systems with sufficient accuracy for practical applications . 
+As systems be5 � kc � j . 6d achieve 
+greater robustness the ability to quantitatively assess performance is needed 
+in order to continuously improve performance . To this end 
+we are providing video sequences and ground truth annotations for 
+performance evaluation . Ground Truth sequences have extension . pvann 
+and are xml files . An explanation of the ground 
+truth procedure can be found in thepaper 1 . Performance 
+metrics and an evaluation of the IBM Smart Surveillance System 
+can also be found in this publication . 1 . 
+Outdoor Sequences 4 videos from PET2001 with ground truth PetsD1TeC1 
+. aviPetsD1TeC1 . pvann       PetsD1TeC2 . aviPetsD1TeC2 
+. pvann       PetsD2TeC1 . aviPetsD2TeC1 . pvann 
+      PetsD2TeC2 . aviPetsD2TeC2 . pvann2 . Indoor 
+Sequences   11 videoswith ground truth IndoorGTTest1 . aviIndoorGTTest1 . 
+p v a n n I n d o o 
+r G T T e s t 2 . aviIndoorGTTest2 
+. pvannThreePerson _ Circles _ Comp _ 0 _ Quad0 
+. aviThreePerson _ Circles _ Comp _ 0 _ Quad0 
+. pvannThreePerson _ Circles _ Comp _ 0 _ Quad2 
+. aviThreePerson _ Circles _ Comp _ 0 _ Quad2 
+. pvannThreePerson _ Circles _ Comp _ 0 _ Quad3 
+. aviThreePerson _ Circles _ Comp _ 0 _ Quad3 
+. pvannThreePerson _ Together _ Split _ Comp _ 0 
+_ Quad0 . aviThreePerson _ Together _ Split _ Comp 
+_ 0 _ Quad0 . pvannThreePerson _ Together _ Split 
+_ Comp _ 0 _ Quad2 . aviThreePerson _ Together 
+_ Split _ Comp _ 0 _ Quad2 . pvannThreePerson 
+_ Together _ Split _ Comp _ 0 _ Quad3 
+. aviThreePerson _ Together _ Split _ Comp _ 0 
+_ Quad3 . pvannTwoPerson _ Line _ Circle _ Comp 
+_ 0 _ Quad0 . aviTwoPerson _ Line _ Circle 
+_ Comp _ 0 _ Quad0 . pvannTwoPerson _ Line 
+_ Circle _ Comp _ 0 _ Quad2 . aviTwoPerson 
+_ Line _ Circle _ Comp _ 0 _ Quad2 
+. pvannTwoPerson _ Line _ Circle _ Comp _ 0 
+_ Quad3 . aviTwoPerson _ Line _ Circle _ Comp 
+_ 0 _ Quad3 . pvann 1 Performance Evaluation of 
+Surveillance Systems Under Varying ConditionsLisa M . Brown Andrew W 
+. Senior Ying li Tian Jonathan Connell Arun Hampapur Chiao 
+fe Shu Hans Merkl and Max LuIEEE Int l Workshop 
+on Performance Evaluation of Tracking and Surveillance ColoradoJan . 2005 
+.   PDFOther Research Areas Robust Background u b t 
+r a c t i o n a l i 
+e n t Motion DetectionObject Classification2D Tracking3D Multi Persoculated Human 
+Body TrackingActive Head TrackingCoarse Head Pose E s t i 
+m a t i o n P o s i 
+t i o n Independent Absolute Head Pose EstimationFace CatalogerVideo 
+PrivacyMulti scale Tracking & Index BrowserReal Time AlertsMiddleware for Large 
+Scale Surveillance MILS 

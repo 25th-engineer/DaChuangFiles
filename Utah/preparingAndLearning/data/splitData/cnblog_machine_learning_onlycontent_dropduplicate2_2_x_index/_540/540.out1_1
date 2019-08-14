@@ -1,0 +1,267 @@
+接触 机器学习 1年 多了 由于 只 会用 C # 堆 
+代码 所以 只 关注 . NET 平台 的 资源 一边 
+积累 一边 收集 一边 学习 所以在 本站 第 101篇 博客 
+到来之际 分享 给 大家 部分 用过 的 会有 稍微 详 
+细点 的 说明 其他 没用过 的 也是 我 关注 的 
+说不定 以后 会 用上 机器学习 并不等于 大 数据 或者 数据挖掘 
+还有 有些 区别 有些 东西 可以 用来 处理 大 数据 
+的 问题 或者 数据挖掘 的 问题 他们 之间 也是 有 
+部分 想通 的 所以 这些 组件 不仅仅 可以 用于 机器学习 
+也 可以 用于 数据挖掘 相关 的 按照 功能 把 资源 
+分为 3个 部分 开源 综合 与非 综合类 以及 其他 网站 
+博客 等 资料 都是 能够 在 . NET 平台 使用 
+的 谢谢 大家 支持 这些 组件 我 日后 肯定 也 
+会 研究 其 使用 到 时候 有 心得 再 分享 
+上来 如果 有 兴趣 可以 关注 本 博客 本文 原文 
+地址 http / / www . cnblogs . com / 
+asxinyu / p / 4422050 . html1 . 开源 综合类 
+1.1   AForge . NETAForge . NET 是 一个 专门 
+为 开发者 和 研究 者 基于 C # 框架 设计 
+的 他 包括 计算机 视觉 与 人工智能 图像处理 神经网络 遗传算法 
+机器学习 模糊 系统 机器人 控制 等 领域 这个 框架 由 
+一系列 的 类库 组成 主要 包括 有 AForge . Imaging 
+一些 日常 的 图像 处理 和 过滤器 AForge . Vision 
+计算机 视觉 应用 类库 AForge . Neuro 神经 网络 计算 
+库 AForge . Genetic 进化 算法 编程 库 AForge . 
+MachineLearning 机器学习 类库 AForge . Robotics 提供 一些 机器 学习 
+的 工具 类库 AForge . Video 一 系列 的 视频处理 
+类库 AForge . Fuzzy 模糊推理 系统 类库 AForge . Controls 
+图像 三维 图表 显示 控件 来自 http / / baike 
+. haosou . com / doc / 1786119 1888850 . 
+html 官方网站 http / / www . aforgenet . com 
+/ 我 个人 认为 这个 是 . NET 平台 机器学习 
+和 数据挖掘 发展 时间 最长 最好 最 全面 的 开源 
+. NET 组件 之一 博客园 有 很多 园 友 写过 
+专门 的 使用 文章 我 本人 也 只是 关注 还 
+没有 使用 因为 方向 和 处理 的 问题 不 一样 
+暂时 还 没有 实际 应用 源代码 案例 等 都 非常 
+全面 1.2   Accord . NET FrameworkAccord . NET Framework 
+是 在 AForge . NET 基础 上 封装 和 进一步 
+开 发来 的 功能 也 很 强大 因为 AForge . 
+NET 更 注重 与 一些 底层 和 广度 而 Accord 
+. NET Framework 更 注重 与 机器学习 这个 专业 在其 
+基础 上 提供 了 更多 统计 分析 和 处理函数 包括 
+图像 处理 和 计算机 视觉 算法 所以 侧重点 不同 但 
+都 非常 有用 官方 网站 http / / accord framework 
+. net / 1.3 Math . NET 不管 是 机器学习 
+还是 数据挖掘 都与 数学 离不开 关系 既然 是 在 . 
+NET 平台 那么 这个 组件 以后 你 也许 用得上 Math 
+. NET 是 . NET 平台 下 最 全面 的 
+数学 计算 组件 之一 基础 功能 非常 完善 我 的 
+博客 有对 这个 组件 的 详细 研究 http / / 
+www . cnblogs . com / asxinyu / p / 
+4329737 . html   当然 更多 的 功能 还 得 
+大家 自己 使用 中 发掘 毕竟 提供 了 源代码 Math 
+. NET 初衷 是 开源 建立 一个 稳定 并 持续 
+维护 的 先进 的 基础 数学 工具箱 以 满足 . 
+NET 开发者 的 日常 需求 目前 该 组件 主要 分为 
+以下 几个 子项目 该 组件 同时 也 支持 Mono 而且 
+支持 的 平台 也 非常 广泛 Math . NET   
+Numerics 是 核心 功能 是 数值 计算 主要 是 提供 
+日常 科学 工程 计算 相关 的 算法 包括 一些 特殊函数 
+线性代数 概率论 随机 函数 微积分 插值 最 优化 等 相关 
+计算 功能 详细 的 介绍 和 使用 可以 参考 本站 
+的 菜单 Math . NET 查看 目录 官方 网站 http 
+/ / www . mathdotnet . com / 1.4 Infer 
+. NET 好吧 上面 说 的 那些 很 强大 强大 
+一方面 是 说 包括 的 面广 一 方面 是 代码 
+注释 资源 案例 也 很 完善 如果 说 上面 那些 
+是 大炮 那么 我 认为 这个 Infer . NET 就是 
+战斗机 零零散散 接触 和 研究 以及 翻译 它 的 文档 
+代码 已经 有 5个 月了 时间 越久 越 感觉到 它 
+的 火力 之 强大 我 博客 已经 发表 了 2篇 
+翻译 的 文档 http / / www . cnblogs . 
+com / asxinyu / p / 4329742 . html 请 
+关注 Infer . NET 是 微软 剑桥 研究院 基于 . 
+NET 平台 开发 的 一款 机器 推理 组件 该 组件 
+的 采用 的 是 Microsoft Research License Agreement 授权 Non 
+Commercial Use Only . Infer . NET 是 一个 概率 
+图 模型 中 graphical models 用于 运行 贝叶斯 推理机 Bayesian 
+inference 的 框架 如果 对 概率 图 模型 或者 贝叶斯 
+推理 的 意义 不 了解 你 可以 参考 一下 相关 
+资源 文件 在 Resources and References page 页面 Infer . 
+NET 为 各种 应用 程序 所 需要 推理 提供 了 
+先进 的 消息 传递 算法 和 统计 程序 Infer . 
+NET 更 关注 与 概率 图 编程 或者 贝叶斯 理论 
+的 相关 应用 这个 随机因素 和 不确定 世界 中 的 
+很多 问题 都 可以 适用 所以 他 的 强大 一方面 
+是 专注 另一方面 是 提供 的 建模语言 与 其他 的 
+组件 不同 其他 组件 是 算法 级 而 Infer . 
+NET 是 建模 级别 附带 了 各种 通用 和 常见 
+的 推理 算法 可以 通过 简单 的 代码 来 创建 
+模型 按照 微软 的 话说 是 MSL 建模语言 这也 是 
+这个 组件 让 我 肃然起敬 的 地方 估计 也 只有 
+微软 的 研究 人员 才 会 想到 这么 干 一劳永逸 
+的 事情 官方 网站 http / / research . microsoft 
+. com / en us / um / cambridge / 
+projects / infernet / default . aspx1 . 5   
+numl 另外 一个 小巧 的 包含 比较 多 的 机器学习 
+算法 类库 支持 监督 式 和非/nr 监督 式 学习 支持 
+很多 常见 的 机器学习 算法 文档 资源 还 不错 包括 
+Cluster KMeans PCA DecisionTree KNN NaiveBayes NeuralNetwork 等 学习 算法 
+内容 也 非常 丰富 功能强大 同时 也 包括 一些 数值 
+计算 的 实现 这个 组件 个人 认为 没有 以上 的 
+那么 复杂 结构 小巧 合理 代码 也很 优雅 看看 下面 
+这段 代码 很快 就 可以 构建 一个 决策树 学习 器 
+进行 预测 1 var generator = new D e c 
+i s i o n T r e e G 
+e n e r a t o r 2 generator 
+. Descriptor = Descriptor . Create Tennis 3 generator . 
+SetHint false 4 5 Tennis tennis = TennisData . GetData 
+6 7 var learned = Learner . Learn tennis 0.80 
+1000 generator 8 9 IModel model = learned . Model 
+10 double accuracy = learned . Accuracy 11 12 Tennis 
+t = new Tennis 13 { 14 Outlook = Outlook 
+. Sunny 15 Temperature = Temperature . High 16 Windy 
+= false 17 } 18 19 Tennis predictedVal = model 
+. Predict t numl 的 入门 案例 和 文档 比较 
+全面 如果 本身 对 算法 比较 了解 熟悉 C # 
+那 入门 应该 不是 问题 并且 可以 通过 组件 本身 
+构建 和 解决 更加 复杂 的 问题 官方 网站 http 
+/ / numl . net / 1.6   AlglibALGLIB 是 
+一个 跨 平台 的 数值 分析 和 数据 处理 函数库 
+该 函数库 包括 开源 版本 和 商业版本 它 支持 多种 
+编程语言 如 C + + C # Pascal VBA 等 
+可以 在 多个 操作 系统 平台 上 运行 如 Windows 
+Linux 和 Solaris ALGLIB 有 以下 特点 1 线性代数 包括 
+矩阵分析 2 方程 求解 线性 和 非线性 3 插值 4 
+最优化 5 快速 傅里叶 变换 6 数值积分 7 线性 和 
+非线性 最小二乘 拟合 8 常 微分方程 求解 9 特殊函数 10 
+统计 描述统计 假设检验 11 数据分析 分类 回归 神经网络 官方 网站 
+http / / www . alglib . net / 2 
+. 开源 . NET 平台 非 综合类 2.1 Adaboost 算法 
+1 . https / / github . com / bgorven 
+/ Classifier2 . https / / github . com / 
+ElmerNing / Adaboost2 . 2 Apriori 算法 1 . https 
+/ / github . com / Omar Salem / Apriori 
+Algorithm2 . https / / github . com / simonesalvo 
+/ apriori2 . 3 PageRank 算法 https / / github 
+. com / archgold / pagerank2 . 4 NativeBayes 朴素 
+贝叶斯 算法 1 . https / / github . com 
+/ Rekin / Naive Bayes Classifier2 . https / / 
+github . com / ArdaXi / Bayes . NET3 . 
+https / / github . com / amrishdeep / Dragon4 
+. https / / github . com / joelmartinez / 
+nBayes2 . 5   kmeans 算法 http / / v 
+i s u a l s t u d i 
+o m a g a z i n e . 
+com / articles / 2013 / 12/01 / k means 
+data clustering using c . aspx3 . 其他 资源 与 
+技术 博客 资源 108个 大 数据 文档 PDF 开放 下载 
+整理 后 打包 下载 虽然 是 大 数据 的 相关 
+资料 主要 是 PPT 等 但/c 也有/i 和/c 机器/n 学习/v 
+有/v 一点/m 关系/n 需要 的 看看 白话 贝叶斯 理论 及 
+在 足球 比赛 结果 预测 中 的 应用 和C#/nr 实现 
+附 资料   里面 有 贝叶斯 相关 的 论文 资料 
+文章 本身 对 朴素 贝叶斯 的 原理 也 介绍 得 
+非常 清楚 数据挖掘 领域 十大 经典 算法 初探 机器学习 10大 
+经典 算法 支持 向量 机 通俗 导论 理解 SVM 的 
+三层 境界 从 决策树 学习 谈到 贝叶斯 分类 算法 EM 
+HMM 自然语言 处理 博客 包含 的 内容 非常 多 可能 
+理论性 有点 强 /nr http //i //i www/w ./i 52nlp/i ./i 
+cn/w //i 西北/ns 工业/n 大学/n 博导/n 聂飞平/nr 博客/nr http / 
+/ www . escience . cn / people / fpnie 
+/ index . html 一个 机器学习 数据挖掘 的 博客 有 
+不少 资源 链接 http / / www . zhizhihu . 
+com / http / / mlg . eng . cam 
+. ac . uk / mlss09 / schedule . htm 
+一个 机器学习 资源 集中 平台   http / / www 
+. kernel machines . org / software 算法 杂货铺 分类 
+算法 之 朴素 贝叶斯 分类 Naive Bayesian classification 最大熵 模型 
+介绍 概率 图 模型 博客园 Bobby0322 的 博客 http / 
+/ www . cnblogs . com / Bobby0322 / p 
+/ 4052495 . html   中的 商务 智能 与 数据挖掘 
+应用 系列 文章 BI 那点儿 事 数据挖掘 初探 BI 那点儿 
+事 数据挖掘 的 主要 方法 BI 那点儿 事 浅析 十三种 
+常用 的 数据 挖掘 的 技术 BI 那点儿 事 数据挖掘 
+与 相关 领域 的 关系 BI 那点儿 事 Microsoft 关联 
+算法 BI 那点儿 事 Microsoft 聚类分析 算法 BI 那点儿 事 
+Microsoft 聚类分析 算法 三国 人物 身份 划分 BI 那点儿 事 
+Microsoft 决策树 算法 BI 那点儿 事 Microsoft 决策树 算法 找出 
+三国 武将 特性 分布 献给 广大 的 三国 爱好者 们 
+BI 那点儿 事 Microsoft 线性 回归 算法 BI 那点儿 事 
+Microsoft 逻辑 回归 算法 BI 那点儿 事 Microsoft 逻辑 回归 
+算法 预测 股票 的 涨跌 BI 那点儿 事 Microsoft Naive 
+Bayes 算法 BI 那点儿 事 Microsoft Naive Bayes 算法 三国 
+人物 身份 划分 BI 那点儿 事 Microsoft 神经网络 算法 BI 
+那点儿 事 Microsoft 顺序 分析 和 聚类分析 算法 BI 那点儿 
+事 Microsoft 时序 算法 BI 那点儿 事 Microsoft 时序 算法 
+验证 神奇 的 斐波那契 数列 BI 那点儿 事 数据挖掘 各类 
+算法 准确性 验证 4 . 我 的 100篇 博客 之路 
+从 2009年 8月 1日 注册 博客园 开始 已经 有 5年 
+多 的 时间 了 这是 博客 的 第 100篇 正式 
+随笔 文章 在 2015年 元旦 的 时候 看着 自己 的 
+博客 很久 没有 更新 只有 40多 篇文章 然后 列出 了 
+一个 写作 计划 初期 是 至少 完成 高 质量 的 
+文章 50篇 左右 而 到 现在 只有 4 个月 没想到 
+我 几乎 完成 了 全年 的 目标 当然 发表 的 
+50多 篇 文章 中 我/r 认为/v 高/a 质量/n 和有/nr 意义/n 
+的/uj 可能/v 只有/c 40篇/mq 但 丝毫 没关系 至少 还有 很多 
+时间 这些 文章 是 对 自己 经历 和 知识 的 
+总结 也 是 一个 提高 在 这 100篇 博客 里程碑 
+到来 的 时候 我 简单 的 回顾 了 一下 这 
+100 篇文章 第 1篇 首日 浏览 量到 1000 的 文章 
+XCode 使用 记录 使用 XCode 自 动向 数据库 插入 测试数据 
+2012 04 25 09 11 第 1篇 首日 浏览 量到 
+3000 的 文章 拥有 自己 的 代码 生成器 Newlife . 
+XCode 模板 编写 教程   2012 05 11 08 35 
+第 1篇 上 博客园 头条 的 文章 挑战 ORM 性能 
+Newlife . XCode 下 500万 sqlite 数据库 的 分页 2012 
+08 22 12 22 第 1篇 推荐 超过 60 的 
+文章 原创 开源 Word 读写 组件 DocX 介绍 与 入门 
+  2013 02 22 10 35   24 第 1篇 
+推荐 超过 80 的 文章 5.1 送礼 国内 第一 部 
+Matlab 和C#/nr . Net 混合 编程 视频教程 免费   2014 
+04 29 08 02 第 1篇 总 浏览量 超 1.6万 
+的 文章 吐槽 VS2012 的 安装 项目 只能 用 InstallShield 
+Limited Edition   2013 09 07 11 20 在 所有 
+的 100篇 随笔 中 有/v 13篇/mq 是/v 目录/n 和/c 链接/n 
+汇总/n 不能 算是 写 的 随笔 还有 9篇 文章 是 
+刚开始 来 博客园 的 时候 还在 学习 技术含量 不高 但 
+我 也没 删除 毕竟 是 一段 历史 加上/v 有/v 2篇/mq 
+关于/p 比特币/i 和/c 源码/n 的/uj 文章/n 准确 的 说 不是 
+我 写 的 大 部分 是 @ 大 石头 的 
+内容 还有 2篇 资源 和 百度 吐槽 是 很 随意 
+临时 写 的 根本 没 打算 发表 在 首页 只是 
+做 一个 记录 所以 实际 比较 有 技术 一点 的 
+文章 或者 心得 数量 是 73篇 这 73篇 文章 中 
+在 个人 认为 还 不错 的 文章 中 有 至少 
+15 篇 上了 博客园 头条 包括 最多 推荐 和 最多 
+评论 以及 编辑 推荐 1 . 白话 贝叶斯 理论 及 
+在 足球 比赛 结果 预测 中 的 应用 和C#/nr 实现 
+附 资料 2 . 你 用过 这种 奇葩 的 C 
+# 注释 吗 如何 看待   2015 04 17 10 
+04 3 . 原创 C # 玩 高频 数字 彩 
+快 3 的 一点 体会   2015 04 11 09 
+03 4 . 踩 坑 经历 一次 Asp . NET 
+小 网站 部署 踩 坑 和 解决 经历   2015 
+04 01 06 10 5 . 分享 博客 美化 4 
+为 博客 添加 一个 智能 的 文章 推荐 插件   
+2015 03 24 07 55 6 . 原创 Newlife . 
+XCode 的 常见 功能 使用 一 查询 与 数据 初始化 
+  2015 01 26 08 52 7 . 原创 开源 
+Math . NET 基础 数学 类库 使用 13 C # 
+实现 其他 随机数 生成器   2015 03 18 08 32 
+8 . 反 传销 传销 故事 总结 如何 尽可能 保护 
+自身 和 家人 安全   2015 03 09 07 37 
+9 . 反 传销 春节 一个 短暂 误入 传销 和 
+脱身 的 真实 故事 以及 对 技术 的 思考   
+2015 03 03 06 10 10 . App 乱世 3721 
+离 我们 有 多远   2015 02 10 09 24 
+11 . 原创 开源 Word 读写 组件 DocX 介绍 与 
+入门   2013 02 22 10 35 12 . 原创 
+C # 开源 轻量级 对象 数据库 NDatabase 介绍   2013 
+02 20 09 35 13 . 原创 . NET 开源 
+压缩 组件 介绍 与 入门   2013 03 05 07 
+59 14 . 5.1 送礼 国内 第一 部 Matlab 和C#/nr 
+. Net 混合 编程 视频教程 免费   2014 04 29 
+08 02 另外 还有 一篇 文章 被 博客园 作为 编辑 
+推荐 文章 15 . 原创 Matlab . NET 混合 编程 
+技巧 之 直接 调用 Matlab 内置 函数 总的来说 文章 是 
+非常 高效 和 得到 大家 的 认可 的 虽然 技术 
+含量 不是 特别 高级 但 可能 基础 的 技术 更多 
+的 能 引起 共鸣 吧 我 想 说 的 是 
+每/zg 一篇/m 文章/n 都是/nr 经过/p 很/zg 用心/n 的/uj 编辑/n 和写/nr 
+出来/v 的/uj 结果 也 是 非常 理想 的 得到 了 
+很多 人 的 支持 和 理解 所以 才 有了 如此 
+高效 的 访问量 和 推荐 以及 评论 

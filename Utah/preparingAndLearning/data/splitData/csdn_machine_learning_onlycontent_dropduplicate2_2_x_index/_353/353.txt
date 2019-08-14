@@ -1,0 +1,50 @@
+机器学习H2O AI框架简介
+1.  H2O框架
+优势：自己实现分布式计算框架，算法种类全，有深度学习算法，同时可以通过Sparkling-water将 h2o 和spark 进行完美整合
+a.底层数据层
+底层数据读取Hdfs数据  s3数据  SQL 数据  noSQL数据
+s3Amazon Simple Storage Service 亚马逊的云存储结构
+Hive其实就是读取HDFS
+noSQL：HBase
+HQL是一种类SQL语言，这种语言最终被转化为Map/Reduce.虽然Hive提供了SQL查询功能，但是Hive不能够进行交互查询--因为它只能够在Haoop上批量的执行Hadoop 便利全部数据速度慢 老版本不支持更新操作
+Hbase的能够在它的数据库上实时运行，而不是运行MapReduce任务在Hbase中，行是key/value映射的集合，这个映射通过row-key来唯一标识。Hbase利用Hadoop的基础设施，可以利用通用的设备进行水平的扩展。
+Hive可以用来进行统计查询，HBase可以用来进行实时查询
+b. 计算引擎层
+hadoop  spark
+在hadoop中使用mapreduce 所起的任务只是Map任务
+使用sparkling-water将H2O和Spark进行整合
+c. 核心运算层
+算法引擎：深度学习
+计算引擎：基于内存的MapReduce 使用分布式的fork/join框架（java并行框架） 内存管理引擎 ：采用列式压缩ColumnarCompression
+d．接口层
+SDK和 REST API
+快速查询R引擎  毫秒级评分引擎
+h2o-3/h2o-docs/src/dev/lifecycle.md
+H2OApp vs. H2OClientApp
+The main class for Standalone H2O isH2OApp.（class）
+H2OApp uses a helper class calledH2OStarter（class）
+H2O.configureLogging();
+H2O.registerExtensions();
+// Fire up the H2O Cluster
+H2O.main(args);
+H2O.registerRestApis(relativeResourcePath);
+H2O.finalizeRegistration();
+water is from h2o-core and hex is fromh2o-algos.
+e  核心组件
+MRTask ：Map/Reduce styledistributed computation
+里边有各种mapreduce方法
+(Dtask–TAICountedCompleted – countedCompleted – fork/jointask)
+Chunk : ChunkType  ChunkName
+2.  H2O中的数据结构
+Frame   Frame are only composed of Vecs of the sameVectorGroup
+Vec    是由多个Chunck组成 可以并行计算mapreduce  MRtask
+newMRTask{} { final double _mean = vec.mean();
+publicvoid map( Chunk chk ) {
+for(int row=0; row &lt; chk._len; row++ )
+if(chk.isNA(row) ) chk.set(row,_mean);
+}
+}.doAll(vec);
+Chunck  1000 –100 0000个element  one cpu
+Key
+DKV  分布式Key/values存储
+AST : AbstractSyntax Tree

@@ -1,0 +1,25 @@
+果然不愧是百度，算法岗位的题目在广度和深度方面都超过了我之前做的几家，在这里放出部分我记得的笔试题，如有侵权，请联系作者删除
+题目类型：30选择+1道问答+1道系统设计+2道编程，题量很大
+一、选择题
+选择题面非常宽，不建议花费太多时间，涉及到的知识点有C++、python、数据库、分页式存储管理、机器学习、自然语言处理、数据结构、操作系统，基本是应有尽有，估计这么设计就是为了让大家快点蒙完，然后做后面的题目
+二、问答题
+问答题问了自然语言处理的相关知识
+什么是统计语言模型？
+统计语言模型中的ngram模型是什么概念？相关的公式推导是？
+如何估计ngram模型中的参数
+答案可以参考 https://www.cnblogs.com/yehui-mmd/p/8082877.html
+https://blog.csdn.net/ed_new/article/details/51924535
+三、系统设计题
+要求设计一个推荐系统，我个人认为推荐系统还算是一个比较常考的问题，建议笔试之前认真准备一下，否则很难回答上来。
+四、编程题
+（1）连分数比大小
+连分数可以表示为（a0；a1,a2,……，an）,这样直观的数学表示为：
+输入
+n，之后是n+1个数字,分别表示a0,a1,……,an
+m，之后是m+1个数字,分别表示b0,b1,……，bn
+要求比较以上两个连分数（分别记为x和y）的大小，n和m不超过100000
+输出
+若x>y,输出“>”，若x<y，输出“<”,否则输出“=”
+分析：这盗图并不是很难，但是由于我最后时间不够，导致写的代码没时间上传编译，我自己测试了几组数据，问题不大。我的思路是先比较两个数字是否相等，之后把连分数化为小数进行比较。使用的数据结构为vector，代码如下：
+1 #include<iostream> 2 #include <vector> 3 #include <algorithm> 4 using namespace std; 5 int main() 6 { 7 vector<int> x(100100); 8 vector<int> y(100100); 9 int numX, numY; 10 //double resX = 0.0,resY = 0.0; 11 cin >> numX; 12 for (int i = 0; i < numX + 1; i++) 13 cin >> x[i]; 14 cin >> numY; 15 for (int i = 0; i < numY + 1; i++) 16 cin >> y[i]; 17 if (x == y) 18 cout << '=' << endl; 19 else 20 { 21 double tempX = x[numX]; 22 for (int i = numX-1; i >= 0; i--) 23 { 24 tempX = x[i] + 1.0 / tempX; 25 //resX += 1.0 / x[i] + x[i - 1]; 26 } 27 double tempY = y[numY]; 28 for (int i = numY - 1; i >= 0; i--) 29 tempY = y[i] + 1.0 / tempY; 30 31 //cout << tempX << endl;// << " " << tempY << endl; 32 if (tempX > tempY) 33 cout << '>'; 34 else 35 cout << '<'; 36 // cout << temp << endl; 37 } 38 return 0; 39 }
+（2）区域划分

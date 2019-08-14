@@ -1,0 +1,150 @@
+Hanlp是由一系列模型与算法组成的工具包，目标是普及自然语言处理在生产环境中的应用。Hanlp具备功能完善、性能高效、架构清洗、语料时新、可自定义的特点；提供词法分析（中文分词、磁性标注、命名实体识别）、句法分析、文本分类和情感分析等功能。
+本篇将用户输入的语句根据词库进行分词、关键词提取、摘要提取、词库维护。
+工具类名称：DKNLPBase
+1、标准分词
+方法签名：List<Term> StandardTokenizer.segment(String txt);
+返回：分词列表。
+签名参数说明：txt:要分词的语句。
+范例：下例验证一段话第5个分词是阿法狗。
+程序清单1
+public void testSegment() throws Exception
+{
+String text = "商品和服务";
+List<Term> termList = DKNLPBase.segment(text);
+assertEquals("商品", termList.get(0).word);
+assertEquals("和", termList.get(1).word);
+assertEquals("服务", termList.get(2).word);
+text = "柯杰解说“李世石VS阿法狗第二局” 结局竟是这样";
+termList = DKNLPBase.segment(text);
+assertEquals("阿法狗", termList.get(5).word);  // 能够识别"阿法狗"
+}
+2、关键词提取
+方法签名：List<String>  extractKeyword(String txt,int keySum);
+返回：关键词列表.
+签名参数说明：txt:要提取关键词的语句，keySum要提取关键词的数量
+范例：给出一段话提取一个关键词是“程序员”。
+程序清单2
+public void testExtractKeyword() throws Exception
+{
+String content = "程序员(英文Programmer)是从事程序开发、维护的专业人员。" +
+"一般将程序员分为程序设计人员和程序编码人员，" +
+"但两者的界限并不非常清楚，特别是在中国。" +
+"软件从业人员分为初级程序员、高级程序员、系统" +
+"分析员和项目经理四大类。";
+List<String> keyword = DKNLPBase.extractKeyword(content, 1);
+assertEquals(1, keyword.size());
+assertEquals("程序员", keyword.get(0));
+}
+3、短语提取
+方法签名：List<String> extractPhrase(String txt, int phSum);
+返回：短语
+签名参数说明：txt:要提取短语的语句，phSum短语数量
+范例：给出一段文字，能代表文章的五个短语，第一个短语是算法工程师。
+程序清单3
+public void testExtractPhrase() throws Exception
+{
+String text = "算法工程师\n" +
+"算法（Algorithm）是一系列解决问题的清晰指令，也就是说，能够对一定规范的输入，在有限时间内获得所要求的输出。" +
+"如果一个算法有缺陷，或不适合于某个问题，执行这个算法将不会解决这个问题。不同的算法可能用不同的时间、" +
+"空间或效率来完成同样的任务。一个算法的优劣可以用空间复杂度与时间复杂度来衡量。算法工程师就是利用算法处理事物的人。\n" +
+"\n" +
+"1职位简介\n" +
+"算法工程师是一个非常高端的职位；\n" +
+"专业要求：计算机、电子、通信、数学等相关专业；\n" +
+"学历要求：本科及其以上的学历，大多数是硕士学历及其以上；\n" +
+"语言要求：英语要求是熟练，基本上能阅读国外专业书刊；\n" +
+"必须掌握计算机相关知识，熟练使用仿真工具MATLAB等，必须会一门编程语言。\n" +
+"\n" +
+"2研究方向\n" +
+"视频算法工程师、图像处理算法工程师、音频算法工程师 通信基带算法工程师\n" +
+"\n" +
+"3目前国内外状况\n" +
+"目前国内从事算法研究的工程师不少，但是高级算法工程师却很少，是一个非常紧缺的专业工程师。" +
+"算法工程师根据研究领域来分主要有音频/视频算法处理、图像技术方面的二维信息算法处理和通信物理层、" +
+"雷达信号处理、生物医学信号处理等领域的一维信息算法处理。\n" +
+"在计算机音视频和图形图像技术等二维信息算法处理方面目前比较先进的视频处理算法：机器视觉成为此类算法研究的核心；" +
+"另外还有2D转3D算法(2D-to-3D conversion)，去隔行算法(de-interlacing)，运动估计运动补偿算法" +
+"(Motion estimation/Motion Compensation)，去噪算法(Noise Reduction)，缩放算法(scaling)，" +
+"锐化处理算法(Sharpness)，超分辨率算法(Super Resolution),手势识别(gesture recognition),人脸识别(face recognition)。\n" +
+"在通信物理层等一维信息领域目前常用的算法：无线领域的RRM、RTT，传送领域的调制解调、信道均衡、信号检测、网络优化、信号分解等。\n" +
+"另外数据挖掘、互联网搜索算法也成为当今的热门方向。\n" +
+"算法工程师逐渐往人工智能方向发展。";
+List<String> phraseList = DKNLPBase.extractPhrase(text, 5);
+assertEquals(5, phraseList.size());
+assertEquals("算法工程师", phraseList.get(0));
+}
+4、自动摘要
+方法签名：List<String> extractSummary(String txt, int sSum);
+返回：摘要语句
+签名参数说明：txt:要提取摘要的语句，sSum摘要句子数量
+范例：自动提取三句摘要句子。
+程序清单4
+public void testExtractSummary() throws Exception
+{
+String document = "算法可大致分为基本算法、数据结构的算法、数论算法、计算几何的算法、图的算法、动态规划以及数值分析、加密算法、排序算法、检索算法、随机化算法、并行算法、厄米变形模型、随机森林算法。\n" +
+"算法可以宽泛的分为三类，\n" +
+"一，有限的确定性算法，这类算法在有限的一段时间内终止。他们可能要花很长时间来执行指定的任务，但仍将在一定的时间内终止。这类算法得出的结果常取决于输入值。\n" +
+"二，有限的非确定算法，这类算法在有限的时间内终止。然而，对于一个（或一些）给定的数值，算法的结果并不是唯一的或确定的。\n" +
+"三，无限的算法，是那些由于没有定义终止定义条件，或定义的条件无法由输入的数据满足而不终止运行的算法。通常，无限算法的产生是由于未能确定的定义终止条件。";
+List<String> sentenceList = DKNLPBase.extractSummary(document, 3);
+assertEquals(3, sentenceList.size());
+}
+5、拼音转换
+方法签名：List<Pinyin> convertToPinyinList(txt);
+返回：拼音列表
+签名参数说明：txt:要转换拼音的语句
+范例：给出一段文字中第二个字的拼音。
+程序清单5
+public void testConvertToPinyinList() throws Exception
+{
+String text = "鸭绿江的绿跟绿色的绿不是一个读音";
+List<Pinyin> pinyinList = DKNLPBase.convertToPinyinList(text);
+assertEquals(text.length(), pinyinList.size());
+assertEquals(Pinyin.lu4, pinyinList.get(1));
+}
+6、添加词库
+方法签名：String addCK(String filePath);
+返回：空—完成，其它—错误信息
+签名参数说明：filePath:新的词库文件，每个词使用回车换行分隔。
+范例：读取新词库文件，将文件内容中第7个词“新美“添加到词库。
+程序清单6
+public void testAddCK() throws Exception
+{
+DKNLPBase.addCK("src/test/resources/custom_dictionary.txt");
+String text = "互联网家装质量问题频繁 新美大杀入胜算几何";
+List<Term> termList = DKNLPBase.segment(text);
+assertEquals("新美", termList.get(6).word);
+}
+7、新词发现
+方法签名：
+NewWordDiscover discover = new NewWordDiscover(max_word_len, min_freq, min_entropy, min_aggregation, filter);
+discover.discovery(text, size);
+返回：空—完成，其它—错误信息
+签名参数说明：max_word_len： 控制识别结果中最长的词语长度,默认值是 4;该值越大,运算量越大,结果中出现短语的数量也会越多。
+min_freq： 控制结果中词语的最低频率,低于该频率的将会被过滤掉,减少一 些运算量。由于结果是按照频率排序的,所以该参数其实意义不大。实际上，在接口中直接设为了0，意思是所有候选词都会出来。
+min_entropy： 控制结果中词语的最低信息熵（信息的不确定度）的值,一般取 0.5 左右。该值越 大,越短的词语就越容易被提取出来。
+min_aggregation： 控制结果中词语的最低互信息值（字和字之间的关联性）,一般取 50 到 200.该值 越大,越长的词语就越容易被提取出来,有时候会出现一些短语。
+Filter： 设为 true 的时候将使用内部词库过滤掉“旧词”。
+Text：用于新词发现的文档。
+Size：新词个数。
+范例：新词发现。
+程序清7
+public void testFindNewWord() {
+NewWordDiscover discover = new NewWordDiscover(4, 0.0f, 0.5f, 100f, true);
+//读取文件夹下所以文档并合并成一篇文档用于新词发现
+StringBuilder sbText = new StringBuilder();
+File[] txtFiles = new File("src/test/resources/搜狗文本分类语料库微型版/健康").listFiles();
+int i = 0;
+for (File file : txtFiles)
+{
+System.out.printf("[%d / %d] 读取 %s 中...\n", ++i, txtFiles.length, file.getName());
+sbText.append(IOUtil.readTxt(file.getPath()));
+if (i == 100) break;
+}
+System.out.printf("对长度为%d的语料进行分析中...\n", sbText.length());
+List<WordInfo> wordInfoList = discover.discovery(sbText.toString(), 10);
+//打印出发现的新词
+for (WordInfo wordInfo : wordInfoList) {
+System.out.println(wordInfo.text);
+}
+}

@@ -1,0 +1,952 @@
+T o p i c N a m e R 
+e f e r e n c e c o 
+d e I m a g e e g m 
+e n t a t i o n e g 
+m e n t a t i o n by 
+Minimum Code LengthAY Yang J . Wright . Shankar Sastry 
+Y . Ma Unsupervised Segmentation of Natural Images via Lossy 
+Data Compression CVIU 2007codeImage e g m e n t 
+a t i o n N o r m a 
+l i z e d CutJ . Shi and J 
+Malik Normalized Cuts and Image Segmentation PAMI 2000codeImage e g 
+m e n t a t i o n E 
+n t r o p y Rate Superpixel SegmentationM . 
+Y .   Liu O . Tuzel . Ramalingam and 
+R . Chellappa Entropy Rate Superpixel Segmentation CVPR 2011codeImage SegmentationMean 
+Shift Image Segmentation EDISOND . Comaniciu P Meer .   
+Mean Shift A Robust Approach Toward Feature Space Analysis . 
+  PAMI 2002codeImage e g m e n t a 
+t i o n E f f i c i 
+e n t Graph based Image Segmentation Matlab WrapperP . 
+Felzenszwalb and D . Huttenlocher .   Efficient Graph Based 
+Image Segmentation IJCV 2004codeImage e g m e n t 
+a t i o n B i a s e 
+d Normalized CutS . Maji N . Vishnoi and J 
+. Malik Biased Normalized Cut CVPR 2011codeImage e g m 
+e n t a t i o n M u 
+l t i s c a l e Segmentation TreeE 
+. Akbas and N . Ahuja From ramp discontinuities to 
+segmentation tree ACCV 2009 and N . Ahuja A Transform 
+for Multiscale Image Segmentation by Integrated Edge and Region Detection 
+PAMI 1996codeImage e g m e n t a t 
+i o n E f f i c i e 
+n t Graph based Image Segmentation C + + codeP 
+. Felzenszwalb and D . Huttenlocher .   Efficient Graph 
+Based Image Segmentation IJCV 2004codeImage e g m e n 
+t a t i o n u p e r 
+p i x e l by Gerg MoriX . Ren 
+and J . Malik .   Learning a classification model 
+for segmentation .   ICCV 2003codeImage e g m e 
+n t a t i o n e g m 
+e n t i n g Scenes by Matching Image 
+CompositesB . Russell AA Efros J . Sivic WT Freeman 
+A . Zisserman NIPS 2009codeImage e g m e n 
+t a t i o n R e c o 
+v e r i n g Occlusion Boundaries from a 
+Single ImageD . Hoiem A . Stein AA Efros M 
+. Hebert Recovering Occlusion Boundaries from a Single Image ICCV 
+2007 . codeImage e g m e n t a 
+t i o n Q u i c k ShiftA 
+. Vedaldi and . Soatto Quick Shift and Kernel Methodsfor 
+Mode Seeking ECCV 2008codeImage SegmentationSLIC SuperpixelsR . Achanta A . 
+Shaji K . Smith A . Lucchi P . Fua 
+and . Susstrunk SLIC Superpixels EPFL Technical Report 2010codeImage SegmentationMean 
+Shift Image Segmentation Matlab WrapperD . Comaniciu P Meer . 
+  Mean Shift A Robust Approach Toward Feature Space Analysis 
+.   PAMI 2002codeImage SegmentationOWT UCM Hierarchical SegmentationP . Arbelaez 
+M . Maire C . Fowlkes and J . Malik 
+.   Contour Detection and Hierarchical Image Segmentation .   
+PAMI 2011codeImage e g m e n t a t 
+i o n T u r b e p i 
+x e l s A . Levinshtein A . Stere 
+KN Kutulakos DJ Fleet SJ Dickinson and K . Siddiqi 
+TurboPixels Fast Superpixels Using Geometric Flows PAMI 2009codeImage Super resolutionMRF 
+for image super resolutionW . T Freeman and C . 
+Liu .   Markov Random Fields for Super resolution and 
+Texture Synthesis .   In A . Blake P . 
+Kohli and C . Rother eds . Advances in Markov 
+Random Fields for Vision and Image Processing Chapter 10 . 
+  MIT Press 2011Image Super resolutionSingle Image Super Resolution Matlab 
+PackageR . Zeyde M . Elad and M . Protter 
+On Single Image Scale Up using Sparse Representations LNCS 2010codeImage 
+Super resolutionSelf Similarities for Single Frame Super ResolutionC . Y 
+.   Yang J . B .   Huang and 
+M . H .   Yang Exploiting Self Similarities for 
+Single Frame Super Resolution ACCV 2010codeImage Super resolutionMDSP Resolution Enhancement 
+SoftwareS . Farsiu D . Robinson M . Elad and 
+P . Milanfar Fast and Robust Multi frame Super resolution 
+TIP 2004codeImage Super r e s o l u t 
+i o n p r a r s e coding 
+super resolutionJ . Yang J . Wright TS Huang and 
+Y . Ma .   Image super resolution via sparse 
+representation TIP 2010codeImage Super resolutionMulti frame image super resolutionPickup LC 
+Machine Learning in Multi frame Image Super resolution PhD thesiscodeImage 
+U n d e r s t a n d 
+i n g u p e r P a r 
+s i n g J . Tighe and . Lazebnik 
+SuperParsing Scalable Nonparametric Image Parsing with Superpixels ECCV 2010codeImage U 
+n d e r s t a n d i 
+n g D i s c r i m i 
+n a t i v e Models for Multi Class 
+Object LayoutC . Desai D . Ramanan C . Fowlkes 
+.   Discriminative Models for Multi Class Object Layout IJCV 
+2011codeImage U n d e r s t a n 
+d i n g N o n p a r 
+a m e t r i c Scene Parsing via 
+Label TransferC . Liu J . Yuen and Antonio Torralba 
+Nonparametric Scene Parsing via Label Transfer PAMI 2011codeImage U n 
+d e r s t a n d i n 
+g B l o c k s World Revisited Image 
+Understanding using Qualitative Geometry and MechanicsA . Gupta AA Efros 
+M . Hebert Blocks World Revisited Image Understanding using Qualitative 
+Geometry and Mechanics ECCV 2010codeImage U n d e r 
+s t a n d i n g T o 
+w a r d s Total Scene UnderstandingL . J 
+.   Li R . Socher and Li F . 
+F . .   Towards Total Scene Understanding Classification Annotation 
+and Segmentation in an Automatic Framework CVPR 2009codeImage U n 
+d e r s t a n d i n 
+g O b j e c t BankLi Jia Li 
+Hao Su Eric P . Xing and Li Fei Fei 
+.   Object Bank A High Level Image Representation for 
+Scene Classification and Semantic Feature Sparsification NIPS 2010codeKernels and DistancesFast 
+Directional Chamfer M a t c h i n g 
+c o d e K e r n e l 
+s and D i s t a n c e 
+s E f f i c i e n t 
+Earth Mover s Distance with L1 Ground Distance EMD _ 
+L1 H . Ling and K . Okada An Efficient 
+Earth Mover s Distance Algorithm for Robust Histogram Comparison PAMI 
+2007codeKernels and D i s t a n c e 
+s D i f f u s i o n 
+based distanceH . Ling and K . Okada Diffusion Distance 
+for Histogram Comparison CVPR 2006codeLow Rank ModelingTILT Transform Invariant Low 
+rank TexturesZ . Zhang A . Ganesh X . Liang 
+and Y . Ma TILT Transform Invariant Low rank Textures 
+IJCV 2011codeLow Rank ModelingLow Rank Matrix Recovery and C o 
+m p l e t i o n c o 
+d e L o w Rank ModelingRASL Robust Batch Alignment 
+of Images by Sparse and Low Rank DecompositionY . Peng 
+A . Ganesh J . Wright W . Xu and 
+Y . Ma RASL Robust Batch Alignment of Images by 
+Sparse and Low Rank Decomposition CVPR 2010codeMRF OptimizationMRF Minimization EvaluationR 
+. Szeliski et al . A Comparative Study of Energy 
+Minimization Methods for Markov Random Fields with Smoothness Based Priors 
+PAMI 2008codeMRF OptimizationMax flow / min cut for shape fittingV 
+. Lempitsky and Y . Boykov Global Optimization for Shape 
+Fitting CVPR 2007codeMRF OptimizationMax flow / min cutY . Boykov 
+and V . Kolmogorov An Experimental Comparison of Min Cut 
+/ Max Flow Algorithms for Energy Minimization in Vision PAMI 
+2004codeMRF O p t i m i z a t 
+i o n P l a n a r Graph 
+CutFR Schmidt E . Toppe and D . Cremers Ef 
+cient Planar Graph Cuts with Applications in Computer Vision   
+CVPR 2009codeMRF OptimizationMax flow / min cut for massive gridsA 
+. Delong and Y . Boykov A Scalable Graph Cut 
+Algorithm for ND Grids CVPR 2008codeMRF O p t i 
+m i z a t i o n M u 
+l t i label optimizationY . Boykov O . Verksler 
+and R . Zabih Fast Approximate Energy Minimization via Graph 
+Cuts PAMI 2001codeMachine L e a r n i n 
+g t a t i s t i c a 
+l Pattern Recognition ToolboxMI Schlesinger V . Hlavac Ten lectures 
+on the statistical and structural pattern recognition Kluwer Academic Publishers 
+2002codeMachine LearningNetlab Neural Network SoftwareCM Bishop Neural Networks for Pattern 
+Recognition ㄝ Oxford University Press 1995codeMachine LearningBoosting Resources by Liangliang 
+Caohttp / / www . ifp . illinois . edu 
+/ ~ cao4 / reading / boostingbib . htmcodeMachine LearningFastICA 
+package for MATLABhttp / / research . ics . tkk 
+. fi / ica / book / codeMulti View StereoPatch 
+based Multi view Stereo SoftwareY . Furukawa and J . 
+Ponce Accurate Dense and Robust Multi View Stereopsis PAMI 2 
+0 0 9 c o d e T o p 
+i c N a m e R e f e 
+r e n c e c o d e M 
+u l t i View StereoClustering Views for Multi view 
+StereoY . Furukawa B . Curless SM Seitz and R 
+. Szeliski Towards Internet scale Multi view Stereo CVPR 2010codeMulti 
+View StereoMulti View Stereo EvaluationS . Seitz et al . 
+  A Comparison and Evaluation of Multi View Stereo Reconstruction 
+Algorithms CVPR 2006codeMultiple Instance LearningDD SVMYixin Chen and James Z 
+. Wang Image Categorization by Learning and Reasoning with Regions 
+JMLR 2004Multiple Instance L e a r n i n 
+g M I F o r e s t s 
+C . Leistner A . Saffari and H . Bischof 
+MIForests Multiple Instance Learning with Randomized Trees ECCV 2010codeMultiple Instance 
+LearningMILISZ . Fu A . Robles Kelly and J . 
+Zhou MILIS Multiple instance learning with instance selection PAMI 2010Multiple 
+Instance LearningMILESY . Chen J . Bi and JZ Wang 
+MILES Multiple Instance Learning via Embedded Instance Selection .   
+PAMI 2006codeMultiple Kernel LearningSHOGUNS . Sonnenburg G . R tsch 
+C . Sch fer B . Sch lkopf .   
+Large scale multiple kernel learning .   JMLR 2006codeMultiple Kernel 
+L e a r n i n g O p 
+e n K e r n e l . orgF 
+. Orabona and L . Jie .   Ultra fast 
+optimization algorithm for sparse multi kernel learning .   ICML 
+2011codeMultiple Kernel L e a r n i n g 
+i m p l e M K L A . 
+Rakotomamonjy F . Bach . Canu and Y . Grandvalet 
+. Simplemkl .   JMRL 2008codeMultiple Kernel LearningDOGMAF . Orabona 
+L . Jie and B . Caputo .   Online 
+batch strongly convex multi kernel learning .   CVPR 2010codeMultiple 
+View GeometryMATLAB and Octave Functions for Computer Vision and Image 
+ProcessingPD Kovesi .   MATLAB and Octave Functions for Computer 
+Vision and Image Processing http / / www . csse 
+. uwa . edu . au / ~ pk / 
+research / m a t l a b f n 
+s c o d e M u l t i 
+p l e View GeometryMatlab Functions for Multiple View G 
+e o m e t r y c o d 
+e N e a r e s t Neighbors MatchingANN 
+Approximate Nearest Neighbor e a r c h i n 
+g c o d e N e a r e 
+s t Neighbors MatchingSpectral HashingY . Weiss A . Torralba 
+R . Fergus Spectral Hashing NIPS 2008codeNearest Neighbors M a 
+t c h i n g C o h e 
+r e n c y Sensitive HashingS . Korman . 
+Avidan Coherency Sensitive Hashing ICCV 2011codeNearest Neighbors MatchingFLANN Fast Library 
+for Approximate Nearest N e i g h b o 
+r s c o d e N e a r 
+e s t Neighbors MatchingLDAHash Binary Descriptors for Matching in 
+Large Image DatabasesC . Strecha AM Bronstein MM Bronstein and 
+P . Fua .   LDAHash Improved matching with smaller 
+descriptors PAMI 2011 . codeObject D e t e c 
+t i o n P o s e l e 
+t L . Bourdev J . Malik Poselets Body Part 
+Detectors Trained Using 3D Human Pose Annotations ICCV 2009codeObject DetectionCascade 
+Object Detection with Deformable Part ModelsP . Felzenszwalb R . 
+Girshick D . McAllester .   Cascade Object Detection with 
+Deformable Part Models .   CVPR 2010codeObject D e t 
+e c t i o n M u l t 
+i p l e KernelsA . Vedaldi V . Gulshan 
+M . Varma and A . Zisserman Multiple Kernels for 
+Object Detection .   ICCV 2009codeObject DetectionHough Forests for Object 
+DetectionJ . Gall and V . Lempitsky Class Speci c 
+Hough Forests for Object Detection CVPR 2009codeObject D e t 
+e c t i o n D i s c 
+r i m i n a t i v e 
+l y Trained Deformable Part ModelsP . Felzenszwalb R . 
+Girshick D . McAllester D . Ramanan .   Object 
+Detection with Discriminatively Trained Part Based Models PAMI 2010codeFeature Extraction 
+andObject D e t e c t i o n 
+H i s t o g r a m of 
+Oriented Graidents OLT for windowsN . Dalal and B . 
+Triggs .   Histograms of Oriented Gradients for Human Detection 
+.   CVPR 2005codeFeature Extraction andObject D e t e 
+c t i o n H i s t o 
+g r a m of Oriented Graidents INRIA Object Localization 
+ToolkitN . Dalal and B . Triggs .   Histograms 
+of Oriented Gradients for Human Detection .   CVPR 2005codeObject 
+D e t e c t i o n R 
+e c o g n i t i o n 
+using regionsC . Gu JJ Lim P . Arbelaez and 
+J . Malik CVPR 2009codeObject DetectionA simple parts and structure 
+object detectorICCV 2005 short courses on Recognizing and Learning Object 
+C a t e g o r i e s 
+c o d e O b j e c t 
+DetectionFeature CombinationP . Gehler and . Nowozin On Feature Combination 
+for Multiclass Object Detection ICCV 2009codeObject D e t e 
+c t i o n E n s e m 
+b l e of Exemplar SVMsT . Malisiewicz A . 
+Gupta A . Efros .   Ensemble of Exemplar SVMs 
+for Object Detection and Beyond .   ICCV 2011codeObject DetectionA 
+simple object detector with boostingICCV 2005 short courses on Recognizing 
+and Learning Object C a t e g o r 
+i e s c o d e O b j 
+e c t DetectionMax Margin Hough TransformS . Maji and 
+J . Malik Object Detection Using a Max Margin Hough 
+Transform .   CVPR 2009codeObject D e t e c 
+t i o n I m p l i c 
+i t Shape ModelB . Leibe A . Leonardis B 
+. Schiele .   Robust Object Detection with Interleaved Categorization 
+and Segmentation IJCV 2008codeObject D e t e c t 
+i o n E n s e m b l 
+e of Exemplar SVMs for Object Detection and BeyondT . 
+Malisiewicz A . Gupta AA Efros Ensemble of Exemplar SVMs 
+for Object Detection and Beyond ICCV 2011codeObject DetectionViola Jones Object 
+DetectionP . Viola and M . Jones Rapid Object Detection 
+Using a Boosted Cascade of Simple Features CVPR 2001codeObject DiscoveryUsing 
+Multiple Segmentations to Discover Objects and their Extent in Image 
+CollectionsB . Russell AA Efros J . Sivic WT Freeman 
+A . Zisserman Using Multiple Segmentations to Discover Objects and 
+their Extent in Image Collections CVPR 2006codeObject P r o 
+p o s a l O b j e c 
+t n e s s measureB . Alexe T . 
+Deselaers V . Ferrari What is an Object CVPR 2010codeObject 
+P r o p o s a l P a 
+r a m e t r i c min cutJ 
+. Carreira and C . Sminchisescu .   Constrained Parametric 
+Min Cuts for Automatic Object Segmentation CVPR 2010codeObject ProposalRegion based 
+Object ProposalI . Endres and D . Hoiem .   
+Category Independent Object Proposals ECCV 2010codeObject R e c o 
+g n i t i o n R e c 
+o g n i t i o n by Association 
+via Learning Per exemplar DistancesT . Malisiewicz AA Efros Recognition 
+by Association via Learning Per exemplar Distances CVPR 2008codeObject R 
+e c o g n i t i o n 
+B i o l o g i c a l 
+l y motivated object recognitionT . Serre L . Wolf 
+and T . Poggio .   Object recognition with features 
+inspired by visual cortex CVPR 2005codeObject e g m e 
+n t a t i o n G e o 
+d e s i c Star Convexity for Interactive Image 
+SegmentationV . Gulshan C . Rother A . Criminisi A 
+. Blake and A . Zisserman . Geodesic star convexity 
+for interactive image s e g m e n t 
+a t i o n c o d e O 
+b j e c t e g m e n 
+t a t i o n C l a s 
+s C u t for Unsupervised Class SegmentationB . Alexe 
+T . Deselaers and V . Ferrari ClassCut for Unsupervised 
+Class Segmentation ECCV 2010codeObject e g m e n t 
+a t i o n p a r s e 
+to Dense LabelingP . Ochs T . Brox Object Segmentation 
+in Video A Hierarchical Variational Approach for Turning Point Trajectories 
+into Dense Regions ICCV 2011codeOptical FlowOptical Flow by Deqing SunD 
+. Sun . Roth MJ Black Secrets of Optical Flow 
+Estimation and Their Principles CVPR 2010codeOptical FlowClassical Variational Optical FlowT 
+. Brox A . Bruhn N . Papenberg J . 
+Weickert High accuracy optical flow estimation based on a theory 
+for warping ECCV 2004codeOptical FlowLarge Displacement Optical FlowT . Brox 
+J . Malik Large displacement optical flow descriptor matching in 
+variational motion estimation PAMI 2011codeOptical FlowDense Point TrackingN . Sundaram 
+T . Brox K . Keutzer Dense point trajectories by 
+GPU accelerated large displacement optical flow ECCV 2010codeOptical FlowOptical Flow 
+EvaluationS . Baker et al .   A Database and 
+Evaluation Methodology for Optical Flow IJCV 2011code 待续 计算机 视觉 
+与 模式识别 代码 合集 第二 版 three T o p i c N a m e R 
+e f e r e n c e c o 
+d e I m a g e e g m 
+e n t a t i o n e g 
+m e n t a t i o n by 
+Minimum Code LengthAY Yang J . Wright . Shankar Sastry 
+Y . Ma Unsupervised Segmentation of Natural Images via Lossy 
+Data Compression CVIU 2007codeImage e g m e n t 
+a t i o n N o r m a 
+l i z e d CutJ . Shi and J 
+Malik Normalized Cuts and Image Segmentation PAMI 2000codeImage e g 
+m e n t a t i o n E 
+n t r o p y Rate Superpixel SegmentationM . 
+Y .   Liu O . Tuzel . Ramalingam and 
+R . Chellappa Entropy Rate Superpixel Segmentation CVPR 2011codeImage SegmentationMean 
+Shift Image Segmentation EDISOND . Comaniciu P Meer .   
+Mean Shift A Robust Approach Toward Feature Space Analysis . 
+  PAMI 2002codeImage e g m e n t a 
+t i o n E f f i c i 
+e n t Graph based Image Segmentation Matlab WrapperP . 
+Felzenszwalb and D . Huttenlocher .   Efficient Graph Based 
+Image Segmentation IJCV 2004codeImage e g m e n t 
+a t i o n B i a s e 
+d Normalized CutS . Maji N . Vishnoi and J 
+. Malik Biased Normalized Cut CVPR 2011codeImage e g m 
+e n t a t i o n M u 
+l t i s c a l e Segmentation TreeE 
+. Akbas and N . Ahuja From ramp discontinuities to 
+segmentation tree ACCV 2009 and N . Ahuja A Transform 
+for Multiscale Image Segmentation by Integrated Edge and Region Detection 
+PAMI 1996codeImage e g m e n t a t 
+i o n E f f i c i e 
+n t Graph based Image Segmentation C + + codeP 
+. Felzenszwalb and D . Huttenlocher .   Efficient Graph 
+Based Image Segmentation IJCV 2004codeImage e g m e n 
+t a t i o n u p e r 
+p i x e l by Gerg MoriX . Ren 
+and J . Malik .   Learning a classification model 
+for segmentation .   ICCV 2003codeImage e g m e 
+n t a t i o n e g m 
+e n t i n g Scenes by Matching Image 
+CompositesB . Russell AA Efros J . Sivic WT Freeman 
+A . Zisserman NIPS 2009codeImage e g m e n 
+t a t i o n R e c o 
+v e r i n g Occlusion Boundaries from a 
+Single ImageD . Hoiem A . Stein AA Efros M 
+. Hebert Recovering Occlusion Boundaries from a Single Image ICCV 
+2007 . codeImage e g m e n t a 
+t i o n Q u i c k ShiftA 
+. Vedaldi and . Soatto Quick Shift and Kernel Methodsfor 
+Mode Seeking ECCV 2008codeImage SegmentationSLIC SuperpixelsR . Achanta A . 
+Shaji K . Smith A . Lucchi P . Fua 
+and . Susstrunk SLIC Superpixels EPFL Technical Report 2010codeImage SegmentationMean 
+Shift Image Segmentation Matlab WrapperD . Comaniciu P Meer . 
+  Mean Shift A Robust Approach Toward Feature Space Analysis 
+.   PAMI 2002codeImage SegmentationOWT UCM Hierarchical SegmentationP . Arbelaez 
+M . Maire C . Fowlkes and J . Malik 
+.   Contour Detection and Hierarchical Image Segmentation .   
+PAMI 2011codeImage e g m e n t a t 
+i o n T u r b e p i 
+x e l s A . Levinshtein A . Stere 
+KN Kutulakos DJ Fleet SJ Dickinson and K . Siddiqi 
+TurboPixels Fast Superpixels Using Geometric Flows PAMI 2009codeImage Super resolutionMRF 
+for image super resolutionW . T Freeman and C . 
+Liu .   Markov Random Fields for Super resolution and 
+Texture Synthesis .   In A . Blake P . 
+Kohli and C . Rother eds . Advances in Markov 
+Random Fields for Vision and Image Processing Chapter 10 . 
+  MIT Press 2011Image Super resolutionSingle Image Super Resolution Matlab 
+PackageR . Zeyde M . Elad and M . Protter 
+On Single Image Scale Up using Sparse Representations LNCS 2010codeImage 
+Super resolutionSelf Similarities for Single Frame Super ResolutionC . Y 
+.   Yang J . B .   Huang and 
+M . H .   Yang Exploiting Self Similarities for 
+Single Frame Super Resolution ACCV 2010codeImage Super resolutionMDSP Resolution Enhancement 
+SoftwareS . Farsiu D . Robinson M . Elad and 
+P . Milanfar Fast and Robust Multi frame Super resolution 
+TIP 2004codeImage Super r e s o l u t 
+i o n p r a r s e coding 
+super resolutionJ . Yang J . Wright TS Huang and 
+Y . Ma .   Image super resolution via sparse 
+representation TIP 2010codeImage Super resolutionMulti frame image super resolutionPickup LC 
+Machine Learning in Multi frame Image Super resolution PhD thesiscodeImage 
+U n d e r s t a n d 
+i n g u p e r P a r 
+s i n g J . Tighe and . Lazebnik 
+SuperParsing Scalable Nonparametric Image Parsing with Superpixels ECCV 2010codeImage U 
+n d e r s t a n d i 
+n g D i s c r i m i 
+n a t i v e Models for Multi Class 
+Object LayoutC . Desai D . Ramanan C . Fowlkes 
+.   Discriminative Models for Multi Class Object Layout IJCV 
+2011codeImage U n d e r s t a n 
+d i n g N o n p a r 
+a m e t r i c Scene Parsing via 
+Label TransferC . Liu J . Yuen and Antonio Torralba 
+Nonparametric Scene Parsing via Label Transfer PAMI 2011codeImage U n 
+d e r s t a n d i n 
+g B l o c k s World Revisited Image 
+Understanding using Qualitative Geometry and MechanicsA . Gupta AA Efros 
+M . Hebert Blocks World Revisited Image Understanding using Qualitative 
+Geometry and Mechanics ECCV 2010codeImage U n d e r 
+s t a n d i n g T o 
+w a r d s Total Scene UnderstandingL . J 
+.   Li R . Socher and Li F . 
+F . .   Towards Total Scene Understanding Classification Annotation 
+and Segmentation in an Automatic Framework CVPR 2009codeImage U n 
+d e r s t a n d i n 
+g O b j e c t BankLi Jia Li 
+Hao Su Eric P . Xing and Li Fei Fei 
+.   Object Bank A High Level Image Representation for 
+Scene Classification and Semantic Feature Sparsification NIPS 2010codeKernels and DistancesFast 
+Directional Chamfer M a t c h i n g 
+c o d e K e r n e l 
+s and D i s t a n c e 
+s E f f i c i e n t 
+Earth Mover s Distance with L1 Ground Distance EMD _ 
+L1 H . Ling and K . Okada An Efficient 
+Earth Mover s Distance Algorithm for Robust Histogram Comparison PAMI 
+2007codeKernels and D i s t a n c e 
+s D i f f u s i o n 
+based distanceH . Ling and K . Okada Diffusion Distance 
+for Histogram Comparison CVPR 2006codeLow Rank ModelingTILT Transform Invariant Low 
+rank TexturesZ . Zhang A . Ganesh X . Liang 
+and Y . Ma TILT Transform Invariant Low rank Textures 
+IJCV 2011codeLow Rank ModelingLow Rank Matrix Recovery and C o 
+m p l e t i o n c o 
+d e L o w Rank ModelingRASL Robust Batch Alignment 
+of Images by Sparse and Low Rank DecompositionY . Peng 
+A . Ganesh J . Wright W . Xu and 
+Y . Ma RASL Robust Batch Alignment of Images by 
+Sparse and Low Rank Decomposition CVPR 2010codeMRF OptimizationMRF Minimization EvaluationR 
+. Szeliski et al . A Comparative Study of Energy 
+Minimization Methods for Markov Random Fields with Smoothness Based Priors 
+PAMI 2008codeMRF OptimizationMax flow / min cut for shape fittingV 
+. Lempitsky and Y . Boykov Global Optimization for Shape 
+Fitting CVPR 2007codeMRF OptimizationMax flow / min cutY . Boykov 
+and V . Kolmogorov An Experimental Comparison of Min Cut 
+/ Max Flow Algorithms for Energy Minimization in Vision PAMI 
+2004codeMRF O p t i m i z a t 
+i o n P l a n a r Graph 
+CutFR Schmidt E . Toppe and D . Cremers Ef 
+cient Planar Graph Cuts with Applications in Computer Vision   
+CVPR 2009codeMRF OptimizationMax flow / min cut for massive gridsA 
+. Delong and Y . Boykov A Scalable Graph Cut 
+Algorithm for ND Grids CVPR 2008codeMRF O p t i 
+m i z a t i o n M u 
+l t i label optimizationY . Boykov O . Verksler 
+and R . Zabih Fast Approximate Energy Minimization via Graph 
+Cuts PAMI 2001codeMachine L e a r n i n 
+g t a t i s t i c a 
+l Pattern Recognition ToolboxMI Schlesinger V . Hlavac Ten lectures 
+on the statistical and structural pattern recognition Kluwer Academic Publishers 
+2002codeMachine LearningNetlab Neural Network SoftwareCM Bishop Neural Networks for Pattern 
+Recognition ㄝ Oxford University Press 1995codeMachine LearningBoosting Resources by Liangliang 
+Caohttp / / www . ifp . illinois . edu 
+/ ~ cao4 / reading / boostingbib . htmcodeMachine LearningFastICA 
+package for MATLABhttp / / research . ics . tkk 
+. fi / ica / book / codeMulti View StereoPatch 
+based Multi view Stereo SoftwareY . Furukawa and J . 
+Ponce Accurate Dense and Robust Multi View Stereopsis PAMI 2 
+0 0 9 c o d e T o p 
+i c N a m e R e f e 
+r e n c e c o d e M 
+u l t i View StereoClustering Views for Multi view 
+StereoY . Furukawa B . Curless SM Seitz and R 
+. Szeliski Towards Internet scale Multi view Stereo CVPR 2010codeMulti 
+View StereoMulti View Stereo EvaluationS . Seitz et al . 
+  A Comparison and Evaluation of Multi View Stereo Reconstruction 
+Algorithms CVPR 2006codeMultiple Instance LearningDD SVMYixin Chen and James Z 
+. Wang Image Categorization by Learning and Reasoning with Regions 
+JMLR 2004Multiple Instance L e a r n i n 
+g M I F o r e s t s 
+C . Leistner A . Saffari and H . Bischof 
+MIForests Multiple Instance Learning with Randomized Trees ECCV 2010codeMultiple Instance 
+LearningMILISZ . Fu A . Robles Kelly and J . 
+Zhou MILIS Multiple instance learning with instance selection PAMI 2010Multiple 
+Instance LearningMILESY . Chen J . Bi and JZ Wang 
+MILES Multiple Instance Learning via Embedded Instance Selection .   
+PAMI 2006codeMultiple Kernel LearningSHOGUNS . Sonnenburg G . R tsch 
+C . Sch fer B . Sch lkopf .   
+Large scale multiple kernel learning .   JMLR 2006codeMultiple Kernel 
+L e a r n i n g O p 
+e n K e r n e l . orgF 
+. Orabona and L . Jie .   Ultra fast 
+optimization algorithm for sparse multi kernel learning .   ICML 
+2011codeMultiple Kernel L e a r n i n g 
+i m p l e M K L A . 
+Rakotomamonjy F . Bach . Canu and Y . Grandvalet 
+. Simplemkl .   JMRL 2008codeMultiple Kernel LearningDOGMAF . Orabona 
+L . Jie and B . Caputo .   Online 
+batch strongly convex multi kernel learning .   CVPR 2010codeMultiple 
+View GeometryMATLAB and Octave Functions for Computer Vision and Image 
+ProcessingPD Kovesi .   MATLAB and Octave Functions for Computer 
+Vision and Image Processing http / / www . csse 
+. uwa . edu . au / ~ pk / 
+research / m a t l a b f n 
+s c o d e M u l t i 
+p l e View GeometryMatlab Functions for Multiple View G 
+e o m e t r y c o d 
+e N e a r e s t Neighbors MatchingANN 
+Approximate Nearest Neighbor e a r c h i n 
+g c o d e N e a r e 
+s t Neighbors MatchingSpectral HashingY . Weiss A . Torralba 
+R . Fergus Spectral Hashing NIPS 2008codeNearest Neighbors M a 
+t c h i n g C o h e 
+r e n c y Sensitive HashingS . Korman . 
+Avidan Coherency Sensitive Hashing ICCV 2011codeNearest Neighbors MatchingFLANN Fast Library 
+for Approximate Nearest N e i g h b o 
+r s c o d e N e a r 
+e s t Neighbors MatchingLDAHash Binary Descriptors for Matching in 
+Large Image DatabasesC . Strecha AM Bronstein MM Bronstein and 
+P . Fua .   LDAHash Improved matching with smaller 
+descriptors PAMI 2011 . codeObject D e t e c 
+t i o n P o s e l e 
+t L . Bourdev J . Malik Poselets Body Part 
+Detectors Trained Using 3D Human Pose Annotations ICCV 2009codeObject DetectionCascade 
+Object Detection with Deformable Part ModelsP . Felzenszwalb R . 
+Girshick D . McAllester .   Cascade Object Detection with 
+Deformable Part Models .   CVPR 2010codeObject D e t 
+e c t i o n M u l t 
+i p l e KernelsA . Vedaldi V . Gulshan 
+M . Varma and A . Zisserman Multiple Kernels for 
+Object Detection .   ICCV 2009codeObject DetectionHough Forests for Object 
+DetectionJ . Gall and V . Lempitsky Class Speci c 
+Hough Forests for Object Detection CVPR 2009codeObject D e t 
+e c t i o n D i s c 
+r i m i n a t i v e 
+l y Trained Deformable Part ModelsP . Felzenszwalb R . 
+Girshick D . McAllester D . Ramanan .   Object 
+Detection with Discriminatively Trained Part Based Models PAMI 2010codeFeature Extraction 
+andObject D e t e c t i o n 
+H i s t o g r a m of 
+Oriented Graidents OLT for windowsN . Dalal and B . 
+Triggs .   Histograms of Oriented Gradients for Human Detection 
+.   CVPR 2005codeFeature Extraction andObject D e t e 
+c t i o n H i s t o 
+g r a m of Oriented Graidents INRIA Object Localization 
+ToolkitN . Dalal and B . Triggs .   Histograms 
+of Oriented Gradients for Human Detection .   CVPR 2005codeObject 
+D e t e c t i o n R 
+e c o g n i t i o n 
+using regionsC . Gu JJ Lim P . Arbelaez and 
+J . Malik CVPR 2009codeObject DetectionA simple parts and structure 
+object detectorICCV 2005 short courses on Recognizing and Learning Object 
+C a t e g o r i e s 
+c o d e O b j e c t 
+DetectionFeature CombinationP . Gehler and . Nowozin On Feature Combination 
+for Multiclass Object Detection ICCV 2009codeObject D e t e 
+c t i o n E n s e m 
+b l e of Exemplar SVMsT . Malisiewicz A . 
+Gupta A . Efros .   Ensemble of Exemplar SVMs 
+for Object Detection and Beyond .   ICCV 2011codeObject DetectionA 
+simple object detector with boostingICCV 2005 short courses on Recognizing 
+and Learning Object C a t e g o r 
+i e s c o d e O b j 
+e c t DetectionMax Margin Hough TransformS . Maji and 
+J . Malik Object Detection Using a Max Margin Hough 
+Transform .   CVPR 2009codeObject D e t e c 
+t i o n I m p l i c 
+i t Shape ModelB . Leibe A . Leonardis B 
+. Schiele .   Robust Object Detection with Interleaved Categorization 
+and Segmentation IJCV 2008codeObject D e t e c t 
+i o n E n s e m b l 
+e of Exemplar SVMs for Object Detection and BeyondT . 
+Malisiewicz A . Gupta AA Efros Ensemble of Exemplar SVMs 
+for Object Detection and Beyond ICCV 2011codeObject DetectionViola Jones Object 
+DetectionP . Viola and M . Jones Rapid Object Detection 
+Using a Boosted Cascade of Simple Features CVPR 2001codeObject DiscoveryUsing 
+Multiple Segmentations to Discover Objects and their Extent in Image 
+CollectionsB . Russell AA Efros J . Sivic WT Freeman 
+A . Zisserman Using Multiple Segmentations to Discover Objects and 
+their Extent in Image Collections CVPR 2006codeObject P r o 
+p o s a l O b j e c 
+t n e s s measureB . Alexe T . 
+Deselaers V . Ferrari What is an Object CVPR 2010codeObject 
+P r o p o s a l P a 
+r a m e t r i c min cutJ 
+. Carreira and C . Sminchisescu .   Constrained Parametric 
+Min Cuts for Automatic Object Segmentation CVPR 2010codeObject ProposalRegion based 
+Object ProposalI . Endres and D . Hoiem .   
+Category Independent Object Proposals ECCV 2010codeObject R e c o 
+g n i t i o n R e c 
+o g n i t i o n by Association 
+via Learning Per exemplar DistancesT . Malisiewicz AA Efros Recognition 
+by Association via Learning Per exemplar Distances CVPR 2008codeObject R 
+e c o g n i t i o n 
+B i o l o g i c a l 
+l y motivated object recognitionT . Serre L . Wolf 
+and T . Poggio .   Object recognition with features 
+inspired by visual cortex CVPR 2005codeObject e g m e 
+n t a t i o n G e o 
+d e s i c Star Convexity for Interactive Image 
+SegmentationV . Gulshan C . Rother A . Criminisi A 
+. Blake and A . Zisserman . Geodesic star convexity 
+for interactive image s e g m e n t 
+a t i o n c o d e O 
+b j e c t e g m e n 
+t a t i o n C l a s 
+s C u t for Unsupervised Class SegmentationB . Alexe 
+T . Deselaers and V . Ferrari ClassCut for Unsupervised 
+Class Segmentation ECCV 2010codeObject e g m e n t 
+a t i o n p a r s e 
+to Dense LabelingP . Ochs T . Brox Object Segmentation 
+in Video A Hierarchical Variational Approach for Turning Point Trajectories 
+into Dense Regions ICCV 2011codeOptical FlowOptical Flow by Deqing SunD 
+. Sun . Roth MJ Black Secrets of Optical Flow 
+Estimation and Their Principles CVPR 2010codeOptical FlowClassical Variational Optical FlowT 
+. Brox A . Bruhn N . Papenberg J . 
+Weickert High accuracy optical flow estimation based on a theory 
+for warping ECCV 2004codeOptical FlowLarge Displacement Optical FlowT . Brox 
+J . Malik Large displacement optical flow descriptor matching in 
+variational motion estimation PAMI 2011codeOptical FlowDense Point TrackingN . Sundaram 
+T . Brox K . Keutzer Dense point trajectories by 
+GPU accelerated large displacement optical flow ECCV 2010codeOptical FlowOptical Flow 
+EvaluationS . Baker et al .   A Database and 
+Evaluation Methodology for Optical Flow IJCV 2011code 待续 计算机 视觉 
+与 模式识别 代码 合集 第二 版 three T o p i c N a m e R 
+e f e r e n c e c o 
+d e I m a g e e g m 
+e n t a t i o n e g 
+m e n t a t i o n by 
+Minimum Code LengthAY Yang J . Wright . Shankar Sastry 
+Y . Ma Unsupervised Segmentation of Natural Images via Lossy 
+Data Compression CVIU 2007codeImage e g m e n t 
+a t i o n N o r m a 
+l i z e d CutJ . Shi and J 
+Malik Normalized Cuts and Image Segmentation PAMI 2000codeImage e g 
+m e n t a t i o n E 
+n t r o p y Rate Superpixel SegmentationM . 
+Y .   Liu O . Tuzel . Ramalingam and 
+R . Chellappa Entropy Rate Superpixel Segmentation CVPR 2011codeImage SegmentationMean 
+Shift Image Segmentation EDISOND . Comaniciu P Meer .   
+Mean Shift A Robust Approach Toward Feature Space Analysis . 
+  PAMI 2002codeImage e g m e n t a 
+t i o n E f f i c i 
+e n t Graph based Image Segmentation Matlab WrapperP . 
+Felzenszwalb and D . Huttenlocher .   Efficient Graph Based 
+Image Segmentation IJCV 2004codeImage e g m e n t 
+a t i o n B i a s e 
+d Normalized CutS . Maji N . Vishnoi and J 
+. Malik Biased Normalized Cut CVPR 2011codeImage e g m 
+e n t a t i o n M u 
+l t i s c a l e Segmentation TreeE 
+. Akbas and N . Ahuja From ramp discontinuities to 
+segmentation tree ACCV 2009 and N . Ahuja A Transform 
+for Multiscale Image Segmentation by Integrated Edge and Region Detection 
+PAMI 1996codeImage e g m e n t a t 
+i o n E f f i c i e 
+n t Graph based Image Segmentation C + + codeP 
+. Felzenszwalb and D . Huttenlocher .   Efficient Graph 
+Based Image Segmentation IJCV 2004codeImage e g m e n 
+t a t i o n u p e r 
+p i x e l by Gerg MoriX . Ren 
+and J . Malik .   Learning a classification model 
+for segmentation .   ICCV 2003codeImage e g m e 
+n t a t i o n e g m 
+e n t i n g Scenes by Matching Image 
+CompositesB . Russell AA Efros J . Sivic WT Freeman 
+A . Zisserman NIPS 2009codeImage e g m e n 
+t a t i o n R e c o 
+v e r i n g Occlusion Boundaries from a 
+Single ImageD . Hoiem A . Stein AA Efros M 
+. Hebert Recovering Occlusion Boundaries from a Single Image ICCV 
+2007 . codeImage e g m e n t a 
+t i o n Q u i c k ShiftA 
+. Vedaldi and . Soatto Quick Shift and Kernel Methodsfor 
+Mode Seeking ECCV 2008codeImage SegmentationSLIC SuperpixelsR . Achanta A . 
+Shaji K . Smith A . Lucchi P . Fua 
+and . Susstrunk SLIC Superpixels EPFL Technical Report 2010codeImage SegmentationMean 
+Shift Image Segmentation Matlab WrapperD . Comaniciu P Meer . 
+  Mean Shift A Robust Approach Toward Feature Space Analysis 
+.   PAMI 2002codeImage SegmentationOWT UCM Hierarchical SegmentationP . Arbelaez 
+M . Maire C . Fowlkes and J . Malik 
+.   Contour Detection and Hierarchical Image Segmentation .   
+PAMI 2011codeImage e g m e n t a t 
+i o n T u r b e p i 
+x e l s A . Levinshtein A . Stere 
+KN Kutulakos DJ Fleet SJ Dickinson and K . Siddiqi 
+TurboPixels Fast Superpixels Using Geometric Flows PAMI 2009codeImage Super resolutionMRF 
+for image super resolutionW . T Freeman and C . 
+Liu .   Markov Random Fields for Super resolution and 
+Texture Synthesis .   In A . Blake P . 
+Kohli and C . Rother eds . Advances in Markov 
+Random Fields for Vision and Image Processing Chapter 10 . 
+  MIT Press 2011Image Super resolutionSingle Image Super Resolution Matlab 
+PackageR . Zeyde M . Elad and M . Protter 
+On Single Image Scale Up using Sparse Representations LNCS 2010codeImage 
+Super resolutionSelf Similarities for Single Frame Super ResolutionC . Y 
+.   Yang J . B .   Huang and 
+M . H .   Yang Exploiting Self Similarities for 
+Single Frame Super Resolution ACCV 2010codeImage Super resolutionMDSP Resolution Enhancement 
+SoftwareS . Farsiu D . Robinson M . Elad and 
+P . Milanfar Fast and Robust Multi frame Super resolution 
+TIP 2004codeImage Super r e s o l u t 
+i o n p r a r s e coding 
+super resolutionJ . Yang J . Wright TS Huang and 
+Y . Ma .   Image super resolution via sparse 
+representation TIP 2010codeImage Super resolutionMulti frame image super resolutionPickup LC 
+Machine Learning in Multi frame Image Super resolution PhD thesiscodeImage 
+U n d e r s t a n d 
+i n g u p e r P a r 
+s i n g J . Tighe and . Lazebnik 
+SuperParsing Scalable Nonparametric Image Parsing with Superpixels ECCV 2010codeImage U 
+n d e r s t a n d i 
+n g D i s c r i m i 
+n a t i v e Models for Multi Class 
+Object LayoutC . Desai D . Ramanan C . Fowlkes 
+.   Discriminative Models for Multi Class Object Layout IJCV 
+2011codeImage U n d e r s t a n 
+d i n g N o n p a r 
+a m e t r i c Scene Parsing via 
+Label TransferC . Liu J . Yuen and Antonio Torralba 
+Nonparametric Scene Parsing via Label Transfer PAMI 2011codeImage U n 
+d e r s t a n d i n 
+g B l o c k s World Revisited Image 
+Understanding using Qualitative Geometry and MechanicsA . Gupta AA Efros 
+M . Hebert Blocks World Revisited Image Understanding using Qualitative 
+Geometry and Mechanics ECCV 2010codeImage U n d e r 
+s t a n d i n g T o 
+w a r d s Total Scene UnderstandingL . J 
+.   Li R . Socher and Li F . 
+F . .   Towards Total Scene Understanding Classification Annotation 
+and Segmentation in an Automatic Framework CVPR 2009codeImage U n 
+d e r s t a n d i n 
+g O b j e c t BankLi Jia Li 
+Hao Su Eric P . Xing and Li Fei Fei 
+.   Object Bank A High Level Image Representation for 
+Scene Classification and Semantic Feature Sparsification NIPS 2010codeKernels and DistancesFast 
+Directional Chamfer M a t c h i n g 
+c o d e K e r n e l 
+s and D i s t a n c e 
+s E f f i c i e n t 
+Earth Mover s Distance with L1 Ground Distance EMD _ 
+L1 H . Ling and K . Okada An Efficient 
+Earth Mover s Distance Algorithm for Robust Histogram Comparison PAMI 
+2007codeKernels and D i s t a n c e 
+s D i f f u s i o n 
+based distanceH . Ling and K . Okada Diffusion Distance 
+for Histogram Comparison CVPR 2006codeLow Rank ModelingTILT Transform Invariant Low 
+rank TexturesZ . Zhang A . Ganesh X . Liang 
+and Y . Ma TILT Transform Invariant Low rank Textures 
+IJCV 2011codeLow Rank ModelingLow Rank Matrix Recovery and C o 
+m p l e t i o n c o 
+d e L o w Rank ModelingRASL Robust Batch Alignment 
+of Images by Sparse and Low Rank DecompositionY . Peng 
+A . Ganesh J . Wright W . Xu and 
+Y . Ma RASL Robust Batch Alignment of Images by 
+Sparse and Low Rank Decomposition CVPR 2010codeMRF OptimizationMRF Minimization EvaluationR 
+. Szeliski et al . A Comparative Study of Energy 
+Minimization Methods for Markov Random Fields with Smoothness Based Priors 
+PAMI 2008codeMRF OptimizationMax flow / min cut for shape fittingV 
+. Lempitsky and Y . Boykov Global Optimization for Shape 
+Fitting CVPR 2007codeMRF OptimizationMax flow / min cutY . Boykov 
+and V . Kolmogorov An Experimental Comparison of Min Cut 
+/ Max Flow Algorithms for Energy Minimization in Vision PAMI 
+2004codeMRF O p t i m i z a t 
+i o n P l a n a r Graph 
+CutFR Schmidt E . Toppe and D . Cremers Ef 
+cient Planar Graph Cuts with Applications in Computer Vision   
+CVPR 2009codeMRF OptimizationMax flow / min cut for massive gridsA 
+. Delong and Y . Boykov A Scalable Graph Cut 
+Algorithm for ND Grids CVPR 2008codeMRF O p t i 
+m i z a t i o n M u 
+l t i label optimizationY . Boykov O . Verksler 
+and R . Zabih Fast Approximate Energy Minimization via Graph 
+Cuts PAMI 2001codeMachine L e a r n i n 
+g t a t i s t i c a 
+l Pattern Recognition ToolboxMI Schlesinger V . Hlavac Ten lectures 
+on the statistical and structural pattern recognition Kluwer Academic Publishers 
+2002codeMachine LearningNetlab Neural Network SoftwareCM Bishop Neural Networks for Pattern 
+Recognition ㄝ Oxford University Press 1995codeMachine LearningBoosting Resources by Liangliang 
+Caohttp / / www . ifp . illinois . edu 
+/ ~ cao4 / reading / boostingbib . htmcodeMachine LearningFastICA 
+package for MATLABhttp / / research . ics . tkk 
+. fi / ica / book / codeMulti View StereoPatch 
+based Multi view Stereo SoftwareY . Furukawa and J . 
+Ponce Accurate Dense and Robust Multi View Stereopsis PAMI 2 
+0 0 9 c o d e T o p 
+i c N a m e R e f e 
+r e n c e c o d e M 
+u l t i View StereoClustering Views for Multi view 
+StereoY . Furukawa B . Curless SM Seitz and R 
+. Szeliski Towards Internet scale Multi view Stereo CVPR 2010codeMulti 
+View StereoMulti View Stereo EvaluationS . Seitz et al . 
+  A Comparison and Evaluation of Multi View Stereo Reconstruction 
+Algorithms CVPR 2006codeMultiple Instance LearningDD SVMYixin Chen and James Z 
+. Wang Image Categorization by Learning and Reasoning with Regions 
+JMLR 2004Multiple Instance L e a r n i n 
+g M I F o r e s t s 
+C . Leistner A . Saffari and H . Bischof 
+MIForests Multiple Instance Learning with Randomized Trees ECCV 2010codeMultiple Instance 
+LearningMILISZ . Fu A . Robles Kelly and J . 
+Zhou MILIS Multiple instance learning with instance selection PAMI 2010Multiple 
+Instance LearningMILESY . Chen J . Bi and JZ Wang 
+MILES Multiple Instance Learning via Embedded Instance Selection .   
+PAMI 2006codeMultiple Kernel LearningSHOGUNS . Sonnenburg G . R tsch 
+C . Sch fer B . Sch lkopf .   
+Large scale multiple kernel learning .   JMLR 2006codeMultiple Kernel 
+L e a r n i n g O p 
+e n K e r n e l . orgF 
+. Orabona and L . Jie .   Ultra fast 
+optimization algorithm for sparse multi kernel learning .   ICML 
+2011codeMultiple Kernel L e a r n i n g 
+i m p l e M K L A . 
+Rakotomamonjy F . Bach . Canu and Y . Grandvalet 
+. Simplemkl .   JMRL 2008codeMultiple Kernel LearningDOGMAF . Orabona 
+L . Jie and B . Caputo .   Online 
+batch strongly convex multi kernel learning .   CVPR 2010codeMultiple 
+View GeometryMATLAB and Octave Functions for Computer Vision and Image 
+ProcessingPD Kovesi .   MATLAB and Octave Functions for Computer 
+Vision and Image Processing http / / www . csse 
+. uwa . edu . au / ~ pk / 
+research / m a t l a b f n 
+s c o d e M u l t i 
+p l e View GeometryMatlab Functions for Multiple View G 
+e o m e t r y c o d 
+e N e a r e s t Neighbors MatchingANN 
+Approximate Nearest Neighbor e a r c h i n 
+g c o d e N e a r e 
+s t Neighbors MatchingSpectral HashingY . Weiss A . Torralba 
+R . Fergus Spectral Hashing NIPS 2008codeNearest Neighbors M a 
+t c h i n g C o h e 
+r e n c y Sensitive HashingS . Korman . 
+Avidan Coherency Sensitive Hashing ICCV 2011codeNearest Neighbors MatchingFLANN Fast Library 
+for Approximate Nearest N e i g h b o 
+r s c o d e N e a r 
+e s t Neighbors MatchingLDAHash Binary Descriptors for Matching in 
+Large Image DatabasesC . Strecha AM Bronstein MM Bronstein and 
+P . Fua .   LDAHash Improved matching with smaller 
+descriptors PAMI 2011 . codeObject D e t e c 
+t i o n P o s e l e 
+t L . Bourdev J . Malik Poselets Body Part 
+Detectors Trained Using 3D Human Pose Annotations ICCV 2009codeObject DetectionCascade 
+Object Detection with Deformable Part ModelsP . Felzenszwalb R . 
+Girshick D . McAllester .   Cascade Object Detection with 
+Deformable Part Models .   CVPR 2010codeObject D e t 
+e c t i o n M u l t 
+i p l e KernelsA . Vedaldi V . Gulshan 
+M . Varma and A . Zisserman Multiple Kernels for 
+Object Detection .   ICCV 2009codeObject DetectionHough Forests for Object 
+DetectionJ . Gall and V . Lempitsky Class Speci c 
+Hough Forests for Object Detection CVPR 2009codeObject D e t 
+e c t i o n D i s c 
+r i m i n a t i v e 
+l y Trained Deformable Part ModelsP . Felzenszwalb R . 
+Girshick D . McAllester D . Ramanan .   Object 
+Detection with Discriminatively Trained Part Based Models PAMI 2010codeFeature Extraction 
+andObject D e t e c t i o n 
+H i s t o g r a m of 
+Oriented Graidents OLT for windowsN . Dalal and B . 
+Triggs .   Histograms of Oriented Gradients for Human Detection 
+.   CVPR 2005codeFeature Extraction andObject D e t e 
+c t i o n H i s t o 
+g r a m of Oriented Graidents INRIA Object Localization 
+ToolkitN . Dalal and B . Triggs .   Histograms 
+of Oriented Gradients for Human Detection .   CVPR 2005codeObject 
+D e t e c t i o n R 
+e c o g n i t i o n 
+using regionsC . Gu JJ Lim P . Arbelaez and 
+J . Malik CVPR 2009codeObject DetectionA simple parts and structure 
+object detectorICCV 2005 short courses on Recognizing and Learning Object 
+C a t e g o r i e s 
+c o d e O b j e c t 
+DetectionFeature CombinationP . Gehler and . Nowozin On Feature Combination 
+for Multiclass Object Detection ICCV 2009codeObject D e t e 
+c t i o n E n s e m 
+b l e of Exemplar SVMsT . Malisiewicz A . 
+Gupta A . Efros .   Ensemble of Exemplar SVMs 
+for Object Detection and Beyond .   ICCV 2011codeObject DetectionA 
+simple object detector with boostingICCV 2005 short courses on Recognizing 
+and Learning Object C a t e g o r 
+i e s c o d e O b j 
+e c t DetectionMax Margin Hough TransformS . Maji and 
+J . Malik Object Detection Using a Max Margin Hough 
+Transform .   CVPR 2009codeObject D e t e c 
+t i o n I m p l i c 
+i t Shape ModelB . Leibe A . Leonardis B 
+. Schiele .   Robust Object Detection with Interleaved Categorization 
+and Segmentation IJCV 2008codeObject D e t e c t 
+i o n E n s e m b l 
+e of Exemplar SVMs for Object Detection and BeyondT . 
+Malisiewicz A . Gupta AA Efros Ensemble of Exemplar SVMs 
+for Object Detection and Beyond ICCV 2011codeObject DetectionViola Jones Object 
+DetectionP . Viola and M . Jones Rapid Object Detection 
+Using a Boosted Cascade of Simple Features CVPR 2001codeObject DiscoveryUsing 
+Multiple Segmentations to Discover Objects and their Extent in Image 
+CollectionsB . Russell AA Efros J . Sivic WT Freeman 
+A . Zisserman Using Multiple Segmentations to Discover Objects and 
+their Extent in Image Collections CVPR 2006codeObject P r o 
+p o s a l O b j e c 
+t n e s s measureB . Alexe T . 
+Deselaers V . Ferrari What is an Object CVPR 2010codeObject 
+P r o p o s a l P a 
+r a m e t r i c min cutJ 
+. Carreira and C . Sminchisescu .   Constrained Parametric 
+Min Cuts for Automatic Object Segmentation CVPR 2010codeObject ProposalRegion based 
+Object ProposalI . Endres and D . Hoiem .   
+Category Independent Object Proposals ECCV 2010codeObject R e c o 
+g n i t i o n R e c 
+o g n i t i o n by Association 
+via Learning Per exemplar DistancesT . Malisiewicz AA Efros Recognition 
+by Association via Learning Per exemplar Distances CVPR 2008codeObject R 
+e c o g n i t i o n 
+B i o l o g i c a l 
+l y motivated object recognitionT . Serre L . Wolf 
+and T . Poggio .   Object recognition with features 
+inspired by visual cortex CVPR 2005codeObject e g m e 
+n t a t i o n G e o 
+d e s i c Star Convexity for Interactive Image 
+SegmentationV . Gulshan C . Rother A . Criminisi A 
+. Blake and A . Zisserman . Geodesic star convexity 
+for interactive image s e g m e n t 
+a t i o n c o d e O 
+b j e c t e g m e n 
+t a t i o n C l a s 
+s C u t for Unsupervised Class SegmentationB . Alexe 
+T . Deselaers and V . Ferrari ClassCut for Unsupervised 
+Class Segmentation ECCV 2010codeObject e g m e n t 
+a t i o n p a r s e 
+to Dense LabelingP . Ochs T . Brox Object Segmentation 
+in Video A Hierarchical Variational Approach for Turning Point Trajectories 
+into Dense Regions ICCV 2011codeOptical FlowOptical Flow by Deqing SunD 
+. Sun . Roth MJ Black Secrets of Optical Flow 
+Estimation and Their Principles CVPR 2010codeOptical FlowClassical Variational Optical FlowT 
+. Brox A . Bruhn N . Papenberg J . 
+Weickert High accuracy optical flow estimation based on a theory 
+for warping ECCV 2004codeOptical FlowLarge Displacement Optical FlowT . Brox 
+J . Malik Large displacement optical flow descriptor matching in 
+variational motion estimation PAMI 2011codeOptical FlowDense Point TrackingN . Sundaram 
+T . Brox K . Keutzer Dense point trajectories by 
+GPU accelerated large displacement optical flow ECCV 2010codeOptical FlowOptical Flow 
+EvaluationS . Baker et al .   A Database and 
+Evaluation Methodology for Optical Flow IJCV 2011code 待续 计算机 视觉 
+与 模式识别 代码 合集 第二 版 three 

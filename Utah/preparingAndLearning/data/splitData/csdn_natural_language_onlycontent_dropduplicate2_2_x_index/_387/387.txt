@@ -1,0 +1,14 @@
+自然语言处理简介
+自然语言处理（Natural Language Processing，简称NLP）就是用计算机来处理、理解以及运用人类语言(如中文、英文等)，它属于人工智能的一个分支，是计算机科学与语言学的交叉学科，又常被称为计算语言学。
+自然语言处理任务
+在得到字、句子表示之后，自然语言处理任务类型划分为：
+类别（对象）到序列：例如文本生成、图像描述生成
+序列到类别：文本分类、情感分析
+同步的序列到序列：中文分词、词性标注、语义角色标注
+异步的序列到序列：机器翻译、自动摘要
+参考资料
+Awesome-Chinese-NLP
+兜哥出品 <一本开源的NLP入门书籍>
+NLP研究入门之道
+YSDA course in Natural Language Processing
+nlp-tutorial：Natural Language Processing Tutorial for Deep Learning Researchers

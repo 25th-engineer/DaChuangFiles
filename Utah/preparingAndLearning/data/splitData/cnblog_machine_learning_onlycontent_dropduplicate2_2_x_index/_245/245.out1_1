@@ -1,0 +1,56 @@
+不多 说 直接 上 干货 简单 说 下 jdk1 . 
+8 * 的 下载 见 http / / www . 
+cnblogs . com / zlslch / p / 5658383 . 
+html 双击 jdk 8u60 windows x64 . exe 运行 程序 
+欢迎 使用 Java SE 开发 工具包 8 Update 60 的 
+安装 向导 界面 点击 下 一步 选择 安装 可选 功能 
+界面 默认 安装 安装 到           
+C \ Program Files \ Java \ jdk1 . 8.0 
+_ 60 点击 下 一步 进度 情况 显示 界面 点击 
+下 一步 进行 安装 耐心 等待 需要 几 分钟 目标 
+文件夹 安装 选择 界面 更 改到 C \ Program Files 
+\ Java \ jre1 . 8.0 _ 60 点击 下 
+一步 安装 状态 显示 界面 大概 等 半分钟 已 成功 
+安装 界面 点击 关闭 在 这里 想 说 的 是 
+一般 java 开发人员 都 需要 配套 的 API 文档 第二 
+jdk 的 配置 环境变量 系统 属性 界面 在 这台 电脑 
+右键 属性 高级 环境变量 默认 的 环境 变量 在 系统变量 
+中 设置 3 属性 JAVA _ HOME CLASSPATH Path 不 
+区分 大小写 若 已 存在 则 点击 编辑 不 存在 
+则 点击 新建 新建 JAVA _ HOME 指明 JDK 安装 
+路径 就是 刚才 安装 时所/nr 选择 的 路径 C \ 
+Program Files \ Java \ Jdk1 . 8.0 _ 60 
+此 路径 下 包括 lib bin jre 等 文件夹 此 
+变量 最好 设置 因为 以后 运行 tomcat eclipse 等 都 
+需要 依 * 此 变量 寻找 Path 变量 在 变量值 
+最后 输入 % JAVA _ HOME % \ bin % 
+JAVA _ HOME % \ jre \ bin 注意 原来 
+Path 的 变量值 末尾 有 没有 号 如果 没有 先 
+输入 号 再输入 上面 的 代码 新建 CLASSPATH 变量 . 
+% JAVA _ HOME % \ lib % JAVA _ 
+HOME % \ lib \ tools . jar7 检验 是否 
+配置 成功 运行 cmd 输入 java version java 和 version 
+之间 有 空格 若 如图所示 显示 版本信息 则 说明 安装 
+和 配置 成功 结束 只要 是 jdk1 . 8 * 
+里 的 版本 都 认为 是 jdk1 . 8 不需 
+具体 Jdk 1.7 * 安装 并 配置 欢迎 大家 加入 
+我 的 微信 公众 号 大 数据 躺过 的 坑 
+        人工智能 躺过 的 坑 同时 大家 
+可以 关注 我 的 个人 博客 http / / www 
+. cnblogs . com / zlslch /       
+和 /nr       http / / www . cnblogs 
+. com / lchzls /           
+http / / www . cnblogs . com / sunnyDream 
+/ 详情 请见 http / / www . cnblogs . 
+com / zlslch / p / 7473861 . html 人生 
+苦短 我 愿 分享 本 公众 号 将 秉持 活到老 
+学到老 学习 无休止 的 交流 分享 开源 精神 汇聚/v 于/p 
+互联网/n 和/c 个人/n 学习/v 工作/vn 的/uj 精华/nz 干货/n 知识/v 一切 
+来 于 互联网 反馈 回 互联网 目前 研究 领域 大 
+数据 机器学习 深度 学习 人工智能 数据挖掘 数据分析 语言 涉及 Java 
+Scala Python Shell Linux 等 同时 还 涉及 平常 所 
+使用 的 手机 电脑 和 互联 网上 的 使用 技巧 
+问题 和 实用软件 只要 你 一直 关注 和 呆在 群 
+里 每天/r 必须/d 有/v 收获/v 对应/vn 本/r 平台/n 的/uj 讨论/v 
+和/c 答疑/v QQ/w 群/n 大 数据 和 人工智能 躺过 的 
+坑 总 群 161156071 

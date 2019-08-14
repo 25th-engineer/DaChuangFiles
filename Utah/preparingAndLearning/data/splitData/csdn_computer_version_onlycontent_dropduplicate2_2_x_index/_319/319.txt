@@ -1,0 +1,39 @@
+第一讲 工欲善其事必先利其器——图像处理基础
+1, Opencv入门；
+2, 图像的基本操作（遍历图像，ROI选取等）
+（Python基础）
+应用：手写字符识别（KNN）
+第二讲 空域图像处理的洪荒之力
+1，线性非线性滤波器
+边缘检测方法：sobel，canny以及图像拉普拉斯
+应用：车牌识别（SVM+NN）
+第三讲：机器视觉中的特征提取与描述
+1，霍夫变换（普通，和概率）
+2，局部特征大汇总（GFTT，SIFT，SURF，FAST，ORB等等）
+第四讲：坐标变换与视觉测量 ###
+1，相机模型
+2，2D，3D，坐标变换
+3，相机标定
+应用：增强现实技术simple VR不神秘（第三讲第四讲综合演练）
+第五讲：数据处理并不难
+（ML&CV中的数据处理方法：PCA， SVD分解，聚类）
+应用：人脸识别之Eigenfaces
+第六讲：深度学习在图像识别中的应用
+分类：linear regression, neural networks
+检测：bounding box regression
+定位：localization
+应用：使用CNN进行图像识别
+第七讲：图像搜索
+图像搜索常用方法（聚类、降维等）
+大规模数据搜索（spark, data paralleling, etc）
+动作识别流程、方法
+第八讲：图像标注与问答
+语言模型介绍
+LSTM模型与标注问题
+应用：DenseCaption in Generating Captions in Images.
+第九讲：3D计算机视觉
+表面和外形重构
+基于模型的重构
+应用：人脸动画
+第十讲：机器视觉项目实战
+CV 实战：以鲸鱼识别为例，利用深度学习解决Kaggle竞赛中的图像分类问题

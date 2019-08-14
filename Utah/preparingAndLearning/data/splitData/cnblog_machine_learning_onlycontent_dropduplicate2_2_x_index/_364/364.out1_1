@@ -1,0 +1,92 @@
+判别式 模型 discriminative model 产生 式 模型 generative model 特点 
+寻找 不同 类别 之间 的 最优 分类 面 反映 的 
+是 异类 数据 之间 的 差异 对 后验/nr 概率 建模 
+从 统计 的 角度 表示 数据 的 分布 情况 能够 
+反映 同类 数据 本身 的 相似 度 区别 假定 输入 
+x   类别 标签 y 估计 的 是 条件 概率分布 
+conditional distribution   P y | x 估计 的 是 
+联合 概率分布 joint probability distribution P x y 联系 由 
+产生 式 模型 可以 得到 判别式 模型 但 由 判别式 
+模型 得不到 产生 式 模型 常见 模型 – logistic regression 
+– SVMs – traditional neural networks – Nearest neighbor – 
+Gaussians Naive Bayes – Mixtures of Gaussians Mixtures of experts 
+HMMs – Sigmoidal belief networks Bayesian networks – Markov random 
+fields 摘要 生成 模型 无穷 样本 = = 概率密度 模型 
+= 产生 模型 = = 预测 判别 模型 有限 样本 
+= = 判别函数 = 预测模型 = = 预测 简介 简单 
+的 说 假设 o 是 观察 值 q 是 模型 
+如果 对 P o | q 建模 就是 生成 模型 
+其 基本 思想 是 首先 建立 样本 的 概率密度 模型 
+再利用 模型 进行 推理 预测 要求 已知 样本 无穷 或 
+尽可能 的 大 限制 这种 方法 一般 建立 在 统计力学 
+和 bayes 理论 的 基础 之上 如果 对 条件概率 后验/nr 
+概率 P q | o 建模 就是 判别 模型 基本 
+思想 是 有限 样本 条件 下 建立 判别函数 不考虑 样本 
+的 产生 模型 直接 研究 预测模型 代表性 理论 为 统计 
+学习理论 这 两种 方法 目前 交叉 较多 判别 模型 Discriminative 
+Model inter class probabilistic description 又 可以 称为 条件 模型 
+或 条件 概率模型 估计 的 是 条件 概率分布 conditional distribution 
+p class | context 利用 正负 例和 分类 标签 focus 
+在 判别 模型 的 边缘 分布 目标函数 直接 对 应于 
+分类 准确率 主要 特点 寻找 不同 类别 之间 的 最优 
+分类 面 反映 的 是 异类 数据 之间 的 差异 
+优点 分类 边界 更 灵活 比 使用 纯 概率 方法 
+或 生产 模型 得到 的 更 高级 能 清晰 的 
+分辨 出 多类 或 某一 类 与 其他 类 之间 
+的 差异 特征 在 聚 类 viewpoint changes partial occlusion 
+and scale variations 中 的 效果 较好 适用于 较多 类别 
+的 识别 判别 模型 的 性能 比 生成 模型 要 
+简单 比较 容易 学习 缺点 不能 反映 训练 数据 本身 
+的 特性 能力 有限 可以 告诉 你 的 是 1 
+还是 2 但 没有 办法 把 整个 场景 描述 出来 
+Lack elegance of generative Priors 结构 不确定性 Alternative notions of 
+penalty functions regularization 核 函数 黑盒 操作 变量 间 的 
+关系 不 清楚 不 可视 常见 的 主要 有 logistic 
+regression     SVMs     traditional neural networks   
+  Nearest neighbor     Conditional random fields CRF 目前 
+最新 提出 的 热门 模型 从 NLP 领域 产生 的 
+正在/t 向/p ASR/w 和/c CV/w 上/f 发展/vn 生成 模型 Generative 
+Model intra class probabilistic description 又叫 产生 式 模型 估计 
+的 是 联合 概率分布 joint probability distribution p class context 
+= p class | context * p context 用于 随机 
+生成 的 观察 值 建模 特别是在 给定 某些 隐藏 参数 
+情况 下 在 机器 学习 中 或 用于 直接 对 
+数据 建模 用 概率密度函数 对 观察到 的 draw 建模 或 
+作为 生成 条件 概率密度函数 的 中间 步骤 通过 使用 贝叶斯 
+rule 可以 从 生成 模型 中 得到 条件分布 如果 观察到 
+的 数据 是 完全 由 生成 模型 所 生成 的 
+那么 就 可以 fitting 生成 模型 的 参数 从而 仅 
+可能 的 增加 数据 相似 度 但 数据 很少 能由/nr 
+生成 模型 完全 得到 所以 比较 准确 的 方式 是 
+直接 对 条件 密度 函数 建模 即使 用 分类 或 
+回归分析 与 描述 模型 的 不同 是 描述 模型 中 
+所有 变量 都是 直接 测量 得到 主要 特点 一般 主要 
+是 对 后验/nr 概率 建模 从 统计 的 角度 表示 
+数据 的 分布 情况 能够 反映 同类 数据 本身 的 
+相似 度 只 关注 自己 的 inclass 本身 即 点 
+左下角 区域内 的 概率 不 关心 到底 decision boundary 在哪 
+优点 实际上 带 的 信息 要比 判别 模型 丰富 研究/vn 
+单类/nr 问题/n 比/p 判别/v 模型/n 灵活性/n 强/a 模型/n 可以/c 通过/p 
+增量/n 学习/v 得到/v 能/v 用于/v 数据/n 不/d 完整/a missing data 
+情况 modular construction of composed solutions to complex problemsprior knowledge 
+can be easily taken into accountrobust to partial occlusion and 
+viewpoint changescan tolerate significant intra class variation of object appearance 
+缺点 tend to produce a significant number of false positives 
+. This is particularly true for object classes which share 
+a high visual similarity such as horses and cows 学习 
+和 计算 过程 比较 复杂 常见 的 主要 有 Gaussians 
+Naive Bayes Mixtures of multinomials     Mixtures of Gaussians 
+Mixtures of experts HMMs     Sigmoidal belief networks Bayesian 
+networks     Markov random fields 所 列举 的 Generative 
+model 也 可以 用 disriminative 方法 来 训练 比如 GMM 
+或 HMM 训练 的 方法 有 EBW Extended Baum Welch 
+或 最近 Fei Sha 提出 的 Large   Margin 方法 
+两者 之间 的 关系 由 生成 模型 可以 得到 判别 
+模型 但 由 判别 模型 得不到 生成 模型 总结 有 
+时称 判别 模型 求 的 是 条件概率 生成 模型 求 
+的 是 联合 概率 常见 的 判别 模型 有 线性 
+回归 对数 回归 线性 判别分析 支持 向量 机 boosting 条件 
+随 机场 神经 网络 等 常见 的 生产 模型 有隐/nr 
+马尔科夫 模型 朴素 贝叶斯 模型 高斯 混合模型 LDA R e 
+s t r i c t e d B o 
+l t z m a n n Machine 等 

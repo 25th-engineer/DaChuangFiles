@@ -1,0 +1,20 @@
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. 13 按 格式 输出 for i in range 0 
+len List _ row if i % 2 = = 
+0 st = List _ row i . strip . 
+split print int len st / 2 file = dt 
+for j in range 0 len st print st j 
+file = dt end = if j % 2 = 
+= 1 print file = dt print file = dt 
+dt . close . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . 到此 就把 所有 数据 
+按 特定 的 格式 处理 完了 

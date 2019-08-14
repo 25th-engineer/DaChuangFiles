@@ -1,0 +1,185 @@
+转自：https://blog.csdn.net/diye2008/article/details/53105652
+所周知，卷积神经网络（CNN）在计算机视觉领域取得了极大的进展，但是除此之外CNN也逐渐在自然语言处理（NLP）领域攻城略地。本文主要以文本分类为例，介绍卷积神经网络在NLP领域的一个基本使用方法，由于本人是初学者，而且为了避免东施效颦，所以下面的理论介绍更多采用非数学化且较为通俗的方式解释。
+0.文本分类
+所谓文本分类，就是使用计算机将一篇文本分为a类或者b类，属于分类问题的一种，同时也是NLP中较为常见的任务。
+一.词向量
+提到深度学习在NLP中的应用就不得不提到词向量，词向量（Distributed Representation）在国内也经常被翻译为词嵌入等等，关于词向量的介绍的文章已经有很多，比如这位大神的博客：http://blog.csdn.net/zhoubl668/article/details/23271225 本文则用较为通俗的语言帮助大家了解词向量。
+所谓词向量就是通过神经网络来训练语言模型，并在训练过程钟生成一组向量，这组向量将每个词表示为一个n维向量。举个例子，假如我们要将"北京"表示为一个2维向量，可能的一种结果如 北京=（1.1,2.2）,在这里北京这个词就被表示为一个2维的向量。但是除了将词表示为向量以外，词向量还要保证语义相近的词在词向量表示方法中的空间距离应当是相近的。比如 '中国' -  '北京'  ≈ '英国' - '伦敦' 。上述条件可在下列词向量分布时满足，'北京'=（1.1,2.2），'中国'=（1.2,2.3） ，'伦敦'=（1.5,2.4），'英国'=(1.6,2.5)。 一般训练词向量可以使用google开源word2vec程序。
+二.卷积神经网络与词向量的结合
+有关CNN的博客非常之多，如果不了解CNN的基本概念可以参见这位大神的博客如下：http://blog.csdn.net/zhoubl668/article/details/23271225 这里就不在赘述。
+通常卷积神经网络都是用来处理类似于图像这样的二维（不考虑rgb）矩阵，比如一张图片通常都可以表示为一个2维数组比如255*255，这就表示该图片是一张255像素宽，255像素高的图片。那么如何将CNN应用到文本中呢，答案就是词向量。
+我们刚刚介绍了词向量的概念，下面介绍下如何将文本通过词向量的方式转换成一个类图像类型的格式。一般来说一篇文本可以被视为一个词汇序列的组合，比如有篇文本内容是 '书写代码，改变世界'。可以将其转换为（'书写'，'代码'，'改变'，'世界'）这样一个文本序列，显然这个序列是一个一维的向量，不能直接使用cnn进行处理。
+但是如果使用词向量的方式将其展开，假设在某词向量钟 '书写' =（1.1,2.1），'代码' = （1.5,2.9），'改变' = （2.7,3.1） ，'世界' = （2.9,3.5）,那么（'书写'，'代码'，'改变'，'世界'）这个序列就可以改写成（（1.1,2.1），（1.5,2.9），（2.7,3.1），（2.9,3.5）），显然原先的文本序列是4*1的向量，改写之后的文本可以表示为一个4*2的矩阵。 推而广之任何以文本序列都可以表示为m*d的数组，m维文本序列的词数，d维词向量的维数。
+三.用于文本分类的神经网络结构设计
+本文前面介绍了词向量、卷积神经网络等概念，并提出可以将文本转换成一个由词序列和词向量嵌套而成的二维矩阵，并通过CNN对其进行处理，下面以文本分类任务为例，举例说明如何设计该神经网络的样式。
+3.1 文本预处理部分的流程
+这部分主要是分3步，共4种状态。1.将原始文本分词并转换成以词的序列 2.将词序列转换成以词编号（每个词表中的词都有唯一编号）为元素的序列 3.将词的编号序列中的每个元素（某个词）展开为词向量的形式。下面通过一张图（本人手画简图。。。。囧）来表示这个过程，如下图所示：
+上述图片，以'书写代码，改变世界' 这一文本为例，介绍了将其转换成词向量为元素的序列表示，最后得到了一个2维矩阵，该矩阵可用于后续神经网络的训练等操作。
+3.2 神经网络模块的设计
+本文关于神经网络设计的思想来自于以下博文：
+http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/  由于该文章是纯英文的，某些读者可能还不习惯阅读这类文献，我下面结合一张神经网络设计图，来说明本文中所使用的神经网络，具体设计图（又是手画图，囧）如下：
+简要介绍下上面的图，第一层数据输入层，将文本序列展开成词向量的序列，之后连接 卷积层、激活层、池化层 ，这里的卷积层因为卷积窗口大小不同，平行放置了三个卷积层，垂直方向则放置了三重（卷积层、激活层、池化层的组合）。之后连接全脸阶层和激活层，激活层采用softmax并输出 该文本属于某类的概率。
+3.3 编程实现所需要的框架和数据集等
+3.3.1 框架：本文采用keras框架来编写神经网络，关于keras的介绍请参见莫言大神翻译的keras中文文档：http://keras-cn.readthedocs.io/en/latest/ 。
+3.3.2 数据集：文本训练集来自20_newsgroup,该数据集包括20种新闻文本，下载地址如下：http://www.qwone.com/~jason/20Newsgroups/
+3.3.3 词向量：虽然keras框架已经有embedding层，但是本文采用glove词向量作为预训练的词向量，glove的介绍和下载地址如下（打开会比较慢）：
+http://nlp.stanford.edu/projects/glove/
+3.4 代码和相应的注释
+在3.2部分已经通过一张图介绍了神经网络的设计部分，但是考虑到不够直观，这里还是把所使用的代码，罗列如下，采用keras编程，关键部分都已经罗列注释，代码有部分是来源自keras文档 中的example目录下的：pretrained_word_embeddings.py,但是该程序我实际运行时出现了无法训练的bug，所以做了诸多改变，最主要的是我把原文中的激活层从relu改成了tanh，整体的设计结构也有了根本性的改变。对keras原始demo有兴趣的可以参见：
+http://keras-cn.readthedocs.io/en/latest/blog/word_embedding/
+下面就是本文中所使用的文本分类代码：
+'''本程序将训练得到一个20类的文本分类器，数据来源是 20 Newsgroup dataset
+GloVe词向量的下载地址如下:
+http://nlp.stanford.edu/data/glove.6B.zip
+20 Newsgroup数据集来自于:
+http://www.cs.cmu.edu/afs/cs.cmu.edu/project/theo-20/www/data/news20.html
+'''
+from __future__ import print_function
+import os
+import numpy as np
+np.random.seed(1337)
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
+from keras.utils.np_utils import to_categorical
+from keras.layers import Dense, Input, Flatten
+from keras.layers import Conv1D, MaxPooling1D, Embedding
+from keras.models import Model
+from keras.optimizers import *
+from keras.models import Sequential
+from keras.layers import Merge
+import sys
+BASE_DIR = '.' # 这里是指当前目录
+GLOVE_DIR = BASE_DIR + '/glove.6B/' # 根据实际目录名更改
+TEXT_DATA_DIR = BASE_DIR + '/20_newsgroup/' # 根据实际目录名更改
+MAX_SEQUENCE_LENGTH = 1000 # 每个文本的最长选取长度，较短的文本可以设短些
+MAX_NB_WORDS = 20000 # 整体词库字典中，词的多少，可以略微调大或调小
+EMBEDDING_DIM = 50 # 词向量的维度，可以根据实际情况使用，如果不了解暂时不要改
+VALIDATION_SPLIT = 0.4 # 这里用作是测试集的比例，单词本身的意思是验证集
+# first, build index mapping words in the embeddings set
+# to their embedding vector 这段话是指建立一个词到词向量之间的索引，比如 peking 对应的词向量可能是（0.1,0,32,...0.35,0.5)等等。
+print('Indexing word vectors.')
+embeddings_index = {}
+f = open(os.path.join(GLOVE_DIR, 'glove.6B.50d.txt')) # 读入50维的词向量文件，可以改成100维或者其他
+for line in f:
+values = line.split()
+word = values[0]
+coefs = np.asarray(values[1:], dtype='float32')
+embeddings_index[word] = coefs
+f.close()
+print('Found %s word vectors.' % len(embeddings_index))
+# second, prepare text samples and their labels
+print('Processing text dataset') # 下面这段代码，主要作用是读入训练样本，并读入相应的标签，并给每个出现过的单词赋一个编号，比如单词peking对应编号100
+texts = [] # 存储训练样本的list
+labels_index = {} # 词到词编号的字典，比如peking对应100
+labels = [] # 存储训练样本，类别编号的文本，比如文章a属于第1类文本
+for name in sorted(os.listdir(TEXT_DATA_DIR)):
+path = os.path.join(TEXT_DATA_DIR, name)
+if os.path.isdir(path):
+label_id = len(labels_index)
+labels_index[name] = label_id
+for fname in sorted(os.listdir(path)):
+if fname.isdigit():
+fpath = os.path.join(path, fname)
+if sys.version_info < (3,):
+f = open(fpath)
+else:
+f = open(fpath, encoding='latin-1')
+texts.append(f.read())
+f.close()
+labels.append(label_id)
+print('Found %s texts.' % len(texts)) # 输出训练样本的数量
+# finally, vectorize the text samples into a 2D integer tensor,下面这段代码主要是将文本转换成文本序列，比如 文本'我爱中华' 转化为[‘我爱’，'中华']，然后再将其转化为[101,231],最后将这些编号展开成词向量，这样每个文本就是一个2维矩阵，这块可以参加本文‘二.卷积神经网络与词向量的结合’这一章节的讲述
+tokenizer.fit_on_texts(texts)
+sequences = tokenizer.texts_to_sequences(texts)
+word_index = tokenizer.word_index
+print('Found %s unique tokens.' % len(word_index))
+data = pad_sequences(sequences, maxlen=MAX_SEQUENCE_LENGTH)
+labels = to_categorical(np.asarray(labels))
+print('Shape of data tensor:', data.shape)
+print('Shape of label tensor:', labels.shape)
+# split the data into a training set and a validation set,下面这段代码，主要是将数据集分为，训练集和测试集（英文原意是验证集，但是我略有改动代码）
+indices = np.arange(data.shape[0])
+np.random.shuffle(indices)
+data = data[indices]
+labels = labels[indices]
+nb_validation_samples = int(VALIDATION_SPLIT * data.shape[0])
+x_train = data[:-nb_validation_samples] # 训练集
+y_train = labels[:-nb_validation_samples]# 训练集的标签
+x_val = data[-nb_validation_samples:] # 测试集，英文原意是验证集
+y_val = labels[-nb_validation_samples:] # 测试集的标签
+print('Preparing embedding matrix.')
+# prepare embedding matrix 这部分主要是创建一个词向量矩阵，使每个词都有其对应的词向量相对应
+nb_words = min(MAX_NB_WORDS, len(word_index))
+embedding_matrix = np.zeros((nb_words + 1, EMBEDDING_DIM))
+for word, i in word_index.items():
+if i > MAX_NB_WORDS:
+continue
+embedding_vector = embeddings_index.get(word)
+if embedding_vector is not None:
+# words not found in embedding index will be all-zeros.
+embedding_matrix[i] = embedding_vector # word_index to word_embedding_vector ,<20000(nb_words)
+# load pre-trained word embeddings into an Embedding layer
+# 神经网路的第一层，词向量层，本文使用了预训练glove词向量，可以把trainable那里设为False
+embedding_layer = Embedding(nb_words + 1,
+EMBEDDING_DIM,
+input_length=MAX_SEQUENCE_LENGTH,
+weights=[embedding_matrix],
+trainable=True)
+print('Training model.')
+# train a 1D convnet with global maxpoolinnb_wordsg
+#left model 第一块神经网络，卷积窗口是5*50（50是词向量维度）
+model_left = Sequential()
+#model.add(Input(shape=(MAX_SEQUENCE_LENGTH,), dtype='int32'))
+model_left.add(embedding_layer)
+model_left.add(Conv1D(128, 5, activation='tanh'))
+model_left.add(MaxPooling1D(5))
+model_left.add(Conv1D(128, 5, activation='tanh'))
+model_left.add(MaxPooling1D(5))
+model_left.add(Conv1D(128, 5, activation='tanh'))
+model_left.add(MaxPooling1D(35))
+model_left.add(Flatten())
+#right model 第二块神经网络，卷积窗口是4*50
+model_right = Sequential()
+model_right.add(embedding_layer)
+model_right.add(Conv1D(128, 4, activation='tanh'))
+model_right.add(MaxPooling1D(4))
+model_right.add(Conv1D(128, 4, activation='tanh'))
+model_right.add(MaxPooling1D(4))
+model_right.add(Conv1D(128, 4, activation='tanh'))
+model_right.add(MaxPooling1D(28))
+model_right.add(Flatten())
+#third model 第三块神经网络，卷积窗口是6*50
+model_3 = Sequential()
+model_3.add(embedding_layer)
+model_3.add(Conv1D(128, 6, activation='tanh'))
+model_3.add(MaxPooling1D(3))
+model_3.add(Conv1D(128, 6, activation='tanh'))
+model_3.add(MaxPooling1D(3))
+model_3.add(Conv1D(128, 6, activation='tanh'))
+model_3.add(MaxPooling1D(30))
+model_3.add(Flatten())
+merged = Merge([model_left, model_right,model_3], mode='concat') # 将三种不同卷积窗口的卷积层组合 连接在一起，当然也可以只是用三个model中的一个，一样可以得到不错的效果，只是本文采用论文中的结构设计
+model = Sequential()
+model.add(merged) # add merge
+model.add(Dense(128, activation='tanh')) # 全连接层
+model.add(Dense(len(labels_index), activation='softmax')) # softmax，输出文本属于20种类别中每个类别的概率
+# 优化器我这里用了adadelta，也可以使用其他方法
+model.compile(loss='categorical_crossentropy',
+optimizer='Adadelta',
+metrics=['accuracy'])
+# =下面开始训练，nb_epoch是迭代次数，可以高一些，训练效果会更好，但是训练会变慢
+model.fit(x_train, y_train,nb_epoch=3)
+score = model.evaluate(x_train, y_train, verbose=0) # 评估模型在训练集中的效果，准确率约99%
+print('train score:', score[0])
+print('train accuracy:', score[1])
+score = model.evaluate(x_val, y_val, verbose=0) # 评估模型在测试集中的效果，准确率约为97%，迭代次数多了，会进一步提升
+print('Test score:', score[0])
+print('Test accuracy:', score[1])
+上述代码和注释较为详细的描述了该神经网络的结构，但是实际使用代码时最好去除中文注释部分，否则可能会有一些编码问题。
+四.总结
+本文描述了如何使用深度学习和keras框架构建一个文本分类器的全过程，并给出了相应的代码实现，为了方便大家使用，下面给出本文代码的下载地址一（简单版）：
+https://github.com/894939677/deeplearning_by_diye/blob/master/pretrain_text_class_by_diye.py
+下面给出本文代码的下载地址二（完整版）：
+https://github.com/894939677/deeplearning_by_diye/blob/master/pre_merge_3.py
+五.后记
+本文描述的是使用类似于googlenet的网络结构，实际上也可以使用类似与resnet的网络结构来做这个事情

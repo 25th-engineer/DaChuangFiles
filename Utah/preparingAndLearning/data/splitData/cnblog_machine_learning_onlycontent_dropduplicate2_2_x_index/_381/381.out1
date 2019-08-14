@@ -1,0 +1,56 @@
+前面 写了 个 简单 的 线性代数 系列 文章 目的 就是 
+让 大家 在 接触 SVD 分解 前 先 了解 回忆 
+一下 线性代数 的 基本 知识 有助于 大家 理解 SVD 分解 
+不至于 一下 被 大量 的 线性代数 操作 搞 晕 这次 
+终于 开始 正题 SVD 的 介绍 了 所谓 SVD 就是 
+要 把 矩阵 进行 如下 转换 A = USVTthe columns 
+of   U   are the eigenvectors of the   
+AAT   matrix and the columns of   V   
+are the eigenvectors of the   ATA   matrix . 
+  VT   is the transpose of   V   
+and     is a diagonal matrix . By definition 
+the nondiagonal elements of diagonal matrices are zero . The 
+diagonal elements of     are a special kind of 
+values of the original matrix . These are termed the 
+  singular values   of   A . 1   
+The Frobenius Norm 一个 矩阵 所有 元素 的 平方和 再 
+开方 称为 这个 矩阵 的 Frobenius Norm 特殊 情况 下 
+行矩阵 的 Frobenius Norm 为 该 向量 的 长度 2 
+计算 A 转置 A * At At * A3 计算 
+在 SVD 中 将 AAt 的 特征值 从大到/nr 小 排列 
+并 开方 得到 的 就是 奇异 值 比 如上 图中 
+特征值 为 40 10 . 因此 奇异 值 为 6.32 
+3.16 矩阵 的 奇异 值 有 如下 特性 a 矩阵 
+的 奇异 值 乘积 等于 矩阵 行列式 的 值 6.32 
+* 3.16 = 20 = | A | b 矩阵 
+A 的   Frobenius Norm 等于 奇异 值 的 平方和 
+的 开方 总结 一下 计算 的 步骤 1 计算 AT 
+  和 ATA 2   计算 ATA 的 特征值 排序 
+并 开方 由此 可以 得到 下面 来看 如何 计算   
+U VT4   计算 V 和 VT 利用 ATA 的 
+特征值 来 计算 特征向量 既然 刚才 提到 V 就是 特征向量 
+的 组合 那么 5 计算 UA = USVTAV = USVTV 
+= USAVS 1   = USS 1U = AVS 16 
+计算 SVD 可以 看出 SVD 可以 对 矩阵 进行 分解 
+重建 7 降 维 的 SVD 如果 我们 只 保留 
+前 k 个 最大 的 奇异 值 前 k 列 
+个 U 前 k 行 个 V 相当于 将 数据 
+中 占 比 不大 的 噪音 进行 过滤 这样 既 
+可以 有效地 对 数据 进行 泛化 又起 到了 降 维 
+减少 运算量 的 目的 是不是 很 奇妙 8 实际 用途 
+我们 实际 的 工作 中 经常 会 用到 这种 降 
+维 方法 包括 现在 非常 火 的 推荐 问题 以及 
+LSI 问题 都对 SVD 有着 广泛 的 应用 举个 最 
+常用 的 例子 在 文本 挖掘 中 A 就是 t 
+term 行 d document 列 的 矩阵 每 列 是 
+一篇 文章 每行 是 一个 单词 每个 单元格 的 当前 
+单词 在 当前 文章 里 的 出现 次数 U 是 
+一个 t   行 r   列 的 矩阵 V 
+是 一个 r   行 d 列 的 矩阵 S 
+是 一个 r   行 r   列 的 对角 
+矩阵 这里 r 的 大小 是 A 的 秩 那么 
+U 和V中/nr 分别 是 A 的 奇异 向量 而 是 
+A 的 奇异 值 AA 的 正交 单位 特征向量 组成 
+U 特征值 组成 S A A 的 正交 单位 特征向量 
+组成 V 特征值 与 AA 相同 组成 SS 希望 大家 
+细细 体会 多多 交流 一起 进步 

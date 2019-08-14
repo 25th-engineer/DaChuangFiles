@@ -1,0 +1,44 @@
+自然语言处理（NLP）中一个很重要的研究方向就是语义的情感分析（Sentiment Analysis）。例如IMDB上有很多关于电影的评论，那么我们就可以通过Sentiment Analysis来评估某部电影的口碑，（如果它才刚刚上映的话）甚至还可以据此预测它是否能够卖座。与此相类似，国内的豆瓣上也有很多对影视作品或者书籍的评论内容亦可以作为情感分析的语料库。对于那些电子商务网站而言，针对某一件商品，我们也可以看到留言区里为数众多的评价内容，那么同类商品中，哪个产品最受消费者喜爱呢？或许对商品评论的情感分析可以告诉我们答案。
+在之前的文章中，笔者已经向读者介绍了在Python中利用NLTK进行自然语言处理的一些基本方法：
+利用NLTK在Python下进行自然语言处理
+Python自然语言处理：词干、词形与MaxMatch算法
+同时，我也介绍了在Python中利用Scikit-Learn进行机器学习，尤其是是利用LogisticRegression进行分类的基本方法：
+Python机器学习之Logistic回归
+下面本文将在这些文章的基础之上，尝试将机器学习和自然语言处理结合起来，以Tweet文为例，演示进行Sentiment Analysis的基本方法。首先需要说明的是内容有三点：
+1）下面的例子仍然主要使用Python中NLTK和Scikit-Learn两个函数库。
+2）SemEval 是NLP领域的带有竞赛性质的年度盛会，类似KDD-Cup。SemEval 创始于1998年，今年（2016）的活动主页为http://alt.qcri.org/semeval2016/  , 下面程序中所使用的数据即来自 SemEval 2016 的Task（当然在使用时我们已经完成了基本的预处理过程，而这并非本文的重点，我们略去不表）。
+3）我们所演示的方法，主要目的在于帮助大家熟悉Sentiment Analysis的基本内容，深化Scikit-Learn函数库的使用，而且我们所分析的数据来自于实际数据集，而非模拟数据集，所以最终的分析结果并不保证得到非常高的准确率。要得到更高的准确率，需要在模型构建和特征选择上做更深层次的思考。而这些“思考”已经超出本博文所讨论的范围。
+我们原始的数据是一条一条的Tweet，例如：
+Top 5 most searched for Back-to-School topics -- the list may surprise you http://t.co/Xj21uMVo0p  @bing @MSFTnews #backtoschool @Microsoft
+@taehongmin1 We have an IOT workshop by @Microsoft at 11PM on the Friday - definitely worth going for inspiration! #HackThePlanet
+当然，我们同时还拥有一个list of labels，即对每条Tweet的Polarity进行评定的标签，其中：+1表示positive, -1表示negative，0表示neutral。
+在预处理阶段，我对每条Tweet进行了分句和分词，然后：1）剔除了@***这样的内容；2）对于#引导的Topic，我们将其视为一个独立的句子进行处理；3）删除了由http引导的网络地址；4）统一了大小写。所以上述两个Tweet处理之后将得到下面两个结果
+[['top', '5', 'most', 'searched', 'for', 'back', '-', 'to', '-', 'school', 'topics', '--', 'the', 'list', 'may', 'surprise', 'you', '.'], ['back', 'to', 'school', '.']]
+[['we', 'have', 'an', 'iot', 'workshop', 'by', 'at', '11pm', 'on', 'the', 'friday', '-', 'definitely', 'worth', 'going', 'for', 'inspiration', '!'], ['.'], ['hack', 'the', 'planet', '.']]
+然后，我们根据训练数据集创建一个词袋（BOW，bag-of-word），这个词袋是一个字典，里面存储着所有训练数据集中出现过的词汇，以及它们在全文中出现的频数。这样做的目的，在于我们期望剔除那些在全部训练数据集中极少出现的词汇（生僻词），以及那些频繁出现但毫无意义的词汇（通常我们称之为停词 stop words，例如 the, of, a等）。
+在BOW基础之上，接下来就可以为每条Tweet创建创建 feature dictionaries了。特征字典是指每条Tweet中出现在BOW中的词（即剔除了罕见的生僻词和停词）以及它们在该条Tweet中出现的频数构成的字典。
+{'-': 2, '--': 1, '.': 2, '5': 1, 'back': 2, 'list': 1, 'may': 1, 'school': 2, 'searched': 1, 'surprise': 1, 'top': 1, 'topics': 1}
+{'!': 1, '-': 1,  '.': 2, '11pm': 1, 'definitely': 1, 'friday': 1, 'going': 1, 'hack': 1, 'inspiration': 1, 'iot': 1, 'planet': 1, 'workshop': 1, 'worth': 1}
+到此为止，所有的预处理工作都已经完成了。我们得到了一个list of dicts 形式的训练数据集（以及它对应的list of labels），和一个list of dicts形式的测试数据集（以及它对应的list of labels）。但是现在问题来了，这种形式的数据显然不能被直接使用。回忆一下我们在前篇介绍Logistic Regression的文章中所使用的鸢尾花数据集的样子，便不难发现与当前我们所拥有的数据形式大相径庭。这时就要借助于Scikit-Learn中提供的特征提取（Feature Extraction）模块。
+The sklearn.feature_extraction module can be used to extract features in a format supported by machine learning algorithms from datasets consisting of formats such as text and image.
+更直接的说我们将有借助的函数是DictVectorizer，The class DictVectorizer can be used to convert feature arrays represented as lists of standard Python dict objects to the NumPy/SciPy representation used by scikit-learn estimators.
+如果你对Scikit-Learn文档中的这些描述感到困惑，那么下面的例子将让你很容易理解其作用。首先，我们给出它的定义原型：
+class sklearn.feature_extraction.DictVectorizer(dtype=<class'numpy.float64'>, separator='=', sparse=True, sort=True)
+其中sparse是一个布尔类型的参数，用于指示是否将结果转换成scipy.sparse matrices，即稀疏矩阵，缺省情况下其赋值为True。
+来看一个例子，measurements是一个list of dicts，我们把它转化成矩阵表示，当对应位置出现某个城市名时，其对应行的那一列就被置为1，否则就是0。
+>>> from sklearn.feature_extraction import DictVectorizer >>> measurements = [ {'city': 'Dubai', 'temperature': 33.}, {'city': 'London', 'temperature': 12.}, {'city': 'San Fransisco', 'temperature': 18.}, ] >>> vec = DictVectorizer() >>> vec.fit_transform(measurements).toarray() array([[ 1., 0., 0., 33.], [ 0., 1., 0., 12.], [ 0., 0., 1., 18.]]) >>> vec.get_feature_names() ['city=Dubai', 'city=London', 'city=San Fransisco', 'temperature']
+再来一个补充例子
+>>> measurements = [ {'city=Dubai': True, 'city=London': True, 'temperature': 33.}, {'city=London': True, 'city=San Fransisco': True, 'temperature': 12.}, {'city': 'San Fransisco', 'temperature': 18.},] >>> vec.fit_transform(measurements).toarray() array([[ 1., 1., 0., 33.], [ 0., 1., 1., 12.], [ 0., 0., 1., 18.]])
+另外的一个常见问题是训练数据集和测试数据集的字典大小不一致，此时我们希望短的那个能够通过补零的方式来追平长的那个。这时就需要使用transform。还是来看例子：
+>>> D = [{'foo': 1, 'bar': 2}, {'foo': 3, 'baz': 1}] >>> v = DictVectorizer(sparse=False) >>> X = v.fit_transform(D) >>> X array([[ 2., 0., 1.], [ 0., 1., 3.]]) >>> v.transform({'foo': 4, 'unseen_feature': 3}) array([[ 0., 0., 4.]]) >>> v.transform({'foo': 4}) array([[ 0., 0., 4.]])
+可见当使用transform之后，后面的那个总是可以实现同前面的一个相同的维度。当然这种追平可以是补齐，也可以是删减，所以通常，我们都是用补齐短的这样的方式来实现维度一致。如果你不使用transform，而是继续fit_transform，则会得到下面的结果（这显然不能满足我们的要求）
+>>> v.fit_transform({'foo': 4, 'unseen_feature': 3}) array([[ 4., 3.]])
+有了这样的认识，下面就可以为我们后续的Logistic Regression建立稀疏矩阵了，代码如下
+vec = DictVectorizer() sparse_matrix_tra = vec.fit_transform(feature_dicts_tra) sparse_matrix_dev = vec.transform(feature_dicts_dev)
+当然，这里你还可以用下面的代码来测试一下他们的维度是否按我们预想的那样
+print(sparse_matrix_dev.shape) print(sparse_matrix_tra.shape)
+然后我们就可以利用之前用过的Logistic Regression来建立分类模型了。
+from sklearn import linear_model logreg = linear_model.LogisticRegression(C = 1) logreg.fit(sparse_matrix_tra, labels_t) prediction = logreg.predict(sparse_matrix_dev) print(logreg) print("accuracy score: ") print(accuracy_score(labels_d, prediction)) print(classification_report(labels_d, prediction))
+一同来看一下该模型对测试集的预测结果
+LogisticRegression(C=1, class_weight=None, dual=False, fit_intercept=True, intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1, penalty='l2', random_state=None, solver='liblinear', tol=0.0001, verbose=0, warm_start=False) accuracy score: 0.512848551121 precision recall f1-score support -1 0.41 0.28 0.33 360 0 0.46 0.69 0.55 700 1 0.68 0.46 0.55 769 avg / total 0.54 0.51 0.51 1829
+该Sentiment分类模型的准确率为51.28%。当然，正如我们前面所说，这个模型显然还有很大的改进空间。你完全可以通过引入新的feature，或者使用其他机器学习模型（或者调整模型参数）等多种途径来提升模型的准确率。但是本文旨在演示NLP中的Sentiment Analysis的基本步骤和策略，以及进一步演示利用Scikit Learn进行机器学习的更广泛的方法（例如基于字典的特征提取和引入稀疏矩阵）等方面的初衷已经完成了。有兴趣的读者完全可以在此基础上继续进行模型优化，以期实现更准确的分类能力。

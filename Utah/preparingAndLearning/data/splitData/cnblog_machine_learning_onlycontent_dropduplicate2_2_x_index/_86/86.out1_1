@@ -1,0 +1,135 @@
+Infer . NET 机器学习 翻译 系列 文章 将 进行 连载 
+感 兴趣 的 朋友 请 收藏 或 关注 本 博客 
+所有 文章 分类 的 总目录 http / / www . 
+cnblogs . com / asxinyu / p / 4288836 . 
+html 微软 Infer . NET 机器学习 组件 文章 目录 http 
+/ / www . cnblogs . com / asxinyu / 
+p / 4329742 . html 关于 本 文档 的 说明 
+本 文档 基于 Infer . NET   2.6对 Infer . 
+NET   User   Guide 进行 中文翻译 但 进行 了 
+若干 简化 和 提炼 按照 原 网站 的 思路 进行 
+但不 局限 与其 顺序 欢迎 传播 分享 必须 保持 原 
+作者 的 信息 但 禁止 将该 文档 直接 用于 商业 
+盈利 本人 正在 研究 基于 Infer . NET 组件 并 
+计划 将 其 应用 于 实际 的 预测 之中 该 
+组件 功能强大 封装 很 完善 但也 有 很多 难以 理解 
+的 地方 同时 官方 也 给出 了 大量 的 例子 
+限于 个人 精力有限 更新 时间 较慢 也/d 希望/v 有/v 兴趣/n 
+的/uj 朋友/n 一起/m 来/v 完成/v 该/r 项/n 工作/vn Email asxinyu 
+@ qq . com 本 文章 地址   http / 
+/ www . cnblogs . com / asxinyu / p 
+/ 4252769 . html1 . 基本 介绍 Infer . NET 
+是 微软 剑桥 研究院 基于 . NET 平台 开发 的 
+一款 机器 推理 组件 官方 网站 http / / research 
+. microsoft . com / en us / um / 
+cambridge / projects / infernet / default . aspx 该 
+组件 的 采用 的 是 Microsoft Research License Agreement 授权 
+Non Commercial Use Only 除了 商业 使用 都 可以 自己 
+看着 办 本 章节 的 英文 原文 为 在 这里 
+1.1   Infer . NET 是 什么 Infer . NET 
+是 一个 概率 图 模型 中 graphical   models 用于 
+运行 贝叶斯 推理机 Bayesian   inference 的 框架 如果 对 
+概率 图 模型 或者 贝叶斯 推理 的 意义 不 了解 
+你 可以 参考 一下 相关 资源 文件 在 Resources   
+and   References   page 页面 Infer . NET 为 
+各种 应用 程序 所 需要 推理 提供 了 先进 的 
+消息 传递 算法 和 统计 程序 Infer . NET   
+与 现有 的 一些 推理 软件 有 下列 区别 1/m 
+./i 1.1/mx  /i 丰富/a 的/uj 建模语言/n 支持/v 单/n 变量/vn 和/c 
+多变/v 量/n 变量/vn 也 支持 连续型 和 离散 型 变量 
+可以 使用 大量 的 各种 因素 进行 建模 包括 算术 
+运算 线性代数 范围 和 积极约束 布尔 操作符 等等 支持 不同 
+模型 的 组合 以及 不同 类型 的 组合 附 Infer 
+. NET 的 内部 使用 了 The   model   
+specification   language   MSL   建模语言 由于 该 组件 
+不允许 用于 商业 因此 源代码 也 没有 全部 开发 无法 
+也 无法 搞 清楚 其 原理 1 . 1.2   
+多种 推理 算法 内置 了 多种 推理 算法 如 Expectation 
+  Propagation   Belief   Propagation   a   special 
+  case   of   EP   Variational   Message 
+  Passing   and   Gibbs   sampling . 这几个 
+专业 词汇 暂时 还 不懂 意义 1 . 1.3   
+为 大规模 推理 而 设计 现 有的 在 大多数 推理 
+程序执行 过程 中 的 开销 减慢 了 推理 过程 而 
+Infer . NET 将 推理模型 编译 为 能够 独立 执行 
+的 源代码 不 需要 额外 的 开销 它 也 可以 
+直接 集成 到 您 的 应用 程序 此外 也 可以 
+查看 分步 执行 源代码 或者 使用 标准 的 开发 工具 
+进行 修改 1 . 1.4   用户 可以 进行 扩展 
+概率分布 因素 消息/n 操作/v 和/c 推理/v 算法/n 都/d 可以/c 由/p 
+用户/n 添加/v Infer . NET 使用 一个 插件 架构 使其 
+开放性 适应性 更强 而 内置 库 支持 多种 模型 和 
+推理 操作 但 总会 有 特殊 的 情况 需要 新 
+的 因素 或者 分布 类型 或者 算法 这种 情况 下 
+用户 可以 编写 自定义 代码 自由 与 内置 功能 进行 
+混合 以 减少 一些 额外 的 工作 可以 看看 一个 
+简单 使用 Infer . NET 的 例子 这个 文档 中的 
+示例代码 是 C # 但 Infer . NET 支持 . 
+NET 平台 的 所有 语言 1.2   安装 文件夹 Infer 
+. NET 通过 Zip 压缩包 进行 发行 解 压后 可以 
+看到 如下 的 文件夹 目录 Bin Learners Source Distributions Factors 
+Wrappers Samples C # F # Bin 文件夹 包含 了 
+Infer . NET 的 dll 文件 1 . Infer . 
+Compiler . dll 是 一个 使用 Infer . NET   
+API 编写 的 将 模型 描述 转换 为 推理 代码 
+的 编译器 2 . Infer . Runtime . dll 是 
+一个 执行 推理 代码 的 程序集 一般 开发 过程 中 
+只需要 引用 这 两个 dll 但在 某些 部署 场景 你 
+可能 只 需要 Infer . Runtime . dll Infer . 
+FSharp . dll 是 为了 标准 的 F ＃ 语言 
+调用 所做 的 一个 封装 不懂 F # 也 没有 
+去 深究 Bin 文件夹 还包括 了 一些 例子 的 生成 
+文件 以及 几 个 项目 的 生成 文件 例子 文件夹 
+中有 2个 完整 项目 的 源代码 1个 是 贝叶斯 分类器 
+1个 是 推荐 系统 比较复杂 还没 开始 研究 1.3   
+一个 简单 的 例子 下面 是 一个 使用 Infer . 
+NET 计算 抛掷 2枚 硬币 结果 都是/nr 正面 的 概率 
+的 例子 代码 如下 1 Variable bool firstCoin = Variable 
+. Bernoulli 0.5 2 Variable bool secondCoin = Variable . 
+Bernoulli 0.5 3 Variable bool bothHeads = firstCoin & secondCoin 
+4 InferenceEngine ie = new InferenceEngine 5 Console . WriteLine 
+Probability both coins are heads + ie . Infer bothHeads 
+程序 输出 为 1 Probability both coins are heads Bernoulli 
+0.25 上述 结果 说明 2 面 同时 为 正面 的 
+概率 为 0.25 上述 简单 的 例子 包括 了 使用 
+Infer . NET 编程 的 几个 关键步骤 1 . 定义 
+概率模型 所有 Infer . NET 程序 都 需要 明确 定义 
+的 概率模型 上述 程序 的 前 3行 就是 定义 3个 
+随机变量 2 . 创建 推理 引擎 推理机 所有 的 推理 
+都是 使用 推理 引擎 进行 的 在 使用 之前 必须 
+创建 和 配置 推理 引擎 如 第四行 使用 默认 的 
+推理 算法 创建 的 推理 引擎 3 . 执行 推理 
+查询 给定 一个 推理 引擎 就 可以 使用 Infer 方法来 
+查询 变量 的 边际 分布 例子 的 最后 一 行中 
+引擎 就去 推理 2个 都是 正面 的 边际 分布 你 
+还 可以 在 这里 找到 更多 运行 推理 的 细节 
+1.4   Infer . NET 工作 原理 下图 是 Infer 
+. NET 的 推理 过程 过程 如下 1 . 首先 
+用户 创建 1个   模型 定义 并 声明 一些 和 
+模型 相关 推理 查询 需求 2 . 用户 将 模型 
+定义 和 推理 查询 传递 给 模型 编译器 后者 使用 
+指定 的 推理 算法 创建 需要 执行 这些 查询 模型 
+的 源代码 这个 源代码 可以 写入 一个 文件 如果 需要 
+也 可以 直接 使用 3 . C # 编译器 编译 
+源代码 来 创建 一个 编译 过 的 算法 这 可以 
+手动 执行 或 通过 推断 方法 自动 执行 4 . 
+使用 一组 观测值 数据 推理 引擎 根据 用户 指定 的 
+设置 执行 编译 算法 以便 产生 推理 查询 要求 的 
+边际 分布 可以 对 观测值 重复 不同 的 设置 而 
+不 需要 重新 编译 算法 本 文章 原始 地址   
+http / / www . cnblogs . com / asxinyu 
+/ p / 4252769 . html1 . 5   Frequently 
+  Asked   Questions 常见问题 比较简单 暂时 没有 翻译 的 
+必要 地址 在 这里 1.6   Resources and References 常见问题 
+比较简单 暂时 没有 翻译 的 必要 地址 在 这里 2 
+. 资源 下载 这里 提供 Infer . NET 2.6 的 
+下载 包括了 例子 和 基础 的 源码 下载 地址 链接 
+http / / pan . baidu . com / s 
+/ 1o6FmVe6 密码 12wz 如果 本 文章 资源 下载 不了 
+或者 文章 显示 有 问题 请 参考   本文 原文 
+地址 http / / www . cnblogs . com / 
+asxinyu / p / 4252769 . html 另外 本文 的 
+翻译 电子版 以及 该 项目 相关 的 翻译 资源 将在 
+最终 完成 后 逐步 开放 请 关注 本 博客 翻译 
+很累 写 篇 文章 也 费时间 兄台 顺手 点个 推荐 
+吧 

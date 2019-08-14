@@ -1,0 +1,227 @@
+一、 简单介绍
+a) 预测字符串概率
+i. 那一个字符串更有可能或者更符合语法
+1. Grill doctoral candidates.
+2. Grill doctoral updates.
+(example from Lee 1997)
+ii. 向字符串赋予概率的方法被称之为语言模型（Methods for assigning probabilities to strings are called Language Models.）
+b) 动机（Motivation）
+i. 语音识别，拼写检查，光学字符识别和其他应用领域（Speech recognition, spelling correction, optical character recognition and other applications）
+ii. 让E作为物证（？不确定翻译），我们需要决定字符串W是否是有E编码而得到的消息（Let E be physical evidence, and we need to determine whether the string W is the message encoded by E）
+iii. 使用贝叶斯规则（Use Bayes Rule）：
+P(W/E)={P_{LM}(W)P(E/W)}/{P(E)}
+其中P_{LM}(W)是语言模型概率
+iv. P_{LM}(W)提供了必要的消歧信息(P_{LM}(W)provides the information necessary for isambiguation (esp. when the physical evidence is not sufficient for disambiguation))
+c) 如何计算（How to Compute it）?
+i. 朴素方法（Naive approach）:
+1. 使用最大似然估计——字符串在语料库S中存在次数的值由语料库规模归一化：
+P_{MLE}(Grill~doctorate~candidates)={count(Grill~doctorate~candidates)}/delim{|}{S}{|}
+2. 对于未知事件，最大似然估计P_{MLE}=0（For unseen events, P_{MLa Sparseness）
+d) 两个著名的句子（Two Famous Sentences）E}=0）
+——数据稀疏问题比较“可怕”（Dreadful behavior in the presence of Dat
+i. “It is fair to assume that neither sentence“Colorless green ideas sleep fu
+riously”
+nor
+“Furiously sleep ideas green colorless”
+... has ever occurred ... Hence, in any statistical model ... these　sentences will be ruled out on identical grounds as equally “remote” from English. Yet (1), though nonsensical, is grammatical, while (2) is not.” [Chomsky 1957]
+ii. 注：这是乔姆斯基《句法结构》第9页上的：下面的两句话从来没有在一段英语谈话中出现过，从统计角度看离英语同样的“遥远”，但只有句1是合乎语法的：
+1) Colorless green ideas sleep furiously.
+2) Furiously sleep ideas sleep green colorless .
+“从来没有在一段英语谈话中出现过”、“从统计角度看离英语同样的‘遥远’”要看从哪个角度去看了，如果抛开具体的词汇、从形类角度看，恐怕句1的统计频率要高于句2而且在英语中出现过。
+二、语言模型构造
+a) 语言模型问题提出（The Language Modeling Problem）
+i. 始于一些词汇集合（Start with some vocabulary）:
+ν= {the, a, doctorate, candidate, Professors, grill, cook, ask, ...}
+ii. 得到一个与词汇集合v关的训练样本:
+Grill doctorate candidate.
+Cook Professors.
+Ask Professors.
+…...
+iii. 假设（Assumption）:训练样本是由一些隐藏的分布P刻画的
+iv. 目标（Goal）: 学习一个概率分布P prime尽可能的与P近似
+sum{x in v}{}{P prime (x)}=1, P prime (x) >=0
+P prime (candidates)=10^{-5}
+{P prime (ask~candidates)}=10^{-8}
+b) 获得语言模型（Deriving Language Model）
+i. 向一组单词序列w_{1}w_{2}...w_{n}赋予概率（Assign probability to a sequencew_{1}w_{2}...w_{n} ）
+ii. 应用链式法则（Apply chain rule）:
+1. P(w1w2...wn)= P(w1|S)∗P(w2|S,w1)∗P(w3|S,w1,w2)...P(E|S,w1,w2,...,wn)
+2. 基于“历史”的模型(History-based model): 我们从过去的事件中预测未来的事件
+3. 我们需要考虑多大范围的上下文?
+c) 马尔科夫假设（Markov Assumption）
+i. 对于任意长度的单词序列P(wi|w(i-n) ...w(i−1))是比较难预测的
+ii. 马尔科夫假设（Markov Assumption）: 第i个单词wi仅依赖于前n个单词
+iii. 三元语法模型（又称二阶马尔科夫模型）:
+1. P(wi|START,w1,w2,...,w(i−1）)=P(wi|w(i−1),w(i−2))
+2. P(w1w2...wn)= 　P(w1|S)∗P(w2|S,w1)∗P(w3|w1,w2)∗...P(E|w(n−1),wn)
+d) 一种语言计算模型（A Computational Model of Language）
+i. 一种有用的概念和练习装置:“抛硬币”模型
+1. 由随机算法生成句子
+——生成器可以是许多“状态”中的一个
+——抛硬币决定下一个状态
+——抛其他硬币决定哪一个字母或单词输出
+ii. 香农（Shannon）: “The states will correspond to the“residue of influence” from preceding letters”
+e) 基于单词的逼近
+注：以下是用莎士比亚作品训练后随机生成的句子，可参考《自然语言处理综论》
+i. 一元语法逼近（这里MIT课件有误，不是一阶逼近（First-order approximation））
+1. To him swallowed confess hear both. which. OF save
+2. on trail for are ay device and rote life have
+3. Every enter now severally so, let
+4. Hill he late speaks; or! a more to leg less first you
+5. enter
+ii. 三元语法逼近（这里课件有误，不是三阶逼近（Third-order approximation））
+1. King Henry. What! I will go seek the traitor Gloucester.
+2. Exeunt some of the watch. A great banquet serv’s in;
+3. Will you tell me how I am?
+4. It cannot be but so.
+三、 语言模型的评估
+a) 评估一个语言模型
+i. 我们有n个测试单词串:
+S_{1},S_{2},...,S_{n}
+ii. 考虑在我们模型之下这段单词串的概率：
+prod{i=1}{n}{P(S_{i})}
+或对数概率(or log probability):
+log{prod{i=1}{n}{P(S_{i})}}=sum{i=1}{n}{logP(S_{i})}
+iii. 困惑度（Perplexity）:
+Perplexity = 2^{-x}
+这里x = {1/W}sum{i=1}{n}{logP(S_{i})}
+W是测试数据里总的单词数（W is the total number of words in the test data.）
+iv. 困惑度是一种有效的“分支因子”评测方法（Perplexity is a measure of effective “branching factor”）
+1. 我们有一个规模为N的词汇集v，模型预测（We have a vocabulary v of size N, and model predicts）：
+P(w) = 1/N 对于v中所有的单词（for all the words in v.）
+v. 困惑度是什么（What about Perplexity）?
+Perplexity = 2^{-x}
+这里 x = log{1/N}
+于是 Perplexity = N
+vi. 人类行为的评估（estimate of human performance (Shannon, 1951)
+1. 香农游戏（Shannon game）— 人们在一段文本中猜测下一个字母（humans guess next letter in text）
+2. PP=142(1.3 bits/letter), uncased, open vocabulary
+vii. 三元语言模型的评估（estimate of trigram language model (Brown et al. 1992)）
+PP=790(1.75 bits/letter), cased, open vocabulary
+四、 平滑算法
+a) 最大似然估计（Maximum Likelihood Estimate）
+i. MLE使训练数据尽可能的“大”：
+P_{ML}(w_{i}/{w_{i-1},w_{i-2}}) = {Count(w_{i-2},w_{i-1},w_{i})}/{Count(w_{i-2},w_{i-1})}
+1. 对于词汇规模为N的语料库，我们将要在模型中得到N^{3}的参数（For vocabulary of size N, we will have N3 parameters in the model）
+2. 对于N=1000，我们将要估计1000^{3}=10^{9}个参数（For N =1, 000, we have to estimate1, 000^{3}=10^{9} parameters）
+3. 问题（Problem）: 如何处理未登录词?
+ii. 数据稀疏问题（Sparsity）
+1. 未知事件的总计概率构成了测试数据的很大一部分
+2. Brown et al (1992): 考虑一个3.5亿词的英语语料库，14%的三元词是未知的
+iii. 注：关于MLE的简要补充
+1. 最大似然估计是一种统计方法，它用来求一个样本集的相关概率密度函数的参数。这个方法最早是遗传学家以及统计学家罗纳德•费雪爵士在1912年至1922年间开始使用的。
+2. “似然”是对likelihood 的一种较为贴近文言文的翻译，“似然”用现代的中文来说即“可能性”。故而，若称之为“最大可能性估计”则更加通俗易懂。
+3.MLE选择的参数使训练语料具有最高的概率，它没有浪费任何概率在训练语料中没有出现的事件中
+4.但是MLE概率模型通常不适合做NLP的统计语言模型，会出现0概率，这是不允许的。
+b) 如何估计未知元素的概率?
+i. 打折（Discounting）
+1. Laplace 加1平滑（Laplace）
+2. Good-Turing 打折法（Good-Turing）
+ii. 线性插值法（Linear Interpolation）
+iii. Katz回退（Katz Back-Off）
+c) 加一(Laplace)平滑
+i. 最简单的打折方法（Simplest discounting technique）:
+{P(w_{i}/w_{i-1})} = {C(w_{i-1},w_{i})+1}/{C(w_{i-1})+V}
+这里Ｖ是词汇表的数目——语料库的“型”
+注：MIT课件这里似乎有误，我已修改
+ii. 贝叶斯估计假设事件发生前是一个均匀分布
+iii. 问题（Problem）: 对于未知事件占去的概率太多了
+iv. 例子（Example）：
+假设V=10000(词型)，S=1000000(词例)（Assume |ν| =10, 000, and S=1, 000, 000）：
+P_{MLE}(ball/{kike~a}) = {{Count(kike~a~ball)}/{Count(kick~a)}} = 9/10 = 0.9
+P_{+1}(ball/{kike~a}) = {{Count(kike~a~ball)+1}/{Count(kick~a)+V}} = {9+1}/{10+10000} = 9*10^{-4}
+v. Laplace的缺点（Weaknesses of Laplace）
+1. 对于稀疏分布，Laplace法则赋予未知事件太多的概率空间
+2. 在预测二元语法的实际概率时与其他平滑方法相比显得非常差（
+3. 使用加epsilon平滑更合理一些
+五、 Good-Turing打折法（Good-Turing Discounting）
+a) 你在将来看到一个新词的可能性有多大？用所看到的事件去估计未知事件的概率
+i. n_r——频率为r的元素（n元语法）计数并且r>0
+ii. n_0——总词汇规模减去观察到的词汇规模，既出现次数为0的n元语法
+iii. 对于频率为r的元素，修正计数为：
+r^* = (r+1)*{n_{r+1}/n_r}
+b) 关于Good-Turing打折法的补充说明：
+i. Good(1953)首先描述了Good-Turing算法，而这种算法的原创思想则来自Turing 。
+ii. Good-Turing平滑的基本思想是：用观察较高的N元语法数的方法来重新估计概率量的大小，并把它指派给那些具有零计数或较低计数的N元语法。
+c) 直观的Good-Turing打折法（Good-Turing Discounting: Intuition）
+i. 目的（Goal）: 估计训练数据中计数为r的单词在同样规模测试集中的出现频率（estimate how often word with r counts in training data occurs in test set of equal size）。
+ii. 我们使用删除估计（We use deleted estimation）：
+1. 每次删除一个单词（delete one word at a time）
+2. 如果单词“test”在所有的数据集中出现了r+1次（if “test” word occurs r +1 times in complete data set）：
+——它在训练集中出现了r 次（it occurs r times in “training” set）
+——对计数为r的单词加1（add one count to words with r counts）
+iii. r-count单词“桶”中的总的计数为（total count placed to bucket for r-count words is）:
+n_{r+1}*(r +1)
+iv. 平均计数为：
+(avg-count of r count words) = {n_{r+1}*(r+1)}/n_r
+d) Good-Turing打折法续（Good-Turing Discounting (cont.)）：
+i. 在Good-Turing中，分配给所有未知事件的总的概率等于n_1/N, 其中N是训练集的规模。它与分配给独立事件的相对频率公式相似。
+ii. In Good-Turing, the total probability assigned to all the unobserved events is equal ton_1/N , where N is the size of the training set. It is the same as a relative frequency formula would assign to singleton events.
+e) 举例（Example: Good-Turing）
+Training sample of 22,000,000 (Church&Gale’1991))
+r 　　　N_r　　　　　　　heldout　　r^*
+0 　　74,671,100,000　0.00027　0.00027
+1 　　2,018,046　　　　0.448　　0.446
+2 　　449,721　　　　　1.25　　　1.26
+3 　　188,933　　　　　2.24　　　2.24
+4 　　105,668　　　　　3.23　　　3.24
+5 　　68,379　　　　　 4.21　　 　4.22
+6 　　48,190　　　　　 5.23　　 　5.19
+f) 补充说明：
+i. 根据Zipf定律,对于小的r, N_r比较大;对于大的r,N_r小,对于出现次数最多的n元组,r*=0!
+ii. 所以对于出现次数很多的n元组, GT估计不准,而MLE估计比较准,因此可以直接采用MLE. GT估计一般适用于出现次数为k(k<10)的n元组 　iii. 如果这样,考虑”劫富济贫”,这里的”富”就变成了”中产”阶级!呵呵,真正的富翁沾光了!（虽然富翁损一点也没什么）连打折法也不敢欺富人！这就是“为富不仁”，“一毛不拔”的来历。
+六、 插值及回退
+a) The Bias-Variance Trade-Off
+i. 未平滑的三元模型估计(Unsmoothed trigram estimate)：
+P_ML({w_i}/{w_{i-2},w_{i-1}})={Count(w_{i-2}w_{i-1}w_{i})}/{Count(w_{i-2},w_{i-1})}
+ii. 未平滑的二元模型估计(Unsmoothed bigram estimate）：
+P_ML({w_i}/{w_{i-1}})={Count(w_{i-1}w_{i})}/{Count(w_{i-1})}
+iii. 未平滑的一元模型估计(Unsmoothed unigram estimate)：
+P_ML({w_i})={Count(w_{i})}/sum{j}{}{Count(w_{j})}
+iv. 这些不同的估计中哪个和“真实”的P({w_i}/{w_{i-2},w_{i-1}})概率最接近（How close are these different estimates to the “true” probability P({w_i}/{w_{i-2},w_{i-1}}))?
+b) 插值（Interpolation）
+i. 一种解决三元模型数据稀疏问题的方法是在模型中混合使用受数据稀疏影响较小的二元模型和一元模型（One way of solving the sparseness in a trigram model is to mix that model with bigram and unigram models that suffer less from data sparseness）。
+ii. 权值可以使用期望最大化算法（EM）或其它数值优化技术设置（The weights can be set using the Expectation-Maximization Algorithm or another numerical optimization technique）
+iii. 线性插值（Linear Interpolation)
+hat{P}({w_i}/{w_{i-2},w_{i-1}})={lambda_1}*P_ML({w_i}/{w_{i-2},w_{i-1}})
++{lambda_2}*P_ML({w_i}/w_{i-1})+{lambda_3}*P_ML({w_i})
+这里{lambda_1}+{lambda_2}+{lambda_3}=1并且{lambda_i}>=0 对于所有的 i
+iv. 参数估计（Parameter Estimation）
+1. 取出训练集的一部分作为“验证”数据（Hold out part of training set as “validation” data）
+2. 定义Count_2(w_1,w_2,w_3)作为验证集中三元集 w_1,w_2,w_3 的出现次数（DefineCount_2(w_1,w_2,w_3) to be the number of times the trigram w_1,w_2,w_3 is seen in validation set）
+3. 选择{lambda_i}去最大化(Choose {lambda_i} to maximize):
+L({lambda_1},{lambda_2},{lambda_3})=sum{(w_1,w_2,w_3)in{upsilon}}{}{Count_2(w_1,w_2,w_3)}log{hat{P}}({w_3}/{w_2,w_1})
+这里{lambda_1}+{lambda_2}+{lambda_3}=1并且{lambda_i}>=0 对于所有的 i
+注：关于参数估计的其他内容，由于公式太多，这里略，请参考原始课件
+c)Kats回退模型-两元（Katz Back-Off Models (Bigrams)）：
+i. 定义两个集合（Define two sets）：
+A(w_{i-1})=delim{lbrace}{w:Count(w_{i-1},w)>0}{rbrace}
+B(w_{i-1})=delim{lbrace}{w:Count(w_{i-1},w)=0}{rbrace}
+ii. 一种两元模型（A bigram model）：
+P_K({w_i}/w_{i-1})=delim{lbrace}{matrix{2}{2}{{{Count^{*}(w_{i-1},w)}/{Count(w_{i-1})}>0} {if{w_i}{in}{A(w_{i-1})}} {alpha(w_{i-1}){{P_ML(w_{i})}/sum{w{in}B(w_{i-1})}{}{P_ML(w)}} } {if{w_i}{in}{B(w_{i-1})}} }}{}
+{alpha(w_{i-1})=1-sum{w{in}A(w_{i-1})}{}{{Count^{*}(w_{i-1},w)}/{Count(w_{i-1})}}}
+iii. Count^*定义（Count^*definitions）
+1. Kats对于Count(x)<5使用Good-Turing方法,对于Count(x)>=5令Count^*(x)=Count(x)(Katz uses Good-Turing method for Count(x)< 5, and Count^*(x)=Count(x)for Count(x)>=5)
+2. “Kneser-Ney”方法（“Kneser-Ney” method）：
+Count^*(x)=Count(x)-D,其中 D={n_1}/{n_1+n_2}
+n_1是频率为1的元素个数（n_1 is a number of elements with frequency 1)
+n_2是频率为2的元素个数（n_2 is a number of elements with frequency 2)
+七、 综述
+a) N元模型的弱点（Weaknesses of n-gram Models）
+i. 有何想法（Any ideas）?
+短距离（Short-range）
+中距离（Mid-range）
+长距离（Long-range）
+b) 更精确的模型（More Refined Models）
+i. 基于类的模型（Class-based models）
+ii. 结构化模型（Structural models）
+iii. 主题和长距离模型（Topical and long-range models）
+c) 总结（Summary）
+i. 从一个词表开始（Start with a vocabulary）
+ii. 选择一种模型（Select type of model）
+iii. 参数估计（Estimate Parameters）
+d) 工具包参考：
+i. CMU-Cambridge language modeling toolkit:
+http://mi.eng.cam.ac.uk/~prc14/toolkit.html
+ii.SRILM - The SRI Language Modeling Toolkit:
+http://www.speech.sri.com/projects/srilm/

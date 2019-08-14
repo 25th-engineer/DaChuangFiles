@@ -1,0 +1,173 @@
+4.4   Functions: The Foundation of Structured Programming
+函数：结构化编程的基础
+Functions provide an effective way to package and re-use program code, as already explained in Section 2.3. For example, suppose we find that we often want to read text from an HTML file. This involves several steps: opening the file, reading it in, normalizing whitespace, and stripping HTML markup. We can collect these steps into a function, and give it a name such as get_text(), as shown in Example 4.2.
+import re
+def get_text(file):
+"""Read text from a file, normalizing whitespace and stripping HTML markup."""
+text = open(file).read()
+text = re.sub('\s+', ' ', text)
+text = re.sub(r'<.*?>', ' ', text)
+return text
+Example 4.2 (code_get_text.py):  Read text from a file
+Now, any time we want to get cleaned-up text from an HTML file, we can just call get_text() with the name of the file as its only argument. It will return a string, and we can assign this to a variable, e.g.: contents = get_text("test.html"). Each time we want to use this series of steps we only have to call the function.
+Using functions has the benefit of saving space in our program. More importantly, our choice of name for the function helps make the program readable. In the case of the above example, whenever our program needs to read cleaned-up text from a file we don't have to clutter the program with four lines of code, we simply need to call get_text(). This naming helps to provide some "semantic interpretation" — it helps a reader of our program to see what the program "means".
+Notice that the above function definition contains a string. The first string inside a function definition is called a docstring（文档字符串）. Not only does it document the purpose of the function to someone reading the code, it is accessible to a programmer who has loaded the code from a file:
+>>> help(get_text)
+Help on function get_text:
+get_text(file)
+Read text from a file, normalizing whitespace
+and stripping HTML markup.
+We have seen that functions help to make our work reusable and readable. They also help make it reliable（可靠的）. When we re-use code that has already been developed and tested, we can be more confident that it handles a variety of cases correctly. We also remove the risk that we forget some important step, or introduce a bug. The program that calls our function also has increased reliability. The author of that program is dealing with a shorter program, and its components behave transparently.
+To summarize（简而言之）, as its name suggests, a function captures functionality. It is a segment of code that can be given a meaningful name and which performs a well-defined task. Functions allow us to abstract away from the details, to see a bigger picture, and to program more effectively.
+The rest of this section takes a closer look at functions, exploring the mechanics and discussing ways to make your programs easier to read（这节的其余部分进一步研究函数，探索其机制和讨论使得你的程序更易读的方式）.
+Function Inputs and Outputs 函数输入和输出
+We pass information to functions using a function's parameters, the parenthesized list of variables and constants following the function's name in the function definition. Here's a complete example:
+>>> def repeat(msg, num):
+...     return ' '.join([msg] * num)
+>>> monty = 'Monty Python'
+>>> repeat(monty, 3)
+'Monty Python Monty Python Monty Python'
+We first define the function to take two parameters, msg and num . Then we call the function and pass it two arguments, monty and 3 ; these arguments fill the "placeholders" provide by the parameters and provide values for the occurrences of msg and num in the function body.
+It is not necessary to have any parameters, as we see in the following example:
+>>> def monty():
+...     return "Monty Python"
+>>> monty()
+'Monty Python'
+A function usually communicates its results back to the calling program via the return statement, as we have just seen. To the calling program, it looks as if the function call had been replaced with the function's result, e.g.:
+>>> repeat(monty(), 3)
+'Monty Python Monty Python Monty Python'
+>>> repeat('Monty Python', 3)
+'Monty Python Monty Python Monty Python'
+A Python function is not required to have a return statement. Some functions do their work as a side effect, printing a result, modifying a file, or updating the contents of a parameter to the function (such functions are called "procedures" in some other programming languages).
+Consider the following three sort functions. The third one is dangerous because a programmer could use it without realizing that it had modified its input(它修改了输入). In general, functions should modify the contents of a parameter (my_sort1()), or return a value (my_sort2()), not both (my_sort3()).
+>>> def my_sort1(mylist):      # good: modifies its argument, no return value
+...     mylist.sort()
+>>> def my_sort2(mylist):      # good: doesn't touch its argument, returns value
+...     return sorted(mylist)
+>>> def my_sort3(mylist):      # bad: modifies its argument and also returns it
+...     mylist.sort()
+...     return mylist
+Parameter Passing 传参
+Back in Section 4.1 you saw that assignment works on values, but that the value of a structured object is a reference to that object. The same is true for functions. Python interprets function parameters as values (this is known as call-by-value). In the following code, set_up() has two parameters, both of which are modified inside the function. We begin by assigning an empty string to w and an empty list to p. After calling the function, w is unchanged, while p is changed:
+>>> def set_up(word, properties):
+...     word = 'lolcat'
+...     properties.append('noun')
+...     properties = 5
+...
+>>> w = ''
+>>> p = []
+>>> set_up(w, p)
+>>> w
+''
+>>> p
+['noun']
+Notice that w was not changed by the function. When we called set_up(w, p), the value of w (an empty string) was assigned to a new variable word. Inside the function, the value of word was modified. However, that change did not propagate to w. This parameter passing is identical to（与相同） the following sequence of assignments:
+>>> w = ''
+>>> word = w
+>>> word = 'lolcat'
+>>> w
+''
+Let's look at what happened with the list p. When we called set_up(w, p), the value of p (a reference to an empty list) was assigned to a new local variable properties, so both variables now reference the same memory location. The function modifies properties, and this change is also reflected in the value of p as we saw. The function also assigned a new value to properties (the number 5); this did not modify the contents at that memory location, but created a new local variable（这没有改变该内存位置上的内容，而是创建了一个新局部变量）. This behavior is just as if we had done the following sequence of assignments:
+>>> p = []
+>>> properties = p
+>>> properties.append['noun']
+>>> properties = 5
+>>> p
+['noun']
+Thus, to understand Python's call-by-value parameter passing, it is enough to understand how assignment works. Remember that you can use the id() function and is operator to check your understanding of object identity after each statement.
+Variable Scope 变量范围
+Function definitions create a new, local scope for variables. When you assign to a new variable inside the body of a function, the name is only defined within that function. The name is not visible outside the function, or in other functions. This behavior means you can choose variable names without being concerned about collisions with names used in your other function definitions.
+When you refer to an existing name from within the body of a function, the Python interpreter first tries to resolve the name with respect to the names that are local to the function. If nothing is found, the interpreter checks if it is a global name within the module. Finally, if that does not succeed, the interpreter checks if the name is a Python built-in. This is the so-called LGB rule of name resolution: local, then global, then built-in（这就是所谓的名称解析的LGB规则：局部，然后全局，最后内建）.
+Caution!
+A function can create a new global variable, using the global declaration. However, this practice should be avoided as much as possible. Defining global variables inside a function introduces dependencies on context and limits the portability (or reusability) of the function. In general you should use parameters for function inputs and return values for function outputs.
+Checking Parameter Types 检测参数类型
+Python does not force us to declare the type of a variable when we write a program, and this permits us to define functions that are flexible about the type of their arguments. For example, a tagger might expect a sequence of words, but it wouldn't care whether this sequence is expressed as a list, a tuple, or an iterator (a new sequence type that we'll discuss below).
+However, often we want to write programs for later use by others, and want to program in a defensive style, providing useful warnings when functions have not been invoked correctly. The author of the following tag() function assumed that its argument would always be a string.
+>>> def tag(word):
+...     if word in ['a', 'the', 'all']:
+...         return 'det'
+...     else:
+...         return 'noun'
+...
+>>> tag('the')
+'det'
+>>> tag('knight')
+'noun'
+>>> tag(["'Tis", 'but', 'a', 'scratch']) ①
+'noun'
+The function returns sensible values for the arguments 'the' and 'knight', but look what happens when it is passed a list ① — it fails to complain, even though the result which it returns is clearly incorrect. The author of this function could take some extra steps to ensure that the word parameter of the tag() function is a string. A naive approach would be to check the type of the argument using if not type(word) is str, and if word is not a string, to simply return Python's special empty value, None. This is a slight improvement, because the function is checking the type of the argument, and trying to return a "special", diagnostic value for the wrong input. However, it is also dangerous because the calling program may not detect that None is intended as a "special" value, and this diagnostic return value may then be propagated to other parts of the program with unpredictable consequences. This approach also fails if the word is a Unicode string, which has type unicode, not str. Here's a better solution, using an assert statement together with Python's basestring type that generalizes over both unicode and str.（我记得在Python美味食谱里提到过如何判断输入是否为字符串类型）
+>>> def tag(word):
+...     assert isinstance(word, basestring), "argument to tag() must be a string"
+...     if word in ['a', 'the', 'all']:
+...         return 'det'
+...     else:
+...         return 'noun'
+If the assert statement fails, it will produce an error that cannot be ignored, since it halts program execution. Additionally, the error message is easy to interpret. Adding assertions to a program helps you find logical errors, and is a kind of defensive programming（防御性编程）. A more fundamental approach is to document the parameters to each function using docstrings as described later in this section.
+Functional Decomposition 功能分解
+Well-structured programs usually make extensive use of functions. When a block of program code grows longer than 10-20 lines, it is a great help to readability if the code is broken up into one or more functions, each one having a clear purpose. This is analogous to（类似于） the way a good essay is divided into paragraphs, each expressing one main idea.
+Functions provide an important kind of abstraction. They allow us to group multiple actions into a single, complex action, and associate a name with it. (Compare this with the way we combine the actions of go and bring back into a single more complex action fetch.) When we use functions, the main program can be written at a higher level of abstraction, making its structure transparent, e.g.
+>>> data = load_corpus()
+>>> results = analyze(data)
+>>> present(results)
+Appropriate use of functions makes programs more readable and maintainable. Additionally, it becomes possible to reimplement（重新实现？） a function — replacing the function's body with more efficient code — without having to be concerned with the rest of the program.
+Consider the freq_words function in Example 4.3. It updates the contents of a frequency distribution that is passed in as a parameter, and it also prints a list of the n most frequent words.
+def freq_words(url, freqdist, n):
+text = nltk.clean_url(url)
+for word in nltk.word_tokenize(text):
+freqdist.inc(word.lower())
+print freqdist.keys()[:n]
+>>> constitution = "http://www.archives.gov/national-archives-experience" \
+...                "/charters/constitution_transcript.html"
+>>> fd = nltk.FreqDist()
+>>> freq_words(constitution, fd, 20)
+['the', 'of', 'charters', 'bill', 'constitution', 'rights', ',',
+'declaration', 'impact', 'freedom', '-', 'making', 'independence']
+Example 4.3 (code_freq_words1.py):  Poorly Designed Function to Compute Frequent Words
+This function has a number of problems. The function has two side-effects（副作用）: it modifies the contents of its second parameter, and it prints a selection of the results it has computed. The function would be easier to understand and to reuse elsewhere if we initialize the FreqDist() object inside the function (in the same place it is populated), and if we moved the selection and display of results to the calling program. In Example 4.4 we refactor（重构） this function, and simplify its interface by providing a single url parameter.
+def freq_words(url):
+freqdist = nltk.FreqDist()
+text = nltk.clean_url(url)
+for word in nltk.word_tokenize(text):
+freqdist.inc(word.lower())
+return freqdist
+>>> fd = freq_words(constitution)
+>>> print fd.keys()[:20]
+['the', 'of', 'charters', 'bill', 'constitution', 'rights', ',',
+'declaration', 'impact', 'freedom', '-', 'making', 'independence']
+Example 4.4 (code_freq_words2.py): Figure 4.4: Well-Designed Function to Compute Frequent Words
+Note that we have now simplified the work of freq_words to the point that we can do its work with three lines of code:
+>>> words = nltk.word_tokenize(nltk.clean_url(constitution))
+>>> fd = nltk.FreqDist(word.lower() for word in words)
+>>> fd.keys()[:20]
+['the', 'of', 'charters', 'bill', 'constitution', 'rights', ',',
+'declaration', 'impact', 'freedom', '-', 'making', 'independence']
+Documenting Functions 文档说明函数
+If we have done a good job at decomposing our program into functions, then it should be easy to describe the purpose of each function in plain language, and provide this in the docstring at the top of the function definition. This statement should not explain how the functionality is implemented; in fact it should be possible to re-implement the function using a different method without changing this statement.
+For the simplest functions, a one-line docstring is usually adequate (see Example 4.2). You should provide a triple-quoted string containing a complete sentence on a single line. For non-trivial functions, you should still provide a one sentence summary on the first line, since many docstring processing tools index this string. This should be followed by a blank line, then a more detailed description of the functionality (see http://www.python.org/dev/peps/pep-0257/ for more information in docstring conventions).
+Docstrings can include a doctest block, illustrating the use of the function and the expected output（说明函数的使用和期待输出）. These can be tested automatically using Python's docutils module. Docstrings should document the type of each parameter to the function, and the return type. At a minimum, that can be done in plain text. However, note that NLTK uses the "epytext" markup language to document parameters. This format can be automatically converted into richly structured API documentation (seehttp://www.nltk.org/), and includes special handling of certain "fields" such as @param which allow the inputs and outputs of functions to be clearly documented. Example 4.5 illustrates a complete docstring.
+def accuracy(reference, test):
+"""
+Calculate the fraction of test items that equal the corresponding reference items.
+Given a list of reference values and a corresponding list of test values,
+return the fraction of corresponding values that are equal.
+In particular, return the fraction of indexes
+{0<i<=len(test)} such that C{test[i] == reference[i]}.
+>>> accuracy(['ADJ', 'N', 'V', 'N'], ['N', 'N', 'V', 'ADJ'])
+0.5
+@param reference: An ordered list of reference values.
+@type reference: C{list}
+@param test: A list of values to compare against the corresponding
+reference values.
+@type test: C{list}
+@rtype: C{float}
+@raise ValueError: If C{reference} and C{length} do not have the
+same length.
+"""
+if len(reference) != len(test):
+raise ValueError("Lists must have the same length.")
+num_correct = 0
+for x, y in izip(reference, test):
+if x == y:
+num_correct += 1
+return float(num_correct) / len(reference)
+Example 4.5 (code_epytext.py):  Illustration of a complete docstring, consisting of a one-line summary, a more detailed explanation, a doctest example, and epytext markup specifying the parameters, types, return type, and exceptions.

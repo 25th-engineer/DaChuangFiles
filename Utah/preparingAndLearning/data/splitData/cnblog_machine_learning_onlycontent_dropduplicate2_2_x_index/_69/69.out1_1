@@ -1,0 +1,151 @@
+= = = = = = = = = = 
+= = = = = = = = = = 
+= = = 国内 = = = = = = 
+= = = = = = = = = = 
+= = = = 之前 自己 一直 想 总结 一下 
+国内 搞 机器学习 和 数据 挖掘 的 大牛 但是 自己 
+太懒 了 所以 没 搞 最近 看到 了 下面 转载 
+的 这篇 博文 感觉 总结 的 比较 全面 了 个人认为 
+但从 整体 研究 实力 来说 机器 学习 和 数据挖掘 方向 
+国内 最强 的 地方 还是 在 MSRA 那边 的 相关 
+研究 小组 太多 很多 方向 都能 和 数据挖掘 扯 上边 
+这里 我 再 补充 几个 相关 研究 方向 的 年轻 
+老师 和 学者 吧 蔡登/nr http / / www . 
+cad . zju . edu . cn / home / 
+dengcai / Han Jiawei 老师 的 学生 博士 毕业 后回/nr 
+浙大 任教 也 算是 国内 年轻 一代 的 牛人 了 
+万 小军 https / / sites . google . com 
+/ site / wanxiaojun1979 / 得 FQ 才能 看到 主页 
+主要 研究 方向 是 文本 挖掘 和 语义 计算 自然语言 
+方向 好 会议 发 了 很多 文章 张磊 http / 
+/ research . microsoft . com / en us / 
+um / people / leizhang / – 原文 地址 http 
+/ / blog . csdn . net / playoffs / 
+article / details / 7588597 李航 http / / research 
+. microsoft . com / en us / people / 
+hangli / 是 MSRA Web Search andMining Group 高级 研究员 
+和 主管 主要 研究 领域 是 信息检索 自然语言 处理 和 
+统计 学习 近年来 主要 与 人 合作 使 用 机器 
+学习 方法 对 信息检索 中 排序 相关性 等 问题 的 
+研究 曾在 人大 听过 一场 他 的 讲座 对 实际 
+应用 的 问题 抽象 转化 和 解决 能力 值得 学习 
+周志华 http / / cs . nju . edu . 
+cn / zhouzh / 是 南京 大学 的 杰 青 
+机器 学习 和 数据挖掘 方面 国内 的 领军 人物 其 
+好几个 研究生 都 进入 了 美国 一流 高校 如 uiuc 
+cmu 等 学习 和 深造 周教授 在 半 监督 学习 
+multi label/w 学习/v 和/c 集成/v 学习/v 方面/n 在/p 国际上/i 有/v 
+一定/d 的/uj 影响力/n 另外 他 也是 ACML 的 创始人 人 
+也很 nice 曾经 发邮件 咨询 过 一个 naive 的 问题 
+周老师 还在 百忙之中 回复 了 我 并对 我 如何 发 
+邮件 给了 些许 建议 杨强 http / / www . 
+cse . ust . hk / ~ qyang / 香港 
+科技 大学 教 授 也是 KDD 2012 的 会议 主席 
+可见 功力 非同一般 杨 教授 是 迁移 学习 的 国际 
+领军人物 曾经 的 中国 第一 位 acm 全球 冠军 上交 
+的 戴 文渊 硕士 期间 就是 跟 他 合作 发表 
+了 一系列 高 水平 的 文章 还有 杨/nr 教授/n 曾/d 
+有一个/i 关于/p 机器学习/i 和/c 数据挖掘/n 有意思/l 的/uj 比喻/n 比如 你 
+训练 一只 狗 若干 年后 如果 它 忽然 有一天 能帮你/nr 
+擦鞋 洗衣服 那么 这 就是 数 据 挖掘 要是 忽然 
+有一天 你 发现 狗 发 装成 一个 老太婆 消失了 那么 
+这 就是 机器学习 李建中 http / / db . hit 
+. edu . cn / jianzhongli / 哈工大 和黑大/nr 共有 
+教授 是 分布式 数据库 的 领军 人物 近年来 其 团队 
+在 不确 定性数据 sensor network 方面 也 发表 了 一系列 
+有名 文章 李教授 为人师表 教书育人 都做 得了 最好 在 圈内 
+是 让人 称道 的 好 老师 和好 学者 唐杰 http 
+/ / keg . cs . tsinghua . edu . 
+cn / jietang / 清华大学 副教授 是 图 挖掘 方面 
+的 专家 他 主持 设计 和 实现 的 Arnetminer 是 
+国内 领先 的 图 挖掘 系统 该 系统 也 是 
+多个 会议 的 支持 商 张钹 http / / www 
+. csai . tsinghua . edu . cn / personal 
+_ homepage / zhang _ bo / index . html 
+清华大学 教授 中科院 院士 现任 清华大学 信息 技术 研究院 指导 
+委员会 主任 微软 亚洲 研究院 技术 顾问 等 主要 从事 
+人工智能 神经网络 遗传算法 智能 机器 人 模式识别 以及 智能 控制 
+等 领域 的 研究 工作 在 过去 二十 多年 中 
+张钹 教授 系统 地 提出 了 问题 求解 的 商 
+空间 理论 近年来 他 建立 了 神经 与 认知 计算 
+研究 中心 以及 多媒体 信息 处理 研究组 该 研究组 已在 
+图像 和 视频 的 分析 与 检索 方面 取得 一些 
+重要 研究 成果 刘铁 岩 http / / research . 
+microsoft . com / en us / people / tyliu 
+/ MSRA 研究 主管 是 learning to rank 的 国际 
+知名 学者 近年 逐步 转向 管理 研究 兴趣 则 开始 
+关注 计算 广告学 方面 王海峰 http / / ir . 
+hit . edu . cn / ~ wanghaifeng / 信息检索 
+自然语言 处理 机器翻译 方面 的 专家 ACL 的 副主席 百度 
+高级 科学家 近年 在 百度 主持 研发 了 百度 翻译 
+产品 何 晓飞 http / / people . cs . 
+uchicago . edu / ~ xiaofei / 浙江 大学 教授 
+多媒体 处理 图像 检索 以及 流型 学习 的 国际 领先 
+学者 朱军 http / / www . ml thu . 
+net / ~ jun / 清华大学 副教授 机器学习 绝对 重量级 
+新星 主要 研究 领域 是 latent variable models large margin 
+learning Bayesian nonparametrics and sparse learning in high dimensions . 
+他 也是 今年 龙星 计划 的 机器学习 领域 的 主讲人 
+之一 吴军 http / / www . cs . jhu 
+. edu / ~ junwu / 腾讯 副总裁 前 google 
+研究员 著名 数学 之美 和 浪潮 之 巅 系列 的 
+作者 张栋/nr http / / weibo . com / machinelearning 
+  前 百度 科学家 和 google 研究员 机器学习 工业界 的 
+代表 人物 之一 戴 文渊 http / / apex . 
+sjtu . edu . cn / apex _ wiki / 
+Wenyuan _ Dai 现 百度 凤巢 ctr 预估 组 leader 
+前 ACM 大赛 冠军 硕士 期间 一 系列 transfer learning 
+方面 的 高水平 论文 让人 瞠目结舌 = = = = 
+= = = = = = = = = = 
+= = = = = = = = 资源 = 
+= = = = = = = = = = 
+= = = = = = = = = 以前 
+转过 一个 计算机 视觉 领域内 的 牛人 简介 现在 转 
+一个 更宽 范围内 的 牛人 简介 http / / people 
+. cs . uchicago . edu / ~ niyogi / 
+http / / www . cs . uchicago . edu 
+/ people / http / / pages . cs . 
+wisc . edu / ~ jerryzhu / http / / 
+www . kyb . tuebingen . mpg . de / 
+~ chapellehttp / / people . cs . uchicago . 
+edu / ~ xiaofei / http / / www . 
+cs . uiuc . edu / homes / dengcai2 / 
+http / / www . kyb . mpg . de 
+/ ~ bshttp / / research . microsoft . com 
+/ ~ denzho / http / / www users . 
+cs . umn . edu / ~ kumar / dmbook 
+/ index . php # item5 resources for the book 
+of the introduction of data mining by   Pang ning 
+Tan et . al .   国内 已经 有 相应 
+的 中文版 http / / www . cs . toronto 
+. edu / ~ roweis / lle / publications . 
+html       lle 算法 源代码 及其 相关 论文 
+http / / dataclustering . cse . msu . edu 
+/ index . html # software data clustering http / 
+/ www . cs . toronto . edu / ~ 
+roweis /         里面 有 好多 资源 
+http / / www . cse . msu . edu 
+/ ~ lawhiu /   manifold learning http / / 
+www . math . umn . edu / ~ wittman 
+/ mani /   manifold learning demo in matlab http 
+/ / www . iipl . fudan . edu . 
+cn / ~ zhangjp / literatures / MLF / INDEX 
+. HTM   manifold learning in matlab http / / 
+videolectures . net / mlss05us _ belkin _ sslmm / 
+    semi supervised learning with manifold   method by 
+Belkin http / / isomap . stanford . edu / 
+      isomap 主页 http / / web . 
+mit . edu / cocosci / josh . html   
+MIT       TENENBAUM J B 主页 http / 
+/ web . engr . oregonstate . edu / ~ 
+tgd /       国际 著名 的 人工智能 专家 
+Thomas G . Dietterich http / / www . cs 
+. berkeley . edu / ~ jordan /   MIchael 
+I . Jordan http / / www . cs . 
+cmu . edu / ~ awm /   Andrew W 
+. Moore s   homepage http / / learning . 
+cs . toronto . edu /   加拿大多伦多大学 机器学习 小组 
+http / / www . cs . cmu . edu 
+/ ~ tom /   Tom Mitchell 里面 有与/nr 教材 
+匹配 的 slide 转 自 http / / www . 
+52ml . net / 

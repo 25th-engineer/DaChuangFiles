@@ -1,0 +1,25 @@
+自带的机器学习库
+meas:测试数据，一行代表一个样本，列代表样本属性，N*M
+species:每个样本对应的类,N*1
+kfoldLoos:交叉验证:确定样本训练后的模型的错误率
+predict:测试集经分类模型处理后分到的类
+knn分类器
+knn = fitcknn(meas,species,'NumNeighbors',5); CVMdl = crossval(knn); kloss = kfoldLoss(CVMdl); predict(knn,ones(1,size(meas,2)))
+pca降维：主成分分析
+//latent:特征值（从大到小),score特征向量 [coeff, score, latent, tsquared, explained] = pca(data); //score即为从大到小排序后的特征矩阵，取前k列即为取样本最具代表性的k个属性 //explained即为每一列对应的影响力，所有列加起来为100
+bp神经网络
+命令行输入nntool
+svm分类器
+svm = fitcsvm(meas,species); CVMdl = crossval(svm); kloss = kfoldLoss(CVMdl);
+朴素贝叶斯
+naivebayes = fitcnb(meas, species); nb = crossval(naivebayes); kloss = kfoldLoss(nb);
+决策树cart分类器
+cart = fitctree(meas,species); CVMdl = crossval(cart); kloss = kfoldLoss(CVMdl);
+随机森林分类器
+b = TreeBagger(nTree,meas,species,'OOBPrediction','on'); rf = oobError(b); kloss = rf(nTree,1);
+集成学习方法
+ada = fitensemble(meas,species,'AdaBoostM1',100,'Tree','Holdout',0.5); kloss = kfoldLoss(ada,'mode','cumulative'); kloss = kloss(100,1);
+matlab机器学习库
+有监督学习
+无监督学习
+集成学习

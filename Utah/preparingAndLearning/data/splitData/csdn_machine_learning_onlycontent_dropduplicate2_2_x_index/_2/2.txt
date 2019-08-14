@@ -1,0 +1,35 @@
+#前言
+主要有以下原因:
+##1. Python是解释语言，程序写起来非常方便
+写程序方便对做机器学习的人很重要。
+因为经常需要对模型进行各种各样的修改，这在编译语言里很可能是牵一发而动全身的事情，Python里通常可以用很少的时间实现。
+举例来说，在C等编译语言里写一个矩阵乘法，需要自己分配操作数（矩阵）的内存、分配结果的内存、手动对BLAS接口调用gemm、最后如果没用smart pointer还得手动回收内存空间。Python几乎就是import numpy; numpy.dot两句话的事。
+当然现在很多面向C/C++库已经支持托管的内存管理了，这也让开发过程容易了很多，但解释语言仍然有天生的优势——不需要编译时间。这对机器学习这种需要大量prototyping和迭代的研究方向是非常有益工作效率的。
+##2. Python的开发生态成熟，有很多有用的库可以用
+除了上面说到的NumPy，还有SciPy、NLTK、os（自带）等等不一而足。Python灵活的语法还使得包括文本操作、list/dict comprehension等非常实用的功能非常容易高效实现（编写和运行效率都高），配合lambda等使用更是方便。这也是Python良性生态背后的一大原因。相比而言，Lua虽然也是解释语言，甚至有LuaJIT这种神器加持，但其本身很难做到Python这样，一是因为有Python这个前辈占领着市场份额，另一个也因为它本身种种反常识的设计（比如全局变量）。不过借着Lua-Python bridge和Torch的东风，Lua似乎也在寄生兴起。
+##3. Python的效率很高。
+解释语言的发展已经大大超过许多人的想象。很多比如list comprehension的语法糖都是贴近内核实现的。除了JIT[1]之外，还有Cython可以大幅增加运行效率。最后，得益于Python对C的接口，很多像gnumpy, theano这样高效、Python接口友好的库可以加速程序的运行，在强大团队的支撑下，这些库的效率可能比一个不熟练的程序员用C写一个月调优的效率还要高。
+##4.数据存储方便
+有sql,hadoop,mangodb,redis,spark等
+##5.数据获取方便
+有Scrapy,beautifulsoup,requests,paramiko等
+##6.数据运算方便
+有pandas，Numpy，scipy等
+##7.输出结果方便
+有matplotlib,VisPy等
+##8.和其他语言交互方便
+有ctypes,rpy2,Cython,SWIG,PyQt,boost.python
+##9.加速方便
+有pypy,Cython,PyCUDA
+##10.图形图像方便
+有PyOpenGL,PyOpenCV,mayavi2
+##11.信号处理方便
+PyWavelets，scipy.signal
+##12.云系统支持方便
+github,sourceforge,EC2,BAT,HPC
+##13.python开源
+python支持的平台多，包括windows,linux,unix,macos。而matlab太贵，只能调用其api，用python省钱，省钱就是赚钱。
+#python 和 c++ 做个比较。
+c++ 的cpu效率是远远高于 python 的.不过 python 是一门胶水语言，它可以和任何语言结合，基于这个优点，很多数据处理的python 库底层都是 c++ 实现的，意思就是说：你用python写code，但效率是c++的。只有那些for 循环，还是用python的效率高。
+近年来机器学习最要是深度学习，而深度学习使用cuda gpu加速远比cpu要快，而cuda 是c++写的。
+###所以现在TensorLayer、theano 等深度学习库都是 python 编程、底层c++。

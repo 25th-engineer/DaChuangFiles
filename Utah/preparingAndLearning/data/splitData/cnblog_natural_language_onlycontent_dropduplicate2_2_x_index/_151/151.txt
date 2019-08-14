@@ -1,0 +1,99 @@
+MIT自然语言处理第四讲：标注（第二部分）
+发表于 2009年03月7号 由 52nlp
+自然语言处理：标注
+Natural Language Processing: Tagging
+作者：Regina Barzilay（MIT,EECS Department, November 15, 2004)
+译者：我爱自然语言处理（www.52nlp.cn ，2009年3月7日）
+学习标注（Learning to Tag）
+* 基于转换的学习（Transformation-based Learning）
+* 隐马尔科夫标注器（Hidden Markov Model Taggers）
+* 对数线性模型（Log-linear models）
+二、 基于转换的学习（Transformation-based Learning ——TBL）
+a) 概述：
+i. TBL 介于符号法和基于语料库方法之间（TBL is “in between” symbolic and corpus-based methods）；
+ii. TBL利用了更广泛的词汇知识和句法规则——很少的参数估计（TBL exploit a wider range of lexical and syntactic regularities (very few parameters to estimate)）
+iii. TBL关键部分（Key TBL components）：
+1. 一个容许的用于“纠错”的转换规范（a specification of which “error-correcting” transformations are admissible）
+2. 学习算法（the learning algorithm）
+b) 转换（Transformations）
+i. 重写规则(Rewrite rule)： tag1 → tag2, 如果C满足某个条件（if C holds）
+– 模板是手工选择的（Templates are hand-selected）
+ii. 触发条件（Triggering environment (C)）：:
+1. 标记触发（tag-triggered）
+2. 单词触发（word-triggered）
+3. 形态触发（morphology-triggered）
+c) 转换模板（Transformation Templates）
+i. 图略；
+ii. 附：TBL算法的提出者Eric Brill（1995-Transformation-Based Error-Driven Learning and Natural Language Processing: A Case Study in Part of Speech Tagging)中的模板：
+1. The preceding (following) word is tagged z.
+2. The word two before (after) is tagged z.
+3. One of the two preceding (following) words is tagged z.
+4. One of the three preceding (following) words is tagged z.
+5. The preceding word is tagged z and the following word is tagged w.
+6. The preceding (following) word is tagged z and the word two before (after) is tagged w.
+当条件满足时，将标记１变为标记２（Change tag１ to tag ２ when），其中变量a，b，z和w在词性集里取值（where a, b, z and w are variables over the set of parts of speech）。
+iii. 举例：
+源标记　　　　目标标记　　　　触发条件
+NN 　　　　　　VB 　　　　　previous tag is TO
+VBP 　　　　　VB 　　　　　one of the previous tags is MD
+JJR　　　　　　JJR 　　　　　next tag is JJ
+VBP　　　　　　VB 　　　　　one of the prev. two words is “n’t”
+d) TBL的学习（Learning component of TBL）：
+i. 贪婪搜索转换的最优序列（Greedy search for the optimal sequence of transformations）：
+1. 选择最好的转换（Select the best transformations）；
+2. 决定它们应用的顺序（Determine their order of applications）；
+e) 算法（Algorithm）
+注释（Notations）：
+1. Ck — 第k次迭代时的语料库标注（corpus tagging at iteration k）
+2. E(Ck) — k次标注语料库的错误数（the number of mistakes in tagged corpus）
+C0 := corpus with each word tagged with its most frequent tag
+for k:= 0 step 1 do
+v:=the transformation ui that minimizes r(ui(Ck))
+if (E(Ck)− E(v(Ck)) < then break fi
+Ck+1 := v(Ck)
+τk+1 := τ
+end
+输出序列（Output sequence）: τ1,...,τn
+f) 初始化（Initialization）
+i. 备选方案（Alternative approaches）
+1. 随机（random）
+2. 频率最多的标记（most frequent tag）
+3. ...
+ii. 实际上TBL对于初始分配并不敏感（In practice, TBL is not sensitive to the original assignment）
+g) 规则应用（Rule Application）：
+i. 从左到右的应用顺序（Left-to-right order of application）
+ii. Immediate vs delayed effect:
+Consider “A → B if the preceding tag is A”
+– Immediate: AAAA →?
+– Delayed: AAAA → ?
+h) 规则应用（Rule Selection）：
+i. 我们选择模板及其相应的实例（We select both the template, and its instantiation）；
+ii. 每个规则对已给出的标注进行修改（Each rule τ modifies given annotations）
+1. 某些情况下提高（improves in some places ）：Cimproved(τ)
+2. 某些情况下降低（worsens in some places）：Cworsened (τ)
+3. 对剩余数据不触动（does not touch the remaining data）
+iii. 规则的贡献是（The contribution of the rule is）：
+Cimproved(τ)− Cworsened (τ)
+iv. 第i次迭代的规则选择（Rule selection at iteration i）：
+τ_selected (i)= argmax_τ_contrib(τ)
+i) TBL标注器（The Tagger）：
+i. 输入（Input）：
+1. 未标注的数据（untagged data）；
+2. 经由学习器学习得到规则（S）（rules (S) learned by the learner）；
+ii. 标注（Tagging）：
+1. 使用与学习器相同的初始值（use the same initialization as the learner did）
+2. 应用所有学习得到的规则，保持合适的应用顺序（apply all the learned rules ，keep the proper order of application)
+3. 最后的即时数据为输出（the last intermediate data is the output）
+j) 讨论（Discussion）
+i. TBL的时间复杂度是多少（What is the time complexity of TBL）?
+ii. 有无可能建立一个无监督的TBL标注器（Is it possible to develop an unsupervised TBL tagger）?
+k) 与其他模型的关系（Relation to Other Models）：
+i. 概率模型（Probabilistic models）：
+1. “k-best”标注（“k-best” tagging）；
+2. 对先验知识编码（encoding of prior knowledge）；
+ii. 决策树（Decision Trees）
+1. TBL 很有效（TBL is more powerful (Brill, 1995)）；
+2. TBL对于过度学习“免疫”（TBL is immune to overfitting）。
+关于TBL，《自然语言处理综论》第8章有更通俗的解释和更详细的算法说明。
+附：课程及课件pdf下载MIT英文网页地址：
+http://people.csail.mit.edu/regina/6881/

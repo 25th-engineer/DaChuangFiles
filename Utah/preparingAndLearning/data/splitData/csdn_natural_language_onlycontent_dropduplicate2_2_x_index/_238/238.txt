@@ -1,0 +1,2 @@
+文章介绍了著名的、通用的三种 word embedding 模型： LSI, PMI 和 skip-gram, 介绍了它们间的联系与区别，结论是： skip-gram 等价于分解一个 shifted PPMI 矩阵，它和SVD间没有本质的差异。
+原文链接：自然语言处理 (三) 之 word embedding

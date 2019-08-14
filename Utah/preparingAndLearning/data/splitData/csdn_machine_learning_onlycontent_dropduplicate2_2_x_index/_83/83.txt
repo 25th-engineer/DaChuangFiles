@@ -1,0 +1,141 @@
+machine learning : 机器学习
+deep learning : 深度学习
+image processing : 图像处理
+natural language processing : 自然语言处理
+algorithms : 算法
+training data set : 训练数据集
+facial detection : 面部识别
+malware detection : 恶意程序检测
+adversarial sample : 对抗样本
+countermeasuring techniques : 防御技术
+Indiscriminate Attack：非针对性攻击
+Adversary’s goal：敌手目标
+Adversary’s knowledge ：敌手知识
+Adversary’s capability：敌手能力
+Attack strategy：攻击策略
+Gradient Ascent Strategy：梯度下降策略
+Generative Model：生成模型
+Discriminative model：判别模型
+The Direct Gradient：直接梯度法
+Accuracy：准确率
+Loss：损失值
+White-Box Attack：白盒攻击
+Blank-Box Attack：黑盒攻击
+Reconstruction Attack：重建攻击
+Proactive Defense：主动防御
+Reactive Defense：被动防御
+Reject On Negative Impact：拒绝消极影响
+Stackelberg Games：斯塔克尔伯格博弈
+Defensive Distillation：防御精馏
+Differential Privacy：差分隐私
+Homomorphic Encryption：同态加密
+Pattern Recognition：模式识别
+RNN, Recurrent Neural Networks：循环神经网络
+FNNs(Feed-forward Neural Networks)：前向反馈神经网络
+Convolutional layer:卷积层
+Rectified Linear Units layer,ReLU layer:线性整流层
+Pooling layer :池化层
+Fully-Connected layer:全连接层
+Face Recognition System :面部识别系统 (FRS)
+Adversarial Classification : 敌手分类
+Adversarial Learning ：对抗学习
+try-and-error：试错
+Causative Attack ：诱发型攻击
+Security Violation ：安全损害
+Integrity Attack ：完整性攻击
+Availability Attack：可用性攻击
+Privacy Violation Attack ：隐私窃取攻击
+Specificity of an Attack ：攻击的专一性
+Obfuscation Attacks：迷惑攻击
+Counterintuitive：反直觉
+Poisoning Attack：投毒攻击
+Centroid：中心值
+Bridge：桥
+Spoofing Attack ：欺骗攻击
+Avoiding Attack：逃避攻击
+Impersonate Attack：模仿攻击
+The Least Likely Class：最小相似类
+Inversion Attack：逆向攻击
+Confidence Values：置信值
+Equation-Solving Attacks：等式求解攻击
+Model Extraction Attacks：模型提取攻击
+Arms Race：攻防技术竞赛
+Non-stationary：不平稳
+Data Sanitization：数据清洗
+Randomized Prediction Games：随机预测博弈
+Deep Contractive Networks：深度收缩网络
+Crowdsourcing：众包
+Randomized Response：随机响应
+Logistic Regression：逻辑回归
+regression analysis：回归分析
+AR autoregressive 自回归
+BPTT back propagation through time 通过时间的反向传播
+BM Boltzmann machine Boltzmann机
+BP back propagation 反向传播
+BSB brain-state-in-a-box 脑中盒状态
+BSS blind source (signal) separation 盲源（信号）分离
+cmm correlation matrix memory 相关矩阵记忆
+CV cross-validation 交叉验证
+DFA deterministic finite-state automata 确定有限状态自动机
+EKF extended Kalman filter 扩展卡尔曼滤波器
+EM expectation-maximization 期望最大化
+FIR finite-duration impulse response 有限时间冲击响应
+FM frequency-modulated (signal) 频率调制（信号）
+GCV generalized cross-validation 广义交叉验证
+GHA generalized Hebbian algorithm 广义Hebb算法
+GSLC generalized sidelobe canceler 广义旁瓣消除器
+ICA independent-components analysis 独立分量分析
+Informax maximum mutual information 最大互信息
+Imax variant of Informax 最大互信息的变体
+Imin another variant of Informax 最大互信息的另一个变体
+KSOM kernel self-organizing map 核自组织映射
+KHA kernel Hebbian algorithm 核Hebb算法
+LMS least-mean-square 最小均方
+LR likelihood ratio 似然比
+LS Least-squares 最小二乘
+LS-TD Least-squares, temporal-difference 最小二乘， 时序差分
+LTP long-term potentiation 长期增强
+LTD long-term depression 长期衰减
+LRT Likelihood ratio test 似然比测试
+MAP Maximum a posteriori 最大后验估计
+MCA minor-components analysis 次分量分析
+MCMC Markov Chain Monte Carlo 马尔科夫链蒙特卡罗
+MDL minimum description length 最小描述长度
+MIMO multiple input multiple output 多输入多输出
+ML maximum likelihood 最大似然
+MLP multilayer perceptron 多层感知器
+MRC model reference control 模型参考控制
+NARMA nonlinear autogressive moving average 非线性自回归滑动平均
+NARX nonlinear autogressive with exogenous inputs 具有外部输入的非线性自回归
+NDP neuro-dynamic programming 神经动态规划
+NW Nadaraya-Watson (estimator) Nadaraya-Watson（估计器）
+NWKR Nadaraya-Waston kernel regression Nadaraya-Wastion 核回归
+OBD optimal brain damage 最优脑损伤
+OBS optimal brain surgeon 最优脑外伤
+OCR optical character recognition 光学字符识别
+PAC probably approximately correct 可能近似正确
+PCA principal-components analysis 主分量分析
+PF Particle Filter 粒子滤波器
+pdf probability density function 概率密度函数
+pmf probability mass function 概率质量函数
+QP quadratic programming 二次规划
+RBF radial basis function 径向基函数
+RLS recursive least-squares 递归最小二乘
+RLS regularized least-squares 正则最小二乘
+RMLP recurrent multilayer preceptron 递归多层感知器
+RTRL real-time recurrent learning 实时递归学习
+SIMO single input multiple output 单输入多输出
+SIR sequential importance resampling 逐次重要重采样
+SIS sequential important sampling 逐次重要采样
+SISO single input single output 单输入单输出
+SNR signal-to-noise ratio 信噪比
+SOM self-organizing map 自组织映射
+SRN simple recurrent network(also referred to as Elman’s recurrent network) 简单递归网络（也称为Elman递归网络）
+SVD singular value decomposition 奇异值分解
+SVM support vector machine 支持向量机
+TD temporal difference 时序差分
+TDNN time-delay neural network 时延神经网络
+TLFN time-lagged feedforward network 时间滞后前馈网络
+VC Vapnik-Chervononkis(dimension) Vapnik-Chervononkis(维数）
+VLSI very-large-scale integration 超大规模集成
+XOR exclusive OR 异或

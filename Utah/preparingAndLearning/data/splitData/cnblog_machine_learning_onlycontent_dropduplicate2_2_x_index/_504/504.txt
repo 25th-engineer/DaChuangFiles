@@ -1,0 +1,60 @@
+很多朋友想学习机器学习，却苦于环境的搭建，这里给出windows上scikit-learn研究开发环境的搭建步骤。
+Step 1. Python的安装
+python有2.x和3.x的版本之分，但是很多好的机器学习python库都不支持3.x，因此，推荐安装2.7版本的python。当前最新的python是2.7.12.链接如下：
+https://www.python.org/downloads/release/python-2712/
+里面可以看到有32位版和64位版的。如果你的机器是64位版的，那么32位和64位版的任选一个安装就可以了。如果机器是32位版的，就只能安装32位版的了。如果你搞不清楚你的机器的位数，那么就安装32位版的吧。也就是“Windows x86 MSI installer”。
+Windows x86-64 MSI installer
+Windows
+for AMD64/EM64T/x64, not Itanium processors
+8fa13925db87638aa472a3e794ca4ee3
+19820544
+SIG
+Windows x86 MSI installer
+Windows
+fe0ef5b8fd02722f32f7284324934f9d
+18907136
+SIG
+安装完毕后，可以设置下环境变量，把python目录加到PATH，比如我的Python装在 C:\Python27，那我就把C:\Python27\Scripts和C:\Python27加到环境变量。当然不加也可以。这样每次使用Python时加上python的全路径名。
+安装完成后，在windows的命令行输入python，如果能出来python的基本信息说明安装成功。
+Step 2. Python包管理工具pip的安装
+我们需要包管理工具来方便python库的安装，包管理工具有很多，这里推荐我习惯使用的pip。
+下载pip的安装脚本。链接如下。下载get-pip.py。然后到你的下载目录，在命令行输入"python get-pip.py",跑完即可安装成功。
+https://pip.pypa.io/en/stable/installing/
+下载完毕后，记得跑下这个命令“pip install -U pip”，一是看看pip能不能正常工作，二是把pip升级到最新版本。
+Step 3. 安装 Visual C++ Compiler for Python
+链接在这: https://www.microsoft.com/en-us/download/details.aspx?id=44266
+这个不装后面很多科学计算的都会装不了。
+Step 4. 安装numpy和scipy
+这两哥们是科学计算和矩阵运算必备工具。
+由于numpy和scipy直接用pip安装经常会出各种各样的问题，因此一般推荐下载离线版的whl来安装numpy和scipy。
+首先安装离线版的numpy，这里我一般是在下面的链接下载numpy，当然scipy也是在这。
+http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
+可以看到里面有很多版本的numpy可以下载，我们的python是2.7，windows 32位的，因此下载“numpy-1.11.2+mkl-cp27-cp27m-win32.whl”
+下载完毕后进入下载目录，在命令行运行 "pip install numpy-1.11.2+mkl-cp27-cp27m-win32.whl" ，这样numpy就安装成功了。
+用同样的方法安装scipy。在下面的链接下载scipy。
+http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy
+我们的python是2.7，windows 32位的，因此选择scipy-0.18.1-cp27-cp27m-win32.whl下载。
+完了运行 "pip install scipy-0.18.1-cp27-cp27m-win32.whl"
+这样numpy和scipy两个好基友就搞定了。
+Step 4. 安装matplotlib，pandas和scikit-learn
+这没有什么好说的，直接在命令行运行下面的命令即可。注意，先安装matplotlib再安装pandas
+pip install -U matplotlib
+pip install -U jinja2
+pip install -U jsonschema
+pip install -U pyzmq
+pip install -U pandas
+pip install -U scikit-learn
+Step 5. 安装ipython和ipython notebook
+ipython notebook是最常用的python交互式学习工具，当然，现在叫做Jupyter Notebook。scikit-learn官方的例子都给出了用ipython notebook运行的版本。
+安装方式很简单：
+pip install ipython
+pip install jupyter
+官网在这：http://ipython.org/notebook.html
+安装完毕后，在命令行输入“jupyter-notebook”,输出会提示你notebook运行在http://localhost:8888
+Step 6.  Hello World！尝试运行一个scikit-learn机器学习程序
+在scikit-learn官网下载一个机器学习的例子，比如： http://scikit-learn.org/stable/_downloads/plot_cv_predict.ipynb
+然后在下载目录运行"jupyter notebook",接着浏览器打开http://localhost:8888。
+可以在浏览器看到你下载目录的内容，我们打开刚下载的plot_cv_predict.ipynb这个文件链接，可以看到python程序的内容，这时我们可以点上面的三角形按钮，一步步的运行程序，如果没有报错，最后可以看到一个线性回归的预测图。
+可以修改这个程序，重新一步步的跑，达到研究学习的目的。
+以上就是scikit-learn和pandas环境的搭建过程。希望大家都可以搭建成功，来研究机器学习。
+（欢迎转载，转载请注明出处。欢迎沟通交流： liujianping-ok@163.com）

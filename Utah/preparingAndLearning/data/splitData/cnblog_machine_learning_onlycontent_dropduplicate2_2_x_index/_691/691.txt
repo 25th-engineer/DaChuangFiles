@@ -1,0 +1,259 @@
+此书网上有英文电子版：Machine Learning with R - Second Edition [eBook].pdf（附带源码）
+评价本书：入门级的好书，介绍了多种机器学习方法，全部用R相关的包实现，案例十分详实，理论与实例结合。
+目录
+第一章 机器学习简介
+第二章 数据的管理和理解
+第三章 懒惰学习--使用近邻分类
+第四章 概率学习--朴素贝叶斯分类
+第五章 分而治之--应用决策树和规则进行分类
+第六章 预测数值型数据--回归方法
+第七章 黑箱方法--神经网络和支持向量机
+第八章 探寻模式--基于关联规则的购物篮分析
+第九章 寻找数据的分组--k均值聚类
+第十章 模型性能的评价
+第十一章 提高模型的性能
+第十二章 其他机器学习主题
+第一章 机器学习简介
+机器学习注重于现实的应用，通常是与特定问题联系在一起，机器学习更像是培训员工，而不是养育孩子。
+机器学习的起源及其实际应用
+知识是如何在计算机中定义和表达的
+用来区分机器学习方法的基本概念
+机器学习提供了应用计算机并把数据转换成可行动的知识的工具集合。
+1.1 起源
+我们的存在离不开信息，我们依赖数据而存在，大脑就是一个黑箱，连接黑箱和外界的就是你的感官，在时间流里，各种数据被我们的感官提取，传入大脑。大脑可以对信息进行建模，理解信息，预测未来，通过肌肉控制器对外发出指令，改变外在的世界。
+语言是这整个环节当中一个非常重要的因素，语言可以将数据在不同的大脑模型间传递，这些模型就组成了更为强大的网络，创造了高等文明。语言也是一种客观的记录工具。
+我们人类的语言是对我们存在世界的一种映射，而计算机语言则很局限，仅为执行任务而生；我们的大脑能够对整个世界建模，能对将这世界的每一个物体抽象建模。
+人类之所以强大，是因为它是作为一个整体存在的，任何个体都只会是这个网络中的一个节点。
+我们一直存在于大数据之中，只是现在我们更容易的获取数据了。
+如果我们理解了数据中存在的有规律的模式，我们就能做出有潜力的预测。
+机器学习，发明计算机算法，把数据转化为智能行为。（核心循环的三者：现有数据；统计方法；计算能力）
+数据挖掘，从大型数据库中产生新的洞察，侧重寻找有价值的信息；机器学习侧重于执行一个已知的任务。
+（在商业上一个重要的应用就是根据客户的购买行为，预测其需求，从而为其提供个性化的服务和推销。）
+1.2 学习理论
+定义：如果机器能够获取经验并且能利用它们，在以后的类似经验中能够提高它的表现，这种行为就是机器的学习。
+学习过程：
+数据输入，观察（抽象并提取信息），记忆（将信息存储在大脑的某个文件里），回忆（打开大脑里的文件）
+抽象化，将数据转换成更宽泛的表现形式
+一般化，应用抽象数据来形成行动的基础
+举例：学习&考试
+过目不忘并不是一种本领，而是一种低级的作弊方式，你没有深刻理解知识，数据本身并不能为你做出决策；必须理解核心概念（建立大纲、概念图），明确信息之间的关系，以主题为中心（这就是知识抽象化）。 一般化，需要大量抽象数据，理解如何将已有知识应用到未知场景中（好的老师能做到这两点）。
+1.2.1 抽象化和知识表达
+原始数据是没有意义的，仅仅是一些01或符号而已，抽象化赋予数据以具体含义。
+idea 和 reality，只是语言的抽象连接。
+知识表达中，将原始数据概括在一个模型里，该模型就是数据间结构化的显式描述。（方程，图表，分类都是模型）
+学习的任务和所分析数据的类型决定选择使用什么模型。
+用一个特定的模型来拟合数据集的过程称为训练（还没达到学习，这还只是抽象化，学习还包括一般化）。
+当模型被训练后，数据转换为一个汇总了原始信息的抽象形式。模型提供了数据之间的关系或联系。
+1.2.2 一般化
+抽象化过程中可能发现无数的内在关系，有多种方法可以对内在关系建模（集合），为了预测，必须选定模型。
+定义：一般化描述了把抽象化的知识转换成可以用于行动的形式。是训练过程中对所有可用于数据抽象化的模型的搜索过程。
+一般不会遍历每一种可能来确定模型，而是用启发式方法。
+偏差，就是系统误差，是模型与真实值之间的差距。偏差是普遍存在的。
+一般化的最后一步就是在存在偏差的情况下判断模型的成功性。
+数据中必然存在噪音，模型不能拟合噪音而造成过度拟合，模型处理噪音数据的好坏是判断模型成功与否的重要方面。
+1.3 应用机器学习的步骤
+收集数据，数据的多种来源
+探索数据和准备数据，这一步需要大量人工干预，80%精力花费在此。
+基于数据训练模型，模型，算法，表示数据
+评价模型性能，每个模型会产生一个学习问题的有偏差的解决方法。能用一个测试集来评价模型的精确度。
+改进模型性能
+1.4 选择机器学习算法
+要权衡学习数据的特征和可以使用方法的偏差。理解所分析数据的类型和任务。
+1.4.1 输入的数据
+几乎所有的输入数据都是以样本（example）和特征值（feature）组成的表格。
+特征有多种形式：数值型特征，分类变量，有序变量（有序的，如大中小）是一种特殊的分类变量。
+1.4.2 机器学习算法的类型
+监督学习，建立预测模型，利用数据集中的其他数值来预测另一个值。发现并且建模目标特征和其他特征之间的关系。目标值担任监督的角色，告诉机器学习的任务是什么。 给定训练集，学习算法会最优化一个模型（函数）来找出属性值之间的组合方式，最终给出目标值。 常见的有分类，回归分析。
+无监督学习，建立描述模型，没有学习目标。模式发现，购物篮分析，聚类，
+1.4.3 为数据匹配合适的算法
+模型
+任务
+章节
+有监督学习算法
+近邻法
+分类
+3
+朴素贝叶斯
+分类
+4
+决策树
+分类
+5
+分类器
+分类
+5
+线性回归
+数值预测
+6
+回归树
+数值预测
+6
+模型树
+数值预测
+6
+神经网络
+双重
+7
+支持向量机
+双重
+7
+无监督学习
+关联规则
+模式识别
+8
+k均值聚类
+聚类
+9
+1.5 使用R进行机器学习
+第一次安装R包就折腾了好久，可以下载，但是不能载入包，显示 rJava 不正常。
+重新配置了好久的Java环境变量，还是不行，于是下载了32位的Java，把R也调成32位的，稍微正常了，但是显示R版本过低。
+更新了R后，Rstudio又报错，显示Rstudio版本过低，于是重新安装了最新版本的RStudio，一切正常。
+总结：软件最好都用最新版的。
+'JAVAC' 不是内部或外部命令解决方法
+配置JAVA的环境变量
+install.packages("RWeka") install.packages("RWeka", lib="/path/to/library") ？install.packages
+library(RWeka)
+1.6 总结
+机器学习起源于统计学、数据库科学和计算机科学的交互。
+机器学习涉及把数据抽象为结构化表示，并把这个结构化表示进行一般化，然后推广到行动中。
+具体而言，数据（样品，特征），概括为模型，用于预测或描述。
+用R包进行机器学习。
+第二章 数据的管理和理解
+初期的核心就是管理和理解所收集的数据。然后才能建立和部署模型。
+基本的R数据结构以及如何使用它们来存储和提取数据
+如何把不同来源格式的数据导入R
+理解并可视化复杂数据的常用方法
+2.1 R的数据结构
+常用的R数据结构有：向量，因子，列表，数组，数据框。
+2.1.1 向量
+c（）
+向量存储一组有序的值，向量可以包含任意数量的元素，但所有的元素必须是同一类型。
+常见的类型有：integer（整型，没有小数点）；numeric（数值型，包含小数点）；character（字符型，文本数据）；logical（逻辑型，取值为TRUE或FALSE）；NULL（没有任何值）；NA（缺失值）。
+用组合函数（combine function）c（）来创建简单的向量：
+向量有固有的顺序，能通过序号来访问；不同于其他编程语言，R语言中序号是从1开始的。
+## Vectors ----- # create vectors of data for three medical patients subject_name <- c("John Doe", "Jane Doe", "Steve Graves") temperature <- c(98.1, 98.6, 101.4) flu_status <- c(FALSE, FALSE, TRUE) # access the second element in body temperature vector temperature[2] ## examples of accessing items in vector # include items in the range 2 to 3 temperature[2:3] # exclude item 2 using the minus sign temperature[-2] # use a vector to indicate whether to include item temperature[c(TRUE, TRUE, FALSE)]
+2.1.2 因子
+factor（）
+用类别值来代表特征的属性称为名义属性，理论上可以用字符型向量来代替，但R有专用的因子（factor）数据结构来表示这种属性。
+因子就是向量的特列，因子在实际存储时，只存储数字1,2,3等数字，以此来节约内存。
+可以将向量转换为因子，使用factor（）函数；
+水平（level），是数据可能取到的所有类别组成。在定义因子时，可以显示的定义水平值。
+还可以创建有序因子
+## Factors ----- # add gender factor gender <- factor(c("MALE", "FEMALE", "MALE")) gender # add blood type factor blood <- factor(c("O", "AB", "A"), levels = c("A", "B", "AB", "O")) blood # add ordered factor symptoms <- factor(c("SEVERE", "MILD", "MODERATE"), levels = c("MILD", "MODERATE", "SEVERE"), ordered = TRUE) symptoms # check for symptoms greater than moderate symptoms > "MODERATE"
+2.1.3 列表
+list（）
+列表也是一种特殊类型的向量，但列表的元素可以是任意不同的类型。
+我们用c（）创建向量，用list（）创建列表；列表可以指定每一项名字，可以通过名字来访问列表的值，而不是像向量那样使用序号。
+创建列表，传入一组值（逗号分开），并为每个值命名。
+如何访问列表元素？类似哈希结构，通过名字访问；也可以通过序号访问；可以同时获取多个列表项；
+单纯的列表似乎没有什么意义。
+## Lists ----- # display information for a patient subject_name[1] temperature[1] flu_status[1] gender[1] blood[1] symptoms[1] # create list for a patient subject1 <- list(fullname = subject_name[1], temperature = temperature[1], flu_status = flu_status[1], gender = gender[1], blood = blood[1], symptoms = symptoms[1]) # display the patient subject1 ## methods for accessing a list # get a single list value by position (returns a sub-list) subject1[2] # get a single list value by position (returns a numeric vector) subject1[[2]] # get a single list value by name subject1$temperature # get several list items by specifying a vector of names subject1[c("temperature", "flu_status")] ## access a list like a vector # get values 2 and 3 subject1[2:3]
+2.1.4 数据框（最重要）
+data.frame（）
+数据框既有行数据，又有列数据，类似于电子表格。
+数据框是一个向量列表或者因子列表，每一列都有相同数量的值，结合了向量和列表的特点。
+如何创建数据框？data.frame()函数可以将向量组合为数据框；向量名将会成为数据框的标题行；
+如何提取数据框中的某一行或某一列？可以通过向量名提取（可以多行提取），可以按行号和列号提取【rows, colums】；
+## Data frames ----- # create a data frame from medical patient data pt_data <- data.frame(subject_name, temperature, flu_status, gender, blood, symptoms, stringsAsFactors = FALSE) # display the data frame pt_data ## accessing a data frame # get a single column pt_data$subject_name # get several columns by specifying a vector of names pt_data[c("temperature", "flu_status")] # this is the same as above, extracting temperature and flu_status pt_data[2:3] # accessing by row and column pt_data[1, 2] # accessing several rows and several columns using vectors pt_data[c(1, 3), c(2, 4)] ## Leave a row or column blank to extract all rows or columns # column 1, all rows pt_data[, 1] # row 1, all columns pt_data[1, ] # all rows and all columns pt_data[ , ] # the following are equivalent pt_data[c(1, 3), c("temperature", "gender")] pt_data[-2, c(-1, -3, -5, -6)]
+2.1.5 矩阵和数组
+matrix（）
+矩阵也是用来存储表格的，不过只能存储单一类型的数据，矩阵一般是用来做数学运算的，通常存储数值型数据。
+数组是多维（多层）矩阵
+## Matrixes ----- # create a 2x2 matrix m <- matrix(c(1, 2, 3, 4), nrow = 2) m # equivalent to the above m <- matrix(c(1, 2, 3, 4), ncol = 2) m # create a 2x3 matrix m <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2) m # create a 3x2 matrix m <- matrix(c(1, 2, 3, 4, 5, 6), ncol = 2) m # extract values from matrixes m[1, 1] m[3, 2] # extract rows m[1, ] # extract columns m[, 1]
+2.2 用R管理数据
+2.2.1 保存和加载R数据结构
+save（）函数把R数据结构写到由file参数设定的位置
+load（）函数将会加载任何一种保存在以“.RData”的数据结构，注意：加载后会覆盖工作区中已存在的相同的变量。
+save.image（）会把所有的会话写入文件，下次启动时自动寻找此文件，恢复上次会话。
+## saving, loading, and removing R data structures save(x, y, z, file = "mydata.RData") load("mydata.RData") save.image() # show all data structures in memory ls() # remove the m and subject1 objects rm(m, subject1) ls() rm(list=ls())
+2.2.2 用CSV文件导入和保存数据
+read.csv()
+read.table()
+write.csv()
+## data exploration example using used car data usedcars <- read.csv("usedcars.csv", stringsAsFactors = FALSE) mydata <- read.csv("mydata.csv", stringsAsFactors = FALSE, header = FALSE) write.csv(pt_data, file = "pt_data.csv")
+2.2.3 从SQL数据库导入数据
+odbcConnect（）
+sqlQuery（）
+odbcClose（）
+ODBC SQL（开放数据库）；数据库管理系统（DBMS）；ODBC是一个连接到数据库的标准规范；需要通过数据源名称（DSN）连接；
+首先需要安装RODBC包；然后连接到DSN数据库（可能需要用户名和密码）；使用sqlQuery（）函数执行SQL查询得到数据库的行数据；建立数据框；
+## SQL install.packages("RODBC") library(RODBC) mydb <- odbcConnect("my_dsn") mydb <- odbcConnect("my_dsn", uid = "my_username", pwd = "my_password") patient_query <- "select * from patient_data where alive = 1" patient_data <- sqlQuery(channel = mydb, query = patient_query, stringsAsFactors = FALSE) odbcClose(mydb)
+2.3 探索和理解数据
+2.3.1 数据的结构
+read.scv()
+str()
+数据导入到R后，就要开始对数据做一个基本的检查；数据的特征和案例；理解数据的独特，以便后面让模型匹配具体的学习问题；
+## data exploration example using used car data usedcars <- read.csv("usedcars.csv", stringsAsFactors = FALSE) # get structure of used car data str(usedcars)
+2.3.2 数值型变量
+summary（）
+汇总统计量分两类：数据的中心测度 和 分散程度测度
+# summarize numeric variables summary(usedcars$year) summary(usedcars[c("price", "mileage")])
+2.3.2.1 测量中心趋势--平均数和中位数
+mean（）
+median（）
+一类统计量：标识一组数据的中间值；
+平均数：按照值的加和，得出平均数；如果平均值偏低，表名数据中小的数偏多；均值不一定最合适；
+中位数：按照次序，位于中间的那个数；中位数反映中等水平，不能全面反映数据。
+均值对异常值非常敏感，容易受到少数几个极端值的影响；
+（实例：均值比中位数大很多，暗示着存在几个极大值）
+# calculate the mean income (36000 + 44000 + 56000) / 3 mean(c(36000, 44000, 56000)) # the median income median(c(36000, 44000, 56000))
+2.3.2.2 测量数据分散程度--四分位数和五分位数
+min（）
+max（）
+range（）
+diff（）
+IQR（）
+quantile（）
+seq（）
+测量数值的大小是否具有多样性；与数据的分散程序有关；
+五数汇总：最小值、第一四分位数、中位数、第三四分位数、最大值；
+第一四分位数（Q1）、第三四分位数（Q3）和中位数（Q2）一起讲数据集分为了4个元素数量均等的部分。
+Q1和Q3之间的50%意义重大，为四分位距（IQR），它就是数据分散程度的一个测度。
+通过比较差值大小，可以判断哪个区域之间聚集的更加紧密。
+# the min/max of used car prices range(usedcars$price) # the difference of the range diff(range(usedcars$price)) # IQR for used car prices IQR(usedcars$price) # use quantile to calculate five-number summary quantile(usedcars$price) # the 99th percentile quantile(usedcars$price, probs = c(0.01, 0.99)) # quintiles quantile(usedcars$price, seq(from = 0, to = 1, by = 0.20))
+2.3.2.3 箱图
+boxplot（）
+箱图是对五数汇总的常用的可视化方式；可以显示数值型变量的中心和分散程度；可以很快了解变量的值域和偏度；
+用水平线来表示五数汇总的值；盒子上的三条线分别是Q1、Q2、Q3；
+最大值和最小值用细线表示；细线通常会有所保留；向内聚合；Q1-1.5*IQR 和 Q3+1.5*IQR；代替了min 和 max；
+任何坐落在min到Q1-1.5*IQR 和 Q3+1.5*IQR到max之间的值都是异常值，用圆圈或者点来表示。
+# boxplot of used car prices and mileage boxplot(usedcars$price, main="Boxplot of Used Car Prices", ylab="Price ($)") boxplot(usedcars$mileage, main="Boxplot of Used Car Mileage", ylab="Odometer (mi.)")
+2.3.2.4 直方图
+hist（）
+直方图是形象化描述数值型变量间差异的方式。高度代表频率，横坐标为分段内的起点和终点。
+# histograms of used car prices and mileage hist(usedcars$price, main = "Histogram of Used Car Prices", xlab = "Price ($)") hist(usedcars$mileage, main = "Histogram of Used Car Mileage", xlab = "Odometer (mi.)")
+2.3.2.5 均匀分布和正态分布
+2.3.2.6 方差和标准差
+var（）
+sd（）
+正态分布可以用两个参数来定义：中心 和 分散程度。
+中心用均值来定义；分散程度用标准差来测量；
+# variance and standard deviation of the used car data var(usedcars$price) sd(usedcars$price) var(usedcars$mileage) sd(usedcars$mileage)
+2.3.3 分类变量
+table（）
+prop.table（）
+round（）
+不能用summary（）函数，而是用table（）函数；
+# one-way tables for the used car data table(usedcars$year) table(usedcars$model) table(usedcars$color) # compute table proportions model_table <- table(usedcars$model) prop.table(model_table) # round the data color_table <- table(usedcars$color) color_pct <- prop.table(color_table) * 100 round(color_pct, digits = 1)
+2.3.4 变量之间关系
+之前都是考察单变量统计量，现在我们开始考虑多变量之间的关系；
+2.3.4.1 散点图
+plot（）
+两个变量之间线性关系的强弱是通过统计量相关系数来测量的。
+# scatterplot of price vs. mileage plot(x = usedcars$mileage, y = usedcars$price, main = "Scatterplot of Price vs. Mileage", xlab = "Used Car Odometer (mi.)", ylab = "Used Car Price ($)")
+2.3.4.2 双向交叉表
+%in%
+CrossTable（）
+用于检查两个名义变量（分类变量）之间的关系；
+# new variable indicating conservative colors usedcars$conservative <- usedcars$color %in% c("Black", "Gray", "Silver", "White") # checking our variable table(usedcars$conservative) # Crosstab of conservative by model library(gmodels) CrossTable(x = usedcars$model, y = usedcars$conservative)
+2.4 总结
+第三章 懒惰学习--使用近邻分类
+第四章 概率学习--朴素贝叶斯分类
+第五章 分而治之--应用决策树和规则进行分类
+第六章 预测数值型数据--回归方法
+第七章 黑箱方法--神经网络和支持向量机
+第八章 探寻模式--基于关联规则的购物篮分析
+第九章 寻找数据的分组--k均值聚类
+第十章 模型性能的评价
+第十一章 提高模型的性能
+第十二章 其他机器学习主题

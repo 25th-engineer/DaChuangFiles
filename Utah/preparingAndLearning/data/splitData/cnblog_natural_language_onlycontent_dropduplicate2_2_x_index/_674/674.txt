@@ -1,0 +1,28 @@
+腾讯人工智能AI开放平台上提供了很多免费的人工智能API，开发人员只需要一个QQ号就可以登录进去使用。
+腾讯人工智能AI开放平台的地址：https://ai.qq.com/
+里面的好东西很多，以自然语言处理的人工智能API为例。
+假设我们有一个句子：腾讯AI人工智能开放平台。我们希望用腾讯的人工智能开放平台里提供的自然语言处理API对这个句子进行智能分词。
+用您的QQ号登录腾讯人工智能开放平台，创建一个新的应用：
+https://ai.qq.com/
+根据您的实际需要选择自然语言处理的具体类别：
+文本朗读（Text to speech）/语音合成（Speech synthesis）
+语音识别（Speech recognition）
+中文自动分词（Chinese word segmentation）
+词性标注（Part-of-speech tagging）
+句法分析（Parsing）
+自然语言生成（Natural language generation）
+文本分类（Text categorization）
+信息检索（Information retrieval）
+信息抽取（Information extraction）
+文字校对（Text-proofing）
+问答系统（Question answering）
+机器翻译（Machine translation）
+自动摘要（Automatic summarization）
+文字蕴涵（Textual entailment）
+创建应用之后生成的app id和app key要记下来，在代码里要使用。
+新建一个js文件，输入如下代码：
+var md5 = require('md5'); var app_id = "2107823355"; var time_stamp = Date.now() / 1000; var nonce_str = Date.now(); var text = "腾讯AI人工智能开放平台"; var app_key = "LHGNH0usjUTRRRSA"; var input = "app_id=" + app_id + "&nonce_str=" + nonce_str + "&text=" + encodeURI(text) + "&time_stamp=" + time_stamp + "&app_key=" + app_key; var upper = md5(input).toUpperCase(); console.log(upper); input = input + "&sign=" + upper; var request = require('request'); var oOptions = { url: "https://api.ai.qq.com/fcgi-bin/nlp/nlp_wordseg", method: "POST", headers: { "content-type": "application/x-www-form-urlencoded", }, body: input }; console.log("request sent: " + oOptions.body); var action = new Promise(function(resolve,reject){ request(oOptions,function(error,response,body){ console.log("response: " + body); }); // end of request });
+通过nodejs里的request组件, 使用HTTP POST调用https://api.ai.qq.com/fcgi-bin/nlp/nlp_wordseg去消费腾讯人工智能开放平台的自然语言处理的分词API：
+这些代码的详细解释，我已经在我之前的NLP版本里介绍过了：
+使用命令行 node nlp.js即可消费该API并查看结果：
+要获取更多Jerry的原创技术文章，请关注公众号"汪子熙"或者扫描下面二维码:

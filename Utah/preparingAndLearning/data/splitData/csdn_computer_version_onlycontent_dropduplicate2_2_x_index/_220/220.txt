@@ -1,0 +1,9 @@
+学习《Python计算机视觉编程》笔记
+第43页上面代码运行不成功
+原因：sift.py文件中process_image()函数的
+cmmd = str(“sift " + imagename + " --output=” + resultname + " " + params)
+os.system(cmmd)
+执行不成功导致的
+解决办法：请参考一下内容：
+转载：Python计算机视觉编程练习1：Python 调用 SIFT
+http://www.itkeyword.com/doc/6844809060106985x122/python-sift

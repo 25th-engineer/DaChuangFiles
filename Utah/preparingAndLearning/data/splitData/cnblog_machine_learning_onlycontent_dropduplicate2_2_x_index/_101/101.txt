@@ -1,0 +1,31 @@
+Python3安装turtle提示错误：Command "python setup.py egg_info" failed with error code 1
+Python3.5安装turtle：
+pip3 install turtle
+提示错误：
+Collecting turtle Using cached https://files.pythonhosted.org/packages/ff/f0/21a42e9e424d24bdd0e509d5ed3c7dfb8f47d962d9c044dba903b0b4a26f/turtle-0.0.2.tar.gz Complete output from command python setup.py egg_info: Traceback (most recent call last): File "<string>", line 1, in <module> File "/tmp/pip-install-hpqxw6_s/turtle/setup.py", line 40 except ValueError, ve: ^ SyntaxError: invalid syntax ---------------------------------------- Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-hpqxw6_s/turtle/
+网络上的方法，升级setuptools也没有用：
+pip3 install --upgrade setuptools
+也会提示错误
+最后通过网友按如下方法解决了，现在记录如下：
+仔细查看安装turtle出错的错误信息，可以看到是个语法错误。
+pip在下载turtle 0.0.2包后，会解压到本地再安装，提示的错误在解压的setup.py文件里面，
+解决的办法就是：按照给定的链接（我的是这个），把turtle包下载到本地，手动解压，修改setup.py文件再安装。
+打开setup.py文件，第40行修改为
+except (ValueError, ve):
+原来的是Python2的写法，没有括号，加了括号之后Python3就能用了。
+用pip3安装修：
+pip install -e turtle-0.0.2
+-e后面接上我们修改过setup.py文件的目录。
+这样就搞定了。
+另外，如果提示 python-tk 未安装，用apt命令安装就可以了：
+sudo apt install python-tk
+参考:https://blog.csdn.net/qq_38784098/article/details/82017601?utm_source=blogxgwz0
+后来发现：python3本身就已包含turtle模块，不需要重新安装
+常用软件开发学习资料目录：
+1.经典编程电子书收藏
+2.C&C++编程学习资料收藏
+3.算法及数据结构（有关c,c++,java）
+4.Java开发学习资料收藏
+5.Android开发学习资料收藏
+6.Python开发学习资料收藏
+7.大数据，机器学习，人工智能资料收藏

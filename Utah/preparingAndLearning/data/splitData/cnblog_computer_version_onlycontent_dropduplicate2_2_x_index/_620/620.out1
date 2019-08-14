@@ -1,0 +1,433 @@
+第七章 目标 检测 与 识别 梯度 直方图 histogram of oriented 
+gradient 图像 金字塔 image pyramid 滑动 窗口 sliding window1 目标 
+检测 与 识别 A   HOG 描述符 每个 单元 包含 
+八个 直方图 即 八个 方向 n nw w sw s 
+se e ne 尺度   检测 目标 可能 位于 较大 
+图像 中 位置   检测 图像 可能 位于 图像 的 
+任意 位置 可以 使用 图像 金字塔 或是 滑动 窗口 解 
+决非 最大 抑制 支持 向量 机 Svm 算法 对于 带 
+有 标签 的 训练 数据 通过 一个 优化 的 超平面 
+对 这些 数据 进行 分类 B   检测 人 示例代码 
+如下 # / usr / bin / env python # 
+* coding utf 8 * # @ Time     
+  2016 / 12/12 11 34 # @ Author   
+Retacn # @ Site       检测 人 # 
+@ File       hogdescriptor . py # @ 
+Software PyCharm _ _ author _ _ = retacn _ 
+_ copyright _ _ = property of mankind . _ 
+_ license _ _ = CN _ _ version _ 
+_ = 0 . 0.1 _ _ maintainer _ _ 
+= retacn _ _ email _ _ = zhenhuayue @ 
+sina . com _ _ status _ _ = Development 
+import cv2 import numpy as np # 检测 某个 矩形 
+是否 包含 另一个 矩形 def is _ inside o i 
+      ox oy ow oh = o   
+    ix iy iw ih = i     
+  return ox ix and oy iy and ox + 
+ow ix + iw and oy + oh iy + 
+ih # 绘制 矩形 框住 检测 到 的 人 def 
+draw _ person imgae person       x y 
+w h = person       cv2 . rectangle 
+imgae x y x + w y + h 0 
+255 255 2 # 读入 图像 img = cv2 . 
+imread . . / people . jpg # 创建 检测器 
+hog = cv2 . HOGDescriptor hog . setSVMDetector cv2 . 
+HOGDescriptor _ g e t D e f a u 
+l t P e o p l e D e 
+t e c t o r found w = hog 
+. detectMultiScale img found _ filtered = for ri r 
+in enumerate found       for qi q in 
+enumerate found               if 
+ri = qi and is _ inside r q   
+                    
+break               else   
+                    
+found _ filtered . append r for person in found 
+_ filtered       draw _ person img person 
+# 显示 图像 cv2 . imshow people detection img cv2 
+. waitKey 0 cv2 . d e s t r 
+o y A l l W i n d o 
+w s C 创建 和 训练 检测器 对于 检测 不同 
+对像 如何 建立 分类器 使用 svm 和词袋/nr bag of word 
+bow 在 语言 分析 中 的 应用 示 列 如下 
+I like opencv and i like pythonI like c + 
++ and pythonI don t like artichokes 可以 用 以下 
+值 来 建立 字典 { I 4 Like 4 Opencv 
+2 And 2Python 2C + + 1Don t 1Artichokes 1 
+} 以上 的 三句话 可以用 以下 向量 表示 2 2 
+1 1 1 0 0 0 1 1 0 1 
+1 1 0 0 1 1 0 0 0 0 
+1 1 计算机 视觉 中的 bow 取 样本 数据集 对 
+数据 集中 的 每幅 图像 提取 描述符 sif surf 将 
+每个 描述符 添加到 bow 训练器 中将 描述符 聚 类 开 
+k 族 中 聚 类 的 中心 就是 视觉 单词 
+K means 聚 类   用于 数据分析 的 向 量化 
+方法 2 汽车 检测 数据集 下载 The university orlllinoishttp / 
+/ l2r . cs . uiuc . edu / ~ 
+cogcomp / DATA / Car / CarData . tar . 
+g z t a n f o r d u 
+n i v e r s i t y H 
+t t p / / ai . stanford . edu 
+/ ~ jkrause / cars / car _ dataset . 
+html 示例代码 如下 import cv2 import numpy as np from 
+os . path import join # TODO   定义 路径 
+datapath = E / notes / python / opencv _ 
+python / openLib / CarData / TrainImages # 取得 测试 
+图像 的 完整 路径 def path cls i     
+  return % s / % s % d . 
+pgm % datapath cls i + 1 pos neg = 
+pos neg # 使用 sif surf 提取 特征 描述符 detect 
+= cv2 . xfeatures2d . SIFT _ create   # 
+提取 关键点 extract = cv2 . xfeatures2d . SURF _ 
+create   # 提取 特征 # 使用 flann 匹 配器 
+flann _ params = dict algorithm = 1 trees = 
+5 matcher = cv2 . F l a n n 
+B a s e d M a t c h 
+e r flann _ params { } # 创建 bow 
+训练器 簇 数 为 40 bow _ kmeans _ trainer 
+= cv2 . BOWKMeansTrainer 40 # 初始化 bow 提取 器 
+extract _ bow = cv2 . B O W I 
+m g D e s c r i p t 
+o r E x t r a c t o 
+r extract matcher # 取得 图像 路径 认 灰度 格式 
+读取 图像 返回 描述符 def extract _ sift fn   
+    im = cv2 . imread fn 0   
+    return extract . compute im detect . detect 
+im 1 # 每个 类 读取 8张 图像 for i 
+in range 8       bow _ kmeans _ 
+trainer . add extract _ sift path pos i   
+    bow _ kmeans _ trainer . add extract 
+_ sift path neg i # 执行 k means 分类 
+并 返回 词汇 voc = bow _ kmeans _ trainer 
+. cluster extract _ bow . setVocabulary voc # 取得 
+基于 bow 描述符 提取 器 计算 得到 的 描述符 def 
+bow _ features fn       im = cv2 
+. imread fn cv2 . IMREAD _ GRAYSCALE     
+  return extract _ bow . compute im detect . 
+detect im # 训练 数据 和 标签 traindata trainlables = 
+# 生成 正负 样本 图像 的 标签 for i in 
+range 20       # extend 尾部 添加   
+    traindata . extend bow _ features path pos 
+i       trainlables . append 1     
+  traindata . extend bow _ features path neg i 
+      trainlables . append 1 # 创建 svm 
+实例 svm = cv2 . ml . SVM _ create 
+# 训练 数据 和 标签 svm . train np . 
+array traindata cv2 . ml . ROW _ SAMPLE np 
+. array trainlables # 显示 predict 结果 def predict fn 
+      f = bow _ features fn   
+    p = svm . predict f     
+  print fn \ t p 1 0 0   
+    return p # TODO   设置 两个 样本 
+图像 的 路径 car notcar = . . / car 
+. jpg . . / book . jpg car _ 
+img = cv2 . imread car notcar _ img = 
+cv2 . imread notcar # 将 图像 传给 svm 取得 
+检测 结果 car _ predict = predict car notcar _ 
+predict = predict notcar # 设置 字体 样式 font = 
+cv2 . FONT _ HERSHEY _ SIMPLEX # 在 图片 
+上 显示 信息 说明 if car _ predict 1 0 
+0 = = 1.0       cv2 . putText 
+car _ img Car Detected 10 30 font 1 0 
+255 0 2 cv2 . LINE _ AA if notcar 
+_ predict 1 0 0 = = 1.0     
+  cv2 . putText notcar _ img Car Not Detected 
+10 30 font 1 0 0 255 2 cv2 . 
+LINE _ AA # 显示 图像 cv2 . imshow BOW 
++ SVM Success car _ img cv2 . imshow BOW 
++ SVM Failure notcar _ img if cv2 . waitKey 
+0 & 0xFF = = ord q       
+cv2 . d e s t r o y A 
+l l W i n d o w s 运行 
+结果 如 下图 Svm 滑动 窗口 检测 同一 物体 的 
+多个 目标 确定 检测 到 的 目标 在 图像 中 
+的 位置 滑动 窗口 的 方法 有点像 lcd 屏 的 
+显示 示例代码 如下 测试 不 成功 第七章 目标 检测 与 识别 梯度 直方图 histogram of oriented 
+gradient 图像 金字塔 image pyramid 滑动 窗口 sliding window1 目标 
+检测 与 识别 A   HOG 描述符 每个 单元 包含 
+八个 直方图 即 八个 方向 n nw w sw s 
+se e ne 尺度   检测 目标 可能 位于 较大 
+图像 中 位置   检测 图像 可能 位于 图像 的 
+任意 位置 可以 使用 图像 金字塔 或是 滑动 窗口 解 
+决非 最大 抑制 支持 向量 机 Svm 算法 对于 带 
+有 标签 的 训练 数据 通过 一个 优化 的 超平面 
+对 这些 数据 进行 分类 B   检测 人 示例代码 
+如下 # / usr / bin / env python # 
+* coding utf 8 * # @ Time     
+  2016 / 12/12 11 34 # @ Author   
+Retacn # @ Site       检测 人 # 
+@ File       hogdescriptor . py # @ 
+Software PyCharm _ _ author _ _ = retacn _ 
+_ copyright _ _ = property of mankind . _ 
+_ license _ _ = CN _ _ version _ 
+_ = 0 . 0.1 _ _ maintainer _ _ 
+= retacn _ _ email _ _ = zhenhuayue @ 
+sina . com _ _ status _ _ = Development 
+import cv2 import numpy as np # 检测 某个 矩形 
+是否 包含 另一个 矩形 def is _ inside o i 
+      ox oy ow oh = o   
+    ix iy iw ih = i     
+  return ox ix and oy iy and ox + 
+ow ix + iw and oy + oh iy + 
+ih # 绘制 矩形 框住 检测 到 的 人 def 
+draw _ person imgae person       x y 
+w h = person       cv2 . rectangle 
+imgae x y x + w y + h 0 
+255 255 2 # 读入 图像 img = cv2 . 
+imread . . / people . jpg # 创建 检测器 
+hog = cv2 . HOGDescriptor hog . setSVMDetector cv2 . 
+HOGDescriptor _ g e t D e f a u 
+l t P e o p l e D e 
+t e c t o r found w = hog 
+. detectMultiScale img found _ filtered = for ri r 
+in enumerate found       for qi q in 
+enumerate found               if 
+ri = qi and is _ inside r q   
+                    
+break               else   
+                    
+found _ filtered . append r for person in found 
+_ filtered       draw _ person img person 
+# 显示 图像 cv2 . imshow people detection img cv2 
+. waitKey 0 cv2 . d e s t r 
+o y A l l W i n d o 
+w s C 创建 和 训练 检测器 对于 检测 不同 
+对像 如何 建立 分类器 使用 svm 和词袋/nr bag of word 
+bow 在 语言 分析 中 的 应用 示 列 如下 
+I like opencv and i like pythonI like c + 
++ and pythonI don t like artichokes 可以 用 以下 
+值 来 建立 字典 { I 4 Like 4 Opencv 
+2 And 2Python 2C + + 1Don t 1Artichokes 1 
+} 以上 的 三句话 可以用 以下 向量 表示 2 2 
+1 1 1 0 0 0 1 1 0 1 
+1 1 0 0 1 1 0 0 0 0 
+1 1 计算机 视觉 中的 bow 取 样本 数据集 对 
+数据 集中 的 每幅 图像 提取 描述符 sif surf 将 
+每个 描述符 添加到 bow 训练器 中将 描述符 聚 类 开 
+k 族 中 聚 类 的 中心 就是 视觉 单词 
+K means 聚 类   用于 数据分析 的 向 量化 
+方法 2 汽车 检测 数据集 下载 The university orlllinoishttp / 
+/ l2r . cs . uiuc . edu / ~ 
+cogcomp / DATA / Car / CarData . tar . 
+g z t a n f o r d u 
+n i v e r s i t y H 
+t t p / / ai . stanford . edu 
+/ ~ jkrause / cars / car _ dataset . 
+html 示例代码 如下 import cv2 import numpy as np from 
+os . path import join # TODO   定义 路径 
+datapath = E / notes / python / opencv _ 
+python / openLib / CarData / TrainImages # 取得 测试 
+图像 的 完整 路径 def path cls i     
+  return % s / % s % d . 
+pgm % datapath cls i + 1 pos neg = 
+pos neg # 使用 sif surf 提取 特征 描述符 detect 
+= cv2 . xfeatures2d . SIFT _ create   # 
+提取 关键点 extract = cv2 . xfeatures2d . SURF _ 
+create   # 提取 特征 # 使用 flann 匹 配器 
+flann _ params = dict algorithm = 1 trees = 
+5 matcher = cv2 . F l a n n 
+B a s e d M a t c h 
+e r flann _ params { } # 创建 bow 
+训练器 簇 数 为 40 bow _ kmeans _ trainer 
+= cv2 . BOWKMeansTrainer 40 # 初始化 bow 提取 器 
+extract _ bow = cv2 . B O W I 
+m g D e s c r i p t 
+o r E x t r a c t o 
+r extract matcher # 取得 图像 路径 认 灰度 格式 
+读取 图像 返回 描述符 def extract _ sift fn   
+    im = cv2 . imread fn 0   
+    return extract . compute im detect . detect 
+im 1 # 每个 类 读取 8张 图像 for i 
+in range 8       bow _ kmeans _ 
+trainer . add extract _ sift path pos i   
+    bow _ kmeans _ trainer . add extract 
+_ sift path neg i # 执行 k means 分类 
+并 返回 词汇 voc = bow _ kmeans _ trainer 
+. cluster extract _ bow . setVocabulary voc # 取得 
+基于 bow 描述符 提取 器 计算 得到 的 描述符 def 
+bow _ features fn       im = cv2 
+. imread fn cv2 . IMREAD _ GRAYSCALE     
+  return extract _ bow . compute im detect . 
+detect im # 训练 数据 和 标签 traindata trainlables = 
+# 生成 正负 样本 图像 的 标签 for i in 
+range 20       # extend 尾部 添加   
+    traindata . extend bow _ features path pos 
+i       trainlables . append 1     
+  traindata . extend bow _ features path neg i 
+      trainlables . append 1 # 创建 svm 
+实例 svm = cv2 . ml . SVM _ create 
+# 训练 数据 和 标签 svm . train np . 
+array traindata cv2 . ml . ROW _ SAMPLE np 
+. array trainlables # 显示 predict 结果 def predict fn 
+      f = bow _ features fn   
+    p = svm . predict f     
+  print fn \ t p 1 0 0   
+    return p # TODO   设置 两个 样本 
+图像 的 路径 car notcar = . . / car 
+. jpg . . / book . jpg car _ 
+img = cv2 . imread car notcar _ img = 
+cv2 . imread notcar # 将 图像 传给 svm 取得 
+检测 结果 car _ predict = predict car notcar _ 
+predict = predict notcar # 设置 字体 样式 font = 
+cv2 . FONT _ HERSHEY _ SIMPLEX # 在 图片 
+上 显示 信息 说明 if car _ predict 1 0 
+0 = = 1.0       cv2 . putText 
+car _ img Car Detected 10 30 font 1 0 
+255 0 2 cv2 . LINE _ AA if notcar 
+_ predict 1 0 0 = = 1.0     
+  cv2 . putText notcar _ img Car Not Detected 
+10 30 font 1 0 0 255 2 cv2 . 
+LINE _ AA # 显示 图像 cv2 . imshow BOW 
++ SVM Success car _ img cv2 . imshow BOW 
++ SVM Failure notcar _ img if cv2 . waitKey 
+0 & 0xFF = = ord q       
+cv2 . d e s t r o y A 
+l l W i n d o w s 运行 
+结果 如 下图 Svm 滑动 窗口 检测 同一 物体 的 
+多个 目标 确定 检测 到 的 目标 在 图像 中 
+的 位置 滑动 窗口 的 方法 有点像 lcd 屏 的 
+显示 示例代码 如下 测试 不 成功 第七章 目标 检测 与 识别 梯度 直方图 histogram of oriented 
+gradient 图像 金字塔 image pyramid 滑动 窗口 sliding window1 目标 
+检测 与 识别 A   HOG 描述符 每个 单元 包含 
+八个 直方图 即 八个 方向 n nw w sw s 
+se e ne 尺度   检测 目标 可能 位于 较大 
+图像 中 位置   检测 图像 可能 位于 图像 的 
+任意 位置 可以 使用 图像 金字塔 或是 滑动 窗口 解 
+决非 最大 抑制 支持 向量 机 Svm 算法 对于 带 
+有 标签 的 训练 数据 通过 一个 优化 的 超平面 
+对 这些 数据 进行 分类 B   检测 人 示例代码 
+如下 # / usr / bin / env python # 
+* coding utf 8 * # @ Time     
+  2016 / 12/12 11 34 # @ Author   
+Retacn # @ Site       检测 人 # 
+@ File       hogdescriptor . py # @ 
+Software PyCharm _ _ author _ _ = retacn _ 
+_ copyright _ _ = property of mankind . _ 
+_ license _ _ = CN _ _ version _ 
+_ = 0 . 0.1 _ _ maintainer _ _ 
+= retacn _ _ email _ _ = zhenhuayue @ 
+sina . com _ _ status _ _ = Development 
+import cv2 import numpy as np # 检测 某个 矩形 
+是否 包含 另一个 矩形 def is _ inside o i 
+      ox oy ow oh = o   
+    ix iy iw ih = i     
+  return ox ix and oy iy and ox + 
+ow ix + iw and oy + oh iy + 
+ih # 绘制 矩形 框住 检测 到 的 人 def 
+draw _ person imgae person       x y 
+w h = person       cv2 . rectangle 
+imgae x y x + w y + h 0 
+255 255 2 # 读入 图像 img = cv2 . 
+imread . . / people . jpg # 创建 检测器 
+hog = cv2 . HOGDescriptor hog . setSVMDetector cv2 . 
+HOGDescriptor _ g e t D e f a u 
+l t P e o p l e D e 
+t e c t o r found w = hog 
+. detectMultiScale img found _ filtered = for ri r 
+in enumerate found       for qi q in 
+enumerate found               if 
+ri = qi and is _ inside r q   
+                    
+break               else   
+                    
+found _ filtered . append r for person in found 
+_ filtered       draw _ person img person 
+# 显示 图像 cv2 . imshow people detection img cv2 
+. waitKey 0 cv2 . d e s t r 
+o y A l l W i n d o 
+w s C 创建 和 训练 检测器 对于 检测 不同 
+对像 如何 建立 分类器 使用 svm 和词袋/nr bag of word 
+bow 在 语言 分析 中 的 应用 示 列 如下 
+I like opencv and i like pythonI like c + 
++ and pythonI don t like artichokes 可以 用 以下 
+值 来 建立 字典 { I 4 Like 4 Opencv 
+2 And 2Python 2C + + 1Don t 1Artichokes 1 
+} 以上 的 三句话 可以用 以下 向量 表示 2 2 
+1 1 1 0 0 0 1 1 0 1 
+1 1 0 0 1 1 0 0 0 0 
+1 1 计算机 视觉 中的 bow 取 样本 数据集 对 
+数据 集中 的 每幅 图像 提取 描述符 sif surf 将 
+每个 描述符 添加到 bow 训练器 中将 描述符 聚 类 开 
+k 族 中 聚 类 的 中心 就是 视觉 单词 
+K means 聚 类   用于 数据分析 的 向 量化 
+方法 2 汽车 检测 数据集 下载 The university orlllinoishttp / 
+/ l2r . cs . uiuc . edu / ~ 
+cogcomp / DATA / Car / CarData . tar . 
+g z t a n f o r d u 
+n i v e r s i t y H 
+t t p / / ai . stanford . edu 
+/ ~ jkrause / cars / car _ dataset . 
+html 示例代码 如下 import cv2 import numpy as np from 
+os . path import join # TODO   定义 路径 
+datapath = E / notes / python / opencv _ 
+python / openLib / CarData / TrainImages # 取得 测试 
+图像 的 完整 路径 def path cls i     
+  return % s / % s % d . 
+pgm % datapath cls i + 1 pos neg = 
+pos neg # 使用 sif surf 提取 特征 描述符 detect 
+= cv2 . xfeatures2d . SIFT _ create   # 
+提取 关键点 extract = cv2 . xfeatures2d . SURF _ 
+create   # 提取 特征 # 使用 flann 匹 配器 
+flann _ params = dict algorithm = 1 trees = 
+5 matcher = cv2 . F l a n n 
+B a s e d M a t c h 
+e r flann _ params { } # 创建 bow 
+训练器 簇 数 为 40 bow _ kmeans _ trainer 
+= cv2 . BOWKMeansTrainer 40 # 初始化 bow 提取 器 
+extract _ bow = cv2 . B O W I 
+m g D e s c r i p t 
+o r E x t r a c t o 
+r extract matcher # 取得 图像 路径 认 灰度 格式 
+读取 图像 返回 描述符 def extract _ sift fn   
+    im = cv2 . imread fn 0   
+    return extract . compute im detect . detect 
+im 1 # 每个 类 读取 8张 图像 for i 
+in range 8       bow _ kmeans _ 
+trainer . add extract _ sift path pos i   
+    bow _ kmeans _ trainer . add extract 
+_ sift path neg i # 执行 k means 分类 
+并 返回 词汇 voc = bow _ kmeans _ trainer 
+. cluster extract _ bow . setVocabulary voc # 取得 
+基于 bow 描述符 提取 器 计算 得到 的 描述符 def 
+bow _ features fn       im = cv2 
+. imread fn cv2 . IMREAD _ GRAYSCALE     
+  return extract _ bow . compute im detect . 
+detect im # 训练 数据 和 标签 traindata trainlables = 
+# 生成 正负 样本 图像 的 标签 for i in 
+range 20       # extend 尾部 添加   
+    traindata . extend bow _ features path pos 
+i       trainlables . append 1     
+  traindata . extend bow _ features path neg i 
+      trainlables . append 1 # 创建 svm 
+实例 svm = cv2 . ml . SVM _ create 
+# 训练 数据 和 标签 svm . train np . 
+array traindata cv2 . ml . ROW _ SAMPLE np 
+. array trainlables # 显示 predict 结果 def predict fn 
+      f = bow _ features fn   
+    p = svm . predict f     
+  print fn \ t p 1 0 0   
+    return p # TODO   设置 两个 样本 
+图像 的 路径 car notcar = . . / car 
+. jpg . . / book . jpg car _ 
+img = cv2 . imread car notcar _ img = 
+cv2 . imread notcar # 将 图像 传给 svm 取得 
+检测 结果 car _ predict = predict car notcar _ 
+predict = predict notcar # 设置 字体 样式 font = 
+cv2 . FONT _ HERSHEY _ SIMPLEX # 在 图片 
+上 显示 信息 说明 if car _ predict 1 0 
+0 = = 1.0       cv2 . putText 
+car _ img Car Detected 10 30 font 1 0 
+255 0 2 cv2 . LINE _ AA if notcar 
+_ predict 1 0 0 = = 1.0     
+  cv2 . putText notcar _ img Car Not Detected 
+10 30 font 1 0 0 255 2 cv2 . 
+LINE _ AA # 显示 图像 cv2 . imshow BOW 
++ SVM Success car _ img cv2 . imshow BOW 
++ SVM Failure notcar _ img if cv2 . waitKey 
+0 & 0xFF = = ord q       
+cv2 . d e s t r o y A 
+l l W i n d o w s 运行 
+结果 如 下图 Svm 滑动 窗口 检测 同一 物体 的 
+多个 目标 确定 检测 到 的 目标 在 图像 中 
+的 位置 滑动 窗口 的 方法 有点像 lcd 屏 的 
+显示 示例代码 如下 测试 不 成功 

@@ -1,0 +1,16 @@
+人工智能(AI)学习资料库每周更新，请Ctrl+D保存到收藏夹，方便及时获取最新学习资料。
+吐血整理：人工智能PDF中文教材资源包2.73G基本包含全部学习资料-人工智能学习书单
+Python机器学习中文版(Python Machine Learning)
+Step by Step 真正从零开始，TensorFlow详细安装入门图文教程！帮你完成那个最难的从0到1
+TensorFlow 官方文档中文版
+人工智能 一种现代的方法（第3版）
+史上最全人工智能英文原版PDF教材1.03G资源包Artificial Intelligence
+资源|28本必读的经典机器学习/数据挖掘书籍（免费下载）
+人工智能入门书单（附PDF链接）
+工学博士珍藏的人工智能进阶书单（附PDF链接）
+TensorFlow教程
+Python教程
+Python3教程
+Django教程
+Linux教程
+Node.js教程

@@ -1,0 +1,27 @@
+编者按：2017年是不平凡的一年（当然，事实上，每一年都是），迄今为止，新增了哪些对机器学习和人工智能学习者有帮助的福利资源呢？我们来盘点一下。
+课程视频：
+1）斯坦福开放CS231n Spring 2017全部课程视频
+关键词：计算机视觉   深度学习
+传送门：http://www.aqinet.cn/thread-576-1-1.html
+2）李飞飞女神对深度学习与计算机视觉的讲解：
+关键词：李飞飞  计算机视觉   深度学习
+传送门：http://www.aqinet.cn/thread-569-1-1.html  （提供百度网盘下载）
+3) 男神Andrew Ng在离开百度以后，正式发布深度学习课程项目Deeplearning.ai
+关键词：吴恩达  andrew  coursera
+传送门：http://www.aqinet.cn/thread-561-1-1.html
+4）宝岛台湾的李宏毅又给深度学习初学者送来大礼，这次，讲的是GAN
+传送门：2017年5月份-李宏毅-最新GAN中文视频教程分享   （提供百度网盘下载）
+5）CS 294: Deep Reinforcement Learning, Spring 2017授课视频
+讲师阵容空前豪华，网红Andrej Karpathy领衔。
+传送门：http://www.aqinet.cn/thread-327-1-1.html    （提供百度网盘下载）
+6）国际大腕MIT给自动驾驶界又添了一把火，发布课程《Deep Learning for Self-Driving Cars》
+关键词：MIT——清华人梦中的学府
+传送门：http://www.aqinet.cn/thread-139-1-1.html    （提供百度网盘下载）
+7)  NLP界新增福利，斯坦福大学放出cs224n课程
+官网：http://web.stanford.edu/class/cs224n/
+开放数据：
+1)百度开放中文问答数据集WebQA
+开源代码：
+1）Facebook开源问答系统DrQA：基于单一信源回答开放域提问
+2）腾讯优图实验室开源项目，手机能用的神经网络
+3) 百度开源无人驾驶核心代码 阿波罗   https://github.com/ApolloAuto/apollo

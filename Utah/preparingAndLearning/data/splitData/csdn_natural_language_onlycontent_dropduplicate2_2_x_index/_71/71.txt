@@ -1,0 +1,20 @@
+from nltk.collocations import BigramCollocationFinder
+1. nltk.collocations.BigramCollocationFinder(word_fd,bigram_fd,window_size=2)
+用于查找和排列bigram搭配或其他关联度量的工具。
+2. BigramCollocationFinder.from_words(words, window_size=2): 把词列表变为双词搭配。
+为给定序列中的所有bigrams构建一个BigramCollocationFinder。
+3.BigramCollocationFinder.score_ngram(score_fn, w1, w2):
+使用给定的评分函数返回给定二元组的分数。
+4. BigramCollocationFinder.apply_ngram_filter(fn):
+对任意n元词组合应用函数fn,如果fn(w1,...,wn)返回结果为True，则删除此n元词组合。
+5.BigramCollocationFinder.apply_word_filter(fn):
+对任意n元词组合，应用函数fn,如果(fn(w1),...,fn(wn))中有一个结果是True，
+则删除此n元词组合。
+6. BigramCollocationFinder.apply_freq_filter(min_freq):
+删除频数小于min_freq的候选项。
+操作实例如下：
+import re import jieba text2 = re.sub('[.．：。；;！!?？%\]\[\t\n\"\')(】【）（+\-\*/<>《》]', '', text1) word_list = jieba.lcut(text2) word_list = [word for word in word_list if len(word)>1] from nltk.collocations import BigramCollocationFinder bigram_finder = BigramCollocationFinder.from_words(word_list) bigram_finder.ngram_fd
+去除频数小于4的二元词组
+bigram_finder.apply_freq_filter(4) bigram_finder.ngram_fd FreqDist({('占崩岗', '滑坡'): 4, ('崩岗', '滑坡'): 24, ('崩岗', '面积'): 4, ('森林', '植被'): 6, ('滑坡', '面积'): 6})
+去除含有'植被'的词组，去除含有 '占崩岗的词组'
+def fn1(*words): return '植被' in words def fn2(word): return word == '占崩岗' bigram_finder.apply_ngram_filter(fn1) bigram_finder.ngram_fd FreqDist({('占崩岗', '滑坡'): 4, ('崩岗', '滑坡'): 24, ('崩岗', '面积'): 4, ('滑坡', '面积'): 6}) bigram_finder.apply_word_filter(fn2) bigram_finder.ngram_fd FreqDist({('崩岗', '滑坡'): 24, ('崩岗', '面积'): 4, ('滑坡', '面积'): 6})

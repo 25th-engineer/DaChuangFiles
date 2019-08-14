@@ -1,0 +1,95 @@
+本 列表 总结 了 25个 Java 机器学习 工具 & 库 
+1 .   Weka 集成 了 数据 挖掘 工作 的 
+机器学习 算法 这些 算法 可以 直接 应用 于 一个 数据 
+集上 或者 你 可以 自己 编写 代码 来 调用 Weka 
+包括 一 系列 的 工具 如 数据 预处理 分类 回归 
+聚 类 关联 规则 以及 可视化 2 . Massive   
+Online   Analysis MOA 是 一个 面向 数据流 挖掘 的 
+流行 开源 框架 有着 非常 活跃 的 成长 社区 它 
+包括 一 系列 的 机器学习 算法 分类 回归 聚 类 
+异常 检测 概念 漂移 检测 和 推荐 系统 和 评估 
+工具 关联 了 WEKA 项目 MOA 也是 用 Java 编写 
+的 其 扩展性 更强 3 . MEKA 项目 提供 了 
+一个 面向 多 标签 学习 和 评价 方法 的 开源 
+实现 在 多 标签 分类 中 我们 要 预测 每个 
+输入 实例 的 多个 输出 变量 这与 普通 情况 下 
+只 涉及 一个 单一 目标 变量 的 情形 不同 此外 
+MEKA 基于 WEKA 的 机器学习 工具包 4 .   Advanced 
+  Data   mining   And   Machine   learning 
+  System ADAMS 是 一种 新型 的 柔性 工作流 引擎 
+旨在 迅速 建立 并 保持 真实 世界 的 复杂 知识 
+流 它 是 基于 GPLv3 发行 的 5 .   
+Environment   for   Developing   KDD Applications   Supported 
+  by   Index Structure ELKI 是 一款 基于 Java 
+的 开源 AGPLv3 数据挖掘 软件 ELKI 主要 集中 于 算法 
+研究 重点 研究 聚类分析 中的 无 监督 方法 和 异常 
+检测 6 .   Mallet 是 一个 基于 Java 的 
+面向 文本文件 的 机器学习 工具包 Mallet 支持 分类 算法 如 
+最大熵 朴素 贝叶斯 和 决策树 分类 7 .   Encog 
+是 一个 先进 的 机器学习 框架 集成 了 支持 向量 
+机 SVM 人工神经网络 遗传算法 贝叶斯 网络 隐 马尔可夫 模型 HMM 
+遗传 编程 和 遗传算法 8 .   Datumbox 机器学习 框架 
+是 一个 用 Java 编写 的 开源 框架 允许 快速 
+地 开发 机器学习 和 统计 应用 该 框架 的 核心 
+重点 包括 大量 的 机器学习 算法 以及 统计 测试 能够 
+处理 中等 规模 的 数据 集 9 .   Deeplearning4j 
+是 使用 Java 和 Scala 编写 的 第一 个 商业 
+级 的 开源 的 分布式 深入 学习 库 其 设计 
+的 目的 是 用于 商业 环境 中 而 不是 作为 
+一个 研究 工具 10 .   Mahout 是 一个 内置 
+算法 的 机器学习 框架 Mahout Samsara 帮助 人们 创建 他们 
+自己 的 数学 并 提供 了 一些 现成 的 算法 
+实现 11 . Rapid   Miner 是 德国 多 特蒙特 
+技术 大学 开发 的 它 为 开发 者 开发 应用 
+程序 提供 了 一个 GUI 图形用户界面 和 Java   API 
+它 还 提供 了 一些 机器学习 算法 用来 做 数据处理 
+可视化 以及 建模 12 .   Apache   SAMOA 是 
+一个 机器学习 ML 框架 内嵌 面向 分布式 流 ML 算法 
+的 编程 抽象 并且 允许 在 没有 直接 处理 底层 
+分布式 流 处理 引擎 DSPEe 如 Apache   Storm Apache 
+  S4 和 Apache   samza 复杂性 的 情况 下 
+开发 新的 ML 算法 用户 可以 开发 分布式 流 ML 
+算法 而且 可以 在 多个 DSPEs 上 执行 13 . 
+  Neuroph 通过 提供 支持 创建 训练/vn 和/c 保存/v 神经/n 
+网络/n 的/uj Java/w 网络/n 库/n 和/c GUI/w 工具/n 简化 了 
+神经 网络 开发 14 .   Oryx   2 是 
+一个 建立在 Apache   Spark 和 Apache   Kafka 的 
+Lambda 架构 实现 但随着 实时 大规模 机器学习 而 逐渐 开始 
+专业化 这 是 一个 用于 构建 应用 程序 的 框架 
+但也 包括 打包 以及 面向 协同 过滤 分类 回归 和聚类/nr 
+的 端 到 端的 应用程序 15 .   Stanford   
+Classifier 是 一个 机器学习 工具 它 可以 将 数据项 归置 
+到 一个 类别 一个 概率 分类器 比如 这个 它 可以 
+对 一个 数据项 给出 类 分配 的 概率分布 该 软件 
+是 最大熵 分类器 的 一个 Java 实现 16 . io 
+是 一个 Retina   API 有着 快速 精确 的 类似 
+大脑 的 自然 语言 处理 算法 17 . JSAT 是 
+一个 快速 入门 的 机器学习 库 该 库 是 我 
+在 业余 时间 开发 的 基于 GPL3 发行 的 库 
+中的 一 部分 内容 可 自主 学习 例如 所有 的 
+代码 都是/nr 独立 的 JSAT 没有 外部 依赖 而且是 纯 
+Java 编写 的 18 .   N Dimensional   Arrays 
+  for   Java ND4J 是 一个 用于 JVM 的 
+科学计算 库 它们 是 用来 在 生产 环境 中 使用 
+的 这表明 例程 的 设计 是以 最小 的 内存 需求 
+来 运行 的 19 .   Java   Machine   
+Learning   Library Java 机器学习 库 是 一系列 机器学习 算法 
+的 相关 实现 这些 算法 无论是 源代码 还是 文档 都 
+编写 的 很 出色 其主要 语言 是 Java 20 . 
+  Java ML 是 一个 使用 Java 编写 的 一系列 
+机器学习 算法 的 Java   API 它 只 提供 了 
+一个 标准 的 算法 接口 21 .   MLlib   
+Spark 是 Apache   Spark 的 可扩展 机器学习 库 虽然 
+是 Java 但该 库 与 平台 还 支持 Java Scala 
+和 Python 绑定 此 库 是 最新 的 并且 算法 
+很多 22 .   H2O 是 用于 智能 应用 的 
+机器学习 API 它 在 大 数据 上 对 统计学 机器 
+学习 和 数学 进行 了 规模化 H2O 可扩展 开发 者 
+可以 在 核心 部分 使用 简单 的 数学 知识 23 
+.   WalnutiQ 是 人脑 部分 面向对象 模型 有着 理论 
+常用 的 学习 算法 正在 向 简单 强烈 的 情感 
+人工智能 模型 方向 研究 24 .   RankLib 是 一个 
+排名 学习 算 法库 目前 已经 实现 八种 流行 的 
+算法 25 .   htm . java 基于 Java 的 
+Hierarchical   Temporal   Memory 算法 实现 是 一个 面向 
+智能 计算 的 Numenta 平台 的 Java 接口 源码 

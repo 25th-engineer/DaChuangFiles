@@ -1,0 +1,42 @@
+人工智能、机器学习、模式识别、计算机视觉、数据挖掘、信息检索、自然语言处理等作为计算机科学重要的研究分支，不论是学术界还是工业界，有关这方面的研究都在如火如荼地进行着，学习这些方面的内容有一些经典书籍，现总结如下，方便自己和大家以后学习研究：
+人工智能：
+《Artificial Intelligence: A Modern Approach》，第三版，Russell著，权威、经典的人工智能教材，阐述了人工智能的核心内容，反映了人工智能最近10年来的新进展。
+《ProgrammingCollective Intelligence》，Toby Segaran著，本书将带你进入机器学习和统计学的世界，对算法的描述简明清晰，很对代码都可以直接拿去实际应用。
+数据挖掘：
+《DataMining, Concepts and Techniques》，第三版，Han著，数据挖掘领域最具里程碑意义的经典著作。
+《DataMining: Practical Machine Learning Tools and Techniques》,第二版，Witten著，介绍了机器学习的基本理论和实践方法，并提供了一个公开的数据挖掘工作平台Weka，算法部分介绍得很详细。
+信息检索：
+《An Introductionto Information Retrieval》,Manning著，这是一本介绍信息检索的入门书籍，书中对信息检索的基本概念和基本算法做了介绍，适合初学者。
+《Search Engines Information Retrieval in Practice》,Croft著，这本书讲述了搜索引擎的构造方法，通过实际代码展示了搜索引擎的工作原理，对于学生和从事相关领域的工程师，本书都值得一看。
+《Managing Gigabytes》，《Mining the Web -Discovering Knowledge from Hypertext Data》
+《Information Theory：Inference and Learning Algorithms》。
+模式识别和机器学习：
+《Pattern Classification 》，第二版，Duda著，模式识别的奠基之作，但对SVM、Boosting几乎没提，有挂一漏万之嫌。
+《Pattern Recognition and Machine Learning》,Bishop著，侧重概率模型，详细介绍了Bayesian方法、有向图、无向图理论等，体系完备。
+《Kernel Methods for Pattern Analysis》,John Shawe-Taylor著，SVM等统计学的诸多工具里都用到了核方法，可以将将低维非线性空间映射到高维的线性空间中，但同时会引入高维数据的难题。
+计算机视觉：
+《Computer Vision: A Modern Approach》，第二版，Forsyth著，一本不错的计算机视觉教材，全书理论联系实际，并加入了计算机视觉领域的最新研究成果。
+《Computer Vision: Algorithms and Applications》,Richard Szeliski的大作，《数字图像处理》课程老师推荐的一本书籍，这本书我还没有看完，书中对计算机视觉领域最新的一些算法进行了汇编，包括图像分割，特征检测和匹配，运动检测，图像缝合，3D重建，对象识别等图像处理的诸多方面，借助本书我们可以对最新主流图像处理算法有个全局把握。
+线性代数：
+《Linear Algebra and Its Applications》Fourth Edition, Gilbert Strang的著作，本书详细介绍了向量空间、线性变换、本征值和本征向量等线性代数的重要基本概念，把抽象的线性空间形象地表达出来，适合初学者。
+《Introduction to Probability Models》第10版，Ross著，一本书能够发行到第十版，你说是不是很经典呢？
+离散数学：
+《Discrete Mathematics and Its Applications》，第六版，Rosen著，本书囊括了离散数学推导、组合分析、算法及其应用、计算理论等多方面的内容，适合初学者。
+矩阵数学：
+《Matrix Analysis》,Horn著,本书无疑是矩阵论领域的经典著作了，风行几十年了。
+概率论与数理统计：
+《All Of Statistics》,Wasserman著，一本数理统计的简介读本。
+《Introductionto Mathematical Statistics》，第六版，Hogg著，本书介绍了概率统计的基本概念以及各种分布，以及ML，Bayesian方法等内容。
+《Statistical Learning Theory》Vapnik的大作，统计学界的权威，本书将理论上升到了哲学层面，他的另一本书《The Nature ofStatistical Learning Theory》也是统计学习研究不可多得的好书，但是这两本书都比较深入，适合有一定基础的读者。
+《统计学习方法》，李航著，国内很多大学都在用这本书，本书从具体问题入手，由浅入深，简明地介绍了统计学习的主要方法，适合初学者而又想对统计学习理论有一个全局理解的学生。
+《The Elements of Statistical Learning-Data Mining, Inference, and Prediction》,第二版，Trevor Hastie著，机器学习方面非常优秀的一本书，较PC和PRML,此书更加深入，对工程人员的价值也许更大一点。
+《AnIntroduction to Probabilistic Graphical Models》,Jordan著，本书介绍了条件独立、分解、混合、条件混合等图模型中的基本概念，对隐变量（潜在变量）也做了详细介绍，相信大家在隐马尔科夫链和用Gaussian混合模型来实现EM算法时遇到过这个概念。
+《Probabilistic Graphical Models-Principles and Techniques》，Koller著，一本很厚很全面的书，理论性很强，可以作为参考书使用。
+最优化方法：
+《Convex Optimization》，Boyd的经典书籍，被引用次数超过14000次，面向实际应用，并且有配套代码，是一本不可多得的好书，网址http://www.stanford.edu/~boyd/cvxbook/。
+《Numerical Optimization》，第二版，Nocedal著，非常适合非数值专业的学生和工程师参考，算法流程清晰详细，原理清楚。
+另外推荐几个博客和网站：
+https://www.coursera.org/，这是一个由世界顶级大学联合创办的网上在线视频公开课网站，里面有stanford, MIT,CMU等计算机科学一流大学提供的免费教学视频，内容全面，计算机科学方面的资源较网易视频公开课网站（http://open.163.com/）内容要新、要全。
+http://blog.csdn.net/pongba/article/details/2915005，本文的部分内容就是借鉴刘未鹏大神的博客而来的，也正是看过他的那个书单后，我才决定写一个总结归纳性的文章，这样可以方便大家学习，更可以勉励自己多看些有益的经典书籍。
+http://blog.pluskid.org/，这是浙大学生张驰原的博客网站，现在他去了MIT，博客里面的很多资源都值得一看，博文的很大一部分都是关于机器学习的，加入了作者自己的理解，深入浅出。
+http://blog.csdn.net/ffeng271/article/details/7164498，林达华推荐的基本数学书，转自MIT大牛博客。

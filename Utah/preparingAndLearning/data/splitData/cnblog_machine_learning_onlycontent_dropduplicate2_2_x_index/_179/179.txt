@@ -1,0 +1,53 @@
+一、准备样本
+接上一篇文章提到的问题：根据一个人的身高、体重来判断一个人的身材是否很好。但我手上没有样本数据，只能伪造一批数据了，伪造的数据比较标准，用来学习还是蛮合适的。
+下面是我用来伪造数据的代码：
+string Filename = "./figure_full.csv"; StreamWriter sw = new StreamWriter(Filename, false); sw.WriteLine("Height,Weight,Result"); Random random = new Random(); float height, weight; Result result; for (int i = 0; i < 2000; i++) { height = random.Next(150, 195); weight = random.Next(70, 200); if (height > 170 && weight < 120) result = Result.Good; else result = Result.Bad; sw.WriteLine($"{height},{weight},{(int)result}"); } enum Result { Bad=0, Good=1 }
+View Code
+制造成功后的数据如下：
+用记事本打开：
+二、源码
+数据准备好了，我们就用准备好的数据进行学习了，先贴出全部代码，然后再逐一解释：
+namespace BinaryClassification_Figure { class Program { static readonly string DataPath = Path.Combine(Environment.CurrentDirectory, "Data", "figure_full.csv"); static readonly string ModelPath = Path.Combine(Environment.CurrentDirectory, "Data", "FastTree_Model.zip"); static void Main(string[] args) { TrainAndSave(); LoadAndPrediction(); Console.WriteLine("Press any to exit!"); Console.ReadKey(); } static void TrainAndSave() { MLContext mlContext = new MLContext(); //准备数据 var fulldata = mlContext.Data.LoadFromTextFile<FigureData>(path: DataPath, hasHeader: true, separatorChar: ','); var trainTestData = mlContext.Data.TrainTestSplit(fulldata,testFraction:0.2); var trainData = trainTestData.TrainSet; var testData = trainTestData.TestSet; //训练 IEstimator<ITransformer> dataProcessPipeline = mlContext.Transforms.Concatenate("Features", new[] { "Height", "Weight" }) .Append(mlContext.Transforms.NormalizeMeanVariance(inputColumnName: "Features", outputColumnName: "FeaturesNormalizedByMeanVar")); IEstimator<ITransformer> trainer = mlContext.BinaryClassification.Trainers.FastTree(labelColumnName: "Result", featureColumnName: "FeaturesNormalizedByMeanVar"); IEstimator<ITransformer> trainingPipeline = dataProcessPipeline.Append(trainer); ITransformer model = trainingPipeline.Fit(trainData); //评估 var predictions = model.Transform(testData); var metrics = mlContext.BinaryClassification.Evaluate(data: predictions, labelColumnName: "Result", scoreColumnName: "Score"); PrintBinaryClassificationMetrics(trainer.ToString(), metrics); //保存模型 mlContext.Model.Save(model, trainData.Schema, ModelPath); Console.WriteLine($"Model file saved to :{ModelPath}"); } static void LoadAndPrediction() { var mlContext = new MLContext(); ITransformer model = mlContext.Model.Load(ModelPath, out var inputSchema); var predictionEngine = mlContext.Model.CreatePredictionEngine<FigureData, FigureDatePredicted>(model); FigureData test = new FigureData(); test.Weight = 115; test.Height = 171; var prediction = predictionEngine.Predict(test); Console.WriteLine($"Predict Result :{prediction.PredictedLabel}"); } } public class FigureData { [LoadColumn(0)] public float Height { get; set; } [LoadColumn(1)] public float Weight { get; set; } [LoadColumn(2)] public bool Result { get; set; } } public class FigureDatePredicted : FigureData { public bool PredictedLabel; } }
+View Code
+三、对代码的解释
+1、读取样本数据
+string DataPath = Path.Combine(Environment.CurrentDirectory, "Data", "figure_full.csv"); MLContext mlContext = new MLContext(); //准备数据 var fulldata = mlContext.Data.LoadFromTextFile<FigureData>(path: DataPath, hasHeader: true, separatorChar: ','); var trainTestData = mlContext.Data.TrainTestSplit(fulldata,testFraction:0.2); var trainData = trainTestData.TrainSet; var testData = trainTestData.TestSet;
+LoadFromTextFile<FigureData>(path: DataPath, hasHeader: true, separatorChar: ',')用来读取数据到DataView
+FigureData类是和样本数据对应的实体类，LoadColumn特性指示该属性对应该条数据中的第几个数据。
+public class FigureData { [LoadColumn(0)] public float Height { get; set; } [LoadColumn(1)] public float Weight { get; set; } [LoadColumn(2)] public bool Result { get; set; } }
+path:文件路径
+hasHeader:文本文件是否包含标题
+separatorChar:用来分割数据的字符，我们用的是逗号，常用的还有跳格符‘\t’
+TrainTestSplit(fulldata,testFraction:0.2)用来随机分割数据，分成学习数据和评估用的数据，通常情况，如果数据较多，测试数据取20%左右比较合适，如果数据量较少，测试数据取10%左右比较合适。
+如果不通过分割，准备两个数据文件,一个用来训练、一个用来评估，效果是一样的。
+2、训练
+//训练 IEstimator<ITransformer> dataProcessPipeline = mlContext.Transforms.Concatenate("Features", new[] { "Height", "Weight" }) .Append(mlContext.Transforms.NormalizeMeanVariance(inputColumnName: "Features", outputColumnName: "FeaturesNormalizedByMeanVar")); IEstimator<ITransformer> trainer = mlContext.BinaryClassification.Trainers.FastTree(labelColumnName: "Result", featureColumnName: "FeaturesNormalizedByMeanVar"); IEstimator<ITransformer> trainingPipeline = dataProcessPipeline.Append(trainer); ITransformer model = trainingPipeline.Fit(trainData);
+IDataView这个数据集就类似一个表格，它的列（Column）是可以动态增加的，一开始我们通过LoadFromTextFile获得的数据集包括：Height、Weight、Result这几个列，在进行训练之前，我们还要对这个数据集进行处理，形成符合我们要求的数据集。
+Concatenate这个方法是把多个列，组合成一个列，因为二元分类的机器学习算法只接收一个特征列，所以要把多个特征列（Height、Weight）组合成一个特征列Features（组合的结果应该是个float数组）。
+NormalizeMeanVariance是对列进行归一化处理，这里输入列为：Features，输出列为：FeaturesNormalizedByMeanVar，归一化的含义见本文最后一节介绍。
+数据集就绪以后，就要选择学习算法，针对二元分类，我们选择了快速决策树算法FastTree，我们需要告诉这个算法特征值放在哪个列里面（FeaturesNormalizedByMeanVar），标签值放在哪个列里面（Result）。
+链接数据处理管道和算法形成学习管道，将数据集中的数据逐一通过学习管道进行学习，形成机器学习模型。
+有了这个模型我们就可以通过它进行实际应用了。但我们一般不会现在就使用这个模型，我们需要先评估一下这个模型，然后把模型保存下来。以后应用时再通过文件读取出模型，然后进行应用，这样就不用等待学习的时间了，通常学习的时间都比较长。
+3、评估
+//评估 var predictions = model.Transform(testData); var metrics = mlContext.BinaryClassification.Evaluate(data: predictions, labelColumnName: "Result"); PrintBinaryClassificationMetrics(trainer.ToString(), metrics);
+评估的过程就是对测试数据集进行批量转换（Transform），转换过的数据集会多出一个“PredictedLabel”的列，这个就是模型评估的结果，逐条将这个结果和实际结果（Result）进行比较，就最终形成了效果评估数据。
+我们可以打印这个评估结果，查看其成功率，一般成功率大于97%就是比较好的模型了。由于我们伪造的数据比较整齐，所以我们这次评估的成功率为100%。
+注意：评估过程不会提升现有的模型能力，只是对现有模型的一种检测。
+4、保存模型
+//保存模型 string ModelPath = Path.Combine(Environment.CurrentDirectory, "Data", "FastTree_Model.zip"); mlContext.Model.Save(model, trainData.Schema, ModelPath); Console.WriteLine($"Model file saved to :{ModelPath}");
+这个没啥好解释的。
+5、读取模型并创建预测引擎
+//读取模型 var mlContext = new MLContext(); ITransformer model = mlContext.Model.Load(ModelPath, out var inputSchema); //创建预测引擎 var predictionEngine = mlContext.Model.CreatePredictionEngine<FigureData, FigureDatePredicted>(model);
+创建预测引擎的功能和Transform是类似的，不过Transform是处理批量记录，这里只处理一条数据，而且这里的输入输出是实体对象，定义如下:
+public class FigureData { [LoadColumn(0)] public float Height { get; set; } [LoadColumn(1)] public float Weight { get; set; } [LoadColumn(2)] public bool Result { get; set; } } public class FigureDatePredicted : FigureData { public bool PredictedLabel; }
+由于预测结果里放在“PredictedLabel”字段中，所以FigureDatePredicted类必须要包含PredictedLabel属性，目前FigureDatePredicted 类是从FigureData类继承的，由于我们只用到PredictedLabel属性，所以不继承也没有关系，如果继承的话，后面要调试的话会方便一点。
+6、应用
+FigureData test = new FigureData { Weight = 115, Height = 171 }; var prediction = predictionEngine.Predict(test); Console.WriteLine($"Predict Result :{prediction.PredictedLabel}");
+这部分代码就比较简单，test是我们要预测的对象，预测后打印出预测结果。
+四、附：数据归一化
+机器学习的算法中一般会有很多的乘法运算，当运算的数字过大时，很容易在多次运算后溢出，为了防止这种情况，就要对数据进行归一化处理。归一化的目标就是把参与运算的特征数变为（0，1）或（-1，1）之间的浮点数，常见的处理方式有：min-max标准化、Log函数转换、对数函数转换等。
+我们这次采用的是平均方差归一化方法。
+五、资源
+源码下载地址：https://github.com/seabluescn/Study_ML.NET
+工程名称：BinaryClassification_Figure
+点击查看机器学习框架ML.NET学习笔记系列文章目录

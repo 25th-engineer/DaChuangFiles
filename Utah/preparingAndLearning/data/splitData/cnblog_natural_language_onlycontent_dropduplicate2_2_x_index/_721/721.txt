@@ -1,0 +1,287 @@
+自然语言处理（NLP）是人工智能研究中极具挑战的一个分支。随着深度学习等技术的引入，NLP领域正在以前所未有的速度向前发展。但对于初学者来说，这一领域目前有哪些研究和资源是必读的？最近，Kyubyong Park 为我们整理了一份完整列表。
+GitHub 项目链接：https://github.com/Kyubyong/nlp_tasks
+本人从事自然语言处理任务（NLP）的研究已经有很长时间了，有一天我想到，我需要为庞大的 NLP领域做一个概览，我知道自己肯定不是想要一睹 NLP 任务的全貌的第一个人。
+我曾竭尽所能的研究过尽可能多种类型的 NLP 任务，但由于个人知识的局限，我承认还远远没有穷尽整个领域。目前，该项目选取的参考文献都偏重最新的深度学习研究成果。我希望这些能为想要深入钻研一个 NLP 任务的人们提供一个开端。这个项目将持续更新，不过，我更希望与更多人合作。如果你有意愿的话，欢迎对这个项目作出贡献。
+回指解析
+See Coreference Resolution （https://github.com/Kyubyong/nlp_tasks#coreference-resolution）
+自动作文评分
+论文：AutomaticText Scoring Using Neural Networks （https://arxiv.org/abs/1606.04289）
+论文：ANeural Approach to Automated Essay Scoring（http://www.aclweb.org/old_anthology/D/D16/D16-1193.pdf）
+竞赛：Kaggle:The Hewlett Foundation: Automated Essay Scoring（https://www.kaggle.com/c/asap-aes）
+项目：EnhancedAI Scoring Engine（https://github.com/edx/ease）
+自动语音识别
+WIKI Speech recognition（https://en.wikipedia.org/wiki/Speech_recognition）
+论文：DeepSpeech 2: End-to-End Speech Recognition in English and Mandarin（https://arxiv.org/abs/1512.02595）
+论文：WaveNet:A Generative Model for Raw Audio （https://arxiv.org/abs/1609.03499）
+项目：A TensorFlow implementation of Baidu's DeepSpeech architecture（https://github.com/mozilla/DeepSpeech）
+项目：Speech-to-Text-WaveNet: End-to-end sentence level English speech recognition using DeepMind's WaveNet（https://github.com/buriburisuri/speech-to-text-wavenet）
+竞赛：The 5thCHiME Speech Separation and Recognition Challenge（http://spandh.dcs.shef.ac.uk/chime_challenge/）
+资源：The 5thCHiME Speech Separation and Recognition Challenge（http://spandh.dcs.shef.ac.uk/chime_challenge/download.html）
+资源：CSTRVCTK Corpus（http://homepages.inf.ed.ac.uk/jyamagis/page3/page58/page58.html）
+资源：LibriSpeechASR corpus （http://www.openslr.org/12/）
+资源：Switchboard-1Telephone Speech Corpus （https://catalog.ldc.upenn.edu/ldc97s62）
+资源：TED-LIUMCorpus （http://www-lium.univ-lemans.fr/en/content/ted-lium-corpus）
+自动摘要
+WIKI Automatic summarization （https://en.wikipedia.org/wiki/Automatic_summarization）
+书籍：AutomaticText Summarization （https://www.amazon.com/Automatic-Text-Summarization-Juan-Manuel-Torres-Moreno/dp/1848216688/ref=sr_1_1?s=books&ie=UTF8&qid=1507782304&sr=1-1&keywords=Automatic+Text+Summarization）
+论文：TextSummarization Using Neural Networks（http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.823.8025&rep=rep1&type=pdf）
+论文：Rankingwith Recursive Neural Networks and Its Application to Multi-DocumentSummarization（https://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/viewFile/9414/9520）
+资源：TextAnalytics Conferences（TAC）（https://tac.nist.gov/data/index.html）
+资源：DocumentUnderstanding Conferences （DUC）（http://www-nlpir.nist.gov/projects/duc/data.html）
+指代消解
+INFO Coreference Resolution（https://nlp.stanford.edu/projects/coref.shtml）
+论文：DeepReinforcement Learning for Mention-Ranking Coreference Models（https://arxiv.org/abs/1609.08667）
+论文：ImprovingCoreference Resolution by Learning Entity-Level Distributed Representations（https://arxiv.org/abs/1606.01323）
+竞赛：CoNLL2012 Shared Task: Modeling Multilingual Unrestricted Coreference in OntoNotes（http://conll.cemantix.org/2012/task-description.html）
+竞赛：CoNLL2011 Shared Task: Modeling Unrestricted Coreference in OntoNotes（http://conll.cemantix.org/2011/task-description.html）
+实体链接
+见「命名实体消歧」部分
+语法错误纠正
+论文：NeuralNetwork Translation Models for Grammatical Error Correction（https://arxiv.org/abs/1606.00189）
+竞赛：CoNLL-2013Shared Task: Grammatical Error Correction（http://www.comp.nus.edu.sg/~nlp/conll13st.html）
+竞赛：CoNLL-2014Shared Task: Grammatical Error Correction（http://www.comp.nus.edu.sg/~nlp/conll14st.html）
+资源：NUSNon-commercial research/trial corpus license（http://www.comp.nus.edu.sg/~nlp/conll14st/nucle_license.pdf）
+资源：Lang-8Learner Corpora（http://cl.naist.jp/nldata/lang-8/）
+资源：CornellMovie--Dialogs Corpus （http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html）
+项目：DeepText Corrector（https://github.com/atpaino/deep-text-corrector）
+产品：deepgrammar（http://deepgrammar.com/）
+字素音素转换
+论文：Grapheme-to-PhonemeModels for （Almost） Any Language（https://pdfs.semanticscholar.org/b9c8/fef9b6f16b92c6859f6106524fdb053e9577.pdf）
+论文：PolyglotNeural Language Models: A Case Study in Cross-Lingual Phonetic RepresentationLearning （https://arxiv.org/pdf/1605.03832.pdf）
+论文：MultitaskSequence-to-Sequence Models for Grapheme-to-Phoneme Conversion（https://pdfs.semanticscholar.org/26d0/09959fa2b2e18cddb5783493738a1c1ede2f.pdf）
+项目：Sequence-to-Sequence G2P toolkit （https://github.com/cmusphinx/g2p-seq2seq）
+资源：Multilingual Pronunciation Data（https://drive.google.com/drive/folders/0B7R_gATfZJ2aWkpSWHpXUklWUmM）
+语种猜测
+见「语种辨别」部分
+语种辨别
+WIKI Language identification （https://en.wikipedia.org/wiki/Language_identification）
+论文：AUTOMATICLANGUAGE IDENTIFICATION USING DEEP NEURAL NETWORKS（https://repositorio.uam.es/bitstream/handle/10486/666848/automatic_lopez-moreno_ICASSP_2014_ps.pdf?sequence=1）
+竞赛： 2015Language Recognition Evaluation （https://www.nist.gov/itl/iad/mig/2015-language-recognition-evaluation）
+语言建模
+WIKI Language model （https://en.wikipedia.org/wiki/Language_model）
+工具包： KenLMLanguage Model Toolkit （http://kheafield.com/code/kenlm/）
+论文：DistributedRepresentations of Words and Phrases and their Compositionality（http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf）
+论文：Character-AwareNeural Language Models（https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/viewFile/12489/12017）
+资源： PennTreebank （https://github.com/townie/PTB-dataset-from-Tomas-Mikolov-s-webpage/tree/master/data）
+语种识别
+见「语种辨别」部分
+同一词类
+WIKI Lemmatisation （https://en.wikipedia.org/wiki/Lemmatisation）
+论文： JointLemmatization and Morphological Tagging with LEMMING（http://www.cis.lmu.de/~muellets/pdf/emnlp_2015.pdf）
+工具包：WordNet Lemmatizer（http://www.nltk.org/api/nltk.stem.html#nltk.stem.wordnet.WordNetLemmatizer.lemmatize）
+资源：Treebank-3 （https://catalog.ldc.upenn.edu/ldc99t42）
+观唇辨意
+WIKI Lip reading （https://en.wikipedia.org/wiki/Lip_reading）
+论文：LipReading Sentences in the Wild （https://arxiv.org/abs/1611.05358）
+论文：3DConvolutional Neural Networks for Cross Audio-Visual Matching Recognition（https://arxiv.org/abs/1706.05739）
+项目： LipReading - Cross Audio-Visual Recognition using 3D Convolutional Neural Networks（https://github.com/astorfi/lip-reading-deeplearning）
+资源： TheGRID audiovisual sentence corpus （http://spandh.dcs.shef.ac.uk/gridcorpus/）
+机器翻译
+论文：NeuralMachine Translation by Jointly Learning to Align and Translate（https://arxiv.org/abs/1409.0473）
+论文：NeuralMachine Translation in Linear Time （https://arxiv.org/abs/1610.10099）
+论文：AttentionIs All You Need （https://arxiv.org/abs/1706.03762）
+竞赛： ACL2014 NINTH WORKSHOP ON STATISTICAL MACHINE TRANSLATION（http://www.statmt.org/wmt14/translation-task.html#download）
+竞赛： EMNLP2017 SECOND CONFERENCE ON MACHINE TRANSLATION （WMT17）（http://www.statmt.org/wmt17/translation-task.html）
+资源：OpenSubtitles2016 （http://opus.lingfil.uu.se/OpenSubtitles2016.php）
+资源： WIT3:Web Inventory of Transcribed and Translated Talks （https://wit3.fbk.eu/）
+资源： TheQCRI Educational Domain （QED） Corpus（http://alt.qcri.org/resources/qedcorpus/）
+生成词法变化
+WIKI Inflection （https://en.wikipedia.org/wiki/Inflection）
+论文：MorphologicalInflection Generation Using Character Sequence to Sequence Learning（https://arxiv.org/abs/1512.06110）
+竞赛：SIGMORPHON 2016 Shared Task: Morphological Reinflection（http://ryancotterell.github.io/sigmorphon2016/）
+资源：sigmorphon2016 （https://github.com/ryancotterell/sigmorphon2016）
+命名实体消歧
+WIKI Entity linking （https://en.wikipedia.org/wiki/Entity_linking）
+论文：Robustand Collective Entity Disambiguation through Semantic Embeddings（http://www.stefanzwicklbauer.info/pdf/Sigir_2016.pdf）
+命名实体识别
+WIKI Named-entity recognition （https://en.wikipedia.org/wiki/Named-entity_recognition）
+论文：NeuralArchitectures for Named Entity Recognition （https://arxiv.org/abs/1603.01360）
+项目： OSUTwitter NLP Tools （https://github.com/aritter/twitter_nlp）
+竞赛： NamedEntity Recognition in Twitter （https://noisy-text.github.io/2016/ner-shared-task.html）
+竞赛： CoNLL2002 Language-Independent Named Entity Recognition（https://www.clips.uantwerpen.be/conll2002/ner/）
+竞赛：Introduction to the CoNLL-2003 Shared Task: Language-Independent Named EntityRecognition （http://aclweb.org/anthology/W03-0419）
+资源：CoNLL-2002 NER corpus（https://github.com/teropa/nlp/tree/master/resources/corpora/conll2002）
+资源：CoNLL-2003 NER corpus （https://github.com/synalp/NER/tree/master/corpus/CoNLL-2003）
+资源： NUTNamed Entity Recognition in Twitter Shared task（https://github.com/aritter/twitter_nlp/tree/master/data/annotated/wnut16）
+释义检测
+论文：DynamicPooling and Unfolding Recursive Autoencoders for Paraphrase Detection（http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.650.7199&rep=rep1&type=pdf）
+项目：Paralex: Paraphrase-Driven Learning for Open Question Answering（http://knowitall.cs.washington.edu/paralex/）
+资源：Microsoft Research Paraphrase Corpus （https://www.microsoft.com/en-us/download/details.aspx?id=52398）
+资源：Microsoft Research Video Description Corpus （https://www.microsoft.com/en-us/download/details.aspx?id=52422&from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fdownloads%2F38cf15fd-b8df-477e-a4e4-a4680caa75af%2F）
+资源： PascalDataset （http://nlp.cs.illinois.edu/HockenmaierGroup/pascal-sentences/index.html）
+资源：Flicker Dataset （http://nlp.cs.illinois.edu/HockenmaierGroup/8k-pictures.html）
+资源： TheSICK data set （http://clic.cimec.unitn.it/composes/sick.html）
+资源： PPDB:The Paraphrase Database （http://www.cis.upenn.edu/~ccb/ppdb/）
+资源：WikiAnswers Paraphrase Corpus（http://knowitall.cs.washington.edu/paralex/wikianswers-paraphrases-1.0.tar.gz）
+语法分析
+WIKI Parsing （https://en.wikipedia.org/wiki/Parsing）
+工具包： TheStanford Parser: A statistical parser （https://nlp.stanford.edu/software/lex-parser.shtml）
+工具包： spaCyparser （https://spacy.io/docs/usage/dependency-parse）
+论文：A fastand accurate dependency parser using neural networks（http://www.aclweb.org/anthology/D14-1082）
+竞赛： CoNLL2017 Shared Task: Multilingual Parsing from Raw Text to Universal Dependencies （http://universaldependencies.org/conll17/）
+竞赛： CoNLL2016 Shared Task: Multilingual Shallow Discourse Parsing（http://www.cs.brandeis.edu/~clp/conll16st/）
+竞赛： CoNLL2015 Shared Task: Shallow Discourse Parsing（http://www.cs.brandeis.edu/~clp/conll15st/）
+竞赛：SemEval-2016 Task 8: The meaning representations may be abstract, but this taskis concrete! （http://alt.qcri.org/semeval2016/task8/）
+词性标记
+WIKI Part-of-speech tagging （https://en.wikipedia.org/wiki/Part-of-speech_tagging）
+论文：MultilingualPart-of-Speech Tagging with Bidirectional Long Short-Term Memory Models andAuxiliary Loss （https://arxiv.org/pdf/1604.05529.pdf）
+论文：UnsupervisedPart-Of-Speech Tagging with Anchor Hidden Markov Models（https://transacl.org/ojs/index.php/tacl/article/viewFile/837/192）
+资源：Treebank-3 （https://catalog.ldc.upenn.edu/ldc99t42）
+工具包：nltk.tag package （http://www.nltk.org/api/nltk.tag.html）
+拼音-中文转换
+论文：NeuralNetwork Language Model for Chinese Pinyin Input Method Engine（http://aclweb.org/anthology/Y15-1052）
+项目： NeuralChinese Transliterator（https://github.com/Kyubyong/neural_chinese_transliterator）
+问答系统
+WIKI Question answering （https://en.wikipedia.org/wiki/Question_answering）
+论文：Ask MeAnything: Dynamic Memory Networks for Natural Language Processing（http://www.thespermwhale.com/jaseweston/ram/papers/paper_21.pdf）
+论文：DynamicMemory Networks for Visual and Textual Question Answering（http://proceedings.mlr.press/v48/xiong16.pdf）
+竞赛： TRECQuestion Answering Task （http://trec.nist.gov/data/qamain.html）
+竞赛：NTCIR-8: Advanced Cross-lingual Information Access （ACLIA）（http://aclia.lti.cs.cmu.edu/ntcir8/Home）
+竞赛： CLEFQuestion Answering Track （http://nlp.uned.es/clef-qa/）
+竞赛：SemEval-2017 Task 3: Community Question Answering（http://alt.qcri.org/semeval2017/task3/）
+资源： MSMARCO: Microsoft MAchine Reading COmprehension Dataset（http://www.msmarco.org/）
+资源：Maluuba NewsQA （https://github.com/Maluuba/newsqa）
+资源： SQuAD:100,000+ Questions for Machine Comprehension of Text（https://rajpurkar.github.io/SQuAD-explorer/）
+资源：GraphQuestions: A Characteristic-rich Question Answering Dataset（https://github.com/ysu1989/GraphQuestions）
+资源： StoryCloze Test and ROCStories Corpora （http://cs.rochester.edu/nlp/rocstories/）
+资源：Microsoft Research WikiQA Corpus （https://www.microsoft.com/en-us/download/details.aspx?id=52419&from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fdownloads%2F4495da01-db8c-4041-a7f6-7984a4f6a905%2Fdefault.aspx）
+资源：DeepMind Q&A Dataset （http://cs.nyu.edu/~kcho/DMQA/）
+资源： QASent（http://cs.stanford.edu/people/mengqiu/data/qg-emnlp07-data.tgz）
+关系提取
+WIKI Relationship extraction （https://en.wikipedia.org/wiki/Relationship_extraction）
+论文：A deeplearning approach for relationship extraction from interaction context insocial manufacturing paradigm（http://www.sciencedirect.com/science/article/pii/S0950705116001210）
+语义角色标注
+WIKI Semantic role labeling （https://en.wikipedia.org/wiki/Semantic_role_labeling）
+书籍：Semantic Role Labeling （https://www.amazon.com/Semantic-Labeling-Synthesis-Lectures-Technologies/dp/1598298313/ref=sr_1_1?s=books&ie=UTF8&qid=1507776173&sr=1-1&keywords=Semantic+Role+Labeling）
+论文：End-to-endLearning of Semantic Role Labeling Using Recurrent Neural Networks（http://www.aclweb.org/anthology/P/P15/P15-1109.pdf）
+论文：NeuralSemantic Role Labeling with Dependency Path Embeddi ngs（https://arxiv.org/abs/1605.07515）
+竞赛：CoNLL-2005 Shared Task: Semantic Role Labeling（http://www.cs.upc.edu/~srlconll/st05/st05.html）
+竞赛：CoNLL-2004 Shared Task: Semantic Role Labeling（http://www.cs.upc.edu/~srlconll/st04/st04.html）
+工具包：Illinois Semantic Role Labeler （SRL）（http://cogcomp.org/page/software_view/SRL）
+资源：CoNLL-2005 Shared Task: Semantic Role Labeling（http://www.cs.upc.edu/~srlconll/soft.html）
+语句边界消歧
+WIKI Sentence boundary disambiguation（https://en.wikipedia.org/wiki/Sentence_boundary_disambiguation）
+论文：AQuantitative and Qualitative Evaluation of Sentence Boundary Detection for theClinical Domain （https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5001746/）
+工具包： NLTKTokenizers （http://www.nltk.org/_modules/nltk/tokenize.html）
+资源： TheBritish National Corpus （http://www.natcorp.ox.ac.uk/）
+资源：Switchboard-1 Telephone Speech Corpus （https://catalog.ldc.upenn.edu/ldc97s62）
+情绪分析
+WIKI Sentiment analysis （https://en.wikipedia.org/wiki/Sentiment_analysis）
+INFO Awesome Sentiment Analysis （https://github.com/xiamx/awesome-sentiment-analysis）
+竞赛：Kaggle: UMICH SI650 - Sentiment Classification（https://www.kaggle.com/c/si650winter11#description）
+竞赛：SemEval-2017 Task 4: Sentiment Analysis in Twitter（http://alt.qcri.org/semeval2017/task4/）
+竞赛：SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogsand News （http://alt.qcri.org/semeval2017/task5/）
+项目：SenticNet （http://sentic.net/about/）
+资源：Multi-Domain Sentiment Dataset （version2.0）（http://www.cs.jhu.edu/~mdredze/datasets/sentiment/）
+资源：Stanford Sentiment Treebank （https://nlp.stanford.edu/sentiment/code.html）
+资源：Twitter Sentiment Corpus （http://www.sananalytics.com/lab/twitter-sentiment/）
+资源：Twitter Sentiment Analysis Training Corpus （http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/）
+资源： AFINN:List of English words rated for valence（http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010）
+源分离
+WIKI Source separation （https://en.wikipedia.org/wiki/Source_separation）
+论文：FromBlind to Guided Audio Source Separation （https://hal-univ-rennes1.archives-ouvertes.fr/hal-00922378/document）
+论文：JointOptimization of Masks and Deep Recurrent Neural Networks for Monaural SourceSeparation （https://arxiv.org/abs/1502.04149）
+竞赛： SignalSeparation Evaluation Campaign （SiSEC）（https://sisec.inria.fr/）
+竞赛： CHiMESpeech Separation and Recognition Challenge（http://spandh.dcs.shef.ac.uk/chime_challenge/）
+说话人认证
+见「说话人识别」部分
+语音身份分离
+WIKI Speaker diarisation （https://en.wikipedia.org/wiki/Speaker_diarisation）
+论文：DNN-basedspeaker clustering for speaker diarisation（http://eprints.whiterose.ac.uk/109281/1/milner_is16.pdf）
+论文：UnsupervisedMethods for Speaker Diarization: An Integrated and Iterative Approach（http://groups.csail.mit.edu/sls/publications/2013/Shum_IEEE_Oct-2013.pdf）
+论文：Audio-VisualSpeaker Diarization Based on Spatiotemporal Bayesian Fusion（https://arxiv.org/pdf/1603.09725.pdf）
+竞赛： RichTranscription Evaluation （https://www.nist.gov/itl/iad/mig/rich-transcription-evaluation）
+说话人识别
+WIKI Speaker recognition （https://en.wikipedia.org/wiki/Speaker_recognition）
+论文：A NOVELSCHEME FOR SPEAKER RECOGNITION USING A PHONETICALLY-AWARE DEEP NEURAL NETWORK（https://pdfs.semanticscholar.org/204a/ff8e21791c0a4113a3f75d0e6424a003c321.pdf）
+论文：DEEPNEURAL NETWORKS FOR SMALL FOOTPRINT TEXT-DEPENDENT SPEAKER VERIFICATION（https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/41939.pdf）
+竞赛： NISTSpeaker Recognition Evaluation （SRE）（https://www.nist.gov/itl/iad/mig/speaker-recognition）
+INFO Are there any suggestions for free databases for speakerrecognition?（https://www.researchgate.net/post/Are_there_any_suggestions_for_free_databases_for_speaker_recognition）
+唇读
+见「观唇辨意」部分
+语音识别
+见「自动语音识别」部分
+语音分割
+WIKI Speech_segmentation （https://en.wikipedia.org/wiki/Speech_segmentation）
+论文：WordSegmentation by 8-Month-Olds: When Speech Cues Count More Than Statistics（http://www.utm.toronto.edu/infant-child-centre/sites/files/infant-child-centre/public/shared/elizabeth-johnson/Johnson_Jusczyk.pdf）
+论文：UnsupervisedWord Segmentation and Lexicon Discovery Using Acoustic Word Embeddings （https://arxiv.org/abs/1603.02845）
+论文：UnsupervisedLexicon Discovery from Acoustic Inpu（http://www.aclweb.org/old_anthology/Q/Q15/Q15-1028.pdf）
+论文：Weaklysupervised spoken term discovery using cross-lingual side information（http://www.research.ed.ac.uk/portal/files/29957958/1609.06530v1.pdf）
+资源：CALLHOME Spanish Speech （https://catalog.ldc.upenn.edu/ldc96s35）
+语音合成
+WIKI Speech synthesis （https://en.wikipedia.org/wiki/Speech_synthesis）
+论文：WaveNet:A Generative Model for Raw Audio （https://arxiv.org/abs/1609.03499）
+论文：Tacotron:Towards End-to-End Speech Synthesis （https://arxiv.org/abs/1703.10135）
+论文：DeepVoice 2: Multi-Speaker Neural Text-to-Speech（https://arxiv.org/abs/1705.08947）
+资源： TheWorld English Bible （https://github.com/Kyubyong/tacotron）
+资源： LJSpeech Dataset （https://github.com/keithito/tacotron）
+资源： LessacData （http://www.cstr.ed.ac.uk/projects/blizzard/2011/lessac_blizzard2011/）
+竞赛：Blizzard Challenge 2017 （https://synsig.org/index.php/Blizzard_Challenge_2017）
+PRODUCT Lyrebird （https://lyrebird.ai/）
+项目： TheFestvox project （http://www.festvox.org/index.html）
+工具包：Merlin: The Neural Network （NN） based Speech Synthesis System（https://github.com/CSTR-Edinburgh/merlin）
+语音增强
+WIKI Speech enhancement （https://en.wikipedia.org/wiki/Speech_enhancement）
+书籍： Speechenhancement: theory and practice （https://www.amazon.com/Speech-Enhancement-Theory-Practice-Second/dp/1466504218/ref=sr_1_1?ie=UTF8&qid=1507874199&sr=8-1&keywords=Speech+enhancement%3A+theory+and+practice）
+论文 AnExperimental Study on Speech Enhancement BasedonDeepNeuralNetwork（http://staff.ustc.edu.cn/~jundu/Speech%20signal%20processing/publications/SPL2014_Xu.pdf）
+论文： ARegression Approach to Speech Enhancement BasedonDeepNeuralNetworks（https://www.researchgate.net/profile/Yong_Xu63/publication/272436458_A_Regression_Approach_to_Speech_Enhancement_Based_on_Deep_Neural_Networks/links/57fdfdda08aeaf819a5bdd97.pdf）
+论文： SpeechEnhancement Based on Deep Denoising Autoencoder（https://www.researchgate.net/profile/Yu_Tsao/publication/283600839_Speech_enhancement_based_on_deep_denoising_Auto-Encoder/links/577b486108ae213761c9c7f8/Speech-enhancement-based-on-deep-denoising-Auto-Encoder.pdf）
+语音文本转换
+见「自动语音识别」部分
+口语的术语检测
+见「语音分割」部分
+词干提取
+WIKI Stemming （https://en.wikipedia.org/wiki/Stemming）
+论文： ABACKPROPAGATION NEURAL NETWORK TO IMPROVE ARABIC STEMMING（http://www.jatit.org/volumes/Vol82No3/7Vol82No3.pdf）
+工具包： NLTKStemmers （http://www.nltk.org/howto/stem.html）
+术语提取
+WIKI Terminology extraction （https://en.wikipedia.org/wiki/Terminology_extraction）
+论文： NeuralAttention Models for Sequence Classification: Analysis and Application to KeyTerm Extraction and Dialogue Act Detection （https://arxiv.org/pdf/1604.00077.pdf）
+文本简化
+WIKI Text simplification （https://en.wikipedia.org/wiki/Text_simplification）
+论文：Aligning Sentences from Standard Wikipedia to Simple Wikipedia（https://ssli.ee.washington.edu/~hannaneh/papers/simplification.pdf）
+论文：Problems in Current Text Simplification Research: New Data Can Help（https://pdfs.semanticscholar.org/2b8d/a013966c0c5e020ebc842d49d8ed166c8783.pdf）
+资源：Newsela Data （https://newsela.com/data/）
+文本语音转换
+见「语音合成」部分
+文本蕴涵
+WIKI Textual entailment （https://en.wikipedia.org/wiki/Textual_entailment）
+项目：Textual Entailment with TensorFlow （https://github.com/Steven-Hewitt/Entailment-with-Tensorflow）
+论文：Textual Entailment with Structured Attentions and Composition（https://arxiv.org/pdf/1701.01126.pdf）
+竞赛：SemEval-2014 Task 1: Evaluation of compositional distributional semantic modelson full sentences through semantic relatedness and textual entailment（http://alt.qcri.org/semeval2014/task1/）
+竞赛：SemEval-2013 Task 7: The Joint Student Response Analysis and 8th RecognizingTextual Entailment Challenge （https://www.cs.york.ac.uk/semeval-2013/task7.html）
+声音转换
+论文：PHONETIC POSTERIORGRAMS FOR MANY-TO-ONE VOICE CONVERSION WITHOUT PARALLEL DATATRAINING（http://www1.se.cuhk.edu.hk/~hccl/publications/pub/2016_paper_297.pdf）
+项目： Animplementation of voice conversion system utilizing phonetic posteriorgrams（https://github.com/sesenosannko/ppg_vc）
+竞赛： VoiceConversion Challenge 2016 （http://www.vc-challenge.org/vcc2016/index.html）
+竞赛： VoiceConversion Challenge 2018 （http://www.vc-challenge.org/）
+资源：CMU_ARCTIC speech synthesis databases （http://festvox.org/cmu_arctic/）
+资源： TIMITAcoustic-Phonetic Continuous Speech Corpus（https://catalog.ldc.upenn.edu/ldc93s1）
+声音识别
+见「说话人识别」部分
+词嵌入
+WIKI Word embedding （https://en.wikipedia.org/wiki/Word_embedding）
+工具包：Gensim: word2vec （https://radimrehurek.com/gensim/models/word2vec.html）
+工具包：fastText （https://github.com/facebookresearch/fastText）
+工具包： GloVe:Global Vectors for Word Representation（https://nlp.stanford.edu/projects/glove/）
+INFO Where to get a pretrained model （https://github.com/3Top/word2vec-api）
+项目：Pre-trained word vectors of 30+ languages（https://github.com/Kyubyong/wordvectors）
+项目：Polyglot: Distributed word representations for multilingual NLP（https://sites.google.com/site/rmyeid/projects/polyglot）
+词预测
+INFO What is Word Prediction? （http://www2.edc.org/ncip/library/wp/what_is.htm）
+论文： Theprediction of character based on recurrent neural network language model（http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7960065）
+论文： AnEmbedded Deep Learning based Word Prediction（https://arxiv.org/abs/1707.01662）
+论文：Evaluating Word Prediction: Framing Keystroke Savings（http://aclweb.org/anthology/P08-2066）
+资源： AnEmbedded Deep Learning based Word Prediction（https://github.com/Meinwerk/WordPrediction/master.zip）
+项目： WordPrediction using Convolutional Neural Networks—can you do better than iPhone™Keyboard? （https://github.com/Kyubyong/word_prediction）
+词分割
+WIKI Word segmentation（https://en.wikipedia.org/wiki/Text_segmentation#Segmentation_problems）
+论文： NeuralWord Segmentation Learning for Chinese （https://arxiv.org/abs/1606.04300）
+项目：Convolutional neural network for Chinese word segmentation（https://github.com/chqiwang/convseg）
+工具包：Stanford Word Segmenter （https://nlp.stanford.edu/software/segmenter.html）
+工具包： NLTKTokenizers （http://www.nltk.org/_modules/nltk/tokenize.html）
+词义消歧
+资源：Word-sense disambiguation （https://en.wikipedia.org/wiki/Word-sense_disambiguation）
+论文：Train-O-Matic: Large-Scale Supervised Word Sense Disambiguation in MultipleLanguages without Manual Training Data （http://www.aclweb.org/anthology/D17-1008）
+资源：Train-O-Matic Data （http://trainomatic.org/data/train-o-matic-data.zip）
+资源：BabelNet （http://babelnet.org/）

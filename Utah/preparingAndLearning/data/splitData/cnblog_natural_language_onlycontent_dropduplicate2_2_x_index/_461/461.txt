@@ -1,0 +1,68 @@
+在前面讲nltk安装的时候，我们下载了很多的文本。总共有9个文本。那么如何找到这些文本呢：
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+直接输入它们的名字就可以了
+print text1
+print text2
+E:\python2.7.11\python.exe E:/py_prj/NLTK_study/chapter1.py
+<Text: Moby Dick by Herman Melville 1851>
+<Text: Sense and Sensibility by Jane Austen 1811>
+我们还可以对文本中的单词进行查找。
+print text1.concordance('monstrous')
+结果如下，找到了11个匹配的地方
+Displaying 11 of 11 matches:
+ong the former , one was of a most monstrous size . ... This came towards us ,
+ON OF THE PSALMS . " Touching that monstrous bulk of the whale or ork we have r
+ll over with a heathenish array of monstrous clubs and spears . Some were thick
+d as you gazed , and wondered what monstrous cannibal and savage could ever hav
+that has survived the flood ; most monstrous and most mountainous ! That Himmal
+they might scout at Moby Dick as a monstrous fable , or still worse and more de
+th of Radney .'" CHAPTER 55 Of the Monstrous Pictures of Whales . I shall ere l
+ing Scenes . In connexion with the monstrous pictures of whales , I am strongly
+ere to enter upon those still more monstrous stories of them which are to be fo
+ght have been rummaged out of this monstrous cabinet there is no telling . But
+of Whale - Bones ; for Whales of a monstrous size are oftentimes cast up dead u
+None
+如果我们想知道单词出现在文本的那些位置，比如是在文本开始处多些呢，还是在文本末尾开始多些。这里就用到dispersion_plot函数。Text4的名称为Inaugural Address Corpus，中文意思是就职演说的意思。因此在text4中有整理的美国总统就职演说的文本。从里面的文本来看有从1789年到2009年的总统就职演说
+我们来看下citizens,democracy,freedom,duties,American出现的位置
+print len(text4)
+text4.dispersion_plot(["citizens","democracy","freedom","duties","American"])
+E:\python2.7.11\python.exe E:/py_prj/NLTK_study/chapter1.py
+145735
+首先text4的长度为145735。上面的散点图就是生成的结果。注意，要得到这个散点图必须先安装Numpy以及Matplotlib。否则在画图的时候会报错。
+从上面的这个散点图我们可以看到citizens是出现得最多的地方。Citizens的中文意思是市民，公民的意思。这也符合美国的一贯政治风格嘛。总统是在现场做演说自然首先就得来和选民们拉近关系。套套近乎嘛。而随着演讲的进行，American和freedom之类的词语就开始多起来了。和选民和拉近关系了后，后面就要开始普世价值以及爱国情绪煽动了。什么捍卫人类的freedom，为了American的强大之类的话语。
+我们再多来点词汇看看：我们加入了china,tax,security,immigrant。分别是中国，税收，安全，移民
+text4.dispersion_plot(["citizens","democracy","freedom","duties","American","china","tax",'security','immigrant'])
+从上面的图可以看到明显少了的很多，除了security和tax有一些之外。诸如china,immigrant这些词基本就没出现。其实我们加入的china,tax,security,immigrant这些词语都是一些具体国家事务的词。但是在就职演说看不到半点的描述。因此我们可以认为总统的就职演说重点不是施政纲领，哪是在竞选的时候才会提到。就职演说就是个口才show。
+如果想文本里面都有哪些单词，可以用set(text4)查看在总统的就职演说中出现了哪些词。由于量太大，这里就不列举出来了。既然知道了总的词数个数以及词的汇总，那么我们可以来计算每个词出现的频度了。从下面结果看到在text4中每个单词的出现频率平均是14次。
+print 'the length of text4 is %d' % len(text4)
+print len(text4) / len(set(text4))
+E:\python2.7.11\python.exe E:/py_prj/NLTK_study/chapter1.py
+the length of text4 is 145735
+14
+那么在这些演讲中这些词出现的次数是多少呢。我们以上图的citizens为例。可以看到citizizens出现了230次。
+print text4.count('citizens')
+E:\python2.7.11\python.exe E:/py_prj/NLTK_study/chapter1.py
+230
+那如果我们要找出在总统就职演说中出现最多的词该怎么办呢。是通过对单词一个个的计数来得出结果？ 那样太费时间了。NLTK提供了专门的函数做到这一点。
+fdist1=FreqDist(text4)
+vocabulary1=fdist1.keys()
+print vocabulary1[:10]
+fdist1.plot(10,cumulative=True)
+FreqDist是一个统计频率分布的函数，通过fdist1.plot我们可以画出用得最多的10个单词的分布。
+我们可以细化一点，如何统计次数超过500次的单词呢。
+fdist1=FreqDist(text4)
+list=[w for w in set(text4) if fdist1[w] > 500]
+[u'.', u'has', u'people', u'for', u'I', u'with', u'as', u'to', u'be', u'by', u'this', u'we', u'the', u'not', u'that', u'a', u'The', u';', u',', u'is', u'it', u'in', u'have', u'our', u'and', u'its', u'of', u'or', u'all', u'are', u'from', u'their', u'which', u'will']
+这些词的次数都超过500词，可以认为是高频词。
+list=[w for w in set(text4) if len(w) > 15].结果如下：
+[u'internationality', u'misappropriation', u'irresponsibility', u'enthusiastically', u'disqualification', u'misrepresentation', u'misunderstanding', u'antiphilosophists', u'responsibilities', u'contradistinction', u'transcontinental', u'unconstitutional', u'discountenancing', u'sentimentalizing', u'uncharitableness', u'constitutionally', u'instrumentalities', u'RESPONSIBILITIES'
+还可以通过print fdist1.max()来查看出现最多的单词。结果是the。
+要计算单词的频率可以通过print fdist1.freq('internationality')来得到

@@ -1,0 +1,58 @@
+原文
+先mark，后续尝试。
+1.NLTK
+NLTK 在用 Python 处理自然语言的工具中处于领先的地位。它提供了 WordNet 这种方便处理词汇资源的借口，还有分类、分词、除茎、标注、语法分析、语义推理等类库。
+网站
+http://www.nltk.org/
+安装
+安装 NLTK:
+sudo pip install -U nltk
+安装 Numpy (可选):
+sudo pip install -U numpy
+安装测试:
+python then type import nltk
+2.Pattern
+Pattern 的自然语言处理工具有词性标注工具(Part-Of-Speech Tagger)，N元搜索(n-gram search)，情感分析(sentiment analysis)，WordNet。支持机器学习的向量空间模型，聚类，向量机。
+网站:
+https://github.com/clips/pattern
+安装:
+pip install pattern
+3.TextBlob
+TextBlob 是一个处理文本数据的 Python 库。提供了一些简单的api解决一些自然语言处理的任务，例如词性标注、名词短语抽取、情感分析、分类、翻译等等。
+网站：
+http://textblob.readthedocs.org/en/dev/
+安装：
+pip install -U textblob
+4.Gensim
+Gensim 提供了对大型语料库的主题建模、文件索引、相似度检索的功能。它可以处理大于RAM内存的数据。作者说它是“实现无干预从纯文本语义建模的最强大、最高效、最无障碍的软件。”
+网站：
+https://github.com/piskvorky/gensim
+安装：
+pip install -U gensim
+5.PyNLPI
+它的全称是：Python自然语言处理库（Python Natural Language Processing Library，音发作: pineapple） 这是一个各种自然语言处理任务的集合，PyNLPI可以用来处理N元搜索，计算频率表和分布，建立语言模型。他还可以处理向优先队列这种更加复杂的数据结构，或者像 Beam 搜索这种更加复杂的算法。
+安装：
+LInux:
+sudo apt-get install pymol
+Fedora:
+yum install pymol
+6.spaCy
+这是一个商业的开源软件。结合Python和Cython，它的自然语言处理能力达到了工业强度。是速度最快，领域内最先进的自然语言处理工具。
+网站：
+https://github.com/proycon/pynlpl
+安装：
+pip install spacy
+7.Polyglot
+Polyglot 支持对海量文本和多语言的处理。它支持对165种语言的分词，对196中语言的辨识，40种语言的专有名词识别，16种语言的词性标注，136种语言的情感分析，137种语言的嵌入，135种语言的形态分析，以及69中语言的翻译。
+网站：
+https://pypi.python.org/pypi/polyglot
+安装
+pip install polyglot
+8.MontyLingua
+MontyLingua 是一个自由的、训练有素的、端到端的英文处理工具。输入原始英文文本到 MontyLingua ，就会得到这段文本的语义解释。适合用来进行信息检索和提取，问题处理，回答问题等任务。从英文文本中，它能提取出主动宾元组，形容词、名词和动词短语，人名、地名、事件，日期和时间，等语义信息。
+网站：
+http://web.media.mit.edu/~hugo/montylingua/
+9.BLLIP Parser
+BLLIP Parser（也叫做Charniak-Johnson parser）是一个集成了产生成分分析和最大熵排序的统计自然语言工具。包括 命令行 和 python接口 。
+10.Quepy
+Quepy是一个Python框架，提供将自然语言转换成为数据库查询语言。可以轻松地实现不同类型的自然语言和数据库查询语言的转化。所以，通过Quepy，仅仅修改几行代码，就可以实现你自己的自然语言查询数据库系统。

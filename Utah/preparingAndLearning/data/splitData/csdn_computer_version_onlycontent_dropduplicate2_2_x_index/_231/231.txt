@@ -1,0 +1,33 @@
+当入手一台新的电脑，所有软件都得重新安装一遍，而每个技术人员的习惯不一。就比如我，一名计算机视觉工程师，需要安装什么软件呢？
+一、技术需要
+1.VS2013
+2.OpenCV源码
+3.git
+4.cmake
+5.sourcetree
+6.有道笔记
+7.python2.7
+8.notepad ++
+9.UltraISO
+10.Ubuntu 16.04 iso
+11.kdevelop
+12.robware studio
+13.gitkraken
+14.sublime
+二、办公需要
+1.百度网盘
+2.WINRAR压缩软件
+3.DISM++
+4.markdown
+5.teamviewer
+6.QDir
+7.搜狗浏览器
+8.Everything
+9.FastStone Capture
+10.iSpring Free Cam 8
+11.云竹协作
+12.gaaiho
+13.金山词霸
+14.CAJViewer
+7/17/2018 3:44:16 PM
+Author：Z

@@ -1,0 +1,44 @@
+计算机视觉和模式识别
+计算机视觉和图像处理是一个令很多人充满兴趣的计算机领域，它不仅涉及到很多精妙和令人称赞的数学推导和
+漂亮的代码
+，更是应用到我们生活的方方面面，简单如
+Photoshop、美图秀秀
+，复杂于相机校准、人脸识别、处理视频等。
+时隔很久没有写博客了，以前写博客的时候总感觉自己欠缺很多，现在发现在计算机专业读书，每一年都会对自己所学的东西有了新的理解。这次的博客系列就是分享自己在图像处理和计算机视觉方面的理解和体会，希望大家
+Have fun with image!
+1.什么是计算机视觉和图像处理？
+Computer vision is an interdisciplinary field that deals with how computers can be made for gaining high-level understanding from digital images or videos. From the perspective of engineering, it seeks to automate tasks that the human visual system can do.
+[ 维基百科 ]
+简而言之
+计算机视觉就是获取图像的高层信息，看起来让计算机和人类视觉系统一样。
+图像处理通常是获取图像的低层或者中层信息，对图像进行直接的处理。
+2.我们使用什么进行图像处理？
+C/C++大家都知道是图像处理包括计算机图形学中常用的编程语言，原因呢，想必大家都懂，就是效率高。在复杂的图形图像处理中这一点显得更重要。因此在接下来的系列中我所介绍的图形图像处理都是采用
+Win10平台下VisualStudio2015 Community版本的VC编译环境
+。当然大家在理解算法的过程后，可以使用诸如Matlab、Java等其他编程语言来写自己的算法程序。
+工欲善其事，必先利其器。如果大家有过图像处理或者图像操作的编程经验都知道，如果没有一些辅助的库文件，那么编写图像处理算法的代码将会有很多冗余繁杂的读取保存图像的代码，这些代码不利于我们对算法的理解和程序的快速编写。因此我们常使用一些辅助的图像处理库，来简化我们的代码编写，比较有名的就是
+OpenCv
+。
+但是在这里要为介绍的是另外一个更为简单（配置简单、操作简单）的图像处理库
+CImg
+。
+3.什么是CImg？
+简而言之，CImg是一个
+小的开源的现代C++图像处理库。
+当然，个人觉得它相比其他库最重要的特点就是它只是一个.h文件，只需把它下载下来后放到VS安装目录下的Include文件下，编写程序时像正常的头文件一样使用就可以了。
+它不需要对库的提前编译
+不用处理复杂的依赖关系
+编译是按需完成的
+类成员和函数都是内联的，在程序执行时有更好的表现
+4.配置CImg
+正如上面所说，CImg的配置过程相当简单，找到自己的VS安装目录（我的是安装在C盘
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include）
+,将CImg.h放进该文件夹即可
+这里提供一下(http://cimg.eu/download.shtml)官网的下载地址，其实直接百度谷歌很容易找到官网然后Download，而且官网也有很多第一手的资料可以提供我们学习使用。
+5.第一个CImg图像处理程序
+这次我们先写出一个Hello CImg的程序，实现图片的读取显示和保存。
+代码如下：
+/*CImg demo for blog*/ #include<CImg.h> // Include the library file using namespace cimg_library; int main() { CImg<unsigned char> image; image.load_bmp("demo.bmp"); // load the image image.display(); // display the image image.save("new.bmp"); // create a new name and save the image return 0; }
+运行结果如下：
+一个只有十行左右的程序，便可以轻松完成对图像的简单操作，
+我们下次见！

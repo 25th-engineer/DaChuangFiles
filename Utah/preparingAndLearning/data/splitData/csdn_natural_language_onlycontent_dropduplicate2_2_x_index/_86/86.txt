@@ -1,0 +1,56 @@
+一 文法型语言模型
+文法型语言模型是人工编制的语言学文法，文法规则来源于语言学家掌握的语言学知识和领域知识，但这种语言模型不能处理大规模真实文本。
+二 统计语言模型
+统计语言模型常用的思想是用一个词在句子中的neighborhood表示该词
+主要的统计语言模型有：
+1.上下文无关模型
+2.N-gram模型：考虑词形方面的特征
+（1）一元模型
+（2）二元模型
+（3）N元模型
+3.N-pos模型：考虑词类词性方面的特征，前一个词的词类决定下一个词出现的概率。
+4.基于决策树的语言模型
+5.最大熵模型
+6.动态、自适应、基于缓存的语言模型
+7.Hyperspace Analogue to Language method (HAL)
+HAL (Lund & Burgess, 1996）方法可以用一个co-occurrence matrix, 表示任意两个词相关性
+8.Latent Semantic Analysis (LSA)
+LSA (Deerwester et al., 1990; Landauer, Foltz, & Laham, 1998) 中， co-occurrence matrix是word-document矩阵，表示文档中出现某词的频率，统计后将其进行normalization
+将document从稀疏的高维Vocabulary空间映射到一个低维的向量空间，我们称之为隐含语义空间(Latent Semantic Space)。
+9.COALS （Rohde et al., 2009）
+在HAL上做了小改动， 将HAL所得co-occurrence matrix进行correlation normalization。
+三 严格匹配模型、概率模型
+严格匹配模型是给定一个查询,利用匹配函数,将文档集分为两个集合: 匹配集和非匹配集. 严格匹配模型中最简单并且常用的一种便是布尔模型.在布尔模型中要定义一个二值变量的集合,这些变量都对应文档的某个特征,称为特征变量.文档由这些特征变量组成的集合来表示,如果变量对文档的内容表示有贡献,则赋值为True,否则为False.查询语句则是由特征变量和操作符and, or和not组成的表达式. 匹配函数则遵循布尔逻辑的规则.
+概率模型是信息检索的又一主要模型,这种模型主要针对信息检索中相关性判断的不确定性以及查询信息表示的模糊性.基于概率排序原则: 对于给定的用户查询Q,对所有的文本D计算概率P(R|D,Q)并从大到小进行排序. 这里R 表示文本D与查询Q的相关性.如果以D=(d1,d2,…,dn)表示文本D,N为特征项个数,特征项i在文本中出现di=1,否则di=0.
+概率模型的缺点是对文本集的依赖性过强,而且处理问题过于简单.
+四 基于分布理论的独立检验模型
+基于分布理论的独立检验模型有关键要素，分别是互信息、t测试、相异度（t测试差）、相关度（i平方的统计量）
+五 基于规则的模型
+这种模型假设自然语言的知识可以用规则集来表示,而规则集的获取既可以人工编写(唯理主义) ,也可以有语料库中学习得到(经验主义) . 1956年乔姆斯基发表了《语言描述的三个模型》,由此兴起的短语结构语法、乔姆斯基语法体系和其他的一些语言描述模型,都可以看作是描述语言的规则模型,基于这些规则模型的语言处理技术就是句法分析技术和语义分析技术.
+六 语言模型变种
+Class-based N-gram Model
+该方法基于词类建立语言模型，以缓解数据稀疏问题，且可以方便融合部分语法信息。
+Topic-based N-gram Model
+该方法将训练集按主题划分成多个子集，并对每个子集分别建立N-gram语言模型，以解决语言模型的主题自适应问题。
+Cache-based N-gram Model
+该方法利用cache缓存前一时刻的信息，以用于计算当前时刻概率，以解决语言模型动态自适应问题。
+应用：各种输入法（搜狗、QQ、微软等）
+Skipping N-gram Model&Trigger-based N-gram Model
+二者核心思想都是刻画远距离约束关系。
+指数语言模型
+最大熵模型MaxEnt、最大熵马尔科夫模型MEMM、条件随机域模型CRF
+七 主题模型及其发展
+主题模型有两种：pLSA（ProbabilisticLatent Semantic Analysis）和LDA（Latent Dirichlet Allocation）
+主题模型的起源是隐性语义索引（LSI）
+隐性语义索引后来又发展为概率隐性语义索引（pLSI）
+主题的实现一般包括五部分的内容：输入、基本假设、表示、参数估计、新样本推断
+输入：主要是文档集合
+基本假设：是词袋（bag of words）假设，即一篇文档内的单词可以交换次序而不影响模型的训练结果。
+主题模型的表示：图模型和生成过程
+Topic Model主要可以分为四大类：
+1）无监督的、无层次结构的topic model；2）无监督的、层次结构的topic model；
+3）有监督的、无层次结构的topic model；4）有监督的、层次结构的topic model。
+对于1）主要有： PLSA, LDA, Correlated Topic Model, PAM，Concept Topic Model等
+对于2）主要有： HLDA， HDP，HPAM等
+对于3）主要有： S-LDA, Disc-LDA, MM-LDA, Author-Model, Labeled LDA, PLDA 等等
+对于4）主要有： hLLDA, HSLDA等

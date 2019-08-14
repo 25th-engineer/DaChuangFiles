@@ -1,0 +1,136 @@
+------------------------------------本博客所有内容以学习、研究和分享为主，如需转载，请联系本人，标明作者和出处，并且是非商业用途，谢谢！--------------------------------
+系列目录：
+1 第一部分 模型的评估与数据处理 2 3 机器学习基础与实践（一）----数据清洗 4 5 机器学习基础与实践（二）----数据转换 6 7 机器学习基础与实践（三）----数据降维 8 9 10 11 第二部分 特征工程 12 13 机器学习基础与实践（四）----特征选择 14 15 机器学习基础与实践（五）----特征提取 16 17 机器学习基础与实践（六）----模型选择与评估 18 19 20 21 第三部分 算法基础之有监督算法 22 23 机器学习基础与实践（七）----广义线性模型 24 25 机器学习基础与实践（八）----最小二乘法 26 27 机器学习基础与实践（九）----LDA 28 29 机器学习基础与实践（十）----SGD 30 31 机器学习基础与实践（十一）----K近邻 32 33 机器学习基础与实践（十二）----高斯过程 34 35 机器学习基础与实践（十三）----决策树（ID3，C4.5，C5.0，CART） 36 37 机器学习基础与实践（十四）----朴素贝叶斯 38 39 机器学习基础与实践（十五）----支持向量机 40 41 机器学习基础与实践（十六）----集成学习（Bagging，RF，AdaBoost，Gradient Tree Boosting，Voting Classifier） 42 43 机器学习基础与实践（十七）----感知机模型 44 45 机器学习基础与实践（十八）----多分类算法 46 47 48 49 第四部分 算法基础之无监督算法 50 51 机器学习基础与实践（十九）----K-means 52 53 机器学习基础与实践（二十）----Affinity propagation 54 55 机器学习基础与实践（二十一）----Mean-shift 56 57 机器学习基础与实践（二十二）----Spectral clustering 58 59 机器学习基础与实践（二十三）----Ward hierachical 60 61 机器学习基础与实践（二十四）----Agglomerative clustering 62 63 机器学习基础与实践（二十五）----DBSCAN 64 65 机器学习基础与实践（二十六）----Gaussian mixtures 66 67 机器学习基础与实践（二十七）----Birch 68 69 70 71 第五部分 算法基础之推荐算法 72 73 机器学习基础与实践（二十八）----相似度计算 74 75 机器学习基础与实践（二十九）----Arules关联规则 76 77 机器学习基础与实践（三十）----Fp-Growth 78 79 机器学习基础与实践（三十一）----User-based or Item-based 80 81 82 83 第六部分 算法基础之半监督模型 84 85 机器学习基础与实践（三十二）----Label Propagation 86 87 88 89 第七部分 算法基础之其他模型 90 91 机器学习基础与实践（三十三）----概率图模型 92 93 机器学习基础与实践（三十四）----最大熵模型 94 95 机器学习基础与实践（三十五）----规则学习 96 97 机器学习基础与实践（三十六）----强化学习 98 99 机器学习基础与实践（三十七）----条件随机场 100 101 机器学习基础与实践（三十八）----保序回归（Isotonic regression） 102 103 机器学习基础与实践（三十九）----Probability calibration
+Contents
+本文目录：
+一.标准化的原因
+二.适用情况
+三.三种数据变换方法的含义与应用
+四.具体方法及代码
+一）标准化
+1.1 scale----零均值单位方差
+1.2 StandardScaler
+二）归一化
+2.1 MinMaxScaler(最小最大值标准化)
+2.2 MaxAbsScaler（绝对值最大标准化）
+2.3 对稀疏数据进行标准化
+2.4 对离群点进行标准化
+三）正则化
+3.1  L1、L2正则化
+四）二值化
+4.1特征二值化
+五）对类别特征进行编码
+六）缺失值的插补
+七）生成多项式特征
+八）自定义转换
+正文：
+一.标准化的原因
+通常情况下是为了消除量纲的影响。譬如一个百分制的变量与一个5分值的变量在一起怎么比较？只有通过数据标准化，都把它们标准到同一个标准时才具有可比性，一般标准化采用的是Z标准化，即均值为0，方差为1，当然也有其他标准化，比如0--1标准化等等，可根据自己的数据分布情况和模型来选择
+二.适用情况
+看模型是否具有伸缩不变性。
+不是所有的模型都一定需要标准化，有些模型对量纲不同的数据比较敏感，譬如SVM等。当各个维度进行不均匀伸缩后，最优解与原来不等价，这样的模型，除非原始数据的分布范围本来就不叫接近，否则必须进行标准化，以免模型参数被分布范围较大或较小的数据主导。但是如果模型在各个维度进行不均匀伸缩后，最优解与原来等价，例如logistic regression等，对于这样的模型，是否标准化理论上不会改变最优解。但是，由于实际求解往往使用迭代算法，如果目标函数的形状太“扁”，迭代算法可能收敛得很慢甚至不收敛。所以对于具有伸缩不变性的模型，最好也进行数据标准化。
+三.三种数据变换方法的含义与应用
+Rescaling（重缩放/归一化）：通常是指增加或者减少一个常数，然后乘以/除以一个常数，来改变数据的衡量单位。例如：将温度的衡量单位从摄氏度转化为华氏温度。
+Normalizing（正则化）：通常是指除以向量的范数。例如：将一个向量的欧氏长度等价于1 。在神经网络中，“正则化”通常是指将向量的范围重缩放至最小化或者一定范围，使所有的元素都在[0,1]范围内。通常用于文本分类或者文本聚类中。
+Standardizing（标准化）：通常是为了消除不同属性或样方间的不齐性，使同一样方内的不同属性间或同一属性在不同样方内的方差减小。例如：如果一个向量包含高斯分布的随机值，你可能会通过除以标准偏差来减少均值，然后获得零均值单位方差的“标准正态”随机变量。
+那么问题是，当我们在训练模型的时候，一定要对数据进行变换吗？这得视情况而定。很多人对多层感知机有个误解，认为输入的数据必须在[0,1]这个范围内。虽然标准化后在训练模型效果会更好，但实际上并没有这个要求。但是最好使输入数据中心集中在0周围，所以把数据缩放到[0,1]其实并不是一个好的选择。
+如果你的输出激活函数的范围是[0,1](sigmoid函数的值域)，那你必须保证你的目标值也在这个范围内。但通常请款下，我们会使输出激活函数的范围适应目标函数的分布，而不是让你的数据来适应激活函数的范围。
+当我们使用激活函数的范围为[0,1]时，有些人可能更喜欢把目标函数缩放到[0.1,0.9]这个范围。我怀疑这种小技巧的之所以流行起来是因为反向传播的标准化太慢了导致的。但用这种方法可能会使输出的后验概率值不对。如果你使用一个有效的训练算法的话，完全不需要用这种小技巧，也没有必要去避免溢出（overflow）
+四.具体方法及代码
+一）标准化
+1.1 scale----零均值单位方差
+1 from sklearn import preprocessing 2 import numpy as np 3 #raw_data 4 X = np.array([[1., -1., 2.], [2., 0., 0.], [0., 1., -1.]]) 5 X_scaled = preprocessing.scale(X) 6 #output 7 X_scaled = [[ 0. -1.22474487 1.33630621] 8 [ 1.22474487 0. -0.26726124] 9 [-1.22474487 1.22474487 -1.06904497]] 10 ＃scaled之后的数据零均值，单位方差 11 X_scaled.mean(axis=0) # column mean: array([ 0., 0., 0.]) 12 X_scaled.std(axis=0) #column standard deviation: array([ 1., 1., 1.])
+1.2 StandardScaler----计算训练集的平均值和标准差，以便测试数据集使用相同的变换
+1 scaler = preprocessing.StandardScaler().fit(X) 2 #out: 3 StandardScaler(copy=True, with_mean=True, with_std=True) 4 scaler.mean_ 5 #out: 6 array([ 1., 0. , 0.33333333]) 7 scaler.std_ 8 #out: 9 array([ 0.81649658, 0.81649658, 1.24721913]) 10 #测试将该scaler用于输入数据，变换之后得到的结果同上 11 scaler.transform(X) 12 #out: 13 array([[ 0., -1.22474487, 1.33630621], [ 1.22474487, 0. , -0.26726124], [-1.22474487,1.22474487, -1.06904497]]) 14 scaler.transform([[-1., 1., 0.]]) 15 #scale the new data, out: 16 array([[-2.44948974, 1.22474487, -0.26726124]])
+注：1）若设置with_mean=False 或者 with_std=False，则不做centering 或者scaling处理。
+2）scale和StandardScaler可以用于回归模型中的目标值处理。
+二）归一化----将数据特征缩放至某一范围(scalingfeatures to a range)
+另外一种标准化方法是将数据缩放至给定的最小值与最大值之间，通常是０与１之间，可用MinMaxScaler实现。或者将最大的绝对值缩放至单位大小，可用MaxAbsScaler实现。
+使用这种标准化方法的原因是，有时数据集的标准差非常非常小，有时数据中有很多很多零（稀疏数据）需要保存住０元素。
+2.1 MinMaxScaler(最小最大值标准化)
+公式：X_std = (X - X.min(axis=0)) / (X.max(axis=0) - X.min(axis=0)) ;
+X_scaler = X_std/ (max - min) + min
+1 #例子：将数据缩放至[0, 1]间 2 X_train = np.array([[1., -1., 2.], [2., 0., 0.], [0., 1., -1.]]) 3 min_max_scaler = preprocessing.MinMaxScaler() 4 X_train_minmax = min_max_scaler.fit_transform(X_train) 5 #out: 6 array([[ 0.5 , 0. , 1. ], 7 [ 1. , 0.5 , 0.33333333], 8 [ 0. , 1. , 0. ]]) 9 #将上述得到的scale参数应用至测试数据 10 X_test = np.array([[ -3., -1., 4.]]) 11 X_test_minmax = min_max_scaler.transform(X_test) #out: array([[-1.5 , 0. , 1.66666667]]) 12 #可以用以下方法查看scaler的属性 13 min_max_scaler.scale_ #out: array([ 0.5 , 0.5, 0.33...]) 14 min_max_scaler.min_ #out: array([ 0., 0.5, 0.33...])
+2.2 MaxAbsScaler（绝对值最大标准化）
+与上述标准化方法相似，但是它通过除以最大值将训练集缩放至[-1,1]。这意味着数据已经以０为中心或者是含有非常非常多０的稀疏数据。
+1 X_train = np.array([[ 1., -1., 2.], 2 [ 2., 0., 0.], 3 [ 0., 1., -1.]]) 4 max_abs_scaler = preprocessing.MaxAbsScaler() 5 X_train_maxabs = max_abs_scaler.fit_transform(X_train) 6 # out: 7 array([[ 0.5, -1., 1. ], [ 1. , 0. , 0. ], [ 0. , 1. , -0.5]]) 8 X_test = np.array([[ -3., -1., 4.]]) 9 X_test_maxabs = max_abs_scaler.transform(X_test) 10 #out: 11 array([[-1.5, -1. , 2. ]]) 12 max_abs_scaler.scale_ 13 #out: 14 array([ 2., 1., 2.])
+其实在scale模块里，也提供了这两种方法： minmax_scale和maxabs_scale
+2.3 对稀疏数据进行标准化
+对稀疏数据进行中心化会破坏稀疏数据的结构，这样做没什么意义。但是我们可以对稀疏数据的输入进行标准化，尤其是特征在不同的标准时。MaxAbsScaler 和 maxabs_scale是专门为稀疏数据设计的，也是常用的方法。但是scale 和 StandardScaler只接受scipy.sparse的矩阵作为输入，并且必须设置with_centering=False。否则会出现 ValueError且破坏稀疏性，而且还会无意中分配更多的内存导致内存崩溃。RobustScaler不适用于稀疏数据的输入，但是你可以用 transform 方法。
+scalers接受压缩的稀疏行（Compressed Sparse Rows）和压缩的稀疏列（Compressed Sparse Columns）的格式（具体参考scipy.sparse.csr_matrix 和scipy.sparse.csc_matrix）。其他的稀疏格式会被转化成压缩的稀疏行（Compressed Sparse Rows）格式。为了避免这种不必要的内存拷贝，推荐使用CSR或者CSC的格式。如果数据很小，可以在稀疏矩阵上运用toarray 方法。
+2.4 对离群点进行标准化
+如果你的数据有离群点（上一篇我们提到过），对数据进行均差和方差的标准化效果并不好。这种情况你可以使用robust_scale 和 RobustScaler 作为替代。它们有对数据中心化和数据的缩放鲁棒性更强的参数。
+三）正则化
+3.1  L1、L2正则化
+1 x=np.array([[1.,-1.,2.], 2 [2.,0.,0.], 3 [0.,1.,-1.]]) 4 x_normalized=preprocessing.normalize(x,norm='l2') 5 print(x_normalized) 6 7 # 可以使用processing.Normalizer()类实现对训练集和测试集的拟合和转换 8 normalizer=preprocessing.Normalizer().fit(x) 9 print(normalizer) 10 normalizer.transform(x)
+注：稀疏数据输入：
+normalize 和 Normalizer 既接受稠密数据（dense array-like），也接受稀疏矩阵（from scipy.sparse）作为输入
+稀疏数据需要转换成压缩的稀疏行（Compressed Sparse Rows）格式（详见scipy.sparse.csr_matrix），为了避免不必要的内存拷贝，推荐使用CSR。
+四）二值化
+4.1特征二值化
+特征二值化是把数值特征转化成布尔值的过程。这个方法对符合多变量伯努利分布的输入数据进行预测概率参数很有效。详细可以见这个例子sklearn.neural_network.BernoulliRBM.
+此外，在文本处理中也经常会遇到二值特征值（很可能是为了简化概率推理），即使在实际中正则化后的词频或者TF-IDF的值通常只比未正则化的效果好一点点。
+对于 Normalizer，Binarizer工具类通常是在Pipeline阶段（sklearn.pipeline.Pipeline）的前期过程会用到。下面举一个具体的例子：
+1 #input 2 X = [[ 1., -1., 2.], 3 [ 2., 0., 0.], 4 [ 0., 1., -1.]] 5 #binary 6 binarizer = preprocessing.Binarizer().fit(X) # fit does nothing 7 binarizer 8 Binarizer(copy=True, threshold=0.0) 9 #transform 10 binarizer.transform(X) 11 #out: 12 array([[ 1., 0., 1.], 13 [ 1., 0., 0.], 14 [ 0., 1., 0.]]) 15 16 # 调整阈值 17 binarizer = preprocessing.Binarizer(threshold=1.1) 18 binarizer.transform(X) 19 #out： 20 array([[ 0., 0., 1.], 21 [ 1., 0., 0.], 22 [ 0., 0., 0.]]) 23
+注：稀疏数据输入：
+binarize 和 Binarizer 既接受稠密数据（dense array-like），也接受稀疏矩阵（from scipy.sparse）作为输入
+稀疏数据需要转换成压缩的稀疏行（Compressed Sparse Rows）格式（详见scipy.sparse.csr_matrix），为了避免不必要的内存拷贝，推荐使用CSR。
+五）对类别特征进行编码
+我们经常会遇到一些类别特征，这些特征不是离散型的数值，而是这样的：["男性","女性"],["来自欧洲","来自美国","来自亚洲"],["使用Firefox浏览器","使用Chrome浏览器","使用Safari浏览器","使用IE浏览器"]等等。这种类型的特征可以被编码为整型（int），如["男性","来自美国","使用IE浏览器"]可以表示成[0,1,3]，["女性","来自亚洲","使用Chrome浏览器"]可以表示成[1,2,1]。这些整数式的表示不能直接作为sklearn的参数，因为我们需要的是连续型的输入，而且我们通常是有序的翻译这些特征，而不是所有的特征都是有序化的（譬如浏览器就是按人工排的序列）。
+将这些类别特征转化成sklearn参数中可以使用的方法是：使用one-of-K或者one-hot编码（独热编码OneHotEncoder）。它可以把每一个有m种类别的特征转化成m中二值特征。举例如下：
+1 enc = preprocessing.OneHotEncoder() 2 #input 3 enc.fit([[0, 0, 3], [1, 1, 0], [0, 2, 1], [1, 0, 2]]) 4 OneHotEncoder(categorical_features='all', dtype=<... 'float'>,handle_unknown='error', n_values='auto', sparse=True) 5 #transform 6 enc.transform([[0, 1, 3]]).toarray() 7 #out 8 array([[ 1., 0., 0., 1., 0., 0., 0., 0., 1.]])
+默认情况下，特征的类别数量是从数据集里自动判断出来的。当然，你也可以用n_values这个参数。我们刚刚举的例子中有两种性别，三种地名和四种浏览器，当我们fit之后就可以将我们的数据转化为数值了。从结果中来看，第一个数字代表性别([0,1]代表男性，女性），第二个数字代表地名（[0,1,2]代表欧洲、美国、亚洲），最后一个数字代表浏览器（[3,0,1,2]代表四种浏览器）
+此外，字典格式也可以编码： Loading features from dicts
+OneHotEncoder参数：class sklearn.preprocessing.OneHotEncoder(n_values='auto', categorical_features='all', dtype=<class 'float'>, sparse=True, handle_unknown='error')
+n_values : ‘auto’, int or array of ints
+每个特征的数量
+‘auto’ : 从训练数据的范围中得到
+int : 所有特征的最大值（number）
+array : 每个特征的最大值（number）
+categorical_features: “all” or array of indices or mask :
+确定哪些特征是类别特征
+‘all’ (默认): 所有特征都是类别特征，意味着所有特征都要进行OneHot编码
+array of indices: 类别特征的数组索引
+mask: n_features 长度的数组，切dtype = bool
+非类别型特征通常会放到矩阵的右边
+dtype : number type, default=np.float
+输出数据的类型
+sparse : boolean, default=True
+设置True会返回稀疏矩阵，否则返回数组
+handle_unknown : str, ‘error’ or ‘ignore’
+当一个不明类别特征出现在变换中时，报错还是忽略
+六）缺失值的插补
+上篇我们讲了五种方法来解决缺失值的问题，其实sklearn里也有一个工具Imputer可以对缺失值进行插补。Imputer类可以对缺失值进行均值插补、中位数插补或者某行/列出现的频率最高的值进行插补，也可以对不同的缺失值进行编码。并且支持稀疏矩阵。
+1 import numpy as np 2 from sklearn.preprocessing import Imputer 3 #用均值插补缺失值 4 imp = Imputer(missing_values='NaN', strategy='mean', axis=0) 5 imp.fit([[1, 2], [np.nan, 3], [7, 6]]) 6 Imputer(axis=0, copy=True, missing_values='NaN', strategy='mean', verbose=0) 7 X = [[np.nan, 2], [6, np.nan], [7, 6]] 8 print(imp.transform(X)) 9 [[ 4. 2. ] 10 [ 6. 3.666...] 11 [ 7. 6. ]] 12 13 #对稀疏矩阵进行缺失值插补 14 import scipy.sparse as sp 15 X = sp.csc_matrix([[1, 2], [0, 3], [7, 6]]) 16 imp = Imputer(missing_values=0, strategy='mean', axis=0) 17 imp.fit(X) 18 Imputer(axis=0, copy=True, missing_values=0, strategy='mean', verbose=0) 19 X_test = sp.csc_matrix([[0, 2], [6, 0], [7, 6]]) 20 print(imp.transform(X_test)) 21 [[ 4. 2. ] 22 [ 6. 3.666...] 23 [ 7. 6. ]]
+在稀疏矩阵中，缺失值被编码为0存储为矩阵中，这种格式是适合于缺失值比非缺失值多得多的情况。此外，Imputer类也可以用于Pipeline中
+Imputor类的参数：class sklearn.preprocessing.Imputer(missing_values='NaN', strategy='mean', axis=0, verbose=0, copy=True)
+missing_values : int或"NaN",默认NaN（String类型）
+strategy : string, 默认为mean，可选则mean、median、most_frequent
+axis :int, 默认为0（axis = 0，对列进行插值；axis= 1，对行进行插值）
+verbose : int, 默认为0
+copy : boolean, 默认为True
+True：会创建一个X的副本
+False：在任何合适的地方都会进行插值。
+但是以下四种情况，计算设置的copy = Fasle，也会创建一个副本：
+1.X不是浮点型数组
+2.X是稀疏矩阵，而且miss_value = 0
+3.axis= 0，X被编码为CSR矩阵
+4.axis= 1，X被编码为CSC矩阵
+举个实例(在用随机森林算法之前先用Imputer类进行处理)：
+1 import numpy as np 2 3 from sklearn.datasets import load_boston 4 from sklearn.ensemble import RandomForestRegressor 5 from sklearn.pipeline import Pipeline 6 from sklearn.preprocessing import Imputer 7 from sklearn.cross_validation import cross_val_score 8 9 rng = np.random.RandomState(0) 10 11 dataset = load_boston() 12 X_full, y_full = dataset.data, dataset.target 13 n_samples = X_full.shape[0] 14 n_features = X_full.shape[1] 15 16 # Estimate the score on the entire dataset, with no missing values 17 estimator = RandomForestRegressor(random_state=0, n_estimators=100) 18 score = cross_val_score(estimator, X_full, y_full).mean() 19 print("Score with the entire dataset = %.2f" % score) 20 21 # Add missing values in 75% of the lines 22 missing_rate = 0.75 23 n_missing_samples = np.floor(n_samples * missing_rate) 24 missing_samples = np.hstack((np.zeros(n_samples - n_missing_samples, 25 dtype=np.bool), 26 np.ones(n_missing_samples, 27 dtype=np.bool))) 28 rng.shuffle(missing_samples) 29 missing_features = rng.randint(0, n_features, n_missing_samples) 30 31 # Estimate the score without the lines containing missing values 32 X_filtered = X_full[~missing_samples, :] 33 y_filtered = y_full[~missing_samples] 34 estimator = RandomForestRegressor(random_state=0, n_estimators=100) 35 score = cross_val_score(estimator, X_filtered, y_filtered).mean() 36 print("Score without the samples containing missing values = %.2f" % score) 37 38 # Estimate the score after imputation of the missing values 39 X_missing = X_full.copy() 40 X_missing[np.where(missing_samples)[0], missing_features] = 0 41 y_missing = y_full.copy() 42 estimator = Pipeline([("imputer", Imputer(missing_values=0, 43 strategy="mean", 44 axis=0)), 45 ("forest", RandomForestRegressor(random_state=0, 46 n_estimators=100))]) 47 score = cross_val_score(estimator, X_missing, y_missing).mean() 48 print("Score after imputation of the missing values = %.2f" % score)
+结果：
+Score with the entire dataset = 0.56 Score without the samples containing missing values = 0.48 Score after imputation of the missing values = 0.55
+七）生成多项式特征
+在输入数据中增加非线性特征可以有效的提高模型的复杂度。简单且常用的方法就是使用多项式特征（polynomial features),可以得到特征的高阶交叉项：
+1 import numpy as np 2 from sklearn.preprocessing import PolynomialFeatures 3 X = np.arange(6).reshape(3, 2) 4 X 5 array([[0, 1], 6 [2, 3], 7 [4, 5]]) 8 poly = PolynomialFeatures(2) 9 poly.fit_transform(X) 10 array([[ 1., 0., 1., 0., 0., 1.], 11 [ 1., 2., 3., 4., 6., 9.], 12 [ 1., 4., 5., 16., 20., 25.]])
+然而有时候我们只需要特征的交叉项，可以设置interaction_only=True来得到：
+1 X = np.arange(9).reshape(3, 3) 2 X 3 array([[0, 1, 2], 4 [3, 4, 5], 5 [6, 7, 8]]) 6 poly = PolynomialFeatures(degree=3, interaction_only=True) 7 poly.fit_transform(X) 8 array([[ 1., 0., 1., 2., 0., 0., 2., 0.], 9 [ 1., 3., 4., 5., 12., 15., 20., 60.], 10 [ 1., 6., 7., 8., 42., 48., 56., 336.]])
+这个方法可能大家在工作中比较少见，但世界上它经常用于核方法中，如选择多项式核时 ( sklearn.svm.SVC, sklearn.decomposition.KernelPCA)
+八）自定义转换
+如果以上的方法觉得都不够，譬如你想用对数据取对数，可以自己用 FunctionTransformer自定义一个转化器,并且可以在Pipeline中使用
+1 import numpy as np 2 from sklearn.preprocessing import FunctionTransformer 3 transformer = FunctionTransformer(np.log1p)#括号内的就是自定义函数 4 X = np.array([[0, 1], [2, 3]]) 5 transformer.transform(X) 6 array([[ 0. , 0.69314718], 7 [ 1.09861229, 1.38629436]])
+告诉你怎么用：
+如果你在做一个分类任务时，发现第一主成分与这个不相关，你可以用FunctionTransformer把第一列除去，剩下的列用PCA：
+1 import matplotlib.pyplot as plt 2 import numpy as np 3 4 from sklearn.cross_validation import train_test_split 5 from sklearn.decomposition import PCA 6 from sklearn.pipeline import make_pipeline 7 # from sklearn.preprocessing import FunctionTransformer 8 # 如果报错ImportError: cannot import name FunctionTransformer，可以使用下面的语句 9 from sklearn.preprocessing import * 10 11 12 def _generate_vector(shift=0.5, noise=15): 13 return np.arange(1000) + (np.random.rand(1000) - shift) * noise 14 15 16 def generate_dataset(): 17 """ 18 This dataset is two lines with a slope ~ 1, where one has 19 a y offset of ~100 20 """ 21 return np.vstack(( 22 np.vstack(( 23 _generate_vector(), 24 _generate_vector() + 100, 25 )).T, 26 np.vstack(( 27 _generate_vector(), 28 _generate_vector(), 29 )).T, 30 )), np.hstack((np.zeros(1000), np.ones(1000))) 31 32 33 def all_but_first_column(X): 34 return X[:, 1:] 35 36 37 def drop_first_component(X, y): 38 """ 39 Create a pipeline with PCA and the column selector and use it to 40 transform the dataset. 41 """ 42 pipeline = make_pipeline( 43 PCA(), FunctionTransformer(all_but_first_column), 44 ) 45 X_train, X_test, y_train, y_test = train_test_split(X, y) 46 pipeline.fit(X_train, y_train) 47 return pipeline.transform(X_test), y_test 48 49 50 if __name__ == '__main__': 51 X, y = generate_dataset() 52 plt.scatter(X[:, 0], X[:, 1], c=y, s=50) 53 plt.show() 54 X_transformed, y_transformed = drop_first_component(*generate_dataset()) 55 plt.scatter( 56 X_transformed[:, 0], 57 np.zeros(len(X_transformed)), 58 c=y_transformed, 59 s=50, 60 ) 61 plt.show()
+结果：
+写到这里基本上关于数据转化的方法已经介绍的差不多了，周四写第三篇--数据降维。写的比较仓促，有错误的欢迎提出来~

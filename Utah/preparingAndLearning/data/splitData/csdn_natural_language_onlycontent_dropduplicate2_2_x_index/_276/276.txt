@@ -1,0 +1,32 @@
+本次首先推荐邱锡鹏老师的两个报告：
+1. Deep learning for natural language processing
+http://nlp.fudan.edu.cn/xpqiu/slides/20160618_DL4NLP@CityU.pdf
+主要讨论了深度学习在自然语言处理中的应用。其中涉及的模型主要有卷积神经网络，递归神经网络，循环神经网络网络等，应用领域主要包括了文本生成，问答系统，机器翻译以及文本匹配等。
+卷积神经网络结构示意图
+递归神经网络结构示意图
+循环神经网络示意图
+2. 神经网络与深度学习
+http://nlp.fudan.edu.cn/xpqiu/slides/20151226_CCFADL_NNDL.pdf
+这个报告可以看作上个报告的简短中文版，其中涉及的主要模型有卷积神经网络，循环神经网络以及前馈神经网络等。
+前馈神经网络示意图
+另外推荐两篇来自ACL 2016的tutorial
+1. 语义表示相关的Tutorial
+链接如下：
+http://wwwusers.di.uniroma1.it/~collados/Slides_ACL16Tutorial_SemanticRepresentation.pdf
+2. 短文本理解相关的tutorial
+链接如下：
+http://www.wangzhongyuan.com/tutorial/ACL2016/Understanding-Short-Texts/
+最后分享几篇搜索意图识别相关的论文
+1. Query Intent Detection using Convolutional Neural Networks
+这篇论文利用卷积神经网络来检测查询意图。
+链接如下：
+http://people.cs.pitt.edu/~hashemi/papers/QRUMS2016_HBHashemi.pdf
+people.cs.pitt.edu/~hashemi/papers/QRUMS2016_slides.pdf
+2. Deep LSTM based Feature Mapping for Query Classification
+基于深度学习中的LSTM用于查询分类
+链接如下：
+https://aclweb.org/anthology/N/N16/N16-1176.pdf
+长短时记忆网络结构示意图
+3. Understanding User’s Query Intent with Wikipedia
+这篇论文利用维基百科来理解用户查询意图
+http://wwwconference.org/www2009/proceedings/pdf/p471.pdf

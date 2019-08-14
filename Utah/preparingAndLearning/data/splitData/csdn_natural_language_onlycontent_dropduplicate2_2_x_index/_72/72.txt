@@ -1,0 +1,133 @@
+from:http://www.datalearner.com/blog/1051509699533080
+简介
+现在很多公司和组织每天都要处理大量的文本信息，包括邮件、评论、客户的电话等。将这些数据变成有用的信息需要花费大量的时间。抽取这些信息的一个核心的技能就是自然语言处理（Natural Language Processing，NLP）。
+自然语言处理在现阶段变得越来越重要，不管你是做什么的，这篇博客都能给你一点帮助。
+为何写这篇博客？
+作者已经在NLP领域做过一段时间工作了。作者遇到过很多种情况，需要从各种资料如最新的论文、博客以及一些自然语言处理的任务中获得帮助。因此，作者希望将这些资源都写到一起来提供一站式的帮助。下面就是自然语言处理有关的一些资源。
+一、词干抽取（Stemming）
+词干抽取是去除词语的形态等，将词语变成它的词干形式的过程。它的目的是将不同形式的相同含义的词语统一起来（数据学习网站提醒一下：中文中一般没有词干抽取的工作，但是多了个分词，这是中英文文本处理的不同）。例如，有下面两个例子：
+beautiful and beautifully are stemmed to beauti
+good, better and best are stemmed to good, better and best respectively
+这是来自于论文的例子，原文：https://tartarus.org/martin/PorterStemmer/def.txt
+使用Python处理词干抽取：https://bitbucket.org/mchaput/stemming/src/5c242aa592a6d4f0e9a0b2e1afdca4fd757b8e8a/stemming/porter2.py?at=default&fileviewer=file-view-default
+比如，我们可以用Porter2算法来实现词干抽取：
+#!pip install stemming
+from stemming.porter2 import stem
+stem("casually")
+二、词形还原（Lemmatisation）
+词形还原是指将一组词语变成他们词干的形式的过程。例如在会话识别任务中，我们需要考虑这个单词在句子中的含义，也要考虑这个单词在相邻句子中的含义。例如，：
+beautiful and beautifully are lemmatised to beautiful and beautifully respectively.
+good, better and best are lemmatised to good, good and good respectively.
+有两篇论文讨论了词形还原：
+论文1：http://www.ijrat.org/downloads/icatest2015/ICATEST-2015127.pdf
+论文2：https://academic.oup.com/dsh/article-abstract/doi/10.1093/llc/fqw034/2669790/Lemmatization-for-variation-rich-languages-using
+数据集：https://catalog.ldc.upenn.edu/ldc99t42
+在Python中可以使用Spacy来做词形还原：
+#!pip install spacy
+#python -m spacy download en
+import spacy
+nlp=spacy.load("en")
+doc="good better best"
+for token in nlp(doc):
+print(token,token.lemma_)
+三、词嵌套（Word Embeddings）
+词嵌套是一种技术，它可以将自然语言变成实值向量的形式。由于计算机无法直接处理文本，所以这种转换很有用。这类技术使用实值向量来表示自然语言中词语的位置和相互关系（数据学习网站提醒一下：词嵌套最有名的论文应当属于word2vec这篇论文，它并没有说提供了新方法，但是提供了一种新工具，可以很方便的从文本中获取词向量的结果。这也是谷歌提出来的，谷歌真是个不错的公司）。例如，我们可以用100维向量表示词语或者短语。
+例如，用5-维的向量表示“男人”这个词语：
+这里的每个数字都是在特定方向上的大小。
+这篇博客详细介绍了词嵌套模型。
+这篇论文详细介绍了词向量，对于深入理解词嵌套模型必看。
+这个工具是一个基于浏览器的对词向量进行可视化展示的。
+这里是一个对294种语言的词向量的训练结果。
+实现方式：我们可以使用Python中gensim工具来训练。
+下载使用谷歌新闻训练好的词向量：
+#!pip install gensim
+from gensim.models.keyedvectors import KeyedVectors
+word_vectors=KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin',binary=True)
+word_vectors['human']
+用自己的数据集训练词向量：
+sentence=[['first','sentence'],['second','sentence']]
+model = gensim.models.Word2Vec(sentence, min_count=1,size=300,workers=4)
+四、词性标注（Part-Of-Speech Tagging）
+词性标注就是将句子中的单词标注成“名词”、“动词”等（数据学习网站提醒一下：中文的词性标注工具可以使用结巴分词或者是张华平分词，都是带有词性标注的功能）。例如，句子：
+“Ashok killed the snake with a stick”
+词性标注的结果是：
+Ashok 代词
+killed 动词
+the DET
+snake 名词
+with 连词
+a DET
+stick 名词
+. 标点符号
+这篇论文使用了Dynamic Feature Induction来得到高精度的词性标注结果。
+这篇论文使用Anchor Hidden Markove模型来训练无监督的词性标注结果。
+实现：我们可以使用spacy来实现词性标注：
+#!pip install spacy
+#!python -m spacy download en
+nlp=spacy.load('en')
+sentence="Ashok killed the snake with a stick"
+for token in nlp(sentence):
+print(token,token.pos_)
+五、命名实体消歧（Named Entity Disambiguation）
+命名实体消岐是值识别句子中的实体的过程。例如，句子：
+“Apple earned a revenue of 200 Billion USD in 2016”
+命名实体消歧的目标是认出Apple是一个公司名字而不是水果名。
+命名实体一般需要一个实体库，它可以将句子中的实体链接到实体库中。
+这篇论文使用了基于深度神经网络的Deep Semantic Relatedness技术来进行命名实体消歧。效果不错。它使用了知识库。
+这篇论文则利用了词向量模型，使用 Local Neural Attention 来进行命名实体消歧。
+六、命名实体识别（Named Entity Recognition）
+命名实体识别是要识别出句子中的实体，并将实体划分到某个类别中，例如人、组织、日期等。例如，句子：
+“Ram of Apple Inc. travelled to Sydney on 5th October 2017”
+返回的结果是：
+Ram
+of
+Apple ORG
+Inc. ORG
+travelled
+to
+Sydney GPE
+on
+5th DATE
+October DATE
+2017 DATE2017 DATE
+ORG表示组织，GPE表示地点。
+目前命名实体识别最大的问题是，当数据变了，即使是最好的NER技术也会表现不好。
+这篇论文使用了二向LSTM模型，在4种语言上，联合了有监督、无监督的模型实现了比较好的命名实体识别的效果。
+我们可以使用Spacy来实现这个技术：
+import spacy
+nlp=spacy.load('en')sentence="Ram of Apple Inc. travelled to Sydney on 5th October 2017"
+for token in nlp(sentence):
+print(token, token.ent_type_)
+七、情感分析
+情感分析的任务涉及的主题较多，一般是利用自然语言处理技术识别如客户评论中正向或者负向的情感等，或者是通过语音分析、写作分析得到情绪判别结果。例如：
+“I did not like the chocolate ice-cream” – 对冰激淋做负向的评价
+“I did not hate the chocolate ice-cream” – 可能是一个中立的评价
+情感分析的方法很多，开始的时候可以用LSTM模型与词向量模型一起，数一数句子中正负向情感词的个数得到。资源有：
+博客 1: 电影推文的情感分析
+博客 2: Chennai 洪水的情感分析
+论文 1: 使用朴素贝叶斯方法对IMDB评论的情感分类.
+论文 2: 使用LDA获得用户文本的主题，然后基于无监督的方法识别情感.
+Repository: 这里总结了大量的关于不同语言的情感处理的论文和实现方法.
+Dataset 1: Multi-Domain sentiment dataset version 2.0
+Dataset 2: Twitter Sentiment analysis Dataset
+Competition: A very good competition where you can check the performance of your models on the sentiment analysis task of movie reviews of rotten tomatoes.
+八、文本语义相似性（Semantic Text Similarity）
+计算文本语义相似性就是计算两段文本之间含义相似性的任务。
+论文 1：详细说明了多种计算文本相似性的方法，必读
+论文 2：介绍如何使用CNN获得短文本之间相似性
+论文 3：使用基于树的LSTM方法获取语义分类
+九、语言识别
+就是识别出文本是什么语言写的，是文本分类的一种特殊情况。
+博客：给了一个新工具，可以识别170多种语言
+论文1：讨论了7种方法，识别285种语言
+论文2：讨论了如何使用深度神经网络获得语言识别结果
+十、文本摘要（Text Summarisation）
+文本摘要是通过识别文本重要的内容将一段文本缩减，并变成对这些点的总结。文本摘要的目标是最大限度保留原始文本的含义。
+论文1：使用 Neural Attention Model 获取文本摘要
+论文2：使用sequence-to-sequence的RNN获取摘要
+Repository：谷歌大脑团队提供的可以自动文本摘要的代码，基于Gigaword数据集训练
+应用：Reddit’s autotldr bot 使用文本摘要将帖子的评论总结成短文，这个特性在Reddit用户中很有名。
+我们可以使用gensim来获取文本摘要：
+from gensim.summarization import summarize
+sentence="Automatic summarization is the process of shortening a text document with software, in order to create a summary with the major points of the original document. Technologies that can make a coherent summary take into account variables such as length, writing style and syntax.Automatic data summarization is part of machine learning and data mining. The main idea of summarization is to find a subset of data which contains the information of the entire set. Such techniques are widely used in industry today. Search engines are an example; others include summarization of documents, image collections and videos. Document summarization tries to create a representative summary or abstract of the entire document, by finding the most informative sentences, while in image summarization the system finds the most representative and important (i.e. salient) images. For surveillance videos, one might want to extract the important events from the uneventful context.There are two general approaches to automatic summarization: extraction and abstraction. Extractive methods work by selecting a subset of existing words, phrases, or sentences in the original text to form the summary. In contrast, abstractive methods build an internal semantic representation and then use natural language generation techniques to create a summary that is closer to what a human might express. Such a summary might include verbal innovations. Research to date has focused primarily on extractive methods, which are appropriate for image collection summarization and video summarization."
+summarize(sentence)

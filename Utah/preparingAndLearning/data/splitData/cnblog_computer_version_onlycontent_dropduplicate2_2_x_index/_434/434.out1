@@ -1,0 +1,601 @@
+在 机器学习 计算机 视觉 和 人工智能 领域 顶级 会议 才 
+是 王道 国内 教材 和 CNKI 上 的 至少 是 
+N 年前 的 东西 有人 会 质疑 这些 会议 都 
+只是 EI 是的 这 的确 非常 特殊 在 别的 大 
+部分 领域 会议 都是 盛会 比如 society   of   
+neuroscience 的 会议 每次/r 都有/nr 上万/m 人/n 参加/v 带个 abstract 
+和 poster 就 可以 去 但在 所 讨论 的 几个 
+领域 顶级 会议 的 重要性 无论 怎么 强调 都 不为过 
+可以 从 以下 几点 说明 1 因为 机器学习 计算机 视觉 
+和 人工智能 领域 发展 非常 迅速 新的 工作 层出不穷 如果把 
+论文 投到 期刊 上 一/m 两年/m 后/f 刊出/v 时就/nr 有点/n 
+out/w 了/ul 因此 大 部分 最新 的 工作 都 首先 
+发表 在 顶级 会议 上 这些 顶级 会议 完全 能 
+反映 热门 研究 方向 最 新方法 2 很多 经典 工作 
+大家 可能 引 的 是 某 顶级 期刊 上 的 
+论文 这 是因为 期刊论文 表述 得 比较 完整 实验 充分 
+但 实际上 很多 都是在/nr 顶级 会议 上 首发 比如 PLSA 
+  Latent   Dirichlet   Allocation 等 3 如果 注意 
+这些 领域 大牛 的 pulications 不难 发现 他们 很 非常 
+看重 这些 顶级 会议 很多 人 是 80% 的 会议 
++ 20% 的 期刊 即 然 大牛 们 把 最新 
+工作 发在 顶级 会议 上 有 什么 理由 不去 读 
+顶级 会议 以下 是 不 完整 的 列表 但 基本 
+覆盖 机器学习 顶级 会议 NIPS   ICML   UAI   
+AISTATS     期刊 JMLR   ML   Trends   
+in   ML   IEEE   T NN 计算机 视觉 
+和 图像 识别 ICCV   CVPR   ECCV     
+期刊 IEEE   T PAMI   IJCV   IEEE   
+T IP 人工智能 IJCAI   AAAI   期刊 AI 另外 
+相关 的 还有 SIGRAPH   KDD   ACL   SIGIR 
+  WWW 等 特别 是 如果 做 机器学习 必须 地 
+把 近 4年 的 NIPS   ICML 翻 几遍 如果 
+做 计算机 视觉 要把 近 4年 的 ICCV   CVPR 
+  NIPS   ICML 翻 几遍 Zisserman 还有 一个 不错 
+的 学生 lifeifei 的 合作者 Rob   Fergus 按 研究 
+方向 分分   应该 更 合理 一些 现在 计算机 视觉 
+  计算机 图形图像   机器学习 开始 融合 到 一起 了吧 
+J .   Malik Zhu   Songchu 偏 segmentation D 
+.   Lowe   .   Ullman   Poggio   
+偏于 从 生物 视觉 的 启发 来 研究 视觉 Zisserman 
+  Schmid   Lowe 研究 局部 特征 Luc   Van 
+  Goo   Long   Quanl 三维重建 Perona   Li 
+  Feife   Freeman 视觉 学习   物体 分类 还有 
+运动 分析   视觉 跟踪 纹理 分析 . MIT 的 
+Brain   &   Cognitive   Science   Dept 和 
+CSAIL 里面 聚集 了 一帮 人 有的 作 low   
+level 有的 作 mid   level   to   high 
+  level 的 他们 的 工作 是 值得 关注 的 
+当然 说 视觉 还是 要从 伟大 的 David   Marr 
+开始 Tomaso   Poggio   Richard   Whitman 是 Marr 
+的 同事 传承 了 其 理念 一直 往下走 Poggio 最 
+近几年 比较 重点 的 工作 放在 他 那个 hierarchical   
+model 上 T .   Poggio 的 第一 个 PhD 
+学生 是 Christof   Koch   kLab   at   
+Caltech 哦 顺便 说 一下 Koch 的 另外 一个 导师 
+是 Valentino   Breitenberg 同样 是 影响 了 一个 时代 
+的 大人物 Koch 研究 重点 兴趣 在 consciousness 上 在 
+Nature 上 的 很多 文章 体现 了 他 的 研究 
+思想 不过 他们 也 做 不少 初级 的 视觉 问题 
+诸如 attention Koch 比较 知名 的 弟子 比如 Laurent   
+Itti 和 Li   Feifei Richard   Whitman   年纪 
+比较 大了 个人 不是 很 关注 他 现在 做 的 
+东西 不过 他 所在 的 Perceptual   Science   Group 
+是 一个 非常 有 影响力 的 地方 这个/r 组/zg 其他/r 
+大家/n 比较/d 熟悉/v 的/uj 老师/n 有/v Aude/w  /i Oliva/w 和/c 
+EH/w  /i Adelson/w Adelson 最 著名 的 一个 事儿 是 
+色彩 恒常 相关 的 视错觉 93年 发在 Science 上 的 
+那篇 关于 Oliva 前面 的 帖子 错了 她 不是 Poggio 
+的 学生 这家伙 和 Torralba 是 老乡 同 在 法国 
+念书 主要 从 心理学 那条 路子 开始 做 成名 之 
+役 是 hybrid   image 和 Antonio   Torrralba 一起 
+搞 的 这个 Hybrid   Image   其实 80 年代 
+就 有了 但是 最 开始 从 心理学 方向 上 探讨 
+没有 非常 有 影响力 的 文章 后来 开始 靠谱 作 
+自然 图像 统计 得到 Gist   theory 当然 这个 illusion 
+本身 后来 转 投 SIGGRAPH 其 影响 是 深远 的 
+嗯 这个 和 CV 关系不大 Perceptual   Science   Group 
+出 了 不少 牛人 他们 的 alumni   list 可谓 
+超 豪华 阵容 Yair   Weiss   Josh   Tenenbaum 
+  Pawan   Sinha   Bill   Freeman 机器学习 与 
+计算机 视觉 大牛 族谱   收藏 包括 Phd 和 Post 
+doc   co supervise 关系 David   Marr MIT Shimon 
+  Ullman Weizmann Daniel   Huttenlocher Cornell Demetri   Terzopoulos 
+UCLA Dimitris   Metaxas Rutgers Eric   Grimson MIT Pedro 
+  Felzenszwalb Uchicago Polina   Golland MIT Xiaogang   Wang 
+CUHK Daniel   Huttenlocher Cornell Marvin   Minsky MIT Turning 
+  Award Berthold   Horn MIT Tomas   Lozano Perez 
+MIT John   Canny UC   Berkeley Canny   edge 
+  detector Paul   Viola Microsoft Olivier   Faugeras Uparis 
+  XI Martial   Hebert CMU Derek   Hoiem UIUC 
+Jean   Ponce UIUC Lazbnik UNC Spatial   Pyramid   
+Matching Zhengyou   Zhang Microsoft Takeo   Kanade CMU Qifa 
+  Ke Microsoft Shree   Nayar Columbia Srinivasa   Narasimhan 
+CMU Simon   Baker Microsoft Richard   Szeliski Microsoft Carlo 
+  Tomasi Duke James   Rehg GIT Jianxin   Wu 
+NTU Whitman   Richards MIT Alex   Pentland MIT Trevor 
+  Darrell UC   Berkeley Kristen   Grauman UTexas Pyramid 
+  Matching   Kernel Joshua   Tenenbaum MIT Isomap Tom 
+  Griffiths UC   Berkeley Andrew   Blake Microsoft Andrew 
+  Zisserman Oxford Andrew   Fitzgibbon Microsoft Josef   Sivic 
+INRIA Video   Google Rob   Fergus NYU Roberto   
+Cipolla Cambridge Alan   Yuille UCLA Thomas   Huang UIUC 
+Yong   Rui Microsoft Ying   Wu Northwestern Qi   
+Tian UTSA   Chang   Wen   Chen   Buffalo 
+  Jiebo   Luo   Kodak Nebojsa   Jojic Microsoft 
+Vladimir   Pavlovic Rutgers Shuicheng   Yan NUS David   
+Mumford Brown   Fields   Medal SongChun   Zhu UCLA 
+Azriel   Rosenfeld Maryland Narendra   Ahuja UIUC Charles   
+Dyer Wisconsin Larry   Davis Maryland Shmuel   Peleg Hebrew 
+Christopher   Brown Rochester Yiannis   Aloimonos Maryland Robert   
+Pless WUSTL LoongFah   Cheong NUS Thomas   Binfold Stanford 
+David   Kriegman UCSD David   Lowe UBC SIFT Jitendra 
+  Malik UC   Berkeley Pietro   Perona Caltech Fei 
+fei   Li Stanford Stefano   Soatto UCLA Max   
+Welling UCI Jianbo   Shi Upenn Ncut Yizhou   Yu 
+UIUC Serge   Belongie UCSD Shape   Context Alexei   
+Efros CMU Derek   Hoiem UIUC Alexander   Berg Stony 
+  brook Christoph   Bregler NYU Edward   Adelson MIT 
+Willian   Freeman MIT Ce   Liu Microsoft   Rob 
+  Fergus NYU Yais   Weiss Hebrew Anat   Levin 
+Weizmann Kevin   Murphy UBC Josef   Sivic INRIA Antonio 
+  Torralba MIT GIST Eirk   Sudderth Brown Tomaso   
+Poggio MIT HMAX Partha   Niyogi UChicago Mikhail   Belkin 
+OSU LE Xiaofei   He ZJU LPP Christof   Koch 
+Caltech Tomas   Serre Brown Michael   Jordan UC   
+Berkeley Tommi   Jaakkola MIT Martin   Wainwright UC   
+Berkeley Xuanlong   Nguyen UMich Andrew   Ng Stanford Honglak 
+  Lee Umich Lawrence   Saul UCSD Fei   Sha 
+USC David   Blei Princeton LDA Eric   Xing CMU 
+Ben   Taskar Upenn Yair   Weiss Hebrew HDP Erik 
+  Sudderth Brown Yoshua   Bengio Umontreal Francis   Bach 
+INRIA Kevin   Murphy UBC Daphne   Koller Stanford Nir 
+  Friedman Hebrew Carlos   Guestrin CMU Ben   Taskar 
+Upenn M3N Geoffrey   Hinton Toronto Yee Whye   The 
+UCL Yann   Lecun NYU Zoubin   Ghahramani CMU Cambridge 
+Max   Welling UCI Sam   Roweis NYU LLE Tom 
+  Mitchell CMU Oren   Etzioni UWashington Geoffrey   Gordon 
+CMU Sebasitian   Thrum Stanford Andrew   McCallum Umass John 
+  Lafferty CMU CRF Chengxiang   Zhai UIUC Qiaozhu   
+Mei Umich Xiaojin   Zhu Wisconsin David   Blei Princeton 
+A   tree   stucture   of   cv   
+guys . David   Marr – Shimon   Ullman   
+Weizmann – Eric   Grimson   MIT – Daniel   
+Huttenlocher   Cornell – Pedro   Felzenszwalb   Chicago Thomas 
+  Binford   Stanford – David   Lowe   UBC 
+– Jitendra   Malik   UC   Berkeley – Pietro 
+  Perona   Caltech – Stefano   Soatto   UCLA 
+– Fei Fei   Li   Princeton – Jianbo   
+Shi   UPenn – Yizhou   Yu   UIUC – 
+Christoph   Bregler   NYU – Serge   Belongie   
+UCSD – Alyosha   Efros   CMU Andrew   Blake 
+  Microsoft   Research   Cambridge – Andrew   Zisserman 
+  Oxford – Andrew   Fitzgibbon   Microsoft   Research 
+  Cambridge – Roberto   Cipolla   Cambridge – Alan 
+  Yuille   UCLA UK 这个 学派 的 师承 关系 
+不 太 清楚   这是 我 听说 加上 自己 猜测 
+的 .   事实上   几个 非常 优秀 的 researcher 
+如 Vladimir   Kolmogorov 虽然 不是 Andrew   Blake 的 
+学生   但是 也 属于 这个 学派 .   Thomas 
+  Huang   UIUC – Yong   Rui   Microsoft 
+  Research   Redmond – Nebojsa   Jojic   Microsoft 
+  Research   Redmond – Ying   Wu   Northwestern 
+  University – Hai   Tao   UCSC – Yuncai 
+  Liu   SJTU Huang 这个 系 的 人 太多 
+  而且 很 怪 的 是   UIUC 的 web 
+上 信息 不全   在此 仅 列出 我 知道 的 
+. 此外   还有 Takeo   Kanade 等 非常 有名 
+的 大牛   囿于 篇幅   不 一一列举 . 从上 
+得知   加州 派 基本 占了 cv 的 半壁江山 . 
+  最 近几年   特别 活跃 的 cv   guys 
+是 USAJitendra   Malik   UC   BerkeleyPietro   Perona 
+  CaltechSerge   Belongie   UCSDJianbo   Shi   UPennStefano 
+  Soatto   UCLAFei Fei   Li   PrincetonWilliam   
+Freeman   MITTrevor   Darrell   MITSimon   Baker   
+CMUYanxi   Liu   CMUSongchun   Zhu   UCLAAlan   
+Yuille   UCLAYi   Ma   UIUCMichael   Black   
+BrownCarlo   Tomasi   DukeRamin   Zabih   CornellShree   
+Nayar   ColumbiaRama   Chellappa   MarylandSteve   Seitz   
+University   of   W a s h i n 
+g t o n E u r o p e 
+A n d r e w   Zisserman   Oxford 
+  UKAndrew   Fitzgibbon   Microsoft   Research   Cambridge 
+  UKRoberto   Cipolla   Cambridge   UKJean   Ponce 
+  INRIA   FranceCordelia   Schmid   INRIA   FranceBill 
+  Triggs   LEAR   FranceYair   Weiss   Hebrew 
+  University   IsraelAnat   Levin   Hebrew   University 
+  IsraelMichal   Irani   Weizmann   IsraelLuc   van 
+  Gool   University   of   Leuven / ETH 
+  Zurich   C z e c h i c 
+C h i n a H a r r y 
+  Shum   MSRAXiaoou   Tang   MSRA / CUHKJian 
+  Sun   MSRASteve   Lin   MSRAYasuyuki   Matsushita 
+  MSRAZhouchen   Lin   MSRALong   Quan   HKUSTChi 
+Keung   Tang   HKUSTOlivier   Faugeras Ponce   UIUC 
+lazebnik Zhengyou   Zhang   MSR Martial   Hebert   
+CMUMit   AI   labpoggio Oliva serreFreeman   80 年代 
+还来 太原理工 扶贫 了 Y .   Weiss Levin Antonio 
+  Torralba   research   scientist Trevor   Darrell Graumanhttp 
+/ / doctorimage . cn / 2012 / 11/19 / 
+maching learning computer vison family sites / 这里 添加 了 
+牛人 以及 实验室 的 链接 在 机器学习 计算机 视觉 和 人工智能 领域 顶级 会议 才 
+是 王道 国内 教材 和 CNKI 上 的 至少 是 
+N 年前 的 东西 有人 会 质疑 这些 会议 都 
+只是 EI 是的 这 的确 非常 特殊 在 别的 大 
+部分 领域 会议 都是 盛会 比如 society   of   
+neuroscience 的 会议 每次/r 都有/nr 上万/m 人/n 参加/v 带个 abstract 
+和 poster 就 可以 去 但在 所 讨论 的 几个 
+领域 顶级 会议 的 重要性 无论 怎么 强调 都 不为过 
+可以 从 以下 几点 说明 1 因为 机器学习 计算机 视觉 
+和 人工智能 领域 发展 非常 迅速 新的 工作 层出不穷 如果把 
+论文 投到 期刊 上 一/m 两年/m 后/f 刊出/v 时就/nr 有点/n 
+out/w 了/ul 因此 大 部分 最新 的 工作 都 首先 
+发表 在 顶级 会议 上 这些 顶级 会议 完全 能 
+反映 热门 研究 方向 最 新方法 2 很多 经典 工作 
+大家 可能 引 的 是 某 顶级 期刊 上 的 
+论文 这 是因为 期刊论文 表述 得 比较 完整 实验 充分 
+但 实际上 很多 都是在/nr 顶级 会议 上 首发 比如 PLSA 
+  Latent   Dirichlet   Allocation 等 3 如果 注意 
+这些 领域 大牛 的 pulications 不难 发现 他们 很 非常 
+看重 这些 顶级 会议 很多 人 是 80% 的 会议 
++ 20% 的 期刊 即 然 大牛 们 把 最新 
+工作 发在 顶级 会议 上 有 什么 理由 不去 读 
+顶级 会议 以下 是 不 完整 的 列表 但 基本 
+覆盖 机器学习 顶级 会议 NIPS   ICML   UAI   
+AISTATS     期刊 JMLR   ML   Trends   
+in   ML   IEEE   T NN 计算机 视觉 
+和 图像 识别 ICCV   CVPR   ECCV     
+期刊 IEEE   T PAMI   IJCV   IEEE   
+T IP 人工智能 IJCAI   AAAI   期刊 AI 另外 
+相关 的 还有 SIGRAPH   KDD   ACL   SIGIR 
+  WWW 等 特别 是 如果 做 机器学习 必须 地 
+把 近 4年 的 NIPS   ICML 翻 几遍 如果 
+做 计算机 视觉 要把 近 4年 的 ICCV   CVPR 
+  NIPS   ICML 翻 几遍 Zisserman 还有 一个 不错 
+的 学生 lifeifei 的 合作者 Rob   Fergus 按 研究 
+方向 分分   应该 更 合理 一些 现在 计算机 视觉 
+  计算机 图形图像   机器学习 开始 融合 到 一起 了吧 
+J .   Malik Zhu   Songchu 偏 segmentation D 
+.   Lowe   .   Ullman   Poggio   
+偏于 从 生物 视觉 的 启发 来 研究 视觉 Zisserman 
+  Schmid   Lowe 研究 局部 特征 Luc   Van 
+  Goo   Long   Quanl 三维重建 Perona   Li 
+  Feife   Freeman 视觉 学习   物体 分类 还有 
+运动 分析   视觉 跟踪 纹理 分析 . MIT 的 
+Brain   &   Cognitive   Science   Dept 和 
+CSAIL 里面 聚集 了 一帮 人 有的 作 low   
+level 有的 作 mid   level   to   high 
+  level 的 他们 的 工作 是 值得 关注 的 
+当然 说 视觉 还是 要从 伟大 的 David   Marr 
+开始 Tomaso   Poggio   Richard   Whitman 是 Marr 
+的 同事 传承 了 其 理念 一直 往下走 Poggio 最 
+近几年 比较 重点 的 工作 放在 他 那个 hierarchical   
+model 上 T .   Poggio 的 第一 个 PhD 
+学生 是 Christof   Koch   kLab   at   
+Caltech 哦 顺便 说 一下 Koch 的 另外 一个 导师 
+是 Valentino   Breitenberg 同样 是 影响 了 一个 时代 
+的 大人物 Koch 研究 重点 兴趣 在 consciousness 上 在 
+Nature 上 的 很多 文章 体现 了 他 的 研究 
+思想 不过 他们 也 做 不少 初级 的 视觉 问题 
+诸如 attention Koch 比较 知名 的 弟子 比如 Laurent   
+Itti 和 Li   Feifei Richard   Whitman   年纪 
+比较 大了 个人 不是 很 关注 他 现在 做 的 
+东西 不过 他 所在 的 Perceptual   Science   Group 
+是 一个 非常 有 影响力 的 地方 这个/r 组/zg 其他/r 
+大家/n 比较/d 熟悉/v 的/uj 老师/n 有/v Aude/w  /i Oliva/w 和/c 
+EH/w  /i Adelson/w Adelson 最 著名 的 一个 事儿 是 
+色彩 恒常 相关 的 视错觉 93年 发在 Science 上 的 
+那篇 关于 Oliva 前面 的 帖子 错了 她 不是 Poggio 
+的 学生 这家伙 和 Torralba 是 老乡 同 在 法国 
+念书 主要 从 心理学 那条 路子 开始 做 成名 之 
+役 是 hybrid   image 和 Antonio   Torrralba 一起 
+搞 的 这个 Hybrid   Image   其实 80 年代 
+就 有了 但是 最 开始 从 心理学 方向 上 探讨 
+没有 非常 有 影响力 的 文章 后来 开始 靠谱 作 
+自然 图像 统计 得到 Gist   theory 当然 这个 illusion 
+本身 后来 转 投 SIGGRAPH 其 影响 是 深远 的 
+嗯 这个 和 CV 关系不大 Perceptual   Science   Group 
+出 了 不少 牛人 他们 的 alumni   list 可谓 
+超 豪华 阵容 Yair   Weiss   Josh   Tenenbaum 
+  Pawan   Sinha   Bill   Freeman 机器学习 与 
+计算机 视觉 大牛 族谱   收藏 包括 Phd 和 Post 
+doc   co supervise 关系 David   Marr MIT Shimon 
+  Ullman Weizmann Daniel   Huttenlocher Cornell Demetri   Terzopoulos 
+UCLA Dimitris   Metaxas Rutgers Eric   Grimson MIT Pedro 
+  Felzenszwalb Uchicago Polina   Golland MIT Xiaogang   Wang 
+CUHK Daniel   Huttenlocher Cornell Marvin   Minsky MIT Turning 
+  Award Berthold   Horn MIT Tomas   Lozano Perez 
+MIT John   Canny UC   Berkeley Canny   edge 
+  detector Paul   Viola Microsoft Olivier   Faugeras Uparis 
+  XI Martial   Hebert CMU Derek   Hoiem UIUC 
+Jean   Ponce UIUC Lazbnik UNC Spatial   Pyramid   
+Matching Zhengyou   Zhang Microsoft Takeo   Kanade CMU Qifa 
+  Ke Microsoft Shree   Nayar Columbia Srinivasa   Narasimhan 
+CMU Simon   Baker Microsoft Richard   Szeliski Microsoft Carlo 
+  Tomasi Duke James   Rehg GIT Jianxin   Wu 
+NTU Whitman   Richards MIT Alex   Pentland MIT Trevor 
+  Darrell UC   Berkeley Kristen   Grauman UTexas Pyramid 
+  Matching   Kernel Joshua   Tenenbaum MIT Isomap Tom 
+  Griffiths UC   Berkeley Andrew   Blake Microsoft Andrew 
+  Zisserman Oxford Andrew   Fitzgibbon Microsoft Josef   Sivic 
+INRIA Video   Google Rob   Fergus NYU Roberto   
+Cipolla Cambridge Alan   Yuille UCLA Thomas   Huang UIUC 
+Yong   Rui Microsoft Ying   Wu Northwestern Qi   
+Tian UTSA   Chang   Wen   Chen   Buffalo 
+  Jiebo   Luo   Kodak Nebojsa   Jojic Microsoft 
+Vladimir   Pavlovic Rutgers Shuicheng   Yan NUS David   
+Mumford Brown   Fields   Medal SongChun   Zhu UCLA 
+Azriel   Rosenfeld Maryland Narendra   Ahuja UIUC Charles   
+Dyer Wisconsin Larry   Davis Maryland Shmuel   Peleg Hebrew 
+Christopher   Brown Rochester Yiannis   Aloimonos Maryland Robert   
+Pless WUSTL LoongFah   Cheong NUS Thomas   Binfold Stanford 
+David   Kriegman UCSD David   Lowe UBC SIFT Jitendra 
+  Malik UC   Berkeley Pietro   Perona Caltech Fei 
+fei   Li Stanford Stefano   Soatto UCLA Max   
+Welling UCI Jianbo   Shi Upenn Ncut Yizhou   Yu 
+UIUC Serge   Belongie UCSD Shape   Context Alexei   
+Efros CMU Derek   Hoiem UIUC Alexander   Berg Stony 
+  brook Christoph   Bregler NYU Edward   Adelson MIT 
+Willian   Freeman MIT Ce   Liu Microsoft   Rob 
+  Fergus NYU Yais   Weiss Hebrew Anat   Levin 
+Weizmann Kevin   Murphy UBC Josef   Sivic INRIA Antonio 
+  Torralba MIT GIST Eirk   Sudderth Brown Tomaso   
+Poggio MIT HMAX Partha   Niyogi UChicago Mikhail   Belkin 
+OSU LE Xiaofei   He ZJU LPP Christof   Koch 
+Caltech Tomas   Serre Brown Michael   Jordan UC   
+Berkeley Tommi   Jaakkola MIT Martin   Wainwright UC   
+Berkeley Xuanlong   Nguyen UMich Andrew   Ng Stanford Honglak 
+  Lee Umich Lawrence   Saul UCSD Fei   Sha 
+USC David   Blei Princeton LDA Eric   Xing CMU 
+Ben   Taskar Upenn Yair   Weiss Hebrew HDP Erik 
+  Sudderth Brown Yoshua   Bengio Umontreal Francis   Bach 
+INRIA Kevin   Murphy UBC Daphne   Koller Stanford Nir 
+  Friedman Hebrew Carlos   Guestrin CMU Ben   Taskar 
+Upenn M3N Geoffrey   Hinton Toronto Yee Whye   The 
+UCL Yann   Lecun NYU Zoubin   Ghahramani CMU Cambridge 
+Max   Welling UCI Sam   Roweis NYU LLE Tom 
+  Mitchell CMU Oren   Etzioni UWashington Geoffrey   Gordon 
+CMU Sebasitian   Thrum Stanford Andrew   McCallum Umass John 
+  Lafferty CMU CRF Chengxiang   Zhai UIUC Qiaozhu   
+Mei Umich Xiaojin   Zhu Wisconsin David   Blei Princeton 
+A   tree   stucture   of   cv   
+guys . David   Marr – Shimon   Ullman   
+Weizmann – Eric   Grimson   MIT – Daniel   
+Huttenlocher   Cornell – Pedro   Felzenszwalb   Chicago Thomas 
+  Binford   Stanford – David   Lowe   UBC 
+– Jitendra   Malik   UC   Berkeley – Pietro 
+  Perona   Caltech – Stefano   Soatto   UCLA 
+– Fei Fei   Li   Princeton – Jianbo   
+Shi   UPenn – Yizhou   Yu   UIUC – 
+Christoph   Bregler   NYU – Serge   Belongie   
+UCSD – Alyosha   Efros   CMU Andrew   Blake 
+  Microsoft   Research   Cambridge – Andrew   Zisserman 
+  Oxford – Andrew   Fitzgibbon   Microsoft   Research 
+  Cambridge – Roberto   Cipolla   Cambridge – Alan 
+  Yuille   UCLA UK 这个 学派 的 师承 关系 
+不 太 清楚   这是 我 听说 加上 自己 猜测 
+的 .   事实上   几个 非常 优秀 的 researcher 
+如 Vladimir   Kolmogorov 虽然 不是 Andrew   Blake 的 
+学生   但是 也 属于 这个 学派 .   Thomas 
+  Huang   UIUC – Yong   Rui   Microsoft 
+  Research   Redmond – Nebojsa   Jojic   Microsoft 
+  Research   Redmond – Ying   Wu   Northwestern 
+  University – Hai   Tao   UCSC – Yuncai 
+  Liu   SJTU Huang 这个 系 的 人 太多 
+  而且 很 怪 的 是   UIUC 的 web 
+上 信息 不全   在此 仅 列出 我 知道 的 
+. 此外   还有 Takeo   Kanade 等 非常 有名 
+的 大牛   囿于 篇幅   不 一一列举 . 从上 
+得知   加州 派 基本 占了 cv 的 半壁江山 . 
+  最 近几年   特别 活跃 的 cv   guys 
+是 USAJitendra   Malik   UC   BerkeleyPietro   Perona 
+  CaltechSerge   Belongie   UCSDJianbo   Shi   UPennStefano 
+  Soatto   UCLAFei Fei   Li   PrincetonWilliam   
+Freeman   MITTrevor   Darrell   MITSimon   Baker   
+CMUYanxi   Liu   CMUSongchun   Zhu   UCLAAlan   
+Yuille   UCLAYi   Ma   UIUCMichael   Black   
+BrownCarlo   Tomasi   DukeRamin   Zabih   CornellShree   
+Nayar   ColumbiaRama   Chellappa   MarylandSteve   Seitz   
+University   of   W a s h i n 
+g t o n E u r o p e 
+A n d r e w   Zisserman   Oxford 
+  UKAndrew   Fitzgibbon   Microsoft   Research   Cambridge 
+  UKRoberto   Cipolla   Cambridge   UKJean   Ponce 
+  INRIA   FranceCordelia   Schmid   INRIA   FranceBill 
+  Triggs   LEAR   FranceYair   Weiss   Hebrew 
+  University   IsraelAnat   Levin   Hebrew   University 
+  IsraelMichal   Irani   Weizmann   IsraelLuc   van 
+  Gool   University   of   Leuven / ETH 
+  Zurich   C z e c h i c 
+C h i n a H a r r y 
+  Shum   MSRAXiaoou   Tang   MSRA / CUHKJian 
+  Sun   MSRASteve   Lin   MSRAYasuyuki   Matsushita 
+  MSRAZhouchen   Lin   MSRALong   Quan   HKUSTChi 
+Keung   Tang   HKUSTOlivier   Faugeras Ponce   UIUC 
+lazebnik Zhengyou   Zhang   MSR Martial   Hebert   
+CMUMit   AI   labpoggio Oliva serreFreeman   80 年代 
+还来 太原理工 扶贫 了 Y .   Weiss Levin Antonio 
+  Torralba   research   scientist Trevor   Darrell Graumanhttp 
+/ / doctorimage . cn / 2012 / 11/19 / 
+maching learning computer vison family sites / 这里 添加 了 
+牛人 以及 实验室 的 链接 在 机器学习 计算机 视觉 和 人工智能 领域 顶级 会议 才 
+是 王道 国内 教材 和 CNKI 上 的 至少 是 
+N 年前 的 东西 有人 会 质疑 这些 会议 都 
+只是 EI 是的 这 的确 非常 特殊 在 别的 大 
+部分 领域 会议 都是 盛会 比如 society   of   
+neuroscience 的 会议 每次/r 都有/nr 上万/m 人/n 参加/v 带个 abstract 
+和 poster 就 可以 去 但在 所 讨论 的 几个 
+领域 顶级 会议 的 重要性 无论 怎么 强调 都 不为过 
+可以 从 以下 几点 说明 1 因为 机器学习 计算机 视觉 
+和 人工智能 领域 发展 非常 迅速 新的 工作 层出不穷 如果把 
+论文 投到 期刊 上 一/m 两年/m 后/f 刊出/v 时就/nr 有点/n 
+out/w 了/ul 因此 大 部分 最新 的 工作 都 首先 
+发表 在 顶级 会议 上 这些 顶级 会议 完全 能 
+反映 热门 研究 方向 最 新方法 2 很多 经典 工作 
+大家 可能 引 的 是 某 顶级 期刊 上 的 
+论文 这 是因为 期刊论文 表述 得 比较 完整 实验 充分 
+但 实际上 很多 都是在/nr 顶级 会议 上 首发 比如 PLSA 
+  Latent   Dirichlet   Allocation 等 3 如果 注意 
+这些 领域 大牛 的 pulications 不难 发现 他们 很 非常 
+看重 这些 顶级 会议 很多 人 是 80% 的 会议 
++ 20% 的 期刊 即 然 大牛 们 把 最新 
+工作 发在 顶级 会议 上 有 什么 理由 不去 读 
+顶级 会议 以下 是 不 完整 的 列表 但 基本 
+覆盖 机器学习 顶级 会议 NIPS   ICML   UAI   
+AISTATS     期刊 JMLR   ML   Trends   
+in   ML   IEEE   T NN 计算机 视觉 
+和 图像 识别 ICCV   CVPR   ECCV     
+期刊 IEEE   T PAMI   IJCV   IEEE   
+T IP 人工智能 IJCAI   AAAI   期刊 AI 另外 
+相关 的 还有 SIGRAPH   KDD   ACL   SIGIR 
+  WWW 等 特别 是 如果 做 机器学习 必须 地 
+把 近 4年 的 NIPS   ICML 翻 几遍 如果 
+做 计算机 视觉 要把 近 4年 的 ICCV   CVPR 
+  NIPS   ICML 翻 几遍 Zisserman 还有 一个 不错 
+的 学生 lifeifei 的 合作者 Rob   Fergus 按 研究 
+方向 分分   应该 更 合理 一些 现在 计算机 视觉 
+  计算机 图形图像   机器学习 开始 融合 到 一起 了吧 
+J .   Malik Zhu   Songchu 偏 segmentation D 
+.   Lowe   .   Ullman   Poggio   
+偏于 从 生物 视觉 的 启发 来 研究 视觉 Zisserman 
+  Schmid   Lowe 研究 局部 特征 Luc   Van 
+  Goo   Long   Quanl 三维重建 Perona   Li 
+  Feife   Freeman 视觉 学习   物体 分类 还有 
+运动 分析   视觉 跟踪 纹理 分析 . MIT 的 
+Brain   &   Cognitive   Science   Dept 和 
+CSAIL 里面 聚集 了 一帮 人 有的 作 low   
+level 有的 作 mid   level   to   high 
+  level 的 他们 的 工作 是 值得 关注 的 
+当然 说 视觉 还是 要从 伟大 的 David   Marr 
+开始 Tomaso   Poggio   Richard   Whitman 是 Marr 
+的 同事 传承 了 其 理念 一直 往下走 Poggio 最 
+近几年 比较 重点 的 工作 放在 他 那个 hierarchical   
+model 上 T .   Poggio 的 第一 个 PhD 
+学生 是 Christof   Koch   kLab   at   
+Caltech 哦 顺便 说 一下 Koch 的 另外 一个 导师 
+是 Valentino   Breitenberg 同样 是 影响 了 一个 时代 
+的 大人物 Koch 研究 重点 兴趣 在 consciousness 上 在 
+Nature 上 的 很多 文章 体现 了 他 的 研究 
+思想 不过 他们 也 做 不少 初级 的 视觉 问题 
+诸如 attention Koch 比较 知名 的 弟子 比如 Laurent   
+Itti 和 Li   Feifei Richard   Whitman   年纪 
+比较 大了 个人 不是 很 关注 他 现在 做 的 
+东西 不过 他 所在 的 Perceptual   Science   Group 
+是 一个 非常 有 影响力 的 地方 这个/r 组/zg 其他/r 
+大家/n 比较/d 熟悉/v 的/uj 老师/n 有/v Aude/w  /i Oliva/w 和/c 
+EH/w  /i Adelson/w Adelson 最 著名 的 一个 事儿 是 
+色彩 恒常 相关 的 视错觉 93年 发在 Science 上 的 
+那篇 关于 Oliva 前面 的 帖子 错了 她 不是 Poggio 
+的 学生 这家伙 和 Torralba 是 老乡 同 在 法国 
+念书 主要 从 心理学 那条 路子 开始 做 成名 之 
+役 是 hybrid   image 和 Antonio   Torrralba 一起 
+搞 的 这个 Hybrid   Image   其实 80 年代 
+就 有了 但是 最 开始 从 心理学 方向 上 探讨 
+没有 非常 有 影响力 的 文章 后来 开始 靠谱 作 
+自然 图像 统计 得到 Gist   theory 当然 这个 illusion 
+本身 后来 转 投 SIGGRAPH 其 影响 是 深远 的 
+嗯 这个 和 CV 关系不大 Perceptual   Science   Group 
+出 了 不少 牛人 他们 的 alumni   list 可谓 
+超 豪华 阵容 Yair   Weiss   Josh   Tenenbaum 
+  Pawan   Sinha   Bill   Freeman 机器学习 与 
+计算机 视觉 大牛 族谱   收藏 包括 Phd 和 Post 
+doc   co supervise 关系 David   Marr MIT Shimon 
+  Ullman Weizmann Daniel   Huttenlocher Cornell Demetri   Terzopoulos 
+UCLA Dimitris   Metaxas Rutgers Eric   Grimson MIT Pedro 
+  Felzenszwalb Uchicago Polina   Golland MIT Xiaogang   Wang 
+CUHK Daniel   Huttenlocher Cornell Marvin   Minsky MIT Turning 
+  Award Berthold   Horn MIT Tomas   Lozano Perez 
+MIT John   Canny UC   Berkeley Canny   edge 
+  detector Paul   Viola Microsoft Olivier   Faugeras Uparis 
+  XI Martial   Hebert CMU Derek   Hoiem UIUC 
+Jean   Ponce UIUC Lazbnik UNC Spatial   Pyramid   
+Matching Zhengyou   Zhang Microsoft Takeo   Kanade CMU Qifa 
+  Ke Microsoft Shree   Nayar Columbia Srinivasa   Narasimhan 
+CMU Simon   Baker Microsoft Richard   Szeliski Microsoft Carlo 
+  Tomasi Duke James   Rehg GIT Jianxin   Wu 
+NTU Whitman   Richards MIT Alex   Pentland MIT Trevor 
+  Darrell UC   Berkeley Kristen   Grauman UTexas Pyramid 
+  Matching   Kernel Joshua   Tenenbaum MIT Isomap Tom 
+  Griffiths UC   Berkeley Andrew   Blake Microsoft Andrew 
+  Zisserman Oxford Andrew   Fitzgibbon Microsoft Josef   Sivic 
+INRIA Video   Google Rob   Fergus NYU Roberto   
+Cipolla Cambridge Alan   Yuille UCLA Thomas   Huang UIUC 
+Yong   Rui Microsoft Ying   Wu Northwestern Qi   
+Tian UTSA   Chang   Wen   Chen   Buffalo 
+  Jiebo   Luo   Kodak Nebojsa   Jojic Microsoft 
+Vladimir   Pavlovic Rutgers Shuicheng   Yan NUS David   
+Mumford Brown   Fields   Medal SongChun   Zhu UCLA 
+Azriel   Rosenfeld Maryland Narendra   Ahuja UIUC Charles   
+Dyer Wisconsin Larry   Davis Maryland Shmuel   Peleg Hebrew 
+Christopher   Brown Rochester Yiannis   Aloimonos Maryland Robert   
+Pless WUSTL LoongFah   Cheong NUS Thomas   Binfold Stanford 
+David   Kriegman UCSD David   Lowe UBC SIFT Jitendra 
+  Malik UC   Berkeley Pietro   Perona Caltech Fei 
+fei   Li Stanford Stefano   Soatto UCLA Max   
+Welling UCI Jianbo   Shi Upenn Ncut Yizhou   Yu 
+UIUC Serge   Belongie UCSD Shape   Context Alexei   
+Efros CMU Derek   Hoiem UIUC Alexander   Berg Stony 
+  brook Christoph   Bregler NYU Edward   Adelson MIT 
+Willian   Freeman MIT Ce   Liu Microsoft   Rob 
+  Fergus NYU Yais   Weiss Hebrew Anat   Levin 
+Weizmann Kevin   Murphy UBC Josef   Sivic INRIA Antonio 
+  Torralba MIT GIST Eirk   Sudderth Brown Tomaso   
+Poggio MIT HMAX Partha   Niyogi UChicago Mikhail   Belkin 
+OSU LE Xiaofei   He ZJU LPP Christof   Koch 
+Caltech Tomas   Serre Brown Michael   Jordan UC   
+Berkeley Tommi   Jaakkola MIT Martin   Wainwright UC   
+Berkeley Xuanlong   Nguyen UMich Andrew   Ng Stanford Honglak 
+  Lee Umich Lawrence   Saul UCSD Fei   Sha 
+USC David   Blei Princeton LDA Eric   Xing CMU 
+Ben   Taskar Upenn Yair   Weiss Hebrew HDP Erik 
+  Sudderth Brown Yoshua   Bengio Umontreal Francis   Bach 
+INRIA Kevin   Murphy UBC Daphne   Koller Stanford Nir 
+  Friedman Hebrew Carlos   Guestrin CMU Ben   Taskar 
+Upenn M3N Geoffrey   Hinton Toronto Yee Whye   The 
+UCL Yann   Lecun NYU Zoubin   Ghahramani CMU Cambridge 
+Max   Welling UCI Sam   Roweis NYU LLE Tom 
+  Mitchell CMU Oren   Etzioni UWashington Geoffrey   Gordon 
+CMU Sebasitian   Thrum Stanford Andrew   McCallum Umass John 
+  Lafferty CMU CRF Chengxiang   Zhai UIUC Qiaozhu   
+Mei Umich Xiaojin   Zhu Wisconsin David   Blei Princeton 
+A   tree   stucture   of   cv   
+guys . David   Marr – Shimon   Ullman   
+Weizmann – Eric   Grimson   MIT – Daniel   
+Huttenlocher   Cornell – Pedro   Felzenszwalb   Chicago Thomas 
+  Binford   Stanford – David   Lowe   UBC 
+– Jitendra   Malik   UC   Berkeley – Pietro 
+  Perona   Caltech – Stefano   Soatto   UCLA 
+– Fei Fei   Li   Princeton – Jianbo   
+Shi   UPenn – Yizhou   Yu   UIUC – 
+Christoph   Bregler   NYU – Serge   Belongie   
+UCSD – Alyosha   Efros   CMU Andrew   Blake 
+  Microsoft   Research   Cambridge – Andrew   Zisserman 
+  Oxford – Andrew   Fitzgibbon   Microsoft   Research 
+  Cambridge – Roberto   Cipolla   Cambridge – Alan 
+  Yuille   UCLA UK 这个 学派 的 师承 关系 
+不 太 清楚   这是 我 听说 加上 自己 猜测 
+的 .   事实上   几个 非常 优秀 的 researcher 
+如 Vladimir   Kolmogorov 虽然 不是 Andrew   Blake 的 
+学生   但是 也 属于 这个 学派 .   Thomas 
+  Huang   UIUC – Yong   Rui   Microsoft 
+  Research   Redmond – Nebojsa   Jojic   Microsoft 
+  Research   Redmond – Ying   Wu   Northwestern 
+  University – Hai   Tao   UCSC – Yuncai 
+  Liu   SJTU Huang 这个 系 的 人 太多 
+  而且 很 怪 的 是   UIUC 的 web 
+上 信息 不全   在此 仅 列出 我 知道 的 
+. 此外   还有 Takeo   Kanade 等 非常 有名 
+的 大牛   囿于 篇幅   不 一一列举 . 从上 
+得知   加州 派 基本 占了 cv 的 半壁江山 . 
+  最 近几年   特别 活跃 的 cv   guys 
+是 USAJitendra   Malik   UC   BerkeleyPietro   Perona 
+  CaltechSerge   Belongie   UCSDJianbo   Shi   UPennStefano 
+  Soatto   UCLAFei Fei   Li   PrincetonWilliam   
+Freeman   MITTrevor   Darrell   MITSimon   Baker   
+CMUYanxi   Liu   CMUSongchun   Zhu   UCLAAlan   
+Yuille   UCLAYi   Ma   UIUCMichael   Black   
+BrownCarlo   Tomasi   DukeRamin   Zabih   CornellShree   
+Nayar   ColumbiaRama   Chellappa   MarylandSteve   Seitz   
+University   of   W a s h i n 
+g t o n E u r o p e 
+A n d r e w   Zisserman   Oxford 
+  UKAndrew   Fitzgibbon   Microsoft   Research   Cambridge 
+  UKRoberto   Cipolla   Cambridge   UKJean   Ponce 
+  INRIA   FranceCordelia   Schmid   INRIA   FranceBill 
+  Triggs   LEAR   FranceYair   Weiss   Hebrew 
+  University   IsraelAnat   Levin   Hebrew   University 
+  IsraelMichal   Irani   Weizmann   IsraelLuc   van 
+  Gool   University   of   Leuven / ETH 
+  Zurich   C z e c h i c 
+C h i n a H a r r y 
+  Shum   MSRAXiaoou   Tang   MSRA / CUHKJian 
+  Sun   MSRASteve   Lin   MSRAYasuyuki   Matsushita 
+  MSRAZhouchen   Lin   MSRALong   Quan   HKUSTChi 
+Keung   Tang   HKUSTOlivier   Faugeras Ponce   UIUC 
+lazebnik Zhengyou   Zhang   MSR Martial   Hebert   
+CMUMit   AI   labpoggio Oliva serreFreeman   80 年代 
+还来 太原理工 扶贫 了 Y .   Weiss Levin Antonio 
+  Torralba   research   scientist Trevor   Darrell Graumanhttp 
+/ / doctorimage . cn / 2012 / 11/19 / 
+maching learning computer vison family sites / 这里 添加 了 
+牛人 以及 实验室 的 链接 

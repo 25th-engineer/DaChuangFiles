@@ -1,0 +1,26 @@
+我爱自然语言，是自然语言的一个博客群
+http://www.aclweb.org/anthology-new/
+自然语言问题列表
+http://www.newsmth.net/bbsdoc.php?board=NLP
+自然语言处理课程在线学习网站
+https://www.coursera.org/
+ACL Anthology，囊括了ACL，EMNLP，CL等NLP领域重要会议和期刊的论文。
+http://www.aclweb.org/anthology-new/
+LDC: The Linguistic Data Consortium
+http://www.ldc.upenn.edu/
+知网
+http://www.keenage.com/
+WordNet
+http://wordnet.princeton.edu/
+中文自然语言处理开放平台
+http://www.nlp.org.cn/
+AAAI Topics on NLP
+http://www.aaai.org/AITopics/html/natlang.html
+Sogou实验室
+http://www.sogou.com/labs/
+Hal Daume III Blog
+http://nlpers.blogspot.com/
+我爱自然语言处理博客(中文)
+http://www.52nlp.cn/
+其他代码和数据资源
+http://www-nlp.stanford.edu/links/statnlp.html

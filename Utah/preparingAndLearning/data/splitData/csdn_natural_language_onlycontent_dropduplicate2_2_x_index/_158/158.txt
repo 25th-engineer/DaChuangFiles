@@ -1,0 +1,60 @@
+写在前面的话
+biaji,<(￣3￣)> bia叽，嘎嘎，最近来教大家写点简单又迷人的自然语言处理的代码。
+不好意思，原谅我用词不当，毕竟我是菜鸟，也没得资格教别人，the main reason is that 我自己写了给自己看的，你看我就是这样一个正直，又不爱慕虚荣的小公主呢～
+感觉自己萌萌哒，啊哈哈哈，不要脸也确实是真的
+反正也没有啥子浏览量，估计就是自己每天看自己写的了呢，所以在我的地盘就听我的，啊哈哈哈
+这女的一定是刚刚从精神病院里跑出来的。
+哦，对了，今天知乎有个推送，笑死我了，怎么在精神病院里证明自己不是神经病！！！！
+我的天，好想怒答一波，问这个人的脑子一定刚刚被门挤了吧，啊哈？
+假装很正紧的正文
+其实个人觉得NLP 就是所谓的nature language processing 在计算机领域入门还真的是没有任何难度呢。当然了，个人意见，觉得你安装几个库，nltk,gensim，sklearn，textblob 什么standford parser 斯坦福解析器，然后自己捣鼓捣鼓，学一些分类算法，聚类算法，topic model 算法之后，我觉得你就入门了。
+就算你不学算法的各种基本原理，你知道怎么用，你也可以很快上手的。
+预处理的话我们要安装一个库，我们就用nltk 来做预处理把，textblob 可以用来修改一些拼写的错误，但是呢，感觉没有考虑语境，所以有时候改正的效果其实并不好，nltk 的处理效果本人觉得也就是那个样子啦。
+不过我们先学吧，你得会了才能评价，不会，听别人说怎么滴，那也是跟你没有半毛钱关系的。
+我一直用的都是Linux的系统Ubuntu14.04 所以安装也很简单
+就是下面这个样子的啦
+sudo pip install nltk
+如果你是用的是conda 那个就这样安装nltk这个库
+conda install nltk
+这里我们先讨论英文的文本处理
+对于自然语言处理的话，预处理其实就是有那么几个固定的步骤，分词，英文的话可能需要全部转换为小写，去除标点符号，提取词干，出去不是英文的单词，出去特殊的符号，修正错别字。
+这篇写的挺好的，这对英文和非英文的处理都在这里了。
+http://www.spiderpy.cn/blog/detail/30
+一些必须知道的基本概念
+在做预处理的时候，我们要知道一些基本的概念，什么叫做分词，什么叫做提取词干
+1.分词 （Tokenization）
+Token 是符号，包括了单词还有标点符号两种。 Tokenization 就是把一句话或者一段话分解成单个的单词和标点。
+I like my cat.
+这句话分词之后就变成了
+['I','like','my','cat','.']
+这样的一个五元组，注意最后的标点符号也是算的。
+2.提取词干（stemming）
+在英文中，常常可能会有一些英文单词的各种变化，比如第三人称的单数，时态等等的变化。
+比如 run 可以变成runnIng，ran,runs 等等，但是我们只要他们的基本态就是run. 这个就叫做提取词干。
+这么做的主要目的是用统一的特征形式，特征降维以减少计算量。在NLTK中提供了三种最常用的词干提取器接口，即 Porter stemmer, Lancaster Stemmer 和 Snowball Stemmer。抽取词的词干或词根形式（不一定能够表达完整语义）
+>>> from nltk.stem.porter import PorterStemmer >>> porter_stemmer = PorterStemmer() >>> from nltk.stem.lancaster import LancasterStemmer >>> lancaster_stemmer = LancasterStemmer() >>> from nltk.stem import SnowballStemmer >>> snowball_stemmer = SnowballStemmer(“english”) >>> porter_stemmer.stem(‘maximum’) u’maximum’ >>> lancaster_stemmer.stem(‘maximum’) ‘maxim’ >>> snowball_stemmer.stem(‘maximum’) u’maximum’ >>> porter_stemmer.stem(‘presumably’) u’presum’ >>> snowball_stemmer.stem(‘presumably’) u’presum’ >>> lancaster_stemmer.stem(‘presumably’) ‘presum’ >>> porter_stemmer.stem(‘multiply’) u’multipli’ >>> snowball_stemmer.stem(‘multiply’) u’multipli’ >>> lancaster_stemmer.stem(‘multiply’) ‘multiply’ >>> porter_stemmer.stem(‘provision’) u’provis’ >>> snowball_stemmer.stem(‘provision’) u’provis’ >>> lancaster_stemmer.stem(‘provision’) u’provid’ >>> porter_stemmer.stem(‘owed’) u’owe’ >>> snowball_stemmer.stem(‘owed’) u’owe’ >>> lancaster_stemmer.stem(‘owed’) ‘ow’
+各有优劣，看具体文本情况。对于分类、聚类这样对于特征词语的具体形态没有要求的情况下，进行词干抽取虽然抽取后的词干可能无实际意义但是却会大大减少计算时间，提高效率。
+以上部分来自这篇博客https://zhangmingemma.github.io/2017/03/29/Python+NLTK-Natural-Language-Process.html，觉得写的很好的。
+词形还原
+词形还原 Lemmatization 是把任何形式的词汇还原为一般形式，能表达完整的语义。相对而言，词干提取是简单的轻量级的词形归并方式，最后获得的结果为词干，但是可能没有实际的意义。词形还原处理相对来说比较复杂，获得结果为词的原形，能够承载一定的意义，与词干的提取相比，更具有研究和应用的价值。
+比如说词干提取，假设这个词是provision得到的是provis这个没有什么实际的意义。
+不过在nltk 中的Lemmatization 算法很鸡肋，基本可以理解为只有复述还原为单数的形式，一些其他的非常态的复数形式转换为单数的形式也是可以实现的。但是形容词变成名词可能会失效。
+具体的例子如下所示：
+>>> from nltk.stem import WordNetLemmatizer >>> wordnet_lemmatizer = WordNetLemmatizer() >>> word = wordnet_lemmatizer.lemmatize('birds') bird
+以上的例子也来自同一篇文章https://zhangmingemma.github.io/2017/03/29/Python+NLTK-Natural-Language-Process.html
+基本操作的代码
+针对这些基本操作我们给出了一些预处理的代码。
+大家之后可以直接拿来用，多看看别人怎么写的，自己再用，那也是极好的，一来提高效率，而来哈哈，积累经验吧。
+import nltk from nltk.corpus import stopwords from nltk.stem.porter import PorterStemmer from nltk.stem import WordNetLemmatizer def Preprocessing(text): text = text.lower() # 将所有的单词转换成小写字母 for c in string.punctuation: text = text.replace(c," ") # 将标点符号转换成空格 wordList = nltk.word_tokenize(text) # 分词 filtered = [w for w in wordList if w not in stopwords.words('english')] # 删除停顿词 # stem ps = PorterStemmer() filtered = [ps.stem(w) for w in filtered] # 提取词干 wl = WordNetLemmatizer() filtered = [wl.lemmatize(w) for w in filtered] # 词形还原 return " ".join(filtered)
+如果你要修改一些拼写的错误的话，就用textblob 这个包
+我现在只会用pip 来安装，conda 安装直接试了一下没有成功。所以就只能用系统自带的那个Python来运行这个自然语言的脚本啦。
+安装TextBlob
+sudo pip install -U textblob
+在使用的时候只要事先引进它就行，也可以用这个工具来做预处理
+拼写矫正的代码如下：
+>>> b = TextBlob("I havv goood speling!") >>> print(b.correct())
+还看到了一些比较有意思的处理，决定收录一下：
+from nltk.corpus import stopwords from nltk.stem.porter import PorterStemmer from nltk.tokenize import word_tokenize stopset = stopwords.words('english') + list(string.punctuation) + ['will','also','said'] corpus = [] all_docs = [] vocab = set() stemmer = PorterStemmer() with open(filename) as f: try: doc = f.read().splitlines() doc = filter(None,doc) # remove empty string doc = '.'.join(doc) doc = doc.translate(None,string.punctuation) doc = doc.translate(None,'0123456789') doc = doc.decode("utf8").encode("utf-8",'ignore') all_docs.append(doc) tokens = word_tokenize(str(doc)) filtered = [] for w in tokens: w = stemmer.stem(w.lower()) if w in stopset: continue filtered.append(w) vocab.update(filtered) corpus.append(filtered) except UnicodeDecodeError: print "Failed to load:", filename
+Reference
+https://zhangmingemma.github.io/2017/03/29/Python+NLTK-Natural-Language-Process.html
+http://www.voidcn.com/article/p-kwpvxxsc-bch.html

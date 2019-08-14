@@ -1,0 +1,120 @@
+原文 地址 http / / www . cnblogs . com 
+/ cyruszhu / p / 5496913 . html 未经 允许 
+请勿 用于 商业 用途 相关 请求 请 联系 作者 yunruizhu 
+@ 126 . com 转载 请 附上 原文 链接 谢谢 
+机器学习 / 深度 学习 / 自然语言 处理 学习 路线 1 
+基础 l   Andrew NG 的 Machine Learning 视频 连接 
+主页 资料 l   2.2008年 Andrew Ng CS229 机器学习 当然 
+基本 方法 没有 太大 变化 所以 课件 PDF 可 下载 
+是 优点 中文字幕 视频 @ 网易 公开课 英文版 视频 @ 
+youtube 课件 PDF @ Stanfordl   3 . Tom Mitchell 
+的 机器学习 视频 他 的 机器学习 在 很多 课程 上 
+被选 做 教材 有 中文版 2 进阶 l   3 
+. 林軒田/nr HT Lin 老师 的 两门课 机器学习 基石 Machine 
+Learning Foundations MOOC all handout slides free youtube videos 机器学习 
+技法 Machine Learning Techniques MOOC all handout slides free youtube 
+videosl   4.2013年 Yaser Abu Mostafa Caltech Learning from Data 
+内容 更 适合 进阶 课程 视频 课件 PDF @ CaltechYaser 
+Abu Mostafa 是 林軒田/nr HT Lin 的 老师 林的课/nr 内容/n 
+安排/v 和/c 这个/r 课/n 相似/v l   5 . 2012年 
+余凯 百度 张潼/nr Rutgers 机器学习 公开课 内容 更 适合 进阶 
+课程 主页 @ 百度 文库 课件 PDF @ 龙星 计划 
+l   PRML / 机器学习 导论 / 矩阵分析 计算 / 
+神经 网络 与 机器学习 3 方向 3.1 深度 神经网络 l 
+  大致 了解 A Deep Learning Tutorial From Perceptrons to 
+A l g o r i t h m s 
+I n t r o d u c t i 
+o n to Deep Learning AlgorithmsDeep learning from the bottom 
+upYann LeCun Yoshua Bengio & Geoffrey Hinton Deep learning J 
+Nature . l   UFLDL Deep Learning Tutorial from Stanford 
+中文版 Stanford 计算机系 的 官方 tutorial Andrew Ng 执笔 要想 
+了解 DL 的 原理 这个 最好 用了 l   Deep 
+Learning Ian Goodfellow Yoshua Bengio Aaron Courville 目前 最 权威 
+的 DL 教材 了 l   Neural Networks for Machine 
+Learning Geoffrey Hinton Department of Computer Science 辛顿 是 反向 
+传播 算法 和 对比 散度 算法 的 发明 人 之一 
+也是 深度 学习 的 积极 推动者 有/v 视频/n 和/c 材料/n 
+l   Oxford Deep LearningNando de Freitas 在 Oxford 开设 
+的 深度 学习 课程 有 全套 视频 l   吴立德 
+复旦 大学 教授 优酷 视频 深度 学习 课程 讲 的 
+很有 大师 风范 其他 参考 l   Neural networks class 
+Hugo Larochelle from Universit é de Sherbrookel   Deep Learning 
+Course CILVR lab @ NYU3 . 2 机器 视觉 l 
+  Fei Fei Li CS231n Convolutional Neural Networks for Visual 
+Recognition http / / cs231n . stanford . edu / 
+英文 字幕 CS231n 课程 笔记 翻译 Python   Numpy 教程 
+@ 杜客 组织 知乎 的 几个 牛人 翻译 的 表示 
+感谢 l   William Hoff   Computer vision 视频 和 
+课件 都有 无字幕 l   CAP 5415 Computer Vision 无字幕 
+3.3 自然语言 处理 l   Richard Socher CS224d Deep Learning 
+for Natural Language Processinghttp / / cs224d . stanford . 
+edu / syllabus . html video . l   Dan 
+Jurafsky 和 Christopher Manning 在 coursera 上 的 NLP 课程 
+链接 自然语言 处理 l   Michael Collins 哥伦比亚大学 Natural Language 
+Processing Coursera 课程 l   High quality video of the 
+2013 NAACL tutorial version are up here video 课程 对应 
+的 主页 ACL 2012 + NAACL 2013 Tutorial Deep Learning 
+for NLP without Magic 链接 l   统计 学习 方法 
+李航 很 出名 擅长 自然语言 处理 该 本书 也 是 
+按照 自然语言 处理 来写 的 3.4 杂货 作者 郭小贤/nr 链接 
+https / / www . zhihu . com / question 
+/ 26006703 / answer / 63572833 著作权 归 作者 所有 
+商业 转载 请 联系 作者 获得 授权 非商业 转载 请 
+注明 出处 另外 建议 看看 大神 Yoshua Bengio 的 推荐 
+左边 的 链接 是 论文 右边 的 是 代码 有/v 
+理论/n 有/v 应用/v 主要 应用于 CV 和 NLP Page on 
+Toronto Home Page of Geoffrey HintonPage on Toronto Home Page 
+of Ruslan R a l a k h u t 
+d i n o v P a g e on 
+Wustl ynd / cae . py GitHubPage on Icml https 
+/ / github . com / lisa lab / pyle 
+. . . Page on Jmlr pylearn2 On the difficulty 
+of training recurrent neural networks t r a i n 
+i n g R N N s I m a 
+g e N e t Classification with Deep Convolutional Neural 
+Networks cuda convnet High performance C + + / CUDA 
+implementation of convolutional neural networks Google Project H o s 
+t i n g L i n g u i 
+s t i c Regularities in Continuous Space Word Representations 
+word2vec Tool for computing continuous distributed representations of words . 
+Google Project Hosting 作者 专业 主义 链接 https / / 
+www . zhihu . com / question / 26006703 / 
+answer / 90969591 来源 知乎 Deep Learning for Natural Language 
+Processing and Related Applications 介绍 这份 文档 来自 微软 研究院 
+精髓 很多 如果 需要 完全 理解 需要 一定 的 机器学习 
+基础 不过 有些 地方 会 让人 眼前一亮 毛塞/nr 顿开 Understanding 
+Convolutions 介绍 这是 一篇 介绍 图像 卷积 运算 的 文章 
+讲 的 已经 算 比较 详细 的 了 Deep Learning 
+and Shallow Learning 介绍 对比 Deep Learning 和 Shallow Learning 
+的 好文 来着 浙大 毕业 MIT 读 博 的 Chiyuan 
+Zhang 的 博客 Java Machine Learning 介绍 Java 机器学习 相关 
+平台 和 开源 的 机器学习 库 按照 大 数据 NLP 
+计算机 视觉 和 Deep Learning 分类 进行 了 整理 看起来 
+挺 全的/nr Java 爱好者 值得 收藏 机器学习 经典 论文 / 
+survey 合集 介绍 看 题目 你 已经 知道 了 是 
+什么 内容 没错 里面 有 很多 经典 的 机器学习 论文 
+值得 仔细 与 反复 的 阅读 机器学习 经典 书籍 介绍 
+总结 了 机器 学习 的 经典 书籍 包括 数学 基础 
+和 算法 理论 的 书籍 可 做为 入门 参考 书单 
+Deep Learning 101 介绍 因为 近两年来 深度 学习 在 媒体 
+界 被 炒作 很厉害 就像 大 数据 其实 很多 人 
+都还 不 知道 什么 是 深度 学习 这篇文章 由浅入深 告诉 
+你 深度 学 究竟 是 什么 Underactuated Robotics 介绍 MIT 
+的 Underactuated Robotics 于 2014年 10月 1日 开课 该 课 
+属于 MIT 研究生 级别 的 课程 对 机器人 和 非线性 
+动力系统 感兴趣 的 朋友 不妨 可以 挑战 一下 这 门 
+课程 作者 肖凯 链接 https / / www . zhihu 
+. com / question / 31785984 / answer / 72180444 
+来源 知乎 著作权 归 作者 所有 商业 转载 请 联系 
+作者 获得 授权 非商业 转载 请 注明 出处 Video and 
+LecturesHow To Create A Mind By Ray Kurzweil Is a 
+inspiring talkDeep Learning Self Taught Learning and Unsupervised Feature Learning 
+By Andrew NgRecent Developments in Deep Learning By Geoff HintonThe 
+Unreasonable Effectiveness of Deep Learning by Yann LeCunDeep Learning of 
+Representations by Yoshua bengioPrinciples of Hierarchical Temporal Memory by Jeff 
+HawkinsMachine Learning Discussion Group Deep Learning w / Stanford AI 
+Lab by Adam CoatesMaking Sense of the World with Deep 
+Learning By Adam C o a t e s D 
+e m y s t i f y i n 
+g Unsupervised Feature Learning By Adam CoatesVisual Perception with Deep 
+Learning By Yann LeCun 

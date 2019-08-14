@@ -1,0 +1,52 @@
+问题 描述 严重 Error starting static Resourcesjava . lang . 
+I l l e g a l A r g 
+u m e n t E x c e p 
+t i o n Document base D \ Code \ 
+MyJavaCode \ . metadata \ . plugins \ org . 
+eclipse . wst . server . core \ tmp0 \ 
+wtpwebapps \ newsInfoCrawler does not exist or is not a 
+readable directory 解决办法 需要 执行 下面 操作 步骤 一 首先 
+进入 你 的 工作 区间 目 录下 的 . metadata 
+\ . plugins \ org . eclipse . wst . 
+server . core / 下 比如 我 的 这里 是 
+步骤 二 进入 tmp0 / conf / 目录 删除 无用 
+的 tmp0 \ conf \ server . xml 中的   
+Context   节点 Context docBase = D \ Code \ 
+MyJavaCode \ . metadata \ . plugins \ org . 
+eclipse . wst . server . core \ tmp0 \ 
+wtpwebapps \ ROOT path = reloadable = false / Context 
+docBase = D \ Code \ MyJavaCode \ . metadata 
+\ . plugins \ org . eclipse . wst . 
+server . core \ tmp0 \ wtpwebapps \ newsInfoCrawler path 
+= / newsInfoCrawler reloadable = true source = org . 
+eclipse . jst . jee . server newsInfoCrawler / / 
+Host 删除 留下 得到 Context docBase = D \ Code 
+\ MyJavaCode \ . metadata \ . plugins \ org 
+. eclipse . wst . server . core \ tmp0 
+\ wtpwebapps \ ROOT path = reloadable = false / 
+/ Host 步骤 三 删除 tmp0 \ work \ Catalina 
+\ localhost 下 的 所有 文件夹 我 这里 是 D 
+\ Code \ MyJavaCode \ . metadata \ . plugins 
+\ org . eclipse . wst . server . core 
+\ tmp0 \ work \ Catalina \ localhost 步骤 四 
+删除 tomcat 步骤 五 重新配置 tomcat 欢迎 大家 加入 我 
+的 微信 公众 号 大 数据 躺过 的 坑   
+      人工智能 躺过 的 坑 同时 大家 可以 
+关注 我 的 个人 博客 http / / www . 
+cnblogs . com / zlslch /       和 /nr 
+      http / / www . cnblogs . 
+com / lchzls /           http 
+/ / www . cnblogs . com / sunnyDream / 
+详情 请见 http / / www . cnblogs . com 
+/ zlslch / p / 7473861 . html 人生 苦短 
+我 愿 分享 本 公众 号 将 秉持 活到老 学到老 
+学习 无休止 的 交流 分享 开源 精神 汇聚/v 于/p 互联网/n 
+和/c 个人/n 学习/v 工作/vn 的/uj 精华/nz 干货/n 知识/v 一切 来 
+于 互联网 反馈 回 互联网 目前 研究 领域 大 数据 
+机器学习 深度 学习 人工智能 数据挖掘 数据分析 语言 涉及 Java Scala 
+Python Shell Linux 等 同时 还 涉及 平常 所 使用 
+的 手机 电脑 和 互联 网上 的 使用 技巧 问题 
+和 实用软件 只要 你 一直 关注 和 呆在 群 里 
+每天/r 必须/d 有/v 收获/v 对应/vn 本/r 平台/n 的/uj 讨论/v 和/c 
+答疑/v QQ/w 群/n 大 数据 和 人工智能 躺过 的 坑 
+总 群 161156071 

@@ -1,0 +1,168 @@
+【主页】 apachecn.org
+【Github】@ApacheCN
+暂时下线: 社区
+暂时下线: cwiki 知识库
+自媒体平台
+微博：@ApacheCN
+知乎：@ApacheCN
+CSDN
+简书
+OSChina
+博客园
+我们不是 Apache 的官方组织/机构/团体，只是 Apache 技术栈（以及 AI）的爱好者！
+合作or侵权，请联系【fonttian】fonttian@gmail.com | 请抄送一份到 apachecn@163.com
+预处理
+离散化
+等值分箱
+等量分箱
+独热 one-hot
+标准化
+最小最大 min-max
+z-score
+l2 标准化
+归一化
+特征选择
+ANOVA
+信息增益/信息增益率
+模型验证
+评价指标
+回归
+MSE
+R 方
+分类
+准确率
+精确率
+召回率
+F1 得分
+宏平均 F1
+微平均 F1
+聚类
+互信息
+轮廓距离
+交叉验证
+K 折
+网格搜索
+最优化方法
+梯度下降
+随机梯度下降 SGD
+牛顿法/拟牛顿法
+动量法
+RMSProp
+Adam
+传统机器学习
+基本概念
+欠拟合/过拟合
+距离
+汉明距离
+曼哈顿距离
+欧几里得距离
+切比雪夫距离
+余弦相似度
+pearson 相似度
+损失函数
+MSE
+交叉熵
+Hinge
+线性模型
+线性回归
+Lasso/岭回归
+正则化
+逻辑回归
+softmax 回归
+支持向量机
+拉格朗日对偶
+软边界支持向量机
+核方法
+树和森林
+决策树
+随机森林
+GDBT/XGBoost
+LightGBM
+集成学习
+Bagging
+Boosting
+Adaboost
+Blending/Stacking
+KNN
+聚类
+KMenas
+层次聚类
+凝聚聚类
+分裂聚类
+DBSCAN
+谱聚类
+高斯混合模型 GMM
+概率图
+朴素贝叶斯
+隐马尔科夫 HMM
+降维
+PCA/SVD
+T-SNE
+深度学习
+基本概念
+正向传播
+反向传播
+激活函数
+sigmoid
+softmax
+tanh
+ReLU
+ELU
+Leaky ReLU
+丢弃 Dropout
+微调 Fine-Tune
+批量归一化 BatchNorm
+前馈神经网络 DNN/多层感知机 MLP
+输入层
+隐层
+输出层
+卷积神经网络 CNN
+层
+卷积层
+池化层
+全连接层
+经典结构
+LeNet
+AlexNet
+ZFNet
+GoogLeNet
+VGG
+ResNet
+DenseNet
+循环神经网络 RNN
+循环层
+经典结构
+LSTM
+GRU
+BiLSTM
+注意力
+Seq2Seq
+自编码器
+栈式自编码器
+稀疏自编码器
+去噪自编码器
+变分自编码器
+生成对抗网络 GAN
+DCGAN
+应用领域（待扩展）
+推荐系统
+机器视觉 CV
+自然语言处理 NLP
+生物信息
+常用工具
+数据分析
+NumPy
+Pandas
+科学计算
+SciPy
+可视化
+Matplotlib
+Seaborn
+机器学习
+scikit-learn/sklearn
+XGBoost
+LightGBM
+深度学习
+Keras
+TensorFlow
+PyTorch

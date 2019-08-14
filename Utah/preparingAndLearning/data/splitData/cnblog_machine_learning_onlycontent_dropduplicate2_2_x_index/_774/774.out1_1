@@ -1,0 +1,10 @@
+箱 型 图 对 数据 的 展示 也 是 非常 
+清晰 的 这是 箱 型 图 的 一些 代码 # 
+导报 机器学习 三剑客 import numpy as npimport pandas as pdfrom 
+matplotlib import pyplot as pltif _ _ name _ _ 
+= = _ _ main _ _ # 读取数据 第一 
+个 参数 是 文件名 第二个 是 文件 页面 df = 
+pd . read _ excel tips . xlsx sheet1 # 
+print df # 调查 小费 比例 与 用 时段 关系 
+df pct time . boxplot by = time plt . 
+show 

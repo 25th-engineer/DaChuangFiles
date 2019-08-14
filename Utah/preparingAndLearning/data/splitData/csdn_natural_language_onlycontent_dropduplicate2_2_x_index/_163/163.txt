@@ -1,0 +1,283 @@
+前言
+关毅老师，现为哈工大计算机学院语言技术中心教授，博士生导师。通过认真学习了《自然语言处理（哈工大 关毅 64集视频）》1（来自互联网）的课程，受益良多，在此感谢关毅老师的辛勤工作！为进一步深入理解课程内容，对部分内容进行了延伸学习2 3，在此分享，期待对大家有所帮助，欢迎加我微信（验证：NLP），一起学习讨论，不足之处，欢迎指正。
+视频列表：
+01自然语言处理绪论 一
+02自然语言处理绪论 二
+03自然语言处理绪论 三
+04自然语言处理绪论 四
+05自然语言处理绪论 五
+06自然语言处理概论 六
+07自然语言处理概论 七
+08自然语言处理概论 八
+09自然语言处理概论 九
+哈工大（LTP）开始使用
+01自然语言处理绪论 一
+第一章 自然语言处理概论
+自然语言处理团队
+自然语言处理的重要应用
+机器翻译
+数据库技术
+语音识别
+主要研究室
+语言技术研究中心
+语音处理实验室
+关毅老师主要工程项目
+微软拼音输入法
+BOPOMOFO汉字输入系统
+关毅老师主要科学贡献
+关于相似的研究，提出系统相似度测度的理论模型
+02自然语言处理绪论 二
+简史
+崛起于80年代初的统计自然语言处理技术，已经成为自然语言处理的主流技术，本课程重点介绍统计语言处理技术，特别是基于统计的汉语词法分析技术。
+自然语言处理技术起源于人们对机器翻译技术的研究，从1946年算起至今，已有60多年的历史了。
+“目前一些试用过的用户表示，改进后的翻译服务在质量方面令人惊讶。对于那些从未使用机器翻译的用户来说，他们完全可以通过翻译后的文本理解原文的意思，一些细微的错误并不会引起太大的麻烦。” --Franz Josef Och
+董振东：JSCL 2005 ”拿统计机器翻译说事”
+还需要多少年才能实现计算机与人类无障碍地沟通？
+1968年的美国影片《2001太空奥德赛》
+机器人HAL和Dave进行了如下对话：
+Dave Bownman: Open the pod bay doors, HAL. (Dave Bownman：HAL, 请你打开太空舱的分离门。)
+HAL: I’m sorry Dave, I am afraid I can’t do that. (HAL：对不起，Dave，我恐怕不能这样做。)
+自然语言处理是一个“AI complete”问题
+自然语言理解与计算分子生物学有着深刻的渊源
+生物学中有着至少500年也解决不完的有趣问题 --Donald E. Knuth
+自然语言与人工语言的最大区别在于“歧义”问题
+03自然语言处理绪论 三
+歧义问题
+词法分析歧义
+分词
+严守一把手机关了
+严守/ 一把手/ 机关/ 了
+严守一/ 把/ 手机/ 关/ 了
+词性标注
+我/pro 计划/v 考/v 研/n
+我/pro 完成/v 了/aux 计划/n
+语法分析歧义
+咬死了猎人的狗
+那只狼咬死了猎人的狗
+咬死了猎人的狗失踪了
+语义分析歧义
+At last, a computer that understands you like your mother.
+– 1985 McDonnell-Douglas ad
+含义1：计算机会象你的母亲那样很好地理解你（的语言）
+含义2：计算机理解你喜欢你的母亲
+含义3：计算机会象很好地理解你的母亲那样理解你
+语义用分析歧义
+“你真坏”
+音字转换例
+ji qi fan yi ji qi ying yong ji qi le ren men ji qi nong hou de xing qu
+几点感性认识
+有点繁琐枯燥
+充满乐趣
+团队合作
+独创精神
+“一只美丽的小花猫”
+04自然语言处理绪论 四
+名言
+取法其上，仅得其中；取法其中，仅得其下；取法其众，得其上。-中国古代思想家
+Every important idea is simple -列夫.托尔斯泰
+The grand aim of all science is to cover the greatest number of empirical facts by logical deduction from the smallest number of hypotheses or axioms -爱因斯坦
+工具
+Mindjet MindManager （ver 8.0）
+Biblioscape（ver 7.0）
+教材
+Christopher Manning and Hinrich Schutze: Foundations of Statistical Language Processing, MIT press, 1999（有中译本，译者 苑春法 等）
+自然语言处理综论 Daniel Jurafsky &James H. Martin著 冯志伟 孙乐 译
+王晓龙、关毅 《计算机自然语言处理》 清华大学出版社 2005年
+什么是自然语言处理
+定义1：研究在人与人交际中以及在人与计算机交际中的语言问题的一门学科。自然语言处理要研制表示语言能力和语言应用的模型，建立计算框架来实现这样的语言模型，提出相应的方法来不断地完善这样的语言模型，根据这样的语言模型设计各种实用系统，并探讨这些实用系统的评测技术。—Bill Manaris
+本学科的主题与背景：“自然语言处理可以定义为研究在人与人交际中以及在人与计算机交际中的语言问题的一门学科。”
+人人交际中的语言问题
+例如语言不通的问题，促进了机器翻译这一语言处理中最重要的应用之一的发展
+人机交际中的语言问题
+例如语言文字的输入输出问题，促进了智能化人机接口技术的研究
+研究自然语言处理的意义
+从科学研究的角度：探寻人类通过语言来交互信息的奥秘，更好地理解语言本身的内在规律
+从实际应用的角度：构建更加有效的人机交互方式
+05自然语言处理绪论 五
+两类不同的语言处理模型
+能力模型
+基于语言学规则的模型。
+建模步骤
+语言学知识形式化
+形式化规则算法化
+算法实现
+应用模型
+根据不同的语言处理应用而建立的特定语言模型，通常是基于统计的模型。又称“经验主义的”语言模型。上世纪80年代崛起的统计自然语言模型可以归入。
+建模步骤
+大规模真实语料库中获得语言各级语言单位上的统计信息
+依据较低级语言单位上的统计信息运用相关的统计推理技术计算较高级语言单位上的统计信息
+用人工智能等相应的方法来不断地完善这样的语言模型
+规则与统计相结合
+评测技术
+自然语言处理的重要研究专题之一。
+国际公认的自然语言研究竞技场：
+Sighan
+Conll
+TREC
+什么是自然语言处理
+定义2：是人工智能和语言学的交叉学科，研究自然语言的自动生成与理解。
+图灵实验
+让机器模仿人来回答某些问题，通过实验和观察来判断机器是否具备智能。
+为人工智能确定了奋斗的目标，并指明了前进的方向
+人工智能自诞生之日起就和自然语言理解结下了不解之缘
+06自然语言处理概论 六
+交叉性学科
+自然语言处理是人工智能的重要分支，也是应用语言学的分支。
+语言学
+计算机科学
+数学
+心理学
+信息论
+中文信息处理
+中文语言处理
+计算语言学
+自然语言理解
+…
+07自然语言处理概论 七
+知识内容
+基础
+应用
+资源
+评测
+基础内容
+音位学
+描述音位的结合规律，说明音位怎样形成语素
+举例：“delete file x”->dilet’#fail#eks
+形态学
+描述语素的结合规律，说明语素怎样形成单词
+举例： dilet’#fail#eks->”delete” “file” “x”
+词汇学
+描述词汇系统的规律，说明单词本身固有的语义特性和语法特性
+举例：
+句法学
+描述单词或词组之间的结构规则，说明单词或词组怎样构成句子
+举例：
+语义学
+描述句子中各个成分之间的语义关系，怎样从构成句子的各个成分推导出整个句子的语义
+举例：
+语用学
+描述与情景有关的情景语义，说明怎样推导出句子具有的与周围话语有关的各种涵义
+举例：delete-file(‘x’)->rm -i x
+应用系统
+常用的中文资源
+北京大学人民日报语料库
+《现代汉语语法信息词典》
+概念层次网络
+知网
+评测内容
+评测方法
+评测量度
+08自然语言处理概论 八
+中文语言处理的发展概况
+从汉字信息处理到汉语信息处理
+汉字信息处理已经基本解决
+汉语信息处理遭遇瓶颈
+从单机信息处理到网络信息处理
+单机信息处理系统
+网络信息处理系统
+汉字排版系统
+词处理
+词是自然语言中最小的有意义的构成单位。
+研究内容
+分词
+词性标注
+名实体识别
+词义消歧等等
+语句处理
+应用
+音字转换
+文本校对
+语音合成
+机器翻译
+篇章处理
+09自然语言处理概论 九
+中文的主要特点
+汉语是大字符集的意音文字
+汉语词与词之间没有空格
+汉语的同音词较多
+汉语没有形态变化
+中文的主要困难
+汉语的语法研究尚未规范化
+汉语的语言学知识的量化与形式化工作滞后
+中文语言处理研究力量分散
+中文语言处理缺乏规范
+科学的评测机制尚未建立
+自然语言处理的主要课题
+基础理论
+概率与统计理论
+统计机器学习理论
+人工智能基本理论
+认知科学理论
+词法分析
+分词
+词性标注
+命名实体识别
+新词发现
+句法分析
+上下文无关文法（概率）
+语义分析
+语义表示
+概念语义网络
+词义消歧
+语用分析
+自然语言生成
+语段分析，对话
+机器翻译
+自然语言处理的主要应用
+哈工大（LTP）开始使用
+开始使用LTP
+本文实验环境为64位win7系统，64位python3.5.2
+哈工大LTP官方主页：
+http://ltp.ai/
+哈工大LTP使用文档：
+https://ltp.readthedocs.io/zh_CN/latest/install.html
+LTP下载
+（1）LTP项目文件ltp-3.3.1-win-x86.zip
+https://github.com/HIT-SCIR/ltp/releases
+（2）LTP模型文件ltp_data_v3.3.1
+http://pan.baidu.com/share/link?shareid=1988562907&uk=2738088569
+文件夹放置
+（1）新建一个项目文件夹：C:\projects\ltp；
+（2）将模型文件解压后的ltp_data文件夹放入项目文件夹；
+（3）将ltp-3.3.1-win-x86.zip解压后的dll、exe文件全部拷入项目文件夹。
+将路径C:\projects\ltp 添加到Windows系统环境变量Path中
+Python使用ltp_test
+LTP提供的模型包括：（在ltp_data文件夹）
+cws.model 分句模型，单文件
+pos.model 词性标注模型，单文件
+ner.model 命名实体识别模型，单文件
+parser.model 依存句法分析模型，单文件
+srl_data/ 语义角色标注模型，多文件（文件夹srl）
+ltp_test是一个整合LTP中各模块的命令行工具。它完成加载模型，依照指定方法执行分析的功能。
+主要参数：线程数、最终步骤、输入文件路径、模型路径、词典路径等。具体可通过CMD运行ltp_test.exe查看。
+python程序简单调用
+test.txt
+#coding=utf-8 txtName = "C:\\projects\\ltp\\file\\test.txt" f = open(txtName,'w'，,encoding='utf-8') f.write('我爱北京天安门!') f.close()
+调用ltp_test
+# -*- coding: utf-8 -*- import os project_path = "C:\\projects\\ltp\\" # 项目文件夹目录 # 可设置（cws、pos、par、ner）_cmdline，但是注意各自能用的参数，没有的参数请置空"" model_exe = "ltp_test" # 又如cws_cmdline threads_num = " --threads "+str(2) # 更改线程数 input_path = " --input "+"C:\\projects\\ltp\\file\\test.txt" # 输入文件 seg_lexicon = "" # 分词用户词典 pos_lexicon = "" # 词性标注用户词典 output_path = "C:\\projects\\ltp\\result\\out.txt" # 输出文件 command = "cd "+project_path+" & "+model_exe+threads_num+input_path+seg_lexicon+" > "+output_path os.system(command)
+运行过程
+out.txt:
+<?xml version="1.0" encoding="utf-8" ?> <xml4nlp> <note sent="y" word="y" pos="y" ne="y" parser="y" wsd="n" srl="y" /> <doc> <para id="0"> <sent id="0" cont="﻿我爱北京天安门!"> <word id="0" cont="﻿" pos="v" ne="O" parent="-1" relate="HED" /> <word id="1" cont="我" pos="r" ne="O" parent="2" relate="SBV" /> <word id="2" cont="爱" pos="v" ne="O" parent="0" relate="COO"> <arg id="0" type="7&#x07;" beg="1" end="1" /> <arg id="1" type="" beg="3" end="4" /> </word> <word id="3" cont="北京" pos="ns" ne="B-Ns" parent="4" relate="ATT" /> <word id="4" cont="天安门" pos="ns" ne="E-Ns" parent="2" relate="VOB" /> <word id="5" cont="!" pos="wp" ne="O" parent="0" relate="WP" /> </sent> </para> </doc> </xml4nlp>
+Python使用xxx_cmdline
+（1）cws_cmdline ：分词命令行
+（2）pos_cmdline ：词性标注命令行
+（3）par_cmdline ：句法分析命令行
+（4）ner_cmdline ：命名实体识别命令行
+pyltp使用
+安装 pyltp
+https://pyltp.readthedocs.io/zh_CN/latest/
+使用 pip 安装
+pip install pyltp
+从源代码编译安装
+$ git clone https://github.com/HIT-SCIR/pyltp $ git submodule init $ git submodule update $ python setup.py install
+注意：有时候装python库的时候，会出现Microsoft visual c++ 14.0 is required的问题，欢迎加我微信（验证：NLP），一起研究解决。
+-下载 LTP 模型文件
+当前模型版本 - 3.4.0
+使用 pyltp 进行分句示例
+# -*- coding: utf-8 -*- from pyltp import SentenceSplitter sents = SentenceSplitter.split('我爱北京天安门？天安门上太阳升！') # 分句 print( '\n'.join(sents))
+结果如下
+我爱北京天安门？ 天安门上太阳升！
+参考文献
+《自然语言处理（哈工大 关毅 64集视频）》（来自互联网） ↩︎
+王晓龙、关毅 《计算机自然语言处理》 清华大学出版社 2005年 ↩︎
+哈工大语言技术平台云官网：http://ltp.ai/ ↩︎

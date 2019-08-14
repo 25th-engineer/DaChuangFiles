@@ -1,0 +1,12 @@
+自然语言处理（NLP Natural Language Processing），是人工智能（AI Artificial Intelligence）的一部分，实现人与计算机之间的有效通信。
+自然语言处理属于计算机科学领域与人工智能领域，其研究使用计算机编程来处理与理解人类的语言。
+常见的自然语言处理有文本相似度匹配、情感分析、机器翻译、聊天机器人等。
+分词
+停用词过滤
+词干提取
+词形还原
+词干提取与词形还原
+词袋模型
+TF-IDF
+Word2Vec
+代码示例：https://github.com/yyhsong/iMLearning/tree/master/NLP

@@ -1,0 +1,8 @@
+首先说明本人最早看的机器学习视频是吴恩达的机器学习后来发现并不适合我。如果你以前了解过一些算法，不妨看看我以下推荐的视频，对于一点都不了解机器学习的小白，那就更要看我推荐的视频了，当然吴恩达的机器学习也很好，但是相信我，看下面我推荐的视频是你学习机器学习更好的选择。
+CalTech: Learning from Data
+台大的林轩田老师是Yaser Abu-Mostafa的学生，他的机器学习基石和机器学习技法可以看做是Learning from Data的中文版。不过我还是推荐Yaser的，毕竟是老师的老师。
+台大: 李宏毅-机器学习，李宏毅-Deep and Structured的机器学习，强烈推荐第一部，个人认为最好的中文ML Tutorial.
+Stanford CS231n: Convolutional Neural Networks for Visual Recognition
+Stanford CS224n: Natural Language Processing with Deep Learning
+UC Berkely CS 294: Deep Reinforcement Learning，UCL:Reinforcement Learning
+UCL的David Silver是AlphaGo的Creator，Sergey Levine是RL界新星，来自大神Pieter Abbeel Lab。

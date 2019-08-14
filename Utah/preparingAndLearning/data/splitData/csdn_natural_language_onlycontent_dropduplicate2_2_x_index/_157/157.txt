@@ -1,0 +1,40 @@
+写在前面
+整理一些质量不错的自然语言处理资源，备忘录性质。
+持续更新~
+Awesome Github
+Awesome Artificial Intelligence (AI)
+Awesome Deep Learning
+Awesome Machine Learning
+awesome-nlp
+NLP-progress
+YSDA Natural Language Processing course
+nlp-datasets
+awesome-chinese-nlp
+Awesome Deep Learning for Natural Language Processing (NLP)
+awesome-sentence-embedding
+Awesome Artificial Intelligence use cases
+Books & Videos
+数学之美: 吴军博士
+自然语言处理综论
+[统计自然语言处理]（宗成庆）
+神经网络与深度学习 : 复旦大学 邱锡鹏
+NLTK with Python 3 for Natural Language Processing
+CS224n: Natural Language Processing with Deep Learning：这个不用说了，斯坦福cs224n
+Introduction to Natural Language Processing：密歇根大学 自然语言处理导论
+Natural Language Processing：哥伦比亚大学 NLP
+Natural Language Understanding and Computational Semantics :NYU
+Interesting blogs
+generalized language model 系列博客
+Google AI Blog
+colah’s blog
+Sebastian Ruder
+Mostafa Dehghani
+Andrej Karpathy blog
+Jay Alammar
+NLP Highlights hosted by Matt Gardner and Waleed Ammar
+natural language processing blog
+Determined22
+我爱自然语言处理
+徐阿衡
+立委NLP频道
+羊肉泡馍与糖蒜

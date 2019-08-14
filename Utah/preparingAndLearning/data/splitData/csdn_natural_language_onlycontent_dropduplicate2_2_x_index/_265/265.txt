@@ -1,0 +1,40 @@
+本博客主要是对网络上的一些关于英文自然语言处理开源工具的博客进行整理、汇总，如果有涉及到您的知识产权等，请联系本人已进行修改，也欢迎广大读者进行指正以及补充。
+本博客将尽量从工具的使用语言、功能等方面进行汇总介绍。
+1 斯坦福大学
+语言：Java
+功能：分词、词性标注、命名实体识别、语法解析、分类。
+介绍：Stanford NLP Group是斯坦福大学自然语言处理的团队，开发了多个NLP工具，官网网址。由于该团队将该开源分为多个子模块，以下将逐一进行介绍。
+1.1 Stanford Word Segmenter
+介绍：采用CRF（条件随机场）算法进行分词，也是基于Java开发的，同时可以支持中文和Arabic，官方要求Java版本1.6以上，推荐内存至少1G。下载地址。
+示例代码：
+[java] view plain copy
+//设置分词器属性。
+Properties props = new Properties();
+//字典文件地址，可以用绝对路径，如d:/data
+props.setProperty("sighanCorporaDict", "data");
+//字典压缩包地址，可以用绝对路径
+props.setProperty("serDictionary","data/dict-chris6.ser.gz");
+//输入文字的编码；
+props.setProperty("inputEncoding", "UTF-8");
+props.setProperty("sighanPostProcessing", "true");
+//初始化分词器，
+CRFClassifier classifier = new CRFClassifier(props);
+//从持久化文件中加载分词器设置；
+classifier.loadClassifierNoExceptions("data/ctb.gz", props);
+// flags must be re-set after data is loaded
+classifier.flags.setProperties(props);
+//分词
+List words = classifier.segmentString("语句内容");
+1.2 Stanford POS Tagger
+介绍：采用Java编写的面向英文、中文、法语、阿拉伯语、德语的命名实体识别工具，下载地址。
+1.3 Stanford Named Entity Recognizer
+介绍：采用条件随机场模型的命名实体工具，下载地址。
+1.4 Stanford Parser
+介绍：进行语法分析的工具，支持英文、中文、阿拉伯文和法语。下载地址。
+1.5 Stanford Classifier
+介绍：采用Java编写的分类器，下载地址。
+最后附上关于中文分词器性能比较的一篇文章(2014.05.27更新)
+1.6 Stanford CoreNLP
+功能：分词、词性标注、命名实体识别、语法分析
+介绍：采用Java编写的面向英文的处理工具，下载网址。
+用户评价：采用它进行英语单词的词性还原，具体应用详见文章《采用Stanford CoreNLP实现英文单词词形还原》。

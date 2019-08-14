@@ -1,0 +1,71 @@
+#对coursera上Andrew Ng老师开的机器学习课程的笔记和心得；
+#注:此笔记是我自己认为本节课里比较重要、难理解或容易忘记的内容并做了些补充，并非是课堂详细笔记和要点；
+#标记为<补充>的是我自己加的内容而非课堂内容，参考文献列于文末。博主能力有限，若有错误，恳请指正；
+#---------------------------------------------------------------------------------#
+#下面这个概念对理解机器学习非常有帮助，但是我发现很多小伙伴不了解这个;
+<补充>机器学习三要素-模型(model)、策略(strategy)、算法(algorithm)；
+模型就是所要学习条件概率分布或决策函数，我们常见的一些方法，像隐马模型(HMM)、SVM模型、决策树模型等等都归于此类；
+策略是指按照什么样的准则来学习或者挑选模型，像课上讲的J(Θ)、损失函数属于此类；
+这里的算法是指学习模型的具体计算方法，即用什么样的方法来求得最优解，像课上讲的梯度下降法，其他如牛顿法、拟牛顿法属于此类；
+#---------------------------------------------------------------------------------#
+#回到课堂上讲的。。。
+当一个方法的预测结果明显有问题时，可采用如下方法:
+1，Get more examples ：helps to fix high variance，Not good if you have high bias；
+2，Smaller set of features: fixes high variance (overfitting)，not good if you have high bias;
+3，Try adding additional features: fixes high bias (because hypothesis is too simple, make hypothesis more specific)
+;
+4，Add polynomial terms: fixes high bias problem;
+5，Decreasing λ : fixes high bias;
+6，Increases λ: fixes high variance;
+#---------------------------------------------------------------------------------#
+模型评估与模型选择
+<补充>用训练集来训练模型，验证集用于模型的选择，测试集用于最终对学习方法的评估；
+<补充>用训练误差和测试误差来评估学习方法:
+训练误差对判断给定的问题是否容易学习是有意义的，但本质上不重要；
+测试误差反映了学习方法对未知数据的预测能力，比较两种学习方法的好坏，不考虑计算速度、空间等因素，测试误差小的方法显然更好；
+#---------------------------------------------------------------------------------#
+诊断: bias vs. variance
+x = degree of polynomial d;
+y = error for both training and cross validation (two lines);
+if d is too small --> this probably corresponds to a high bias problem
+if d is too large --> this probably corresponds to a high variance problem
+For the high bias case, we find both cross validation and training error are high
+Doesn't fit training data well
+Doesn't generalize either
+For high variance, we find the cross validation error is high but training error is low
+So we suffer from overfitting (training is low, cross validation is high)
+i.e. training set fits well
+But generalizes poorly
+#---------------------------------------------------------------------------------#
+学习曲线(learning curve)
+学习曲线可以通过判断模型High bias还是High variance来提高性能；
+，
+suffering from high bias：需要增加模型复杂度，增加数据无效！
+，
+suffering from high variance：增加数据有效！也可尝试增加正则项；
+#---------------------------------------------------------------------------------#
+学习器的几个评价指标:
+精确率(precision)
+= true positives / # predicted positive
+= true positives / (true positive + false positive)；
+召回率(recall)
+= true positives / # actual positives
+= true positive / (true positive + false negative)；
+F1值
+= 2 * (PR/ [P + R])，If P = 0 or R = 0 the Fscore = 0；
+精确率与召回率都高，F1值也会高；
+准确率(accuracy)
+= (true positives + true negative)/ # total dataset
+= (true positives + true negative)/ (true positive + true negative + false positive + false negative)；
+#---------------------------------------------------------------------------------#
+平衡(trade off)精确率和召回率：很多时候我们需要平衡精确率和召回率；
+例子：
+Trained a logistic regression classifier
+Predict 1 if hθ(x) >= 0.5
+Predict 0 if hθ(x) < 0.5
+调整阈值对精确率和召回率的影响见下图：
+#---------------------------------------------------------------------------------#
+参考文献:
+《统计学习方法》，李航著；
+《machine learning》, by Tom Mitchell；
+couresra课程: standford machine learning, by Andrew Ng；

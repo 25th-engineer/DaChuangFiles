@@ -1,0 +1,93 @@
+spark 2 . 0.2 机器学习 库 MLlib 指南 MLlib 是 
+Spark 的 机器学习 ML 库 旨在 简化 机器 学习 的 
+工程 实践 工作 并 方便 扩展到 更大 规模 MLlib 由 
+一些 通用 的 学习 算法 和 工具 组成 包括 分类 
+回归 聚 类 协同 过滤 降 维 等 同时 还 
+包括 底层 的 优化 原语 和 高层 的 管道 API 
+MLllib 目前 分为 两个 代码 包 spark . mllib   
+包含 基于 RDD 的 原始 算法 API spark . ml 
+  则 提供 了 基于 DataFrames   高 层次 的 
+API 可以 用 来 构建 机器学习 管道 我们 推荐 您 
+使用 spark . ml 因为 基于 DataFrames 的 API 更加 
+的 通用 而且 灵活 不过 我们 也 会 继续 支持 
+spark . mllib 包 用户 可以 放心 使用 spark . 
+mllib 还会 持续 地 增加 新的 功能 不过 开发 者 
+需要 注意 如果 新的 算法 能够 适用于 机器学习 管道 的 
+概念 就 应该 将其 放到 spark . ml 包中/nr 如 
+特征提取 器 和 转换器 下面 的 列表 列出 了 两个 
+包的/nr 主要 功能 spark . mllib 数据类型 算法 以及 工具 
+Data types 数据类型 Basic statistics 基础 统计 summary statistics 摘要 
+统计 correlations 相关性 stratified sampling 分层抽样 hypothesis testing 假设检验 streaming 
+significance testingrandom data generation 随机 数据 生成 Kernel density estimation 
+  核 密度估计 Classification and regression 分类 和 回归 linear 
+models SVMs logistic regression linear regression 线性 模型 SVM 逻辑 
+回归 线性 回归 naive Bayes 朴素 贝叶斯 decision trees 决策树 
+ensembles of trees Random Forests and Gradient Boosted Trees 树 
+套装 随机 森林 和 梯度 提升 决策树 isotonic regression 保 
+序 回归 Collaborative filtering 协同 过滤 alternating least squares ALS 
+交替 最小二乘 ALS Clustering 聚 类 k means K 均值 
+Gaussian mixture 高斯 混合 power iteration clustering PIC 幂 迭代 
+聚 类 PIC latent Dirichlet allocation LDA 隐含 狄利克雷 分配 
+bisecting k means 平分 K 均值 streaming k means 流式 
+K 均值 Dimensionality reduction 降 维 singular value decomposition SVD 
+奇异 值 分解 SVD principal component analysis PCA 主 成分 
+分析 PCA Feature extraction and transformation 特征 抽取 和 转换 
+Frequent pattern mining 频繁 模式 挖掘 FP growth FP 增长 
+association rules 关联 规则 PrefixSpan PrefixSpan Evaluation metrics 评价 指标 
+PMML model export PMML 模型 导出 Optimization developer 优化 开发者 
+stochastic gradient descent 随机 梯度 下降 limited memory BFGS L 
+BFGS 有限 的 记忆 BFGS L BFGS spark . ml 
+机器学习 管道 高级 APIOverview estimators transformers and pipelines 概览 评估器 
+转换器 和 管道 Extracting transforming and selecting features 抽取 转换 
+和 选取 特征 Classification and regression 分类 和 回归 Clustering 
+聚 类 Advanced topics 高级 主题 虽然 还 有些 降 
+维 技术 在 spark . ml 中 尚 不可用 不过 
+用户 可以 将 spark . mllib 中的 的 相关 实现 
+和 spark . ml 中的 算法 无缝 地 结合 起来 
+依赖/v 项/n MLlib/w 使用/v 的/uj 线性代数/l 代码/n 包是/nr Breeze/w 而 
+Breeze 又 依赖于   netlib java   优化 的 数值 
+处理 如果 在 运行 时 环境 中 这些 原生 库 
+不可用 你 将会 收到 一条 警告 而后 spark 会 使用 
+纯 JVM 实现 来 替代 之 由于 许可 限制 的 
+原因 spark 在 默认 情况下 不会 包含 netlib Java 的 
+原生 代理 库 如果 需要 配置 netlib java / Breeze 
+使用 其 系统优化 库 你 需要 添加 依赖 项 com 
+. github . fommil . netlib all 1 . 1.2 
+或者 在 编译 时 加上 参数 Pnetlib lgpl 然后再 看一看 
+  netlib java   相应 的 安装 文档 要 使用 
+MLlib 的 Python 接口 你 需要 安装 NumPy   1.4 
+以上 的 版本 迁移 指南 MLlib 目前 还 在 积极 
+的 开发 当中 所以 标记 为 Experimental / DeveloperApi 的 
+接口 可能 在 未来 发生变化 下面 的 迁移 指南 说明 
+了 版本 升级 后的/nr 变化 从/p 1.5/mx 升级到/i 1.6/mx 从/p 
+1.5/mx 到/v 1.6/mx spark . mllib 和 spark . ml 
+包中并/nr 没有 重大 的 API 变化 不过 有 一些 行为 
+不再 支持 或 者 发生 变化 已经 废弃 SPARK 11358 
+spark . mllib . clustering . KMeans 的 runs 参数 
+已经 废弃 SPARK 10592 spark . ml . classification . 
+L o g i s t i c R e 
+g r e s s i o n M o 
+d e l 和 spark . ml . regresion . 
+L i n e a r R e g r 
+e s s i o n M o d e 
+l 中 weights 字段 改名 为 coefficients 这一 变动 有助于 
+消除歧义 可以 和 输入 给 算法 的 实例 行 权重 
+weights 区分 开来 行为 有变 SPARK 7770   spark . 
+mllib . tree . G r a d i e 
+n t B o o s t e d T 
+r e e s   validationTol   的 语义 在 
+1.6中 有变 原先 其 代表 误差 变化 绝对值 的 一个 
+阈值 而 现在 它 类似于 GradientDescent 中的 convergenceTol 对于 较大 
+的 误差 使用 相对误差 相对于 上一次 而 对于 较小 的 
+误差 0.01 使用 绝对误差 SPARK 11069   spark . ml 
+. feature . RegexTokenizer 以前 在 分词 之前 不会 讲 
+字符串 转 小写 现在 的 实现 是 默认 会将 字符串 
+转 小写 不过 有 选项 可以 设为 不 转 这/r 
+中/f 实现/v 和To/nr k/w e/w n/w i/w z/w e/w r/w 
+t/w r/w a/w n/w s/w f/w o/w r/w m/w e/w 
+r/w 的/uj 行为/v 相/v 匹配/v Spark 老 版本 以前 版本 
+的 迁移 指南 归档 在 这里 on this page 要 
+了解 更多 有关 系统优化 的 好处 和 背景 资料 可以 
+看看 Sam Halliday 关于 ScalaX 的 演讲 High Performance Linear 
+Algebra in Scala 转载自 并发 编 程网 – ifeve . 
+com 本文 链接 地址   Spark 机器学习 库 MLlib 指南 

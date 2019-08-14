@@ -1,0 +1,426 @@
+国内外自然语言处理(NLP)研究组
+*博客地址 http://blog.csdn.net/wangxinginnlp/article/details/44890553
+*排名不分先后。收集不全，欢迎留言完善。
+中国大陆地区：
+微软亚洲研究院自然语言计算组 Natural Language Computing (NLC) Group
+https://www.microsoft.com/en-us/research/group/natural-language-computing/
+清华大学自然语言处理与社会人文计算实验室
+http://nlp.csai.tsinghua.edu.cn/site2/
+清华大学智能技术与系统国家重点实验室信息检索组
+http://www.thuir.cn/cms/
+北京大学计算语言学教育部重点实验室
+http://www.klcl.pku.edu.cn/
+北京大学计算机科学技术研究所语言计算与互联网挖掘研究室
+http://www.icst.pku.edu.cn/lcwm/index.php?title=%E9%A6%96%E9%A1%B5
+哈工大社会计算与信息检索研究中心
+http://ir.hit.edu.cn/
+哈工大机器智能与翻译研究室
+http://www.contem.org/
+哈尔滨工业大学智能技术与自然语言处理实验室
+http://www.insun.hit.edu.cn/home/
+中科院计算所自然语言处理研究组
+http://nlp.ict.ac.cn/index_zh.php
+中科院自动化研究所语音语言技术研究组
+http://nlpr-web.ia.ac.cn/cip/introduction.htm
+南京大学自然语言处理研究组
+http://nlp.nju.edu.cn/homepage/
+复旦大学自然语言处理研究组
+http://nlp.fudan.edu.cn/
+东北大学自然语言处理实验室
+http://www.nlplab.com/
+厦门大学智能科学与技术系自然语言处理实验室
+http://nlp.xmu.edu.cn/
+苏州大学自然语言处理实验室
+http://nlp.suda.edu.cn/
+苏州大学人类语言技术研究所
+http://hlt.suda.edu.cn/
+郑州大学自然语言处理实验室
+http://nlp.zzu.edu.cn/
+中国 香港/澳门/台湾 地区：
+Huawei Noah’s Ark Lab
+http://www.noahlab.com.hk
+Human Language Technology Center  at Hong Kong University of Science & Technology
+http://www.cse.ust.hk/~hltc/
+Natural Language Processing & Portuguese-Chinese Machine Translation Laboratory at University of Macau
+http://nlp2ct.cis.umac.mo/
+Natural Language Processing Lab at National Taiwan University
+http://nlg.csie.ntu.edu.tw/
+新加坡 / 日本 / 以色列 / 澳大利亚：
+NUS Natural Language Processing Group
+http://www.comp.nus.edu.sg/~nlp/index.html
+NLP at Singapore University of Technology and Design
+http://people.sutd.edu.sg/~yue_zhang/
+NLP and Big Data Research Group at Singapore University of Technology and Design
+http://www.statnlp.org/
+Advanced Translation Technology Laboratory at National Institute of Information and Communications Technology (NICT)
+http://att-astrec.nict.go.jp/en/
+Natural Language Processing Lab at Bar-Ilan University
+http://u.cs.biu.ac.il/~nlp/
+The University of Melbourne NLP Group
+http://hum.csse.unimelb.edu.au/nlp-group/
+北美：
+The Stanford Natural Language Processing Group
+http://nlp.stanford.edu/
+The Berkeley NLP Group
+http://nlp.cs.berkeley.edu/index.shtml
+Natural Language Processing research at Columbia University
+http://www1.cs.columbia.edu/nlp/index.cgi
+The Language Technologies Institute (LTI) at Carnegie Mellon University
+http://www.lti.cs.cmu.edu/
+Graham Neubig's lab at the Language Technologies Instititute ofCarnegie Mellon University
+http://www.cs.cmu.edu/~neulab/
+Algorithms for Computational Linguistics at City University of New York
+http://acl.cs.qc.edu/
+Algorithms for Computational Linguistics at Oregon State University
+http://web.engr.oregonstate.edu/~huanlian/
+RPI Blender Lab
+http://nlp.cs.rpi.edu/
+The Natural Language Group at USC/ISI
+http://nlg.isi.edu/
+Natural Language Processing Group at University of Notre Dame
+http://nlp.nd.edu/
+Artificial Intelligence Research Group at Harvard
+http://www.eecs.harvard.edu/ai/
+The Harvard natural-language processing group
+http://nlp.seas.harvard.edu/
+Natural Language Processing - Research at Google
+https://research.google.com/pubs/NaturalLanguageProcessing.html
+The Redmond-based Natural Language Processing group
+http://research.microsoft.com/en-us/groups/nlp/
+Computational Linguistics and Information Processing at Maryland
+https://wiki.umiacs.umd.edu/clip/index.php/Main_Page
+Language and Speech Processing at Johns Hopkins University
+http://www.clsp.jhu.edu/about-clsp/
+Human Language Technology Center of Excellence at Johns Hopkins University
+http://hltcoe.jhu.edu/
+Machine Translation Group at The Johns Hopkins University
+http://www.statmt.org/jhu/
+NLP @ University of Illinois at Urbana-Champaign
+http://nlp.cs.illinois.edu/
+UIC Natural Language Processing Laboratory
+http://nlp.cs.uic.edu/
+Human Language Technology Research Institute at The University of Texas at Dallas
+http://www.hlt.utdallas.edu/
+Natural Language Processing Group at MIT CSAIL
+http://nlp.csail.mit.edu/
+Human Language Technology Research Institute at University of Texas at Dallas
+http://www.hlt.utdallas.edu/
+Natural Language Processing Group at Texas A&M University
+http://nlp.cs.tamu.edu/
+Cornell NLP group
+https://confluence.cornell.edu/display/NLP/Home/
+Natural Language Processing group at University Of Washington
+https://www.cs.washington.edu/research/nlp
+Natural Language Processing Research Group at University of Utah
+https://www.cs.utah.edu/nlp/
+Natural Language Processing and Information Retrieval group at University of Pittsburgh
+http://www.isp.pitt.edu/research/nlp-info-retrieval-group
+Brown Laboratory for Linguistic Information Processing (BLLIP)
+http://bllip.cs.brown.edu/
+欧洲：
+Natural Language and Information Processing Research Group at University of Cambridge
+http://www.cl.cam.ac.uk/research/nl/
+The Computational Linguistics Group at Oxford University
+http://www.clg.ox.ac.uk/
+Human Language Technology and Pattern Recognition Group at the RWTH Aachen
+https://www-i6.informatik.rwth-aachen.de/
+Statistical Machine Translation Group at the University of Edinburgh
+http://www.statmt.org/ued/?n=Public.HomePage
+Natural Language Processing Research Group at The University of Sheffield
+http://nlp.shef.ac.uk/
+Speech Research Group at University of Cambridge
+http://mi.eng.cam.ac.uk/Main/Speech/
+Statistical Machine Translation Group at the University of Cambridge
+http://divf.eng.cam.ac.uk/smt
+Computational Linguistics group at Uppsala University
+http://www.lingfil.uu.se/forskning/datorlingvistik/?languageId=1
+The Center for Information and Language Processing at University of Munich
+http://www.cis.uni-muenchen.de/ueber_uns/
+National Centre for Language Technology at Dublin City University
+http://www.nclt.dcu.ie/
+The National Centre for Text Mining (NaCTeM) at University of Manchester
+http://nactem.ac.uk/
+Institute of Formal and Applied Linguistics at Charles University
+http://ufal.mff.cuni.cz/
+自然语言处理相关书籍及其他资源[ZZ]
+已有 4905 次阅读 2010-1-27 22:51 |个人分类:研究方法|系统分类:科研笔记|关键词:自然语言处理，NLP|文章来源:转载
+From: http://www.52nlp.cn/resources
+这里开始提供一些52nlp所收集的自然语言处理相关书籍及其他资源的下载，陆续整理中!如有不妥，我会做删除处理！
+特别推荐：
+1、HMM学习最佳范例全文文档
+2、无约束最优化全文文档
+一、书籍：
+1、《自然语言处理综论》英文版第二版
+2、《统计自然语言处理基础》英文版
+3、《用Python进行自然语言处理》，NLTK配套书
+4、《Learning Python第三版》，Python入门经典书籍，详细而不厌其烦
+5、《自然语言处理中的模式识别》
+6、《EM算法及其扩展》
+7、《统计学习基础》
+8、《自然语言理解》英文版（似乎只有前9章）
+9、《Fundamentals of Speech Recognition》，质量不太好，不过第6章关于HMM的部分比较详细，作者之一便是Lawrence Rabiner；
+10、概率统计经典入门书：《概率论及其应用》（英文版，威廉*费勒著）
+第一卷　　第二卷　　DjVuLibre阅读器（阅读前两卷书需要）
+11、一本利用Perl和Prolog进行自然语言处理的介绍书籍：《An Introduction to Language Processing with Perl and Prolog》
+12、国外机器学习书籍之：
+1) “Programming Collective Intelligence“，中文译名《集体智慧编程》，机器学习&数据挖掘领域”近年出的入门好书，培养兴趣是最重要的一环，一上来看大部头很容易被吓走的”
+2) “Machine Learning“,机器学习领域无可争议的经典书籍，下载完毕将后缀改为pdf即可。豆瓣评论 by 王宁）：老书，牛人。现在看来内容并不算深，很多章节有点到为止的感觉，但是很适合新手（当然，不能”新”到连算法和概率都不知道）入门。比如决策树部分就很精彩，并且这几年没有特别大的进展，所以并不过时。另外，这本书算是对97年前数十年机器学习工作的大综述，参考文献列表极有价值。国内有翻译和影印版，不知道绝版否。
+3) “Introduction to Machine Learning”
+13、国外数据挖掘书籍之：
+1) “Data.Mining.Concepts.and.Techniques.2nd“，数据挖掘经典书籍 作者 : Jiawei Han/Micheline Kamber 出版社 : Morgan Kaufmann 评语 : 华裔科学家写的书，相当深入浅出。
+2) Data Mining:Practical Machine Learning Tools and Techniques
+14、国外模式识别书籍之：
+1）“Pattern Recognition”
+2）“Pattern Recongnition Technologies and Applications”
+3）“An Introduction to Pattern Recognition”
+4）“Introduction to Statistical Pattern Recognition”
+5）“Statistical Pattern Recognition 2nd Edition”
+6）“Supervised and Unsupervised Pattern Recognition”
+7）“Support Vector Machines for Pattern Classification”
+15、国外人工智能书籍之：
+1）“Paradigms of Artificial Intelligence Programming: Case Studies in Common LISP”
+二、课件：
+1、哈工大刘挺老师的“统计自然语言处理”课件；
+2、哈工大刘秉权老师的“自然语言处理”课件；
+3、中科院计算所刘群老师的“计算语言学讲义“课件；
+4、中科院自动化所宗成庆老师的“自然语言理解”课件；
+5、北大常宝宝老师的“计算语言学”课件；
+6、北大詹卫东老师的“中文信息处理基础”的课件及相关代码；
+7、MIT Regina Barzilay教授的“自然语言处理”课件，52nlp上翻译了前5章；
+8、MIT大牛Michael Collins的“Machine Learning Approaches for Natural Language Processing(面向自然语言处理的机器学习方法)”课件；
+9、Michael Collins的“Machine Learning （机器学习）”课件；
+10、SMT牛人Philipp Koehn “Advanced Natural Language Processing（高级自然语言处理）”课件；
+11、Philipp Koehn “Empirical Methods in Natural Language Processing”课件；
+12、Philipp Koehn“Machine Translation（机器翻译）”课件；
+三、语言资源和开源工具：
+1、Brown语料库：
+a) XML格式的brown语料库，带词性标注；
+b) 普通文本格式的brown语料库，带词性标注；
+c) 合并并去除空行、行首空格，用于词性标注训练：browntest.zip
+2、NLTK官方提供的语料库资源列表
+3、OpenNLP上的开源自然语言处理工具列表
+4、斯坦福大学自然语言处理组维护的“统计自然语言处理及基于语料库的计算语言学资源列表”
+5、LDC上免费的中文信息处理资源
+6、中文分词相关工具：
+1）Java版本的MMSEG：mmseg-v0.3.zip，作者为solol，详情可参见：《中文分词入门之篇外》
+四、文献：
+1、ACL-IJCNLP 2009论文全集：
+a) 大会论文Full Paper第一卷
+b) 大会论文Full Paper第二卷
+c) 大会论文Short Paper合集
+d) ACL09之EMNLP-2009合集
+e) ACL09 所有workshop论文合集
+国内外自然语言处理(NLP)研究组
+标签： 自然语言处理NLP
+2015-04-05 20:26 9658人阅读 评论(4) 收藏 举报
+分类：
+NLP（12）
+版权声明：本文为博主原创文章，未经博主允许不得转载。
+*博客地址 http://blog.csdn.net/wangxinginnlp/article/details/44890553
+*排名不分先后。收集不全，欢迎留言完善。
+中国大陆地区：
+微软亚洲研究院自然语言计算组 Natural Language Computing (NLC) Group
+https://www.microsoft.com/en-us/research/group/natural-language-computing/
+清华大学自然语言处理与社会人文计算实验室
+http://nlp.csai.tsinghua.edu.cn/site2/
+清华大学智能技术与系统国家重点实验室信息检索组
+http://www.thuir.cn/cms/
+北京大学计算语言学教育部重点实验室
+http://www.klcl.pku.edu.cn/
+北京大学计算机科学技术研究所语言计算与互联网挖掘研究室
+http://www.icst.pku.edu.cn/lcwm/index.php?title=%E9%A6%96%E9%A1%B5
+哈工大社会计算与信息检索研究中心
+http://ir.hit.edu.cn/
+哈工大机器智能与翻译研究室
+http://www.contem.org/
+哈尔滨工业大学智能技术与自然语言处理实验室
+http://www.insun.hit.edu.cn/home/
+中科院计算所自然语言处理研究组
+http://nlp.ict.ac.cn/index_zh.php
+中科院自动化研究所语音语言技术研究组
+http://nlpr-web.ia.ac.cn/cip/introduction.htm
+南京大学自然语言处理研究组
+http://nlp.nju.edu.cn/homepage/
+复旦大学自然语言处理研究组
+http://nlp.fudan.edu.cn/
+东北大学自然语言处理实验室
+http://www.nlplab.com/
+厦门大学智能科学与技术系自然语言处理实验室
+http://nlp.xmu.edu.cn/
+苏州大学自然语言处理实验室
+http://nlp.suda.edu.cn/
+苏州大学人类语言技术研究所
+http://hlt.suda.edu.cn/
+郑州大学自然语言处理实验室
+http://nlp.zzu.edu.cn/
+中国 香港/澳门/台湾 地区：
+Huawei Noah’s Ark Lab
+http://www.noahlab.com.hk
+Human Language Technology Center  at Hong Kong University of Science & Technology
+http://www.cse.ust.hk/~hltc/
+Natural Language Processing & Portuguese-Chinese Machine Translation Laboratory at University of Macau
+http://nlp2ct.cis.umac.mo/
+Natural Language Processing Lab at National Taiwan University
+http://nlg.csie.ntu.edu.tw/
+新加坡 / 日本 / 以色列 / 澳大利亚：
+NUS Natural Language Processing Group
+http://www.comp.nus.edu.sg/~nlp/index.html
+NLP at Singapore University of Technology and Design
+http://people.sutd.edu.sg/~yue_zhang/
+NLP and Big Data Research Group at Singapore University of Technology and Design
+http://www.statnlp.org/
+Advanced Translation Technology Laboratory at National Institute of Information and Communications Technology (NICT)
+http://att-astrec.nict.go.jp/en/
+Natural Language Processing Lab at Bar-Ilan University
+http://u.cs.biu.ac.il/~nlp/
+The University of Melbourne NLP Group
+http://hum.csse.unimelb.edu.au/nlp-group/
+北美：
+The Stanford Natural Language Processing Group
+http://nlp.stanford.edu/
+The Berkeley NLP Group
+http://nlp.cs.berkeley.edu/index.shtml
+Natural Language Processing research at Columbia University
+http://www1.cs.columbia.edu/nlp/index.cgi
+The Language Technologies Institute (LTI) at Carnegie Mellon University
+http://www.lti.cs.cmu.edu/
+Graham Neubig's lab at the Language Technologies Instititute ofCarnegie Mellon University
+http://www.cs.cmu.edu/~neulab/
+Algorithms for Computational Linguistics at City University of New York
+http://acl.cs.qc.edu/
+Algorithms for Computational Linguistics at Oregon State University
+http://web.engr.oregonstate.edu/~huanlian/
+RPI Blender Lab
+http://nlp.cs.rpi.edu/
+The Natural Language Group at USC/ISI
+http://nlg.isi.edu/
+Natural Language Processing Group at University of Notre Dame
+http://nlp.nd.edu/
+Artificial Intelligence Research Group at Harvard
+http://www.eecs.harvard.edu/ai/
+The Harvard natural-language processing group
+http://nlp.seas.harvard.edu/
+Natural Language Processing - Research at Google
+https://research.google.com/pubs/NaturalLanguageProcessing.html
+The Redmond-based Natural Language Processing group
+http://research.microsoft.com/en-us/groups/nlp/
+Computational Linguistics and Information Processing at Maryland
+https://wiki.umiacs.umd.edu/clip/index.php/Main_Page
+Language and Speech Processing at Johns Hopkins University
+http://www.clsp.jhu.edu/about-clsp/
+Human Language Technology Center of Excellence at Johns Hopkins University
+http://hltcoe.jhu.edu/
+Machine Translation Group at The Johns Hopkins University
+http://www.statmt.org/jhu/
+NLP @ University of Illinois at Urbana-Champaign
+http://nlp.cs.illinois.edu/
+UIC Natural Language Processing Laboratory
+http://nlp.cs.uic.edu/
+Human Language Technology Research Institute at The University of Texas at Dallas
+http://www.hlt.utdallas.edu/
+Natural Language Processing Group at MIT CSAIL
+http://nlp.csail.mit.edu/
+Human Language Technology Research Institute at University of Texas at Dallas
+http://www.hlt.utdallas.edu/
+Natural Language Processing Group at Texas A&M University
+http://nlp.cs.tamu.edu/
+Cornell NLP group
+https://confluence.cornell.edu/display/NLP/Home/
+Natural Language Processing group at University Of Washington
+https://www.cs.washington.edu/research/nlp
+Natural Language Processing Research Group at University of Utah
+https://www.cs.utah.edu/nlp/
+Natural Language Processing and Information Retrieval group at University of Pittsburgh
+http://www.isp.pitt.edu/research/nlp-info-retrieval-group
+Brown Laboratory for Linguistic Information Processing (BLLIP)
+http://bllip.cs.brown.edu/
+欧洲：
+Natural Language and Information Processing Research Group at University of Cambridge
+http://www.cl.cam.ac.uk/research/nl/
+The Computational Linguistics Group at Oxford University
+http://www.clg.ox.ac.uk/
+Human Language Technology and Pattern Recognition Group at the RWTH Aachen
+https://www-i6.informatik.rwth-aachen.de/
+Statistical Machine Translation Group at the University of Edinburgh
+http://www.statmt.org/ued/?n=Public.HomePage
+Natural Language Processing Research Group at The University of Sheffield
+http://nlp.shef.ac.uk/
+Speech Research Group at University of Cambridge
+http://mi.eng.cam.ac.uk/Main/Speech/
+Statistical Machine Translation Group at the University of Cambridge
+http://divf.eng.cam.ac.uk/smt
+Computational Linguistics group at Uppsala University
+http://www.lingfil.uu.se/forskning/datorlingvistik/?languageId=1
+The Center for Information and Language Processing at University of Munich
+http://www.cis.uni-muenchen.de/ueber_uns/
+National Centre for Language Technology at Dublin City University
+http://www.nclt.dcu.ie/
+The National Centre for Text Mining (NaCTeM) at University of Manchester
+http://nactem.ac.uk/
+Institute of Formal and Applied Linguistics at Charles University
+http://ufal.mff.cuni.cz/
+自然语言处理（NLP）网上资源整理
+http://blog.csdn.net/xuh5156/article/details/7437475
+最近把一些在网上见到的自然语言处理的资源整理了一下，包括论文列表、软件资源和一些实验室主页、个人主页等，希望能对NLP研究者有所帮助，由于个人视野有限，目前只整理了这些，以后会持续更新。在此也感谢这些资源的提供者和维护者。
+转载请标明出处（http://blog.csdn.net/xuh5156/article/details/7437475）
+论文、博客
+1.       Google在研究博客中总结了他们2011年的精彩论文《Excellent Papers for 2011》，包括社会网络、机器学习、人机交互、信息检索、自然语言处理、多媒体、系统等各个领域，很精彩的论文集锦。http://googleresearch.blogspot.com/2012/03/excellent-papers-for-2011.html
+或者zibuyu的BLOG http://blog.sina.com.cn/s/blog_574a437f0100y6zy.html
+2.       Best paper awards for AAAI,ACL, CHI, CIKM, FOCS, ICML, IJCAI, KDD, OSDI, SIGIR, SIGMOD, SOSP, STOC, UIST,VLDB, WWWhttp://jeffhuang.com/best_paper_awards.html
+3.       IBM R&D Journal 刚发布了关于Watson的专刊《This is Watson》。总共17篇论文。http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=6177717&punumber=5288520
+4.       Web Data Mining作者刘兵维护的一个专题资源：Opinion Mining,Sentiment Analysis, and Opinion Spam Detection 。http://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
+5.       Statistical Machine Translationhttp://www.statmt.org/
+Statistical Machine TranslationTutorial Readinghttp://cseweb.ucsd.edu/~dkauchak/mt-tutorial/
+Philipp Koehn主页http://homepages.inf.ed.ac.uk/pkoehn/
+6.       Profile Hidden Markov ModelResourceshttp://webdocs.cs.ualberta.ca/~colinc/cmput606/
+Hidden Markov Model (HMM) Toolbox forMatlabhttp://www.cs.ubc.ca/~murphyk/Software/HMM/hmm.html
+7.       CRF http://www.inference.phy.cam.ac.uk/hmw26/crf/
+Conditional Random Field (CRF)Toolbox for Matlabhttp://www.cs.ubc.ca/~murphyk/Software/CRF/crf.html
+FlexCRFs: Flexible Conditional RandomFieldshttp://flexcrfs.sourceforge.net/
+8.       Transfer Learning 包含papers、talks、software等http://www.cse.ust.hk/TL/index.html
+9.       Topic Model，Topic Modeling Bibliographyhttp://www.cs.princeton.edu/~mimno/topics.html
+David M. Blei的主页http://www.cs.princeton.edu/~blei/publications.htmlMatlab Topic Modeling Toolbox 1.4http://psiexp.ss.uci.edu/research/programs_data/toolbox.htm
+LDA GIBBS Java源码http://arbylon.net/resources.html
+GibbsLDA++: A C/C++ Implementation ofLatent Dirichlet Allocationhttp://gibbslda.sourceforge.net/
+10.   科学网—推荐系统的循序进阶读物（从入门到精通） - 张子柯的博文http://blog.sciencenet.cn/home.php?mod=space&uid=210641&do=blog&id=508634
+11.   SVM入门http://www.blogjava.net/zhenandaci/archive/2009/02/13/254519.html
+12.   斯坦福大学自然语言处理实验室整理的NLP资源http://www-nlp.stanford.edu/links/statnlp.html
+13.   Stanford University InformationRetrieval Resourceshttp://nlp.stanford.edu/IR-book/information-retrieval.html
+14.   Software Tools for NLP http://www-a2k.is.tokushima-u.ac.jp/member/kita/NLP/nlp_tools.html
+实验室主页
+1.       The Stanford NLP Group http://nlp.stanford.edu
+2.       The Berkeley Natural LanguageProcessing Grouphttp://nlp.cs.berkeley.edu
+3.       University of Tokyo TsujiiLaboratory http://www.nactem.ac.uk/tsujii/publications.cgi?lang=en
+4.       Korea University NLP http://nlp.korea.ac.kr/ http://nlp.korea.ac.kr/new/
+5.       中国科学院计算技术研究所自然语言处理研究组http://nlp.ict.ac.cn/new/
+6.       清华大学自然语言处理组 http://nlp.csai.tsinghua.edu.cn/site2/
+7.       HIT-SCIR http://ir.hit.edu.cn/
+8.       苏州大学自然语言处理实验室http://nlp.suda.edu.cn/
+补充两个：
+计算所刘群老师实验室维护的一个网站，有一些比较经典的资源
+http://www.nlp.org.cn/
+张华平老师的站点，上面能找到一些有价值的中文NLP资源：
+http://www.nlpir.org/
+个人主页
+1.       David M. Blei， (Princeton) LDA，http://www.cs.princeton.edu/~blei/publications.html
+2.       Noah Smith, (CMU),以自然语言处理、机器学习为基础研究computationalsocial science。http://www.cs.cmu.edu/~nasmith/
+3.       Philipp Koehn (University ofEdinburgh)http://homepages.inf.ed.ac.uk/pkoehn/
+4.       Dekang Lin (University ofAlberta)http://webdocs.cs.ualberta.ca/~lindek/
+5.       Michael Collins(ColumbiaUniversity)http://www.cs.columbia.edu/~mcollins/
+6.       Dekai WU(HKUST) http://www.cs.ust.hk/~dekai/
+7.       Pascale Fung (HKUST) http://www.ee.ust.hk/~pascale/
+8.       Alessandro Moschitti (Universityof Trento)http://disi.unitn.it/moschitti/
+9.       Xiaojin (Jerry) Zhu (Universityof Wisconsin-Madison)http://pages.cs.wisc.edu/~jerryzhu/
+10.   Eugene Charniak (BrownUniversity)http://www.cs.brown.edu/~ec/
+https://www.google.com.hk/#q=%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86&newwindow=1&safe=strict&start=60
+一些较大的NLP数据下载，包括Yelp评论下载，google词向量下载等。传一个百度云，给从官方渠道下载不动的人。
+Yelp acadamic data, 官方地址Yelp Dataset Challenge, round 9. 用的时候不需要区分round9，解压开就行。里面有 review，user，business的json文件。baiduyun。大1小1.78G。
+Glove 词向量，大小1.75G。glove.42B.300d.zip
+Glove.6b.zip 822M
+glove.840B.300d.zip  2.03G
+GoogleNews-vectors-negative300.bin.gz 1.53G
+GoogleNews-vectors-negative300.bin 3.39G
+glove.twitter.27B.zip 1.41G
+1-billion-word-language-modeling-benchmark-r13output.tar.gz  1.67G
+enwiki9.zip 307M
+enwiki-latest-pages-articles.xml.bz2 504M

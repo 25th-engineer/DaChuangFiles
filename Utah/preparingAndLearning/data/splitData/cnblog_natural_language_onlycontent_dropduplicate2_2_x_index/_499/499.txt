@@ -1,0 +1,186 @@
+序号
+会议名称
+会议介绍
+代表领域
+12
+ICCV: IEEE International Conference on Computer Vision
+领域顶级国际会议，录取率20%左右，2年一次，中国大陆每年论文数不超过10篇
+计算机视觉，模式识别，多媒体计算
+13
+CVPR: IEEE Conf on Comp Vision and Pattern Recognition
+领域顶级国际会议，录取率25%左右，每年一次，中国大陆每年论文数不超过20篇
+模式识别，计算机视觉，多媒体计算
+14
+ECCV: European Conference on Computer Vision
+领域顶级国际会议，录取率25%左右，2年一次，中国大陆每年论文数不超过20篇
+模式识别，计算机视觉，多媒体计算
+16
+ICML: International Conference on Machine Learning
+领域顶级国际会议，录取率25%左右，2年一次，目前完全国内论文很少
+机器学习，模式识别
+17
+NIPS: Neural Information Processing Systems
+领域顶级国际会议，录取率20%左右，每年一次，目前完全国内论文极少（不超过5篇）
+神经计算，机器学习
+18
+ACM MM: ACM Multimedia Conference
+领域顶级国际会议，全文的录取率极低，但Poster比较容易
+多媒体技术，数据压缩
+20
+IEEE ICME: International Conference on Multimedia and Expo
+多媒体领域重要国际会议，一年一次
+多媒体技术
+24
+ACL: The Association for Computational Linguistics
+国际计算语言学会年会，是本领域最权威的国际学术会议之一，每年举办一次
+计算语言学，自然语言处理
+25
+COLING: International Conference on Computational Linguistics
+计算语言学会议，也是本领域最权威的国际学术会议之一，两年一次
+计算语言学，自然语言处理
+27
+IJCNLP: International Joint Conference on Natural Language Processing
+自然语言处理亚洲联盟主办的国际会议，是自然语言处理领域亚洲区域最有影响的学术会议，基本是每年举办一次
+自然语言处理
+129
+ACL: The Association for Computational Linguistics
+计算语言学/自然语言处理方面最好的会议, ACL (Association of Computational Linguistics) 主办, 每年开。
+人工智能 计算语言学
+130
+ACM SIGIR: The ACM Conference on Research and Development in Information Retrieval
+信息检索方面最好的会议, ACM 主办, 每年开。19％左右
+信息检索技术
+131
+ACM SIGKDD: The ACM Conference on Knowledge Discovery in Databases and Data Mining
+数据挖掘方面最好的会议, ACM 主办, 每年开。18％左右
+132
+WWW: The ACM International World Wide Web Conference
+应用和媒体领域顶级国际会议
+万维网
+133
+ACM SIGMOD: ACM SIGMOD Conf on Management of Data
+数据库领域顶级国际
+数据管理
+134
+CIKM: The ACM Conference on Information and Knowledge Management
+数据库领域知名国际会议
+数据管理
+135
+COLING: International Conference on Computational Linguistics
+计算语言学知名国际会议
+计算语言学
+136
+ICML: International Conference on Machine Learning
+领域顶级国际会议，录取率25%左右，2年一次，目前完全国内论文很少
+机器学习，模式识别
+137
+IEEE ICDM: International Conference on Data Mining
+数据挖掘领域顶级国际会议
+138
+IJCAI: International Joint Conference on Artificial Intelligence
+人工智能领域顶级国际会议，论文接受率18％左右
+人工智能
+139
+VLDB: The ACM International Conference on Very Large Data Bases
+数据库领域顶级国际
+数据库
+142
+AAAI: American Association for Artificial Intelligence
+美国人工智能学会AAAI的年会，使该领域的顶级会议
+人工智能
+145
+ACM SIGIR: The ACM Conference on Research and Development in Information Retrieval
+信息检索领域的重要会议
+信息检索
+148
+ACM SIGMOD: ACM SIGMOD Conf on Management of Data
+数据库与数据管理最顶级的学术会议，数据管理的主要发展都在这个会上有描述。
+数据管理
+151
+CIKM: The ACM Conference on Information and Knowledge Management
+信息检索领域的会议，录用率为15%
+信息检索
+159
+ICML: International Conference on Machine Learning
+机器学习领域中的顶级会议
+机器学习
+162
+IEEE ICDM: International Conference on Data Mining
+数据挖掘领域的著名会议，率用率为14%。
+数据挖掘
+167
+IEEE SPIRE: The IEEE International Symposium on String Processing and Information Retrieval
+字符串处理与信息检索的年会，字符串匹配的主要进展都可以在这个会议上找到。
+字符串处理信息检索
+168
+IJCAI: International Joint Conference on AI
+人工智能领域的顶级会议。
+人工智能
+176
+PAKDD: Pacific-Asia Conference on Knowledge Discovery and Data Mining
+178
+PKDD: Conference on Principles and Practice of Knowledge Discovery in Databases
+数据挖掘领域的重要会议，录用率为14%。
+数据挖掘
+180
+SDM: SIAM International Conference on Data Mining
+数据挖掘领域的重要会议，录用率为14%
+数据挖据
+184
+VLDB: The ACM International Conference on Very Large Data Bases
+数据管理
+185
+WWW: The ACM International World Wide Web Conference
+ACM旗下关于互联网方面的重要会议，从Web服务器到互联网语义等研究问题一一包含其中。15%录用率。
+Internet
+186
+RAID International Symposium on Recent Advances in Intrusion Detection
+数据库顶级国际会议
+187
+IJCAI: International Joint Conference on Artificial Intelligence
+人工智能顶级国际会议
+人工智能
+188
+VLDB: The ACM International Conference on Very Large Data Bases
+数据库顶级国际会议
+数据库
+189
+ICML: International Conference on Machine Learning
+机器学习顶级国际会议
+机器学习
+190
+PRICAI: Pacific Rim International Conference on Artificial Intelligence
+亚太人工智能国际会议
+人工智能
+191
+IFIP ICIIP: IFIP International Conference on Intelligent Information Processing
+IFIP智能信息处理国际会议
+智能信息处理
+192
+NIPS: Neural Information Processing Systems
+神经信息处理领域顶级国际会议
+神经计算，机器学习
+232
+WWW: The ACM International World Wide Web Conference
+Internet领域顶级国际会议
+Internet
+233
+International Semantic Web Conference
+Semantic Web领域顶级会议，录用率17%
+Semantic Web
+234
+ACM SIGMOD: ACM SIGMOD Conf on Management of Data
+ACM的旗舰会议之一，也是数据库领域顶级学术会议，内容侧重于数据管理。
+数据管理
+235
+ACM PODS Conference
+ACM的旗舰会议之一，也是数据库领域顶级学术会议，内容侧重于数据管理基本理论。
+数据管理
+236
+VLDB: The ACM International Conference on Very Large Data Bases
+数据库顶级国际会议
+数据管理
+237
+IEEE ICDE - International Conference on Data Engineering
+数据库顶级国际会议
+数据管理

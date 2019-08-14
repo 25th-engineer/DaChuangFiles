@@ -1,0 +1,407 @@
+声明：本博客整理自博友@zhouyong计算广告与机器学习－技术共享平台，尊重原创，欢迎感兴趣的博友查看原文。
+写在前面
+记得在《Pattern Recognition And Machine Learning》一书中的开头有讲到：“概率论、决策论、信息论3个重要工具贯穿着《PRML》整本书，虽然看起来令人生畏…”。确实如此，其实这3大理论在机器学习的每一种技法中，或多或少都会出现其身影（不局限在概率模型）。
+《PRML》书中原话：”This chapter also provides a self-contained introduction to three important tools that will be used throughout the book, namely probability theory, decision theory, and information theory. Although these might sound like daunting topics, they are in fact straightforward, and a clear understanding of them is essential if machine learning techniques are to be used to best effect in practical applications.”
+怀念好学生时代：那些年－书本啃过的印记
+本章主要讨论《信息论》(Information Theory)中一个非常重要的概念：信息熵，以及概率模型的一个学习准则：最大熵理论。
+基本概念
+熵与信息熵
+如何理解熵的含义？
+自然界的事物，如果任其自身发展，最终都会达到尽可能的平衡或互补状态。举例：
+一盒火柴，（人为或外力）有序地将其摆放在一个小盒子里，如果不小心火柴盒打翻了，火柴会“散乱”地洒在地板上。此时火柴虽然很乱，但这是它自身发展的结果。
+上面描述的其实是自然界的熵。在自然界中，熵可以这样表述：
+熵是描述事物无序性的参数，熵越大则无序性越强。
+那么，在信息论中，我们用熵表示一个随机变量的不确定性，那么如何量化信息的不确定性呢？
+信息熵公式定义
+设一次随机事件（用随机变量\(X\)表示），它可能会有\(x_1, x_2, x_3, \cdots ,x_m\)共\(m\)个不同的结果，每个结果出现的概率分别为\(p_1, p_2, p_3, \cdots, p_m\)，那么\(X\)的不确定度，即信息熵为：
+$$
+H(X) =\sum_{i=1}^{m} p_i \cdot \log_{2} \frac{1}{p_i} = - \sum_{i=1}^{m} p_i \cdot \log_{2} p_i \qquad (ml.1.2.1)
+$$
+①. 信息熵的物理意义：
+一个事件（用随机变量\(X\)表示）可能的变化越多，那么它携带的信息量就越大（与变量具体取值无关，只跟值的种类多少以及发生概率有关）。
+②. 系统熵举例：
+对于一个分类系统来说，假设类别\(C\)可能的取值为\(c_1, c_2, \cdots, c_k\)（\(k\)是类别总数），每一个类别出现的概率分别是\(p(c_1),p(c_2), \cdots, p(c_k)\)。此时，分类系统的熵可以表示为:
+$$
+H(C) = - \sum_{i=1}^{k} p(c_i) \cdot \log_{2} p(c_i) \qquad (n.ml.1.2.1)
+$$
+分类系统的作用就是输出一个特征向量（文本特征、ID特征、属性特征等）属于哪个类别的值，而这个值可能是\(c_1, c_2, \cdots, c_k\)，因此这个值所携带的信息量就是公式\((n.ml.1.2.1)\)这么多。
+条件熵
+设\(X,Y\)为两个随机变量，在\(X\)发生的前提下，\(Y\)发生所新带来的熵 定义为\(Y\)的条件熵（Conditional Entropy），用\(H(Y|X)\)表示，计算公式如下：
+$$
+H(Y|X) = - \sum_{x_i,y_j}^{m,n} p(x_i,y_j) \cdot log_2 p(y_j|x_i) \qquad(ml.1.2.2)
+$$
+其物理含义是当变量\(X\)已知时，变量\(Y\)的平均不确定性是多少。公式\((ml.1.2.2)\)推导如下：
+假设变量\(X\)取值有\(m\)个，那么\(H(Y|X=x_i)\)是指变量\(X\)被固定为值\(x_i\)时的条件熵；\(H(Y|X)\)时指变量\(X\)被固定时的条件熵。那么二者之间的关系时：
+$$
+\begin{align}
+H(Y|X) & = p(x_1) \cdot H(Y|X=x_1) + \cdots + p(x_m) \cdot H(Y|X=x_m) \\
+& = \sum_{i=1}^{m} p(x_i) \cdot H(Y|X=x_i)
+\end{align} \quad(n.ml.1.2.2)
+$$
+根据公式\((n.ml.1.2.2)\)继续推导\(Y\)的条件熵：
+$$
+\begin{align}
+H(Y|X) & = \sum_{i=1}^{m} p(x_i) \cdot H(Y|X=x_i) \\
+& = -\sum_{i=1}^{m} p(x_i) \cdot \left( \sum_{j=i}^{n} p(y_j|x_i) \cdot log_2 p(y_j|x_i) \right) \\
+& = -\sum_{i=1}^{m} \sum_{j=1}^{n} p(y_j,x_i) \cdot log_2 p(y_j|x_i) \\
+& = - \sum_{x_i,y_j}^{m,n} p(x_i,y_j) \cdot log_2 p(y_j|x_i)
+\end{align} \qquad\qquad (n.ml.1.2.3)
+$$
+注：条件熵里面是联合概率分布累加，公式\((n.ml.1.2.3)\)推导过程可参考《第3章：深入浅出ML之Based-Tree Classification Family》中3.1.2节条件熵部分。
+联合熵
+一个随机变量的不确定性可以用熵来表示，这一概念可以直接推广到多个随机变量。
+联合熵计算（Joint Entropy）
+设\(X,Y\)为两个随机变量，\(p(x_i,y_j)\)表示其联合概率，用\(H(XY)\)表示联合熵，计算公式为：
+$$
+H(XY) = - \sum_{i=1}^{m} \sum_{j=1}^{n} p(x_i,y_j) \cdot log_{2} p(x_i,y_j) \qquad(ml.1.2.3)
+$$
+条件熵、联合熵、熵之间的关系：
+$$
+H(Y|X) = H(X,Y) - H(X) \qquad\qquad(n.ml.1.2.4)
+$$
+公式推导如下：
+$$
+\begin{align}
+H(X,Y) - H(X) & = - \sum_{i=1}^{m} \sum_{j=1}^{n} p(x_i,y_j) \cdot log_2 p(x_i,y_j) + \sum_{i=1}^{m} \underline{p(x_i)} \cdot log_2 p(x_i) \\
+& = - \sum_{i=1}^{m} \sum_{j=1}^{n} p(x_i,y_j) \cdot log_2 p(x_i,y_j) + \sum_{i=1}^{m} \underline{ \left( \sum_{j=1}^{n} p(x_i,y_j) \right) } \cdot log_2 p(x_i) \\
+& = - \sum_{i=1}^{m} \sum_{j=1}^{n} p(x_i,y_j) \cdot \left(log_2 p(x_i,y_j) - log_2 p(x_i) \right) \\
+& = - \sum_{i=1}^{m} \sum_{j=1}^{n} p(x_i,y_j) \cdot log_2 p(y_j|x_i) \\
+& = H(Y|X) \qquad\qquad\qquad\qquad\qquad\qquad (n.ml.1.2.5)
+\end{align}
+$$
+联合熵特点
+\(H(XY) \geq H(X)\)
+联合系统的熵不小于子系统的熵，即增加一个新系统不会减少不确定性。
+\(H(XY) \leq H(X)+H(Y)\)
+子系统可加性
+\(H(XY) \geq 0\): 非负性。
+相对熵、KL距离
+相对熵概念
+相对熵，又称为交叉熵或KL距离，是Kullback-Leibler散度（Kullback-Leibler Divergence）的简称。它主要用于衡量相同事件空间里的两个概率分布的差异。简单介绍其背景：
+根据香农的信息论，给定一个字符集的概率分布，我们可以设计一种编码，使得表示该字符集组成的（每个）字符串平均需要的比特数最少（比如Huffman编码）。假设字符集是\(X\)，对\(x \in X\)，其出现概率为\(P(x)\)，那么其最优编码平均需要的比特数（即每一个字符需要的比特数）等于这个字符集的熵（公式见\((ml.1.2.1)\)），即最优编码时，字符\(x\)的编码长度等于\(log_2{\frac{1}{P(x)}}\)。
+在同样的字符集上，假设存在另一个概率分布\(Q(x)\)。如果根据\(Q(x)\)分布进行编码，那么表示这些字符就会比理想情况多用一些比特数。而KL距离就是用来衡量这种情况下平均每个字符多用的比特数，可用来度量两个分布的距离。
+KL距离计算公式
+这里用\(D(P||Q)\)表示KL距离，计算公式如下：
+$$
+D(P||Q) = \sum_{x \in X} P(x) \cdot log_2 \frac{P(x)}{Q(x)} \qquad\qquad(ml.1.2.4)
+$$
+从公式\((ml.1.2.4)\)可以看出，当两个概率分布完全相同时，KL距离为0。概率分布\(P(x)\)的信息熵如公式\((ml.1.2.1)\)所示，说的是如果按照概率分布\(P(x)\)编码时，描述这个随机事件至少需要多少比特编码。
+因此，KL距离的物理意义可以这样表达：
+在相同的事件空间里，概率分布为\(P(x)\)的事件空间，若用概率分布\(Q(x)\)编码时，平均每个基本事件（符号）编码长度增加了多少比特数。
+通过信息熵可知，不存在其它比按照随机事件本身概率分布更好的编码方式了，所以\(D(P||Q)\)始终是大于等于0的。
+虽然KL被称为距离，但是其不满足距离定义的3个条件：1) 非负性；2) 对称性(不满足)；3) 三角不等式(不满足)。
+KL距离示例
+假设有一个字符发射器，随机发出0和1两种字符，真实发出的概率分布为\(A\)。现在通过样本观察，得到概率分布\(B\)和\(C\)。各个分布的具体情况如下：
+(1). \(A(0) = 1/2, A(1) = 1/2\);
+(2). \(B(0) = 1/4, B(1) = 3/4\);
+(3). \(C(0) = 1/8, C(1) = 7/8\);
+那么可以计算出相对熵如下：
+\(D(A||B) = 1/2 \cdot log_2 (\frac{1/2}{1/4}) + 1/2 \cdot log_2 (\frac{1/2}{3/4}) = 1/2 \cdot log_2 (4/3)\)
+\(D(A||C) = 1/2 \cdot log_2 (\frac{1/2}{1/8}) + 1/2 \cdot log_2 (\frac{1/2}{7/8}) = 1/2 \cdot log_2 (16/7)\)
+可以看到，用\(B和C\)两种方式进行编码，其结果都是的平均编码长度增加了。同时也能发现，按照概率分布\(B\)进行编码，要比按照\(C\)进行编码，平均每个符号增加的比特数目要少。从分布熵也可以看出，实际上\(B\)要比\(C\)更接近实际分布。
+如果实际分布为\(C\)，而用\(A\)分布来编码这个字符发射器的每个字符，同样可以得到：
+\(D(C||A) = 1/8 \cdot log_2 (\frac{1/8}{1/2}) + 7/8 \cdot log_2 (\frac{7/8}{1/2}) = 7/8 \log_2{7} - 2 > 0\)
+从示例中，我们可以得出结论：对于一个信息源进行编码，按照其本身的概率分布进行编码，每个字符的平均比特数最少。 这也是信息熵的概念，用于衡量信息源本身的不确定性。
+此外可以看出，KL距离不满足对称性，即\(D(P||Q)\)不一定等于\(D(Q||P)\)。
+相对熵应用场景
+推荐系统－物品之间相似度
+在使用LDA(Latent Dirichlet Allocation)计算物品之间的内容相似度时，我们可以先计算出物品在Topic上的分布，然后利用两个物品的Topic（话题）分布计算物品的相似度。比如，如果两个物品的Topic分布相似（处在同一个事件空间），则认为两个物品具有较高的相似度，反之则认为两个物品的相似度较低。
+这种Topic分布的相似度可以利用KL散度来计算：
+$$
+D(P||Q) = \sum_{i \in X} p(x_i) \cdot log_2 {\frac{p(x_i)}{q(x_i)}} \qquad(n.ml.1.2.6)
+$$
+其中\(p\)和\(q\)是两个分布，\(X\)为话题集合，\(x_i\)表示第\(i\)个话题。KL散度越大说明分布的相似度越低。
+互信息
+如果说相对熵（KL）距离衡量的是相同事件空间里的两个事件的相似度大小，那么，互信息通常用来衡量不同事件空间里的两个信息（随机事件、变量）的相关性大小。
+互信息计算公式
+设\(X\)和\(Y\)为两个离散随机变量，事件\(Y=y_j\)的出现对于事件\(X=x_i\)的出现的互信息量\(I(x_i,y_j)\)定义为：
+$$
+I(x_i;y_j) = log_2 {\frac{p(x_i|y_j)}{p(x_i)}} = log_2 {\frac {p(x_i,y_j)}{p(x_i)p(y_j)}} \qquad(ml.1.2.5)
+$$
+对于事件\(X\)和\(Y\)来说，它们之间的互信息用\(I(X;Y)\)表示，公式为：
+$$
+I(X;Y) = \sum_{i=1}^{m} \sum_{j=1}^{n} p(x_i,y_j) \cdot log_2 {\frac{p(x_i,y_j)}{p(x_i)p(y_j)}} \qquad(ml.1.2.6)
+$$
+公式解释：
+互信息就是随机事件\(X\)的不确定性（即熵\(H(X)\)），以及在给定随机变量\(Y\)条件下的不确定性（即条件熵\(H(X|Y)\)）之间的差异，即
+$$
+I(X;Y) = H(X) - H(X|Y) \qquad(n.ml.1.2.7)
+$$
+互信息与决策树中的信息增益等价: 互信息 \(\Longleftrightarrow\) 信息增益.
+所谓两个事件相关性的量化度量，就是在了解了其中一个事件\(Y\)的前提下，对消除另一个事件\(X\)不确定性所提供的信息量。
+互信息与其它熵之间的关系
+\(H(X|Y) = H(X,Y) - H(Y)\)
+\(I(X;Y) = H(X) + H(Y) - H(X,Y)\)
+\(I(X;Y) = H(X) - H(X|Y)\)
+\(I(X;X) = H(X)\)
+互信息应用场景
+机器学习－<feature，label>之间相关性
+计算随机事件之间（不同的事件空间）的相关性。
+最大熵模型（Maximum Entropy Model）
+最大熵原理
+在介绍最大熵模型之前，我们先了解一下最大熵原理，因为最大熵原理是选择最优概率模型的一个准则。
+最大熵原理
+在概率模型空间集合中，在满足给定约束条件的前提下，使信息熵最大化得到的概率模型，就是最优的模型。
+理解最大熵原理通常用约束条件来确定概率模型的集合。
+假设离散随机变量\(X\)的概率分布是\(P(X)\)，其信息熵可用公式\((ml.1.2.1)\) 表示，并且熵满足以下不等式：
+$$
+0 \leq H(X) \leq log_2 |X| \qquad\quad(ml.1.2.7)
+$$
+其中，\(|X|\)是\(X\)的取值个数，当且仅当\(X\)的分布是均匀分布时右边的等号才成立。也就是说，当\(X\)服从均匀分布时，熵最大。
+根据最大熵原理学习概率模型坚持的原则：首先必须满足已有的事实，即约束条件；但对不确定的部分不做任何假设，坚持无偏原则。最大熵原理通过熵的最大化来表示等可能性。
+最大熵原理举例（本示例来自《统计学习方法》第6章－李航老师）
+问题：假设随机变量\(X\)有5个取值\(\{A,B,C,D,E\}\), 要估计各个取值的概率\(P(A),P(B),P(C),P(D),P(E)\)。
+首先这些概率只满足以下约束条件：
+$$
+P(A) + P(B) + P(C) + P(D) + P(E) = 1 \qquad(exp.ml.1.2.1)
+$$
+满足这个约束条件的概率分布有无穷多个，但是在没有任何其它信息的情况下，根据最大熵原理和无偏原则，选择熵最大时对应的概率分布，即各个取值概率相等是一个不错的概率估计方法。即有：
+$$
+P(A) = P(B) = P(C) = P(D) = P(E) = \frac{1}{5} \qquad(exp.ml.1.2.2)
+$$
+等概率坚持了最大熵的无偏原则，因为没有更多信息，此种判断是合理的。
+现在从先验知识中得到一些信息：\(A和B\)的概率值之和满足以下条件：
+$$
+P(A) + P(B) = \frac{3}{10} \qquad(exp.ml.1.2.3)
+$$
+同样的，满足公式\((exp.ml.1.2.1)和(exp.ml.1.2.3)\)两个约束条件的概率分布仍有无穷多个。在缺少其它信息的情况下，坚持无偏原则，得到：
+$$
+\begin{align}
+P(A) = P(B) = \frac{3}{20} \qquad (exp.ml.1.2.4) \\
+P(C) = P(D) = P(E) = \frac{7}{30} \qquad (exp.ml.1.2.5)
+\end{align}
+$$
+…
+还可以继续按照满足约束条件下的求等概率的方法估计概率分布。以上概率模型学习的方法正是遵循了最大熵原理。
+最大熵模型定义
+最大熵原理是统计学习的一般原理，将它应用到分类问题中，即得到最大熵模型。
+最大熵模型引入
+训练数据集：\(D=\{(x^{(1)},y^{(1)}), (x^{(2)},y^{(2)}), \cdots, (x^{(N)},y^{(N)})\}\)，学习的目标是：用最大熵原理选择最优的分类模型。
+假设分类模型是一个条件概率分布\(P(y|x), x \in X \subseteq R^n\)表示输入（特征向量），\(y \in Y\), \(X\)和\(Y\)分别是输入（特征向量）和输出（标签）的集合。这个模型表示的是对于给定的输入\(x\)，以条件概率\(P(y|x)\)计算得到标签\(y\)。
+首先，考虑模型应满足的条件
+给定训练集，可以计算得到经验联合分布\(P(x,y)\)和边缘分布\(P(x)\)的经验分布，分别以\(\tilde{P}(x,y)\)和\(\tilde{P}(x)\)表示，即：
+$$
+\begin{align}
+\tilde{P}(x=\tilde{x}, y = \tilde{y}) &= \frac{freq(x=\tilde{x}, y = \tilde{y})}{N} \qquad(1)\\
+\tilde{P}(x=\tilde{x}) &= \frac{freq(x=\tilde{x})}{N} \qquad\qquad\;(2)
+\end{align} \qquad(ml.1.2.8)
+$$
+其中，\(freq(x=\tilde{x}, y=\tilde{y})\)表示训练集中样本\((\tilde{x}, \tilde{y})\)出现的频数，\(freq(\tilde{x})\)表示训练集中输入\(\tilde{x}\)（向量）出现的频数，\(N\)表示训练集容量。
+特征函数（Feature Function）
+定义特征函数 \(f(x,y)\)用于描述输入\(x\)和输出\(y\)之间满足的某一种事实：
+$$
+f(x,y) = \begin{cases}
+\displaystyle 1, &x与y满足某一事实; \\
+0, & 其它
+\end{cases} \qquad\qquad(ml.1.2.9)
+$$
+这是一个二值函数（也可以是任意实值函数），当\(x\)与\(y\)满足这个事实时取值为1，否则为0.
+①. 特征函数\(f(x,y)\)关于经验分布\(\tilde{P}(x,y)\)的期望值，用\(E_{\tilde{P}}(f)\)表示如下：
+$$
+E_{\tilde{P}} = \sum_{x,y} \tilde{P}(x,y) \cdot f(x,y) \qquad\qquad(n.ml.1.2.8)
+$$
+②. 特征函数\(f(x,y)\)关于模型\(P(y|x)\)与经验分布\(\tilde{P}(x)\)的期望值，用\(E_P(f)\)表示如下：
+$$
+E_P(f) = \sum_{x,y} \tilde{P}(x) \cdot P(y|x) \cdot f(x,y) \qquad(n.ml.1.2.9)
+$$
+③. 如果模型能够获取训练数据中足够的信息，那么就可以假设这两个期望值相等。即：
+$$
+\sum_{x,y} \tilde{P}(x,y) \cdot f(x,y) ＝ \sum_{x,y} \tilde{P}(x) \cdot P(y|x) \cdot f(x,y) \qquad(n.ml.1.2.10)
+$$
+注：公式\((n.ml.1.2.10)\)是频率学派－点估计求参数套路，之所以假设相等，是因为有\(p(x,y)=p(y|x) \cdot p(x)\)
+我们将公式\((n.ml.1.2.10)\)作为概率模型学习的约束条件。假如有\(n\)个特征函数\(f_{i} (x,y), i=1,2, \cdots, n\)，那么就有\(n\)个约束条件。
+最大熵模型定义
+假设满足所有约束条件的模型集合为：
+$$
+\mathcal{C} = \{P \in \mathcal{P} | E_{P}(f_i) = E_{\tilde{P}}(f_i), i=1,2, \cdots, n\} \qquad (ml.1.2.10)
+$$
+定义在条件概率分布\(P(y|x)\)上的条件熵为：
+$$
+H(P) = - \sum_{x,y} \tilde{P}(x) \cdot P(y|x) \cdot \log {P(y|x)} \qquad (ml.1.2.11)
+$$
+模型集合\(\mathcal{C}\)中条件熵\(H(P)\)最大的模型称为最大熵模型。
+注：最大熵模型中\(\log\)是指以\(e\)为底的对数，与信息熵公式中以2为底不同。本文如无特殊说明，\(\log\)均指自然对数。
+最大熵模型参数学习
+最大熵模型学习过程即为求解最大熵模型的过程，最大熵模型的学习问题可以表示为带有约束的最优化问题。
+示例：学习《最大熵原理》示例中的最大熵模型
+为了简便，这里分别以\(y_1,y_2,y_3,y_4,y_5\)表示\(A,B,C,D和E\)，最大熵模型学习的最优化问题可以表示为：
+$$
+\begin{align}
+& min \quad -H(P) = \sum_{i=1}^{5} P(y_i) \cdot log{P(y_i)} \\
+& s.t. \quad P(y_1) + P(y_2) = \tilde{P}(y_1) + \tilde{P}(y_2) = \frac{3}{10} \\
+& \qquad \sum_{i=1}^{5} P(y_i) = \sum_{i=1}^{5} \tilde{P}(y_i) = 1
+\end{align} \qquad\quad (exp.ml.1.2.5)
+$$
+提示：这里面没有特征\(x\)和特征函数\(f_i(x,y)\)的约束。
+将带约束优化问题转化为无约束优化问题：引入拉格朗日乘子\(w_0,w_1\)，定义朗格朗日函数：
+$$
+L(P,w) = \sum_{i=1}^{5} P(y_i) log{P(y_i)} + w_1 \left( P(y_1) + P(y_2) - \frac{3}{10} \right) + w_0 \left(\sum_{i=1}^{5} P(y_i) - 1 \right) \;(exp.ml.1.2.6)
+$$
+根据拉格朗日对偶性，可以通过求解对偶最优化问题得到原始最优化问题的解，所以求解（对偶问题）：\(\max_{w} \min_{P} L(P,w) \)。求解过程如下：
+首先求解\(L(P,w)\)关于\(P\)的极小化问题。为此，固定\(w_0,w_1\)，求偏导数：
+$$
+\begin{align}
+& \frac{\partial L(P,w)}{\partial P(y_1)} = 1 + log_2 P(y_1) + w_1 + w_0 \\
+& \frac{\partial L(P,w)}{\partial P(y_2)} = 1 + log_2 P(y_2) + w_1 + w_0 \\
+& \frac{\partial L(P,w)}{\partial P(y_3)} = 1 + log_2 P(y_3) + w_0 \\
+& \frac{\partial L(P,w)}{\partial P(y_4)} = 1 + log_2 P(y_4) + w_0 \\
+& \frac{\partial L(P,w)}{\partial P(y_5)} = 1 + log_2 P(y_5) + w_0 \\
+\end{align}
+$$
+令各偏导数等于0，可解得：
+$$
+\begin{align}
+& P(y_1) = P(y_2) = e^{-w_1 - w_0 - 1} \\
+& P(y_3) = P(y_4) = P(y_5) = e^{-w_0 -1}
+\end{align}
+$$
+于是，极小化结果为：
+$$
+\min_{P} \; L(P,w) = L(P_w, w) = -2 e^{-w_1 - w_0 - 1} -3 e^{-w_0 - 1} - \frac{3}{10} w_1 - w_0
+$$
+下面再求解对偶函数\(L(P_w,w)\)关于\(w\)的极大化问题：
+$$
+\max_{w} \; L(P_w, w) = -2 e^{-w_1 - w_0 - 1} -3 e^{-w_0 - 1} - \frac{3}{10} w_1 - w_0 \qquad(exp.ml.1.2.7)
+$$
+分别求\(L(P_w,w)\)对\(w_0,w_1\)的偏导数，并令其为0，得到：
+$$
+\begin{align}
+& e^{-w_1 - w_0 - 1} = \frac{3}{20} \\
+& e^{-w_0 - 1} = \frac{7}{30}
+\end{align}
+$$
+于是得到所求的概率分布为：
+$$
+\begin{align}
+& P(y_1) = P(y_2) = \frac{3}{20} \\
+& P(y_3) = P(y_4) = P(y_5) = \frac{7}{30}
+\end{align}
+$$
+最大熵模型学习一般流程
+对于给定的训练\(D=\{(x^{(1)},y^{(1)}), (x^{(2)},y^{(2)}), \cdots, (x^{(N)},y^{(N)})\}\)以及特征函数\(f_i(x,y),i=1,2,\cdots,n\)，最大熵模型的学习等价于带约束的最优化问题：
+$$
+\begin{align}
+& \max_{P \in \mathcal{C}} \quad H(P) = -\sum_{x,y} \tilde{P}(x) \cdot P(y|x) \cdot log P(y|x) \\
+& s.t. \quad E_P(f_i) = E_{\tilde{P}} (f_i), \; i=1,2,\cdots,n \\
+& \qquad \sum_{y} P(y|x) = 1
+\end{align} \qquad\quad(ml.1.2.12)
+$$
+按照最优化问题的习惯思路，将求最大值问题改写为求等价的最小值问题，即：
+$$
+\begin{align}
+& \min_{P \in \mathcal{C}} \quad -H(P) = \sum_{x,y} \tilde{P}(x) \cdot P(y|x) \cdot log P(y|x) \\
+& s.t. \quad E_P(f_i) - E_{\tilde{P}} (f_i) = 0, \; i=1,2,\cdots,n \\
+& \qquad \sum_{y} P(y|x) = 1
+\end{align} \qquad\quad(ml.1.2.13)
+$$
+求解约束最优化问题\((ml.1.2.13)\)所得出的解，就是最大熵模型学习的解。
+将约束最优化的原始问题转换为无约束最优化的对偶问题。具体推导过程如下：
+首先，引入拉格朗日乘子\(w_0,w_1,\cdots,w_n\)，定义拉格朗日函数\(L(P,w)\)
+表达式为：
+$$
+\begin{align}
+L(P,w) & = -H(P) + w_0 \cdot \left( 1- \sum_{y} P(y|x) \right) + \sum_{i=1}^{n} w_i \cdot \left( E_{\tilde{P}}(f_i) - E_P (f_i) \right) \\
+& = \sum_{x,y} \tilde{P}(x) \cdot P(y|x) \cdot log {P(y|x)} + w_0 \cdot \left( 1- \sum_{y} P(y|x) \right) \\
+& \qquad + \sum_{i=1}^{n} w_i \cdot \left(\sum_{x,y} \tilde{P}(x,y) \cdot f_i(x,y) - \sum_{x.y} \tilde{P}(x) \cdot P(y|x) \cdot f_i(x,y) \right)
+\end{align} \quad(ml.1.2.14)
+$$
+最优化的原始问题是：
+$$
+\min_{P \in \mathcal{C}} \max_{w} L(P,w) \qquad\qquad(ml.1.2.15)
+$$
+对偶问题是：
+$$
+\max_{w} \min_{P \in \mathcal{C}} L(P,w) \qquad\qquad(ml.1.2.16)
+$$
+通俗的讲，由_最小最大问题_转化为_最大最小问题_。
+由于最大熵模型对应的朗格朗日函数\(L(P,w)\)是参数\(P\)的凸函数，所以原始问题\((ml.1.2.15)\)的解与对偶问题\((ml.1.2.16)\)的解是等价的。因此，可以通过求解对偶问题来得到原始问题的解。
+其次，求对偶问题\((ml.1.2.16)\)内部的极小化问题\(\min_{P \in \mathcal{C}} L(P,w)\)
+\(\min_{P \in \mathcal{C}} L(P,w)\)是乘子\(w\)的函数，将其记作：
+$$
+\Psi(w) = \min_{P \in \mathcal{C}} L(P,w) = L(P_w, w) \qquad(ml.1.2.17)
+$$
+\(\Psi(w)\)称为对偶函数（\(Latex: \Psi\) = \Psi）。将其解记作：
+$$
+P_w = arg \min_{P \in \mathcal{C}} L(P,w) = P_w (y|x) \qquad(n.ml.1.2.11)
+$$
+具体地，固定\(w_i\)，求\(L(P,w)\)对\(P(y|x)\)的偏导数：
+$$
+\begin{align}
+\frac{\partial L(P,w)} {\partial P(y|x)} & = \sum_{x,y} \tilde{P}(x) \cdot \left(logP(y|x) + 1 \right) - \sum_{y} w_0 - \sum_{x,y} \left( \tilde{P}(x) \cdot \sum_{i=1}^{n} w_i \cdot f_i(x,y) \right) \\
+& = \sum_{x,y} \tilde{P}(x) \cdot \left(logP(y|x) + 1 - w_0 - \sum_{i=1}^{n} w_i \cdot f_i(x,y) \right) \qquad(n.ml.1.2.12)
+\end{align}
+$$
+令偏导数等于0，在\(\tilde{P}(x) > 0\)的情况下，求得：
+$$
+P(y|x) = \exp {\left( \sum_{i=1}^{n} w_i \cdot f_i(x,y) + w_0 - 1 \right)} = \frac {\exp \left(\sum_{i=1}^{n} w_i \cdot f_i(x,y) \right)} {\exp(1-w_0)} \quad(n.ml.1.2.13)
+$$
+由于 \(\sum_{y} P(y|x) = 1\)，可得：
+$$
+P_w (y|x) = \frac{1}{Z_w(x)} \exp \left(\sum_{i=1}^{n} w_i \cdot f_i(x,y) \right) \qquad\quad(n.ml.1.2.14)
+$$
+其中，
+$$
+Z_w(x) = \sum_{y} \exp \left(\sum_{i=1}^{n} w_i \cdot f_i(x,y) \right) \qquad\quad(n.ml.1.2.15)
+$$
+\(Z_w(x)\)称为归一化因子；\(f_i(x,y)\)是特征函数；\(w_i\)是第\(i\)个参数（特征权值）。公式\((n.ml.1.2.14)\)、\((n.ml.1.2.15)\) 表示的模型\(P_w = P_w(y|x)\)就是最大熵模型（\(w\)是最大熵模型中的参数向量）。
+最后，求解对偶问题外部的极大化问题
+对偶问题外部极大化表达式：
+$$
+\max_{w} \Psi(w) \qquad\qquad(ml.1.2.18)
+$$
+将其解记作\(w^@\)，即: \(w^@ = arg \max_{w} \Psi(w)\)。
+也就是说，可以应用最优化算法求对偶函数\(\Psi(w)\)的极大化，得到\(w^@\)，用其表示\(P^@ = P_{w^@} = P_{w^@}(y|x)\)是学习到的最优模型（最大熵模型）。
+最大熵模型的学习归结为对偶函数\(\Psi(w)\)的极大化。
+对偶函数极大化与极大似然估计等价
+从最大熵模型的学习过程可以看出，最大熵模型是由\(n.ml.1.2.14\)和\(n.ml.1.2.15\)表示的条件概率分布。下面证明：对偶函数的极大化等价于最大熵模型的极大似然估计。
+对偶函数极大化＝极大似然估计
+已知训练数据的经验概率分布\(\tilde{P}(x,y)\)，条件概率分布分布\(P(y|x)\)的对数似然函数表示为：
+$$
+L_{\tilde{P}}(P_w) = \log \prod_{x,y} P(y|x)^{\tilde{P}(x,y)} = \sum_{x,y} \tilde{P}(x,y) \cdot \log P(y|x) \qquad(ml.1.2.19)
+$$
+当条件概率分布\(P(y|x)\)是最大熵模型(公式\((n.ml.1.2.14)和n(.ml.1.2.15)\))时，对数似然函数\(L_{\tilde{P}}(P_w)\)为：
+$$
+\begin{align}
+L_{\tilde{P}}(P_w) & = \sum_{x,y} \tilde{P}(x,y) \cdot \log P(y|x) \\
+& = \sum_{x,y} \left (\tilde{P}(x,y) \cdot \sum_{i=1}^{n} w_i f_i(x,y)\right) - \sum_{x,y} \tilde{P}(x,y) \cdot log Z_w(x) \\
+& = \sum_{x,y} \left (\tilde{P}(x,y) \cdot \sum_{i=1}^{n} w_i f_i(x,y)\right) - \sum_{x} \tilde{P}(x) \cdot log Z_w(x)
+\end{align} \quad(ml.1.2.20)
+$$
+再看对偶函数\(\Psi(w)\)，由公式\((ml.1.2.14)\)和公式\((ml.1.2.17)\)可得：
+$$
+\begin{align}
+\Psi(w) & = \sum_{x,y} \tilde{P}(x) \cdot P_w(y|x) \cdot \log P_w(y|x) \\
+& \qquad\quad + \sum_{i=1}^{n} w_i \cdot \left(\sum_{x,y} \tilde{P}(x,y) f_i(x,y) - \sum_{x,y} \tilde{P}(x) P_w(y|x)f_i(x,y) \right) \\
+& = \sum_{x,y} \tilde{P}(x,y) \sum_{i=1}^{n} w_i f_i(x,y) + \sum_{x,y} \tilde{P}(x)P_w(y|x) \left(\underline{log P_w(y|x) - \sum_{i=1}^{n} w_i f_i (x,y)}\right) \\
+& = \sum_{x,y} \tilde{P}(x,y) \sum_{i=1}^{n} w_i f_i(x,y) - \sum_{x,y} \tilde{P}(x) P_w(y|x) \cdot \underline{\log Z_w(x)} \\
+& = \sum_{x,y} \tilde{P}(x,y) \sum_{i=1}^{n} w_i f_i(x,y) - \sum_{x} \tilde{P}(x) \log Z_w(x)
+\end{align} \quad(ml.1.2.21)
+$$
+其中， 第二步推导第三步中用到了:
+$$
+\sum_{i=1}^{n} w_i \cdot f_i(x,y) = \log P_w(y|x) \cdot Z_w(x) \qquad(n.ml.1.2.16)
+$$
+根据公式\((n.ml.1.2.14)\)得到。在最后一步用到了\(\sum_{y} P(y|x) = 1\)的性质。即：
+$$
+\begin{align}
+\sum_{x,y} \tilde{P}(x) P_w(y|x) \log Z_w(x) & = \sum_{x} \tilde{P}(x) \left( \sum_{y} P_w(y|x) \right) \log Z_w(x) \\
+& = \sum_{x} \tilde{P}(x) \log Z_w(x)
+\end{align} \qquad(n.ml.1.2.17)
+$$
+比较公式\((ml.1.2.20)\)和\((ml.1.2.21)\)，可以发现：
+$$
+\Psi(w) = L_{\tilde{P}}(P_w) \qquad\qquad(ml.1.2.22)
+$$
+即对偶函数\(\Psi(w)\)等价于对数似然函数\(L_{\tilde{P}}(P_w)\)，于是最大熵模型学习中的对偶函数极大化等价于最大熵模型的极大似然估计的结论得以证明。
+总结：最大熵模型的学习问题就转化为具体求解对数似然函数极大化或对偶函数极大化的问题。
+可以将最大熵模型写成更为一般的形式：
+$$
+\begin{align}
+P_w(y|x) &= \frac{1}{Z_w(x)} \cdot \exp \left(\sum_{i=1}^{n} w_i \cdot f_i(x,y)\right) \\
+Z_w(x) &= \sum_{y} \exp \left(\sum_{i=1}^{n} w_i \cdot f_i(x,y)\right)
+\end{align} \qquad(ml.1.2.23)
+$$
+这里，\(x \in R^n\)为输入（向量），\(y \in \{1,2, \cdots, K\}\)为输出，\(w \in R^n\)为权值向量，\(f_i(x,y), i=1,2, \cdots, n\)为任意实值特征函数。
+小结：
+①. 最大熵模型与LR模型有类似的形式，它们又称为对数线性模型（Log Linear Model）。
+②. 模型学习就是在给定的训练数据条件下对模型进行极大似然估计或正则化的极大似然估计。

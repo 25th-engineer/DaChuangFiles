@@ -1,0 +1,331 @@
+所有 文章 分类 的 总目录 http / / www . 
+cnblogs . com / asxinyu / p / 4288836 . 
+html 微软 Infer . NET 机器学习 组件 http / / 
+www . cnblogs . com / asxinyu / p / 
+4329742 . html 关于 本 文档 的 说明 本 文档 
+基于 Infer . NET   2.6对 Infer . NET   
+User   Guide 进行 中文翻译 但 进行 了 若干 简化 
+和 提炼 按照 原 网站 的 思路 进行 但不 局限 
+与其 顺序 欢迎 传播 分享 必须 保持 原 作者 的 
+信息 但 禁止 将该 文档 直接 用于 商业 盈利 本人 
+正在 研究 基于 Infer . NET 组件 并 计划 将 
+其 应用 于 实际 的 预测 之中 该 组件 功能强大 
+封装 很 完善 但也 有 很多 难以 理解 的 地方 
+同时 官方 也 给出 了 大量 的 例子 限于 个人 
+精力有限 更新 时间 较慢 也/d 希望/v 有/v 兴趣/n 的/uj 朋友/n 
+一起/m 来/v 完成/v 该/r 项/n 工作/vn Email asxinyu @ qq 
+. com 本 文章 地址   http / / www 
+. cnblogs . com / asxinyu / p / InferNet 
+_ Demo _ Learner _ 1 . html1 . 基本 
+介绍 一个 learner 是 一个 完整 的 机器学习 应用 解决方案 
+例如 分类 系统 或者 推荐 系统 这些 Learners 都 能够 
+直接 在 命令行 或者 . NET 程序 中 调用 而无须 
+学习 Infer . NET 的 API 接口 . 每一个 learner 
+都 包括 训练 预测 以及 评估 能力 Learners 的 源代码 
+包括 了 一些 综合 使用 Infer . NET 的 构建 
+复杂 稳定 的 机器学习 功能 程序 的 例子 本文 是 
+在前 一篇 文章 基础 上 进行 介绍 本文 英文 原文 
+地址 原文 2 . 标准 数据格式 的 映射 我们 一起 
+回顾 以下 分类器 映射 接口 I C l a s 
+s i f i e r M a p p 
+i n g 它 声 明了 4个 方法 2.1 G 
+e t I n s t a n c e 
+s I E n u m e r a b 
+l e TInstance   GetInstances TInstanceSource   instanceSource GetInstances 方法 
+手动 给 学习者 提供 了 实例 样 本集 培训 或 
+测试 集 可以 在 训练 和 预测 中 使用 此外 
+这 两个 泛 型 类型 TInstance TInstanceSource 可以 自由 选择 
+例如 TInstance 可能 被 绑定 到 一个 类 提供 的 
+特性 和 标签 也 可能 引用 或 索引 到 这样 
+一个 类 的 一个 对象 为了 配合 缓存 贝叶斯 机器 
+分类器 假设 相同 的 实例 源 总是 提供 相同 的 
+实例 2.2 G e t F e a t u 
+r e s T F e a t u r 
+e s   GetFeatures         TInstance   
+instance           TInstanceSource   instanceSource   
+=   default TInstanceSource GetFeatures 为 指定 的 样本 实例 
+提供 所有 特征值 指标 这种 方法 也 同样 用 在 
+训练 和 预测 中 注意 如果 实例 本身 包含 一个 
+对应 的 特征值 则 没有 必要 指定 源 贝叶斯 机器 
+分类器 需要 将 TFeatures 绑定 到 M i c r 
+o s o f t R e s e a 
+r c h . Infer . Maths . Vector 中 
+为了 配合 缓存 GetFeatures 假设 相同 的 实例 源 总是 
+提供 相同 的 实例 你 可能 想 给 所有 实例 
+添加 一个 恒定 的 特性 如 添加 1个 特征值 一直 
+为 1 的 特征 这 将使 分类器 具有 特性 值 
+转移 的 不变性 通过 为 每个 类 添加 一个 预期 
+值 此外 特性 之间 的 相关性 存在 越少 越好 高度 
+相关 特性 可能 导致 训练 算法 的 收敛 速度慢 2.3 
+GetLabelTLabel   GetLabel TInstance   instance         
+  TInstanceSource   instanceSource   =   default TInstanceSource   
+        TLabelSource   labelSource   =   
+default TLabelSource GetLabel 提供 了 实例 需要 的 实际 数据 
+的 标签 值 类别 值 这个 方法 在 训练 的 
+过程 中 被 调用 一个 标签 的 来源 如果 独立 
+与 实例 源 将会 更 灵活 因为 在 某些 实际 
+情况 中 实际 的 数据 源 特性 和 标签 值 
+可能 是 分开 的 如果 实例 本身 包括 了 标签 
+的 数据 那么 这里 的 就 可以 省略 了 为了 
+缓存 标签 数据 和 避免 转换 为 本地 数据格式 的 
+带来 的 损失 贝叶斯 机器 分类器 假设 对于 相同 的 
+实例 调用 GetLabel 都 获取 相同 的 标签 2.4   
+G e t C l a s s L a 
+b e l s I E n u m e 
+r a b l e TLabel   GetClassLabels     
+    TInstanceSource   instanceSource   =   default TInstanceSource 
+          TLabelSource   labelSource   = 
+  default TLabelSource GetClassLabels 方法 可以 获取 分类 数据 中 
+所有 标签 数据集 它 不仅 包括 确定 当前 任务 有 
+多个 标签 还 可以 获取 对应 标签 的 类型 标签 
+在最 简单 的 情况 下 当 标签 是 Bool 类型 
+时 GetClassLabels 将 返回 { true false } GetClassLabels 可以 
+在 分类 过程 中 保证 每 一个 类型 的 标签 
+都是 有效 的 I C l a s s i 
+f i e r M a p p i n 
+g 接口 需要 这种 方法 是 因为 通常 情况下 它 
+有可能 不 能 推出 完整 的 样本 标签 集合 也 
+就是说 训练 集 或 测试 集 可能 并不 包含 所有 
+标签 类型 由于 可以 很 灵活 的 选择 合适 的 
+数据 类型 TInstance TInstanceSource TLabelSource 和 TLabel TFeatures 需要 Vector 
+类型 一般 直接 提供 一个 简单 高效 的 I C 
+l a s s i f i e r M 
+a p p i n g 接口 实现 就 可以 
+了 所以 提供 标准 的 数据格式 是 一个 使用 分类器 
+非常 方便 的 方法 正如 前面 提到 的 贝叶斯 机器 
+分类器 最终 需要 将 标准 的 数据 格式 的 转换 
+为 Infer . NET 算法 可以 接受 的 本地 数据格式 
+然而 在 很多 情况 下 在 程序 中 使用 本地 
+数据格式 要比 需要 转换 的 标准 数据格式 更加 有用 I 
+C l a s s i f i e r 
+M a p p i n g 的 一个 实现 
+的 例子 就是 本 教程 前面 的 性别 预测 的 
+例子 3 . 本地 数据格式 映射 I B a y 
+e s P o i n t M a c 
+h i n e C l a s s i 
+f i e r M a p p i n 
+g 接口 提供 可以 由 贝叶斯 机器 分类 在 训练 
+和 预测 过程中 不需要 转换 的 数据格式 因此 这个 提供 
+的 格式 也 被称为 本地 数据格式 本机 数据格式 有 两个 
+不同 的 表示 方法 密集 和 稀疏 密集/n 表示/v 单个/b 
+实例/n 相/v 关联/ns 的/uj 所有/b 特征值/n 都/d 存储/l 在/p 一个/m 
+double/w 数组/n 而 稀疏 表示 包含 所有 非零 特征值 和 
+相应 的 索引 这 2种 表示 方法 产生 的 结果 
+是 相同 的 只是 计算 的 代价 有 差别 在 
+训练 和 预测 数据 包括 很多 0 特征值 的 矩阵 
+比 对应 的 稀疏 矩阵 要快 一些 除了 特征值 的 
+表示 功能 本机 数据格式 还 可以 修复 标签 的 类型 
+在 二分 类 问题 中 标签 值 必须 是 布尔 
+类型 在 多分 类 问题 时 标签 必须 从0/nr 开始 
+的 连续 整数 通过 原生 格式 提供数据 需要 实现 下面 
+8个 方法 1 . IsSparse IsSparse 表示 是否 以 稀疏 
+矩阵 存储 注意 该 特征 是 不能 修改 的 bool 
+  IsSparse TInstanceSource   instanceSource 2 . GetFeatureCount GetFeatureCount 获取 
+分类 数据 中 多少 个 特征 当 使用 稀疏 矩阵 
+表示 时 需要 建立 对应 的 推理 算法 int   
+GetFeatureCount TInstanceSource   instanceSource 3 . GetClassCount GetClassCount 返回 实例 
+中 所有 类别 标签 总数 int   GetClassCount     
+    TInstanceSource   instanceSource   =   default TInstanceSource 
+          TLabelSource   labelSource   = 
+  default TLabelSource 上述/b 三/m 种/m 方法/n 都是/nr 用于/v 设置/vn 
+贝叶斯/nr 机器/n 分类器/n 的/uj 特征/n 和/c 标签/n 的/uj 有效性/n 他们/r 
+都在/nr 训练/vn 和/c 预测/vn 过程/n 中/f 被/p 调用/vn IsSparse/w 和/c 
+GetFeatureCount/w 方法/n 可以/c 从/p GetFeatureValues/w 和Ge/nr t/w F/w e/w a/w 
+t/w u/w r/w e/w I/w n/w d/w e/w x/w e/w 
+s/w 中/f 确定/v 部分/n 返回值/n 下面 两个 方法 在 单个 
+对象 的 预测 中 给 单个 实例 传递 特征值 他们 
+的 返回值 不会 被 缓存 4 . GetFeatureValues single instance 
+GetFeatureValues 返回 给定 实例 的 一个 特征值 数组 如果 是 
+以 稀疏 特性 表示 的 例如 IsSparse 返回 true 这个 
+方法 只 返回 给定 实例 的 所有 相关 非零 特征值 
+如果 表示 是非 稀疏 表示 GetFeatureValues 会 返回 所有 的 
+特征值 而 不管 他们 是不是 是否 他们 是 零 double 
+  GetFeatureValues         TInstance   instance   
+        TInstanceSource   instanceSource   =   
+default TInstanceSource 5 . G e t F e a 
+t u r e I n d e x e 
+s single instance G e t F e a t 
+u r e I n d e x e s 
+方法 如果 实例 是以 非 稀疏 矩阵 表示 则 返回 
+null 否则 返回 一个 返回 非零 特征值 对应 的 特征 
+指数 的 数组 因此 给/p 训练/vn 和/c 测试/vn 算法/n 有/v 
+两种/m 提供/v 特性/n 值/n 和其/nr 索引/nr 的/uj 方法/n 在 训练 
+时 实例 可能 被 进一步 分成 多个 子集 称为 批次 
+可以 不 直接 从 内存 出 处理 全部 数据 不 
+使用 批次 也 大 部分 使用 以下 两个 方法 int 
+  G e t F e a t u r 
+e I n d e x e s TInstance   
+instance           TInstanceSource   instanceSource   
+=   default TInstanceSource 6 . GetFeatureValues multi instance GetFeatureValues 
+返回 每个 实例 指定 的 批处理 的 实例 的 特性 
+值 相对 于是 返回 指定 批次 的 特征值 默认 情况 
+下 假定 所有 实例 的 特性 和 标签 都是 在 
+一个 处理 中 进行 如果 这是 很 困难 可能 是 
+因为 需要 太多 内存 贝叶斯 机器 分类器 允许 将 训练 
+数据 映射 为 多个 批次 进行 设置 BatchCount 属性 实例 
+将 运行 索引 从0到/nr BatchCount 1 的 批处理 训练 的 
+多个 批次 处理 设置 参考 IterationCount double   GetFeatureValues   
+      TInstanceSource   instanceSource   int   batchNumber 
+  =   0 7 . G e t F 
+e a t u r e I n d e 
+x e s multi instance 如果 以 稀疏 矩阵 标准 
+G e t F e a t u r e 
+I n d e x e s 返回 null 否则 
+返回 指定 实例 上 指定 批次 的 特征 索引 对 
+同一 批次 的 实例 这 要与 GetFeatureValues 返回 的 特征值 
+一致 I B a y e s P o i 
+n t M a c h i n e C 
+l a s s i f i e r M 
+a p p i n g 最后 一个 方法 是 
+提供 真实 标签 值 int   G e t F 
+e a t u r e I n d e 
+x e s TInstanceSource   instanceSource   int   batchNumber 
+  =   0 8 . GetLabels getlabel 提供 给定 
+实例 或者 标签 数据源 的 实际 标签 类别 值 注意 
+TLabel 在 二 分类 中 是 bool 类型 在 多份 
+类 中 是 int 类型 在 预测 中 不 需要 
+实用 该 方法 TLabel   GetLabels TInstanceSource   instanceSource   
+        TLabelSource   labelSource   =   
+default TLabelSource           int   batchNumber 
+  =   0 M i c r o s 
+o f t R e s e a r c 
+h . Infer . Learners . B a y e 
+s P o i n t M a c h 
+i n e C l a s s i f 
+i e r I n t e r n a 
+l 命名 空间 中的 N a t i v e 
+C l a s s i f i e r 
+M a p p i n g 类 及其 子 
+方法 是 实现 I B a y e s P 
+o i n t M a c h i n 
+e C l a s s i f i e 
+r M a p p i n g 接口 的 
+例子 这些 I C l a s s i f 
+i e r M a p p i n g 
+类 的 封装 展示 了 如何 从 标准 的 数据格式 
+转换 为 本地 数据 的 过程 以及 如何 在 训练 
+中 分 批次 的 缓存数据 4 . 评估 数据格式 映射 
+一个 简单 的 评估 测试 分类器 性能 的 方法 是 
+使用 evaluator Evaluator 通过 一个 实现 I C l a 
+s s i f i e r E v a 
+l u a t o r M a p p 
+i n g 映射 接口 的 实例 来 读取 真是 
+的 标签 值 由于 Evaluator 独立 于 特定 分类器 要求 
+的 具 的 数据 格式 如 贝叶斯 分类器 的 I 
+C l a s s i f i e r 
+E v a l u a t o r M 
+a p p i n g 本质上 声明 了 一个 
+通用 的 标准 数据格式 映射 I C l a s 
+s i f i e r M a p p 
+i n g 接口 只是 没有 GetFeatures 方法 而 预测 
+输入 参数 的 评价 方法 不要 通过 映射 5 . 
+创建 与 序列化 5.1   创建 贝叶斯 分类器 一旦 创建 
+映射 的 实例 就 可以 根据 分类 问题 的 类型 
+调用 下面 2个 工厂 方法 很 容易 的 创建 一个 
+贝叶斯 机器 分类器 B a y e s P o 
+i n t M a c h i n e 
+C l a s s i f i e r 
+. C r e a t e B i n 
+a r y C l a s s i f 
+i e r   二类 问题 B a y e 
+s P o i n t M a c h 
+i n e C l a s s i f 
+i e r . C r e a t e 
+M u l t i c l a s s 
+C l a s s i f i e r 
+  多类 问题 另外 这/r 两种/m 方法/n 都有/nr 两个/m 版本/n 
+一个 是 将 输入 映射 到 本地 数据格式 一个 是 
+将 输入 映射 到 标准 数据格式 分别 实现 I B 
+a y e s P o i n t M 
+a c h i n e C l a s 
+s i f i e r M a p p 
+i n g 和IC/nr l a s s i f 
+i e r M a p p i n g 
+接口 工厂 方法 返回 I B a y e s 
+P o i n t M a c h i 
+n e C l a s s i f i 
+e r 类型 的 分类器 为 训练 和 预测 提供 
+一些 适当 设置 例如 假设 我们 已经 实现 一个 从 
+SQL 数据库 到 贝叶斯 机器 分类 所需 的 本地 数据格式 
+的 映射 SqlNativeMapping 可以 很 简单 的 创建 一个 多 
+分类器 问题 的 分类器 var   mapping   =   
+new   SqlNativeMapping var   classifier   =   B 
+a y e s P o i n t M 
+a c h i n e C l a s 
+s i f i e r . C r e 
+a t e M u l t i c l 
+a s s C l a s s i f 
+i e r mapping 创建 贝叶斯 机器 分类器 的 操作 
+是 很 简单 的 不 需要 数据 输入 相关 计算 
+5.2 序列化 序列化 是 通过 ILearner 接口 的 Save 扩展 
+方法 实现 的 该 方法 有 2个 重载 版本 1个 
+是 在 文件 1个 是 在 格式化 的 流 训练/vn 
+和未/nr 训练/vn 的/uj 分类器/n 都/d 可以/c 被/p 序列化/n 和反/nr 序列化/n 
+序列化 一个 贝叶斯 机器 分类器 到 一个 文件 的 调用 
+程序 如下 classifier . Save bpm . bin 该 程序 
+序列化 分类器 的 参数 和 用户 定义 的 映射 它 
+不 序列化 任何 训练 数据 也 没有 附加 任何 事件 
+处理 程序 5.3 反 序列化 通过 调用 B a y 
+e s P o i n t M a c 
+h i n e C l a s s i 
+f i e r 的 一个 静态 方法 可以 加载 
+一个 之前 被 序列化 的 分类器 和 保存 方法 类似 
+也 可以 从 一个 文件 或者 格式化 流 中 反 
+序列化 一个 分类器 var   classifier   =   B 
+a y e s P o i n t M 
+a c h i n e C l a s 
+s i f i e r . Load     
+            q l I n 
+s t a n c e o u r c 
+e   Instance   SqlLabelSource   int   Discrete   
+              B a y 
+e s P o i n t M a c 
+h i n e C l a s s i 
+f i e r T r a i n i 
+n g e t t i n g s   
+              M u l 
+t i c l a s s B a y 
+e s P o i n t M a c 
+h i n e C l a s s i 
+f i e r P r e d i c 
+t i o n e t t i n g 
+s int bpm . bin 上述 方法 需要 的 泛 
+型 参数 如下 l   TInstanceSource 源 实例 的 类型 
+l   TInstance 单个 实例 的 类型 l   TLabelSource 
+源 标签 的 类型 l   TLabel 单个 标签 的 
+类型 贝叶斯 分类器 有 2种 2类 为 bool 多类 为 
+Int l   T L a b e l D 
+i s t r i b u t i o 
+n 标签 的 分布 类型 l   T T r 
+a i n i n g e t t i 
+n g s 训练 设置 类型 l   T P 
+r e d i c t i o n e 
+t t i n g s 预测 设置 类型 分 
+二类 问题 和 多类 问题 预测 设置 的 类型 是 
+不一样 B i n a r y B a y 
+e s P o i n t M a c 
+h i n e C l a s s i 
+f i e r P r e d i c 
+t i o n e t t i n g 
+s 和 M u l t i c l a 
+s s B a y e s P o i 
+n t M a c h i n e C 
+l a s s i f i e r P 
+r e d i c t i o n e 
+t t i n g s . 反 序列化 的 
+泛 型 参数 必须 和 分类器 序列 化时 的 参数 
+精确 匹配 同样在 反 序列 化时 将 执行 版本 检查程序 
+如果 序列化 的 版本 不匹配 将 抛出 一个 异常 然而 
+很多 情况 下 为了 方便 存在 很多 方法 并 不 
+需要 很多 具体 的 泛 型 类型 如 var   
+classifier   =   B a y e s P 
+o i n t M a c h i n 
+e C l a s s i f i e 
+r . L o a d M u l t 
+i c l a s s C l a s 
+s i f i e r         
+        q l I n s t 
+a n c e o u r c e   
+Instance   SqlLabelSource   int   Discrete bpm . bin 
+这 和 前面 的 从文件 反 序列化 多类 贝叶斯 机器 
+分类器 是 等价 的 

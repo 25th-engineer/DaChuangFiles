@@ -1,0 +1,1362 @@
+搜集如下博客的资源：以供自己学习是使用，感谢被转载的博客，以后抽时间再汇总综合一下，去除重复的。
+计算机视觉CV领域大牛及研究组主页链接: http://blog.csdn.net/libing403/article/details/70473859?locationNum=4&fps=1
+【机器视觉】计算机视觉牛人博客和代码汇总（全）
+: http://blog.csdn.net/Taily_Duan/article/details/53171065?locationNum=8&fps=1
+计算机视觉Computer Vision领域博客资源: http://blog.csdn.net/garfielder007/article/details/50866107
+计算机视觉整理库：http://blog.csdn.net/c2a2o2/article/details/77920507?locationNum=2&fps=1
+计算机视觉领域经典论文源码大全
+： http://blog.csdn.net/ddreaming/article/details/52416643
+计算机视觉牛人博客和代码汇总（全）
+每个做过或者正在做研究工作的人都会关注一些自己认为有价值的、活跃的研究组和个人的主页，关注他们的主页有时候比盲目的去搜索一些论文有用多了，大牛的或者活跃的研究者主页往往提供了他们的最新研究线索，顺便还可八一下各位大牛的经历，对于我这样的小菜鸟来说最最实惠的是有时可以找到源码，很多时候光看论文是理不清思路的。
+1 牛人Homepages（随意排序，不分先后）：
+1.USC Computer Vision Group：南加大，多目标跟踪/检测等；
+2.ETHZ Computer Vision Laboratory：苏黎世联邦理工学院，欧洲最好的几个CV/ML研究机构；
+3.Helmut Grabner：Online Boosting and Vision的作者，tracking by online feature selection的早期经典，貌似现在不是很活跃了，跑去创业了；
+4.Robert T. Collins：PSU，也是跟踪界的大牛；
+5.Ying Wu：美国西北大学，华人学者中的翘楚；
+6.Junsong Yuan：NTU，上面Wu老师的学生；
+7.James W. Davis：俄亥俄州立，视频监控；
+8. The Australian Centre for Visual Technologies：阿德莱德大学的CV组，最近也是exceedingly active & fruitful；
+9.Chunhua Shen：属上面的ACVT组，最近非常活跃；
+10.Xi Li：同属ACVT，之前是中科院的PHD，跟踪方面的论文很多，有理论深度；
+11.Haibin Ling：天普大学，L1-Tracker及后续扩展，源码分享；
+12.Learning, Recognition, and Surveillance：奥地利 TU Graz，在线学习，跟踪/检测等，active！源码分享；
+13.Statistical Visual Computing Laboratory：UCSD，光听名字就很学术吧，Saliency研究很有名；
+14.David Ross：多伦多大学，IVT的作者，跟踪中Generative表观的经典中的经典，提供源码，IVT的代码结构被后来很多人引用，值得一读；
+15.EPFL, Computer Vision Laboratory：洛桑理工的学院，和上面的的ETHZ CV lab同样是欧洲最好的CV研究大组；
+16.Jamie Shotton：属微软剑桥研究中心，Decision/Regression Forests；
+17.Sinisa Todorovic：俄勒冈州立，行为分析等；
+18.Shi Jianbo：大名鼎鼎的Good Feature to Track作者，目前方向行为分析和多目标跟踪等；
+19.Shai Avidan：特拉维夫大学，大牛级，可算是Tracking-by-detection的开创者，Ensemble Tracking, SVM Tracking；
+20.Visual Information Processing and Learning：中科院计算所，山世光老师的研究组，不需介绍了吧；
+21.Shaogang Gong：Queen Mary University of London，各种PAMI，IJCV；
+22.Yang Jian：南京理工大学，2DPCA，人脸识别；
+23.CALVIN：weakly supervised learning，objectness；
+24.Learning & Vision Group：NUS，稀疏表示；
+26.Xiaogang Wang：CUHK，active & fruitful，行人检测，群体行为分析；
+27.Zhou, Bolei：上面Wang老师硕士研究生，群体行为，看看人家的Publications已经轻松甩国内博士好几条街；
+28.Computational Vision Group：Leader--Deva Ramanan；
+29.Zhang Lei：香港理工，稀疏表示，人脸识别，可以算大中华区比较活跃的研究组了，几乎每篇论文都有对应源码；
+30.Zhang Kaihua：上面Zhang老师学生，Compressive Tracking；
+31.Pramod Sharma：离线训练检测器的在线自适应，貌似是个不错的topic；
+32.Loris Bazzani：person re-id，他的SDALF(code)描述子经常被用来做为比较对象，说明还是有参考价值的；
+33.Pedro Felzenszwalb：布朗大学，目标检测，新新N人一枚；
+34.Vijayakumar Bhagavatula：IEEE Fellow， correlation filters；
+35.Laurens van der Maaten：MLer.
+牛人主页（主页有很多论文代码）
+Serge Belongie at UC San Diego
+Antonio Torralba at MIT
+Alexei Ffros at CMU
+Ce Liu at Microsoft Research New England
+Vittorio Ferrari at Univ.of Edinburgh
+Kristen Grauman at UT Austin
+Devi Parikh at  TTI-Chicago (Marr Prize at ICCV2011)
+John Wright at Columbia Univ.
+Piotr Dollar at CalTech
+Boris Babenko at UC San Diego
+David Ross at Google/Youtube
+David Donoho at Stanford Univ.
+大神们：
+William T. Freeman at MIT
+Roberto Cipolla at Cambridge
+David Lowe at Univ. of British Columbia
+Mubarak Shah at Univ. of Central Florida
+Yi Ma at MSRA
+Tinne Tuytelaars at K.U. Leuven
+Trevor Darrell at U.C. Berkeley
+Michael J. Black at Brown Univ.
+重要研究组：
+Computer Vision Group at UC Berkeley
+Robotics Research Group at Univ. of Oxford
+LEAR at INRIA
+Computer Vision Lab at Stanford
+Computer Vision Lab at EPFL
+Computer Vision Lab at ETH Zurich
+Computer Vision Lab at Seoul National Univ.
+Computer Vision Lab at UC San Diego
+Computer Vision Lab at UC Santa Cruz
+Computer Vision Lab at Univ. of Southern California
+Computer Vision Lab at Univ. of Central Florida
+Computer Vision Lab at Columbia Univ.
+UCLA Vision Lab
+Motion and Shape Computing Group at George Mason Univ.
+Robust Image Understanding Lab at Rutgers Univ.
+Intelligent Vision Systems Group at Univ. of Bonn
+Institute for Computer Graphics and Vision at Graz Univ. of Tech.
+Computer Vision Lab. at Vienna Univ. of Tech.
+Computational Image Analysis and Radiology at Medical Univ. of Vienna
+Personal Robotics Lab at CMU
+Visual Perception Lab at Purdue Univ.
+潜力牛人：
+Juergen Gall at ETH Zurich
+Matt Flagg at Georgia Tech.
+Mathieu Salzmann at TTI-Chicago
+Gerg Shakhnarovich at TTI-Chicago
+Taeg Sang Cho at MIT
+Jianchao Yang at UIUC
+Stefan Roth at TU Darmstadt
+Peter Kontschieder at Graz Univ. of Tech.
+Dominik Alexander Klein at Univ. of Bonn
+Yinan Yu at CASIA (PASCAL VOC 2010 Detection Challenge Winner)
+Zdenek Kalal at FPFL
+Julien Pilet at FPFL
+Kenji Okuma
+2 个人、研究机构链接
+（1）googleResearch； http://research.google.com/index.html
+（2）MIT博士，汤晓欧学生林达华；http://people.csail.mit.edu/dhlin/index.html
+（3）MIT博士后Douglas Lanman； http://web.media.mit.edu/~dlanman/
+（4）opencv中文网站；http://www.opencv.org.cn/index.php/%E9%A6%96%E9%A1%B5
+（5）Stanford大学vision实验室； http://vision.stanford.edu/research.html
+（6）Stanford大学博士崔靖宇； http://www.stanford.edu/~jycui/
+（7）UCLA教授朱松纯； http://www.stat.ucla.edu/~sczhu/
+（8）中国人工智能网； http://www.chinaai.org/
+（9）中国视觉网； http://www.china-vision.net/
+（10）中科院自动化所； http://www.ia.cas.cn/
+（11）中科院自动化所李子青研究员； http://www.cbsr.ia.ac.cn/users/szli/
+（12）中科院计算所山世光研究员； http://www.jdl.ac.cn/user/sgshan/
+（13）人脸识别主页； http://www.face-rec.org/
+（14）加州大学伯克利分校CV小组；http://www.eecs.berkeley.edu/Research/Projects/CS/vision/
+（15）南加州大学CV实验室； http://iris.usc.edu/USC-Computer-Vision.html
+（16）卡内基梅隆大学CV主页；
+http://www.cs.cmu.edu/afs/cs/project/cil/ftp/html/vision.html
+（17）微软CV研究员Richard Szeliski；http://research.microsoft.com/en-us/um/people/szeliski/
+（18）微软亚洲研究院计算机视觉研究组； http://research.microsoft.com/en-us/groups/vc/
+（19）微软剑桥研究院ML与CV研究组； http://research.microsoft.com/en-us/groups/mlp/default.aspx
+（20）研学论坛； http://bbs.matwav.com/
+（21）美国Rutgers大学助理教授刘青山；http://www.research.rutgers.edu/~qsliu/
+（22）计算机视觉最新资讯网； http://www.cvchina.info/
+（23）运动检测、阴影、跟踪的测试视频下载；http://apps.hi.baidu.com/share/detail/18903287
+（24）香港中文大学助理教授王晓刚； http://www.ee.cuhk.edu.hk/~xgwang/
+(25)香港中文大学多媒体实验室（汤晓鸥）; http://mmlab.ie.cuhk.edu.hk/
+(26)U.C. San Diego. computer vision;http://vision.ucsd.edu/content/home
+(27)CVonline; http://homepages.inf.ed.ac.uk/rbf/CVonline/
+(28)computer vision software; http://peipa.essex.ac.uk/info/software.html
+(29)Computer Vision Resource; http://www.cvpapers.com/
+(30)computer vision research groups;http://peipa.essex.ac.uk/info/groups.html
+(31)computer vision center; http://computervisioncentral.com/cvcnews
+(32)浙江大学图像技术研究与应用（ITRA）团队：http://www.dvzju.com/
+(33)自动识别网：http://www.autoid-china.com.cn/
+(34)清华大学章毓晋教授：http://www.tsinghua.edu.cn/publish/ee/4157/2010/20101217173552339241557/20101217173552339241557_.html
+(35)顶级民用机器人研究小组Porf.Gary领导的Willow Garage:http://www.willowgarage.com/
+(36)上海交通大学图像处理与模式识别研究所：http://www.pami.sjtu.edu.cn/
+(37)上海交通大学计算机视觉实验室刘允才教授：http://www.visionlab.sjtu.edu.cn/
+(38)德克萨斯州大学奥斯汀分校助理教授Kristen Grauman ：http://www.cs.utexas.edu/~grauman/ 图像分解，检索
+(39)清华大学电子工程系智能图文信息处理实验室（丁晓青教授）：http://ocrserv.ee.tsinghua.edu.cn/auto/index.asp
+(40)北京大学高文教授：http://www.jdl.ac.cn/htm-gaowen/
+(41)清华大学艾海舟教授：http://media.cs.tsinghua.edu.cn/cn/aihz
+(42)中科院生物识别与安全技术研究中心：http://www.cbsr.ia.ac.cn/china/index%20CH.asp
+(43)瑞士巴塞尔大学 Thomas Vetter教授：http://informatik.unibas.ch/personen/vetter_t.html
+(44)俄勒冈州立大学 Rob Hess博士：http://blogs.oregonstate.edu/hess/
+(45)深圳大学 于仕祺副教授：http://yushiqi.cn/
+(46)西安交通大学人工智能与机器人研究所：http://www.aiar.xjtu.edu.cn/
+(47)卡内基梅隆大学研究员Robert T. Collins:http://www.cs.cmu.edu/~rcollins/home.html#Background
+(48)MIT博士Chris Stauffer:http://people.csail.mit.edu/stauffer/Home/index.php
+(49)美国密歇根州立大学生物识别研究组(Anil K. Jain教授)：http://www.cse.msu.edu/rgroups/biometrics/
+(50)美国伊利诺伊州立大学Thomas S. Huang:http://www.beckman.illinois.edu/directory/t-huang1
+(51)武汉大学数字摄影测量与计算机视觉研究中心：http://www.whudpcv.cn/index.asp
+(52)瑞士巴塞尔大学Sami Romdhani助理研究员：http://informatik.unibas.ch/personen/romdhani_sami/
+(53)CMU大学研究员Yang Wang:http://www.cs.cmu.edu/~wangy/home.html
+(54)英国曼彻斯特大学Tim Cootes教授：http://personalpages.manchester.ac.uk/staff/timothy.f.cootes/
+(55)美国罗彻斯特大学教授Jiebo Luo:http://www.cs.rochester.edu/u/jluo/
+(56)美国普渡大学机器人视觉实验室：https://engineering.purdue.edu/RVL/Welcome.html
+(57)美国宾利州立大学感知、运动与认识实验室：http://vision.cse.psu.edu/home/home.shtml
+(58)美国宾夕法尼亚大学GRASP实验室：https://www.grasp.upenn.edu/
+(59)美国内达华大学里诺校区CV实验室：http://www.cse.unr.edu/CVL/index.php
+(60)美国密西根大学vision实验室：http://www.eecs.umich.edu/vision/index.html
+(61)University of Massachusetts(麻省大学),视觉实验室：http://vis-www.cs.umass.edu/index.html
+(62)华盛顿大学博士后Iva Kemelmacher:http://www.cs.washington.edu/homes/kemelmi
+(63)以色列魏茨曼科技大学Ronen Basri:http://www.wisdom.weizmann.ac.il/~ronen/index.html
+(64)瑞士ETH-Zurich大学CV实验室：http://www.vision.ee.ethz.ch/boostingTrackers/index.htm
+(65)微软CV研究员张正友：http://research.microsoft.com/en-us/um/people/zhang/
+(66)中科院自动化所医学影像研究室：http://www.3dmed.net/
+(67)中科院田捷研究员：http://www.3dmed.net/tian/
+(68)微软Redmond研究院研究员Simon Baker:http://research.microsoft.com/en-us/people/sbaker/
+(69)普林斯顿大学教授李凯：http://www.cs.princeton.edu/~li/
+(70)普林斯顿大学博士贾登：http://www.cs.princeton.edu/~jiadeng/
+(71)牛津大学教授Andrew Zisserman： http://www.robots.ox.ac.uk/~az/
+(72)英国leeds大学研究员Mark Everingham:http://www.comp.leeds.ac.uk/me/
+(73)英国爱丁堡大学教授Chris William: http://homepages.inf.ed.ac.uk/ckiw/
+(74)微软剑桥研究院研究员John Winn: http://johnwinn.org/
+(75)佐治亚理工学院教授Monson H.Hayes：http://savannah.gatech.edu/people/mhayes/index.html
+(76)微软亚洲研究院研究员孙剑：http://research.microsoft.com/en-us/people/jiansun/
+(77)微软亚洲研究院研究员马毅：http://research.microsoft.com/en-us/people/mayi/
+(78)英国哥伦比亚大学教授David Lowe: http://www.cs.ubc.ca/~lowe/
+(79)英国爱丁堡大学教授Bob Fisher: http://homepages.inf.ed.ac.uk/rbf/
+(80)加州大学圣地亚哥分校教授Serge J.Belongie:http://cseweb.ucsd.edu/~sjb/
+(81)威斯康星大学教授Charles R.Dyer: http://pages.cs.wisc.edu/~dyer/
+(82)多伦多大学教授Allan.Jepson: http://www.cs.toronto.edu/~jepson/
+(83)伦斯勒理工学院教授Qiang Ji: http://www.ecse.rpi.edu/~qji/
+(84)CMU研究员Daniel Huber: http://www.ri.cmu.edu/person.html?person_id=123
+(85)多伦多大学教授：David J.Fleet: http://www.cs.toronto.edu/~fleet/
+(86)伦敦大学玛丽女王学院教授Andrea Cavallaro:http://www.eecs.qmul.ac.uk/~andrea/
+(87)多伦多大学教授Kyros Kutulakos: http://www.cs.toronto.edu/~kyros/
+(88)杜克大学教授Carlo Tomasi: http://www.cs.duke.edu/~tomasi/
+(89)CMU教授Martial Hebert: http://www.cs.cmu.edu/~hebert/
+(90)MIT助理教授Antonio Torralba: http://web.mit.edu/torralba/www/
+(91)马里兰大学研究员Yasel Yacoob: http://www.umiacs.umd.edu/users/yaser/
+(92)康奈尔大学教授Ramin Zabih: http://www.cs.cornell.edu/~rdz/
+(93)CMU博士田渊栋: http://www.cs.cmu.edu/~yuandong/
+(94)CMU副教授Srinivasa Narasimhan: http://www.cs.cmu.edu/~srinivas/
+(95)CMU大学ILIM实验室：http://www.cs.cmu.edu/~ILIM/
+(96)哥伦比亚大学教授Sheer K.Nayar: http://www.cs.columbia.edu/~nayar/
+(97)三菱电子研究院研究员Fatih Porikli ：http://www.porikli.com/
+(98)康奈尔大学教授Daniel Huttenlocher：http://www.cs.cornell.edu/~dph/
+(99)南京大学教授周志华：http://cs.nju.edu.cn/zhouzh/index.htm
+(100)芝加哥丰田技术研究所助理教授Devi Parikh: http://ttic.uchicago.edu/~dparikh/index.html
+(101)瑞士联邦理工学院博士后Helmut Grabner:http://www.vision.ee.ethz.ch/~hegrabne/#Short_CV
+(102)香港中文大学教授贾佳亚：http://www.cse.cuhk.edu.hk/~leojia/index.html
+(103)南京大学教授吴建鑫：http://c2inet.sce.ntu.edu.sg/Jianxin/index.html
+(104)GE研究院研究员李关：http://www.cs.unc.edu/~lguan/
+(105)佐治亚理工学院教授Monson Hayes:http://savannah.gatech.edu/people/mhayes/
+(106)图片检索国际竞赛PASCAL VOC(微软剑桥研究院组织):http://pascallin.ecs.soton.ac.uk/challenges/VOC/
+(107)机器视觉开源处理库汇总：http://archive.cnblogs.com/a/2217609/
+(108)布朗大学教授Benjamin Kimia: http://www.lems.brown.edu/kimia.html
+(109)数据堂-图像处理相关的样本数据：http://www.datatang.com/data/list/602026/p1
+(110)东软基于CV的汽车辅助驾驶系统：http://www.neusoft.com/cn/solutions/1047/
+(111)马里兰大学教授Rema Chellappa:http://www.cfar.umd.edu/~rama/
+(112)芝加哥丰田研究中心助理教授Devi Parikh：http://ttic.uchicago.edu/~dparikh/index.html
+(113)宾夕法尼亚大学助理教授石建波：http://www.cis.upenn.edu/~jshi/
+(114)比利时鲁汶大学教授Luc Van Gool：http://www.vision.ee.ethz.ch/members/get_member.cgi?id=1, http://www.vision.ee.ethz.ch/~vangool/
+(115)行人检测主页：http://www.pedestrian-detection.com/
+(116)法国学习算法与系统实验室Basilio Noris博士：http://lasa.epfl.ch/people/member.php?SCIPER=129576 http://mldemos.epfl.ch/
+(117)美国马里兰大学LARRY S.DAVIS教授：http://www.umiacs.umd.edu/~lsd/
+(118)计算机视觉论文分类导航：http://www.visionbib.com/bibliography/contents.html
+(119)计算机视觉分类信息导航：http://www.visionbib.com/
+(120)西班牙马德里理工大学博士Marcos Nieto：http://marcosnieto.net/
+(121)香港理工大学副教授张磊：http://www4.comp.polyu.edu.hk/~cslzhang/
+(122)以色列技术学院教授Michael Elad：http://www.cs.technion.ac.il/~elad/
+(123)韩国启明大学计算机视觉与模式识别实验室：http://cvpr.kmu.ac.kr/
+(124)英国诺丁汉大学Michel Valstar博士：http://www.cs.nott.ac.uk/~mfv/
+(125)卡内基梅隆大学Takeo Kanade教授:http://www.ri.cmu.edu/people/kanade_takeo.html
+(126)微软学术搜索：http://libra.msra.cn/
+(127)比利时天主教鲁汶大学Radu Timofte博士：http://homes.esat.kuleuven.be/~rtimofte/，交通标志检测，定位，3D跟踪
+(128)迪斯尼匹兹堡研究院研究员：Iain Matthews:http://www.iainm.com/iainm/Home.html
+http://www.ri.cmu.edu/person.html?type=publications&person_id=741 AAM,三维重建
+（129）康奈尔大学视觉与图像分析组：http://www.via.cornell.edu/ 医学图像处理
+（130）密西根州立大学生物识别研究组：http://www.cse.msu.edu/biometrics/ 人脸识别、指纹识别、图像检索
+（131）柏林科技大学计算机视觉与遥感实验室：http://www.cv.tu-berlin.de/menue/computer_vision_remote_sensing/parameter/en/ 图像分析、物体重建、基于图像的表面测量、医学图像处理
+（132）英国布里斯托大学数字多媒体研究组：http://www.cs.bris.ac.uk/Research/Digitalmedia/ 运动检测与跟踪、视频压缩、3D重建、字符定位
+（133）英国萨利大学视觉、语音与信号处理中心： http://www.surrey.ac.uk/cvssp/   人脸识别、监控、3D、视频检索、
+（134）北卡莱罗纳大学教堂山分校Marc Pollefeys教授：http://www.cs.unc.edu/~marc/ 基于视频的3D模型生成、相机标定、运动检测与分析、3D重建
+（135）澳大利亚国立大学Richard Hartley教授：http://users.cecs.anu.edu.au/~hartley/ 运动估计、稀疏子空间、跟踪、
+（136）百度技术副总监于凯：http://www.dbs.ifi.lmu.de/~yu_k/ 深度学习，稀疏表示，图像分类
+（137）西安电子科技大学高新波教授：http://web.xidian.edu.cn/xbgao/index.html 质量评判、水印、稀疏表示、超分辨率
+（138）加州大学伯克利分校Michael I.Jordan教授：http://www.cs.berkeley.edu/~jordan/ 机器学习
+（139）加州理工行人检测相关资料：http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/
+（140）微软Redmond研究院研究员Piotr Dollar: http://vision.ucsd.edu/~pdollar/ 行人检测、特征提取、
+（141）视觉计算研究论坛：http://www.sigvc.org/bbs/ 中科院视觉计算研究小组的论坛
+（142）美国坦桑尼亚州立大学稀疏学习软件包：http://www.public.asu.edu/~jye02/Software/SLEP/index.htm 稀疏学习
+（143）美国加州大学圣地亚哥分校Jacob Whitehill博士：http://mplab.ucsd.edu/~jake/ 机器学习
+（144）美国布朗大学Michael J.Black教授：http://cs.brown.edu/~black/  人的姿态估计和跟踪
+（145）美国加州大学圣地亚哥分校David Kriegman教授：http://cseweb.ucsd.edu/~kriegman/ 人脸识别
+（146）南加州大学Paul Debevec教授：http://ict.debevec.org/~debevec/ 或 http://www.pauldebevec.com/ 将CV和CG结合研究 人脸捕捉重建技术
+（147）伊利诺伊大学D.A.Forsyth教授：http://luthuli.cs.uiuc.edu/~daf/ 三维重建
+（148）英国牛津大学Ian Reid教授：http://www.robots.ox.ac.uk/~ian/ 跟踪和机器人导航
+（149）CMU大学Alyosha Efros 教授: https://www.cs.cmu.edu/~efros/ 图像纹理合成
+（150）加州大学伯克利分校Jitendra Malik教授：http://www.cs.berkeley.edu/~malik/ 轮廓检测、图像/视频分割、图形匹配、目标识别
+（151）MIT教授William Freeman： http://people.csail.mit.edu/billf/ 图像纹理合成
+（152）CMU博士Henry Schneiderman： http://www.cs.cmu.edu/~hws/ 目标检测和识别；
+（153）微软研究员Paul Viola: http://research.microsoft.com/en-us/um/people/viola/ AdaBoost算法
+（154）微软研究员Antonio Criminisi: http://research.microsoft.com/en-us/people/antcrim/ 图像修补，三维重建，目标检测与跟踪；
+（155）魏茨曼科学研究所教授Michal Irani: http://www.wisdom.weizmann.ac.il/~irani/ 超分辨率
+（156）瑞士洛桑理工学院Pascal Fua教授：http://people.epfl.ch/pascal.fua/bio?lang=en 立体视觉，增强现实
+（157）佐治亚理工学院Irfan Essa教授：http://www.ic.gatech.edu/people/irfan-essa 人脸表情识别
+（158）中科院助理教授樊彬：http://www.sigvc.org/bfan/ 特征描述；
+（159）斯坦福大学Sebastian Thrun教授：http://robots.stanford.edu/index.html 机器人；
+（160）多伦多大学Geoffrey E.Hinton教授：http://www.cs.toronto.edu/~hinton/ 深度学习
+（161）凤巢系统架构师张栋博士：http://weibo.com/machinelearning
+（162）2012年龙星计划机器学习课程：http://bigeye.au.tsinghua.edu.cn/DragonStar2012/index.html
+（163）中科院自动化所肖柏华教授：http://www.compsys.ia.ac.cn/people/xiaobaihua.html 文字识别、人脸识别、质量评判
+（164）图像视频质量评判：http://live.ece.utexas.edu/research/quality/
+（165）纽约大学Yann LeCun教授http://yann.lecun.com/   http://yann.lecun.com/exdb/mnist/  手写体数字识别
+（166）二维条码识别开源库zxing：http://code.google.com/p/zxing/
+（167）布朗大学Pedro Felzenszwalb教授：http://cs.brown.edu/~pff/ 特征提取，Deformable Part Model
+（168）伊利诺伊香槟大学Svetlana Lazebnik教授：http://www.cs.illinois.edu/homes/slazebni/ 特征提取，聚类，图像检索
+（169）荷兰乌德勒支大学图像与多媒体研究中心http://www.cs.uu.nl/centers/give/multimedia/index.html 图像、多媒体检索与匹配
+（170）英国格拉斯哥大学信息检索小组：http://ir.dcs.gla.ac.uk/ 文本、图像、视频检索
+（171）中科院自动化所孙哲南助理教书：http://www.cbsr.ia.ac.cn/users/znsun/ 虹膜识别、掌纹识别、人脸识别
+（172）南京信息工程大学刘青山教授：http://www.jstuoke.com/web/xky/detail.asp?NewsID=1096 人脸图像分析、医学图像分析
+（173）清华大学助理教授冯建江：http://ivg.au.tsinghua.edu.cn/~jfeng/ 指纹识别
+（174）北航助理教授黄迪：http://irip.buaa.edu.cn/~dihuang/ 3D人脸识别
+（175）中山大学助理教授郑伟诗：http://sist.sysu.edu.cn/~zhwshi/ 人脸识别、特征匹配、聚类、检索；
+（176）google瑞士苏黎世的工程师Thomas Deselaers: http://thomas.deselaers.de/index.html 图像检索
+（177）百度深度学习研究中心博士后余轶南：http://www.cbsr.ia.ac.cn/users/ynyu/index.htm 目标检测，图像检索
+（178）威兹曼科技大学超分辨率：http://www.wisdom.weizmann.ac.il/~vision/SingleImageSR.html
+（179）德克萨斯大学奥斯汀分校Al Bovik教授：http://live.ece.utexas.edu/people/bovik/ 图像视频质量判别、特征提取
+（180）以色列希伯来大学Yair Weiss教授：http://www.cs.huji.ac.il/~yweiss/ 机器学习、超分辨率
+（181）以色列希伯来大学Daniel Zoran博士：http://www.cs.huji.ac.il/~daniez/ 超分辨率、去噪
+（182）美国加州大学Peyman Milanfar教授：http://users.soe.ucsc.edu/~milanfar/ 去噪
+（183）中科院计算所副研究员常虹：http://www.jdl.ac.cn/user/hchang/index.html 图像检索、半监督学习、超分辨率
+（184）以色列威茨曼大学Anat Levin教授：http://www.wisdom.weizmann.ac.il/~levina/ 去噪、去模糊
+（185）以色列威茨曼大学Daniel Glasner博士后：http://www.wisdom.weizmann.ac.il/~glasner/ 超分辨率、分割、姿态估计
+（186）密西根大学助理教授Honglak Lee: http://web.eecs.umich.edu/~honglak/ 机器学习、特征提取，去噪、稀疏表示；
+（187）MIT周博磊博士：http://people.csail.mit.edu/bzhou/ 聚集分析、运动检测
+（188）美国田纳西大学Li He博士：http://web.eecs.utk.edu/~lhe4/ 稀疏表示、超分辨率；
+（189）Adobe研究院Jianchao Yang研究员：http://www.ifp.illinois.edu/~jyang29/ 稀疏表示，超分辨率、图片检索、去噪、去模糊
+（190）Deep Learning主页：http://deeplearning.net/ 深度学习论文、软件，代码，demo，数据等；
+（191）斯坦福大学Andrew Ng教授：http://cs.stanford.edu/people/ang/ 深度神经网络，深度学习
+（192）Elefant: http://elefant.developer.nicta.com.au/ 机器学习开源库
+（193）微软研究员Ce Liu: http://people.csail.mit.edu/celiu/ 去噪、超分辨率、去模糊、分割
+（194）West Virginia大学助理教授Xin Li: http://www.csee.wvu.edu/~xinl/ 边缘检测、降噪、去模糊
+（195）http://www.csee.wvu.edu/~xinl/source.html 深度学习、去噪、编码、压缩感知、超分辨率、聚类、分割等相关代码集合
+（196）西班牙格拉纳达大学超分辨率重建项目组：http://decsai.ugr.es/pi/superresolution/index.html
+（197）清华大学程明明博士：http://mmcheng.net/ 图像分割、检索
+（198）牛津布鲁克斯大学Philip H.S.Torr教授：http://cms.brookes.ac.uk/staff/PhilipTorr/ 分割、三维重建
+（199）佐治亚理工学院James M.Rehg教授：http://www.cc.gatech.edu/~rehg/ 分割、行人检测、特征描述、
+（200）大规模图像分类、检测竞赛ILSVRC（Stanford, Google举办）:
+http://www.image-net.org/challenges/LSVRC/2013/
+（201）加州大学尔湾分校Deva Ramanan助理教授：http://www.ics.uci.edu/~dramanan/ 目标检测，行人检测，跟踪、稀疏表示
+（202）人脸识别测试图片集：http://www.mlcv.net/
+（203）美国西北大学博士Ming Yang: http://www.ece.northwestern.edu/~mya671/ 人脸识别、图像检索；
+（204）美国加州大学伯克利分校博士后Ross B.Girshick：http://www.cs.berkeley.edu/~rbg/ 目标检测（DPM）
+（205）中文语言资源联盟：http://www.chineseldc.org/index.html  内有很多语言识别、字符识别的训练，测试库；
+（206）西班牙巴塞罗那大学计算机视觉中心：http://www.cvc.uab.es/adas/site/ 检测、跟踪、3D、行人检测、汽车辅助驾驶
+（207）德国戴姆勒研究所Prof. Dr. Dariu M. Gavrila：http://www.gavrila.net/index.html 跟踪、行人检测、
+（208）苏黎世联邦理工学院Andreas Ess博士后：http://www.vision.ee.ethz.ch/~aess/ 行人检测、行为检测、跟踪
+（209）Libqrencode: http://fukuchi.org/works/qrencode/ 基于C语言的QR二维码编码开源库
+（210）江西财经大学袁飞牛教授：http://sit.jxufe.cn/grbk/yfn/index.html#  烟雾检测、3D重建、医学图像处理
+（211）耶路撒冷大学Raanan Fattal教师：http://www.cs.huji.ac.il/~raananf/  图像增强、
+（212）耶路撒冷大学Dani Lischnski教授：http://www.cs.huji.ac.il/~danix/ 去模糊、纹理合成、图像增强
+3 代码汇总
+一、特征提取Feature Extraction：
+SIFT [1] [Demo program][SIFT Library] [VLFeat]
+PCA-SIFT [2] [Project]
+Affine-SIFT [3] [Project]
+SURF [4] [OpenSURF] [Matlab Wrapper]
+Affine Covariant Features [5] [Oxford project]
+MSER [6] [Oxford project] [VLFeat]
+Geometric Blur [7] [Code]
+Local Self-Similarity Descriptor [8] [Oxford implementation]
+Global and Efficient Self-Similarity [9] [Code]
+Histogram of Oriented Graidents [10] [INRIA Object Localization Toolkit] [OLT toolkit for Windows]
+GIST [11] [Project]
+Shape Context [12] [Project]
+Color Descriptor [13] [Project]
+Pyramids of Histograms of Oriented Gradients [Code]
+Space-Time Interest Points (STIP) [14][Project] [Code]
+Boundary Preserving Dense Local Regions [15][Project]
+Weighted Histogram[Code]
+Histogram-based Interest Points Detectors[Paper][Code]
+An OpenCV - C++ implementation of Local Self Similarity Descriptors [Project]
+Fast Sparse Representation with Prototypes[Project]
+Corner Detection [Project]
+AGAST Corner Detector: faster than FAST and even FAST-ER[Project]
+Real-time Facial Feature Detection using Conditional Regression Forests[Project]
+Global and Efficient Self-Similarity for Object Classification and Detection[code]
+WαSH: Weighted α-Shapes for Local Feature Detection[Project]
+HOG[Project]
+Online Selection of Discriminative Tracking Features[Project]
+二、图像分割Image Segmentation：
+Normalized Cut [1] [Matlab code]
+Gerg Mori’ Superpixel code [2] [Matlab code]
+Efficient Graph-based Image Segmentation [3] [C++ code] [Matlab wrapper]
+Mean-Shift Image Segmentation [4] [EDISON C++ code] [Matlab wrapper]
+OWT-UCM Hierarchical Segmentation [5] [Resources]
+Turbepixels [6] [Matlab code 32bit] [Matlab code 64bit] [Updated code]
+Quick-Shift [7] [VLFeat]
+SLIC Superpixels [8] [Project]
+Segmentation by Minimum Code Length [9] [Project]
+Biased Normalized Cut [10] [Project]
+Segmentation Tree [11-12] [Project]
+Entropy Rate Superpixel Segmentation [13] [Code]
+Fast Approximate Energy Minimization via Graph Cuts[Paper][Code]
+Efﬁcient Planar Graph Cuts with Applications in Computer Vision[Paper][Code]
+Isoperimetric Graph Partitioning for Image Segmentation[Paper][Code]
+Random Walks for Image Segmentation[Paper][Code]
+Blossom V: A new implementation of a minimum cost perfect matching algorithm[Code]
+An Experimental Comparison of Min-Cut/Max-Flow Algorithms for Energy Minimization in Computer Vision[Paper][Code]
+Geodesic Star Convexity for Interactive Image Segmentation[Project]
+Contour Detection and Image Segmentation Resources[Project][Code]
+Biased Normalized Cuts[Project]
+Max-flow/min-cut[Project]
+Chan-Vese Segmentation using Level Set[Project]
+A Toolbox of Level Set Methods[Project]
+Re-initialization Free Level Set Evolution via Reaction Diffusion[Project]
+Improved C-V active contour model[Paper][Code]
+A Variational Multiphase Level Set Approach to Simultaneous Segmentation and Bias Correction[Paper][Code]
+Level Set Method Research by Chunming Li[Project]
+ClassCut for Unsupervised Class Segmentation[code]
+SEEDS: Superpixels Extracted via Energy-Driven Sampling [Project][other]
+三、目标检测Object Detection：
+A simple object detector with boosting [Project]
+INRIA Object Detection and Localization Toolkit [1] [Project]
+Discriminatively Trained Deformable Part Models [2] [Project]
+Cascade Object Detection with Deformable Part Models [3] [Project]
+Poselet [4] [Project]
+Implicit Shape Model [5] [Project]
+Viola and Jones’s Face Detection [6] [Project]
+Bayesian Modelling of Dyanmic Scenes for Object Detection[Paper][Code]
+Hand detection using multiple proposals[Project]
+Color Constancy, Intrinsic Images, and Shape Estimation[Paper][Code]
+Discriminatively trained deformable part models[Project]
+Gradient Response Maps for Real-Time Detection of Texture-Less Objects: LineMOD [Project]
+Image Processing On Line[Project]
+Robust Optical Flow Estimation[Project]
+Where's Waldo: Matching People in Images of Crowds[Project]
+Scalable Multi-class Object Detection[Project]
+Class-Specific Hough Forests for Object Detection[Project]
+Deformed Lattice Detection In Real-World Images[Project]
+Discriminatively trained deformable part models[Project]
+四、显著性检测Saliency Detection：
+Itti, Koch, and Niebur’ saliency detection [1] [Matlab code]
+Frequency-tuned salient region detection [2] [Project]
+Saliency detection using maximum symmetric surround [3] [Project]
+Attention via Information Maximization [4] [Matlab code]
+Context-aware saliency detection [5] [Matlab code]
+Graph-based visual saliency [6] [Matlab code]
+Saliency detection: A spectral residual approach. [7] [Matlab code]
+Segmenting salient objects from images and videos. [8] [Matlab code]
+Saliency Using Natural statistics. [9] [Matlab code]
+Discriminant Saliency for Visual Recognition from Cluttered Scenes. [10] [Code]
+Learning to Predict Where Humans Look [11] [Project]
+Global Contrast based Salient Region Detection [12] [Project]
+Bayesian Saliency via Low and Mid Level Cues[Project]
+Top-Down Visual Saliency via Joint CRF and Dictionary Learning[Paper][Code]
+Saliency Detection: A Spectral Residual Approach[Code]
+五、图像分类、聚类Image Classification, Clustering
+Pyramid Match [1] [Project]
+Spatial Pyramid Matching [2] [Code]
+Locality-constrained Linear Coding [3] [Project] [Matlab code]
+Sparse Coding [4] [Project] [Matlab code]
+Texture Classification [5] [Project]
+Multiple Kernels for Image Classification [6] [Project]
+Feature Combination [7] [Project]
+SuperParsing [Code]
+Large Scale Correlation Clustering Optimization[Matlab code]
+Detecting and Sketching the Common[Project]
+Self-Tuning Spectral Clustering[Project][Code]
+User Assisted Separation of Reflections from a Single Image Using a Sparsity Prior[Paper][Code]
+Filters for Texture Classification[Project]
+Multiple Kernel Learning for Image Classification[Project]
+SLIC Superpixels[Project]
+六、抠图Image Matting
+A Closed Form Solution to Natural Image Matting [Code]
+Spectral Matting [Project]
+Learning-based Matting [Code]
+七、目标跟踪Object Tracking：
+A Forest of Sensors - Tracking Adaptive Background Mixture Models [Project]
+Object Tracking via Partial Least Squares Analysis[Paper][Code]
+Robust Object Tracking with Online Multiple Instance Learning[Paper][Code]
+Online Visual Tracking with Histograms and Articulating Blocks[Project]
+Incremental Learning for Robust Visual Tracking[Project]
+Real-time Compressive Tracking[Project]
+Robust Object Tracking via Sparsity-based Collaborative Model[Project]
+Visual Tracking via Adaptive Structural Local Sparse Appearance Model[Project]
+Online Discriminative Object Tracking with Local Sparse Representation[Paper][Code]
+Superpixel Tracking[Project]
+Learning Hierarchical Image Representation with Sparsity, Saliency and Locality[Paper][Code]
+Online Multiple Support Instance Tracking [Paper][Code]
+Visual Tracking with Online Multiple Instance Learning[Project]
+Object detection and recognition[Project]
+Compressive Sensing Resources[Project]
+Robust Real-Time Visual Tracking using Pixel-Wise Posteriors[Project]
+Tracking-Learning-Detection[Project][OpenTLD/C++ Code]
+the HandVu：vision-based hand gesture interface[Project]
+Learning Probabilistic Non-Linear Latent Variable Models for Tracking Complex Activities[Project]
+八、Kinect：
+Kinect toolbox[Project]
+OpenNI[Project]
+zouxy09 CSDN Blog[Resource]
+FingerTracker 手指跟踪[code]
+九、3D相关：
+3D Reconstruction of a Moving Object[Paper] [Code]
+Shape From Shading Using Linear Approximation[Code]
+Combining Shape from Shading and Stereo Depth Maps[Project][Code]
+Shape from Shading: A Survey[Paper][Code]
+A Spatio-Temporal Descriptor based on 3D Gradients (HOG3D)[Project][Code]
+Multi-camera Scene Reconstruction via Graph Cuts[Paper][Code]
+A Fast Marching Formulation of Perspective Shape from Shading under Frontal Illumination[Paper][Code]
+Reconstruction:3D Shape, Illumination, Shading, Reflectance, Texture[Project]
+Monocular Tracking of 3D Human Motion with a Coordinated Mixture of Factor Analyzers[Code]
+Learning 3-D Scene Structure from a Single Still Image[Project]
+十、机器学习算法：
+Matlab class for computing Approximate Nearest Nieghbor (ANN) [Matlab class providing interface toANN library]
+Random Sampling[code]
+Probabilistic Latent Semantic Analysis (pLSA)[Code]
+FASTANN and FASTCLUSTER for approximate k-means (AKM)[Project]
+Fast Intersection / Additive Kernel SVMs[Project]
+SVM[Code]
+Ensemble learning[Project]
+Deep Learning[Net]
+Deep Learning Methods for Vision[Project]
+Neural Network for Recognition of Handwritten Digits[Project]
+Training a deep autoencoder or a classifier on MNIST digits[Project]
+THE MNIST DATABASE of handwritten digits[Project]
+Ersatz：deep neural networks in the cloud[Project]
+Deep Learning [Project]
+sparseLM : Sparse Levenberg-Marquardt nonlinear least squares in C/C++[Project]
+Weka 3: Data Mining Software in Java[Project]
+Invited talk "A Tutorial on Deep Learning" by Dr. Kai Yu (余凯)[Video]
+CNN - Convolutional neural network class[Matlab Tool]
+Yann LeCun's Publications[Wedsite]
+LeNet-5, convolutional neural networks[Project]
+Training a deep autoencoder or a classifier on MNIST digits[Project]
+Deep Learning 大牛Geoffrey E. Hinton's HomePage[Website]
+Multiple Instance Logistic Discriminant-based Metric Learning (MildML) and Logistic Discriminant-based Metric Learning (LDML)[Code]
+Sparse coding simulation software[Project]
+Visual Recognition and Machine Learning Summer School[Software]
+十一、目标、行为识别Object, Action Recognition：
+Action Recognition by Dense Trajectories[Project][Code]
+Action Recognition Using a Distributed Representation of Pose and Appearance[Project]
+Recognition Using Regions[Paper][Code]
+2D Articulated Human Pose Estimation[Project]
+Fast Human Pose Estimation Using Appearance and Motion via Multi-Dimensional Boosting Regression[Paper][Code]
+Estimating Human Pose from Occluded Images[Paper][Code]
+Quasi-dense wide baseline matching[Project]
+ChaLearn Gesture Challenge: Principal motion: PCA-based reconstruction of motion histograms[Project]
+Real Time Head Pose Estimation with Random Regression Forests[Project]
+2D Action Recognition Serves 3D Human Pose Estimation[
+A Hough Transform-Based Voting Framework for Action Recognition[
+Motion Interchange Patterns for Action Recognition in Unconstrained Videos[
+2D articulated human pose estimation software[Project]
+Learning and detecting shape models [code]
+Progressive Search Space Reduction for Human Pose Estimation[Project]
+Learning Non-Rigid 3D Shape from 2D Motion[Project]
+十二、图像处理：
+Distance Transforms of Sampled Functions[Project]
+The Computer Vision Homepage[Project]
+Efficient appearance distances between windows[code]
+Image Exploration algorithm[code]
+Motion Magnification 运动放大 [Project]
+Bilateral Filtering for Gray and Color Images 双边滤波器 [Project]
+A Fast Approximation of the Bilateral Filter using a Signal Processing Approach [
+十三、一些实用工具：
+EGT: a Toolbox for Multiple View Geometry and Visual Servoing[Project] [Code]
+a development kit of matlab mex functions for OpenCV library[Project]
+Fast Artificial Neural Network Library[Project]
+十四、人手及指尖检测与识别：
+finger-detection-and-gesture-recognition [Code]
+Hand and Finger Detection using JavaCV[Project]
+Hand and fingers detection[Code]
+十五、场景解释：
+Nonparametric Scene Parsing via Label Transfer [Project]
+十六、光流Optical flow：
+High accuracy optical flow using a theory for warping [Project]
+Dense Trajectories Video Description [Project]
+SIFT Flow: Dense Correspondence across Scenes and its Applications[Project]
+KLT: An Implementation of the Kanade-Lucas-Tomasi Feature Tracker [Project]
+Tracking Cars Using Optical Flow[Project]
+Secrets of optical flow estimation and their principles[Project]
+implmentation of the Black and Anandan dense optical flow method[Project]
+Optical Flow Computation[Project]
+Beyond Pixels: Exploring New Representations and Applications for Motion Analysis[Project]
+A Database and Evaluation Methodology for Optical Flow[Project]
+optical flow relative[Project]
+Robust Optical Flow Estimation [Project]
+optical flow[Project]
+十七、图像检索Image Retrieval：
+Semi-Supervised Distance Metric Learning for Collaborative Image Retrieval [Paper][code]
+十八、马尔科夫随机场Markov Random Fields：
+Markov Random Fields for Super-Resolution [Project]
+A Comparative Study of Energy Minimization Methods for Markov Random Fields with Smoothness-Based Priors [Project]
+十九、运动检测Motion detection：
+Moving Object Extraction, Using Models or Analysis of Regions [Project]
+Background Subtraction: Experiments and Improvements for ViBe [Project]
+A Self-Organizing Approach to Background Subtraction for Visual Surveillance Applications [Project]
+changedetection.net: A new change detection benchmark dataset[Project]
+ViBe - a powerful technique for background detection and subtraction in video sequences[Project]
+Background Subtraction Program[Project]
+Motion Detection Algorithms[Project]
+Stuttgart Artificial Background Subtraction Dataset[Project]
+Object Detection, Motion Estimation, and Tracking[Project]
+Feature Detection and Description
+General Libraries:
+VLFeat – Implementation of various feature descriptors (including SIFT, HOG, and LBP) and covariant feature detectors (including DoG, Hessian, Harris Laplace, Hessian Laplace, Multiscale Hessian, Multiscale Harris). Easy-to-use Matlab interface. See Modern features: Software – Slides providing a demonstration of VLFeat and also links to other software. Check also VLFeat hands-on session training
+OpenCV – Various implementations of modern feature detectors and descriptors (SIFT, SURF, FAST, BRIEF, ORB, FREAK, etc.)
+Fast Keypoint Detectors for Real-time Applications:
+FAST – High-speed corner detector implementation for a wide variety of platforms
+AGAST – Even faster than the FAST corner detector. A multi-scale version of this method is used for the BRISK descriptor (ECCV 2010).
+Binary Descriptors for Real-Time Applications:
+BRIEF – C++ code for a fast and accurate interest point descriptor (not invariant to rotations and scale) (ECCV 2010)
+ORB – OpenCV implementation of the Oriented-Brief (ORB) descriptor (invariant to rotations, but not scale)
+BRISK – Efficient Binary descriptor invariant to rotations and scale. It includes a Matlab mex interface. (ICCV 2011)
+FREAK – Faster than BRISK (invariant to rotations and scale) (CVPR 2012)
+SIFT and SURF Implementations:
+SIFT: VLFeat, OpenCV, Original code by David Lowe, GPU implementation, OpenSIFT
+SURF: Herbert Bay’s code, OpenCV, GPU-SURF
+Other Local Feature Detectors and Descriptors:
+VGG Affine Covariant features – Oxford code for various affine covariant feature detectors and descriptors.
+LIOP descriptor – Source code for the Local Intensity order Pattern (LIOP) descriptor (ICCV 2011).
+Local Symmetry Features – Source code for matching of local symmetry features under large variations in lighting, age, and rendering style (CVPR 2012).
+Global Image Descriptors:
+GIST – Matlab code for the GIST descriptor
+CENTRIST – Global visual descriptor for scene categorization and object detection (PAMI 2011)
+Feature Coding and Pooling
+VGG Feature Encoding Toolkit – Source code for various state-of-the-art feature encoding methods – including Standard hard encoding, Kernel codebook encoding, Locality-constrained linear encoding, and Fisher kernel encoding.
+Spatial Pyramid Matching – Source code for feature pooling based on spatial pyramid matching (widely used for image classification)
+Convolutional Nets and Deep Learning
+EBLearn – C++ Library for Energy-Based Learning. It includes several demos and step-by-step instructions to train classifiers based on convolutional neural networks.
+Torch7 – Provides a matlab-like environment for state-of-the-art machine learning algorithms, including a fast implementation of convolutional neural networks.
+Deep Learning - Various links for deep learning software.
+Part-Based Models
+Deformable Part-based Detector – Library provided by the authors of the original paper (state-of-the-art in PASCAL VOC detection task)
+Efficient Deformable Part-Based Detector – Branch-and-Bound implementation for a deformable part-based detector.
+Accelerated Deformable Part Model – Efficient implementation of a method that achieves the exact same performance of deformable part-based detectors but with significant acceleration (ECCV 2012).
+Coarse-to-Fine Deformable Part Model – Fast approach for deformable object detection (CVPR 2011).
+Poselets – C++ and Matlab versions for object detection based on poselets.
+Part-based Face Detector and Pose Estimation – Implementation of a unified approach for face detection, pose estimation, and landmark localization (CVPR 2012).
+Attributes and Semantic Features
+Relative Attributes – Modified implementation of RankSVM to train Relative Attributes (ICCV 2011).
+Object Bank – Implementation of object bank semantic features (NIPS 2010). See also ActionBank
+Classemes, Picodes, and Meta-class features – Software for extracting high-level image descriptors (ECCV 2010, NIPS 2011, CVPR 2012).
+Large-Scale Learning
+Additive Kernels – Source code for fast additive kernel SVM classifiers (PAMI 2013).
+LIBLINEAR – Library for large-scale linear SVM classification.
+VLFeat – Implementation for Pegasos SVM and Homogeneous Kernel map.
+Fast Indexing and Image Retrieval
+FLANN – Library for performing fast approximate nearest neighbor.
+Kernelized LSH – Source code for Kernelized Locality-Sensitive Hashing (ICCV 2009).
+ITQ Binary codes – Code for generation of small binary codes using Iterative Quantization and other baselines such as Locality-Sensitive-Hashing (CVPR 2011).
+INRIA Image Retrieval – Efficient code for state-of-the-art large-scale image retrieval (CVPR 2011).
+Object Detection
+See Part-based Models and Convolutional Nets above.
+Pedestrian Detection at 100fps – Very fast and accurate pedestrian detector (CVPR 2012).
+Caltech Pedestrian Detection Benchmark – Excellent resource for pedestrian detection, with various links for state-of-the-art implementations.
+OpenCV – Enhanced implementation of Viola&Jones real-time object detector, with trained models for face detection.
+Efficient Subwindow Search – Source code for branch-and-bound optimization for efficient object localization (CVPR 2008).
+3D Recognition
+Point-Cloud Library – Library for 3D image and point cloud processing.
+Action Recognition
+ActionBank – Source code for action recognition based on the ActionBank representation (CVPR 2012).
+STIP Features – software for computing space-time interest point descriptors
+Independent Subspace Analysis – Look for Stacked ISA for Videos (CVPR 2011)
+Velocity Histories of Tracked Keypoints - C++ code for activity recognition using the velocity histories of tracked keypoints (ICCV 2009)
+Datasets
+Attributes
+Animals with Attributes – 30,475 images of 50 animals classes with 6 pre-extracted feature representations for each image.
+aYahoo and aPascal – Attribute annotations for images collected from Yahoo and Pascal VOC 2008.
+FaceTracer – 15,000 faces annotated with 10 attributes and fiducial points.
+PubFig – 58,797 face images of 200 people with 73 attribute classifier outputs.
+[url=http://vis-www.cs.umass.edu/lfw/]LFW[/url] – 13,233 face images of 5,749 people with 73 attribute classifier outputs.
+Human Attributes – 8,000 people with annotated attributes. Check also this link for another dataset of human attributes.
+SUN Attribute Database – Large-scale scene attribute database with a taxonomy of 102 attributes.
+ImageNet Attributes – Variety of attribute labels for the ImageNet dataset.
+Relative attributes – Data for OSR and a subset of PubFig datasets. Check also this link for the WhittleSearch data.
+Attribute Discovery Dataset – Images of shopping categories associated with textual descriptions.
+Fine-grained Visual Categorization
+Caltech-UCSD Birds Dataset – Hundreds of bird categories with annotated parts and attributes.
+Stanford Dogs Dataset – 20,000 images of 120 breeds of dogs from around the world.
+Oxford-IIIT Pet Dataset – 37 category pet dataset with roughly 200 images for each class. Pixel level trimap segmentation is included.
+Leeds Butterfly Dataset – 832 images of 10 species of butterflies.
+Oxford Flower Dataset – Hundreds of flower categories.
+Face Detection
+[url=http://vis-www.cs.umass.edu/fddb/]FDDB[/url] – UMass face detection dataset and benchmark (5,000+ faces)
+CMU/MIT – Classical face detection dataset.
+Face Recognition
+Face Recognition Homepage – Large collection of face recognition datasets.
+[url=http://vis-www.cs.umass.edu/lfw/]LFW[/url] – UMass unconstrained face recognition dataset (13,000+ face images).
+NIST Face Homepage – includes face recognition grand challenge (FRGC), vendor tests (FRVT) and others.
+CMU Multi-PIE – contains more than 750,000 images of 337 people, with 15 different views and 19 lighting conditions.
+FERET – Classical face recognition dataset.
+Deng Cai’s face dataset in Matlab Format – Easy to use if you want play with simple face datasets including Yale, ORL, PIE, and Extended Yale B.
+SCFace – Low-resolution face dataset captured from surveillance cameras.
+Handwritten Digits
+MNIST – large dataset containing a training set of 60,000 examples, and a test set of 10,000 examples.
+Pedestrian Detection
+Caltech Pedestrian Detection Benchmark – 10 hours of video taken from a vehicle,350K bounding boxes for about 2.3K unique pedestrians.
+INRIA Person Dataset – Currently one of the most popular pedestrian detection datasets.
+ETH Pedestrian Dataset – Urban dataset captured from a stereo rig mounted on a stroller.
+TUD-Brussels Pedestrian Dataset – Dataset with image pairs recorded in an crowded urban setting with an onboard camera.
+PASCAL Human Detection – One of 20 categories in PASCAL VOC detection challenges.
+USC Pedestrian Dataset – Small dataset captured from surveillance cameras.
+Generic Object Recognition
+ImageNet – Currently the largest visual recognition dataset in terms of number of categories and images.
+Tiny Images – 80 million 32x32 low resolution images.
+Pascal VOC – One of the most influential visual recognition datasets.
+Caltech 101 / Caltech 256 – Popular image datasets containing 101 and 256 object categories, respectively.
+MIT LabelMe – Online annotation tool for building computer vision databases.
+Scene Recognition
+MIT SUN Dataset – MIT scene understanding dataset.
+UIUC Fifteen Scene Categories – Dataset of 15 natural scene categories.
+Feature Detection and Description
+VGG Affine Dataset – Widely used dataset for measuring performance of feature detection and description. CheckVLBenchmarksfor an evaluation framework.
+Action Recognition
+Benchmarking Activity Recognition – CVPR 2012 tutorial covering various datasets for action recognition.
+RGBD Recognition
+RGB-D Object Dataset – Dataset containing 300 common household objects
+Reference:
+[1]: http://rogerioferis.com/VisualRecognitionAndSearch/Resources.html
+特征提取
+SURF特征: http://www.vision.ee.ethz.ch/software/index.de.html(当然这只是其中之一)
+LBP特征(一种纹理特征)：http://www.comp.hkbu.edu.hk/~icpr06/tutorials/Pietikainen.html
+Fast Corner Detection（OpenCV中的Fast算法）:FAST Corner Detection -- Edward Rosten
+机器视觉
+A simple object detector with boosting(Awarded the Best Short Course Prize at ICCV 2005，So了解adaboost的推荐之作)：http://people.csail.mit.edu/torralba/shortCourseRLOC/boosting/boosting.html
+Boosting(该网页上有相当全的Boosting的文章和几个Boosting代码，本人推荐)：http://cbio.mskcc.org/~aarvey/boosting_papers.html
+Adaboost Matlab 工具：http://graphics.cs.msu.ru/en/science/research/machinelearning/adaboosttoolbox
+MultiBoost(不说啥了，多类Adaboost算法的程序)：http://sourceforge.net/projects/multiboost/
+TextonBoost(我们教研室王冠夫师兄的毕设): Jamie Shotton - Code
+LibSvm的老爹（推荐）: http://www.csie.ntu.edu.tw/~cjlin/
+Conditional Random Fields（CRF论文+Code列表，推荐）
+CRF++: Yet Another CRF toolkit
+Conditional Random Field (CRF) Toolbox for Matlab
+Tree CRFs
+LingPipe: Installation
+Hidden Markov Models（推荐）
+隐马尔科夫模型(Hidden Markov Models)系列之一 - eaglex的专栏 - 博客频道 - CSDN.NET（推荐）
+综合代码
+CvPapers(好吧，牛吧网站，里面有ICCV，CVPR，ECCV，SIGGRAPH的论文收录，然后还有一些论文的代码搜集，要求加精！)：http://www.cvpapers.com/
+Computer Vision Software(里面代码很多，并详细的给出了分类)：http://peipa.essex.ac.uk/info/software.html
+某人的Windows Live（我看里面东东不少就收藏了）：https://skydrive.live.com/?cid=3b6244088fd5a769#cid=3B6244088FD5A769&id=3B6244088FD5A769!523
+MATLAB and Octave Functions for Computer Vision and Image Processing（这个里面的东西也很全，只是都是用Matlab和Octave开发的）：http://www.csse.uwa.edu.au/~pk/research/matlabfns/
+Computer Vision Resources（里面的视觉算法很多，给出了相应的论文和Code，挺好的）：https://netfiles.uiuc.edu/jbhuang1/www/resources/vision/index.html
+MATLAB Functions for Multiple View Geometry（关于物体多视角计算的库）：http://www.robots.ox.ac.uk/~vgg/hzbook/code/
+Evolutive Algorithm based on Naïve Bayes models Estimation（单独列了一个算法的Code）：http://www.cvc.uab.cat/~xbaro/eanbe/#_Software
+主页代码
+Pablo Negri's Home Page
+Jianxin Wu's homepage
+Peter Carbonetto
+Markov Random Fields for Super-Resolution
+Detecting and Sketching the Common
+Pedro Felzenszwalb
+Hae JONG, SEO
+CAP 5416 - Computer Vision
+Parallel Tracking and Mapping for Small AR Workspaces (PTAM)
+Deva Ramanan - UC Irvine - Computer Vision
+Raghuraman Gopalan
+Hui Kong
+Jamie Shotton - Post-Doctoral Researcher in Computer Vision
+Jean-Yves AUDIBERT
+Olga Veksler
+Stephen Gould
+Publications (Last Update: 09/30/10)
+Karim Ali - FlowBoost
+A simple parts and structure object detector
+Code - Oxford Brookes Vision Group
+Taku Kudo
+行人检测
+Histogram of Oriented Gradient (Windows)
+INRIA Pedestrian detector
+Poselets
+William Robson Schwartz - Softwares
+calvin upper-body detector v1.02
+RPT@CVG
+Main Page
+Source Code
+Dr. Luciano Spinello
+Pedestrian Detection
+Class-Specific Hough Forests for Object Detection
+Jianxin Wu's homepage（就是上面的）
+Berkeley大学做的Pedestrian Detector，使用交叉核的支持向量机，特征使用HOG金字塔，提供Matlab和C++混编的代码：http://www.cs.berkeley.edu/~smaji/projects/ped-detector/
+视觉壁障
+High Speed Obstacle Avoidance using Monocular Vision and Reinforcement Learning
+TLD(2010年很火的tracking算法)
+online boosting trackers
+Boris Babenko
+Optical Flow Algorithm Evaluation (提供了一个动态贝叶斯网络框架，例如递 归信息处理与分析、卡尔曼滤波、粒子滤波、序列蒙特卡罗方法等，C++写的)http://of-eval.sourceforge.net/
+物体检测算法
+Object Detection
+Software for object detection
+人脸检测
+Source Code
+10个人脸检测项目
+Jianxin Wu's homepage（又是这货）
+ICA独立成分分析
+An ICA page-papers,code,demo,links (Tony Bell)
+FastICA
+Cached k-d tree search for ICP algorithms
+滤波算法
+卡尔曼滤波：The Kalman Filter(终极网页)
+Bayesian Filtering Library: The Bayesian Filtering Library
+路面识别
+Source Code
+Vanishing point detection for general road detection
+分割算法
+MATLAB Normalized Cuts Segmentation Code：software
+超像素分割：SLIC Superpixels
+附： http://blog.sina.com.cn/s/blog_5086c3e20101kdy5.html，http://www.yuanyong.org/cv/cv-code-three.html
+参考：
+http://blog.csdn.net/carson2005/article/details/6601109
+http://blog.csdn.net/chlele0105/article/details/16880049
+http://blog.csdn.net/yihaizhiyan/article/details/6583727
+http://www.sigvc.org/bbs/forum.phpmod=viewthread&tid=3126&highlight=%BC%C6%CB%E3%BB%FA%CA%D3%BE%F5%B4%FA%C2%EB
+//=========================================================================================================================//
+1  中国内地
+1.1    程明明
+清华大学程明明博士，南开大学媒体计算实验室
+http://mmcheng.net/
+方向：图像分割、检索，显著性计算，目标检测。
+资源：Paper、Code、data。
+更新：2015
+1.2    冯建江
+清华大学助理教授
+http://ivg.au.tsinghua.edu.cn/~jfeng/
+方向：图像处理、模式识别、生物认证
+资源：Paper、Matlab code, C++ library, or executable file。
+更新：2015
+1.3    樊彬
+中科院助理教授樊彬
+http://www.sigvc.org/bfan/
+方向：计算机视觉，局部不变特征。
+资源：Paper、Code。
+更新：2015
+1.4    吴建鑫
+南京大学教授，LAMDA group
+http://cs.nju.edu.cn/wujx/
+方向：大规模数据的机器学习算法、物体的实时检测与识别、人的行为识别、场景分类和理解、计算机视觉和机器学习在其他领域的应用
+资源：Paper、Code、
+更新：2015
+1.5    Junjie Yan
+http://www.cbsr.ia.ac.cn/users/jjyan/main.htm
+方向：Object Detection, Face Detection, Pedestrian Detection
+资源：Paper
+更新：2015
+1.6    余轶南
+百度深度学习研究中心博士后(PASCAL VOC 2010 Detection Challenge Winner)：
+http://www.cbsr.ia.ac.cn/users/ynyu/index.htm
+方向：Multiple Transform Estimation、Object Detection、Image Matching、Interest point detection、Image Classification and Object Recognition
+资源：Paper
+更新：2015
+1.7    周志华
+http://cs.nju.edu.cn/zhouzh/index.htm
+南京大学教授
+书籍：Ensemble Methods: Foundations and Algorithms。Ensemble Methods领域首屈一指，主要兴趣是机器学习，应用方面关注图像检索、人脸识别、数据挖掘等。负责LAMDA（Learning And Mining from DatA）
+资源：Paper和课程，LAMDA有部分代码和数据
+更新：2015
+2   中国香港
+2.1    贾佳亚
+香港中文大学教授贾佳亚
+http://www.cse.cuhk.edu.hk/~leojia/index.html
+方向： computer vision, computational photography, and machine learning.
+资源：Paper、项目
+更新：2015
+2.2    汤晓鸥
+香港中文大学多媒体实验室（汤晓鸥）
+http://mmlab.ie.cuhk.edu.hk/
+方向：深度学习、人脸分析、视频监控、图像视觉搜索、图像视觉编辑、3D画直线
+资源：Paper、dataset、项目
+更新：2015
+2.3    王晓刚
+香港中文大学助理教授王晓刚
+http://www.ee.cuhk.edu.hk/~xgwang/
+方向：computer vision, medical imaging, machine learning, and applications to visual surveillance, face recognition, image and video searching, and diffusion weighted imaging
+资源：Paper、dataset
+更新：2014
+2.4    张磊
+香港理工大学教授张磊
+http://www4.comp.polyu.edu.hk/~cslzhang/
+方向：图像质量、Metric Learning 等
+资源：Paper、code
+更新：2015
+3   中国台湾
+3.1    Chih-Chung Chang and Chih-Jen Lin
+http://www.csie.ntu.edu.tw/~cjlin/libsvm/
+方向：著名的svm库，OpenCV采用的svm算法
+资源：Paper、code
+更新：2014
+1        美国
+1.1     MIT
+1.1.1   Antonio Torralba
+MIT助理教授Antonio Torralba
+http://web.mit.edu/torralba/www/
+方向：计算机视觉，机器学习和人类视觉感知。场景和物体识别。比较好的交互可视化web工具：Interactive visualization of deep networks
+资源：Paper，project，Databases，code，teaching，demo。
+更新：2015
+1.1.2   Bolei Zhou
+http://people.csail.mit.edu/bzhou/
+方向：计算机视觉和机器学习，专为数据驱动的视觉和场景的理解.
+资源：Paper、project、demo
+更新：2015
+1.1.3   Ce Liu
+MIT前微软研究员现谷歌Ce Liu:
+http://people.csail.mit.edu/celiu/
+方向：CNN、Face hallucination、去噪、超分辨率、去模糊、分割
+资源：Paper、software、project、Code
+更新：2014
+1.1.4   Douglas Lanman
+Research Scientist at Oculus Research （虚拟现实一家公司）
+http://alumni.media.mit.edu/~dlanman/index.html
+方向：跨越计算机图形学，视觉，光学，信号处理与应用程序的计算显示和成像系统，特别是头戴式显示器和虚拟/增强现实.
+资源：Paper、Code、Video
+更新：2014
+1.1.5   Michael (Miki) Rubinstein
+Research Scientist, Google
+http://people.csail.mit.edu/mrub/
+方向：计算机视觉和图形的交叉点的图像和视频的分析的各个领域的工作。是低层次的图像/视频处理和计算摄影和视频.
+资源：Paper、Code、Video、software、data
+更新：2015
+1.1.6   William Freeman
+MIT教授William Freeman：
+http://billf.mit.edu/
+方向：图像纹理合成，运动重新渲染，计算摄影，和视觉学习。
+经典：图像融合算法Phase-based Video Motion Processing。
+Alex Efros和Freeman在2001年SIGGRAPH上发表了”Image quilting for texture synthesis and transfer”，其思想是从已知图像中获得小块，然后将这些小块拼接mosaic一起，形成新的图像。该算法是图像纹理合成中经典中的经典
+资源：Paper，project。
+更新：2015
+1.1.7   林达华
+MIT博士，汤晓欧学生林达华个人博客
+http://dahua.me/
+方向：机器学习，数据挖掘，计算机视觉和自然语言理解
+资源：Paper
+更新：2014
+1.1.8   周博磊
+MIT周博磊博士
+http://people.csail.mit.edu/bzhou/
+方向：计算机视觉和机器学习，专为数据驱动的视觉和场景的理解.
+资源：Paper，project，demo。
+更新：2015
+1.2     斯坦福
+1.2.1   Andrew Ng
+斯坦福大学Andrew Ng教授
+http://cs.stanford.edu/people/ang/
+方向：深度神经网络，深度学习，very large neural networks to learn from labeled and unlabeled data
+资源：Paper，project，courses。
+更新：2013
+1.2.2   Quoc V.Le
+斯坦福大学，现谷歌研究科学家
+http://ai.stanford.edu/~quocle/
+方向：机器学习、RNN、ICA、行为识别
+资源：Paper、Code、2011年行为识别文章的代码？
+更新：2015
+1.2.3   Sebastian Thrun
+斯坦福大学Sebastian Thrun教授：
+http://robots.stanford.edu/index.html
+方向：机器人，自动驾驶汽车，家庭自动化，医疗保健，无人机和其他一些应用程序的工作。目前集中在两个方面：早期癌症检测和跟踪，以及智能家园.
+资源：Paper，project，courses。
+更新：2007
+1.2.4   李菲菲
+Stanford大学vision实验室；李菲菲所在实验室
+http://vision.stanford.edu/index.html
+方向：计算机视觉和人的视觉。物体识别，场景分类，综合场景理解，人体运动识别，材料识别，神经机制等。
+经典：建立了图像识别领域的标准测试库Caltech101/256、ImageNet？
+资源：Paper，Tedtalk， teaching。
+更新：2015
+1.3     CMU
+1.3.1   Daniel Huber
+CMU研究员Daniel Huber
+http://www.ri.cmu.edu/person.html?person_id=123
+方向：三维（3D）计算机视觉，特别是使用高精确度范围的传感器，例如激光扫描仪在建模，识别和可视化的领域中的问题。提取三维模型的高层次语义，如建筑物的模型.
+资源：Project、paper
+更新：2015
+1.3.2   Martial Hebert
+CMU机器人学院教授Martial Hebert:
+http://www.cs.cmu.edu/~hebert/
+方向：目标/类别识别；利用上下文信息，从图像的特定的3-D几何进行场景分析；场景解释和重建；在视频剪辑的特征提取和事件检测运动分析；动态三维点云的分析（“3-D信号处理”），高效的工具；感知的自治系统；在动态环境探测，跟踪和预测
+资源：Project、paper、software、data
+更新：2014
+1.3.3   Yang Wang
+CMU大学研究员Yang Wang
+http://www.cs.cmu.edu/~wangy/home.html
+方向：计算机视觉，图形学，医学图像分析，生物识别，机器学习，计算机动画，以及增强现实.
+资源：Project、demo、paper
+更新：2010
+//=========================================================================================================================//
+转自：http://www.cnblogs.com/tornadomeet/archive/2012/05/24/2515980.html
+Deep Learning（深度学习）：
+ufldl的2个教程(这个没得说，入门绝对的好教程，Ng的，逻辑清晰有练习)：一
+ufldl的2个教程(这个没得说，入门绝对的好教程，Ng的，逻辑清晰有练习)：二
+Bengio团队的deep learning教程，用的theano库，主要是rbm系列，搞python的可以参考，很不错。
+deeplearning.net主页，里面包含的信息量非常多，有software, reading list, research lab, dataset, demo等，强烈推荐，自己去发现好资料。
+Deep learning的toolbox，matlab实现的，对应源码来学习一些常见的DL模型很有帮助，这个库我主要是用来学习算法实现过程的。
+2013年龙星计划深度学习教程，邓力大牛主讲，虽然老师准备得不充分，不过还是很有收获的。
+Hinton大牛在coursera上开的神经网络课程，DL部分有不少，非常赞，没有废话，课件每句话都包含了很多信息，有一定DL基础后去听收获更大。
+Larochelle关于DL的课件，逻辑清晰，覆盖面广,包含了rbm系列，autoencoder系列，sparse coding系列，还有crf，cnn，rnn等。虽然网页是法文，但是课件是英文。
+CMU大学2013年的deep learning课程，有不少reading paper可以参考。
+达慕思大学Lorenzo Torresani的2013Deep learning课程reading list.
+Deep Learning Methods for Vision(余凯等在cvpr2012上组织一个workshop，关于DL在视觉上的应用)。
+斯坦福Ng团队成员链接主页，可以进入团队成员的主页，比较熟悉的有Richard Socher, Honglak Lee, Quoc Le等。
+多伦多ML团队成员链接主页，可以进入团队成员主页，包括DL鼻祖hinton，还有Ruslan Salakhutdinov , Alex Krizhevsky等。
+蒙特利尔大学机器学习团队成员链接主页，包括大牛Bengio，还有Ian Goodfellow 等。
+纽约大学的机器学习团队成员链接主页，包括大牛Lecun，还有Rob Fergus等。
+Charlie Tang个人主页，结合DL+SVM.
+豆瓣上的脑与deep learning读书会，有讲义和部分视频，主要介绍了一些于deep learning相关的生物神经网络。
+Large Scale ML的课程，由Lecun和Langford讲的，能不推荐么。
+Yann Lecun的2014年Deep Learning课程主页。视频链接。
+吴立德老师《深度学习课程》
+一些常见的DL code列表，csdn博主zouxy09的博文，Deep Learning源代码收集-持续更新…
+Deep Learning for NLP (without Magic)，由DL界5大高手之一的Richard Socher小组搞的，他主要是NLP的。
+2012 Graduate Summer School: Deep Learning, Feature Learning，高手云集，深度学习盛宴，几乎所有的DL大牛都有参加。
+matlab下的maxPooling速度优化，调用C++实现的。
+2014年ACL机器学习领域主席Kevin Duh的深度学习入门讲座视频。
+R-CNN code: Regions with Convolutional Neural Network Features.
+Machine Learning（机器学习）：
+介绍图模型的一个ppt，非常的赞，ppt作者总结得很给力，里面还包括了HMM，MEM, CRF等其它图模型。反正看完挺有收获的。
+机器学习一个视频教程，youtube上的，翻吧，内容很全面，偏概率统计模型，每一小集只有几分钟。
+龙星计划2012机器学习，由余凯和张潼主讲。
+demonstrate 的 blog :关于PGM(概率图模型)系列，主要按照Daphne Koller的经典PGM教程介绍的，大家依次google之。
+FreeMind的博客，主要关于机器学习的。
+Tom Mitchell大牛的机器学习课程，他的machine learning教科书非常出名。
+CS109,Data Science,用python介绍机器学习算法的课程。
+CCF主办的一些视频讲座。
+国外技术团队博客：
+Netflix技术博客,很多干货。
+Computer Vision（计算机视觉）：
+MIT2013年秋季课程：Advances in Computer Vision，有练习题，有些有code.
+IPAM一个计算机视觉的短期课程，有不少牛人参加。
+OpenCV相关：
+http://opencv.org/
+2012年7月4日随着opencv2.4.2版本的发布，opencv更改了其最新的官方网站地址。
+http://www.opencvchina.com/
+好像12年才有这个论坛的，比较新。里面有针对《learning opencv》这本书的视频讲解，不过视频教学还没出完，正在更新中。对刚入门学习opencv的人来说很不错。
+http://www.opencv.org.cn/forum/
+opencv中文论坛，对于初次接触opencv的学者来说比较不错，入门资料多，opencv的各种英文文档也翻译成中文了。不足是感觉这个论坛上发帖提问很少人回答，也就是说讨论不够激烈。
+http://opencv.jp/
+opencv的日文网站，里面有不少例子代码，看不懂日文可以用网站自带的翻译，能看个大概。
+http://code.opencv.org/projects/opencv
+opencv版本bug修补，版本更新，以及各种相关大型活动安排,还包含了opencv最近几个月内的活动路线，即未来将增加的功能等，可以掌握各种关于opencv进展情况的最新进展。
+http://tech.groups.yahoo.com/group/OpenCV/
+opencv雅虎邮件列表，据说是最好的opencv论坛，信息更新最新的地方。不过个人认为要查找相关主题的内容，在邮件列表中非常不方便。
+http://www.cmlab.csie.ntu.edu.tw/~jsyeh/wiki/doku.php
+台湾大学暑假集训网站，内有链接到与opencv集训相关的网页。感觉这种教育形式还蛮不错的。
+http://sourceforge.net/projects/opencvlibrary/
+opencv版本发布地方。
+http://code.opencv.org/projects/opencv/wiki/ChangeLog#241http://opencv.willowgarage.com/wiki/OpenCV%20Change%20Logs
+opencv版本内容更改日志网页,前面那个网页更新最快。
+http://www.opencv.org.cn/opencvdoc/2.3.2/html/doc/tutorials/tutorials.html
+opencv中文教程网页，分几个模块讲解，有代码有过程。内容是网友翻译opencv自带的doc文件里的。
+https://netfiles.uiuc.edu/jbhuang1/www/resources/vision/index.html
+网友总结的常用带有cvpr领域常见算法code链接的网址，感觉非常的不错。
+http://fossies.org/dox/OpenCV-2.4.2/
+该网站可以查看opencv中一些函数的变量接口，还会列出函数之间的结构图。
+http://opencv.itseez.com/
+opencv的函数、类等查找网页，有导航，查起来感觉不错。
+优化：
+submodual优化网页。
+Geoff Gordon的优化课程，youtube上有对应视频。
+数学：
+http://www.youku.com/playlist_show/id_19465801.html
+《计算机中的数学》系列视频，8位老师10讲内容，生动介绍微积分和线性代数基本概念在计算机学科中的各种有趣应用！
+Linux学习资料：
+http://itercast.com/library/1
+linux入门的基础视频教程，对于新手可选择看第一部分，视频来源于LinuxCast.NET网站，还不错。
+OpenNI+Kinect相关：
+http://1.yuhuazou.sinaapp.com/
+网友晨宇思远的博客，主攻cvpr，ai等。
+http://blog.csdn.net/chenli2010/article/details/6887646
+kinect和openni学习资料汇总。
+http://blog.csdn.net/moc062066/article/category/871261
+OpenCV 计算机视觉 kinect的博客:
+http://kheresy.wordpress.com/index_of_openni_and_kinect/comment-page-5/
+网友Heresy的博客，里面有不少kinect的文章，写的比较详细。
+http://www.cnkinect.com/
+体感游戏中文网，有不少新的kinect资讯。
+http://www.kinectutorial.com/
+Kinect体感开发网。
+http://code.google.com/p/openni-hand-tracker
+openni_hand_tracking google code项目。
+http://blog.candescent.ch/
+网友的kinect博客，里面有很多手势识别方面的文章介绍，还有源码，不过貌似是基于c#的。
+https://sites.google.com/site/colordepthfusion/
+一些关于深度信息和颜色信息融合（fusion）的文章。
+http://projects.ict.usc.edu/mxr/faast/
+kinect新的库，可以结合OpenNI使用。
+https://sites.google.com/a/chalearn.org/gesturechallenge/
+kinect手势识别网站。
+http://www.ros.org/wiki/mit-ros-pkg
+mit的kinect项目，有code。主要是与手势识别相关。
+http://www.thoughtden.co.uk/blog/2012/08/kinecting-people-our-top-6-kinect-projects/
+kinect 2012年度最具创新的6个项目，有视频，确实够创新的！
+http://www.cnblogs.com/yangyangcv/archive/2011/01/07/1930349.html
+kinect多点触控的一篇博文。
+http://sourceforge.net/projects/kinect-mex/
+http://www.mathworks.com/matlabcentral/fileexchange/30242-kinect-matlab
+有关matlab for kinect的一些接口。
+http://news.9ria.com/2012/1212/25609.html
+AIR和Kinect的结合，有一些手指跟踪的code。
+http://eeeweba.ntu.edu.sg/computervision/people/home/renzhou/index.htm
+研究kinect手势识别的，任洲。刚毕业不久。
+其他网友cvpr领域的链接总结：
+http://www.cnblogs.com/kshenf/
+网友整理常用牛人链接总结，非常多。不过个人没有没有每个网站都去试过。所以本文也是我自己总结自己曾经用过的或体会过的。
+OpenGL有关:
+http://nehe.gamedev.net/
+NeHe的OpenGL教程英文版。
+http://www.owlei.com/DancingWind/
+NeHe的OpenGL教程对应的中文版，由网友周玮翻译的。
+http://www.qiliang.net/old/nehe_qt/
+NeHe的OpengGL对应的Qt版中文教程。
+http://blog.csdn.net/qp120291570
+网友"左脑设计，右脑编程"的Qt_OpenGL博客,写得还不错。
+http://guiliblearning.blogspot.com/
+这个博客对opengl的机制有所剖析，貌似要FQ才能进去。
+cvpr综合网站论坛博客等：
+http://www.cvchina.net/
+中国计算机视觉论坛
+http://www.cvchina.info/
+这个博客很不错，每次看完都能让人兴奋，因为有很多关于cv领域的科技新闻，还时不时有视频显示。另外这个博客里面的资源也整理得相当不错。中文的。
+http://www.bfcat.com/
+一位网友的个人计算机视觉博客，有很多关于计算机视觉前沿的东西介绍，与上面的博客一样，看了也能让人兴奋。
+http://blog.csdn.net/v_JULY_v/
+牛人博客，主攻数据结构，机器学习数据挖掘算法等。
+http://blog.youtueye.com/
+该网友上面有一些计算机视觉方向的博客,博客中附有一些实验的测试代码.
+http://blog.sciencenet.cn/u/jingyanwang
+多看pami才扯谈的博客，其中有不少pami文章的中文介绍。
+http://chentingpc.me/
+做网络和自然语言处理的，有不少机器学习方面的介绍。
+ML常用博客资料等：
+http://freemind.pluskid.org/
+由 pluskid 所维护的 blog，主要记录一些机器学习、程序设计以及各种技术和非技术的相关内容，写得很不错。
+http://datasciencemasters.org/
+里面包含学ML/DM所需要的一些知识链接，且有些给出了视频教程，网页资料，电子书，开源code等，推荐！
+http://cs.nju.edu.cn/zhouzh/index.htm
+周志华主页，不用介绍了，机器学习大牛，更可贵的是他的很多文章都有源码公布。
+http://www.eecs.berkeley.edu/~jpaisley/Papers.htm
+John Paisley的个人主页，主要研究机器学习领域，有些文章有代码提供。
+http://foreveralbum.yo2.cn/
+里面有一些常见机器学习算法的详细推导过程。
+http://blog.csdn.net/abcjennifer
+浙江大学CS硕士在读，关注计算机视觉，机器学习，算法研究，博弈， 人工智能， 移动互联网等学科和产业。该博客中有很多机器学习算法方面的介绍。
+http://www.wytk2008.net/
+无垠天空的机器学习博客。
+http://www.chalearn.org/index.html
+机器学习挑战赛。
+http://licstar.net/
+licstar的技术博客，偏自然语言处理方向。
+国内科研团队和牛人网页：
+http://vision.ia.ac.cn/zh/index_cn.html
+中科院自动化所机器视觉课题小组，有相关数据库、论文、课件等下载。
+http://www.cbsr.ia.ac.cn/users/szli/
+李子青教授个人主页，中科院自动化所cvpr领域牛叉人！
+http://www4.comp.polyu.edu.hk/~cslzhang/
+香港理工大学教授lei zhang个人主页，也是cvpr领域一大牛人啊，cvpr，iccv各种发表。更重要的是他所以牛叉论文的code全部公开，非常难得！
+http://liama.ia.ac.cn/wiki/start
+中法信息、自动化与应用联合实验室，里面很多内容不仅限而cvpr，还有ai领域一些其他的研究。
+http://www.cogsci.xmu.edu.cn/cvl/english/
+厦门大学特聘教授，cv领域一位牛人。研究方向主要为目标检测，目标跟踪，运动估计，三维重建，鲁棒统计学，光流计算等。
+http://idm.pku.edu.cn/index.aspx
+北京大学数字视频编码技术国家实验室。
+http://www.csie.ntu.edu.tw/~cjlin/libsvm/
+libsvm项目网址，台湾大学的，很火！
+http://www.jdl.ac.cn/user/sgshan/index.htm
+山世光，人脸识别研究比较牛。在中国科学院智能信息处理重点实验室
+国外科研团队和牛人网页：
+https://netfiles.uiuc.edu/jbhuang1/www/resources/vision/index.html
+常见计算机视觉资源整理索引，国外学者整理，全是出名的算法，并且带有代码的，这个非常有帮助，其链接都是相关领域很火的代码。
+http://www.cs.cmu.edu/afs/cs/project/cil/ftp/html/txtv-groups.html
+国外学者整理的各高校研究所团队网站
+http://research.microsoft.com/en-us/groups/vision/
+微软视觉研究小组，不解释，大家懂的，牛！
+http://lear.inrialpes.fr/index.php
+法国国家信息与自动化研究所，有对应牛人的链接，论文项目网页链接，且一些code对应链接等。
+http://www.cs.ubc.ca/~pcarbo/objrecls/
+Learning to recognize objects with little supervision该篇论文的项目网页，有对应的code下载，另附有详细说明。
+http://www.eecs.berkeley.edu/~lbourdev/poselets/
+poselets相关研究界面，关于poselets的第一手资料。
+http://www.cse.oulu.fi/CMV/Research
+芬兰奥卢大学计算机科学与工程学院网页，里面有很多cv领域相关的研究，比如说人脸，脸部表情，人体行为识别，跟踪，人机交互等cv基本都涉及有。
+http://www.cs.cmu.edu/~cil/vision.html
+卡耐基梅隆大学计算机视觉主页，内容非常多。可惜的是该网站内容只更新到了2004年。
+http://vision.stanford.edu/index.html
+斯坦福大学计算机视觉主页，里面有非常非常多的牛人，比如说大家熟悉的lifeifei.
+http://www.wavelet.org/index.php
+关于wavelet研究的网页。
+http://civs.ucla.edu/
+加州大学洛杉矶分校统计学院，关于统计学习方面各种资料，且有相应的网上公开课。
+http://www.cs.cmu.edu/~efros/
+卡耐基梅隆大学Alexei(Alyosha)Efros教授个人网站，计算机图形学高手。
+http://web.mit.edu/torralba/www//
+mit牛人Associate教授个人网址，主要研究计算机视觉人体视觉感知，目标识别和场景理解等。
+http://people.csail.mit.edu/billf/
+mit牛人William T. Freeman教授，主要研究计算机视觉和图像学
+http://www.research.ibm.com/peoplevision/
+IBM人体视觉研究中心，里面除了有其研究小组的最新成果外，还有很多测试数据(特别是视频）供下载。
+http://www.vlfeat.org/
+vlfeat主页，vlfeat也是一个开源组织，主要定位在一些最流行的视觉算法开源上，Ｃ编写，其很多算法效果比opencv要好,不过数量不全，但是非常有用。
+http://www.robots.ox.ac.uk/~az/
+Andrew Zisserman的个人主页，这人大家应该熟悉，《计算机视觉中的多视几何》这本神书的作者之一。
+http://www.cs.utexas.edu/~grauman/
+KristenGrauman教授的个人主页，是个大美女，且是2011年“马尔奖”获得者，”马尔奖“大家都懂的，计算机视觉领域的最高奖项，目前无一个国内学者获得过。她的主要研究方法是视觉识别。
+http://groups.csail.mit.edu/vision/welcome/
+mit视觉实验室主页。
+http://code.google.com/p/sixthsense/
+曾经在网络上非常出名一个视频，一个作者研究的第六感装置，现在这个就是其开源的主页。
+http://vision.ucsd.edu/~pdollar/research.html#BehaviorRecognitionAnimalBehavior
+Piotr Dollar的个人主要，主要研究方向是人体行为识别。
+http://www.mmp.rwth-aachen.de/
+移动多媒体处理，将移动设备，计算机图像学，视觉，图像处理等结合的领域。
+http://www.di.ens.fr/~laptev/index.html
+Ivan Laptev牛人主页，主要研究人体行为识别。有很多数据库可以下载。
+http://blogs.oregonstate.edu/hess/
+Rob Hess的个人主要，里面有源码下载，比如说粒子滤波，他写的粒子滤波在网上很火。
+http://morethantechnical.googlecode.com/svn/trunk/
+cvpr领域一些小型的开源代码。
+http://iica.de/pd/index.py
+做行人检测的一个团队，内部有一些行人检测的代码下载。
+http://www.cs.utexas.edu/~grauman/research/pubs.html
+UT-Austin计算机视觉小组，包含的视觉研究方向比较广，且有的文章有源码，你只需要填一个邮箱地址，系统会自动发跟源码相关的信息过来。
+http://www.robots.ox.ac.uk/~vgg/index.html
+visual geometry group
+图像:
+http://blog.sina.com.cn/s/blog_4cccd8d301012pw5.html
+交互式图像分割代码。
+http://vision.csd.uwo.ca/code/
+graphcut优化代码。
+语音：
+http://danielpovey.com/kaldi-lectures.html
+语音处理中的kaldi学习。
+算法分析与设计（计算机领域的基础算法）：
+http://www.51nod.com/focus.html
+该网站主要是讨论一些算法题。里面的李陶冶是个大牛，回答了很多算法题。
+一些综合topic列表：
+http://www.cs.cornell.edu/courses/CS7670/2011fa/
+计算机视觉中的些topic（Special Topics in Computer Vision），截止到2011年为止，其引用的文章都是非常顶级的topic。
+书籍相关网页：
+http://www.imageprocessingplace.com/index.htm
+冈萨雷斯的《数字图像处理》一书网站，包含课程材料，matlab图像处理工具包，课件ppt等相关素材。
+Consumer Depth Cameras for Computer Vision
+很优秀的一本书，不过很贵，买不起啊！做深度信息的使用这本书还不错，google图中可以预览一部分。
+Making.Things.See
+针对Kinect写的，主要关注深度信息，较为基础。书籍中有不少例子，貌似是Java写的。
+国内一些AI相关的研讨会：
+http://www.iipl.fudan.edu.cn/MLA13/index.htm
+中国机器学习及应用研讨会(这个是2013年的)
+期刊会议论文下载：
+http://cvpapers.com/
+几个顶级会议论文公开下载界面，比如说ICCV,CVPR,ECCV,ACCV,ICPR,SIGGRAPH等。
+http://www.cvpr2012.org/
+cvpr2012的官方地址，里面有各种资料和信息，其他年份的地址类似推理更改即可。
+http://www.sciencedirect.com/science/journal/02628856
+ICV期刊下载
+http://www.computer.org/portal/web/tpami
+TPAMI期刊，AI领域中可以算得上是最顶级的期刊了，里面有不少cvpr方面的内容。
+http://www.springerlink.com/content/100272/
+IJCV的网址。
+http://books.nips.cc/
+NIPS官网，有论文下载列表。
+http://graphlab.org/lsrs2013/program/
+LSRS （会议）地址，大规模推荐系统，其它年份依次类推。
+会议期刊相关信息：
+http://conferences.visionbib.com/Iris-Conferences.html
+该网页列出了图像处理，计算机视觉领域相关几乎所有比较出名的会议时间表。
+http://conferences.visionbib.com/Browse-conf.php
+上面网页的一个子网页，列出了最近的CV领域提交paper的deadline。
+cvpr相关数据库下载：
+http://research.microsoft.com/en-us/um/people/jckrumm/WallFlower/TestImages.htm
+微软研究院牛人Wallflower Paper的论文中用到的目标检测等测试图片
+http://archive.ics.uci.edu/ml/
+UCI数据库列表下载，最常用的机器学习数据库列表。
+http://www.cs.rochester.edu/~rmessing/uradl/
+人体行为识别通过关键点的跟踪视频数据库，Rochester university的
+http://www.research.ibm.com/peoplevision/performanceevaluation.html
+IBM人体视觉研究中心，有视频监控等非常多的测试视频。
+http://www.cvpapers.com/datasets.html
+该网站上列出了常见的cvpr研究的数据库。
+http://www.cs.washington.edu/rgbd-dataset/index.html
+RGB-D Object Dataset.做目标识别的。
+AI相关娱乐网页：
+http://en.akinator.com/
+该网站很好玩，可以测试你心里想出的一个人名(当然前提是这个人必须有一定的知名度)，然后该网站会提出一系列的问题，你可以选择yes or no,or I don’t know等等，最后系统会显示你心中所想的那个人。
+http://www.doggelganger.co.nz/
+人与狗的匹配游戏，摄像头采集人脸，呵呵…
+Android相关：
+https://code.google.com/p/android-ui-utils/
+该网站上有一些android图标,菜单等跟界面有关的设计工具,可以用来做一些简单的UI设计.
+工具和code下载：
+http://lear.inrialpes.fr/people/dorko/downloads.html
+6种常见的图像特征点检测子，linux下环境运行。不过只提供了二进制文件，不提供源码。
+http://www.cs.ubc.ca/~pcarbo/objrecls/index.html#code
+ssmcmc的matlab代码,是Learning to recognize objects with little supervision这一系列文章用的源码，属于目标识别方面的研究。
+http://www.robots.ox.ac.uk/~timork/
+仿射无关尺度特征点检测算子源码，还有些其它算子的源码或二进制文件。
+http://www.vision.ee.ethz.ch/~bleibe/code/ism.html
+隐式形状模型(ISM)项目主页，作者Bastian Leibe提供了linux下运行的二进制文件。
+http://www.di.ens.fr/~laptev/download.html#stip
+Ivan Laptev牛人主页中的STIP特征点检测code，但是也只是有二进制文件，无源码。该特征点在行为识别中该特征点非常有名。
+http://ai.stanford.edu/~quocle/
+斯坦福大学Quoc V.Le主页，上有它2011年行为识别文章的代码。
+开源软件：
+http://mloss.org/software/
+一些ML开源软件在这里基本都可以搜到，有上百个。
+https://github.com/myui/hivemall
+Scalable machine learning library for Hive/Hadoop.
+http://scikit-learn.org/stable/
+基于Python的机器学习开源软件，文档写得不错。
+挑战赛：
+http://www.chioka.in/kaggle-competition-solutions/
+kaggle一些挑战赛的code.
+公开课：
+网易公开课，国内做得很不错的公开课，翻译了一些国外出名的公开课教程，与国外公开课平台coursera有合作。
+coursera在线教育网上公开课，很新，有个邮箱注册即可学习，有不少课程，且有对应的练习，特别是编程练习，超赞。
+斯坦福网上公开课链接，有统计学习，凸优化等课程。
+udacity公开课程下载链接，其实速度还可以。里面有不少好教程。
+机器学习公开课的连接，有不少课。
+转自：http://blog.csdn.Net/tainyiliusha/article/details/10077081
+//============================================================================================================================//
+牛人主页（主页有很多论文代码） Serge Belongie atUC San Diego AntonioTorralba at MIT Alexei Ffros atCMU Ce Liu atMicrosoft Research New England VittorioFerrari at Univ.of Edinburgh KristenGrauman at UT Austin Devi Parikh at TTI-Chicago (MarrPrize at ICCV2011) John Wright atColumbia Univ. Piotr Dollar atCalTech Boris Babenko atUC San Diego David Ross atGoogle/Youtube
+相关领域： Terence Tao at UCLA David Donoho atStanford Univ.
+大神们： William T.Freeman at MIT RobertoCipolla at Cambridge David Lowe atUniv. of British Columbia Mubarak Shah at Univ. of Central Florida Yi Ma atMSRA TinneTuytelaars at K.U. Leuven Trevor Darrell atU.C. Berkeley Michael J.Black at Brown Univ.
+重要研究组： Computer Vision Group at UC Berkeley RoboticsResearch Group at Univ. of Oxford LEAR atINRIA ComputerVision Lab at Stanford ComputerVision Lab at EPFL ComputerVision Lab at ETH Zurich Computer Vision Lab atSeoul National Univ. Computer Vision Lab atUC San Diego ComputerVision Lab at UC Santa Cruz ComputerVision Lab at Univ. of Southern California ComputerVision Lab at Univ. of Central Florida ComputerVision Lab at Columbia Univ. UCLA VisionLab Motion andShape Computing Group at George Mason Univ. Robust ImageUnderstanding Lab at Rutgers Univ. IntelligentVision Systems Group at Univ. of Bonn Institute forComputer Graphics and Vision at Graz Univ. of Tech. ComputerVision Lab. at Vienna Univ. of Tech. ComputationalImage Analysis and Radiology at Medical Univ. of Vienna Personal Robotics Lab atCMU VisualPerception Lab at Purdue Univ.
+潜力牛人： Juergen Gall at ETHZurich Matt Flagg atGeorgia Tech. MathieuSalzmann at TTI-Chicago GergShakhnarovich at TTI-Chicago Taeg Sang Cho atMIT Jianchao Yang atUIUC Stefan Roth at TU Darmstadt Peter Kontschieder at Graz Univ. of Tech. DominikAlexander Klein at Univ. of Bonn Yinan Yu atCASIA (PASCAL VOC 2010 Detection Challenge Winner) Zdenek Kalal atFPFL Julien Pilet atFPFL Kenji Okuma
+（1）googleResearch； http://research.google.com/index.html （2）MIT博士，汤晓欧学生林达华； http://people.csail.mit.edu/dhlin/index.html （3）MIT博士后Douglas Lanman； http://web.media.mit.edu/~dlanman/ （4）opencv中文网站； http://www.opencv.org.cn/index.php/首页 （5）Stanford大学vision实验室； http://vision.stanford.edu/research.html （6）Stanford大学博士崔靖宇； http://www.stanford.edu/~jycui/ （7）UCLA教授朱松纯； http://www.stat.ucla.edu/~sczhu/ （8）中国人工智能网； http://www.chinaai.org/ （9）中国视觉网； http://www.china-vision.net/ （10）中科院自动化所； http://www.ia.cas.cn/ （11）中科院自动化所李子青研究员； http://www.cbsr.ia.ac.cn/users/szli/ （12）中科院计算所山世光研究员； http://www.jdl.ac.cn/user/sgshan/ （13）人脸识别主页； http://www.face-rec.org/ （14）加州大学伯克利分校CV小组； http://www.eecs.berkeley.edu/Research/Projects/CS/vision/ （15）南加州大学CV实验室； http://iris.usc.edu/USC-Computer-Vision.html （16）卡内基梅隆大学CV主页； http://www.cs.cmu.edu/afs/cs/project/cil/ftp/html/vision.html （17）微软CV研究员Richard Szeliski；http://research.microsoft.com/en-us/um/people/szeliski/ （18）微软亚洲研究院计算机视觉研究组； http://research.microsoft.com/en-us/groups/vc/ （19）微软剑桥研究院ML与CV研究组； http://research.microsoft.com/en-us/groups/mlp/default.aspx （20）研学论坛； http://bbs.matwav.com/ （21）美国Rutgers大学助理教授刘青山；http://www.research.rutgers.edu/~qsliu/ （22）计算机视觉最新资讯网； http://www.cvchina.info/ （23）运动检测、阴影、跟踪的测试视频下载；http://apps.hi.baidu.com/share/detail/18903287 （24）香港中文大学助理教授王晓刚； http://www.ee.cuhk.edu.hk/~xgwang/ (25)香港中文大学多媒体实验室（汤晓鸥）; http://mmlab.ie.cuhk.edu.hk/ (26)U.C. San Diego. computer vision;http://vision.ucsd.edu/content/home (27)CVonline; http://homepages.inf.ed.ac.uk/rbf/CVonline/ (28)computer vision software; http://peipa.essex.ac.uk/info/software.html (29)Computer Vision Resource; http://www.cvpapers.com/ (30)computer vision research groups;http://peipa.essex.ac.uk/info/groups.html (31)computer vision center; http://computervisioncentral.com/cvcnews (32)浙江大学图像技术研究与应用（ITRA）团队：http://www.dvzju.com/ (33)自动识别网：http://www.autoid-china.com.cn/ (34)清华大学章毓晋教授：http://www.tsinghua.edu.cn/publish/ee/4157/2010/20101217173552339241557/20101217173552339241557_.html (35)顶级民用机器人研究小组Porf.Gary领导的Willow Garage:http://www.willowgarage.com/ (36)上海交通大学图像处理与模式识别研究所：http://www.pami.sjtu.edu.cn/ (37)上海交通大学计算机视觉实验室刘允才教授：http://www.visionlab.sjtu.edu.cn/ (38)德克萨斯州大学奥斯汀分校助理教授Kristen Grauman ：http://www.cs.utexas.edu/~grauman/ (39)清华大学电子工程系智能图文信息处理实验室（丁晓青教授）：http://ocrserv.ee.tsinghua.edu.cn/auto/index.asp (40)北京大学高文教授：http://www.jdl.ac.cn/htm-gaowen/ (41)清华大学艾海舟教授：http://media.cs.tsinghua.edu.cn/cn/aihz (42)中科院生物识别与安全技术研究中心：http://www.cbsr.ia.ac.cn/china/indexCH.asp (43)瑞士巴塞尔大学 Thomas Vetter教授：http://informatik.unibas.ch/personen/vetter_t.html (44)俄勒冈州立大学 Rob Hess博士：http://blogs.oregonstate.edu/hess/ (45)深圳大学于仕祺副教授：http://yushiqi.cn/ (46)西安交通大学人工智能与机器人研究所：http://www.aiar.xjtu.edu.cn/ (47)卡内基梅隆大学研究员Robert T.Collins:http://www.cs.cmu.edu/~rcollins/home.html#Background (48)MIT博士Chris Stauffer:http://people.csail.mit.edu/stauffer/Home/index.php (49)美国密歇根州立大学生物识别研究组(Anil K. Jain教授)：http://www.cse.msu.edu/rgroups/biometrics/ (50)美国伊利诺伊州立大学Thomas S. Huang:http://www.beckman.illinois.edu/directory/t-huang1 (51)武汉大学数字摄影测量与计算机视觉研究中心：http://www.whudpcv.cn/index.asp (52)瑞士巴塞尔大学Sami Romdhani助理研究员：http://informatik.unibas.ch/personen/romdhani_sami/ (53)CMU大学研究员Yang Wang:http://www.cs.cmu.edu/~wangy/home.html (54)英国曼彻斯特大学Tim Cootes教授：http://personalpages.manchester.ac.uk/staff/timothy.f.cootes/ (55)美国罗彻斯特大学教授Jiebo Luo:http://www.cs.rochester.edu/u/jluo/ (56)美国普渡大学机器人视觉实验室：https://engineering.purdue.edu/RVL/Welcome.html (57)美国宾利州立大学感知、运动与认识实验室：http://vision.cse.psu.edu/home/home.shtml (58)美国宾夕法尼亚大学GRASP实验室：https://www.grasp.upenn.edu/ (59)美国内达华大学里诺校区CV实验室：http://www.cse.unr.edu/CVL/index.php (60)美国密西根大学vision实验室：http://www.eecs.umich.edu/vision/index.html (61)Universityof Massachusetts(麻省大学),视觉实验室：http://vis-www.cs.umass.edu/index.html (62)华盛顿大学博士后Iva Kemelmacher:http://www.cs.washington.edu/homes/kemelmi (63)以色列魏茨曼科技大学Ronen Basri:http://www.wisdom.weizmann.ac.il/~ronen/index.html (64)瑞士ETH-Zurich大学CV实验室：http://www.vision.ee.ethz.ch/boostingTrackers/index.htm (65)微软CV研究员张正友：http://research.microsoft.com/en-us/um/people/zhang/ (66)中科院自动化所医学影像研究室：http://www.3dmed.net/ (67)中科院田捷研究员：http://www.3dmed.net/tian/ (68)微软Redmond研究院研究员Simon Baker:http://research.microsoft.com/en-us/people/sbaker/ (69)普林斯顿大学教授李凯：http://www.cs.princeton.edu/~li/ (70)普林斯顿大学博士贾登：http://www.cs.princeton.edu/~jiadeng/ (71)牛津大学教授Andrew Zisserman： http://www.robots.ox.ac.uk/~az/ (72)英国leeds大学研究员Mark Everingham:http://www.comp.leeds.ac.uk/me/ (73)英国爱丁堡大学教授Chris William: http://homepages.inf.ed.ac.uk/ckiw/ (74)微软剑桥研究院研究员John Winn: http://johnwinn.org/ (75)佐治亚理工学院教授Monson H.Hayes：http://savannah.gatech.edu/people/mhayes/index.html (76)微软亚洲研究院研究员孙剑：http://research.microsoft.com/en-us/people/jiansun/ (77)微软亚洲研究院研究员马毅：http://research.microsoft.com/en-us/people/mayi/ (78)英国哥伦比亚大学教授David Lowe: http://www.cs.ubc.ca/~lowe/ (79)英国爱丁堡大学教授Bob Fisher: http://homepages.inf.ed.ac.uk/rbf/ (80)加州大学圣地亚哥分校教授Serge J.Belongie:http://cseweb.ucsd.edu/~sjb/ (81)威斯康星大学教授Charles R.Dyer: http://pages.cs.wisc.edu/~dyer/ (82)多伦多大学教授Allan.Jepson: http://www.cs.toronto.edu/~jepson/ (83)伦斯勒理工学院教授Qiang Ji: http://www.ecse.rpi.edu/~qji/ (84)CMU研究员Daniel Huber: http://www.ri.cmu.edu/person.html?person_id=123 (85)多伦多大学教授：David J.Fleet: http://www.cs.toronto.edu/~fleet/ (86)伦敦大学玛丽女王学院教授Andrea Cavallaro:http://www.eecs.qmul.ac.uk/~andrea/ (87)多伦多大学教授Kyros Kutulakos: http://www.cs.toronto.edu/~kyros/ (88)杜克大学教授Carlo Tomasi: http://www.cs.duke.edu/~tomasi/ (89)CMU教授Martial Hebert: http://www.cs.cmu.edu/~hebert/ (90)MIT助理教授Antonio Torralba: http://web.mit.edu/torralba/www/ (91)马里兰大学研究员Yasel Yacoob: http://www.umiacs.umd.edu/users/yaser/ (92)康奈尔大学教授Ramin Zabih: http://www.cs.cornell.edu/~rdz/ (93)CMU博士田渊栋:http://www.cs.cmu.edu/~yuandong/ (94)CMU副教授Srinivasa Narasimhan:http://www.cs.cmu.edu/~srinivas/ (95)CMU大学ILIM实验室：http://www.cs.cmu.edu/~ILIM/ (96)哥伦比亚大学教授Sheer K.Nayar:http://www.cs.columbia.edu/~nayar/ (97)三菱电子研究院研究员Fatih Porikli ：http://www.porikli.com/ (98)康奈尔大学教授Daniel Huttenlocher：http://www.cs.cornell.edu/~dph/ (99)南京大学教授周志华：http://cs.nju.edu.cn/zhouzh/index.htm (100)芝加哥丰田技术研究所助理教授Devi Parikh:http://ttic.uchicago.edu/~dparikh/index.html (101)瑞士联邦理工学院博士后Helmut Grabner:http://www.vision.ee.ethz.ch/~hegrabne/#Short_CV (102)香港中文大学教授贾佳亚：http://www.cse.cuhk.edu.hk/~leojia/index.html (103)南洋理工大学副教授吴建鑫：http://c2inet.sce.ntu.edu.sg/Jianxin/index.html (104)GE研究院研究员李关：http://www.cs.unc.edu/~lguan/ (105)佐治亚理工学院教授Monson Hayes:http://savannah.gatech.edu/people/mhayes/ (106)图片检索国际会议VOC(微软剑桥研究院组织):http://pascallin.ecs.soton.ac.uk/challenges/VOC/ (107)机器视觉开源处理库汇总：http://archive.cnblogs.com/a/2217609/ (108)布朗大学教授Benjamin Kimia: http://www.lems.brown.edu/kimia.html
+aboutmulti-camera: http://server.cs.ucf.edu/~vision/projects.html
+about 3D VoxelColoring Rob Hess: http://blogs.oregonstate.edu/hess/code/voxels/
+About theparticle filters–condensation filter:http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/ISARD1/condensation.html
+Machine LearningOpen Source Software： http://jmlr.csail.mit.edu/mloss/ 1、动作识别数据库：Recognition ofhuman actions：http://www.nada.kth.se/cvap/actions/ 2、Datasets for Computer Vision Research：http://www-cvr.ai.uiuc.edu/ponce_grp/data/ 3、Computer VisionDatasets:http://clickdamage.com/sourcecode/cv_datasets.php 4、里面有好多基本算法 matlab： http://www.mathworks.cn/index.html
+· Matlab Codefor Graph EmbeddingDiscriminant Analysis on Grassmannian Manifolds for Improved Image Set Matching (CVPR),2011. · Matlab Codefor Optimal Local Basis: AReinforcement Learning Approach for Face Recognition(IJCV), vol. 81,no. 2, pp. 191-204, 2009.
+牛人bolg：
+1、Hong KongPolytechnic University ：http://www4.comp.polyu.edu.hk/~cslzhang/
+2、Computer VisionResources：资源非常丰富，包含有基本算法。https://netfiles.uiuc.edu/jbhuang1/www/resources/vision/index.html
+3、源代码非常丰富~~ http://homepage.tudelft.nl/19j49/Publications.html
+CVonline http://homepages.inf.ed.ac.uk/rbf/CVonline http://homepages.inf.ed.ac.uk/rbf/CVonline/unfolded.htm http://homepages.inf.ed.ac.uk/rbf/CVonline/CVentry.htm
+李子青的大作： Markov Random Field Modeling in Computer Vision http://www.cbsr.ia.ac.cn/users/szli/mrf_book/book.html Handbook of Face Recognition (PDF) http://www.umiacs.umd.edu/~shaohua/papers/zhou04hfr.pdf
+张正友的有关参数鲁棒估计著作：
+Parameter Estimation Techniques:A Tutorial with Application to Conic Fitting
+http://research.microsoft.com/~zhang/INRIA/Publis/Tutorial-Estim/Main.html Andrea Fusiello“计算机视觉中的几何”教程：Elements of Geometric Computer Vision http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/FUSIELLO4/tutorial.html#x1-520007 有关马尔可夫蒙特卡罗方法的资料： An introduction to Markov chain Monte Carlo http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/SENEGAS/mcmc.html Markov Chain Monte Carlo for Computer Vision— A tutorial at ICCV05 http://civs.stat.ucla.edu/MCMC/MCMC_tutorial.htm
+有关独立成分分析（Independent Component Analysis , ICA）的资料： An ICA-Page http://www.cnl.salk.edu/~tony/ica.html Fast ICA http://www.cis.hut.fi/projects/ica/fastica/
+The Kalman Filter (介绍卡尔曼滤波器的终极网页) http://www.cs.unc.edu/~welch/kalman/index.html
+1
+2
+3
+Cached k-d tree search for ICP algorithms
+http://kos.informatik.uni-osnabrueck.de/download/3dim2007/paper.html
+几个计算机视觉研究工具
+Machine Vision Toolbox for Matlab
+http://www.petercorke.com/MachineVision Toolbox.html
+Matlab and Octave Function for Computer Vision and Image Processing
+http://www.csse.uwa.edu.au/~pk/research/matlabfns/
+Bayes Net Toolbox for Matlab
+http://www.cs.ubc.ca/~murphyk/Software/BNT/bnt.html
+OpenCV (Chinese)
+http://www.opencv.org.cn/index.php/首页
+Gandalf (A Computer Vision and Numerical Algorithm Labrary)
+http://gandalf-library.sourceforge.net/
+CMU Computer Vision Home Page
+http://www.cs.cmu.edu/afs/cs/project/cil/ftp/html/vision.html
+Machine Learning Resource Links
+http://www.cse.ust.hk/~ivor/resource.htm
+The Bayesian Filtering Library
+http://www.orocos.org/bfl
+Optical Flow Algorithm Evaluation (提供了一个动态贝叶斯网络框架，例如递归信息处理与分析、卡尔曼滤波、粒子滤波、序列蒙特卡罗方法等，C++写的)
+http://of-eval.sourceforge.net/
+MATLAB code for ICP algorithm
+http://www.usenet.com/newsgroups/comp.graphics.visualization/msg00102.html
+牛人主页：
+朱松纯 （Song-Chun Zhu）
+http://www.stat.ucla.edu/~sczhu/
+David Lowe (SIFT) (很帅的一个老头哦 ^ ^)
+http://www.cs.ubc.ca/~lowe/
+Andrea Vedaldi (SIFT)
+http://vision.ucla.edu/~vedaldi/index.html
+Pedro F. Felzenszwalb
+http://people.cs.uchicago.edu/~pff/
+Dougla Dlanman (Brown的一个研究生，在其主页上搜集了大量算法教程和源码)
+http://mesh.brown.edu/dlanman/courses.html
+Jianbo Shi (Ncuts 的始作俑者)
+http://www.cis.upenn.edu/~jshi/
+Active Vision Group (Oxford的一个机器视觉研究团队，特色是SLAM，监视，导航)
+http://www.robots.ox.ac.uk/ActiveVision/index.html
+Juyang Weng（机器学习的专家，Autonomous Mental Development 是其特色）
+http://www.cse.msu.edu/~weng/
+测试图片或视频：
+Middlebury College‘s Stereo Vision Data Set
+http://cat.middlebury.edu/stereo/data.html
+Intelligent Vehicle:
+IVSource
+www.ivsoruce.net
+Robot Car
+http://www.plyojump.com/robot_cars.html
+How to Build a Robot: The Computer Vision Part
+http://www.societyofrobots.com/programming_computer_vision_tutorial.shtml
+收集的一般牛人主页（带代码）:
+Xiaofei He(machine learning code)
+http://people.cs.uchicago.edu/~xiaofei/
+YingNian Wu(active base model code)
+http://www.stat.ucla.edu/~ywu/research.html
+布朗大学计算机主页（可找到该校CS牛人博客）
+http://www.cs.brown.edu/research/areas.html
+Navneet Dalal(Histograms of Oriented Gradients for Human Detection )
+http://www.navneetdalal.com/software
+Paul Viola(Robust Real-timeObject Detection)
+http://research.microsoft.com/en-us/um/people/viola/
+人工智能与模式识别国际顶级期刊会议目录（包含该领域最权威的期刊和会议）

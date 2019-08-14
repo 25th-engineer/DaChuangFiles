@@ -1,0 +1,129 @@
+高校的暑假即将来临，有没有想利用这个暑假为自己充电，为未来的自己赢在起跑线上，成为人工智能界的人生赢家呢？来自 KDnuggets 的 Matthew Mayo 就提供了这份书单，小编在翻译此书单的同时，还贴心搜索了相应的中文译本，并提供了中文版的购买链接。加油吧，骚年！
+如果你想了解大数据的学习路线，想学习大数据知识以及需要免费的学习资料可以加群：784789432.欢迎你的加入。每天下午三点开直播分享基础知识，晚上20:00都会开直播给大家分享大数据项目实战。
+1. 《统计思维：程序员数学之概率统计》Think Stats: Probability and Statistics for Programmers
+Allen B. Downey|著
+张建峰 等|译
+英文：http://www.greenteapress.com/thinkstats/
+中文：https://union-click.jd.com/jdc?d=eysyRS
+本书是 Python 程序员对概率和统计的介绍。
+本书强调了一些简单的技术，您可以利用这些技术来探索真实的数据集并回答有趣的问题。该书的样例基于美国国立卫生研究院的数据，并鼓励读者使用真实的数据集展开项目。
+2. 《贝叶斯方法：概率编程与贝叶斯推断》Probabilistic Programming & Bayesian Methods for Hackers
+Cam Davidson-Pilon|著
+辛愿 等|译
+英文：http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers
+中文：https://union-click.jd.com/jdc?d=noCI83
+本书以计算 / 理解为主，数学为辅，介绍了贝叶斯方法理论和概率编程。
+贝叶斯方法是对数学分析自然而然的估计与推论，但贝叶斯方法的推理非常晦涩、繁杂、难懂。通常介绍贝叶斯推断之前，要先介绍两到三章的概率论的相关内容。不幸的是，由于大多数贝叶斯模型的数学复杂性，读者只能看到简单的、人为编造的示例。于是给读者留下一种“贝叶斯似乎也没什么用处”的错觉。事实上作者本人在刚开始学贝叶斯方法就有过这种尴尬。
+3. 《深入理解机器学习：从原理到算法》Understanding Machine Learning: From Theory to Algorithms
+Shai Shalev-Shwartz 等|著
+张文生|译
+英文：http://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/
+中文：https://union-click.jd.com/jdc?d=RFII4v
+机器学习是计算机科学发展最快的领域之一，具有深远的应用。本书的目的是以原则性的方式介绍机器学习及其提供的算法范例。本书提供了机器学习的基础知识，以及将这些原理转化为实际算法的数学推导的说明。在介绍基础知识之后，本书还涵盖了以前教科书没有提到的大量重要的课题。课题包括讨论学习的计算复杂性、凸性和稳定性的概念；重要的算法包括随机梯度下降、神经网络和结构化输出式学习；以及新兴的理论概念，如 PAC-Bayes 方法和 compression-based bounds 等。
+4. The Elements of Statistical Learning
+Trevor Hastie 等|著
+英文：http://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf
+中文：无
+这本书在通用概念框架的基础上阐述了统计学领域的重要思想。虽然本书的许多方法都是基于统计学的，但它的重心在概念上而不是数学理论上。本书以彩色配图的形式给出了大量的样例。本书对统计学家以及任何对科学或工业数据挖掘感兴趣的从业人士来说都是一本不可多得的好书。本书的覆盖面很广，从监督式学习（预测）到非监督式学习都有所涉猎。书中还提到了神经网络、支持向量机、分类树、预测和分级助推之类的其他话题，这也是相关话题在所有书籍中首次全面论述的一本书。
+5. 《统计学习导论：基于 R 应用》An Introduction to Statistical Learning with Applications in R
+Gareth James 等|著
+王星|译
+英文：http://www-bcf.usc.edu/~gareth/ISL/
+中文：https://union-click.jd.com/jdc?d=bf87xm
+本书介绍了统计学习方法。本书主要面向非数学专业的高年级本科生、硕士研究生和博士生。本书包括大量的 R 语言的实例，这些实例详细解释了如何将统计方法使用真实世界情形设置的详细解释，这些资源对于有志于成为数据科学家的人来说应该很有价值。
+6. Foundations of Data Science
+Avrim Blum 等|著
+英文：https://www.cs.cornell.edu/jeh/book.pdf
+中文：无
+虽然计算机科学的传统领域仍然十分重要，但越来越多的研究人员目光转向了如何利用计算机从应用中产生的大量数据中理解和提取有用的信息，而不仅仅是用计算机解决实际的应用问题。鉴于上述原因，本书涵盖了未来四十年里都会非常有用的技术理论，这些理论的重要性，就相当于自动控制的原理和算法，它们在过去四十年里对学生们在数据科学上的研究起到了很大的作用。
+7. 《写给程序员的数据挖掘实践指南》A Programmer’s Guide to Data Mining: The Ancient Art of the Numerati
+Ron Zacharski|著
+王斌|译
+英文：http://guidetodatamining.com/
+中文：https://union-click.jd.com/jdc?d=GQ9u7w
+本书的编写理念是遵循一个循序渐进的方法，引导读者使用作者提供的 Python 代码进行练习和实验，而不是被动地去阅读本书。作者建议读者们可以积极参与这个编程的实战中去，去尝试数据挖掘的技术。本书通过将知识点分解成一系列小步骤，当读者学完本书时，就可以掌握一个对于数据挖掘技术的基本理解了。
+8.《大数据: 互联网大规模数据挖掘与分布式处理》Mining of Massive Datasets
+Jure Leskovec 等|著
+王斌|译
+英文：http://mmds.org/
+中文：https://union-click.jd.com/jdc?d=2fudaj
+本书由斯坦福大学 CS246:Mining Massive Datasets 和 SC345A:Data Mining 课程的内容总结而成。
+本书的设计同斯坦福课程一样，假设读者没有相关的预备基础知识。如果读者想要了解更深层的东西，大多数章节都附有参考书目，读者可以按此索引进行深入学习。
+9. 《深度学习》Deep Learning
+Ian Goodfellow 等|著
+赵申剑 等|译
+英文：http://www.deeplearningbook.org/
+中文：https://union-click.jd.com/jdc?d=HK6Cxh
+本书旨在帮助读者进入机器学习的领域，尤其是深度学习。网上有完整的在线免费版可供阅读。
+10. 《机器学习训练秘籍》Machine Learning Yearning
+Andrew Ng|著
+英文：http://www.mlyearning.org/
+中文：微信公众号 ngDeepLearningai
+人工智能、机器学习和深度学习正在改变着许多行业。但是建立一个机器学习系统需要你做出以下的一些决策:
+应该收集更多的训练数据吗？
+应该使用端对端的深度学习吗？
+如何处理与测试集不匹配的训练集？
+等等……
+11. Python 数据科学手册 Python Data Science Handbook
+Jake VanderPlas|著
+陶俊杰 等|译
+英文：https://github.com/jakevdp/PythonDataScienceHandbook
+中文：https://union-click.jd.com/jdc?d=KBvZ05
+本书介绍了使用 Python 处理数据所必需的核心库：IPython、NumPy、panda、Matplotlib、Scikit-Learn 以及相关包。本书要求读者需熟悉 Python 语言。如果读者想快速学习 Python，可选读作者另一本著作 A Whirlwind Tour of Python，该书是为计算机相关人员准备的快速入门。
+12. Neural Networks and Deep Learning
+Michael Nielsen|著
+英文：http://neuralnetworksanddeeplearning.com
+中文：无
+本书分两部分：
+神经网络：一种唯美的、从万物生长中汲取灵感的编程范式，使计算机能够从数据中学习；
+深度学习：一系列强有力的技术，让神经网络壮大起来。
+目前，神经网络和深度学习在图像识别、语音识别和自然语言处理等诸多问题提供了最佳的解决方案。本书将教会读者许多神经网络和深度学习背后的核心概念。
+13. 《贝叶斯思维》Think Bayes
+Allen B. Downey|著
+许杨毅|译
+英文：http://greenteapress.com/wp/think-bayes/
+中文：https://union-click.jd.com/jdc?d=zHle26
+本书讲述的是如何使用计算方法处理贝叶斯统计。
+作为 Think X 丛书之一，本书的编写理念是，如果读者会编程，就可以用这项技能来学习其他科目了。
+多数关于贝叶斯统计的书，用的都是数学符号，也就是以数学概念如微积分来表达其思想。本书用的是 Python 代码，取代了数学符号，用离散近似代替连续数学。结果，数学里的积分变成了求和，概率分布的运算大多成了简单的环。
+14. Machine Learning & Big Data
+Kareem Alkaseer|著
+英文：http://www.kareemalkaseer.com/books/ml
+中文：无
+本书尚未完成，将随着时间推移进一步完善。本书的理念是，在理论和实践之间取得平衡，让软件工程师能够轻松使用机器学习模型，而不必过分依赖库。多数情况下，模型或技术背后的概念都比较简单直观，但在细节或术语上就有所欠缺。另外，现有的库通常都可以解决手头的问题，但它们都是黑盒，它们多数还有自己的抽象方法和结构，看不到基本概念。本书的目的就是要把这些隐藏的基本概念弄清楚。
+15. Statistical Learning with Sparsity: The Lasso and Generalizations
+Trevor Hastie 等|著
+英文：https://web.stanford.edu/~hastie/StatLearnSparsity/
+中文：无
+在过去的十年里，计算机和信息技术发生了爆炸式增长。随之而来的是医学、生物学、金融和市场营销等领域有了大量数据。本书在通用的概念框架中阐述了这些领域的重要思想。
+16. Statistical inference for data science
+Brian Caffo|著
+英文：https://leanpub.com/LittleInferenceBook
+中文：无
+本书是 Coursera 课程 Statistical Inference（推论统计学）的配套书，也是 Data Science（数据科学）专业课的一部分。然而，如果读者不上这门课，本书也可阅读。
+本书目的是对重要的推论统计学领域进行介绍。目标读者是有数学背景、具备编程能力的学生，帮助他们把这样的技能用到数据科学或统计学中去。
+17. 《凸优化》Convex Optimization
+Stephen Boyd 等|著
+王书宁 等|译
+英文：http://stanford.edu/~boyd/cvxbook/
+中文：https://union-click.jd.com/jdc?d=kBrTS3
+本书是讲述关于凸优化的问题。凸优化是一类特殊的数学优化问题，最小二乘法和线性规划问题也属于此类。众所周知，最小二乘法和线性规划问题有相当完整的理论，在各种应用中都有出现，并且可以非常有效地用数值方法求解。本书的基本要点是，对于较大的凸优化问题，也可以这样用编程的方式来解决。
+18. 《Python 自然语言处理》Natural Language Processing with Python
+Steven Bird|著
+张旭 等|译
+英文：https://www.nltk.org/book/
+中文：https://union-click.jd.com/jdc?d=RSf7bd
+本书是关于自然语言处理的书。所谓“自然语言”，是指一种人类日常交流所使用的语言：英语、印地语或葡萄牙语等。与编程语言和数学表示法等人工语言不同的是，自然语言是在代代相传的过程中而进化的，很难用明确的规则来解析其中的含义。我们将把自然语言处理广泛地应用于任何一种自然语言的计算机操作。
+本书是基于 Python 编程语言和一个名为自然语言工具包（NLTK）的开源库而写成的。
+19. Automate the Boring Stuff with Python
+Al Sweigart|著
+英文：https://automatetheboringstuff.com/
+中文：无
+你是否曾经花费好几个小时来重命名文件、或者更新表格里的几百个单元？这些任务是多么乏味，那就让电脑来为你效力吧！
+Python 可以帮你完成这些乏味的任务。本书将教会你如何使用 Python 编程来帮你完成那些乏味的任务。本书不要求读者有编程经验，只需跟随本书即可掌握相关编程技巧。一旦掌握编程的基础知识，创建可以毫不费力地执行自动化的 Python 程序将是一件手到擒来的轻松事儿。
+20. 《社会媒体挖掘》Social Media Mining: An Introduction
+Reza Zafarani 等|著
+刘挺 等|译
+英文：http://dmml.asu.edu/smm/
+中文：https://union-click.jd.com/jdc?d=VyZxUc
+过去十年，社交媒体的发展改变了个人互动和行业开展业务的方式。个人通过社交媒体互动、分享和消费内容，以前所未有的速度生成数据。了解和处理这种新型的数据，从而收集可操作的模式，为跨学科研究、新算法和工具开发提供了挑战和机会。社交媒体挖掘整合了社交媒体、社交网络分析和数据挖掘，为学生、从业者、研究人员和项目经理提供了一个方便、连贯的平台，以了解社交媒体挖掘的基础和潜力。

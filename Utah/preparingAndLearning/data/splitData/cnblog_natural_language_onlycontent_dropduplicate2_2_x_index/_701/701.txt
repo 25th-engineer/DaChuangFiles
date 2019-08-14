@@ -1,0 +1,70 @@
+自然语言处理任务数据集
+keywords: NLP, DataSet, corpus process
+语料处理一般步骤
+以下处理步骤出自[Mikolov T, et al. Exploiting Similarities among Languages for Machine Translation[J]. Computer Science, 2013.]
+Tokenization of text using scripts (from www.statmt.org)
+Duplicate sentences were removed
+Numeric values were rewritten as a single token
+special characters were removed (such as !?,:)
+AI Challenger - 英中翻译评测
+适用领域：机器翻译
+规模最大的口语领域英中双语对照数据集。提供了超过1000万的英中对照的句子对作为数据集合。所有双语句对经过人工检查，数据集从规模、相关度、质量上都有保障。
+训练集：10,000,000 句
+验证集（同声传译）：934 句
+验证集（文本翻译）：8000 句
+https://challenger.ai/datasets/translation
+WMT(Workshop on Machine Translation) - 机器翻译研讨会
+适用领域：机器翻译
+WMT 是机器翻译领域最重要的公开数据集。数据规模较大，取决于不同的语言，通常在百万句到千万句不等。
+2017年WMT的网址 http://www.statmt.org/wmt17/
+UN Parallel Corpus - 联合国平行语料
+适用领域：机器翻译
+联合国平行语料库由已进入公有领域的联合国正式记录和其他会议文件组成。语料库包含1990至2014年编写并经人工翻译的文字内容，包括以语句为单位对齐的文本。
+语料库旨在提供多语种的语言资源，帮助在机器翻译等各种自然语言处理方面开展研究和取得进展。为了方便使用，本语料库还提供现成的特定语种双语文本和六语种平行语料子库。
+介绍：https://conferences.unite.un.org/UNCorpus/zh#introduction
+下载：https://conferences.unite.un.org/UNCorpus/zh/DownloadOverview
+（目前一直下载不下来）
+2nd International Chinese Word Segmentation Bakeoff
+适用领域：中文分词
+This directory contains the training, test, and gold-standard data
+used in the 2nd International Chinese Word Segmentation Bakeoff.
+http://sighan.cs.uchicago.edu/bakeoff2005/
+20 Newsgroups
+适用领域：文本分类
+The 20 Newsgroups data set is a collection of approximately 20,000 newsgroup documents, partitioned (nearly) evenly across 20 different newsgroups.
+http://qwone.com/~jason/20Newsgroups/
+NLPCC 2017 新闻标题分类
+适用领域：文本分类
+http://tcci.ccf.org.cn/conference/2017/taskdata.php
+https://github.com/FudanNLP/nlpcc2017_news_headline_categorization
+Reuters-21578 Text Categorization Collection
+适用领域：文本分类
+This is a collection of documents that appeared on Reuters newswire in 1987. The documents were assembled and indexed with categories.
+http://kdd.ics.uci.edu/databases/reuters21578/reuters21578.html
+全网新闻数据(SogouCA)
+适用领域：文本分类、事件检测跟踪、新词发现、命名实体识别自动摘要
+来自若干新闻站点2012年6月—7月期间国内，国际，体育，社会，娱乐等18个频道的新闻数据，提供URL和正文信息
+http://www.sogou.com/labs/resource/ca.php
+清华大学孙茂松老师组清洗并整理的数据（SogouT），Complete training dataset Clean-SogouT is released in https://pan.baidu.com/s/1kXgkyJ9(password: f2ul).
+ref: https://github.com/thunlp/SE-WRL
+搜狐新闻数据（SogouCS）
+适用领域：文本分类、事件检测跟踪、新词发现、命名实体识别、自动摘要
+来自搜狐新闻2012年6月—7月期间国内，国际，体育，社会，娱乐等18个频道的新闻数据，提供URL和正文信息
+http://www.sogou.com/labs/resource/cs.php
+评测-文本分类评价（SogouTCE）
+适用领域：文本分类
+评估文本分类结果的正确性。语料来自搜狐等多个新闻网站近20个频道。
+http://www.sogou.com/labs/resource/tce.php
+THUCNews
+THUCNews是根据新浪新闻RSS订阅频道2005~2011年间的历史数据筛选过滤生成，包含74万篇新闻文档（2.19 GB），均为UTF-8纯文本格式。我们在原始新浪新闻分类体系的基础上，重新整合划分出14个候选分类类别：财经、彩票、房产、股票、家居、教育、科技、社会、时尚、时政、体育、星座、游戏、娱乐。
+ref: http://thuctc.thunlp.org/
+CMU World Wide Knowledge Base (Web->KB) project
+适用领域：知识抽取
+To develop a probabilistic, symbolic knowledge base that mirrors the content of the world wide web. If successful, this will make text information on the web available in computer-understandable form, enabling much more sophisticated information retrieval and problem solving.
+http://www.cs.cmu.edu/afs/cs.cmu.edu/project/theo-11/www/wwkb/
+Wikidump
+适用领域：word embedding
+中文：https://dumps.wikimedia.org/zhwiki/latest/
+GitHub 项目
+大规模中文自然语言处理语料 Large Scale Chinese Corpus for NLP
+https://github.com/brightmart/nlp_chinese_corpus

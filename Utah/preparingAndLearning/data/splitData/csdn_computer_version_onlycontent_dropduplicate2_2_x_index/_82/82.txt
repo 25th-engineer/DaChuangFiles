@@ -1,0 +1,95 @@
+《计算机视觉特征提取与图像处理（第三版）》第一章（1）
+Cpt1 绪论（人类视觉系统/计算机视觉系统/数学系统/参考文献）
+1.2 人类视觉和计算机视觉
+a. 图像处理领域常用图片/视频：openCV自带的图片库/视频库，例如Lena；
+b. 广义图像采集：摄像机图像/MRI（软组织图像/computerized tomography计算断层摄影术/infrared sensor或synthetic-aperture radar遥感图像/sonar array等的空间信息，即计算机视觉系统对广义的图像进行处理；
+c. 使用合成图像评价不同方法各自性能的局限；
+纹理库：Brodatz album of texture，Brodatz纹理相簿；
+http://multibandtexture.recherche.usherbrooke.ca/original_brodatz.html
+1.3 人类视觉系统
+a. 人类视觉善于区分相对距离，而不善于估计绝对距离，计算机视觉正好相反，善于估测绝对差异，但对相对差异估测的效果较差；
+b. 人类视觉系统可以用三个部分来建模：
+眼睛，物理模型，很多功能可以用病理学来确定；
+处理系统，实验模型，不能精确断定；
+脑分析，心理模型，通过实验或推理来判断它的活动；
+1.3.1 眼睛物理模型
+a. 虹膜iris/瞳孔pupil；角膜cornea或巩膜sclera；脉络膜choroid；视网膜retina；中央凹forvea；盲点blind spot；
+b. 感光细胞分为：
+rod柱细胞（暗视觉，scotopic vision，1千万左右）
+cone锥细胞（明视觉，photopic vision，1亿左右），分为S短波长（蓝光，数量少）、M中波长（绿光）、L长波长（红光）；
+c. 视敏度，通常表现为空间分辨率（清晰度）和亮度/色彩分辨率，；
+d. 视觉响应成对数特性，依赖于从暗处到亮处的亮度适应；
+e. 马赫带效果（Mach band）：不同亮度区域的交界处在人眼中存在过冲响应以便于区分视界内的不同目标；人类视觉实际上可以辨别5bit的灰度等级；
+1.3.2 神经系统
+眼睛产生的神经信号实际上是视锥细胞和视杆细胞两种细胞所传送的响应，通过加法模型和对数函数模型映射眼睛产生的已知响应；然后与权重因子相乘调节特定单元权重；
+1.3.3 处理系统
+a. 神经信号被传送到大脑的两个区域进行进一步处理，分别为联络皮层和枕叶皮层；
+b. 参考书：The Joy of Vision，Schwarz；
+www.yorku.ca./eye/thejoy.htm
+1.4 计算机视觉系统
+1.4.1 摄像机
+a. 成像原理：空穴/电子对的数量同入射光量成正比，亮度增强则电流增大，电压增大；
+b. 摄像机主要分为：摄像管（早期模拟技术，需要扫描过程，性能较差，存在部件磨损；）、CCD（Charge Coupled Devices）相机和CMOS(Complementary Metal Oxide Silicon)相机；
+半导体像素传感器可以分为passive sensor无源传感器和active sensor有源传感器；
+1.4.2 图像处理
+a. C、C++、Java是目前为止最受欢迎的视觉系统实现语言，在集成高低和低级功能方面力量强大且编译能力较强；
+基于Java的演示系统：http://www.southampton.ac.uk/~msn/book/new_demo/
+软件包：OpenCV，“通过创建一个免费和开放的基础平台把视觉领域的成果进行整合和性能优化，帮助计算机视觉在人机交互、机器人、监测、生物测量和安全方面实现商业应用”；
+VXL库（vision-something-libraries），为计算机视觉研究和实现而设计的而设计的C++库集https://vxl.github.io/；
+Adobe通用图像库（GIL）,旨在减少图像相关代码的编写难度http://stlab.adobe.com/group__asl__gil.html；
+CImg Library，图像处理算法通用平台系统，http://www.cimg.eu/；
+VLFeat，http://www.vlfeat.org/；
+此外还包括部分有开源软件的竞赛网站，如ACM Multimedia；
+1.5 数学系统
+1.5.1 数学工具
+a. 目前最受欢迎的数学系统有Mathematica、Maple、MATLAB、Mathcad等；
+1.5.2 Hello MATLAB，hello images
+a. Matlab提供强有力的矩阵计算来开发和测试复杂的实现；
+本书成像模型采用正投影，，世界坐标直接映射到图像；通过Matlab的应用代码转换比其他系统容易，能够将代码直接编译；
+1.5.3 Hello, Mathcad!
+a. Mathcad是一个所见即所得系统，而不是基于屏幕的（把Mathcad看作Word，则Matlab看作Latex）；Mathcad使用Mapple数学库来扩展其功能；
+因为必须包含低级函数，Mathcad代码的应用比Matlab复杂；
+可以从参考网站下载worksheet；
+1.6 相关资料
+1.6.1 期刊杂志和学术会议
+a. Vision System Design和Advanced Imaging
+b. IEEE Transactions on: Pattern Analysis and Machine Intelligence
+Image Processing；
+System, Man and Cybernetics；
+Medical Imaging；
+Pattern Recognition；
+Pattern Recognition Letters；
+International Journal of Computer Vision；
+Image and Vision Computing；
+1.6.2学术会议：
+IEEE；
+CVPR；
+ICCV；
+Springer，Lecture Notes in Computer Science
+1.6.3 书籍推荐
+a. World of Mathematics；
+b. Numerical Recipes信号处理相关；
+c. Digital Signal Processing；
+d. Joy of Visual Perception；
+e. CVOnline，
+http://homepages.inf.ed.ac.uk/rbf/CVonline/（强烈推荐！！！！）
+f. Vision
+Fundamentals of Computer Vision
+Robot Vision
+Image Processing, Analysis and Computer Vision(Sonka et al., 2007)
+Machine Vision(Jain et al., 1995)
+Digital Image Processing(Gonzalez and Woods, 2008)，冈萨雷斯的著名教程
+Digital Picture Processing(Rosenfeld and Kak, 1982)
+Digital Image Processing(Pratt, 2001)
+Active Contour(Blake and Isard, 1998)
+Image Processing The Fundamentals(Petrou and Petrou, 2010)
+Computer Vision(Shapiro and Stockman, 2001)，图像数据库和虚拟及增强现实
+Computer Imaging: Digital Image Analysis and Processing(Umbaugh, 2005)
+Computer Vision: A Modern Approach(Forsyth and Ponce, 2002)
+Image Processing and Computer Vision(Parker, 2010)
+Practical Algorithms for Image Analysis(O’ Gorman et al., 2008 )
+Computer Vision and Image Processing(Umbaugh, 2005) ，侧重工程性
+The Art of Image Processing with Java(Hunt, 2011)，Java教程
+The Image Processing Handbooks(Russ, 2006)
+Machine Vision: Theory, Algorithms and Practicalities(Davies, 2005)，侧重工业视觉系统
+Handbook of Pattern Recognition and Computer Vision(Cheng and Wang, 2009);

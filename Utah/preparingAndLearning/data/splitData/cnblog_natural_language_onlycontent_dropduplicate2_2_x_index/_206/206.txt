@@ -1,0 +1,268 @@
+http://www.cnblogs.com/yuxc/archive/2011/08/29/2157415.html#2189237
+关于Python自然语言处理
+关于该书的简介：
+《Python自然语言处理》提供了非常易学的自然语言处理入门介绍，该领域涵盖从文本和电子邮件预测过滤，到自动总结和翻译等多种语言处理技术。在《Python自然语言处理(影印版)》 中，你将学会编写Python程序处理大量非结构化文本。你还将通过使用综合语言数据结构访问含有丰富注释的数据集，理解用于分析书面通信内容和结构的主 要算法。
+《Python自然语言处理》准备了充足的示例和练习，可以帮助你：
+从非结构化文本中抽取信息，甚至猜测主题或识别“命名实体”；
+分析文本语言结构，包括解析和语义分析；
+访问流行的语言学数据库，包括WordNet和树库(treebank)；
+从多种语言学和人工智能领域中提取的整合技巧。
+《Python自然语言处理(影印版)》将帮助你学习运用Python编程语言和自然语言工具包(NLTK)获得实用的自然语言处理技能。如果对于开发 Web应用、分析多语言新闻源或记录濒危语言感兴趣——即便只是想从程序员视角观察人类语言如何运作，你将发现《Python自然语言处理》是一本令人着 迷且极为有用的好书。
+关于学习笔记...
+这是我在阅读Python自然语言处理时写的一些学习笔记，因为受时间的约束(papers&find job...blablabla)，学习笔记采用注释和讨论的形式。 由于初学，翻译可能不准确，希望看到的童鞋能够指出，学习过程中我也会回头来修改翻译不恰当的地方。
+目前还没读完这本书，有些初步的感想与大家分享：
+优点：
+这本书即涉及到了语料库的操作，也对传统的基于规则的方法有所涉及。全书包括了分词（tokenization）、词性标注（POS）、语块（Chunk）标注、句法剖析与语义剖析等方面，是一本实用的自然语言处理教程，即使你不想全面地学习自然语言处理，也会对其中的分析美国历届总统的演讲、对抓取的网页进行解析提取文本，使用正则表达式处理字符串、新闻信息检索等等感兴趣的。此外，Python简洁优雅，适合上手，而且我很喜爱这门语言。
+缺点：
+(1)实用性很强，但对理论性介绍不足，需要自己去查找相关资料，我考虑把相关资料都搜集起来
+(2)毕竟是E文的语言背景，对中文涉及很少，中文与英文尤其在分词上有很大的不同，等我积累了一些心得，我打算把中文分词写成单独的一章。
+Anyway，我把下面这句话送给有兴趣的童鞋。
+Now is better than never.
+——摘自The Zen of Python
+目录索引以及持续更新信息的传送门在此，下面也贴出了目前的目录索引。
+Update日志
+创建日期：2011.6.27
+翻译修正：2011.7.20
+修改了已知的翻译错误
+更新1st:  2011.8.5
+为目录添加了相关笔记链接
+更新2nd:2011.8.28
+修正了部分翻译错误
+更新3rd:2011.9.7
+修正了Chapter7的部分翻译错误
+目前施工进度：Chapter7
+Table of Contents     目录
+Preface
+前言
+1. Language Processing and Python
+Python和语言处理
+1.1 Computing with Language: Texts and Words
+语言计算：文本和单词
+1.2 A Closer Look at Python: Texts as Lists of Words
+进一步学习Python：将文本视作单词列表
+1.3 Computing with Language: Simple Statistics
+语言计算：简单的统计
+1.4 Back to Python: Making Decisions and Taking Control
+回到Python:决策和控制
+1.5 Automatic Natural Language Understanding
+自动理解自然语言
+1.6 Summary
+小结
+1.7 Further Reading
+深入阅读
+1.8 Exercises
+练习
+2. Accessing Text Corpora and Lexical Resources
+访问文本语料库和词汇资源
+2.1 Accessing Text Corpora
+访问文本语料库
+2.2 Conditional Frequency Distributions
+条件频率分布
+2.3 More Python: Reusing Code
+More Python:代码重用
+2.4 Lexical Resources
+词汇资源
+2.5 WordNet
+WordNet词典
+2.6 Summary
+小结
+2.7 Further Reading
+深入阅读
+2.8 Exercises
+练习
+3. Processing Raw Text
+处理原始文本
+3.1 Accessing Text from the Web and from Disk
+从Web和磁盘获得文本
+3.2 Strings: Text Processing at the Lowest Level
+字符串：最底层的文本处理
+3.3 Text Processing with Unicode
+使用Unicode处理文本
+3.4 Regular Expressions for Detecting Word Patterns
+使用正则表达式检测词组
+3.5 Useful Applications of Regular Expressions
+正则表示式的有益应用
+3.6 Normalizing Text
+规格化文本
+3.7 Regular Expressions for Tokenizing Text
+正则表达式用于本文分词
+3.8 Segmentation
+分割
+3.9 Formatting: From Lists to Strings
+格式设定：从列表到字符串
+3.10 Summary
+小结
+3.11 Further Reading
+深入阅读
+3.12 Exercises
+练习
+4. Writing Structured Programs
+编写结构化程序
+4.1 Back to the Basics
+回到基础
+4.2 Sequences
+序列
+4.3 Questions of Style
+关于风格
+4.4 Functions: The Foundation of Structured Programming
+函数：结构化编程的基础
+4.5 Doing More with Functions
+关于函数的更多使用
+4.6 Program Development
+程序开发
+4.7 Algorithm Design
+算法设计
+4.8 A Sample of Python Libraries
+Python库的样本
+4.9 Summary
+小结
+4.10 Further Reading
+深入阅读
+4.11 Exercises
+练习
+5. Categorizing and Tagging Words
+分类和标注单词
+5.1 Using a Tagger
+使用标注器
+5.2 Tagged Corpora
+标记语料库
+5.3 Mapping Words to Properties Using Python Dictionaries
+使用Python字典把单词映射到属性
+5.4 Automatic Tagging
+自动标注
+5.5 N-Gram Tagging
+N-Gram标注
+5.6 Transformation-Based Tagging
+基于转换的标注
+5.7 How to Determine the Category of a Word
+如何决定一个词的类别
+5.8 Summary
+小结
+5.9 Further Reading
+深入阅读
+5.10 Exercises
+练习
+6. Learning to Classify Text
+学习本文分类
+6.1 Supervised Classification
+监督式分类
+6.2 Further Examples of Supervised Classification
+监督式分类的更多例子
+6.3 Evaluation
+评分
+6.4 Decision Trees
+决策树
+6.5 Naive Bayes Classifiers
+朴素贝叶斯分类器
+6.6 Maximum Entropy Classifiers
+最大熵分类器
+6.7 Modeling Linguistic Patterns
+建模语言模式
+6.8 Summary
+小结
+6.9 Further Reading
+深入阅读
+6.10 Exercises
+练习
+7. Extracting Information from Text
+从文本提取信息
+7.1 Information Extraction
+信息抽取
+7.2 Chunking
+分块
+7.3 Developing and Evaluating Chunkers
+分块器开发和求值
+7.4 Recursion in Linguistic Structure
+语言结构中的递归
+7.5 Named Entity Recognition
+命名实体识别
+7.6 Relation Extraction
+关系提取
+7.7 Summary
+小结
+7.8 Further Reading
+深入阅读
+7.9 Exercises
+练习
+8. Analyzing Sentence Structure
+句子结构分析
+8.1 Some Grammatical Dilemmas
+一些语法困惑
+8.2 What’s the Use of Syntax?
+语法有什么用处？
+8.3 Context-Free Grammar
+上下文无关语法
+8.4 Parsing with Context-Free Grammar
+使用上下文无关语法进行解析
+8.5 Dependencies and Dependency Grammar
+相关性和相关性语法
+8.6 Grammar Development
+语法的发展
+8.7 Summary
+小结
+8.8 Further Reading
+深入阅读
+8.9 Exercises
+练习
+9. Building Feature-Based Grammars
+构建基于特征的语法
+9.1 Grammatical Features
+语法特征
+9.2 Processing Feature Structures
+处理特征结构
+9.3 Extending a Feature-Based Grammar
+扩展基于特征的语法
+9.4 Summary
+小结
+9.5 Further Reading
+深入扩展
+9.6 Exercises
+练习
+10. Analyzing the Meaning of Sentences
+分析句子的意义
+10.1 Natural Language Understanding
+自然语言的理解
+10.2 Propositional Logic
+命题逻辑
+10.3 First-Order Logic
+一阶逻辑
+10.4 The Semantics of English Sentences
+英文句子的语义
+10.5 Discourse Semantics
+语段语义
+10.6 Summary
+小结
+10.7 Further Reading
+深入阅读
+10.8 Exercises
+练习
+11. Managing Linguistic Data
+语料管理
+11.1 Corpus Structure: A Case Study
+语料库结构：案例研究
+11.2 The Life Cycle of a Corpus
+语料库的生命周期
+11.3 Acquiring Data
+获取数据
+11.4 Working with XML
+处理XML
+11.5 Working with Toolbox Data
+处理Toolbox Data
+11.6 Describing Language Resources Using OLAC Metadata
+使用OLAC元数据描述语言资源
+11.7 Summary
+小结
+11.8 Further Reading
+深入阅读
+11.9 Exercises
+练习
+Afterword: The Language Challenge
+后记：语言的挑战
+Bibliography
+参考文献
+NLTK Index
+NLTK索引
+General Index
+一般索引
+知识共享署名、非商业性使用、禁止演绎创作许可证3.0
+以上章节内容均来自Natural Language Processing with Python，由Steven Bird, Ewan Klein 和Edward Loper共同的辛勤劳动，Copyright © 2009，本内容并随NLTK共同发布，网址：http://www.nltk.org/ 。文章和相关资料遵循Creative Commons Attribution-Noncommercial-No Derivative Works 3.0创作许可证。

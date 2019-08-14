@@ -1,0 +1,82 @@
+不多 说 直接 上 干货 安装 cdh5 到最后 报 如下 
+错误 安装 失败 无法 接受 agent 发出 的 检测 信号 
+确保 主机 名称 正确 确保 端口 7182 可在 cloudera manager 
+server 上 访问 检查 防火墙 规则 确保 正在 添加 的 
+主机 的 端口 9000 和 9001 空闲 检查 在 添加 
+的 主机 上 / var / log / cloudera scm 
+agent / 中的 代理 日志 某些 日志 可在 安装 详细 
+信息 中 找到 即 这个 问题 就是 Cloudera Manager 安装 
+失败 无法 接收 Agent 发出 的 检测 信号 Installation failed 
+. Failed to receive heartbeat from agent . Ensure that 
+the host s hostname is configured properly . Ensure that 
+port 7182 is accessible on the Cloudera Manager server check 
+firewall rules . Ensure that ports 9000 and 9001 are 
+free on the host being added . Check agent logs 
+in / var / log / cloudera scm agent / 
+on the host being added some of the logs can 
+be found in the installation details . 首先 查看 日志 
+/ var / log / cloudera scm agent / 得知 
+192.168 . 30.1 这台 cloudemanager 安装 时 出现 ProtocolError ProtocolError 
+for 127.0 . 0.1 / RPC2 401 Unauthorized 问题 解决 
+方法 图文 详解 首先 查看 日志 / var / log 
+/ cloudera scm agent / 得知 192.168 . 30.2 192.168 
+. 30.3 和 192.168 . 30.4 这台 cloudemanager 安装 时 
+出现 8475 MainThread agent ERROR Heartbeating to 192.168 . 30.1 
+7182 failed 问题 解决 方法 图文 详解 我 的 问题 
+按照 上面 这 两步走 就 解决 了 如果 上述 问题 
+还没 解决 则 见 如下 的 解决 思路 一般来说 如下 
+是 几乎 大家 都会 配置 对了 的 解决 关闭 防火墙 
+1 Python 文件 不 匹配 参考 http / / www 
+. cnblogs . com / lion . net / archive 
+/ 2014/09 / 02/3950619 . html 中 _ io 的 
+设置 2 日志文件 不 存在 在 config . ini 中 
+把 log _ file 放开 3 / etc / hosts 
+/ 中 主机 和 ip 配置 问题 4 防火墙 是否 
+关闭 ubuntu 是 ufw   disable5 端口配置 config . ini 
+中 端口 是否 配置 的 为 71826 集群 时间 是否 
+同步 安装 ntp 同步 时间 7 ssh 私钥 的 问题 
+我 现在 正在 查 这个 问题 呢 前边 都配/nr 完了 
+但是 仍然 无法 检测 到 信号 我 没有 使用 私钥 
+不 知道 是不是 跟 这个 有 关系 查看 主机名 有错 
+查看 / etc / hosts 和 / etc / sysconfig 
+/ network 下 的 配置 是否 一致 关闭 防火墙 service 
+iptables stop 启动 Httpd 服务 service httpd start1 首先 在 
+安装 时 搜索 不到 192.168 . 0.70 这个 ip 说明 
+你 hosts 可能 配置 得有 问题 或者 是 防火墙 网卡 
+配置 等 其他 原因 最好 不要 使用 localhost 或者 127.0 
+. 0.1 去 安装 CM 机器 2 . 无法 检测 
+到 agent 服务 的 信号 不 代表 没有 安装 成功 
+某些 情况 因为 你 机器 或者 是 你 使用 虚拟机 
+的 等 原因 导致 了 无法 接收 信号 如果 你 
+要 追究 这个 错误 产生 的 原因 请 检查 你 
+虚拟机 的 网络 环境 配置 以及 centos 系统 的 hosts 
+防火墙 网卡 等 配置 3 . 再次 声明 如果 能够 
+在 主机 页面 找到 该 机器 说明 agent 服务 已经 
+安装 成功 出现 检测 不到 信号 只是 不 能 进一步 
+添加 服务 而已 不 影响 你 在 该 主机 上 
+直接 添加 指定 的 服务 参考 https / / stackoverflow 
+. com / questions / 22088053 / why i am 
+getting this error installation failed failed to receive heartbeat frhttps 
+/ / my . oschina . net / MaTech / 
+blog / 374556http / / bbs . csdn . net 
+/ topics / 390740790 / 欢迎 大家 加入 我 的 
+微信 公众 号 大 数据 躺过 的 坑     
+    人工智能 躺过 的 坑 同时 大家 可以 关注 
+我 的 个人 博客 http / / www . cnblogs 
+. com / zlslch /       和 /nr   
+    http / / www . cnblogs . com 
+/ lchzls /           http / 
+/ www . cnblogs . com / sunnyDream / 详情 
+请见 http / / www . cnblogs . com / 
+zlslch / p / 7473861 . html 人生 苦短 我 
+愿 分享 本 公众 号 将 秉持 活到老 学到老 学习 
+无休止 的 交流 分享 开源 精神 汇聚/v 于/p 互联网/n 和/c 
+个人/n 学习/v 工作/vn 的/uj 精华/nz 干货/n 知识/v 一切 来 于 
+互联网 反馈 回 互联网 目前 研究 领域 大 数据 机器学习 
+深度 学习 人工智能 数据挖掘 数据分析 语言 涉及 Java Scala Python 
+Shell Linux 等 同时 还 涉及 平常 所 使用 的 
+手机 电脑 和 互联 网上 的 使用 技巧 问题 和 
+实用软件 只要 你 一直 关注 和 呆在 群 里 每天/r 
+必须/d 有/v 收获/v 对应/vn 本/r 平台/n 的/uj 讨论/v 和/c 答疑/v 
+QQ/w 群/n 大 数据 和 人工智能 躺过 的 坑 总 
+群 161156071 

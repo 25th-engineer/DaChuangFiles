@@ -1,0 +1,20 @@
+杂谈
+自然语言处理怎么最快入门？ - 刘知远的回答 - 知乎
+https://www.zhihu.com/question/19895141/answer/24710071
+刘老师主要是从ACL等著名NLP相关会议的角度来介绍如何跟进NLP领域的研究
+国内大陆部分NLP团队
+NLP（自然语言处理）界有哪些神级人物？ - jiangfeng的回答 - 知乎
+https://www.zhihu.com/question/32318281/answer/55588123
+有关NLP的比赛 - 砍手豪的文章 - 知乎
+https://zhuanlan.zhihu.com/p/33901181
+系列教程
+李航的《统计学习方法》第4、10、11章
+Coursera的一门课——Natural Language Processing(已经下架，有人整理)
+http://www.52nlp.cn/tag/nlp%E5%85%A5%E9%97%A8
+CS224 深度学习自然语言处理教程(B站上爱可可老师已分享带英文字幕的视频)
+https://www.bilibili.com/video/av13383754from=search&seid=4721962932083536913
+工具(包)
+著名工具：NLTK、结巴、Word2Vec、Gensim、SpaCy
+目前常用的自然语言处理开源项目/开发包有哪些？ - 刘知远的回答 - 知乎
+https://www.zhihu.com/question/19929473/answer/90201148
+待更新

@@ -1,0 +1,75 @@
+判别式模型（discriminative model）
+产生式模型（generative model）
+特点
+寻找不同类别之间的最优分类面，反映的是异类数据之间的差异
+对后验概率建模，从统计的角度表示数据的分布情况，能够反映同类数据本身的相似度
+区别(假定输入x, 类别标签y)
+估计的是条件概率分布(conditional distribution) : P(y|x)
+估计的是联合概率分布（joint probability distribution: P(x, y),
+联系
+由产生式模型可以得到判别式模型，但由判别式模型得不到产生式模型。
+常见模型
+– logistic regression
+– SVMs
+– traditional neural networks
+– Nearest neighbor
+–Gaussians, Naive Bayes
+–Mixtures of Gaussians, Mixtures of experts, HMMs
+–Sigmoidal belief networks, Bayesian networks
+– Markov random fields
+【摘要】
+- 生成模型：无穷样本==》概率密度模型 = 产生模型==》预测
+- 判别模型：有限样本==》判别函数 = 预测模型==》预测
+【简介】
+简单的说，假设o是观察值，q是模型。
+如果对P(o|q)建模，就是生成模型。其基本思想是首先建立样本的概率密度模型，再利用模型进行推理预测。要求已知样本无穷或尽可能的大限制。
+这种方法一般建立在统计力学和bayes理论的基础之上。
+如果对条件概率(后验概率) P(q|o)建模，就是判别模型。基本思想是有限样本条件下建立判别函数，不考虑样本的产生模型，直接研究预测模型。代表性理论为统计学习理论。
+这两种方法目前交叉较多。
+【判别模型Discriminative Model】——inter-class probabilistic description
+又可以称为条件模型，或条件概率模型。估计的是条件概率分布(conditional distribution)， p(class|context)。
+利用正负例和分类标签，focus在判别模型的边缘分布。目标函数直接对应于分类准确率。
+- 主要特点：
+寻找不同类别之间的最优分类面，反映的是异类数据之间的差异。
+- 优点:
+分类边界更灵活，比使用纯概率方法或生产模型得到的更高级。
+能清晰的分辨出多类或某一类与其他类之间的差异特征
+在聚类、viewpoint changes, partial occlusion and scale variations中的效果较好
+适用于较多类别的识别
+判别模型的性能比生成模型要简单，比较容易学习
+- 缺点：
+不能反映训练数据本身的特性。能力有限，可以告诉你的是1还是2，但没有办法把整个场景描述出来。
+Lack elegance of generative: Priors, 结构, 不确定性
+Alternative notions of penalty functions, regularization, 核函数
+黑盒操作: 变量间的关系不清楚，不可视
+- 常见的主要有：
+logistic regression、    SVMs、    traditional neural networks、    Nearest neighbor、    Conditional random fields(CRF): 目前最新提出的热门模型，从NLP领域产生的，正在向ASR和CV上发展。
+【生成模型Generative Model】——intra-class probabilistic description
+又叫产生式模型。估计的是联合概率分布（joint probability distribution），p(class, context)=p(class|context)*p(context)。
+用于随机生成的观察值建模，特别是在给定某些隐藏参数情况下。在机器学习中，或用于直接对数据建模（用概率密度函数对观察到的draw建模），或作为生成条件概率密度函数的中间步骤。通过使用贝叶斯rule可以从生成模型中得到条件分布。
+如果观察到的数据是完全由生成模型所生成的，那么就可以fitting生成模型的参数，从而仅可能的增加数据相似度。但数据很少能由生成模型完全得到，所以比较准确的方式是直接对条件密度函数建模，即使用分类或回归分析。
+与描述模型的不同是，描述模型中所有变量都是直接测量得到。
+- 主要特点：
+一般主要是对后验概率建模，从统计的角度表示数据的分布情况，能够反映同类数据本身的相似度。
+只关注自己的inclass本身（即点左下角区域内的概率），不关心到底 decision boundary在哪。
+- 优点:
+实际上带的信息要比判别模型丰富，
+研究单类问题比判别模型灵活性强
+模型可以通过增量学习得到
+能用于数据不完整（missing data）情况
+modular construction of composed solutions to complex problems
+prior knowledge can be easily taken into account
+robust to partial occlusion and viewpoint changes
+can tolerate significant intra-class variation of object appearance
+- 缺点：
+tend to produce a significant number of false positives. This is particularly true for object classes which share a high visual similarity such as horses and cows
+学习和计算过程比较复杂
+- 常见的主要有：
+Gaussians, Naive Bayes, Mixtures of multinomials、    Mixtures of Gaussians, Mixtures of experts, HMMs、    Sigmoidal belief networks, Bayesian networks、    Markov random fields
+所列举的Generative model也可以用disriminative方法来训练，比如GMM或HMM，训练的方法有EBW(Extended Baum Welch),或最近Fei Sha提出的Large   Margin方法。
+【两者之间的关系】
+由生成模型可以得到判别模型，但由判别模型得不到生成模型。
+【总结】
+有时称判别模型求的是条件概率，生成模型求的是联合概率。
+常见的判别模型有线性回归、对数回归、线性判别分析、支持向量机、 boosting、条件随机场、神经网络等。
+常见的生产模型有隐马尔科夫模型、朴素贝叶斯模型、高斯混合模型、 LDA、 RestrictedBoltzmann Machine 等

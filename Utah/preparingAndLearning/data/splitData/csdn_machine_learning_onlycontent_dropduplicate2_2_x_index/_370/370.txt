@@ -1,0 +1,17 @@
+机器学习定义
+Machine Learning definition
+flyfish 笔记
+what is machine learing?什么是机器学习？
+1959 Arthur Samuel 
+field of study that gives computes the ability to learn without being explicitly programmed.
+1959年Arthure Samuel将机器学习非正式的定义为：在不直接针对问题进行编程的情况下赋予计算机学习
+能力的一个研究领域
+Tom mitchell(1998) Well-posed Learning
+Problem:A compute program is said to learn from experience E with respect to same task T
+and some performance measure P,if its performance on T,as measured by P,
+improves with experience E。
+更现代更正式的定义
+给它一个任务T和一个性能测量方法P，如果在经验E的影响下，P对T的测量结果得到了改进，
+那么说该程序从E中学习
+respectn. 尊敬，尊重；方面；敬意
+vt. 尊敬，尊重；遵守

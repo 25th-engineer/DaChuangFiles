@@ -1,0 +1,188 @@
+机器学习 错题 集 1 .     Some of the 
+problems below are best addressed using a supervised learning algorithm 
+and the others with an unsupervised learning algorithm . Which 
+of the following would you apply supervised learning to Select 
+all that apply . In each case assume some appropriate 
+dataset is available for your algorithm to learn from . 
+A C A . Given historical data of childrens ages 
+and heights predict children s height as a function of 
+their age . 解析 This is a supervised learning regression 
+problem where we can learn from a training set to 
+predict height . B .   Examine a large collection 
+of emails that are known to be spam email to 
+discover if there are sub types of spam mail . 
+解析 This can addressed using a clustering unsupervised learning algorithm 
+to cluster spam mail into sub types . C . 
+  Examine the statistics of two football teams and predicting 
+which team will win tomorrow s match given historical data 
+of teams wins / losses to learn from . 解析 
+This can be addressed using supervised learning in which we 
+learn from historical records to make win / loss predictions 
+. D .   Given a large dataset of medical 
+records from patients suffering from heart disease try to learn 
+whether there might be different clusters of such patients for 
+which we                 
+might tailor separate treatements . 解析 This can be addressed 
+using an unsupervised learning clustering algorithm in which we group 
+patients into different clusters . 2 .     Suppose 
+that for some linear regression problem say predicting housing prices 
+as in the lecture we have some training set and 
+for our training set we managed to find some θ 
+0 θ 1 such that J θ 0 θ 1 
+= 0 . Which of the statements below must thenbe 
+true   A A .   For these values of 
+θ 0 and θ 1 that satisfy J θ 0 
+θ 1 = 0 we have that h θ x 
+i = y i for every training example x i 
+y i 解析 J θ 0 θ 1 = 0 
+that means the line defined by the equation y = 
+θ 0 + θ 1x perfectly fits all of our 
+data . B .   For this to be true 
+we must have y i = 0 for every value 
+of i = 1 2 m . 解析 So long 
+as all of our training examples lie on a straight 
+line we will be able to find θ 0 and 
+θ 1 so that J θ 0 θ 1 = 
+0 . It is not necessary that y i = 
+0 for all of our examples . C .   
+Gradient descent is likely to get stuck at a local 
+minimum and fail to find the global minimum . 解析 
+The cost function J θ 0 θ 1 for linear 
+regression has no local optima other than the global minimum 
+so gradient descent will not get stuck at a bad 
+local minimum . D . We can perfectly predict the 
+value of y even for new examples that we have 
+not yet seen . e . g . we can 
+perfectly predict prices of even new houses that we have 
+not yet seen . 解析 Even though we can fit 
+our training set perfectly this does not mean that we 
+ll always make perfect predictions on houses in the future 
+/ on houses that we have not yet seen . 
+3 .   Which of the following are reasons for 
+using feature scaling It speeds up gradient descent by making 
+it require fewer iterations to get to a good solution 
+. 解析 Feature scaling speeds up gradient descent by avoiding 
+many extra iterations that are required when one or more 
+features take on much larger values than the rest . 
+The cost function J θ for linear regression has no 
+local optima . The magnitude of the feature values are 
+insignificant in terms of computational cost . 4 . You 
+run gradient descent for 15 iterations with   α = 
+0.3   and compute   J θ   aftereach iteration 
+. You find that the value of   J θ 
+  decreases   quicklythen levels off . Based on this 
+which of the following conclusions seems most plausible A smaller 
+learning rate will only decrease the rate of convergence to 
+the cost function s minimum thus increasing the number of 
+iterations needed . 5 .   You are training a 
+classification model with logistic regression . Which of the following 
+statements are true Check all that apply . D A 
+.   Introducing regularization to the model always results in 
+equal or better performance on the training set . Introducing 
+regularization to the model always results in equal or better 
+performance on the training set . 解析 If we introduce 
+too much regularization we can underfit the training set and 
+have worse performance on the training set . B . 
+Adding many new features to the model helps prevent overfitting 
+on the training set . 解析 Adding many new features 
+gives us more expressive models which are able to better 
+fit our training set . If too many new features 
+are added this can lead to overfitting of the training 
+set . C . Adding a new feature to the 
+model always results in equal or better performance on examples 
+not inthe training set . 解析 Adding   more features 
+might result in a model that overfits the training set 
+and thus can lead to worse performs for examples which 
+are not in the training set . D . Adding 
+a new feature to the model always results in equal 
+or better performance on the training set . 解析 By 
+adding a new feature our model must be more or 
+just as expressive thus allowing it learn more complex hypotheses 
+to fit the training set . 6 .   Whichof 
+the following statements about regularization are true Check all that 
+apply . D A . Because regularization causes J θ 
+to no longer be convex gradient descent may not always 
+converge to the global minimum when λ 0 and when 
+using an appropriate learning rate α . 解析 Regularized logistic 
+regression and regularized linear regression are both convex and thus 
+gradient descent will still converge to the global minimum . 
+B . Using too large a value of λ can 
+cause your hypothesis to overfit the data this can be 
+avoided by reducing λ . 解析 Using a very large 
+value of λ can lead to underfitting of the training 
+set . C . Because logistic regression outputs values 0 
+≤ h θ x ≤ 1 it s range of 
+output values can only be shrunk slightly by regularization anyway 
+so regularization is generally not helpful for it . 解析 
+Regularization affects the parameters θ and is also helpful for 
+logistic regression . D . Consider a classification problem . 
+Adding regularization may cause your classifier to incorrectly classify some 
+training examples which it had correctly classified when not using 
+regularization i . e . when λ = 0 . 
+解析 Regularization penalizes complex models with large values of θ 
+. They can lead to a simpler models which misclassifies 
+more training examples . 7 .   Which of the 
+following statements about regularization are true Check all that apply 
+. A B C D A . For computational efficiency 
+after we have performed gradient checking to verify that our 
+backpropagation code is correct we usually disable gradient checking before 
+using backpropagation to train the network . 解析 Checking the 
+gradient numerically is a debugging tool it helps ensure a 
+corre ct implementation but it is too slow to use 
+as a method for actually computing gradients . B . 
+If our neural network overfits the training set one reasonable 
+step to take is to increase the r e g 
+u l a r i z a t i o 
+n p a r a m e t e r 
+λ . 解析 Just as with logistic regression a large 
+value of λ will penalize large parameter values thereby reducing 
+the changes of overfitting the training set . C . 
+Suppose you are training a neural network using gradient descent 
+. Depending on your random initialization your algorithm may converge 
+to different local optima i . e . if you 
+run the algorithm twice with different random initializations gradient descent 
+may convergeto two different solutions . 解析 Thecost function for 
+a neural network is non convex so it may have 
+multiple minima . Which minimum you find with gradient descent 
+depends on the initialization . D . Suppose we have 
+a correct implementation of backpropagation and are training a neural 
+network using gradient descent . Suppose we plot   J 
+Θ   as a function of the number of iterations 
+and find that it isincreasing   rather than decreasing . 
+One possible cause of this is that the learning rate 
+  α   is too large . 解析 If the 
+learning rate is too large the cost function can diverge 
+during gradient descent . Thus you should select a smaller 
+value of α . E . Suppose that the parameter 
+Θ 1 is a square matrix meaning the number of 
+rows equals the number of columns . If we replace 
+Θ 1 with its transpose Θ 1 T then we 
+have not changed the function that the network is computing 
+. 解析 Θ 1 can be an arbitrary matrix so 
+when you compute a 2 = g Θ 1 a 
+1 replacing Θ 1 with its transpose will compute a 
+different value . F . Suppose we are using gradient 
+descent with learning rate α . For logistic regression and 
+linear regression J θ was a convex optimization problem and 
+thus we did not want to choose a learning rate 
+α that is too large . For a neural network 
+however J Θ may not be convex and thus choosing 
+a very large value of α can only speed up 
+convergence . 解析 Even when J Θ is not convex 
+a learning rate that is too large can prevent gradient 
+descent from converging . G . Using a large value 
+of λ cannot hurt the performance of your neural network 
+the only reason we do not set λ to be 
+too large is to avoid numerical problems . 解析 A 
+large value of λ can be quite detrimental . If 
+you set it too high then the network will be 
+underfit to the training data and give poor predictions on 
+both training data and new unseen test data . H 
+. Gradient checking is useful if we are using gradient 
+descent as our optimization algorithm . However it serves little 
+purpose if we are using one of the advanced optimization 
+methods such as in fminunc . 解析 Gradient checking will 
+still be useful with advanced optimization methods as they depend 
+on computing the gradient at given parameter settings . The 
+difference is they use the gradient values in more sophisticated 
+ways than gradient descent . 

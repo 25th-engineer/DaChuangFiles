@@ -1,0 +1,23 @@
+机器学习实战笔记索引
+最近通过学习《机器学习实战》把书结合网上的一些博客都完整的看了下，感觉还是很有收获的，稍微总结了下，留着复习吧
+kNN算法python实现和简单数字识别
+决策树的python实现
+朴素贝叶斯算法的python实现
+Logistic回归 python实现
+Logistic回归的使用
+支持向量机
+AdaBoost算法分析与实现
+线性回归和局部加权线性回归
+树回归
+k-means聚类算法python实现
+二分K-means算法
+关联挖掘和Aprioir算法
+FP-growth高效频繁项集发现
+PCA降维
+SVD
+上面的阶段基本上完成了，余下的部分会尽快完成，通过实践的方式有了一个大题的了解，但是对理论部分还是有很大的欠缺。所以接下来会在理论和数学上下下工夫
+Ng Deep Learning Specialization
+课程回顾-Neural Network & Deep Learning
+课程回顾-Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization
+课程回顾-Structuring Machine Learning Projects
+课程回顾-Convolutional Neural Networks

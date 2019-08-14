@@ -1,0 +1,46 @@
+机器学习已经火遍全球了，目前几乎所有科技公司都或多或少都在积极地响应AI的趋势，但是此时需要培养更多的人工智能和机器学习专家，然而优质的学习资源却相当匮乏。几大科技巨头和业界领军大神也相应提供了各自特色的在线课程，先收录一些好的课程在此，方便大家选择。
+吴恩达 deeplearning.ai
+https://mooc.study.163.com/u/ykt1503557960168#/c
+https://www.coursera.org/specializations/deep-learning
+https://www.coursera.org/learn/ai-for-everyone/
+Hinton机器学习与神经网络中文课程
+http://study.163.com/course/introduction.htm?courseId=1003842018
+台湾大学林轩田机器学习基石课程
+https://www.csie.ntu.edu.tw/~htlin/mooc/
+微软人工智能专业学位
+https://school.azure.cn/curriculums/28
+Google机器学习速成课程
+https://developers.google.com/machine-learning/crash-course/
+英伟达深度学习课程
+https://www.nvidia.com/en-us/deep-learning-ai/education/
+https://courses.nvidia.com/courses
+亚马逊机器学习
+https://cn.udacity.com/course/machine-learning-engineer-nanodegree--nd009-cn-advanced
+https://aws.amazon.com/cn/training/learning-paths/machine-learning/
+英特尔AI Academy
+https://software.intel.com/zh-cn/ai-academy/students/kits
+Uber AI Residency
+https://eng.uber.com/uber-ai-residency/
+天池AI学习
+https://tianchi.aliyun.com/learn/index.htm
+清华数据科学认证证书项目
+http://www.xuetangx.com/livecast/microdegree/introduce/19/
+CMU深度学习
+http://deeplearning.cs.cmu.edu/
+【中文字幕】卡耐基梅隆大学 2018 秋季《深度学习导论》
+http://www.mooc.ai/course/562?from=timeline&isappinstalled=0
+斯坦福CS230深度学习
+http://cs229.stanford.edu/
+https://web.stanford.edu/class/cs230/
+Oxford Deep NLP 2017 course
+https://github.com/oxford-cs-deepnlp-2017/lectures
+UC Berkeley Deep Reinforcement Learning
+http://rail.eecs.berkeley.edu/deeprlcourse/
+机器学习Machine Learning 余凯&张潼
+https://wenku.baidu.com/course/study/53b9fd0a79563c1ec5da7107
+Open Machine Learning Course
+https://mlcourse.ai/
+Fast.AI Deep Learning For Coders
+http://course.fast.ai/
+Intro to Deep Learning with PyTorch
+https://cn.udacity.com/course/deep-learning-pytorch--ud188

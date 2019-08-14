@@ -1,0 +1,123 @@
+欢迎关注天善智能，我们是专注于商业智能BI，人工智能AI，大数据分析与挖掘领域的垂直社区，学习，问答、求职一站式搞定！
+对商业智能BI、大数据分析挖掘、机器学习，python，R等数据领域感兴趣的同学加微信：tstoutiao，邀请你进入数据爱好者交流群，数据爱好者们都在这儿
+作者：黄天元，复旦大学博士在读，目前研究涉及文本挖掘、社交网络分析和机器学习等。希望与大家分享学习经验，推广并加深R语言在业界的应用。
+邮箱：huang.tian-yuan@qq.com
+前文推送：
+R语言自然语言处理：中文分词
+R语言自然语言处理：词性标注与命名实体识别
+R语言自然语言处理：关键词提取（TF-IDF）
+R语言自然语言处理：关键词提取与文本摘要（TextRank）
+R语言自然语言处理：文本向量化——词嵌入（Word Embedding）
+R语言自然语言处理：情感分析
+不知不觉已经写了这么多，但是很多R语言自然语言处理的方法并没有展开来讲。这次希望尝试用简单的技术（TF-IDF和相似度矩阵）做一次实践，即文档分类。
+任务定义：对于任意给定的一个字符串，判断它与目前哪个文档最为相似，从而进行归类。首先要对当前的文档（数据见github.com/hope-data-sc）做词嵌入（就用最简单的TF-IDF模型），然后对于任意的新字符串，进行向量化之后，与先前的标准库做相似性的分析，看看与哪个文档相似性最近，就属于哪一个类别。
+1 读入文件
+1 library(pacman)
+2 p_load(tidyverse,data.table)
+3
+4 fread("classification_corpus_raw.csv",encoding ="UTF-8") %>%
+5 as_tibble() %>%
+6 mutate(id=1:n())-> raw
+这样，文件就在raw中了。
+2 计算TF-IDF
+这一部分参考R语言自然语言处理：关键词提取（TF-IDF），先进行分词，然后对所有的词计算TF-IDF。
+1 ## 快速分词
+2 p_load(jiebaR)
+3 worker() -> wk
+4
+5 raw %>%
+6 mutate(words = map(title,segment,jieba = wk)) %>%
+7 select(id,words) -> corpus
+8
+9 ## 计算TF-IDF
+10 corpus %>%
+11 unnest() %>%
+12 count(id,words) %>%
+13 bind_tf_idf(term = words,document =id,n = n) -> corpus_tf_idf
+仔细看，这个文档现在究竟有多少个词语呢？
+1 corpus_tf_idf%>% distinct(words)
+2
+3 # A tibble: 1,510 x 1
+4 words
+5 <chr>
+6 1百年
+7 2办公室
+8 3筹备工作
+9 4校庆
+10 5保卫部
+11 6处
+12 7安全
+13 8管理
+14 9生产
+15 10保密
+16 # ... with 1,500 more rows
+一共1510个，不多，因此我决定不进行筛选了。本来常规套路要把这个TF-IDF的矩阵变为一个文档-词语矩阵（Document Term Matrix,DTM）。但是既然走了tidy的路线，我突然认为那是一个多余的步骤，做了一个高维稀疏的矩阵效率异常低，而进行连接（join）的速度可谓异常地快。
+下面我要写一个函数，它要完成一个这样的任务：对于任意给定的字符串，求这个字符串与当前所有文档的相似性，然后筛选出相似性最高的n个文档，显示出来。
+虽然不需要构造矩阵，但是我还是要构造一个类似的数据框。
+1 corpus_tf_idf%>%
+2 select(id,tf_idf) -> for_future_use
+3 举例尝试
+先假设给定的字符串为“大数据学院”，我们看看是否能够找到合理的相似文档。我们首先要明确，什么叫做相似？定义：1、字符串中包含相同的组分（相同的分词结果）；2、当包含组分数量一致的时候，如果包含重要表征组分，其得分更高（举例说明：我们给定的字符串是“物理学院”，分词之后是“物理”和“学院”，但是“物理”这个词能够表征的程度更高，因此它会得到更高的得分，这个得分在我们的模型中是以TF-IDF的形式存在的）。
+下面我们给出代码：
+1 string="大数据学院"
+2
+3 string%>%
+4 segment(jiebar = wk) %>%
+5 enframe() %>%
+6 transmute(words =value) -> string_table
+7
+8 for_future_use %>%
+9 inner_join(string_table) %>%
+10 group_by(id) %>%
+11 summarise(score = sum(tf_idf)) %>%
+12 arrange(desc(score)) -> sort_table
+13
+14 sort_table %>%
+15 slice(1:5) %>%
+16 inner_join(raw,by="id")
+17
+18 # A tibble: 5 x 3
+19 id score title
+20
+21 1584.70大数据学院
+22 2572.86大数据研究院
+23 31091.84高级律师学院
+24 44361.84公共卫生学院
+25 54791.84管理学院
+我们可以看到，“大数据学院”被正确地筛选出来，而排名第二的是“大数据研究院”，因为“大数据”作为一个比“学院”拥有更高TF-IDF的关键词，更能够表征“大数据”这个特征。其他3个选项得分其实是一样的，它们都因为有“学院”而被筛选出来，但是没有匹配更多更有价值的词语了。现在我们就可以正式对函数进行构造：
+1 get_sim = function(string){
+2 string%>%
+3 segment(jiebar = wk) %>%
+4 enframe() %>%
+5 transmute(words =value) -> string_table
+6
+7 for_future_use %>%
+8 inner_join(string_table,by="words") %>%
+9 group_by(id) %>%
+10 summarise(score = sum(tf_idf)) %>%
+11 arrange(desc(score)) -> sort_table
+12
+13 sort_table %>%
+14 slice(1:3) %>%
+15 inner_join(raw,by="id") ->result
+16
+17 ifelse(nrow(result)==0,
+18 NA,
+19 result %>%
+20 pull(title) %>%
+21 str_c(collapse =","))
+22 }
+这个函数能够对任意的字符串进行识别，如果没有任何识别，就返回NA；如果识别到了，最多返回匹配度最高的3个分类，分类之间以“,”分隔（注意是英文的逗号，这个可以根据自己的洗好更改）。我们用两个例子看看结果如何：
+1 get_sim("稀奇古怪")
+2 [1]NA
+3
+4 get_sim("大数据")
+5 [1]"大数据研究院,大数据学院,大数据试验场研究院（筹）"
+显然，这个函数是有效的。
+——————————————
+往期精彩：
+今天，我改名了！
+不敢穷，不敢病，不敢死……我们是独生子女
+qkerntool使用说明
+R语言中文社区2018年终文章整理（作者篇）
+R语言中文社区2018年终文章整理（类型篇）

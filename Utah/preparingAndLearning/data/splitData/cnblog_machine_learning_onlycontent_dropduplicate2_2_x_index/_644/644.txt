@@ -1,0 +1,51 @@
+机器学习定义
+1959年Arthur Samuel曾经这样定义机器学习：Field of study that gives computers the ability to learn without being explicitly programmed.Samuel 本人也写了一个西洋棋的程序，通过让这个程序练习下西洋棋一万次，使得这个西洋棋程序的棋艺比自己还要高超。
+1998年Tom Mitchell对机器学习给出了一个更加正式的定义：A computer program is said to learn from experience E with respect to some task T and some performance measure P,if its performance on T,as measured by P,improves with experience E.这个定义比较专业，甚至还有点押韵。
+课程内容
+监督学习（supervised learning）:监督学习就是给出一组特征，也给出特征所对应的结果。以此来推测另外的特征所对应的结果。比如说给出某一地区房子的面积大小，卧室数量，以及它们所对应的价格。以此来预测给定面积大小，卧室数量的另外一些房子的价格。
+学习理论（learning theory）:介绍一些theory。
+无监督学习（unsupervised learning）:无监督学习就是给出一些特征，但是不给出这些特征所对应的结果，以此来判断这些特征之间有什们结构关系。聚类问题就是无监督学习的一个例子。
+强化学习（reinforcement learning）:强化学习就是不断做出决策。比如无人驾驶飞机，只有不断做一些良好的决策，这个飞机才能持续飞行 。
+监督学习
+定义几个符号
+m：样本数量（# training examples）
+x：输入值，又成为特征（input variables/features）
+y：输出值，又叫目标值（output variables/target variables）
+(x,y)：训练样本（training examples）
+第i个训练样本（ith training examples）：（x(i),y(i)）
+监督学习思路
+为了设计学习算法，我们第一步要做的决定就是怎样表示h，即预测函数。倘若给定某一地区房间的大小以及对应的价格，那么这只有一个特征，我们就可以令，若将theta看成向量，那么也可以写成。如果给出两个特征，那么可以将预测函数写成，假设X0=1，那么预测函数就可以写成。当特征有n个时，依次类推。
+实际上，我们希望自己的预测值与实际值之间的差距要小一些，即尽量小，即目标是
+，前面乘以1/2是为了之后数学计算的方便性。定义函数J:
+。
+我们的目标就是求出参数theta，使得J取值最小。
+寻找theta的算法
+搜寻算法（search algorithm,应为一类算法统称）
+算法思想：
+1.先给定一个特定的theta，例如可以让theta取零向量。
+2.改变theta的值，让J变小，不断重复，以求得最小J。
+梯度下降（ gradient descent）
+算法思想：给定某一特定的theta值，然后重复此操作
+，其中“：=”是赋值操作，alpha称作学习速度。
+若只有一个样本点，那么
+此时可以将theta的更新操作更改为。
+同理可证若有m个训练样本，则更新操作应该为
+以上的梯度下降算法称作“批梯度下降算法”（batch gradient descent）,这种算法要遍历整个样本。
+若样本很大，则可以使用随机梯度下降算法，也称增量梯度下降算法（stochastic gradient descent (also incremental gradient descent)），此算法的基本思想为：
+循环{
+for j=1 to m{
+(for all i)
+}
+}
+这个算法的好处就是不用每次都要遍历所有的样本。为了开始学习，仅仅需要查看第一个样本，但是这个算法不会精确的收敛到全局的最小值。
+正规方程组（normal equation）
+定义一下矩阵求导
+求过导后的矩阵是一个n+1维向量。此时，梯度下降算法的更新可以写成
+矩阵求导的进一步说明
+如果A是n*n的矩阵，那么tr(A),即A的迹就等于A矩阵对角线元素之和。
+trAB=trBA
+trABC=trCAB=trBCA
+tra=a,a为实数
+定义几个矩阵
+对上述另上述J的梯度等于0，经过推到就会得出正规方程组
+得出

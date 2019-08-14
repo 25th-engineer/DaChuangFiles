@@ -1,0 +1,92 @@
+Journals
+ACM Transactions on Information Systems (TOIS) 影响因子 5.059(2006)
+IEEE Transactions on Knowledge and Data Engineering(TKDE),影响因子：2.063
+Information Retrieval (KLUWER ACADEMIC PUBL),影响因子: 1.744 (2006)
+Information Processing & Management (IP&M) (Elsevier), 影响因子：1.546 (2006)
+ACM Transactions on Asian Language Information Processing (TALIP)
+ACM Transactions on Knowledge Discovery from Data (TKDD)
+JCST
+计算机研究与发展
+计算机学报
+软件学报
+《中国科学》
+《Journal of Chinese Language and Computing》（中文与东方语言信息处理学会学报，新加坡）
+《Transactions on Asian Language Information Processing》 (TALIP,ACM,香港)
+《Computational Linguistics and Chinese Language Processing》（中文计算语言学，台湾）
+SCI检索（ISI主页）
+ACL Anthology
+ACM SIGIR
+计算机学报
+软件学报
+计算机研究与发展
+中文信息学报
+情报学报
+Conferences
+IR: SIGIR/WWW/TREC/CIKM
+DM: VLDB/SIGMOD/ICDE
+ML: ICML/ICDM/SIGKDD
+NLP: ACL/Coling/EMNLP
+1  ICCV: IEEE International Conference on Computer Vision  领域顶级国际会议，录取率20%左右，2年一次         计算机视觉，模式识别，多媒体计算
+2  CVPR: IEEE Conf on Comp Vision and Pattern Recognition      领域顶级国际会议，录取率25%左右，每年一次        模式识别，计算机视觉，多媒体计算
+3  ECCV: European Conference on Computer Vision      领域顶级国际会议，录取率25%左右，2年一次         模式识别，计算机视觉，多媒体计算
+4  ICML: International Conference on Machine Learning 领域顶级国际会议，录取率25%左右，2年一次         机器学习，模式识别
+5  NIPS: Neural Information Processing Systems      领域顶级国际会议，录取率20%左右，每年一次        神经计算，机器学习
+6  ACL: The Association for Computational Linguistics    国际计算语言学会年会，每年举办一次       计算语言学，自然语言处理
+7  COLING: International Conference on Computational Linguistics         计算语言学会议，两年一次        计算语言学，自然语言处理
+8  IJCNLP: International Joint Conference on Natural Language Processing 自然语言处理亚洲联盟主办的国际会议，是自然语言处理领域亚洲区域最有影响的学术会议，基本是每年举办一次   自然语言处理
+9  ACM SIGIR: The ACM Conference on Research and Development in Information Retrieval   信息检索方面最好的会议, ACM 主办, 每年开。19％左右       信息检索技术
+10         ACM SIGKDD: The ACM Conference on Knowledge Discovery in Databases and Data Mining    数据挖掘方面最好的会议, ACM 主办, 每年开。18％左右
+11         WWW: The ACM International World Wide Web Conference       应用和媒体领域顶级国际会议    万维网
+12         ACM SIGMOD: ACM SIGMOD Conf on Management of Data    数据库领域顶级国际 数据管理
+13         CIKM: The ACM Conference on Information and Knowledge Management       数据库领域知名国际会议   数据管理
+14         IEEE ICDM: International Conference on Data Mining          数据挖掘领域顶级国际会议
+15         IJCAI: International Joint Conference on Artificial Intelligence     人工智能领域顶级国际会议，论文接受率18％左右    人工智能
+16         VLDB: The ACM International Conference on Very Large Data Bases      数据库领域顶级国际 数据库
+17         AAAI: American Association for Artificial Intelligence   美国人工智能学会AAAI的年会，使该领域的顶级会议        人工智能
+18         CPM: Combinatorial Pattern Matching Symposium      组合模式匹配年会，是字符串匹配、模式匹配较好的会议。        模式匹配
+19     IEEE SPIRE: The IEEE International Symposium on String Processing and Information Retrieval    字符串处理与信息检索的年会，字符串匹配的主要进展都可以在这个会议上找到。    字符串处理信息检索
+Books
+Introduction to Information Retrieval. C.D. Manning, P. Raghavan, H. Schütze. Cambridge UP, 2007. Draft. NLP大拿Manning最新出的一本书，中文版已经上市，内容比较新，有语言模型、机器学习及XML检索，有很多实现方面的内容。
+Information Retrieval: Algorithms and Heuristics. D.A. Grossman, O. Frieder. Springer, 2004. 非常好的教材, 例子非常多，在组织上和传统的教材不太一样，关注Ad Hoc 检索。据说在Amazon上卖的很好。
+Modern Information Retrieval. R. Baeza-Yates, B. Ribeiro-Neto. Addison-Wesley, 1999. 用的较广泛的教材，非常全，但是感觉有点过时，实现方面的内容也有所欠缺。
+Readings in Information Retrieval. K. Sparck Jones, P. Willett. Morgan Kaufmann, 1997. 许多经典论文的珍藏本。
+Managing Gigabytes. I.H. Witten, A. Moffat, T.C. Bell. Morgan Kaufmann, 1999.    关于文本和图像处理中的索引及压缩的数据结构及算法
+Information Retrieval: Data Structures and Algorithms(2nd edition), William B. Frakes and Ricardo Baeza-Yates, Prentice Hall PTR, 1992. 也是从数据结构和算法方面介绍IR的书，偏实现，但是确实有些内容过时了。
+Mining the Web: Analysis of Hypertext and Semi Structured Data. S. Chakrabarti. Morgan Kaufmann, 2002. 有关WEB IR的书，感觉公式有点多
+Finding Out About: A Cognitive Perspective on Search Engine Technology and the WWW. R. Belew. Cambridge UP, 2001.
+Google's PageRank and Beyond: The Science of Search Engine Rankings, Amy N. Langville and Carl D. Meyer, 有关PageRank原理及实现的一本全集。
+Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data (Data-Centric Systems and Applications), Bing Liu, Springer, 2006. 只看了看目录，觉得挺全挺新的。中文翻译版已经面世。
+Lucene in Action, Otis Gospodnetic and Erik Hatcher. Manning Publications. 2004. 不用说了，著名开源索引检索工具Lucene的大全。
+Programming Collective Intelligence: Building Smart Web 2.0 Applications, Toby Segaran, O'Reilly Media, Inc. 2007.这本书给了很多在真实环境下用Python语言写IR/Machine Learning算法的例子。值得一读。网上有电子版。
+Teams
+北大计算语言学研究所
+中科院计算所自然语言处理课题组
+中科院计算所信息检索课题组
+知网（hownet）
+东北大学中文信息处理实验室
+纳讯--中文信息处理技术站点
+北邮模式识别与智能系统试验室
+自然语言处理机构站点收集
+中文自然语言处理开放平台
+微软研究院
+Computists International AI Association
+太平洋邻里协会（PNC,Pacific Neighborhood Consortium）
+Computational Linguistics Tools
+Bow: A Toolkit for Statistical Language Modeling, Text Retrieval, Classification and Clustering
+Gate -- General Architecture for Text Engineering
+UMass
+CMU
+UIUC
+Glasgow University
+University of Montreal
+Microsoft Research Cambridge
+Microsoft Research Asia
+HIT
+TSinghua
+PKU
+ACL Anthology
+ACL Anthology Network
+ACL Wiki
+CLSP
+<a< div="">
+TAG: 导航 网址 信息检索 自然语言处理

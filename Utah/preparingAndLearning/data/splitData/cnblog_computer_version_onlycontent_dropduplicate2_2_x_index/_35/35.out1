@@ -1,0 +1,2581 @@
+1 什么 是 基于 内容 的 图像 检索 1 构建 
+基于 内容 的 图像 检索系统 步骤 1 定义 你 的 
+图像 描述符 在 这个 阶段 你 需要 决定 你 想 
+描述 的 图像 的 哪个 方面 你 对 图像 的 
+颜色 感兴趣 吗 图像 中 物体 的 形状 或者 你 
+想 表征 纹理 2 特征提取 和 索引 您 的 数据集 
+    现在 您 已经 定义 了 图像 描述符 您 
+的 工作 是 将此 图像 描述符 应用于 数据 集中 的 
+每个 图像 从 这些 图像 提取 特征 并将 特征 写入 
+存储 例如 CSV 文件 RDBMS Redis 等 以便 稍后 可以 
+比较 它们 的 相似性 此外 您 需要 考虑 是否 将 
+使用 任何 专门 的 数据 结构 来 促进 更快 的 
+搜索 3 定义 您 的 相似性 度量     我们 
+现在 有一个 可能 是 指数 特征向量 的 集合 但 你 
+如何 比较 它们 的 相似性 呢 常用 选项 包括 欧几里得 
+距离 余弦 距离 和 距离 但 实际 选择 高度 依赖 
+于 1 数据集 和 2 您 提取 的 特征 类型 
+4 搜索     最后 一步 是 执行 实际 搜索 
+用户 将 向 系统 提交 查询 图像 例 如从 上传 
+表单 或 通过 移动 应用 程序 并且 您 的 工作 
+将 1 从该/nr 查询 图像 中 提取 特征 然后 2 
+应用 您 的 相似性 函数 进行 比较 该 查询 的 
+功能 已 针对 已 编入索引 的 功能 从那里 你 只需 
+根据 你 的 相似 度 函数 返回 最 相关 的 
+结果 2 CBIR 和 机器学习 / 图像 分类 有何 不同 
+1 机器学习 包括 使 计算机 完成 诸如 预测 分类 识别 
+等 智能 人工 任务 的 方法 此外 机器 学习管理 算法 
+使 计算机 能够 执行 这些 智能 任务     而不 
+需要 明确 编程 CBIR 确实 利用 了 一些 机器学习 技术 
+即 降 维和 聚 类 但是 CBIR 系统 不 执行 
+任何 实际 学习 2 主要 的   区别 在于 CBIR 
+不   直接 试图 理解 和 解释 图像 的 内容 
+相反 CBIR 系统 依赖于 通过 提取 特征向量 来 量化 图像 
+假设 特征向量 的 比较 具有 相似 特征向量 的 图像 具有 
+相似 的 视觉 内容 基于 这 两个 组件 图像 搜索引擎 
+能够 将 查询 与 图像 数据 集 进行 比较 并 
+返回 最 相关 的 结果 而 不必 实际 知道 图像 
+的 内容 3 在 机器 学习 和 图像 分类 中 
+能够 学习 和 理解 图像 的 内容 需要 一些 训练 
+集 的 概念         一组 标记 数据 
+用于 教 计算机 数据 集中 每个 可视 对象 的 外观 
+4 CBIR 系统 不 需要 标记 数据 他们 只需 拍摄 
+图像 数据集 从 每幅 图像 中 提取 特征 并使 数据集 
+可以 在 视觉 上 搜索 在 某些 方面 您 可以 
+将 CBIR 系统 视为 一种 哑 图像 分类器 它 没有 
+标签 概念 来 使 自己 更加 智能 它 仅 依赖于 
+1 从 图像 中 提取 的 特征 和 2 相似性 
+函数 用于 给 用户 提供 有 意义 的 结果 2 
+构建 CBIR 系统 1 目录 结构 及 作用 | pyimagesearch 
+|         | _ _ init _ 
+_ . py |         | cbir 
+|         |         
+| _ _ init _ _ . py |   
+      |         | dists 
+. py       作用 包含 我们 的 距离 
+度量 / 相似 度 函数 用于 比较 两 个 图像 
+的 相似 度 |         |   
+      | hsvdescriptor . py   作用 实现 
+我们 的 颜色 描述符 用于 从 图像 中 提取 特征向量 
+|         |         
+| resultsmontage . py 作用 用于 显示 搜索 到 我们 
+的 屏幕 结果 的 实用 工具 类 |     
+    |         | searcher . 
+py 作用 将 封装 用于 执行 实际 搜索 的 Searcher 
+类 | index . py 作用 用于 从 我们 的 
+UKBench 数据 集中 提取 特征 | search . py   
+作用 将 接受 查询 图像 调用   搜索器     
+然后 将 结果 显示 在 屏幕 上 疑问 1 highlight 
+= resultID in queryRelevant2 对 第三 条 运行 结果 存在 
+疑问 运行 命令 1 python search . py index index 
+. csv dataset . . / ukbench relevant . . 
+/ ukbench / relevant . json query . . / 
+ukbench / ukbench00644 . jpg2 python search . py index 
+index . csv dataset . . / ukbench relevant . 
+. / ukbench / relevant . json query . . 
+/ ukbench / ukbench00996 . jpg3 python search . py 
+index index . csv dataset . . / ukbench relevant 
+. . / ukbench / relevant . json query . 
+. / ukbench / ukbench00568 . jpgsearch . pyfrom _ 
+_ future _ _ import print _ function from pyimagesearch 
+. cbir . resultsmontage import ResultsMontage from pyimagesearch . cbir 
+. hsvdescriptor import HSVDescriptor from pyimagesearch . cbir . searcher 
+import Searcher import argparse import imutils import json import cv2 
+ap = argparse . ArgumentParser ap . add _ argument 
+i index required = True help = Path to where 
+the features index will be stored ap . add _ 
+argument q query required = True help = Path to 
+the query image ap . add _ argument d dataset 
+required = True help = Path to the original dataset 
+directory ap . add _ argument r relevant required = 
+True help = Path to relevant dictionary args = vars 
+ap . parse _ args desc = HSVDescriptor 4 6 
+3 montage = ResultsMontage 240 320 5 20 relevant = 
+json . loads open args relevant . read queryFilename = 
+args query args query . rfind / + 1 queryRelevant 
+= relevant queryFilename query = cv2 . imread args query 
+print INFO describing query . . . cv2 . imshow 
+Query imutils . resize query width = 320 features = 
+desc . describe query print INFO searching . . . 
+searcher = Searcher args index results = searcher . search 
+features numResults = 20 for i score resultID in enumerate 
+results print INFO { result _ num } . { 
+result } score . 2f . format result _ num 
+= i + 1 result = resultID score = score 
+result = cv2 . imread { } / { } 
+. format args dataset resultID print resultID print resultID montage 
+. addResult result text = # { } . format 
+i + 1 highlight = resultID in queryRelevant cv2 . 
+imshow Results imutils . resize montage . montage height = 
+700 cv2 . imwrite mo . png montage . montage 
+cv2 . waitKey 0 index . pyfrom _ _ future 
+_ _ import print _ function from pyimagesearch . cbir 
+. hsvdescriptor import HSVDescriptor from imutils import paths import progressbar 
+import argparse import cv2 ap = argparse . ArgumentParser ap 
+. add _ argument d dataset required = True help 
+= Path to the directory that contains the images to 
+be indexed ap . add _ argument i index required 
+= True help = Path to where the features index 
+will be stored args = vars ap . parse _ 
+args desc = HSVDescriptor 4 6 3 output = open 
+args index w imagePaths = list paths . list _ 
+images args dataset widgets = Indexing progressbar . Percentage progressbar 
+. Bar progressbar . ETA pbar = progressbar . ProgressBar 
+maxval = len imagePaths widgets = widgets pbar . start 
+for i imagePath in enumerate imagePaths filename = imagePath imagePath 
+. rfind / + 1 image = cv2 . imread 
+imagePath features = desc . describe image features = str 
+x for x in features output . write { } 
+{ } \ n . format filename . join features 
+pbar . update i pbar . finish print INFO indexed 
+{ } images . format len imagePaths output . close 
+dist . pyimport numpy as np def chi2 _ distance 
+histA histB eps = 1e 10 d = 0.5 * 
+np . sum histA histB * * 2 / histA 
++ histB + eps return dhsvdescriptor . pyimport numpy as 
+np import cv2 import imutils class HSVDescriptor def _ _ 
+init _ _ self bins self . bins = bins 
+def describe self image image = cv2 . cvtColor image 
+cv2 . COLOR _ BGR2HSV features = h w = 
+image . shape 2 cX cY = int w * 
+0.5 int h * 0.5 segments = 0 cX 0 
+cY cX w 0 cY cX w cY h 0 
+cX cY h axesX axesY = int w * 0.75 
+/ / 2 int h * 0.75 / / 2 
+ellipMask = np . zeros image . shape 2 dtype 
+= uint8 cv2 . ellipse ellipMask cX cY axesX axesY 
+0 0 360 255 1 for startX endX startY endY 
+in segments cornerMask = np . zeros image . shape 
+2 dtype = uint8 cv2 . rectangle cornerMask startX startY 
+endX endY 255 1 cornerMask = cv2 . subtract cornerMask 
+ellipMask hist = self . histogram image cornerMask features . 
+extend hist hist = self . histogram image ellipMask features 
+. extend hist return np . array features def histogram 
+self image mask = None hist = cv2 . calcHist 
+image 0 1 2 mask self . bins 0 180 
+0 256 0 256 if imutils . is _ cv2 
+hist = cv2 . normalize hist . flatten else hist 
+= cv2 . normalize hist hist . flatten return h 
+i s t r e s u l t s 
+m o n t a g e . pyimport numpy 
+as np import cv2 class ResultsMontage def _ _ init 
+_ _ self imageSize imagesPerRow numResults self . imageW = 
+imageSize 0 self . imageH = imageSize 1 self . 
+imagesPerRow = imagesPerRow numCols = numResults / / imagesPerRow self 
+. montage = np . zeros numCols * self . 
+imageW imagesPerRow * self . imageH 3 dtype = uint8 
+self . counter = 0 self . row = 0 
+self . col = 0 def addResult self image text 
+= None highlight = False if self . counter = 
+0 and self . counter % self . imagesPerRow = 
+= 0 self . col = 0 self . row 
++ = 1 image = cv2 . resize image self 
+. imageH self . imageW startY endY = self . 
+row * self . imageW self . row + 1 
+* self . imageW startX endX = self . col 
+* self . imageH self . col + 1 * 
+self . imageH self . montage startY endY startX endX 
+= image if text is not None cv2 . putText 
+self . montage text startX + 10 startY + 30 
+cv2 . FONT _ HERSHEY _ SIMPLEX 1.0 0 255 
+255 3 print text if highlight cv2 . rectangle self 
+. montage startX + 3 startY + 3 endX 3 
+endY 3 0 255 0 4 print hig self . 
+col + = 1 self . counter + = 1searcher 
+. pyfrom . import dists import csv class Searcher def 
+_ _ init _ _ self dbPath self . dbPath 
+= dbPath def search self queryFeatures numResults = 10 results 
+= { } with open self . dbPath as f 
+reader = csv . reader f for row in reader 
+features = float x for x in row 1 d 
+= dists . chi2 _ distance features queryFeatures results row 
+0 = d f . close results = sorted v 
+k for k v in results . items return results 
+numResults 2 特征提取 和 索引 1 描述 图像 的 三 
+个 方面 颜色     表征 图像 颜色 的 图像 
+描述符 试图 模拟图像 每个 通道 中 像素 强度 的 分布 
+这些 方法 包括 基本 颜色 统计 如 平均值 标准偏差 和偏度/nr 
+以及 颜色 直方图 平面 和 多维 纹理     纹理 
+描述符 试图 模拟图像 中 物体 的 感觉 外观 和 整体 
+触觉 质量 一些 但 不是 全部 纹理 描述符 将 图像 
+转换 为 灰度 然后 计算 灰度 共生 矩阵 GLCM 并 
+计算 该 矩阵 的 统计量 包括 对比度 相关性 和熵等/nr Haralick 
+纹理 更 先进 的 纹理 描述符 如 局部 二进制 模式 
+尝试 模型     模式 也 是 如此 甚至 还有 
+更 高级 的 纹理 描述符 例如 傅立叶 和 小波 变换 
+也 存在 但 仍然 使用 灰度 图像 形状     
+绝大多数 形状 描述符 方法 依靠 提取 图像 中 对象 的 
+轮廓 即 轮廓 一旦 我们 有了 轮廓 我们 就 可以 
+计算 简单 的 统计 数据 来 表征 轮廓 这 正是 
+Hu Moments 和 Zernike Moments 所做 的 这些 统计 数据 
+可 用于 表示 图像 中 对象 的 形状 轮廓 在 
+机器 学习 和 对象 识别 的 背景 下     
+面向 梯度 的 直方图   也 是 一个 不错 的 
+选择 2 特征提取 的 定义 定义   特征提取   是 
+通过 应用 图像 描述符 从 数据 集中 每个 图像 中 
+提取 特征 来 量化 数据集 的 过程 通常 这些 功能 
+存储 在 磁盘 上供     以后 使用 并   
+  使用 专门 的 数据结构 例如 倒排索引 kd 树 或 
+随机 投影 林 进行 索引 以 加快 查询 速度 3 
+定义 相似 度 1 常用 距离 度量 欧几里德 from scipy 
+. spatial import distance as dists dists . euclidean A 
+B 曼哈顿 / 城市 大厦 dists . cityblock A B 
+直方图 交点 def histogram _ intersection H1 H2 return np 
+. sum np . minimum H1 H2 距离 def chi2 
+_ distance histA histB eps = 1e 10 return 0.5 
+* np . sum histA histB * * 2 / 
+histA + histB + eps chi2 _ distance A B 
+余弦 dists . cosine A B 海明 dists . hamming 
+A B 4 提取 关键点 和 局部 不变 描述符 1 
+文件 结构 及 作用 | pyimagesearch |       
+  | _ _ init _ _ . py | 
+        | descriptors 作用 包含/v 了/ul 实现/v 
+从/p 我们/r 的/uj 图像/n 数据集/i 提取/v 关键点/n 和/c 本地/r 不变/v 
+描述/v |/i  /i  /i  /i  /i |/i  /i  /i  /i 
+ /i |/i _ _ init _ _ . py | 
+        |         | 
+d e t e c t a n d d 
+e s c r i b e . py 作用 
+以便 使用 任意 检测器 和 描述符 轻松 检测 关键点 并 
+提取 功能 |         | indexer 作用 
+包含 我们 面向 HDF5 数据集 的 面向 对象 的 接口 
+来 存储 特征 |         |   
+      | _ _ init _ _ . 
+py |         |       
+  | baseindexer . py |         
+|         | featureindexer . py | 
+index _ features . py 作用 驱动程序 脚本 用于 将 
+所有 碎片 粘合 在 一起 疑问 1 @ staticmethod 静 
+态函数 定义 的 方法 运行 命令 python index _ features 
+. py dataset . . / ukbench _ sample features 
+db output / features . hdf5index _ features . py 
+# coding = utf 8 from _ _ future _ 
+_ import print _ function from pyimagesearch . descriptors . 
+d e t e c t a n d d 
+e s c r i b e import D e 
+t e c t A n d D e s 
+c r i b e from pyimagesearch . indexer . 
+featureindexer import FeatureIndexer from imutils . feature import FeatureDetector _ 
+create D e s c r i p t o 
+r E x t r a c t o r 
+_ create from imutils import paths import argparse import imutils 
+import cv2 ap = argparse . ArgumentParser ap . add 
+_ argument d dataset required = True help = Path 
+to the directory that contains the images to be indexed 
+# 图像 目录 路径 ap . add _ argument f 
+features db required = True help = Path to where 
+the features database will be stored # 制定 HDF5 数据库 
+储存 在 磁 盘上 的 路径 ap . add _ 
+argument a approx images type = int default = 500 
+help = Approximate # of images in the dataset # 
+该 可选 开关 允许 我们 指定 数据 集中 图像 的 
+近似 数量 ap . add _ argument b max buffer 
+size type = int default = 50000 help = Maximum 
+buffer size for # of features to be stored in 
+memory # 一次 一个 地 写入 HDF5 的 特征向量 效率 
+非常 低 相反 将/d 特征向量/n 收集到/i 内存/n 中/f 的/uj 一个/m 
+大/a 数组/n 中/f 然后/c 在/p 缓冲区/n 满时将/nr 它们/r 转储/v 到/v 
+HDF5/i 会/v 更/d 有效/a 的 值 最大 缓冲器 大小 指定 
+许多 如何 特征向量 可以 被 存储 在 存储器 中 直到 
+缓冲器 被 刷新 到 HDF5 args = vars ap . 
+parse _ args detector = FeatureDetector _ create SURF # 
+获取 关键点 descriptor = D e s c r i 
+p t o r E x t r a c 
+t o r _ create RootSIFT # 定义 提取 关键点 
+特征 方法 dad = D e t e c t 
+A n d D e s c r i b 
+e detector descriptor # 获取 关键点 和 关键 点 特征向量 
+fi = FeatureIndexer args features _ db estNumImages = args 
+approx _ images maxBufferSize = args max _ buffer _ 
+size verbose = True for i imagePath in enumerate paths 
+. list _ images args dataset if i 0 and 
+i % 10 = = 0 fi . _ debug 
+processed { } images . format i msgType = PROGRESS 
+filename = imagePath imagePath . rfind / + 1 image 
+= cv2 . imread imagePath image = imutils . resize 
+image width = 320 image = cv2 . cvtColor image 
+cv2 . COLOR _ BGR2GRAY kps descs = dad . 
+describe image if kps is None or descs is None 
+continue fi . add filename kps descs fi . finish 
+d e t e c t a n d d 
+e s c r i b e . pyimport numpy 
+as np class D e t e c t A 
+n d D e s c r i b e 
+def _ _ init _ _ self detector descriptor self 
+. detector = detector self . descriptor = descriptor def 
+describe self image useKpList = True kps = self . 
+detector . detect image kps descs = self . descriptor 
+. compute image kps if len kps = = 0 
+return None None if useKpList kps = np . int0 
+kp . pt for kp in kps return kps descs 
+baseindexer . pyfrom _ _ future _ _ import print 
+_ function import numpy as np import datetime class BaseIndexer 
+object def _ _ init _ _ self dbPath estNumImages 
+= 500 maxBufferSize = 50000 dbResizeFactor = 2 verbose = 
+True self . dbPath = dbPath self . estNumImages = 
+estNumImages self . maxBufferSize = maxBufferSize self . dbResizeFactor = 
+dbResizeFactor self . verbose = verbose self . idxs = 
+{ } def _ wrieBuffers self pass def _ writeBuffer 
+self dataset datasetName buf idxName sparse = False if type 
+buf is list end = self . idxs idxName + 
+len buf else end = self . idxs idxName + 
+buf . shape 0 if end dataset . shape 0 
+self . _ debug triggering { } db resize . 
+format datasetName self . _ resizeDataset dataset datasetName baseSize = 
+end if sparse buf = buf . toarray self . 
+_ debug writing { } buffer . format datasetName dataset 
+self . idxs idxName end = buf def _ resizeDataset 
+self dataset dbName baseSize = 0 finished = 0 origSize 
+= dataset . shape 0 if finished 0 newSize = 
+finished else newSize = baseSize * self . dbResizeFactor shape 
+= list dataset . shape shape 0 = newSize dataset 
+. resize tuple shape self . _ debug old size 
+of { } { } new size { } . 
+format dbName origSize newSize def _ debug self msg msgType 
+= INFO if self . verbose print { } { 
+} { } . format msgType msg datetime . datetime 
+. now @ staticmethod def featureStack array accum = None 
+stackMethod = np . vstack if accum is None accum 
+= array else accum = stackMethod accum array return a 
+c c u m f e a t u r 
+e i n d e x e r . py 
+# coding = utf 8 from . baseindexer import BaseIndexer 
+import numpy as np import h5py import sys class FeatureIndexer 
+BaseIndexer def _ _ init _ _ self dbPath estNumImages 
+= 500 maxBufferSize = 50000 dbResizeFactor = 2 verbose = 
+True super FeatureIndexer self . _ _ init _ _ 
+dbPath estNumImages = estNumImages maxBufferSize = maxBufferSize dbResizeFactor = dbResizeFactor 
+verbose = verbose self . db = h5py . File 
+self . dbPath mode = w self . imageIDDB = 
+None self . indexDB = None self . featuresDB = 
+None self . imageIDBuffer = self . indexBuffer = self 
+. featuresBuffer = None self . totalFeatures = 0 self 
+. idxs = { index 0 features 0 } def 
+add self imageID kps features start = self . idxs 
+features + self . totalFeatures end = start + len 
+features self . imageIDBuffer . append imageID self . featuresBuffer 
+= BaseIndexer . featureStack np . hstack kps features self 
+. featuresBuffer self . indexBuffer . append start end self 
+. totalFeatures + = len features if self . totalFeatures 
+= self . maxBufferSize if None in self . imageIDDB 
+self . indexDB self . featuresDB self . _ debug 
+initial buffer full self . _ createDatasets self . _ 
+writeBuffers def _ createDatasets self avgFeatures = self . totalFeatures 
+/ float len self . imageIDBuffer approxFeatures = int avgFeatures 
+* self . estNumImages fvectorSize = self . featuresBuffer . 
+shape 1 if sys . version _ info 0 3 
+dt = h5py . special _ dtype vlen = unicode 
+else dt = h5py . special _ dtype vlen = 
+str self . _ debug creating datasets . . . 
+self . imageIDDB = self . db . create _ 
+dataset image _ ids self . estNumImages maxshape = None 
+dtype = dt self . indexDB = self . db 
+. create _ dataset index self . estNumImages 2 maxshape 
+= None 2 dtype = int self . featuresDB = 
+self . db . create _ dataset features approxFeatures fvectorSize 
+maxshape = None fvectorSize dtype = float def _ writeBuffers 
+self self . _ writeBuffer self . imageIDDB image _ 
+ids self . imageIDBuffer index self . _ writeBuffer self 
+. indexDB index self . indexBuffer index self . _ 
+writeBuffer self . featuresDB features self . featuresBuffer features self 
+. idxs index + = len self . imageIDBuffer self 
+. idxs features + = self . totalFeatures self . 
+imageIDBuffer = self . indexBuffer = self . featuresBuffer = 
+None self . totalFeatures = 0 def finish self if 
+None in self . imageIDDB self . indexDB self . 
+featuresDB self . _ debug minimum init buffer not reached 
+msgType = WARN self . _ createDatasets self . _ 
+debug writing un empty buffers . . . self . 
+_ writeBuffers self . _ debug compacting datasets . . 
+. self . _ resizeDataset self . imageIDDB image _ 
+ids finished = self . idxs index self . _ 
+resizeDataset self . indexDB index finished = self . idxs 
+index self . _ resizeDataset self . featuresDB features finished 
+= self . idxs features self . db . close 
+5 集群 功能 组成 一个 码本 1 文件 结构 及 
+作用 多 添加 俩个 新文件 cluster _ features . py 
+和 vocabulary . py | pyimagesearch |       
+  | _ _ init _ _ . py | 
+        | descriptors |       
+  |         | _ _ init 
+_ _ . py |         | 
+        | d e t e c 
+t a n d d e s c r i 
+b e . py |         | 
+indexer |         |       
+  | _ _ init _ _ . py | 
+        |         | 
+baseindexer . py |         |   
+      | featureindexer . py |     
+    | ir |         | 
+        | _ _ init _ _ 
+. py |         |     
+    | vocabulary . py 作用 用于 摄取 的 
+功能 HDF5 数据集 然后 返回 一个 字典 的 视觉 即 
+聚 类 中心 话 | cluster _ features . py 
+作用 驱动 脚本 将 启动   词汇表     制定 
+过程 | index _ features . py 运行 命令 python 
+cluster _ features . py features db output / features 
+. hdf5 codebook output / vocab . cpickle clusters 1536 
+percentage 0 . 25cluster _ features . py # coding 
+= utf 8 from _ _ future _ _ import 
+print _ function from pyimagesearch . ir . vocabulary import 
+Vocabulary import argparse import pickle ap = argparse . ArgumentParser 
+ap . add _ argument f features db required = 
+True help = Path to where the features database will 
+be stored ap . add _ argument c codebook required 
+= True help = Path to the output codebook ap 
+. add _ argument k clusters type = int default 
+= 64 help = # of clusters to generate # 
+小批量 k 均值 将 生成 的 簇 的 数量 即 
+可视 词 ap . add _ argument p percentage type 
+= float default = 0.25 help = Percentage of total 
+features to use when clustering args = vars ap . 
+parse _ args # 控制 特征向量 样本量 的 大小 voc 
+= Vocabulary args features _ db vocab = voc . 
+fit args clusters args percentage # 获得 生成 的 视觉 
+词 整个 采样 和聚类/nr 过程 由 词汇 类 抽象 print 
+INFO storing cluster centers . . . f = open 
+args codebook wb f . write pickle . dumps vocab 
+f . close vocabulary . pyfrom _ _ future _ 
+_ import print _ function from sklearn . cluster import 
+MiniBatchKMeans import numpy as np import datetime import h5py class 
+Vocabulary def _ _ init _ _ self dbPath verbose 
+= True self . dbPath = dbPath self . verbose 
+= verbose def fit self numClusters samplePercent randomState = None 
+db = h5py . File self . dbPath totalFeatures = 
+db features . shape 0 sampleSize = int np . 
+ceil samplePercent * totalFeatures print sampleSize print sampleSize idxs = 
+np . random . choice np . arange 0 totalFeatures 
+sampleSize replace = False idxs . sort data = self 
+. _ debug starting sampling . . . for i 
+in idxs data . append db features i 2 self 
+. _ debug sampled { } features from a population 
+of { } . format len idxs totalFeatures self . 
+_ debug clustering with k = { } . format 
+numClusters clt = MiniBatchKMeans n _ clusters = numClusters random 
+_ state = randomState clt . fit data self . 
+_ debug cluster shape { } . format clt . 
+cluster _ centers _ . shape db . close return 
+clt . cluster _ centers _ def _ debug self 
+msg msgType = INFO if self . verbose print { 
+} { } { } . format msgType msg datetime 
+. datetime . now 6 可视化 码本 中的 单词 注 
+在前面 构建 出 关键点 和 局部 不变 特征 描述符 建立 
+集群 码本 后方 可实现 作用 将 码本 中 K means 
+分类 后的/nr 直方图 转化 为 可视化 图片 visuluze _ centers 
+. py # coding = utf 8 from _ _ 
+future _ _ import print _ function from pyimagesearch . 
+resultsmontage import ResultsMontage from sklearn . metrics import pairwise import 
+numpy as np import progressbar import argparse import pickle import 
+h5py import cv2 ap = argparse . ArgumentParser ap . 
+add _ argument d dataset required = True help = 
+Path to the directory of indexed images ap . add 
+_ argument f features db required = True help = 
+Path to the features database # 提取 关键 和 局部 
+不变 描述符 的 数据 记 路经 ap . add _ 
+argument c codebook required = True help = Path to 
+the codebook # 可视 话 词汇表 中的 视觉 词汇 路经 
+ap . add _ argument o output required = True 
+help = Path to output directory args = vars ap 
+. parse _ args vocab = pickle . loads open 
+args codebook rb . read featuresDB = h5py . File 
+args features _ db mode = r print INFO starting 
+distance distance computations . . . vis = { i 
+for i in np . arange 0 len vocab } 
+widgets = Comparing progressbar . Percentage progressbar . Bar progressbar 
+. ETA pbar = progressbar . ProgressBar maxval = featuresDB 
+image _ ids . shape 0 widgets = widgets . 
+start for i imageID in enumerate featuresDB image _ ids 
+start end = featuresDB index i rows = featuresDB features 
+start end kps descs = rows 2 rows 2 for 
+kp features in zip kps descs features = features . 
+reshape 1 1 D = pairwise . euclidean _ distances 
+features Y = vocab 0 for j in np . 
+arange 0 len vocab topResults = vis . get j 
+topResults . append D j kp imageID topResults = sorted 
+topResults key = lambda r r 0 16 vis j 
+= topResults pbar . update i pbar . finish featuresDB 
+. close print INFO writing visualizations to file . . 
+. for vwID results in vis . items montage = 
+ResultsMontage 64 64 4 16 for _ x y imageID 
+in results p = { } / { } . 
+format args dataset imageID image = cv2 . imread p 
+h w = image . shape 2 startX endX = 
+max 0 int x 32 min w int x + 
+32 startY endY = max 0 int y 32 min 
+h int y + 32 roi = image startY endY 
+startX endX montage . addResult roi p = { } 
+/ vis _ { } . jpg . format args 
+output vwID cv2 . imwrite p cv2 . cvtColor montage 
+. montage cv2 . COLOR _ BGR2GRAY 7 矢量 量化 
+7.1 从 多个 特 征到 单个 直方图 bagofvisualwords . pyfrom 
+sklearn . metrics import pairwise from scipy . sparse import 
+csr _ matrix import numpy as np class BagOfVisualWords def 
+_ _ init _ _ self codebook sparse = True 
+self . codebook = codebook self . sparse = sparse 
+def describe self features D = pairwise . euclidean _ 
+distances features Y = self . codebook words counts = 
+np . unique np . argmin D axis = 1 
+return _ counts = True if self . sparse hist 
+= csr _ matrix counts np . zeros len words 
+words shape = 1 len self . codebook dtype = 
+float else hist = np . zeros len self . 
+codebook dtype = float hist words = counts return histquantize 
+_ example . pyfrom _ _ future _ _ import 
+print _ function from pyimagesearch . ir . bagofvisualwords import 
+BagOfVisualWords from sklearn . metrics import pairwise import numpy as 
+np np . random . seed 42 vocab = np 
+. random . uniform size = 3 6 features = 
+np . random . uniform size = 10 6 print 
+INFO vocabulary \ n { } \ n . format 
+vocab print INFO features \ n { } \ n 
+. format features hist = np . zeros 3 dtype 
+= int32 for i f in enumerate features D = 
+pairwise . euclidean _ distances f . reshape 1 1 
+Y = vocab j = np . argmin D print 
+INFO Closest visual word to feature # { } { 
+} . format i j hist j + = 1 
+print INFO Updated histogram { } . format hist bovw 
+= BagOfVisualWords vocab sparse = False hist = bovw . 
+describe features print INFO BOVW histogram { } . format 
+hist 7.2 形成 BOVW 运行 命令 python extract _ bovw 
+. py features db output / features . hdf5 codebook 
+output / vocab . cpickle     bovw db output 
+/ bovw . hdf5 idf output / idf . cpickleextract 
+_ bovw . pyfrom pyimagesearch . ir . bagofvisualwords import 
+BagOfVisualWords from pyimagesearch . indexer . bovwindexer import BOVWIndexer import 
+argparse import pickle import h5py ap = argparse . ArgumentParser 
+ap . add _ argument f features db required = 
+True help = Path to the features database # 关键点 
+和 局部 不变 描述符 课程 中 构建 的 HDF5 数据集 
+的 路径 该 数据库 应 包含 与 数据 集中 每个 
+图像 相关 的 图像 ID 索引 和 原始 关键点 / 
+特征向量 ap . add _ argument c codebook required = 
+True help = Path to the codebook # 我们 需要 
+可视化 码本 的 路径 ap . add _ argument b 
+bovw db required = True help = Path to where 
+the bag of visual words database will be stored # 
+将 BOVW 表示 存储 在 一个 单独 的 HDF5 数据库 
+中的 路经 ap . add _ argument d idf required 
+= True help = Path to inverse document frequency counts 
+will be stored ap . add _ argument s max 
+buffer size type = int default = 500 help = 
+Maximum buffer size for # of features to be stored 
+in memory # 在 写入 HDF5 数据集 之前 在 内存 
+中 管理 一个 原始 特征向量 的 缓冲区 我们 将 在 
+这里 做 同样 的 事情 这次 我们 将 管理 一个 
+BOVW 直方图 缓冲区 args = vars ap . parse _ 
+args vocab = pickle . loads open args codebook rb 
+. read bovw = BagOfVisualWords vocab featuresDB = h5py . 
+File args features _ db mode = r bi = 
+BOVWIndexer bovw . codebook . shape 0 args bovw _ 
+db estNumImages = featuresDB image _ ids . shape 0 
+maxBufferSize = args max _ buffer _ size for i 
+imageID offset in enumerate zip featuresDB image _ ids featuresDB 
+index if i 0 and i % 10 = = 
+0 bi . _ debug processed { } images . 
+format i msgType = PROGRESS features = featuresDB features offset 
+0 offset 1 2 hist = bovw . describe features 
+bi . add hist featuresDB . close bi . finish 
+f = open args idf wb f . write pickle 
+. dumps bi . df method = idf f . 
+close bovwindexer . pyfrom . baseindexer import BaseIndexer from scipy 
+import sparse import numpy as np import h5py class BOVWIndexer 
+BaseIndexer def _ _ init _ _ self fvectorSize dbPath 
+estNumImages = 500 maxBufferSize = 500 dbResizeFactor = 2 verbose 
+= True super BOVWIndexer self . _ _ init _ 
+_ dbPath estNumImages = estNumImages maxBufferSize = maxBufferSize dbResizeFactor = 
+dbResizeFactor verbose = verbose self . db = h5py . 
+File self . dbPath mode = w self . bovwDB 
+= None self . bovwBuffer = None self . idxs 
+= { bovw 0 } self . fvectorSize = fvectorSize 
+self . _ df = np . zeros fvectorSize dtype 
+= float self . totalImages = 0 def add self 
+hist self . bovwBuffer = BaseIndexer . featureStack hist self 
+. bovwBuffer stackMethod = sparse . vstack self . _ 
+df np . where hist . toarray 0 0 + 
+= 1 if self . bovwBuffer . shape 0 = 
+self . maxBufferSize if self . bovwDB is None self 
+. _ debug initial buffer full self . _ createDatasets 
+self . _ writeBuffers def _ writeBuffers self if self 
+. bovwBuffer is not None and self . bovwBuffer . 
+shape 0 0 self . _ writeBuffer self . bovwDB 
+bovw self . bovwBuffer bovw sparse = True self . 
+idxs bovw + = self . bovwBuffer . shape 0 
+self . bovwBuffer = None def _ createDatasets self self 
+. _ debug creating datasets . . . self . 
+bovwDB = self . db . create _ dataset bovw 
+self . estNumImages self . fvectorSize maxshape = None self 
+. fvectorSize dtype = float def finish self if self 
+. bovwDB is None self . _ debug minimum init 
+buffer not reached msgType = WARN self . _ createDatasets 
+self . _ debug writing un empty buffers . . 
+. self . _ writeBuffers self . _ debug compacting 
+datasets . . . self . _ resizeDataset self . 
+bovwDB bovw finished = self . idxs bovw self . 
+totalImage = self . bovwDB . shape 0 self . 
+db . close def df self method = None if 
+method = = idf return np . log self . 
+totalImages / 1.0 + self . _ df return sel 
+. _ df8 反转 索引 和 搜索 8.1 建立 倒排索引 
+1 文件 结构 | pyimagesearch |         
+| _ _ init _ _ . py |   
+      | db |         
+|         | _ _ init _ 
+_ . py |         |   
+      | redisqueue . py |     
+    | descriptors |         | 
+        | _ _ init _ _ 
+. py |         |     
+    | d e t e c t a 
+n d d e s c r i b e 
+. py |         | indexer | 
+        |         | 
+_ _ init _ _ . py |     
+    |         | baseindexer . 
+py |         |       
+  | bovwindexer . py |         
+|         | featureindexer . py | 
+        | ir |       
+  |         | _ _ init 
+_ _ . py |         | 
+        | bagofvisualwords . py |   
+      |         | vocabulary 
+. py | build _ redis _ index . py 
+| cluster _ features . py | extract _ bvow 
+. py | index _ features . py | visualize 
+_ centers . py 运行 命令 redisqueue . pyimport numpy 
+as np class RedisQueue def _ _ init _ _ 
+self redisDB self . redisDB = redisDB def add self 
+imageIdx hist # imageIdx image _ ids 中 HDF5 数据 
+集中 图像 的 索引 hist 从 图像 中 提取 的 
+BOVW 直方图 p = self . redisDB . pipeline for 
+i in np . where hist 0 0 p . 
+rpush vw { } . format i imageIdx p . 
+execute def finish self self . redisDB . save build 
+_ redis _ index . pyfrom _ _ future _ 
+_ import print _ function from pyimagesearch . db . 
+redisqueue import RedisQueue from redis import Redis import h5py import 
+argparse ap = argparse . ArgumentParser ap . add _ 
+argument b bovw db required = True help = Path 
+to where the bag of visual words database args = 
+vars ap . parse _ args redisDB = Redis host 
+= localhost port = 6379 db = 0 rq = 
+RedisQueue redisDB bovwDB = h5py . File args bovw _ 
+db mode = r for i hist in enumerate bovwDB 
+bovw if i 0 and i % 10 = = 
+0 print PROGRESS processed { } entries . format i 
+rq . add i hist bovwDB . close rq . 
+finish 8.2 执行 搜索 文件目录 结构 |   pyimagesearch | 
+        |   _ _ init _ 
+_ . py |         |   
+db |         |       
+  |   _ _ init _ _ . py 
+|         |         
+|   redisqueue . py |         
+|   descriptors |         |   
+      |   _ _ init _ _ 
+. py |         |     
+    |   d e t e c t 
+a n d d e s c r i b 
+e . py |         |   
+indexer |         |       
+  |   _ _ init _ _ . py 
+|         |         
+|   baseindexer . py |         
+|         |   bovwindexer . py 
+|         |         
+|   featureindexer . py |         
+|   ir |         |   
+      |   _ _ init _ _ 
+. py |         |     
+    |   bagofvisualwords . py |     
+    |         |   vocabulary 
+. py |         |     
+    | dists . py |       
+  |         | searcher . py 
+|         |         
+| searchresult . py |   build _ redis _ 
+index . py |   cluster _ features . py 
+|   extract _ bvow . py |   index 
+_ features . py |   visualize _ centers . 
+py | search . py 运行 命令 python search . 
+py dataset . . / ukbench features db output / 
+features . hdf5 bovw db output / bovw . hdf5 
+codebook output / vocab . cpickle relevant . . / 
+ukbench / relevant . json query . . / ukbench 
+/ ukbench00258 . jpgsearch . pyfrom _ _ future _ 
+_ import print _ function from pyimagesearch . descriptors . 
+d e t e c t a n d d 
+e s c r i b e import D e 
+t e c t A n d D e s 
+c r i b e from pyimagesearch . ir . 
+bagofvisualwords import BagOfVisualWords from pyimagesearch . ir . searcher import 
+Searcher from pyimagesearch . ir . dists import chi2 _ 
+distance from pyimagesearch . resultsmontage import ResultsMontage from scipy . 
+spatial import distance from redis import Redis from imutils . 
+feature import FeatureDetector _ create D e s c r 
+i p t o r E x t r a 
+c t o r _ create import argparse import pickle 
+import imutils import json import cv2 ap = argparse . 
+ArgumentParser ap . add _ argument d dataset required = 
+True help = Path to the directory of indexed images 
+ap . add _ argument f features db required = 
+True help = Path to the features database ap . 
+add _ argument b bovw db required = True help 
+= Path to the bag of visual words database ap 
+. add _ argument c codebook required = True help 
+= Path to relevant dictionary ap . add _ argument 
+i idf type = str help = Path to inverted 
+document frequencies array ap . add _ argument r relevant 
+required = True help = Path to relevant dictionary ap 
+. add _ argument q query required = True help 
+= Path to the query image args = vars ap 
+. parse _ args detector = FeatureDetector _ create SURF 
+descriptor = D e s c r i p t 
+o r E x t r a c t o 
+r _ create RootSIFT dad = D e t e 
+c t A n d D e s c r 
+i b e detector descriptor distanceMetric = chi2 _ distance 
+idf = None if args idf is not None idf 
+= pickle . loads open args idf rb . read 
+vocab = pickle . loads open args codebook rb . 
+read bovw = BagOfVisualWords vocab relevant = json . loads 
+open args relevant . read queryFilename = args query args 
+query . rfind / + 1 queryRelevant = relevant queryFilename 
+queryImage = cv2 . imread args query queryImage = imutils 
+. resize queryImage width = 320 queryImage = cv2 . 
+cvtColor queryImage cv2 . COLOR _ BGR2GRAY _ descs = 
+dad . describe queryImage hist = bovw . describe descs 
+. tocoo redisDB = Redis host = localhost port = 
+6379 db = 0 searcher = Searcher redisDB args bovw 
+_ db args features _ db idf = idf distanceMetric 
+= distanceMetric sr = searcher . search hist numResults = 
+20 print INFO search took { . 2f } s 
+. format sr . search _ time montage = ResultsMontage 
+240 320 5 20 for i score resultID resultIdx in 
+enumerate sr . results print RESULT { result _ num 
+} . { result } { score . 2f } 
+. format result _ num = i + 1 result 
+= resultID score = score result = cv2 . imread 
+{ } / { } . format args dataset resultID 
+montage . addResult result text = # { } . 
+format i + 1 highlight = resultID in queryRelevant cv2 
+. imshow Result imutils . resize montage . montage height 
+= 700 cv2 . waitKey 0 searcher . finish searcher 
+. pyfrom . searchresult import SearchResult from . dists import 
+chi2 _ distance import numpy as np import datetime import 
+h5py class Searcher def _ _ init _ _ self 
+redisDB bovwDBPath featuresDBPath idf = None distanceMetric = chi2 _ 
+distance self . redisDB = redisDB self . idf = 
+idf self . distanceMetric = distanceMetric self . bovwDB = 
+h5py . File bovwDBPath mode = r self . featuresDB 
+= h5py . File featuresDBPath r def search self queryHist 
+numResults = 10 maxCandidates = 200 startTime = datetime . 
+datetime . now candidateIdxs = self . buildCandidates queryHist maxCandidates 
+candidateIdxs . sort hists = self . bovwDB bovw candidateIdxs 
+queryHist = queryHist . toarray results = { } if 
+self . idf is not None queryHist * = self 
+. idf for candidate hist in zip candidateIdxs hists if 
+self . idf is not None hist * = self 
+. idf d = self . distanceMetric hist queryHist results 
+candidate = d results = sorted v self . featuresDB 
+image _ ids k k for k v in results 
+. items results = results = results numResults return SearchResult 
+results datetime . datetime . now startTime . total _ 
+seconds def buildCandidates self hist maxCandidates p = self . 
+redisDB . pipeline for i in hist . col p 
+. lrange vw { } . format i 0 1 
+pipelineResults = p . execute candidates = for results in 
+pipelineResults results = int r for r in results candidates 
+. extend results imageIdxs counts = np . unique candidates 
+return _ counts = True imageIdxs = i for c 
+i in sorted zip counts imageIdxs reverse = True return 
+imageIdxs maxCandidates def finish self self . bovwDB . close 
+self . featuresDB . close dists . pyimport numpy as 
+np def chi2 _ distance histA histB eps = 1e 
+10 d = 0.5 * np . sum histA histB 
+* * 2 / histA + histB + eps return 
+dsearchersult . pyfrom collections import namedtuple SearchResult = namedtuple SearchResult 
+results search _ time 9 评估 evaluate . pyfrom _ 
+_ future _ _ import print _ function from pyimagesearch 
+. descriptors . d e t e c t a 
+n d d e s c r i b e 
+import D e t e c t A n d 
+D e s c r i b e from pyimagesearch 
+. ir . bagofvisualwords import BagOfVisualWords from pyimagesearch . ir 
+. searcher import Searcher from pyimagesearch . ir . dists 
+import chi2 _ distance from scipy . spatial import distance 
+from redis import Redis from imutils . feature import FeatureDetector 
+_ create D e s c r i p t 
+o r E x t r a c t o 
+r _ create import numpy as np import progressbar import 
+argparse import pickle import imutils import json import cv2 ap 
+= argparse . ArgumentParser ap . add _ argument d 
+dataset required = True help = Path to the directory 
+of indexed images ap . add _ argument f features 
+db required = True help = Path to the features 
+database ap . add _ argument b bovw db required 
+= True help = Path to the bag of visual 
+words database ap . add _ argument c codebook required 
+= True help = Path to the codebook ap . 
+add _ argument i idf type = str help = 
+Path to inverted document frequencies array ap . add _ 
+argument r relevant required = True help = Path to 
+relevant dictionary args = vars ap . parse _ args 
+detector = FeatureDetector _ create SURF descriptor = D e 
+s c r i p t o r E x 
+t r a c t o r _ create RootSIFT 
+dad = D e t e c t A n 
+d D e s c r i b e detector 
+descriptor distanceMetric = chi2 _ distance idf = None if 
+args idf is not None idf = pickle . loads 
+open args idf rb . read distanceMetric = distance . 
+cosine vocab = pickle . loads open args codebook rb 
+. read bovw = BagOfVisualWords vocab redisDB = Redis host 
+= localhost port = 6379 db = 0 searcher = 
+Searcher redisDB args bovw _ db args features _ db 
+idf = idf distanceMetric = distanceMetric relevant = json . 
+loads open args relevant . read queryIDs = relevant . 
+keys accuracies = timings = widgets = Evaluating progressbar . 
+Percentage progressbar . Bar progressbar . ETA pbar = progressbar 
+. ProgressBar maxval = len queryIDs widgets = widgets . 
+start for i queryID in enumerate sorted queryIDs queryRelevant = 
+relevant queryID p = { } / { } . 
+format args dataset queryID queryImage = cv2 . imread p 
+quertImage = imutils . resize queryImage width = 320 queryImage 
+= cv2 . cvtColor queryImage cv2 . COLOR _ BGR2GRAY 
+_ descs = dad . describe queryImage hist = bovw 
+. describe descs . tocoo sr = searcher . search 
+hist numResults = 4 results = set r 1 for 
+r in sr . results inter = results . intersection 
+queryRelevant accuracies . append len inter timings . append sr 
+. search _ time pbar . update i searcher . 
+finish pbar . finish accuracies = np . array accuracies 
+timings = np . array timings print INFO ACCURACY u 
+= { . 2f } o = { . 2f 
+} . format accuracies . mean accuracies . std print 
+INFO TIMINGS u = { . 2f } o = 
+{ . 2f } . format timings . mean timings 
+. std 1 什么 是 基于 内容 的 图像 检索 1 构建 
+基于 内容 的 图像 检索系统 步骤 1 定义 你 的 
+图像 描述符 在 这个 阶段 你 需要 决定 你 想 
+描述 的 图像 的 哪个 方面 你 对 图像 的 
+颜色 感兴趣 吗 图像 中 物体 的 形状 或者 你 
+想 表征 纹理 2 特征提取 和 索引 您 的 数据集 
+    现在 您 已经 定义 了 图像 描述符 您 
+的 工作 是 将此 图像 描述符 应用于 数据 集中 的 
+每个 图像 从 这些 图像 提取 特征 并将 特征 写入 
+存储 例如 CSV 文件 RDBMS Redis 等 以便 稍后 可以 
+比较 它们 的 相似性 此外 您 需要 考虑 是否 将 
+使用 任何 专门 的 数据 结构 来 促进 更快 的 
+搜索 3 定义 您 的 相似性 度量     我们 
+现在 有一个 可能 是 指数 特征向量 的 集合 但 你 
+如何 比较 它们 的 相似性 呢 常用 选项 包括 欧几里得 
+距离 余弦 距离 和 距离 但 实际 选择 高度 依赖 
+于 1 数据集 和 2 您 提取 的 特征 类型 
+4 搜索     最后 一步 是 执行 实际 搜索 
+用户 将 向 系统 提交 查询 图像 例 如从 上传 
+表单 或 通过 移动 应用 程序 并且 您 的 工作 
+将 1 从该/nr 查询 图像 中 提取 特征 然后 2 
+应用 您 的 相似性 函数 进行 比较 该 查询 的 
+功能 已 针对 已 编入索引 的 功能 从那里 你 只需 
+根据 你 的 相似 度 函数 返回 最 相关 的 
+结果 2 CBIR 和 机器学习 / 图像 分类 有何 不同 
+1 机器学习 包括 使 计算机 完成 诸如 预测 分类 识别 
+等 智能 人工 任务 的 方法 此外 机器 学习管理 算法 
+使 计算机 能够 执行 这些 智能 任务     而不 
+需要 明确 编程 CBIR 确实 利用 了 一些 机器学习 技术 
+即 降 维和 聚 类 但是 CBIR 系统 不 执行 
+任何 实际 学习 2 主要 的   区别 在于 CBIR 
+不   直接 试图 理解 和 解释 图像 的 内容 
+相反 CBIR 系统 依赖于 通过 提取 特征向量 来 量化 图像 
+假设 特征向量 的 比较 具有 相似 特征向量 的 图像 具有 
+相似 的 视觉 内容 基于 这 两个 组件 图像 搜索引擎 
+能够 将 查询 与 图像 数据 集 进行 比较 并 
+返回 最 相关 的 结果 而 不必 实际 知道 图像 
+的 内容 3 在 机器 学习 和 图像 分类 中 
+能够 学习 和 理解 图像 的 内容 需要 一些 训练 
+集 的 概念         一组 标记 数据 
+用于 教 计算机 数据 集中 每个 可视 对象 的 外观 
+4 CBIR 系统 不 需要 标记 数据 他们 只需 拍摄 
+图像 数据集 从 每幅 图像 中 提取 特征 并使 数据集 
+可以 在 视觉 上 搜索 在 某些 方面 您 可以 
+将 CBIR 系统 视为 一种 哑 图像 分类器 它 没有 
+标签 概念 来 使 自己 更加 智能 它 仅 依赖于 
+1 从 图像 中 提取 的 特征 和 2 相似性 
+函数 用于 给 用户 提供 有 意义 的 结果 2 
+构建 CBIR 系统 1 目录 结构 及 作用 | pyimagesearch 
+|         | _ _ init _ 
+_ . py |         | cbir 
+|         |         
+| _ _ init _ _ . py |   
+      |         | dists 
+. py       作用 包含 我们 的 距离 
+度量 / 相似 度 函数 用于 比较 两 个 图像 
+的 相似 度 |         |   
+      | hsvdescriptor . py   作用 实现 
+我们 的 颜色 描述符 用于 从 图像 中 提取 特征向量 
+|         |         
+| resultsmontage . py 作用 用于 显示 搜索 到 我们 
+的 屏幕 结果 的 实用 工具 类 |     
+    |         | searcher . 
+py 作用 将 封装 用于 执行 实际 搜索 的 Searcher 
+类 | index . py 作用 用于 从 我们 的 
+UKBench 数据 集中 提取 特征 | search . py   
+作用 将 接受 查询 图像 调用   搜索器     
+然后 将 结果 显示 在 屏幕 上 疑问 1 highlight 
+= resultID in queryRelevant2 对 第三 条 运行 结果 存在 
+疑问 运行 命令 1 python search . py index index 
+. csv dataset . . / ukbench relevant . . 
+/ ukbench / relevant . json query . . / 
+ukbench / ukbench00644 . jpg2 python search . py index 
+index . csv dataset . . / ukbench relevant . 
+. / ukbench / relevant . json query . . 
+/ ukbench / ukbench00996 . jpg3 python search . py 
+index index . csv dataset . . / ukbench relevant 
+. . / ukbench / relevant . json query . 
+. / ukbench / ukbench00568 . jpgsearch . pyfrom _ 
+_ future _ _ import print _ function from pyimagesearch 
+. cbir . resultsmontage import ResultsMontage from pyimagesearch . cbir 
+. hsvdescriptor import HSVDescriptor from pyimagesearch . cbir . searcher 
+import Searcher import argparse import imutils import json import cv2 
+ap = argparse . ArgumentParser ap . add _ argument 
+i index required = True help = Path to where 
+the features index will be stored ap . add _ 
+argument q query required = True help = Path to 
+the query image ap . add _ argument d dataset 
+required = True help = Path to the original dataset 
+directory ap . add _ argument r relevant required = 
+True help = Path to relevant dictionary args = vars 
+ap . parse _ args desc = HSVDescriptor 4 6 
+3 montage = ResultsMontage 240 320 5 20 relevant = 
+json . loads open args relevant . read queryFilename = 
+args query args query . rfind / + 1 queryRelevant 
+= relevant queryFilename query = cv2 . imread args query 
+print INFO describing query . . . cv2 . imshow 
+Query imutils . resize query width = 320 features = 
+desc . describe query print INFO searching . . . 
+searcher = Searcher args index results = searcher . search 
+features numResults = 20 for i score resultID in enumerate 
+results print INFO { result _ num } . { 
+result } score . 2f . format result _ num 
+= i + 1 result = resultID score = score 
+result = cv2 . imread { } / { } 
+. format args dataset resultID print resultID print resultID montage 
+. addResult result text = # { } . format 
+i + 1 highlight = resultID in queryRelevant cv2 . 
+imshow Results imutils . resize montage . montage height = 
+700 cv2 . imwrite mo . png montage . montage 
+cv2 . waitKey 0 index . pyfrom _ _ future 
+_ _ import print _ function from pyimagesearch . cbir 
+. hsvdescriptor import HSVDescriptor from imutils import paths import progressbar 
+import argparse import cv2 ap = argparse . ArgumentParser ap 
+. add _ argument d dataset required = True help 
+= Path to the directory that contains the images to 
+be indexed ap . add _ argument i index required 
+= True help = Path to where the features index 
+will be stored args = vars ap . parse _ 
+args desc = HSVDescriptor 4 6 3 output = open 
+args index w imagePaths = list paths . list _ 
+images args dataset widgets = Indexing progressbar . Percentage progressbar 
+. Bar progressbar . ETA pbar = progressbar . ProgressBar 
+maxval = len imagePaths widgets = widgets pbar . start 
+for i imagePath in enumerate imagePaths filename = imagePath imagePath 
+. rfind / + 1 image = cv2 . imread 
+imagePath features = desc . describe image features = str 
+x for x in features output . write { } 
+{ } \ n . format filename . join features 
+pbar . update i pbar . finish print INFO indexed 
+{ } images . format len imagePaths output . close 
+dist . pyimport numpy as np def chi2 _ distance 
+histA histB eps = 1e 10 d = 0.5 * 
+np . sum histA histB * * 2 / histA 
++ histB + eps return dhsvdescriptor . pyimport numpy as 
+np import cv2 import imutils class HSVDescriptor def _ _ 
+init _ _ self bins self . bins = bins 
+def describe self image image = cv2 . cvtColor image 
+cv2 . COLOR _ BGR2HSV features = h w = 
+image . shape 2 cX cY = int w * 
+0.5 int h * 0.5 segments = 0 cX 0 
+cY cX w 0 cY cX w cY h 0 
+cX cY h axesX axesY = int w * 0.75 
+/ / 2 int h * 0.75 / / 2 
+ellipMask = np . zeros image . shape 2 dtype 
+= uint8 cv2 . ellipse ellipMask cX cY axesX axesY 
+0 0 360 255 1 for startX endX startY endY 
+in segments cornerMask = np . zeros image . shape 
+2 dtype = uint8 cv2 . rectangle cornerMask startX startY 
+endX endY 255 1 cornerMask = cv2 . subtract cornerMask 
+ellipMask hist = self . histogram image cornerMask features . 
+extend hist hist = self . histogram image ellipMask features 
+. extend hist return np . array features def histogram 
+self image mask = None hist = cv2 . calcHist 
+image 0 1 2 mask self . bins 0 180 
+0 256 0 256 if imutils . is _ cv2 
+hist = cv2 . normalize hist . flatten else hist 
+= cv2 . normalize hist hist . flatten return h 
+i s t r e s u l t s 
+m o n t a g e . pyimport numpy 
+as np import cv2 class ResultsMontage def _ _ init 
+_ _ self imageSize imagesPerRow numResults self . imageW = 
+imageSize 0 self . imageH = imageSize 1 self . 
+imagesPerRow = imagesPerRow numCols = numResults / / imagesPerRow self 
+. montage = np . zeros numCols * self . 
+imageW imagesPerRow * self . imageH 3 dtype = uint8 
+self . counter = 0 self . row = 0 
+self . col = 0 def addResult self image text 
+= None highlight = False if self . counter = 
+0 and self . counter % self . imagesPerRow = 
+= 0 self . col = 0 self . row 
++ = 1 image = cv2 . resize image self 
+. imageH self . imageW startY endY = self . 
+row * self . imageW self . row + 1 
+* self . imageW startX endX = self . col 
+* self . imageH self . col + 1 * 
+self . imageH self . montage startY endY startX endX 
+= image if text is not None cv2 . putText 
+self . montage text startX + 10 startY + 30 
+cv2 . FONT _ HERSHEY _ SIMPLEX 1.0 0 255 
+255 3 print text if highlight cv2 . rectangle self 
+. montage startX + 3 startY + 3 endX 3 
+endY 3 0 255 0 4 print hig self . 
+col + = 1 self . counter + = 1searcher 
+. pyfrom . import dists import csv class Searcher def 
+_ _ init _ _ self dbPath self . dbPath 
+= dbPath def search self queryFeatures numResults = 10 results 
+= { } with open self . dbPath as f 
+reader = csv . reader f for row in reader 
+features = float x for x in row 1 d 
+= dists . chi2 _ distance features queryFeatures results row 
+0 = d f . close results = sorted v 
+k for k v in results . items return results 
+numResults 2 特征提取 和 索引 1 描述 图像 的 三 
+个 方面 颜色     表征 图像 颜色 的 图像 
+描述符 试图 模拟图像 每个 通道 中 像素 强度 的 分布 
+这些 方法 包括 基本 颜色 统计 如 平均值 标准偏差 和偏度/nr 
+以及 颜色 直方图 平面 和 多维 纹理     纹理 
+描述符 试图 模拟图像 中 物体 的 感觉 外观 和 整体 
+触觉 质量 一些 但 不是 全部 纹理 描述符 将 图像 
+转换 为 灰度 然后 计算 灰度 共生 矩阵 GLCM 并 
+计算 该 矩阵 的 统计量 包括 对比度 相关性 和熵等/nr Haralick 
+纹理 更 先进 的 纹理 描述符 如 局部 二进制 模式 
+尝试 模型     模式 也 是 如此 甚至 还有 
+更 高级 的 纹理 描述符 例如 傅立叶 和 小波 变换 
+也 存在 但 仍然 使用 灰度 图像 形状     
+绝大多数 形状 描述符 方法 依靠 提取 图像 中 对象 的 
+轮廓 即 轮廓 一旦 我们 有了 轮廓 我们 就 可以 
+计算 简单 的 统计 数据 来 表征 轮廓 这 正是 
+Hu Moments 和 Zernike Moments 所做 的 这些 统计 数据 
+可 用于 表示 图像 中 对象 的 形状 轮廓 在 
+机器 学习 和 对象 识别 的 背景 下     
+面向 梯度 的 直方图   也 是 一个 不错 的 
+选择 2 特征提取 的 定义 定义   特征提取   是 
+通过 应用 图像 描述符 从 数据 集中 每个 图像 中 
+提取 特征 来 量化 数据集 的 过程 通常 这些 功能 
+存储 在 磁盘 上供     以后 使用 并   
+  使用 专门 的 数据结构 例如 倒排索引 kd 树 或 
+随机 投影 林 进行 索引 以 加快 查询 速度 3 
+定义 相似 度 1 常用 距离 度量 欧几里德 from scipy 
+. spatial import distance as dists dists . euclidean A 
+B 曼哈顿 / 城市 大厦 dists . cityblock A B 
+直方图 交点 def histogram _ intersection H1 H2 return np 
+. sum np . minimum H1 H2 距离 def chi2 
+_ distance histA histB eps = 1e 10 return 0.5 
+* np . sum histA histB * * 2 / 
+histA + histB + eps chi2 _ distance A B 
+余弦 dists . cosine A B 海明 dists . hamming 
+A B 4 提取 关键点 和 局部 不变 描述符 1 
+文件 结构 及 作用 | pyimagesearch |       
+  | _ _ init _ _ . py | 
+        | descriptors 作用 包含/v 了/ul 实现/v 
+从/p 我们/r 的/uj 图像/n 数据集/i 提取/v 关键点/n 和/c 本地/r 不变/v 
+描述/v |/i  /i  /i  /i  /i |/i  /i  /i  /i 
+ /i |/i _ _ init _ _ . py | 
+        |         | 
+d e t e c t a n d d 
+e s c r i b e . py 作用 
+以便 使用 任意 检测器 和 描述符 轻松 检测 关键点 并 
+提取 功能 |         | indexer 作用 
+包含 我们 面向 HDF5 数据集 的 面向 对象 的 接口 
+来 存储 特征 |         |   
+      | _ _ init _ _ . 
+py |         |       
+  | baseindexer . py |         
+|         | featureindexer . py | 
+index _ features . py 作用 驱动程序 脚本 用于 将 
+所有 碎片 粘合 在 一起 疑问 1 @ staticmethod 静 
+态函数 定义 的 方法 运行 命令 python index _ features 
+. py dataset . . / ukbench _ sample features 
+db output / features . hdf5index _ features . py 
+# coding = utf 8 from _ _ future _ 
+_ import print _ function from pyimagesearch . descriptors . 
+d e t e c t a n d d 
+e s c r i b e import D e 
+t e c t A n d D e s 
+c r i b e from pyimagesearch . indexer . 
+featureindexer import FeatureIndexer from imutils . feature import FeatureDetector _ 
+create D e s c r i p t o 
+r E x t r a c t o r 
+_ create from imutils import paths import argparse import imutils 
+import cv2 ap = argparse . ArgumentParser ap . add 
+_ argument d dataset required = True help = Path 
+to the directory that contains the images to be indexed 
+# 图像 目录 路径 ap . add _ argument f 
+features db required = True help = Path to where 
+the features database will be stored # 制定 HDF5 数据库 
+储存 在 磁 盘上 的 路径 ap . add _ 
+argument a approx images type = int default = 500 
+help = Approximate # of images in the dataset # 
+该 可选 开关 允许 我们 指定 数据 集中 图像 的 
+近似 数量 ap . add _ argument b max buffer 
+size type = int default = 50000 help = Maximum 
+buffer size for # of features to be stored in 
+memory # 一次 一个 地 写入 HDF5 的 特征向量 效率 
+非常 低 相反 将/d 特征向量/n 收集到/i 内存/n 中/f 的/uj 一个/m 
+大/a 数组/n 中/f 然后/c 在/p 缓冲区/n 满时将/nr 它们/r 转储/v 到/v 
+HDF5/i 会/v 更/d 有效/a 的 值 最大 缓冲器 大小 指定 
+许多 如何 特征向量 可以 被 存储 在 存储器 中 直到 
+缓冲器 被 刷新 到 HDF5 args = vars ap . 
+parse _ args detector = FeatureDetector _ create SURF # 
+获取 关键点 descriptor = D e s c r i 
+p t o r E x t r a c 
+t o r _ create RootSIFT # 定义 提取 关键点 
+特征 方法 dad = D e t e c t 
+A n d D e s c r i b 
+e detector descriptor # 获取 关键点 和 关键 点 特征向量 
+fi = FeatureIndexer args features _ db estNumImages = args 
+approx _ images maxBufferSize = args max _ buffer _ 
+size verbose = True for i imagePath in enumerate paths 
+. list _ images args dataset if i 0 and 
+i % 10 = = 0 fi . _ debug 
+processed { } images . format i msgType = PROGRESS 
+filename = imagePath imagePath . rfind / + 1 image 
+= cv2 . imread imagePath image = imutils . resize 
+image width = 320 image = cv2 . cvtColor image 
+cv2 . COLOR _ BGR2GRAY kps descs = dad . 
+describe image if kps is None or descs is None 
+continue fi . add filename kps descs fi . finish 
+d e t e c t a n d d 
+e s c r i b e . pyimport numpy 
+as np class D e t e c t A 
+n d D e s c r i b e 
+def _ _ init _ _ self detector descriptor self 
+. detector = detector self . descriptor = descriptor def 
+describe self image useKpList = True kps = self . 
+detector . detect image kps descs = self . descriptor 
+. compute image kps if len kps = = 0 
+return None None if useKpList kps = np . int0 
+kp . pt for kp in kps return kps descs 
+baseindexer . pyfrom _ _ future _ _ import print 
+_ function import numpy as np import datetime class BaseIndexer 
+object def _ _ init _ _ self dbPath estNumImages 
+= 500 maxBufferSize = 50000 dbResizeFactor = 2 verbose = 
+True self . dbPath = dbPath self . estNumImages = 
+estNumImages self . maxBufferSize = maxBufferSize self . dbResizeFactor = 
+dbResizeFactor self . verbose = verbose self . idxs = 
+{ } def _ wrieBuffers self pass def _ writeBuffer 
+self dataset datasetName buf idxName sparse = False if type 
+buf is list end = self . idxs idxName + 
+len buf else end = self . idxs idxName + 
+buf . shape 0 if end dataset . shape 0 
+self . _ debug triggering { } db resize . 
+format datasetName self . _ resizeDataset dataset datasetName baseSize = 
+end if sparse buf = buf . toarray self . 
+_ debug writing { } buffer . format datasetName dataset 
+self . idxs idxName end = buf def _ resizeDataset 
+self dataset dbName baseSize = 0 finished = 0 origSize 
+= dataset . shape 0 if finished 0 newSize = 
+finished else newSize = baseSize * self . dbResizeFactor shape 
+= list dataset . shape shape 0 = newSize dataset 
+. resize tuple shape self . _ debug old size 
+of { } { } new size { } . 
+format dbName origSize newSize def _ debug self msg msgType 
+= INFO if self . verbose print { } { 
+} { } . format msgType msg datetime . datetime 
+. now @ staticmethod def featureStack array accum = None 
+stackMethod = np . vstack if accum is None accum 
+= array else accum = stackMethod accum array return a 
+c c u m f e a t u r 
+e i n d e x e r . py 
+# coding = utf 8 from . baseindexer import BaseIndexer 
+import numpy as np import h5py import sys class FeatureIndexer 
+BaseIndexer def _ _ init _ _ self dbPath estNumImages 
+= 500 maxBufferSize = 50000 dbResizeFactor = 2 verbose = 
+True super FeatureIndexer self . _ _ init _ _ 
+dbPath estNumImages = estNumImages maxBufferSize = maxBufferSize dbResizeFactor = dbResizeFactor 
+verbose = verbose self . db = h5py . File 
+self . dbPath mode = w self . imageIDDB = 
+None self . indexDB = None self . featuresDB = 
+None self . imageIDBuffer = self . indexBuffer = self 
+. featuresBuffer = None self . totalFeatures = 0 self 
+. idxs = { index 0 features 0 } def 
+add self imageID kps features start = self . idxs 
+features + self . totalFeatures end = start + len 
+features self . imageIDBuffer . append imageID self . featuresBuffer 
+= BaseIndexer . featureStack np . hstack kps features self 
+. featuresBuffer self . indexBuffer . append start end self 
+. totalFeatures + = len features if self . totalFeatures 
+= self . maxBufferSize if None in self . imageIDDB 
+self . indexDB self . featuresDB self . _ debug 
+initial buffer full self . _ createDatasets self . _ 
+writeBuffers def _ createDatasets self avgFeatures = self . totalFeatures 
+/ float len self . imageIDBuffer approxFeatures = int avgFeatures 
+* self . estNumImages fvectorSize = self . featuresBuffer . 
+shape 1 if sys . version _ info 0 3 
+dt = h5py . special _ dtype vlen = unicode 
+else dt = h5py . special _ dtype vlen = 
+str self . _ debug creating datasets . . . 
+self . imageIDDB = self . db . create _ 
+dataset image _ ids self . estNumImages maxshape = None 
+dtype = dt self . indexDB = self . db 
+. create _ dataset index self . estNumImages 2 maxshape 
+= None 2 dtype = int self . featuresDB = 
+self . db . create _ dataset features approxFeatures fvectorSize 
+maxshape = None fvectorSize dtype = float def _ writeBuffers 
+self self . _ writeBuffer self . imageIDDB image _ 
+ids self . imageIDBuffer index self . _ writeBuffer self 
+. indexDB index self . indexBuffer index self . _ 
+writeBuffer self . featuresDB features self . featuresBuffer features self 
+. idxs index + = len self . imageIDBuffer self 
+. idxs features + = self . totalFeatures self . 
+imageIDBuffer = self . indexBuffer = self . featuresBuffer = 
+None self . totalFeatures = 0 def finish self if 
+None in self . imageIDDB self . indexDB self . 
+featuresDB self . _ debug minimum init buffer not reached 
+msgType = WARN self . _ createDatasets self . _ 
+debug writing un empty buffers . . . self . 
+_ writeBuffers self . _ debug compacting datasets . . 
+. self . _ resizeDataset self . imageIDDB image _ 
+ids finished = self . idxs index self . _ 
+resizeDataset self . indexDB index finished = self . idxs 
+index self . _ resizeDataset self . featuresDB features finished 
+= self . idxs features self . db . close 
+5 集群 功能 组成 一个 码本 1 文件 结构 及 
+作用 多 添加 俩个 新文件 cluster _ features . py 
+和 vocabulary . py | pyimagesearch |       
+  | _ _ init _ _ . py | 
+        | descriptors |       
+  |         | _ _ init 
+_ _ . py |         | 
+        | d e t e c 
+t a n d d e s c r i 
+b e . py |         | 
+indexer |         |       
+  | _ _ init _ _ . py | 
+        |         | 
+baseindexer . py |         |   
+      | featureindexer . py |     
+    | ir |         | 
+        | _ _ init _ _ 
+. py |         |     
+    | vocabulary . py 作用 用于 摄取 的 
+功能 HDF5 数据集 然后 返回 一个 字典 的 视觉 即 
+聚 类 中心 话 | cluster _ features . py 
+作用 驱动 脚本 将 启动   词汇表     制定 
+过程 | index _ features . py 运行 命令 python 
+cluster _ features . py features db output / features 
+. hdf5 codebook output / vocab . cpickle clusters 1536 
+percentage 0 . 25cluster _ features . py # coding 
+= utf 8 from _ _ future _ _ import 
+print _ function from pyimagesearch . ir . vocabulary import 
+Vocabulary import argparse import pickle ap = argparse . ArgumentParser 
+ap . add _ argument f features db required = 
+True help = Path to where the features database will 
+be stored ap . add _ argument c codebook required 
+= True help = Path to the output codebook ap 
+. add _ argument k clusters type = int default 
+= 64 help = # of clusters to generate # 
+小批量 k 均值 将 生成 的 簇 的 数量 即 
+可视 词 ap . add _ argument p percentage type 
+= float default = 0.25 help = Percentage of total 
+features to use when clustering args = vars ap . 
+parse _ args # 控制 特征向量 样本量 的 大小 voc 
+= Vocabulary args features _ db vocab = voc . 
+fit args clusters args percentage # 获得 生成 的 视觉 
+词 整个 采样 和聚类/nr 过程 由 词汇 类 抽象 print 
+INFO storing cluster centers . . . f = open 
+args codebook wb f . write pickle . dumps vocab 
+f . close vocabulary . pyfrom _ _ future _ 
+_ import print _ function from sklearn . cluster import 
+MiniBatchKMeans import numpy as np import datetime import h5py class 
+Vocabulary def _ _ init _ _ self dbPath verbose 
+= True self . dbPath = dbPath self . verbose 
+= verbose def fit self numClusters samplePercent randomState = None 
+db = h5py . File self . dbPath totalFeatures = 
+db features . shape 0 sampleSize = int np . 
+ceil samplePercent * totalFeatures print sampleSize print sampleSize idxs = 
+np . random . choice np . arange 0 totalFeatures 
+sampleSize replace = False idxs . sort data = self 
+. _ debug starting sampling . . . for i 
+in idxs data . append db features i 2 self 
+. _ debug sampled { } features from a population 
+of { } . format len idxs totalFeatures self . 
+_ debug clustering with k = { } . format 
+numClusters clt = MiniBatchKMeans n _ clusters = numClusters random 
+_ state = randomState clt . fit data self . 
+_ debug cluster shape { } . format clt . 
+cluster _ centers _ . shape db . close return 
+clt . cluster _ centers _ def _ debug self 
+msg msgType = INFO if self . verbose print { 
+} { } { } . format msgType msg datetime 
+. datetime . now 6 可视化 码本 中的 单词 注 
+在前面 构建 出 关键点 和 局部 不变 特征 描述符 建立 
+集群 码本 后方 可实现 作用 将 码本 中 K means 
+分类 后的/nr 直方图 转化 为 可视化 图片 visuluze _ centers 
+. py # coding = utf 8 from _ _ 
+future _ _ import print _ function from pyimagesearch . 
+resultsmontage import ResultsMontage from sklearn . metrics import pairwise import 
+numpy as np import progressbar import argparse import pickle import 
+h5py import cv2 ap = argparse . ArgumentParser ap . 
+add _ argument d dataset required = True help = 
+Path to the directory of indexed images ap . add 
+_ argument f features db required = True help = 
+Path to the features database # 提取 关键 和 局部 
+不变 描述符 的 数据 记 路经 ap . add _ 
+argument c codebook required = True help = Path to 
+the codebook # 可视 话 词汇表 中的 视觉 词汇 路经 
+ap . add _ argument o output required = True 
+help = Path to output directory args = vars ap 
+. parse _ args vocab = pickle . loads open 
+args codebook rb . read featuresDB = h5py . File 
+args features _ db mode = r print INFO starting 
+distance distance computations . . . vis = { i 
+for i in np . arange 0 len vocab } 
+widgets = Comparing progressbar . Percentage progressbar . Bar progressbar 
+. ETA pbar = progressbar . ProgressBar maxval = featuresDB 
+image _ ids . shape 0 widgets = widgets . 
+start for i imageID in enumerate featuresDB image _ ids 
+start end = featuresDB index i rows = featuresDB features 
+start end kps descs = rows 2 rows 2 for 
+kp features in zip kps descs features = features . 
+reshape 1 1 D = pairwise . euclidean _ distances 
+features Y = vocab 0 for j in np . 
+arange 0 len vocab topResults = vis . get j 
+topResults . append D j kp imageID topResults = sorted 
+topResults key = lambda r r 0 16 vis j 
+= topResults pbar . update i pbar . finish featuresDB 
+. close print INFO writing visualizations to file . . 
+. for vwID results in vis . items montage = 
+ResultsMontage 64 64 4 16 for _ x y imageID 
+in results p = { } / { } . 
+format args dataset imageID image = cv2 . imread p 
+h w = image . shape 2 startX endX = 
+max 0 int x 32 min w int x + 
+32 startY endY = max 0 int y 32 min 
+h int y + 32 roi = image startY endY 
+startX endX montage . addResult roi p = { } 
+/ vis _ { } . jpg . format args 
+output vwID cv2 . imwrite p cv2 . cvtColor montage 
+. montage cv2 . COLOR _ BGR2GRAY 7 矢量 量化 
+7.1 从 多个 特 征到 单个 直方图 bagofvisualwords . pyfrom 
+sklearn . metrics import pairwise from scipy . sparse import 
+csr _ matrix import numpy as np class BagOfVisualWords def 
+_ _ init _ _ self codebook sparse = True 
+self . codebook = codebook self . sparse = sparse 
+def describe self features D = pairwise . euclidean _ 
+distances features Y = self . codebook words counts = 
+np . unique np . argmin D axis = 1 
+return _ counts = True if self . sparse hist 
+= csr _ matrix counts np . zeros len words 
+words shape = 1 len self . codebook dtype = 
+float else hist = np . zeros len self . 
+codebook dtype = float hist words = counts return histquantize 
+_ example . pyfrom _ _ future _ _ import 
+print _ function from pyimagesearch . ir . bagofvisualwords import 
+BagOfVisualWords from sklearn . metrics import pairwise import numpy as 
+np np . random . seed 42 vocab = np 
+. random . uniform size = 3 6 features = 
+np . random . uniform size = 10 6 print 
+INFO vocabulary \ n { } \ n . format 
+vocab print INFO features \ n { } \ n 
+. format features hist = np . zeros 3 dtype 
+= int32 for i f in enumerate features D = 
+pairwise . euclidean _ distances f . reshape 1 1 
+Y = vocab j = np . argmin D print 
+INFO Closest visual word to feature # { } { 
+} . format i j hist j + = 1 
+print INFO Updated histogram { } . format hist bovw 
+= BagOfVisualWords vocab sparse = False hist = bovw . 
+describe features print INFO BOVW histogram { } . format 
+hist 7.2 形成 BOVW 运行 命令 python extract _ bovw 
+. py features db output / features . hdf5 codebook 
+output / vocab . cpickle     bovw db output 
+/ bovw . hdf5 idf output / idf . cpickleextract 
+_ bovw . pyfrom pyimagesearch . ir . bagofvisualwords import 
+BagOfVisualWords from pyimagesearch . indexer . bovwindexer import BOVWIndexer import 
+argparse import pickle import h5py ap = argparse . ArgumentParser 
+ap . add _ argument f features db required = 
+True help = Path to the features database # 关键点 
+和 局部 不变 描述符 课程 中 构建 的 HDF5 数据集 
+的 路径 该 数据库 应 包含 与 数据 集中 每个 
+图像 相关 的 图像 ID 索引 和 原始 关键点 / 
+特征向量 ap . add _ argument c codebook required = 
+True help = Path to the codebook # 我们 需要 
+可视化 码本 的 路径 ap . add _ argument b 
+bovw db required = True help = Path to where 
+the bag of visual words database will be stored # 
+将 BOVW 表示 存储 在 一个 单独 的 HDF5 数据库 
+中的 路经 ap . add _ argument d idf required 
+= True help = Path to inverse document frequency counts 
+will be stored ap . add _ argument s max 
+buffer size type = int default = 500 help = 
+Maximum buffer size for # of features to be stored 
+in memory # 在 写入 HDF5 数据集 之前 在 内存 
+中 管理 一个 原始 特征向量 的 缓冲区 我们 将 在 
+这里 做 同样 的 事情 这次 我们 将 管理 一个 
+BOVW 直方图 缓冲区 args = vars ap . parse _ 
+args vocab = pickle . loads open args codebook rb 
+. read bovw = BagOfVisualWords vocab featuresDB = h5py . 
+File args features _ db mode = r bi = 
+BOVWIndexer bovw . codebook . shape 0 args bovw _ 
+db estNumImages = featuresDB image _ ids . shape 0 
+maxBufferSize = args max _ buffer _ size for i 
+imageID offset in enumerate zip featuresDB image _ ids featuresDB 
+index if i 0 and i % 10 = = 
+0 bi . _ debug processed { } images . 
+format i msgType = PROGRESS features = featuresDB features offset 
+0 offset 1 2 hist = bovw . describe features 
+bi . add hist featuresDB . close bi . finish 
+f = open args idf wb f . write pickle 
+. dumps bi . df method = idf f . 
+close bovwindexer . pyfrom . baseindexer import BaseIndexer from scipy 
+import sparse import numpy as np import h5py class BOVWIndexer 
+BaseIndexer def _ _ init _ _ self fvectorSize dbPath 
+estNumImages = 500 maxBufferSize = 500 dbResizeFactor = 2 verbose 
+= True super BOVWIndexer self . _ _ init _ 
+_ dbPath estNumImages = estNumImages maxBufferSize = maxBufferSize dbResizeFactor = 
+dbResizeFactor verbose = verbose self . db = h5py . 
+File self . dbPath mode = w self . bovwDB 
+= None self . bovwBuffer = None self . idxs 
+= { bovw 0 } self . fvectorSize = fvectorSize 
+self . _ df = np . zeros fvectorSize dtype 
+= float self . totalImages = 0 def add self 
+hist self . bovwBuffer = BaseIndexer . featureStack hist self 
+. bovwBuffer stackMethod = sparse . vstack self . _ 
+df np . where hist . toarray 0 0 + 
+= 1 if self . bovwBuffer . shape 0 = 
+self . maxBufferSize if self . bovwDB is None self 
+. _ debug initial buffer full self . _ createDatasets 
+self . _ writeBuffers def _ writeBuffers self if self 
+. bovwBuffer is not None and self . bovwBuffer . 
+shape 0 0 self . _ writeBuffer self . bovwDB 
+bovw self . bovwBuffer bovw sparse = True self . 
+idxs bovw + = self . bovwBuffer . shape 0 
+self . bovwBuffer = None def _ createDatasets self self 
+. _ debug creating datasets . . . self . 
+bovwDB = self . db . create _ dataset bovw 
+self . estNumImages self . fvectorSize maxshape = None self 
+. fvectorSize dtype = float def finish self if self 
+. bovwDB is None self . _ debug minimum init 
+buffer not reached msgType = WARN self . _ createDatasets 
+self . _ debug writing un empty buffers . . 
+. self . _ writeBuffers self . _ debug compacting 
+datasets . . . self . _ resizeDataset self . 
+bovwDB bovw finished = self . idxs bovw self . 
+totalImage = self . bovwDB . shape 0 self . 
+db . close def df self method = None if 
+method = = idf return np . log self . 
+totalImages / 1.0 + self . _ df return sel 
+. _ df8 反转 索引 和 搜索 8.1 建立 倒排索引 
+1 文件 结构 | pyimagesearch |         
+| _ _ init _ _ . py |   
+      | db |         
+|         | _ _ init _ 
+_ . py |         |   
+      | redisqueue . py |     
+    | descriptors |         | 
+        | _ _ init _ _ 
+. py |         |     
+    | d e t e c t a 
+n d d e s c r i b e 
+. py |         | indexer | 
+        |         | 
+_ _ init _ _ . py |     
+    |         | baseindexer . 
+py |         |       
+  | bovwindexer . py |         
+|         | featureindexer . py | 
+        | ir |       
+  |         | _ _ init 
+_ _ . py |         | 
+        | bagofvisualwords . py |   
+      |         | vocabulary 
+. py | build _ redis _ index . py 
+| cluster _ features . py | extract _ bvow 
+. py | index _ features . py | visualize 
+_ centers . py 运行 命令 redisqueue . pyimport numpy 
+as np class RedisQueue def _ _ init _ _ 
+self redisDB self . redisDB = redisDB def add self 
+imageIdx hist # imageIdx image _ ids 中 HDF5 数据 
+集中 图像 的 索引 hist 从 图像 中 提取 的 
+BOVW 直方图 p = self . redisDB . pipeline for 
+i in np . where hist 0 0 p . 
+rpush vw { } . format i imageIdx p . 
+execute def finish self self . redisDB . save build 
+_ redis _ index . pyfrom _ _ future _ 
+_ import print _ function from pyimagesearch . db . 
+redisqueue import RedisQueue from redis import Redis import h5py import 
+argparse ap = argparse . ArgumentParser ap . add _ 
+argument b bovw db required = True help = Path 
+to where the bag of visual words database args = 
+vars ap . parse _ args redisDB = Redis host 
+= localhost port = 6379 db = 0 rq = 
+RedisQueue redisDB bovwDB = h5py . File args bovw _ 
+db mode = r for i hist in enumerate bovwDB 
+bovw if i 0 and i % 10 = = 
+0 print PROGRESS processed { } entries . format i 
+rq . add i hist bovwDB . close rq . 
+finish 8.2 执行 搜索 文件目录 结构 |   pyimagesearch | 
+        |   _ _ init _ 
+_ . py |         |   
+db |         |       
+  |   _ _ init _ _ . py 
+|         |         
+|   redisqueue . py |         
+|   descriptors |         |   
+      |   _ _ init _ _ 
+. py |         |     
+    |   d e t e c t 
+a n d d e s c r i b 
+e . py |         |   
+indexer |         |       
+  |   _ _ init _ _ . py 
+|         |         
+|   baseindexer . py |         
+|         |   bovwindexer . py 
+|         |         
+|   featureindexer . py |         
+|   ir |         |   
+      |   _ _ init _ _ 
+. py |         |     
+    |   bagofvisualwords . py |     
+    |         |   vocabulary 
+. py |         |     
+    | dists . py |       
+  |         | searcher . py 
+|         |         
+| searchresult . py |   build _ redis _ 
+index . py |   cluster _ features . py 
+|   extract _ bvow . py |   index 
+_ features . py |   visualize _ centers . 
+py | search . py 运行 命令 python search . 
+py dataset . . / ukbench features db output / 
+features . hdf5 bovw db output / bovw . hdf5 
+codebook output / vocab . cpickle relevant . . / 
+ukbench / relevant . json query . . / ukbench 
+/ ukbench00258 . jpgsearch . pyfrom _ _ future _ 
+_ import print _ function from pyimagesearch . descriptors . 
+d e t e c t a n d d 
+e s c r i b e import D e 
+t e c t A n d D e s 
+c r i b e from pyimagesearch . ir . 
+bagofvisualwords import BagOfVisualWords from pyimagesearch . ir . searcher import 
+Searcher from pyimagesearch . ir . dists import chi2 _ 
+distance from pyimagesearch . resultsmontage import ResultsMontage from scipy . 
+spatial import distance from redis import Redis from imutils . 
+feature import FeatureDetector _ create D e s c r 
+i p t o r E x t r a 
+c t o r _ create import argparse import pickle 
+import imutils import json import cv2 ap = argparse . 
+ArgumentParser ap . add _ argument d dataset required = 
+True help = Path to the directory of indexed images 
+ap . add _ argument f features db required = 
+True help = Path to the features database ap . 
+add _ argument b bovw db required = True help 
+= Path to the bag of visual words database ap 
+. add _ argument c codebook required = True help 
+= Path to relevant dictionary ap . add _ argument 
+i idf type = str help = Path to inverted 
+document frequencies array ap . add _ argument r relevant 
+required = True help = Path to relevant dictionary ap 
+. add _ argument q query required = True help 
+= Path to the query image args = vars ap 
+. parse _ args detector = FeatureDetector _ create SURF 
+descriptor = D e s c r i p t 
+o r E x t r a c t o 
+r _ create RootSIFT dad = D e t e 
+c t A n d D e s c r 
+i b e detector descriptor distanceMetric = chi2 _ distance 
+idf = None if args idf is not None idf 
+= pickle . loads open args idf rb . read 
+vocab = pickle . loads open args codebook rb . 
+read bovw = BagOfVisualWords vocab relevant = json . loads 
+open args relevant . read queryFilename = args query args 
+query . rfind / + 1 queryRelevant = relevant queryFilename 
+queryImage = cv2 . imread args query queryImage = imutils 
+. resize queryImage width = 320 queryImage = cv2 . 
+cvtColor queryImage cv2 . COLOR _ BGR2GRAY _ descs = 
+dad . describe queryImage hist = bovw . describe descs 
+. tocoo redisDB = Redis host = localhost port = 
+6379 db = 0 searcher = Searcher redisDB args bovw 
+_ db args features _ db idf = idf distanceMetric 
+= distanceMetric sr = searcher . search hist numResults = 
+20 print INFO search took { . 2f } s 
+. format sr . search _ time montage = ResultsMontage 
+240 320 5 20 for i score resultID resultIdx in 
+enumerate sr . results print RESULT { result _ num 
+} . { result } { score . 2f } 
+. format result _ num = i + 1 result 
+= resultID score = score result = cv2 . imread 
+{ } / { } . format args dataset resultID 
+montage . addResult result text = # { } . 
+format i + 1 highlight = resultID in queryRelevant cv2 
+. imshow Result imutils . resize montage . montage height 
+= 700 cv2 . waitKey 0 searcher . finish searcher 
+. pyfrom . searchresult import SearchResult from . dists import 
+chi2 _ distance import numpy as np import datetime import 
+h5py class Searcher def _ _ init _ _ self 
+redisDB bovwDBPath featuresDBPath idf = None distanceMetric = chi2 _ 
+distance self . redisDB = redisDB self . idf = 
+idf self . distanceMetric = distanceMetric self . bovwDB = 
+h5py . File bovwDBPath mode = r self . featuresDB 
+= h5py . File featuresDBPath r def search self queryHist 
+numResults = 10 maxCandidates = 200 startTime = datetime . 
+datetime . now candidateIdxs = self . buildCandidates queryHist maxCandidates 
+candidateIdxs . sort hists = self . bovwDB bovw candidateIdxs 
+queryHist = queryHist . toarray results = { } if 
+self . idf is not None queryHist * = self 
+. idf for candidate hist in zip candidateIdxs hists if 
+self . idf is not None hist * = self 
+. idf d = self . distanceMetric hist queryHist results 
+candidate = d results = sorted v self . featuresDB 
+image _ ids k k for k v in results 
+. items results = results = results numResults return SearchResult 
+results datetime . datetime . now startTime . total _ 
+seconds def buildCandidates self hist maxCandidates p = self . 
+redisDB . pipeline for i in hist . col p 
+. lrange vw { } . format i 0 1 
+pipelineResults = p . execute candidates = for results in 
+pipelineResults results = int r for r in results candidates 
+. extend results imageIdxs counts = np . unique candidates 
+return _ counts = True imageIdxs = i for c 
+i in sorted zip counts imageIdxs reverse = True return 
+imageIdxs maxCandidates def finish self self . bovwDB . close 
+self . featuresDB . close dists . pyimport numpy as 
+np def chi2 _ distance histA histB eps = 1e 
+10 d = 0.5 * np . sum histA histB 
+* * 2 / histA + histB + eps return 
+dsearchersult . pyfrom collections import namedtuple SearchResult = namedtuple SearchResult 
+results search _ time 9 评估 evaluate . pyfrom _ 
+_ future _ _ import print _ function from pyimagesearch 
+. descriptors . d e t e c t a 
+n d d e s c r i b e 
+import D e t e c t A n d 
+D e s c r i b e from pyimagesearch 
+. ir . bagofvisualwords import BagOfVisualWords from pyimagesearch . ir 
+. searcher import Searcher from pyimagesearch . ir . dists 
+import chi2 _ distance from scipy . spatial import distance 
+from redis import Redis from imutils . feature import FeatureDetector 
+_ create D e s c r i p t 
+o r E x t r a c t o 
+r _ create import numpy as np import progressbar import 
+argparse import pickle import imutils import json import cv2 ap 
+= argparse . ArgumentParser ap . add _ argument d 
+dataset required = True help = Path to the directory 
+of indexed images ap . add _ argument f features 
+db required = True help = Path to the features 
+database ap . add _ argument b bovw db required 
+= True help = Path to the bag of visual 
+words database ap . add _ argument c codebook required 
+= True help = Path to the codebook ap . 
+add _ argument i idf type = str help = 
+Path to inverted document frequencies array ap . add _ 
+argument r relevant required = True help = Path to 
+relevant dictionary args = vars ap . parse _ args 
+detector = FeatureDetector _ create SURF descriptor = D e 
+s c r i p t o r E x 
+t r a c t o r _ create RootSIFT 
+dad = D e t e c t A n 
+d D e s c r i b e detector 
+descriptor distanceMetric = chi2 _ distance idf = None if 
+args idf is not None idf = pickle . loads 
+open args idf rb . read distanceMetric = distance . 
+cosine vocab = pickle . loads open args codebook rb 
+. read bovw = BagOfVisualWords vocab redisDB = Redis host 
+= localhost port = 6379 db = 0 searcher = 
+Searcher redisDB args bovw _ db args features _ db 
+idf = idf distanceMetric = distanceMetric relevant = json . 
+loads open args relevant . read queryIDs = relevant . 
+keys accuracies = timings = widgets = Evaluating progressbar . 
+Percentage progressbar . Bar progressbar . ETA pbar = progressbar 
+. ProgressBar maxval = len queryIDs widgets = widgets . 
+start for i queryID in enumerate sorted queryIDs queryRelevant = 
+relevant queryID p = { } / { } . 
+format args dataset queryID queryImage = cv2 . imread p 
+quertImage = imutils . resize queryImage width = 320 queryImage 
+= cv2 . cvtColor queryImage cv2 . COLOR _ BGR2GRAY 
+_ descs = dad . describe queryImage hist = bovw 
+. describe descs . tocoo sr = searcher . search 
+hist numResults = 4 results = set r 1 for 
+r in sr . results inter = results . intersection 
+queryRelevant accuracies . append len inter timings . append sr 
+. search _ time pbar . update i searcher . 
+finish pbar . finish accuracies = np . array accuracies 
+timings = np . array timings print INFO ACCURACY u 
+= { . 2f } o = { . 2f 
+} . format accuracies . mean accuracies . std print 
+INFO TIMINGS u = { . 2f } o = 
+{ . 2f } . format timings . mean timings 
+. std 1 什么 是 基于 内容 的 图像 检索 1 构建 
+基于 内容 的 图像 检索系统 步骤 1 定义 你 的 
+图像 描述符 在 这个 阶段 你 需要 决定 你 想 
+描述 的 图像 的 哪个 方面 你 对 图像 的 
+颜色 感兴趣 吗 图像 中 物体 的 形状 或者 你 
+想 表征 纹理 2 特征提取 和 索引 您 的 数据集 
+    现在 您 已经 定义 了 图像 描述符 您 
+的 工作 是 将此 图像 描述符 应用于 数据 集中 的 
+每个 图像 从 这些 图像 提取 特征 并将 特征 写入 
+存储 例如 CSV 文件 RDBMS Redis 等 以便 稍后 可以 
+比较 它们 的 相似性 此外 您 需要 考虑 是否 将 
+使用 任何 专门 的 数据 结构 来 促进 更快 的 
+搜索 3 定义 您 的 相似性 度量     我们 
+现在 有一个 可能 是 指数 特征向量 的 集合 但 你 
+如何 比较 它们 的 相似性 呢 常用 选项 包括 欧几里得 
+距离 余弦 距离 和 距离 但 实际 选择 高度 依赖 
+于 1 数据集 和 2 您 提取 的 特征 类型 
+4 搜索     最后 一步 是 执行 实际 搜索 
+用户 将 向 系统 提交 查询 图像 例 如从 上传 
+表单 或 通过 移动 应用 程序 并且 您 的 工作 
+将 1 从该/nr 查询 图像 中 提取 特征 然后 2 
+应用 您 的 相似性 函数 进行 比较 该 查询 的 
+功能 已 针对 已 编入索引 的 功能 从那里 你 只需 
+根据 你 的 相似 度 函数 返回 最 相关 的 
+结果 2 CBIR 和 机器学习 / 图像 分类 有何 不同 
+1 机器学习 包括 使 计算机 完成 诸如 预测 分类 识别 
+等 智能 人工 任务 的 方法 此外 机器 学习管理 算法 
+使 计算机 能够 执行 这些 智能 任务     而不 
+需要 明确 编程 CBIR 确实 利用 了 一些 机器学习 技术 
+即 降 维和 聚 类 但是 CBIR 系统 不 执行 
+任何 实际 学习 2 主要 的   区别 在于 CBIR 
+不   直接 试图 理解 和 解释 图像 的 内容 
+相反 CBIR 系统 依赖于 通过 提取 特征向量 来 量化 图像 
+假设 特征向量 的 比较 具有 相似 特征向量 的 图像 具有 
+相似 的 视觉 内容 基于 这 两个 组件 图像 搜索引擎 
+能够 将 查询 与 图像 数据 集 进行 比较 并 
+返回 最 相关 的 结果 而 不必 实际 知道 图像 
+的 内容 3 在 机器 学习 和 图像 分类 中 
+能够 学习 和 理解 图像 的 内容 需要 一些 训练 
+集 的 概念         一组 标记 数据 
+用于 教 计算机 数据 集中 每个 可视 对象 的 外观 
+4 CBIR 系统 不 需要 标记 数据 他们 只需 拍摄 
+图像 数据集 从 每幅 图像 中 提取 特征 并使 数据集 
+可以 在 视觉 上 搜索 在 某些 方面 您 可以 
+将 CBIR 系统 视为 一种 哑 图像 分类器 它 没有 
+标签 概念 来 使 自己 更加 智能 它 仅 依赖于 
+1 从 图像 中 提取 的 特征 和 2 相似性 
+函数 用于 给 用户 提供 有 意义 的 结果 2 
+构建 CBIR 系统 1 目录 结构 及 作用 | pyimagesearch 
+|         | _ _ init _ 
+_ . py |         | cbir 
+|         |         
+| _ _ init _ _ . py |   
+      |         | dists 
+. py       作用 包含 我们 的 距离 
+度量 / 相似 度 函数 用于 比较 两 个 图像 
+的 相似 度 |         |   
+      | hsvdescriptor . py   作用 实现 
+我们 的 颜色 描述符 用于 从 图像 中 提取 特征向量 
+|         |         
+| resultsmontage . py 作用 用于 显示 搜索 到 我们 
+的 屏幕 结果 的 实用 工具 类 |     
+    |         | searcher . 
+py 作用 将 封装 用于 执行 实际 搜索 的 Searcher 
+类 | index . py 作用 用于 从 我们 的 
+UKBench 数据 集中 提取 特征 | search . py   
+作用 将 接受 查询 图像 调用   搜索器     
+然后 将 结果 显示 在 屏幕 上 疑问 1 highlight 
+= resultID in queryRelevant2 对 第三 条 运行 结果 存在 
+疑问 运行 命令 1 python search . py index index 
+. csv dataset . . / ukbench relevant . . 
+/ ukbench / relevant . json query . . / 
+ukbench / ukbench00644 . jpg2 python search . py index 
+index . csv dataset . . / ukbench relevant . 
+. / ukbench / relevant . json query . . 
+/ ukbench / ukbench00996 . jpg3 python search . py 
+index index . csv dataset . . / ukbench relevant 
+. . / ukbench / relevant . json query . 
+. / ukbench / ukbench00568 . jpgsearch . pyfrom _ 
+_ future _ _ import print _ function from pyimagesearch 
+. cbir . resultsmontage import ResultsMontage from pyimagesearch . cbir 
+. hsvdescriptor import HSVDescriptor from pyimagesearch . cbir . searcher 
+import Searcher import argparse import imutils import json import cv2 
+ap = argparse . ArgumentParser ap . add _ argument 
+i index required = True help = Path to where 
+the features index will be stored ap . add _ 
+argument q query required = True help = Path to 
+the query image ap . add _ argument d dataset 
+required = True help = Path to the original dataset 
+directory ap . add _ argument r relevant required = 
+True help = Path to relevant dictionary args = vars 
+ap . parse _ args desc = HSVDescriptor 4 6 
+3 montage = ResultsMontage 240 320 5 20 relevant = 
+json . loads open args relevant . read queryFilename = 
+args query args query . rfind / + 1 queryRelevant 
+= relevant queryFilename query = cv2 . imread args query 
+print INFO describing query . . . cv2 . imshow 
+Query imutils . resize query width = 320 features = 
+desc . describe query print INFO searching . . . 
+searcher = Searcher args index results = searcher . search 
+features numResults = 20 for i score resultID in enumerate 
+results print INFO { result _ num } . { 
+result } score . 2f . format result _ num 
+= i + 1 result = resultID score = score 
+result = cv2 . imread { } / { } 
+. format args dataset resultID print resultID print resultID montage 
+. addResult result text = # { } . format 
+i + 1 highlight = resultID in queryRelevant cv2 . 
+imshow Results imutils . resize montage . montage height = 
+700 cv2 . imwrite mo . png montage . montage 
+cv2 . waitKey 0 index . pyfrom _ _ future 
+_ _ import print _ function from pyimagesearch . cbir 
+. hsvdescriptor import HSVDescriptor from imutils import paths import progressbar 
+import argparse import cv2 ap = argparse . ArgumentParser ap 
+. add _ argument d dataset required = True help 
+= Path to the directory that contains the images to 
+be indexed ap . add _ argument i index required 
+= True help = Path to where the features index 
+will be stored args = vars ap . parse _ 
+args desc = HSVDescriptor 4 6 3 output = open 
+args index w imagePaths = list paths . list _ 
+images args dataset widgets = Indexing progressbar . Percentage progressbar 
+. Bar progressbar . ETA pbar = progressbar . ProgressBar 
+maxval = len imagePaths widgets = widgets pbar . start 
+for i imagePath in enumerate imagePaths filename = imagePath imagePath 
+. rfind / + 1 image = cv2 . imread 
+imagePath features = desc . describe image features = str 
+x for x in features output . write { } 
+{ } \ n . format filename . join features 
+pbar . update i pbar . finish print INFO indexed 
+{ } images . format len imagePaths output . close 
+dist . pyimport numpy as np def chi2 _ distance 
+histA histB eps = 1e 10 d = 0.5 * 
+np . sum histA histB * * 2 / histA 
++ histB + eps return dhsvdescriptor . pyimport numpy as 
+np import cv2 import imutils class HSVDescriptor def _ _ 
+init _ _ self bins self . bins = bins 
+def describe self image image = cv2 . cvtColor image 
+cv2 . COLOR _ BGR2HSV features = h w = 
+image . shape 2 cX cY = int w * 
+0.5 int h * 0.5 segments = 0 cX 0 
+cY cX w 0 cY cX w cY h 0 
+cX cY h axesX axesY = int w * 0.75 
+/ / 2 int h * 0.75 / / 2 
+ellipMask = np . zeros image . shape 2 dtype 
+= uint8 cv2 . ellipse ellipMask cX cY axesX axesY 
+0 0 360 255 1 for startX endX startY endY 
+in segments cornerMask = np . zeros image . shape 
+2 dtype = uint8 cv2 . rectangle cornerMask startX startY 
+endX endY 255 1 cornerMask = cv2 . subtract cornerMask 
+ellipMask hist = self . histogram image cornerMask features . 
+extend hist hist = self . histogram image ellipMask features 
+. extend hist return np . array features def histogram 
+self image mask = None hist = cv2 . calcHist 
+image 0 1 2 mask self . bins 0 180 
+0 256 0 256 if imutils . is _ cv2 
+hist = cv2 . normalize hist . flatten else hist 
+= cv2 . normalize hist hist . flatten return h 
+i s t r e s u l t s 
+m o n t a g e . pyimport numpy 
+as np import cv2 class ResultsMontage def _ _ init 
+_ _ self imageSize imagesPerRow numResults self . imageW = 
+imageSize 0 self . imageH = imageSize 1 self . 
+imagesPerRow = imagesPerRow numCols = numResults / / imagesPerRow self 
+. montage = np . zeros numCols * self . 
+imageW imagesPerRow * self . imageH 3 dtype = uint8 
+self . counter = 0 self . row = 0 
+self . col = 0 def addResult self image text 
+= None highlight = False if self . counter = 
+0 and self . counter % self . imagesPerRow = 
+= 0 self . col = 0 self . row 
++ = 1 image = cv2 . resize image self 
+. imageH self . imageW startY endY = self . 
+row * self . imageW self . row + 1 
+* self . imageW startX endX = self . col 
+* self . imageH self . col + 1 * 
+self . imageH self . montage startY endY startX endX 
+= image if text is not None cv2 . putText 
+self . montage text startX + 10 startY + 30 
+cv2 . FONT _ HERSHEY _ SIMPLEX 1.0 0 255 
+255 3 print text if highlight cv2 . rectangle self 
+. montage startX + 3 startY + 3 endX 3 
+endY 3 0 255 0 4 print hig self . 
+col + = 1 self . counter + = 1searcher 
+. pyfrom . import dists import csv class Searcher def 
+_ _ init _ _ self dbPath self . dbPath 
+= dbPath def search self queryFeatures numResults = 10 results 
+= { } with open self . dbPath as f 
+reader = csv . reader f for row in reader 
+features = float x for x in row 1 d 
+= dists . chi2 _ distance features queryFeatures results row 
+0 = d f . close results = sorted v 
+k for k v in results . items return results 
+numResults 2 特征提取 和 索引 1 描述 图像 的 三 
+个 方面 颜色     表征 图像 颜色 的 图像 
+描述符 试图 模拟图像 每个 通道 中 像素 强度 的 分布 
+这些 方法 包括 基本 颜色 统计 如 平均值 标准偏差 和偏度/nr 
+以及 颜色 直方图 平面 和 多维 纹理     纹理 
+描述符 试图 模拟图像 中 物体 的 感觉 外观 和 整体 
+触觉 质量 一些 但 不是 全部 纹理 描述符 将 图像 
+转换 为 灰度 然后 计算 灰度 共生 矩阵 GLCM 并 
+计算 该 矩阵 的 统计量 包括 对比度 相关性 和熵等/nr Haralick 
+纹理 更 先进 的 纹理 描述符 如 局部 二进制 模式 
+尝试 模型     模式 也 是 如此 甚至 还有 
+更 高级 的 纹理 描述符 例如 傅立叶 和 小波 变换 
+也 存在 但 仍然 使用 灰度 图像 形状     
+绝大多数 形状 描述符 方法 依靠 提取 图像 中 对象 的 
+轮廓 即 轮廓 一旦 我们 有了 轮廓 我们 就 可以 
+计算 简单 的 统计 数据 来 表征 轮廓 这 正是 
+Hu Moments 和 Zernike Moments 所做 的 这些 统计 数据 
+可 用于 表示 图像 中 对象 的 形状 轮廓 在 
+机器 学习 和 对象 识别 的 背景 下     
+面向 梯度 的 直方图   也 是 一个 不错 的 
+选择 2 特征提取 的 定义 定义   特征提取   是 
+通过 应用 图像 描述符 从 数据 集中 每个 图像 中 
+提取 特征 来 量化 数据集 的 过程 通常 这些 功能 
+存储 在 磁盘 上供     以后 使用 并   
+  使用 专门 的 数据结构 例如 倒排索引 kd 树 或 
+随机 投影 林 进行 索引 以 加快 查询 速度 3 
+定义 相似 度 1 常用 距离 度量 欧几里德 from scipy 
+. spatial import distance as dists dists . euclidean A 
+B 曼哈顿 / 城市 大厦 dists . cityblock A B 
+直方图 交点 def histogram _ intersection H1 H2 return np 
+. sum np . minimum H1 H2 距离 def chi2 
+_ distance histA histB eps = 1e 10 return 0.5 
+* np . sum histA histB * * 2 / 
+histA + histB + eps chi2 _ distance A B 
+余弦 dists . cosine A B 海明 dists . hamming 
+A B 4 提取 关键点 和 局部 不变 描述符 1 
+文件 结构 及 作用 | pyimagesearch |       
+  | _ _ init _ _ . py | 
+        | descriptors 作用 包含/v 了/ul 实现/v 
+从/p 我们/r 的/uj 图像/n 数据集/i 提取/v 关键点/n 和/c 本地/r 不变/v 
+描述/v |/i  /i  /i  /i  /i |/i  /i  /i  /i 
+ /i |/i _ _ init _ _ . py | 
+        |         | 
+d e t e c t a n d d 
+e s c r i b e . py 作用 
+以便 使用 任意 检测器 和 描述符 轻松 检测 关键点 并 
+提取 功能 |         | indexer 作用 
+包含 我们 面向 HDF5 数据集 的 面向 对象 的 接口 
+来 存储 特征 |         |   
+      | _ _ init _ _ . 
+py |         |       
+  | baseindexer . py |         
+|         | featureindexer . py | 
+index _ features . py 作用 驱动程序 脚本 用于 将 
+所有 碎片 粘合 在 一起 疑问 1 @ staticmethod 静 
+态函数 定义 的 方法 运行 命令 python index _ features 
+. py dataset . . / ukbench _ sample features 
+db output / features . hdf5index _ features . py 
+# coding = utf 8 from _ _ future _ 
+_ import print _ function from pyimagesearch . descriptors . 
+d e t e c t a n d d 
+e s c r i b e import D e 
+t e c t A n d D e s 
+c r i b e from pyimagesearch . indexer . 
+featureindexer import FeatureIndexer from imutils . feature import FeatureDetector _ 
+create D e s c r i p t o 
+r E x t r a c t o r 
+_ create from imutils import paths import argparse import imutils 
+import cv2 ap = argparse . ArgumentParser ap . add 
+_ argument d dataset required = True help = Path 
+to the directory that contains the images to be indexed 
+# 图像 目录 路径 ap . add _ argument f 
+features db required = True help = Path to where 
+the features database will be stored # 制定 HDF5 数据库 
+储存 在 磁 盘上 的 路径 ap . add _ 
+argument a approx images type = int default = 500 
+help = Approximate # of images in the dataset # 
+该 可选 开关 允许 我们 指定 数据 集中 图像 的 
+近似 数量 ap . add _ argument b max buffer 
+size type = int default = 50000 help = Maximum 
+buffer size for # of features to be stored in 
+memory # 一次 一个 地 写入 HDF5 的 特征向量 效率 
+非常 低 相反 将/d 特征向量/n 收集到/i 内存/n 中/f 的/uj 一个/m 
+大/a 数组/n 中/f 然后/c 在/p 缓冲区/n 满时将/nr 它们/r 转储/v 到/v 
+HDF5/i 会/v 更/d 有效/a 的 值 最大 缓冲器 大小 指定 
+许多 如何 特征向量 可以 被 存储 在 存储器 中 直到 
+缓冲器 被 刷新 到 HDF5 args = vars ap . 
+parse _ args detector = FeatureDetector _ create SURF # 
+获取 关键点 descriptor = D e s c r i 
+p t o r E x t r a c 
+t o r _ create RootSIFT # 定义 提取 关键点 
+特征 方法 dad = D e t e c t 
+A n d D e s c r i b 
+e detector descriptor # 获取 关键点 和 关键 点 特征向量 
+fi = FeatureIndexer args features _ db estNumImages = args 
+approx _ images maxBufferSize = args max _ buffer _ 
+size verbose = True for i imagePath in enumerate paths 
+. list _ images args dataset if i 0 and 
+i % 10 = = 0 fi . _ debug 
+processed { } images . format i msgType = PROGRESS 
+filename = imagePath imagePath . rfind / + 1 image 
+= cv2 . imread imagePath image = imutils . resize 
+image width = 320 image = cv2 . cvtColor image 
+cv2 . COLOR _ BGR2GRAY kps descs = dad . 
+describe image if kps is None or descs is None 
+continue fi . add filename kps descs fi . finish 
+d e t e c t a n d d 
+e s c r i b e . pyimport numpy 
+as np class D e t e c t A 
+n d D e s c r i b e 
+def _ _ init _ _ self detector descriptor self 
+. detector = detector self . descriptor = descriptor def 
+describe self image useKpList = True kps = self . 
+detector . detect image kps descs = self . descriptor 
+. compute image kps if len kps = = 0 
+return None None if useKpList kps = np . int0 
+kp . pt for kp in kps return kps descs 
+baseindexer . pyfrom _ _ future _ _ import print 
+_ function import numpy as np import datetime class BaseIndexer 
+object def _ _ init _ _ self dbPath estNumImages 
+= 500 maxBufferSize = 50000 dbResizeFactor = 2 verbose = 
+True self . dbPath = dbPath self . estNumImages = 
+estNumImages self . maxBufferSize = maxBufferSize self . dbResizeFactor = 
+dbResizeFactor self . verbose = verbose self . idxs = 
+{ } def _ wrieBuffers self pass def _ writeBuffer 
+self dataset datasetName buf idxName sparse = False if type 
+buf is list end = self . idxs idxName + 
+len buf else end = self . idxs idxName + 
+buf . shape 0 if end dataset . shape 0 
+self . _ debug triggering { } db resize . 
+format datasetName self . _ resizeDataset dataset datasetName baseSize = 
+end if sparse buf = buf . toarray self . 
+_ debug writing { } buffer . format datasetName dataset 
+self . idxs idxName end = buf def _ resizeDataset 
+self dataset dbName baseSize = 0 finished = 0 origSize 
+= dataset . shape 0 if finished 0 newSize = 
+finished else newSize = baseSize * self . dbResizeFactor shape 
+= list dataset . shape shape 0 = newSize dataset 
+. resize tuple shape self . _ debug old size 
+of { } { } new size { } . 
+format dbName origSize newSize def _ debug self msg msgType 
+= INFO if self . verbose print { } { 
+} { } . format msgType msg datetime . datetime 
+. now @ staticmethod def featureStack array accum = None 
+stackMethod = np . vstack if accum is None accum 
+= array else accum = stackMethod accum array return a 
+c c u m f e a t u r 
+e i n d e x e r . py 
+# coding = utf 8 from . baseindexer import BaseIndexer 
+import numpy as np import h5py import sys class FeatureIndexer 
+BaseIndexer def _ _ init _ _ self dbPath estNumImages 
+= 500 maxBufferSize = 50000 dbResizeFactor = 2 verbose = 
+True super FeatureIndexer self . _ _ init _ _ 
+dbPath estNumImages = estNumImages maxBufferSize = maxBufferSize dbResizeFactor = dbResizeFactor 
+verbose = verbose self . db = h5py . File 
+self . dbPath mode = w self . imageIDDB = 
+None self . indexDB = None self . featuresDB = 
+None self . imageIDBuffer = self . indexBuffer = self 
+. featuresBuffer = None self . totalFeatures = 0 self 
+. idxs = { index 0 features 0 } def 
+add self imageID kps features start = self . idxs 
+features + self . totalFeatures end = start + len 
+features self . imageIDBuffer . append imageID self . featuresBuffer 
+= BaseIndexer . featureStack np . hstack kps features self 
+. featuresBuffer self . indexBuffer . append start end self 
+. totalFeatures + = len features if self . totalFeatures 
+= self . maxBufferSize if None in self . imageIDDB 
+self . indexDB self . featuresDB self . _ debug 
+initial buffer full self . _ createDatasets self . _ 
+writeBuffers def _ createDatasets self avgFeatures = self . totalFeatures 
+/ float len self . imageIDBuffer approxFeatures = int avgFeatures 
+* self . estNumImages fvectorSize = self . featuresBuffer . 
+shape 1 if sys . version _ info 0 3 
+dt = h5py . special _ dtype vlen = unicode 
+else dt = h5py . special _ dtype vlen = 
+str self . _ debug creating datasets . . . 
+self . imageIDDB = self . db . create _ 
+dataset image _ ids self . estNumImages maxshape = None 
+dtype = dt self . indexDB = self . db 
+. create _ dataset index self . estNumImages 2 maxshape 
+= None 2 dtype = int self . featuresDB = 
+self . db . create _ dataset features approxFeatures fvectorSize 
+maxshape = None fvectorSize dtype = float def _ writeBuffers 
+self self . _ writeBuffer self . imageIDDB image _ 
+ids self . imageIDBuffer index self . _ writeBuffer self 
+. indexDB index self . indexBuffer index self . _ 
+writeBuffer self . featuresDB features self . featuresBuffer features self 
+. idxs index + = len self . imageIDBuffer self 
+. idxs features + = self . totalFeatures self . 
+imageIDBuffer = self . indexBuffer = self . featuresBuffer = 
+None self . totalFeatures = 0 def finish self if 
+None in self . imageIDDB self . indexDB self . 
+featuresDB self . _ debug minimum init buffer not reached 
+msgType = WARN self . _ createDatasets self . _ 
+debug writing un empty buffers . . . self . 
+_ writeBuffers self . _ debug compacting datasets . . 
+. self . _ resizeDataset self . imageIDDB image _ 
+ids finished = self . idxs index self . _ 
+resizeDataset self . indexDB index finished = self . idxs 
+index self . _ resizeDataset self . featuresDB features finished 
+= self . idxs features self . db . close 
+5 集群 功能 组成 一个 码本 1 文件 结构 及 
+作用 多 添加 俩个 新文件 cluster _ features . py 
+和 vocabulary . py | pyimagesearch |       
+  | _ _ init _ _ . py | 
+        | descriptors |       
+  |         | _ _ init 
+_ _ . py |         | 
+        | d e t e c 
+t a n d d e s c r i 
+b e . py |         | 
+indexer |         |       
+  | _ _ init _ _ . py | 
+        |         | 
+baseindexer . py |         |   
+      | featureindexer . py |     
+    | ir |         | 
+        | _ _ init _ _ 
+. py |         |     
+    | vocabulary . py 作用 用于 摄取 的 
+功能 HDF5 数据集 然后 返回 一个 字典 的 视觉 即 
+聚 类 中心 话 | cluster _ features . py 
+作用 驱动 脚本 将 启动   词汇表     制定 
+过程 | index _ features . py 运行 命令 python 
+cluster _ features . py features db output / features 
+. hdf5 codebook output / vocab . cpickle clusters 1536 
+percentage 0 . 25cluster _ features . py # coding 
+= utf 8 from _ _ future _ _ import 
+print _ function from pyimagesearch . ir . vocabulary import 
+Vocabulary import argparse import pickle ap = argparse . ArgumentParser 
+ap . add _ argument f features db required = 
+True help = Path to where the features database will 
+be stored ap . add _ argument c codebook required 
+= True help = Path to the output codebook ap 
+. add _ argument k clusters type = int default 
+= 64 help = # of clusters to generate # 
+小批量 k 均值 将 生成 的 簇 的 数量 即 
+可视 词 ap . add _ argument p percentage type 
+= float default = 0.25 help = Percentage of total 
+features to use when clustering args = vars ap . 
+parse _ args # 控制 特征向量 样本量 的 大小 voc 
+= Vocabulary args features _ db vocab = voc . 
+fit args clusters args percentage # 获得 生成 的 视觉 
+词 整个 采样 和聚类/nr 过程 由 词汇 类 抽象 print 
+INFO storing cluster centers . . . f = open 
+args codebook wb f . write pickle . dumps vocab 
+f . close vocabulary . pyfrom _ _ future _ 
+_ import print _ function from sklearn . cluster import 
+MiniBatchKMeans import numpy as np import datetime import h5py class 
+Vocabulary def _ _ init _ _ self dbPath verbose 
+= True self . dbPath = dbPath self . verbose 
+= verbose def fit self numClusters samplePercent randomState = None 
+db = h5py . File self . dbPath totalFeatures = 
+db features . shape 0 sampleSize = int np . 
+ceil samplePercent * totalFeatures print sampleSize print sampleSize idxs = 
+np . random . choice np . arange 0 totalFeatures 
+sampleSize replace = False idxs . sort data = self 
+. _ debug starting sampling . . . for i 
+in idxs data . append db features i 2 self 
+. _ debug sampled { } features from a population 
+of { } . format len idxs totalFeatures self . 
+_ debug clustering with k = { } . format 
+numClusters clt = MiniBatchKMeans n _ clusters = numClusters random 
+_ state = randomState clt . fit data self . 
+_ debug cluster shape { } . format clt . 
+cluster _ centers _ . shape db . close return 
+clt . cluster _ centers _ def _ debug self 
+msg msgType = INFO if self . verbose print { 
+} { } { } . format msgType msg datetime 
+. datetime . now 6 可视化 码本 中的 单词 注 
+在前面 构建 出 关键点 和 局部 不变 特征 描述符 建立 
+集群 码本 后方 可实现 作用 将 码本 中 K means 
+分类 后的/nr 直方图 转化 为 可视化 图片 visuluze _ centers 
+. py # coding = utf 8 from _ _ 
+future _ _ import print _ function from pyimagesearch . 
+resultsmontage import ResultsMontage from sklearn . metrics import pairwise import 
+numpy as np import progressbar import argparse import pickle import 
+h5py import cv2 ap = argparse . ArgumentParser ap . 
+add _ argument d dataset required = True help = 
+Path to the directory of indexed images ap . add 
+_ argument f features db required = True help = 
+Path to the features database # 提取 关键 和 局部 
+不变 描述符 的 数据 记 路经 ap . add _ 
+argument c codebook required = True help = Path to 
+the codebook # 可视 话 词汇表 中的 视觉 词汇 路经 
+ap . add _ argument o output required = True 
+help = Path to output directory args = vars ap 
+. parse _ args vocab = pickle . loads open 
+args codebook rb . read featuresDB = h5py . File 
+args features _ db mode = r print INFO starting 
+distance distance computations . . . vis = { i 
+for i in np . arange 0 len vocab } 
+widgets = Comparing progressbar . Percentage progressbar . Bar progressbar 
+. ETA pbar = progressbar . ProgressBar maxval = featuresDB 
+image _ ids . shape 0 widgets = widgets . 
+start for i imageID in enumerate featuresDB image _ ids 
+start end = featuresDB index i rows = featuresDB features 
+start end kps descs = rows 2 rows 2 for 
+kp features in zip kps descs features = features . 
+reshape 1 1 D = pairwise . euclidean _ distances 
+features Y = vocab 0 for j in np . 
+arange 0 len vocab topResults = vis . get j 
+topResults . append D j kp imageID topResults = sorted 
+topResults key = lambda r r 0 16 vis j 
+= topResults pbar . update i pbar . finish featuresDB 
+. close print INFO writing visualizations to file . . 
+. for vwID results in vis . items montage = 
+ResultsMontage 64 64 4 16 for _ x y imageID 
+in results p = { } / { } . 
+format args dataset imageID image = cv2 . imread p 
+h w = image . shape 2 startX endX = 
+max 0 int x 32 min w int x + 
+32 startY endY = max 0 int y 32 min 
+h int y + 32 roi = image startY endY 
+startX endX montage . addResult roi p = { } 
+/ vis _ { } . jpg . format args 
+output vwID cv2 . imwrite p cv2 . cvtColor montage 
+. montage cv2 . COLOR _ BGR2GRAY 7 矢量 量化 
+7.1 从 多个 特 征到 单个 直方图 bagofvisualwords . pyfrom 
+sklearn . metrics import pairwise from scipy . sparse import 
+csr _ matrix import numpy as np class BagOfVisualWords def 
+_ _ init _ _ self codebook sparse = True 
+self . codebook = codebook self . sparse = sparse 
+def describe self features D = pairwise . euclidean _ 
+distances features Y = self . codebook words counts = 
+np . unique np . argmin D axis = 1 
+return _ counts = True if self . sparse hist 
+= csr _ matrix counts np . zeros len words 
+words shape = 1 len self . codebook dtype = 
+float else hist = np . zeros len self . 
+codebook dtype = float hist words = counts return histquantize 
+_ example . pyfrom _ _ future _ _ import 
+print _ function from pyimagesearch . ir . bagofvisualwords import 
+BagOfVisualWords from sklearn . metrics import pairwise import numpy as 
+np np . random . seed 42 vocab = np 
+. random . uniform size = 3 6 features = 
+np . random . uniform size = 10 6 print 
+INFO vocabulary \ n { } \ n . format 
+vocab print INFO features \ n { } \ n 
+. format features hist = np . zeros 3 dtype 
+= int32 for i f in enumerate features D = 
+pairwise . euclidean _ distances f . reshape 1 1 
+Y = vocab j = np . argmin D print 
+INFO Closest visual word to feature # { } { 
+} . format i j hist j + = 1 
+print INFO Updated histogram { } . format hist bovw 
+= BagOfVisualWords vocab sparse = False hist = bovw . 
+describe features print INFO BOVW histogram { } . format 
+hist 7.2 形成 BOVW 运行 命令 python extract _ bovw 
+. py features db output / features . hdf5 codebook 
+output / vocab . cpickle     bovw db output 
+/ bovw . hdf5 idf output / idf . cpickleextract 
+_ bovw . pyfrom pyimagesearch . ir . bagofvisualwords import 
+BagOfVisualWords from pyimagesearch . indexer . bovwindexer import BOVWIndexer import 
+argparse import pickle import h5py ap = argparse . ArgumentParser 
+ap . add _ argument f features db required = 
+True help = Path to the features database # 关键点 
+和 局部 不变 描述符 课程 中 构建 的 HDF5 数据集 
+的 路径 该 数据库 应 包含 与 数据 集中 每个 
+图像 相关 的 图像 ID 索引 和 原始 关键点 / 
+特征向量 ap . add _ argument c codebook required = 
+True help = Path to the codebook # 我们 需要 
+可视化 码本 的 路径 ap . add _ argument b 
+bovw db required = True help = Path to where 
+the bag of visual words database will be stored # 
+将 BOVW 表示 存储 在 一个 单独 的 HDF5 数据库 
+中的 路经 ap . add _ argument d idf required 
+= True help = Path to inverse document frequency counts 
+will be stored ap . add _ argument s max 
+buffer size type = int default = 500 help = 
+Maximum buffer size for # of features to be stored 
+in memory # 在 写入 HDF5 数据集 之前 在 内存 
+中 管理 一个 原始 特征向量 的 缓冲区 我们 将 在 
+这里 做 同样 的 事情 这次 我们 将 管理 一个 
+BOVW 直方图 缓冲区 args = vars ap . parse _ 
+args vocab = pickle . loads open args codebook rb 
+. read bovw = BagOfVisualWords vocab featuresDB = h5py . 
+File args features _ db mode = r bi = 
+BOVWIndexer bovw . codebook . shape 0 args bovw _ 
+db estNumImages = featuresDB image _ ids . shape 0 
+maxBufferSize = args max _ buffer _ size for i 
+imageID offset in enumerate zip featuresDB image _ ids featuresDB 
+index if i 0 and i % 10 = = 
+0 bi . _ debug processed { } images . 
+format i msgType = PROGRESS features = featuresDB features offset 
+0 offset 1 2 hist = bovw . describe features 
+bi . add hist featuresDB . close bi . finish 
+f = open args idf wb f . write pickle 
+. dumps bi . df method = idf f . 
+close bovwindexer . pyfrom . baseindexer import BaseIndexer from scipy 
+import sparse import numpy as np import h5py class BOVWIndexer 
+BaseIndexer def _ _ init _ _ self fvectorSize dbPath 
+estNumImages = 500 maxBufferSize = 500 dbResizeFactor = 2 verbose 
+= True super BOVWIndexer self . _ _ init _ 
+_ dbPath estNumImages = estNumImages maxBufferSize = maxBufferSize dbResizeFactor = 
+dbResizeFactor verbose = verbose self . db = h5py . 
+File self . dbPath mode = w self . bovwDB 
+= None self . bovwBuffer = None self . idxs 
+= { bovw 0 } self . fvectorSize = fvectorSize 
+self . _ df = np . zeros fvectorSize dtype 
+= float self . totalImages = 0 def add self 
+hist self . bovwBuffer = BaseIndexer . featureStack hist self 
+. bovwBuffer stackMethod = sparse . vstack self . _ 
+df np . where hist . toarray 0 0 + 
+= 1 if self . bovwBuffer . shape 0 = 
+self . maxBufferSize if self . bovwDB is None self 
+. _ debug initial buffer full self . _ createDatasets 
+self . _ writeBuffers def _ writeBuffers self if self 
+. bovwBuffer is not None and self . bovwBuffer . 
+shape 0 0 self . _ writeBuffer self . bovwDB 
+bovw self . bovwBuffer bovw sparse = True self . 
+idxs bovw + = self . bovwBuffer . shape 0 
+self . bovwBuffer = None def _ createDatasets self self 
+. _ debug creating datasets . . . self . 
+bovwDB = self . db . create _ dataset bovw 
+self . estNumImages self . fvectorSize maxshape = None self 
+. fvectorSize dtype = float def finish self if self 
+. bovwDB is None self . _ debug minimum init 
+buffer not reached msgType = WARN self . _ createDatasets 
+self . _ debug writing un empty buffers . . 
+. self . _ writeBuffers self . _ debug compacting 
+datasets . . . self . _ resizeDataset self . 
+bovwDB bovw finished = self . idxs bovw self . 
+totalImage = self . bovwDB . shape 0 self . 
+db . close def df self method = None if 
+method = = idf return np . log self . 
+totalImages / 1.0 + self . _ df return sel 
+. _ df8 反转 索引 和 搜索 8.1 建立 倒排索引 
+1 文件 结构 | pyimagesearch |         
+| _ _ init _ _ . py |   
+      | db |         
+|         | _ _ init _ 
+_ . py |         |   
+      | redisqueue . py |     
+    | descriptors |         | 
+        | _ _ init _ _ 
+. py |         |     
+    | d e t e c t a 
+n d d e s c r i b e 
+. py |         | indexer | 
+        |         | 
+_ _ init _ _ . py |     
+    |         | baseindexer . 
+py |         |       
+  | bovwindexer . py |         
+|         | featureindexer . py | 
+        | ir |       
+  |         | _ _ init 
+_ _ . py |         | 
+        | bagofvisualwords . py |   
+      |         | vocabulary 
+. py | build _ redis _ index . py 
+| cluster _ features . py | extract _ bvow 
+. py | index _ features . py | visualize 
+_ centers . py 运行 命令 redisqueue . pyimport numpy 
+as np class RedisQueue def _ _ init _ _ 
+self redisDB self . redisDB = redisDB def add self 
+imageIdx hist # imageIdx image _ ids 中 HDF5 数据 
+集中 图像 的 索引 hist 从 图像 中 提取 的 
+BOVW 直方图 p = self . redisDB . pipeline for 
+i in np . where hist 0 0 p . 
+rpush vw { } . format i imageIdx p . 
+execute def finish self self . redisDB . save build 
+_ redis _ index . pyfrom _ _ future _ 
+_ import print _ function from pyimagesearch . db . 
+redisqueue import RedisQueue from redis import Redis import h5py import 
+argparse ap = argparse . ArgumentParser ap . add _ 
+argument b bovw db required = True help = Path 
+to where the bag of visual words database args = 
+vars ap . parse _ args redisDB = Redis host 
+= localhost port = 6379 db = 0 rq = 
+RedisQueue redisDB bovwDB = h5py . File args bovw _ 
+db mode = r for i hist in enumerate bovwDB 
+bovw if i 0 and i % 10 = = 
+0 print PROGRESS processed { } entries . format i 
+rq . add i hist bovwDB . close rq . 
+finish 8.2 执行 搜索 文件目录 结构 |   pyimagesearch | 
+        |   _ _ init _ 
+_ . py |         |   
+db |         |       
+  |   _ _ init _ _ . py 
+|         |         
+|   redisqueue . py |         
+|   descriptors |         |   
+      |   _ _ init _ _ 
+. py |         |     
+    |   d e t e c t 
+a n d d e s c r i b 
+e . py |         |   
+indexer |         |       
+  |   _ _ init _ _ . py 
+|         |         
+|   baseindexer . py |         
+|         |   bovwindexer . py 
+|         |         
+|   featureindexer . py |         
+|   ir |         |   
+      |   _ _ init _ _ 
+. py |         |     
+    |   bagofvisualwords . py |     
+    |         |   vocabulary 
+. py |         |     
+    | dists . py |       
+  |         | searcher . py 
+|         |         
+| searchresult . py |   build _ redis _ 
+index . py |   cluster _ features . py 
+|   extract _ bvow . py |   index 
+_ features . py |   visualize _ centers . 
+py | search . py 运行 命令 python search . 
+py dataset . . / ukbench features db output / 
+features . hdf5 bovw db output / bovw . hdf5 
+codebook output / vocab . cpickle relevant . . / 
+ukbench / relevant . json query . . / ukbench 
+/ ukbench00258 . jpgsearch . pyfrom _ _ future _ 
+_ import print _ function from pyimagesearch . descriptors . 
+d e t e c t a n d d 
+e s c r i b e import D e 
+t e c t A n d D e s 
+c r i b e from pyimagesearch . ir . 
+bagofvisualwords import BagOfVisualWords from pyimagesearch . ir . searcher import 
+Searcher from pyimagesearch . ir . dists import chi2 _ 
+distance from pyimagesearch . resultsmontage import ResultsMontage from scipy . 
+spatial import distance from redis import Redis from imutils . 
+feature import FeatureDetector _ create D e s c r 
+i p t o r E x t r a 
+c t o r _ create import argparse import pickle 
+import imutils import json import cv2 ap = argparse . 
+ArgumentParser ap . add _ argument d dataset required = 
+True help = Path to the directory of indexed images 
+ap . add _ argument f features db required = 
+True help = Path to the features database ap . 
+add _ argument b bovw db required = True help 
+= Path to the bag of visual words database ap 
+. add _ argument c codebook required = True help 
+= Path to relevant dictionary ap . add _ argument 
+i idf type = str help = Path to inverted 
+document frequencies array ap . add _ argument r relevant 
+required = True help = Path to relevant dictionary ap 
+. add _ argument q query required = True help 
+= Path to the query image args = vars ap 
+. parse _ args detector = FeatureDetector _ create SURF 
+descriptor = D e s c r i p t 
+o r E x t r a c t o 
+r _ create RootSIFT dad = D e t e 
+c t A n d D e s c r 
+i b e detector descriptor distanceMetric = chi2 _ distance 
+idf = None if args idf is not None idf 
+= pickle . loads open args idf rb . read 
+vocab = pickle . loads open args codebook rb . 
+read bovw = BagOfVisualWords vocab relevant = json . loads 
+open args relevant . read queryFilename = args query args 
+query . rfind / + 1 queryRelevant = relevant queryFilename 
+queryImage = cv2 . imread args query queryImage = imutils 
+. resize queryImage width = 320 queryImage = cv2 . 
+cvtColor queryImage cv2 . COLOR _ BGR2GRAY _ descs = 
+dad . describe queryImage hist = bovw . describe descs 
+. tocoo redisDB = Redis host = localhost port = 
+6379 db = 0 searcher = Searcher redisDB args bovw 
+_ db args features _ db idf = idf distanceMetric 
+= distanceMetric sr = searcher . search hist numResults = 
+20 print INFO search took { . 2f } s 
+. format sr . search _ time montage = ResultsMontage 
+240 320 5 20 for i score resultID resultIdx in 
+enumerate sr . results print RESULT { result _ num 
+} . { result } { score . 2f } 
+. format result _ num = i + 1 result 
+= resultID score = score result = cv2 . imread 
+{ } / { } . format args dataset resultID 
+montage . addResult result text = # { } . 
+format i + 1 highlight = resultID in queryRelevant cv2 
+. imshow Result imutils . resize montage . montage height 
+= 700 cv2 . waitKey 0 searcher . finish searcher 
+. pyfrom . searchresult import SearchResult from . dists import 
+chi2 _ distance import numpy as np import datetime import 
+h5py class Searcher def _ _ init _ _ self 
+redisDB bovwDBPath featuresDBPath idf = None distanceMetric = chi2 _ 
+distance self . redisDB = redisDB self . idf = 
+idf self . distanceMetric = distanceMetric self . bovwDB = 
+h5py . File bovwDBPath mode = r self . featuresDB 
+= h5py . File featuresDBPath r def search self queryHist 
+numResults = 10 maxCandidates = 200 startTime = datetime . 
+datetime . now candidateIdxs = self . buildCandidates queryHist maxCandidates 
+candidateIdxs . sort hists = self . bovwDB bovw candidateIdxs 
+queryHist = queryHist . toarray results = { } if 
+self . idf is not None queryHist * = self 
+. idf for candidate hist in zip candidateIdxs hists if 
+self . idf is not None hist * = self 
+. idf d = self . distanceMetric hist queryHist results 
+candidate = d results = sorted v self . featuresDB 
+image _ ids k k for k v in results 
+. items results = results = results numResults return SearchResult 
+results datetime . datetime . now startTime . total _ 
+seconds def buildCandidates self hist maxCandidates p = self . 
+redisDB . pipeline for i in hist . col p 
+. lrange vw { } . format i 0 1 
+pipelineResults = p . execute candidates = for results in 
+pipelineResults results = int r for r in results candidates 
+. extend results imageIdxs counts = np . unique candidates 
+return _ counts = True imageIdxs = i for c 
+i in sorted zip counts imageIdxs reverse = True return 
+imageIdxs maxCandidates def finish self self . bovwDB . close 
+self . featuresDB . close dists . pyimport numpy as 
+np def chi2 _ distance histA histB eps = 1e 
+10 d = 0.5 * np . sum histA histB 
+* * 2 / histA + histB + eps return 
+dsearchersult . pyfrom collections import namedtuple SearchResult = namedtuple SearchResult 
+results search _ time 9 评估 evaluate . pyfrom _ 
+_ future _ _ import print _ function from pyimagesearch 
+. descriptors . d e t e c t a 
+n d d e s c r i b e 
+import D e t e c t A n d 
+D e s c r i b e from pyimagesearch 
+. ir . bagofvisualwords import BagOfVisualWords from pyimagesearch . ir 
+. searcher import Searcher from pyimagesearch . ir . dists 
+import chi2 _ distance from scipy . spatial import distance 
+from redis import Redis from imutils . feature import FeatureDetector 
+_ create D e s c r i p t 
+o r E x t r a c t o 
+r _ create import numpy as np import progressbar import 
+argparse import pickle import imutils import json import cv2 ap 
+= argparse . ArgumentParser ap . add _ argument d 
+dataset required = True help = Path to the directory 
+of indexed images ap . add _ argument f features 
+db required = True help = Path to the features 
+database ap . add _ argument b bovw db required 
+= True help = Path to the bag of visual 
+words database ap . add _ argument c codebook required 
+= True help = Path to the codebook ap . 
+add _ argument i idf type = str help = 
+Path to inverted document frequencies array ap . add _ 
+argument r relevant required = True help = Path to 
+relevant dictionary args = vars ap . parse _ args 
+detector = FeatureDetector _ create SURF descriptor = D e 
+s c r i p t o r E x 
+t r a c t o r _ create RootSIFT 
+dad = D e t e c t A n 
+d D e s c r i b e detector 
+descriptor distanceMetric = chi2 _ distance idf = None if 
+args idf is not None idf = pickle . loads 
+open args idf rb . read distanceMetric = distance . 
+cosine vocab = pickle . loads open args codebook rb 
+. read bovw = BagOfVisualWords vocab redisDB = Redis host 
+= localhost port = 6379 db = 0 searcher = 
+Searcher redisDB args bovw _ db args features _ db 
+idf = idf distanceMetric = distanceMetric relevant = json . 
+loads open args relevant . read queryIDs = relevant . 
+keys accuracies = timings = widgets = Evaluating progressbar . 
+Percentage progressbar . Bar progressbar . ETA pbar = progressbar 
+. ProgressBar maxval = len queryIDs widgets = widgets . 
+start for i queryID in enumerate sorted queryIDs queryRelevant = 
+relevant queryID p = { } / { } . 
+format args dataset queryID queryImage = cv2 . imread p 
+quertImage = imutils . resize queryImage width = 320 queryImage 
+= cv2 . cvtColor queryImage cv2 . COLOR _ BGR2GRAY 
+_ descs = dad . describe queryImage hist = bovw 
+. describe descs . tocoo sr = searcher . search 
+hist numResults = 4 results = set r 1 for 
+r in sr . results inter = results . intersection 
+queryRelevant accuracies . append len inter timings . append sr 
+. search _ time pbar . update i searcher . 
+finish pbar . finish accuracies = np . array accuracies 
+timings = np . array timings print INFO ACCURACY u 
+= { . 2f } o = { . 2f 
+} . format accuracies . mean accuracies . std print 
+INFO TIMINGS u = { . 2f } o = 
+{ . 2f } . format timings . mean timings 
+. std 

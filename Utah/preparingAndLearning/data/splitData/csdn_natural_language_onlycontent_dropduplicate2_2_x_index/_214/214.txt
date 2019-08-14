@@ -1,0 +1,86 @@
+开源NLP自然语言处理工具集锦
+现状
+首先看看目前常用的分词系统：
+No
+Name
+Feature
+1
+BosonNLP
+http://bosonnlp.com/
+2
+IKAnalyzer
+http://git.oschina.net/wltea/IK-Analyzer-2012FF
+3
+NLPIR
+http://ictclas.nlpir.org/
+4
+SCWS
+http://www.xunsearch.com/scws/
+5
+结巴分词
+http://www.oschina.net/p/jieba
+6
+盘古分词
+http://pangusegment.codeplex.com/
+7
+庖丁解牛
+http://zengzhaoshuai.iteye.com/blog/986314
+8
+搜狗分词
+http://www.sogou.com/labs/webservice/
+9
+腾讯文智
+http://nlp.qq.com/
+10
+新浪云
+http://www.sinacloud.com/doc/sae/php/storage.html
+11
+语言云
+http://www.ltp-cloud.com/demo/
+博主也是刚开始接触分词，使用的不多，目前看来市场上用的比较多的是中科院的NLPIR分词系统，大家可以在官网上下载试用（貌似是一个月 (～￣▽￣)），然后就被无情的提示license过期。这时只需要在git上下载新的license替换旧license就好啦~
+ps.每次更新license有效期一个月，所以大家勤动手吧！
+BosonNLP
+和大多数的NLP工具一样，玻森的处理能力大概就以上几种。
+分词与词性标注
+大家可以点击链接浏览词性分析的文档。博主摘取部分关键信息如下：
+1）分词和词性标注联合枚举的方法
+2）开放API接口
+3）基于序列标注实现的，以词为单位对句子进行词边界和词性的标注，即基于字符串匹配的方法。
+4）结合上下文识别生词
+5）加入了对url、email等特殊词的识别
+6）对词性标签进行调整和优化，实现了更细的标签划分（22个大类，69个标签）
+7）对训练语料进行修正
+8）加入繁简转化，可以处理繁体中文或者繁简混合的中文句子
+9）多种分词选项：
+空格保留选项
+新词枚举强度选项
+繁简转换选项
+特殊字符转换选项
+下面看一下玻森的免费使用次数：
+可见除了词性分析比较多以外，其他的均为500次。(；′⌒`)
+我们这里额外讲解一下rest api——表述性状态转移（Representational State Transfer），它是一种设计风格而非标准，通常基于使用http、uri、xml、以及html这些现有的广泛流行的协议和标准。
+想深入了解的童鞋可以查看下面的链接：
+Rest API开发学习笔记——by spring yang
+Rest——维基百科
+情感分析
+这是情感分析返回的结果，可见我们查询了两句话，每句话的前面是正面概率，后面是消极概率。
+这里提供一个curl的下载链接：
+CURL官方网址
+新闻分类
+时间转换
+这个在博主看来还是很有意思的，它可以将中文描述的时间短语转换为三种标准的时间格式字符串—：
+1) 时间点（timestamp，表示某一具体时间时间描述）;
+2) 时间量（timedelta，表示时间的增量的时间描述）;
+3)时间区间（timespan，大于一天的有具体起始和结束时间点的时间描述）
+新闻摘要
+摘要系统提供4个输入选项：
+- 新闻标题
+- 新闻正文
+- 字数限制
+- 是否为严格字数限制
+文本聚类引擎
+看到可以文本聚类的时候，博主是很激动的，因为毕设就一直在折腾这个！
+文档中说：该引擎能够对给定的文本进行话题聚类，将语义上相似的文章归为一类
+IKAnalyzer
+点击 IKAnalyzer 链接，可以看到最新的版本也是2012年的，实现的功能比较单一，感兴趣的童鞋可以看看。
+总之，玻森使用比较方便，个人认为界面简介明了，易于初学者使用。

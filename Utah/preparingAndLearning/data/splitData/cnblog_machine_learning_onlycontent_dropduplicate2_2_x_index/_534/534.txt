@@ -1,0 +1,76 @@
+所有文章分类的总目录：http://www.cnblogs.com/asxinyu/p/4288836.html
+微软Infer.NET机器学习组件：http://www.cnblogs.com/asxinyu/p/4329742.html
+关于本文档的说明
+本文档基于Infer.NET 2.6对Infer.NET User Guide进行中文翻译，但进行了若干简化和提炼，按照原网站的思路进行，但不局限与其顺序。
+欢迎传播分享，必须保持原作者的信息，但禁止将该文档直接用于商业盈利。
+本人正在研究基于Infer.NET组件，并计划将其应用于实际的预测之中，该组件功能强大，封装很完善，但也有很多难以理解的地方，同时官方也给出了大量的例子，限于个人精力有限，更新时间较慢，也希望有兴趣的朋友一起来完成该项工作。
+Email：asxinyu@qq.com
+本文章地址： http://www.cnblogs.com/asxinyu/p/InferNet_Demo_Learner_1.html
+1.基本介绍
+一个 "learner"是一个完整的机器学习应用解决方案，例如分类系统或者推荐系统。这些 Learners都能够直接在命令行或者.NET程序中调用，而无须学习Infer.NET的 API接口. 每一个learner都包括训练，预测以及评估能力。Learners的源代码包括了一些综合使用Infer.NET 的构建复杂稳定的机器学习功能程序的例子。本文是在前一篇文章基础上进行介绍。本文英文原文地址：原文
+2.标准数据格式的映射
+我们一起回顾以下分类器映射接口IClassifierMapping ，它声明了4个方法:
+2.1 GetInstances
+IEnumerable<TInstance> GetInstances(TInstanceSource instanceSource);
+GetInstances方法手动给学习者提供了实例样本集(培训或测试集)，可以在训练和预测中使用。此外,这两个泛型类型,TInstance TInstanceSource,可以自由选择。例如,TInstance可能被绑定到一个类提供的特性和标签;也可能引用或索引到这样一个类的一个对象。为了配合缓存，贝叶斯机器分类器假设相同的实例源总是提供相同的实例。
+2.2 GetFeatures
+TFeatures GetFeatures(     TInstance instance,      TInstanceSource instanceSource = default(TInstanceSource));
+GetFeatures 为指定的样本实例提供所有特征值(指标)。这种方法也同样用在训练和预测中。注意，如果实例本身包含一个对应的特征值，则没有必要指定源。贝叶斯机器分类器需要将TFeatures绑定到 MicrosoftResearch.Infer.Maths.Vector中。为了配合缓存，GetFeatures假设相同的实例源总是提供相同的实例。你可能想给所有实例添加一个恒定的特性，如添加1个特征值一直为1的特征。这将使分类器具有特性值转移的不变性(通过为每个类添加一个预期值)。此外,特性之间的相关性存在越少越好(高度相关特性可能导致训练算法的收敛速度慢)。
+2.3 GetLabel
+TLabel GetLabel(TInstance instance,      TInstanceSource instanceSource = default(TInstanceSource),      TLabelSource labelSource = default(TLabelSource));
+GetLabel提供了实例需要的实际数据的标签值(类别值)，这个方法在训练的过程中被调用。一个标签的来源如果独立与实例源，将会更灵活，因为在某些实际情况中，实际的数据源特性和标签值可能是分开的。如果实例本身包括了标签的数据，那么这里的就可以省略了。为了缓存标签数据和避免转换为本地数据格式的带来的损失，贝叶斯机器分类器假设对于相同的实例调用GetLabel都获取相同的标签。
+2.4 GetClassLabels
+IEnumerable<TLabel> GetClassLabels(     TInstanceSource instanceSource = default(TInstanceSource),      TLabelSource labelSource = default(TLabelSource));
+GetClassLabels方法可以获取分类数据中所有标签数据集。它不仅包括确定当前任务有多个标签，还可以获取对应标签的类型标签。在最简单的情况下,当标签是Bool类型时，GetClassLabels 将返回{true，false}。GetClassLabels可以在分类过程中保证每一个类型的标签都是有效的。IClassifierMapping接口需要这种方法,是因为通常情况下，它有可能不能推出完整的样本标签集合，也就是说,训练集或测试集可能并不包含所有标签类型。
+由于可以很灵活的选择合适的数据类型TInstance,TInstanceSource,TLabelSource和TLabel(TFeatures需要Vector类型)，一般直接提供一个简单、高效的IClassifierMapping接口实现就可以了，所以提供标准的数据格式是一个使用分类器非常方便的方法。正如前面提到的,贝叶斯机器分类器最终需要将标准的数据格式的转换为Infer.NET算法可以接受的本地数据格式。然而,在很多情况下,在程序中使用本地数据格式要比需要转换的标准数据格式更加有用。IClassifierMapping的一个实现的例子就是本教程前面的性别预测的例子。
+3.本地数据格式映射
+IBayesPointMachineClassifierMapping接口提供可以由贝叶斯机器分类在训练和预测过程中不需要转换的数据格式，因此这个提供的格式也被称为本地数据格式。
+本机数据格式有两个不同的表示方法:密集和稀疏。密集表示单个实例相关联的所有特征值都存储在一个double数组，而稀疏表示包含所有非零特征值和相应的索引。这2种表示方法产生的结果是相同的，只是计算的代价有差别。在训练和预测数据包括很多0特征值的矩阵比对应的稀疏矩阵要快一些。
+除了特征值的表示功能，本机数据格式还可以修复标签的类型。在二分类问题中，标签值必须是布尔类型，在多分类问题时，标签必须从0开始的连续整数。通过原生格式提供数据需要实现下面8个方法:
+1.IsSparse：IsSparse表示是否以稀疏矩阵存储，注意该特征是不能修改的。
+bool IsSparse(TInstanceSource instanceSource);
+2.GetFeatureCount:GetFeatureCount获取分类数据中多少个特征。当使用稀疏矩阵表示时，需要建立对应的推理算法。
+int GetFeatureCount(TInstanceSource instanceSource);
+3.GetClassCount:GetClassCount 返回实例中所有类别标签总数。
+int GetClassCount(     TInstanceSource instanceSource = default(TInstanceSource),      TLabelSource labelSource = default(TLabelSource));
+上述三种方法都是用于设置贝叶斯机器分类器的特征和标签的有效性。他们都在训练和预测过程中被调用。IsSparse和GetFeatureCount方法可以从GetFeatureValues和GetFeatureIndexes中确定部分返回值。下面两个方法在单个对象的预测中给单个实例传递特征值。他们的返回值不会被缓存。
+4.GetFeatureValues (single-instance):GetFeatureValues返回给定实例的一个特征值数组。如果是以稀疏特性表示的(例如IsSparse返回true)，这个方法只返回给定实例的所有相关非零特征值。如果表示是非稀疏表示，GetFeatureValues会返回所有的特征值，而不管他们是不是是否他们是零。
+double[] GetFeatureValues(     TInstance instance,      TInstanceSource instanceSource = default(TInstanceSource));
+5.GetFeatureIndexes (single-instance):GetFeatureIndexes方法如果实例是以非稀疏矩阵表示，则返回null，否则返回一个返回非零特征值对应的特征指数的数组。(??)，因此，给训练和测试算法有两种提供特性值和其索引的方法。在训练时,实例可能被进一步分成多个子集(称为批次)，可以不直接从内存出处理全部数据。不使用批次，也大部分使用以下两个方法。
+int[] GetFeatureIndexes(TInstance instance,      TInstanceSource instanceSource = default(TInstanceSource));
+6.GetFeatureValues (multi-instance):GetFeatureValues返回每个实例指定的批处理的实例的特性值(相对于是返回指定批次的特征值)。默认情况下,假定所有实例的特性和标签都是在一个处理中进行。如果这是很困难，可能是因为需要太多内存,贝叶斯机器分类器允许将训练数据映射为多个批次进行(设置BatchCount属性)。实例将运行索引从0到BatchCount - 1的批处理。训练的多个批次处理设置参考IterationCount。
+double[][] GetFeatureValues(     TInstanceSource instanceSource, int batchNumber = 0);
+7.GetFeatureIndexes (multi-instance):如果以稀疏矩阵标准，GetFeatureIndexes返回null；否则返回指定实例上指定批次的特征索引。对同一批次的实例，这要与GetFeatureValues返回的特征值一致。IBayesPointMachineClassifierMapping最后一个方法是提供真实标签值：
+int[][] GetFeatureIndexes(TInstanceSource instanceSource, int batchNumber = 0);
+8.GetLabels:getlabel提供给定实例或者标签数据源的实际标签类别值。注意，TLabel在二分类中是bool类型，在多份类中是int类型。在预测中不需要实用该方法。
+TLabel[] GetLabels(TInstanceSource instanceSource,      TLabelSource labelSource = default(TLabelSource),      int batchNumber = 0);
+MicrosoftResearch.Infer.Learners.BayesPointMachineClassifierInternal命名空间中的NativeClassifierMapping类及其子方法是实现IBayesPointMachineClassifierMapping接口的例子。这些IClassifierMapping类的封装展示了如何从标准的数据格式转换为本地数据的过程，以及如何在训练中分批次的缓存数据。
+4.评估数据格式映射
+一个简单的评估测试分类器性能的方法是使用evaluator。Evaluator通过一个实现IClassifierEvaluatorMapping映射接口的实例来读取真是的标签值，由于Evaluator独立于特定分类器要求的具的数据格式，如贝叶斯分类器的IClassifierEvaluatorMapping本质上声明了一个通用的标准数据格式映射IClassifierMapping接口,只是没有GetFeatures方法。而预测输入参数的评价方法,不要通过映射。
+5.创建与序列化
+5.1 创建贝叶斯分类器
+一旦创建映射的实例，就可以根据分类问题的类型，调用下面2个工厂方法，很容易的创建一个贝叶斯机器分类器。
+BayesPointMachineClassifier.CreateBinaryClassifier (二类问题) BayesPointMachineClassifier.CreateMulticlassClassifier (多类问题)
+另外,这两种方法都有两个版本,一个是将输入映射到本地数据格式，一个是将输入映射到标准数据格式，分别实现IBayesPointMachineClassifierMapping和IClassifierMapping接口。工厂方法返回IBayesPointMachineClassifier类型的分类器,为训练和预测提供一些适当设置。
+例如，假设我们已经实现一个从SQL数据库到贝叶斯机器分类所需的本地数据格式的映射SqlNativeMapping，可以很简单的创建一个多分类器问题的分类器：
+var mapping = new SqlNativeMapping(); var classifier = BayesPointMachineClassifier.CreateMulticlassClassifier(mapping);
+创建贝叶斯机器分类器的操作是很简单的，不需要数据输入相关计算。
+5.2 序列化
+序列化是通过ILearner接口的Save扩展方法实现的。该方法有2个重载版本，1个是在文件，1个是在格式化的流。训练和未训练的分类器都可以被序列化和反序列化。序列化一个贝叶斯机器分类器到一个文件的调用程序如下：
+classifier.Save("bpm.bin");
+该程序序列化分类器的参数和用户定义的映射。它不序列化任何训练数据也没有附加任何事件处理程序。
+5.3 反序列化
+通过调用BayesPointMachineClassifier的一个静态方法可以加载一个之前被序列化的分类器。和保存方法类似，也可以从一个文件或者格式化流中反序列化一个分类器。
+var classifier = BayesPointMachineClassifier.Load         <SqlInstanceSource, Instance, SqlLabelSource, int, Discrete,         BayesPointMachineClassifierTrainingSettings,        MulticlassBayesPointMachineClassifierPredictionSettings<int>>("bpm.bin");
+上述方法需要的泛型参数如下：
+l TInstanceSource ：源实例的类型
+l TInstance ：单个实例的类型
+l TLabelSource ：源标签的类型
+l TLabel ：单个标签的类型(贝叶斯分类器有2种，2类为bool,多类为Int)
+l TLabelDistribution ：标签的分布类型
+l TTrainingSettings：训练设置类型
+l TPredictionSettings ：预测设置类型，分二类问题和多类问题，预测设置的类型是不一样。(BinaryBayesPointMachineClassifierPredictionSettings
+和 MulticlassBayesPointMachineClassifierPredictionSettings).
+反序列化的泛型参数必须和分类器序列化时的参数精确匹配。同样在反序列化时，将执行版本检查程序，如果序列化的版本不匹配，将抛出一个异常。然而，很多情况下，为了方便，存在很多方法并不需要很多具体的泛型类型，如：
+var classifier = BayesPointMachineClassifier.LoadMulticlassClassifier         <SqlInstanceSource, Instance, SqlLabelSource, int, Discrete>("bpm.bin");
+这和前面的从文件反序列化多类贝叶斯机器分类器是等价的。

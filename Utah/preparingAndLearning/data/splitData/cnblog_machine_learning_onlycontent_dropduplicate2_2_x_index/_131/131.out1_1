@@ -1,0 +1,825 @@
+https / / blog . csdn . net / luyao 
+_ cxy / article / details / 82383091 转载 https 
+/ / blog . csdn . net / qq _ 
+27297393 / article / details / 82284384 机器学习 一 人工智能 
+机器学习 与 深度 学习 人工智能 机器学习 经典 机器学习 基于 神经 
+网络 的 机器学习 浅层 学习 深层 学习 深度 学习 强化 
+学习 迁移 学习 二 机器学习/i 基本/n 类型/n 1/m ./i 有/v 
+监督/vn 学习/v 有/v 监督/vn 学习/v 根据 已知 的 输入 和 
+输出 建立联系 它们 的 模型 根据 该 模型 对 未知 
+输出 的 输入 进行 判断 1 回归 以 无限 连续 
+域 的 形式 表示 输出 2 分类 以 有限 离散 
+域 的 形式 表示 输出 2 . 无 监督 学习 
+无 监督 学习 在 一组 没有 已知 输出 标签 的 
+输入 中 根据 数据 的 内部 特征 和 联系 找到 
+某种 规则 进行 族群 的 划分 聚 类 3 . 
+半 监督 学习 半 监督 学习 从/p 一个/m 相对/d 有限/a 
+的/uj 已知/v 结构/n 中/f 利用/n 有/v 监督/vn 学习/v 的/uj 方法/n 
+构建 基本 模型 通过 对 未知 输入 和 已知 输入 
+的 比对 判断 其 输出 扩展 原有 的 已知 领域 
+三 机器 学习 的 基本 过程 数据采集 数据 清洗 数据 
+预处理 选择 模型 训练 模型 测试 模型 使用 模型 原材料 
+            去除 杂质     
+  准备                 
+            算法       
+              规则     
+          检验         
+            业务 生产 四 数据 
+预处理 一列 一 特征 | v 一行 一 样本 x 
+x x x x \           
+                    
+    y y yx x x x x   
+| 样本 矩阵   y y yx x x x 
+x /                 
+                  y 
+y y 姓名       年龄       
+身高       体重       张飞   
+    22             1.75 
+    60 赵云       20     
+        1.80     70 1 . 
+均值 移除 为了 统一 样本 矩阵 中 不同 特征 的 
+基准值 和 分散度 可以 将 各个 特征 的 平均值 调整 
+为 0 标准差 调整 为 1 这个 过程 称为 均值 
+移除 a b cm = a + b + c 
+/ 3a m b m c mm = a m 
++ b m + c m / 3 = a 
++ b + c / 3 3m / 3 = 
+0A B Cs = sqrt A ^ 2 + B 
+^ 2 + C ^ 2 / 3 A / 
+s B / s C / ss = sqrt A 
+^ 2 / s ^ 2 + B ^ 2 
+/ s ^ 2 + C ^ 2 / s 
+^ 2 / 3 = sqrt A ^ 2 + 
+B ^ 2 + C ^ 2 / s ^ 
+2/3 = sqrt s ^ 2 / s ^ 2 
+= 1sklearn . preprocessing . scale 原始 样本 矩阵 均值 
+移除 后的/nr 样本 矩阵 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ std . py2 . 范围 缩放 统一 样本 矩阵 
+中 不同 特征 的 最大值 和 最小值 范围 k x 
++ b = yk min + b = min k 
+max + b = max sklearn . preprocessing . MinMaxScaler 
+feature _ range = 期望 最 小和 最大值 范围 缩放 
+器 范围 缩放 器 . fit _ transform 原始 样本 
+矩阵 范围 缩 放后 的 样本 矩阵 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / mms . py3 . 归一化 归一化 
+为了 用 占 比 表示 特征 用 每个 样本 的 
+特征值 除 以该 样本 的 特征值 绝对值 之和 以使 每个 
+样本 的 特征值 绝对值 之和 为 1Python Java C / 
+C + + PHP2016 30           
+      50         40   
+            20       
+30/1402017 20                 
+30         20         
+      10       20 / 80sklearn 
+. preprocessing . normalize 原始 样本 矩阵 norm = l1 
+归一化 后的/nr 样本 矩阵 l1 即 L1 范数 矢量 中 
+各 元素 绝对值 之和 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ nor . py4 . 二 值 化二 值 化 
+用/p 0/m 和1来/nr 表示/v 样本/n 矩阵/n 中/f 相对/d 于/p 某个/r 
+给定/v 阈值/n 高于/v 或者/c 低于/v 它/r 的/uj 元素/n sklearn . 
+preprocessing . Binarizer threshold = 阈值 二 值 化器 二 
+值 化器 . transform 原始 样本 矩阵 二 值 化 
+后的/nr 样本 矩阵 参考 代码 https / / github . 
+com / hilqiqi0 / AI / tree / master / 
+6 . ML / code / Machine % 20Learning / 
+bin . py5 . 独 热 编码 1     
+          3         
+      27             
+  5               41 
+              8     
+          67         
+      3             
+  91 10   3 100 2 10007 01   
+5 010 4 01008 001 6 00109 00011 0 1 
+0 0 1 0 0 00 1 0 1 0 
+0 1 0 01 0 0 0 1 0 0 
+1 00 1 1 0 0 0 0 0 1sklearn 
+. preprocessing . OneHotEncoder sparse = 是否 使用 压缩 格式 
+dtype = 元素 类型 独 热 编码器 独 热 编码器 
+. fit _ transform 原始 样本 矩阵 独 热 编码 
+后的/nr 样本 矩阵 同时 构建 编 码表 字典 独 热 
+编码器 . transform 原始 样本 矩阵 独 热 编码 后的/nr 
+样本 矩阵 使用 已有 编 码表 字典 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / ohe . py6 . 标签 编码 
+标签 编码 将 字符 形式 的 特征值 映射 为 整数 
+sklearn . preprocessing . LabelEncoder 标签 编码器 标签 编码器 . 
+fit _ transform 原始 样本 矩阵 编码 样本 矩阵 构建 
+编码 字典 标签 编码器 . transform 原始 样本 矩阵 编码 
+样本 矩阵 使用 编码 字典 标签 编码器 . inverse _ 
+transform 编码 样本 矩 原始 样本 矩阵 使用 编码 字典 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / lab . py 
+五 线性 回归 m 个 输入 样本 m 个 输出 
+标签 x1 y1x2 y2x3 y3 xm ymxk + b y1 
+. 预测 函数 预测 函数 联系 输出 和 输入 的 
+数学 函数 y = kx + b 其中 的 k 
+和b/nr 称为 模型 参数 根据 已知 输入 样本 和 对应 
+的 输出 标签 来 训练 得出 2 . 均方 误差 
+均方 误差 每一个 已知 输入 样本 所 对应 的 实际 
+输出 标签 和由/nr 模型 预测 出来 的 输出 标签 之间 
+的 误差 平方 的 平均值 kx1 + b = y1 
+kx2 + b = y2 kx3 + b = y3 
+kxm + b = ym y1 y1 ^ 2 + 
+y2 y2 ^ 2 + y3 y3 ^ 2 + 
++ ym ym ^ 2 m3 . 成本 函数 成本 
+函数 将 均方 误差 看作 是 关于 模型 参数 的 
+函数 谓之 成本 函数 记 做 J k b 线性 
+回归 问题 的 本质 就是 寻找 能够 使 成本 函数 
+J k b 极小值 的 模型 参数 4 . 梯度 
+下降 loss = J k b 5 . 接口 sklearn 
+. linear _ model . LinearRegression 线性 回归 器 线性 
+回归 器 . fit 输入 样本 输出 标签 线性 回归 
+器 . predict 输入 样本 预测 输出 标签 6 . 
+复用 通过 pickle 将 内存 中的 模型 对象 写入 磁盘 
+文件 或 从 磁盘 文件 载入 内存 以此 保存 训 
+练好 的 模型 以备 复用 参考 代码 https / / 
+github . com / hilqiqi0 / AI / tree / 
+master / 6 . ML / code / Machine % 
+20Learning / line . py 参考 代码 https / / 
+github . com / hilqiqi0 / AI / tree / 
+master / 6 . ML / code / Machine % 
+20Learning / save . py 参考 代码 https / / 
+github . com / hilqiqi0 / AI / tree / 
+master / 6 . ML / code / Machine % 
+20Learning / load . py 六 岭回归 loss = J 
+k b + 正则 函数 样本 权重 x 正则 强度 
+惩罚 系数 sklearn . linear _ model . Ridge 正则 
+强度 fit _ intercept = 是否 修正 截距 max _ 
+iter = 最大 迭代 次数 岭回归 器 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / rdg . py 七 欠 拟合 
+与 过拟合 欠 拟合 无论 是 训练 数据 还是 测试数据 
+模型/n 给出/v 的/uj 预测/vn 值/n 和/c 真实/d 值/n 都/d 存在/v 
+较大/a 的/uj 误差/n 过拟合 模型 对于 训练 数据 具有 较高 
+的 精度 但对 测试数据 则 表现 极差 模型 过于 特殊 
+不够 一般 泛化 欠 拟合 – 模型 复杂度 – 过拟合 
+八 多项式 回归 x y           
+                    
+    y = kx + bx x ^ 2 
+y                   
+y = k1x ^ 2 + k2x + bx x 
+^ 2 x ^ 3 y   y = k1x 
+^ 3 + k2x ^ 2 + k3x + bsklearn 
+. preprocessing . P o l y n o m 
+i a l F e a t u r e 
+s 最高 次数 多项式 特征 扩展器 sklearn . pipeline . 
+make _ pipe 多项式 特征 扩展器 线性 回归 器 多项式 
+回归 器 x – 多项式 特征 扩展器 – x x 
+^ 2 x ^ 3 – 线性 回归 器 – 
+k1 k2 k3 – 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ poly . py 九 决策树 相似 的 输入 会有 
+相似 的 输出 0 专科       0 普通 
+        0 女     0 差 
+                    
+        0 低 1 本科     
+  1 985         1 男   
+  1 及格               
+        1 中 2 硕士     
+  2 211               
+              2 良好   
+                    
+2 高3/nr 博士               
+                    
+                    
+  3 优异 学历             
+院校         性别         
+  成绩                 
+    月薪 1             
+          0         
+        1           
+          2         
+                    
+      80000             
+          0         
+        0           
+          2         
+                    
+      70003             
+          1         
+        1           
+          3         
+                    
+      20000 1           
+            1       
+          0         
+            1       
+                    
+        回归 平均 分类 投票 优化 1 
+结合 业务 优先选择 有限 的 主要 特征 划分 子表 降低 
+决策树 的 高度 2 根据 香农定理 计算 根据 每 一个 
+特征 划分 子表 前后 的 信息 熵 差 选择 熵 
+减少量 最大 的 特征 优先 参与 子表 划分 3 集合 
+算法 根据 不同 方法 构建 多个 决策树 利用 它们 的 
+预测 结果 按照 取 均 回归 或 投票 分类 的 
+方法 产生 最终 的 预测 结果 A . 自助 聚合 
+采用 有 放回 抽样 的 规则 从m个/nr 样本 中 随机 
+抽取 n 个 样本 构建 一棵 决策树 重复 以上 过程 
+b 次 得到 b 棵 决策树 利用 每棵 决策树 的 
+预测 结果 根据 平均 或者 投票 得到 最终 预测 结果 
+B . 随机 森林 在 自助 聚合 算法 的 基础 
+上 更进一步 对 特征 也 应用 自助 聚合 即 每次 
+训练 时 不是 用 所有 的 特征 构建 树结构 而是 
+随机 选择 部分 特征 参与 构建 以此 避免 特殊 特征 
+对 预测 结果 的 影响 C . 正向 激励 初始 
+化时 针对 m 个 样本 分配 初始 权重 然后 根据 
+这个 带有 权重 的 模型 预测 训练样本 针对 那些 预测 
+错误 的 样本 提高 其 权重 再 构建 一棵 决策树 
+模型 重复 以上 过程 得到 b 棵 决策树 sklearn . 
+tree . D e c i s i o n 
+T r e e R e g r e s 
+s o r 决策树 回归 器 sklearn . ensemble . 
+A d a B o o s t R e 
+g r e s s o r 元 回归 器 
+n _ estimators = 评估器 数 radom _ state = 
+随机 种子 源 正向 激励 回归 器 sklearn . ensemble 
+. R a n d o m F o r 
+e s t R e g r e s s 
+o r max _ depth = 最大 树高 n _ 
+estimators = 评估器 数 min _ samples _ split = 
+划分 子表 的 最小 样本数 随机 森林 回归 器 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / house . py 决策树 
+模型 . feature _ importances _ 特征 重要性 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / fi . py 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / bike . py 十 简单 
+分类器 输入       输出 3     1 
+          02     5   
+        11     8     
+      16     4       
+    05     2         
+  03     5           
+14     7           14 
+  1         07     5 
+          0 参考 代码 https / 
+/ github . com / hilqiqi0 / AI / tree 
+/ master / 6 . ML / code / Machine 
+% 20Learning / simple . py 十一 逻辑 分类 1 
+. 预测 函数 x1 x2 y1y = – 1 + 
+e ^ zz = k1x1 + k2x2 + b2 . 
+成本 函数 交叉 熵 误差 J k1 k2 b = 
+sigma ylog y 1 y log 1 y / m 
++ m 正则 函数 | | k1 k2 b | 
+| x 正则 强度 x x 0.9 1x x 0.2 
+0sklearn . linear _ model . L o g i 
+s t i c R e g r e s 
+s i o n solver = liblinear C = 正则 
+强度 A     B       C A 
+1 0.9 0.1 0.3 A B 0 0.3 0.6 0.4 
+B C 0 0.1 0.2 0.6 C 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / mlog . c 十二 朴素 贝叶斯 
+分类 x x x   0x x x   1x 
+x x   0x x x   0x x x 
+  1x x x   2x x x   1x 
+x x   0x x x   2 1 9 
+x   0 0.8 1 0.9 * 2 0.71 . 
+贝叶 斯定理 P A P B | A P A 
+| B = P B 2 . 朴素 贝叶斯 分类 
+求 X 样 本属于 C 类别 的 概率 即 当 
+观察到 X 样本 出现 时 其 所属 的 类别 为 
+C 的 概率 P C | X = P C 
+P X | C / P X P C P 
+X | C = P C X = P C 
+x1 x2 xn = P x1 x2 xn C = 
+P x1 | x2 xn C P x2 x3 xn 
+C = P x1 | x2 xn C P x2 
+| x3 xn C P x3 x4 xn C = 
+P x1 | x2 xn C P x2 | x3 
+xn C P x3 | x4 xn C P C 
+朴素 条件 独立 假设 即 样本 各个 特征 之间 并 
+无 关联 不 构成 条件 约束 = P x1 | 
+C P x2 | C P x3 | C P 
+C X 样 本属于 C 类别 的 概率 正比 于C/nr 
+类别 出现 的 的 概率 乘以 C 类别 条件 下 
+X 样本 中 每一个 特征值 出现 的 概率 之 乘积 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / nb . py3 
+. 划分 训练 集 和 测试 集 sklearn . model 
+_ selection . train _ test _ split 输入 集合 
+输出 集合 test _ size = 测试 集 占 比 
+random _ state = 随机 种子 源 训练 输入 测试 
+输入 训练 输出 测试 输出 参考 代码 https / / 
+github . com / hilqiqi0 / AI / tree / 
+master / 6 . ML / code / Machine % 
+20Learning / split . py4 . 交叉 验证 1 查准率 
+和 召回率 查准率 被 正确 识别 为 某 类别 的 
+样本 数 / 被 识别 为 该 类别 的 样本 
+数 正确性 对不对 召回率 被 正确 识别 为 某 类别 
+的 样本 数 / 该 类别 的 实际 样本数 完整性 
+全 不全 f1 _ score = 2x 查准率 x 召回率 
+/ 查准率 + 召回率 0 – 1 差     
+    好 sklearn . model _ selection . cross 
+_ val _ score 分类器 输入 集合 输出 集合 cv 
+= 验证 次数 scoring = 验证 指标 名称 验证 指标值 
+数组 ms . cross _ val _ score model x 
+y cv = 5 scoring = f1 _ weighted 0.6 
+0.8 0.4 0.7 0.6 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ cv . py5 . 混淆 矩阵 以 实际 类别 
+为 行 以 预测 类别 为 列 0     
+    1       20   45   
+    4       31   11   
+56       22       5   
+    6   49sklearn . metrics . confusion _ 
+matrix 实际 输出 预测 输出 混淆 矩阵 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / cm . py6 . 分类 报告 
+sklearn . metrics . classification _ report 实际 输出 预测 
+输出 分类 报告 参考 代码 https / / github . 
+com / hilqiqi0 / AI / tree / master / 
+6 . ML / code / Machine % 20Learning / 
+cr . py 十三 随机 森林 分类 1 . 评估 
+汽车 档次 参考 代码 https / / github . com 
+/ hilqiqi0 / AI / tree / master / 6 
+. ML / code / Machine % 20Learning / car 
+. py2 . 验证 曲线 f1 _ score = f 
+模型 对象 超 参数 验证 曲线 的 峰值 寻找 相对 
+理想 的 超 参数 model = se . R a 
+n d o m F o r e s t 
+C l a s s i f i e r 
+max _ depth = 8 n _ estimators = 200 
+random _ state = 7 ^ ^ ^ ^ ^ 
+^ ^ ^ ^ ^ ^ ^ model = se 
+. R a n d o m F o r 
+e s t C l a s s i f 
+i e r max _ depth = 8 random _ 
+state = 7 sklearn . model _ selection . validation 
+_ curve model x y n _ estimators 100 200 
+300 cv = 5 训练 集 得分 矩阵 测试 集 
+得分 矩阵 1       2       
+3       4       5100 0.7 
+0.9 0.6 0.8 0.7200 300 参考 代码 https / / 
+github . com / hilqiqi0 / AI / tree / 
+master / 6 . ML / code / Machine % 
+20Learning / vc . py3 . 学习曲线 f1 _ score 
+= f 训练 集 大小 sklearn . model _ selection 
+. learning _ curve model x y 训练 集 大小 
+数组 cv = 5 训练 集 大小 数组 训练 集 
+得分 矩阵 测试 集 得分 矩阵 参考 代码 https / 
+/ github . com / hilqiqi0 / AI / tree 
+/ master / 6 . ML / code / Machine 
+% 20Learning / lc . py 十四 支持 向量 机 
+SVM 1 . 分类 边界 同时 满足 四 个 条件 
+A . 正确 分类 B . 支持 向 量到 分类 
+边界 的 距离 相等 C . 间距 最大 D . 
+线性 直线 平面 2 . 升 维 变换 对于 在 
+低维 度空间 中 无法 线性 划分 的 样本 通过 升 
+维 变换 在 高纬 度空间 寻找 最佳 线性 分类 边界 
+核 函数 用于 对 特征值 进行 升 维 变换 的 
+函数 多项式 核 函数 径向 基 核 函数 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / svm _ line . py 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / svm _ poly 
+. py 参考 代码 https / / github . com 
+/ hilqiqi0 / AI / tree / master / 6 
+. ML / code / Machine % 20Learning / svm 
+_ rbf . py3 . 权重 均衡化 样本 数量 相差悬殊 
+时 当 不同 类别 的 样本 数量 相差悬殊 时 样本 
+数 较少 的 类别 可能 被 支持 向量 机 分类器 
+忽略 为此 可以 将 class _ weight 参数 指定 为 
+balanced 通过 调节 不同 类别 样本 的 权重 均衡化 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / svm _ balanced . 
+py4 . 置信 概率 svm . SVC probability = True 
+支持 向量 机 分类器 . predict _ proba 输入 样本 
+置信 概率 矩阵 类别 1   类别 2 样本 1 
+  0.99       0.01 样本 2   0.02 
+      0.98 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ svm _ prob . py5 . 最优 超 参数 
+sklearn . model _ selection . GridSearchCV 模型 参 数组 
+合表 cv = 交叉 验证 次数 最优 模型 对象 参 
+数组 合表 { 参 数名 取值 列表 } { } 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / bhp . py 
+事件 预测 参考 代码 https / / github . com 
+/ hilqiqi0 / AI / tree / master / 6 
+. ML / code / Machine % 20Learning / evt 
+. py2     43     64     
+8 y = kx + b 利用 支持 向量 机 
+回归模型 预测 交通流量 参考 代码 https / / github . 
+com / hilqiqi0 / AI / tree / master / 
+6 . ML / code / Machine % 20Learning / 
+trf . py 十五 聚 类 1 . K 均值 
+根据 事先 给定 的 聚 类 数 为 每个 聚 
+类 随机 分配 中心点 计算 所有 样本 与 各个 中心点 
+的 距离 将 每个 样本 分配 到 与其 距离 最近 
+的 中心 点 所在 的 聚 类 中 计算 每个 
+聚 类 的 几何 中心 用 该 几何 中心 作为 
+新的 聚 类 中心 重新 划分 聚 类 直到 计算出 
+的 几何 中心 与 上一次 聚 类 使用 的 聚 
+类 中心 重合 或者 足够 接近 为止 聚 类 数 
+必须 事先 已知 从 业务 中 找 选择 最 优化 
+指标 聚 类 结果 会受 样本 比例 的 影响 聚 
+类 中心 的 初始 位置 会 影响 聚 类 结果 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / km . py 
+图像 量化 参考 代码 https / / github . com 
+/ hilqiqi0 / AI / tree / master / 6 
+. ML / code / Machine % 20Learning / quant 
+. py2 . 均值 漂移 把 训练样本 看成 服从 某种 
+概率密度函数 规则 的 随机分布 在 不断 迭代 的 过程 中 
+试图 寻找 最佳 的 模式匹配 该 密度 函数 的 峰值 
+点 就是 聚 类 的 中心 为 该 密度 函数 
+所 覆盖 的 样本 即 隶属于 该 聚 类 不 
+需要 实现 给 定聚 类 数 算法 本身 具有 发现 
+聚 类 数量 的 能力 参考 代码 https / / 
+github . com / hilqiqi0 / AI / tree / 
+master / 6 . ML / code / Machine % 
+20Learning / shift . py3 . 凝聚 层次 凝聚 层次 
+聚 类 可以 是 自下而上 聚 也 可以 是 自上而下 
+分 的 在 自下而上 的 算法 中 每个 训练样本 都被 
+看做 是 一个 单独 的 集群 根据 样本 之间 的 
+相似 度 将其 不断 合并 直到 集群 数 达到 事先 
+指定 的 聚 类 数 为止 在 自上而下 的 算法 
+中 所有 训练样本 被 看做 是 一个 大 的 聚 
+类 根据 样本 之间 的 差异 度 将其 不断 拆分 
+直到 集群 数 达到 指定 的 聚 类 数 为止 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / agglo . py 
+凝聚 层次 算法 不同 于 其它 基于 中心 的 聚 
+类 算法 用 它 对 一些 在 空间 上 具有 
+明显 连续性 但 彼此 间 的 距离 未必 最近 的 
+样本 可以 优先 聚集 这样 所 构成 的 聚 类 
+划分 就 能够 表现 出 较强 的 连续 特性 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / spiral . py4 . 
+DBSCAN 朋友 的 朋友 也 是 朋友 从 任何 一个 
+训练样本 出发 以 一个 事先 给定 的 半径 做 圆 
+凡是 不 在此 圆 之外 的 样本 都与 圆心 样本 
+同类 再以 这些 同类 样本 为 中心 做 圆 重复 
+以上 过程 直到 没有 新的 同类 样本 加入 该 聚 
+类 为止 以此类推 获得 样本空间 中 的 所有 聚 类 
+那些 不属于 任何 聚 类 的 样本 被 称为 偏离 
+样本 位于 聚 类 边缘 的 样本 则 成为 外周 
+样本 其余 统一 称为 核心 样本 参考 代码 https / 
+/ github . com / hilqiqi0 / AI / tree 
+/ master / 6 . ML / code / Machine 
+% 20Learning / dbscan . py5 . 轮廓 系数 表示 
+聚 类 划 分内 密 外 疏 的 程度 轮廓 
+系数 有 一下 两个 指标 构成 a 一个 样本 与 
+其 所在 聚 类 其它 样本 的 平均 距离 b 
+一个 样本 与 其 距离 最近 的 另一个 聚 类 
+中 样本 的 平均 距离 针对 这个 一 个 样本 
+的 轮廓 系数 s = b a / max a 
+b 针对 一个 数据集 其 轮廓 系数 就是 其中 所有 
+样本 的 轮廓 系数 的 平均值 轮廓 系数 的 值 
+介于 1 1 区间 1 表示 完美 聚 类 1 
+表示 错误 聚 类 0 表示 聚 类 重叠 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / score . py 十六 
+推荐 引擎 1 . 管线 输入 学习 模型 1 输出 
+学习 模型 2 输出 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ map . py 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ reduce . py 输入 | vdef 学习 模型 1 
+参数 return 返回值 | v 输出 – + | vdef 
+学习 模型 2 参数 return 返回值 | v 输出 所谓 
+管线 其 本质 就是 函数 的 级联 调用 即用 一个 
+函数 的 返回值 作为 另一个 函数 的 参数 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / cc1 . py 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / cc2 . py 特征 选择器 
+随机 森林 分类器 参考 代码 https / / github . 
+com / hilqiqi0 / AI / tree / master / 
+6 . ML / code / Machine % 20Learning / 
+pipe . py2 . 寻找 最 近邻 FNN sklearn . 
+neighbors . NearestNeighbors n _ neighbors = 邻居 数 algorithm 
+= 算法 FNN 模型 ball _ tree FNN 模型 . 
+fit 已知 样本 集合 x x xx x x x 
+x x   11 x x x   23 x 
+x x   34 FNN 模型 . kneibhbors 待 求 
+样本 集合 距离矩阵 近邻 下标 索引 矩阵 x x x 
+    11 23 34     0.5 0.3 0.1 
+x x x     22 10 15     
+0.4 0.1 0.2               
+                    
+                参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / fnn . py3 . KNN 
+分类 和 回归 遍历 训练 集中 的 所有 样本 计算 
+每个 样本 与 待 测 样本 的 距离 并 从中 
+挑选 出 K 的 最近 邻 根据 与 距离 成反比 
+的 权重 做 加权 投票 分类 或 平均 回归 得到 
+待 测 样本 的 类别 标签 或 预测 数值 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / knnc . py 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / knnr . py4 . 
+欧氏 欧几里得 距离 x1 y1 x2 y2 _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+_ _ _ V x1 x2 ^ 2 + y1 
+y2 ^ 2 _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ 
+_ _ _ V x1 x2 ^ 2 + y1 
+y2 ^ 2 + z1 z2 ^ 2 a b 
+c A B C 1 欧氏距离 得分 = 1 + 
+欧氏距离 0 不相似 欧氏距离 得分 相似 1 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / es . py 用户 1   
+  用户 2     用户 3     用户 
+1                 1 
+          0.8         
+    0.9     用户 2       
+    0.8               
+  1             0.7   
+  用户 3 5 . 皮 尔逊 氏 距离 得分 
+用 两个 样本 的 协方差 1 1 表示 相似 度 
+A       B       C1   
+5       1         32 
+  10   0         5 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / ps . py 根据 
+样本 的 相似 程度 排序 参考 代码 https / / 
+github . com / hilqiqi0 / AI / tree / 
+master / 6 . ML / code / Machine % 
+20Learning / sim . py 生成 针对 每个 用户 的 
+推荐 列表 参考 代码 https / / github . com 
+/ hilqiqi0 / AI / tree / master / 6 
+. ML / code / Machine % 20Learning / rcm 
+. py 十七 文本 分析 import nltk 自然语言 工具包 1 
+. 分词 从 完整 的 文章 或 段落 中 划分 
+出 若干 独立 的 语义 单元 如 句 或者 词 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / tkn . py2 
+. 词干 提取 从 单词 中 抽取 主要 成分 未必 
+是 合法 的 词汇 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ stm . py3 . 词 型 还 原从 名词 
+或 动词 中 抽取 原型 成分 依然 保证 其 合法性 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / lmm . py4 
+. 词 袋 模型 the brown dog is runningthe black 
+dog is in the black roomruning in the room is 
+forbidden the brown dog is running black in room forbddden1 
+            1       
+1                   
+  1         1   1   
+                    
+  0               0 
+  0               02 
+            2       
+0                   
+  1         1   0   
+                    
+  2               1 
+    1             03 
+            1       
+0                   
+  0         1   1   
+                    
+  0               1 
+    1             1 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / bow . py5 
+. 词频 单词 在 句子 中 出现 的 次数 – 
+句子 的 总 单 词数 参考 代码 https / / 
+github . com / hilqiqi0 / AI / tree / 
+master / 6 . ML / code / Machine % 
+20Learning / tf . py6 . 词频 逆 文档 频率 
+TF IDF 总 样本数 词频 x 逆 文档 频率 = 
+词频 x 包含 该 单词 的 样本 数 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / tfidf . py1 文本 分类 
+核心问题 预测 xxxxxxxxxxxxxx 加解密 xxxxxxxxxxxxxx 摩托车 xxxxxxxxxxxxxx 棒球 xxxxxxxxxxxxxx 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / doc . py1 2 
+3 4 5 61 2 0 0 1 12 1 
+1 1 0 0 2 性别 识别 featuredo     
+malemy   femaleam   omneorne 参考 代码 https / / 
+github . com / hilqiqi0 / AI / tree / 
+master / 6 . ML / code / Machine % 
+20Learning / gndr . py3 情感 分析 xxx     
+  xxx       xxx     xxxTrue   
+False False True POSITIVE 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ sent . py4 主题词 抽取 import gensim . models 
+. ldamodelLDA Latent Dirichlet Allocation5 隐含 狄利克雷 分布 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / topic . py 十八 音频 
+识别 1 . 模拟 音频 和 数字音频 声带 机械振动 频率 
++ 响度 = 声场 强度 = f 时间 | v 
+耳朵 播放 器件 机械振动 电压 / 电流 = f 时间 
+| A / Dv . wav 文件 存储 数字音频 量化 
+采样 | v 传输 | v 回放 软件 | D 
+/ Av 电压 / 电流 = f 时间 播放 器件 
+机械振动 耳朵 2 . 借助 傅里叶 变换 提起 频率 特征 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / sig . py3 
+. 梅尔 频率 倒 谱 系数 在 频率 特征 的 
+基础上 结合 语音 的 特点 选择 主要 成分 MFCC 梅尔 
+频率 倒 谱 系数 关键 频率 1 关键 频率 2 
+关键 频率 3 时域 区间 1         
+      30             
+        40           
+            20       
+        apple 时域 区间 2     
+          10         
+            20       
+                50   
+            apple 时域 区间 3 
+              40     
+                30   
+                    
+60               apple 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / mfcc . py4 . 
+语音识别 HMM 隐 马尔科夫 模型 音频 样本 MFCC HMM 标签 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / spch . py 
+语音 数字音频 流 MFCC 学习 模型 文本 TFIDF 模型 | 
+语音识别 |                 
+                    
+            | |     
+                    
+                    
+    v |             
+                    
+          语义 | 自然语言 处理 | 
+| 语音 应答 语言 合成 十九 图像识别 1 . 机器 
+视觉 工具包 OpenCV Python 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ basic . py2 . 边缘 检测 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / edge . py3 . 通过 均衡 
+直 方 提升 亮度 参考 代码 https / / github 
+. com / hilqiqi0 / AI / tree / master 
+/ 6 . ML / code / Machine % 20Learning 
+/ eq . py4 . 角 点 检测 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / corner . py5 . star 
+特征 检测 参考 代码 https / / github . com 
+/ hilqiqi0 / AI / tree / master / 6 
+. ML / code / Machine % 20Learning / star 
+. py6 . sift 特征 检测 参考 代码 https / 
+/ github . com / hilqiqi0 / AI / tree 
+/ master / 6 . ML / code / Machine 
+% 20Learning / sift . py7 . 特征 描述 矩阵 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / desc . py8 
+. 图像识别 参考 代码 https / / github . com 
+/ hilqiqi0 / AI / tree / master / 6 
+. ML / code / Machine % 20Learning / obj 
+. py 二十 人脸识别 1 . 视频 捕捉 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / vidcap . py2 . 人脸 
+定位 基于 哈尔 级联 分类器 的 人脸 定位 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / haar . py3 . 人脸识别 
+基于 OpenCV 的 局部 二 值 模式 直方图 LBPH 模型 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / face . py 
+二十一 成分 分析 CA 1 . 主 成分 分析 PCA 
+参考 代码 https / / github . com / hilqiqi0 
+/ AI / tree / master / 6 . ML 
+/ code / Machine % 20Learning / np . py2 
+. sklearn 的 PCA 接口 N K K N import 
+sklearn . decomposition as dcmodel = dc . PCA n 
+_ components = K pca _ x = model . 
+fit _ transform x model . fit x # U 
+_ reducepca _ x = model . transform x # 
+Zipca _ x = model . inverse _ transform pca 
+_ x # X _ approxmodel . explained _ variance 
+_ ratio _ . sum 还原 率 0 1 0 
+还原 率 1 误差 越大     误差 越小 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / sk . py3 . 
+主 成分 分析 在 人脸识别 中的 应用 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / face1 . py 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / face2 . py 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / face3 . py 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / face4 . py 参考 代码 https 
+/ / github . com / hilqiqi0 / AI / 
+tree / master / 6 . ML / code / 
+Machine % 20Learning / face5 . py4 . 核 主 
+成分 分析 KPCA 对于 在 n 维空间 不可 线性 分割 
+的 样本 通过 核 函数 升 维 到 更高 维 
+度空间 再 通过 主 成分 分析 在 投射 误差 最小 
+的 前提 下 降到 n 维空间 即 寻找 可 线性 
+分割 的 投影面 达到 简化 分类 模型 的 目的 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / kpca . py 二十二 
+神经网络 1 . 神经元 权重 过滤 输入 信息 针对 不同 
+的 数据 提高 或者 降低 其 作用 和 影响 w1 
+w2 wn 偏置 没有 任何 输 入时 的 输出 b 
+激活 函数 将 线性 的 连续 的 输入 转换 为 
+非线性 的 离散 的 输出 sigmoid / tanh / relu 
+2 . 层 每 一层 可以 由 1 到 多个 
+神经元 组成 层 中的 神经元 接收 上 一层 的 输出 
+并为 下一层 提供 输入 数据 只能 在 相邻 层 之间 
+传递 不能 跨 层 传输 3 . 多层 神经网络 输入 
+层 接收 输入 样本 的 各个 特征 传递 给 第一 
+个 隐藏 层 本身 不 对 数据 进行 运算 隐藏 
+层 0 到 多个 通过 权重 偏置 和 激活 函数 
+对 所 接收 到 来自 上 一层 的 数据 进行 
+运算 O = f I x W + b 输出 
+层 功能 和 隐藏 相同 将 计算 结果 作为 输出 
+的 每一个 特征 若 隐藏 层 的 层数 多余 一层 
+则 可以 被 称为 深度 神经网络 通常 使用 的 深度 
+神经网络 其 隐藏 层数 可以 多 达 数十 甚至 上 
+百层 基于 这样 结构 的 学习 模型 被称为 深度 学习 
+4 . 最 简单 的 神经 网络 感知器 只由 输入 
+层 和 输出 层 组成 的 神经 网络 参考 代码 
+https / / github . com / hilqiqi0 / AI 
+/ tree / master / 6 . ML / code 
+/ Machine % 20Learning / neuron . py5 . 单层 
+多 输出 神经网络 参考 代码 https / / github . 
+com / hilqiqi0 / AI / tree / master / 
+6 . ML / code / Machine % 20Learning / 
+mono . py6 . 深度 两个 隐藏 层 神经网络 参考 
+代码 https / / github . com / hilqiqi0 / 
+AI / tree / master / 6 . ML / 
+code / Machine % 20Learning / deep . py7 . 
+OCR 字符识别 参考 代码 https / / github . com 
+/ hilqiqi0 / AI / tree / master / 6 
+. ML / code / Machine % 20Learning / ocrdb 
+. py 参考 代码 https / / github . com 
+/ hilqiqi0 / AI / tree / master / 6 
+. ML / code / Machine % 20Learning / ocr 
+. pyo m a n d i   ga   
+                  0 
+0   1 0 0 0 0i       
+                0 0 
+  0 0 0 1 0 二十三 推荐 书目 入门 
+Python 数据 分析 基础 教程 Numpy 学习指南 张驭宇/nr 译 人民邮电出版社 
+Python 神经网络 编程 林赐译/nr 人 邮 白话 深度 学习 与 
+TensorFlow 高扬 著 机械 基础 scikit learn 机器学习 常用 算法 
+原理 和 编程 实践 黄 永昌 主编 机械 机器学习 算法 
+原理 与 编程 实践 郑捷 著 电子 进阶 深度 学习 
+张鹏 主编 电子 TensorFlow 机器学习 项目 实战 姚鹏 鹏 译 
+人 邮 休闲 数学 之美 吴军 人 邮 终极 算法 
+黄芳萍/nr 译 中信 深度 学习 伊恩 古德 弗洛 著 人 
+邮 二十四 附录 目录 人工智能 Machine Learning 目录 汇总 

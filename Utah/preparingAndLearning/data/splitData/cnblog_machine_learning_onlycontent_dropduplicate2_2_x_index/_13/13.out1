@@ -1,0 +1,138 @@
+0 . 前言 1 . 损失 函数 2 . Margin3 
+. Cross Entropy vs . Squared Error 总结 参考资料 0 
+. 前言 尽管 新 技术 新 算法 层出不穷 但是 掌握 
+好 基础 算法 就能 解决 手头 90% 的 机器 学习 
+问题 本 系列 参考书 Hands on machine learning with scikit 
+learn and tensorflow 以及 kaggle 相关 资料 但是 这 篇 
+文章 没有 参考 ? ? 观察到 的 一个 有意思 的 
+细节 一些 喜好 机器学习 或者 数据 科学 的 初学 工程师 
+和 有机 器 学习 或者 数据 科学 背景 的 科学家 
+在 工作 上 的 主要 区别 在于 如何 对待 负面 
+的 实验 包括 线下 和 线上 结果 初学者 往往 就 
+开始 琢磨 如何 改 模型 加 Feature 调 参数 思考 
+如何 从 简单 模型 转换 到 复杂 模型 有/v 经验/n 
+的/uj 人/n 往往/t 更加/d 去/v 了解/v 实验/vn 的/uj 设置/vn 有/v 
+没有/v 问题/n 实验 的 Metrics 的 Comparison 是 到底 怎么 
+计算 的 到 真 需要 去 思考 模型 的 问题 
+的 时候 有 经验 的 人 往往 会 先 反思 
+训练 数据 的 收集 情况 测试数据 和 测试 评测 的 
+真实 度 问题 初学者 有点 类似 程咬金 的 三板斧 有 
+那么 几个 技能 用 完了 要是 还 没有 效果 也就 
+完了 而 有 经验 的 数据 科学家 往往 是 从 
+问题 出发 去看 是不是 对 问题 本质 的 把握 比如 
+优化 的 目标 是 不是 对 有 没有 Counterfactual 的 
+情况 出现 了 偏差 最后 再 讨论 模型 by   
+@ 洪亮 劼 1 . 损失 函数 前面 一篇 讨论 
+了 PRC ROC AUC 等 评测 模型 的 不同 侧重点 
+另外 一方面 模型 损失 函数 目标函数 是 机器学习 里 另外 
+一个 较为 本质 的 问题 由于 机器 学习 的 损失 
+函数 根据 任务 模型 的 不同 演化 出 各种 形式 
+下面 只 谈谈 分类 模型 里 常见 的 情形 假设 
+一个 二 分类 问题 样本空间 是   y = { 
+1 1 } 一个 分类 模型 对其 进行 预测 输出 
+值 是 f x f   0 判定 为 1 
+f   0 判定 为 1 计算 模型 预测 准确率 
+的 时候 样本 真实 分类   y   如果 和 f/nr 
+  符号 相同 则 表示 分类 正确 符号 相反 则 
+模型 分类 错误 表示 成 分类 误差 可 记为   
+if y   *   f x   0 then 
+error = 0 else error = 1 实际 情况 中 
+极少 看到 直接 用 分类 误差 作为 模型 的 目标 
+函数 原因 主要 有 几点 其一 loss = 0 or 
+1   是 平行 于 x 轴 的 射线 求导 
+为 0 原点 除外 没法用 梯度 下 降法 来 优化 
+模型 而 实际上 这 是个 NP Hard 离散 的 非 
+凸 优化 问题 其二 要 训练 一个 好 的 模型 
+还要 让 模型 感知 到 某个 样本 尽管 分类 正确 
+了 但是 到底 有多/nr 正确 如果 确 信度 低了 还 
+需要 继续 优化 举个 例子 有三种 水果 两种 模型 都 
+进行 了 训练 在 测试 集上 概率分布 表现 如下 模型 
+A 预测 概率 真实 概率 分类 误差 0.3 0.3 0.40 
+0 1 苹果 00.3 0.4 0.30 1 0 梨子 00.1 
+0.2 0.71 0 0 桃子 1 模型 B 预测 概率 
+真实 概率 分类 误差 0.1 0.2 0.70 0 1 苹果 
+00.1 0.8 0.10 1 0 梨子 00.4 0.5 0.11 0 
+0 桃子 1 目测 可以 看出 模型 A 和 模型 
+B 分类 误差 都是 0.333 但是 模型 B 更 靠谱 
+一些 问题 来了 这个 靠谱 如何 衡量 2 . Marginmargin 
+是 衡量 某次 预测 到底有 多 准确 的 一个 指标 
+定义 为   y * f x 简单 说 希望 
+正 样本 预测值 为 正 尽 量大 负 样本 预测值 
+为 负 尽 量小 就 需要 模型 max margin 以 
+margin 作为 横轴 黑色 表示 分类 loss 红色 表示 log 
+loss 蓝色 表示 hinge loss 绿色 表示 square error 可以 
+看到 随着 margin 变大 loss 总体 是 单调 递减 的 
+但是 squared error 超过 1 后会 递增 从 上图 可以 
+看到 hinge loss 在 margin 达到 一定 阈值 后 很 
+确信 分类 正确 的 样本 loss 降为 0 对 整个 
+模型 训练 其实 已经 没有 影响 了 log loss 不管 
+margin 多大 loss 永远 不会 降为 0 会 一直 对 
+模型 有 影响 squared error 里 如果 f x   
+输出 绝对值 可以 大于 1 那么 margin 太大 的 点 
+对模型 反而 有 不好 的 影响 中场 休息 时间 喝口 
+茶 ~ 欢迎 关注 公众 号 kaggle 实战 或 博客 
+http / / www . cnblogs . com / daniel 
+D / 3 . Cross Entropy vs . Squared Errorcross 
+entropy 可以 简单 理解为 上面 的 log loss 在 深度 
+学习 里面 最后 一层 往往 是 通过   softmax   
+计算出 概率分布 margin 区间 为 0 1 squared error 并不 
+存在 上述 margin 太大 的 点 对模型 反而 有 负面 
+影响 的 情况 这时候 该 采用 Cross Entropy or Squared 
+Error 结论 是 如果 你 使用 的 是 神经 网络 
+的 分类 模型 建议 使用 Cross entropy 做 分类 任务 
+的 深度 神经网络 最后 一层 一般 为 softmax softmax 计算 
+公式 如下 一般 采用 反向 传播 的 梯度 下降 方法 
+优化 下面 先把 softmax 的 计算 过程 逐步 剖析 开来 
+纠正 图中 一个 错误 P = A * V 上 
+图中 O1 O2 O3   表示 softmax 的 输入 节点 
+每个 节点 先 经过 指数化 得到 A 然后 求和 得到 
+S 即 分母 倒数 得到 V 再 各自 和 指数 
+相乘 得到 该 节点 输出 的 概率 P 为了 图片 
+结构 稍微 美 观点 这里 P2 就 没画 出来了 对于 
+上图 的 O1   来说 导数 来源于 虚线 的 链路 
+箭 头上 的 文字 表示 局部 导数 它 的 导数 
+实际 来自 两 部分 一是 直接 相连 的 P1 以及 
+无 直接 链接 的 P2 P3 对应 输入 层 的 
+某个 节点 O1   应用 链式法则 P1   节点 对其 
+偏 导 如下 如果 i = j 即 图中 O1 
+到 P1 导数 由 两条 链路 组成 如果 i ≠ 
+j 即 图中 O1   到 P3 导数 由 一条 
+链路 组成 如果 模型 训练 得 很好 Pj 和/c Pi/w 
+都/d 接近/v 0/m 或者/c 其中/r 一个/m 接近于/i 1/m 可以 看到 
+两种 情况 梯度 都是 接近于 0 符合 预期 如果 模型 
+很差 把 某个 错误 的 类别 的 概率 也 计算 
+成1/nr 那么 Pj 和 Pi 都 接近 0 者 其中 
+一个 接近于 1 梯度 也 很小 不太 符合 预期 看看 
+Cross entropy 是 如何 解决 这个 问题 的 对于 Cross 
+entropy Logloss 误差 计算公式 为 可以 看到 Cross entropy 只 
+关注 正确 label 上 的 概率 大小 上 图中   
+只有 连 到到 P1 的 链路 才是 对 梯度 计算 
+有效 的 对 i = j 也 就是 上图 中的 
+O1 来说 对 i ≠ j 也 就是 O2 到 
+L1 链路 来说 备注 x 应该 是 1 / p 
+_ i 上面 梯度 应该 多个 负号 截图 太累 如果 
+模型 很差 正确 label 上 的 概率 Pi 接近 0 
+实际上 不 会 影响 梯度 大小 但是 如果 是 Squared 
+Error 上图 P 到 L 连接 上 的 x 并不 
+包含 logLoss 的 倒数 形式 由于 正确 类别 和 错误 
+类别 的 损失 函数 都会 影响 Oi 的 偏 导 
+整体 公式 比较复杂 这里 就 不做 详细 的 推导 了 
+但是 整体 上 是 先 相乘 然后 求和 梯度 会 
+很小 给 优化 带来 阻碍 总结 softmax 部分 在 完全 
+分类 正确 或者 分类 完全 错误 的 情况 下 该/r 
+部分/n 偏/a 导/v 都/d 接近/v 于/p 0logLoss/i 偏 导 中有 
+倒数 可以 中和 softmax 这个 缺点 Squared Error 如果 初始化 
+不好 很难 克服 这个 问题 使用 softmax 分类 模型 的 
+Loss 推荐 使用 cross entropy 而 不是 classification error 或 
+squared errorlogLoss 对 完全 错误 分类 的 惩罚 极大 但是 
+其实 偏 导 不会 超过 1 对于 上述 logLoss 这种 
+虚张声势 的 做法 直接 看 logLoss 可能 无法 这种 体现 
+模型 的 准确性 比如 把 1个 样本 分得 很 错 
+的 模型 vs . 把 多个 样本 分得 不那么 错 
+的 模型 可能 后者 的 logLoss 更小 建议 直接 用 
+分类 误差 评估 参考资料 Why You Should Use Cross Entropy 
+Error Instead Of Classification Error Or Mean Squared Error For 
+Neural Network Classifier TrainingCross Entropy vs . Squared Error Training 
+a Theoretical and Experimental ComparisonThe Softmax function and its derivativeWhat 
+are the impacts of choosing different loss functions in classification 
+to approximate 0 1 loss 附 公众 号 

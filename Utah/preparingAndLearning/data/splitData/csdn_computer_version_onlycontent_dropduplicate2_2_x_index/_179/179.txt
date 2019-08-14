@@ -1,0 +1,20 @@
+前情提要
+上期结束前我们经过一些形态学处理得到了一幅这样的图（根据大家用的方法和参数设置可能会有出入）。
+可以看到即使经过一些腐蚀膨胀滤波的处理，图像依然有不少噪声，做计算机视觉就是这样的，没有银弹，只能不断的利用已有的信息逐步逼近我们想要的结果。
+本期内容
+本期介绍一些轮廓检测的方法，结合一些骚皮操作就能得到我们想要的车牌区域。
+一、矩形检测
+在OpenCV中检测矩形是用cv2.boundRect，接受的参数是一个由多个点组成的list，返回的是一个tuple，共有4个元素，分别表示矩形的左上角x坐标、左上角y坐标、宽度、高度，像这样。
+(x,y,w,h) = cv2.boundingRect([(10,10),(20,25),(30,30),(60,10),(2,15)])
+我准备了一个程序可以测试这个效果，运行程序以后点击图像可以在上面画点，按S键画矩形，按Q键退出。
+# coding: utf-8 import cv2 import numpy as np # 点集 points = [] # 窗口 window_name = 'DEMO' window = cv2.namedWindow(window_name) # 底图 img = np.zeros((300,300,3), dtype=np.uint8) # 鼠标回调 def on_mouse(event, x, y, flags, param): if event == cv2.EVENT_LBUTTONDOWN: print 'Click at (%d,%d)' % (x,y) points.append((x,y)) cv2.circle(img, (x,y), 3, (255,255,255), -1) # 程序入口 def main(): global points, img # 设置回调 cv2.setMouseCallback(window_name, on_mouse) # 画图 while True: cv2.imshow(window_name, img) k = cv2.waitKey(1) if k == ord('q'): # 退出 print 'EXIT' return elif k == ord('s'): # 绘制矩形 (x,y,w,h) = cv2.boundingRect(np.array(points)) cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2) elif k == ord('c'): # 清空 img[...] = 0 points = [] if __name__ == '__main__': main()
+由于我们得到的是掩码图而不是一堆点集，因此还要用一个函数检测出边界点——cv2.findContours。findContours可以找出各个连通域的内外边界点和结构化表示，在这里我们只需要外边界点而且不需要结构化信息。示例代码如下：
+# coding: utf-8 import cv2 import numpy as np # 程序入口 def main(): img = cv2.imread('mask.jpg') gray = img[..., 0] # 寻找点集 _, contours, _ = cv2.findContours(gray.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) # 画点 for cnt in contours: for point in cnt: point = (point[0][0], point[0][1]) cv2.circle(img, point, 1, (255,0,0), -1) # 画图 cv2.imshow('DEMO', img) cv2.imwrite('contours.jpg', img) cv2.waitKey(0) if __name__ == '__main__': main()
+检测到的点用蓝色标出，效果如下：
+接下来就可以对每个点集求出外接矩形了：
+# 在每个点集上求外接矩形 for cnt in contours: (x,y,w,h) = cv2.boundingRect(cnt) cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
+效果如下：
+可以看到有很多个不同大小的矩形被检测出来了，但我们只想要车牌区域那一个，宽高比例信息是比较容易想到的用于筛选的信息之一，除此以外我还使用了白色区域占比的信息，代码如下：
+# 在每个点集上求外接矩形 for cnt in contours: (x,y,w,h) = cv2.boundingRect(cnt) # 白色区域占比 nonZeroRatio = float(cv2.countNonZero(gray[y:y+h, x:x+w])) / (w*h) # 宽高比 whRatio = float(w) / h # 高度大于20，宽高比大于3，白色区域占比大于0.7 if h > 20 and whRatio > 3.0 and nonZeroRatio > 0.7: cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
+结果如下：
+放到原图上看看效果：

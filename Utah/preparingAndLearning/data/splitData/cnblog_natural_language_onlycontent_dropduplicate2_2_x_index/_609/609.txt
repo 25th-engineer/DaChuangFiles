@@ -1,0 +1,23 @@
+条件频率分布就是频率分布的集合，每个频率分布有一个不同的“条件”，这个条件通常是文本的类别。当语料文本分为几类（文体，主题，作者等）时，可以计算每个类别独立的频率分布，这样，就可以通过条件频率分布研究类别之间的系统性差异。通常，我们用nltk的ConditionalFreqDist数据类型来实现的。
+1. 条件和事件
+频率分布计算观察到的事件，如本文中出现的词汇。条件频率分布需要给每个事件关联一个条件，所以不是处理一个词序列，而是要处理一系列配对序列。
+>>> text=['The', 'Fulton', 'County', 'Grand', 'Jury', 'said'] >>> pairs = [('news', 'The'), ('news', 'Fulton'), ('news', 'County')] >>>
+每对的形式是：（条件，事件）。
+2. 按文体统计词汇
+1）输入
+FreqDist()以一个简单的链表作为输入，ConditionalFreqDist()以一个配对链表作为输入。
+2）遍历文体，产生配对
+对于每个文体，遍历文体中的每个词以产生文体与词的配对。这里以“新闻”和“言情”两种文体为例。
+>>> from nltk.corpus import brown >>> genre_word = [(genre, word) ... for genre in ['news', 'romance'] ... for word in brown.words(categories=genre)] >>> len(genre_word) 170576 >>> genre_word[:4] [('news', 'The'), ('news', 'Fulton'), ('news', 'County'), ('news', 'Grand')] >>>
+3）使用此配对链表创建一个ConditionalFreqDist,并保存。
+>>> cfd = nltk.ConditionalFreqDist(genre_word) >>> cfd <ConditionalFreqDist with 2 conditions> >>> cfd.conditions() ['romance', 'news'] >>> cfd['news'] FreqDist({'the': 5580, ',': 5188, '.': 4030, 'of': 2849, 'and': 2146, 'to': 2116 , 'a': 1993, 'in': 1893, 'for': 943, 'The': 806, ...}) >>> cfd['romance'] FreqDist({',': 3899, '.': 3736, 'the': 2758, 'and': 1776, 'to': 1502, 'a': 1335, 'of': 1186, '``': 1045, "''": 1044, 'was': 993, ...}) >>> cfd['romance']['could'] 193 >>>
+3.绘制分布图和分布表
+除了组合两个或两个以上的频率分布及更容易初始化之外，ConditionalFreqDist还为制表和绘图提供了一些有用的方法。
+>>> import nltk >>> from nltk.corpus import udhr >>> languages = ['Chickasaw', 'English', 'German_Deutsch', 'Greenlandic_Inuktiku t', 'Hungarian_Magyar', 'Ibibio_Efik'] >>> cfd = nltk.ConditionalFreqDist( ... (lang, len(word)) ... for lang in languages ... for word in udhr.words(lang+'-Latin1')) >>> cfd.plot(cumulative=True) >>> cfd.tabulate(conditions=['English', 'German_Deutsch'], samples=range(10), cu mulative=True) 0 1 2 3 4 5 6 7 8 9 English 0 185 525 883 997 1166 1283 1440 1558 1638 German_Deutsch 0 171 263 614 717 894 1013 1110 1213 1275 >>>
+该图是基于上面代码绘制出来的一个条件频率分布图。条件是语言的名称，图中的计数来源于单词长度。它利用了这样一个特点：即每一种语言的文件名是语言名称及后面紧跟着‘-Latin1’(字符编码)。
+在plot()和tabulate()方法中，可以使用conditions=参数来指定显示哪些条件。如果我们忽略它，所有条件都会显示出来。同样，可以使用samples=参数来限制要显示的样本，这能将大量数据载入到一个条件频率分布，然后通过选定条件和样品，对完成的绘图或制表进行探索。这也使我们能全面控制条件和样本的显示顺序。如上面，为两种语言和长度少于10个字符的词汇绘制累计频率数据表，如上面代码输出显示。
+4.使用双连词生成随机文本
+1）产生双连词
+>>> sent=['In', 'the', 'begining'] >>> nltk.bigrams(sent) <generator object bigrams at 0x03C3E4E0> >>> mt = nltk.bigrams(sent) >>> mt <generator object bigrams at 0x0455A058>
+2）创建随机本文
+>>> sent=['In', 'the', 'begining'] >>> nltk.bigrams(sent) <generator object bigrams at 0x03C3E4E0> >>> mt = nltk.bigrams(sent) >>> mt <generator object bigrams at 0x0455A058> >>> cfd=nltk.ConditionalFreqDist(mt) >>> cfd.tabulate() begining the In 0 1 the 1 0 >>> cfd.plot() >>>

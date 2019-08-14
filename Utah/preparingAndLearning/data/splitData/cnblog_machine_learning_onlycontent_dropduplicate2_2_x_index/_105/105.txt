@@ -1,0 +1,84 @@
+Quora
+What is Data Science?
+How do I become a Data Scientist?
+How does Data Science differ from traditional statistical analysis?
+Related Courses
+Concepts in Computing with Data, Berkeley
+Practical Machine Learning, Berkeley
+Artificial Intelligence, Berkeley
+Visualization, Berkeley
+Data Mining and Analytics in Intelligent Business Services, Berkeley
+Data Science and Analytics: Thought Leaders, Berkeley
+Machine Learning, Stanford
+Paradigms for Computing with Data, Stanford
+Mining Massive Data Sets, Stanford
+Data Visualization, Stanford
+Algorithms for Massive Data Set Analysis, Stanford
+Research Topics in Interactive Data Analysis, Stanford
+Data Mining, Stanford
+Machine Learning, CMU
+Statistical Computing, CMU
+Machine Learning with Large Datasets, CMU
+Machine Learning, MIT
+Data Mining, MIT
+Statistical Learning Theory and Applications, MIT
+Data Literacy, MIT
+Introduction to Data Mining, UIUC
+Learning from Data, Caltech
+Introduction to Statistics, Harvard
+Data-Intensive Information Processing Applications, University of Maryland
+Dealing with Massive Data, Columbia
+Data-Driven Modeling, Columbia
+Introduction to Data Mining and Analysis, Georgia Tech
+Computational Data Analysis: Foundations of Machine Learning and Da..., Georgia Tech
+Applied Statistical Computing, Iowa State
+Data Visualization, Rice
+Data Warehousing and Data Mining, NYU
+Data Mining in Engineering, Toronto
+Machine Learning and Data Mining, UC Irvine
+Knowledge Discovery from Data, Cal Poly
+Large Scale Learning, University of Chicago
+Data Science: Large-scale Advanced Data Analysis, University of Florida
+Strategies for Statistical Data Analysis, Universität Leipzig
+Related Workshops
+Data Bootcamp, Strata 2011
+Machine Learning Summer School, Purdue 2011
+Looking at Data
+Books
+Competing on Analytics
+Analytics at Work
+Super Crunchers
+The Numerati
+Data Driven
+Data Source Handbook
+Programming Collective Intelligence
+Mining the Social Web
+Data Analysis with Open Source Tools
+Visualizing Data
+The Visual Display of Quantitative Information
+Envisioning Information
+Visual Explanations: Images and Quantities, Evidence and Narrative
+Beautiful Evidence
+Think Stats
+Data Analysis Using Regression and Multilevel/Hierarchical Models
+Applied Longitudinal Data Analysis
+Design of Observational Studies
+Statistical Rules of Thumb
+All of Statistics
+A Handbook of Statistical Analyses Using R
+Mathematical Statistics and Data Analysis
+The Elements of Statistical Learning
+Counterfactuals and Causal Inference
+Mining of Massive Data Sets
+Data Analysis: What Can Be Learned From the Past 50 Years
+Bias and Causation
+Regression Modeling Strategies
+Probably Not
+Statistics as Principled Argument
+The Practice of Data Analysis
+Videos
+Lies, damned lies and statistics (about TEDTalks)
+The Joy of Stats
+Journalism in the Age of Data
+Source: http://datascienc.es
+来自：http://www.datasciencecentral.com/profiles/blogs/berkeley-course-on-data-science

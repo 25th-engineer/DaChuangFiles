@@ -1,0 +1,32 @@
+前言
+python是一种功能强大和适用面很广的开发语言，在大数据应用和机器学习日益流行的年代，python凭借其简洁、易用和可扩展性获得很多用户的支持，近年来使用率高速增长。python环境下，集成了科学计算扩展库：NumPy、SciPy和matplotlib，它们分别为Python提供了快速数组处理、数值运算以及绘图功能。因此Python语言及其众多的扩展库所构成的开发环境十分适合工程技术、科研人员处理实验数据、制作图表，甚至开发科学计算程序。
+Python Plugins的安装
+Idea缺省是没有安装Python的，需要在plugins里安装，具体方法见下图：
+等它下载完，会要求重启idea，关闭idea，并重启。
+创建Python工程
+在idea里面，File->new projects  ，在弹出的工程界面，选择sdk
+然后一路next下去
+最后点击“finish”就可以创建自己的python工程了。
+在python 工程中添加module
+在自己的python工程，如myPythonProject下，可以建立自己的module。
+在module下可以建立自己的文件。
+需要注意的是，一定要带入后缀名py。
+编写hello world
+好吧，继续编写helloworld程序，在HelloWorld.py文件里面，写入如下代码：
+def hello(name): strHello='Hello, '+name return strHello; print (hello("Python!"))
+在程序文件上，右键执行，执行情况如下：
+外部环境中执行
+虽然在idea里面可以执行这个程序，在外部环境里，也可以执行这个程序。进入这个程序所在路径，执行 python 程序文件名，这样也与idea环境中一样。
+几个库说明
+前面建立工程和module的时候，有出现如下的内容：
+这里简要做一下说明：
+Django：是用Python开发的一个免费开源的Web框架，可以用于快速搭建高性能，优雅的网站
+Google App Engine: 是一种让您可以在 Google 的基础架构上运行您的网络应用程序
+SQL Support: 是支持SQL的框架
+欢迎大家，加入我的微信公众号：大数据躺过的坑        人工智能躺过的坑
+同时，大家可以关注我的个人博客：
+http://www.cnblogs.com/zlslch/   和     http://www.cnblogs.com/lchzls/      http://www.cnblogs.com/sunnyDream/
+详情请见：http://www.cnblogs.com/zlslch/p/7473861.html
+人生苦短，我愿分享。本公众号将秉持活到老学到老学习无休止的交流分享开源精神，汇聚于互联网和个人学习工作的精华干货知识，一切来于互联网，反馈回互联网。
+目前研究领域：大数据、机器学习、深度学习、人工智能、数据挖掘、数据分析。 语言涉及：Java、Scala、Python、Shell、Linux等 。同时还涉及平常所使用的手机、电脑和互联网上的使用技巧、问题和实用软件。 只要你一直关注和呆在群里，每天必须有收获
+对应本平台的讨论和答疑QQ群：大数据和人工智能躺过的坑（总群）（161156071）

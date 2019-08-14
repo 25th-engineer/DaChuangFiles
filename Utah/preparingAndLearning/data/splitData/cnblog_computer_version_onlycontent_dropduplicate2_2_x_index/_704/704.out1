@@ -1,0 +1,393 @@
+转 自 一位 MIT 牛人 的 空间 文章 总 感觉 
+做 计算机 视觉 和 显著性 检测 这 一块 数学 的 
+储备 不够 从 大学 到 现在 课堂 上学 的 和 
+自学 的 数学 其实 不算 少了 可是 在 研究 的 
+过程 中 总是 发现 需要 补充 新 的 数学 知识 
+Learning 和 Vision 都是 很多 种 数学 的 交汇 场 
+看着 不同 的 理论 体系 的 交汇 对于 一个 researcher 
+来说 往往 是 非常 exciting 的 enjoyable 的 事情 不过 
+这也 代表 着 要 充分 了解 这个 领域 并且 取得 
+有 意义 的 进展 是 很 艰苦 的 记得 在 
+两年 前 的 一次 blog 里面 提到 过 和 learning 
+有关 的 数学 今天 看来 我 对于 数学 在 这个 
+领域 的 作用 有了/nr 新的 思考 对于 Learning 的 研究 
+1 Linear Algebra 线性代数   和 /nr Statistics 统计学   是 
+最重要 和 不可 缺少 的 2 Calculus 微积分 只是 数学分析 
+体系 的 基础 3 Partial Differential Equation   偏 微分方程 
+4 Functional Analysis 泛函分析 5 Measure Theory 测度 理论 6 
+Topology 拓扑学 7 Differential Manifold 微分流形 8 Lie Group Theory 
+李 群论 9 Graph Theory 图论 书籍 推荐 1 . 
+  线性代数 Linear Algebra Introduction to Linear Algebra 3rd Ed 
+.     by Gilbert Strang . 这 本书 是 
+MIT 的 线性代数 课 使用 的 教材 也是 被 很多 
+其它 大学 选用 的 经典 教材 它 的 难度 适中 
+讲解 清晰 重要 的 是 对 许多 核心 的 概念 
+讨论 得 比较 透彻 我 个人 觉得 学习 线性代数 最 
+重要 的 不是 去 熟练 矩阵 运算 和 解方程 的 
+方法 这些 在 实际 工作 中 MATLAB 可以 代劳 关键 
+的 是 要 深入 理解 几个 基础 而又 重要 的 
+概念 子空间 Subspace 正交 Orthogonality 特征值 和 特征向量 Eigenvalues and 
+eigenvectors 和 线性变换 Linear transform 从我的/nr 角度 看来 一本 线 
+代 教科书 的 质量 就 在于 它 能否 给 这些 
+根本 概念 以 足够 的 重视 能否 把 它们 的 
+联系 讲清楚 Strang 的 这 本书 在 这 方面 是 
+做得 很好 的 而且 这本书 有个 得天独厚 的 优势 书 
+的 作者 长期 在 MIT 讲授 线性代数 课 18.06 课程 
+的 video 在 MIT 的 Open courseware 网站 上 有 
+提供 有 时间 的 朋友 可以 一边 看着 名师 授课 
+的 录像 一边 对照 课本 学习 或者 复习 http / 
+/ ocw . mit . edu / OcwWeb / Mathematics 
+/ 18 06Spring 2005 / CourseHome / index . htm2 
+.   概率 和 统计   Probability and Statistics 概率论 
+和 统计 的 入门 教科书 很多 我 目前 也 没有 
+特别 的 推荐 我 在 这里 想 介绍 的 是 
+一本 关于 多元 统计 的 基础 教科书 Applied Multivariate Statistical 
+Analysis   5th Ed .     by Richard A 
+. Johnson and Dean W . Wichern 这 本书 是 
+我 在 刚 接触 向量 统计 的 时候 用于 学习 
+的 我 在 香港 时做/nr 研究 的 基础 就是 从此 
+打下 了 实验室 的 一些 同学 也 借用 这本书 学习 
+向量 统计 这本书 没有 特别 追求 数学上 的 深度 而是 
+以 通俗 易懂 的 方式 讲述 主要 的 基本 概念 
+读 起来 很 舒服 内容 也 很 实用 对于 Linear 
+regression factor analysis principal component analysis PCA and canonical component 
+analysis CCA 这些 Learning 中 的 基本 方法 也 展开 
+了 初步 的 论述 之后 就 可以 进一步 深入 学习 
+贝叶斯 统计 和 Graphical models 一本 理想 的 书 是 
+Introduction to Graphical Models draft version .     by 
+M . Jordan and C . Bishop . 我 不 
+知道 这 本书 是不是 已经 出版 了 不要 和 Learning 
+in Graphical Models 混淆 那 是个 论文集 不适合 初学 这本书/i 
+从/p 基本/n 的/uj 贝叶斯/nr 统计模型/i 出发/v 一直/d 深入/v 到/v 复杂/a 
+的/uj 统计/v 网络/n 的/uj 估计/v 和/c 推断/v 深入浅出 statistical learning/w 
+的/uj 许多/m 重要/a 方面/n 都在/nr 此书/r 有/v 清楚/a 论述/v 和/c 
+详细/ad 讲解/v MIT 内部 可以 access 至于 外面 好像 也是 
+有 电子版 的 3 .   分析   Analysis 我 
+想 大家 基本 都在/nr 大学 就 学过 微积分 或者 数学分析 
+深度 和 广度 则 随 各个 学校 而异 了 这个 
+领域 是 很多 学科 的 基础 值得 推荐 的 教科书 
+莫过于 Principles of Mathematical Analysis by Walter Rudin 有点 老 
+但是 绝 对 经典 深入 透彻 缺点 就是 比较 艰深 
+这是 Rudin 的 书 的 一贯 风格 适合于/i 有/v 一定/d 
+基础/n 后/f 回头/v 去看/i 在 分析 这个 方向 接下来 就是 
+泛函分析 Functional Analysis Introductory Functional Analysis with Applications by Erwin 
+Kreyszig . 适合 作为 泛 函 的 基础 教材 容易 
+切入 而 不失 全面 我 特别 喜欢 它 对于 谱 
+论 和 算子 理论 的 特别 关注 这 对于 做 
+learning 的 研究 是 特别 重要 的 Rudin 也有 一本 
+关于 functional analysis 的 书 那 本书 在 数学 上 
+可能 更为 深刻 但是 不 易于 上手 所讲 内容 和 
+learning 的 切 合度 不如 此书 在 分析 这个 方向 
+还有 一个 重要 的 学科 是 测度 理论 Measure theory 
+但是 我 看过 的 书 里面 目前 还 没有 感觉 
+有 特别 值得 介绍 的 4 .   拓扑   
+Topology 在 我 读过 的 基本 拓扑 书 各有特色 但是 
+综合 而言 我 最 推崇 Topology 2nd Ed .   
+  by James Munkres 这 本书 是 Munkres 教授 长期 
+执教 MIT 拓扑 课 的 心血 所 凝 对于 一般 
+拓扑学 General topology 有 全面 介绍 而 对于 代数拓扑 Algebraic 
+topology 也有 适度 的 探讨 此书 不 需要 特别 的 
+数学 知识 就 可以 开始 学习 由浅入深 从最/nr 基本 的 
+集合论 概念 很多 书 不屑 讲 这个 到 Nagata Smirnov 
+Theorem 和 Tychonoff theorem 等 较深 的 定理 很多 书 
+避开 了 这个 都 覆盖 了 讲述 方式 思想性 很强 
+对于 很多 定理 除了 给 出 证明 过程 和 引导 
+你 思考 其 背后 的 原理 脉络 很多 令人 赞叹 
+的 亮点 我 常 读得 忘却 饥饿 不愿 释手 很多 
+习题 很有 水平 5 .   流形 理论   Manifold 
+theory 对于/p 拓扑/v 和/c 分析/vn 有/v 一定/d 把握/v 时/n 方可 
+开始 学习 流形 理论 否则 所学 只能 流于 浮浅 我 
+所 使用 的 书 是 Introduction to Smooth Manifolds . 
+    by John M . Lee 虽然 书名 有 
+introduction 这个 单词 但是 实际上 此书 涉 入 很深 除了 
+讲授 了 基本 的 manifold   tangent space bundle   
+sub manifold 等 还 探讨 了 诸如 纲 理论 Category 
+theory 德拉姆 上同调 De Rham cohomology 和 积分 流形 等 
+一些 比较 高级 的 专题 对于 李群 和 李代数 也有 
+相当多 的 讨论 行文 通俗 而又 不失 严谨 不过 对 
+某些 记号 方式 需要 熟悉 一下 虽然 李 群论 是 
+建 基于 平滑 流形 的 概念 之上 不过 也/d 可能/v 
+从/p 矩阵/n 出发/v 直接/ad 学习/v 李群/nr 和/c 李代数/i 这种方法 对于 
+急需 使用 李 群论 解决 问题 的 朋友 可能 更加 
+实用 而且 对于 一个 问题 从 不同 角度 看待 也 
+利于 加深理解 下面 一 本书 就是 这个 方向 的 典范 
+Lie Groups Lie Algebras and Representations An Elementary Introduction . 
+    by Brian C . Hall 此书 从 开始 
+即从 矩阵 切入 从 代数 而非 几何 角度 引入 矩阵 
+李群 的 概念 并 通过 定义 运算 的 方式 建立 
+exponential mapping 并 就此 引入 李代数 这种方式 比起 传统 的 
+通过 左 不变 向量场 Left invariant vector field 的 方式 
+定义 李代数 更容易 为人 所 接受 也 更容易 揭示 李代数 
+的 意义 最后 也有 专门 的 论述 把 这种 新的 
+定义 方式 和 传统 方式 联系 起来 无论 是 研究 
+Vision Learning 还是 其它 别的 学科 数学 终究 是 根基 
+所在 学好 数学 是 做好 研究 的 基石 学好 数学 
+的 关键 归根结底 是 自己 的 努力 但是 选择 一本 
+好 的 书 还是 大 有 益处 的 不同 的 
+人 有 不同 的 知识 背景 思维 习惯 和 研究 
+方向 因 此书 的 选择 也 因人而异 只求 适合 自己 
+不必 强求 一致 上面 的 书 仅仅 是从 我 个人 
+角度 的 出发 介绍 的 我 的 阅读 经历 实在 
+非常 有限 很 可能 还有 比 它们 更好 的 书 
+转 自 一位 MIT 牛人 的 空间 文章 总 感觉 
+做 计算机 视觉 和 显著性 检测 这 一块 数学 的 
+储备 不够 从 大学 到 现在 课堂 上学 的 和 
+自学 的 数学 其实 不算 少了 可是 在 研究 的 
+过程 中 总是 发现 需要 补充 新 的 数学 知识 
+Learning 和 Vision 都是 很多 种 数学 的 交汇 场 
+看着 不同 的 理论 体系 的 交汇 对于 一个 researcher 
+来说 往往 是 非常 exciting 的 enjoyable 的 事情 不过 
+这也 代表 着 要 充分 了解 这个 领域 并且 取得 
+有 意义 的 进展 是 很 艰苦 的 记得 在 
+两年 前 的 一次 blog 里面 提到 过 和 learning 
+有关 的 数学 今天 看来 我 对于 数学 在 这个 
+领域 的 作用 有了/nr 新的 思考 对于 Learning 的 研究 
+1 Linear Algebra 线性代数   和 /nr Statistics 统计学   是 
+最重要 和 不可 缺少 的 2 Calculus 微积分 只是 数学分析 
+体系 的 基础 3 Partial Differential Equation   偏 微分方程 
+4 Functional Analysis 泛函分析 5 Measure Theory 测度 理论 6 
+Topology 拓扑学 7 Differential Manifold 微分流形 8 Lie Group Theory 
+李 群论 9 Graph Theory 图论 书籍 推荐 1 . 
+  线性代数 Linear Algebra Introduction to Linear Algebra 3rd Ed 
+.     by Gilbert Strang . 这 本书 是 
+MIT 的 线性代数 课 使用 的 教材 也是 被 很多 
+其它 大学 选用 的 经典 教材 它 的 难度 适中 
+讲解 清晰 重要 的 是 对 许多 核心 的 概念 
+讨论 得 比较 透彻 我 个人 觉得 学习 线性代数 最 
+重要 的 不是 去 熟练 矩阵 运算 和 解方程 的 
+方法 这些 在 实际 工作 中 MATLAB 可以 代劳 关键 
+的 是 要 深入 理解 几个 基础 而又 重要 的 
+概念 子空间 Subspace 正交 Orthogonality 特征值 和 特征向量 Eigenvalues and 
+eigenvectors 和 线性变换 Linear transform 从我的/nr 角度 看来 一本 线 
+代 教科书 的 质量 就 在于 它 能否 给 这些 
+根本 概念 以 足够 的 重视 能否 把 它们 的 
+联系 讲清楚 Strang 的 这 本书 在 这 方面 是 
+做得 很好 的 而且 这本书 有个 得天独厚 的 优势 书 
+的 作者 长期 在 MIT 讲授 线性代数 课 18.06 课程 
+的 video 在 MIT 的 Open courseware 网站 上 有 
+提供 有 时间 的 朋友 可以 一边 看着 名师 授课 
+的 录像 一边 对照 课本 学习 或者 复习 http / 
+/ ocw . mit . edu / OcwWeb / Mathematics 
+/ 18 06Spring 2005 / CourseHome / index . htm2 
+.   概率 和 统计   Probability and Statistics 概率论 
+和 统计 的 入门 教科书 很多 我 目前 也 没有 
+特别 的 推荐 我 在 这里 想 介绍 的 是 
+一本 关于 多元 统计 的 基础 教科书 Applied Multivariate Statistical 
+Analysis   5th Ed .     by Richard A 
+. Johnson and Dean W . Wichern 这 本书 是 
+我 在 刚 接触 向量 统计 的 时候 用于 学习 
+的 我 在 香港 时做/nr 研究 的 基础 就是 从此 
+打下 了 实验室 的 一些 同学 也 借用 这本书 学习 
+向量 统计 这本书 没有 特别 追求 数学上 的 深度 而是 
+以 通俗 易懂 的 方式 讲述 主要 的 基本 概念 
+读 起来 很 舒服 内容 也 很 实用 对于 Linear 
+regression factor analysis principal component analysis PCA and canonical component 
+analysis CCA 这些 Learning 中 的 基本 方法 也 展开 
+了 初步 的 论述 之后 就 可以 进一步 深入 学习 
+贝叶斯 统计 和 Graphical models 一本 理想 的 书 是 
+Introduction to Graphical Models draft version .     by 
+M . Jordan and C . Bishop . 我 不 
+知道 这 本书 是不是 已经 出版 了 不要 和 Learning 
+in Graphical Models 混淆 那 是个 论文集 不适合 初学 这本书/i 
+从/p 基本/n 的/uj 贝叶斯/nr 统计模型/i 出发/v 一直/d 深入/v 到/v 复杂/a 
+的/uj 统计/v 网络/n 的/uj 估计/v 和/c 推断/v 深入浅出 statistical learning/w 
+的/uj 许多/m 重要/a 方面/n 都在/nr 此书/r 有/v 清楚/a 论述/v 和/c 
+详细/ad 讲解/v MIT 内部 可以 access 至于 外面 好像 也是 
+有 电子版 的 3 .   分析   Analysis 我 
+想 大家 基本 都在/nr 大学 就 学过 微积分 或者 数学分析 
+深度 和 广度 则 随 各个 学校 而异 了 这个 
+领域 是 很多 学科 的 基础 值得 推荐 的 教科书 
+莫过于 Principles of Mathematical Analysis by Walter Rudin 有点 老 
+但是 绝 对 经典 深入 透彻 缺点 就是 比较 艰深 
+这是 Rudin 的 书 的 一贯 风格 适合于/i 有/v 一定/d 
+基础/n 后/f 回头/v 去看/i 在 分析 这个 方向 接下来 就是 
+泛函分析 Functional Analysis Introductory Functional Analysis with Applications by Erwin 
+Kreyszig . 适合 作为 泛 函 的 基础 教材 容易 
+切入 而 不失 全面 我 特别 喜欢 它 对于 谱 
+论 和 算子 理论 的 特别 关注 这 对于 做 
+learning 的 研究 是 特别 重要 的 Rudin 也有 一本 
+关于 functional analysis 的 书 那 本书 在 数学 上 
+可能 更为 深刻 但是 不 易于 上手 所讲 内容 和 
+learning 的 切 合度 不如 此书 在 分析 这个 方向 
+还有 一个 重要 的 学科 是 测度 理论 Measure theory 
+但是 我 看过 的 书 里面 目前 还 没有 感觉 
+有 特别 值得 介绍 的 4 .   拓扑   
+Topology 在 我 读过 的 基本 拓扑 书 各有特色 但是 
+综合 而言 我 最 推崇 Topology 2nd Ed .   
+  by James Munkres 这 本书 是 Munkres 教授 长期 
+执教 MIT 拓扑 课 的 心血 所 凝 对于 一般 
+拓扑学 General topology 有 全面 介绍 而 对于 代数拓扑 Algebraic 
+topology 也有 适度 的 探讨 此书 不 需要 特别 的 
+数学 知识 就 可以 开始 学习 由浅入深 从最/nr 基本 的 
+集合论 概念 很多 书 不屑 讲 这个 到 Nagata Smirnov 
+Theorem 和 Tychonoff theorem 等 较深 的 定理 很多 书 
+避开 了 这个 都 覆盖 了 讲述 方式 思想性 很强 
+对于 很多 定理 除了 给 出 证明 过程 和 引导 
+你 思考 其 背后 的 原理 脉络 很多 令人 赞叹 
+的 亮点 我 常 读得 忘却 饥饿 不愿 释手 很多 
+习题 很有 水平 5 .   流形 理论   Manifold 
+theory 对于/p 拓扑/v 和/c 分析/vn 有/v 一定/d 把握/v 时/n 方可 
+开始 学习 流形 理论 否则 所学 只能 流于 浮浅 我 
+所 使用 的 书 是 Introduction to Smooth Manifolds . 
+    by John M . Lee 虽然 书名 有 
+introduction 这个 单词 但是 实际上 此书 涉 入 很深 除了 
+讲授 了 基本 的 manifold   tangent space bundle   
+sub manifold 等 还 探讨 了 诸如 纲 理论 Category 
+theory 德拉姆 上同调 De Rham cohomology 和 积分 流形 等 
+一些 比较 高级 的 专题 对于 李群 和 李代数 也有 
+相当多 的 讨论 行文 通俗 而又 不失 严谨 不过 对 
+某些 记号 方式 需要 熟悉 一下 虽然 李 群论 是 
+建 基于 平滑 流形 的 概念 之上 不过 也/d 可能/v 
+从/p 矩阵/n 出发/v 直接/ad 学习/v 李群/nr 和/c 李代数/i 这种方法 对于 
+急需 使用 李 群论 解决 问题 的 朋友 可能 更加 
+实用 而且 对于 一个 问题 从 不同 角度 看待 也 
+利于 加深理解 下面 一 本书 就是 这个 方向 的 典范 
+Lie Groups Lie Algebras and Representations An Elementary Introduction . 
+    by Brian C . Hall 此书 从 开始 
+即从 矩阵 切入 从 代数 而非 几何 角度 引入 矩阵 
+李群 的 概念 并 通过 定义 运算 的 方式 建立 
+exponential mapping 并 就此 引入 李代数 这种方式 比起 传统 的 
+通过 左 不变 向量场 Left invariant vector field 的 方式 
+定义 李代数 更容易 为人 所 接受 也 更容易 揭示 李代数 
+的 意义 最后 也有 专门 的 论述 把 这种 新的 
+定义 方式 和 传统 方式 联系 起来 无论 是 研究 
+Vision Learning 还是 其它 别的 学科 数学 终究 是 根基 
+所在 学好 数学 是 做好 研究 的 基石 学好 数学 
+的 关键 归根结底 是 自己 的 努力 但是 选择 一本 
+好 的 书 还是 大 有 益处 的 不同 的 
+人 有 不同 的 知识 背景 思维 习惯 和 研究 
+方向 因 此书 的 选择 也 因人而异 只求 适合 自己 
+不必 强求 一致 上面 的 书 仅仅 是从 我 个人 
+角度 的 出发 介绍 的 我 的 阅读 经历 实在 
+非常 有限 很 可能 还有 比 它们 更好 的 书 
+转 自 一位 MIT 牛人 的 空间 文章 总 感觉 
+做 计算机 视觉 和 显著性 检测 这 一块 数学 的 
+储备 不够 从 大学 到 现在 课堂 上学 的 和 
+自学 的 数学 其实 不算 少了 可是 在 研究 的 
+过程 中 总是 发现 需要 补充 新 的 数学 知识 
+Learning 和 Vision 都是 很多 种 数学 的 交汇 场 
+看着 不同 的 理论 体系 的 交汇 对于 一个 researcher 
+来说 往往 是 非常 exciting 的 enjoyable 的 事情 不过 
+这也 代表 着 要 充分 了解 这个 领域 并且 取得 
+有 意义 的 进展 是 很 艰苦 的 记得 在 
+两年 前 的 一次 blog 里面 提到 过 和 learning 
+有关 的 数学 今天 看来 我 对于 数学 在 这个 
+领域 的 作用 有了/nr 新的 思考 对于 Learning 的 研究 
+1 Linear Algebra 线性代数   和 /nr Statistics 统计学   是 
+最重要 和 不可 缺少 的 2 Calculus 微积分 只是 数学分析 
+体系 的 基础 3 Partial Differential Equation   偏 微分方程 
+4 Functional Analysis 泛函分析 5 Measure Theory 测度 理论 6 
+Topology 拓扑学 7 Differential Manifold 微分流形 8 Lie Group Theory 
+李 群论 9 Graph Theory 图论 书籍 推荐 1 . 
+  线性代数 Linear Algebra Introduction to Linear Algebra 3rd Ed 
+.     by Gilbert Strang . 这 本书 是 
+MIT 的 线性代数 课 使用 的 教材 也是 被 很多 
+其它 大学 选用 的 经典 教材 它 的 难度 适中 
+讲解 清晰 重要 的 是 对 许多 核心 的 概念 
+讨论 得 比较 透彻 我 个人 觉得 学习 线性代数 最 
+重要 的 不是 去 熟练 矩阵 运算 和 解方程 的 
+方法 这些 在 实际 工作 中 MATLAB 可以 代劳 关键 
+的 是 要 深入 理解 几个 基础 而又 重要 的 
+概念 子空间 Subspace 正交 Orthogonality 特征值 和 特征向量 Eigenvalues and 
+eigenvectors 和 线性变换 Linear transform 从我的/nr 角度 看来 一本 线 
+代 教科书 的 质量 就 在于 它 能否 给 这些 
+根本 概念 以 足够 的 重视 能否 把 它们 的 
+联系 讲清楚 Strang 的 这 本书 在 这 方面 是 
+做得 很好 的 而且 这本书 有个 得天独厚 的 优势 书 
+的 作者 长期 在 MIT 讲授 线性代数 课 18.06 课程 
+的 video 在 MIT 的 Open courseware 网站 上 有 
+提供 有 时间 的 朋友 可以 一边 看着 名师 授课 
+的 录像 一边 对照 课本 学习 或者 复习 http / 
+/ ocw . mit . edu / OcwWeb / Mathematics 
+/ 18 06Spring 2005 / CourseHome / index . htm2 
+.   概率 和 统计   Probability and Statistics 概率论 
+和 统计 的 入门 教科书 很多 我 目前 也 没有 
+特别 的 推荐 我 在 这里 想 介绍 的 是 
+一本 关于 多元 统计 的 基础 教科书 Applied Multivariate Statistical 
+Analysis   5th Ed .     by Richard A 
+. Johnson and Dean W . Wichern 这 本书 是 
+我 在 刚 接触 向量 统计 的 时候 用于 学习 
+的 我 在 香港 时做/nr 研究 的 基础 就是 从此 
+打下 了 实验室 的 一些 同学 也 借用 这本书 学习 
+向量 统计 这本书 没有 特别 追求 数学上 的 深度 而是 
+以 通俗 易懂 的 方式 讲述 主要 的 基本 概念 
+读 起来 很 舒服 内容 也 很 实用 对于 Linear 
+regression factor analysis principal component analysis PCA and canonical component 
+analysis CCA 这些 Learning 中 的 基本 方法 也 展开 
+了 初步 的 论述 之后 就 可以 进一步 深入 学习 
+贝叶斯 统计 和 Graphical models 一本 理想 的 书 是 
+Introduction to Graphical Models draft version .     by 
+M . Jordan and C . Bishop . 我 不 
+知道 这 本书 是不是 已经 出版 了 不要 和 Learning 
+in Graphical Models 混淆 那 是个 论文集 不适合 初学 这本书/i 
+从/p 基本/n 的/uj 贝叶斯/nr 统计模型/i 出发/v 一直/d 深入/v 到/v 复杂/a 
+的/uj 统计/v 网络/n 的/uj 估计/v 和/c 推断/v 深入浅出 statistical learning/w 
+的/uj 许多/m 重要/a 方面/n 都在/nr 此书/r 有/v 清楚/a 论述/v 和/c 
+详细/ad 讲解/v MIT 内部 可以 access 至于 外面 好像 也是 
+有 电子版 的 3 .   分析   Analysis 我 
+想 大家 基本 都在/nr 大学 就 学过 微积分 或者 数学分析 
+深度 和 广度 则 随 各个 学校 而异 了 这个 
+领域 是 很多 学科 的 基础 值得 推荐 的 教科书 
+莫过于 Principles of Mathematical Analysis by Walter Rudin 有点 老 
+但是 绝 对 经典 深入 透彻 缺点 就是 比较 艰深 
+这是 Rudin 的 书 的 一贯 风格 适合于/i 有/v 一定/d 
+基础/n 后/f 回头/v 去看/i 在 分析 这个 方向 接下来 就是 
+泛函分析 Functional Analysis Introductory Functional Analysis with Applications by Erwin 
+Kreyszig . 适合 作为 泛 函 的 基础 教材 容易 
+切入 而 不失 全面 我 特别 喜欢 它 对于 谱 
+论 和 算子 理论 的 特别 关注 这 对于 做 
+learning 的 研究 是 特别 重要 的 Rudin 也有 一本 
+关于 functional analysis 的 书 那 本书 在 数学 上 
+可能 更为 深刻 但是 不 易于 上手 所讲 内容 和 
+learning 的 切 合度 不如 此书 在 分析 这个 方向 
+还有 一个 重要 的 学科 是 测度 理论 Measure theory 
+但是 我 看过 的 书 里面 目前 还 没有 感觉 
+有 特别 值得 介绍 的 4 .   拓扑   
+Topology 在 我 读过 的 基本 拓扑 书 各有特色 但是 
+综合 而言 我 最 推崇 Topology 2nd Ed .   
+  by James Munkres 这 本书 是 Munkres 教授 长期 
+执教 MIT 拓扑 课 的 心血 所 凝 对于 一般 
+拓扑学 General topology 有 全面 介绍 而 对于 代数拓扑 Algebraic 
+topology 也有 适度 的 探讨 此书 不 需要 特别 的 
+数学 知识 就 可以 开始 学习 由浅入深 从最/nr 基本 的 
+集合论 概念 很多 书 不屑 讲 这个 到 Nagata Smirnov 
+Theorem 和 Tychonoff theorem 等 较深 的 定理 很多 书 
+避开 了 这个 都 覆盖 了 讲述 方式 思想性 很强 
+对于 很多 定理 除了 给 出 证明 过程 和 引导 
+你 思考 其 背后 的 原理 脉络 很多 令人 赞叹 
+的 亮点 我 常 读得 忘却 饥饿 不愿 释手 很多 
+习题 很有 水平 5 .   流形 理论   Manifold 
+theory 对于/p 拓扑/v 和/c 分析/vn 有/v 一定/d 把握/v 时/n 方可 
+开始 学习 流形 理论 否则 所学 只能 流于 浮浅 我 
+所 使用 的 书 是 Introduction to Smooth Manifolds . 
+    by John M . Lee 虽然 书名 有 
+introduction 这个 单词 但是 实际上 此书 涉 入 很深 除了 
+讲授 了 基本 的 manifold   tangent space bundle   
+sub manifold 等 还 探讨 了 诸如 纲 理论 Category 
+theory 德拉姆 上同调 De Rham cohomology 和 积分 流形 等 
+一些 比较 高级 的 专题 对于 李群 和 李代数 也有 
+相当多 的 讨论 行文 通俗 而又 不失 严谨 不过 对 
+某些 记号 方式 需要 熟悉 一下 虽然 李 群论 是 
+建 基于 平滑 流形 的 概念 之上 不过 也/d 可能/v 
+从/p 矩阵/n 出发/v 直接/ad 学习/v 李群/nr 和/c 李代数/i 这种方法 对于 
+急需 使用 李 群论 解决 问题 的 朋友 可能 更加 
+实用 而且 对于 一个 问题 从 不同 角度 看待 也 
+利于 加深理解 下面 一 本书 就是 这个 方向 的 典范 
+Lie Groups Lie Algebras and Representations An Elementary Introduction . 
+    by Brian C . Hall 此书 从 开始 
+即从 矩阵 切入 从 代数 而非 几何 角度 引入 矩阵 
+李群 的 概念 并 通过 定义 运算 的 方式 建立 
+exponential mapping 并 就此 引入 李代数 这种方式 比起 传统 的 
+通过 左 不变 向量场 Left invariant vector field 的 方式 
+定义 李代数 更容易 为人 所 接受 也 更容易 揭示 李代数 
+的 意义 最后 也有 专门 的 论述 把 这种 新的 
+定义 方式 和 传统 方式 联系 起来 无论 是 研究 
+Vision Learning 还是 其它 别的 学科 数学 终究 是 根基 
+所在 学好 数学 是 做好 研究 的 基石 学好 数学 
+的 关键 归根结底 是 自己 的 努力 但是 选择 一本 
+好 的 书 还是 大 有 益处 的 不同 的 
+人 有 不同 的 知识 背景 思维 习惯 和 研究 
+方向 因 此书 的 选择 也 因人而异 只求 适合 自己 
+不必 强求 一致 上面 的 书 仅仅 是从 我 个人 
+角度 的 出发 介绍 的 我 的 阅读 经历 实在 
+非常 有限 很 可能 还有 比 它们 更好 的 书 

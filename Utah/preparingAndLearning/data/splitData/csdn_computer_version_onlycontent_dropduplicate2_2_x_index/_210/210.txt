@@ -1,0 +1,47 @@
+在计算机视觉领域，每年都会有很多顶级会议召开，如比较著名的CVPR，ICCV等，在会议上会有CV各个领域的新思想、新方法被提出来，推动着这个领域的发展，以下为2019年各个会议的时间地点，还有会议相关链接。
+1. IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2019)
+Location ：Long Beach Convention & Entertainment Center, Los Angeles CA, United States
+Date：Jun 15 - Jun 21, 2019
+Paper Submission Deadline：Nov 16, 2018 (92)
+http://cvpr2019.thecvf.com
+２. IEEE International Conference on Computer Vision (ICCV 2019)
+Location ：Seoul, South Korea
+Date: Oct 27 - Nov 3, 2019
+Paper Submission Deadline: Mar, 2019
+http://iccv2019.thecvf.com
+3. International Conference on Machine Learning（ICML 2019）
+Location：Long Beach Convention Center, Long Beach, United States
+Date：Jun 10 - Jun 15, 2019
+Paper Submission Deadline: TBD
+https://icml.cc/Conferences/2019
+4.Association for the Advancement of Artificial Intelligence（AAAI 2019）
+Location：Hilton Hawaiian Village, Waikiki Beach, Honolulu, Hawaii, United States
+Date：Jan 27 - Feb 1, 2019
+Paper Submission Deadline:Sep 5, 2018 (20)
+http://www.aaai.org/aaai19
+5.International Joint Conference on Artificial Intelligence（IJCAI 2019）
+Location：Macao, China
+Date：Aug 10 - Aug 16, 2019
+Paper Submission Deadline：Feb 25, 2019
+http://www.ijcai19.org
+6. Computer Graphics and Interactive Techniques（SIGGRAPH 2019）
+Location：Los Angeles, California, United States
+Date：Jul 29 – Aug 1, 2019
+Paper Submission Deadline：TBD
+http://s2019.siggraph.org
+7. ACM SIGKDD International Conference on Knowledge discovery and data mining（SIGKDD 2019）
+Location：Anchorage, Alaska, United States
+Date：Aug 3 - Aug 7, 2019
+Paper Submission Deadline：TBD
+http://www.kdd.org/kdd2019
+8. Annual Meeting of the Association for Computational Linguistics（ACL 2019）
+Location：Florence, Italy
+Date：Jul 28 - Aug 2, 2019
+Paper Submission Deadline：TBD
+http://acl2019.org
+9. International Conference on Learning Representations（ICLR 2019)
+Location：New Orleans, United States
+Date：May 6 - May 9. 2019
+Paper Submission Deadline：Sep 27, 2018 (42)
+http://www.iclr.cc
+转载自https://blog.csdn.net/hitzijiyingcai/article/details/81709755

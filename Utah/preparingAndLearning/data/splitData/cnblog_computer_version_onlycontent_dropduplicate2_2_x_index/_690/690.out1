@@ -1,0 +1,138 @@
+说明 这个 贴 用于 收集 笔者 能力 范围内 收集 收藏 
+并 认为 有用 的 资料 方便 各方 参考 免去 到处 
+找寻 之苦 提升 信息 的 交叉 引用 价值 仅供参考 不作为 
+必然 的 推荐 倾向 如 涉及 版权 等 问题 请 
+相关 人员 联系 笔者 谢谢 | 博客 | 龙心 尘 
+的 博客 http / / blog . csdn . net 
+/ longxinchen _ ml 寒 小阳 的 博客 http / 
+/ blog . csdn . net / han _ xiaoyang 
+wepon http / / 2hwp . com / 面 包包 
+包包 包包 http / / blog . csdn . net 
+/ breada 仆 居 http / / blog . csdn 
+. net / kkk584520 | 人工智能 | 机器学习 | 数据挖掘 
+| 神经网络 | 手把手 入门 神经网络 系列 2篇 有图/nr 有码 
+机器学习 系列 7篇 有图/nr 有码 NLP 自然语言 处理 系列 5篇 
+有图/nr 有码 利用 Python 练习 数据挖掘 建议 适合 入门 简介 
+围绕 1个 例子 完整 的 步骤 少量 错误 扩展 关于 
+IRIS 数据集 的 Python 分析   太初 扩展 IRIS 数据集 
+的 PCA 分析 和 3D 展现 用 Python 做 科学计算 
+基础 篇 简介 不错 的 教程 scikit learn 的 主要 
+模块 和 基本 使用 简介 内容 精要 浅谈 神经网络 入门 
+| 统计 与 计算 入门 | 人脸识别 | 指纹 掌纹 
+识别 | 生物 识别 | 计算机 视觉 CV PCA + 
+SVM 人脸识别 深度 学习 与 计算机 视觉 系列 10篇 有图/nr 
+有码/n Python/w 和/c OPENVC/w 分析/vn 烤箱/n 状态/n 从/p 特征/n 描述符/n 
+到/v 深度/ns 学习/v 计算机 视觉 发展 20年 Python 计算机 视觉 
+编程 10 章+/nr 附录 ABC | 算法 | 模型 | 
+| 朴素 贝叶斯 分类器   | 朴素 贝叶斯 分类   
+| 朴素 贝叶斯 的 三个 常用 模型 高斯 / 多项式 
+/ 伯努利   | | 判别 模型 / 生成 模型 
+与 朴素 贝叶斯 方法 | 聚 类 算法 k mean 
+| 聚 类 算法 k mean | 白化   | 
+PCA 1 2 3 4 5 | | 线性 回归 
+  | 中文分词 软件 14款 开源 |   | | 
+实用 连接 | | numpy . zeros 函数 用法 | 
+SCIPY . ORG   | numpy 中的 ndarray 方法 和 
+属性   |   多维 数组 ndarray 及 切片 | 
+plot 绘图   | numpy . linspace | numpy . 
+matrix |   numpy . arange |   scipy   
+| | sklearn 官网 API | 大量 wheel   | 
+Anaconda 简介 极好 的 PythonIDE 安装 使用   | | 
+平台 | 网站 | 竞赛 | Aminer Open Science Platform 
+  | Kaggle 体验 简介   | DataCastle   | 
+阿里 天池   体会 总结 | 神经 网络 实验室 所见即 
+所得 的 测试 谷歌 tensorflow 极好   | 谷歌 大脑 
+Google Brain | | 实用 连接 | | Python 数据 
+图表 工具 | Python 写 爬虫 查询   | END 
+说明 这个 贴 用于 收集 笔者 能力 范围内 收集 收藏 
+并 认为 有用 的 资料 方便 各方 参考 免去 到处 
+找寻 之苦 提升 信息 的 交叉 引用 价值 仅供参考 不作为 
+必然 的 推荐 倾向 如 涉及 版权 等 问题 请 
+相关 人员 联系 笔者 谢谢 | 博客 | 龙心 尘 
+的 博客 http / / blog . csdn . net 
+/ longxinchen _ ml 寒 小阳 的 博客 http / 
+/ blog . csdn . net / han _ xiaoyang 
+wepon http / / 2hwp . com / 面 包包 
+包包 包包 http / / blog . csdn . net 
+/ breada 仆 居 http / / blog . csdn 
+. net / kkk584520 | 人工智能 | 机器学习 | 数据挖掘 
+| 神经网络 | 手把手 入门 神经网络 系列 2篇 有图/nr 有码 
+机器学习 系列 7篇 有图/nr 有码 NLP 自然语言 处理 系列 5篇 
+有图/nr 有码 利用 Python 练习 数据挖掘 建议 适合 入门 简介 
+围绕 1个 例子 完整 的 步骤 少量 错误 扩展 关于 
+IRIS 数据集 的 Python 分析   太初 扩展 IRIS 数据集 
+的 PCA 分析 和 3D 展现 用 Python 做 科学计算 
+基础 篇 简介 不错 的 教程 scikit learn 的 主要 
+模块 和 基本 使用 简介 内容 精要 浅谈 神经网络 入门 
+| 统计 与 计算 入门 | 人脸识别 | 指纹 掌纹 
+识别 | 生物 识别 | 计算机 视觉 CV PCA + 
+SVM 人脸识别 深度 学习 与 计算机 视觉 系列 10篇 有图/nr 
+有码/n Python/w 和/c OPENVC/w 分析/vn 烤箱/n 状态/n 从/p 特征/n 描述符/n 
+到/v 深度/ns 学习/v 计算机 视觉 发展 20年 Python 计算机 视觉 
+编程 10 章+/nr 附录 ABC | 算法 | 模型 | 
+| 朴素 贝叶斯 分类器   | 朴素 贝叶斯 分类   
+| 朴素 贝叶斯 的 三个 常用 模型 高斯 / 多项式 
+/ 伯努利   | | 判别 模型 / 生成 模型 
+与 朴素 贝叶斯 方法 | 聚 类 算法 k mean 
+| 聚 类 算法 k mean | 白化   | 
+PCA 1 2 3 4 5 | | 线性 回归 
+  | 中文分词 软件 14款 开源 |   | | 
+实用 连接 | | numpy . zeros 函数 用法 | 
+SCIPY . ORG   | numpy 中的 ndarray 方法 和 
+属性   |   多维 数组 ndarray 及 切片 | 
+plot 绘图   | numpy . linspace | numpy . 
+matrix |   numpy . arange |   scipy   
+| | sklearn 官网 API | 大量 wheel   | 
+Anaconda 简介 极好 的 PythonIDE 安装 使用   | | 
+平台 | 网站 | 竞赛 | Aminer Open Science Platform 
+  | Kaggle 体验 简介   | DataCastle   | 
+阿里 天池   体会 总结 | 神经 网络 实验室 所见即 
+所得 的 测试 谷歌 tensorflow 极好   | 谷歌 大脑 
+Google Brain | | 实用 连接 | | Python 数据 
+图表 工具 | Python 写 爬虫 查询   | END 
+说明 这个 贴 用于 收集 笔者 能力 范围内 收集 收藏 
+并 认为 有用 的 资料 方便 各方 参考 免去 到处 
+找寻 之苦 提升 信息 的 交叉 引用 价值 仅供参考 不作为 
+必然 的 推荐 倾向 如 涉及 版权 等 问题 请 
+相关 人员 联系 笔者 谢谢 | 博客 | 龙心 尘 
+的 博客 http / / blog . csdn . net 
+/ longxinchen _ ml 寒 小阳 的 博客 http / 
+/ blog . csdn . net / han _ xiaoyang 
+wepon http / / 2hwp . com / 面 包包 
+包包 包包 http / / blog . csdn . net 
+/ breada 仆 居 http / / blog . csdn 
+. net / kkk584520 | 人工智能 | 机器学习 | 数据挖掘 
+| 神经网络 | 手把手 入门 神经网络 系列 2篇 有图/nr 有码 
+机器学习 系列 7篇 有图/nr 有码 NLP 自然语言 处理 系列 5篇 
+有图/nr 有码 利用 Python 练习 数据挖掘 建议 适合 入门 简介 
+围绕 1个 例子 完整 的 步骤 少量 错误 扩展 关于 
+IRIS 数据集 的 Python 分析   太初 扩展 IRIS 数据集 
+的 PCA 分析 和 3D 展现 用 Python 做 科学计算 
+基础 篇 简介 不错 的 教程 scikit learn 的 主要 
+模块 和 基本 使用 简介 内容 精要 浅谈 神经网络 入门 
+| 统计 与 计算 入门 | 人脸识别 | 指纹 掌纹 
+识别 | 生物 识别 | 计算机 视觉 CV PCA + 
+SVM 人脸识别 深度 学习 与 计算机 视觉 系列 10篇 有图/nr 
+有码/n Python/w 和/c OPENVC/w 分析/vn 烤箱/n 状态/n 从/p 特征/n 描述符/n 
+到/v 深度/ns 学习/v 计算机 视觉 发展 20年 Python 计算机 视觉 
+编程 10 章+/nr 附录 ABC | 算法 | 模型 | 
+| 朴素 贝叶斯 分类器   | 朴素 贝叶斯 分类   
+| 朴素 贝叶斯 的 三个 常用 模型 高斯 / 多项式 
+/ 伯努利   | | 判别 模型 / 生成 模型 
+与 朴素 贝叶斯 方法 | 聚 类 算法 k mean 
+| 聚 类 算法 k mean | 白化   | 
+PCA 1 2 3 4 5 | | 线性 回归 
+  | 中文分词 软件 14款 开源 |   | | 
+实用 连接 | | numpy . zeros 函数 用法 | 
+SCIPY . ORG   | numpy 中的 ndarray 方法 和 
+属性   |   多维 数组 ndarray 及 切片 | 
+plot 绘图   | numpy . linspace | numpy . 
+matrix |   numpy . arange |   scipy   
+| | sklearn 官网 API | 大量 wheel   | 
+Anaconda 简介 极好 的 PythonIDE 安装 使用   | | 
+平台 | 网站 | 竞赛 | Aminer Open Science Platform 
+  | Kaggle 体验 简介   | DataCastle   | 
+阿里 天池   体会 总结 | 神经 网络 实验室 所见即 
+所得 的 测试 谷歌 tensorflow 极好   | 谷歌 大脑 
+Google Brain | | 实用 连接 | | Python 数据 
+图表 工具 | Python 写 爬虫 查询   | END 

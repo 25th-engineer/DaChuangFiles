@@ -1,0 +1,145 @@
+Apache Mahout 是 ApacheSoftware Foundation (ASF) 旗下的一个开源项目，提供一些可扩展的机器学习领域经典算法的实现，旨在帮助开发人员更加方便快捷地创建智能应用程序，并且，在 Mahout 的最近版本中还加入了对Apache Hadoop 的支持，使这些算法可以更高效的运行在云计算环境中。
+在Mahout实现的机器学习算法见下表：
+算法类
+算法名
+中文名
+分类算法
+Logistic Regression
+逻辑回归
+Bayesian
+贝叶斯
+SVM
+支持向量机
+Perceptron
+感知器算法
+Neural Network
+神经网络
+Random Forests
+随机森林
+Restricted Boltzmann Machines
+有限波尔兹曼机
+聚类算法
+Canopy Clustering
+Canopy聚类
+K-means Clustering
+K均值算法
+Fuzzy K-means
+模糊K均值
+Expectation Maximization
+EM聚类（期望最大化聚类）
+Mean Shift Clustering
+均值漂移聚类
+Hierarchical Clustering
+层次聚类
+Dirichlet Process Clustering
+狄里克雷过程聚类
+Latent Dirichlet Allocation
+LDA聚类
+Spectral Clustering
+谱聚类
+关联规则挖掘
+Parallel FP Growth Algorithm
+并行FP Growth算法
+回归
+Locally Weighted Linear Regression
+局部加权线性回归
+降维/维约简
+Singular Value Decomposition
+奇异值分解
+Principal Components Analysis
+主成分分析
+Independent Component Analysis
+独立成分分析
+Gaussian Discriminative Analysis
+高斯判别分析
+进化算法
+并行化了Watchmaker框架
+推荐/协同过滤
+Non-distributed recommenders
+Taste(UserCF, ItemCF, SlopeOne）
+Distributed Recommenders
+ItemCF
+向量相似度计算
+RowSimilarityJob
+计算列间相似度
+VectorDistanceJob
+计算向量间距离
+非Map-Reduce算法
+Hidden Markov Models
+隐马尔科夫模型
+集合方法扩展
+Collections
+扩展了java的Collections类
+Mahout最大的优点就是基于hadoop实现，把很多以前运行于单机上的算法，转化为了MapReduce模式，这样大大提升了算法可处理的数据量和处理性能。 Apache Mahout 是 ApacheSoftware Foundation (ASF) 旗下的一个开源项目，提供一些可扩展的机器学习领域经典算法的实现，旨在帮助开发人员更加方便快捷地创建智能应用程序，并且，在 Mahout 的最近版本中还加入了对Apache Hadoop 的支持，使这些算法可以更高效的运行在云计算环境中。
+在Mahout实现的机器学习算法见下表：
+算法类
+算法名
+中文名
+分类算法
+Logistic Regression
+逻辑回归
+Bayesian
+贝叶斯
+SVM
+支持向量机
+Perceptron
+感知器算法
+Neural Network
+神经网络
+Random Forests
+随机森林
+Restricted Boltzmann Machines
+有限波尔兹曼机
+聚类算法
+Canopy Clustering
+Canopy聚类
+K-means Clustering
+K均值算法
+Fuzzy K-means
+模糊K均值
+Expectation Maximization
+EM聚类（期望最大化聚类）
+Mean Shift Clustering
+均值漂移聚类
+Hierarchical Clustering
+层次聚类
+Dirichlet Process Clustering
+狄里克雷过程聚类
+Latent Dirichlet Allocation
+LDA聚类
+Spectral Clustering
+谱聚类
+关联规则挖掘
+Parallel FP Growth Algorithm
+并行FP Growth算法
+回归
+Locally Weighted Linear Regression
+局部加权线性回归
+降维/维约简
+Singular Value Decomposition
+奇异值分解
+Principal Components Analysis
+主成分分析
+Independent Component Analysis
+独立成分分析
+Gaussian Discriminative Analysis
+高斯判别分析
+进化算法
+并行化了Watchmaker框架
+推荐/协同过滤
+Non-distributed recommenders
+Taste(UserCF, ItemCF, SlopeOne）
+Distributed Recommenders
+ItemCF
+向量相似度计算
+RowSimilarityJob
+计算列间相似度
+VectorDistanceJob
+计算向量间距离
+非Map-Reduce算法
+Hidden Markov Models
+隐马尔科夫模型
+集合方法扩展
+Collections
+扩展了java的Collections类
+Mahout最大的优点就是基于hadoop实现，把很多以前运行于单机上的算法，转化为了MapReduce模式，这样大大提升了算法可处理的数据量和处理性能。

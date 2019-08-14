@@ -1,0 +1,488 @@
+导语 Science is NOT a battle it is a collaboration 
+. We all build on each other s ideas . 
+Science is an act of love not war . Love 
+for the beauty in the world that surr ounds us 
+and love to share and build something together . That 
+makes science a highly satisfying activity emotionally speaking Yoshua Bengio 
+人工智能 的 浪潮 正 席卷 全球 诸多 词汇 时刻 萦绕 
+在 我们 的 耳边 如 人工智能 机器学习 深度 学习 等 
+人工智能 的 概念 早在 1956年 就被 提出 顾名思义 用 计算机 
+来 构造 复杂 的 拥有 与 人类 智慧 同样 本质 
+特性 的 机器 经过 几十年 的 发展 在 2012 年后 
+得益于 数据量 的 上涨 运算 力 的 提升 和 机器学习 
+算法 深度 学习 的 出现 人工智能 开始 大 爆发 但 
+目前 的 科研 工作 都 集中 在 弱 人工智能 部分 
+即 让 机器 具备 观察 和 感知 能力 可以 一定 
+程度 的 理解 和 推理 预期 在 该 领域 能够 
+取得 一些 重大 突破 电影 里 的 人工智能 多半 都是 
+在 描绘 强 人工智能 即 让 机器 获得 自 适应能力 
+解决 一些 之前 还 没 遇到 过 的 问题 而 
+这 部分 在 目前 的 现实 世界 里 难以 真正 
+实现 弱 人工智能 有 希望 取得 突破 是 如何 实现 
+的 智能 又 从何而来 呢 这 主要 归功于 一种 实现 
+人工智能 的 方法 机器学习 一 机器学习 概念 机器学习 是 一种 
+实现 人工智能 的 方法 机器学习 最 基本 的 做法 是 
+使用 算法 来 解析 数据 从中 学习 然后 对 真实世界 
+中 的 事件 做出 决策 和 预测 与 传统 的 
+为 解决 特定 任务 硬 编码 的 软件 程序 不同 
+机器学习 是 用 大量 的 数据 来 训练 通过 各种 
+算法 从 数据 中 学习 如何 完成 任务 器 学习 
+直接 来源于 早期 的 人工智能 领域 传统 的 算法 包括 
+决策树 聚 类 贝叶斯 分类 支持 向量 机 EM Adaboost 
+等等 从 学习 方法 上来 分 机器学习 算法 可以 分为 
+监督 学习 如 分类 问题 无 监督 学习 如 聚 
+类 问题 半 监督 学习 集成 学习 深度 学习 和 
+强化 学习 传统 的 机器学习 算法 在 指纹 识别 基于 
+Haar 的 人脸 检测 基于 HoG 特征 的 物体 检测 
+等 领域 的 应用 基本 达到 了 商业化 的 要求 
+或者 特定 场景 的 商业化 水平 但 每 前进 一步 
+都 异常 艰难 直到 深度 学习 算法 的 出现 二 
+深度 学习 概念 深度 学习 是 一种 实现 机器 学习 
+的 技术 深度 学习 本来 并 不是 一种 独立 的 
+学习 方法 其 本身 也 会用 到有 监督 和无/nr 监督 
+的 学习 方法 来 训练 深度 神经网络 但 由于 近几年 
+该 领域 发展 迅猛 一些 特有 的 学习 手段 相继 
+被 提出 如 残差 网络 因此 越来越 多 的 人 
+将其 单独 看作 一种 学习 的 方法 最初 的 深度 
+学习 是 利用 深度 神经 网络 来 解决 特征 表达 
+的 一种 学习 过程 深度 神经 网络 本身 并 不是 
+一个 全新 的 概念 可 大致 理解为 包含 多个 隐含 
+层 的 神经 网络结构 为了 提高 深层 神经 网络 的 
+训练 效果 人们 对 神经元 的 连接 方法 和 激活 
+函数 等 方面 做出 相应 的 调整 其实 有 不少 
+想法 早年间 也曾 有过 但 由于 当时 训练 数据 量 
+不足 计算能力 落后 因此 最终 的 效果 不 尽如人意 深度 
+学习 作为 目前 最热 的 机器 学习 方法 但 并不 
+意味着 是 机器 学习 的 终点 起码 目前 存在 以下 
+问题 1               深度 
+学习 模型 需要 大量 的 训练 数据 才能 展现出 神奇 
+的 效果 但 现实 生活 中 往往 会 遇到 小 
+样本 问题 此时 深度 学习 方法 无法 入手 传统 的 
+机器 学习 方法 就 可以 处理 2       
+        有些 领域 采用 传统 的 简单 
+的 机器 学习 方法 可以 很好 地 解决 了 没必要 
+非得 用 复杂 的 深度 学习 方法 3     
+          深度 学习 的 思想 来源于 
+人脑 的 启发 但 绝不 是 人脑 的 模拟 因此 
+机器学习 框架 和 深度 学习 框架 之间 也 是 有区别 
+的 本质上 机器学习 框架 涵盖 用于 分类 回归 聚 类 
+异常 检测 和 数据 准备 的 各种 学习 方法 并且 
+其 可以 或 可以 不 包括 神经网络 方法 深度 学习 
+或 深度 神经网络 DNN 框架 涵盖 具有 许多 隐藏 层 
+的 各种 神经 网络拓扑 这些 层 包括 模式识别 的 多 
+步骤 过程 网络 中的 层 越多 可以/c 提取/v 用于/v 聚/v 
+类/q 和/c 分类/n 的/uj 特征/n 越/d 复杂/a 我们 常见 的 
+Caffe CNTK DeepLearning4j Keras MXNet 和 TensorFlow 是 深度 学习 
+框架 Scikit learning 和 Spark MLlib 是 机器学习 框架 Theano 
+跨越 了 这 两个 类别 本文 接下来 的 篇幅 将会 
+重点 介绍 深度 学习 的 三个 框架 caffe tensorflow 和 
+keras 如果 只是 需要 使用 传统 的 机器学习 基础 算法 
+使用 scikit learning 和 spark MLlib 则 更为 合适 三 
+深度 学习 框架 比较 神经网络 一般 包括 训练 测试 两 
+大 阶段 训练 就是 把 训练 数据 原料 和 神经 
+网络 模型 如 AlexNet RNN 等 倒进 神经网络 训练 框架 
+例如 cafffe 等 然后 用 CPU 或 GPU 真 火 
+提炼出 模型 参数 仙丹 的 过程 测试 就是 把 测试数据 
+用 训 练好 的 模型 神经网络 模型 + 模型 参数 
+跑 一 跑 看看 结果 如何 作为 炼丹炉 caffe keras 
+tensorflow 就是 把 炼制 过程 所 涉及 的 概念 做 
+抽象 形成 一套 体系 一 Caffe1 概念 介绍 Caffe 是 
+一个 清晰 而 高效 的 深度 学习 框架 也 是 
+一个 被 广泛 使用 的 开源 深度 学习 框架 在 
+Tensorflow 出现 之前 一直 是 深度 学习 领域 Github star 
+最多 的 项目 Caffe 的 主要 优势 为 容易 上手 
+网络结构 都 是以 配置文件 形式 定义 不 需要 用 代码 
+设计 网络 训练 速度快 组件 模块化 可以 方便 的 拓展 
+到 新的 模型 和 学习 任务 上 但是/c Caffe/w 最/d 
+开始/v 设计/vn 时的/nr 目标/n 只/d 针对/p 于/p 图像/n 没有 考虑 
+文本 语音 或者 时间 序列 的 数据 因此 Caffe 对 
+卷积 神经 网络 的 支持 非常好 但是 对于 时间 序列 
+RNN LSTM 等 支持 的 不是 特别 充分 caffe 工程 
+的 models 文件夹 中 常用 的 网络 模型 比较 多 
+比如 Lenet AlexNet ZFNet VGGNet GoogleNet ResNet 等 2 Caffe 
+的 模块 结构 总的来讲 由/p 低到/i 高/a 依次/d 把/p 网络/n 
+中/f 的/uj 数据/n 抽象/v 成/n Blob/w 各层 网络 抽象 成 
+Layer 整个 网络 抽象 成 Net 网络 模型 的 求解 
+方法 抽象 成 Solver 1           
+  Blob 主要 用来 表示 网络 中 的 数据 包括 
+训练 数据 网络 各层 自身 的 参数 网络 之间 传递 
+的 数据 都是/nr 通过 Blob 来 实现 的 同时 Blob 
+数据 也 支持 在 CPU 与 GPU 上 存储 能够 
+在 两者 之间 做 同步 2         
+    Layer 是 对 神经 网络 中 各种 层 
+的 一个 抽象 包括 我们 熟知 的 卷积 层 和下/nr 
+采样 层 还有/v 全/a 连接/v 层/q 和/c 各种/r 激活/a 函/n 
+数层/n 等等/u 同时 每种 Layer 都/d 实现/v 了/ul 前/f 向/p 
+传播/vn 和/c 反向/v 传播/vn 并 通过 Blob 来 传递数据 3 
+            Net 是 对 整个 
+网络 的 表示 由 各种 Layer 前后 连接 组合而成 也 
+是 我们 所 构建 的 网络 模型 4     
+        Solver 定义 了 针对 Net 网络 
+模型 的 求解 方法 记录 网络 的 训练 过程 保存 
+网络 模型 参数 中断 并 恢复 网络 的 训练 过程 
+自定义 Solver 能够 实现 不同 的 网络 求解 方式 3 
+安装 方式 Caffe   需要 预先 安装 比 较多 的 
+依赖 项 CUDA snappy leveldb gflags glog szip lmdb OpenCV 
+hdf5 BLAS boost 等等 Caffe 官网 http / / caffe 
+. berkeleyvision . org / Caffe Github https / / 
+github . com / BVLC / caffeCaffe   安装 教程 
+http / / caffe . berkeleyvision . org / installation 
+. html   http / / blog . csdn . 
+net / yhaolpz / article / details / 71375762Caffe   
+安装 分为 CPU 和 GPU 版本 GPU 版本 需要 显卡 
+支持 以及 安装 CUDA Caffe 依赖   ProtoBuffer Boost GFLAGS 
+GLOG BLAS HDF5 OpenCV LMDB LEVELDB Snappy4 使用 Caffe 搭建 
+神经网络 表 3 1 caffe 搭建 神经网络 流程 使用 流程 
+操作 说明 1 数据格式 处理 将 数据 处理 成 caffe 
+支持 格式 具体 包括 LEVELDB LMDB 内存 数据 hdfs 数据 
+图像 数据 windows dummy 等 2 编写 网络结构 文件 定义 
+网络结构 如 当前 网络 包括 哪 几层 每层 作用 是 
+什么 使用 caffe 过程 中 最 麻烦 的 一个 操作步骤 
+具体 编写 格式 可 参考 caffe 框架 自带 自动识别 手写体 
+样例 caffe / examples / mnist / lenet _ train 
+_ test . prototxt 3 编写 网络 求解 文件 定义 
+了 网络 模型 训练 过程 中 需要 设置 的 参数 
+比如 学习率 权重 衰减系数 迭代 次数 使用 GPU 还是 CP 
+等 一般 命名 方式 为 xx _ solver . prototxt 
+可 参考 caffe / examples / mnist / lenet _ 
+solver . prototxt 4 训练 基于 命令行 的 训练 如 
+caffe train solver examples / mnist / lenet _ solver 
+. prototxt5 测试 caffe test model examples / mnist / 
+lenet _ train _ test . prototxt weights examples / 
+mnist / lenet _ iter _ 10000 . caffemodel gpu 
+0 iterations 100 在 上述 流程 中 步骤 2 是 
+核心 操作 也是 caffe 使用 最让人 头痛 的 地方 keras 
+则 对 该 部分 做了 更 高层 的 抽象 让 
+使用者 能够 快速 编写 出 自己 想 要 实现 的 
+模型 二 Tensorflow1 概念 介绍 TensorFlow 是 一个 使用 数据流 
+图 进行 数值 计算 的 开源 软件库 图中 的 节点 
+表示 数学 运算 而 图 边 表示 在 它们 之间 
+传递 的 多维 数据 阵列 又称 张量 灵活 的 体系 
+结构 允许 你 使用 单个 API 将 计算 部署 到 
+桌面 服务器 或 移动 设备 中 的 一个 或 多个 
+CPU 或 GPU Tensorflow 涉及 相关 概念 解释 如下 1 
+符号计算 符号计算 首先 定义 各种 变量 然后 建立 一个 计 
+算图 计 算图 规定 了 各个 变量 之间 的 计算 
+关系   符号计算 也叫 数据流 图 其 过程 如下 1 
+所示 数据 是 按 图中 黑色带 箭头 的 线 流动 
+的 图 3 1 数据流 图 示例 数据流 图 用 
+结点 nodes 和 线 edges 的 有向图 来 描述 数学计算 
+①                 节点 
+一般 用来 表示 施加 的 数学 操作 但 也 可以 
+表示 数据 输入 feed in 的 起点 / 输出 push 
+out 的 终点 或者 是 读取 / 写入 持久 变量 
+persistent variable 的 终点 ②           
+      线 表示 节点 之间 的 输入 / 
+输出 关系 ③               
+  在线 上 流动 的 多维 数据 阵列 被称作 张量 
+2 张量 张量 tensor 可以 看作 是 向量 矩阵 的 
+自然 推广 用来 表示 广泛 的 数据 类型 张量 的 
+阶数 也叫 维度 0 阶 张量 即 标量 是 一个 
+数 1 阶 张量 即 向量 一组 有序 排列 的 
+数 2 阶 张量 即 矩阵 一组 向量 有序 的 
+排列 起来 3 阶 张量 即 立方体 一组 矩阵 上下 
+排列 起来 4 阶 张量 . . . . . 
+. 依次 类推 3 数据格式 data _ format 目前 主要 
+有 两种 方式 来 表示 张量 ① th 模式 或 
+channels _ first 模式 Theano 和 caffe 使用 此 模式 
+② tf 模式 或 channels _ last 模式 TensorFlow 使用 
+此 模式 下面 举例说明 两种 模式 的 区别 对于 100张 
+RGB3 通道 的 16 × 32 高为/nr 16 宽 为 
+32 彩色 图 th 表示 方式 100 3 16 32 
+tf 表示 方式 100 16 32 3 唯一 的 区别 
+就是 表示 通道 个数 3 的 位置 不 一样 2 
+Tensorflow 的 模块 结构 Tensorflow / core 目录 包含 了 
+TF 核心 模块 代码 具体 结构 如 2 所示 图 
+3 2 tensorflow 代码 模块 结构 3 安装 方式 1 
+官网 下载 naconda 安装 https / / www . anaconda 
+. com / download / 2 依次 在 Anaconda Prompt 
+控制台 按 以下 5个 步骤 输入 指令 进行 安装 1 
+              安装 py3 + 
+cmd conda create n p y 3.6 python = 3.6 
+anaconda2               激活 虚拟环境 
+cmd activate p y 3.63           
+    激活 TSF 预 安装 cmd conda create n 
+tensorflow python = 3 . 6activate tensorflow4       
+        安装 TSF pip install ignore installed 
+upgrade tensorflowpip install ignore installed upgrade tensorflow gpu5     
+          退出 虚拟环境 cmd deactivate p 
+y 3.64 使用 Tensorflow 搭建 神经 网络 使用 Tensorflow 搭建 
+神经网络 主要 包含 以下 6个 步骤 1       
+        定义 添加 神经 层 的 函数 
+2               准备 训练 
+的 数据 3               
+定义 节点 准备 接收数据 4           
+    定义 神经 层 隐藏 层 和 预测 层 
+5               定义 loss 
+表达式 6               选择 
+optimizer 使 loss 达到 最小 7         
+      对 所有 变量 进行 初始化 通过 sess 
+. run optimizer 迭代 多次 进行 学习 5 示例代码 Tensorflow 
+构建 神经网络 识别 手写 数字 具体 代码 如下 所示 import 
+tensorflow as tf import numpy as np # 添加 层 
+def add _ layer inputs in _ size out _ 
+size activation _ function = None # add one more 
+layer and return the output of this layer Weights = 
+tf . Variable tf . random _ normal in _ 
+size out _ size biases = tf . Variable tf 
+. zeros 1 out _ size + 0.1 Wx _ 
+plus _ b = tf . matmul inputs Weights + 
+biases if activation _ function is None outputs = Wx 
+_ plus _ b else outputs = activation _ function 
+Wx _ plus _ b return outputs # 1 . 
+训练 的 数据 # Make up some real data x 
+_ data = np . linspace 1 1 300 np 
+. newaxis noise = np . random . normal 0 
+0.05 x _ data . shape y _ data = 
+np . square x _ data 0.5 + noise # 
+2 . 定义 节点 准备 接收数据 # define placeholder for 
+inputs to network xs = tf . placeholder tf . 
+float32 None 1 ys = tf . placeholder tf . 
+float32 None 1 # 3 . 定义 神经 层 隐藏 
+层 和 预测 层 # add hidden layer 输入 值 
+是 xs 在 隐藏 层 有 10 个 神经元 l1 
+= add _ layer xs 1 10 activation _ function 
+= tf . nn . relu # add output layer 
+输入 值 是 隐藏 层 l1 在 预测 层 输出 
+1 个 结果 prediction = add _ layer l1 10 
+1 activation _ function = None # 4 . 定义 
+loss 表达式 # the error between prediciton and real data 
+loss = tf . reduce _ mean tf . reduce 
+_ sum tf . square ys prediction reduction _ indices 
+= 1 # 5 . 选择 optimizer 使 loss 达到 
+最小 # 这 一行 定义 了 用 什么 方式 去 
+减少 loss 学习率 是 0.1 train _ step = tf 
+. train . G r a d i e n 
+t D e s c e n t O p 
+t i m i z e r 0.1 . minimize 
+loss # important step 对 所有 变量 进行 初始化 init 
+= tf . initialize _ all _ variables sess = 
+tf . Session # 上面 定义 的 都 没有 运算 
+直到 sess . run 才会 开始 运算 sess . run 
+init # 迭代 1000 次 学习 sess . run optimizer 
+for i in range 1000 # training train _ step 
+和 loss 都 是由 placeholder 定义 的 运算 所以 这里 
+要用 feed 传入 参数 sess . run train _ step 
+feed _ dict = { xs x _ data ys 
+y _ data } if i % 50 = = 
+0 # to see the step improvement print sess . 
+run loss feed _ dict = { xs x _ 
+data ys y _ data } 三 Keras1 概念 介绍 
+Keras 由 纯 Python 编写 而成 并 基于 Tensorflow Theano 
+以及 CNTK 后端 相当于 Tensorflow Theano CNTK 的 上层 接口 
+号称 10行 代码 搭建 神经网络 具有 操作 简单 上手 容易 
+文档资料 丰富 环境 配置 容易 等 优点 简化 了 神经 
+网络 构建 代码 编写 的 难度 目前/t 封/q 装有/b 全/a 
+连接/v 网络/n 卷积 神经网络 RNN 和 LSTM 等 算法 Keras 
+有 两种 类型 的 模型 序 贯 模型 Sequential 和函/nr 
+数式 模型 Model 函 数式 模型 应用 更为 广泛 序 
+贯 模型 是 函 数式 模型 的 一种 特殊 情况 
+1               序 贯 
+模型 Sequential 单/n 输入/v 单/n 输出/v 一条 路通 到底 层 
+与 层 之间 只有 相邻 关系 没有 跨 层 连接 
+这种 模型 编译 速度快 操作 也 比较 简单 2   
+            函 数式 模型 Model 
+多 输入 多 输出 层 与 层 之间 任意 连接 
+这种 模型 编译 速度慢 2 Keras 的 模块 结构 Keras 
+主要 由 5大 模块 构成 模块 之间 的 关系 及 
+每个 模块 的 功能 如 3 所示 图 3 3 
+keras 模块 结构图 3 安装 方式 Keras 的 安装 方式 
+有 以下 三 个 步骤 1         
+      安装 anaconda python 2       
+        用于 科学计算 的 python 发行版 支持 
+Linux Mac Windows 系统 提供 了 包 管理 与 环境 
+管理 的 功能 可以 很 方便 的 解决 多 版本 
+python 并存 切换 以及 各种 第三方 包 安装 问题 3 
+              利用 pip 或者 
+conda 安装 numpy keras pandas tensorflow 等 库 下载 地址 
+https / / www . anaconda . com / what 
+is anaconda / 4 使用 Keras 搭建 神经 网络 使用 
+keras 搭建 一个 神经 网络 包括 5个 步骤 分别为 模型 
+选择 构建 网络层 编译 训练 和 预测 每个 步骤 操作 
+过程 中 使用 到 的 keras 模块 如 4 所示 
+图 3 4 使用 keras 搭建 神经网络 步骤 6 示例代码 
+Kears 构建 神经网络 识别 手写 数字 具体 代码 如下 所示 
+from keras . models import Sequential from keras . layers 
+. core import Dense Dropout Activation from keras . optimizers 
+import SGD from keras . datasets import mnist import numpy 
+第一步 选择 模型 model = Sequential 第二步 构建 网络层 model 
+. add Dense 500 input _ shape = 784 # 
+输入 层 28 * 28 = 784 model . add 
+Activation tanh # 激活 函数 是 tanh model . add 
+Dropout 0.5 # 采用 50% 的 dropout model . add 
+Dense 500 # 隐藏 层 节点 500个 model . add 
+Activation tanh model . add Dropout 0.5 model . add 
+Dense 10 # 输出 结果 是 10个 类别 所以 维度 
+是 10 model . add Activation softmax # 最后 一层 
+用 softmax 作为 激活 函数 第三步 编译 sgd = SGD 
+lr = 0.01 decay = 1e 6 momentum = 0.9 
+nesterov = True # 优化 函数 设定 学习率 lr 等 
+参数 model . compile loss = categorical _ crossentropy optimizer 
+= sgd class _ mode = categorical # 使用 交叉 
+熵 作为 loss 函数 第四步 训练 . fit 的 一些 
+参数 batch _ size 对 总的 样本数 进行 分组 每组 
+包含 的 样本 数量 epochs 训练 次数 shuffle 是否 把 
+数据 随机 打乱 之后 再 进行 训练 validation _ split 
+拿出 百分之 多少 用 来做 交叉 验证 verbose 屏 显 
+模式 0 不 输出 1 输出 进度 2 输出 每次 
+的 训练 结果 X _ train y _ train X 
+_ test y _ test = mnist . load _ 
+data # 使用 Keras 自带 的 mnist 工具 读取数据 第一 
+次 需要 联网 # 由于 mist 的 输入 数据 维度 
+是 num 28 28 这里 需要 把 后面 的 维度 
+直接 拼起来 变成 784 维 X _ train = X 
+_ train . reshape X _ train . shape 0 
+X _ train . shape 1 * X _ train 
+. shape 2 X _ test = X _ test 
+. reshape X _ test . shape 0 X _ 
+test . shape 1 * X _ test . shape 
+2 Y _ train = numpy . arange 10 = 
+= y _ train None . astype int Y _ 
+test = numpy . arange 10 = = y _ 
+test None . astype int model . fit X _ 
+train Y _ train batch _ size = 200 epochs 
+= 50 shuffle = True verbose = 0 validation _ 
+split = 0.3 model . evaluate X _ test Y 
+_ test batch _ size = 200 verbose = 0 
+第五步 输出 print test set scores = model . evaluate 
+X _ test Y _ test batch _ size = 
+200 verbose = 0 print print The test loss is 
+% f % scores result = model . predict X 
+_ test batch _ size = 200 verbose = 0 
+result _ max = numpy . argmax result axis = 
+1 test _ max = numpy . argmax Y _ 
+test axis = 1 result _ bool = numpy . 
+equal result _ max test _ max true _ num 
+= numpy . sum result _ bool print print The 
+accuracy of the model is % f % true _ 
+num / len result _ bool 四 框架 性能 及 
+优缺点 对比 表 3 2 深度 学习 框架 对比 对比 
+维度 C a f f e T e n s 
+o r f l o w K e a r 
+s 上手 难度 1         不 用不 
+写 代码 只需 在 . prototxt 文件 中 定义 网络结构 
+就 可以 完成 模型 训练 2         
+安装 过程 复杂 且 在 . prototxt 文件 内部 设计 
+网络 节 构 比较 受限 没有 在 Python 中 设计 
+网络结构 方便 自由 配置文件 不能 用 编程 的 方式 调整 
+超 参数 对 交叉 验证 超 参数 Grid Search   
+等 操作 无法 很 方便 的 支持 1     
+    安装简单 教学 资源 丰富 根据 样例 能 快速 
+搭 建出 基础 模型 2         有 
+一定 的 使用 门槛 不管 是 编程 范式 还是 数学 
+统计 基础 都 为非 机器学习 与 数据 科学 背景 的 
+伙伴 们 带来 一定 的 上手 难度 另外 是 一个 
+相对 低层 的 框架 使用 时 需要 编写 大量 的 
+代码 重 新发明 轮子 1 安装简单 它 旨在 让 用户 
+进行 最 快速 的 原型 实验 让 想法 变为 结果 
+的 这个 过程 最短 非常适合 最前沿 的 研究 2 API 
+使用方便 用户 只 需要 将 高级 的 模块 拼在一起 就 
+可以 设计 神经网络 降低/v 了/ul 编程/n 和/c 阅读/v 别人/r 代码/n 
+时的/nr 理解/v 开销/v 框架/n 维护/v 在/p TensorFlow 出现 之前 一直 
+是 深度 学习 领域 GitHub star 最多 的 项目 前 
+由 伯克利 视觉 学 中心 Berkeley Vision and Learning Center 
+BVLC 进行 维护 被 定义 为 最 流行 最 被 
+认可 的 开源 深度 学习 框架 拥 有产 品级 的 
+高质量 代码 有 Google 强大 的 开发 维护 能力 的 
+加持 整体 架构 设计 也 非常 优秀 开发 主要 由 
+谷歌 支持 API 以 tf . keras 的 形式 打 
+包在 TensorFlow 中 微软 维护 着 Keras 的 CNTK 后端 
+亚马逊 AWS 正在 开发 MXNet 支持 其他 提供 支持 的 
+公司 包括 NVIDIA 优 步 苹果 通过 CoreML 支持 语言 
+C + + / CudaC + + python Go Java 
+Lua Javascript 或者 是 R Python 封装 算法 1 对 
+卷积 神经 网络 的 支持 非常好 拥有 大量 的 训练 
+好 的 经典 模型 AlexNet VGG Inception 乃至 其他 state 
+of the art ResNet 等 的 模型 收藏 在 它 
+的 Model Zoo 2 对时间 序列 RNN LSTM 等 支持 
+得 不是 特别 充分 1 支持 CNN 与 RNN 还 
+支持 深度 强化 学习 乃至 其他 计算 密集 的 科学计算 
+如 偏 微分方程 求解 等 2 计 算图 必须 构建 
+为 静态 图 这 让 很多 计算 变得 难以实现 尤其 
+是 序列 预测 中 经常 使用 的 beam search 1 
+专精于 深度 学习 支持 卷积 网络 和 循环 网络 支持 
+级联 的 模型 或 任意 的 图 结构 的 模型 
+从 CPU 上 计算 切换 到 GPU 加速 无须 任何 
+代码 的 改动 2 没有 增强 学习 工具箱 自己 修改 
+实现 很麻烦 封装 得 太高 级 训练 细节 不能 修改 
+penalty 细节 很难 修改 模型 部署 1 程序运行 非常 稳定 
+代码 质量 比较 高 很 适合 对 稳定 性 要求 
+严格 的 生产 环境 第一 个 主流 的 工业级 深度 
+学习 框架 Caffe 的 底层 基于 C + + 可以 
+在 各种 硬件 环境 编译 并 具有 良好 的 移植性 
+支持 Linux Mac 和 Windows 系统 也 可以 编译 部署 
+到 移动 设备 系统 如 Android 和 iOS 上 1 
+为 生产 环境 设计 的 高性能 的 机器学习 服务 系统 
+可以 同时 运行 多个 大 规模 深度 学习 模型 支持 
+模型 生命周期 管理 算法 实验 并可以 高效 地 利用 GPU 
+资源 让 训 练好 的 模型 更 快捷 方便 地 
+投入 到 实际 生产 环境 灵活 的 移植性 可以 将 
+同一 份 代码 几乎 不 经过 修改 就 轻松 地 
+部署 到有 任意 数量 CPU 或 GPU 的 PC 服务器 
+或者 移动 设备 上 1 使用 TensorFlow CNTK Theano 作为 
+后端 简化 了 编程 的 复杂度 节约 了 尝试 新 
+网络 结构 的 时间 模型 越 复杂 收益 越大 尤其 
+是 在 高度 依赖 权值 共享 多 模型 组合 多任务 
+学习 等 模型 上 表现 得 非常 突出 性能 目前 
+仅 支持 单机 多 GPU 的 训练 不支持 分布式 的 
+训练 1         支持 分布式计算 使 GPU 
+集群 乃至 TPU 集群 并行计算 共同 训练 出 一个 模型 
+2         对 不同 设备 间 的 
+通信 优化 得 不是 很好 分布式 性能 还 没有 达到 
+最优 无法 直接 使用 多 GPU 对 大 规模 的 
+数据 处理 速度 没有 其他 支持 多 GPU 和 分布式 
+的 框架 快 用 TensorFLow backend 时 速度 比 纯 
+TensorFLow 下 要 慢 很多 如表 3 2 对比 维度 
+所示 对于 刚 入门 机器 学习 的 新手 而已 keras 
+无疑 是 最好 的 选择 能够 快速 搭建 模型 验证 
+想法 随着 对 机型 学习 的 理解 逐步 加深 业务 
+模型 越来越 复杂 时 可以 根据 实际 需要 转到 Tensorflow 
+或 Caffe 四 结束语 深度 学习 的 研究 在 持续 
+进行 中 一直 与 其它 经典 机器学习 算法 并存 各类 
+深度 学习 框架 也是 遍地开花 各有 偏向 优劣 各异 具体 
+用 哪种 要根据 应用 场景 灵活 选择 正如 本文 导语 
+所言 科学 不 是 战争 而 是 合作 任何 学科 
+的 发展 从来 都 不是 一条路 走到 黑 而是 同行 
+之间 互相 学习 互相 借鉴 博采众长 相得益彰 站在 巨人 的 
+肩膀 上 不断 前行 对 机器 学习 和 深度 学习 
+的 研究 也 是 一样 你死我活 那是 邪教 开放 包容 
+才是 正道 最后 文章 内容 多 摘自 网上 广大 网友 
+的 贡献 如 所写 内容 涉及 他人 著作 且 未 
+进行 参考 引用 那 一定 是 我 遗漏 了 非常 
+抱歉 还请 及时 联系 我 进行 修正 万分 感谢 参考 
+文章 1 . https / / www . zhihu . 
+com / question / 57770020 / answer / 249708509   
+人工智能 机器 学习 和 深度 学习 的 区别 2 . 
+http / / km . oa . com / group 
+/ 25254 / articles / show / 325228 kmref = 
+search & from _ page = 1 & no = 
+1 从 入门 到 吃 鸡 基于 Caffe 框架 AI 
+图像识别 自动化 3 . http / / blog . luoyetx 
+. com / 2015/10 / reading caffe 1 / 4 
+. https / / zhuanlan . zhihu . com / 
+p / 24087905   Caffe 入门 与 实践 简介 5 
+. https / / keras cn . readthedocs . io 
+/ en / latest / for _ beginners / FAQ 
+/   keras 官网 6 . http / / biog 
+. csdn . net / sinat _ 26917383 7 . 
+http / / www . cnblogs . com / lc1217 
+/ p / 7132364 . html 深度 学习 Keras 入门 
+一 之 基础 篇 8 . https / / www 
+. jianshu . com / p / e112012a4b2d 一 文学 
+会用 Tensorflow 搭建 神经网络 9 . https / / www 
+. zhihu . com / question / 42061396 / answer 
+/ 93827994   深度 学习 会 不会 淘汰 掉 其他 
+所有 机器学习 算法 10 . https / / www . 
+leiphone . com / news / 201702 / T5e31Y2ZpeG1ZtaN . 
+html   TensorFlow 和 Caffe MXNet Keras 等 其他 深度 
+学习 框架 的 对比 11 . https / / chenrudan 
+. github . io / blog / 2015 / 11/18 
+/ c o m p a r e t h 
+r e e o p e n l i b 
+. html   Caffe TensorFlow MXnet 三个 开源 库 对比 
+12 . https / / zhuanlan . zhihu . com 
+/ p / 24687814   对比 深度 学习 十大 框架 
+TensorFlow 最 流行 但 并 不是 最好 13 . https 
+/ / www . leiphone . com / news / 
+201704 / 8RWdnz9dQ0tyoexF . html   万事开头难 入门 TensorFlow 这 
+9个 问题 TF Boys 必须 要 搞清楚 

@@ -1,0 +1,245 @@
+支持中文分词（N-最短路分词、CRF分词、索引分词、用户自定义词典、词性标注），命名实体识别（中国人名、音译人名、日本人名、地名、实体机构名识别），关键词提取，自动摘要，短语提取，拼音转换，简繁转换，文本推荐，依存句法分析（MaxEnt依存句法分析、CRF依存句法分析）。提供Lucene插件，兼容Lucene4.x。
+HanLP: Han Language Processing
+汉语言处理包
+HanLP是由一系列模型与算法组成的Java工具包，目标是促进自然语言处理在生产环境中的应用。HanLP具备功能完善、性能高效、架构清晰、语料时新、可自定义的特点。
+HanLP提供下列功能：
+1 中文分词 2 3 最短路分词 4 5 N-最短路分词 6 7 CRF分词 8 9 索引分词 10 11 极速词典分词 12 13 用户自定义词典 14 15 词性标注 16 17 命名实体识别 18 19 中国人名识别 20 21 音译人名识别 22 23 日本人名识别 24 25 地名识别 26 27 实体机构名识别 28 29 关键词提取 30 31 TextRank关键词提取 32 33 自动摘要 34 35 TextRank自动摘要 36 37 短语提取 38 39 基于互信息和左右信息熵的短语提取 40 41 拼音转换 42 43 多音字 44 45 声母 46 47 韵母 48 49 声调 50 51 简繁转换 52 53 繁体中文分词 54 55 简繁分歧词 56 57 文本推荐 58 59 语义推荐 60 61 拼音推荐 62 63 字词推荐 64 65 依存句法分析 66 67 MaxEnt依存句法分析 68 69 CRF依存句法分析 70 71 语料库工具 72 73 分词语料预处理 74 75 词频词性词典制作 76 77 BiGram统计 78 79 词共现统计 80 81 CoNLL语料预处理 82 83 CoNLL UA/LA/DA评测工具
+在提供丰富功能的同时，HanLP内部模块坚持低耦合、模型坚持惰性加载、服务坚持静态提供、词典坚持明文发布，使用非常方便，同时自带一些语料处理工具，帮助用户训练自己的语料。
+项目地址
+HanLP项目主页：https://github.com/hankcs/HanLP
+HanLP下载地址：https://github.com/hankcs/HanLP/releases
+内存要求
+内存120MB以上（-Xms120m -Xmx120m -Xmn64m），标准数据包（35万核心词库+默认用户词典），分词测试正常。
+全部词典和模型都是惰性加载的，如果你只用拼音转换的话，则只加载拼音词典，未加载的词典相当于不存在，不占内存。同理，模型也是如此。
+下载与配置
+方式一、通过Maven的pom.xml
+为了方便用户，特提供内置了数据包的Portable版，只需在pom.xml加入：
+1 <dependency> 2 <groupId>com.hankcs</groupId> 3 <artifactId>hanlp</artifactId> 4 <version>portable-1.2.4</version> 5 </dependency>
+零配置，即可使用基本功能（除CRF分词、依存句法分析外的全部功能）。连Maven都懒得用的话，可以直接下载portable版的jar。
+如果用户有自定义的需求，可以参考方式二，使用hanlp.properties进行配置。
+目前Portable体积仅仅5.7MB，作为代价，使用的是1998年的小词典，对现代汉语的支持有限；所以还是建议外挂下面的数据包比较好。
+方式二、下载jar、data、hanlp.properties
+HanLP将数据与程序分离，给予用户自定义的自由。
+1、下载jar
+hanlp.jar
+2、下载data
+数据包
+功能
+体积（MB）
+data.zip
+全部词典，全部模型
+280（注：分词词典大约40MB，主要是句法分析模型占体积，可以自行删除。）
+在GitHub的release页面Ctrl＋F搜索data即可，下载后解压到任意目录，接下来通过配置文件告诉HanLP数据包的位置。
+HanLP中的数据分为词典和模型，其中词典是词法分析必需的，模型是句法分析必需的。
+1 data 2 │ 3 ├─dictionary 4 └─model
+用户可以自行增删替换，如果不需要句法分析功能的话，随时可以删除model文件夹。
+3、配置文件
+示例配置文件:hanlp.properties
+配置文件的作用是告诉HanLP数据包的位置，只需修改第一行
+root=usr/home/HanLP/
+为data的父目录即可，比如data目录是/Users/hankcs/Documents/data，那么root=/Users/hankcs/Documents/。
+如果选用mini词典的话，则需要修改配置文件：
+CoreDictionaryPath=data/dictionary/CoreNatureDictionary.mini.txt BiGramDictionaryPath=data/dictionary/CoreNatureDictionary.ngram.mini.txt
+最后将HanLP.properties放入classpath即可，对于Eclipse，一般是：
+1 $Project/bin
+Web项目的话可以放在如下位置：
+1 $Project/WEB-INF/classes
+对于任何项目，都可以放到src目录下，编译时IDE会自动将其复制到classpath中。
+如果放置不当，HanLP会智能提示当前环境下的合适路径，并且尝试从项目根目录读取数据集。
+调用方法
+HanLP几乎所有的功能都可以通过工具类HanLP快捷调用，当你想不起来调用方法时，只需键入HanLP.，IDE应当会给出提示，并展示HanLP完善的文档。
+推荐用户始终通过工具类HanLP调用，这么做的好处是，将来HanLP升级后，用户无需修改调用代码。
+所有Demo都位于com.hankcs.demo下。
+1. 第一个Demo
+1 System.out.println(HanLP.segment("你好，欢迎使用HanLP汉语处理包！"));
+2. 标准分词
+1 List<Term> termList = StandardTokenizer.segment("商品和服务"); 2 System.out.println(termList);
+说明
+HanLP中有一系列“开箱即用”的静态分词器，以Tokenizer结尾，在接下来的例子中会继续介绍。
+HanLP.segment其实是对StandardTokenizer.segment的包装。
+分词结果包含词性，每个词性的意思请查阅《HanLP词性标注集》。
+算法详解
+《词图的生成》
+3. NLP分词
+1 List<Term> termList = NLPTokenizer.segment("中国科学院计算技术研究所的宗成庆教授正在教授自然语言处理课程"); 2 System.out.println(termList);
+说明
+NLP分词NLPTokenizer会执行全部命名实体识别和词性标注。
+4. 索引分词
+1 List<Term> termList = IndexTokenizer.segment("主副食品"); 2 for (Term term : termList) 3 { 4 System.out.println(term + " [" + term.offset + ":" + (term.offset + term.word.length()) + "]"); 5 }
+说明
+索引分词IndexTokenizer是面向搜索引擎的分词器，能够对长词全切分，另外通过term.offset可以获取单词在文本中的偏移量。
+5. N-最短路径分词
+1 Segment nShortSegment = new NShortSegment().enableCustomDictionary(false).enablePlaceRecognize(true).enableOrganizationRecognize(true); 2 Segment shortestSegment = new DijkstraSegment().enableCustomDictionary(false).enablePlaceRecognize(true).enableOrganizationRecognize(true); 3 String[] testCase = new String[]{ 4 "今天，刘志军案的关键人物,山西女商人丁书苗在市二中院出庭受审。", 5 "刘喜杰石国祥会见吴亚琴先进事迹报告团成员", 6 }; 7 for (String sentence : testCase) 8 { 9 System.out.println("N-最短分词：" + nShortSegment.seg(sentence) + "\n最短路分词：" + shortestSegment.seg(sentence)); 10 }
+说明
+N最短路分词器NShortSegment比最短路分词器慢，但是效果稍微好一些，对命名实体识别能力更强。
+一般场景下最短路分词的精度已经足够，而且速度比N最短路分词器快几倍，请酌情选择。
+算法详解
+《N最短路径的Java实现与分词应用》
+6. CRF分词
+1 /** 2 * CRF分词(在最新训练的未压缩100MB模型下，能够取得较好的效果，可以投入生产环境) 3 * 4 * @author hankcs 5 */ 6 public class DemoCRFSegment 7 { 8 public static void main(String[] args) 9 { 10 HanLP.Config.ShowTermNature = false; // 关闭词性显示 11 Segment segment = new CRFSegment(); 12 String[] sentenceArray = new String[] 13 { 14 "HanLP是由一系列模型与算法组成的Java工具包，目标是普及自然语言处理在生产环境中的应用。", 15 "鐵桿部隊憤怒情緒集結 馬英九腹背受敵", // 繁体无压力 16 "馬英九回應連勝文“丐幫說”：稱黨內同志談話應謹慎", 17 "高锰酸钾，强氧化剂，紫红色晶体，可溶于水，遇乙醇即被还原。常用作消毒剂、水净化剂、氧化剂、漂白剂、毒气吸收剂、二氧化碳精制剂等。", // 专业名词有一定辨识能力 18 "《夜晚的骰子》通过描述浅草的舞女在暗夜中扔骰子的情景,寄托了作者对庶民生活区的情感", // 非新闻语料 19 "这个像是真的[委屈]前面那个打扮太江户了，一点不上品...@hankcs", // 微博 20 "鼎泰丰的小笼一点味道也没有...每样都淡淡的...淡淡的，哪有食堂2A的好次", 21 "克里斯蒂娜·克罗尔说：不，我不是虎妈。我全家都热爱音乐，我也鼓励他们这么做。", 22 "今日APPS：Sago Mini Toolbox培养孩子动手能力", 23 "财政部副部长王保安调任国家统计局党组书记", 24 "2.34米男子娶1.53米女粉丝 称夫妻生活没问题", 25 "你看过穆赫兰道吗", 26 "乐视超级手机能否承载贾布斯的生态梦" 27 }; 28 for (String sentence : sentenceArray) 29 { 30 List<Term> termList = segment.seg(sentence); 31 System.out.println(termList); 32 } 33 } 34 }
+说明
+CRF对新词有很好的识别能力，但是无法利用自定义词典。
+算法详解
+《CRF分词的纯Java实现》
+《CRF++模型格式说明》
+7. 极速词典分词
+1 /** 2 * 演示极速分词，基于AhoCorasickDoubleArrayTrie实现的词典分词，适用于“高吞吐量”“精度一般”的场合 3 * @author hankcs 4 */ 5 public class DemoHighSpeedSegment 6 { 7 public static void main(String[] args) 8 { 9 String text = "江西鄱阳湖干枯，中国最大淡水湖变成大草原"; 10 System.out.println(SpeedTokenizer.segment(text)); 11 long start = System.currentTimeMillis(); 12 int pressure = 1000000; 13 for (int i = 0; i < pressure; ++i) 14 { 15 SpeedTokenizer.segment(text); 16 } 17 double costTime = (System.currentTimeMillis() - start) / (double)1000; 18 System.out.printf("分词速度：%.2f字每秒", text.length() * pressure / costTime); 19 } 20 }
+说明
+极速分词是词典最长分词，速度极其快，精度一般。
+在i7上跑出了2000万字每秒的速度。
+算法详解
+《Aho Corasick自动机结合DoubleArrayTrie极速多模式匹配》
+8. 用户自定义词典
+1 public class DemoCustomDictionary 2 { 3 public static void main(String[] args) 4 { 5 // 动态增加 6 CustomDictionary.add("攻城狮"); 7 // 强行插入 8 CustomDictionary.insert("白富美", "nz 1024"); 9 // 删除词语（注释掉试试） 10 // CustomDictionary.remove("攻城狮"); 11 System.out.println(CustomDictionary.add("单身狗", "nz 1024 n 1")); 12 System.out.println(CustomDictionary.get("单身狗")); 13 14 String text = "攻城狮逆袭单身狗，迎娶白富美，走上人生巅峰"; // 怎么可能噗哈哈！ 15 16 // DoubleArrayTrie分词 17 final char[] charArray = text.toCharArray(); 18 CustomDictionary.parseText(charArray, new AhoCorasickDoubleArrayTrie.IHit<CoreDictionary.Attribute>() 19 { 20 @Override 21 public void hit(int begin, int end, CoreDictionary.Attribute value) 22 { 23 System.out.printf("[%d:%d]=%s %s\n", begin, end, new String(charArray, begin, end - begin), value); 24 } 25 }); 26 // 首字哈希之后二分的trie树分词 27 BaseSearcher searcher = CustomDictionary.getSearcher(text); 28 Map.Entry entry; 29 while ((entry = searcher.next()) != null) 30 { 31 System.out.println(entry); 32 } 33 34 // 标准分词 35 System.out.println(HanLP.segment(text)); 36 37 // Note:动态增删不会影响词典文件 38 // 目前CustomDictionary使用DAT储存词典文件中的词语，用BinTrie储存动态加入的词语，前者性能高，后者性能低 39 // 之所以保留动态增删功能，一方面是历史遗留特性，另一方面是调试用；未来可能会去掉动态增删特性。 40 }
+说明
+CustomDictionary是一份全局的用户自定义词典，可以随时增删，影响全部分词器。
+另外可以在任何分词器中关闭它。通过代码动态增删不会保存到词典文件。
+追加词典
+CustomDictionary主词典文本路径是data/dictionary/custom/CustomDictionary.txt，用户可以在此增加自己的词语（不推荐）；也可以单独新建一个文本文件，通过配置文件CustomDictionaryPath=data/dictionary/custom/CustomDictionary.txt; 我的词典.txt;来追加词典（推荐）。
+始终建议将相同词性的词语放到同一个词典文件里，便于维护和分享。
+词典格式
+每一行代表一个单词，格式遵从[单词] [词性A] [A的频次] [词性B] [B的频次] ... 如果不填词性则表示采用词典的默认词性。
+词典的默认词性默认是名词n，可以通过配置文件修改：全国地名大全.txt ns;如果词典路径后面空格紧接着词性，则该词典默认是该词性。
+关于用户词典的更多信息请参考词典说明一章。
+算法详解
+《Trie树分词》
+《Aho Corasick自动机结合DoubleArrayTrie极速多模式匹配》
+9. 中国人名识别
+1 String[] testCase = new String[]{ 2 "签约仪式前，秦光荣、李纪恒、仇和等一同会见了参加签约的企业家。", 3 "王国强、高峰、汪洋、张朝阳光着头、韩寒、小四", 4 "张浩和胡健康复员回家了", 5 "王总和小丽结婚了", 6 "编剧邵钧林和稽道青说", 7 "这里有关天培的有关事迹", 8 "龚学平等领导,邓颖超生前", 9 }; 10 Segment segment = HanLP.newSegment().enableNameRecognize(true); 11 for (String sentence : testCase) 12 { 13 List<Term> termList = segment.seg(sentence); 14 System.out.println(termList); 15 }
+说明
+目前分词器基本上都默认开启了中国人名识别，比如HanLP.segment()接口中使用的分词器等等，用户不必手动开启；上面的代码只是为了强调。
+有一定的误命中率，比如误命中关键年，则可以通过在data/dictionary/person/nr.txt加入一条关键年 A 1来排除关键年作为人名的可能性，也可以将关键年作为新词登记到自定义词典中。
+如果你通过上述办法解决了问题，欢迎向我提交pull request，词典也是宝贵的财富。
+算法详解
+《实战HMM-Viterbi角色标注中国人名识别》
+9. 音译人名识别
+1 String[] testCase = new String[]{ 2 "一桶冰水当头倒下，微软的比尔盖茨、Facebook的扎克伯格跟桑德博格、亚马逊的贝索斯、苹果的库克全都不惜湿身入镜，这些硅谷的科技人，飞蛾扑火似地牺牲演出，其实全为了慈善。", 3 "世界上最长的姓名是简森·乔伊·亚历山大·比基·卡利斯勒·达夫·埃利奥特·福克斯·伊维鲁莫·马尔尼·梅尔斯·帕特森·汤普森·华莱士·普雷斯顿。", 4 }; 5 Segment segment = HanLP.newSegment().enableTranslatedNameRecognize(true); 6 for (String sentence : testCase) 7 { 8 List<Term> termList = segment.seg(sentence); 9 System.out.println(termList); 10 }
+说明
+目前分词器基本上都默认开启了音译人名识别，用户不必手动开启；上面的代码只是为了强调。
+算法详解
+《层叠隐马模型下的音译人名和日本人名识别》
+11. 日本人名识别
+1 String[] testCase = new String[]{ 2 "北川景子参演了林诣彬导演的《速度与激情3》", 3 "林志玲亮相网友:确定不是波多野结衣？", 4 }; 5 Segment segment = HanLP.newSegment().enableJapaneseNameRecognize(true); 6 for (String sentence : testCase) 7 { 8 List<Term> termList = segment.seg(sentence); 9 System.out.println(termList); 10 }
+说明
+目前标准分词器默认关闭了日本人名识别，用户需要手动开启；这是因为日本人名的出现频率较低，但是又消耗性能。
+算法详解
+《层叠隐马模型下的音译人名和日本人名识别》
+12. 地名识别
+1 String[] testCase = new String[]{ 2 "武胜县新学乡政府大楼门前锣鼓喧天", 3 "蓝翔给宁夏固原市彭阳县红河镇黑牛沟村捐赠了挖掘机", 4 }; 5 Segment segment = HanLP.newSegment().enablePlaceRecognize(true); 6 for (String sentence : testCase) 7 { 8 List<Term> termList = segment.seg(sentence); 9 System.out.println(termList); 10 }
+说明
+目前标准分词器都默认关闭了地名识别，用户需要手动开启；这是因为消耗性能，其实多数地名都收录在核心词典和用户自定义词典中。
+在生产环境中，能靠词典解决的问题就靠词典解决，这是最高效稳定的方法。
+算法详解
+《实战HMM-Viterbi角色标注地名识别》
+13. 机构名识别
+1 String[] testCase = new String[]{ 2 "我在上海林原科技有限公司兼职工作，", 3 "我经常在台川喜宴餐厅吃饭，", 4 "偶尔去地中海影城看电影。", 5 }; 6 Segment segment = HanLP.newSegment().enableOrganizationRecognize(true); 7 for (String sentence : testCase) 8 { 9 List<Term> termList = segment.seg(sentence); 10 System.out.println(termList); 11 }
+说明
+目前分词器默认关闭了机构名识别，用户需要手动开启；这是因为消耗性能，其实常用机构名都收录在核心词典和用户自定义词典中。
+HanLP的目的不是演示动态识别，在生产环境中，能靠词典解决的问题就靠词典解决，这是最高效稳定的方法。
+算法详解
+《层叠HMM-Viterbi角色标注模型下的机构名识别》
+14. 关键词提取
+1 String content = "程序员(英文Programmer)是从事程序开发、维护的专业人员。一般将程序员分为程序设计人员和程序编码人员，但两者的界限并不非常清楚，特别是在中国。软件从业人员分为初级程序员、高级程序员、系统分析员和项目经理四大类。"; 2 List<String> keywordList = HanLP.extractKeyword(content, 5); 3 System.out.println(keywordList);
+说明
+内部采用TextRankKeyword实现，用户可以直接调用TextRankKeyword.getKeywordList(document, size)
+算法详解
+《TextRank算法提取关键词的Java实现》
+15. 自动摘要
+1 String document = "算法可大致分为基本算法、数据结构的算法、数论算法、计算几何的算法、图的算法、动态规划以及数值分析、加密算法、排序算法、检索算法、随机化算法、并行算法、厄米变形模型、随机森林算法。\n" + 2 "算法可以宽泛的分为三类，\n" + 3 "一，有限的确定性算法，这类算法在有限的一段时间内终止。他们可能要花很长时间来执行指定的任务，但仍将在一定的时间内终止。这类算法得出的结果常取决于输入值。\n" + 4 "二，有限的非确定算法，这类算法在有限的时间内终止。然而，对于一个（或一些）给定的数值，算法的结果并不是唯一的或确定的。\n" + 5 "三，无限的算法，是那些由于没有定义终止定义条件，或定义的条件无法由输入的数据满足而不终止运行的算法。通常，无限算法的产生是由于未能确定的定义终止条件。"; 6 List<String> sentenceList = HanLP.extractSummary(document, 3); 7 System.out.println(sentenceList);
+说明
+内部采用TextRankSentence实现，用户可以直接调用TextRankSentence.getTopSentenceList(document, size)。
+算法详解
+《TextRank算法自动摘要的Java实现》
+16. 短语提取
+1 String text = "算法工程师\n" + 2 "算法（Algorithm）是一系列解决问题的清晰指令，也就是说，能够对一定规范的输入，在有限时间内获得所要求的输出。" + 3 "如果一个算法有缺陷，或不适合于某个问题，执行这个算法将不会解决这个问题。不同的算法可能用不同的时间、" + 4 "空间或效率来完成同样的任务。一个算法的优劣可以用空间复杂度与时间复杂度来衡量。算法工程师就是利用算法处理事物的人。\n" + 5 "\n" + 6 "1职位简介\n" + 7 "算法工程师是一个非常高端的职位；\n" + 8 "专业要求：计算机、电子、通信、数学等相关专业；\n" + 9 "学历要求：本科及其以上的学历，大多数是硕士学历及其以上；\n" + 10 "语言要求：英语要求是熟练，基本上能阅读国外专业书刊；\n" + 11 "必须掌握计算机相关知识，熟练使用仿真工具MATLAB等，必须会一门编程语言。\n" + 12 "\n" + 13 "2研究方向\n" + 14 "视频算法工程师、图像处理算法工程师、音频算法工程师 通信基带算法工程师\n" + 15 "\n" + 16 "3目前国内外状况\n" + 17 "目前国内从事算法研究的工程师不少，但是高级算法工程师却很少，是一个非常紧缺的专业工程师。" + 18 "算法工程师根据研究领域来分主要有音频/视频算法处理、图像技术方面的二维信息算法处理和通信物理层、" + 19 "雷达信号处理、生物医学信号处理等领域的一维信息算法处理。\n" + 20 "在计算机音视频和图形图像技术等二维信息算法处理方面目前比较先进的视频处理算法：机器视觉成为此类算法研究的核心；" + 21 "另外还有2D转3D算法(2D-to-3D conversion)，去隔行算法(de-interlacing)，运动估计运动补偿算法" + 22 "(Motion estimation/Motion Compensation)，去噪算法(Noise Reduction)，缩放算法(scaling)，" + 23 "锐化处理算法(Sharpness)，超分辨率算法(Super Resolution),手势识别(gesture recognition),人脸识别(face recognition)。\n" + 24 "在通信物理层等一维信息领域目前常用的算法：无线领域的RRM、RTT，传送领域的调制解调、信道均衡、信号检测、网络优化、信号分解等。\n" + 25 "另外数据挖掘、互联网搜索算法也成为当今的热门方向。\n" + 26 "算法工程师逐渐往人工智能方向发展。"; 27 List<String> phraseList = HanLP.extractPhrase(text, 5); 28 System.out.println(phraseList);
+说明
+内部采用MutualInformationEntropyPhraseExtractor实现，用户可以直接调用MutualInformationEntropyPhraseExtractor..extractPhrase(text, size)。
+算法详解
+《基于互信息和左右信息熵的短语提取识别》
+17. 拼音转换
+1 /** 2 * 汉字转拼音 3 * @author hankcs 4 */ 5 public class DemoPinyin 6 { 7 public static void main(String[] args) 8 { 9 String text = "重载不是重任"; 10 List<Pinyin> pinyinList = HanLP.convertToPinyinList(text); 11 System.out.print("原文,"); 12 for (char c : text.toCharArray()) 13 { 14 System.out.printf("%c,", c); 15 } 16 System.out.println(); 17 System.out.print("拼音（数字音调）,"); 18 for (Pinyin pinyin : pinyinList) 19 { 20 System.out.printf("%s,", pinyin); 21 } 22 System.out.println(); 23 System.out.print("拼音（符号音调）,"); 24 for (Pinyin pinyin : pinyinList) 25 { 26 System.out.printf("%s,", pinyin.getPinyinWithToneMark()); 27 } 28 System.out.println(); 29 System.out.print("拼音（无音调）,"); 30 for (Pinyin pinyin : pinyinList) 31 { 32 System.out.printf("%s,", pinyin.getPinyinWithoutTone()); 33 } 34 System.out.println(); 35 System.out.print("声调,"); 36 for (Pinyin pinyin : pinyinList) 37 { 38 System.out.printf("%s,", pinyin.getTone()); 39 } 40 System.out.println(); 41 System.out.print("声母,"); 42 for (Pinyin pinyin : pinyinList) 43 { 44 System.out.printf("%s,", pinyin.getShengmu()); 45 } 46 System.out.println(); 47 System.out.print("韵母,"); 48 for (Pinyin pinyin : pinyinList) 49 { 50 System.out.printf("%s,", pinyin.getYunmu()); 51 } 52 System.out.println(); 53 System.out.print("输入法头,"); 54 for (Pinyin pinyin : pinyinList) 55 { 56 System.out.printf("%s,", pinyin.getHead()); 57 } 58 System.out.println(); 59 } 60 }
+说明
+HanLP不仅支持基础的汉字转拼音，还支持声母、韵母、音调、音标和输入法首字母首声母功能。
+HanLP能够识别多音字，也能给繁体中文注拼音。
+最重要的是，HanLP采用的模式匹配升级到AhoCorasickDoubleArrayTrie，性能大幅提升，能够提供毫秒级的响应速度！
+算法详解
+《汉字转拼音与简繁转换的Java实现》
+18. 简繁转换
+1 /** 2 * 简繁转换 3 * @author hankcs 4 */ 5 public class DemoTraditionalChinese2SimplifiedChinese 6 { 7 public static void main(String[] args) 8 { 9 System.out.println(HanLP.convertToTraditionalChinese("用笔记本电脑写程序")); 10 System.out.println(HanLP.convertToSimplifiedChinese("「以後等妳當上皇后，就能買士多啤梨慶祝了」")); 11 } 12 }
+说明
+HanLP能够识别简繁分歧词，比如打印机=印表機。许多简繁转换工具不能区分“以后”“皇后”中的两个“后”字，HanLP可以。
+算法详解
+《汉字转拼音与简繁转换的Java实现》
+19. 文本推荐
+/** * 文本推荐(句子级别，从一系列句子中挑出与输入句子最相似的那一个) * @author hankcs */ public class DemoSuggester { public static void main(String[] args) { Suggester suggester = new Suggester(); String[] titleArray = ( "威廉王子发表演说 呼吁保护野生动物\n" + "《时代》年度人物最终入围名单出炉 普京马云入选\n" + "“黑格比”横扫菲：菲吸取“海燕”经验及早疏散\n" + "日本保密法将正式生效 日媒指其损害国民知情权\n" + "英报告说空气污染带来“公共健康危机”" ).split("\\n"); for (String title : titleArray) { suggester.addSentence(title); } System.out.println(suggester.suggest("发言", 1)); // 语义 System.out.println(suggester.suggest("危机公共", 1)); // 字符 System.out.println(suggester.suggest("mayun", 1)); // 拼音 } }
+说明
+在搜索引擎的输入框中，用户输入一个词，搜索引擎会联想出最合适的搜索词，HanLP实现了类似的功能。
+可以动态调节每种识别器的权重
+20. 语义距离
+/** * 语义距离 * @author hankcs */ public class DemoWordDistance { public static void main(String[] args) { String[] wordArray = new String[] { "香蕉", "苹果", "白菜", "水果", "蔬菜", "自行车", "公交车", "飞机", "买", "卖", "购入", "新年", "春节", "丢失", "补办", "办理", "送给", "寻找", "孩子", "教室", "教师", "会计", }; for (String a : wordArray) { for (String b : wordArray) { System.out.println(a + "\t" + b + "\t之间的距离是\t" + CoreSynonymDictionary.distance(a, b)); } } } }
+说明
+设想的应用场景是搜索引擎对词义的理解，词与词并不只存在“同义词”与“非同义词”的关系，就算是同义词，它们之间的意义也是有微妙的差别的。
+算法
+为每个词分配一个语义ID，词与词的距离通过语义ID的差得到。语义ID通过《同义词词林扩展版》计算而来。
+21. 依存句法解析
+/** * 依存句法解析 * @author hankcs */ public class DemoDependencyParser { public static void main(String[] args) { System.out.println(HanLP.parseDependency("把市场经济奉行的等价交换原则引入党的生活和国家机关政务活动中")); } }
+说明
+内部采用MaxEntDependencyParser实现，用户可以直接调用MaxEntDependencyParser.compute(sentence)
+也可以调用基于随机条件场的依存句法分析器CRFDependencyParser.compute(sentence)
+在封闭测试集上准确率有90%以上，但在开放测试集上则不理想。
+算法详解
+《最大熵依存句法分析器的实现》
+《基于CRF序列标注的中文依存句法分析器的Java实现》
+词典说明
+本章详细介绍HanLP中的词典格式，满足用户自定义的需要。HanLP中有许多词典，它们的格式都是相似的，形式都是文本文档，随时可以修改。
+基本格式
+词典分为词频词性词典和词频词典。
+词频词性词典
+每一行代表一个单词，格式遵从[单词] [词性A] [A的频次] [词性B] [B的频次] ...。
+词频词典
+每一行代表一个单词，格式遵从[单词] [单词的频次]。
+每一行的分隔符为空格符或制表符
+少数词典有自己的专用格式，比如同义词词典兼容《同义词词林扩展版》的文本格式，而转移矩阵词典则是一个csv表格。
+下文主要介绍通用词典，如不注明，词典特指通用词典。
+数据结构
+Trie树（字典树）是HanLP中使用最多的数据结构，为此，我实现了通用的Trie树，支持泛型、遍历、储存、载入。
+用户自定义词典采用AhoCorasickDoubleArrayTrie和二分Trie树储存，其他词典采用基于双数组Trie树(DoubleArrayTrie)实现的AC自动机AhoCorasickDoubleArrayTrie。
+储存形式
+词典有两个形态：文本文件(filename.txt)和缓存文件(filename.txt.bin或filename.txt.trie.dat和filename.txt.trie.value)。
+文本文件
+采用明文储存，UTF-8编码，CRLF换行符。
+缓存文件
+就是一些二进制文件，通常在文本文件的文件名后面加上.bin表示。有时候是.trie.dat和.trie.value。后者是历史遗留产物，分别代表trie树的数组和值。
+如果你修改了任何词典，只有删除缓存才能生效。
+修改方法
+HanLP的核心词典训练自人民日报2014语料，语料不是完美的，总会存在一些错误。这些错误可能会导致分词出现奇怪的结果，这时请打开调试模式排查问题：
+HanLP.Config.enableDebug();
+核心词性词频词典
+比如你在data/dictionary/CoreNatureDictionary.txt中发现了一个不是词的词，或者词性标注得明显不对，那么你可以修改它，然后删除缓存文件使其生效。
+核心二元文法词典
+二元文法词典data/dictionary/CoreNatureDictionary.ngram.txt储存的是两个词的接续，如果你发现不可能存在这种接续时，删掉即可。
+你也可以添加你认为合理的接续，但是这两个词必须同时在核心词典中才会生效。
+命名实体识别词典
+基于角色标注的命名实体识别比较依赖词典，所以词典的质量大幅影响识别质量。
+这些词典的格式与原理都是类似的，请阅读相应的文章或代码修改它。
+如果问题解决了，欢迎向我提交一个pull request，这是我在代码库中保留明文词典的原因，众人拾柴火焰高！
+版权
+Apache License Version 2.0
+Apache License Version 2.0
+HanLP产品初始知识产权归上海林原信息科技有限公司所有，任何人和企业可以无偿使用，可以对产品、源代码进行任何形式的修改，可以打包在其他产品中进行销售。
+任何使用了HanLP的全部或部分功能、词典、模型的项目、产品或文章等形式的成果必须显式注明HanLP及此项目主页。
+鸣谢
+感谢下列优秀开源项目：
+darts-clone-java
+aho-corasick
+SharpICTCLAS
+snownlp
+ansj_seg
+nlp-lang
+感谢NLP界各位学者老师的著作：
+《基于角色标注的中国人名自动识别研究》张华平 刘群
+《基于层叠隐马尔可夫模型的中文命名实体识别》俞鸿魁 张华平 刘群 吕学强 施水才
+《基于角色标注的中文机构名识别》俞鸿魁 张华平 刘群
+《基于最大熵的依存句法分析》 辛霄 范士喜 王轩 王晓龙
+An Efficient Implementation of Trie Structures, JUN-ICHI AOE AND KATSUSHI MORIMOTO
+TextRank: Bringing Order into Texts, Rada Mihalcea and Paul Tarau

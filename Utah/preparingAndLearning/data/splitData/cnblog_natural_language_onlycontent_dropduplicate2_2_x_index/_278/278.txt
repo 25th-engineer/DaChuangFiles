@@ -1,0 +1,118 @@
+一种基于 Numpy 的 TF-IDF 实现报告
+摘要
+本文使用了一种 state-of-the-art 的矩阵表示方法来计算每个词在每篇文章上的 TF-IDF 权重（特征）。本文还将介绍基于 TF-IDF 的文档相似度查询方法。
+系统介绍
+本节将着重介绍我的 TF-IDF 系统使用方法。
+本系统由以下五部分组成
+utility.py - 自己写的常用库函数封装
+merge.py - 把白老师给的4个excel表格合并成一个excel表格
+extraction.py - 从合并后的excel表格中抽取“公众号名称”、“文章标题”和“文章内容”，然后将这些内容分词然后合并
+tf-idf.py - 基于合并、分词后的语料计算其每一个在每一个文档上的TF-IDF特征值，得到一个二维矩阵。本系统使用了一种 state-of-the-art 的二维矩阵存储方式，本文后面的章节将着重介绍。
+query.py - 基于离线计算好的tf-idf特征，返回与该查询最接近的文档。
+系统操作流程
+Step 1. 合并 N 张Excel表格，将会得到 corpus.xls
+python3 merge.py
+Step 2. 基于 corpus.xls 进行二次抽取、分词、合并，得到分词后的文档集合 docs.txt
+python3 extraction.py
+Step 3. 基于 docs.txt 得到词汇表，然后计算每一个词在每一个文档上的 TF-IDF 特征。截至到该步骤，目前进行的处理都属于离线的（off-line），也即预先生成好的，在用户提交具体查询时将不再进行运行以上步骤的查询。所以需要把一些必要的数据保存下来，以备在线程序（on-line）直接采用 [3]。
+执行本程序后，会得到词表文件 vocab.txt，TF-IDF特征文件 tf-idf.npy
+python3 TF-IDF.py
+Step 4. 基于用户的查询返回结果
+python3 query.py
+TF-IDF
+数学公式计算公式为：
+\[ TF_{term} = \frac{count(term)}{len(doc)} = \frac{关键词在文档中出现的次数}{文档总次数} \quad（相当于把 TF 进行了归一化)\\ IDF_{term} = \log{\frac{D}{D_w}} = \log\frac{总文档数}{含有关键词的文档数} \\ TF \cdot IDF_{term} = TF_{term} \times IDF_{term} \]
+计算 TF-IDF 的例子
+该例子的灵感受启发于文献[1]
+假设我们有如下三个文档：
+人工智能 的 应用
+机器学习 与 人工智能
+自然语言处理 的 应用
+我们想要得到每个词在每篇文档上的 TF-IDF 权重，我们首先要得到 TF 表格，如下表所示
+文档  TF  词汇
+人工智能
+的
+应用
+机器学习
+与
+自然语言处理
+doc 1
+1
+1
+1
+doc 2
+1
+1
+1
+doc 3
+1
+1
+1
+然后要求得 IDF 表格，如下表所示（log1.5 = 0.18, log3=0.48）
+文档  IDF  词汇
+人工智能
+的
+应用
+机器学习
+与
+自然语言处理
+doc 1
+log1.5=0.18
+log1.5=0.18
+log1.5=0.18
+doc 2
+log1.5=0.18
+log3=0.48
+log3=0.48
+doc 3
+log1.5=0.18
+log1.5=0.18
+log3=0.48
+最后求得 TF-IDF 表格，如下表所示
+文档  TF-IDF  词汇
+人工智能
+的
+应用
+机器学习
+与
+自然语言处理
+doc 1
+0.18
+0.18
+0.18
+doc 2
+0.18
+0.48
+0.48
+doc 3
+0.18
+0.18
+0.48
+找出与查询最相似的文档
+如何找出与查询(query)最相似的文档呢？
+文献[1] 给出了一种计算方法，比如我们要查询 “人工智能 与 自然语言处理”，三个文档的TF-IDF值分别为
+\[ \begin{align} TF-IDF_{doc1} &=0.18 + 0 + 0 &= 0.18 \\ TF-IDF_{doc2} &=0.18 + 0.48 + 0 &= 0.66 \\ TF-IDF_{doc3} &=0 + 0 + 0.48& = 0.48 \end{align} \]
+于是得到文档与查询（人工智能 与 自然语言处理）的相似度排序为：
+doc2 > doc3 > doc1
+Python中的二维矩阵表示方法
+基于二维数组的方法
+声明一个三行两列的矩阵，传统的基于二维数组表示方法为
+row = 3 col = 2 matrix = [[0 for c in range(col)] for r in range(row)]
+这种方法的缺点有：
+占用内存大
+代码复杂
+没有相关配套库函数支持
+基于 Numpy
+基于numpy的方法有很多好处：
+占用内存小（底层是使用C语言写成的Python拓展）
+API简单
+强大的相关库函数支持
+程序健壮、代码短少、易于调试等等
+声明一个三行两列的矩阵，代码如下
+import numpy as np matrix = np.zeros(shape=[3,2])
+基于 Numpy 实现的 TF-IDF 程序详解
+def tf(table, vocab, docs): for r in range(len(docs)): for w in docs[r]: c = vocab.index(w) table[r][c] = table[r][c] + 1 #numpy的矩阵的元素存取方式与二维数组无异，都是用[]操作符 table[r] = table[r] / len(docs[r]) #table[r]取第r行的一整行数据，其每个元素均除以同一个数 return table def idf(table, D): for c in range(table.shape[1]): #shape返回一个元组——（行，列） tf = table[:, c] #以行的形式，返回第c列 Dw = np.count_nonzero(tf) #计算向量/矩阵中非零元素的数目 idf = math.log(D/Dw) table[:, c] = table[:, c] * idf #以列的形式返回第c列 return table table = np.zeros(shape=(len(docs), len(vocab))) #声明矩阵，行数是文档总数，列数是词汇总数 table = tf(table, vocab, docs) table = idf(table, len(docs))
+参考文献
+[1] 吴军. 《数学之美（第二版）》. 人民邮电出版社[M]
+[2] 白宇. 信息检索概述KERC2016. [PPT]
+[3] Mark Allen Weiss(美). 冯舜玺(译). 《数据结构与算法分析——C语言描述》. 2004. 机械工业出版社[M]

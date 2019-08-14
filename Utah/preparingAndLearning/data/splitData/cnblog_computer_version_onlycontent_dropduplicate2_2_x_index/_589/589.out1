@@ -1,0 +1,1363 @@
+牛人 主页 主页 有 很多 论文 代码 Serge Belongie   
+at UC San DiegoAntonio Torralba   at MITAlexei Ffros   
+at CMUCe Liu   at Microsoft Research New EnglandVittorio Ferrari 
+  at Univ . of EdinburghKristen Grauman   at UT 
+AustinDevi Parikh   at     TTI Chicago   Marr 
+Prize at ICCV2011 John Wright   at Columbia Univ . 
+Piotr Dollar   at CalTechBoris Babenko   at UC San 
+DiegoDavid Ross   at Google / YoutubeDavid Donoho   at 
+Stanford Univ . 大神 们 William T . Freeman   
+at MITRoberto Cipolla   at CambridgeDavid Lowe   at Univ 
+. of British ColumbiaMubarak Shah   at Univ . of 
+Central FloridaYi Ma   at MSRATinne Tuytelaars   at K 
+. U . LeuvenTrevor Darrell   at U . C 
+. BerkeleyMichael J . Black   at Brown Univ . 
+重要 研究组 Computer Vision Group   at UC BerkeleyRobotics Research 
+Group   at Univ . of OxfordLEAR   at INRIAComputer 
+Vision Lab   at StanfordComputer Vision Lab   at EPFLComputer 
+Vision Lab   at ETH ZurichComputer Vision Lab   at 
+Seoul National Univ . Computer Vision Lab   at UC 
+San DiegoComputer Vision Lab   at UC Santa CruzComputer Vision 
+Lab   at Univ . of Southern C a l 
+i f o r n i a C o m 
+p u t e r Vision Lab   at Univ 
+. of Central FloridaComputer Vision Lab   at Columbia Univ 
+. UCLA Vision LabMotion and Shape Computing Group   at 
+George Mason Univ . Robust Image Understanding Lab   at 
+Rutgers Univ . Intelligent Vision Systems Group   at Univ 
+. of BonnInstitute for Computer Graphics and Vision   at 
+Graz Univ . of Tech . Computer Vision Lab . 
+  at Vienna Univ . of Tech . Computational Image 
+Analysis and Radiology   at Medical Univ . of ViennaPersonal 
+  Robotics   Lab   at CMUVisual Perception Lab   
+at Purdue Univ . 潜力 牛人 Juergen Gall   at 
+  ETH ZurichMatt Flagg   at Georgia Tech . Mathieu 
+Salzmann   at TTI ChicagoGerg Shakhnarovich   at TTI ChicagoTaeg 
+Sang Cho   at MITJianchao Yang   at UIUCStefan Roth 
+  at TU DarmstadtPeter Kontschieder   at Graz Univ . 
+of Tech . Dominik Alexander Klein   at Univ . 
+of BonnYinan Yu   at CASIA PASCAL VOC 2010 Detection 
+Challenge Winner Zdenek Kalal   at FPFLJulien Pilet   at 
+FPFLKenji Okuma 1 googleResearch   http / / research . 
+google . com / index . html 2 MIT 博士 
+汤晓欧/nr 学生/n 林达/nr 华/ns   http / / people . 
+csail . mit . edu / dhlin / index . 
+html 3 MIT 博士后 Douglas Lanman   http / / 
+web . media . mit . edu / ~ dlanman 
+/ 4 opencv 中文网站   http / / www . 
+opencv . org . cn / index . php / 
+首页 5 Stanford 大学 vision 实验室   http / / 
+vision . stanford . edu / research . html 6 
+Stanford 大学 博士 崔 靖宇   http / / www 
+. stanford . edu / ~ jycui / 7 UCLA 
+教授 朱松 纯   http / / www . stat 
+. ucla . edu / ~ sczhu / 8 中国 
+人 工 智能网   http / / www . chinaai 
+. org / 9 中国 视觉 网   http / 
+/ www . china vision . net / 10 中科院 
+自动化所   http / / www . ia . cas 
+. cn / 11 中科院 自动化所 李子 青 研究员   
+http / / www . cbsr . ia . ac 
+. cn / users / szli / 12 中科院计算所 山世光/nr 
+研究员   http / / www . jdl . ac 
+. cn / user / sgshan / 13 人脸识别 主页 
+  http / / www . face rec . org 
+/ 14 加州 大学 伯克利 分校 CV 小组 http / 
+/ www . eecs . berkeley . edu / Research 
+/ Projects / CS / vision / 15 南加州 大学 
+CV 实验室   http / / iris . usc . 
+edu / USC Computer Vision . html 16 卡内基 梅隆 
+大学 CV 主页 http / / www . cs . 
+cmu . edu / afs / cs / project / 
+cil / ftp / html / vision . html 17 
+微软 CV 研究员 Richard Szeliski http / / research . 
+microsoft . com / en us / um / people 
+/ szeliski / 18 微软 亚洲 研究院 计算机 视觉 研究组 
+http / / research . microsoft . com / en 
+us / groups / vc / 19 微软 剑桥 研究院 
+ML 与 CV 研究组 http / / research . microsoft 
+. com / en us / groups / mlp / 
+default . aspx 20 研 学 论坛   http / 
+/ bbs . matwav . com / 21 美国 Rutgers 
+大学 助理 教授 刘青山 http / / www . research 
+. rutgers . edu / ~ qsliu / 22 计算机 
+视觉 最新 资讯 网   http / / www . 
+cvchina . info / 23 运动 检测 阴影 跟踪 的 
+测试 视频 下载 http / / apps . hi . 
+baidu . com / share / detail / 18903287 24 
+香港 中文 大学 助理 教授 王晓刚 http / / www 
+. ee . cuhk . edu . hk / ~ 
+xgwang / 25 香港 中文 大学 多 媒体 实验室 汤晓鸥/nr 
+http / / mmlab . ie . cuhk . edu 
+. hk / 26 U . C . San Diego 
+. computer vision http / / vision . ucsd . 
+edu / content / home 27 CVonline   http / 
+/ homepages . inf . ed . ac . uk 
+/ rbf / CVonline / 28 computer vision software http 
+/ / peipa . essex . ac . uk / 
+info / software . html 29 Computer Vision Resource   
+http / / www . cvpapers . com / 30 
+computer vision research groups http / / peipa . essex 
+. ac . uk / info / groups . html 
+31 computer vision center http / / c o m 
+p u t e r v i s i o 
+n c e n t r a l . com 
+/ cvcnews 32 浙江大学 图像 技术 研究 与 应用 ITRA 
+团队 http / / www . dvzju . com / 
+33 自动识别 网 http / / www . autoid china 
+. com . cn / 34 清华大学/nt 章毓晋/nr 教授/n http 
+/ / www . tsinghua . edu . cn / 
+publish / ee / 4157/2010 / 2 0 1 0 
+1 2 1 7 1 7 3 5 5 2 
+3 3 9 2 4 1 5 5 7 / 
+2 0 1 0 1 2 1 7 1 7 
+3 5 5 2 3 3 9 2 4 1 
+5 5 7 _ . html 35 顶级 民用 机器人 
+研究 小组 Porf . Gary 领导 的 Willow Garage http 
+/ / www . willowgarage . com / 36 上海 
+交通 大学 图像 处理 与 模式识别 研究所 http / / 
+www . pami . sjtu . edu . cn / 
+37 上海 交通 大学 计算机 视觉 实验室 刘允 才 教授 
+http / / www . visionlab . sjtu . edu 
+. cn / 38 德克萨斯州 大学 奥斯汀 分校 助理 教授 
+Kristen Grauman http / / www . cs . utexas 
+. edu / ~ grauman / 39 清华大学电子工程系 智能 图文 
+信息处理 实验室 丁晓青 教授 http / / ocrserv . ee 
+. tsinghua . edu . cn / auto / index 
+. asp 40 北京大学 高文 教授 http / / www 
+. jdl . ac . cn / htm gaowen / 
+41 清华大学 艾 海舟 教授 http / / media . 
+cs . tsinghua . edu . cn / cn / 
+aihz 42 中科院 生物 识别 与 安全 技术 研究中心 http 
+/ / www . cbsr . ia . ac . 
+cn / china / index CH . asp 43 瑞士 
+巴塞尔 大学 Thomas Vetter 教授 http / / informatik . 
+unibas . ch / personen / vetter _ t . 
+html 44 俄勒冈 州立大学 Rob Hess 博士 http / / 
+blogs . oregonstate . edu / hess / 45 深圳大学 
+于仕祺/nr 副教授 http / / yushiqi . cn / 46 
+西安交通大学 人工智能 与 机器人 研究所 http / / www . 
+aiar . xjtu . edu . cn / 47 卡内基 
+梅隆 大学 研究员 Robert T . Collins http / / 
+www . cs . cmu . edu / ~ rcollins 
+/ home . html # Background 48 MIT 博士 Chris 
+Stauffer http / / people . csail . mit . 
+edu / stauffer / Home / index . php 49 
+美国 密歇根 州立 大学 生物 识别 研究组 Anil K . 
+Jain 教授 http / / www . cse . msu 
+. edu / rgroups / biometrics / 50 美国 伊利 
+诺 伊州 立 大学 Thomas . Huang http / / 
+www . beckman . illinois . edu / directory / 
+t huang1 51 武汉大学 数字 摄影 测量 与 计算机 视觉 
+研究中心 http / / www . whudpcv . cn / 
+index . asp 52 瑞士 巴塞尔 大学 Sami Romdhani 助理 
+研究员 http / / informatik . unibas . ch / 
+personen / romdhani _ sami / 53 CMU 大学 研究员 
+Yang Wang http / / www . cs . cmu 
+. edu / ~ wangy / home . html 54 
+英国曼彻斯特大学 Tim Cootes 教授 http / / personalpages . manchester 
+. ac . uk / staff / timothy . f 
+. cootes / 55 美国 罗彻斯特 大学教授 Jiebo Luo http 
+/ / www . cs . rochester . edu / 
+u / jluo / 56 美国 普渡大学 机器人 视觉 实验室 
+https / / engineering . purdue . edu / RVL 
+/ Welcome . html 57 美国 宾利 州立大学 感知 运动 
+与 认识 实验室 http / / vision . cse . 
+psu . edu / home / home . shtml 58 
+美国宾夕法尼亚大学 GRASP 实验室 https / / www . grasp . 
+upenn . edu / 59 美国 内 达 华 大学 
+里 诺 校区 CV 实验室 http / / www . 
+cse . unr . edu / CVL / index . 
+php 60 美国 密西根 大学 vision 实验室 http / / 
+www . eecs . umich . edu / vision / 
+index . html 61 University of Massachusetts 麻省 大学 视觉 
+实验室 http / / vis www . cs . umass 
+. edu / index . html 62 华盛顿大学 博士后 Iva 
+Kemelmacher http / / www . cs . washington . 
+edu / homes / kemelmi 63 以色列 魏茨曼 科技大学 Ronen 
+Basri http / / www . wisdom . weizmann . 
+ac . il / ~ ronen / index . html 
+64 瑞士 ETH Zurich 大学 CV 实验室 http / / 
+www . vision . ee . ethz . ch / 
+boostingTrackers / index . htm 65 微软 CV 研究员 张正友 
+http / / research . microsoft . com / en 
+us / um / people / zhang / 66 中科院 
+自动化所 医学影像 研究室 http / / www . 3dmed . 
+net / 67 中科院 田捷 研究员 http / / www 
+. 3dmed . net / tian / 68 微软 Redmond 
+研究院 研究员 Simon Baker http / / research . microsoft 
+. com / en us / people / sbaker / 
+69 普林斯顿 大学 教授 李凯 http / / www . 
+cs . princeton . edu / ~ li / 70 
+普林斯顿 大学 博士 贾登 http / / www . cs 
+. princeton . edu / ~ jiadeng / 71 牛津 
+大学 教授 Andrew Zisserman http / / www . robots 
+. ox . ac . uk / ~ az / 
+72 英国 leeds 大学 研究员 Mark Everingham http / / 
+www . comp . leeds . ac . uk / 
+me / 73 英国 爱丁堡 大学 教授 Chris William http 
+/ / homepages . inf . ed . ac . 
+uk / ckiw / 74 微软 剑桥 研究院 研究员 John 
+Winn   http / / johnwinn . org / 75 
+佐治亚 理工学院 教授 Monson H . Hayes http / / 
+savannah . gatech . edu / people / mhayes / 
+index . html 76 微软 亚洲 研究院 研究员 孙剑 http 
+/ / research . microsoft . com / en us 
+/ people / jiansun / 77 微软 亚洲 研究院 研究员 
+马毅/nr http / / research . microsoft . com / 
+en us / people / mayi / 78 英国 哥伦比亚 
+大学 教授 David Lowe http / / www . cs 
+. ubc . ca / ~ lowe / 79 英国 
+爱丁堡 大学 教授 Bob Fisher http / / homepages . 
+inf . ed . ac . uk / rbf / 
+80 加州大学 圣地亚哥 分校 教授 Serge J . Belongie http 
+/ / cseweb . ucsd . edu / ~ sjb 
+/ 81 威斯康星 大学 教授 Charles R . Dyer http 
+/ / pages . cs . wisc . edu / 
+~ dyer / 82 多伦多 大学 教授 Allan . Jepson 
+http / / www . cs . toronto . edu 
+/ ~ jepson / 83 伦斯勒 理工学院 教授 Qiang Ji 
+  http / / www . ecse . rpi . 
+edu / ~ qji / 84 CMU 研究员 Daniel Huber 
+  http / / www . ri . cmu . 
+edu / person . html person _ id = 123 
+85 多伦多 大学 教授 David J . Fleet http / 
+/ www . cs . toronto . edu / ~ 
+fleet / 86 伦敦大学 玛丽 女王 学院 教授 Andrea Cavallaro 
+http / / www . eecs . qmul . ac 
+. uk / ~ andrea / 87 多伦多 大学 教授 
+Kyros Kutulakos http / / www . cs . toronto 
+. edu / ~ kyros / 88 杜克 大学 教授 
+Carlo Tomasi   http / / www . cs . 
+duke . edu / ~ tomasi / 89 CMU 教授 
+Martial Hebert   http / / www . cs . 
+cmu . edu / ~ hebert / 90 MIT 助理 
+教授 Antonio Torralba http / / web . mit . 
+edu / torralba / www / 91 马里兰 大学 研究员 
+Yasel Yacoob http / / www . umiacs . umd 
+. edu / users / yaser / 92 康奈尔 大学 
+教授 Ramin Zabih   http / / www . cs 
+. cornell . edu / ~ rdz / 93 CMU 
+博士 田渊栋/nr http / / www . cs . cmu 
+. edu / ~ yuandong / 94 CMU 副教授 Srinivasa 
+Narasimhan http / / www . cs . cmu . 
+edu / ~ srinivas / 95 CMU 大学 ILIM 实验室 
+http / / www . cs . cmu . edu 
+/ ~ ILIM / 96 哥伦比亚 大学 教授 Sheer K 
+. Nayar http / / www . cs . columbia 
+. edu / ~ nayar / 97 三菱 电子 研究院 
+研究员 Fatih Porikli http / / www . porikli . 
+com / 98 康奈尔 大学 教授 Daniel Huttenlocher http / 
+/ www . cs . cornell . edu / ~ 
+dph / 99 南京 大学 教授 周志华 http / / 
+cs . nju . edu . cn / zhouzh / 
+index . htm 100 芝加哥 丰田 技术 研究所 助理 教授 
+Devi Parikh http / / ttic . uchicago . edu 
+/ ~ dparikh / index . html 101 瑞士 联邦 
+理工学院 博士后 Helmut Grabner http / / www . vision 
+. ee . ethz . ch / ~ hegrabne / 
+# Short _ CV 102 香港 中文 大学 教授 贾 
+佳亚 http / / www . cse . cuhk . 
+edu . hk / ~ leojia / index . html 
+103 南洋 理工大学 副教授 吴建 鑫 http / / c2inet 
+. sce . ntu . edu . sg / Jianxin 
+/ index . html 104 GE 研究院 研究员 李关/nr http 
+/ / www . cs . unc . edu / 
+~ lguan / 105 佐治亚 理工学院 教授 Monson Hayes http 
+/ / savannah . gatech . edu / people / 
+mhayes / 106 图片 检索 国际 会议 VOC 微软 剑桥 
+研究院 组织 http / / pascallin . ecs . soton 
+. ac . uk / challenges / VOC / 107 
+机器 视觉 开源 处理 库 汇总 http / / archive 
+. cnblogs . com / a / 2217609 / 108 
+布朗 大学 教授 Benjamin Kimia http / / www . 
+lems . brown . edu / kimia . htmlabout multi 
+camera   http / / server . cs . ucf 
+. edu / ~ vision / projects . htmlabout 3D 
+Voxel Coloring       Rob Hess   http / 
+/ blogs . oregonstate . edu / hess / code 
+/ voxels / About     the particle filters condensation 
+filter http / / homepages . inf . ed . 
+ac . uk / rbf / CVonline / LOCAL _ 
+COPIES / ISARD1 / condensation . htmlMachine Learning Open Source 
+Software http / / jmlr . csail . mit . 
+edu / mloss / 1 动作 识别 数据库 Recognition of 
+human actions http / / www . nada . kth 
+. se / cvap / actions / 2 Datasets for 
+Computer Vision Research http / / www cvr . ai 
+. uiuc . edu / ponce _ grp / data 
+/ 3 Computer Vision Datasets http / / clickdamage . 
+com / sourcecode / cv _ datasets . php4 里面 
+有 好多 基本 算法 matlab   http / / www 
+. mathworks . cn / index . html5 CVPR 2011中 
+关于 grassmann 流形 文章 的 源码   http / / 
+itee . uq . edu . au / ~ uqmhara1 
+/ code . htmlMatlab Codefor   Graph Embedding Discriminant Analysis 
+on Grassmannian Manifolds for Improved Image Set Matching   CVPR 
+2011 . Matlab Codefor   Optimal Local Basis A Reinforcement 
+Learning Approach for Face Recognition IJCV vol . 81 no 
+. 2 pp . 191 204 2009 . 牛人 bolg 
+1 Hong Kong Polytechnic University http / / www4 . 
+comp . polyu . edu . hk / ~ cslzhang 
+/ 2 Computer Vision Resources 资源 非常 丰富 包含 有 
+基本 算法 https / / netfiles . uiuc . edu 
+/ jbhuang1 / www / resources / vision / index 
+. html3 源代码 非常丰富 ~ ~     http / 
+/ homepage . tudelft . nl / 19j49 / Publications 
+. htmlCVonlinehttp / / homepages . inf . ed . 
+ac . uk / rbf / CVonlinehttp / / homepages 
+. inf . ed . ac . uk / rbf 
+/ CVonline / unfolded . htmhttp / / homepages . 
+inf . ed . ac . uk / rbf / 
+CVonline / CVentry . htm 李子 青 的 大作 Markov 
+Random Field Modeling in Computer Visionhttp / / www . 
+cbsr . ia . ac . cn / users / 
+szli / mrf _ book / book . htmlHandbook of 
+Face Recognition PDF http / / www . umiacs . 
+umd . edu / ~ shaohua / papers / zhou04hfr 
+. pdf 张正友 的 有关 参数 鲁棒 估计 著作 Parameter 
+Estimation Techniques A Tutorial with Application to Conic Fittinghttp / 
+/ research . microsoft . com / ~ zhang / 
+INRIA / Publis / Tutorial Estim / Main . htmlAndrea 
+Fusiello 计算机 视觉 中的 几何 教程 Elements of Geometric Computer 
+Visionhttp / / homepages . inf . ed . ac 
+. uk / rbf / CVonline / LOCAL _ COPIES 
+/ FUSIELLO4 / tutorial . html # x1 520007 有关 
+马尔可夫 蒙特卡罗 方法 的 资料 An introduction to Markov chain 
+Monte Carlohttp / / homepages . inf . ed . 
+ac . uk / rbf / CVonline / LOCAL _ 
+COPIES / SENEGAS / mcmc . htmlMarkov Chain Monte Carlo 
+for Computer Vision A tutorial at ICCV05http / / civs 
+. stat . ucla . edu / MCMC / MCMC 
+_ tutorial . htm 有关 独立 成分 分析 Independent Component 
+Analysis ICA 的 资料 An ICA Pagehttp / / www 
+. cnl . salk . edu / ~ tony / 
+ica . htmlFast ICAhttp / / www . cis . 
+hut . fi / projects / ica / fastica / 
+The Kalman Filter 介绍 卡尔曼 滤波器 的 终极 网页 http 
+/ / www . cs . unc . edu / 
+~ welch / kalman / index . htmlCached   k 
+d tree search for ICP algorithmshttp / / kos . 
+informatik . uni osnabrueck . de / download / 3dim2007 
+/ paper . html 几个 计算机 视觉 研究 工具 Machine 
+Vision Toolbox for Matlabhttp / / www . petercorke . 
+com / Machine Vision Toolbox . htmlMatlab and Octave Function 
+for Computer Vision and Image Processinghttp / / www . 
+csse . uwa . edu . au / ~ pk 
+/ research / matlabfns / Bayes Net Toolbox for Matlabhttp 
+/ / www . cs . ubc . ca / 
+~ murphyk / Software / BNT / bnt . htmlOpenCV 
+Chinese http / / www . opencv . org . 
+cn / index . php / 首页 Gandalf A Computer 
+Vision and Numerical Algorithm Labrary http / / gandalf library 
+. sourceforge . net / CMU Computer Vision Home Pagehttp 
+/ / www . cs . cmu . edu / 
+afs / cs / project / cil / ftp / 
+html / vision . htmlMachine Learning Resource Linkshttp / / 
+www . cse . ust . hk / ~ ivor 
+/ resource . htmThe Bayesian Filtering Libraryhttp / / www 
+. orocos . org / bflOptical Flow Algorithm Evaluation 提供 
+了 一个 动态 贝叶斯 网络 框架 例如 递归 信息 处理 
+与 分析 卡尔曼滤波 粒子 滤波 序列 蒙特卡罗 方法 等 C 
++ + 写 的 http / / of eval . 
+sourceforge . net / MATLAB code for ICP algorithmhttp / 
+/ www . usenet . com / newsgroups / comp 
+. graphics . visualization / msg00102 . html 牛人 主页 
+朱松 纯 Song Chun Zhu http / / www . 
+stat . ucla . edu / ~ sczhu / David 
+Lowe SIFT 很帅 的 一个 老头 哦 ^ ^ http 
+/ / www . cs . ubc . ca / 
+~ lowe / Andrea Vedaldi SIFT http / / vision 
+. ucla . edu / ~ vedaldi / index . 
+htmlPedro F . Felzenszwalbhttp / / people . cs . 
+uchicago . edu / ~ pff / Dougla Dlanman Brown 
+的 一个 研究生 在其 主页 上 搜集 了 大量 算法 
+教程 和 源码 http / / mesh . brown . 
+edu / dlanman / courses . htmlJianbo Shi Ncuts 的 
+始作俑者 http / / www . cis . upenn . 
+edu / ~ jshi / Active Vision Group Oxford 的 
+一个 机器 视觉 研究 团队 特色 是 SLAM 监视 导航 
+http / / www . robots . ox . ac 
+. uk / ActiveVision / index . htmlJuyang Weng 机器 
+学习 的 专家 Autonomous Mental Development   是 其 特色 
+http / / www . cse . msu . edu 
+/ ~ weng / 测试 图片 或 视频 Middlebury College 
+s Stereo Vision Data Sethttp / / cat . middlebury 
+. edu / stereo / data . htmlIntelligent Vehicle IVSourcewww 
+. ivsoruce . netRobot Carhttp / / www . plyojump 
+. com / robot _ cars . htmlHow to Build 
+a Robot The Computer Vision Parthttp / / www . 
+societyofrobots . com / programming _ computer _ vision _ 
+tutorial . shtml 收集 的 一般 牛人 主页 带 代码 
+Xiaofei He machine learning code http / / people . 
+cs . uchicago . edu / ~ xiaofei / YingNian 
+Wu active base model code http / / www . 
+stat . ucla . edu / ~ ywu / research 
+. html 布朗 大学 计算机 主页 可 找到 该校 CS 
+牛人 博客 http / / www . cs . brown 
+. edu / research / areas . htmlNavneet Dalal Histograms 
+of Oriented Gradients for Human Detection http / / www 
+. navneetdalal . com / softwarePaul Viola Robust Real time 
+Object Detection http / / research . microsoft . com 
+/ en us / um / people / viola / 
+Active LearningRMw 平坦 软件园 http / / active learning . 
+net / 这里 包括 了 关于 Active Learning 理论 以及 
+应用 的 一些 文章 特别 是 那篇 Survey Transfer LearningRMw 
+平坦 软件园 http / / www . cse . ust 
+. hk / TL / 包括 经典 的 论文 以及 
+附 带有 源码 很 方便 Gaussian ProcessesRMw 平坦 软件园 RMw 
+平坦 软件园 http / / www . gaussianprocess . org 
+  包括 相关 的 书籍 有 Carl Edward Rasmussen 的 
+书 相关 的 程序 以及 分类 的 paper 列表 这也 
+是由 Carl 自己 维护 的 他 应该 是 将 GP 
+引入 machine learning 最早 的 人 之一 了吧 Hinton 的 
+学生 Nonparametric Bayesian MethodsRMw 平坦 软件园 http / / www 
+. cs . berkeley . edu / ~ jordan / 
+npb . html   这个 一看 就 知道 是 Jordan 
+维护 的 主要 包括 Dirichlet process 以及 相关 的 其他 
+随机 过程 在 machine learning 里面 如何 进行 建模 如何 
+进行 approximate inference 主要 是 文章 列表 Probabilistic Graphical ModelRMw 
+平坦 软件园 http / / www . cs . ubc 
+. ca / ~ murphyk / Bayes / bnintro . 
+html   是 Kevin Murphy 所 维护 的 关于 Bayesian 
+belief networks 的 介绍 含有 最 基本 的 概念 相关 
+的 文献 和 软件 的 链接 罕见 的 UCB 出来 
+的 不是 Jordan 的 学生 老板 是 Stuart Russel http 
+/ / www . cs . berkeley . edu / 
+~ jordan / graphical . html   是 Jordan 系 
+关于 这个 方面 的 论文 汇编 http / / www 
+. inference . phy . cam . ac . uk 
+/ hmw26 / crf /   是 关于 Conditional Random 
+Fields 方面 论文 和 软件 的 收集 由 Hanna Wallach 
+维护 Compressed SensingRMw 平坦 软件园 http / / www dsp 
+. rice . edu / cs   这是 Rice 大学 
+维护 的 论文 分类 列表 软件 链接 等 推荐 Emmanuel 
+Cand è s 所写 的 tutorial 这人 是 David Donoho 
+的 学生 TensorRMw 平坦 软件园 http / / csmr . 
+ca . sandia . gov / ~ tgkolda / pubs 
+/ index . html   关于 tensor 的 一些 偏 
+数学 的 文章 Deep Belief NetworkRMw 平坦 软件园 http / 
+/ www . cs . toronto . edu / ~ 
+hinton / csc2515 / deeprefs . html   是 Geoffrey 
+Hinton 为 研究生 开设 的 machine learning 课程 的 DBN 
+的 reading list Kernel MethodsRMw 平坦 软件园 http / / 
+www . cs . berkeley . edu / ~ jordan 
+/ kernels . html   是 Jordan 维护 的 关于 
+kernel methods 的 文章 列表 Markov LogicRMw 平坦 软件园 http 
+/ / ai . cs . washington . edu / 
+pubs   是 UW AI 组 的 文章 里面 关于 
+Markov logic 的 比较 多 因为 Pedro Domingos 就是 这个 
+组 的 Machine learning theoryhttp / / hunch . net 
+/ 这个 网站 主要 是 一些 learning theory 的 东西 
+比较 多 想在 machine learning 理论 上 有所 建树 的 
+同志 们 可以 去 看看 牛人 Iasonas Kokkinos 搞 统计模型 
+视觉 http / / vision . mas . ecp . 
+fr / Personnel / iasonas / index . html 牛人 主页 主页 有 很多 论文 代码 Serge Belongie   
+at UC San DiegoAntonio Torralba   at MITAlexei Ffros   
+at CMUCe Liu   at Microsoft Research New EnglandVittorio Ferrari 
+  at Univ . of EdinburghKristen Grauman   at UT 
+AustinDevi Parikh   at     TTI Chicago   Marr 
+Prize at ICCV2011 John Wright   at Columbia Univ . 
+Piotr Dollar   at CalTechBoris Babenko   at UC San 
+DiegoDavid Ross   at Google / YoutubeDavid Donoho   at 
+Stanford Univ . 大神 们 William T . Freeman   
+at MITRoberto Cipolla   at CambridgeDavid Lowe   at Univ 
+. of British ColumbiaMubarak Shah   at Univ . of 
+Central FloridaYi Ma   at MSRATinne Tuytelaars   at K 
+. U . LeuvenTrevor Darrell   at U . C 
+. BerkeleyMichael J . Black   at Brown Univ . 
+重要 研究组 Computer Vision Group   at UC BerkeleyRobotics Research 
+Group   at Univ . of OxfordLEAR   at INRIAComputer 
+Vision Lab   at StanfordComputer Vision Lab   at EPFLComputer 
+Vision Lab   at ETH ZurichComputer Vision Lab   at 
+Seoul National Univ . Computer Vision Lab   at UC 
+San DiegoComputer Vision Lab   at UC Santa CruzComputer Vision 
+Lab   at Univ . of Southern C a l 
+i f o r n i a C o m 
+p u t e r Vision Lab   at Univ 
+. of Central FloridaComputer Vision Lab   at Columbia Univ 
+. UCLA Vision LabMotion and Shape Computing Group   at 
+George Mason Univ . Robust Image Understanding Lab   at 
+Rutgers Univ . Intelligent Vision Systems Group   at Univ 
+. of BonnInstitute for Computer Graphics and Vision   at 
+Graz Univ . of Tech . Computer Vision Lab . 
+  at Vienna Univ . of Tech . Computational Image 
+Analysis and Radiology   at Medical Univ . of ViennaPersonal 
+  Robotics   Lab   at CMUVisual Perception Lab   
+at Purdue Univ . 潜力 牛人 Juergen Gall   at 
+  ETH ZurichMatt Flagg   at Georgia Tech . Mathieu 
+Salzmann   at TTI ChicagoGerg Shakhnarovich   at TTI ChicagoTaeg 
+Sang Cho   at MITJianchao Yang   at UIUCStefan Roth 
+  at TU DarmstadtPeter Kontschieder   at Graz Univ . 
+of Tech . Dominik Alexander Klein   at Univ . 
+of BonnYinan Yu   at CASIA PASCAL VOC 2010 Detection 
+Challenge Winner Zdenek Kalal   at FPFLJulien Pilet   at 
+FPFLKenji Okuma 1 googleResearch   http / / research . 
+google . com / index . html 2 MIT 博士 
+汤晓欧/nr 学生/n 林达/nr 华/ns   http / / people . 
+csail . mit . edu / dhlin / index . 
+html 3 MIT 博士后 Douglas Lanman   http / / 
+web . media . mit . edu / ~ dlanman 
+/ 4 opencv 中文网站   http / / www . 
+opencv . org . cn / index . php / 
+首页 5 Stanford 大学 vision 实验室   http / / 
+vision . stanford . edu / research . html 6 
+Stanford 大学 博士 崔 靖宇   http / / www 
+. stanford . edu / ~ jycui / 7 UCLA 
+教授 朱松 纯   http / / www . stat 
+. ucla . edu / ~ sczhu / 8 中国 
+人 工 智能网   http / / www . chinaai 
+. org / 9 中国 视觉 网   http / 
+/ www . china vision . net / 10 中科院 
+自动化所   http / / www . ia . cas 
+. cn / 11 中科院 自动化所 李子 青 研究员   
+http / / www . cbsr . ia . ac 
+. cn / users / szli / 12 中科院计算所 山世光/nr 
+研究员   http / / www . jdl . ac 
+. cn / user / sgshan / 13 人脸识别 主页 
+  http / / www . face rec . org 
+/ 14 加州 大学 伯克利 分校 CV 小组 http / 
+/ www . eecs . berkeley . edu / Research 
+/ Projects / CS / vision / 15 南加州 大学 
+CV 实验室   http / / iris . usc . 
+edu / USC Computer Vision . html 16 卡内基 梅隆 
+大学 CV 主页 http / / www . cs . 
+cmu . edu / afs / cs / project / 
+cil / ftp / html / vision . html 17 
+微软 CV 研究员 Richard Szeliski http / / research . 
+microsoft . com / en us / um / people 
+/ szeliski / 18 微软 亚洲 研究院 计算机 视觉 研究组 
+http / / research . microsoft . com / en 
+us / groups / vc / 19 微软 剑桥 研究院 
+ML 与 CV 研究组 http / / research . microsoft 
+. com / en us / groups / mlp / 
+default . aspx 20 研 学 论坛   http / 
+/ bbs . matwav . com / 21 美国 Rutgers 
+大学 助理 教授 刘青山 http / / www . research 
+. rutgers . edu / ~ qsliu / 22 计算机 
+视觉 最新 资讯 网   http / / www . 
+cvchina . info / 23 运动 检测 阴影 跟踪 的 
+测试 视频 下载 http / / apps . hi . 
+baidu . com / share / detail / 18903287 24 
+香港 中文 大学 助理 教授 王晓刚 http / / www 
+. ee . cuhk . edu . hk / ~ 
+xgwang / 25 香港 中文 大学 多 媒体 实验室 汤晓鸥/nr 
+http / / mmlab . ie . cuhk . edu 
+. hk / 26 U . C . San Diego 
+. computer vision http / / vision . ucsd . 
+edu / content / home 27 CVonline   http / 
+/ homepages . inf . ed . ac . uk 
+/ rbf / CVonline / 28 computer vision software http 
+/ / peipa . essex . ac . uk / 
+info / software . html 29 Computer Vision Resource   
+http / / www . cvpapers . com / 30 
+computer vision research groups http / / peipa . essex 
+. ac . uk / info / groups . html 
+31 computer vision center http / / c o m 
+p u t e r v i s i o 
+n c e n t r a l . com 
+/ cvcnews 32 浙江大学 图像 技术 研究 与 应用 ITRA 
+团队 http / / www . dvzju . com / 
+33 自动识别 网 http / / www . autoid china 
+. com . cn / 34 清华大学/nt 章毓晋/nr 教授/n http 
+/ / www . tsinghua . edu . cn / 
+publish / ee / 4157/2010 / 2 0 1 0 
+1 2 1 7 1 7 3 5 5 2 
+3 3 9 2 4 1 5 5 7 / 
+2 0 1 0 1 2 1 7 1 7 
+3 5 5 2 3 3 9 2 4 1 
+5 5 7 _ . html 35 顶级 民用 机器人 
+研究 小组 Porf . Gary 领导 的 Willow Garage http 
+/ / www . willowgarage . com / 36 上海 
+交通 大学 图像 处理 与 模式识别 研究所 http / / 
+www . pami . sjtu . edu . cn / 
+37 上海 交通 大学 计算机 视觉 实验室 刘允 才 教授 
+http / / www . visionlab . sjtu . edu 
+. cn / 38 德克萨斯州 大学 奥斯汀 分校 助理 教授 
+Kristen Grauman http / / www . cs . utexas 
+. edu / ~ grauman / 39 清华大学电子工程系 智能 图文 
+信息处理 实验室 丁晓青 教授 http / / ocrserv . ee 
+. tsinghua . edu . cn / auto / index 
+. asp 40 北京大学 高文 教授 http / / www 
+. jdl . ac . cn / htm gaowen / 
+41 清华大学 艾 海舟 教授 http / / media . 
+cs . tsinghua . edu . cn / cn / 
+aihz 42 中科院 生物 识别 与 安全 技术 研究中心 http 
+/ / www . cbsr . ia . ac . 
+cn / china / index CH . asp 43 瑞士 
+巴塞尔 大学 Thomas Vetter 教授 http / / informatik . 
+unibas . ch / personen / vetter _ t . 
+html 44 俄勒冈 州立大学 Rob Hess 博士 http / / 
+blogs . oregonstate . edu / hess / 45 深圳大学 
+于仕祺/nr 副教授 http / / yushiqi . cn / 46 
+西安交通大学 人工智能 与 机器人 研究所 http / / www . 
+aiar . xjtu . edu . cn / 47 卡内基 
+梅隆 大学 研究员 Robert T . Collins http / / 
+www . cs . cmu . edu / ~ rcollins 
+/ home . html # Background 48 MIT 博士 Chris 
+Stauffer http / / people . csail . mit . 
+edu / stauffer / Home / index . php 49 
+美国 密歇根 州立 大学 生物 识别 研究组 Anil K . 
+Jain 教授 http / / www . cse . msu 
+. edu / rgroups / biometrics / 50 美国 伊利 
+诺 伊州 立 大学 Thomas . Huang http / / 
+www . beckman . illinois . edu / directory / 
+t huang1 51 武汉大学 数字 摄影 测量 与 计算机 视觉 
+研究中心 http / / www . whudpcv . cn / 
+index . asp 52 瑞士 巴塞尔 大学 Sami Romdhani 助理 
+研究员 http / / informatik . unibas . ch / 
+personen / romdhani _ sami / 53 CMU 大学 研究员 
+Yang Wang http / / www . cs . cmu 
+. edu / ~ wangy / home . html 54 
+英国曼彻斯特大学 Tim Cootes 教授 http / / personalpages . manchester 
+. ac . uk / staff / timothy . f 
+. cootes / 55 美国 罗彻斯特 大学教授 Jiebo Luo http 
+/ / www . cs . rochester . edu / 
+u / jluo / 56 美国 普渡大学 机器人 视觉 实验室 
+https / / engineering . purdue . edu / RVL 
+/ Welcome . html 57 美国 宾利 州立大学 感知 运动 
+与 认识 实验室 http / / vision . cse . 
+psu . edu / home / home . shtml 58 
+美国宾夕法尼亚大学 GRASP 实验室 https / / www . grasp . 
+upenn . edu / 59 美国 内 达 华 大学 
+里 诺 校区 CV 实验室 http / / www . 
+cse . unr . edu / CVL / index . 
+php 60 美国 密西根 大学 vision 实验室 http / / 
+www . eecs . umich . edu / vision / 
+index . html 61 University of Massachusetts 麻省 大学 视觉 
+实验室 http / / vis www . cs . umass 
+. edu / index . html 62 华盛顿大学 博士后 Iva 
+Kemelmacher http / / www . cs . washington . 
+edu / homes / kemelmi 63 以色列 魏茨曼 科技大学 Ronen 
+Basri http / / www . wisdom . weizmann . 
+ac . il / ~ ronen / index . html 
+64 瑞士 ETH Zurich 大学 CV 实验室 http / / 
+www . vision . ee . ethz . ch / 
+boostingTrackers / index . htm 65 微软 CV 研究员 张正友 
+http / / research . microsoft . com / en 
+us / um / people / zhang / 66 中科院 
+自动化所 医学影像 研究室 http / / www . 3dmed . 
+net / 67 中科院 田捷 研究员 http / / www 
+. 3dmed . net / tian / 68 微软 Redmond 
+研究院 研究员 Simon Baker http / / research . microsoft 
+. com / en us / people / sbaker / 
+69 普林斯顿 大学 教授 李凯 http / / www . 
+cs . princeton . edu / ~ li / 70 
+普林斯顿 大学 博士 贾登 http / / www . cs 
+. princeton . edu / ~ jiadeng / 71 牛津 
+大学 教授 Andrew Zisserman http / / www . robots 
+. ox . ac . uk / ~ az / 
+72 英国 leeds 大学 研究员 Mark Everingham http / / 
+www . comp . leeds . ac . uk / 
+me / 73 英国 爱丁堡 大学 教授 Chris William http 
+/ / homepages . inf . ed . ac . 
+uk / ckiw / 74 微软 剑桥 研究院 研究员 John 
+Winn   http / / johnwinn . org / 75 
+佐治亚 理工学院 教授 Monson H . Hayes http / / 
+savannah . gatech . edu / people / mhayes / 
+index . html 76 微软 亚洲 研究院 研究员 孙剑 http 
+/ / research . microsoft . com / en us 
+/ people / jiansun / 77 微软 亚洲 研究院 研究员 
+马毅/nr http / / research . microsoft . com / 
+en us / people / mayi / 78 英国 哥伦比亚 
+大学 教授 David Lowe http / / www . cs 
+. ubc . ca / ~ lowe / 79 英国 
+爱丁堡 大学 教授 Bob Fisher http / / homepages . 
+inf . ed . ac . uk / rbf / 
+80 加州大学 圣地亚哥 分校 教授 Serge J . Belongie http 
+/ / cseweb . ucsd . edu / ~ sjb 
+/ 81 威斯康星 大学 教授 Charles R . Dyer http 
+/ / pages . cs . wisc . edu / 
+~ dyer / 82 多伦多 大学 教授 Allan . Jepson 
+http / / www . cs . toronto . edu 
+/ ~ jepson / 83 伦斯勒 理工学院 教授 Qiang Ji 
+  http / / www . ecse . rpi . 
+edu / ~ qji / 84 CMU 研究员 Daniel Huber 
+  http / / www . ri . cmu . 
+edu / person . html person _ id = 123 
+85 多伦多 大学 教授 David J . Fleet http / 
+/ www . cs . toronto . edu / ~ 
+fleet / 86 伦敦大学 玛丽 女王 学院 教授 Andrea Cavallaro 
+http / / www . eecs . qmul . ac 
+. uk / ~ andrea / 87 多伦多 大学 教授 
+Kyros Kutulakos http / / www . cs . toronto 
+. edu / ~ kyros / 88 杜克 大学 教授 
+Carlo Tomasi   http / / www . cs . 
+duke . edu / ~ tomasi / 89 CMU 教授 
+Martial Hebert   http / / www . cs . 
+cmu . edu / ~ hebert / 90 MIT 助理 
+教授 Antonio Torralba http / / web . mit . 
+edu / torralba / www / 91 马里兰 大学 研究员 
+Yasel Yacoob http / / www . umiacs . umd 
+. edu / users / yaser / 92 康奈尔 大学 
+教授 Ramin Zabih   http / / www . cs 
+. cornell . edu / ~ rdz / 93 CMU 
+博士 田渊栋/nr http / / www . cs . cmu 
+. edu / ~ yuandong / 94 CMU 副教授 Srinivasa 
+Narasimhan http / / www . cs . cmu . 
+edu / ~ srinivas / 95 CMU 大学 ILIM 实验室 
+http / / www . cs . cmu . edu 
+/ ~ ILIM / 96 哥伦比亚 大学 教授 Sheer K 
+. Nayar http / / www . cs . columbia 
+. edu / ~ nayar / 97 三菱 电子 研究院 
+研究员 Fatih Porikli http / / www . porikli . 
+com / 98 康奈尔 大学 教授 Daniel Huttenlocher http / 
+/ www . cs . cornell . edu / ~ 
+dph / 99 南京 大学 教授 周志华 http / / 
+cs . nju . edu . cn / zhouzh / 
+index . htm 100 芝加哥 丰田 技术 研究所 助理 教授 
+Devi Parikh http / / ttic . uchicago . edu 
+/ ~ dparikh / index . html 101 瑞士 联邦 
+理工学院 博士后 Helmut Grabner http / / www . vision 
+. ee . ethz . ch / ~ hegrabne / 
+# Short _ CV 102 香港 中文 大学 教授 贾 
+佳亚 http / / www . cse . cuhk . 
+edu . hk / ~ leojia / index . html 
+103 南洋 理工大学 副教授 吴建 鑫 http / / c2inet 
+. sce . ntu . edu . sg / Jianxin 
+/ index . html 104 GE 研究院 研究员 李关/nr http 
+/ / www . cs . unc . edu / 
+~ lguan / 105 佐治亚 理工学院 教授 Monson Hayes http 
+/ / savannah . gatech . edu / people / 
+mhayes / 106 图片 检索 国际 会议 VOC 微软 剑桥 
+研究院 组织 http / / pascallin . ecs . soton 
+. ac . uk / challenges / VOC / 107 
+机器 视觉 开源 处理 库 汇总 http / / archive 
+. cnblogs . com / a / 2217609 / 108 
+布朗 大学 教授 Benjamin Kimia http / / www . 
+lems . brown . edu / kimia . htmlabout multi 
+camera   http / / server . cs . ucf 
+. edu / ~ vision / projects . htmlabout 3D 
+Voxel Coloring       Rob Hess   http / 
+/ blogs . oregonstate . edu / hess / code 
+/ voxels / About     the particle filters condensation 
+filter http / / homepages . inf . ed . 
+ac . uk / rbf / CVonline / LOCAL _ 
+COPIES / ISARD1 / condensation . htmlMachine Learning Open Source 
+Software http / / jmlr . csail . mit . 
+edu / mloss / 1 动作 识别 数据库 Recognition of 
+human actions http / / www . nada . kth 
+. se / cvap / actions / 2 Datasets for 
+Computer Vision Research http / / www cvr . ai 
+. uiuc . edu / ponce _ grp / data 
+/ 3 Computer Vision Datasets http / / clickdamage . 
+com / sourcecode / cv _ datasets . php4 里面 
+有 好多 基本 算法 matlab   http / / www 
+. mathworks . cn / index . html5 CVPR 2011中 
+关于 grassmann 流形 文章 的 源码   http / / 
+itee . uq . edu . au / ~ uqmhara1 
+/ code . htmlMatlab Codefor   Graph Embedding Discriminant Analysis 
+on Grassmannian Manifolds for Improved Image Set Matching   CVPR 
+2011 . Matlab Codefor   Optimal Local Basis A Reinforcement 
+Learning Approach for Face Recognition IJCV vol . 81 no 
+. 2 pp . 191 204 2009 . 牛人 bolg 
+1 Hong Kong Polytechnic University http / / www4 . 
+comp . polyu . edu . hk / ~ cslzhang 
+/ 2 Computer Vision Resources 资源 非常 丰富 包含 有 
+基本 算法 https / / netfiles . uiuc . edu 
+/ jbhuang1 / www / resources / vision / index 
+. html3 源代码 非常丰富 ~ ~     http / 
+/ homepage . tudelft . nl / 19j49 / Publications 
+. htmlCVonlinehttp / / homepages . inf . ed . 
+ac . uk / rbf / CVonlinehttp / / homepages 
+. inf . ed . ac . uk / rbf 
+/ CVonline / unfolded . htmhttp / / homepages . 
+inf . ed . ac . uk / rbf / 
+CVonline / CVentry . htm 李子 青 的 大作 Markov 
+Random Field Modeling in Computer Visionhttp / / www . 
+cbsr . ia . ac . cn / users / 
+szli / mrf _ book / book . htmlHandbook of 
+Face Recognition PDF http / / www . umiacs . 
+umd . edu / ~ shaohua / papers / zhou04hfr 
+. pdf 张正友 的 有关 参数 鲁棒 估计 著作 Parameter 
+Estimation Techniques A Tutorial with Application to Conic Fittinghttp / 
+/ research . microsoft . com / ~ zhang / 
+INRIA / Publis / Tutorial Estim / Main . htmlAndrea 
+Fusiello 计算机 视觉 中的 几何 教程 Elements of Geometric Computer 
+Visionhttp / / homepages . inf . ed . ac 
+. uk / rbf / CVonline / LOCAL _ COPIES 
+/ FUSIELLO4 / tutorial . html # x1 520007 有关 
+马尔可夫 蒙特卡罗 方法 的 资料 An introduction to Markov chain 
+Monte Carlohttp / / homepages . inf . ed . 
+ac . uk / rbf / CVonline / LOCAL _ 
+COPIES / SENEGAS / mcmc . htmlMarkov Chain Monte Carlo 
+for Computer Vision A tutorial at ICCV05http / / civs 
+. stat . ucla . edu / MCMC / MCMC 
+_ tutorial . htm 有关 独立 成分 分析 Independent Component 
+Analysis ICA 的 资料 An ICA Pagehttp / / www 
+. cnl . salk . edu / ~ tony / 
+ica . htmlFast ICAhttp / / www . cis . 
+hut . fi / projects / ica / fastica / 
+The Kalman Filter 介绍 卡尔曼 滤波器 的 终极 网页 http 
+/ / www . cs . unc . edu / 
+~ welch / kalman / index . htmlCached   k 
+d tree search for ICP algorithmshttp / / kos . 
+informatik . uni osnabrueck . de / download / 3dim2007 
+/ paper . html 几个 计算机 视觉 研究 工具 Machine 
+Vision Toolbox for Matlabhttp / / www . petercorke . 
+com / Machine Vision Toolbox . htmlMatlab and Octave Function 
+for Computer Vision and Image Processinghttp / / www . 
+csse . uwa . edu . au / ~ pk 
+/ research / matlabfns / Bayes Net Toolbox for Matlabhttp 
+/ / www . cs . ubc . ca / 
+~ murphyk / Software / BNT / bnt . htmlOpenCV 
+Chinese http / / www . opencv . org . 
+cn / index . php / 首页 Gandalf A Computer 
+Vision and Numerical Algorithm Labrary http / / gandalf library 
+. sourceforge . net / CMU Computer Vision Home Pagehttp 
+/ / www . cs . cmu . edu / 
+afs / cs / project / cil / ftp / 
+html / vision . htmlMachine Learning Resource Linkshttp / / 
+www . cse . ust . hk / ~ ivor 
+/ resource . htmThe Bayesian Filtering Libraryhttp / / www 
+. orocos . org / bflOptical Flow Algorithm Evaluation 提供 
+了 一个 动态 贝叶斯 网络 框架 例如 递归 信息 处理 
+与 分析 卡尔曼滤波 粒子 滤波 序列 蒙特卡罗 方法 等 C 
++ + 写 的 http / / of eval . 
+sourceforge . net / MATLAB code for ICP algorithmhttp / 
+/ www . usenet . com / newsgroups / comp 
+. graphics . visualization / msg00102 . html 牛人 主页 
+朱松 纯 Song Chun Zhu http / / www . 
+stat . ucla . edu / ~ sczhu / David 
+Lowe SIFT 很帅 的 一个 老头 哦 ^ ^ http 
+/ / www . cs . ubc . ca / 
+~ lowe / Andrea Vedaldi SIFT http / / vision 
+. ucla . edu / ~ vedaldi / index . 
+htmlPedro F . Felzenszwalbhttp / / people . cs . 
+uchicago . edu / ~ pff / Dougla Dlanman Brown 
+的 一个 研究生 在其 主页 上 搜集 了 大量 算法 
+教程 和 源码 http / / mesh . brown . 
+edu / dlanman / courses . htmlJianbo Shi Ncuts 的 
+始作俑者 http / / www . cis . upenn . 
+edu / ~ jshi / Active Vision Group Oxford 的 
+一个 机器 视觉 研究 团队 特色 是 SLAM 监视 导航 
+http / / www . robots . ox . ac 
+. uk / ActiveVision / index . htmlJuyang Weng 机器 
+学习 的 专家 Autonomous Mental Development   是 其 特色 
+http / / www . cse . msu . edu 
+/ ~ weng / 测试 图片 或 视频 Middlebury College 
+s Stereo Vision Data Sethttp / / cat . middlebury 
+. edu / stereo / data . htmlIntelligent Vehicle IVSourcewww 
+. ivsoruce . netRobot Carhttp / / www . plyojump 
+. com / robot _ cars . htmlHow to Build 
+a Robot The Computer Vision Parthttp / / www . 
+societyofrobots . com / programming _ computer _ vision _ 
+tutorial . shtml 收集 的 一般 牛人 主页 带 代码 
+Xiaofei He machine learning code http / / people . 
+cs . uchicago . edu / ~ xiaofei / YingNian 
+Wu active base model code http / / www . 
+stat . ucla . edu / ~ ywu / research 
+. html 布朗 大学 计算机 主页 可 找到 该校 CS 
+牛人 博客 http / / www . cs . brown 
+. edu / research / areas . htmlNavneet Dalal Histograms 
+of Oriented Gradients for Human Detection http / / www 
+. navneetdalal . com / softwarePaul Viola Robust Real time 
+Object Detection http / / research . microsoft . com 
+/ en us / um / people / viola / 
+Active LearningRMw 平坦 软件园 http / / active learning . 
+net / 这里 包括 了 关于 Active Learning 理论 以及 
+应用 的 一些 文章 特别 是 那篇 Survey Transfer LearningRMw 
+平坦 软件园 http / / www . cse . ust 
+. hk / TL / 包括 经典 的 论文 以及 
+附 带有 源码 很 方便 Gaussian ProcessesRMw 平坦 软件园 RMw 
+平坦 软件园 http / / www . gaussianprocess . org 
+  包括 相关 的 书籍 有 Carl Edward Rasmussen 的 
+书 相关 的 程序 以及 分类 的 paper 列表 这也 
+是由 Carl 自己 维护 的 他 应该 是 将 GP 
+引入 machine learning 最早 的 人 之一 了吧 Hinton 的 
+学生 Nonparametric Bayesian MethodsRMw 平坦 软件园 http / / www 
+. cs . berkeley . edu / ~ jordan / 
+npb . html   这个 一看 就 知道 是 Jordan 
+维护 的 主要 包括 Dirichlet process 以及 相关 的 其他 
+随机 过程 在 machine learning 里面 如何 进行 建模 如何 
+进行 approximate inference 主要 是 文章 列表 Probabilistic Graphical ModelRMw 
+平坦 软件园 http / / www . cs . ubc 
+. ca / ~ murphyk / Bayes / bnintro . 
+html   是 Kevin Murphy 所 维护 的 关于 Bayesian 
+belief networks 的 介绍 含有 最 基本 的 概念 相关 
+的 文献 和 软件 的 链接 罕见 的 UCB 出来 
+的 不是 Jordan 的 学生 老板 是 Stuart Russel http 
+/ / www . cs . berkeley . edu / 
+~ jordan / graphical . html   是 Jordan 系 
+关于 这个 方面 的 论文 汇编 http / / www 
+. inference . phy . cam . ac . uk 
+/ hmw26 / crf /   是 关于 Conditional Random 
+Fields 方面 论文 和 软件 的 收集 由 Hanna Wallach 
+维护 Compressed SensingRMw 平坦 软件园 http / / www dsp 
+. rice . edu / cs   这是 Rice 大学 
+维护 的 论文 分类 列表 软件 链接 等 推荐 Emmanuel 
+Cand è s 所写 的 tutorial 这人 是 David Donoho 
+的 学生 TensorRMw 平坦 软件园 http / / csmr . 
+ca . sandia . gov / ~ tgkolda / pubs 
+/ index . html   关于 tensor 的 一些 偏 
+数学 的 文章 Deep Belief NetworkRMw 平坦 软件园 http / 
+/ www . cs . toronto . edu / ~ 
+hinton / csc2515 / deeprefs . html   是 Geoffrey 
+Hinton 为 研究生 开设 的 machine learning 课程 的 DBN 
+的 reading list Kernel MethodsRMw 平坦 软件园 http / / 
+www . cs . berkeley . edu / ~ jordan 
+/ kernels . html   是 Jordan 维护 的 关于 
+kernel methods 的 文章 列表 Markov LogicRMw 平坦 软件园 http 
+/ / ai . cs . washington . edu / 
+pubs   是 UW AI 组 的 文章 里面 关于 
+Markov logic 的 比较 多 因为 Pedro Domingos 就是 这个 
+组 的 Machine learning theoryhttp / / hunch . net 
+/ 这个 网站 主要 是 一些 learning theory 的 东西 
+比较 多 想在 machine learning 理论 上 有所 建树 的 
+同志 们 可以 去 看看 牛人 Iasonas Kokkinos 搞 统计模型 
+视觉 http / / vision . mas . ecp . 
+fr / Personnel / iasonas / index . html 牛人 主页 主页 有 很多 论文 代码 Serge Belongie   
+at UC San DiegoAntonio Torralba   at MITAlexei Ffros   
+at CMUCe Liu   at Microsoft Research New EnglandVittorio Ferrari 
+  at Univ . of EdinburghKristen Grauman   at UT 
+AustinDevi Parikh   at     TTI Chicago   Marr 
+Prize at ICCV2011 John Wright   at Columbia Univ . 
+Piotr Dollar   at CalTechBoris Babenko   at UC San 
+DiegoDavid Ross   at Google / YoutubeDavid Donoho   at 
+Stanford Univ . 大神 们 William T . Freeman   
+at MITRoberto Cipolla   at CambridgeDavid Lowe   at Univ 
+. of British ColumbiaMubarak Shah   at Univ . of 
+Central FloridaYi Ma   at MSRATinne Tuytelaars   at K 
+. U . LeuvenTrevor Darrell   at U . C 
+. BerkeleyMichael J . Black   at Brown Univ . 
+重要 研究组 Computer Vision Group   at UC BerkeleyRobotics Research 
+Group   at Univ . of OxfordLEAR   at INRIAComputer 
+Vision Lab   at StanfordComputer Vision Lab   at EPFLComputer 
+Vision Lab   at ETH ZurichComputer Vision Lab   at 
+Seoul National Univ . Computer Vision Lab   at UC 
+San DiegoComputer Vision Lab   at UC Santa CruzComputer Vision 
+Lab   at Univ . of Southern C a l 
+i f o r n i a C o m 
+p u t e r Vision Lab   at Univ 
+. of Central FloridaComputer Vision Lab   at Columbia Univ 
+. UCLA Vision LabMotion and Shape Computing Group   at 
+George Mason Univ . Robust Image Understanding Lab   at 
+Rutgers Univ . Intelligent Vision Systems Group   at Univ 
+. of BonnInstitute for Computer Graphics and Vision   at 
+Graz Univ . of Tech . Computer Vision Lab . 
+  at Vienna Univ . of Tech . Computational Image 
+Analysis and Radiology   at Medical Univ . of ViennaPersonal 
+  Robotics   Lab   at CMUVisual Perception Lab   
+at Purdue Univ . 潜力 牛人 Juergen Gall   at 
+  ETH ZurichMatt Flagg   at Georgia Tech . Mathieu 
+Salzmann   at TTI ChicagoGerg Shakhnarovich   at TTI ChicagoTaeg 
+Sang Cho   at MITJianchao Yang   at UIUCStefan Roth 
+  at TU DarmstadtPeter Kontschieder   at Graz Univ . 
+of Tech . Dominik Alexander Klein   at Univ . 
+of BonnYinan Yu   at CASIA PASCAL VOC 2010 Detection 
+Challenge Winner Zdenek Kalal   at FPFLJulien Pilet   at 
+FPFLKenji Okuma 1 googleResearch   http / / research . 
+google . com / index . html 2 MIT 博士 
+汤晓欧/nr 学生/n 林达/nr 华/ns   http / / people . 
+csail . mit . edu / dhlin / index . 
+html 3 MIT 博士后 Douglas Lanman   http / / 
+web . media . mit . edu / ~ dlanman 
+/ 4 opencv 中文网站   http / / www . 
+opencv . org . cn / index . php / 
+首页 5 Stanford 大学 vision 实验室   http / / 
+vision . stanford . edu / research . html 6 
+Stanford 大学 博士 崔 靖宇   http / / www 
+. stanford . edu / ~ jycui / 7 UCLA 
+教授 朱松 纯   http / / www . stat 
+. ucla . edu / ~ sczhu / 8 中国 
+人 工 智能网   http / / www . chinaai 
+. org / 9 中国 视觉 网   http / 
+/ www . china vision . net / 10 中科院 
+自动化所   http / / www . ia . cas 
+. cn / 11 中科院 自动化所 李子 青 研究员   
+http / / www . cbsr . ia . ac 
+. cn / users / szli / 12 中科院计算所 山世光/nr 
+研究员   http / / www . jdl . ac 
+. cn / user / sgshan / 13 人脸识别 主页 
+  http / / www . face rec . org 
+/ 14 加州 大学 伯克利 分校 CV 小组 http / 
+/ www . eecs . berkeley . edu / Research 
+/ Projects / CS / vision / 15 南加州 大学 
+CV 实验室   http / / iris . usc . 
+edu / USC Computer Vision . html 16 卡内基 梅隆 
+大学 CV 主页 http / / www . cs . 
+cmu . edu / afs / cs / project / 
+cil / ftp / html / vision . html 17 
+微软 CV 研究员 Richard Szeliski http / / research . 
+microsoft . com / en us / um / people 
+/ szeliski / 18 微软 亚洲 研究院 计算机 视觉 研究组 
+http / / research . microsoft . com / en 
+us / groups / vc / 19 微软 剑桥 研究院 
+ML 与 CV 研究组 http / / research . microsoft 
+. com / en us / groups / mlp / 
+default . aspx 20 研 学 论坛   http / 
+/ bbs . matwav . com / 21 美国 Rutgers 
+大学 助理 教授 刘青山 http / / www . research 
+. rutgers . edu / ~ qsliu / 22 计算机 
+视觉 最新 资讯 网   http / / www . 
+cvchina . info / 23 运动 检测 阴影 跟踪 的 
+测试 视频 下载 http / / apps . hi . 
+baidu . com / share / detail / 18903287 24 
+香港 中文 大学 助理 教授 王晓刚 http / / www 
+. ee . cuhk . edu . hk / ~ 
+xgwang / 25 香港 中文 大学 多 媒体 实验室 汤晓鸥/nr 
+http / / mmlab . ie . cuhk . edu 
+. hk / 26 U . C . San Diego 
+. computer vision http / / vision . ucsd . 
+edu / content / home 27 CVonline   http / 
+/ homepages . inf . ed . ac . uk 
+/ rbf / CVonline / 28 computer vision software http 
+/ / peipa . essex . ac . uk / 
+info / software . html 29 Computer Vision Resource   
+http / / www . cvpapers . com / 30 
+computer vision research groups http / / peipa . essex 
+. ac . uk / info / groups . html 
+31 computer vision center http / / c o m 
+p u t e r v i s i o 
+n c e n t r a l . com 
+/ cvcnews 32 浙江大学 图像 技术 研究 与 应用 ITRA 
+团队 http / / www . dvzju . com / 
+33 自动识别 网 http / / www . autoid china 
+. com . cn / 34 清华大学/nt 章毓晋/nr 教授/n http 
+/ / www . tsinghua . edu . cn / 
+publish / ee / 4157/2010 / 2 0 1 0 
+1 2 1 7 1 7 3 5 5 2 
+3 3 9 2 4 1 5 5 7 / 
+2 0 1 0 1 2 1 7 1 7 
+3 5 5 2 3 3 9 2 4 1 
+5 5 7 _ . html 35 顶级 民用 机器人 
+研究 小组 Porf . Gary 领导 的 Willow Garage http 
+/ / www . willowgarage . com / 36 上海 
+交通 大学 图像 处理 与 模式识别 研究所 http / / 
+www . pami . sjtu . edu . cn / 
+37 上海 交通 大学 计算机 视觉 实验室 刘允 才 教授 
+http / / www . visionlab . sjtu . edu 
+. cn / 38 德克萨斯州 大学 奥斯汀 分校 助理 教授 
+Kristen Grauman http / / www . cs . utexas 
+. edu / ~ grauman / 39 清华大学电子工程系 智能 图文 
+信息处理 实验室 丁晓青 教授 http / / ocrserv . ee 
+. tsinghua . edu . cn / auto / index 
+. asp 40 北京大学 高文 教授 http / / www 
+. jdl . ac . cn / htm gaowen / 
+41 清华大学 艾 海舟 教授 http / / media . 
+cs . tsinghua . edu . cn / cn / 
+aihz 42 中科院 生物 识别 与 安全 技术 研究中心 http 
+/ / www . cbsr . ia . ac . 
+cn / china / index CH . asp 43 瑞士 
+巴塞尔 大学 Thomas Vetter 教授 http / / informatik . 
+unibas . ch / personen / vetter _ t . 
+html 44 俄勒冈 州立大学 Rob Hess 博士 http / / 
+blogs . oregonstate . edu / hess / 45 深圳大学 
+于仕祺/nr 副教授 http / / yushiqi . cn / 46 
+西安交通大学 人工智能 与 机器人 研究所 http / / www . 
+aiar . xjtu . edu . cn / 47 卡内基 
+梅隆 大学 研究员 Robert T . Collins http / / 
+www . cs . cmu . edu / ~ rcollins 
+/ home . html # Background 48 MIT 博士 Chris 
+Stauffer http / / people . csail . mit . 
+edu / stauffer / Home / index . php 49 
+美国 密歇根 州立 大学 生物 识别 研究组 Anil K . 
+Jain 教授 http / / www . cse . msu 
+. edu / rgroups / biometrics / 50 美国 伊利 
+诺 伊州 立 大学 Thomas . Huang http / / 
+www . beckman . illinois . edu / directory / 
+t huang1 51 武汉大学 数字 摄影 测量 与 计算机 视觉 
+研究中心 http / / www . whudpcv . cn / 
+index . asp 52 瑞士 巴塞尔 大学 Sami Romdhani 助理 
+研究员 http / / informatik . unibas . ch / 
+personen / romdhani _ sami / 53 CMU 大学 研究员 
+Yang Wang http / / www . cs . cmu 
+. edu / ~ wangy / home . html 54 
+英国曼彻斯特大学 Tim Cootes 教授 http / / personalpages . manchester 
+. ac . uk / staff / timothy . f 
+. cootes / 55 美国 罗彻斯特 大学教授 Jiebo Luo http 
+/ / www . cs . rochester . edu / 
+u / jluo / 56 美国 普渡大学 机器人 视觉 实验室 
+https / / engineering . purdue . edu / RVL 
+/ Welcome . html 57 美国 宾利 州立大学 感知 运动 
+与 认识 实验室 http / / vision . cse . 
+psu . edu / home / home . shtml 58 
+美国宾夕法尼亚大学 GRASP 实验室 https / / www . grasp . 
+upenn . edu / 59 美国 内 达 华 大学 
+里 诺 校区 CV 实验室 http / / www . 
+cse . unr . edu / CVL / index . 
+php 60 美国 密西根 大学 vision 实验室 http / / 
+www . eecs . umich . edu / vision / 
+index . html 61 University of Massachusetts 麻省 大学 视觉 
+实验室 http / / vis www . cs . umass 
+. edu / index . html 62 华盛顿大学 博士后 Iva 
+Kemelmacher http / / www . cs . washington . 
+edu / homes / kemelmi 63 以色列 魏茨曼 科技大学 Ronen 
+Basri http / / www . wisdom . weizmann . 
+ac . il / ~ ronen / index . html 
+64 瑞士 ETH Zurich 大学 CV 实验室 http / / 
+www . vision . ee . ethz . ch / 
+boostingTrackers / index . htm 65 微软 CV 研究员 张正友 
+http / / research . microsoft . com / en 
+us / um / people / zhang / 66 中科院 
+自动化所 医学影像 研究室 http / / www . 3dmed . 
+net / 67 中科院 田捷 研究员 http / / www 
+. 3dmed . net / tian / 68 微软 Redmond 
+研究院 研究员 Simon Baker http / / research . microsoft 
+. com / en us / people / sbaker / 
+69 普林斯顿 大学 教授 李凯 http / / www . 
+cs . princeton . edu / ~ li / 70 
+普林斯顿 大学 博士 贾登 http / / www . cs 
+. princeton . edu / ~ jiadeng / 71 牛津 
+大学 教授 Andrew Zisserman http / / www . robots 
+. ox . ac . uk / ~ az / 
+72 英国 leeds 大学 研究员 Mark Everingham http / / 
+www . comp . leeds . ac . uk / 
+me / 73 英国 爱丁堡 大学 教授 Chris William http 
+/ / homepages . inf . ed . ac . 
+uk / ckiw / 74 微软 剑桥 研究院 研究员 John 
+Winn   http / / johnwinn . org / 75 
+佐治亚 理工学院 教授 Monson H . Hayes http / / 
+savannah . gatech . edu / people / mhayes / 
+index . html 76 微软 亚洲 研究院 研究员 孙剑 http 
+/ / research . microsoft . com / en us 
+/ people / jiansun / 77 微软 亚洲 研究院 研究员 
+马毅/nr http / / research . microsoft . com / 
+en us / people / mayi / 78 英国 哥伦比亚 
+大学 教授 David Lowe http / / www . cs 
+. ubc . ca / ~ lowe / 79 英国 
+爱丁堡 大学 教授 Bob Fisher http / / homepages . 
+inf . ed . ac . uk / rbf / 
+80 加州大学 圣地亚哥 分校 教授 Serge J . Belongie http 
+/ / cseweb . ucsd . edu / ~ sjb 
+/ 81 威斯康星 大学 教授 Charles R . Dyer http 
+/ / pages . cs . wisc . edu / 
+~ dyer / 82 多伦多 大学 教授 Allan . Jepson 
+http / / www . cs . toronto . edu 
+/ ~ jepson / 83 伦斯勒 理工学院 教授 Qiang Ji 
+  http / / www . ecse . rpi . 
+edu / ~ qji / 84 CMU 研究员 Daniel Huber 
+  http / / www . ri . cmu . 
+edu / person . html person _ id = 123 
+85 多伦多 大学 教授 David J . Fleet http / 
+/ www . cs . toronto . edu / ~ 
+fleet / 86 伦敦大学 玛丽 女王 学院 教授 Andrea Cavallaro 
+http / / www . eecs . qmul . ac 
+. uk / ~ andrea / 87 多伦多 大学 教授 
+Kyros Kutulakos http / / www . cs . toronto 
+. edu / ~ kyros / 88 杜克 大学 教授 
+Carlo Tomasi   http / / www . cs . 
+duke . edu / ~ tomasi / 89 CMU 教授 
+Martial Hebert   http / / www . cs . 
+cmu . edu / ~ hebert / 90 MIT 助理 
+教授 Antonio Torralba http / / web . mit . 
+edu / torralba / www / 91 马里兰 大学 研究员 
+Yasel Yacoob http / / www . umiacs . umd 
+. edu / users / yaser / 92 康奈尔 大学 
+教授 Ramin Zabih   http / / www . cs 
+. cornell . edu / ~ rdz / 93 CMU 
+博士 田渊栋/nr http / / www . cs . cmu 
+. edu / ~ yuandong / 94 CMU 副教授 Srinivasa 
+Narasimhan http / / www . cs . cmu . 
+edu / ~ srinivas / 95 CMU 大学 ILIM 实验室 
+http / / www . cs . cmu . edu 
+/ ~ ILIM / 96 哥伦比亚 大学 教授 Sheer K 
+. Nayar http / / www . cs . columbia 
+. edu / ~ nayar / 97 三菱 电子 研究院 
+研究员 Fatih Porikli http / / www . porikli . 
+com / 98 康奈尔 大学 教授 Daniel Huttenlocher http / 
+/ www . cs . cornell . edu / ~ 
+dph / 99 南京 大学 教授 周志华 http / / 
+cs . nju . edu . cn / zhouzh / 
+index . htm 100 芝加哥 丰田 技术 研究所 助理 教授 
+Devi Parikh http / / ttic . uchicago . edu 
+/ ~ dparikh / index . html 101 瑞士 联邦 
+理工学院 博士后 Helmut Grabner http / / www . vision 
+. ee . ethz . ch / ~ hegrabne / 
+# Short _ CV 102 香港 中文 大学 教授 贾 
+佳亚 http / / www . cse . cuhk . 
+edu . hk / ~ leojia / index . html 
+103 南洋 理工大学 副教授 吴建 鑫 http / / c2inet 
+. sce . ntu . edu . sg / Jianxin 
+/ index . html 104 GE 研究院 研究员 李关/nr http 
+/ / www . cs . unc . edu / 
+~ lguan / 105 佐治亚 理工学院 教授 Monson Hayes http 
+/ / savannah . gatech . edu / people / 
+mhayes / 106 图片 检索 国际 会议 VOC 微软 剑桥 
+研究院 组织 http / / pascallin . ecs . soton 
+. ac . uk / challenges / VOC / 107 
+机器 视觉 开源 处理 库 汇总 http / / archive 
+. cnblogs . com / a / 2217609 / 108 
+布朗 大学 教授 Benjamin Kimia http / / www . 
+lems . brown . edu / kimia . htmlabout multi 
+camera   http / / server . cs . ucf 
+. edu / ~ vision / projects . htmlabout 3D 
+Voxel Coloring       Rob Hess   http / 
+/ blogs . oregonstate . edu / hess / code 
+/ voxels / About     the particle filters condensation 
+filter http / / homepages . inf . ed . 
+ac . uk / rbf / CVonline / LOCAL _ 
+COPIES / ISARD1 / condensation . htmlMachine Learning Open Source 
+Software http / / jmlr . csail . mit . 
+edu / mloss / 1 动作 识别 数据库 Recognition of 
+human actions http / / www . nada . kth 
+. se / cvap / actions / 2 Datasets for 
+Computer Vision Research http / / www cvr . ai 
+. uiuc . edu / ponce _ grp / data 
+/ 3 Computer Vision Datasets http / / clickdamage . 
+com / sourcecode / cv _ datasets . php4 里面 
+有 好多 基本 算法 matlab   http / / www 
+. mathworks . cn / index . html5 CVPR 2011中 
+关于 grassmann 流形 文章 的 源码   http / / 
+itee . uq . edu . au / ~ uqmhara1 
+/ code . htmlMatlab Codefor   Graph Embedding Discriminant Analysis 
+on Grassmannian Manifolds for Improved Image Set Matching   CVPR 
+2011 . Matlab Codefor   Optimal Local Basis A Reinforcement 
+Learning Approach for Face Recognition IJCV vol . 81 no 
+. 2 pp . 191 204 2009 . 牛人 bolg 
+1 Hong Kong Polytechnic University http / / www4 . 
+comp . polyu . edu . hk / ~ cslzhang 
+/ 2 Computer Vision Resources 资源 非常 丰富 包含 有 
+基本 算法 https / / netfiles . uiuc . edu 
+/ jbhuang1 / www / resources / vision / index 
+. html3 源代码 非常丰富 ~ ~     http / 
+/ homepage . tudelft . nl / 19j49 / Publications 
+. htmlCVonlinehttp / / homepages . inf . ed . 
+ac . uk / rbf / CVonlinehttp / / homepages 
+. inf . ed . ac . uk / rbf 
+/ CVonline / unfolded . htmhttp / / homepages . 
+inf . ed . ac . uk / rbf / 
+CVonline / CVentry . htm 李子 青 的 大作 Markov 
+Random Field Modeling in Computer Visionhttp / / www . 
+cbsr . ia . ac . cn / users / 
+szli / mrf _ book / book . htmlHandbook of 
+Face Recognition PDF http / / www . umiacs . 
+umd . edu / ~ shaohua / papers / zhou04hfr 
+. pdf 张正友 的 有关 参数 鲁棒 估计 著作 Parameter 
+Estimation Techniques A Tutorial with Application to Conic Fittinghttp / 
+/ research . microsoft . com / ~ zhang / 
+INRIA / Publis / Tutorial Estim / Main . htmlAndrea 
+Fusiello 计算机 视觉 中的 几何 教程 Elements of Geometric Computer 
+Visionhttp / / homepages . inf . ed . ac 
+. uk / rbf / CVonline / LOCAL _ COPIES 
+/ FUSIELLO4 / tutorial . html # x1 520007 有关 
+马尔可夫 蒙特卡罗 方法 的 资料 An introduction to Markov chain 
+Monte Carlohttp / / homepages . inf . ed . 
+ac . uk / rbf / CVonline / LOCAL _ 
+COPIES / SENEGAS / mcmc . htmlMarkov Chain Monte Carlo 
+for Computer Vision A tutorial at ICCV05http / / civs 
+. stat . ucla . edu / MCMC / MCMC 
+_ tutorial . htm 有关 独立 成分 分析 Independent Component 
+Analysis ICA 的 资料 An ICA Pagehttp / / www 
+. cnl . salk . edu / ~ tony / 
+ica . htmlFast ICAhttp / / www . cis . 
+hut . fi / projects / ica / fastica / 
+The Kalman Filter 介绍 卡尔曼 滤波器 的 终极 网页 http 
+/ / www . cs . unc . edu / 
+~ welch / kalman / index . htmlCached   k 
+d tree search for ICP algorithmshttp / / kos . 
+informatik . uni osnabrueck . de / download / 3dim2007 
+/ paper . html 几个 计算机 视觉 研究 工具 Machine 
+Vision Toolbox for Matlabhttp / / www . petercorke . 
+com / Machine Vision Toolbox . htmlMatlab and Octave Function 
+for Computer Vision and Image Processinghttp / / www . 
+csse . uwa . edu . au / ~ pk 
+/ research / matlabfns / Bayes Net Toolbox for Matlabhttp 
+/ / www . cs . ubc . ca / 
+~ murphyk / Software / BNT / bnt . htmlOpenCV 
+Chinese http / / www . opencv . org . 
+cn / index . php / 首页 Gandalf A Computer 
+Vision and Numerical Algorithm Labrary http / / gandalf library 
+. sourceforge . net / CMU Computer Vision Home Pagehttp 
+/ / www . cs . cmu . edu / 
+afs / cs / project / cil / ftp / 
+html / vision . htmlMachine Learning Resource Linkshttp / / 
+www . cse . ust . hk / ~ ivor 
+/ resource . htmThe Bayesian Filtering Libraryhttp / / www 
+. orocos . org / bflOptical Flow Algorithm Evaluation 提供 
+了 一个 动态 贝叶斯 网络 框架 例如 递归 信息 处理 
+与 分析 卡尔曼滤波 粒子 滤波 序列 蒙特卡罗 方法 等 C 
++ + 写 的 http / / of eval . 
+sourceforge . net / MATLAB code for ICP algorithmhttp / 
+/ www . usenet . com / newsgroups / comp 
+. graphics . visualization / msg00102 . html 牛人 主页 
+朱松 纯 Song Chun Zhu http / / www . 
+stat . ucla . edu / ~ sczhu / David 
+Lowe SIFT 很帅 的 一个 老头 哦 ^ ^ http 
+/ / www . cs . ubc . ca / 
+~ lowe / Andrea Vedaldi SIFT http / / vision 
+. ucla . edu / ~ vedaldi / index . 
+htmlPedro F . Felzenszwalbhttp / / people . cs . 
+uchicago . edu / ~ pff / Dougla Dlanman Brown 
+的 一个 研究生 在其 主页 上 搜集 了 大量 算法 
+教程 和 源码 http / / mesh . brown . 
+edu / dlanman / courses . htmlJianbo Shi Ncuts 的 
+始作俑者 http / / www . cis . upenn . 
+edu / ~ jshi / Active Vision Group Oxford 的 
+一个 机器 视觉 研究 团队 特色 是 SLAM 监视 导航 
+http / / www . robots . ox . ac 
+. uk / ActiveVision / index . htmlJuyang Weng 机器 
+学习 的 专家 Autonomous Mental Development   是 其 特色 
+http / / www . cse . msu . edu 
+/ ~ weng / 测试 图片 或 视频 Middlebury College 
+s Stereo Vision Data Sethttp / / cat . middlebury 
+. edu / stereo / data . htmlIntelligent Vehicle IVSourcewww 
+. ivsoruce . netRobot Carhttp / / www . plyojump 
+. com / robot _ cars . htmlHow to Build 
+a Robot The Computer Vision Parthttp / / www . 
+societyofrobots . com / programming _ computer _ vision _ 
+tutorial . shtml 收集 的 一般 牛人 主页 带 代码 
+Xiaofei He machine learning code http / / people . 
+cs . uchicago . edu / ~ xiaofei / YingNian 
+Wu active base model code http / / www . 
+stat . ucla . edu / ~ ywu / research 
+. html 布朗 大学 计算机 主页 可 找到 该校 CS 
+牛人 博客 http / / www . cs . brown 
+. edu / research / areas . htmlNavneet Dalal Histograms 
+of Oriented Gradients for Human Detection http / / www 
+. navneetdalal . com / softwarePaul Viola Robust Real time 
+Object Detection http / / research . microsoft . com 
+/ en us / um / people / viola / 
+Active LearningRMw 平坦 软件园 http / / active learning . 
+net / 这里 包括 了 关于 Active Learning 理论 以及 
+应用 的 一些 文章 特别 是 那篇 Survey Transfer LearningRMw 
+平坦 软件园 http / / www . cse . ust 
+. hk / TL / 包括 经典 的 论文 以及 
+附 带有 源码 很 方便 Gaussian ProcessesRMw 平坦 软件园 RMw 
+平坦 软件园 http / / www . gaussianprocess . org 
+  包括 相关 的 书籍 有 Carl Edward Rasmussen 的 
+书 相关 的 程序 以及 分类 的 paper 列表 这也 
+是由 Carl 自己 维护 的 他 应该 是 将 GP 
+引入 machine learning 最早 的 人 之一 了吧 Hinton 的 
+学生 Nonparametric Bayesian MethodsRMw 平坦 软件园 http / / www 
+. cs . berkeley . edu / ~ jordan / 
+npb . html   这个 一看 就 知道 是 Jordan 
+维护 的 主要 包括 Dirichlet process 以及 相关 的 其他 
+随机 过程 在 machine learning 里面 如何 进行 建模 如何 
+进行 approximate inference 主要 是 文章 列表 Probabilistic Graphical ModelRMw 
+平坦 软件园 http / / www . cs . ubc 
+. ca / ~ murphyk / Bayes / bnintro . 
+html   是 Kevin Murphy 所 维护 的 关于 Bayesian 
+belief networks 的 介绍 含有 最 基本 的 概念 相关 
+的 文献 和 软件 的 链接 罕见 的 UCB 出来 
+的 不是 Jordan 的 学生 老板 是 Stuart Russel http 
+/ / www . cs . berkeley . edu / 
+~ jordan / graphical . html   是 Jordan 系 
+关于 这个 方面 的 论文 汇编 http / / www 
+. inference . phy . cam . ac . uk 
+/ hmw26 / crf /   是 关于 Conditional Random 
+Fields 方面 论文 和 软件 的 收集 由 Hanna Wallach 
+维护 Compressed SensingRMw 平坦 软件园 http / / www dsp 
+. rice . edu / cs   这是 Rice 大学 
+维护 的 论文 分类 列表 软件 链接 等 推荐 Emmanuel 
+Cand è s 所写 的 tutorial 这人 是 David Donoho 
+的 学生 TensorRMw 平坦 软件园 http / / csmr . 
+ca . sandia . gov / ~ tgkolda / pubs 
+/ index . html   关于 tensor 的 一些 偏 
+数学 的 文章 Deep Belief NetworkRMw 平坦 软件园 http / 
+/ www . cs . toronto . edu / ~ 
+hinton / csc2515 / deeprefs . html   是 Geoffrey 
+Hinton 为 研究生 开设 的 machine learning 课程 的 DBN 
+的 reading list Kernel MethodsRMw 平坦 软件园 http / / 
+www . cs . berkeley . edu / ~ jordan 
+/ kernels . html   是 Jordan 维护 的 关于 
+kernel methods 的 文章 列表 Markov LogicRMw 平坦 软件园 http 
+/ / ai . cs . washington . edu / 
+pubs   是 UW AI 组 的 文章 里面 关于 
+Markov logic 的 比较 多 因为 Pedro Domingos 就是 这个 
+组 的 Machine learning theoryhttp / / hunch . net 
+/ 这个 网站 主要 是 一些 learning theory 的 东西 
+比较 多 想在 machine learning 理论 上 有所 建树 的 
+同志 们 可以 去 看看 牛人 Iasonas Kokkinos 搞 统计模型 
+视觉 http / / vision . mas . ecp . 
+fr / Personnel / iasonas / index . html 

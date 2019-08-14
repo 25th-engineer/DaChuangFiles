@@ -1,0 +1,157 @@
+整理NLP-Progress上的东西。
+目录
+English
+Common Sense 知识推理
+Event2Mind
+SWAG
+Winograd Schema Challenge
+Constituency parsing
+Penn Treebank
+English
+Common Sense 知识推理
+Common sense reasoning tasks are intended to require the model to go beyond pattern recognition. Instead, the model should use “common sense” or world knowledge to make inferences.
+常识推理任务旨在要求模型超越模式识别。 相反，知识推理模型应该使用“常识”或世界知识来做出推论。
+Event2Mind
+Event2Mind is a crowdsourced corpus of 25,000 event phrases covering a diverse range of everyday events and situations. Given an event described in a short free-form text, a model should reason about the likely intents and reactions of the event’s participants. Models are evaluated based on average cross-entropy (lower is better).
+Event2Mind是一个包含25,000个活动短语的众包语料库，涵盖各种日常事件和情境。 鉴于在简短的自由格式文本中描述的事件，模型应该推断事件的参与者可能的意图和反应。 基于平均交叉熵评估模型（越低越好）。
+Model
+Dev
+Test
+Paper / Source
+Code
+BiRNN 100d (Rashkin et al., 2018)
+4.25
+4.22
+Event2Mind: Commonsense Inference on Events, Intents, and Reactions
+ConvNet (Rashkin et al., 2018)
+4.44
+4.40
+Event2Mind: Commonsense Inference on Events, Intents, and Reactions
+SWAG
+Situations with Adversarial Generations (SWAG) is a dataset consisting of 113k multiple choice questions about a rich spectrum of grounded situations.
+Situations with Adversarial Generations（SWAG）是一个由113k多项选择问题组成的数据集，这些问题涉及丰富的基础情境。
+Model
+Dev
+Test
+Paper / Source
+Code
+BERT Large (Devlin et al., 2018)
+86.6
+86.3
+BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+BERT Base (Devlin et al., 2018)
+81.6
+-
+BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+ESIM + ELMo (Zellers et al., 2018)
+59.1
+59.2
+SWAG: A Large-Scale Adversarial Dataset for Grounded Commonsense Inference
+ESIM + GloVe (Zellers et al., 2018)
+51.9
+52.7
+SWAG: A Large-Scale Adversarial Dataset for Grounded Commonsense Inference
+Winograd Schema Challenge
+The Winograd Schema Challenge is a dataset for common sense reasoning. It employs Winograd Schema questions that require the resolution of anaphora: the system must identify the antecedent of an ambiguous pronoun in a statement. Models are evaluated based on accuracy.
+Example:
+The trophy doesn’t fit in the suitcase because it is too big. What is too big? Answer 0: the trophy. Answer 1: the suitcase
+WSC是常识推理的数据集。 它使用了需要解决回指的Winograd Schema问题：系统必须识别句子中的模糊的代词。 模型基于准确性进行评估。
+例：
+奖杯不适合行李箱，因为它太大了。 什么太大了？
+回答0：奖杯。 答案1：行李箱
+Model
+Score
+Paper / Source
+Word-LM-partial (Trinh and Le, 2018)
+62.6
+A Simple Method for Commonsense Reasoning
+Char-LM-partial (Trinh and Le, 2018)
+57.9
+A Simple Method for Commonsense Reasoning
+USSM + Supervised DeepNet + KB (Liu et al., 2017)
+52.8
+Combing Context and Commonsense Knowledge Through Neural Networks for Solving Winograd Schema Problems
+Constituency parsing 句法解析
+Consituency parsing aims to extract a constituency-based parse tree from a sentence that represents its syntactic structure according to a phrase structure grammar.
+Example:
+Sentence (S) | +-------------+------------+ | | Noun (N) Verb Phrase (VP) | | John +-------+--------+ | | Verb (V) Noun (N) | | sees Bill
+Recent approaches convert the parse tree into a sequence following a depth-first traversal in order to be able to apply sequence-to-sequence models to it. The linearized version of the above parse tree looks as follows: (S (N) (VP V N)).
+Penn Treebank
+The Wall Street Journal section of the Penn Treebank is used for evaluating constituency parsers. Section 22 is used for development and Section 23 is used for evaluation. Models are evaluated based on F1. Most of the below models incorporate external data or features. For a comparison of single models trained only on WSJ, refer to Kitaev and Klein (2018).
+Model
+F1 score
+Paper / Source
+Self-attentive encoder + ELMo (Kitaev and Klein, 2018)
+95.13
+Constituency Parsing with a Self-Attentive Encoder
+Model combination (Fried et al., 2017)
+94.66
+Improving Neural Parsing by Disentangling Model Combination and Reranking Effects
+In-order (Liu and Zhang, 2017)
+94.2
+In-Order Transition-based Constituent Parsing
+Semi-supervised LSTM-LM (Choe and Charniak, 2016)
+93.8
+Parsing as Language Modeling
+Stack-only RNNG (Kuncoro et al., 2017)
+93.6
+What Do Recurrent Neural Network Grammars Learn About Syntax?
+RNN Grammar (Dyer et al., 2016)
+﻿93.3
+Recurrent Neural Network Grammars
+Transformer (Vaswani et al., 2017)
+92.7
+Attention Is All You Need
+Semi-supervised LSTM (Vinyals et al., 2015)
+92.1
+Grammar as a Foreign Language
+Self-trained parser (McClosky et al., 2006)
+92.1
+Effective Self-Training for Parsing
+Domain adaptation
+Sentiment analysis
+The Multi-Domain Sentiment Dataset is a common evaluation dataset for domain adaptation for sentiment analysis. It contains product reviews from Amazon.com from different product categories, which are treated as distinct domains. Reviews contain star ratings (1 to 5 stars) that are generally converted into binary labels. Models are typically evaluated on a target domain that is different from the source domain they were trained on, while only having access to unlabeled examples of the target domain (unsupervised domain adaptation). The evaluation metric is accuracy and scores are averaged across each domain.
+多域情感数据集是用于情绪分析的域适应的通用评估数据集。 它包含来自Amazon.com的不同产品类别的产品评论，这些评论被视为不同的域。 评论包含星级（1至5星），通常转换为二进制标签。 模型通常在目标域上进行评估，该目标域与它们所训练的源域不同，而只能访问目标域的未标记示例（无监督域适应）。 评估指标是准确性，并且每个域的平均得分。
+Model
+DVD
+Books
+Electronics
+Kitchen
+Average
+Paper / Source
+Multi-task tri-training (Ruder and Plank, 2018)
+78.14
+74.86
+81.45
+82.14
+79.15
+Strong Baselines for Neural Semi-supervised Learning under Domain Shift
+Asymmetric tri-training (Saito et al., 2017)
+76.17
+72.97
+80.47
+83.97
+78.39
+Asymmetric Tri-training for Unsupervised Domain Adaptation
+VFAE (Louizos et al., 2015)
+76.57
+73.40
+80.53
+82.93
+78.36
+The Variational Fair Autoencoder
+DANN (Ganin et al., 2016)
+75.40
+71.43
+77.67
+80.53
+76.26
+Domain-Adversarial Training of Neural Networks
+Multi-task learning
+Multi-task learning aims to learn multiple different tasks simultaneously while maximizing performance on one or all of the tasks.
+DecaNLP
+The Natural Language Decathlon (decaNLP) is a benchmark for studying general NLP models that can perform a variety of complex, natural language tasks. It evaluates performance on ten disparate natural language tasks.
+Results can be seen on the public leaderboard.
+GLUE
+The General Language Understanding Evaluation benchmark (GLUE) is a tool for evaluating and analyzing the performance of models across a diverse range of existing natural language understanding tasks. Models are evaluated based on their average accuracy across all tasks.
+The state-of-the-art results can be seen on the public GLUE leaderboard.

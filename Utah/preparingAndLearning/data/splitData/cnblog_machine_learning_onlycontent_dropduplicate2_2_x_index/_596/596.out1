@@ -1,0 +1,116 @@
+本文 对这 篇 论文 的 简单 描述 Optimization Methods for 
+Large Scale Machine Learning author Leon Bottou Frank E . 
+Curtisy Jorge Nocedalz1 . Introduction 随着 大 数据 时代 到来 
+尽管 计算机硬件 条件 的 改善 对于 机器学习 算法 效率 的 
+要求 并 不会 降低 而 机器学习 算法 效率 更多 地 
+依赖于 数值 优化 方法 的 改进 因而 有 必要 对 
+近年来 关于 大 规模 机器学习 中的 优化 算法 做 一个 
+总结 以便 更好 地 理清 思路 确定 未来 算法 的 
+改进 方向 本文 尝试 解答 以下 问题 1 .   
+优化 问题 怎样 在 机器学习 应用 产生 以及 面对 怎样 
+的 挑战 2 .   在 大规模 数据 应用 中 
+最 广泛 使用 的 优化 方法 3 .   近年来 
+关于 优化 方法 设计 上 的 进步 及 在此 领域 
+的 公开 问题 通过 机器学习 中 的 两个 例子 尝试 
+解答 第一个 问题 文本 分类 问题 和 深度 神经网络 感知 
+问题 通过 介绍 随机 梯度 法的/nr 基本 定理 以及 实际应用 
+来 说明 第二个 问题 第三步 主要 介绍 noise reduction method 
+和 the second order method 以及 关于 正则 模型 的 
+方法 来 说明 第三 个 问题 2 . machine learning 
+case studies2 . 1 文本 分类 确定 文本 类别 是 
+自然 语言 处理 的 一个 基本 问题 比如 我 正在 
+写 的 这篇文章 应该 归到/nr 哪个 类别 显然 人工 分类 
+对于 小 样本 文本 非常 有效 但是 数量 激增 的话 
+远非 人力 所能 处理 基于 自然语言 处理 方面 的 知识 
+我们 可以 用 向量 来 表示 一篇 文档 那么 问题 
+就 转化 为 基本 的 机器学习 分类 问题 比如 n 
+个 样本 { x1 y1 x2 y2 . . . 
+xn yn } xi 表示 第 i 个 文档 向量 
+yi 表示 第 i 个 文档 所属 类别 通过 样本数据 
+我们 学习 一个 预测 函数 h 来 对 未分类 样本 
+进行 预测 那么 我们 用 经验 风险 误差 Rn h 
+来 评价 预测 学习 的 好坏 通常 我们 可以 将 
+预测 函数 表示 成  /nr w 表示 h 需要 学习 的 
+参数 t 表示 一个 偏置 项 同时 我们 需要 一个 
+合适 的 损失 函数 比如 来 替换 2.1 中的 1 
+这样 问题 就 变成 一个 比较 纯粹 的 优化 问题 
+其中 右边 那项 为 正则 项 防止 模型 太 复杂 
+过拟合 2.2 深度 神经网络 深度 神经网络 受 启发 于 生物学 
+上 的 神经学 希望 通过 计算机 来 模拟 人脑 的 
+学习 过程 2.3 总的来说 问题 描述 一个 训练 集   
+  损失 函数   可以为 逻辑 损失 合页 损失 等等 
+预测 函数 h w x 要 解决   记   
+  实际应用 一般 为 经验 风险 理论 分析 使用 期望 
+风险 通常 经验 风险 容易 过拟合 需要 加入 正则 项来/nr 
+泛化 模型 即 常用 的 结构 风险 最小化 即 2.3 
+所示 3 . overview of optimization methods3 . 1 stochastic 
+gradient method SG 首先 表示 经验 风险 f 是 l 
+与 h 的 复合函数 那么 w 的 更新 公式 为 
+可以 看出 SG 方法 每次 迭代 只需 计算 一个 梯度 
+值 随机 过程 依赖于 i _ k 的 选取 不是 
+梯度 下 降法 在 期望 上 是 下降 的 3.2 
+batch optimization methodsw 的 更新 公式 为 每次 迭代 需 
+计算 的 数量 与 n 成比例 每次 迭代 代价 比 
+SG 要高 可以考虑 并行 化 并且 有 很多 以此 衍生 
+的 算法 3.3   motivation for stochastic methods 直观 上看 
+  batch 的 数量 增加 SG 的 还是 一样 对于 
+n 非常大 SG 比较 有利 实践 SG 初始 收敛 速度 
+非常 快 例子 当 SG 迭代 到 w * 附近 
+时 就不 太 确定 继续 迭代 方向 这时 速度 就 
+会 变得 非常 慢 3.4 Theoretical motivationbatch 方法 在 满足 
+一定 假设 下 可以 达到 线性 收敛 几何 收敛 每次/r 
+迭代/v 代价/n 正比/z 于/p nSG/w 可以/c 同时/c 实现/v R/w 和/c 
+Rn/w 次 线性 收敛 每次 迭 代与 n 无关 两者 
+总的 复杂度 当 R w R w * e4 . 
+Analyses of Stochastic Gradient Methods 不失 一般性 将 期望 风险 
+R w 和 经验 风险 Rn w 的 目标 函数 
+表示 如下 本节 主要 讨论 SG 算法 的 收敛性 及 
+迭代 上界 以上 算法 就 称之为 SG g 主要 为 
+三种 形式 4.1 两个 基本 引理 通常 SG 的 收敛性 
+证明 需要 目标函数 F 的 光滑性 假设 F 的 梯度 
+利普希茨 连续 根据 这个 猜想 得出 一个 重要 的 不等式 
+由 算法 4.1 知道 w k + 1 依赖于   
+  { } 可以 看成 随机 种子 可以 看成 依赖于 
+w k 的 分布 每次 根据 随机 种子 来 挑选 
+g 对 不等式 取 期望 就 得到 4.4 不等式 左边 
+第一项 可 下降 而 第二 项 相当于 噪音 干扰 收敛 
+猜想 2 引理 2SG 方法 的 收敛 依赖于 不等式 右边 
+两项 的 协调 4.2   SG for Strong Convex Objectives 
+强凸/nr 目标函数 在 一些 优化 文献 里 常常 被 讨论 
+不仅 由于 函 此 能 得到 较强 的 结论 实际 
+实践 也 会 遇到 如 机器学习 中的 正则 项 强 
+凸函数 定义 如意 得到 其中 c =/i L/w 定/v 步长/n 
+的/uj 收敛/v 定/v 理当/v M/w =/i 0时/tq 对于/p batch/w 梯度/n 
+法有/nr 线性/n 收敛/v 速度/n M 0时 收敛 存在 噪声 阻止 
+收敛 到 最优 解 减小 步长 收敛 定理 4.7 考虑 
+mini batch 与   single example 的 比较 虽然 batch 
+每次 迭代 代价 比 single 大 但是 可以 使用 较大 
+步长 收敛 较快 4.3 SG for General Objectives 非 凸函数 
+可能 有 多个 局部 最优 解 要 达到 全局 最优 
+相对 较难 定 步长 步长 减小 4.4 work complexity for 
+large scale learning 数据 越大 往往 能 更好 拟合 数据 
+且 不会 过拟合 然而 需要 更多 的 训练 时间 定性分析 
+  是 经验 风险 最小值 点 的 逼近 花H是/nr 预测 
+函数 族 app approximation error   est estimation error   
+opt optimization error 那么 逼近 误差 Tmax 为 时间 预算 
+经过 分析   T n e 表示 迭代 次数 e 
+* 表示 所能 达到 的 最小 逼近 误差 4.5 commentary1 
+SG 在 渐近收敛 是 速度 非常 慢 对 步长 要求 
+严格 25 . noise reduction methods 从 SG 方法 出发 
+可以 衍生 出 多种 方法 从 不同 方面 来 提升 
+SG 的 稳定性 及 效率 根据 上面 提到 的 噪声 
+本节 主要 介绍 减小 噪声 的 方法 来 提高 收敛 
+速度 主要 3 种方法 dynamic sampling gradient aggregation iterate averaging 
+. 1 . dynamic sampling 首先 是 前面 的 假设 
+有 定理 要 使得 成立   令 就有 可以 看到 
+每次 迭代 的 样本 大小 是 增加 的 总的 复杂度 
+与 SG 的 复杂度 是 一样 的 为 O 1 
+/ e   特别 的 取 实际上 该 方法 不 
+常 采用 2 . gradient   aggregation 主要 是 对 
+梯度 计算 的 处理 来 纠正 梯度方向 简介 两种 方法 
+SVRG   stochastic variance reduced gradient 在内 循环 里 随机 
+抽取 梯度 纠正 偏差 g ~ 是   Rn 梯度 
+的 无偏估计 SAGA stochastic average gradient 同样 是 线性 收敛 
+g 是 Rn 梯度 的 无偏估计 3 . iterative averaging 
+步长 一般 取 下降 速度 为 次 线性 收敛 速度 
+6 . second order methods 

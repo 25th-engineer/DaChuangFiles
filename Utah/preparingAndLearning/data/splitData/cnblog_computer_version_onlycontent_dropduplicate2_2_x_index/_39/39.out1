@@ -1,0 +1,52 @@
+1 源代码 下载 地址 OpenCV3 计算机 视觉 Python 语言 实现 
+第二 版 由 我们 翻译 其 英文 书名 Learning OpenCV3 
+Computer Vision with Python second edition 源代码 的 下 地址 
+为 https / / github . com / techfort / 
+pycv 或 http / / examples . oreilly . com 
+/ 9781785283840 / 中文版 第 15页 第一段 提到 的 接口 
+例子 程序 在 下面 下载 https / / github . 
+com / abidrahmank / OpenCV2 Python / tree / master 
+/ Official _ Tutorial _ Python _ Codes2 纠错 1 
+第 11页 最 下面 的 第二 行 代码 中的 libavcodecdev 
+应 修改 为 libavcodec dev 2 第 75页 将 cv2 
+. rectangle img ex ey ex + ew ey + 
+eh 0 255 0 2 修改 为 cv2 . rectangle 
+img ex + x ey + y ex + x 
++ ew ey + y + eh 0 255 0 
+2 感谢 河海大学 物联网 工程学院   沈晓海 的 指正 3 
+将 第 7页 中的 xcode select install 修改 为 xcode 
+select install 重庆 工商大学   计信/nr 学院   刘波 1 源代码 下载 地址 OpenCV3 计算机 视觉 Python 语言 实现 
+第二 版 由 我们 翻译 其 英文 书名 Learning OpenCV3 
+Computer Vision with Python second edition 源代码 的 下 地址 
+为 https / / github . com / techfort / 
+pycv 或 http / / examples . oreilly . com 
+/ 9781785283840 / 中文版 第 15页 第一段 提到 的 接口 
+例子 程序 在 下面 下载 https / / github . 
+com / abidrahmank / OpenCV2 Python / tree / master 
+/ Official _ Tutorial _ Python _ Codes2 纠错 1 
+第 11页 最 下面 的 第二 行 代码 中的 libavcodecdev 
+应 修改 为 libavcodec dev 2 第 75页 将 cv2 
+. rectangle img ex ey ex + ew ey + 
+eh 0 255 0 2 修改 为 cv2 . rectangle 
+img ex + x ey + y ex + x 
++ ew ey + y + eh 0 255 0 
+2 感谢 河海大学 物联网 工程学院   沈晓海 的 指正 3 
+将 第 7页 中的 xcode select install 修改 为 xcode 
+select install 重庆 工商大学   计信/nr 学院   刘波 1 源代码 下载 地址 OpenCV3 计算机 视觉 Python 语言 实现 
+第二 版 由 我们 翻译 其 英文 书名 Learning OpenCV3 
+Computer Vision with Python second edition 源代码 的 下 地址 
+为 https / / github . com / techfort / 
+pycv 或 http / / examples . oreilly . com 
+/ 9781785283840 / 中文版 第 15页 第一段 提到 的 接口 
+例子 程序 在 下面 下载 https / / github . 
+com / abidrahmank / OpenCV2 Python / tree / master 
+/ Official _ Tutorial _ Python _ Codes2 纠错 1 
+第 11页 最 下面 的 第二 行 代码 中的 libavcodecdev 
+应 修改 为 libavcodec dev 2 第 75页 将 cv2 
+. rectangle img ex ey ex + ew ey + 
+eh 0 255 0 2 修改 为 cv2 . rectangle 
+img ex + x ey + y ex + x 
++ ew ey + y + eh 0 255 0 
+2 感谢 河海大学 物联网 工程学院   沈晓海 的 指正 3 
+将 第 7页 中的 xcode select install 修改 为 xcode 
+select install 重庆 工商大学   计信/nr 学院   刘波 

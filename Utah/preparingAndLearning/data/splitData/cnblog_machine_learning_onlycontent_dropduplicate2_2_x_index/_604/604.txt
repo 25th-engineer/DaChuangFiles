@@ -1,0 +1,70 @@
+本文结构：
+是什么？
+有什么算法？
+数学原理？
+编码实现算法？
+1. 是什么？
+简单地理解，就是根据一些 feature 进行分类，每个节点提一个问题，通过判断，将数据分为几类，再继续提问。这些问题是根据已有数据学习出来的，再投入新数据的时候，就可以根据这棵树上的问题，将数据划分到合适的叶子上。
+2. 有什么算法？
+常用的几种决策树算法有ID3、C4.5、CART：
+ID3：选择信息熵增益最大的feature作为node，实现对数据的归纳分类。
+C4.5：是ID3的一个改进，比ID3准确率高且快，可以处理连续值和有缺失值的feature。
+CART：使用基尼指数的划分准则，通过在每个步骤最大限度降低不纯洁度，CART能够处理孤立点以及能够对空缺值进行处理。
+3. 数学原理？
+ID3: Iterative Dichotomiser 3
+参考
+下面这个数据集，可以同时被上面两颗树表示，结果是一样的，而我们更倾向于选择简单的树。
+那么怎样做才能使得学习到的树是最简单的呢？
+下面是 ID3（ Iterative Dichotomiser 3 ）的算法：
+例如下面数据集，哪个是最好的 Attribute？
+用熵Entropy来衡量：
+E(S) 是数据集S的熵
+i 指每个结果，即 No，Yes的概率
+E越大意味着信息越混乱，我们的目标是要让E最小。
+E在0-1之间，如果P＋的概率在0.5， 此时E最大，这时候说明信息对我们没有明确的意义，对分类没有帮助。
+但是我们不仅仅想要变量的E最小，还想要这棵树是 well organized。
+所以用到 Gain：信息增益
+意思是如果我后面要用这个变量的话，它的E会减少多少。
+例如下面的数据集：
+先计算四个feature的熵E，及其分支的熵，然后用Gain的公式计算信息增益。
+再选择Gain最大的特征是 outlook。
+第一层选择出来后，各个分支再继续选择下一层，计算Gain最大的，例如分支 sunny 的下一层节点是 humidity。
+详细的计算步骤可以参考这篇博文。
+C4.5
+参考
+ID3有个局限是对于有大量数据的feature过于敏感，C4.5是它的一个改进，通过选择最大的信息增益率 gain ratio 来选择节点。而且它可以处理连续的和有缺失值的数据。
+P’ (j/p) is the proportion of elements present at the position p, taking the value of j-th test.
+例如 outlook 作为第一层节点后，它有 3 个分支，分别有 5，4，5 条数据，则 SplitInfo(5,4,5) = -5/14log(5,14)-4/14log(4,14)-5/14(5,14) ，其中 log(5,14) 即为 log2(5/14)。
+下面是一个有连续值和缺失值的例子：
+连续值
+第一步计算 Gain，除了连续值的 humudity，其他步骤和前文一样。
+要计算 humudity 的 Gain 的话，先把所有值升序排列：
+{65, 70, 70, 70, 75, 78, 80, 80, 80, 85, 90, 90, 95, 96}
+然后把重复的去掉：
+{65, 70, 75, 78, 80, 85, 90, 95, 96}
+如下图所示，按区间计算 Gain，然后选择最大的 Gain (S, Humidity) = 0.102
+因为 Gain(S, Outlook) = 0 .246，所以root还是outlook：
+缺失值
+处理有缺失值的数据时候，用下图的公式：
+例如 D12 是不知道的。
+计算全集和 outlook 的 info，
+其中几个分支的熵如下，再计算出 outlook 的 Gain：
+比较一下 ID3 和 C4.5 的准确率和时间：
+accuracy ：
+execution time：
+4. 编码实现算法？
+代码可以看《机器学习实战》这本书和这篇博客。
+完整代码可以在 github 上查看。
+接下来以 C4.5 的代码为例：
+1. 定义数据：
+1 def createDataSet(): 2 dataSet = [[0, 0, 0, 0, 'N'], 3 [0, 0, 0, 1, 'N'], 4 [1, 0, 0, 0, 'Y'], 5 [2, 1, 0, 0, 'Y'], 6 [2, 2, 1, 0, 'Y'], 7 [2, 2, 1, 1, 'N'], 8 [1, 2, 1, 1, 'Y']] 9 labels = ['outlook', 'temperature', 'humidity', 'windy'] 10 return dataSet, labels
+2. 计算熵：
+1 def calcShannonEnt(dataSet): 2 numEntries = len(dataSet) 3 labelCounts = {} 4 for featVec in dataSet: 5 currentLabel = featVec[-1] 6 if currentLabel not in labelCounts.keys(): 7 labelCounts[currentLabel] = 0 8 labelCounts[currentLabel] += 1 # 数每一类各多少个， {'Y': 4, 'N': 3} 9 shannonEnt = 0.0 10 for key in labelCounts: 11 prob = float(labelCounts[key])/numEntries 12 shannonEnt -= prob * log(prob, 2) 13 return shannonEnt
+3. 选择最大的gain ratio对应的feature：
+1 def chooseBestFeatureToSplit(dataSet): 2 numFeatures = len(dataSet[0]) - 1 #feature个数 3 baseEntropy = calcShannonEnt(dataSet) #整个dataset的熵 4 bestInfoGainRatio = 0.0 5 bestFeature = -1 6 for i in range(numFeatures): 7 featList = [example[i] for example in dataSet] #每个feature的list 8 uniqueVals = set(featList) #每个list的唯一值集合 9 newEntropy = 0.0 10 splitInfo = 0.0 11 for value in uniqueVals: 12 subDataSet = splitDataSet(dataSet, i, value) #每个唯一值对应的剩余feature的组成子集 13 prob = len(subDataSet)/float(len(dataSet)) 14 newEntropy += prob * calcShannonEnt(subDataSet) 15 splitInfo += -prob * log(prob, 2) 16 infoGain = baseEntropy - newEntropy #这个feature的infoGain 17 if (splitInfo == 0): # fix the overflow bug 18 continue 19 infoGainRatio = infoGain / splitInfo #这个feature的infoGainRatio 20 if (infoGainRatio > bestInfoGainRatio): #选择最大的gain ratio 21 bestInfoGainRatio = infoGainRatio 22 bestFeature = i #选择最大的gain ratio对应的feature 23 return bestFeature
+4. 划分数据，为下一层计算准备:
+1 def splitDataSet(dataSet, axis, value): 2 retDataSet = [] 3 for featVec in dataSet: 4 if featVec[axis] == value: #只看当第i列的值＝value时的item 5 reduceFeatVec = featVec[:axis] #featVec的第i列给除去 6 reduceFeatVec.extend(featVec[axis+1:]) 7 retDataSet.append(reduceFeatVec) 8 return retDataSet
+5. 多重字典构建树：
+1 def createTree(dataSet, labels): 2 classList = [example[-1] for example in dataSet] # ['N', 'N', 'Y', 'Y', 'Y', 'N', 'Y'] 3 if classList.count(classList[0]) == len(classList): 4 # classList所有元素都相等，即类别完全相同，停止划分 5 return classList[0] #splitDataSet(dataSet, 0, 0)此时全是N，返回N 6 if len(dataSet[0]) == 1: #[0, 0, 0, 0, 'N'] 7 # 遍历完所有特征时返回出现次数最多的 8 return majorityCnt(classList) 9 bestFeat = chooseBestFeatureToSplit(dataSet) #0－> 2 10 # 选择最大的gain ratio对应的feature 11 bestFeatLabel = labels[bestFeat] #outlook -> windy 12 myTree = {bestFeatLabel:{}} 13 #多重字典构建树{'outlook': {0: 'N' 14 del(labels[bestFeat]) #['temperature', 'humidity', 'windy'] -> ['temperature', 'humidity'] 15 featValues = [example[bestFeat] for example in dataSet] #[0, 0, 1, 2, 2, 2, 1] 16 uniqueVals = set(featValues) 17 for value in uniqueVals: 18 subLabels = labels[:] #['temperature', 'humidity', 'windy'] 19 myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), subLabels) 20 # 划分数据，为下一层计算准备 21 return myTree
+6. 可视化决策树的结果:
+dataSet, labels = createDataSet() labels_tmp = labels[:] desicionTree = createTree(dataSet, labels_tmp) treePlotter.createPlot(desicionTree)

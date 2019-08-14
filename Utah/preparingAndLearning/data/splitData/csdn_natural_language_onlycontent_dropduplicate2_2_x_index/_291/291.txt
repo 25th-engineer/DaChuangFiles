@@ -1,0 +1,48 @@
+清华大学自然语言处理与社会人文计算实验室
+清华大学智能技术与系统国家重点实验室信息检索组
+北京大学计算语言学教育部重点实验室
+北京大学计算机科学技术研究所语言计算与互联网挖掘研究室
+哈工大社会计算与信息检索研究中心
+哈工大机器智能与翻译研究室
+哈尔滨工业大学智能技术与自然语言处理实验室
+中科院计算所自然语言处理研究组
+中科院自动化研究所语音语言技术研究组
+南京大学自然语言处理研究组
+东北大学自然语言处理实验室
+厦门大学智能科学与技术系自然语言处理实验室
+苏州大学自然语言处理实验室
+郑州大学自然语言处理实验室
+中科院自动化所 模式识别实验室（NLPR）
+Huawei Noah’s Ark Lab
+Human Language Technology Center at Hong Kong University of Science & Technology
+NUS Natural Language Processing Group
+The Stanford Natural Language Processing Group
+The Berkeley NLP Group
+Natural Language Processing research at Columbia University
+Natural Language and Information Processing Research Group at University of Cambridge
+Speech Research Group at University of Cambridge
+The Language Technologies Institute (LTI) at Carnegie Mellon University
+The Computational Linguistics Group at Oxford University
+Human Language Technology and Pattern Recognition Group at the RWTH Aachen
+Algorithms for Computational Linguistics at City University of New York
+RPI Blender Lab
+The Natural Language Group at USC/ISI
+Natural Language Processing Group at University of Notre Dame
+Artificial Intelligence Research Group at Harvard
+Natural Language Processing - Research at Google
+The Redmond-based Natural Language Processing group
+Computational Linguistics and Information Processing at Maryland
+Language and Speech Processing at Johns Hopkins University
+Human Language Technology Center of Excellence at Johns Hopkins University
+Statistical Machine Translation Group at the University of Edinburgh
+University of Sheffield NLP Group
+The CNGL Centre for Global Intelligent Content
+Cornell NLP group
+Natural Language Processing (NLP) group at University Of Washington
+NLP @ Illinois
+搜狗公司
+百度公司：现任副总裁王海峰先生是自然语言处理领域世界上影响力最大、也最具活力的国际学术组织ACL（Association for Computational Linguistics）50多年历史上唯一的华人主席。
+科大讯飞：国内专业做中文语音、文字产品研发的企业，是目前国内最大的智能语音技术提供商。
+参考
+知乎
+warrioR_wx CSDN博客

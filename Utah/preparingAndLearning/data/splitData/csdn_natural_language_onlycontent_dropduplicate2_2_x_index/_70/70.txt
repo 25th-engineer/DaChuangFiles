@@ -1,0 +1,19 @@
+cestella/NLPWithMahout · GitHub是一个使用Mahout实现自然语言处理(NLP:Natural Language Processing)的开源项目。
+NLP一词来自于统计自然语言处理，来自google的研究主管Peter Norvig评价这本书：如果有人告诉我在一年内能赚一百万，那么就只有这本书能做到，我复制了这本书，并开始启动一个web 文本处理公司。
+Apache Mahout is 一个能够运行在Hadoop上的分布式机器学习算法高性能库，可用算法如下：
+类型：算法 Linear Algebra : Stochastic Gradient Descent Linear Algebra : Stochastic Singular Value Decomposition Classification: Random Forests Classification : Naïve Bayesian Classification :Hidden Markov Models Clustering :Normal and Fuzzy K-Means Clustering :Expectation Maximization Clustering :Dirichlet Process Clustering Clustering :Latent Dirichlet Allocation Clustering :Spectral Clustering Clustering :MinHash Clustering Pattern Mining: Parallel FP Growth
+Mahout 提供了很多工具库，允许从hadoop中以ML算法格式获取数据。
+基本模式有：
+1.将文本转为序列文件 SequenceFiles，通过 seqdirectory
+命令。
+2.将序列文件转为一系列稀疏向量，使用seq2sparse，根据选择使用 word-integer和feature-weight.
+3.转换与稀疏向量关联的Key到使用rowid命令的可增量整数。
+另外，可在Mahout中使用Latent Dirichlet Allocation(LDA)，通过客户一遍一遍购买记录，能够猜测其购买偏好。Mahout是LDA原始实现的性能15倍。
+LDA在Mahout使用方式：
+输入数据作为一个稀疏向量；
+建立来自文档字段的管道，如下三个步骤：
+1. seqdirectory ! 转换包含每行一个文档的系列文档到序列文件
+2. seq2sparse ! 将序列文件作为条目字典转为稀疏向量。
+3. rowid !转为稀疏向量的key到整数
+cvb工具能够运行LDA算法。输入是字数加权频率的序列文件，输出是topic 模型。
+http://www.jdon.com/45591

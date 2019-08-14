@@ -1,0 +1,244 @@
+根据 吴恩 达 机器学习 教程 总结 在 matlab octave 均可 
+使用 Matlab 进行 标量 运算 5 + 5ans = 10 
+6 * 2ans = 12 3 ^ 2ans = 9 
+3 / 2ans = 1.5000 变量 赋值 a = 3a 
+= 3 赋值 语句 后面 加 可以 不 输出 结果 
+q = 3 qq = 3 字符 输入 时 必须 
+是 单引号 b = hi bb = hi 并 或 
+运算 1 & & 0ans = 0 1 | | 
+1ans = 1 比较 语句 2 3ans = 0 输出 
+字符串 a = pia = 3.1416 disp a 3.1416 disp 
+sprintf 2 decimals % 0.2 f a 2 decimals 3.14 
+sprintf hi ans = hi 矩阵 表示 A = 1 
+2 3 4 A = 1         
+23         4 向量 表示 V = 
+1 2 3 V = 123 从 1 开始 到 
+2 终 止步 长为 0.1 的 行向量 V = 1 
+0.1 2V = 1.0000       1.1000     
+  1.2000       1.3000       1.4000 
+      1.5000       1.6000     
+  1.7000       1.8000       1.9000 
+      2 . 00001X2 全为 1 矩阵 ones 
+1 2 ans = 1         12X2 
+全为 0 矩阵 zeros 2 2 ans = 0   
+      00         0 随机 
+1X3 的 矩阵 rand 1 3 ans = 0.8147   
+    0.9058       0.1270 对角线 为 全为 
+1 的 单位 矩阵 eye 4 ans = 1   
+      0         0   
+      00         1   
+      0         00   
+      0         1   
+      00         0   
+      0         1help 查看 
+内置 函数 的 用法 help eyeeye Identity matrix . eye 
+N is the N by N identity matrix . eye 
+M N or eye M N is an M by 
+N matrix with 1 s onthe diagonal and zeros elsewhere 
+. eye SIZE A is the same size as A 
+. eye with no arguments is the scalar 1 . 
+eye . . . CLASSNAME is a matrix with ones 
+of class specified byCLASSNAME on the diagonal and zeros elsewhere 
+. eye . . . like Y is an identity 
+matrix with the same data type sparsity and complexity real 
+or complex as the numeric variable Y . Note The 
+size inputs M and N should be nonnegative integers . 
+Negative integers are treated as 0 . Example x = 
+eye 2 3 int8 See also speye ones zeros rand 
+randn . eye 的 参考 页 名为 eye 的 其他 
+函数 判断 矩阵 的 形状 size a ans = 1 
+        1 size A 1 ans = 
+2 v = 1 2 3 4 v = 1 
+        2         3 
+        4 size v ans = 1 
+        4 length v ans = 4 
+显示 当前工作 目录 与 Linux 较为 相似 pwdans = C 
+\ Program Files \ MATLAB \ R2016a 进入 某一 目录 
+cd C \ Users \ scz \ Desktop pwdans = 
+C \ Users \ scz \ Desktop 显示 当前目录 下 
+所有 文件 ls . . . 1 . docx123 读入 
+文件 并 保存 到 变量 中 load loldata . csv 
+loldataloldata = 7.0000       5.0000       
+2.0000       0.9329     28.7941     
+  5.9861       4 . 59842.0000     
+  1.0000       3.0000       0.4512 
+      2.5701       0.9661     
+  1 . 20147.0000       5.0000     
+  3.0000       0.8364     21.6821   
+    6.0617       3 . 833219.0000   
+    2.0000       1.0000       
+1.0947     36.3245     12.7096       
+3 . 79694.0000       2.0000       
+4.0000       0.8193     19.6814     
+  2.3778       1 . 33442.0000     
+  9.0000       2.0000       0.7157 
+    14.4339       3.3351       
+6.34050     10.0000       6.0000     
+  0.7573     12.3280       2.1769   
+    5 . 35438.0000       5.0000   
+    1.0000       0.9012     20.2787 
+      5.1798       3 . 94953.0000 
+      7.0000       1.0000     
+  0.7876     10.5917       2.2607   
+    6 . 46201.0000       8.0000   
+    4.0000       0.6336       
+5.9939       1.8080       5.9950 size 
+loldata ans = 10         7 显示 
+当前 所有 变量 who 您 的 变量 为 A   
+            V       
+        a           
+    ans           b   
+            c       
+        loldata   q       
+        v 所有 变量 具体 信息 whosName 
+                  Size 
+                    
+  Bytes   Class         AttributesA   
+                    
+  2x2                 
+              32   doubleV 
+                    
+    1x11               
+              88   doublea 
+                    
+    1x1               
+                  8 
+  doubleans                 
+    1x2               
+                16   
+doubleb                   
+      1x2             
+                    
+4   charc               
+          1x1         
+                    
+    8   doubleloldata           
+10x7                   
+          560   doubleq     
+                    
+1x1                   
+              8   doublev 
+                    
+    1x4               
+                32   
+double 保存 变量 到 文件 中 save hello . mat 
+v 矩阵 运算 A = 1 2 3 4 5 
+6 A = 1         23   
+      45         6 C 
+= 1 1 2 2 C = 1     
+    12         2 A   
+*   Cans = 5         511 
+      1117       17 注意 A 
+后面 有 空格 . 是 对 矩阵 中 所有 元素 
+进行 位运算 A . ^ 2ans = 1     
+    49       1625       
+36 A + 1ans = 2         
+34         56         
+7 AA = 1         23   
+      45         6 矩阵 
+的 转置 A ans = 1         
+3         52         
+4         6 没 一列 中 所有 
+最大 元素 max A ans = 5       
+  6 VAL IND = max A VAL = 5 
+        6IND = 3       
+  3 矩阵 的 比较 运算 A 3ans = 1 
+        10         00 
+        0 所有 元素 中 符合 条件 
+位置 find A 3 ans = 14 a = magic 
+4 a = 16         2   
+      3       135     
+  11       10         
+89         7         
+6       124       14   
+    15         1 r c 
+= find A 3 r = 11c = 12 a 
+= 1 2 3 4 a = 1     
+    2         3     
+    4 sum a ans = 10 prod a 
+ans = 24 a = 1 2 3 4 1 
+3 4 5 a = 1         
+2         3         
+41         3         
+4         5 求和 默认 是 列 
+sum a ans = 2         5 
+        7         9 
+sum a 1 ans = 2         
+5         7         
+9 求积 prod a ans = 1       
+  6       12       20 
+floor a % 向下 四舍五入 ans = 1     
+    2         3     
+    41         3     
+    4         5 ceil a 
+% 向上 四舍五入 ans = 1         
+2         3         
+41         3         
+4         5 max rand 3 rand 
+3 ans = 0.9572       0.2785     
+  0 . 96490.6324       0.5469     
+  0 . 95950.8003       0.9575     
+  0.9706 A ans = 135246 调换 方向 flipud eye 
+9 ans = 0         0   
+      0         0   
+      0         0   
+      0         0   
+      10         0   
+      0         0   
+      0         0   
+      0         1   
+      00         0   
+      0         0   
+      0         0   
+      1         0   
+      00         0   
+      0         0   
+      0         1   
+      0         0   
+      00         0   
+      0         0   
+      1         0   
+      0         0   
+      00         0   
+      0         1   
+      0         0   
+      0         0   
+      00         0   
+      1         0   
+      0         0   
+      0         0   
+      00         1   
+      0         0   
+      0         0   
+      0         0   
+      01         0   
+      0         0   
+      0         0   
+      0         0   
+      0 求 矩阵 的 拟 pinv a 
+ans = 1.3333     1.0000 1.6667       
+1.3333 0.3333       0 . 33331.0000     
+0.6667 D = 0 0.01 0.98 y1 = sin 2 
+* pi * 4 * D plot D y2 r 
+xlabel time ylabel value legend sin cos title my plot 
+print dpng myplot . png subplot 1 2 1 plot 
+D y1 subplot 1 2 2 plot D y2 clf 
+A = magic 5 A = 17       
+24         1         
+8       1523         5 
+        7       14   
+    164         6     
+  13       20       2210 
+      12       19     
+  21         311       
+18       25         2 
+        9 imagesc A imagesc A imagesc 
+A colorbar colormap gray 循环 语句 判断 语句 for i 
+= 1 10 v i = 2 ^ i end 
+vv = 2 4 8 1 6 3 2 6 
+4 1 2 8 2 5 6 5 1 2 
+1 0 2 4 while true i = 1 v 
+i = 100 if i = 6 break end end 
+vv = 1 0 0 4 8 1 6 3 
+2 6 4 1 2 8 2 5 6 5 
+1 2 1 0 2 4 

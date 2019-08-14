@@ -1,0 +1,1 @@
+微软：计算机视觉A Beginner's Guide To Understanding Convolutional Neural Networks阮一峰：图像与滤波专知：计算机视觉位、字节和字位（bit）：最小的存储单元，可以存储 0 或 1；字节（byte）：1 byte = 8 bit；字（word）：是设计计算机时给定的自然存储单位。比如 8 位的微型计算机，1 个字长只有 8 位。

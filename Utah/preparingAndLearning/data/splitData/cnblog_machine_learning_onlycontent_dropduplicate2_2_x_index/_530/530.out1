@@ -1,0 +1,36 @@
+我 断断续续 利用 在家 休假 的 时间 完成 了 这门 
+课程 Essential Math for Machine Learning Python Edition 的 学习 
+并且 得到 了 总分 91分 这门 课程 的 主要 内容 
+如下 虽然 我们 以前 都 学过 数学 但 大部分 真的 
+都 还给 老师 了 学习 这 门 课程 中 总是 
+隐隐约约 有一种 压力感 一 方面 总是 觉得 这些 知识 我 
+应该 知道 啊 但 另外 一方面 看着 那些 题目 却 
+有一种 无助 的 感觉 学习 数学 很 可能 是 有趣 
+的 因为 我 在 学习 这 门 课程 时 到处 
+找 资料 发现 真的 有 一个 网站 叫 Math is 
+Fun 而且有 中文 的 版本 数学 乐 英文 网站 是 
+https / / www . mathsisfun . com / 中文 
+网站 是   https / / www . shuxuele . 
+com / index . html 但 无论如何 有趣 前提 是 
+你 能 掌握 它 的 一些 基本 原理 谢天谢地 谢 
+Python 因为 有了 numpy 和 pandas 这些 package 在 理解 
+和 掌握 上面 提到 的 几方面 数学知识 过程 中 我 
+感觉到 了 前所未有 的 能力 我 印象 最 深刻 的 
+是 在 计算 向量 和 矩阵 运算 的 时候 使用 
+numpy 提供 的 array 以及 matrix 类型 简直 易如反掌 课程 
+附带 了 25个 练习 是 Jupyter 格式 的 notebook 每个 
+材料 都 丰富 详实 可谓 业界 良心 真心 为 这些 
+讲师 点 赞 如果 对 Jupyter 还 不太熟悉 建议 访问 
+  http / / jupyter . org / 我 另外 
+还 发现 一个 不错 的 中文 网站   https / 
+/ zh . wikihow . com 里面 有 不少 数学 
+方程 求解 的 讲解 最后 还给 大家 分享 一个 Python 
+的 统计分析 库 statsmodels 请 参考 https / / www 
+. statsmodels . org / stable / index . html 
+以及 与 numpy 齐名 的 Scipy 在 本 课程 中用 
+到了 它 的 stats 模块 中的 binom 类型 来 计算 
+概率 非常 实用 要 了解 Scipy 请 参考   https 
+/ / www . scipy . org / 请 通过 
+  https / / aka . ms / learningAI 或者 
+扫描 下面 的 二维码 关注 本 系列 文章 人工智能 学习 
+笔记 

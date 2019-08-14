@@ -1,0 +1,277 @@
+原文：http://blog.csdn.net/heyongluoyao8/article/details/47840255
+常见的机器学习&数据挖掘知识点
+转载请说明出处
+Basis(基础)：
+SSE(Sum of Squared Error, 平方误差和)
+SAE(Sum of Absolute Error, 绝对误差和)
+SRE(Sum of Relative Error, 相对误差和)
+MSE(Mean Squared Error, 均方误差)
+RMSE(Root Mean Squared Error, 均方根误差)
+RRSE(Root Relative Squared Error, 相对平方根误差)
+MAE(Mean Absolute Error, 平均绝对误差)
+RAE(Root Absolute Error, 平均绝对误差平方根)
+MRSE(Mean Relative Square Error, 相对平均误差)
+RRSE(Root Relative Squared Error, 相对平方根误差)
+Expectation(期望)&Variance(方差)
+Standard Deviation(标准差，也称Root Mean Squared Error, 均方根误差)
+CP(Conditional Probability, 条件概率)
+JP(Joint Probability, 联合概率)
+MP(Marginal Probability, 边缘概率)
+Bayesian Formula(贝叶斯公式)
+CC(Correlation Coefficient, 相关系数)
+Quantile (分位数)
+Covariance(协方差矩阵)
+GD(Gradient Descent, 梯度下降)
+SGD(Stochastic Gradient Descent, 随机梯度下降)
+LMS(Least Mean Squared, 最小均方)
+LSM(Least Square Methods, 最小二乘法)
+NE(Normal Equation, 正规方程)
+MLE(Maximum Likelihood Estimation, 极大似然估计)
+QP(Quadratic Programming, 二次规划)
+L1 /L2 Regularization(L1/L2正则, 以及更多的, 现在比较火的L2.5正则等)
+Eigenvalue(特征值)
+Eigenvector(特征向量)
+Common Distribution(常见分布)：
+Discrete Distribution(离散型分布)：
+Bernoulli Distribution/Binomial Distribution(贝努利分布/二项分布)
+Negative Binomial Distribution(负二项分布)
+Multinomial Distribution(多项分布)
+Geometric Distribution(几何分布)
+Hypergeometric Distribution(超几何分布)
+Poisson Distribution (泊松分布)
+Continuous Distribution (连续型分布)：
+Uniform Distribution(均匀分布)
+Normal Distribution/Gaussian Distribution(正态分布/高斯分布)
+Exponential Distribution(指数分布)
+Lognormal Distribution(对数正态分布)
+Gamma Distribution(Gamma分布)
+Beta Distribution(Beta分布)
+Dirichlet Distribution(狄利克雷分布)
+Rayleigh Distribution(瑞利分布)
+Cauchy Distribution(柯西分布)
+Weibull Distribution (韦伯分布)
+Three Sampling Distribution(三大抽样分布)：
+Chi-square Distribution(卡方分布)
+t-distribution(t-分布)
+F-distribution(F-分布)
+Data Pre-processing(数据预处理)：
+Missing Value Imputation(缺失值填充)
+Discretization(离散化)
+Mapping(映射)
+Normalization(归一化/标准化)
+Sampling(采样)：
+Simple Random Sampling(简单随机采样)
+Offline Sampling(离线等可能K采样)
+Online Sampling(在线等可能K采样)
+Ratio-based Sampling(等比例随机采样)
+Acceptance-rejection Sampling(接受-拒绝采样)
+Importance Sampling(重要性采样)
+MCMC(Markov Chain MonteCarlo 马尔科夫蒙特卡罗采样算法：Metropolis-Hasting& Gibbs)
+Clustering(聚类)：
+K-MeansK-Mediods
+二分K-Means
+FK-Means
+Canopy
+Spectral-KMeans(谱聚类)
+GMM-EM(混合高斯模型-期望最大化算法解决)
+K-Pototypes
+CLARANS(基于划分)
+BIRCH(基于层次)
+CURE(基于层次)
+STING(基于网格)
+CLIQUE(基于密度和基于网格)
+2014年Science上的密度聚类算法等
+Clustering Effectiveness Evaluation(聚类效果评估)：
+Purity(纯度)
+RI(Rand Index, 芮氏指标)
+ARI(Adjusted Rand Index, 调整的芮氏指标)
+NMI(Normalized Mutual Information, 规范化互信息)
+F-meaure(F测量)
+Classification&Regression(分类&回归)：
+LR(Linear Regression, 线性回归)
+LR(Logistic Regression, 逻辑回归)
+SR(Softmax Regression, 多分类逻辑回归)
+GLM(Generalized Linear Model, 广义线性模型)
+RR(Ridge Regression, 岭回归/L2正则最小二乘回归)，LASSO(Least Absolute Shrinkage and Selectionator Operator , L1正则最小二乘回归)
+DT(Decision Tree决策树)
+RF(Random Forest, 随机森林)
+GBDT(Gradient Boosting Decision Tree, 梯度下降决策树)
+CART(Classification And Regression Tree 分类回归树)
+KNN(K-Nearest Neighbor, K近邻)
+SVM(Support Vector Machine, 支持向量机, 包括SVC(分类)&SVR(回归))
+CBA(Classification based on Association Rule, 基于关联规则的分类)
+KF(Kernel Function, 核函数)
+Polynomial Kernel Function(多项式核函数)
+Guassian Kernel Function(高斯核函数)
+Radial Basis Function(RBF径向基函数)
+String Kernel Function 字符串核函数
+NB(Naive Bayesian,朴素贝叶斯)
+BN(Bayesian Network/Bayesian Belief Network/Belief Network 贝叶斯网络/贝叶斯信度网络/信念网络)
+LDA(Linear Discriminant Analysis/Fisher Linear Discriminant 线性判别分析/Fisher线性判别)
+EL(Ensemble Learning, 集成学习)
+Boosting
+Bagging
+Stacking
+AdaBoost(Adaptive Boosting 自适应增强)
+MEM(Maximum Entropy Model, 最大熵模型)
+Classification EffectivenessEvaluation(分类效果评估)：
+Confusion Matrix(混淆矩阵)
+Precision(精确度)
+Recall(召回率)
+Accuracy(准确率)
+F-score(F得分)
+ROC Curve(ROC曲线)
+AUC(AUC面积)
+Lift Curve(Lift曲线)
+KS Curve(KS曲线)
+PGM(Probabilistic Graphical Models, 概率图模型)：
+BN(BayesianNetwork/Bayesian Belief Network/ Belief Network , 贝叶斯网络/贝叶斯信度网络/信念网络)
+MC(Markov Chain, 马尔科夫链)
+MEM(Maximum Entropy Model, 最大熵模型)
+HMM(Hidden Markov Model, 马尔科夫模型)
+MEMM(Maximum Entropy Markov Model, 最大熵马尔科夫模型)
+CRF(Conditional Random Field,条件随机场)
+MRF(Markov Random Field, 马尔科夫随机场)
+Viterbi(维特比算法)
+NN(Neural Network, 神经网络)
+ANN(Artificial Neural Network, 人工神经网络)
+SNN(Static Neural Network, 静态神经网络)
+BP(Error Back Propagation, 误差反向传播)
+HN(Hopfield Network)
+DNN(Dynamic Neural Network, 动态神经网络)
+RNN(Recurrent Neural Network, 循环神经网络)
+SRN(Simple Recurrent Network, 简单的循环神经网络)
+ESN(Echo State Network, 回声状态网络)
+LSTM(Long Short Term Memory, 长短记忆神经网络)
+CW-RNN(Clockwork-Recurrent Neural Network, 时钟驱动循环神经网络, 2014ICML）等.
+Deep Learning(深度学习)：
+Auto-encoder(自动编码器)
+SAE(Stacked Auto-encoders堆叠自动编码器)
+Sparse Auto-encoders(稀疏自动编码器)
+Denoising Auto-encoders(去噪自动编码器)
+Contractive Auto-encoders(收缩自动编码器)
+RBM(Restricted Boltzmann Machine, 受限玻尔兹曼机)
+DBN(Deep Belief Network, 深度信念网络)
+CNN(Convolutional Neural Network, 卷积神经网络)
+Word2Vec(词向量学习模型)
+Dimensionality Reduction(降维)：
+LDA(Linear Discriminant Analysis/Fisher Linear Discriminant, 线性判别分析/Fish线性判别)
+PCA(Principal Component Analysis, 主成分分析)
+ICA(Independent Component Analysis, 独立成分分析)
+SVD(Singular Value Decomposition 奇异值分解)
+FA(Factor Analysis 因子分析法)
+Text Mining(文本挖掘)：
+VSM(Vector Space Model, 向量空间模型)
+Word2Vec(词向量学习模型)
+TF(Term Frequency, 词频)
+TF-IDF(TermFrequency-Inverse Document Frequency, 词频-逆向文档频率)
+MI(Mutual Information, 互信息)
+ECE(Expected Cross Entropy, 期望交叉熵)
+QEMI(二次信息熵)
+IG(Information Gain, 信息增益)
+IGR(Information Gain Ratio, 信息增益率)
+Gini(基尼系数)
+x2 Statistic(x2统计量)
+TEW(Text Evidence Weight, 文本证据权)
+OR(Odds Ratio, 优势率)
+N-Gram Model
+LSA(Latent Semantic Analysis, 潜在语义分析)
+PLSA(Probabilistic Latent Semantic Analysis, 基于概率的潜在语义分析)
+LDA(Latent Dirichlet Allocation, 潜在狄利克雷模型)
+SLM(Statistical Language Model, 统计语言模型)
+NPLM(Neural Probabilistic Language Model, 神经概率语言模型)
+CBOW(Continuous Bag of Words Model, 连续词袋模型)
+Skip-gram(Skip-gram Model)
+Association Mining(关联挖掘)：
+Apriori算法
+FP-growth(Frequency Pattern Tree Growth, 频繁模式树生长算法)
+MSApriori(Multi Support-based Apriori, 基于多支持度的Apriori算法)
+GSpan(Graph-based Substructure Pattern Mining, 频繁子图挖掘)
+Sequential Patterns Analysis(序列模式分析)
+AprioriAll
+Spade
+GSP(Generalized Sequential Patterns, 广义序列模式)
+PrefixSpan
+Forecast(预测)
+LR(Linear Regression, 线性回归)
+SVR(Support Vector Regression, 支持向量机回归)
+ARIMA(Autoregressive Integrated Moving Average Model, 自回归积分滑动平均模型)
+GM(Gray Model, 灰色模型)
+BPNN(BP Neural Network, 反向传播神经网络)
+SRN(Simple Recurrent Network, 简单循环神经网络)
+LSTM(Long Short Term Memory, 长短记忆神经网络)
+CW-RNN(Clockwork Recurrent Neural Network, 时钟驱动循环神经网络)
+……
+Linked Analysis(链接分析)
+HITS(Hyperlink-Induced Topic Search, 基于超链接的主题检索算法)
+PageRank(网页排名)
+Recommendation Engine(推荐引擎)：
+SVD
+Slope One
+DBR(Demographic-based Recommendation, 基于人口统计学的推荐)
+CBR(Context-based Recommendation, 基于内容的推荐)
+CF(Collaborative Filtering, 协同过滤)
+UCF(User-based Collaborative Filtering Recommendation, 基于用户的协同过滤推荐)
+ICF(Item-based Collaborative Filtering Recommendation, 基于项目的协同过滤推荐)
+Similarity Measure&Distance Measure(相似性与距离度量)：
+EuclideanDistance(欧式距离)
+Chebyshev Distance(切比雪夫距离)
+Minkowski Distance(闵可夫斯基距离)
+Standardized EuclideanDistance(标准化欧氏距离)
+Mahalanobis Distance(马氏距离)
+Cos(Cosine, 余弦)
+Hamming Distance/Edit Distance(汉明距离/编辑距离)
+Jaccard Distance(杰卡德距离)
+Correlation Coefficient Distance(相关系数距离)
+Information Entropy(信息熵)
+KL(Kullback-Leibler Divergence, KL散度/Relative Entropy, 相对熵)
+Optimization(最优化)：
+Non-constrained Optimization(无约束优化)：
+Cyclic Variable Methods(变量轮换法)
+Variable Simplex Methods(可变单纯形法)
+Newton Methods(牛顿法)
+Quasi-Newton Methods(拟牛顿法)
+Conjugate Gradient Methods(共轭梯度法)。
+Constrained Optimization(有约束优化)：
+Approximation Programming Methods(近似规划法)
+Penalty Function Methods(罚函数法)
+Multiplier Methods(乘子法)。
+Heuristic Algorithm(启发式算法)
+SA(Simulated Annealing, 模拟退火算法)
+GA(Genetic Algorithm, 遗传算法)
+ACO(Ant Colony Optimization, 蚁群算法)
+Feature Selection(特征选择)：
+Mutual Information(互信息)
+Document Frequence(文档频率)
+Information Gain(信息增益)
+Chi-squared Test(卡方检验)
+Gini(基尼系数)
+Outlier Detection(异常点检测)：
+Statistic-based(基于统计)
+Density-based(基于密度)
+Clustering-based(基于聚类)。
+Learning to Rank(基于学习的排序)：
+Pointwise
+McRank
+Pairwise
+RankingSVM
+RankNet
+Frank
+RankBoost；
+Listwise
+AdaRank
+SoftRank
+LamdaMART
+Tool(工具)：
+MPI
+Hadoop生态圈
+Spark
+IGraph
+BSP
+Weka
+Mahout
+Scikit-learn
+PyBrain
+Theano
+…
+以及一些具体的业务场景与case…

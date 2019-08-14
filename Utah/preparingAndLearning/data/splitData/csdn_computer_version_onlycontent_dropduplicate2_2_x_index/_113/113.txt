@@ -1,0 +1,24 @@
+中文名
+英文名
+简称
+所属学科
+Input
+Output
+计算机视觉
+Computer Vision
+CV
+Computer Science/ Artificial Intelligence
+图像
+模型
+图像处理
+Image Processing
+IP
+Electrical Engineering/ Signal Processing/ Digital Signal Processing
+图像
+图像
+计算机图形学
+Computer Graphics
+CG
+Computer Science/ Computer Graphics and Visualization
+模型
+图像

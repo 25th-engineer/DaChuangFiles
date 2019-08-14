@@ -1,0 +1,879 @@
+Jia-Bin Huang同学收集了很多计算机视觉方面的代码，链接如下：
+https://netfiles.uiuc.edu/jbhuang1/www/resources/vision/index.html
+这些代码很实用，可以让我们站在巨人的肩膀上~~
+Topic
+Resources
+References
+Feature Extraction
+SIFT [1] [Demo program][SIFT Library] [VLFeat]
+PCA-SIFT [2] [Project]
+Affine-SIFT [3] [Project]
+SURF [4] [OpenSURF] [Matlab Wrapper]
+Affine Covariant Features [5] [Oxford project]
+MSER [6] [Oxford project] [VLFeat]
+Geometric Blur [7] [Code]
+Local Self-Similarity Descriptor [8] [Oxford implementation]
+Global and Efficient Self-Similarity [9] [Code]
+Histogram of Oriented Graidents [10] [INRIA Object Localization Toolkit] [OLT toolkit for Windows]
+GIST [11] [Project]
+Shape Context [12] [Project]
+Color Descriptor [13] [Project]
+Pyramids of Histograms of Oriented Gradients [Code]
+Space-Time Interest Points (STIP) [14] [Code]
+Boundary Preserving Dense Local Regions [15][Project]
+1.    D. Lowe. Distinctive Image Features from Scale-Invariant Keypoints, IJCV 2004. [PDF]
+2.    Y. Ke and R. Sukthankar, PCA-SIFT: A More Distinctive Representation for Local Image Descriptors,CVPR, 2004. [PDF]
+3.    J.M. Morel and G.Yu, ASIFT, A new framework for fully affine invariant image comparison. SIAM Journal on Imaging Sciences, 2009. [PDF]
+4.    H. Bay, T. Tuytelaars and L. V. Gool SURF: Speeded Up Robust Features,ECCV, 2006. [PDF]
+5.    K. Mikolajczyk, T. Tuytelaars, C. Schmid, A. Zisserman, J. Matas, F. Schaffalitzky, T. Kadir and L. Van Gool, A comparison of affine region detectors. IJCV, 2005. [PDF]
+6.    J. Matas, O. Chum, M. Urba, and T. Pajdla. Robust wide baseline stereo from maximally stable extremal regions. BMVC, 2002. [PDF]
+7.    A. C. Berg, T. L. Berg, and J. Malik. Shape matching and object recognition using low distortion correspondences. CVPR, 2005. [PDF]
+8.    E. Shechtman and M. Irani. Matching local self-similarities across images and videos, CVPR, 2007. [PDF]
+9.    T. Deselaers and V. Ferrari. Global and Efficient Self-Similarity for Object Classification and Detection. CVPR 2010. [PDF]
+10.  N. Dalal and B. Triggs. Histograms of Oriented Gradients for Human Detection. CVPR 2005. [PDF]
+11.  A. Oliva and A. Torralba. Modeling the shape of the scene: a holistic representation of the spatial envelope, IJCV, 2001. [PDF]
+12.  S. Belongie, J. Malik and J. Puzicha. Shape matching and object recognition using shape contexts, PAMI, 2002. [PDF]
+13.  K. E. A. van de Sande, T. Gevers and Cees G. M. Snoek, Evaluating Color Descriptors for Object and Scene Recognition, PAMI, 2010.
+14.  I. Laptev, On Space-Time Interest Points, IJCV, 2005. [PDF]
+15.  J. Kim and K. Grauman, Boundary Preserving Dense Local Regions, CVPR 2011. [PDF]
+Image Segmentation
+·         Normalized Cut [1] [Matlab code]
+·         Gerg Mori' Superpixel code [2] [Matlab code]
+·         Efficient Graph-based Image Segmentation [3] [C++ code] [Matlab wrapper]
+·         Mean-Shift Image Segmentation [4] [EDISON C++ code] [Matlab wrapper]
+·         OWT-UCM Hierarchical Segmentation [5] [Resources]
+·         Turbepixels [6] [Matlab code 32bit] [Matlab code 64bit] [Updated code]
+·         Quick-Shift [7] [VLFeat]
+·         SLIC Superpixels [8] [Project]
+·         Segmentation by Minimum Code Length [9] [Project]
+·         Biased Normalized Cut [10] [Project]
+·         Segmentation Tree [11-12] [Project]
+·         Entropy Rate Superpixel Segmentation [13] [Code]
+1.    J. Shi and J Malik, Normalized Cuts and Image Segmentation, PAMI, 2000 [PDF]
+2.    X. Ren and J. Malik. Learning a classification model for segmentation.ICCV, 2003. [PDF]
+3.    P. Felzenszwalb and D. Huttenlocher. Efficient Graph-Based Image Segmentation, IJCV 2004. [PDF]
+4.    D. Comaniciu, P Meer. Mean Shift: A Robust Approach Toward Feature Space Analysis. PAMI 2002. [PDF]
+5.    P. Arbelaez, M. Maire, C. Fowlkes and J. Malik. Contour Detection and Hierarchical Image Segmentation. PAMI, 2011. [PDF]
+6.    A. Levinshtein, A. Stere, K. N. Kutulakos, D. J. Fleet, S. J. Dickinson, and K. Siddiqi, TurboPixels: Fast Superpixels Using Geometric Flows, PAMI 2009. [PDF]
+7.    A. Vedaldi and S. Soatto, Quick Shift and Kernel Methodsfor Mode Seeking,ECCV, 2008. [PDF]
+8.    R. Achanta, A. Shaji, K. Smith, A. Lucchi, P. Fua, and S. Susstrunk, SLIC Superpixels, EPFL Technical Report, 2010. [PDF]
+9.    A. Y. Yang, J. Wright, S. Shankar Sastry, Y. Ma , Unsupervised Segmentation of Natural Images via Lossy Data Compression, CVIU, 2007. [PDF]
+10.  S. Maji, N. Vishnoi and J. Malik, Biased Normalized Cut, CVPR 2011
+11.  E. Akbas and N. Ahuja, “From ramp discontinuities to segmentation tree,”  ACCV 2009. [PDF]
+12.  N. Ahuja, “A Transform for Multiscale Image Segmentation by Integrated Edge and Region Detection,” PAMI 1996 [PDF]
+13.  M.-Y. Liu, O. Tuzel, S. Ramalingam, and R. Chellappa, Entropy Rate Superpixel Segmentation, CVPR 2011 [PDF]
+Object Detection
+·         A simple object detector with boosting [Project]
+·         INRIA Object Detection and Localization Toolkit [1] [Project]
+·         Discriminatively Trained Deformable Part Models [2] [Project]
+·         Cascade Object Detection with Deformable Part Models [3] [Project]
+·         Poselet [4] [Project]
+·         Implicit Shape Model [5] [Project]
+·         Viola and Jones's Face Detection [6] [Project]
+1.    N. Dalal and B. Triggs. Histograms of Oriented Gradients for Human Detection. CVPR 2005. [PDF]
+2.    P. Felzenszwalb, R. Girshick, D. McAllester, D. Ramanan.
+Object Detection with Discriminatively Trained Part Based Models, PAMI, 2010 [PDF]
+3.    P. Felzenszwalb, R. Girshick, D. McAllester. Cascade Object Detection with Deformable Part Models. CVPR 2010 [PDF]
+4.    L. Bourdev, J. Malik, Poselets: Body Part Detectors Trained Using 3D Human Pose Annotations, ICCV 2009 [PDF]
+5.    B. Leibe, A. Leonardis, B. Schiele. Robust Object Detection with Interleaved Categorization and Segmentation, IJCV, 2008. [PDF]
+6.    P. Viola and M. Jones, Rapid Object Detection Using a Boosted Cascade of Simple Features, CVPR 2001. [PDF]
+Saliency Detection
+·         Itti, Koch, and Niebur' saliency detection [1] [Matlab code]
+·         Frequency-tuned salient region detection [2] [Project]
+·         Saliency detection using maximum symmetric surround [3] [Project]
+·         Attention via Information Maximization [4] [Matlab code]
+·         Context-aware saliency detection [5] [Matlab code]
+·         Graph-based visual saliency [6] [Matlab code]
+·         Saliency detection: A spectral residual approach. [7] [Matlab code]
+·         Segmenting salient objects from images and videos. [8] [Matlab code]
+·         Saliency Using Natural statistics. [9] [Matlab code]
+·         Discriminant Saliency for Visual Recognition from Cluttered Scenes. [10] [Code]
+·         Learning to Predict Where Humans Look [11] [Project]
+·         Global Contrast based Salient Region Detection [12] [Project]
+1.    L. Itti, C. Koch, and E. Niebur. A model of saliency-based visual attention for rapid scene analysis. PAMI, 1998. [PDF]
+2.    R. Achanta, S. Hemami, F. Estrada, and S. Susstrunk. Frequency-tuned salient region detection. In CVPR, 2009. [PDF]
+3.    R. Achanta and S. Susstrunk. Saliency detection using maximum symmetric surround. In ICIP, 2010. [PDF]
+4.    N. Bruce and J. Tsotsos. Saliency based on information maximization. InNIPS, 2005. [PDF]
+5.    S. Goferman, L. Zelnik-Manor, and A. Tal. Context-aware saliency detection. In CVPR, 2010. [PDF]
+6.    J. Harel, C. Koch, and P. Perona. Graph-based visual saliency. NIPS, 2007. [PDF]
+7.    X. Hou and L. Zhang. Saliency detection: A spectral residual approach.CVPR, 2007. [PDF]
+8.    E. Rahtu, J. Kannala, M. Salo, and J. Heikkila. Segmenting salient objects from images and videos. CVPR, 2010. [PDF]
+9.    L. Zhang, M. Tong, T. Marks, H. Shan, and G. Cottrell. Sun: A bayesian framework for saliency using natural statistics. Journal of Vision, 2008. [PDF]
+10.  D. Gao and N. Vasconcelos, Discriminant Saliency for Visual Recognition from Cluttered Scenes, NIPS, 2004. [PDF]
+11.  T. Judd and K. Ehinger and F. Durand and A. Torralba, Learning to Predict Where Humans Look, ICCV, 2009. [PDF]
+12.  M.-M. Cheng, G.-X. Zhang, N. J. Mitra, X. Huang, S.-M. Hu. Global Contrast based Salient Region Detection. CVPR 2011.
+Image Classification
+·         Pyramid Match [1] [Project]
+·         Spatial Pyramid Matching [2] [Code]
+·         Locality-constrained Linear Coding [3] [Project] [Matlab code]
+·         Sparse Coding [4] [Project] [Matlab code]
+·         Texture Classification [5] [Project]
+·         Multiple Kernels for Image Classification [6] [Project]
+·         Feature Combination [7] [Project]
+·         SuperParsing [Code]
+1.    K. Grauman and T. Darrell, The Pyramid Match Kernel: Discriminative Classification with Sets of Image Features, ICCV 2005. [PDF]
+2.    S. Lazebnik, C. Schmid, and J. Ponce. Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories, CVPR 2006[PDF]
+3.    J. Wang, J. Yang, K. Yu, F. Lv, T. Huang, and Y. Gong. Locality-constrained Linear Coding for Image Classification, CVPR, 2010 [PDF]
+4.    J. Yang, K. Yu, Y. Gong, T. Huang, Linear Spatial Pyramid Matching using Sparse Coding for Image Classification, CVPR, 2009 [PDF]
+5.    M. Varma and A. Zisserman, A statistical approach to texture classification from single images, IJCV2005. [PDF]
+6.    A. Vedaldi, V. Gulshan, M. Varma, and A. Zisserman, Multiple Kernels for Object Detection. ICCV, 2009. [PDF]
+7.    P. Gehler and S. Nowozin, On Feature Combination for Multiclass Object Detection, ICCV, 2009. [PDF]
+8.    J. Tighe and S. Lazebnik, SuperParsing: Scalable Nonparametric Image
+Parsing with Superpixels, ECCV 2010. [PDF]
+Category-Independent Object Proposal
+·         Objectness measure [1] [Code]
+·         Parametric min-cut [2] [Project]
+·         Object proposal [3] [Project]
+1.    B. Alexe, T. Deselaers, V. Ferrari, What is an Object?, CVPR 2010 [PDF]
+2.    J. Carreira and C. Sminchisescu. Constrained Parametric Min-Cuts for Automatic Object Segmentation, CVPR 2010. [PDF]
+3.    I. Endres and D. Hoiem. Category Independent Object Proposals, ECCV 2010. [PDF]
+MRF
+·         Graph Cut [Project] [C++/Matlab Wrapper Code]
+1.    Y. Boykov, O. Veksler and R. Zabih, Fast Approximate Energy Minimization via Graph Cuts, PAMI 2001 [PDF]
+Shadow Detection
+·         Shadow Detection using Paired Region [Project]
+·         Ground shadow detection [Project]
+1.    R. Guo, Q. Dai and D. Hoiem, Single-Image Shadow Detection and Removal using Paired Regions, CVPR 2011 [PDF]
+2.    J.-F. Lalonde, A. A. Efros, S. G. Narasimhan, Detecting Ground Shadowsin Outdoor Consumer Photographs, ECCV 2010 [PDF]
+Optical Flow
+·         Kanade-Lucas-Tomasi Feature Tracker [C Code]
+·         Optical Flow Matlab/C++ code by Ce Liu [Project]
+·         Horn and Schunck's method by Deqing Sun [Code]
+·         Black and Anandan's method by Deqing Sun [Code]
+·         Optical flow code by Deqing Sun [Matlab Code] [Project]
+·         Large Displacement Optical Flow by Thomas Brox [Executable for 64-bit Linux] [ Matlab Mex-functions for 64-bit Linux and 32-bit Windows] [Project]
+·         Variational Optical Flow by Thomas Brox [Executable for 64-bit Linux] [ Executable for 32-bit Windows ] [ Matlab Mex-functions for 64-bit Linux and 32-bit Windows ] [Project]
+1.    B.D. Lucas and T. Kanade, An Iterative Image Registration Technique with an Application to Stereo Vision, IJCAI 1981. [PDF]
+2.    J. Shi, C. Tomasi, Good Feature to Track, CVPR 1994. [PDF]
+3.    C. Liu. Beyond Pixels: Exploring New Representations and Applications for Motion Analysis. Doctoral Thesis. MIT 2009. [PDF]
+4.    B.K.P. Horn and B.G. Schunck, Determining Optical Flow, Artificial Intelligence 1981. [PDF]
+5.    M. J. Black and P. Anandan, A framework for the robust estimation of optical flow, ICCV 93. [PDF]
+6.    D. Sun, S. Roth, and M. J. Black, Secrets of optical flow estimation and their principles, CVPR 2010. [PDF]
+7.    T. Brox, J. Malik, Large displacement optical flow: descriptor matching in variational motion estimation, PAMI, 2010 [PDF]
+8.    T. Brox, A. Bruhn, N. Papenberg, J. Weickert, High accuracy optical flow estimation based on a theory for warping, ECCV 2004 [PDF]
+Object Tracking
+·         Particle filter object tracking [1] [Project]
+·         KLT Tracker [2-3] [Project]
+·         MILTrack [4] [Code]
+·         Incremental Learning for Robust Visual Tracking [5] [Project]
+·         Online Boosting Trackers [6-7] [Project]
+·         L1 Tracking [8] [Matlab code]
+1.    P. Perez, C. Hue, J. Vermaak, and M. Gangnet. Color-Based Probabilistic Tracking ECCV, 2002. [PDF]
+2.    B.D. Lucas and T. Kanade, An Iterative Image Registration Technique with an Application to Stereo Vision, IJCAI 1981. [PDF]
+3.    J. Shi, C. Tomasi, Good Feature to Track, CVPR 1994. [PDF]
+4.    B. Babenko, M. H. Yang, S. Belongie, Robust Object Tracking with Online Multiple Instance Learning, PAMI 2011 [PDF]
+5.    D. Ross, J. Lim, R.-S. Lin, M.-H. Yang, Incremental Learning for Robust Visual Tracking, IJCV 2007 [PDF]
+6.    H. Grabner, and H. Bischof, On-line Boosting and Vision, CVPR 2006 [PDF]
+7.    H. Grabner, C. Leistner, and H. Bischof, Semi-supervised On-line Boosting for Robust Tracking, ECCV 2008 [PDF]
+8.    X. Mei and H. Ling, Robust Visual Tracking using L1 Minimization, ICCV, 2009. [PDF]
+Image Matting
+·         Closed Form Matting [Code]
+·         Spectral Matting [Project]
+·         Learning-based Matting [Code]
+1.    A. Levin D. Lischinski and Y. Weiss. A Closed Form Solution to Natural Image Matting, PAMI 2008 [PDF]
+2.    A. Levin, A. Rav-Acha, D. Lischinski. Spectral Matting. PAMI 2008. [PDF]
+3.    Y. Zheng and C. Kambhamettu, Learning Based Digital Matting, ICCV 2009 [PDF]
+Bilateral Filtering
+·         Fast Bilateral Filter [Project]
+·         Real-time O(1) Bilateral Filtering [Code]
+·         SVM for Edge-Preserving Filtering [Code]
+1.    Q. Yang, K.-H. Tan and N. Ahuja,  Real-time O(1) Bilateral Filtering,
+CVPR 2009. [PDF]
+2.    Q. Yang, S. Wang, and N. Ahuja, SVM for Edge-Preserving Filtering,
+CVPR 2010. [PDF]
+Image Denoising
+·         K-SVD [Matlab code]
+·         BLS-GSM [Project]
+·         BM3D [Project]
+·         FoE [Code]
+·         GFoE [Code]
+·         Non-local means [Code]
+·         Kernel regression [Code]
+Image Super-Resolution
+·         MRF for image super-resolution [Project]
+·         Multi-frame image super-resolution [Project]
+·         UCSC Super-resolution [Project]
+·         Sprarse coding super-resolution [Code]
+Image Deblurring
+·         Eficient Marginal Likelihood Optimization in Blind Deconvolution [Code]
+·         Analyzing spatially varying blur [Project]
+·         Radon Transform [Code]
+Image Quality Assessment
+·         FSIM [1] [Project]
+·         Degradation Model [2] [Project]
+·         SSIM [3] [Project]
+·         SPIQA [Code]
+1.    L. Zhang, L. Zhang, X. Mou and D. Zhang, FSIM: A Feature Similarity Index for Image Quality Assessment, TIP 2011. [PDF]
+2.    N. Damera-Venkata, and T. D. Kite, W. S. Geisler, B. L. Evans, and A. C. Bovik,Image Quality Assessment Based on a Degradation Model, TIP 2000. [PDF]
+3.    Z. Wang, A. C. Bovik, H. R. Sheikh and E. P. Simoncelli, Image quality assessment: from error visibility to structural similarity, TIP 2004. [PDF]
+4.    B. Ghanem, E. Resendiz, and N. Ahuja, Segmentation-Based Perceptual Image Quality Assessment (SPIQA), ICIP 2008. [PDF]
+Density Estimation
+·         Kernel Density Estimation Toolbox [Project]
+Dimension Reduction
+·         Dimensionality Reduction Toolbox [Project]
+·         ISOMAP [Code]
+·         LLE [Project]
+·         LaplacianEigenmaps [Code]
+·         Diffusion maps [Code]
+Sparse Coding
+Low-Rank Matrix Completion
+Nearest Neighbors matching
+·         ANN: Approximate Nearest Neighbor Searching [Project] [Matlab wrapper]
+·         FLANN: Fast Library for Approximate Nearest Neighbors [Project]
+Steoreo
+·         StereoMatcher [Project]
+1.    D. Scharstein and R. Szeliski. A taxonomy and evaluation of dense two-frame stereo correspondence algorithms, IJCV 2002 [PDF]
+Structure from motion
+·         Boundler [1] [Project]
+1.    N. Snavely, S. M. Seitz, R. Szeliski. Photo Tourism: Exploring image collections in 3D. SIGGRAPH, 2006. [PDF]
+Distance Transformation
+·         Distance Transforms of Sampled Functions [1] [Project]
+1.    P. F. Felzenszwalb and D. P. Huttenlocher. Distance transforms of sampled functions. Technical report, Cornell University, 2004. [PDF]
+Chamfer Matching
+·         Fast Directional Chamfer Matching [Code]
+1.    M.-Y. Liu, O. Tuzel, A. Veeraraghavan, and R. Chellappa, Fast Directional Chamfer Matching, CVPR 2010 [PDF]
+Clustering
+·         K-Means [VLFeat] [Oxford code]
+·         Spectral Clustering [UW Project][Code] [Self-Tuning code]
+·         Affinity Propagation [Project]
+Classification
+·         SVM [Libsvm] [SVM-Light] [SVM-Struct]
+·         Boosting
+·         Naive Bayes
+Regression
+·         SVM
+·         RVM
+·         GPR
+Multiple Kernel Learning (MKL)
+·         SHOGUN [Project]
+·         OpenKernel.org [Project]
+·         DOGMA (online algorithms) [Project]
+·         SimpleMKL [Project]
+1.    S. Sonnenburg, G. Rätsch, C. Schäfer, B. Schölkopf . Large scale multiple kernel learning. JMLR, 2006. [PDF]
+2.    F. Orabona and L. Jie. Ultra-fast optimization algorithm for sparse multi kernel learning. ICML, 2011. [PDF]
+3.    F. Orabona, L. Jie, and B. Caputo. Online-batch strongly convex multi kernel learning. CVPR, 2010. [PDF]
+4.    A. Rakotomamonjy, F. Bach, S. Canu, and Y. Grandvalet. Simplemkl. JMRL, 2008. [PDF]
+Multiple Instance Learning (MIL)
+·         MIForests [1] [Project]
+·         MILIS [2]
+·         MILES [3] [Project] [Code]
+·         DD-SVM [4] [Project]
+1.    C. Leistner, A. Saffari, and H. Bischof, MIForests: Multiple-Instance Learning with Randomized Trees, ECCV 2010. [PDF]
+2.    Z. Fu, A. Robles-Kelly, and J. Zhou, MILIS: Multiple instance learning with instance selection, PAMI 2010. [PDF]
+3.    Y. Chen, J. Bi and J. Z. Wang, MILES: Multiple-Instance Learning via Embedded Instance Selection. PAMI 2006 [PDF]
+4.    Yixin Chen and James Z. Wang, Image Categorization by Learning and Reasoning with Regions, JMLR 2004. [PDF]
+Other Utilities
+·         Code for downloading Flickr images, by James Hays [Code]
+·         The LightspeedMatlab Toolbox by Tom Minka [Code]
+·         MATLAB Functions for Multiple View Geometry [Code]
+·         Peter's Functions for Computer Vision [Code]
+·         Statistical Pattern Recognition Toolbox [Code]
+Useful Links(dataset, lectures, and other softwares)
+Conference Information
+·         Computer Image Analysis, Computer Vision Conferences
+Papers
+·         Computer vision paper on the web
+·         NIPS Proceedings
+Datasets
+·         Compiled list of recognition datasets
+·         Computer vision dataset from CMU
+Lectures
+·         Videolectures
+Source Codes
+·         Computer Vision Algorithm Implementations
+·         OpenCV
+·         Source Code Collection for Reproducible Research
+图像处理：
+全局特征
+局部特征
+图像质量评价
+显著性检测
+图像滤波
+IP: Image Process
+Global Feature
+Local Feature
+Image Quality Analysis
+Salience Detection
+Image Filtering
+Year
+Topic
+Method
+Reference (Formal)
+2009
+Global Feature
+PHOG: Pyramids of Histograms of Oriented Gradients
+A. Bosch, A. Zisserman, and X. Munoz, Representing shape with a spatial pyramid kernel, CIVR, 2007
+2009
+Global Feature
+Gist
+A. Oliva and A. Torralba. Modeling the shape of the scene: a holistic representation of the spatial envelope, IJCV, 2001
+2009
+Local Feature
+SIFT: Scale Invariant Feature Transform
+D. Lowe. Distinctive Image Features from Scale-Invariant Keypoints, IJCV 2004.
+2010
+Local Feature
+Affine-SIFT: Affine-Scale Invariant Feature Transform
+J.M. Morel and G.Yu, ASIFT, A new framework for fully affine invariant image comparison. SIAM Journal on Imaging Sciences, 2009
+2011
+Local Feature
+LBP: Local Binary Pattern
+M. Pietikainen and J. Heikkila, CVPR 2011 Tutorial
+2012
+Local Feature
+PCA-SIFT: Principal Component Analysis - Scale Invariant Feature Transform
+Y. Ke and R. Sukthankar, PCA-SIFT: A More Distinctive Representation for Local Image Descriptors,CVPR, 2004
+2012
+Local Feature
+SC: Shape Context
+S. Belongie, J. Malik and J. Puzicha. Shape matching and object recognition using shape contexts, PAMI, 2002
+2012
+Image Quality Analysis
+SSim: Structure Similarity
+Image quality assessment: from error visibility to structural similarity [J]. IEEE Trans. Image Process, 2004, 13(4): 600–612.
+2012
+Image Quality Analysis
+IW-SSim: Information Content Weighted Structure Similarity
+Z. Wang and Q. Li, "Information content weighting for perceptual image quality assessment," IEEE Transactions on Image Processing, vol. 20, no 5, pp. 1185-1198, May 2011.
+2012
+Image Quality Analysis
+MS-SSim: Multi-scale Structure Similarity
+Wang Z, Simoncelli E P, Bovik A C. Multi-scale  structural similarity for image quality assessment [J].  Proc. IEEE Asilomar Conf. Signals, Syst.Comput., 2003:. 1398–1402.
+2012
+Image Quality Analysis
+MSE：Mean Square Error
+Wang Z,  Bovik A C, Sheikh H R, et al. Image quality assessment: from error visibility to structural similarity [J]. IEEE Trans. Image Process, 2004, 13(4): 600–612.
+2012
+Image Quality Analysis
+VSNR: Visual Signal-to-Noise Ratio
+Chandler D M, Hemami S S. VSNR: a Wavelet based visual signal-to-noise ratio for  natural images [J]. IEEE Trans. Image Process, 2007,16(9): 2284–2298.
+2012
+Image Quality Analysis
+3-SSIM: 3 -Chanle Structure Similarity
+Li C and  Bovik A C. Three-component weighted structural similarity index[C]\\ Proceedings of the International Society for Optical Engineering, 2009.
+2012
+Image Resizing
+Context-Aware:Context
+Shai Avidan, Ariel Shamir. Seam carving for content-aware image resizing. ACM SIGGRAPH '07. 26(3). 2007
+2012
+Salience Detection
+Itti Model
+Itti, L. A model of saliency-based visual attention for rapid scene analysis . Pattern Analysis and Machine Intelligence, IEEE Transactions on. 20(11): 1254 - 1259. 1998.
+2012
+Salience Detection
+MSSS: Saliency Detection using Maximum Symmetric
+Achanta, R.; Süsstrunk, S. Saliency detection using maximum symmetric surround. Image Processing (ICIP), 2010 17th IEEE International Conference on. 2653 - 2656, 2010.
+2012
+Salience Detection
+AIM: Attention based on Information Maximization
+Bruce, N.D.B., Tsotsos, J.K., Saliency Based on Information Maximization. Advances in Neural Information Processing Systems, 18, pp. 155-162, June 2006. Selected for oral presentation
+2012
+Salience Detection
+SF: Saliency Filters: Contrast Based Filtering for Salient Region Detection
+Perazzi, F. Krahenbuhl, P. ; Pritch, Y. ; Hornung, A. Saliency Filters: Contrast Based Filtering for Salient Region Detection. Computer Vision and Pattern Recognition (CVPR), 2012 IEEE Conference on. 733 - 740. 2012
+2012
+Salience Detection
+SR: Sspectral Residual
+Xiaodi Hou; Liqing Zhang. Saliency Detection: A Spectral Residual Approach. Computer Vision and Pattern Recognition, 2007. CVPR '07. IEEE Conference on. 1-8. 2007.
+2012
+Salience Detection
+HC: Histogram-based Contrast,  RC: Region-based Contrast
+M.-M. Cheng, G.-X. Zhang, N. J. Mitra, X. Huang, S.-M. Hu. Global Contrast based Salient Region Detection. CVPR, 2011
+2012
+Salience Detection
+CRF: Conditional Random Field
+Tie Liu; Jian Sun; Nan-Ning Zheng; Xiaoou Tang; Heung-Yeung Shum. Learning to Detect A Salient Object. Computer Vision and Pattern Recognition, 2007. CVPR '07. IEEE Conference on. 1-8. 2007.
+2012
+Salience Detection
+IG: Interest Gaussian
+R. Achanta, S. Hemami, F. Estrada, and S. Susstrunk. Frequency-tuned salient region detection. In CVPR, 2009
+2012
+Salience Detection
+Context-Aware:Context
+S. Goferman, L. Zelnik-Manor, and A. Tal. Context-aware saliency detection. In CVPR, 2010.
+2012
+Salience Detection
+Salient region detection and segmentation.
+R. Achanta, F. Estrada, P. Wils, and S. S¨usstrunk. Salient region detection and segmentation. In ICVS, pages 66–75. Springer, 2008. 410, 412, 414
+2012
+Salience Detection
+GBVS：Graph-Based Visual Saliency
+J. Harel, C. Koch, and P. Perona. Graph-based visua saliency. In NIPS, pages 545–552, 2006. 410, 412, 414
+2012
+Salience Detection
+SUN：Saliency Using Natural statistics
+A Bayesian Framework for Saliency Using Natural Statistics
+2012
+Salience Detection
+Fuzzy Growing
+Y.-F. Ma and H.-J. Zhang, “Contrast-based image attention analysis by using fuzzy growing,” ACM International Conference on Multimedia, pp. 374–381, November 2003.
+2012
+Salience Detection
+DSD：Discriminant Saliency Detector
+Achanta, R. Discriminant Saliency for Visual Recognition from Cluttered Scenes[C]/Proc. Of IEEE  Conference Publications. On Hong Kong IEEE press. 2010,Pages: 2653 - 2656
+2012
+Salience Detection
+HS：Human Saliency
+Judd, T. Ehinger, K. Learning to Predict Where Humans Look[C]/Proc. Of IEEE  Conference Publications. On Kyoto ,Pages:2106 - 2113
+2009
+Image Filtering
+BF: Bilateral Filtering
+S. Paris and F. Durand, A Fast Approximation of the Bilateral Filter using a Signal Processing Approach, ECCV, 2006
+2012
+Image Filtering
+BF: Bilateral Filtering
+Q. Yang, K.-H. Tan and N. Ahuja,  Real-time O(1) Bilateral Filtering, CVPR 2009
+2012
+Image Filtering
+BF: Bilateral Filtering
+Q. Yang, S. Wang and N. Ahuja , Real-time Specular Highlight Removal Using Bilateral Filtering, ECCV 2010
+2009
+Image Filtering
+BF: Bilateral Filtering
+S. Paris and F. Durand, A Fast Approximation of the Bilateral Filter using a Signal Processing Approach, ECCV, 2006
+
+
+机器学习：
+判决模型
+生成模型
+图模型
+聚类
+流形
+核方法
+距离函数
+迁移学习
+集成学习
+ML: Machine Learning
+Discriminative Model
+Generated Model
+Graph Model
+Clustering
+Manifold
+Kernel
+Distance
+Transfer Learning
+Ensemble Learning
+2008
+Discriminative Model
+SVM: Support Vector Machines
+C.-W. Hsu, C.-J. Lin. A simple decomposition method for support vector machines , Machine Learning 46(2002), 291-314
+2010
+Discriminative Model
+LDA: Linear Discriminant Analysis
+C. Strecha, A. M. Bronstein, M. M. Bronstein and P. Fua. LDAHash: Improved matching with smaller descriptors, PAMI, 2011.
+2012
+Discriminative Model
+Netlab: Networks Laboratory
+C. M. Bishop, Neural Networks for Pattern RecognitionㄝOxfordUniversity Press, 1995
+2009
+Generated Model
+PLSA: Probabilistic Latent Semantic Analysis
+Fei-Fei, L. and Perona, P., "A Bayesian Heirarcical Model for Learning Natural Scene Categories", Proc. CVPR, 2005.
+2010
+Generated Model
+LDA: Latent Dirichlet Allocation
+Tracking E. B. Graphical Models for Visual Object Recognition and Sudderth Doctoral Thesis, Massachusetts Institute of Technology, May 2006.
+2010
+Generated Model
+HDP: Hierarchical Dirichlet Processes
+Targets E. Fox, E. Sudderth, and A. Willsky. Hierarchical DirichletProcesses for Tracking Maneuvering International Conference on Information Fusion, July 2007.
+2010
+Generated Model
+TDP: Transformed Dirichlet Processes
+Processes E. Sudderth, A. Torralba, W. Freeman, and A. Willsky. Describing Visual Scenes using Transformed Dirichlet. Neural Information Processing Systems, Dec. 2005.
+2009
+Graph Model
+CRF: Conditional Random Field, MRF: Markov Random Field
+S. V. N. Vishwanathan. Nicol N. Schraudolph. Mark W. Schmidt. Kevin P. Murphy. Accelerated training of conditional random fields with stochastic gradient methods. Proceeding ICML '06 Proceedings of the 23rd international conference on Machine learning. Pages 969 - 976. 2006.
+2009
+Graph Model
+ICM: Iterated Conditional Modes
+S Li. Markov Random Field Modeling in Computer Vision Springer-Verlag, 1995
+2010
+Clustering
+AP: Affinity Propagation (k-centers; k-means; klogk; mdgEM: Mixture Directional Gaussian - Exception Maximum; migEM: Mixture Isotropic Gaussian - Exception Maximum;Clusteing with Quantized/ Quantized Extension)
+Clustering by Passing Messages Between Data Points. Brendan J. Frey and Delbert Dueck, Science 315, 972–976, February 2007.
+2010
+Manifold
+PCA: Principal Component Analysis, LE: Laplacian Eigenmap, LLE: Local Linear Embedding, HLLE: Hessian Local Linear Embedding, Isomap: Isometric Feature Mapping
+L.J.P. van der Maaten, E.O. Postma, and H.J. van den Herik.Dimensionality Reduction: A Comparative Review. Tilburg UniversityTechnical Report, TiCC-TR 2009-005, 2009.
+2012
+Kernel
+SKMsmo: Support Kernel Machine - Sequential Minimal Optimization
+Bach, F.R. Lanckriet, G.R.G., Jordan , M.I. Fast Kernel Learning using Sequential Minimal Optimization . Technical Report CSD-04-1307, Division of Computer Science, University of California , Berkeley . 2004
+2012
+Kernel
+SimpleMKL: Simple Multi-Kernel Learning
+A. Rakotomamonjy, F. Bach, S. Canu, and Y. Grandvalet. Simplemkl. JMRL, 2008
+2012
+Distance
+EMD: Earth Mover's Distance
+H. Ling and K. Okada, An Efficient Earth Mover's Distance Algorithm for Robust Histogram Comparison, PAMI 2007
+2012
+Distance
+Pwmetric: Pair-Wise Metric
+Modeling and Estimating Persistent Motion with Geometric Flows. DahuaLin, Eric Grimson, and John Fisher. 23rd IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2010.
+2009
+Ensemble Learning
+Boosting
+A. Vezhnevets, O. Barinova . Avoiding Boosting Overfitting by Removing 'Confusing Samples. ECML 2007, Oral.
+2009
+Ensemble Learning
+Boosting
+Theoretical and Empirical Analysis of Diversity in Non-Stationary Learning, R. Stapenhurst and G. Brown, 2011 IEEE Symposium on Computational Intelligence in Dynamic and Uncertain Environments. 2011.
+2009
+Ensemble Learning
+Alignment
+Z. H. Zhou, W. Tang. Clusterer Ensemble [J]. Knowledge-Based Systems, 2006, 19(1): 77-83
+2012
+Transfer Learning
+CCTL: Cross Category Transfer Learning
+Guo-Jun Qi, Charu Aggarwal, Yong Rui, Qi Tian, Shiyu Chang and Thomas Huang. Towards Cross-Category Knowledge Propagation for Learning Visual Concepts, in Proc. of IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2011), Colorado Springs, Colorado, June 21-23, 2011.
+2012
+Transfer Learning
+MSTR: Multi-Source Transfer Learning
+Ping Luo, Fuzhen Zhuang, Hui Xiong, Yuhong Xiong, Qing He. Transfer learning from multiple source domains via consensus regularization. Proceeding CIKM '08 Proceedings of the 17th ACM conference on Information and knowledge management. Pages 103-112. 2008.
+计算机视觉：
+图像超分辨率重建
+图像配准
+图像分割
+图像抠图
+图像修补
+图像分类
+图像检索
+图像理解
+光流
+目标跟踪
+图像深度估计
+语义分析
+数据集
+CV: Computer Vision
+Image Super-Resolution
+Image Registration
+Image Segmentation
+Image Matting
+Image Inpainting
+Image Classification
+Image Retrieval
+Image Understanding
+Optical Flow
+Object Tracking
+Image Depth
+Semantic Analysis
+Data Set
+2012
+Image Super-Resolution
+Super-resolution as Sparse Representation
+Jianchao Yang, John Wright, Thomas Huang, and Yi Ma. Image Super-resolution as Sparse Representation of Raw Image Patches. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2008.
+2009
+Image Registration
+Base on SIFT(Scale Invariant Feature Transform)
+D. Lowe. Distinctive Image Features from Scale-Invariant Keypoints, IJCV 2004.
+2011
+Image Segmentation
+SP: Super Pixcels
+X. Ren and J. Malik. Learning a classification model for segmentation. ICCV, 2003
+2012
+Image Segmentation
+GC: Graph Cut (Max Flow/ Min Cut)
+L. Gorelick, A. Delong, O. Veksler, Y. Boykov, Recursive MDL via Graph Cuts: Application to Segmentation, International Conference on Computer Vision. 2011,
+2012
+Image Segmentation
+Ncut: Normal Cut
+J. Shi and J Malik, Normalized Cuts and Image Segmentation, PAMI, 2000
+2012
+Image Matting
+Closed-Form Solution
+AnatLevin,DaniLischinski,andYairWeiss.A Closed-Form Solution to Natural Imae Matting,2006
+2012
+Image Matting
+SpectralMatting
+AnatLevin,AlexRav-Acha,andDaniLischinski. Spectral Matting,2008
+2012
+Image Matting
+KnockOut
+A. Berman, A. Dadourian, and P. Vlahos. Method for removing from an image the background surrounding a selected object,2000
+2012
+Image Matting
+BayesianMatting
+Yung-Yu Chuang,Brian Curless1David H. Salesin1, Richard Szeliski.A Bayesian Approach to Digital Matting,2000
+2012
+Image Matting
+Learning Based Matting
+YuanjieZheng,ChandraKambhamettu.Learning Based Digital Matting,2009
+2012
+ImageInpainting
+Criminisi Inpainting
+Antonio Criminisi, Patrick Perez, and KentaroToyama.Object Removal by Exemplar-Based Inpainting,2003
+2012
+image Classification
+SC: Sparse Coding
+Sparse Coding for Image Classification
+2010
+image Classification
+ICA : Independent Component Analysis
+Hyvärinen A. Testing the ICA mixing matrix based on inter-subject or inter-session consistency.NeuroImage.
+2010
+image Classification
+FastICA: Fast Independent Component Analysis
+A. Hyvärinen, J. Karhunen, E. Oja . Independent Component Analysis. Wiley-Interscience. 2001
+2010
+Image Classification
+SPM: Spatial Pyramid Matching, BoF: Bag of Feature (BoW: Bag of Word)
+S. Lazebnik, C. Schmid, and J. Ponce. Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, New York , June 2006, vol. II, pp. 2169-2178.
+2011
+Image Classification
+LLC: Locality-constrained Linear Coding
+Jianchao Yang, Kai Yu, Yihong Gong, and Thomas Huang. Linear spatial pyramid matching using sparse coding for image classification. CVPR'09.
+2011
+Image Classification
+EMK: Efficient Match Kernels
+Liefeng Bo, Cristian Sminchisescu Efficient Match Kernels between Sets of Features for Visual Recognition, Advances in Neural Information Processing Systems (NIPS), December, 2009.
+2008
+Image Retrieval
+The Pyramid Match: Efficient Matching for Retrieval and Recognition
+K. Grauman and T. Darrell.  The Pyramid Match Kernel: Discriminative Classification with Sets of Image Features, ICCV 2005
+2012
+Image Understanding
+TSU: Towards Total Scene Understanding
+Li-Jia Li, Richard Socher and Li Fei-Fei. Towards Total Scene Understanding:Classification, Annotation and Segmentation in an Automatic Framework. Computer Vision and Pattern Recognition (CVPR) 2009.
+2012
+Image Understanding
+Object Context
+Yong Jae Lee and Kristen Grauman. Object-Graphs for Context-Aware Category Discovery. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), San Francisco , CA , June 2010.
+2012
+Optical Flow
+Black and Anandan's Optical Flow
+Black, M.J. Anandan, P. A framework for the robust estimation of optical flow. Computer Vision, 1993. Proceedings. Fourth International Conference on. 1993.
+2012
+Object Tracking
+PF: Particle Filter (LASSO: Least Absolute Shrinkage and Selection Operator)
+X. Mei and H. Ling. Robust Visual Tracking and Vehicle Classification via Sparse Representation. IEEE Trans. on Pattern Analysis and Machine Intelligence (PAMI), 33(11):2259--2272, 2011.
+2012
+Object Tracking
+Incremental Learning
+D. Ross, J. Lim, R.-S. Lin, M.-H. Yang, Incremental Learning for Robust Visual Tracking, IJCV 2007
+2012
+Object Tracking
+On-Line Boosting
+Tracking the Invisible: Learning Where the Object Might be H. Grabner, J. Matas, L. Van Gool, and P.Cattin In Proceedings IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2010
+2012
+Object Tracking
+Motion Tracking
+C. Stauffer and W. E. L. Grimson. Learning patterns of activity using real-time tracking, PAMI, 2000
+2012
+Object Tracking
+Kanade-Lucas-Tomasi Feature Tracker
+B. D. Lucas and T. Kanade. An Iterative Image Registration Technique with an Application to Stereo Vision. IJCAI, 1981
+2012
+Object Tracking
+Tracking Decomposition
+J Kwon and K. M. Lee, Visual Tracking Decomposition, CVPR 2010
+2012
+Object Tracking
+Adaptive Structural Local Sparse Appearance Model
+Xu Jia, Huchuan Lu, Minghsuan Yang, Visual Tracking via Adaptive Structural Local Sparse Appearance Model, International Conference on Computer Vision and Pattern Recognition,2012,.
+2012
+Object Tracking
+Sparsity-based Collaborative Model
+Wei Zhong, Huchuan Lu, Minghsuan Yang, Robust Object Tracking via Sparsity-based Collaborative Model, International Conference on Computer Vision and Pattern Recognition,2012.
+2012
+Image Depth
+DC: Dark Channel
+Kaiming He, Jian Sun, and Xiaoou Tang, Single Image Haze Removal using Dark Channel Prior, by  in TPAMI 2011.
+2010
+Semantic Analysis
+Wordnet
+WordNet 3.0 Reference Manual
+2008
+Data Set
+Caltech 256: Caltech-256 benchmarks
+Citation: caltech-256 object Gategory dataset[c].Greg Griffin，Alex Holub,California Institute of Technology on 2007
+2008
+Data Set
+VOCdevkit: PASCAL VOC Development Kits (PASCAL: Pattern Analysis, Statistical Modelling and Computational Learning)
+Citation: The PASCAL Visual Object Classes Challenge 2011 (VOC2011) Development Kit.Mark EveringhamJohn WinnMark Everingham John Winn
+2009
+Data Set
+LabelMe
+Citation: Modeling the shape of the scene: a holistic representation of the spatial envelope. A. Oliva, A.Torralba. International Journal of Computer Vision, Vol. 42(3): 145-175, 2001.
+2009
+Data Set
+Eight outdoor scene categories
+Aude Oliva, Antonio Torralba. Modeling the shape of the scene: a holistic representation of the spatial envelope. International Journal of Computer Vision, Vol. 42(3): 145-175, 2001.
+2009
+Data Set
+Fifteen Scene Categories
+Svetlana Lazebnik, Cordelia Schmid, and Jean Ponce. Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 2006.
+2009
+Data Set
+SUN Database: Scene UNderstanding Database.
+J. Xiao, J. Hays, K. Ehinger, A. Oliva, and A.Torralba. SUN Database: Large scale Scene Recognition from Abbey to Zoo. IEEE Conference on Computer Vision and Pattern Recognition. CVPR. 2010.
+2012
+Data Set
+SegBanch: The Berkely Segmentation Dataset and Benchmark
+VOI
+2012
+Data Set
+Saliency Benchmark
+R. Subramanian, H. Katti, N. Sebe1, M. Kankanhalli, T-S. Chua, An Eye Fixation Database for Saliency Detection in Images,  European Conference on Computer Vision (ECCV 2010), Heraklion, Greece, September 2010
+2012
+Data Set
+SegBanch: The Berkely Segmentation Dataset and Benchmark
+X. Ren, C. Fowlkes, J. Malik. "Figure/Ground Assignment in Natural Images", ECCV, Graz , Austria, (May 2006).
+2012
+Data Set
+Flikcer
+Citation: Flickr shapetiles : Location data created fromWOEid geotagged Flickr photos
+2012
+Data Set
+YL face: Yale Face Database
+Citation: From Few to Many: Illumination Cone Models for Face Recognition under Variable Lighting andPose[J].Georghiades, A.S. and Belhumeur .IEEE Trans. Pattern Anal. Mach. Intelligence on 2001.pages:643-660
+2012
+Data Set
+Saliency Benchmark
+R. Subramanian, H. Katti, N. Sebe1, M. Kankanhalli, T-S. Chua, An Eye Fixation Database for Saliency Detection in Images,  European Conference on Computer Vision (ECCV 2010), Heraklion, Greece, September 2010
+2012
+Data Set
+ImageCLEF Plant (CLEF: key/ french)
+Goëau, Hervé; Bonnet, Pierre; Joly, Alexis; Boujemaa,Nozha; Barthelemy, Daniel; Molino, Jean-François;Birnbaum, Philippe; Mouysset, Elise; Picard, Marie. The CLEF 2011 plant image classification task. CLEF 2011 working notes, Amsterdam , The Netherlands, 2011.
+2012
+Data Set
+ImageCLEFphoto (CLEF: key/ french)
+Citation: Diversity in Photo Retrieval: Overview of theImageCLEFPhoto Task 2009. Monica Lestari Paramita, Mark Sanderson,Lecture Notes in Computer Science, 2010, Volume 6242/2010, 45-59,
+ECCV 2012 papers on the web 已经发布了。今天浏览了一下文章列表，找出了自己感兴趣的一些论文。那个列表目前还没有公布论文的下载链接。先把列表记下来，慢慢整理链接把。
+显著性相关
+Depth Matters: Influence of Depth Cues on Visual Saliency
+Lang Congyan (Beijijng Jiaotong University), Tam Nguyen (NUS - Singapore),harish Katti (National University of Singapore), Karthik Yadati (National University of Singapore), Shuicheng Yan, Mohan Kankanhalli (National University of Singapore)
+Quaternion-based Spectral Saliency Detection for Human Eye Fixation Point Prediction   [bibtex] [code #1 - saliency - will be updated soon(ish)] [code #2 - Matlab AUC measure implementation]
+Boris Schauerte (Karlsruhe Inst. Tech.), Rainer Stiefelhagen (KarlsruheInst. of Technology)
+Geodesic Saliency Using Background Priors
+Yichen Wei (Microsoft Research), Fang Wen, Wangjiang Zhu (Tsinghua University), Jian Sun (Microsoft Research Asia)
+Saliency Modeling from Image Histograms
+Shijian Lu (I2R - A*STAR), Joo-Hwee Lim (Institute for Infocomm Research)
+Salient Object Detection: A Benchmark
+Ali Borji (University of Southern Califor), Dicky Sihite (University of Southern California), Laurent Itti (University of Southern California)
+跟踪和光流
+Online Learned Discriminative Part-Based Appearance Models forMulti-Human Tracking
+Bo Yang (USC), Ram Nevatia
+Real-Time Camera Tracking: When is High Frame-Rate Best?
+Ankur Handa (Imperial College London), Richard Newcombe (Imperial CollegeLondon), Adrien Angeli, Andrew Davison (Imperial College London)
+Online Learning of Linear Predictors for Real-Time Tracking
+Stefan Holzer (Technische Universität München), Marc Pollefeys,Slobodan Ilic (TUM), David Joseph Tan (Technische Universität München), Nassir Navab (Technische Universität München)
+Tracking Using Motion Patterns for Very Crowded Scenes
+Xuemei Zhao (Univ. of Southern California), Dian Gong (Univ. of Southern California), Gerard Medioni (University of Southern California)
+Divergence-free motion estimation
+Dominque BÃˆrÃˆziat (UPMC), Isabelle Herlin (INRIA), Nicolas Mercier (INRIA),Sergiy Zhuk (CWI)
+Coherent Filtering: Detecting Coherent Motions from Clutters
+Bolei Zhou (The Chinese University of HK), Xiaogang Wang (The ChineseUniversity of HK), Xiaoou Tang
+Statistical Inference of Motion in the Invisible
+Haroon Idrees (UCF), Imran Saleemi (UCF), Mubarak Shah (UCF)
+Group Tracking: Exploring Mutual Relations for Multiple Object Tracking
+Genquan Duan (Tsinghua University), Song Cao (Tsinghua University),Haizhou Ai (Tsinghua University), Shihong Lao (Omron Company)
+Stixels motion estimation without optical flow computation
+Bertan GÂ¸nyel (KU Leuven), Rodrigo Benenson (KU Leuven), Radu Timofte (KULeuven), Luc Van Gool (KU Leuven)
+Simultaneous Compaction and Factorization of Sparse Image Motion Matrices
+Susanna Ricco (Duke University), Carlo Tomasi
+Efficient Nonlocal Regularization for Optical Flow
+Philipp KrähenbÂ¸hl (Stanford University), Vladlen Koltun (Stanford University)
+Scale Invariant Optical Flow
+Li Xu (CUHK), Zhenlong Dai (CUHK), jiaya Jia (CUHK)
+A Naturalistic Open Source Movie for Optical Flow Evaluation
+Daniel Butler (University of Washington), Jonas Wulff (Max Planck Institute for Intelligent Systems), Garrett Stanley (Department of Biomedical Engineering - Georgia Institute of Technology), Michael Black (Max Planck Institute for Intelligent Systems)
+Dynamic Context for Tracking Behind Occlusions
+Fei Xiong (Northeastern University), Octavia Camps (Northeastern University), Mario Sznaier (Northeastern University)
+运动和视频分割
+Video Matting Using Multi-Frame Nonlocal Matting Laplacain
+Inchang Choi (KAIST), Yu-Wing Tai (KAIST), Minhaeng Lee (KAIST)
+Semi-Nonnegative Matrix Factorization for Motion Segmentation with Missing Data
+Quanyi Mo (Colorado State University), Bruce Draper (Colorado StateUniversity)
+Multi-Scale Clustering of Frame-to-Frame Correspondences for Motion Segmentation
+Ralf Dragon (Leibniz Universit\auml),t Hannover, Bodo Rosenhahn, Joern Ostermann
+Learning to segment a video to clips based on scene and camera motion
+Adarsh Kowdle (Cornell University), Tsuhan Chen (Cornell University)
+Efficient Articulated Trajectory Reconstruction using Dynamic Programming and Filters
+Jack Valmadre (CSIRO), Yingying Zhu (Csiro), Sridha Sridharan (Queensland University of Technology), Simon Lucey (CSIRO)
+Background Inpainting for Videos with Dynamic Objects and a Free-moving Camera
+Miguel Granados (MPI Informatik), Kwang In Kim (MPI for Informatics), James Tompkin (UCL), Jan Kautz (UCL), Christian Theobalt (MPI Informatik)
+Active Frame Selection for Label Propagation in Videos
+Sudheendra Vijayanarasimhan, Kristen Grauman
+Streaming Hierarchical Video Segmentation
+Chenliang Xu (SUNY at Buffalo), Caiming Xiong (SUNY at Buffalo), Jason Corso (SUNY at Buffalo)
+行为识别
+Modeling Complex Temporal Composition of Actionlets for ActivityPrediction
+Kang Li, Jie Hu (State University of New York (SUNY) at Buffalo), YunFu (SUNY at Buffalo)
+Combining Per-Frame and Per-Track Cues for Multi-Person ActionRecognition
+Sameh Khamis (University of Maryland), Vlad Morariu (University of Maryland), Larry Davis (University of Maryland)
+Script Data for Attribute-based Recognition of Composite Activities
+Marcus Rohrbach (MPI Informatics), Michaela Regneri (Saarland University), Mykhaylo Andriluka (MPI Informatik), Sikandar Amin (Max-Planck - TU Munich),Manfred Pinkal, Bernt Schiele
+A Unified Framework for Multi-Target Tracking and Collective ActivityRecognition
+Wongun Choi (The University of Michigan), Silvio Savarese (The University of Michigan - Ann Arbor)
+Activity Forecasting
+Kris Kitani (Carnegie Mellon University), James Bagnell, Martial Hebert
+Propagative Hough Voting for Human Activity Recognition
+Gang YU (NTU), Junsong Yuan (NTU), Zicheng Liu (MSR)
+Human Actions as Stochastic Kronecker Graphs
+Sinisa Todorovic (Oregon State University)
+Trajectory-Based Modeling of Human Actions with Motion Reference Points
+Yu-Gang Jiang (Fudan University), Qi Dai (Fudan University), XiangyangXue (Fudan University), Wei Liu (Columbia University), Chong-Wah Ngo (CityUniversity of Hong Kong)
+Team Activity Recognition in Sports
+Cem Direkoglu (Dublin City University), Noel O’Connor (Dublin City University)
+Real–Time Human Pose Tracking using Range Cameras
+Varun Ganapathi (Google), Christian Plagemann (Google Research), DaphneKoller (Stanford University), Sebastian Thrun (Google)
+目标检测与分割
+Object Co-detection
+Yinzge Bao (U of Michigan at Ann Arbor), Yu Xiang (University of Michigan), Silvio Savarese (The University of Michigan - Ann Arbor)
+Hausdorff Distance Constraint for Multi-Surface Segmentation
+Frank Schmidt (ESIEE), Yuri Boykov (University of Western Ontario)
+Background Subtraction using Group Sparsity and Low Rank constraint
+Xinyi Cui (Rutgers University), Junzhou Huang, shaoting Zhang (Rutgers University), Dimitris Metaxas (Rutgers University)
+Shape Sharing for Object Segmentation
+Jaechul Kim (University of Texas at Austin), Kristen Grauman
+On Learning Higher-Order Consistency Potentials for Multi-class Pixel Labeling
+Kyoungup Park (ANU), Stephen Gould (ANU)
+Object detection using strongly-supervised deformable part models
+Hossein Azizpour (KTH), Ivan Laptev
+Hough Regions for Joining Instance Localization and Segmentation
+Hayko Riemenschneider (Graz University of Technology), Sabine Sternig (Graz University of Technology), Michael Donoser (Graz University ofTechnology), Peter Roth (Graz University of Technology)
+Latent Hough Transform for Object Detection
+Nima Razavi (ETH Zurich), Juergen Gall (ETH Zurich), Pushmeet Kohli, LucVan Gool
+Annotation Propagation in Large Image Databases via Dense Image Correspondence
+Michael Rubinstein (MIT), Ce Liu (Microsoft Research New England), WilliamFreeman (Massachusetts Institute of Technology)
+Fast Tiered Labeling with Topological Priors
+Ying Zheng (Duke University - Computer Science), Steve Gu (DukeUniversity - Computer Scie), Carlo Tomasi
+Multi-Component Models for Object Detection
+Chunhui Gu (UC Berkeley), Pablo Arbelaez (UC Berkeley), Yuanqing Lin (NECLaboratories Amertica), Kai Yu (NEC Laboratories Amertica), Jitendra Malik (UCBerkeley)
+Joint Classification-Regression Forests for Spatially Structured Multi-Object Segmentation
+Ben Glocker (Microsoft Research Cambridge), Olivier Pauly (TechnischeUniversitaet Muenchen), Ender Konukoglu (Microsoft Research Cambridge), AntonioCriminisi (Microsoft Research Cambridge)
+Using linking features in learning non-parametric part models
+Leonid Karlinsky (Weizmann Institute of Science), Shimon Ullman (WeizmannInstitute of Science)
+Connecting Missing Links: Object Discovery from Sparse Observations
+Hongwen Kang (Carnegie Mellon University), Martial Hebert, Takeo Kanade
+Beyond the line of sight: labeling the underlying surfaces
+Ruiqi Guo (UIUC), Derek Hoiem (University of Illinois)
+立体视觉与重建
+Optimal Templates for Non-Rigid Surface Reconstruction
+Markus Moll (K.U.Leuven), Luc Van Gool
+Scale Robust Multi View Stereo
+Christian Bailer, Manuel Finckh (Tuebingen University), Hendrik Lensch (Tuebingen University)
+Multiple View Object Cosegmentation using Appearance and Stereo Cues
+Adarsh Kowdle (Cornell University), Sudipta Sinha, Rick Szeliski
+Detection of Independently Moving Objects in Non-planar Scenes via Multi-Frame Monocular Epipolar Constraint
+Vladimir Reilly (University of Central Florida), Soumyabrata Dey (University of Central Florida), Mubarak Shah (UCF)
+3D Reconstruction of Dynamic Scenes with Multiple Handheld Cameras
+Hanqing Jiang (Zhejiang University), Haomin Liu (Zhejiang University), PingTan (National University of Singapore), Guofeng Zhang (Zhejiang University),Hujun Bao (Zhejiang University)
+其他
+Auto-grouped Sparse Representation for Visual Analysis
+Jiashi Feng (NUS), Xiaotong Yuan, zilei Wang, Huan Xu, Shuicheng Yan
+Undoing the Damage of Dataset Bias
+Aditya Khosla (MIT), Tinghui Zhou (CMU), Tomasz Malisiewicz (MIT), Alyosha Efros (CMU), Antonio Torralba (MIT)
+Unsupervised Discovery of Mid-Level Discriminative Patches
+Saurabh Singh (Carnegie Mellon University), Abhinav Gupta, Alyosha Efros (CMU)
+A new biologically inspired color- and shape-based image descriptor
+Jun Zhang (Brown University), Youssef Barhomi (Brown University), ThomasSerre (Brown University)
+Continuous Regression for Non-Rigid Image Alignment
+Enrique Sanchez Lozano (Gradiant), Fernando De la Torre (Carnegie Mellon University), Daniel Gonzalez Jimenez (Gradiant)
+Coregistration: Simultaneous Alignment and Modeling of Articulated 3D Shape
+David Hirshberg (MPI for Intelligent Systems), Matthew Loper (MPI for Intelligent Systems), Eric Rachlin (MPI for Intelligent Systems), MichaelBlack (Max Planck Institute for Intelligent Systems)
+Discovering Latent Domains for Multisource Domain Adaptation
+Judy Hoffman (UC Berkeley), Kate Saenko (UC Berkeley - Harvard - ICSI),Brian Kulis (Ohio State), Trevor Darrell (UC Berkeley - ICSI)

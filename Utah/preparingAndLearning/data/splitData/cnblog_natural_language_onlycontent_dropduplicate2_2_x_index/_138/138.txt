@@ -1,0 +1,77 @@
+MIT自然语言处理第一讲：简介和概述（第二部分）
+发表于 2009年01月4号 由 52nlp
+自然语言处理：背景和概述
+Natural Language Processing:Background and Overview
+作者：Regina Barzilay（MIT,EECS Department,September 8, 2004)
+译者：我爱自然语言处理（www.52nlp.cn ，2009年1月4日）
+三、NLP的知识瓶颈（Knowledge Bottleneck in NLP）
+我们需要（We need）：
+——有关语言的知识（Knowledge about language）；
+——有关世界的知识（Knowledge about the world）；
+可能的解决方案（Possible solutions）：
+——符号方法or象征手法（Symbolic approach）：将所有需要的信息在计算机里编码(Encode all the required information into computer)；
+——统计方法（Statistical approach）：从语言样本中推断语言特性（Infer language properties from language samples）；
+1、例子研究：限定词位置（Case study: Determiner Placement）
+任务：在文本中自动地放置限定词
+Task: Automatically place determiners (a,the,null)in a text
+样本：
+Scientists in United States have found way of turning lazy monkeys into workaholics using gene therapy. Usually monkeys work hard only when they know reward is coming, but animals given this treatment did their best all time. Researchers at National Institute of Mental Health near Washington DC, led by Dr Barry Richmond, have now developed genetic treatment which changes their work ethic markedly. ”Monkeys under influence of treatment don’t procrastinate,” Dr Richmond says. Treatment consists of anti-sense DNA – mirror image of piece of one of our genes – and basically prevents that gene from working. But for rest of us, day when such treatments fall into hands of our bosses may be one we would prefer to put off.
+2、 相关语法规则（Relevant Grammar Rules）
+a) 限定词位置很大程度上由以下几项决定（Determiner placement is largely determined by）：
+i. 名词类型-可数，不可数（Type of noun – countable, uncountable)；
+ii. 照应-特指，类指（Reference -specific, generic)；
+iii. 信息价值-已有，新知（Information value – given, new）？这个翻译不确定^_^
+iv. 数词-单数，复数（Number – singular, plural)
+b) 然而，许多例外和特殊情况也扮演着一定的角色（However, many exceptions and special cases play a role），如：
+i. 定冠词用在报纸名称的前面，但是零冠词用在杂志和期刊名称前面
+ii. The definite article is used with newspaper titles (The Times), but zero article in names of magazines and journals (Time)
+3、 符号方法方案（Symbolic Approach: Determiner Placement）
+a) 我们需要哪些类别的知识（What categories of knowledge do we need）:
+i. 语言知识（Linguistic knowledge）：
+-静态知识：数词，可数性，…(Static knowledge: number, countability, …)
+-上下文相关知识：共指关系，…(Context-dependent knowledge: co-reference, … )
+ii. 世界知识（World knowledge）：
+-Uniqueness of reference (the current president of the US), type of noun (newspaper vs. magazine), situational associativity between nouns (the score of the football game), …
+iii. 这些信息很难人工编码（Hard to manually encode this information）！
+4、 统计方法方案（Statistical Approach: Determiner Placement）
+a) 朴素方法（Naive approach）：
+i. 收集和你的领域相关的大量的文本（Collect a large collection of texts relevant to your domain (e.g., newspaper text)）
+ii. 对于其中的每个名词，计算它和特定的限定词一起出现的概率，公式如下（For each noun, compute its probability to take a certain determiner）：
+- p(determiner|noun)= freq(noun,deter miner)/freq(noun)
+iii. 对于一个新名词，依据训练语料库中最高似然估计选择一个限定词（Given a new noun, select a determiner with the highest likelihood as estimated on the training corpus）
+b) 实现（Implementation）：
+i. 语料：训练——华尔街日报(WSJ)前21节语料，测试——第23节（Corpus: training — first 21 sections of the Wall Street Journal (WSJ) corpus, testing – the 23th section）
+ii. 预测准确率：71.5%（Prediction accuracy: 71.5%）
+c) 结论（Does it work？）：
+i. 结果并不是很好，但是对于这样简单的方法结果还是令人吃惊（The results are not great, but surprisingly high for such a simple method）
+ii. 这个语料库中的很大一部分名词总是和同样的限定词一起出现（A large fraction of nouns in this corpus always appear with the same determiner），如：
+-“the FBI”,“the defendant”, …
+5、 作为分类问题的限定词位置（Determiner Placement as Classification）
+a) 预测（Prediction）： “the”, “a”, “null”
+b) 代表性的问题（Representation of the problem）：
+i. 复数？（是，否）（plural? (yes, no)）
+ii. 第一次在文本中出现？（是否）（first appearance in text? (yes, no)）
+iii. 名词（词汇集的成员）（noun (members of the vocabulary set)）
+c) 图表例子略
+d) 目标：学习分类函数以预测未知例子（Goal: Learn classification function that can predict unseen examples）
+6、 分类方法(Classification Approach)
+a) 学习X->Y的映射函数（Learn a function from X->Y (in the previous example, {−1,0,1})
+b) 假设已存在一些分布D（X,Y)(Assume there is some distribution D(X, Y ), where x ∈ X, and y ∈ Y )
+c) 尝试建立分布D(X,Y)和D(X|Y)的模型（Attempt to explicitly model the distribution D(X, Y ) and D(X|Y )）
+7、 分类之外（Beyond Classification）
+a) 许多NLP应用领域可以被看作是从一个复杂的集合到另一个集合的映射（Many NLP applications can be viewed as a mapping from one complex set to another）：
+i. 句法分析（Parsing）: 串到树（strings to trees）
+ii. 机器翻译（Machine Translation）: 串到串（strings to strings）
+iii. 自然语言生成（Natural Language Generation）:数据词条到串（database entries to strings）
+b) 注意，分类框架并不适合这些情况！（Classification framework is not suitable in these cases!）
+8、 机器翻译中的映射（Mapping in Machine Translation）
+a) Weaver 1955 的经典论述：
+i. “… one naturally wonders if the problem of translation could conceivably be treated as a problem of cryptography. When I look at an article in Russian, I say: ‘this is really written in English, but it has been coded in some strange symbols. I will now proceed to decode.’ ”
+b) 机器翻译示例略
+c) 机器翻译中的学习（Learning for MT）
+i. 在许多语言对中都有合适的平行语料库（Parallel corpora are available in several language pairs）
+ii. 基本思想（Basic idea）：使用平行语料库作为翻译例子的训练集（use a parallel corpus as a training set of translation examples）
+iii. 目标（Goal）： 学习一个函数能将源语言的字符串映射为目标语言的字符串（learn a function that maps a string in a source language to a string in a target language）
+附：课程及课件pdf下载MIT英文网页地址：
+http://people.csail.mit.edu/regina/6881/
+注：本文遵照麻省理工学院开放式课程创作共享规范翻译发布，转载请注明出处“我爱自然语言处理”：www.52nlp.cn

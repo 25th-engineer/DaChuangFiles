@@ -1,0 +1,1 @@
+1.OpenCv(计算机视觉必学的库，个人认为其作用相当强悍）http://opencv.willowgarage.com/wiki/2.CVpaper 主页上推荐的开源视觉算法库，最全的了，也非常新,强烈推荐大家去看看http://www.cvpapers.com/rr.html3.cmu的图像处理和计算机视觉软件库，非常全，但有点老了，但都很经典，资源非常丰富http://www.cs.cmu.edu/~cil/v-source.html4.在网上还找到很多图像处理和视觉的开源软件，不过没用过，用过后再陆续更新了，敬请期待！

@@ -1,0 +1,164 @@
+Accord . NET   Framework 是 在 AForge . NET 
+项目 的 基础 上 封装 和 进一步 开发 而来 因为 
+AForge . NET 更 注重 与 一些 底层 和 广度 
+而 Accord . NET   Framework 更 注重 与 机器学习 
+算法 以及 提供 计算机 视频 音频 信号 处理 以及 统计 
+应用 相关 的 解决方案 该 项目 使用 C # 语言 
+编写 项目 主页 http / / accord framework . net 
+/ 说明 该 文章 只是 一个 基本 介绍 主要 内容 
+是 翻译 的 官方 文档 和 介绍 部分 英文 表述 
+个人 能力 有限 不太熟悉 所以 直接 照搬 原文 有 比较 
+确切 的 知道 中文名称 的 可以 提醒 一些 我 非常 
+感 本人 将 使用 该 组件 进行 一些 简单 的 
+数据 挖掘 和 机器 学习 任务 过程/n 和/c 代码/n 都将/nr 
+发表/v 在/p 本/r 博客/nr 有兴趣 的 可以 关注 NET 开 
+源目录 目录 本 博客 其他 . NET 开源 项目 文章 
+目录 本文 原文 地址 . NET 平台 开源 项目 速 
+览 13 机器学习 组件 Accord . NET 框架 功能 介绍 
+1 . 基本 功能 与 介绍 Accord . NET 为 
+. NET 应用程序 提供 了 统计分析 机器学习 图像处理 计算机 视觉 
+相关 的 算法 Accord . NET 框架 扩展 了 AForge 
+. NET 框架 提供 了 一些 新 功能 同时 为 
+. NET 环境 下 的 科学 计算 提供 了 一个 
+完整 的 开发 环境 该 框架 被 分成 了 多个 
+程序集 可以 直接 从 官网 下载 安装 文件 或者 使用 
+NuGet 得到 可以 参考 以下 链接 https / / github 
+. com / accord net / framework / wiki1 . 
+1   框架 的 三大 功能模块 Accord . NET 框架 
+主要有 三 个大 的 功能性 模块 分别 为 科学技术 信号 
+与 图像 处理 支持 组件 下面 将对 3个 模型 的 
+命名 空间 和 功能 进行 简单 介绍 可以 让 大家 
+更快 的 接触 和 了解 其 功能 是否 是 自己 
+想要 的 下面 是 主要 的 命名 空间 介绍 1 
+. 1.1   科学计算 Accord . Math 包括 矩阵 扩展 
+程序 以及 一组 矩阵 数值 计算 和 分解 的 方法 
+也 包括 一些 约束 和非/nr 约束 问题 的 数值 优化 
+算法 还有 一些 特殊函数 以及 其他 一些 辅助工具 Accord . 
+Statistics 包含 概率分布 假设检验 线性/n 和/c 逻辑/n 回归/v 等/u 统计/v 
+模型/n 和/c 方法/n 隐 马尔科夫 模型 隐藏 条件 随机 域 
+主 成分 分析 偏 最小二乘 判别分析 内核 方法 和 许多 
+其他 相关 的 技术 Accord . MachineLearning   为 机器学习 
+应用程序 提供 包括 支持 向量 机 决策树 朴素 贝叶斯 模型 
+k means 聚 类 算法 高斯 混合模型 和 通用 算 
+法如 Ransac 交叉 验证 和 网格 搜索 等 算法 Accord 
+. Neuro 包括 大量 的 神经 网络 学习 算法 如 
+Levenberg Marquardt Parallel   Resilient   Backpropagation Nguyen Widrow 初始化 
+算法 深层 的 信念 网络 和 许多 其他 神经网络 相关 
+的 算法 具体 看 参考 帮助 文档 1 . 1.2 
+  信号 与 图像 处理 Accord . Imaging 包含 特征点 
+探测器 如 Harris   SURF   FAST   and   
+  FREAK 图像 过滤器 图像匹配 和 图像 拼接 方法 还有 
+一些 特征提取 器 Accord . Audio 包含 一些 机器学习 和 
+统计 应用程序 说 需要 的 处理 转换 过滤器 以及 处理 
+音频 信号 的 方法 Accord . Vision 实时 人脸 检测 
+和 跟踪 以及 对 人流 图像 中 的 一般 的 
+检测 跟踪 和 转换方法 还有 动态 模板 匹配 追踪器 1 
+. 1.3   支持 组件 主要 是 为 上述 一些 
+组件 提供 数据 显示 绘图 的 控件 分为 以下 几个 
+命名 空间 Accord . Controls 包括 科学计算 应用程序 常见 的 
+柱状图 散点图 和 表格 数据 浏览 Accord . Controls . 
+Imaging 包括 用 来 显示 和 处理 的 图像 的 
+WinForm 控件 包含 一个 方便 快速 显示 图像 的 对话框 
+Accord . Controls . Audio 显示 波形 和 音频 相关性 
+信息 的 WinForm 控件 Accord . Controls . Vision 包括 
+跟踪 头部 脸部 和 手部 运动 以及 其他 计算机 视觉 
+相关 的 任务 WinForm 控件 1.2   支持 的 算法 
+介绍 下面 将 Accord . NET 框架 包括 的 主要 
+功能 算法 按照 类别 进行 介绍 来源 主要 是 官网 
+介绍 进行 了 简单 的 翻译 和 整理 1 . 
+2.1   分类 Classification SVM 支持 向量 机 Logistic   
+Regression 逻辑 回归 Decision   Trees 决策树   Neural   
+Networks 神经网络 Deep   Learning 深度 学习 Deep   Neural 
+  Networks 深层 神经网络 Levenberg Marquardt   with   Bayesian 
+  Regularization Restricted   Boltzmann   Machines 限制 玻耳兹曼 机 
+Sequence   classification   序列 分类 Hidden   Markov   
+Classifiers   and   Hidden   Conditional   Random   
+Fields 隐 马尔科夫 分类器 和 隐藏 条件 随机 域 1 
+. 2.2   回归 Regression Multiple   linear   regression 
+多元 线性 回归 单 因变量 多 自变量 Multivariate   linear 
+  regression 多元 线性 回归 多 因变量 多 自变量 polynomial 
+  regression   多项式 回归 logarithmic   regression 对数 回归 
+Logistic   regression 逻辑 回归 multinomial   logistic   regression 
+多项式 逻辑 回归 softmax   and   generalized   linear 
+  models 广义 线性 模型 L2 regularized   L2 loss 
+  logistic   regression     L2 regularized   logistic 
+  regression     L1 regularized   logistic   regression 
+    L2 regularized   logistic   regression   in 
+  the   dual   form   and   regression 
+  support   vector   machines 1 . 2.3   
+聚 类 Clustering K Means K Modes Mean Shift 均值 
+漂移 Gaussian   Mixture   Models 高斯 混合模型 Binary   
+Split 二元 分裂 Deep   Belief   Networks 深层 的 
+信念 网络   Restricted   Boltzmann   Machines 限制 玻耳兹曼 
+机 聚 类 算法 可以 应用于 任意 数据 包括 图像 
+数据表 视频 和 音频 1 . 2.4   概率分布 Distributions 
+包括 40多 个 分布 的 参数 和非/nr 参数估计 包括 一些 
+常见 的 分布 如 正态分布 柯西分布 超 几何 分布 泊松分布 
+伯努利 也 包括 一些 特殊 的 分布 如 Kolmogorov Smirnov 
+    Nakagami Weibull and   Von Mises   distributions 
+也 包括 多元 分布 如 多元 正态分布 Multinomial   Independent 
+  Joint   and   Mixture   distributions 1 . 
+2.5   假设检验 Hypothesis   Tests 超过 35 统计假设 测试 
+包括 单向 和 双向 方差 分析测试 非 参数 测试 如 
+Kolmogorov Smirnov 测试 和 媒体 中 的 信号 测试 contingency 
+  table   tests   such   as   the 
+  Kappa   test with   variations   for   
+multiple   tables     as   well   as 
+  the   Bhapkar   and   Bowker   tests 
+  and   the   more   traditional   Chi 
+Square     Z     F     T 
+  and   Wald   tests   . 1 . 
+2.6   核 方法 Kernel   Methods 内核 支持 向量 
+机 多类 和多/nr 标签 向量 机 序列 最小 优化 最小二乘 
+学习 概率 学习 Including   special   methods   for 
+  linear   machines   such   as   LIBLINEAR 
+s   methods   for   Linear   Coordinate   
+Descent     Linear   Newton   Method     
+Probabilistic   Coordinate   Descent     Probabilistic   Coordinate 
+  Descent   in   the   Dual     
+Probabilistic   Newton   Method   for   L1   
+and   L2   machines   in   both   
+the   dual   and   primal   formulations   
+. 1 . 2.7   图像 Imaging 兴趣 和 特征点 
+探测器 如 Harris FREAK SURF FAST 灰度 共生 矩阵 Border 
+  following Bag of Visual Words   BoW RANSAC based 
+  homography   estimation     integral   images   
+  haralick   textural   feature   extraction     
+and   dense   descriptors   such   as   
+histogram   of   oriented   gradients   HOG   
+and   Local   Binary   Pattern   LBP . 
+Several   image   filters   for   image   
+processing   applications   such   as   difference   
+of   Gaussians     Gabor     Niblack   
+and   Sauvola   thresholding 还有 几个 图像 处理 中 
+经常 用到 的 图像 过滤器 1 . 2.8   音频 
+信号 Audio   and   Signal 音频 信号 的 加载 
+解析 保存 过滤 和 转换 如在 空间 域 和 频域 
+应用 音频 过滤器 WAV 文件 音频 捕捉 时域 滤波器 高通 
+低 通 波 整流 过滤器 Frequency domain   operators   
+such   as   differential   rectification   filter   
+and   comb   filter   with   Dirac s 
+  delta   functions   .   Signal   generators 
+  for   Cosine     Impulse     Square 
+  signals . 1 . 2.9   视觉 Vision 实时 
+人脸 检测 和 跟踪 以及 图像 流 中 检测 跟踪 
+转换 的 一般 的 检测 方法 Contains   cascade   
+definitions     Camshift   and   Dynamic   Template 
+  Matching   trackers   .   Includes   pre 
+created   classifiers   for   human   faces   
+and   some   facial   features   such   
+as   noses 1.3   相关 资源 从 项目 主页 
+http / / accord framework . net / 下载 的 
+& ldquo Archive & rdquo 压缩包 中 包括 了 几乎 
+所有 的 在线 资源 如 下图 介绍 几个 主要 的 
+资源 Debug 是 一些 用于 调试 的 程序集 Docs 是 
+帮助 文档 Externals 是 一些 辅助 的 组件 Release 是 
+不同 . NET 环境 的 Dll 程序集 版本 Samples 是 
+案例 源代码 Setup 是 安装 的 程序 Sources 是 项目 
+的 源代码 Unit   Tests 是 单元 测试代码 Accord . 
+NET 框架 源代码 托管 在 GitHub https / / github 
+. com / accord net/w //i framework/w //i 上面/f 有/v 
+大量/n 的/uj 入门/ns 资源/n 和/c 教程/n 例如 查看 页面 右边 
+的 列表 栏 切换 https / / github . com 
+/ accord net / framework / wiki / How to 
+use 

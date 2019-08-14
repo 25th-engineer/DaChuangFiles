@@ -1,0 +1,170 @@
+教程内容：
+1. 本课程的教学重心是从数学层面理解并掌握推导经典的机器学习算法，从历史到细节深入了解机器学习的基本思想和各种算法的具体思路与方法。
+2. 强化数学、概率论、数理统计的基础知识，夯实机器学习的基础必备知识。
+3. 本课程将提供严谨的数学推导过程文档，帮助学员更好地掌握算法推导（面试必备）
+4. 课程中讲设置随堂测验环节，帮助学员在课中巩固和理解重要知识点。
+5. 课程将提供学员经过老师精心整理的配套学习资料和经典论文，在课程的不同阶段给学员用来复习和学习。
+教程目录：
+第一课：机器学习的数学基础
+1. 机器学习的数学基础
+a. 函数与数据的泛化
+b. 推理与归纳 (Deduction and Induction)
+2. 线性代数（Linear Algebra）
+a. 向量与矩阵 (Vector and Matrix)
+b. 特征值与特征向量
+c. 向量与高维空间
+d. 特征向量（Feature Vector）
+3. 概率与统计（Probability and Statistics）
+a. 条件概率与经典问题 (Conditional Probability)
+b. 边缘概率 (Marginal Probability)
+4. 作业/实践： 财宝问题的概率计算程序
+第二课：机器学习的数学基础
+1. 统计推理（Statistical Inference）
+a. 贝叶斯原理与推理 (Bayesian Theorem)
+b. 极大似然估计 (Maximum Likelihood)
+c. 主观概率（Subjective Probability）
+d. 最大后延概率（MAP)
+2. 随机变量（Random Variable）
+a. 独立与相关 (Independence)
+b. 均值与方差 （Mean and Variance）
+c. 协方差 (Co-Variance)
+3. 概率分布（Probability Distributions)
+4. 中心极限定理（Central Limit Theorem)
+5. 作业/实践： 概率分布采样与不同随机变量之间协方差计算
+第三课：机器学习的数学基础
+1. 梯度下降（Gradient Descent）
+a. 导数与梯度（Derivative and Gradient）
+b. 随机梯度下降（SGD）
+c. 牛顿方法（Newton's Method)
+2. 凸函数（Convex Function）
+a. Jensen不等式（Jensen's Inequality）
+b. 拉格朗日乘子（Lagrange Multiplier）
+3. 作业/实践： 利用牛顿方法求解给定的方程
+第四课：机器学习的哲学（Philosophy of ML）
+1. 算法的科学（Science of Algorithms）
+a. 输入与输出的神话（Mystery of I/O）
+b. 奥卡姆剃刀（Occam’s Razor）
+2. 维数的诅咒（Curse of Dimensionality）
+a. 高维的几何特性 (Geometric Properity )
+b. 高维空间流形（High-dimensional Manifold）
+3. 机器学习与人工智能（Machine learning and AI）
+4. 机器学习的范式（Paradigms of ML）
+第五课：经典机器学习模型（Classical ML Models）
+1. 样本学习（Case-Based Reasoning）
+a. K-近邻（K-Nearest Neighbors）
+b. K-近邻预测（KNN for Prediction）
+c. 距离与测度（Distance and Metric）
+2. 朴素贝叶斯（Naïve Bayes Classifier)
+a. 条件独立（Conditional Independence）
+b. 分类（Naive Bayes for Classification)
+3. 作业/实践：垃圾邮件分类的案例
+第六课：经典机器学习模型（Classical ML Models）
+1. 决策树（Decision Tree Learning）
+a. 信息论与概率
+b. 信息熵（Information Entropy）
+c. ID3, CART算法
+2. 决策树剪枝（Pruning）
+3. 软决策树（Soft Decision Tree）
+4. 决策树与规则（DT and Rule Learning）
+5. 作业/实践：决策树分类实验
+第七课：经典机器学习模型（Classical ML Models）
+1. 集成学习（Ensemble learning）
+a. Bagging and Boosting
+b. AdaBoost
+c. 误差分解（Bias-Variance Decomposition）
+d. 随机森林（Boosting and Random Forest）
+2. 模型评估（Model Evaluation）
+a. 交叉验证（Cross-ValIDAtion）
+b. ROC (Receiver Operating Characteristics)
+c. Cost-Sensitive Learning
+3. 作业/实践：随机森林与决策树分类实验的比较
+第八课：线性模型（Linear Models）
+1. 线性模型（Linear Models）
+a. 线性拟合（Linear Regression）
+2. 最小二乘法（LMS）
+b. 线性分类器（Linear Classifier）
+3. 感知器（Perceptron）
+4. 对数几率回归（Logistic Regression）
+5. 线性模型的概率解释 (Probabilistic Interpretation)
+6. 作业/实践：对数几率回归的文本情感分析中应用
+第九课：线性模型（Linear Models）
+1. 线性判别分析 (Linear Discrimination Analysis)
+2. 约束线性模型 (Linear Model with Regularization)
+a. LASSO
+b. Ridge Regression
+3. 稀疏表示与字典学习
+a. Sparse Representation & Coding
+b. Dictionary Learning
+第十课：核方法（Kernel Methods）
+1. 支持向量机SVM（Support Vector Machines）
+a. VC-维（VC-Dimension）
+b. 最大间距（Maximum Margin）
+c. 支撑向量（Support Vectors）
+2. 作业/实践：SVM不同核函数在实际分类中比较
+第十一课：核方法（Kernel Methods）
+1. 对偶拉格朗日乘子
+2. KKT条件（KKT Conditions）
+3. Support Vector Regression (SVR)
+4. 核方法（Kernel Methods）
+第十二课：统计学习（Statistical Learning）
+1. 判别模型与生成模型
+a. 隐含变量（Latent Variable）
+2. 混合模型（Mixture Model）
+a. 三枚硬币问题（3-Coin Problem）
+b. 高斯混合模型（Gaussian Mixture Model）
+3. EM算法（Expectation Maximization）
+a. 期望最大（Expectation Maximization）
+b. 混合模型的EM算法（EM for Mixture Models）
+c. Jensen 不等式 (Jensen's Inequality)
+d. EM算法推导与性能 (EM Algorithm)
+第十三课：统计学习（Statistical Learning）
+1. 隐马可夫模型（Hidden Markov Models）
+a. 动态混合模型（Dynamic Mixture Model）
+b. 维特比算法（Viterbi Algorithm）
+c. 算法推导 (Algorithm)
+2. 条件随机场（Conditional Random Field）
+第十四课：统计学习（Statistical Learning）
+1. 层次图模型（Hierarchical Bayesian Model）
+a. 概率图模型 (Graphical Model)
+b. 从隐含语义模型到p-LSA (From LSA to P-LSA)
+c. Dirichlet 分布与特点（Dirichlet Distribution）
+d. 对偶分布（Conjugate Distribution）
+第十五课：统计学习（Statistical Learning）
+1. 主题模型（Topic Model – LDA）
+a. Latent Dirichlet Allocation
+b. 文本分类（LDA for Text Classification）
+2. 中文主题模型（Topic Modeling for Chinese）
+3. 其他主题模型（Other Topic Variables）
+第十六课：无监督学习（Unsupervised Learning）
+1. K-均值算法（K-Means）
+a. 核密度估计（Kernel Density Estimation）
+b. 层次聚类（Hierarchical Clustering）
+2. 蒙特卡洛(Monte Carlo)
+a. 蒙特卡洛树搜索（Monte Carol Tree Search）
+b. MCMC（Markov Chain Monte Carlo）
+c. Gibbs Sampling
+第十七课：流形学习（Manifold Learning）
+1. 主成分分析（PCA）
+a. PCA and ICA
+2. 低维嵌入（Low-Dimensional Embedding）
+a. 等度量映射（Isomap）
+b. 局部线性嵌入（Locally Linear Embedding）
+第十八课：概念学习（Concept Learning）
+1. 概念学习（Concept Learning）
+a. 经典概念学习
+b. One-Short概念学习
+2. 高斯过程学习（Gaussian Process for ML）
+c. Dirichlet Process
+第十九课：强化学习（Reinforcement Learning）
+1. 奖赏与惩罚（Reward and Penalty）
+a. 状态空间 (State-Space Model)
+b. Q-学习算法 (Q-Learning)
+2. 路径规划 （Path Planning）
+3. 游戏人工智能 （Game AI）
+4. 作业/实践：小鸟飞行游戏的自动学习算法
+第二十课：神经网络
+1. 多层神经网络
+a. 非线性映射（Nonlinear Mapping）
+b. 反向传播（Back-propagation）
+2. 自动编码器（Auto-Encoder）
+下载地址：百度网盘

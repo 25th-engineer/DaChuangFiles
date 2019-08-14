@@ -1,1 +1,0 @@
-{"content2":"【ImageNet】\nImageNet 项目是一个用于物体对象识别检索大型视觉数据库。截止2016年，ImageNet 已经对超过一千万个图像进行手动注释，标记图像的类别。在至少一百万张图像中还提供了边界框。\n自2010年以来，ImageNet 举办一年一度的软件竞赛，叫做（ImageNet Large Scale Visual Recognition Challenge,ILSVRC)。主要内容是通过算法程序实现正确分类和探测识别物体与场景，评价标准就是Top-5 错误率。\nTop-5错误率\n即对一个图片，如果概率前五中包含正确答案，即认为正确。\nTop-1错误率\n即对一个图片，如果概率最大的是正确答案，才认为正确。\n原po：https://www.jianshu.com/p/46e812c1d670"}

@@ -1,0 +1,140 @@
+原创   2017 07 27   马 文辉   MATLAB 
+作 者 简 介 马 文辉 MathWorks 中国 应用 工程师 
+  南开大学 工学博士 在 大 数据 处理 与 分析 领域 
+有 多年 研究 与 开发 经验 曾/d 就职/v 于/p Nokia/w 
+中国/ns 研究院/n Adobe 中国 研发 中心 以及 IBM 中国 近年来 
+全国 赛 的 题目 中 多多少少 都 有些 数据 而且 
+数据量 总体 来说 呈 不断 增加 的 趋势 这 是 
+由于 在 科研 界 和 工业界 已 积累 了 比较 
+丰富 的 数据 伴随 大 数据 概念 的 兴起 及 
+机器学习 技术 的 发展 这些 数据 需要 转化成 更有 意义 
+的 知识 或 模型 所以在 建模 比赛 中 只要 数据量 
+还 比较 大 就有 机器 学习 的 用武之地 1 . 
+  MATLAB 机器学习 概况 机器学习 Machine Learning 是 一门 多 
+领域 交叉 学科 它 涉及 到 概率论 统计学 计算机科学 以及 
+软件工程 机器学习 是 指 一套 工具 或 方法 凭借 这套 
+工具 和 方法 利用 历史 数据 对 机器 进行 训练 
+进而 学习 到 某种 模式 或 规律 并 建立 预测 
+未来 结果 的 模型 机器学习 涉及 两类 学习 方法 如 
+有 监督 学习 主要 用于 决策 支持 它 利用 有 
+标识 的 历史 数据 进行 训练 以 实现 对 新 
+数据 的 标识 的 预测 有/v 监督/vn 学习/v 方法/n 主要/b 
+包括/v 分类/n 和/c 回归/v 无 监督 学习 主要 用于 知识发现 
+它 在 历史 数据 中 发现 隐藏 的 模式 或 
+内在 结构 无 监督 学习 方法 主要 包括 聚 类 
+MATLAB 统计 与 机器学习 工具箱 Statistics and Machine Learning Toolbox 
+支持 大量 的 分类 模型 回归模型 和聚类/nr 的 模型 并 
+提供 专门 应用程序 APP 以 图形化 的 方式 实现 模型 
+的 训练 验证 以及 模型 之间 的 比较 分类 分 
+类 技术 预测 的 数据 对 象是 离散 值 例如 
+电子邮件 是否 为 垃圾 邮件 肿瘤 是 癌 性 还是 
+良性 等等 分类 模型 将 输入 数据 分类 典型 应用 
+包括 医学 成像 信用 评分 等 MATLAB 提供 的 分类 
+算法 包括 回归 回归 技术 预测 的 数据 对象 是 
+连续 值 例如 温度 变化 或 功率 需求 波动 典型 
+应用 包括 电力 负荷 预测 和 算法 交易 等 回归模型 
+包括 一元 回归 和 多元 回归 线性 回归 和 非线性 
+回归 MATLAB 提供 的 回归 算法 有 聚 类聚 类 
+算法 用于 在 数据 中 寻找 隐藏 的 模式 或 
+分组 聚 类 算法 构成 分组 或 类 类 中 
+的 数据 具有 更高 的 相似 度 聚 类 建模 
+的 相似 度 衡量 可以 通过 欧几里得 距离 概率距离 或 
+其他 指标 进行 定义 MATLAB 支持 的 聚 类 算法 
+有 以下 将 通过 一些 示例 演示 如何 使用 MATLAB 
+提供 的 机器 学习 相关 算法 进行 数据 的 分类 
+回归 和聚类/nr 2 .   分类 技术支持 向量 机 SVM 
+SVM 在 小 样本 非线性 及 高维 数据 分类 中 
+具有 很强 的 优势 在 MATLAB 中 可以 利用 SVM 
+解决 二 分类 问题 同时 也 可以 使用 SVM 进行 
+数据 的 多 分类 划分 1 二 分类 以下 示例 
+显示 了 利用 MATLAB 提供 的 支持 向量 机 模型 
+进行 二 分类 并在 图中 画出 了 支持 向量 的 
+分布 情况 中 圆 圈内 的 点 表示支持 向量 MATLAB 
+支持 SVM 的 核 函数 KernelFunction 参数 有 线性 核 
+函数 Linear 多项式 核 函数 Polynomial 高斯 核 函数 Gaussian 
+% % 支持 向量 机 模型 load   fisheriris % 
+数据 只取 两个 分类 versicolor 和 virginica inds = ~ 
+strcmp species   setosa % 使用 两 个 维度 X 
+= meas inds 3 4 y = species inds tabulate 
+y Value       Count       P 
+e r c e n t v e r s 
+i c o l o r         
+    50           50.00% verginica 
+            50       
+    50.00% % % SVM 模型 训练 使用 线性 
+核 函数 SVMModel = fitcsvm X y   KernelFunction   
+linear   % % 查看 进行 数据 划分 的 支持 
+向量 sv = SVMModel . SupportVectors figuregscatter X 1 X 
+2 y hold   onplot sv 1 sv 2   
+ko     MarkerSize   10 legend   versicolor   
+  virginica     Support Vector   hold   off2 
+  多 分类 MATLAB 多分 类 问题 的 处理 是 
+基于 二 分类 模型 . 下面 的 示例 演示 如何 
+利用 SVM 的 二分 类 模型 并 结合 fitcecoc 函数 
+解决 多 分类 问题 % 导入 Fisher s iris 数据集 
+load   fisheririsX = meas Y = species tabulate Y 
+Value   Count   Percentsetosa         50 
+      33.33% versicolor         50 
+        33.33% virginica         
+50         33.33% % 创建 SVM 模板 
+二 分类 模型 并对 分类 变量 进行 标准化 处理 % 
+predictorst = templateSVM   Standardize   1 % 基于 SVM 
+二 分类 模型 进行 训练 并 生成 多 分类 模型 
+Mdl = fitcecoc X Y   Learners   t . 
+. .   ClassNames   { setosa     versicolor 
+    virginica } Mdl = C l a s 
+s i f i c a t i o n 
+E C O C R e s p o n 
+s e N a m e     Y C 
+a t e g o r i c a l 
+P r e d i c t o r s 
+  ClassNames   { setosa versicolor virginica } ScoreTransform   
+none BinaryLearners   { 3 * 1 cell } CodingName 
+  onevsone MATLAB 的 fitcecoc 函数 支持 多种 二 分类 
+模型 例如 templateKNN templateTree templateLinear t e m p l 
+a t e N a i v e B a 
+y e s 等等 3 . 回归 回归模型 描述 了 
+响应 输出 变量 与 一个 或 多个 预测 变量 输入 
+变量 之间 的 关系 MATLAB 支持 线性 广义 线性 和 
+非线性 回归模型 以下 示例 演示 如何 训练 逻辑 回归模型 逻辑 
+回归 在 MATLAB 中 逻辑 回 归属 于广义 线性 回归 
+的 范畴 可以 通过 使用 fitglm 函数 实现 逻辑 回归模型 
+的 训练 % 判定 不同 体重 年龄 和 性别 的 
+人 的 吸烟 概率 load   hospitaldsa = hospital % 
+指定 模型 使用 的 计算 公式 % 公式 的 书写 
+方式 符合 Wilkinson Notation 详情请 查看 % http / / 
+cn . mathworks . com / help / stats / 
+wilkinson notation . htmlmodelspec =   Smoker ~ 1 + 
+Age + Weight + Sex + Age Weight + Age 
+Sex + Weight Sex % 通过 参数 Disribution 指定 binomial 
+构建 逻辑 回归模型 mdl = fitglm dsa modelspec   Distribution 
+  binomial 4 .   聚 类聚 类 是 将 
+数据集 分 成组 或 类 形成 类 使得 同 一类 
+中 的 数据 非常 相似 而不 同类 中 的 数据 
+差异 非常明显 层次 聚 类 下面 以 层次 聚 类 
+方法 为例 演示 如何 利用 MATLAB 进行 聚类分析 % 数据 
+导入 load   fisheriris % MATLAB 中层次 聚 类 是 
+通过 linkage 函数 实现 % 通过 参数 可以 配置 距离 
+计算方法 % 类 内 距离 的 计算 方法 euclidean 欧几里得 
+距离 eucD = pdist mean   euclidean   % 类 
+间 距离 的 计算 方法 ward 最小化 两个 类 内 
+点 之间 聚 类 平方和 Z = linkage eucD   
+ward % 使用 cophenetic 相关系数 评价 聚 类 计算 过程 
+类 内 距离 最小 类 间 距离 最大 % 值 
+越大 表明 距离 计算结果 越好 cophenet Z eucD ans = 
+0 . 872828315330562 % 生成 4个 类别 的 聚 类 
+结果 c = cluster Z   maxclust   4 可以 
+显示 层次 聚 类 生成 的 聚 类 树 使用 
+dendrogram 函数 % 查看 层次 聚 类 树 dendrogram Z 
+以上 只是 简单 的 介绍 了 一下 MATLAB 支持 的 
+机器学习 算法 的 使用 方式 更多 的 信息 可以 查看 
+MathWorks 官网 和 MATLAB 帮助 文档 文中 例程 中 的 
+所有 例程 均可 在 MATLAB 直接 运行 程序 使用 的 
+数据 为 MATLAB 2017a 中的 demo 数据 大家 快 去 
+动手 实践 吧 点击 阅读 原文 申请 MATLAB 正版软件 授权 
+数学 建模 竞赛 支持 * 友情 提醒 9月 8日 晚上 
+7点 截止 软件 下载 申请 往 期 | 数模 专栏 
+开篇 如何 备战 数学 建模 竞赛 之 MATLAB 编程 第二篇 
+MATLAB 数学 建模 快速 入门 第三篇 MATLAB 数据 建模 方法 
+上 常用 方法 阅读 原文 微信 扫 一扫 关注 该 
+公众 号 

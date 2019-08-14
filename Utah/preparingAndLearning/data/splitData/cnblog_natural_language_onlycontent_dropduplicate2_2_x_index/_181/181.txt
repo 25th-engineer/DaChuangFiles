@@ -1,0 +1,33 @@
+TF-IDF算法可用来提取文档的关键词，关键词在文本聚类、文本分类、文献检索、自动文摘等方面有着重要应用。
+算法原理
+TF：Term Frequency，词频
+IDF：Inverse Document Frequency，逆文档频率
+词频（TF）：某一个词在该文件中出现的频率
+计算方法为：
+逆文档频率（IDF）：总文件数目除以包含该词的文件数目
+计算方法为：
+分母加1是为了防止该词不在语料库中而导致被除数为零
+最后，TF-IDF的计算方式为：
+TF-IDF 的主要思想为：
+如果某个词在一篇文档中出现的频率高（即 TF 高），并且在语料库中其他文档中很少出现（即 IDF 高），则认为这个词具有很好的类别区分能力
+算法过程：先计算出文档中每个词的TF-IDF值，然后按降序排列，取排在最前面的几个词作为关键词进行输出
+算法优点：
+原理简单，能满足大多数实际需求
+算法缺点：
+单纯以 “词频” 衡量一个词的重要性，不够全面（文档频率小的词就越重要，文档频率大的词就越无用，显然这并不是完全正确的）
+TF-IDF值的计算没有加入词的位置信息，不够严谨（出现在文档标题、第一段、每一段的第一句话中的词应给予较大的权重）
+Python实现
+jieba
+jieba内置了TF-IDF算法，调用非常简单，例：
+sen = '自然语言处理是人工智能和语言学领域的分支学科，此领域探讨如何处理及运用自然语言，包括多方面和步骤。' print(' jieba extract:', jieba.analyse.extract_tags(sen, topK=topK)) # ['自然语言', '领域', '处理']
+topK：返回 TF-IDF 值最大的关键词个数，此处为 3
+更详细用法可参考官方文档：https://github.com/fxsjy/jieba
+sklearn
+关键词提取需用到 CountVectorizer 和 TfidfVectorizer，示例代码：
+corpus = [ # 语料 '自然语言处理是人工智能和语言学领域的分支学科，此领域探讨如何处理及运用自然语言，包括多方面和步骤。', '计算机视觉是一门研究如何使机器“看”的科学，用摄影机和计算机代替人眼对目标进行识别、跟踪和测量。', '机器学习是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科。' ] corpus = [jieba.lcut(sen) for sen in corpus] with open('stop_words.txt', encoding='utf8') as f: stop_words = [line.strip() for line in f.readlines()] corpus = [' '.join(filter_stop_words(sen, stop_words)) for sen in corpus] cvec = CountVectorizer() cvec.fit_transform(corpus) feature_words = cvec.get_feature_names() feature_words = np.array(feature_words) tvec = TfidfVectorizer() tvec = tvec.fit_transform(corpus) first_sen = tvec.toarray()[0] max_indices = np.argsort(-first_sen)[:topK] print('sklearn extract:', feature_words[max_indices]) # ['自然语言' '领域' '语言学']
+完整项目地址：https://github.com/cyandn/practice/tree/master/TF-IDF
+参考：
+https://www.jianshu.com/p/b0ba00ccaf9c
+http://www.ruanyifeng.com/blog/2013/03/tf-idf.html
+https://blog.csdn.net/Eastmount/article/details/50323063
+https://blog.csdn.net/m0_37324740/article/details/79411651

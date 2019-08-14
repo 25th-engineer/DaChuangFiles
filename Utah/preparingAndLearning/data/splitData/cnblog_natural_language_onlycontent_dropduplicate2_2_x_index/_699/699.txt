@@ -1,0 +1,24 @@
+自然语言处理中，一个很重要的应用就是问答系统，这里面，涉及到问题和知识库里面的问题的匹配度，从而检索出问题的答案，这个是一个比较常见的应用算法。
+编辑距离（Edit Distance），又称Levenshtein距离（即莱文斯坦距离，LD算法），是指两个字串之间，由一个转成另一个所需的最少编辑操作次数。
+许可的编辑操作包括将一个字符替换成另一个字符，插入一个字符，删除一个字符。一般来说，编辑距离越小，两个串的相似度越大。
+该算法由俄罗斯科学家Vladimir Levenshtein于1965年提出。
+算法应用范围很广泛，除了论文查重（抄袭率），基因序列匹配，当前一个很重要的应用就是自然语言处理中的语句的近似度。今天，我们重点讨论的是用LD算法计算两个语句串的相似度。
+例如将kitten转成sitting（变化过程中没有删除动作，只有修改和插入）：
+kitten->sitten （将字母k→s）
+sitten->sittin （将字母e→i）
+sittin->sitting （插入g）
+算法逻辑步骤：
+1. 计算出比较的字符串S，T的长度n和m。
+2. 初始化一个(n+1)*(m+1)的二维数组edit(i,j)。
+3. 抽象出动态规划计算编辑距离的方程edit(i,j)=min{edit(i-1,j)+1,edit(i,j-1)+1,edit(i-1,j-1)+cost}。
+其中cost=[当S串的i字符与T串的j字符不等时为1，否则为0]
+4. 遍历S，T中的每个字符的对比，最后的edit(n,m)为编辑距离。
+比如要计算cafe和coffee的编辑距离。cafe→caffe→coffe→coffee，定义S=cafe，T=coffee，编辑距离是3.
+算法的java的实现过程源码：
+import java.io.File; import java.io.FileNotFoundException; import java.util.Scanner; /** * @author shihuc * @date 2017年9月28日 下午3:24:43 */ public class EditDistance { /** * @author shihuc * @param args * @throws FileNotFoundException */ public static void main(String[] args) throws FileNotFoundException { File file = new File("./src/com/shihuc/nlp/leventhienDistance/sample.txt"); Scanner sc = new Scanner(file); int N = sc.nextInt(); sc.nextLine(); for(int i=0; i<N; i++){ String T = sc.nextLine(); String S = sc.nextLine(); int dist = editDist(S,T); System.out.println(S + " vs " + T + " distance: " + dist); } sc.close(); } private static int editDist(String S, String T){ /* * 步骤1. */ int n = S.length(); int m = T.length(); int [][] edit = new int[n+1][m+1]; /* * 步骤2. * 初始化动态规划数据容器edit[][] */ for(int i=0;i<=n;i++) edit[i][0] = i; for(int j=0;j<=m;j++) edit[0][j] = j; /* * 步骤4. * 遍历S,T */ for(int i=1; i<=n; i++){ char s = S.charAt(i-1); for(int j=1; j<=m; j++){ /* * 步骤3. * 动态规划，迭代计算edit[i][j]的距离 */ int cost = calcCost(s, T.charAt(j-1)); edit[i][j] = min(edit[i-1][j]+1,edit[i][j-1]+1,edit[i-1][j-1]+cost); } } printEdit(S,T,edit); return edit[n][m]; } private static int calcCost(int a, int b){ if(a == b) { return 0; }else { return 1; } } private static int min(int a, int b, int c){ int m = 0; if(a < b){ m = a; }else{ m = b; } if(m < c){ return m; }else{ return c; } } private static void printEdit(String S, String T, int es[][]){ System.out.print(" "); for(int x=0; x<es[0].length - 1; x++){ System.out.print(T.charAt(x)+" "); } System.out.println(""); for(int i=0;i<es.length;i++){ if(i > 0){ System.out.print(S.charAt(i - 1) + " "); }else{ System.out.print(" " ); } for(int j=0;j<es[0].length;j++){ System.out.print(es[i][j] + " "); } System.out.println(""); } } }
+这里，附上测试案例数据：
+4 #表示有4组测试数据，每组含有S和T。每组的第一行是T，表示目标数据，第二行S表示源数据 coffee cafe failing sailn kitten sitting girl girlfriend
+运行后的结果如下：
+c o f f e e 0 1 2 3 4 5 6 c 1 0 1 2 3 4 5 a 2 1 1 2 3 4 5 f 3 2 2 1 2 3 4 e 4 3 3 2 2 2 3 cafe vs coffee distance: 3 f a i l i n g 0 1 2 3 4 5 6 7 s 1 1 2 3 4 5 6 7 a 2 2 1 2 3 4 5 6 i 3 3 2 1 2 3 4 5 l 4 4 3 2 1 2 3 4 n 5 5 4 3 2 2 2 3 sailn vs failing distance: 3 k i t t e n 0 1 2 3 4 5 6 s 1 1 2 3 4 5 6 i 2 2 1 2 3 4 5 t 3 3 2 1 2 3 4 t 4 4 3 2 1 2 3 i 5 5 4 3 2 2 3 n 6 6 5 4 3 3 2 g 7 7 6 5 4 4 3 sitting vs kitten distance: 3 g i r l f r i e n d 0 1 2 3 4 5 6 7 8 9 10 g 1 0 1 2 3 4 5 6 7 8 9 i 2 1 0 1 2 3 4 5 6 7 8 r 3 2 1 0 1 2 3 4 5 6 7 l 4 3 2 1 0 1 2 3 4 5 6 girl vs girlfriend distance: 6
+是不是比较有意思，还是比较有价值的。
+PS。最近有很长一段时间没有跟算法了，因为项目太紧，自然语言处理是个深远的领域，路很长，慢慢走！

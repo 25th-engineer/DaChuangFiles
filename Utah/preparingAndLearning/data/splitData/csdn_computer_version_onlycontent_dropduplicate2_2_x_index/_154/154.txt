@@ -1,0 +1,92 @@
+会议：
+三大顶级
+ICCV：International Conference on Computer Vision，国际计算机视觉大会
+CVPR：International Conference on Computer Vision and Pattern Recognition，国际计算机视觉与模式识别大会
+ECCV：European Conference on Computer Vision，欧洲计算机视觉大会
+较好
+ICIP：International Conference on Image Processing，国际图像处理大会
+BMVC：British Machine Vision Conference，英国机器视觉大会
+ICPR：International Conference on Pattern Recognition，国际模式识别大会
+ACCV：Asian Conference on Computer Vision，亚洲计算机视觉大会
+ICCV的全称是International Comference on Computer Vision，正如很多和他一样的名字的会议一行，这样最朴实的名字的会议，通常也是这方面最nb的会议。ICCV两年一次，与ECCV正好错开，是公认的三个会议中级别最高的。它的举办地方会在世界各地选，上次是在北京，下次在巴西，2009在日本。iccv上的文章看起来一般都比较好懂。
+CVPR的全称是Internaltional Conference on Computer Vision and Pattern Recogintion。这是一个一年一次的会议，举办地从来没有出过美国，因此想去美国旅游的同学不要错过。正如它的名字一样，这个会上除了视觉的文章，还会有不少模式识别的文章，当然两方面的结合自然也是重点。
+ECCV的全称是Europeon Conference on Computer Vision，是一个欧洲的会议。虽然名字不是International，但是会议的级别不比前面两个差多少。欧洲人一般比较看中理论，但是从最近一次会议来看，似乎大家也开始注重应用了，oral里面的demo非常之多，演示效果很好，让人赏心悦目、叹为观止。不过欧洲的会有一个不好，就是他们的人通常英语口音很重，有些人甚至不太会说英文，所以开会和交流的时候，稍微有些费劲。
+总的来说，以上三个会议是做计算机视觉人必须关注的会议，建议每一期的oral都要精读，poster调自己相关的仔细看看。如果有好的进一步的想法，可以马上发表，因为他们已经是最新的了，对他们的改进通常也是最新的。同时如果你做了类似的工作，却没有引用这些会议的文章，很有可能会被人指出综述部分的问题，因为评审的人一般都是牛人，对这三个会议也会很关注的。
+期刊：
+顶级
+PAMI：IEEE TRANS.on Patt.Analysis and Machine Intelligence国际计算机视觉大会
+LICV:Inter.Jour.on Comp.Vision
+较好
+CVIU:Computer Vision and Image Understanding
+PR：Pattern Reco.
+A.I.
+AAAI: American Association for Artificial Intelligence
+ACM/SigIR: 这个是IR方面的，可能DB/AI的人都有
+IJCAI: International Joint Conference on Artificial Intelligence
+NIPS: Neural Information Processing Systems
+ICML: International Conference on Machine Learning
+Jour.:
+Machine Learning
+NEURAL COMPUTATION: 这个的影响因子在AI里最高，2000年为1.921
+ARTIFICIAL INTELLIGENCE: 1.683(2000年的数据，下同)
+PAMI: 1.668
+IEEE TRANSACTIONS ON FUZZY SYSTEMS: 1.597
+IEEE TRANSACTIONS ON NEURAL NETWORKS: 1.395
+AI MAGAZINE: 1.044
+NEURAL NETWORKS: 1.019
+PATTERN RECOGNITION: 0.781
+IMAGE AND VISION COMPUTING: 0.616
+IEEE TRANSACTIONS ON KNOWLEDGE AND DATA ENGINEERING: 0.465
+APPLIED INTELLIGENCE: 0.268
+部分ai刊物影响因子05 SCI IF
+2005 2004
+JMLR 4.027 5.952
+PAMI 3.810 4.352
+TOIS 4.529 4.097
+AIJ 2.638 3.570
+MLJ 3.108 3.258
+ECJ 1.568 3.206
+TEvC 3.257 3.688
+IJCV 3.657 2.914
+DMKD 2.105 2.800
+NCJ 2.591 2.364
+TNN 2.205 2.178
+PR 2.153 2.176
+Alife 1.857 2.150
+JASIST 1.583 2.086
+JAIR 2.247 2.045
+CIJ 0.850 1.923
+NNJ 1.665 1.736
+TFS 1.701 1.373
+TKDE 1.758 1.243
+IRJ 2.036 1.231
+AIIM 1.882 1.124
+TSMCB 1.108 1.052
+AICom 0.612 0.738
+AIRev 0.868 0.562
+————————————————————————————————————————————————————————
+搜集了一些在计算机视觉领域比较有名的数据库、期刊、会议，分享给大家：（大牛们有补充的就在评论区补充一下，我会加上去。）
+1、Elsevier (ScienceDirect OnSite,SDOL)
+http://www.sciencedirect.com/
+2、IEEE/IEE Electronic Library
+http://ieeexplore.ieee.org/
+3、SpringerLink 科技期刊
+http://link.springer.com/
+4、ICCV（IEEE International Conference on Computer Vision）
+http://ieeexplore.ieee.org/xpl/conhome.jsp?punumber=1000149
+5、ICCVR
+http://ieeexplore.ieee.org/xpl/conferences.jsp?queryText=ICCVW
+6、CVPR(IEEE Conference on Computer Vision and Pattern Recognition)
+http://ieeexplore.ieee.org/xpl/conhome.jsp?punumber=1001809
+7、CVPRW
+http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6230822
+8、PAMI（IEEE Transactions on Pattern Analysis and Machine Intelligence）
+http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34
+9、IJCV
+http://link.springer.com/journal/11263
+10、ECCV
+http://link.springer.com/search?query=ECCV
+11、TIP
+http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83
+12、CVPapers：
+http://www.cvpapers.com/index.html关于ICCV，CVPR，ECCV的一个总结

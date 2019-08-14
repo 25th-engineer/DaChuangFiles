@@ -1,0 +1,26 @@
+International Conference on Machine Learning
+http://icml.cc/2015/
+ICML is the leading international machine learning conference and is supported by the International Machine Learning Society (IMLS).
+The 32nd International Conference on Machine Learning (ICML 2015) will be held in Lille, France, on July 6 – July 11, 2015.
+The Neural Information Processing Systems (NIPS)
+http://nips.cc/
+The Foundation: The Neural Information Processing Systems (NIPS) Foundation is a non-profit corporation whose purpose is to foster the exchange of research on neural information processing systems in their biological, technological, mathematical, and theoretical aspects. Neural information processing is a field which benefits from a combined view of biological, physical, mathematical, and computational sciences.
+Uncertainty in Artificial Intelligence
+http://auai.org/uai2015/index.shtml
+The Conference on Uncertainty in Artificial Intelligence (UAI) is one of the premier international conferences on research related to knowledge representation, learning, and reasoning in the presence of uncertainty. UAI is supported by the Association for Uncertainty in Artificial Intelligence (AUAI).
+UAI 2015 will be held in Amsterdam, The Netherlands, from July 12th to 16th, 2015. The main conference will take place on July 13-15, with tutorials on July 12 and workshops (tentative) on July 16. The conference will be located close in time and location with the ICML 2015 (July 6-11, 2015 in Lille, France) and EMS 2015 (July 6-10, 2015 in Amsterdam, The Netherlands) conferences. Traveling between Lille and Amsterdam takes about 2.5 hours by train.
+Key dates
+Tuesday, March 3, 2015, 11:59pm UTC: Paper submission deadline
+April 20-23, 2015: Author feedback about initial reviews
+Tuesday, May 12, 2015: Author notification
+Tuesday, June 1, 2015: Camera-ready copy due
+International Joint Conference on Artificial Intelligence
+http://ijcai-15.org/index.php/about-ijcai
+IJCAI is the International Joint Conference on Artificial Intelligence, the main international gathering of researchers in AI. Held biennially in odd-numbered years since 1969, IJCAI is sponsored jointly by IJCAI and the national AI societie(s) of the host nation(s).
+IJCAI is a not-for-profit scientific and educational organization incorporated in California. Its major objective is dissemination of information and cutting-edge research on Artificial Intelligence through its Conferences, Proceedings and other educational materials.
+IJCAI-13 was held in Beijing, China, from 3rd August through 9th August 2013. The IJCAI Organization and Local Arrangements
+IJCAI Board of Trustees in its historical meeting held on Thursday, July 21, 2011 in Barcelona, Catalonia, Spain, decided that IJCAI conferences will be held annually in the future.
+IJCAI-15 will be held in Buenos Aires, Argentina. IJCAI-16 will be held in New York, USA and IJCAI-17 in Melbourne, Australia.
+AAAI 2015 (The Twenty-Ninth AAAI Conference on Artificial Intelligence will be held January 25–29, 2015 in Austin, Texas USA)
+期刊：ml，jmlr，pami
+TOP：ICDM SDM KDD CVPR ICCV AAAI

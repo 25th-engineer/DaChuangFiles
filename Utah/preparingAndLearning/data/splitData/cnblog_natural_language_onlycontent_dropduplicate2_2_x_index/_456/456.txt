@@ -1,0 +1,30 @@
+因为想学python自然语言处理就想在mac上重新配置一下python。
+在网上找了很久才找到两篇有用的教程http://765i.cn/%E5%9C%A8macosx%E4%B8%8A%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85python-10-8/
+http://woodpecker.org.cn/diveintopython3/installing-python.html
+第一篇文章基本没有问题，但是使用了下发现，还是少了一些命令。
+第一步, 下载最新的Python版本
+下载的地址就在http://python.org， 最新的版本是Python 2.7.3 Mac OS X 64-bit/32-bit x86-64/i386 Installer (for Mac OS X 10.6 and 10.7)，大约是18.8Mb。DMG的格式，下载完成，双击即可安装，不需要任何设置，默认的安装路径是 /Library/Frameworks/Python.framework，不过这和系统原有的路径不一样。因为系统之前是存在Python的，所以安装成功后，在Terminal里运行Python，看到的依旧是2.7.2的版本号。接下来，我们要做的就是把原来的系统版本移除，让新的版本正常工作
+第二步, 把Python挪到正确的位置去
+如第二步删除系统原有的/System/Library/Frameworks/Python.framework/Versions/文件夹下的python
+sudo rm -R /System/Library/Frameworks/Python.framework/Versions/2.7
+使用完该命令以后要再系统文件下重新建立文件夹Version，sudo mkdir Version,反之无法继续下面命令
+sudo mv /Library/Frameworks/Python.framework/Versions/2.7 /System/Library/Frameworks/Python.framework/Versions
+来移动新的python到原来的系统路径下。
+第三步，修改文件所属的Group
+设置Group为wheel，原来系统自带的就是这样的。／／这个很重要自己设置的时候没注意
+sudo chown -R root:wheel /System/Library/Frameworks/Python.framework/Versions/2.7
+但是其实我的电脑做到这一步就可以了，下面两步感觉不是必须的。
+第四步，更新一下Current的Link
+在Versions的目录里有一个Current的link，是指向当前的Python版本，原始是指向系统自带的Python2.7.2，我们把它删除后，link就失效了，所以需要重新链一下这里的Current文件夹同样需要重新设置。
+sudo rm /System/Library/Frameworks/Python.framework/Versions/Current sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7 /System/Library/Frameworks/Python.framework/Versions/Current
+第五步，重新链接可执行文件
+1) 先把系统原来的执行文件删掉
+sudo rm /usr/bin/pydoc sudo rm /usr/bin/python sudo rm /usr/bin/pythonw sudo rm /usr/bin/python-config
+2) 建立新的链接
+sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7/bin/pydoc /usr/bin/pydoc sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7/bin/python /usr/bin/python sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7/bin/pythonw /usr/bin/pythonw sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7/bin/python-config /usr/bin/python-config
+最后，更新一下.bash_profile文件
+cd ~
+vim .bash_profile (只要能编辑就行)
+插入新的Python路径
+# Setting PATH for Python 2.7 # The orginal version is saved in .bash_profile.pysave PATH="/System/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}" export PATH
+之后打命令python -V就可以看到版本是2.7.3

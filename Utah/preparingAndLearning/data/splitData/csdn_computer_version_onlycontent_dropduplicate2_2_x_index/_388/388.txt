@@ -1,0 +1,52 @@
+计算机视觉方向网站
+1 Visual 3D Modeling
+2 University of California 的计算机视觉课程
+3 多视几何教程的代码
+4 VGG
+计算机视觉方向博客
+人工智能方向博客
+尹相志Allans blog
+人工智能方向网站
+1 AI Weekly
+2 CSDN-机器学习-知识库
+3 CUM计算机学院
+实用网站
+Quora
+其他
+1 在线玩转深度学习
+2 一个数学问题讲解网站
+计算机视觉书籍
+1.计算机视觉方向网站
+1.1 Visual 3D Modeling
+美国北卡罗来纳大学教堂山分校（UNC）的Visual 3D Modeling from Images的课程notes，详细内容见该课程目录页，有一些关于摄影几何基本知识、摄像机模型、多视几何等的基本概念的介绍，浅显易懂，特别是配了很多特别棒的图，易于理解！
+1.2 University of California 的计算机视觉课程
+CSE 252B: Computer Vision II
+1.3 多视几何教程的代码
+Richard Hartley和Andrew Zisserman的多视几何的MATLAB代码，只有书中部分内容对应的代码
+1.4 VGG
+超级权威的一个网站，里面有大量计算机视觉相关算法、文章和软件
+http://www.robots.ox.ac.uk/~vgg/
+2.计算机视觉方向博客
+Damier Teney的个人网站，里面有许多关于该作者自己的各种关于computer vision的m文件：http://damienteney.info/dml.htm
+3. 人工智能方向博客
+尹相志Allan’s blog
+尹相志Allan’s blog主要介绍人工智能方向的内容，内容为繁体字书写，应该是香港人吧
+4.人工智能方向网站
+4.1 AI Weekly
+AI Weekly是一个人工资能方向的日报，可以输入邮箱订阅，每天更新人工智能领域的最新进展、想课程等，但为英文版本
+4.2 CSDN-机器学习-知识库
+CSDN-机器学习-知识库
+4.3 CUM计算机学院
+CUM机器学习团队-joe
+5.实用网站
+Quora
+美国的一个问答网站，类似于国内的知乎，比较活跃，但需要使用英文进行问答
+６.其他
+6.1 在线玩转深度学习
+Google Tensorflow给出了一个非常直观的playground，任何人都可以通过该网站玩转深度学习，非常酷炫
+6.2 一个数学问题讲解网站
+interactive mathematics
+该网站以浅显易懂的语言讲解了许多基本的数学知识，比如，什么是向量、圆、….等
+7.计算机视觉书籍
+《Computer Vision for Visual Effects》
+现在的很多大片例如阿凡达等，里面的特效制作都使用了大量的计算机视觉技术。这本书就是用来介绍如何使用现在最先进的计算机视觉技术来制作电影电视特效。

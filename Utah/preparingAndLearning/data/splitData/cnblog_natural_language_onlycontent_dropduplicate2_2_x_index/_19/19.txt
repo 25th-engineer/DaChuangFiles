@@ -1,0 +1,362 @@
+1. NLP 走近自然语言处理
+概念
+Natural Language Processing/Understanding，自然语言处理/理解
+日常对话、办公写作、上网浏览
+希望机器能像人一样去理解，以人类自然语言为载体的文本所包含的信息，并完成一些特定任务
+内容
+中文分词、词性标注、命名实体识别、关系抽取、关键词提取、信息抽取、依存分析、词嵌入……
+应用
+篇章理解、文本摘要、情感分析、知识图谱、文本翻译、问答系统、聊天机器人……
+2. NLP 使用jieba分词处理文本,中文分词,关键词提取,词性标注
+https://github.com/fxsjy/jieba
+jieba：基于前缀词典进行词图扫描，构成全部可能分词结果的有向无环图，动态规划查找最大概率路径
+1. 中文分词:jieba.cut
+import jieba
+seg_list = jieba.cut("我来到北京清华大学", cut_all=True)
+print("Full Mode: " + "/ ".join(seg_list)) # 全模式
+seg_list = jieba.cut("我来到北京清华大学", cut_all=False)
+print("Default Mode: " + "/ ".join(seg_list)) # 精确模式
+seg_list = jieba.cut("他来到了网易杭研大厦") # 默认是精确模式
+print(", ".join(seg_list))
+seg_list = jieba.cut_for_search("小明硕士毕业于中国科学院计算所，后在日本京都大学深造") # 搜索引擎模式
+print(", ".join(seg_list))
+2 .关键词提取:jieba.analyse.extract_tags
+import jieba.analyse
+基于TF-IDF：jieba.analyse.extract_tags(sentence, topK=20, withWeight=False, allowPOS=())
+基于TextRank：jieba.analyse.textrank(sentence, topK=20, withWeight=False, allowPOS=('ns', 'n', 'vn', 'v'))
+使用 add_word(word, freq=None, tag=None) 和 del_word(word) 可在程序中动态修改词典。
+使用 suggest_freq(segment, tune=True) 可调节单个词语的词频，使其能（或不能）被分出来。
+sentence 为待提取的文本
+topK 为返回几个 TF/IDF 权重最大的关键词，默认值为 20
+withWeight 为是否一并返回关键词权重值，默认值为 False
+allowPOS 仅包括指定词性的词，默认值为空，即不筛选
+3 .词性标注:jieba.posseg.cut()
+import jieba.posseg as pseg
+words = pseg.cut("我爱北京天安门")
+for word, flag in words:
+print('%s, %s' % (word, flag))
+我 r
+爱 v
+北京 ns
+天安门 ns
+4. 并行分词
+原理：将目标文本按行分隔后，把各行文本分配到多个 Python 进程并行分词，然后归并结果，从而获得分词速度的可观提升
+基于 python 自带的 multiprocessing 模块，目前暂不支持 Windows
+用法：
+jieba.enable_parallel(4) # 开启并行分词模式，参数为并行进程数
+jieba.disable_parallel() # 关闭并行分词模式
+例子：https://github.com/fxsjy/jieba/blob/master/test/parallel/test_file.py
+实验结果：在 4 核 3.4GHz Linux 机器上，对金庸全集进行精确分词，获得了 1MB/s 的速度，是单进程版的 3.3 倍。
+注意：并行分词仅支持默认分词器 jieba.dt 和 jieba.posseg.dt。
+5. Tokenize：返回词语在原文的起止位置
+注意，输入参数只接受 unicode
+默认模式
+result = jieba.tokenize(u'永和服装饰品有限公司')
+for tk in result:
+print("word %s\t\t start: %d \t\t end:%d" % (tk[0],tk[1],tk[2]))
+word 永和 start: 0 end:2
+word 服装 start: 2 end:4
+word 饰品 start: 4 end:6
+word 有限公司 start: 6 end:10
+搜索模式
+result = jieba.tokenize(u'永和服装饰品有限公司', mode='search')
+for tk in result:
+print("word %s\t\t start: %d \t\t end:%d" % (tk[0],tk[1],tk[2]))
+word 永和 start: 0 end:2
+word 服装 start: 2 end:4
+word 饰品 start: 4 end:6
+word 有限 start: 6 end:8
+word 公司 start: 8 end:10
+word 有限公司 start: 6 end:10
+Segmentation speed
+1.5 MB / Second in Full Mode
+400 KB / Second in Default Mode
+Test Env: Intel(R) Core(TM) i7-2600 CPU @ 3.4GHz；《围城》.txt
+词性列表
+1. 名词 (1个一类，7个二类，5个三类)
+n 名词
+nr 人名
+nr1 汉语姓氏
+nr2 汉语名字
+nrj 日语人名
+nrf 音译人名
+ns 地名
+nsf 音译地名
+nt 机构团体名
+nz 其它专名
+nl 名词性惯用语
+ng 名词性语素
+2. 时间词(1个一类，1个二类)
+t 时间词
+tg 时间词性语素
+3. 处所词(1个一类)
+s 处所词 (家中、门外、境内、西方……)
+4. 方位词(1个一类)
+f 方位词
+5. 动词(1个一类，9个二类)
+v 动词
+vd 副动词
+vn 名动词
+vshi 动词“是”
+vyou 动词“有”
+vf 趋向动词
+vx 形式动词
+vi 不及物动词（内动词）
+vl 动词性惯用语
+vg 动词性语素
+6. 形容词(1个一类，4个二类)
+a 形容词
+ad 副形词
+an 名形词
+ag 形容词性语素
+al 形容词性惯用语
+7. 区别词(1个一类，2个二类)
+b 区别词 (主要、整个、所有……)
+bl 区别词性惯用语
+8. 状态词(1个一类)
+z 状态词
+9. 代词(1个一类，4个二类，6个三类)
+r 代词
+rr 人称代词
+rz 指示代词
+rzt 时间指示代词
+rzs 处所指示代词
+rzv 谓词性指示代词
+ry 疑问代词
+ryt 时间疑问代词
+rys 处所疑问代词
+ryv 谓词性疑问代词
+rg 代词性语素
+10. 数词(1个一类，1个二类)
+m 数词
+mq 数量词
+11. 量词(1个一类，2个二类)
+q 量词
+qv 动量词
+qt 时量词
+12. 副词(1个一类)
+d 副词
+13. 介词(1个一类，2个二类)
+p 介词
+pba 介词“把”
+pbei 介词“被”
+14. 连词(1个一类，1个二类)
+c 连词
+cc 并列连词
+15. 助词(1个一类，15个二类)
+u 助词
+uzhe 着
+ule 了 喽
+uguo 过
+ude1 的 底
+ude2 地
+ude3 得
+usuo 所
+udeng 等 等等 云云
+uyy 一样 一般 似的 般
+udh 的话
+uls 来讲 来说 而言 说来
+uzhi 之
+ulian 连 （“连小学生都会”）
+16. 叹词(1个一类)
+e 叹词
+17. 语气词(1个一类)
+y 语气词(delete yg)
+18. 拟声词(1个一类)
+o 拟声词
+19. 前缀(1个一类)
+h 前缀
+20. 后缀(1个一类)
+k 后缀
+21. 字符串(1个一类，2个二类)
+x 字符串
+xx 非语素字
+xu 网址URL
+22. 标点符号(1个一类，16个二类)
+w 标点符号
+wkz 左括号，全角：（ 〔 ［ ｛ 《 【 〖 〈 半角：( [ { <
+wky 右括号，全角：） 〕 ］ ｝ 》 】 〗 〉 半角： ) ] { >
+wyz 左引号，全角：“ ‘ 『
+wyy 右引号，全角：” ’ 』
+wj 句号，全角：。
+ww 问号，全角：？ 半角：?
+wt 叹号，全角：！ 半角：!
+wd 逗号，全角：， 半角：,
+wf 分号，全角：； 半角： ;
+wn 顿号，全角：、
+wm 冒号，全角：： 半角： :
+ws 省略号，全角：…… …
+wp 破折号，全角：—— －－ ——－ 半角：--- ----
+wb 百分号千分号，全角：％ ‰ 半角：%
+wh 单位符号，全角：￥ ＄ ￡ ° ℃ 半角：$
+文本挖掘主要有哪些功能
+自然语言处理技术文本挖掘功能：
+* 涉黄涉政检测：对文本内容做涉黄涉政检测，满足相应政策要求；
+* 垃圾评论过滤：在论坛发言或用户评论中，过滤文本中的垃圾广告，提升文本总体质量；
+* 情感分析：对用户评论等文本内容做情感分析，指导决策与运营；
+* 自动标签提取：自动提取文本重要内容生成关键性标签，在此基础之上拓展更多功能形式；
+* 文本自动分类：通过对文本内容进行分析，给出文本所属的类别和置信度，支持二级分类.
+NLP WordEmbedding的概念和实现
+背景
+如何表示词语所包含的语义？
+苹果？水果？Iphone？
+苹果、梨子，这两个词相关吗？
+语言的表示
+符号主义：Bags-of-word，维度高、过于稀疏、缺乏语义、模型简单
+分布式表示：Word Embedding，维度低、更为稠密、包含语义、训练复杂
+Word Embedding
+核心思想：语义相关的词语，具有相似的上下文环境，例如， 苹果和梨子
+所做的事情：将每个词语训练成，词向量
+实践
+基于gensim包和中文维基语料
+gensim：http://radimrehurek.com/gensim/models/word2vec.html
+中文维基分词语料：链接 https://pan.baidu.com/s/1qXKIPp6 密码 kade
+pip install gensim
+# 加载包
+from gensim.models import Word2Vec
+from gensim.models.word2vec import LineSentence
+# 训练模型
+sentences = LineSentence('wiki.zh.word.text')
+model = Word2Vec(sentences, size=128, window=5, min_count=5, workers=4)
+# 保存模型
+model.save('word_embedding_128')
+# 加载模型
+model = Word2Vec.load("word_embedding_128")
+# 使用模型
+items = model.most_similar(u'中国')
+model.similarity(u'男人', u'女人')
+demo 2017.11.29 by denny shenzhen
+import sys
+import jieba
+import jieba.analyse
+import jieba.posseg as posg
+sentence=u'''深圳新闻网讯 10月30日，世界城市日——全球城市竞争力论坛在广州举行。会上，中国社科院财经战略研究院和联合国人类住区规划署发布了《全球城市竞争力报告2017-2018》（以下简称《报告》）。
+《报告》称，通过对全球1007个城市的“经济竞争力”进行测度后，深圳在“经济竞争力”这项评选中位于第六名。上海、广州、北京分列全球第14、15、20名。
+北上广深，不仅有最繁华的建筑群，最多元的包容性，同时也是很多人改变命运的圆梦场。“经济竞争力”是对现有存量的排名，但对青年们来说，增量的部分（即未来）显得更为重要。《报告》也提供了一个可供参考的指标——“可持续竞争力”，即在未来保持全球竞争力的可持续性。
+在未来“可持续竞争力”排名上，除了北京高于“经济竞争力”指标，其他几座城市的可持续竞争力指标都低于其经济竞争力排名，深圳全球排名第35位。
+科技与金融正在主导全球经济，占据全球价值链的主要部分，尤其是信息科技企业的影响力正变得越来越大。科技中心城市在全球城市体系中的地位不断上升。
+综合2017年各城市所拥有最具价值品牌数量和近十年变化情况等因素，《报告》还提出了未来“新型全球城市”排名，在排名前50的城市当中，北京、深圳、上海、广州皆在其列，而“新一线城市”中仅有杭州入围。“未来的竞争将持续转向以城市经济为单元的竞争”，美国独立经济智库米尔肯研究所亚洲中心研究部董事、总经理黄华跃说。（记者李佳佳'''
+#kw=jieba.analyse.extract_tags(sentence,topK=20,withWeight=True,allowPOS=('n','nr','ns'))
+# kw=jieba.analyse.textrank(sentence,topK=20,withWeight=True,allowPOS=('ns','n','vn','v'))
+# for item in kw:
+# print(item[0],item[1])
+cixingDict = {
+'n': '名词','nr': '人名','nr1': '汉语姓氏','nr2': '汉语名字','nrj': '日语人名','nrf': '音译人名','ns': '地名','nsf': '音译地名',
+'nt': '机构团体名','nz': '其它专名','nl': '名词性惯用语','ng': '名词性语素','t': '时间词','tg': '时间词性语素','s':'处所词',
+'f':'方位词','v': '动词','vd': '副动词','vn': '名动词','vshi': '动词“是”','vyou': '动词“有”','vf': '趋向动词','vx': '形式动词',
+'vi': '不及物动词（内动词）','vl': '动词性惯用语','vg': '动词性语素','a': '形容词','ad': '副形词','an': '名形词','ag': '形容词性语素',
+'al': '形容词性惯用语','b': '区别词 (主要、整个、所有……)','bl': '区别词性惯用语','z': '状态词','r': '代词','rr': '人称代词',
+'rz': '指示代词','rzt': '时间指示代词','rzs': '处所指示代词','rzv': '谓词性指示代词','ry': '疑问代词','ryt': '时间疑问代词',
+'rys': '处所疑问代词','ryv': '谓词性疑问代词','rg': '代词性语素','m': '数词','mq': '数量词','q': '量词','qv': '动量词','qt': '时量词',
+'d':'副词','p': '介词','pba': '介词“把”','pbei': '介词“被”','c': '连词','cc': '并列连词','e':'叹词','y': '语气词',
+'o': '拟声词','h': '前缀','k': '后缀','x': '标点符号','xx': '非语素字','xu': '网址URL',
+'u': '助词',
+'uzhe': '着',
+'ule': ' 了 喽',
+'ul': '助词',
+'uj': '助词2',
+'uguo': '过',
+'ude1': '的 底',
+'ude2': '地',
+'ude3': '得',
+'usuo': '所',
+'udeng': '等 等等 云云',
+'uyy': '一样 一般 似的 般',
+'udh': '的话',
+'uls': '来讲 来说 而言 说来',
+'uzhi': '之',
+'ulian': '连 ',
+'w': '标点符号2',
+'wkz': '左括号，全角：（ 〔 ［ ｛ 《 【 〖 〈 半角：( [ { <',
+'wky': '右括号，全角：） 〕 ］ ｝ 》 】 〗 〉 半角： ) ] { >',
+'wyz': '左引号，全角：『',
+'wyy': '右引号，全角："" 』',
+'wj': '句号，全角：。',
+'ww': '问号，全角：？ 半角：?',
+'wt': '叹号，全角：！ 半角：!',
+'wd': '逗号，全角：， 半角：',
+'wf': '分号，全角：； 半角：',
+'wn': '顿号，全角：、',
+'wm': '冒号，全角：： 半角： ',
+'ws': '省略号，全角：…… …',
+'wp': '破折号，全角：—— －－ ——－ 半角：--- ----',
+'wb': '百分号千分号，全角：％ ‰ 半角：%',
+'wh': '单位符号，全角：￥ ＄ ￡ ° ℃ 半角：$'
+}
+#seg_lig=jieba.cut('习平：担当党的崇高使命 矢志永远奋斗',cut_all=True)
+#print("full_name"+ "/ ".join(seg_lig))
+# seg_lig2=jieba.cut('习平：担当党的崇高使命 矢志永远奋斗',cut_all=False)
+# for item in seg_lig2:
+# print(item)
+# print("default_name"+ "/ ".join(seg_lig2))
+# seg_lig3=jieba.cut_for_search('平：担当党的崇高使命 矢志永远奋斗')
+# print("search_name"+ ", ".join(seg_lig3))
+#
+# ci xing analysis
+def cixingAnalysis(inputtxt):
+word=posg.cut(inputtxt)
+for work,flag in word:
+try:
+print(work,cixingDict[flag])
+except KeyError as e:
+print('except',e)
+# ci xing tongji
+def cixingTongji(inputtxt):
+word=posg.cut(inputtxt)
+n_type={}
+for work,flag in word:
+if flag not in n_type:
+n_type[flag] = 1
+else:
+n_type[flag] += 1
+sorted(n_type.items(),key=lambda d:d[1],reverse=False)
+print(n_type)
+cixingAnalysis(sentence)
+cixingTongji(sentence)
+demo :
+利用HMM进行词性标注
+隐马尔科夫模型(HMM)是什么？说白了，就是一个数学模型，用一堆数学符号和参数表示而已，包括隐藏状态集合、观察符号集合、初始概率向量pi, 状态转移矩阵A，混淆矩阵B。
+隐马尔科夫模型(HMM)的三大基本问题与解决方案包括：
+1. 对于一个观察序列匹配最可能的系统——评估，使用前向算法（forward algorithm）解决；
+2. 对于已生成的一个观察序列，确定最可能的隐藏状态序列——解码，使用维特比算法（Viterbi algorithm）解决；
+3. 对于已生成的观察序列，决定最可能的模型参数——学习，使用前向-后向算法（forward-backward algorithm）解决。
+可以解释为：
+1、对词性标注问题进行提炼：词性标注本质上是一个分类问题，对于句子中的每一个单词W，找到一个合适的词类类别T，也就是词性标记，不过词性标注考虑的是整体标记的好坏，既整个句子的序列标记问题；
+2、抽象为数学模型：对于分类问题，有很多现成的数学模型和框架可以套用，譬如HMM、最大熵模型、条件随机场、SVM等等；
+3、求出模型的解：上述模型和框架一旦可以套用，如何求解就基本确定好了，就像HMM中不仅描述了三大基本问题，并相应的给出了求解方案一样；
+4、验证模型的合理性：就是词性标注的准确率等评测指标了，在自然语言处理中属于必不可少的评测环节；
+5、解释现实问题：如果词性标注的各项指标够好，就可以利用该数学模型构造一个词性标注器来解决某种语言的标注问题了！
+词性标注的数学建模就这样了，自然语言处理中的多数分类问题与此相似。这里讲得是HMM的应用，所以其他模型暂且不表，以后有机会有条件了我们再说。
+word2vec
+使用word2vec训练一个高质量的同义词库将"非标准表述" 映射到 "标准表述"，这就是Synonyms的起源.
+文本进行分词:jieba.cut(line.strip(),cut_all = False)
+统计 词频：jieba.lcut(line.strip(),cut_all = False)
+动态调整词典:jieba.suggest_freq(segment,tune=True)可以调节每个单个词语的词频，使其能/不能被分出来。
+jieba.suggest_freq(('中','将'),tune=True) #True表示希望分出来，False表示不希望分出来。
+Facebook FastText:模型简单，训练速度非常快
+fasttext是facebook开源的一个词向量与文本分类工具
+就是把文档中所有词通过lookup table变成向量，取平均后直接用线性分类器得到分类结果
+对比gensim的word2vec word2vec&doc2vec词向量模型
+作为一个处理可变长度文本的总结性方法，Quoc Le 和 Tomas Mikolov 提出了 Doc2Vec方法。除了增加一个段落向量以外，这个方法几乎等同于 Word2Vec。
+中文自然语言处理分析
+1.关键词提取
+基于 TF-IDF 算法的关键词抽取:特征选取
+•jieba.analyse.extract_tags(sentence, topK=20, withWeight=False, allowPOS=())◾sentence 为待提取的文本
+◾topK 为返回几个 TF/IDF 权重最大的关键词，默认值为 20
+◾withWeight 为是否一并返回关键词权重值，默认值为 False
+◾allowPOS 仅包括指定词性的词，默认值为空，即不筛选
+基于 TextRank 算法的关键词抽取:从本篇文档中提取关键词
+•jieba.analyse.textrank(sentence, topK=20, withWeight=False, allowPOS=('ns', 'n', 'vn', 'v')) 直接使用，接口相同，注意默认过滤词性。
+•jieba.analyse.TextRank() 新建自定义 TextRank 实例
+2.LDA主题模型
+.载入停用词
+.转换成合适的格式
+.词袋模型dictionary = corpora.Dictionary(sentences)
+corpus = [dictionary.doc2bow(sentence) for sentence in sentences]
+.LDA建模lda = gensim.models.ldamodel.LdaModel(corpus=corpus, id2word=dictionary, num_topics=20)
+print lda.print_topic(3, topn=5)
+处理可变长度文本的总结性方法 Doc2Vec方法
+用深度学习做文本分类:
+1.CNN做文本分类
+2 LSTM:long short term memory 捕捉时序信息的长短时记忆神经网络
+3.GRU分类器

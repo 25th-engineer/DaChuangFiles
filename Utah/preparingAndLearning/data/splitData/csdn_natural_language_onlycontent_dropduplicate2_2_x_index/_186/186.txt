@@ -1,0 +1,15 @@
+哈工大语言云（语言技术平台云）是以哈工大社会计算与信息检索研究中心研发的“语言技术平台（LTP）” 为基础，提供高效精准的中文自然语言处理云服务。
+官网：http://www.ltp-cloud.com/
+使用python调用API实验，参考文档：http://www.ltp-cloud.com/document/
+1.注册：免费注册一个帐号
+注册网址：http://www.ltp-cloud.com/accounts/register/
+注册后获取调用语言云服务的token以及api_key（新版API的调用认证方式）。目前新注册用户将获得每月20G的免费流量。
+2.Python程序（注：32位 python 2.7.11，64位win7系统）
+（1）简单测试句子
+# -*- coding: utf-8 -*- """ 功能：哈工大语言云使用测试 时间：2016年4月9日 13:45:24 """ import urllib2 url_get_base = "http://api.ltp-cloud.com/analysis/?" api_key = '********替换为自己的API_KEY********’ # 输入注册API_KEY # 待分析的文本 text = "这是一个测试文本" format0 = 'xml' # 结果格式，有xml、json、conll、plain（不可改成大写） pattern = 'ws' # 指定分析模式，有ws、pos、ner、dp、sdp、srl和all result = urllib2.urlopen("%sapi_key=%s&text=%s&format=%s&pattern=%s" % (url_get_base, api_key, text, format0, pattern)) content = result.read().strip() print content
+（2）本地文本处理
+# -*- coding: utf-8 -*- """ 功能：哈工大语言云使用测试 时间：2016年4月12日 19:56:11 """ import urllib2 import codecs def ltp_cloud(par1): url_get_base = "http://api.ltp-cloud.com/analysis/?" api_key = '***********替换为自己的API_KEY***********' # 用户注册语言云服务后获得的认证标识 format0 = 'plain' # 结果格式，有xml、json、conll、plain（不可改成大写） pattern = 'ws' # 指定分析模式，有ws、pos、ner、dp、sdp、srl和all result1 = urllib2.urlopen("%sapi_key=%s&text=%s&format=%s&pattern=%s" % (url_get_base, api_key, par1, format0, pattern)) return result1.read().strip() f = open(r"C:\Users\lenovo\Desktop\test.txt", "r") # 待分析文本，已分句，每行一句。 savef = codecs.open(u"C:\\Users\\lenovo\\Desktop\\out1.txt", "a", "utf-8") # 结果存储 linenum = 0 newline = "" for line in f: linenum += 1 # 记录处理行数 newline += line.strip().replace("#", "") # 删除行末空白符、干扰符号，以免影响URI if line[-1] != "\n": # 如果处理到文本最后一行 if " and " and " in " in newline: print u"需要更改单词in" newline = newline.replace(" in ", " i.n ") print u"已处理到文本最后一行：", linenum savef.write(ltp_cloud(newline).decode("utf-8") + "\n") if len(newline) > 6000: # 让文本足够长时再提交处理，最大值在8000左右 if " and " and " in " in newline: # 不能同时含有and和in两个词 print u"需要更改单词in" newline = newline.replace(" in ", " i.n ") print u"处理到第" + str(linenum) + u"行" savef.write(ltp_cloud(newline).decode("utf-8") + "\n") newline = "" savef.close() f.close()
+说明：
+[1]如果是本地文本，尽量一次提交尽可能多的文本，而不是一句一句提交，以提高请求效率。一次提交的文本有最大长度限制，在UTF-8编码下，单次解析的文本长度大约为2700个汉字（8100长度）。
+[2]提交的文本中不能有影响URI构造的特殊符号，目前已知的干扰符号有【# & ; +】四种；另外不知道为什么英文单词and和in不能同时存在于提交的文本中。
+[3]上述程序中读取的文本是已经分好句的，每行一句。不过语言云本身提供分句功能，因此可以直接提交没有分句的文本。其分句是根据中文标点符号【。？！；……】五种。

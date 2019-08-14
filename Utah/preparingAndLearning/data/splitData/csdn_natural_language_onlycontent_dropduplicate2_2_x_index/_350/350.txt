@@ -1,0 +1,70 @@
+自然语言处理-实际开发
+一个可以识别自然语言的翻译应用
+-----------------------------------------------------------------------------
+必不可少的开发环境
+Eclipse4.5+JDK1.7+WindowBuilder插件
+其他资源
+语义平台：OLAMI
+源代码：https://github.com/volcanoliu/TranslateDemo
+可执行文件：http://download.csdn.net/detail/u011211290/9888544
+百度云地址：http://pan.baidu.com/s/1bQhH4U
+1.界面及使用
+这里介绍一下页面。
+整体分为三个部分，最上面的是对话框，中间的是回答框，最下面的比较大的显示的是从语义平台取得的语义数据。
+使用方式：把需要理解的语句输入到对话框中，点击发送，就可以得到结果。
+返回结果：
+2.代码简介
+这里先整体简单介绍一下。
+NLPJSON.java 里面是拿到语义返回JSON数据的关键字；
+APIJSON.java 里面是拿到翻译返回JSON数据的关键字。
+ApiLanguage.java 里面是翻译API接口需要的各国语言的缩写；
+Encrypt.java 功能是加密字符串，里面只有MD5加密的方法；
+Format.java 功能是整理JSON内容，用于输出；
+GetModifier.java 功能是从OLAMI提供的API接口拿到语义；
+HttpRequestUtils.java 功能是发送HTTP请求,获得HTTP返回的数据；
+MainWindow.java 是主程序，做的是窗口的建立和主流程的控制；
+ModifierProcess.java 功能是处理语义；
+TranslateByAPI.java 功能是从翻译API接口拿到翻译的结果；
+3.核心代码
+3.1 MainWindows.java
+Button btnNewButton = new Button(translateShell, SWT.NONE); translateShell.setDefaultButton(btnNewButton); btnNewButton.setLocation(319, 91); btnNewButton.setSize(80, 27); btnNewButton.addSelectionListener(new SelectionAdapter() { @Override public void widgetSelected(SelectionEvent e) { NLPText.setText(""); String src = inputText.getText(); if (src == null || src.length() == 0) { answerText.setText("你还没有输入内容！"); return; } // 把string用接口拿到语义 JSONObject nlp = GetModifier.GetNLI(src); NLPText.setText(Format.formatJson(nlp.toString())); // 处理语义 String answer = ModifierProcess.NLPProcess(nlp); answerText.setText(answer); if (errorFlag == 1) { answerText.setText(errorMessage); } else if (errorFlag == 2) { answerText.setText("遇到了错误，但这不是我的锅！"); } resetError(); } }); btnNewButton.setText("发送");
+这里是主程序的处理流程，发送按钮做了监听。
+先处理输入内容，然后把内容发送到语义平台拿到语义，然后去处理语义，输出结果。
+3.2 GetModifier.java
+protected static JSONObject GetNLI(String src) { JSONObject data = new JSONObject(); data.put("input_type", 1); data.put("text", src); JSONObject send = new JSONObject(); send.put("data_type", "stt"); send.put("data", data); // 时间戳 long timestamp = new Timestamp(System.currentTimeMillis()).getTime(); // 签名 String sign = appSecret + "api=" + api + "appkey=" + appKey + "timestamp=" + timestamp + appSecret; sign = Encrypt.MD5(sign); // 参数 Map<String, String> post_data = new HashMap<String, String>(); post_data.put("appkey", appKey); post_data.put("api", api); post_data.put("timestamp", String.valueOf(timestamp)); post_data.put("sign", sign); post_data.put("rq", send.toString()); post_data.put("cusid", cusid); return HttpRequestUtils.httpPost(apiUrl, post_data); }
+3.3 ModifierProcess.java
+protected static String NLPProcess(JSONObject nlpJson) { String status = nlpJson.getString(NLPJSON.JSON_STATUS); if (status == null || !NLPJSON.STATUS_OK.equalsIgnoreCase(status)) { MainWindow.setErrorFlag(2); return ""; } // Get info from JSON String result = ""; String modifier = null; String src_language = null; String dst_language = null; String src_code = null; String dst_code = null; String content = null; String resultLanguage = null; try { JSONObject nli = nlpJson.getJSONObject(NLPJSON.JSON_DATA).getJSONArray(NLPJSON.DATA_NLI).getJSONObject(0); JSONObject descobj = nli.getJSONObject(NLPJSON.NLI_DESCOBJ); if (!"0".equals(descobj.getString(NLPJSON.DESCOBJ_STATUS))) { MainWindow.setErrorFlag(1); MainWindow.setErrorMessage(descobj.getString(NLPJSON.DESCOBJ_RESULT)); return ""; } JSONObject semantic = nli.getJSONArray(NLPJSON.NLI_SEMANTIC).getJSONObject(0); modifier = semantic.getJSONArray(NLPJSON.SEMANTIC_MODIFIER).getString(0); JSONArray slotsArray = semantic.getJSONArray(NLPJSON.SEMANTIC_SLOTS); if (slotsArray != null && slotsArray.size() > 0) { Map<String, String> slotsMap = new HashMap<String, String>(); for (int i = 0; i < slotsArray.size(); i++) { JSONObject slots = slotsArray.getJSONObject(i); String name = slots.getString(NLPJSON.SLOTS_NAME); String value = slots.getString(NLPJSON.SLOTS_VALUE); slotsMap.put(name, value); } src_language = slotsMap.get(NLPJSON.S_SRCLANGUAGE); dst_language = slotsMap.get(NLPJSON.S_DSTLANGUAGE); content = slotsMap.get(NLPJSON.S_CONTENT); } } catch (Exception e) { MainWindow.setErrorFlag(2); return ""; } // Process the info if (modifier == null || modifier.length() < 1) { MainWindow.setErrorFlag(2); return ""; }// 问能力 if (modifier.equalsIgnoreCase(NLPJSON.M_CAN)) { if (dst_language != null && dst_language.length() > 0) { String language = ApiLanguage.language.get(dst_language); if (language != null && language.length() > 0) { MainWindow.resetLastLanguage(); MainWindow.setLastDstLanguage(dst_language); result = "没问题！"; return result; } result = "我还不懂" + dst_language + "，但我会慢慢学习的！"; return result; } result = "我可以翻译，问我吧，但最好不要太难哟！"; return result; } else if (modifier.equalsIgnoreCase(NLPJSON.M_CANDOWHICH)) { // 问能翻译多少种语言 // map.keyset get 5 languages Set<String> set = ApiLanguage.language.keySet(); set.remove(ApiLanguage.AUTO); String[] language = set.toArray(new String[set.size()]); int start = 0; for (int i = 0; i < outputLanguageNumber; i++) { Random random = new Random(); start += random.nextInt(language.length - outputLanguageNumber + i - start) + 1; result += language[start] + "、"; } MainWindow.resetLastLanguage(); result = "我会翻译" + result.substring(0, result.length() - 1) + "...还有好多种语言！"; return result; } else if (modifier.equalsIgnoreCase(NLPJSON.M_TRANSLATE)) { // 翻译内容 // If content exist, get languages, translate it by translateApi if (content != null && content.length() > 0) { if (src_language == null || src_language.length() == 0) { String lastSrcLanguage = MainWindow.getLastSrcLanguage(); if (lastSrcLanguage == null || lastSrcLanguage.length() == 0) { src_code = ApiLanguage.language.get(ApiLanguage.AUTO); } else { src_code = ApiLanguage.language.get(lastSrcLanguage); } } else { src_code = ApiLanguage.language.get(src_language); if (src_code == null || src_code.length() == 0) { result = "我还没有学会" + src_language + "，等我学会之后你再问我吧！"; return result; } } if (dst_language == null || dst_language.length() == 0) { String lastDstLanguage = MainWindow.getLastDstLanguage(); if (lastDstLanguage == null || lastDstLanguage.length() == 0) { dst_code = ApiLanguage.language.get(ApiLanguage.ENGLISH); resultLanguage = ApiLanguage.ENGLISH; } else { dst_code = ApiLanguage.language.get(lastDstLanguage); resultLanguage = lastDstLanguage; } } else { dst_code = ApiLanguage.language.get(dst_language); resultLanguage = dst_language; if (dst_code == null || dst_code.length() == 0) { result = "我还没有学会" + dst_language + "，等我学会之后你再问我吧！"; return result; } } MainWindow.setLastSrcLanguage(src_language); MainWindow.setLastDstLanguage(dst_language); String transResult = TranslateByAPI.translateProcess(content, src_code, dst_code); if (transResult.equals(content)) { dst_code = ApiLanguage.language.get(ApiLanguage.CHINESE); resultLanguage = ApiLanguage.CHINESE; transResult = TranslateByAPI.translateProcess(content, src_code, dst_code); } if ("".equals(transResult)) { return ""; } result = "【" + content + "】翻译成" + resultLanguage + "的结果是【" + transResult + "】"; return result; } else { if (src_language != null && src_language.length() > 0 && dst_language != null && dst_language.length() > 0) { MainWindow.setLastSrcLanguage(src_language); MainWindow.setLastDstLanguage(dst_language); } result = "你说，我来翻译！"; return result; } } // 前面没有处理，设置错误标志 MainWindow.setErrorFlag(2); return result; }
+从语义数据拿到语义信息，然后判断返回的modifier和slot内容作出处理。
+3.4 TranslateByAPI.java
+protected static String translateProcess(String src, String from, String to) { if (src == null || src.length() == 0) { MainWindow.setErrorFlag(2); return ""; } else if (src.length() > 1500) { MainWindow.setErrorFlag(1); MainWindow.setErrorMessage("翻译的文字太多了！"); return ""; } if (from == null) { MainWindow.setErrorFlag(1); MainWindow.setErrorMessage("输入的文字看不懂啊！"); return ""; } if (to == null) { MainWindow.setErrorFlag(1); MainWindow.setErrorMessage("我还不会你想要的语言！"); return ""; } int salt = new Random().nextInt(10000); // 签名 String sign = Encrypt.MD5(APPID + src + salt + key); if (sign == "") { return ""; } Map<String, String> params = new HashMap<String, String>(); params.put("appid", APPID); params.put("salt", String.valueOf(salt)); params.put("sign", sign); params.put("from", from); params.put("to", to); params.put("q", src); JSONObject translate = HttpRequestUtils.httpPost(apiUrl, params); String errorCode = translate.getString(APIJSON.ERROR); if (errorCode != null && errorCode.length() > 0) { MainWindow.setErrorFlag(2); return ""; } JSONObject transResult = null; try { transResult = translate.getJSONArray(APIJSON.TRANS_RESULT).getJSONObject(0); } catch (Exception e) { MainWindow.setErrorFlag(2); return ""; } if (transResult == null) { MainWindow.setErrorFlag(2); return ""; } String result = transResult.getString(APIJSON.RESULT_DST); if (result == null) { MainWindow.setErrorFlag(2); return ""; } return result; }
+通过翻译API来翻译内容。API的调用方法大同小异。
+到此为止，翻译工作就完成了。
+4.总结
+总体来说，功能简单，代码简单，但是能做到的事情就很强大，总体还是归功于语义开放平台的语义解析。
+其他说明
+GetModifier.java 里面所使用到的调用语义API接口的关键信息，开发者需自行在OLAMI官网注册生成并更换，这样开发者可以自己定义所需的语法。
+TranslateByAPI.java 里所使用到的调用翻译API接口的关键信息，开发者也需自行更换。目前某度的翻译API处于量小免费量大收费的模式，开发者使用的话还是不用担心超出免费额度的情况。但是如果发现有被乱用的现象，作者将关闭翻译API的接口。
+语义开放平台
+1.注册登陆OLAMI官网；
+2.点击账号出现下拉菜单，点击“NLI系统”进入语法编辑系统（可以选择导入已有的模块，也可以创建模块自定义语法）；
+3.导入translate语义模块；
+4.进入语义模块，点击“发布”进入发布页面，点击“发布”按钮，启用刚才导入的语法；
+5.回到官网，点击账号出现菜单，点击“应用管理”，进入应用管理页面，点击“创建新应用”，新建一个应用；
+6.配置应用，点击“配置模块”，勾选模块，选择这个应用需要支持的模块，第一个选项卡是自定义的模块，第二个选项卡是系统自带模块；
+7.“查看Key”可以查询使用API调用应用所需要的key，“测试”可以测试应用的语法。
+更多的文档可以参照OLAMI文档中心
+最后
+这里只是做了一个可以运行的demo。如果说能把这些功能整合到个人网站，或者公众号、微信小程序之中，就能极大的提高逼格。
+[闲聊-智能对话：微信小程序详解]
+[“欢快”的小程序开发之路]
+[微信小程序IOS端showLoading之后showToast不显示]
+---------------
+**优秀自然语言理解博客文章推荐：**
+[根据OLAMI平台开发的日历Demo]
+[用olami开放语义平台做汇率换算应用]
+[自然语言处理-实际开发:用语义开放平台olami写一个翻译的应用]
+[自定义java.awt.Canvas—趣味聊天]
+[微信小程序+OLAMI自然语言API接口制作智能查询工具--快递、聊天、日历等]
+[热门自然语言理解和语音API开发平台对比]
+[使用OLAMI SDK和讯飞语音合成制作一个语音回复的短信小助手]
+[告诉你如何使用OLAMI自然语言理解开放平台API制作自己的智能对话助手]

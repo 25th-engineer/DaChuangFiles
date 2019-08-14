@@ -1,0 +1,26 @@
+斯坦福大学于2012年3月在Coursera启动了一个在线的自然语言处理课程，由NLP领域的大牛Dan Jurafsky 和 Chirs Manning教授授课：
+https://class.coursera.org/nlp/
+Lecture Slides
+Introduction
+Basic Text Processing
+Minimum Edit Distance
+Language Modeling
+Spelling Correction
+Text Classification
+Sentiment Analysis
+Maximum Entropy Classifiers
+Information Extraction and Named Entity Recognition
+Relation Extraction
+Advanced Maximum Entropy Models
+POS Tagging
+Parsing Introduction
+Probabilistic Parsing
+Lexicalized Parsing
+Dependency Parsing
+<img src="http://s
+Dependency Parsing
+Information Retrieval
+Ranked Information Retrieval
+Semantics
+Question Answering
+Summarization

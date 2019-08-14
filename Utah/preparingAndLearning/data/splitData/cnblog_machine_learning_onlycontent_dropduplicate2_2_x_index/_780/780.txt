@@ -1,0 +1,149 @@
+编者注：澳大利亚机器学习专家、畅销书作者  Jason Brownlee，对机器学习领域的各类优质书籍进行了盘点，汇总成这份阅读指南。在所筛选的学习资源中，这堪称是迄今为止最全面、最完整、权威性比较高的一份 ML 书单，涵盖了最值得学习者、从业者、开发者认真研读的精品书目。这份指南适合多样背景的读者：从想要了解机器学习的普通人，到入门新手，再到高阶开发者和学术研究人员。因此，雷锋网对其进行编译整理，特来与大家分享。
+友情提醒：该指南只考虑了英文市场的机器学习图书，适合大家作为国际 ML 读物的参考。而例如周志华老师 《机器学习》等国内优秀著作并没有体现，请读者见谅。
+Jason Brownlee：
+我喜欢书，对于搞到的每一本机器学习书籍，我都要去读。
+我认为，有好的参考资源，是对你心中机器学习谜题进行“解惑”的最快方式。阅读多本书，你就有了看待疑难问题的多种角度。
+这份指南中，你会发现机器学习领域最值得一读的好书。
+有许多原因促使人们想要机器学习书籍。因此，我采用了三种不同方式对机器学习书籍进行分类、排列，使读者们能按图索骥快速查找。比方说：
+依据类别（难易）：教材，科普等。
+依据话题：Python，深度学习等
+依据出版商：Packt，O’Reilly 等
+所有书都包括了亚马逊或京东链接，你可以点击链接了解更多。
+如何使用这份指南？
+找到一个你最感兴趣的话题
+浏览所选类别的书目
+购书、借书、下载
+从头读到尾
+重复以上过程
+把书摆在家里、办公室显眼的地方，跟你读过那本书是两码事。别瞎搞收藏。
+1.0 依据难易水平
+1.1 机器学习科普读物
+这是面向普通大众的机器学习书目。它们让你体会到机器学习和数据科学的优点和益处，但免去了理论和应用细节。我还加入了一些个人非常喜欢的、偏“统计思维”的流行科普读物。
+The Master Algorithm: How the Quest for the Ultimate Learning Machine Will Remake Our World
+译本：终极算法:机器学习和人工智能如何重塑世界
+Predictive Analytics: The Power to Predict Who Will Click, Buy, Lie, or Die
+译本：大数据预测
+The Signal and the Noise: Why So Many Predictions Fail–but Some Don't
+Naked Statistics: Stripping the Dread from the Data
+The Drunkard's Walk: How Randomness Rules Our Lives
+该类别的首选是： The Signal and the Noise
+与上述读物的乐观相比，提供了反面观点的是：Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy.
+1.2 初学者书籍
+真正面向零基础初学者的机器学习书籍，基本上是一片市场空白。下面的这些书，既包含了科普读物（见 1.1）中使用机器学习的益处，也部分包含了多见于入门书籍（见 1.3）的应用细节。
+Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking
+Data Smart: Using Data Science to Transform Information into Insight
+Data Mining: Practical Machine Learning Tools and Techniques （第四版）
+译本：数据挖掘：实用机器学习工具与技术（第三版）
+Doing Data Science: Straight Talk from the Frontline
+译本：数据科学实战
+该类别的首选是：Data Mining: Practical Machine Learning Tools and Techniques （数据挖掘：实用机器学习工具与技术）
+1.3 机器学习入门书籍
+下面是菜鸟入门的首选书单。相当于本科生级别的机器学习资源，适合基础学习者以及开发者新手。它们覆盖了广泛的机器学习话题，倾向于“怎么做”，而非“为什么”或是探讨理论。
+Machine Learning for Hackers: Case Studies and Algorithms to Get You Started
+译本：机器学习:实用案例解析
+Machine Learning in Action
+译本：机器学习实战
+Programming Collective Intelligence: Building Smart Web 2.0 Applications
+译本：集体智慧编程
+An Introduction to Statistical Learning: with Applications in R
+译本：统计学习导论：基于R应用
+Applied Predictive Modeling
+译本：应用预测建模
+该类别的首选是：An Introduction to Statistical Learning: with Applications in R （统计学习导论：基于R应用）
+1.4 （国外）机器学习教科书
+下面是世界一流机器学习教材的列表。这些是研究生课程中会使用到的教科书，覆盖了一系列方法和背后的理论。
+The Elements of Statistical Learning: Data Mining, Inference, and Prediction
+译本：统计学习基础：数据挖掘、推理与预测
+Pattern Recognition and Machine Learning
+Machine Learning: A Probabilistic Perspective
+Learning From Data
+Machine Learning
+Machine Learning: The Art and Science of Algorithms that Make Sense of Data
+译本：机器学习
+Foundations of Machine Learning
+该类别的首选是： The Elements of Statistical Learning: Data Mining, Inference, and Prediction （统计学习基础：数据挖掘、推理与预测）
+2.0 依据话题
+2.1 与 R 语言相关
+R 语言平台的应用机器学习书目。
+R for Data Science: Import, Tidy, Transform, Visualize, and Model Data
+Machine Learning with R
+Machine Learning With R Cookbook – 110 Recipes for Building Powerful Predictive Models with R
+国内名为：R语言机器学习参考手册（英文影印版）
+R Machine Learning By Example
+R Machine Learning Essentials
+Mastering Machine Learning with R
+An Introduction to Statistical Learning: with Applications in R
+译本：统计学习导论：基于R应用
+Practical Data Science with R
+译本：数据科学:理论、方法与R语言实践
+Applied Predictive Modeling
+译本：应用预测建模
+R and Data Mining: Examples and Case Studies
+译本：计算机科学丛书:R语言与数据挖掘最佳实践和经典案例
+该类别的首选是：Applied Predictive Modeling（应用预测建模）
+2.2 与 Python 相关
+使用 Python 或 SciPy 语言平台的应用机器学习书目。
+Python Machine Learning
+国内名为：Python 语言构建机器学习系统（英文影印版）
+Data Science from Scratch: First Principles with Python
+译本：数据科学入门 (图灵程序设计丛书)
+Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques for Building Intelligent Systems
+Introduction to Machine Learning with Python: A Guide for Data Scientists
+Vital Introduction to Machine Learning with Python: Best Practices to Improve and Optimize Machine Learning Systems and Algorithms
+Machine Learning in Python: Essential Techniques for Predictive Analysis
+译本：Python机器学习:预测分析核心算法
+Python Data Science Handbook: Essential Tools for Working with Data
+Introducing Data Science: Big Data, Machine Learning, and more, using Python tools
+Real-World Machine Learning
+该类别的首选是： Python Machine Learning （Python 语言构建机器学习系统）
+2.3 深度学习
+深度学习书目。现在没几本深度学习的好书，所以我只得用数量弥补质量。其中有许多专门针对 Tesnorflow 的教程。雷锋网注：该类推荐书目“全军覆没”——没有一本书有中文译本。这或许是因为深度学习领域理论框架尚不完善，缺乏影响力巨大的著作。
+Deep Learning
+Deep Learning: A Practitioner's Approach
+Fundamentals of Deep Learning: Designing Next-Generation Machine Intelligence Algorithms
+Learning TensorFlow: A guide to building deep learning systems
+Machine Learning with TensorFlow
+TensorFlow Machine Learning Cookbook
+Getting Started with TensorFlow
+TensorFlow for Machine Intelligence: A Hands-On Introduction to Learning Algorithms
+该类别毫无疑问的首选是：Deep Learning.
+另外，Michael Nielsen 的免费电子书 Neural Networks and Deep Learning 简单易懂，深受许多入门学习者的喜爱，雷锋网将其添加在这里，以作补充。
+2.4 时间序列预测
+时间序列预测领域最值得一读的书目。在该技术的应用方面，目前 R 语言是霸主。
+Time Series Analysis: Forecasting and Control
+Practical Time Series Forecasting with R: A Hands-On Guide
+Introduction to Time Series and Forecasting
+Forecasting: principles and practice
+该类别的入门首选是：Forecasting: principles and practice.
+该类别的首选教材是：Time Series Analysis: Forecasting and Control.
+3.0 依据出版商
+有三个出版商在机器学习领域下了大力气，并且在认真出版图书。
+它们是: O'Reilly, Manning 和 Packt。它们的焦点是应用书籍。该榜单上的书籍质量参差不齐：从严谨设计、编排的图书到装订在一起的博文。
+3.1 O'Reilly 机器学习书籍
+在它们的“数据”类别，O'Reilly 有超过 100 本图书，许多与机器学习相关。以下是最畅销的几本：
+Programming Collective Intelligence: Building Smart Web 2.0 Applications
+译本：集体智慧编程
+Introduction to Machine Learning with Python: A Guide for Data Scientists
+Deep Learning: A Practitioner's Approach
+Fundamentals of Deep Learning: Designing Next-Generation Machine Intelligence Algorithms
+Data Science from Scratch: First Principles with Python
+译本：数据科学入门
+Python Data Science Handbook: Essential Tools for Working with Data
+这些书中，Programming Collective Intelligence: Building Smart Web 2.0 Applications （集体智慧编程） 或许是开创了 O'Reilly 该目录的书，一直很受欢迎。
+3.2 Manning 机器学习书籍
+Manning 的书偏实用，并且质量还行，虽然数量没 O’Reilly 和 Packt 那么多。
+Machine Learning in Action
+译本：机器学习实战
+Real-World Machine Learning
+Introducing Data Science: Big Data, Machine Learning, and more, using Python tools
+Practical Data Science with R
+译本：数据科学:理论、方法与R语言实践
+Manning 目录里较突出的一本是 Machine Learning in Action（机器学习实战），这也许同样是因为，它是该出版社在机器学习和数据科学领域的第一本出版物。
+3.3 Packt 机器学习书籍
+感觉上 Packt 全面拥抱了数据科学和机器学习领域的图书出版。他们有一大堆针对晦涩难懂机器学习库的书。在流行话题上面，比如 R 和 Python，也有不少书籍出版。雷锋网注：可惜的是，Packt 似乎不重视汉语市场，旗下主要机器学习图书并没有中文译本。
+以下是一些较流行的书目：
+Machine Learning with R
+Python Machine Learning
+Practical Machine Learning
+Machine Learning in Java
+Mastering .NET Machine Learnin

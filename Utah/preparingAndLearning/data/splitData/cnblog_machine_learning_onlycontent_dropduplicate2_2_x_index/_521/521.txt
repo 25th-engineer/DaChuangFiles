@@ -1,0 +1,31 @@
+我们不止可以读取数据库的内容，还可以读取xlsx文件的内容，这个库有在有些情况还是挺实用的
+首先我们想读取这个文件的时候必须得现有个seaborn库
+下载命令就是：
+pip install  seaborn
+我写了个案例， 就是把读取的内容在小提琴图上显示出来，还有在对比柱形图上显示出来
+#导报
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+if __name__ == "__main__":
+#读取数据集
+df = pd.read_excel('test.xlsx','sheet1')
+print(df)
+#绘制小提琴图
+sns.violinplot(df['Sales'],df['Gender'])
+#初始化数据
+sns.despine()
+#绘制
+plt.show()
+###这个是对比柱状图
+#声明绘图对象 Sales销售额
+myexcel = df.groupby(['BMI','Gender']).Sales.sum()
+# #绘制对比柱形图
+myexcel.unstack().plot(
+kind = 'bar',
+stacked=True,
+color=['red','blue']
+)
+#绘制
+plt.show()

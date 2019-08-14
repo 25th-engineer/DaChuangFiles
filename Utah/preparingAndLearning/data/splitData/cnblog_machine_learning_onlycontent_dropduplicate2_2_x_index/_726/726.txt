@@ -1,0 +1,54 @@
+特征选择是一个重要的数据预处理过程，在现实机器学习任务中，获得数据之后通常先进行特征选择，此后在训练学习器，如下图所示：
+进行特征选择有两个很重要的原因：
+避免维数灾难：能剔除不相关(irrelevant)或冗余(redundant )的特征，从而达到减少特征个数，提高模型精确度，减少运行时间的目的
+降低学习任务的难度：选取出真正相关的特征简化模型，协助理解数据产生的过程
+如流程图所示，特征选择包括两个环节：
+子集搜索 （subset search）
+子集评价 （subset evaluation）
+《机器学习》将特征选择分为了三种方法：分别是过滤式（filter） 、包裹式（wrapper）和嵌入式（embedded）。下面依据sklearn中的特征选择文档来叙述特征选择的几个方法。
+过滤式（filter）
+这类方法先对数据机进行特征选择，然后再训练学习器，特征选择的过程与后续学习器无关。
+移除低方差的特征
+VarianceThreshold 是特征选择的一个简单基本方法，它会移除所有那些方差不满足阈值的特征。默认情况下，它将会移除所有的零方差特征，即那些在所有的样本上的取值均不变的特征。
+例如，假设我们有一个特征是布尔值的数据集，我们想要移除那些在整个数据集中特征值为0或者为1的比例超过80%的特征。布尔特征是伯努利（ Bernoulli ）随机变量，变量的方差为\(Var[X]=p(1-p)\)
+因此，我们可以使用阈值.8*(1-.8)进行选择
+>>> from sklearn.feature_selection import VarianceThreshold >>> X = [[0, 0, 1], [0, 1, 0], [1, 0, 0], [0, 1, 1], [0, 1, 0], [0, 1, 1]] >>> sel = VarianceThreshold(threshold=(.8 * (1 - .8))) >>> sel.fit_transform(X) array([[0, 1], [1, 0], [0, 0], [1, 1], [1, 0], [1, 1]])
+正如预期一样， VarianceThreshold 移除了第一列。
+单变量特征选择
+单变量的特征选择是通过基于单变量的统计测试来选择最好的特征。它可以当做是评估器的预处理步骤。Scikit-learn 将特征选择的内容作为实现了 transform 方法的对象：
+SelectKBest 移除那些除了评分最高的 K 个特征之外的所有特征
+SelectPercentile 移除除了用户指定的最高得分百分比之外的所有特征
+GenericUnivariateSelect 允许使用可配置方法来进行单变量特征选择。它允许超参数搜索评估器来选择最好的单变量特征。
+例如下面的实例，我们可以使用 \(\chi^{2}\) （卡方检验）检验样本集来选择最好的两个特征：
+>>> from sklearn.datasets import load_iris >>> from sklearn.feature_selection import SelectKBest >>> from sklearn.feature_selection import chi2 >>> iris = load_iris() >>> X, y = iris.data, iris.target >>> X.shape (150, 4) >>> X_new = SelectKBest(chi2, k=2).fit_transform(X, y) >>> X_new.shape (150, 2)
+很明显，上述两种方法都是过滤式特征选择的方法，所以与模型无关的特征权重显得尤为重要。这种权重主要分析特征与target的相关性，这样的分析是与这次学习所使用的模型无关的。与模型无关特征权重分析方法包括(1)交叉熵，(2)Information Gain，(3)Odds ratio，(4)互信息，(5)KL散度(相对熵)等
+上述代码用到的是经典的卡方检验，这里简单叙述原理：
+经典的卡方检验是检验定性自变量对定性因变量的相关性。假设自变量有N种取值，因变量有M种取值，考虑自变量等于i且因变量等于j的样本频数的观察值与期望的差距，构建统计量：
+\(\chi^{2} = \sum\frac{(A-E)^{2}}{E}\)
+A为实际值， E为理论值，求和值为理论值与实际值的差异程度。
+基本思想是根据样本数据推断总体的分布与期望分布是否有显著性差异，或者推断两个分类变量是否相关或者独立。
+卡方检验具体可参考这篇博客：卡方分布与卡方检验
+包裹式（wrapper）
+这类方法选择直接把最终将要使用学习期的性能作为特征子集的评价准则。
+递归式特征消除(RFE)
+给定一个外部的估计器，该估计起对特征赋予一定的权重（比如，线性模型的系数），recursive feature elimination ( RFE ) 通过处理越来越少的特征集合来递归的选择特征。 首先，评估器在初始的特征集合上面进行训练并且每一个特征的重要程度是通过一个诸如sklearn里的 coef_ 属性 或者 feature_importances_ 属性来获得。 然后，从当前的特征集合中移除最不重要的特征。在特征集合上不断的重复递归这个步骤，直到最终达到所需要的特征数量为止。
+下列代码使用RFE抽取5个最informative的特征：
+>>> from sklearn.datasets import make_friedman1 >>> from sklearn.feature_selection import RFE >>> from sklearn.svm import SVR >>> X, y = make_friedman1(n_samples=50, n_features=10, random_state=0) >>> estimator = SVR(kernel="linear") >>> selector = RFE(estimator, 5, step=1) >>> selector = selector.fit(X, y) >>> selector.support_ array([ True, True, True, True, True, False, False, False, False, False], dtype=bool) >>> selector.ranking_ array([1, 1, 1, 1, 1, 6, 4, 3, 2, 5])
+从最终的学习器性能来看，包裹式特征选择比过滤式特征选择更好。但是另一方面，由于在特征选择过程中需多次训练学习期，因此包裹式特征选择的计算开销通常要大得多
+嵌入式（embedded）
+SelectFromModel选取特征
+sklearn.feature_selection.SelectFromModel(estimator, threshold=None, prefit=False, norm_order=1)
+SelectFromModel 是一个 meta-transformer（元转换器） ，它可以用来处理任何带有 coef_ 或者 feature_importances_ 属性的训练之后的评估器。 如果相关的coef_ 或者 feature_importances_ 属性值低于预先设置的阈值，这些特征将会被认为不重要并且移除掉。除了指定数值上的阈值之外，还可以通过给定字符串参数来使用内置的启发式方法找到一个合适的阈值。可以使用的启发式方法有 mean 、 median 以及使用浮点数乘以这些（例如，0.1*mean）
+Linear models 使用 L1 正则化的线性模型会得到稀疏解：他们的许多系数为 0。 当目标是降低使用另一个分类器的数据集的维度， 它们可以与 feature_selection.SelectFromModel 一起使用来选择非零系数。
+>>> from sklearn.svm import LinearSVC >>> from sklearn.datasets import load_iris >>> from sklearn.feature_selection import SelectFromModel >>> iris = load_iris() >>> X, y = iris.data, iris.target >>> X.shape (150, 4) >>> lsvc = LinearSVC(C=0.01, penalty="l1", dual=False).fit(X, y) >>> model = SelectFromModel(lsvc, prefit=True) >>> X_new = model.transform(X) >>> X_new.shape (150, 3)
+其实用包装好的库看不出嵌入式的两者兼顾，实际上在fit后，得到coef的过程中，相当于已经做出了特征选择。
+另外，基于树的 estimators 也可以用来计算特征的重要性，然后可以消除不相关的特征（当与 sklearn.feature_selection.SelectFromModel 等元转换器一同使用时）
+以下是一个使用随机森林进行特征选择的例子：
+from sklearn.ensemble import RandomForestClassifier feat_labels = df_wine.columns[1:] forest = RandomForestClassifier(n_estimators=500, random_state=1) forest.fit(X_train, y_train) importances = forest.feature_importances_ indices = np.argsort(importances)[::-1] for f in range(X_train.shape[1]): print("%2d) %-*s %f" % (f + 1, 30, feat_labels[indices[f]], importances[indices[f]]))
+Reference:
+http://scikit-learn.org/stable/modules/feature_selection.html
+http://sklearn.apachecn.org/cn/0.19.0/modules/feature_selection.html
+https://www.kaggle.com/bertcarremans/data-preparation-exploration
+https://github.com/rasbt/python-machine-learning-book-2nd-edition
+https://www.zhihu.com/question/28641663
+《机器学习》.周志华

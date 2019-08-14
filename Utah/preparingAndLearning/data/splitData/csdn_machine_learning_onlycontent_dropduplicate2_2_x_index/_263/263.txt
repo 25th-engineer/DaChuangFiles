@@ -1,0 +1,1035 @@
+声明：版权所有，转载请联系作者并注明出处  http://blog.csdn.net/u013719780?viewmode=contents
+博主简介：风雪夜归子（Allen），机器学习算法攻城狮，喜爱钻研Meachine Learning的黑科技，对Deep Learning和Artificial Intelligence充满兴趣，经常关注Kaggle数据挖掘竞赛平台，对数据、Machine Learning和Artificial Intelligence有兴趣的童鞋可以一起探讨哦，个人CSDN博客：http://blog.csdn.net/u013719780?viewmode=contents
+运用机器学习(Kmeans算法)确定家庭用电的主要原因
+本文将对家庭的用电数据进行一些基本的分析。
+本文主要分为两个部分：
+Part One: 对数据做一些简单的清洗和分析工作；
+Part Two: 运用无监督的机器学习算法-Kmeans算法确定某个特定的时间段家庭用电的主要原因。
+首先，想入相应的包并且读取数据集。具体代码如下：
+In [1]:
+import numpy as np import pandas as pd import matplotlib.pyplot as plt
+In [2]:
+sensor_data = pd.read_csv('merged-sensor-files.csv', names=["MTU", "Time", "Power", "Cost", "Voltage"], header = 0) weather_data = pd.read_json('weather.json', typ ='series')
+In [3]:
+import json f=open('weather.json') json_data = json.load(f) Time = [] Temperature = [] for time, temperature in json_data.items(): Time.append(int(time)) Temperature.append(float(temperature)) temperature = pd.DataFrame({'Time':Time, 'Temperature': Temperature}) temperature
+Out[3]:
+Temperature
+Time
+0
+84.4
+1431468000
+1
+83.3
+1431450000
+2
+70.7
+1431403200
+3
+72.1
+1431432000
+4
+84.2
+1431464400
+5
+80.9
+1431446400
+6
+68.6
+1431424800
+7
+81.1
+1431475200
+8
+80.7
+1431442800
+9
+69.2
+1431417600
+10
+76.2
+1431435600
+11
+68.8
+1431414000
+12
+72.1
+1431396000
+13
+68.7
+1431428400
+14
+80.1
+1431439200
+15
+83.0
+1431471600
+16
+69.0
+1431410400
+17
+75.4
+1431388800
+18
+71.0
+1431399600
+19
+69.6
+1431406800
+20
+67.9
+1431421200
+21
+85.1
+1431457200
+22
+87.0
+1431460800
+23
+73.2
+1431392400
+24
+84.5
+1431453600
+In [4]:
+import json f=open('weather.json').read() Time = [] Temperature = [] for line in f.split(','): time, temperature = line.split(':') time = time.replace('"','') time = time.replace('{','') temperature = temperature.replace('"','') temperature = temperature.replace('}','') #print time, temperature Time.append(int(time)) Temperature.append(float(temperature))
+In [5]:
+# A quick look at the datasets sensor_data.head(5)
+Out[5]:
+MTU
+Time
+Power
+Cost
+Voltage
+0
+MTU1
+05/11/2015 19:59:06
+4.102
+0.62
+122.4
+1
+MTU1
+05/11/2015 19:59:05
+4.089
+0.62
+122.3
+2
+MTU1
+05/11/2015 19:59:04
+4.089
+0.62
+122.3
+3
+MTU1
+05/11/2015 19:59:06
+4.089
+0.62
+122.3
+4
+MTU1
+05/11/2015 19:59:04
+4.097
+0.62
+122.4
+In [6]:
+sensor_data.describe()
+Out[6]:
+MTU
+Time
+Power
+Cost
+Voltage
+count
+88914
+88914
+88914
+88914
+88914
+unique
+2
+72359
+2495
+88
+48
+top
+MTU1
+Time
+0.136
+0.05
+123.1
+freq
+88891
+23
+6544
+19476
+5063
+In [7]:
+sensor_data.info()
+<class 'pandas.core.frame.DataFrame'> RangeIndex: 88914 entries, 0 to 88913 Data columns (total 5 columns): MTU 88914 non-null object Time 88914 non-null object Power 88914 non-null object Cost 88914 non-null object Voltage 88914 non-null object dtypes: object(5) memory usage: 3.4+ MB
+TASK 1: 数据分析
+数据清洗
+从数据集merged-sensor-files.csv 中我们发现，某些数据有问题。
+In [8]:
+sensor_data.dtypes
+Out[8]:
+MTU object Time object Power object Cost object Voltage object dtype: object
+下面找出有问题的数据
+In [9]:
+# Get the inconsistent rows indexes faulty_row_idx = sensor_data[sensor_data["Power"] == " Power"].index.tolist() faulty_row_idx
+Out[9]:
+[3784, 7582, 11385, 15004, 18773, 22363, 26049, 29795, 33554, 37193, 40951, 44563, 48227, 51934, 55660, 59431, 63041, 66706, 70468, 74305, 77951, 81617, 85327]
+删除有问题的数据
+In [10]:
+sensor_data.drop(faulty_row_idx, inplace=True) sensor_data[sensor_data["Power"] == " Power"].index.tolist()
+Out[10]:
+[]
+从上述结果可以知道，有问题的数据已经成功被删除
+We have cleaned up the sensor_data and now these can be converted to more appropriate data types. 对数据类型进行转换
+In [11]:
+sensor_data[["Power", "Cost", "Voltage"]] = sensor_data[["Power", "Cost", "Voltage"]].astype(float) sensor_data[["Time"]] = pd.to_datetime(sensor_data["Time"]) sensor_data['Hour'] = pd.DatetimeIndex(sensor_data["Time"]).hour sensor_data.dtypes
+Out[11]:
+MTU object Time datetime64[ns] Power float64 Cost float64 Voltage float64 Hour int32 dtype: object
+This is better now. We have got clearly defined datatypes of different columns now. Next step is to convert the weather_data Series to a dataframe so that we can work with it with more ease.
+Good!我们现在已经得到了我们所需的数据类型。接下来为了数据操作上的方便，我们将数据集weather_data转换成dataframe格式。
+In [12]:
+temperature_data = weather_data.to_frame() temperature_data.reset_index(level=0, inplace=True) temperature_data.columns = ["Time", "Temperature"] temperature_data.dtypes temperature_data['Temperature'] = Temperature temperature_data["Hour"] = pd.DatetimeIndex(temperature_data["Time"]).hour temperature_data[["Temperature"]] = temperature_data[["Temperature"]].astype(float) temperature_data
+Out[12]:
+Time
+Temperature
+Hour
+0
+2015-05-12 00:00:00
+75.4
+0
+1
+2015-05-12 01:00:00
+73.2
+1
+2
+2015-05-12 02:00:00
+72.1
+2
+3
+2015-05-12 03:00:00
+71.0
+3
+4
+2015-05-12 04:00:00
+70.7
+4
+5
+2015-05-12 05:00:00
+69.6
+5
+6
+2015-05-12 06:00:00
+69.0
+6
+7
+2015-05-12 07:00:00
+68.8
+7
+8
+2015-05-12 08:00:00
+69.2
+8
+9
+2015-05-12 09:00:00
+67.9
+9
+10
+2015-05-12 10:00:00
+68.6
+10
+11
+2015-05-12 11:00:00
+68.7
+11
+12
+2015-05-12 12:00:00
+72.1
+12
+13
+2015-05-12 13:00:00
+76.2
+13
+14
+2015-05-12 14:00:00
+80.1
+14
+15
+2015-05-12 15:00:00
+80.7
+15
+16
+2015-05-12 16:00:00
+80.9
+16
+17
+2015-05-12 17:00:00
+83.3
+17
+18
+2015-05-12 18:00:00
+84.5
+18
+19
+2015-05-12 19:00:00
+85.1
+19
+20
+2015-05-12 20:00:00
+87.0
+20
+21
+2015-05-12 21:00:00
+84.2
+21
+22
+2015-05-12 22:00:00
+84.4
+22
+23
+2015-05-12 23:00:00
+83.0
+23
+24
+2015-05-13 00:00:00
+81.1
+0
+In [14]:
+sensor_data.describe()
+Out[14]:
+Power
+Cost
+Voltage
+Hour
+count
+88891.000000
+88891.000000
+88891.000000
+88891.000000
+mean
+1.315980
+0.202427
+123.127744
+11.531865
+std
+1.682181
+0.252357
+0.838768
+6.921775
+min
+0.113000
+0.020000
+121.000000
+0.000000
+25%
+0.255000
+0.040000
+122.600000
+6.000000
+50%
+0.367000
+0.060000
+123.100000
+12.000000
+75%
+1.765000
+0.270000
+123.700000
+18.000000
+max
+6.547000
+0.990000
+125.600000
+23.000000
+In [15]:
+temperature_data.describe()
+Out[15]:
+Temperature
+Hour
+count
+25.000000
+25.00000
+mean
+76.272000
+11.04000
+std
+6.635355
+7.29429
+min
+67.900000
+0.00000
+25%
+69.600000
+5.00000
+50%
+75.400000
+11.00000
+75%
+83.000000
+17.00000
+max
+87.000000
+23.00000
+从上面的统计结果可以知道，耗电的平均值、最小值、最大值分别为1.315980kW，0.11kW and 6.54kW。为了对数据进行更好的理解，我们绘制出耗电 and 温度与时间的关系图。 在绘图之前，需要对数据关于列'hour'group BY:
+In [16]:
+grouped_sensor_data = sensor_data.groupby(["Hour"], as_index = False).mean() grouped_sensor_data
+Out[16]:
+Hour
+Power
+Cost
+Voltage
+0
+0
+0.173790
+0.029468
+124.723879
+1
+1
+0.179594
+0.033805
+124.522469
+2
+2
+0.185763
+0.037013
+123.929979
+3
+3
+0.184510
+0.036815
+124.174454
+4
+4
+0.181104
+0.036366
+123.847801
+5
+5
+0.184242
+0.036693
+122.790974
+6
+6
+0.672423
+0.106142
+123.375132
+7
+7
+0.977755
+0.150614
+123.722441
+8
+8
+0.382392
+0.060904
+122.997544
+9
+9
+0.168447
+0.027770
+122.675906
+10
+10
+0.373942
+0.058812
+122.986207
+11
+11
+0.383065
+0.059837
+123.500554
+12
+12
+0.378432
+0.059604
+122.783133
+13
+13
+0.380076
+0.059766
+122.991571
+14
+14
+0.378020
+0.059666
+122.815359
+15
+15
+0.376586
+0.059619
+122.464499
+16
+16
+4.365774
+0.659342
+121.766840
+17
+17
+4.318118
+0.652923
+121.851496
+18
+18
+4.779928
+0.721469
+122.301059
+19
+19
+4.250034
+0.642619
+122.103700
+20
+20
+1.967120
+0.300640
+122.770635
+21
+21
+1.579896
+0.242180
+123.086060
+22
+22
+2.542672
+0.387109
+123.542620
+23
+23
+2.269941
+0.346457
+123.415791
+In [17]:
+grouped_temperature_data = temperature_data.groupby(["Hour"], as_index = False).mean() grouped_temperature_data
+Out[17]:
+Hour
+Temperature
+0
+0
+78.25
+1
+1
+73.20
+2
+2
+72.10
+3
+3
+71.00
+4
+4
+70.70
+5
+5
+69.60
+6
+6
+69.00
+7
+7
+68.80
+8
+8
+69.20
+9
+9
+67.90
+10
+10
+68.60
+11
+11
+68.70
+12
+12
+72.10
+13
+13
+76.20
+14
+14
+80.10
+15
+15
+80.70
+16
+16
+80.90
+17
+17
+83.30
+18
+18
+84.50
+19
+19
+85.10
+20
+20
+87.00
+21
+21
+84.20
+22
+22
+84.40
+23
+23
+83.00
+Basic Visualizations:
+In [18]:
+%pylab inline plt.style.use('ggplot')
+Populating the interactive namespace from numpy and matplotlib
+WARNING: pylab import has clobbered these variables: ['f'] `%matplotlib` prevents importing * from pylab and numpy
+In [19]:
+fig = plt.figure(figsize=(13,7)) plt.hist(sensor_data.Power, bins=50) fig.suptitle('Power Histogram', fontsize = 20) plt.xlabel('Power', fontsize = 16) plt.ylabel('Count', fontsize = 16)
+Out[19]:
+<matplotlib.text.Text at 0x115220310>
+从上图可以得出：大部分时间耗电都比较低，但是也有一些时间段用电较多，达到了3.5kW - 5kW之间。接下来绘制用电关于时间的分布图。
+In [20]:
+fig = plt.figure(figsize=(13,7)) plt.bar(grouped_sensor_data.Hour, grouped_sensor_data.Power) fig.suptitle('Power Distribution with Hours', fontsize = 20) plt.xlabel('Hour', fontsize = 16) plt.ylabel('Power', fontsize = 16) plt.xticks(range(0, 24)) plt.show()
+从上面条形图可以得出如下推论:
+用电需求最高的时间段是在晚上，这可能是因为大部分的电器设备，如：AC、暖气、TV、烤炉、洗衣机等的使用。
+睡觉时间段(0000 - 0500) and 办公时间段(0900 - 1600)有非常低的需求, 是因为这两个时间段电器设备都已经关闭了.
+在时间段0600 - 0900用电有少许增加, 这可能是一些电器设备处在激活状态导致的.
+稳定状态:
+在时间段 0000 - 0500, 用电需求很少，其范围处在 0.17kW - 0.18kW
+另一个稳定状态是时间段 1000 - 1500, 其需求处在 0.373kW - 0.376kW
+最高的稳定时间段是 1600 - 1900 其需求处在 4.36kW - 4.25kW
+在0700 and 1800期间电力需求突然发生了变化，可能是随机事件或者某些电器设备的使用和异常数据导致的。
+在0900时间段电力需求同样有轻微震动，从0.38kw下降到了0.16kw随后又上升到了0.37kw。在2100可以看到同样的变化趋势。
+让我们进一步绘制temperature and Power的关系图，看看这里是否有一些相关性。
+In [21]:
+fig = plt.figure(figsize=(13,7)) plt.bar(grouped_temperature_data.Temperature, grouped_sensor_data.Power) fig.suptitle('Power Distribution with Temperature', fontsize = 20) plt.xlabel('Temperature in Fahrenheit', fontsize = 16) plt.ylabel('Power', fontsize = 16) plt.show()
+温度和电力需求似乎有一些直接的关系，这很好理解，因为我们当前的数据集是取自于5月，在高峰期（晚上）制冷设备都已经打开了。
+Task 2: 机器学习
+为了在一个完整的数据集上工作，合并数据集 grouped_sensor_data and grouped_temperature_data。
+In [22]:
+merged_data = grouped_sensor_data.merge(grouped_temperature_data) merged_data
+Out[22]:
+Hour
+Power
+Cost
+Voltage
+Temperature
+0
+0
+0.173790
+0.029468
+124.723879
+78.25
+1
+1
+0.179594
+0.033805
+124.522469
+73.20
+2
+2
+0.185763
+0.037013
+123.929979
+72.10
+3
+3
+0.184510
+0.036815
+124.174454
+71.00
+4
+4
+0.181104
+0.036366
+123.847801
+70.70
+5
+5
+0.184242
+0.036693
+122.790974
+69.60
+6
+6
+0.672423
+0.106142
+123.375132
+69.00
+7
+7
+0.977755
+0.150614
+123.722441
+68.80
+8
+8
+0.382392
+0.060904
+122.997544
+69.20
+9
+9
+0.168447
+0.027770
+122.675906
+67.90
+10
+10
+0.373942
+0.058812
+122.986207
+68.60
+11
+11
+0.383065
+0.059837
+123.500554
+68.70
+12
+12
+0.378432
+0.059604
+122.783133
+72.10
+13
+13
+0.380076
+0.059766
+122.991571
+76.20
+14
+14
+0.378020
+0.059666
+122.815359
+80.10
+15
+15
+0.376586
+0.059619
+122.464499
+80.70
+16
+16
+4.365774
+0.659342
+121.766840
+80.90
+17
+17
+4.318118
+0.652923
+121.851496
+83.30
+18
+18
+4.779928
+0.721469
+122.301059
+84.50
+19
+19
+4.250034
+0.642619
+122.103700
+85.10
+20
+20
+1.967120
+0.300640
+122.770635
+87.00
+21
+21
+1.579896
+0.242180
+123.086060
+84.20
+22
+22
+2.542672
+0.387109
+123.542620
+84.40
+23
+23
+2.269941
+0.346457
+123.415791
+83.00
+在之前的数据可视化中，我们看到了当温度低的时候电力需求比较小。但是这主要是与制冷的电器设备有较大的关系：
+Cooling Systems
+TV
+Geyser
+Lights
+Oven
+Home Security Systems
+我们接下来用合并后的完整数据集确定这些设备是否打开。
+AC, Refrigerator and Other Coooling Systems:
+从"Power Distribution with Temperature"图可以明显看出，随着温度的上升电力需求突然增加，这就意味着家里的制冷设备处于开启状态。
+TV:
+在evening hours(1600 - 2300), 电视机可能是另外一个导致电力需求增加的因素. 从Power特征看它是相当明显的.
+Geyser, Oven:
+在during morning hours电力需求轻微增加可能是与一些设备的工作是相关的.
+Lights:
+灯光对用电需求有比较小的影响（认为house owner使用的是节能灯）。
+Home Security Systems:
+在工作时间有轻微的增加可能是一些家庭设备与其他的一些自动设备导致的。
+现在，我们将使用 K-Means clustering 算法. 使用原始数据集中的特征 Hour, Power and Temperature .首先，我们需要合并数据集sensor_data dataframe 和 grouped_temperature_data.
+In [23]:
+data =sensor_data.merge(grouped_temperature_data) data.drop(["Time", "MTU", "Cost", "Voltage"], axis = 1, inplace = True) data.head()
+Out[23]:
+Power
+Hour
+Temperature
+0
+4.102
+19
+85.1
+1
+4.089
+19
+85.1
+2
+4.089
+19
+85.1
+3
+4.089
+19
+85.1
+4
+4.097
+19
+85.1
+In [24]:
+from sklearn.cluster import KMeans from sklearn.cross_validation import train_test_split
+In [25]:
+np.random.seed(1234) train_data, test_data = train_test_split(data, test_size = 0.25, random_state = 42)
+In [26]:
+train_data.shape
+Out[26]:
+(66668, 3)
+In [27]:
+test_data.shape
+Out[27]:
+(22223, 3)
+In [28]:
+kmeans = KMeans(n_clusters = 4, n_jobs = 4) kmeans_fit = kmeans.fit(train_data)
+/Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8) /Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8) /Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8) /Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8) /Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8) /Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8) /Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8) /Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8) /Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8) /Applications/anaconda/lib/python2.7/site-packages/sklearn/externals/joblib/hashing.py:197: DeprecationWarning: Changing the shape of non-C contiguous array by descriptor assignment is deprecated. To maintain the Fortran contiguity of a multidimensional Fortran array, use 'a.T.view(...).T' instead obj_bytes_view = obj.view(self.np.uint8)
+In [29]:
+predict = kmeans_fit.predict(test_data)
+In [30]:
+test_data["Cluster"] = predict test_data.head(20)
+/Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:1: SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame. Try using .loc[row_indexer,col_indexer] = value instead See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy if __name__ == '__main__':
+Out[30]:
+Power
+Hour
+Temperature
+Cluster
+52595
+0.114
+8
+69.2
+1
+86044
+4.255
+17
+83.3
+0
+6091
+3.559
+20
+87.0
+0
+60185
+0.453
+11
+68.7
+1
+37054
+0.136
+4
+70.7
+2
+59216
+0.312
+10
+68.6
+1
+61848
+0.453
+11
+68.7
+1
+278
+4.162
+19
+85.1
+0
+30829
+0.136
+3
+71.0
+2
+8751
+0.955
+21
+84.2
+0
+35134
+0.276
+4
+70.7
+2
+31476
+0.278
+3
+71.0
+2
+55854
+0.456
+10
+68.6
+1
+54992
+0.370
+8
+69.2
+1
+78259
+0.307
+15
+80.7
+3
+62724
+0.313
+11
+68.7
+1
+54132
+0.260
+8
+69.2
+1
+44204
+0.114
+9
+67.9
+1
+7834
+1.094
+21
+84.2
+0
+25231
+0.125
+1
+73.2
+2
+这看起来是一个很合理的聚类. 我们进一步将标签分到类里面, 作为一个检测模型. 很明显，我们可以将预测的标签设置成如下的类别:
+0 - Cooling Systems
+1 - Oven, Geyser
+2 - Night Lights
+3 - Home Security Systems
+接下来我们将会把标签和预测结果合并成一个数据框.
+In [31]:
+label_df = pd.DataFrame({"Cluster": [0, 1, 2, 3], "Appliances": ["Cooling System","Oven, Geyser", "Night Lights", "Home Security Systems"]}) label_df
+Out[31]:
+Appliances
+Cluster
+0
+Cooling System
+0
+1
+Oven, Geyser
+1
+2
+Night Lights
+2
+3
+Home Security Systems
+3
+In [32]:
+result = test_data.merge(label_df) result.head()
+Out[32]:
+Power
+Hour
+Temperature
+Cluster
+Appliances
+0
+0.114
+8
+69.2
+1
+Oven, Geyser
+1
+0.453
+11
+68.7
+1
+Oven, Geyser
+2
+0.312
+10
+68.6
+1
+Oven, Geyser
+3
+0.453
+11
+68.7
+1
+Oven, Geyser
+4
+0.456
+10
+68.6
+1
+Oven, Geyser
+In [33]:
+result.tail()
+Out[33]:
+Power
+Hour
+Temperature
+Cluster
+Appliances
+22218
+0.306
+15
+80.7
+3
+Home Security Systems
+22219
+0.450
+13
+76.2
+3
+Home Security Systems
+22220
+4.426
+16
+80.9
+3
+Home Security Systems
+22221
+0.452
+15
+80.7
+3
+Home Security Systems
+22222
+0.307
+15
+80.7
+3
+Home Security Systems
+从result dataframe可以看出，在8, 9, 10时Oven or Geyser有比较高的概率在使用，另一方面，在office hours(1000 - 1600)安全设备使用的可能性很高。
+在数据分析的过程中，我们仅仅使用了按照hour的group BY的数据，事实上，如果我们拥有更多的数据，可以使用更多的特征，例如按照day，week，month进行group BY。
+我们也应该考虑季节和温度，因为不同的电器设备在不同的季节使用情况是不一样的。因为好的特征能够让我们的模型预测的更加准确。
+同时，这个也可以帮助我们进行一个分类任务，因为我们已经知道了某些电器设备需要的耗电情况。
+参考文献:
+http://www.sciencedirect.com/science/article/pii/S037877881200151X
+http://cs.gmu.edu/~jessica/publications/astronomy11.pdf

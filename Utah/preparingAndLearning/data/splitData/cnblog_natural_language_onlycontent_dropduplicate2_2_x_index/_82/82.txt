@@ -1,0 +1,131 @@
+5.5  N-Gram Tagging   N-Gram标注
+Unigram Tagging  一元标注
+Unigram taggers are based on a simple statistical algorithm: for each token, assign the tag that is most likely for that particular token. For example, it will assign the tag JJ to any occurrence of the word frequent, since frequent is used as an adjective (e.g., a frequent word) more often than it is used as a verb (e.g., I frequent this cafe). A unigram tagger behaves just like a lookup tagger (Section 5.4), except there is a more convenient technique for setting it up（建立）, called training（训练）. In the following code sample, we train a unigram tagger, use it to tag a sentence, and then evaluate:
+>>> from nltk.corpus import brown
+>>> brown_tagged_sents = brown.tagged_sents(categories='news')
+>>> brown_sents = brown.sents(categories='news')
+>>> unigram_tagger = nltk.UnigramTagger(brown_tagged_sents)
+>>> unigram_tagger.tag(brown_sents[2007])
+[('Various', 'JJ'), ('of', 'IN'), ('the', 'AT'), ('apartments', 'NNS'),
+('are', 'BER'), ('of', 'IN'), ('the', 'AT'), ('terrace', 'NN'), ('type', 'NN'),
+(',', ','), ('being', 'BEG'), ('on', 'IN'), ('the', 'AT'), ('ground', 'NN'),
+('floor', 'NN'), ('so', 'QL'), ('that', 'CS'), ('entrance', 'NN'), ('is', 'BEZ'),
+('direct', 'JJ'), ('.', '.')]
+>>> unigram_tagger.evaluate(brown_tagged_sents)
+0.9349006503968017
+#为啥拿news做训练又回来做测试，我拿news做训练，然后对romance测试，效果不错,得分：0.80983119590985686
+We train a UnigramTagger by specifying tagged sentence data as a parameter when we initialize the tagger. The training process involves inspecting the tag of each word and storing the most likely tag for any word in a dictionary that is stored inside the tagger.
+Separating the Training and Testing Data 分离训练和测试数据
+Now that we are training a tagger on some data, we must be careful not to test it on the same data, as we did in the previous example（噢，这边就说不测试相同的数据了）. A tagger that simply memorized its training data and made no attempt to construct a general model would get a perfect score, but would be useless for tagging new text. Instead, we should split the data, training on 90% and testing on the remaining 10%:
+>>> size = int(len(brown_tagged_sents) * 0.9)
+>>> size
+4160
+>>> train_sents = brown_tagged_sents[:size]
+>>> test_sents = brown_tagged_sents[size:]
+>>> unigram_tagger = nltk.UnigramTagger(train_sents)
+>>> unigram_tagger.evaluate(test_sents)
+0.81202033290142528
+Although the score is worse, we now have a better picture of the usefulness of this tagger, i.e., its performance on previously unseen text.
+General N-Gram Tagging  一般的N-Gram标注
+When we perform a language processing task based on unigrams, we are using one item of context. In the case of tagging, we consider only the current token, in isolation from any larger context（与其他内容是孤立的）. Given such a model, the best we can do is tag each word with its a priori most likely tag. This means we would tag a word such as wind with the same tag, regardless of whether it appears in the context the wind or to wind.
+An n-gram tagger is a generalization of a unigram tagger whose context is the current word together with the part-of-speech tags of the n-1 preceding tokens, as shown in Figure 5-5. The tag to be chosen, tn, is circled, and the context is shaded in grey. In the example of an n-gram tagger shown in Figure 5-5, we have n=3; that is, we consider the tags of the two preceding words in addition to the current word. An n-gram tagger picks the tag that is most likely in the given context.
+A 1-gram tagger is another term for a unigram tagger: i.e., the context used to tag a token is just the text of the token itself. 2-gram taggers are also called bigram taggers, and 3-gram taggers are called trigram taggers.
+The NgramTagger class uses a tagged training corpus to determine which part-of-speech tag is most likely for each context. Here we see a special case of an n-gram tagger, namely a bigram tagger. First we train it, then use it to tag untagged sentences:
+>>> bigram_tagger = nltk.BigramTagger(train_sents)
+>>> bigram_tagger.tag(brown_sents[2007])
+[('Various', 'JJ'), ('of', 'IN'), ('the', 'AT'), ('apartments', 'NNS'),
+('are', 'BER'), ('of', 'IN'), ('the', 'AT'), ('terrace', 'NN'),
+('type', 'NN'), (',', ','), ('being', 'BEG'), ('on', 'IN'), ('the', 'AT'),
+('ground', 'NN'), ('floor', 'NN'), ('so', 'CS'), ('that', 'CS'),
+('entrance', 'NN'), ('is', 'BEZ'), ('direct', 'JJ'), ('.', '.')]
+>>> unseen_sent = brown_sents[4203]
+>>> bigram_tagger.tag(unseen_sent)
+[('The', 'AT'), ('population', 'NN'), ('of', 'IN'), ('the', 'AT'), ('Congo', 'NP'),
+('is', 'BEZ'), ('13.5', None), ('million', None), (',', None), ('divided', None),
+('into', None), ('at', None), ('least', None), ('seven', None), ('major', None),
+('``', None), ('culture', None), ('clusters', None), ("''", None), ('and', None),
+('innumerable', None), ('tribes', None), ('speaking', None), ('400', None),
+('separate', None), ('dialects', None), ('.', None)]
+Notice that the bigram tagger manages to tag every word in a sentence it saw during training, but does badly on an unseen sentence. As soon as it encounters a new word (i.e., 13.5), it is unable to assign a tag. It cannot tag the following word (i.e., million), even if it was seen during training, simply because it never saw it during training with a None tag on the previous word. Consequently, the tagger fails to tag the rest of the sentence. Its overall accuracy score is very low:
+>>> bigram_tagger.evaluate(test_sents)
+0.10276088906608193
+As n gets larger, the specificity of the contexts increases, as does the chance that the data we wish to tag contains contexts that were not present in the training data. This is known as the sparse data（稀疏数据） problem, and is quite pervasive（普遍的） in NLP. As a consequence, there is a trade-off between the accuracy and the coverage of our results (and this is related to the precision/recall trade-off （精度/取消 权衡）in information retrieval（信息检索）).
+Caution!
+N-gram taggers should not consider context that crosses a sentence boundary(不该考虑穿过句子边界的内容). Accordingly, NLTK taggers are designed to work with lists of sentences, where each sentence is a list of words. At the start of a sentence, tn-1 and preceding tags are set to None.（在句子的开始，tn-1和先前的标记都设为None）
+Combining Taggers   合并标注器
+One way to address the trade-off between accuracy and coverage is to use the more accurate algorithms when we can, but to fall back（后退）on algorithms with wider coverage when necessary. For example, we could combine the results of a bigram tagger, a unigram tagger, and a default tagger, as follows:
+1. Try tagging the token with the bigram tagger.
+2. If the bigram tagger is unable to find a tag for the token, try the unigram tagger.
+3. If the unigram tagger is also unable to find a tag, use a default tagger.
+Most NLTK taggers permit a backoff tagger to be specified（允许指定一个备值的tagger）. The backoff tagger may itself have a backoff tagger:
+>>> t0 = nltk.DefaultTagger('NN')
+>>> t1 = nltk.UnigramTagger(train_sents, backoff=t0)
+>>> t2 = nltk.BigramTagger(train_sents, backoff=t1)  #好NB的调用...
+>>> t2.evaluate(test_sents)
+0.84491179108940495
+Your Turn: Extend the preceding example by defining a TrigramTagger called t3, which backs off to t2.
+奇怪，效果还不如t2的好，继续看
+In [46]: t3 = nltk.TrigramTagger(train_sents, backoff=t2)
+In [47]: t3.evaluate(test_sents)
+Out[47]: 0.84570915977274996
+In [48]: t2.evaluate(test_sents)
+Out[48]: 0.84720422605402168
+Note that we specify the backoff tagger when the tagger is initialized so that training can take advantage of the backoff tagger（注意在tagger初始化的时候我们指定了备值tagger，这样训练就可以利用备值的tagger）. Thus, if the bigram tagger would assign the same tag as its unigram backoff tagger in a certain context, the bigram tagger discards the training instance（因此，如果在特定的内容中，二元tagger所赋的标记和备值的一元tagger一样的话，就会放弃这个训练实例）. This keeps the bigram tagger model as small as possible（这就是的二元tagger模型尽可能地小）. We can further specify that a tagger needs to see more than one instance of a context in order to retain（保留） it. For example, nltk.BigramTagger(sents, cutoff=2, backoff=t1) will discard contexts that have only been seen once or twice（放弃仅被看过一次或两次的内容？）.
+Tagging Unknown Words  标记未知的单词
+Our approach to tagging unknown words still uses backoff to a regular expression tagger or a default tagger. These are unable to make use of context. Thus, if our tagger encountered the word blog, not seen during training, it would assign it the same tag, regardless of whether this word appeared in the context the blog or to blog. How can we do better with these unknown words, or out-of-vocabulary items?
+A useful method to tag unknown words based on context is to limit the vocabulary of a tagger to the most frequent n words, and to replace every other word with a special word UNK using the method shown in Section 5.3. During training, a unigram tagger will probably learn that UNK is usually a noun. However, the n-gram taggers will detect contexts in which it has some other tag. For example, if the preceding word is to (tagged TO), then UNK will probably be tagged as a verb.
+Storing Taggers  存储标注器
+Training a tagger on a large corpus may take a significant time. Instead of training a tagger every time we need one, it is convenient to save a trained tagger in a file for later reuse. Let’s save our tagger t2 to a file t2.pkl:
+>>> from cPickle import dump
+>>> output = open('t2.pkl', 'wb')
+>>> dump(t2, output, -1)
+>>> output.close()
+Now, in a separate Python process, we can load our saved tagger:
+>>> from cPickle import load
+>>> input = open('t2.pkl', 'rb')
+>>> tagger = load(input)
+>>> input.close()
+Now let’s check that it can be used for tagging:
+>>> text = """The board's action shows what free enterprise
+...     is up against in our complex maze of regulatory laws ."""
+>>> tokens = text.split()
+>>> tagger.tag(tokens)
+[('The', 'AT'), ("board's", 'NN$'), ('action', 'NN'), ('shows', 'NNS'),
+('what', 'WDT'), ('free', 'JJ'), ('enterprise', 'NN'), ('is', 'BEZ'),
+('up', 'RP'), ('against', 'IN'), ('in', 'IN'), ('our', 'PP$'), ('complex', 'JJ'),
+('maze', 'NN'), ('of', 'IN'), ('regulatory', 'NN'), ('laws', 'NNS'), ('.', '.')]
+Performance Limitations   性能限制
+What is the upper limit to the performance of an n-gram tagger? Consider the case of a trigram tagger. How many cases of part-of-speech ambiguity does it encounter? We can determine the answer to this question empirically:
+>>> cfd = nltk.ConditionalFreqDist(
+...            ((x[1], y[1], z[0]), z[1])
+...            for sent in brown_tagged_sents
+...            for x, y, z in nltk.trigrams(sent))
+>>> ambiguous_contexts = [c for c in cfd.conditions() if len(cfd[c]) > 1]
+>>> sum(cfd[c].N() for c in ambiguous_contexts) / cfd.N()
+0.049297702068029296
+Thus, 1 out of 20 trigrams is ambiguous. Given the current word and the previous two tags, in 5% of cases there is more than one tag that could be legitimately（合理地） assigned to the current word according to the training data. Assuming we always pick the most likely tag in such ambiguous contexts, we can derive a lower bound on the performance of a trigram tagger.
+Another way to investigate the performance of a tagger is to study its mistakes. Some tags may be harder than others to assign, and it might be possible to treat them specially by pre- or post-processing the data. A convenient way to look at tagging errors is the confusion matrix（混淆矩阵）. It charts expected tags (the gold standard) against actual tags generated by a tagger:
+>>> test_tags = [tag for sent in brown.sents(categories='editorial')
+...                  for (word, tag) in t2.tag(sent)]
+>>> gold_tags = [tag for (word, tag) in brown.tagged_words(categories='editorial')]
+>>> print nltk.ConfusionMatrix(gold, test)
+Based on such analysis we may decide to modify the tagset. Perhaps a distinction between tags that is difficult to make can be dropped, since it is not important in the context of some larger processing task.
+Another way to analyze the performance bound on a tagger comes from the less than 100% agreement between human annotators.
+In general, observe that the tagging process collapses(失败) distinctions: e.g., lexical identity（特性） is usually lost when all personal pronouns are tagged PRP. At the same time, the tagging process introduces new distinctions and removes ambiguities: e.g., deal tagged as VB or NN. This characteristic of collapsing certain distinctions and introducing new distinctions is an important feature of tagging which facilitates classification and prediction.
+When we introduce finer distinctions in a tagset, an n-gram tagger gets more detailed information about the left-context when it is deciding what tag to assign to a particular word. However, the tagger simultaneously has to do more work to classify the current token, simply because there are more tags to choose from. Conversely, with fewer distinctions (as with the simplified tagset), the tagger has less information about context, and it has a smaller range of choices in classifying the current token.
+We have seen that ambiguity in the training data leads to an upper limit in tagger performance. Sometimes more context will resolve（解决） the ambiguity. In other cases, however, as noted by (Abney, 1996), the ambiguity can be resolved only with reference to（关于） syntax or to world knowledge. Despite these imperfections, part-of-speech tagging has played a central role in the rise of statistical approaches to natural language processing.
+In the early 1990s, the surprising accuracy of statistical taggers was a striking demonstration that it was possible to solve one small part of the language understanding problem, namely part-of-speech disambiguation（词性消歧）, without reference to deeper sources of linguistic knowledge. Can this idea be pushed（伸展） further? In Chapter 7, we will see that it can.
+Tagging Across Sentence Boundaries    在句子边界处标记
+An n-gram tagger uses recent tags to guide the choice of tag for the current word. When tagging the first word of a sentence, a trigram tagger will be using the part-of-speech tag of the previous two tokens, which will normally be the last word of the previous sentence and the sentence-ending punctuation. However, the lexical category（语义范畴）that closed the previous sentence has no bearing（没有关系） on the one that begins the next sentence.
+To deal with this situation, we can train, run, and evaluate taggers using lists of tagged sentences, as shown in Example 5-5.
+Example 5-5. N-gram tagging at the sentence level.
+brown_tagged_sents = brown.tagged_sents(categories='news')
+brown_sents = brown.sents(categories='news')
+size = int(len(brown_tagged_sents) * 0.9)
+train_sents = brown_tagged_sents[:size]
+test_sents = brown_tagged_sents[size:]
+t0 = nltk.DefaultTagger('NN')
+t1 = nltk.UnigramTagger(train_sents, backoff=t0)
+t2 = nltk.BigramTagger(train_sents, backoff=t1)
+>>> t2.evaluate(test_sents)
+0.84491179108940495

@@ -1,0 +1,117 @@
+一、概述
+这会是激动人心的一章，因为我们将首次接触到最优化算法。仔细想想就会发现，其实我们日常生活中遇到过很多最优化问题，比如如何在最短时间内从A点到达B点？如何投入最少工作量却获得最大的效益？如何设计发动机使得油耗最少而功率最大？可见，最优化的作用十分强大。接下来，我们介绍几个最优化算法，并利用它们训练出一个非线性函数用于分类。
+假设现在有一些数据点，我们用一条直线对这些点进行拟合（该线称为最佳拟合直线），这个拟合过程就称作回归。利用Logistic回归进行分类的主要思想是：根据现有数据对分类边界线建立回归公式，以此进行分类。这里的“回归”一词源于最佳拟合，表示要找到最佳拟合参数集，其背后的数学分析将在下一部分介绍。训练分类器时的做法就是寻找最佳拟合参数，使用的是最优化算法。接下来介绍这个二值型输出分类器的数学原理。
+Logistic回归的一般过程
+（1）收集数据：采用任意方法收集数据。
+（2）准备数据：由于需要进行距离计算，因此要求数据类型为数值型。另外，结构化数据格式则最佳。
+（3）分析数据：采用任意方法对数据进行分析。
+（4）训练算法：大部分时间将用于训练，训练的目的是为了找到最佳的分类回归系数。
+（5）测试算法：一旦训练步骤完成，分类将会很快。
+（6）使用算法：首先，我们需要输入一些数据，并将其转换成对应的结构化数值；接着，基于训练好的回归系数就可以对这些数值进行简单的回归计算，判定它们属于哪个类别；在这之后，我们就可以在输出的类别上做一些其他分析工作。
+二、优缺点
+优点：计算代价不高，易于理解和实现。
+缺点：容易欠拟合，分类精度可能不高。
+适用数据类型：数值型和标称型数据。
+三、数学公式
+我们想要的函数应该是，能接受所有的输入然后预测出类别。例如，在两个类的情况下，上述函数输出0或1。或许你之前接触过具有这种性质的函数，该函数称为海维塞德阶跃函数（Heaviside step function），或者直接称为单位阶跃函数。然而，海维塞德阶跃函数的问题在于：该函数在跳跃点上从0瞬间跳跃到1，这个瞬间跳跃过程有时很难处理。幸好，另一个函数也有类似的性质，且数学上更易处理，这就是Sigmoid函数。Sigmoid函数具体的计算公式如下：
+-1给出了Sigmoid函数在不同坐标尺度下的两条曲线图。当x为0时，Sigmoid函数值为0.5。随着x的增大，对应的Sigmoid值将逼近于1；而随着x的减小，Sigmoid值将逼近于0。如果横坐标刻度足够大（-1下图），Sigmoid函数看起来很像一个阶跃函数。
+-1　两种坐标尺度下的Sigmoid函数图。上图的横坐标为-5到5，这时的曲线变化较为平滑；下图横坐标的尺度足够大，可以看到，在x=0点处Sigmoid函数看起来很像阶跃函数
+因此，为了实现Logistic回归分类器，我们可以在每个特征上都乘以一个回归系数，然后把所有的结果值相加，将这个总和代入Sigmoid函数中，进而得到一个范围在0~1之间的数值。任何大于0.5的数据被分入1类，小于0.5即被归入0类。所以，Logistic回归也可以被看成是一种概率估计。确定了分类器的函数形式之后，现在的问题变成了：最佳回归系数是多少？如何确定它们的大小？
+四、基于最优化方法的最佳回归系数确定
+Sigmoid函数的输入记为z，由下面公式得出： 其中 wi 为最佳拟合参数，每一 列 数据都对应一个w拟合参数。
+如果采用向量的写法，上述公式可以写成z=wx，它表示将这两个数值向量对应元素相乘然后全部加起来即得到z值。其中的向量x是分类器的输入数据，向量w也就是我们要找到的最佳参数（系数），从而使得分类器尽可能地精确。为了寻找该最佳参数，需要用到最优化理论的一些知识。下面首先介绍梯度上升的最优化方法，我们将学习到如何使用该方法求得数据集的最佳参数。接下来，展示如何绘制梯度上升法产生的决策边界图，该图能将梯度上升法的分类效果可视化地呈现出来。最后我们将学习随机梯度上升算法，以及如何对其进行修改以获得更好的结果。
+梯度上升法
+我们介绍的第一个最优化算法叫做梯度上升法。梯度上升法基于的思想是：要找到某函数的最大值，最好的方法是沿着该函数的梯度方向探寻。如果梯度记为∇，则函数f(x,y)的梯度由下式表示：
+这是机器学习中最易造成混淆的一个地方，但在数学上并不难，需要做的只是牢记这些符号的意义。这个梯度意味着要沿x的方向移动，沿y的方向移动。其中，函数f(x,y)必须要在待计算的点上有定义并且可微。一个具体的函数例子见-2。
+-2　梯度上升算法到达每个点后都会重新估计移动的方向。从P0开始，计算完该点的梯度，函数就根据梯度移动到下一点P1。在P1点，梯度再次被重新计算，并沿新的梯度方向移动到P2。如此循环迭代，直到满足停止条件。迭代的过程中，梯度算子总是保证我们能选取到最佳的移动方向
+-2中的梯度上升算法沿梯度方向移动了一步。可以看到，梯度算子总是指向函数值增长最快的方向。这里所说的是移动方向，而未提到移动量的大小。该量值称为步长，记做α。用向量来表示的话，梯度上升算法的迭代公式如下：
+该公式将一直被迭代执行，直至达到某个停止条件为止，比如迭代次数达到某个指定值或算法达到某个可以允许的误差范围。
+五、训练算法：使用梯度上升找到最佳参数
+-3　一个简单数据集，下面将采用梯度上升法找到Logistic回归分类器在此数据集上的最佳回归系数
+-3中有100个样本点，每个点包含两个数值型特征：X1和X2。在此数据集上，我们将通过使用梯度上升法找到最佳回归系数，也就是拟合出Logistic回归模型的最佳参数。
+梯度上升法的伪代码如下：
+每个回归系数初始化为1重复R次：
+计算整个数据集的梯度
+使用alpha×gradient更新回归系数的向量
+返回回归系数
+程序清单5-1 Logistic回归梯度上升优化算法
+1 def loadDataSet():　　#每行前两个值分别是X1和X2，第三个值是数据对应的类别标签。此外，为了方便计算，该函数还将X0的值设为1.0 2 dataMat = []; labelMat = [] 3 fr = open('testSet.txt') 4 for line in fr.readlines(): 5 lineArr = line.strip().split() 6 dataMat.append([1.0, float(lineArr[0]), float(lineArr[1])]) 7 labelMat.append(int(lineArr[2])) 8 return dataMat,labelMat # 分类用 1 ，0 表示 9 10 def sigmoid(inX): 11 return 1.0/(1+exp(-inX)) 12 13 def gradAscent(dataMatIn, classLabels):　　# 梯度上升算法 变量alpha是向目标移动的步长，maxCycles是迭代次数。 14 dataMatrix = mat(dataMatIn) # 数据集转 矩阵 15 labelMat = mat(classLabels).transpose() # 分类向量 转置 16 m,n = shape(dataMatrix) 17 alpha = 0.001 18 maxCycles = 500 19 weights = ones((n,1))　　#weights 与列的数量相同 20 for k in range(maxCycles): #heavy on matrix operations 21 h = sigmoid(dataMatrix*weights) # 把 Z 代入到 Sigmoid 函数当中 22 error = (labelMat - h) #向量的减法 23 weights = weights + alpha * dataMatrix.transpose()* error # 数学公式 alpha=移动步长 24 return weights
+接下来看看实际效果，在Python提示符下，敲入下面的代码：
+1 >>> import logRegres 2 >>> dataArr,labelMat=logRegres.loadDataSet() 3 >>> logRegres.gradAscent(dataArr,labelMat) 4 　　 matrix([[4.12414349], [0.48007329], [-0.6168482]])
+求出了数据集每一列的最佳拟合参数据 w 的值。
+六、分析数据：画出决策边界
+上面已经解出了一组回归系数，它确定了不同类别数据之间的分隔线。那么怎样画出该分隔线，从而使得优化的过程便于理解呢？下面将解决这个问题，打开logRegres.py并添加如下代码。
+画出数据集和Logistic回归最佳拟合直线的函数
+1 def plotBestFit(weights): 2 import matplotlib.pyplot as plt 3 dataMat,labelMat=loadDataSet() 4 dataArr = array(dataMat) 5 n = shape(dataArr)[0] 6 xcord1 = []; ycord1 = [] 7 xcord2 = []; ycord2 = [] 8 for i in range(n): 9 if int(labelMat[i])== 1: 10 xcord1.append(dataArr[i,1]); ycord1.append(dataArr[i,2]) 11 else: 12 xcord2.append(dataArr[i,1]); ycord2.append(dataArr[i,2]) 13 fig = plt.figure() 14 ax = fig.add_subplot(111) 15 ax.scatter(xcord1, ycord1, s=30, c='red', marker='s') 16 ax.scatter(xcord2, ycord2, s=30, c='green') 17 x = arange(-3.0, 3.0, 0.1) 18 y = (-weights[0]-weights[1]*x)/weights[2] #① 最佳拟合直线 19 ax.plot(x, y) 20 plt.xlabel('X1'); plt.ylabel('X2'); 21 plt.show()
+程序清单5-2中的代码是直接用Matplotlib画出来的。唯一要指出的是，①处设置了sigmoid函数为0。回忆5.2节，0是两个分类（类别1和类别0）的分界处。因此，我们设定0=w0x0+w1x1+w2x2，然后解出X2和X1的关系式（即分隔线的方程，注意X0＝1）。
+运行程序清单5-2的代码，在Python提示符下输入：
+1 >>> from numpy import* 2 >>> reload(logRegres) 3 <module'logRegres'from'logRegres.py'> 4 >>> logRegres.plotBestFit(weights.getA())
+梯度上升算法在500次迭代后得到的Logistic回归最佳拟合直线
+这个分类结果相当不错，从图上看只错分了两到四个点。但是，尽管例子简单且数据集很小，这个方法却需要大量的计算（300次乘法）。因此下一节将对该算法稍作改进，从而使它可以用在真实数据集上。
+七、训练算法：随机梯度上升
+梯度上升算法在每次更新回归系数时都需要遍历整个数据集，该方法在处理100个左右的数据集时尚可，但如果有数十亿样本和成千上万的特征，那么该方法的计算复杂度就太高了。一种改进方法是一次仅用一个样本点来更新回归系数，该方法称为随机梯度上升算法。由于可以在新样本到来时对分类器进行增量式更新，因而随机梯度上升算法是一个在线学习算法。与“在线学习”相对应，一次处理所有数据被称作是“批处理”。
+随机梯度上升算法可以写成如下的伪代码：
+所有回归系数初始化为1
+对数据集中每个样本
+计算该样本的梯度
+使用alpha×gradient更新回归系数值
+返回回归系数值
+程序清单5-3 随机梯度上升算法
+1 def stocGradAscent0(dataMatrix, classLabels): 2 m,n = shape(dataMatrix) 3 alpha = 0.01 4 weights = ones(n) #初始化 所有数为1的向量 5 for i in range(m): 6 h = sigmoid(sum(dataMatrix[i]*weights)) # 两向理相乘 h = 一个数值 7 error = classLabels[i] - h　　#error 这一个数值 8 weights = weights + alpha * error * dataMatrix[i] 9 return weights
+可以看到，随机梯度上升算法与梯度上升算法在代码上很相似，但也有一些区别：
+第一，后者的变量h和误差error都是向量，而前者则全是数值；
+第二，前者没有矩阵的转换过程，所有变量的数据类型都是NumPy数组。
+测试代码：
+1 >>> dataArr,labelMat=logRegres.loadDataSet() 2 >>> weights=logRegres.stocGradAscent0(array(dataArr),labelMat) 3 >>> weights 4 array([ 1.01702007, 0.85914348, -0.36579921])
+5 >>>logRegres.plotBestFit(weights)
+执行完毕后将得到-5所示的最佳拟合直线图，该图与-4有一些相似之处。可以看到，拟合出来的直线效果还不错，但并不像-4那样完美。这里的分类器错分了三分之一的样本。
+-5　随机梯度上升算法在上述数据集上的执行结果，最佳拟合直线并非最佳分类线
+直接比较程序清单5-3和程序清单5-1的代码结果是不公平的，后者的结果是在整个数据集上迭代了500次才得到的。一个判断优化算法优劣的可靠方法是看它是否收敛，也就是说参数是否达到了稳定值，是否还会不断地变化？对此，我们在程序清单5-3中随机梯度上升算法上做了些修改，使其在整个数据集上运行200次。最终绘制的三个回归系数的变化情况如-6所示。
+-6　运行随机梯度上升算法，在数据集的一次遍历中回归系数与迭代次数的关系图。回归系数经过大量迭代才能达到稳定值，并且仍然有局部的波动现象
+-6展示了随机梯度上升算法在200次迭代过程中回归系数的变化情况。其中的系数2，也就是-5中的X2只经过了50次迭代就达到了稳定值，但系数1和0则需要更多次的迭代。另外值得注意的是，在大的波动停止后，还有一些小的周期性波动。不难理解，产生这种现象的原因是存在一些不能正确分类的样本点（数据集并非线性可分），在每次迭代时会引发系数的剧烈改变。我们期望算法能避免来回波动，从而收敛到某个值。另外，收敛速度也需要加快。
+对于-6存在的问题，可以通过修改程序清单5-3的随机梯度上升算法来解决，具体代码如下。
+程序清单5-4　改进的随机梯度上升算法
+1 def stocGradAscent1(dataMatrix, classLabels, numIter=150): 2 m,n = shape(dataMatrix) 3 weights = ones(n) #initialize to all ones 4 for j in range(numIter): 5 dataIndex = range(m) 6 for i in range(m): 7 alpha = 4/(1.0+j+i)+0.0001 #apha decreases with iteration, does not  // ①alpha每次迭代时需要调整 8 randIndex = int(random.uniform(0,len(dataIndex)))#go to 0 because of the constant// ②  随机选取更新 9 h = sigmoid(sum(dataMatrix[randIndex]*weights)) 10 error = classLabels[randIndex] - h 11 weights = weights + alpha * error * dataMatrix[randIndex] 12 del(dataIndex[randIndex]) 13 return weights
+程序清单5-4与程序清单5-3类似，但增加了两处代码来进行改进。第一处改进在①处。一方面，alpha在每次迭代的时候都会调整，这会缓解-6上的数据波动或者高频波动。另外，虽然alpha会随着迭代次数不断减小，但永远不会减小到0，这是因为①中还存在一个常数项。必须这样做的原因是为了保证在多次迭代之后新数据仍然具有一定的影响。如果要处理的问题是动态变化的，那么可以适当加大上述常数项，来确保新的值获得更大的回归系数。另一点值得注意的是，在降低alpha的函数中，alpha每次减少1/(j+i)，其中j是迭代次数，i是样本点的下标。这样当j<<max(i)时，alpha就不是严格下降的。避免参数的严格下降也常见于模拟退火算法等其他优化算法中。
+程序清单5-4第二个改进的地方在②处，这里通过随机选取样本来更新回归系数。这种方法将减少周期性的波动（如-6中的波动）。具体实现方法与第3章类似，这种方法每次随机从列表中选出一个值，然后从列表中删掉该值（再进行下一次迭代）。
+此外，改进算法还增加了一个迭代次数作为第3个参数。如果该参数没有给定的话，算法将默认迭代150次。如果给定，那么算法将按照新的参数值进行迭代。与stocGradAscent1()类似，-7显示了每次迭代时各个回归系数的变化情况。
+-7　使用样本随机选择和alpha动态减少机制的随机梯度上升算法stocGradAscent1()所生成的系数收敛示意图。该方法比采用固定alpha的方法收敛速度更快
+比较-7和-6可以看到两点不同。第一点是，-7中的系数没有像-6里那样出现周期性的波动，这归功于stocGradAscent1()里的样本随机选择机制；第二点是，-7的水平轴比-6短了很多，这是由于stocGradAscent1()可以收敛得更快。这次我们仅仅对数据集做了20次遍历，而之前的方法是500次。
+下面看看在同一个数据集上的分类效果
+1 >>> weights=logRegres.stocGradAscent1(array(dataArr),labelMat) 2 >>> weights 3 array([ 14.38360334, 0.9962485 , -1.96508465]) 4 >>> logRegres.plotBestFit(weights)
+-8　使用改进的随机梯度上升算法得到的系数
+程序运行之后应该能看到类似-8的结果图。该分隔线达到了与GradientAscent()差不多的效果，但是所使用的计算量更少。
+八、示例：从疝气病症预测病马的死亡率
+本节将使用Logistic回归来预测患有疝病的马的存活问题。这里的数据包含368个样本和28个特征。我并非育马专家，从一些文献中了解到，疝病是描述马胃肠痛的术语。然而，这种病不一定源自马的胃肠问题，其他问题也可能引发马疝病。该数据集中包含了医院检测马疝病的一些指标，有的指标比较主观，有的指标难以测量，例如马的疼痛级别。
+示例：使用Logistic回归估计马疝病的死亡率
+（1）收集数据：给定数据文件。
+（2）准备数据：用Python解析文本文件并填充缺失值。
+（3）分析数据：可视化并观察数据。
+（4）训练算法：使用优化算法，找到最佳的系数。
+（5）测试算法：为了量化回归的效果，需要观察错误率。根据错误率决定是否回退到训练阶段，通过改变迭代的次数和步长等参数来得到更好的回归系数。
+（6）使用算法：实现一个简单的命令行程序来收集马的症状并输出预测结果并非难事，这可以做为留给读者的一道习题。
+另外需要说明的是，除了部分指标主观和难以测量外，该数据还存在一个问题，数据集中有30%的值是缺失的。下面将首先介绍如何处理数据集中的数据缺失问题，然后再利用Logistic回归和随机梯度上升算法来预测病马的生死。
+1、准备数据：处理数据中的缺失值
+数据中的缺失值是个非常棘手的问题，有很多文献都致力于解决这个问题。那么，数据缺失究竟带来了什么问题？假设有100个样本和20个特征，这些数据都是机器收集回来的。若机器上的某个传感器损坏导致一个特征无效时该怎么办？此时是否要扔掉整个数据？这种情况下，另外19个特征怎么办？它们是否还可用？答案是肯定的。因为有时候数据相当昂贵，扔掉和重新获取都是不可取的，所以必须采用一些方法来解决这个问题。
+下面给出了一些可选的做法：
+•使用可用特征的均值来填补缺失值；
+•使用特殊值来填补缺失值，如-1；
+•忽略有缺失值的样本；
+•使用相似样本的均值添补缺失值；
+•使用另外的机器学习算法预测缺失值。
+现在，我们对下一节要用的数据集进行预处理，使其可以顺利地使用分类算法。在预处理阶段需要做两件事：第一，所有的缺失值必须用一个实数值来替换，因为我们使用的NumPy数据类型不允许包含缺失值。这里选择实数0来替换所有缺失值，恰好能适用于Logistic回归。这样做的直觉在于，我们需要的是一个在更新时不会影响系数的值。回归系数的更新公式如下：weights=weights+alpha*error*dataMatrix[randIndex]
+如果dataMatrix的某特征对应值为0，那么该特征的系数将不做更新，即：   weights=weights
+另外，由于sigmoid(0)=0.5，即它对结果的预测不具有任何倾向性，因此上述做法也不会对误差项造成任何影响。基于上述原因，将缺失值用0代替既可以保留现有数据，也不需要对优化算法进行修改。此外，该数据集中的特征取值一般不为0，因此在某种意义上说它也满足“特殊值”这个要求。
+预处理中做的第二件事是，如果在测试数据集中发现了一条数据的类别标签已经缺失，那么我们的简单做法是将该条数据丢弃。这是因为类别标签与特征不同，很难确定采用某个合适的值来替换。采用Logistic回归进行分类时这种做法是合理的，而如果采用类似kNN的方法就可能不太可行。
+原始的数据集经过预处理之后保存成两个文件：horseCol-icTest.txt和horseColicTraining.txt。如果想对原始数据和预处理后的数据做个比较，可以在http://archive.ics.uci.edu/ml/datasets/Horse+Colic浏览这些数据。
+现在我们有一个“干净”可用的数据集和一个不错的优化算法，下面将把这些部分融合在一起训练出一个分类器，然后利用该分类器来预测病马的生死问题。
+2、测试算法：用Logistic回归进行分类
+本章前面几节介绍了优化算法，但目前为止还没有在分类上做任何实际尝试。使用Logistic回归方法进行分类并不需要做很多工作，所需做的只是把测试集上每个特征向量乘以最优化方法得来的回归系数，再将该乘积结果求和，最后输入到Sigmoid函数中即可。如果对应的Sigmoid值大于0.5就预测类别标签为1，否则为0。下面看看实际运行效果，打开文本编辑器并将下列代码添加到logRegres.py文件中。
+程序清单5-5　Logistic回归分类函数
+1 def classifyVector(inX, weights): 2 prob = sigmoid(sum(inX*weights)) 3 if prob > 0.5: return 1.0 4 else: return 0.0 5 6 def colicTest(): 7 frTrain = open('horseColicTraining.txt'); frTest = open('horseColicTest.txt') 8 trainingSet = []; trainingLabels = [] 9 for line in frTrain.readlines(): 10 currLine = line.strip().split('\t') 11 lineArr =[] 12 for i in range(21): 13 lineArr.append(float(currLine[i])) 14 trainingSet.append(lineArr) 15 trainingLabels.append(float(currLine[21])) 16 trainWeights = stocGradAscent1(array(trainingSet), trainingLabels, 1000) 17 errorCount = 0; numTestVec = 0.0 18 for line in frTest.readlines(): 19 numTestVec += 1.0 20 currLine = line.strip().split('\t') 21 lineArr =[] 22 for i in range(21): 23 lineArr.append(float(currLine[i])) 24 if int(classifyVector(array(lineArr), trainWeights))!= int(currLine[21]): 25 errorCount += 1 26 errorRate = (float(errorCount)/numTestVec) 27 #print "the error rate of this test is: %f" % errorRate 28 return errorRate 29 30 def multiTest(): 31 numTests = 10; errorSum=0.0 32 for k in range(numTests): 33 errorSum += colicTest() 34 #print "after %d iterations the average error rate is: %f" % (numTests, errorSum/float(numTests)) 35
+程序清单5-5的第一个函数是classifyVector()，它以回归系数和特征向量作为输入来计算对应的Sigmoid值。如果Sigmoid值大于0.5函数返回1，否则返回0。
+接下来的函数是colicTest()，是用于打开测试集和训练集，并对数据进行格式化处理的函数。该函数首先导入训练集，同前面一样，数据的最后一列仍然是类别标签。数据最初有三个类别标签，分别代表马的三种情况：“仍存活”、“已经死亡”和“已经安乐死”。这里为了方便，将“已经死亡”和“已经安乐死”合并成“未能存活”这个标签。数据导入之后，便可以使用函数stocGradAscent1()来计算回归系数向量。这里可以自由设定迭代的次数，例如在训练集上使用500次迭代，实验结果表明这比默认迭代150次的效果更好。在系数计算完成之后，导入测试集并计算分类错误率。整体看来，colicTest()具有完全独立的功能，多次运行得到的结果可能稍有不同，这是因为其中有随机的成分在里面。如果在stocGradAscent1()函数中回归系数已经完全收敛，那么结果才将是确定的。
+最后一个函数是multiTest()，其功能是调用函数col-icTest()10次并求结果的平均值。下面看一下实际的运行效果，在Python提示符下输入：
+1 >>> import logRegres 2 >>> logRegres.multiTest() 3 4 RuntimeWarning: overflow encountered in exp 5 the error rate of this test is: 0.328358 6 the error rate of this test is: 0.343284 7 the error rate of this test is: 0.432836 8 the error rate of this test is: 0.402985 9 the error rate of this test is: 0.343284 10 the error rate of this test is: 0.343284 11 the error rate of this test is: 0.283582 12 the error rate of this test is: 0.313433 13 the error rate of this test is: 0.432836 14 the error rate of this test is: 0.283582 15 after 10 iterations the average error rate is: 0.350746
+这边有一个警告，是可能溢出的警告
+从上面的结果可以看到，10次迭代之后的平均错误率为35%。事实上，这个结果并不差，因为有30%的数据缺失。当然，如果调整colicTest()中的迭代次数和stochGradAscent1()中的步长，平均错误率可以降到20%左右。第7章中我们还会再次使用到这个数据集。

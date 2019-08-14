@@ -1,0 +1,52 @@
+斯坦福计算机视觉相关课程
+CS131 基础知识
+CS231a 通用的计算机视觉
+CS231A: Computer Vision, From 3D Reconstruction to Recognition
+CS231n 神经网络在计算机视觉里的应用
+http://cs231n.stanford.edu/
+CS331
+CS431
+Hubel-Wiesel模型
+Hubel, D. H., & Wiesel, T. N. (1959). Receptive fields of single neurones in the cat’s striate cortex. Journal of Physiology, 148(3),574.
+真实的鱼没刺激神经元 鱼的图片有
+基础视觉区的神经元是按一列一列的组织起来
+每一列的神经元只喜欢特定的形状
+视觉第一步并不是处理整体，而是对简单的边缘和形状结构进行处理
+边缘决定结构
+计算机视觉起源
+1963
+Larry Roberts 解析图片的边缘 计算机视觉的第一篇论文
+1966
+MIT人工智能实验室做这方面研究，计算机视觉从此成为计算机的一个分支
+1970s
+David Marr 视觉是分层的
+视觉是2D的
+1973
+Fischler & Elschlager:
+pictorial structures
+http://www.cs.princeton.edu/courses/archive/spr08/cos598B/Lectures/PictorialStructure.pdf
+http://www.cs.cornell.edu/~dph/papers/pict-struct-ijcv.pdf
+1979
+Brooks&Binford:
+Generalized Cylinder
+1997
+Shi & Malik
+彩色图像
+把图像切分为有意义的几部分（感知分组）
+1999
+David Lowe
+“SIFT”& Object Recognition
+特征检测
+2001
+Viola&jones
+Face Detction
+Pascal VOC & ImageNet
+PASCAL 20种物体
+http://host.robots.ox.ac.uk/pascal/VOC/
+ImageNet 图像数据库
+http://www.image-net.org/
+CS231n overview
+object detection
+action classification
+image captioning
+CNN is an important tool for object detection.

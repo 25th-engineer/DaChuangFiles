@@ -1,0 +1,39 @@
+【计算机视觉】目标检测中的指标衡量Recall与Precision
+标签（空格分隔）： 【图像处理】
+说明：目标检测性能指标Recall与Precision的理解。
+Recall与Precision
+其实道理非常朴素：
+Precision就是精度，以行人检测为例，精度就是检测出来的行人中确实是行人的所占的百分比，也就是所谓的检测精度，可以提供给客户看，我们的检测精度是100%，也就是没有虚景，没有false positive；
+Recall就是正确检出的行人数量占行人总数的百分比，Recall=100%表示没有漏检；
+所以，这两个常常是一对矛盾，客户总是需要既没有虚景也不会发生漏检的情况，也就是Precision和Recall均为100%的状况。太难了！
+通常在论文中还会有这样的曲线，Recall和Precision Score随阈值的变化曲线，以及Recall-Precision曲线。
+如果一个分类器的性能比较好，那么它应该有如下的表现：是让Recall值增长的同时保持Precision的值在一个很高的水平。而性能比较差的分类器可能会损失很多Precision值才能换来Recall值的提高。通常情况下，文章中都会使用Precision-recall曲线，来显示出分类器在Precision与Recall之间的权衡。
+Average Precision
+相比较与曲线图，在某些时候还是一个具体的数值能更直观地表现出分类器的性能。通常情况下都是用 Average Precision来作为这一度量标准，它的公式为：
+That is equal to taking the area under the curve
+在这一积分中，其中p代表Precision ，r代表Recall，p是一个以r为参数的函数，That is equal to taking the area under the curve.
+实际上这一积分极其接近于这一数值：对每一种阈值分别求（Precision值）乘以（Recall值的变化情况），再把所有阈值下求得的乘积值进行累加。公式如下：
+在这一公式中，N代表测试集中所有图片的个数，P(k)表示在能识别出k个图片的时候Precision的值，而 Delta r(k) 则表示识别图片个数从k-1变化到k时（通过调整阈值）Recall值的变化情况。
+在这一例子中，Approximated Average Precision的值
+=(1 * （0.2-0）) + (1 * (0.4-0.2)) + (0.66 * (0.4-0.4)) + (0.75 * (0.6-0.4)) + (0.6 * (0.6-0.6)) + (0.66 * (0.8-0.6)) + (0.57 * (0.8-0.8)) + (0.5 * (0.8-0.8)) + (0.44 * (0.8-0.8)) + (0.5 * (1-0.8)) = 0.782.
+=(1 * 0.2) + (1 * 0.2) + (0.66 * 0) + (0.75 * 0.2) + (0.6 * 0) + (0.66 * 0.2) + (0.57 * 0) + (0.5 * 0) + (0.44 * 0) + (0.5 * 0.2) = 0.782.
+通过计算可以看到，那些Recall值没有变化的地方（红色数值），对增加Average Precision值没有贡献。
+Interpolated average precision
+不同于Approximated Average Precision，一些作者选择另一种度量性能的标准：Interpolated Average Precision。这一新的算法不再使用P(k)，也就是说，不再使用当系统识别出k个图片的时候Precision的值与Recall变化值相乘。而是使用：
+也就是每次使用在所有阈值的Precision中，最大值的那个Precision值与Recall的变化值相乘。公式如下：
+下图的图片是Approximated Average Precision 与 Interpolated Average Precision相比较。
+需要注意的是，为了让特征更明显，图片中使用的参数与上面所说的例子无关。
+很明显 Approximated Average Precision与精度曲线挨的很近，而使用Interpolated Average Precision算出的Average Precision值明显要比Approximated Average Precision的方法算出的要高。
+一些很重要的文章都是用Interpolated Average Precision 作为度量方法，并且直接称算出的值为Average Precision 。PASCAL Visual Objects Challenge从2007年开始就是用这一度量制度，他们认为这一方法能有效地减少Precision-recall 曲线中的抖动。所以在比较文章中Average Precision 值的时候，最好先弄清楚它们使用的是那种度量方式。
+IoU
+IoU这一值，可以理解为系统预测出来的框与原来图片中标记的框的重合程度。
+算方法即检测结果Detection Result与 Ground Truth 的交集比上它们的并集，即为检测的准确率：
+IoU=DetectionResult⋂GroundTruthDetectionResult⋃GroundTruth
+IoU = \frac{DetectionResult⋂GroundTruth }{DetectionResult⋃GroundTruth}
+如下图所示：
+蓝色的框是：GroundTruth
+黄色的框是：DetectionResult
+绿色的框是：DetectionResult ⋂ GroundTruth
+红色的框是：DetectionResult ⋃ GroundTruth
+2017年5月10日 19:07
+张朋艺 pyZhangBIT2010@126.com

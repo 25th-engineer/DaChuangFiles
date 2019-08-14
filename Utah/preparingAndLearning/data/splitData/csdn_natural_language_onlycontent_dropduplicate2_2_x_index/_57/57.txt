@@ -1,0 +1,26 @@
+NLTK
+自然语言处理库，自带语料库，词性分类库。要记得安装语料库。
+import nltk nltk.download()
+Tokenize
+拆句子，拆小
+英文分词
+import nltk sentence = 'hello world' tokens = nltk.word_tokenize(sentence) tokens
+社交语言的分词 表情符号需要用正则表达式去匹配
+中文分词 启发式Heuristic 或者 机器学习统计方法 可以用Jieba
+import jieba seg_list = jieba.cut('啊啊啊',cut_all=Ture) #全模式 False是精准模式分词
+分词之后
+是一个数组，比如
+word = ['i','am','a','fool']
+英文单词比较复杂，为了降低复杂度，一般要经过词干提取(stemming)和词形归一(lemma)。
+walking 变成 walk 去掉了ing的后缀，因为它不影响词性
+went 变成 go 去掉了过去式模式，不影响词性
+from nlk.stem.porter import PorterStemmer porter_stemmer = PorterStemmer() porter_stemmer.stem('running') from nlk.stem.lancaster import LancasterStemmer lancaster_stemmer = LancasterStemmer() lancaster_stemmer.stem('probalility')
+from nltk.stem import WordNetLemmatizer
+为了更好的进行词性划分，因为一个单词有不同的意思，所以必须加入词性让它更加容易分离。
+NLTK有词性标注器，标注POS Tag
+import nltk text = nltk.word_tokenize('i am a fool') text.pos_tag(text)
+Stopwords 停止词
+以上就是对文本预处理的流程。
+文本预处理有什么用
+得到一个list，包含了句子中有意思的词，去掉了不需要的，然后进行feature化。
+进入竞赛内容

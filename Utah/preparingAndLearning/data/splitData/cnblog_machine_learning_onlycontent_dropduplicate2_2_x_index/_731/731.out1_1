@@ -1,0 +1,24 @@
+由于 笔者 最近 在 进行 毕业 论文 的 准备 且 
+毕业 论文 中 需要 用到 Python 版本 的 机器学习 库 
+scikit learn 所以 最近三 天 一直 在 Windows 上 部署 
+这 个 框架 终于 部署 成功 了 首先 打开 加州大学 
+底 下一个 实验室 的 网站 下载 以下 安装包 1 Numpy 
++ MKL http / / www . lfd . uci 
+. edu / ~ gohlke / pythonlibs / # numpy2 
+Scipy http / / www . lfd . uci . 
+edu / ~ gohlke / pythonlibs / # scipy3 scikit 
+learn http / / www . lfd . uci . 
+edu / ~ gohlke / pythonlibs / # scikit learn 
+前期 准备 在 部署 之前 我们 需要 在 本地 环境 
+的 Python 中有 pip 模块 这样 我们 才能 安装 上述 
+的 wheel 文件 一 安装 Numpy + MKL pip install 
+numpy 1 . 11.1 + mkl cp27 cp27m win _ 
+amd64 . whl 二 安装 Scipy pip install scipy 0 
+. 18.1 cp27 cp27m win _ amd64 . whl 三 
+安装 scikit learn pip install scikit _ learn 0 . 
+17.1 cp27 cp27m win _ amd64 . whl 这样 就 
+大功告成 了 前 几天 一直 在 看 网上 的 一些 
+安装 教程 什么 本地 VC + + 编译 库 啊 
+之类 的 都 不行 这是 我 现在 能 找到 最 
+简单 的 方案 了 希望 能够 节约 大家 的 时间 
+~ ~ ~ 

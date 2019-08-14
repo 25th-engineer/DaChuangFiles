@@ -1,0 +1,71 @@
+spark-2.0.2
+机器学习库（MLlib）指南
+MLlib是Spark的机器学习（ML）库。旨在简化机器学习的工程实践工作，并方便扩展到更大规模。MLlib由一些通用的学习算法和工具组成，包括分类、回归、聚类、协同过滤、降维等，同时还包括底层的优化原语和高层的管道API。
+MLllib目前分为两个代码包：
+spark.mllib 包含基于RDD的原始算法API。
+spark.ml 则提供了基于DataFrames 高层次的API，可以用来构建机器学习管道。
+我们推荐您使用spark.ml，因为基于DataFrames的API更加的通用而且灵活。不过我们也会继续支持spark.mllib包。用户可以放心使用，spark.mllib还会持续地增加新的功能。不过开发者需要注意，如果新的算法能够适用于机器学习管道的概念，就应该将其放到spark.ml包中，如：特征提取器和转换器。
+下面的列表列出了两个包的主要功能。
+spark.mllib: 数据类型，算法以及工具
+Data types（数据类型）
+Basic statistics（基础统计）
+summary statistics（摘要统计）
+correlations（相关性）
+stratified sampling（分层抽样）
+hypothesis testing（假设检验）
+streaming significance testing
+random data generation（随机数据生成）
+Kernel density estimation （核密度估计）
+Classification and regression（分类和回归）
+linear models (SVMs, logistic regression, linear regression)（线性模型（SVM，逻辑回归，线性回归））
+naive Bayes（朴素贝叶斯）
+decision trees（决策树）
+ensembles of trees (Random Forests and Gradient-Boosted Trees)（树套装（随机森林和梯度提升决策树））
+isotonic regression（保序回归）
+Collaborative filtering（协同过滤）
+alternating least squares (ALS)（交替最小二乘（ALS））
+Clustering（聚类）
+k-means（K-均值）
+Gaussian mixture（高斯混合）
+power iteration clustering (PIC)（幂迭代聚类（PIC））
+latent Dirichlet allocation (LDA)（隐含狄利克雷分配）
+bisecting k-means（平分K-均值）
+streaming k-means（流式K-均值）
+Dimensionality reduction（降维）
+singular value decomposition (SVD)（奇异值分解（SVD））
+principal component analysis (PCA)（主成分分析（PCA））
+Feature extraction and transformation（特征抽取和转换）
+Frequent pattern mining（频繁模式挖掘）
+FP-growth（FP-增长）
+association rules（关联规则）
+PrefixSpan（PrefixSpan）
+Evaluation metrics（评价指标）
+PMML model export（PMML模型导出）
+Optimization (developer)（优化（开发者））
+stochastic gradient descent（随机梯度下降）
+limited-memory BFGS (L-BFGS)（有限的记忆BFGS（L-BFGS））
+spark.ml: 机器学习管道高级API
+Overview: estimators, transformers and pipelines（概览：评估器，转换器和管道）
+Extracting, transforming and selecting features（抽取，转换和选取特征）
+Classification and regression（分类和回归）
+Clustering（聚类）
+Advanced topics（高级主题）
+虽然还有些降维技术在spark.ml中尚不可用，不过用户可以将spark.mllib中的的相关实现和spark.ml中的算法无缝地结合起来。
+依赖项
+MLlib使用的线性代数代码包是Breeze，而Breeze又依赖于 netlib-java 优化的数值处理。如果在运行时环境中这些原生库不可用，你将会收到一条警告，而后spark会使用纯JVM实现来替代之。
+由于许可限制的原因，spark在默认情况下不会包含netlib-Java的原生代理库。如果需要配置netlib-java/Breeze使用其系统优化库，你需要添加依赖项：com.github.fommil.netlib:all:1.1.2（或者在编译时加上参数：-Pnetlib-lgpl），然后再看一看 netlib-java 相应的安装文档。
+要使用MLlib的Python接口，你需要安装NumPy 1.4以上的版本。
+迁移指南
+MLlib目前还在积极的开发当中。所以标记为 Experimental / DeveloperApi 的接口可能在未来发生变化，下面的迁移指南说明了版本升级后的变化。
+从1.5升级到1.6
+从1.5到1.6，spark.mllib 和 spark.ml 包中并没有重大的API变化，不过有一些行为不再支持或者发生变化。
+已经废弃:
+SPARK-11358: spark.mllib.clustering.KMeans 的runs参数已经废弃
+SPARK-10592: spark.ml.classification.LogisticRegressionModel和spark.ml.regresion.LinearRegressionModel 中，weights字段改名为coefficients。这一变动有助于消除歧义，可以和输入给算法的实例（行）权重（weights）区分开来。
+行为有变:
+SPARK-7770: spark.mllib.tree.GradientBoostedTrees: validationTol 的语义在1.6中有变。原先其代表误差变化绝对值的一个阈值，而现在它类似于GradientDescent中的convergenceTol：对于较大的误差，使用相对误差（相对于上一次）；而对于较小的误差（<0.01），使用绝对误差。
+SPARK-11069: spark.ml.feature.RegexTokenizer：以前，在分词之前不会讲字符串转小写。现在的实现是，默认会将字符串转小写，不过有选项可以设为不转。这中实现和Tokenizertransformer的行为相匹配。
+Spark老版本
+以前版本的迁移指南归档在这里：on this page
+要了解更多有关系统优化的好处和背景资料，可以看看Sam Halliday关于ScalaX的演讲：High Performance Linear Algebra in Scala
+转载自并发编程网 – ifeve.com本文链接地址: Spark机器学习库（MLlib）指南

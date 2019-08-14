@@ -1,0 +1,17 @@
+Summary：国内提供计算机视觉(CV)算法岗位的公司名单
+Author：Amusi
+Date：2019-01-15
+微信公众号：CVer
+github：https://github.com/amusi/CV-Jobs
+国内提供计算机视觉(CV)算法岗位的公司名单(含外企和国内公司)，欢迎大家到CV-Jobs中提交issues进行补充
+文章目录
+北京
+上海
+TODO
+北京
+上海
+TODO
+深圳
+杭州
+南京
+广州

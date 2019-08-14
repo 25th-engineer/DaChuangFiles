@@ -1,0 +1,29 @@
+Python 自然语言处理（一）NLTK及语料库下载
+参考网站 http://www.nltk.org/
+NLTK是用来进行自然语言处理很强大的包，本文介绍Python下安装NLTK及语料下载
+1. 安装 NLTK
+pip install nltk
+如果已经安装了 Anaconda 则默认安装了nltk，但是没有安装语料库
+2. 自动安装语料库
+如果在引入nltk包后，发现没有安装语料库，则可以自动下载安装，命令:
+import nltk nltk.download() showing info https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml
+True
+3. 手动导入语料库
+由于自动安装语料库会耗费很大时间，可以手动导入语料库。
+语料库下载地址百度云盘：http://pan.baidu.com/s/1hswoU5u
+下载后的语料库可以导入到以下目录：
+- ‘/home/zhanghc/nltk_data’
+- ‘/usr/share/nltk_data’
+- ‘/usr/local/share/nltk_data’
+- ‘/usr/lib/nltk_data’
+- ‘/usr/local/lib/nltk_data’
+4. NLTK安装包及语料库安装完成
+import nltk
+# NLTK自带的语料库展示 from nltk.corpus import brown
+brown.categories()
+[u'adventure', u'belles_lettres', u'editorial', u'fiction', u'government', u'hobbies', u'humor', u'learned', u'lore', u'mystery', u'news', u'religion', u'reviews', u'romance', u'science_fiction']
+len(brown.sents())
+57340
+len(brown.words())
+1161192
+5. NLTK 常用函数

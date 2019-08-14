@@ -1,0 +1,43 @@
+开发环境
+win10
+vs2010 本人习惯vs2010
+cmake 3.7.0
+所需工具
+boost1.4.8
+下载地址 https://ncu.dl.sourceforge.net/project/boost/boost/1.48.0/boost_1_48_0.7z
+shark 3.0.0
+下载地址https://codeload.github.com/Shark-ML/Shark/tar.gz/v3.0.0
+步骤
+1： 安装boost
+a. bootstrap.bat
+b. bjam toolset=msvc-10.0 variant=debug,release threading=multi link=static
+(配置成vs2010的库)
+c. b2.exe
+库生成成功，自己先搭建环境测试下
+2： 生成 shark 的环境
+a. 修改 hark-3.0.0\CMakeLists.txt 修改部分如下
+#####################################################################
+# Boost configuration
+#####################################################################
+set(Boost_USE_STATIC_LIBS OFF CACHE BOOL "use static libraries from Boost")
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_LIBS ON)
+set(CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "E:/deeplearn/boost_1_48_0/boost_1_48_0")
+set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "E:/deeplearn/boost_1_48_0/boost_1_48_0/stage/lib")
+add_definitions(-DBOOST_PARAMETER_MAX_ARITY=15)
+add_definitions(-DBOOST_FILESYSTEM_VERSION=3)
+set(BOOST_INCLUDEDIR E:/deeplearn/boost_1_48_0/boost_1_48_0)
+set(BOOST_LIBRARYDIR E:/deeplearn/boost_1_48_0/boost_1_48_0/stage/lib)
+b. 打开cmake, 配置 where is the source code
+where to build the binaries
+Configure vs2010
+点击生成，中间可能会报错误（类似No Boost libraries were found. You may need to set BOOST_LIBRARYDIR to the directory containing Boost libraries or BOOST_ROOT to the location of Boost.） ,不管跳过（现在只要生成vs2010的工程，boost库等会自己配置到vs工程里面就行了）
+c. 打开 build/shark.sln
+配置 包含目录
+库目录
+连接器 输入 附加依赖项
+将shark作为启动项目，生成库
+3： 测试
+启动 example下面的 AckleuES
+点击运行
+测试几个例子，环境搭建成功。

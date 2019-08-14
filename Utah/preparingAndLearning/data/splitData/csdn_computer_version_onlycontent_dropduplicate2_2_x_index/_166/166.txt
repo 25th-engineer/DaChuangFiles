@@ -1,0 +1,129 @@
+信号与图像处理、模式识别与计算机视觉
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+国际计算机视觉与模式识别会议，计算机视觉领域三大顶会之一，每年在美国召开
+Jun. 16-21, 2019, Long Beach, CA, USA
+主页：cvpr2019.thecvf.com
+H5指数：188
+International Conference on Computer Vision (ICCV)
+国际计算机视觉会议，计算机视觉领域三大顶会之一，奇数年召开
+Oct. 27 - Nov. 03, 2019, Seoul, Korea
+主页：iccv2019.thecvf.com
+H5指数：124
+European Conference on Computer Vision (ECCV)
+欧洲计算机视觉会议，计算机视觉领域三大顶会之一，偶数年在欧洲召开
+Aug. 23-28, 2020, Glasgow, Scotland
+主页：eccv2020.eu
+H5指数：104
+IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)
+国际声学、语音与信号处理会议，规模最大、最全面的信号处理及其应用方面的会议，每年召开
+May 04-09, 2020, Barcelona, Spain
+主页：2020.ieeeicassp.org
+H5指数：79
+British Machine Vision Conference (BMVC)
+英国机器视觉会议，计算机视觉领域著名国际会议，每年在英国召开
+Sept. 09-12, 2019, Cardiff University, UK
+主页：bmvc2019.org
+H5指数：42
+IEEE International Conference on Image Processing (ICIP)
+国际图像处理会议，每年召开
+Sept. 25-28, 2020, Abu Dhabi, UAE
+主页：Coming soon
+H5指数：41
+Asian Conference on Computer Vision (ACCV)
+亚洲计算机视觉会议，在亚太地区召开，2010年之前奇数年召开，之后偶数年
+Nov. 30 - Dec. 04, 2020, Kyoto, Japan
+主页：accv2020.kyoto
+H5指数：30
+IEEE Global Conference on Signal and Information Processing (GlobalSIP)
+全球信号与信息处理会议，每年召开
+Nov. 11–14, 2019, Ottawa, Canada
+主页：2019.ieeeglobalsip.org
+H5指数：28
+International Conference on Pattern Recognition (ICPR)
+国际模式识别会议，偶数年召开
+Sep. 13-18, 2020, Milan, Italy
+主页：icpr2020.com
+H5指数：28
+European Signal Processing Conference (EUSIPCO)
+欧洲信号处理会议，每年在欧洲召开
+Aug. 24-28, 2020, Amsterdam, Netherlands
+主页：eusipco2020.org
+H5指数：23
+IEEE International Conference on Visual Communications and Image Processing (VCIP)
+国际视觉通信与图像处理会议，每年召开
+Dec. 01-04, 2019, Sydney, Australia
+主页：www.multimediauts.org/VCIP2019
+H5指数：14
+雷达遥感
+IEEE International Geoscience and Remote Sensing Symposium (IGARSS)
+国际地球科学与遥感大会，每年召开
+Jul. 19-24, 2020, Hawaii, USA
+主页：www.igarss2020.org
+H5指数：21
+SPIE Remote Sensing
+SPIE(国际光学工程学会)国际遥感会议，每年在欧洲召开
+Sept. 09-12, 2019, Strasbourg, France
+主页：spie.org/conferences-and-exhibitions/remote-sensing
+IEEE Radar Conference (RadarConf)
+IEEE雷达会议，每年召开
+Sep. 21-25, 2020, Florence, Italy
+主页：www.radarconf20.org
+H5指数：25
+IEEE International Radar Conference (RADAR)
+国际雷达会议，美中英澳法五国每年轮流召开
+Apr. 27 - May. 01, 2020, Washington, DC, USA
+主页：Coming soon
+H5指数：9
+IET International Radar Conference (IRC)
+IET国际雷达会议，每五年召开两次
+Oct. 17-19, 2018, Nanjing, China
+主页：www.ietradar.org/
+H5指数：13
+International Radar Symposium (IRS)
+国际雷达研讨会，每年在欧洲召开
+Jun. 26-28, 2019, Ulm, Germany
+主页：www.dgon-irs.org
+H5指数：14
+European Radar Conference (EuRAD)
+欧洲雷达会议，欧洲微波年会(Europe Microwave Week)之一，每年在欧洲召开
+Oct. 02-04, 2019, Paris, France
+主页：www.eumweek.com
+H5指数：12
+European Conference on Synthetic Aperture Radar (EuSAR)
+欧洲合成孔径雷达会议，偶数年在欧洲召开
+Jun. 15-18, 2020, Leipzig, Germany
+主页：www.eusar.de
+Asia-Pacific Conference on Synthetic Aperture Radar (APSAR)
+亚太合成孔径雷达会议，奇数年在亚太地区召开
+Nov. 26-29, 2019, Xiamen, China
+主页：apsar2019.org.cn
+H5指数：9
+SPIE Asia-Pacific Remote Sensing
+SPIE（国际光学工程学会）亚太遥感会议，偶数年在亚太地区召开
+Sept. 24-26, 2018, Honolulu, Hawaii, United States
+主页：spie.org/conferences-and-exhibitions/asia-pacific-remote-sensing
+机器学习与人工智能
+Neural Information Processing Systems (NeurIPS)
+神经信息处理系统大会，机器学习领域的顶级会议，每年召开
+Dec. 08-14, 2019, Vancouver, Canada
+主页：nips.cc/Conferences/2019
+H5指数：134
+International Conference on Machine Learning (ICML)
+国际机器学习会议，如今已发展为由国际机器学习学会（IMLS）主办的年度机器学习国际顶级会议，每年召开
+Jul. 13-18, 2020, Vienna, Austria
+主页：icml.cc/Conferences/2019
+H5指数：113
+AAAI Conference on Artificial Intelligence (AAAI)
+美国人工智能协会主办的人工智能大会，人工智能领域的顶级会议之一，每年在美国召开（个别年份在加拿大）
+Jan. 27 - Feb. 01, 2019, Honolulu, Hawaii, USA
+主页：aaai.org/Conferences/AAAI-19
+H5指数：69
+International Joint Conference on Artificial Intelligence (IJCAI)
+国际人工智能联合会议，人工智能领域顶级国际会议，原为奇数年召开，自2015年起改为每年召开
+Aug. 10-16, 2019, Macao, China
+主页：ijcai19.org
+H5指数：61
+International Conference on Learning Representations (ICLR)
+国际学习表征会议，深度学习顶级会议，由位列深度学习三大巨头之二的 Yoshua Bengio 和 Yann LeCun 牵头创办，每年召开
+May 06-09, 2019, New Orleans, USA
+主页：iclr.cc/Conferences/2019

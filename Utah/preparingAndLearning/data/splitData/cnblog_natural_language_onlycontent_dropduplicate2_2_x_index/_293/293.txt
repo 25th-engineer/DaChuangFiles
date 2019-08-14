@@ -1,0 +1,37 @@
+中国中文信息学会
+http://www.cipsc.org.cn/
+中国计算机学会
+http://www.ccf.org.cn/
+IEEE
+https://www.ieee.org/
+ACL Wiki
+https://aclweb.org/aclwiki/Main_Page
+ACL Anthology
+https://aclanthology.coli.uni-saarland.de/
+List of Issues of Computational Linguistics in the MIT Press Journals
+https://www.mitpressjournals.org/loi/coli
+Transactions of the Association for Computational Linguistics
+https://www.transacl.org/ojs/index.php/tacl
+斯坦福大学自然语言处理实验室整理的NLP资源
+https://nlp.stanford.edu/links/statnlp.html
+Google Research Blog
+https://research.googleblog.com/
+Best Paper Awards in Computer Science
+http://jeffhuang.com/best_paper_awards.html
+我爱自然语言处理
+http://www.52nlp.cn/
+http://www.52nlp.cn/resources
+natural language processing blog
+https://nlpers.blogspot.tw/
+火光摇曳
+http://www.flickering.cn/
+自然语言处理(NLP)入门学习资源清单
+https://cloud.tencent.com/developer/article/1075692
+语料库语言学在线
+http://www.corpus4u.org/
+Lecture Collection | Natural Language Processing with Deep Learning
+https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6
+video lectures
+http://videolectures.net/
+课程图谱
+http://coursegraph.com/

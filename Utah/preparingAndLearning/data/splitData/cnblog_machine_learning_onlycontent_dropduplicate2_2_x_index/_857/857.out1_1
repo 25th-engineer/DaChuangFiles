@@ -1,0 +1,104 @@
+这周 我 来 跟 大家 分享 的 是 在 Microsoft 
+Build 2016 上 发布 的 微软 聊天 机器人 的 框架 
+现如今 各种 人工智能 充斥 在 我们 的 生活 里 最 
+典型 的 人工智能 产品 就是 聊天 机器人 它 既可以 陪 
+我们 聊天 也 可以 替代 客服 人员 回答 客户 的 
+问题 甚至 还 可以 充当 秘书 帮助 我们 订 电影票 
+飞机票 等等 最 成功 的 产品 就是 苹果 公司 的 
+Siri 和 微软 公司 的 Cortana 那么 如何 搭建 一个 
+自己 的 聊天 机器 人呢 今天 我 会用 微软 公司 
+出品 的   Bot Framework   来 搭建 一个 聊天 
+机器人 官网 上 介绍 Bot Framework 可以 用 C # 
+Node . js 来 编写 由于 我 个人 技术 限制 
+问题 我 只 介绍 C # 的 部分 大家 可以 
+使用 Node . js 来 编写 你 也 可以 从 
+Github 获取 官方 事例 代码 前提 准备 Visual Studio 2015 
+或者   Visual Studio 2017 在 Visual Studio 中 将 
+所有 插件 进行 更新 下载   Bot Framework 模板 将 
+下载 的 zip 文件夹 直接 复制 到 % USERPROFILE % 
+\ Documents \ Visual Studio 2017 \ Templates \ ProjectTemplates 
+\ Visual C # \ 创建 你 的 机器 人 
+打开 Visual Studio 并且 创建 一个 C # 项目 选择 
+Bot Application 作为 项目 的 模板 使用 Bot Application 作为 
+项目 模板 创建 出来 的 项目 已经 包含 了 一个 
+简单 的 机器人 请 检查一下 项目 是否 包含 了 最新 
+的 Bot Application 模板 右键 点击 项目 找到 Manage NuGet 
+Packages 在 Browse 标签 栏 输入 Microsoft . Bot . 
+Builder 在 结果 中 找到   Microsoft . Bot . 
+Builder   并 点击 后面 的 更新 按钮 根据 提示 
+来 更改 并 更新 引用 的 程序包 输入 代码 首先 
+编写   Controllers \ M e s s a g 
+e s C o n t r o l l 
+e r . cs 文件 中的 Post 方法 来 获得 
+用户 的 消息 并且 调用 根 对话框 C # B 
+o t A u t h e n t i 
+c a t i o n public class M e 
+s s a g e s C o n t 
+r o l l e r ApiController { / / 
+/ summary / / / POST api / Messages / 
+/ / Receive a message from a user and reply 
+to it / / / / summary public async Task 
+H t t p R e s p o n 
+s e M e s s a g e Post 
+FromBody Activity activity { if activity . Type = = 
+ActivityTypes . Message { await Conversation . SendAsync activity = 
+new Dialogs . RootDialog } else { H a n 
+d l e y s t e m M e 
+s s a g e activity } var response = 
+Request . CreateResponse HttpStatusCode . OK return response } . 
+. . } 这个 根 对话框 会 处理 消息 并且 
+生成 一个 回复 Dialogs \ RootDialog . cs 文件 中的 
+M e s s a g e R e v 
+i c e d A s y n c 方法 
+会 回复 用户 的 消息 C # Serializable public class 
+RootDialog IDialog object { public Task StartAsync IDialogContext context { 
+context . Wait M e s s a g e 
+R e c e i v e d A s 
+y n c return Task . CompletedTask } private async 
+Task M e s s a g e R e 
+c e i v e d A s y n 
+c IDialogContext context IAwaitable object result { var activity = 
+await result as Activity / / calculate something for us 
+to return int length = activity . Text string . 
+Empty . Length / / return our reply to the 
+user await context . PostAsync $ You sent { activity 
+. Text } which was { length } characters context 
+. Wait M e s s a g e R 
+e c e i v e d A s y 
+n c } } 测试 你 的 机器人 下一步 使用 
+  Bot Framework Emulator 来 测试 你 的 机器人 首先 
+你 需要 下载 并 安装 它 运行 你 的 机器人 
+在 安装 完 Bot Framework Emulator 之后 你 可以 点击 
+Microsoft Edge 按钮 来 运行 它 运行 成功 界面 如下 
+图 所示 打开 你 的 emulator 并且 连接 到 机器 
+人 首先 需要 确保 你 的 机器 人 正在 本机 
+上 运行 之后 打开 emulator 然后 连接 到 你 的 
+机器人 在 地址栏 输入 http / / localhost port number 
+/ api / messages port number 是 你 浏览器 中 
+显示 的 机器 人 占用 的 端口 号码 点击   
+Connect 你 不 需要 输入 Microsoft App ID   和 
+Microsoft App Password 现在 他们 是 空白 的 也 没有 
+问题 在 之后 如果 你 注册 了 bot 你 会 
+得到 这些 信息 测试 你 的 机器 人 现在 你 
+的 机器 人 已经 开始 运行 了 并且 emulator 已经 
+开始 工作 了 你 可以 输入 你 想 输入 的 
+任何 东西 在 输入 后 你 会 看到 * You 
+sent and ending with the text which was # # 
+characters where # # is the total number of characters 
+in the message that you sent . * 这样 的 
+回复 结语 好啦 搭建 自己 的 机器 人 是不是 非常简单 
+呢 但是 如果 想 搭建 一个 如 Siri 或者 Cortana 
+这样 的 机器人 那是 需要 海量 数据 来 支持 的 
+甚至 还 需要 自学习 算法 以及 人工智能 的 知识 因为 
+当 一个 用户 输入 一段话 的 时候 机器 人 必须 
+了解 这 句话 的 含义 甚至 要 去 猜测 这 
+句话 的 意思 并给 出 正确 或者 接近 的 答案 
+这也 是 为什么 能做 聊天 机器人 的 公司 大 都是 
+搜索 公司 或者 用户量 极大 的 互联网 公司 这个 项目 
+只是 我们 触及 机器人 的 一 小步 还有 很多 的 
+知识 来不及 介绍 比如 如何 将 Bot 发布 到 服务器 
+上 并且 用 微信 或者 Skype 进行 访问 如何将 Bot 
+和 一些 Cortana 这些 智能 平台 进行 交互 这些 大家 
+可以 自行 到 官 网上 去 了解 并 学习 How 
+the Bot Framework worksPrinciples of bot designBot Builder SDK for 
+. NETDeploy a bot to the cloudBot Framework FAQ 

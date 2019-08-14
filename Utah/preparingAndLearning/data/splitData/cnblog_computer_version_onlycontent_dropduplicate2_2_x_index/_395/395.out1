@@ -1,0 +1,586 @@
+原文 http / / blog . csdn . NET / 
+chenyusiyuan / article / details / 5961769 双目 测距 的 
+基本 原理 如上 图 所示 双目 测距 主要 是 利用 
+了 目标 点 在 左右 两幅 视 图上 成像 的 
+横向 坐标 直接 存在 的 差异 即 视差 与 目标 
+点到 成像 平面 的 距离 Z 存在着 反比例 的 关系 
+Z = fT / d 假设 目标 点在 左视图 中的 
+坐标 为 x y 在 左右 视图 上 形成 的 
+视差 为 d 目标 点在 以左 摄像头 光心 为 原点 
+的 世界 坐标系 中的 坐标 为 X Y Z 则 
+存在 上 图 所示 的 变换 矩阵 Q 使得 Q 
+* x y d 1 = X Y Z W 
+@ scyscyao   为了 精确地 求得 某个 点在 三维空间 里 
+的 距离 Z 我们 需要 获得 的 参数 有 焦距 
+f 视差 d 摄像头 中心 距 Tx 如果 还 需要 
+获得 X 坐标 和Y/nr 坐标 的话 那么 还 需要 额外 
+知道 左右 像 平面 的 坐标系 与 立体 坐标系 中 
+原点 的 偏移 cx 和 cy 其中 f Tx cx 
+和 cy 可以 通过 立体 标定 获得 初始值 并 通过 
+立体 校准 优化 使得 两个 摄像头 在 数学 上 完全 
+平行 放置 并且 左右 摄像头 的 cx cy 和f/nr 相同 
+也 就是 实现 中 左右 视图 完全 平行 对准 的 
+理想 形式 而 立体匹配 所做 的 工作 就是 在 之前 
+的 基础 上 求取 最后 一个 变量 视差 d 这个 
+d 一般 需要 达到 亚 像素 精度 从而 最终 完成 
+求 一个 点 三维 坐标 所 需要 的 准备 工作 
+在 清楚 了 上述 原理 之后 我们 也 就 知道 
+了 所有 的 这 几步 标定 校准 和 匹配 都是 
+围绕 着 如何 更 精确 地 获得 f d Tx 
+cx 和 cy   而 设计 的     一 
+图像 的 获取 1 ． 如何 打开 两个 或 多个 
+摄像头 可以 通过 OpenCV 的 capture 类 函数 或者 结合 
+DirectShow 来 实现 双 摄像头 的 捕获 具体 可见 我 
+的 读书 笔记 OpenCV 学习 笔记 6 基于 VC + 
+OpenCV + DirectShow 的 多个 摄像头 同步 工作   文中 
+曾 提及 不能 用 c v C r e a 
+t e C a m e r a C a 
+p t u r e 同时 读取 两个 摄像头 不过 
+后来 一位 研 友 来信 讨论 说 只要 把 摄像头 
+指针 的 创建 代码 按照 摄像头 序号 降序 执行 就 
+可以 顺利 打开 多个 摄像头 例如 c sharp view plain 
+copy print CvCapture *   capture2   =   c 
+v C r e a t e C a m 
+e r a C a p t u r e 
+  1   CvCapture *   capture1   =   
+c v C r e a t e C a 
+m e r a C a p t u r 
+e   0   采用 DirectShow 的 方式 读 入时 
+c sharp view plain copy print camera2 . OpenCamera 1 
+  false   640 480 camera1 . OpenCamera 0   
+false   640 480 这样 就 可以 同时 采集 两个 
+摄像头 我 也 验证 过 这种 方法 确实 有效 而且 
+还 解决 了 我 遇到 的 c v e t 
+C a p t u r e P r o 
+p e r t y 调整 帧 画面 大小 速度 
+过慢 的 问题 当 摄像头 的 打开 或 创建 代码 
+按照 摄像头 序号 从0/nr 开始 以 升序 编写 执行 时 
+使用 c v e t C a p t u 
+r e P r o p e r t y 
+就会 出现 第一 个 摄像头 序号 为 0 的 显示 
+窗口 为 灰色 即 无 图像 且 程序运行 速度 缓慢 
+的 现象 而 改为 降序 编写 执行 后 则能 正常 
+实时 地 显示 各 摄像头 的 画面 具体 原因 有待 
+分析 讨论 2 ． 如何 实现 多 个 摄像头 帧 
+画面 的 同步 抓取 在 单 摄像头 情况 下用 cvQueryFrame 
+即可 抓取 一帧 画面 实际上 这个 函数 是由 两个 routine 
+组成 的 cvGrabFrame 和 cvRetrieveFrame 详见 Learning OpenCV 第 103页 
+cvGrabFrame 将 摄像头 帧 画面 即时 复制 到 内部 缓存 
+中 然后 通过 cvRetrieveFrame 把 我们 预定义 的 一个 IplImage 
+型 空 指针 指向 缓存 内 的 帧 数据 注意 
+这时 我们 并 没有 真正 把 帧 数据 取出来 它 
+还 保存 在 OpenCV 的 内部 缓存 中 下一次 读取 
+操作 就会 被覆 盖掉 所以 一般 我们 要 另外 定义 
+一个 IplImage 来 复制 所 抓取 的 帧 数据 然后 
+对 这个 新 IplImage 进行 操作 由 上面 的 解释 
+也 可以 看出 cvGrabFrame 的 作用 就是 尽可能 快 的 
+将 摄像头 画面 数据 复制 到 计算机 缓存 这个 功能 
+就 方便 我们 实现 对 多个 摄像头 的 同步 抓取 
+即 首先 用 cvGrabFrame 依次 抓取 各个 CvCapture * 然后 
+再用 cvRetrieveFrame 把 帧 数据 取出来 例如 c sharp view 
+plain copy print cvGrabFrame   lfCam   cvGrabFrame   riCam 
+  frame1   =   cvRetrieveFrame   lfCam   frame2 
+  =   cvRetrieveFrame   riCam   if   frame1 
+| |   frame2   break cvCopyImage frame1   image1 
+cvCopyImage frame2   image2 二 摄像头 定标 摄像头 定标 一般 
+都 需要 一个 放在 摄像 头前 的 特制 的 标定 
+参照物 棋 盘纸 摄像头 获取 该 物体 的 图像 并 
+由此 计算 摄像头 的 内外 参数 标定/n 参照物/n 上/f 的/uj 
+每一个/i 特征点/i 相对/d 于/p 世界/n 坐标系/n 的/uj 位置/v 在/p 制作/vn 
+时应/nr 精确/a 测定/v 世界 坐标系 可 选为 参照物 的 物体 
+坐标系 在 得到 这些 已知 点在 图像 上 的 投影 
+位置 后 可 计算出 摄像头 的 内外 参数 如上 图 
+所示 摄像头 由于 光学 透镜 的 特性 使得 成像 存在着 
+径向 畸变 可由 三个 参数 k1 k2 k3 确定 由于 
+装配 方面 的 误差 传感器 与 光学 镜头 之间 并非 
+完全 平行 因此 成像 存在 切向 畸变 可由 两个 参数 
+p1 p2 确定 单个 摄像头 的 定标 主要 是 计算 
+出 摄像头 的 内参 焦距 f 和 成像 原点 cx 
+cy 五个 畸变 参数 一般 只 需要 计算出 k1 k2 
+p1 p2 对于 鱼眼 镜头 等 径向 畸变 特别 大 
+的 才 需要 计算 k3 以及 外 参 标 定物 
+的 世界坐标 OpenCV 中 使用 的 求解 焦距 和 成像 
+原点 的 算法 是 基于 张正友 的 方法 pdf   
+而 求解 畸变 参数 是 基于 Brown 的 方法 pdf 
+  1 ． 图像 坐标系 摄像头 坐标系 和 世界 坐标系 
+的 关系 摄像头 成像 几何 关系 其中 Oc   点 
+称为 摄像头 透镜 的 光心 Xc/w  /i 轴/n 和/c Yc/w 
+ /i 轴/n 与/p 图像/n 的/uj x/w 轴/n 和Y轴/nr 平行/n Zc 
+  轴 为 摄像头 的 光轴 它 与 图像 平面 
+垂直 光轴 与 图像 平面 的 交点 O1   即为 
+图像 坐标系 的 原点 由 点 Oc   与 Xc 
+  Yc   Zc   轴 组成 的 坐标系 称为 
+摄像头 坐标系 Oc   O1 的 距离 为 摄像头 焦距 
+用 f 表示 图像 坐标系 是 一个 二维 平面 又 
+称为 像 平面 @ scyscyao   实际上 就是 摄像头 的 
+CCD 传感器 的 表面 每个/r CCD/w 传感器/n 都有/nr 一定/d 的/uj 
+尺寸/n 也 有 一定 的 分辨率 这个 就 确定 了 
+毫米 与 像素点 之间 的 转换 关系 举个 例子 CCD 
+的 尺寸 是 8mm X 6mm 帧 画面 的 分辨率 
+设置 为 640X480 那么 毫米 与 像素点 之间 的 转换 
+关系 就是 80pixel / mm 设 CCD 传感器 每个 像素点 
+的 物理 大小 为 dx * dy 相应 地 就有 
+dx = dy = 1/80 2 ． 进行 摄像头 定标 
+时 棋盘 方格 的 实际 大小 square _ size 默认 
+为 1.0 f 的 设置 对 定标 参数 是否 有 
+影响 @ scyscyao   当然有 在 标 定时 需要 指定 
+一个 棋盘 方格 的 长度 这个 长度 一般以 毫米 为 
+单位 如果 需要 更 精确 可以 设为 0.1 毫米 量级 
+与 实际 长度 相同 标   定 得出 的 结果 
+才能 用 于 实际 距离 测量 一般 如果 尺寸 设定 
+准确 的话 通过 立体 标定 得出 的 Translation 向量 的 
+第一 个 分量 Tx 的 绝对值 就是 左右 摄像头 的 
+中心 距 一般 可以 用 这个 来 验证 立体 标定 
+的 准确度 比如 我 设定 的 棋盘格 大小 为 270 
+27mm 最终 得出 的 Tx 大小 就是 602.8 60 . 
+28mm 相当 精确 3 ． 定标 所得 的 摄像头 内 
+参数 即 焦距 和 原点 坐标 其 数值 单位 都是/nr 
+一致 的 吗 怎么 把 焦距 数值 换算 为 实际 
+的 物理量 @ wobject   是的 都 是以 像素 为 
+单位 假设 像素点 的 大小 为 k x l 单位 
+为 mm 则 fx = f / k fy = 
+f / l * sinA A 一般 假设 为 90 
+° 是 指 摄像头 坐标系 的 偏 斜度 就是 镜头 
+坐标 和 CCD 是否 垂直 摄像头 矩阵 内参 的 目的 
+是 把 图像 的 点 从 图像 坐标 转换成 实际 
+物理 的 三维 坐标 因此 其中 的 fx fy cx 
+cy 都是 使用 类似 上面 的 纲 量 同样 Q 
+中的 变量 f cx cy 也 应该 是 一样 的 
+4 ． 棋盘 图像 数目 应该 取 多少 对 摄像头 
+定标 比较 适宜 OpenCV 中文论坛 上 piao 的 帖子 在 
+OpenCV 中用 c v C a l i b r 
+a t e C a m e r a 2 
+进行 相机 标定 附 程序   中 指出 影响 摄像头 
+定标 结果 的 准确性 和 稳定性 的 因素 主要有 三个 
+1 标定 板 所在 平面 与 成像 平面 image plane 
+之间 的 夹角 2 标定 时 拍摄 的 图片 数目 
+棋盘 图像 数目 3 图像 上角 点 提取 的 不准确 
+感觉 OpenCV1 . 2 以后 对 图像 角 点 的 
+提取 准确度 是 比较 高的/nr c v F i n 
+d C h e s s b o a r 
+d C o r n e r s 和 c 
+v F i n d C o r n e 
+r u b P i x 结合 可以 获得 很好 
+的 角 点 检测 效果 hqhuang1 在 HQ 角 点 
+检测 Corner Detection c v F i n d C 
+o r n e r u b P i x 
+使用 范例   中 给出 了 相关 的 应用 范例 
+因此 影响 定标 结果 较大 的 就是 标定 板 与 
+镜头 的 夹角 和 棋盘 图像 数目 在 实际 定标 
+过程 中 我 感觉 棋盘 图像 数目 应该 大于 20张 
+每 成功 检测 一次 完整 的 棋盘 角 点 就要 
+变换 一下 标定 板 的 姿态 包括 角度 距离 5 
+． 单目 定标 函数 c v C a l i 
+b r a t e C a m e r 
+a 2 采用 怎样 的 flags 比较 合适 由于 一般 
+镜头 只需要 计算 k1 k2 p1 p2 四个 参数 所以 
+我们 首先 要 设置 CV _ CALIB _ FIX _ 
+K3 其次 如果 所用 的 摄像头 不是 高 端的 切向 
+畸变 系数 非常少 的 则 不要 设置 CV _ CALIB 
+_ ZERO _ TANGENT _ DIST 否则 单目 校正 误差 
+会 很大 如果 事先 知道 摄像头 内参 的 大概 数值 
+并且 c v C a l i b r a 
+t e C a m e r a 2 函数 
+的 第五个/nr 参数 intrinsic _ matrix 非空 则 也可 设置 
+CV _ CALIB _ USE _ INTRINSIC _ GUESS 以 
+输入 的 intrinsic _ matrix 为 初始 估计值 来 加快 
+内参 的 计算 其它 的 flag 一般 都不/nr 需要 设置 
+对 单目 定标 的 影响 不大 P . . 使用 
+OpenCV 进行 摄像机 定标 虽然 方便 但是 定标 结果 往往 
+不够 准确 和 稳定 最好 是 使用   Matlab 标定 
+工具箱   来 进行 定标 再将 定标 结果 取 回来 
+用于 立体匹配 和 视差 计算 工具箱 的 使用 官方主页   
+有 图文并茂 的 详细 说明 此外 有两 篇 博文 也 
+进行 了 不错 的 总结 推荐 阅读 1 分享 一些 
+OpenCV 实现 立体 视觉 的 经验 2 Matlab 标定 工具箱 
+使用 的 一些 注意 事项 . 原文 http / / blog . csdn . NET / 
+chenyusiyuan / article / details / 5961769 双目 测距 的 
+基本 原理 如上 图 所示 双目 测距 主要 是 利用 
+了 目标 点 在 左右 两幅 视 图上 成像 的 
+横向 坐标 直接 存在 的 差异 即 视差 与 目标 
+点到 成像 平面 的 距离 Z 存在着 反比例 的 关系 
+Z = fT / d 假设 目标 点在 左视图 中的 
+坐标 为 x y 在 左右 视图 上 形成 的 
+视差 为 d 目标 点在 以左 摄像头 光心 为 原点 
+的 世界 坐标系 中的 坐标 为 X Y Z 则 
+存在 上 图 所示 的 变换 矩阵 Q 使得 Q 
+* x y d 1 = X Y Z W 
+@ scyscyao   为了 精确地 求得 某个 点在 三维空间 里 
+的 距离 Z 我们 需要 获得 的 参数 有 焦距 
+f 视差 d 摄像头 中心 距 Tx 如果 还 需要 
+获得 X 坐标 和Y/nr 坐标 的话 那么 还 需要 额外 
+知道 左右 像 平面 的 坐标系 与 立体 坐标系 中 
+原点 的 偏移 cx 和 cy 其中 f Tx cx 
+和 cy 可以 通过 立体 标定 获得 初始值 并 通过 
+立体 校准 优化 使得 两个 摄像头 在 数学 上 完全 
+平行 放置 并且 左右 摄像头 的 cx cy 和f/nr 相同 
+也 就是 实现 中 左右 视图 完全 平行 对准 的 
+理想 形式 而 立体匹配 所做 的 工作 就是 在 之前 
+的 基础 上 求取 最后 一个 变量 视差 d 这个 
+d 一般 需要 达到 亚 像素 精度 从而 最终 完成 
+求 一个 点 三维 坐标 所 需要 的 准备 工作 
+在 清楚 了 上述 原理 之后 我们 也 就 知道 
+了 所有 的 这 几步 标定 校准 和 匹配 都是 
+围绕 着 如何 更 精确 地 获得 f d Tx 
+cx 和 cy   而 设计 的     一 
+图像 的 获取 1 ． 如何 打开 两个 或 多个 
+摄像头 可以 通过 OpenCV 的 capture 类 函数 或者 结合 
+DirectShow 来 实现 双 摄像头 的 捕获 具体 可见 我 
+的 读书 笔记 OpenCV 学习 笔记 6 基于 VC + 
+OpenCV + DirectShow 的 多个 摄像头 同步 工作   文中 
+曾 提及 不能 用 c v C r e a 
+t e C a m e r a C a 
+p t u r e 同时 读取 两个 摄像头 不过 
+后来 一位 研 友 来信 讨论 说 只要 把 摄像头 
+指针 的 创建 代码 按照 摄像头 序号 降序 执行 就 
+可以 顺利 打开 多个 摄像头 例如 c sharp view plain 
+copy print CvCapture *   capture2   =   c 
+v C r e a t e C a m 
+e r a C a p t u r e 
+  1   CvCapture *   capture1   =   
+c v C r e a t e C a 
+m e r a C a p t u r 
+e   0   采用 DirectShow 的 方式 读 入时 
+c sharp view plain copy print camera2 . OpenCamera 1 
+  false   640 480 camera1 . OpenCamera 0   
+false   640 480 这样 就 可以 同时 采集 两个 
+摄像头 我 也 验证 过 这种 方法 确实 有效 而且 
+还 解决 了 我 遇到 的 c v e t 
+C a p t u r e P r o 
+p e r t y 调整 帧 画面 大小 速度 
+过慢 的 问题 当 摄像头 的 打开 或 创建 代码 
+按照 摄像头 序号 从0/nr 开始 以 升序 编写 执行 时 
+使用 c v e t C a p t u 
+r e P r o p e r t y 
+就会 出现 第一 个 摄像头 序号 为 0 的 显示 
+窗口 为 灰色 即 无 图像 且 程序运行 速度 缓慢 
+的 现象 而 改为 降序 编写 执行 后 则能 正常 
+实时 地 显示 各 摄像头 的 画面 具体 原因 有待 
+分析 讨论 2 ． 如何 实现 多 个 摄像头 帧 
+画面 的 同步 抓取 在 单 摄像头 情况 下用 cvQueryFrame 
+即可 抓取 一帧 画面 实际上 这个 函数 是由 两个 routine 
+组成 的 cvGrabFrame 和 cvRetrieveFrame 详见 Learning OpenCV 第 103页 
+cvGrabFrame 将 摄像头 帧 画面 即时 复制 到 内部 缓存 
+中 然后 通过 cvRetrieveFrame 把 我们 预定义 的 一个 IplImage 
+型 空 指针 指向 缓存 内 的 帧 数据 注意 
+这时 我们 并 没有 真正 把 帧 数据 取出来 它 
+还 保存 在 OpenCV 的 内部 缓存 中 下一次 读取 
+操作 就会 被覆 盖掉 所以 一般 我们 要 另外 定义 
+一个 IplImage 来 复制 所 抓取 的 帧 数据 然后 
+对 这个 新 IplImage 进行 操作 由 上面 的 解释 
+也 可以 看出 cvGrabFrame 的 作用 就是 尽可能 快 的 
+将 摄像头 画面 数据 复制 到 计算机 缓存 这个 功能 
+就 方便 我们 实现 对 多个 摄像头 的 同步 抓取 
+即 首先 用 cvGrabFrame 依次 抓取 各个 CvCapture * 然后 
+再用 cvRetrieveFrame 把 帧 数据 取出来 例如 c sharp view 
+plain copy print cvGrabFrame   lfCam   cvGrabFrame   riCam 
+  frame1   =   cvRetrieveFrame   lfCam   frame2 
+  =   cvRetrieveFrame   riCam   if   frame1 
+| |   frame2   break cvCopyImage frame1   image1 
+cvCopyImage frame2   image2 二 摄像头 定标 摄像头 定标 一般 
+都 需要 一个 放在 摄像 头前 的 特制 的 标定 
+参照物 棋 盘纸 摄像头 获取 该 物体 的 图像 并 
+由此 计算 摄像头 的 内外 参数 标定/n 参照物/n 上/f 的/uj 
+每一个/i 特征点/i 相对/d 于/p 世界/n 坐标系/n 的/uj 位置/v 在/p 制作/vn 
+时应/nr 精确/a 测定/v 世界 坐标系 可 选为 参照物 的 物体 
+坐标系 在 得到 这些 已知 点在 图像 上 的 投影 
+位置 后 可 计算出 摄像头 的 内外 参数 如上 图 
+所示 摄像头 由于 光学 透镜 的 特性 使得 成像 存在着 
+径向 畸变 可由 三个 参数 k1 k2 k3 确定 由于 
+装配 方面 的 误差 传感器 与 光学 镜头 之间 并非 
+完全 平行 因此 成像 存在 切向 畸变 可由 两个 参数 
+p1 p2 确定 单个 摄像头 的 定标 主要 是 计算 
+出 摄像头 的 内参 焦距 f 和 成像 原点 cx 
+cy 五个 畸变 参数 一般 只 需要 计算出 k1 k2 
+p1 p2 对于 鱼眼 镜头 等 径向 畸变 特别 大 
+的 才 需要 计算 k3 以及 外 参 标 定物 
+的 世界坐标 OpenCV 中 使用 的 求解 焦距 和 成像 
+原点 的 算法 是 基于 张正友 的 方法 pdf   
+而 求解 畸变 参数 是 基于 Brown 的 方法 pdf 
+  1 ． 图像 坐标系 摄像头 坐标系 和 世界 坐标系 
+的 关系 摄像头 成像 几何 关系 其中 Oc   点 
+称为 摄像头 透镜 的 光心 Xc/w  /i 轴/n 和/c Yc/w 
+ /i 轴/n 与/p 图像/n 的/uj x/w 轴/n 和Y轴/nr 平行/n Zc 
+  轴 为 摄像头 的 光轴 它 与 图像 平面 
+垂直 光轴 与 图像 平面 的 交点 O1   即为 
+图像 坐标系 的 原点 由 点 Oc   与 Xc 
+  Yc   Zc   轴 组成 的 坐标系 称为 
+摄像头 坐标系 Oc   O1 的 距离 为 摄像头 焦距 
+用 f 表示 图像 坐标系 是 一个 二维 平面 又 
+称为 像 平面 @ scyscyao   实际上 就是 摄像头 的 
+CCD 传感器 的 表面 每个/r CCD/w 传感器/n 都有/nr 一定/d 的/uj 
+尺寸/n 也 有 一定 的 分辨率 这个 就 确定 了 
+毫米 与 像素点 之间 的 转换 关系 举个 例子 CCD 
+的 尺寸 是 8mm X 6mm 帧 画面 的 分辨率 
+设置 为 640X480 那么 毫米 与 像素点 之间 的 转换 
+关系 就是 80pixel / mm 设 CCD 传感器 每个 像素点 
+的 物理 大小 为 dx * dy 相应 地 就有 
+dx = dy = 1/80 2 ． 进行 摄像头 定标 
+时 棋盘 方格 的 实际 大小 square _ size 默认 
+为 1.0 f 的 设置 对 定标 参数 是否 有 
+影响 @ scyscyao   当然有 在 标 定时 需要 指定 
+一个 棋盘 方格 的 长度 这个 长度 一般以 毫米 为 
+单位 如果 需要 更 精确 可以 设为 0.1 毫米 量级 
+与 实际 长度 相同 标   定 得出 的 结果 
+才能 用 于 实际 距离 测量 一般 如果 尺寸 设定 
+准确 的话 通过 立体 标定 得出 的 Translation 向量 的 
+第一 个 分量 Tx 的 绝对值 就是 左右 摄像头 的 
+中心 距 一般 可以 用 这个 来 验证 立体 标定 
+的 准确度 比如 我 设定 的 棋盘格 大小 为 270 
+27mm 最终 得出 的 Tx 大小 就是 602.8 60 . 
+28mm 相当 精确 3 ． 定标 所得 的 摄像头 内 
+参数 即 焦距 和 原点 坐标 其 数值 单位 都是/nr 
+一致 的 吗 怎么 把 焦距 数值 换算 为 实际 
+的 物理量 @ wobject   是的 都 是以 像素 为 
+单位 假设 像素点 的 大小 为 k x l 单位 
+为 mm 则 fx = f / k fy = 
+f / l * sinA A 一般 假设 为 90 
+° 是 指 摄像头 坐标系 的 偏 斜度 就是 镜头 
+坐标 和 CCD 是否 垂直 摄像头 矩阵 内参 的 目的 
+是 把 图像 的 点 从 图像 坐标 转换成 实际 
+物理 的 三维 坐标 因此 其中 的 fx fy cx 
+cy 都是 使用 类似 上面 的 纲 量 同样 Q 
+中的 变量 f cx cy 也 应该 是 一样 的 
+4 ． 棋盘 图像 数目 应该 取 多少 对 摄像头 
+定标 比较 适宜 OpenCV 中文论坛 上 piao 的 帖子 在 
+OpenCV 中用 c v C a l i b r 
+a t e C a m e r a 2 
+进行 相机 标定 附 程序   中 指出 影响 摄像头 
+定标 结果 的 准确性 和 稳定性 的 因素 主要有 三个 
+1 标定 板 所在 平面 与 成像 平面 image plane 
+之间 的 夹角 2 标定 时 拍摄 的 图片 数目 
+棋盘 图像 数目 3 图像 上角 点 提取 的 不准确 
+感觉 OpenCV1 . 2 以后 对 图像 角 点 的 
+提取 准确度 是 比较 高的/nr c v F i n 
+d C h e s s b o a r 
+d C o r n e r s 和 c 
+v F i n d C o r n e 
+r u b P i x 结合 可以 获得 很好 
+的 角 点 检测 效果 hqhuang1 在 HQ 角 点 
+检测 Corner Detection c v F i n d C 
+o r n e r u b P i x 
+使用 范例   中 给出 了 相关 的 应用 范例 
+因此 影响 定标 结果 较大 的 就是 标定 板 与 
+镜头 的 夹角 和 棋盘 图像 数目 在 实际 定标 
+过程 中 我 感觉 棋盘 图像 数目 应该 大于 20张 
+每 成功 检测 一次 完整 的 棋盘 角 点 就要 
+变换 一下 标定 板 的 姿态 包括 角度 距离 5 
+． 单目 定标 函数 c v C a l i 
+b r a t e C a m e r 
+a 2 采用 怎样 的 flags 比较 合适 由于 一般 
+镜头 只需要 计算 k1 k2 p1 p2 四个 参数 所以 
+我们 首先 要 设置 CV _ CALIB _ FIX _ 
+K3 其次 如果 所用 的 摄像头 不是 高 端的 切向 
+畸变 系数 非常少 的 则 不要 设置 CV _ CALIB 
+_ ZERO _ TANGENT _ DIST 否则 单目 校正 误差 
+会 很大 如果 事先 知道 摄像头 内参 的 大概 数值 
+并且 c v C a l i b r a 
+t e C a m e r a 2 函数 
+的 第五个/nr 参数 intrinsic _ matrix 非空 则 也可 设置 
+CV _ CALIB _ USE _ INTRINSIC _ GUESS 以 
+输入 的 intrinsic _ matrix 为 初始 估计值 来 加快 
+内参 的 计算 其它 的 flag 一般 都不/nr 需要 设置 
+对 单目 定标 的 影响 不大 P . . 使用 
+OpenCV 进行 摄像机 定标 虽然 方便 但是 定标 结果 往往 
+不够 准确 和 稳定 最好 是 使用   Matlab 标定 
+工具箱   来 进行 定标 再将 定标 结果 取 回来 
+用于 立体匹配 和 视差 计算 工具箱 的 使用 官方主页   
+有 图文并茂 的 详细 说明 此外 有两 篇 博文 也 
+进行 了 不错 的 总结 推荐 阅读 1 分享 一些 
+OpenCV 实现 立体 视觉 的 经验 2 Matlab 标定 工具箱 
+使用 的 一些 注意 事项 . 原文 http / / blog . csdn . NET / 
+chenyusiyuan / article / details / 5961769 双目 测距 的 
+基本 原理 如上 图 所示 双目 测距 主要 是 利用 
+了 目标 点 在 左右 两幅 视 图上 成像 的 
+横向 坐标 直接 存在 的 差异 即 视差 与 目标 
+点到 成像 平面 的 距离 Z 存在着 反比例 的 关系 
+Z = fT / d 假设 目标 点在 左视图 中的 
+坐标 为 x y 在 左右 视图 上 形成 的 
+视差 为 d 目标 点在 以左 摄像头 光心 为 原点 
+的 世界 坐标系 中的 坐标 为 X Y Z 则 
+存在 上 图 所示 的 变换 矩阵 Q 使得 Q 
+* x y d 1 = X Y Z W 
+@ scyscyao   为了 精确地 求得 某个 点在 三维空间 里 
+的 距离 Z 我们 需要 获得 的 参数 有 焦距 
+f 视差 d 摄像头 中心 距 Tx 如果 还 需要 
+获得 X 坐标 和Y/nr 坐标 的话 那么 还 需要 额外 
+知道 左右 像 平面 的 坐标系 与 立体 坐标系 中 
+原点 的 偏移 cx 和 cy 其中 f Tx cx 
+和 cy 可以 通过 立体 标定 获得 初始值 并 通过 
+立体 校准 优化 使得 两个 摄像头 在 数学 上 完全 
+平行 放置 并且 左右 摄像头 的 cx cy 和f/nr 相同 
+也 就是 实现 中 左右 视图 完全 平行 对准 的 
+理想 形式 而 立体匹配 所做 的 工作 就是 在 之前 
+的 基础 上 求取 最后 一个 变量 视差 d 这个 
+d 一般 需要 达到 亚 像素 精度 从而 最终 完成 
+求 一个 点 三维 坐标 所 需要 的 准备 工作 
+在 清楚 了 上述 原理 之后 我们 也 就 知道 
+了 所有 的 这 几步 标定 校准 和 匹配 都是 
+围绕 着 如何 更 精确 地 获得 f d Tx 
+cx 和 cy   而 设计 的     一 
+图像 的 获取 1 ． 如何 打开 两个 或 多个 
+摄像头 可以 通过 OpenCV 的 capture 类 函数 或者 结合 
+DirectShow 来 实现 双 摄像头 的 捕获 具体 可见 我 
+的 读书 笔记 OpenCV 学习 笔记 6 基于 VC + 
+OpenCV + DirectShow 的 多个 摄像头 同步 工作   文中 
+曾 提及 不能 用 c v C r e a 
+t e C a m e r a C a 
+p t u r e 同时 读取 两个 摄像头 不过 
+后来 一位 研 友 来信 讨论 说 只要 把 摄像头 
+指针 的 创建 代码 按照 摄像头 序号 降序 执行 就 
+可以 顺利 打开 多个 摄像头 例如 c sharp view plain 
+copy print CvCapture *   capture2   =   c 
+v C r e a t e C a m 
+e r a C a p t u r e 
+  1   CvCapture *   capture1   =   
+c v C r e a t e C a 
+m e r a C a p t u r 
+e   0   采用 DirectShow 的 方式 读 入时 
+c sharp view plain copy print camera2 . OpenCamera 1 
+  false   640 480 camera1 . OpenCamera 0   
+false   640 480 这样 就 可以 同时 采集 两个 
+摄像头 我 也 验证 过 这种 方法 确实 有效 而且 
+还 解决 了 我 遇到 的 c v e t 
+C a p t u r e P r o 
+p e r t y 调整 帧 画面 大小 速度 
+过慢 的 问题 当 摄像头 的 打开 或 创建 代码 
+按照 摄像头 序号 从0/nr 开始 以 升序 编写 执行 时 
+使用 c v e t C a p t u 
+r e P r o p e r t y 
+就会 出现 第一 个 摄像头 序号 为 0 的 显示 
+窗口 为 灰色 即 无 图像 且 程序运行 速度 缓慢 
+的 现象 而 改为 降序 编写 执行 后 则能 正常 
+实时 地 显示 各 摄像头 的 画面 具体 原因 有待 
+分析 讨论 2 ． 如何 实现 多 个 摄像头 帧 
+画面 的 同步 抓取 在 单 摄像头 情况 下用 cvQueryFrame 
+即可 抓取 一帧 画面 实际上 这个 函数 是由 两个 routine 
+组成 的 cvGrabFrame 和 cvRetrieveFrame 详见 Learning OpenCV 第 103页 
+cvGrabFrame 将 摄像头 帧 画面 即时 复制 到 内部 缓存 
+中 然后 通过 cvRetrieveFrame 把 我们 预定义 的 一个 IplImage 
+型 空 指针 指向 缓存 内 的 帧 数据 注意 
+这时 我们 并 没有 真正 把 帧 数据 取出来 它 
+还 保存 在 OpenCV 的 内部 缓存 中 下一次 读取 
+操作 就会 被覆 盖掉 所以 一般 我们 要 另外 定义 
+一个 IplImage 来 复制 所 抓取 的 帧 数据 然后 
+对 这个 新 IplImage 进行 操作 由 上面 的 解释 
+也 可以 看出 cvGrabFrame 的 作用 就是 尽可能 快 的 
+将 摄像头 画面 数据 复制 到 计算机 缓存 这个 功能 
+就 方便 我们 实现 对 多个 摄像头 的 同步 抓取 
+即 首先 用 cvGrabFrame 依次 抓取 各个 CvCapture * 然后 
+再用 cvRetrieveFrame 把 帧 数据 取出来 例如 c sharp view 
+plain copy print cvGrabFrame   lfCam   cvGrabFrame   riCam 
+  frame1   =   cvRetrieveFrame   lfCam   frame2 
+  =   cvRetrieveFrame   riCam   if   frame1 
+| |   frame2   break cvCopyImage frame1   image1 
+cvCopyImage frame2   image2 二 摄像头 定标 摄像头 定标 一般 
+都 需要 一个 放在 摄像 头前 的 特制 的 标定 
+参照物 棋 盘纸 摄像头 获取 该 物体 的 图像 并 
+由此 计算 摄像头 的 内外 参数 标定/n 参照物/n 上/f 的/uj 
+每一个/i 特征点/i 相对/d 于/p 世界/n 坐标系/n 的/uj 位置/v 在/p 制作/vn 
+时应/nr 精确/a 测定/v 世界 坐标系 可 选为 参照物 的 物体 
+坐标系 在 得到 这些 已知 点在 图像 上 的 投影 
+位置 后 可 计算出 摄像头 的 内外 参数 如上 图 
+所示 摄像头 由于 光学 透镜 的 特性 使得 成像 存在着 
+径向 畸变 可由 三个 参数 k1 k2 k3 确定 由于 
+装配 方面 的 误差 传感器 与 光学 镜头 之间 并非 
+完全 平行 因此 成像 存在 切向 畸变 可由 两个 参数 
+p1 p2 确定 单个 摄像头 的 定标 主要 是 计算 
+出 摄像头 的 内参 焦距 f 和 成像 原点 cx 
+cy 五个 畸变 参数 一般 只 需要 计算出 k1 k2 
+p1 p2 对于 鱼眼 镜头 等 径向 畸变 特别 大 
+的 才 需要 计算 k3 以及 外 参 标 定物 
+的 世界坐标 OpenCV 中 使用 的 求解 焦距 和 成像 
+原点 的 算法 是 基于 张正友 的 方法 pdf   
+而 求解 畸变 参数 是 基于 Brown 的 方法 pdf 
+  1 ． 图像 坐标系 摄像头 坐标系 和 世界 坐标系 
+的 关系 摄像头 成像 几何 关系 其中 Oc   点 
+称为 摄像头 透镜 的 光心 Xc/w  /i 轴/n 和/c Yc/w 
+ /i 轴/n 与/p 图像/n 的/uj x/w 轴/n 和Y轴/nr 平行/n Zc 
+  轴 为 摄像头 的 光轴 它 与 图像 平面 
+垂直 光轴 与 图像 平面 的 交点 O1   即为 
+图像 坐标系 的 原点 由 点 Oc   与 Xc 
+  Yc   Zc   轴 组成 的 坐标系 称为 
+摄像头 坐标系 Oc   O1 的 距离 为 摄像头 焦距 
+用 f 表示 图像 坐标系 是 一个 二维 平面 又 
+称为 像 平面 @ scyscyao   实际上 就是 摄像头 的 
+CCD 传感器 的 表面 每个/r CCD/w 传感器/n 都有/nr 一定/d 的/uj 
+尺寸/n 也 有 一定 的 分辨率 这个 就 确定 了 
+毫米 与 像素点 之间 的 转换 关系 举个 例子 CCD 
+的 尺寸 是 8mm X 6mm 帧 画面 的 分辨率 
+设置 为 640X480 那么 毫米 与 像素点 之间 的 转换 
+关系 就是 80pixel / mm 设 CCD 传感器 每个 像素点 
+的 物理 大小 为 dx * dy 相应 地 就有 
+dx = dy = 1/80 2 ． 进行 摄像头 定标 
+时 棋盘 方格 的 实际 大小 square _ size 默认 
+为 1.0 f 的 设置 对 定标 参数 是否 有 
+影响 @ scyscyao   当然有 在 标 定时 需要 指定 
+一个 棋盘 方格 的 长度 这个 长度 一般以 毫米 为 
+单位 如果 需要 更 精确 可以 设为 0.1 毫米 量级 
+与 实际 长度 相同 标   定 得出 的 结果 
+才能 用 于 实际 距离 测量 一般 如果 尺寸 设定 
+准确 的话 通过 立体 标定 得出 的 Translation 向量 的 
+第一 个 分量 Tx 的 绝对值 就是 左右 摄像头 的 
+中心 距 一般 可以 用 这个 来 验证 立体 标定 
+的 准确度 比如 我 设定 的 棋盘格 大小 为 270 
+27mm 最终 得出 的 Tx 大小 就是 602.8 60 . 
+28mm 相当 精确 3 ． 定标 所得 的 摄像头 内 
+参数 即 焦距 和 原点 坐标 其 数值 单位 都是/nr 
+一致 的 吗 怎么 把 焦距 数值 换算 为 实际 
+的 物理量 @ wobject   是的 都 是以 像素 为 
+单位 假设 像素点 的 大小 为 k x l 单位 
+为 mm 则 fx = f / k fy = 
+f / l * sinA A 一般 假设 为 90 
+° 是 指 摄像头 坐标系 的 偏 斜度 就是 镜头 
+坐标 和 CCD 是否 垂直 摄像头 矩阵 内参 的 目的 
+是 把 图像 的 点 从 图像 坐标 转换成 实际 
+物理 的 三维 坐标 因此 其中 的 fx fy cx 
+cy 都是 使用 类似 上面 的 纲 量 同样 Q 
+中的 变量 f cx cy 也 应该 是 一样 的 
+4 ． 棋盘 图像 数目 应该 取 多少 对 摄像头 
+定标 比较 适宜 OpenCV 中文论坛 上 piao 的 帖子 在 
+OpenCV 中用 c v C a l i b r 
+a t e C a m e r a 2 
+进行 相机 标定 附 程序   中 指出 影响 摄像头 
+定标 结果 的 准确性 和 稳定性 的 因素 主要有 三个 
+1 标定 板 所在 平面 与 成像 平面 image plane 
+之间 的 夹角 2 标定 时 拍摄 的 图片 数目 
+棋盘 图像 数目 3 图像 上角 点 提取 的 不准确 
+感觉 OpenCV1 . 2 以后 对 图像 角 点 的 
+提取 准确度 是 比较 高的/nr c v F i n 
+d C h e s s b o a r 
+d C o r n e r s 和 c 
+v F i n d C o r n e 
+r u b P i x 结合 可以 获得 很好 
+的 角 点 检测 效果 hqhuang1 在 HQ 角 点 
+检测 Corner Detection c v F i n d C 
+o r n e r u b P i x 
+使用 范例   中 给出 了 相关 的 应用 范例 
+因此 影响 定标 结果 较大 的 就是 标定 板 与 
+镜头 的 夹角 和 棋盘 图像 数目 在 实际 定标 
+过程 中 我 感觉 棋盘 图像 数目 应该 大于 20张 
+每 成功 检测 一次 完整 的 棋盘 角 点 就要 
+变换 一下 标定 板 的 姿态 包括 角度 距离 5 
+． 单目 定标 函数 c v C a l i 
+b r a t e C a m e r 
+a 2 采用 怎样 的 flags 比较 合适 由于 一般 
+镜头 只需要 计算 k1 k2 p1 p2 四个 参数 所以 
+我们 首先 要 设置 CV _ CALIB _ FIX _ 
+K3 其次 如果 所用 的 摄像头 不是 高 端的 切向 
+畸变 系数 非常少 的 则 不要 设置 CV _ CALIB 
+_ ZERO _ TANGENT _ DIST 否则 单目 校正 误差 
+会 很大 如果 事先 知道 摄像头 内参 的 大概 数值 
+并且 c v C a l i b r a 
+t e C a m e r a 2 函数 
+的 第五个/nr 参数 intrinsic _ matrix 非空 则 也可 设置 
+CV _ CALIB _ USE _ INTRINSIC _ GUESS 以 
+输入 的 intrinsic _ matrix 为 初始 估计值 来 加快 
+内参 的 计算 其它 的 flag 一般 都不/nr 需要 设置 
+对 单目 定标 的 影响 不大 P . . 使用 
+OpenCV 进行 摄像机 定标 虽然 方便 但是 定标 结果 往往 
+不够 准确 和 稳定 最好 是 使用   Matlab 标定 
+工具箱   来 进行 定标 再将 定标 结果 取 回来 
+用于 立体匹配 和 视差 计算 工具箱 的 使用 官方主页   
+有 图文并茂 的 详细 说明 此外 有两 篇 博文 也 
+进行 了 不错 的 总结 推荐 阅读 1 分享 一些 
+OpenCV 实现 立体 视觉 的 经验 2 Matlab 标定 工具箱 
+使用 的 一些 注意 事项 . 

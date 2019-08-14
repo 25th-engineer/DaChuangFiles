@@ -1,0 +1,16 @@
+1.《数学之美》吴军 这个书写得特别生动形象，没有太多公式，科普性质。看完对于nlp的许多技术原理都会有初步认识。可以说是自然语言处理最好的入门读物。链接: https://pan.baidu.com/s/1eSphCSa 密码: 59je.
+2.如何在NLP领域第一次做成一件事 by 周明 微软亚洲研究院首席研究员、自然语言处理顶会ACL候任主席,http://www.msra.cn/zh-cn/news/features/nlp-20161124
+3.深度学习基础 by 邱锡鹏 复旦大学 2017年8月17日, 206页PPT带你全面梳理深度学习要点。http://nlp.fudan.edu.cn/xpqiu/slides/20170817-CIPS-ATT-DL.pdf,https://nndl.github.io/
+4.Deep learning for natural language processing 自然语言处理中的深度学习 by 邱锡鹏
+主要讨论了深度学习在自然语言处理中的应用。其中涉及的模型主要有卷积神经网络，递归神经网络，循环神经网络网络等，应用领域主要包括了文本生成，问答系统，机器翻译以及文本匹配等。http://nlp.fudan.edu.cn/xpqiu/slides/20160618_DL4NLP@CityU.pdf
+5.Deep Learning, NLP, and Representations （深度学习，自然语言处理及其表达)来自著名的colah’s blog，简要概述了DL应用于NLP的研究，重点介绍了Word Embeddings。http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/ 翻译： http://blog.csdn.net/ycheng_sjtu/article/details/48520293\
+6.《中文信息发展报告》 by 中国中文信息学会 2016年12月是一份非常好的中文NLP总览性质的文档，通过这份报告可以了解中文和英文NLP主要的技术方向。链接：http://cips-upload.bj.bcebos.com/cips2016.pdf
+7.Deep Learning in NLP （一）词向量和语言模型 by Lai Siwei(来斯惟) 中科院自动化所 2013比较详细的介绍了DL在NLP领域的研究成果，系统地梳理了各种神经网络语言模型。链接：http://licstar.net/archives/328
+8.语义分析的一些方法(一，二，三) by 火光摇曳 腾讯广点通 链接：http://www.flickering.cn/ads/2015/02/
+9.我们是这样理解语言的-3 神经网络语言模型 by 火光摇曳 腾讯广点通 总结了词向量和常见的几种神经网络语言模型。链接：http://www.flickering.cn/nlp/2015/03/
+10.深度学习word2vec笔记之基础篇 by falao_beiliu http://blog.csdn.net/mytestmy/article/details/26961315
+11.Understanding Convolutional Neural Networks for NLP 卷积神经网络在自然语言处理的应用 by WILDML 链接：http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp 翻译：http://www.csdn.net/article/2015-11-11/2826192
+12.The Unreasonable Effectiveness of Recurrent Neural Networks. 循环神经网络惊人的有效性 by Andrej Karpathy 链接：http://karpathy.github.io/2015/05/21/rnn-effectiveness/ 翻译：https://zhuanlan.zhihu.com/p/22107715
+13.Understanding LSTM Networks 理解长短期记忆网络（LSTM NetWorks） by colah 链接：http://colah.github.io/posts/2015-08-Understanding-LSTMs/ 翻译：http://www.csdn.net/article/2015-11-25/2826323?ref=myread
+14.注意力机制（Attention Mechanism）在自然语言处理中的应用 by robert_ai 链接：http://www.cnblogs.com/robert-dlut/p/5952032.html
+15.初学者如何查阅自然语言处理（NLP）领域学术资料 刘知远 链接：http://blog.sina.com.cn/s/blog_574a437f01019poo.html\

@@ -1,0 +1,124 @@
+计算机视觉—相机标定
+brycezou@163.com
+0、预备知识
+下图基本展示了一些重要的概念：点
+O
+O 与
+Xc,Yc,Zc
+X_c,Y_c,Z_c三个轴组成的坐标系为相机坐标系，其中，原点
+O
+O 为相机光心，
+Zc
+Z_c为相机的光轴，光轴和成像平面
+xO1y
+xO1y 垂直，且光轴与成像平面的交点为图像的主点
+O1
+O1，
+OO1
+OO1 为相机的焦距
+f
+f，
+XcOYc
+X_cOY_c 平面和成像平面平行。世界坐标系是为了描述相机的位置而引入的，下图中，点
+Ow
+O_w 与
+Xw,Yw,Zw
+X_w,Y_w,Z_w 三个轴组成的坐标系即为世界坐标系。点
+O1
+O1 与
+x,y
+x,y 两个坐标轴组成的坐标系为图像物理坐标系，也即成像平面坐标系。
+
+此图来自网络，非作者原创，若侵犯到您的权益，请留言，以便标明出处，谢谢
+1、世界坐标系
+→
+\rightarrow 相机坐标系
+设
+(Xw,Yw,Zw)
+(X_w,Y_w,Z_w) 表示世界坐标系中的点，
+(Xc,Yc,Zc)
+(X_c,Y_c,Z_c) 表示相机坐标系中的点，则世界坐标系到相机坐标系的变换，其实就是一个刚体变换，可以由旋转矩阵
+R
+R 和平移矩阵
+t
+t 来表示，
+R⎡⎣⎢⎢XwYwZw⎤⎦⎥⎥+t=⎡⎣⎢⎢XcYcZc⎤⎦⎥⎥
+R\left[\begin{matrix}X_w\\Y_w\\Z_w\end{matrix}\right]+t= \left[\begin{matrix}X_c\\Y_c\\Z_c\end{matrix}\right]
+其中，
+R
+R 为
+3x3
+3x3 的旋转矩阵，
+t
+t 为
+3x1
+3x1 的平移向量。化为齐次坐标形式
+[R3x301x3t3x111x1]⎡⎣⎢⎢⎢⎢XwYwZw1⎤⎦⎥⎥⎥⎥=⎡⎣⎢⎢⎢⎢XcYcZc1⎤⎦⎥⎥⎥⎥
+\left[\begin{matrix}R_{3x3} & t_{3x1}\\0_{1x3} & 1_{1x1}\end{matrix}\right] \left[\begin{matrix}X_w\\Y_w\\Z_w\\1\end{matrix}\right]= \left[\begin{matrix}X_c\\Y_c\\Z_c\\1\end{matrix}\right]
+2、相机坐标系
+→
+\rightarrow
+理想
+图像物理坐标系（成像平面坐标系）
+设
+(x,y)
+(x,y) 是图像物理坐标系中的点，
+由于点
+(Xc,Yc,Zc)
+(X_c,Y_c,Z_c) 和相机坐标系的原点（相机光心）之间的连线，穿过图像物理坐标系所在的平面
+，因此，由相似三角形可得
+Xcx=Zcf,Ycy=Zcf
+\frac{X_c}{x}=\frac{Z_c}{f},\frac{Y_c}{y}=\frac{Z_c}{f}
+进一步整理可得
+[f00f][XcYc]=Zc[xy]
+\left[\begin{matrix}f & 0\\0 & f\end{matrix}\right] \left[\begin{matrix}X_c\\Y_c\end{matrix}\right]= Z_c\left[\begin{matrix}x\\y\end{matrix}\right]
+化为齐次坐标形式
+⎡⎣⎢⎢f000f0001000⎤⎦⎥⎥⎡⎣⎢⎢⎢⎢XcYcZc1⎤⎦⎥⎥⎥⎥=Zc⎡⎣⎢⎢xy1⎤⎦⎥⎥
+\left[\begin{matrix}f & 0 & 0 & 0\\0 & f & 0 & 0\\0 & 0 & 1 & 0\end{matrix}\right] \left[\begin{matrix}X_c\\Y_c\\Z_c\\1\end{matrix}\right]=Z_c \left[\begin{matrix}x\\y\\1\end{matrix}\right]
+3、图像物理坐标系
+→
+\rightarrow 图像像素坐标系
+以图像的左上角为原点建立图像像素坐标系
+(u,v)
+(u,v)，并且让
+u
+u 轴与
+x
+x 轴平行，
+v
+v 轴与
+y
+y 轴平行。设图像物理坐标系的原点
+O1(0,0)
+O1(0,0) 在
+uv
+uv 坐标系中对应的坐标为
+(u0,v0)
+(u_0,v_0)，
+单位像素在
+x
+x 轴和
+y
+y 轴方向的物理尺寸分别为
+dx
+dx 和
+dy
+dy
+，则有
+u−u0=xdx,v−v0=ydy
+u-u_0=\frac{x}{dx},v-v_0=\frac{y}{dy}
+进一步整理可得
+[uv]=⎡⎣⎢⎢⎢1dx001dy⎤⎦⎥⎥⎥[xy]+[u0v0]
+\left[\begin{matrix}u\\v\end{matrix}\right]= \left[\begin{matrix}\frac{1}{dx} & 0\\0 & \frac{1}{dy}\end{matrix}\right] \left[\begin{matrix}x\\y\end{matrix}\right]+ \left[\begin{matrix}u_0\\v_0\end{matrix}\right]
+化为齐次坐标形式
+⎡⎣⎢⎢⎢⎢⎢1dx0001dy0u0v01⎤⎦⎥⎥⎥⎥⎥⎡⎣⎢⎢xy1⎤⎦⎥⎥=⎡⎣⎢⎢uv1⎤⎦⎥⎥
+\left[\begin{matrix}\frac{1}{dx} & 0 & u_0\\0 & \frac{1}{dy} & v_0\\0 & 0 & 1\end{matrix}\right] \left[\begin{matrix}x\\y\\1\end{matrix}\right]= \left[\begin{matrix}u\\v\\1\end{matrix}\right]
+4、结论
+将相关矩阵相乘，便可以得到三维空间点坐标到图像像素坐标的映射
+Zc⎡⎣⎢⎢uv1⎤⎦⎥⎥=⎡⎣⎢⎢⎢⎢⎢1dx0001dy0u0v01⎤⎦⎥⎥⎥⎥⎥⎡⎣⎢⎢f000f0001000⎤⎦⎥⎥[R3x301x3t3x111x1]⎡⎣⎢⎢⎢⎢XwYwZw1⎤⎦⎥⎥⎥⎥=⎡⎣⎢⎢α000β0u0v01000⎤⎦⎥⎥[R3x301x3t3x111x1]⎡⎣⎢⎢⎢⎢XwYwZw1⎤⎦⎥⎥⎥⎥=M1M2⎡⎣⎢⎢⎢⎢XwYwZw1⎤⎦⎥⎥⎥⎥
+Z_c\left[\begin{matrix}u\\v\\1\end{matrix}\right]= \left[\begin{matrix}\frac{1}{dx} & 0 & u_0\\0 & \frac{1}{dy} & v_0\\0 & 0 & 1\end{matrix}\right] \left[\begin{matrix}f & 0 & 0 & 0\\0 & f & 0 & 0\\0 & 0 & 1 & 0\end{matrix}\right] \left[\begin{matrix}R_{3x3} & t_{3x1}\\0_{1x3} & 1_{1x1}\end{matrix}\right] \left[\begin{matrix}X_w\\Y_w\\Z_w\\1\end{matrix}\right]\\= \left[\begin{matrix}\alpha & 0 & u_0 & 0\\0 & \beta & v_0 & 0\\0 & 0 & 1 & 0\end{matrix}\right] \left[\begin{matrix}R_{3x3} & t_{3x1}\\0_{1x3} & 1_{1x1}\end{matrix}\right] \left[\begin{matrix}X_w\\Y_w\\Z_w\\1\end{matrix}\right]= M_1M_2 \left[\begin{matrix}X_w\\Y_w\\Z_w\\1\end{matrix}\right]
+其中，
+M1
+M_1为相机的内参数，
+M2
+M_2为相机的外参数，包括旋转和平移矩阵。

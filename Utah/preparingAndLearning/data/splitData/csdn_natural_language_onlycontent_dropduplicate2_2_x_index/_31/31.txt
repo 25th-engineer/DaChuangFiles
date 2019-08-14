@@ -1,0 +1,18 @@
+1、计算jieba和thula的P，R，F值。基于文本‘express.txt’，标准文本是人工切分。
+基本计算公式：
+精度（Precision）、召回率（Recall）、F值（F-mesure）。
+N ：标准分割的单词数e ：分词器错误标注的单词数c ：分词器正确标注的单词数
+P = c/N     R = c/(c+e)   F = 2*R*P/(R+P)
+结巴分词的使用函数：
+s1 = list(jieba.cut(f))
+清华分词的使用函数：
+thu1=thulac.thulac(seg_only=True) s_2 = thu1.cut(f, text=True)
+编程思路
+读取标准文本，建立词典（数据类型为list），去除文本中的标点符号，计算n值
+通过jieba进行分词，jieba分词后可直接生成list，删除文本中的标点符号，将jieba分词的结果与词典进行对比，遍历jieba分词结果中的每个词，若词典中有，则c+1，若没有，则e+1，最后计算P、R、F值，输出结果
+通过清华分词，清华分词后的结果为一个字符串，用空格隔开，先通过一个循环将字符串中的词分割开，存入list中，再删除list中的标点符后，其余步骤与jieba分词相同
+将P、R、F的计算过程写成函数，简化代码
+结果
+
+代码
+#!/usr/bin/env python # -*- coding:utf-8 -*- #Date:2018/3/26 19:07 #__Author__:cimoko #File Name:lesson_3_1.py import jieba import re import thulac def P_R_F(n, c, e): R = round(c / n, 4) P = round(c / (c + e), 4) F = round(2*P*R / (P + R), 4) print("精度P为：", P * 100, '%') print("召回率R为：", R * 100, '%') print("F值为：", F * 100, '%') return P, R, F f = str(open("express.txt").readlines()) #print(f) #标准文本 raw = open('express_cut.txt').readlines() d=[re.split(r' |\n',w)[0] for w in raw] dict = [] for w in d: if w == r'，' or w == r'。' or w == r'（'or w == r'）': pass else: dict.append(w) print('*************标准分词文本*************') print(dict) n = len(dict) #结巴 s1 = list(jieba.cut(f)) s_jieba = [] for w in s1: if w == r'，' or w == r'。' or w == r'（'or w == r'）'or w == r'['or w == r']'or w == r"'": pass else: s_jieba.append(w) #print(s_jieba) e_jieba = 0 c_jieba = 0 for i in range(len(s_jieba)): if s_jieba[i] in dict: c_jieba += 1 else: e_jieba += 1 print('*************结巴分词结果*************') print(s_jieba) print('c:',c_jieba) print('e:',e_jieba) print('n:',n) P_R_F(n, c_jieba, e_jieba) #清华 thu1=thulac.thulac(seg_only=True) s_2 = thu1.cut(f, text=True) s2=[] #print(s_2) s_qinghua = [] a=0 for i in range(len(s_2)): if s_2[i] == ' ': s2.append(s_2[a:i]) a = i+1 else: continue for w in s2: if w == r'，' or w == r'。' or w == r'（'or w == r'）'or w == r'['or w == r']'or w == r"'": pass else: s_qinghua.append(w) #print(s_qinghua) e_qinghua = 0 c_qinghua = 0 for i in range(len(s_qinghua)): if s_qinghua[i] in dict: c_qinghua += 1 else: e_qinghua += 1 print('*************清华分词结果*************') print(s_qinghua) print('c:',c_qinghua) print('e:',e_qinghua) print('n:',n) P_R_F(n, c_qinghua, e_qinghua)

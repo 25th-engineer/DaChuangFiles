@@ -1,0 +1,66 @@
+近期主要学习了灰度直方图、Haar-like、HOG、LBP、PCA、SIFT和SURF，以及距离度量方法。
+一、灰度直方图
+单个像素灰度分布的一阶统计量。纹理是灰度在空间以一定的形式变换产生的图案，直方图是描述图像中像素灰度级分布的工具，可以用直方图或其统计特征作为图像的纹理特征。灰度具有一定的稳定性，对大小、方向都不敏感，能表现出相当强的鲁棒性。在医学图像中，大多是灰度图像，基于灰色直方图的特征提取是医学图像颜色特征提取中的一个典型算法。
+基本概念：
+1.灰度级L 包括纯黑、纯白和其间的无数级灰度，这里取L=256;
+2.灰度值Zi 灰度图像在计算机中的表示是一个M*N的二维矩阵，一个像素点i就对应着矩阵中相应位置的灰度值Zi。由于灰度级为256，所以灰度值范围在0-255间，0代表黑，255代表白。
+3.h(i) 直方图中统计的灰度为Zi的像素个数
+4.p(i) 归一化直方图灰度级分布中，灰度为Zi的概率。与h(i)的关系为：p(i)=h(i)/sum(h(i))
+一般在图像处理过程中，将图像转为灰度模式，可以加快后续图像分析处理的进程。
+二、Haar-like
+Haar-like的优势在于能更好地描述明暗变化，如：眼睛比脸颊的颜色要深，鼻梁两侧比鼻梁颜色要深等，因此用于检测正面的人脸。
+特征值：特征模板内有白色和黑色两种矩形（如下图），并定义该模板的特征值为白色矩形像素和减去黑色矩形像素和，反映了图像的灰度变化，但是矩形特征只对简单的图形结构，如边缘、线段较敏感，因此只能描述特定方向（水平、垂直、对角）的结构。
+Haar-like在opencv下检测人脸可以直接调用相关模块。
+以下贴一块代码，参考了http://blog.csdn.net/xingchenbingbuyu/article/details/51386949
+#include<opencv2\opencv.hpp> #include <iostream> #include <stdio.h> using namespace std; using namespace cv; // Function Headers void detectAndDisplay(Mat frame); // Global variables String face_cascade_name = "haarcascade_frontalface_default.xml"; String eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml"; CascadeClassifier face_cascade; //定义人脸分类器 CascadeClassifier eyes_cascade; //定义人眼分类器 String window_name = "Capture - Face detection"; // @function main int main(void) { Mat frame = imread("4.jpg"); //VideoCapture capture; //Mat frame; //-- 1. Load the cascades if (!face_cascade.load(face_cascade_name)) { printf("--(!)Error loading face cascade\n"); return -1; }; if (!eyes_cascade.load(eyes_cascade_name)) { printf("--(!)Error loading eyes cascade\n"); return -1; }; //-- 2. Read the video stream //capture.open(0); //if (!capture.isOpened()) { printf("--(!)Error opening video capture\n"); return -1; } //while (capture.read(frame)) //{ // if (frame.empty()) // { // printf(" --(!) No captured frame -- Break!"); // break; // } //-- 3. Apply the classifier to the frame detectAndDisplay(frame); int c = waitKey(0); if ((char)c == 27) { return 0; } // escape //} return 0; } // @function detectAndDisplay void detectAndDisplay(Mat frame) { face_cascade.load(face_cascade_name); eyes_cascade.load(eyes_cascade_name); std::vector<Rect> faces; Mat frame_gray; cvtColor(frame, frame_gray, COLOR_BGR2GRAY); equalizeHist(frame_gray, frame_gray); //-- Detect faces face_cascade.detectMultiScale(frame_gray, faces, 1.1, 3, CV_HAAR_DO_ROUGH_SEARCH, Size(50, 50)); for (size_t j = 0; j < faces.size(); j++) { Mat faceROI = frame(faces[j]); Mat MyFace; if (faceROI.cols > 100) { resize(faceROI, MyFace, Size(92, 112)); string str = format("D:\\研究生阶段2016-2019\\计算机视觉\\实验室CV\\第二节\\小组展示\\Face Recognition\\Face Recognition\\Face Recognition\\MyFcae\\%d.jpg", 4); imwrite(str, MyFace); imshow("ii", MyFace); } waitKey(10); } /*以下可以同时检测出人眼和眼睛。 face_cascade.detectMultiScale(frame_gray, faces, 1.1, 3, CV_HAAR_DO_ROUGH_SEARCH, Size(10, 10), Size(400, 400)); namedWindow(window_name, 2); for (size_t i = 0; i < faces.size(); i++) { //Point center(faces[i].x + faces[i].width / 2, faces[i].y + faces[i].height / 2); //ellipse(frame, center, Size(faces[i].width / 2, faces[i].height / 2), 0, 0, 360, Scalar(255, 0, 255), 4, 8, 0); rectangle(frame, faces[i], Scalar(255, 0, 0), 2, 8, 0); Mat faceROI = frame_gray(faces[i]); std::vector<Rect> eyes; //-- In each face, detect eyes eyes_cascade.detectMultiScale(faceROI, eyes, 1.1, 1, CV_HAAR_DO_ROUGH_SEARCH, Size(3, 3)); for (size_t j = 0; j < eyes.size(); j++) { Rect rect(faces[i].x + eyes[j].x, faces[i].y + eyes[j].y, eyes[j].width, eyes[j].height); //Point eye_center(faces[i].x + eyes[j].x + eyes[j].width / 2, faces[i].y + eyes[j].y + eyes[j].height / 2); //int radius = cvRound((eyes[j].width + eyes[j].height)*0.25); //circle(frame, eye_center, radius, Scalar(255, 0, 0), 4, 8, 0); rectangle(frame, rect, Scalar(0, 255, 0), 2, 8, 0); } }*/ //-- Show what you got namedWindow(window_name, 2); imshow(window_name, frame); }
+以上贴出的代码，就是传入一张带有人脸的图片，程序会识别出其中的人脸，并将其用矩形框出来。
+三、HOG特征提取
+HOG特征是一种在计算机视觉和图像处理中用来进行物体检测的特征描述子。通过计算和统计图像局部区域的梯度方向直方图来构成特征。其本质为梯度的统计信息，而梯度主要存在于边缘的地方。可以很好的运用于行人目标的检测，可以和svm或者softmax结合在一起用于对目标的分类。
+四、LBP
+LBP （Local Binary Pattern）局部二值模式：是一种用来描述图像局部特征的算子，LBP特征具有灰度不变性和旋转不变性等显著优点。LBP特征比较出名的应用是用在人脸识别和目标检测中。
+LBP可以和Haar-like搭配起来，先用Haar-like检测出图像中的人脸，挑选出一部分训练集，用于opencv中LBP的训练，之后可以在电脑上开启摄像头，实现在线的人脸检测。
+Ptr<FaceRecognizer> model2 = createLBPHFaceRecognizer(); model2->train(images, labels); model2->save("MyFaceLBPHModel.xml");
+五、PCA
+CA（Principal Component Analysis）主成因分析:是一种常用的数据分析方法。PCA通过线性变换将原始数据变换为一组各维度线性无关的表示，可用于提取数据的主要特征分量，常用于高维数据的降维。PCA是人脸识别的主流方法之一。其核心思想是：重整高维数据，提取其中的重要部分，忽略其中无关紧要的部分。
+其实，PCA与LBP类似，均可以用来训练图像中的人脸，训练处所需识别人脸的模型用以检测。
+六、SIFT
+尺度不变特征变换匹配算法(Scale Invariant Feature Transform , SIFT)，SIFT算法是用来提取图像局部特征的经典算法，SIFT算法的实质是在不同的尺度空间上查找关键点(特征点)，并计算出关键点的方向。SIFT所查找到的关键点是一些十分突出，不会因光照，仿射变换和噪音等因素而变化的点，如角点、边缘点、暗区的亮点及亮区的暗点等。
+优点
+1. SIFT特征是图像的局部特征，其对旋转、尺度缩放、亮度变化保持不变性，对视角变化、仿射变换、噪声也保持一定程度的稳定性。
+2. 独特性好，信息量丰富，适用于在海量特征数据库中进行快速、准确的匹配；
+3. 多量性，即使少数的几个物体也可以产生大量的SIFT特征向量。
+4. 高速性，经优化的SIFT匹配算法甚至可以达到实时的要求。
+5. 可扩展性，可以很方便的与其他形式的特征向量进行联合。
+缺点
+1. 实时性不够高。
+2. 对边缘光滑的目标无法准确提取特征点，对圆更是无能为力。
+3. 对模糊的图像，检测出的特征点过少。
+主要应用
+1. 目标的旋转、缩放、平移
+2. 图像仿射/投影变换
+3. 光照影响
+4. 目标遮挡
+5. 杂物场景
+6. 噪声
+典型应用于物体识别、机器人定位与导航、图像拼接、三维建模、手势识别、视频跟踪、笔记鉴定、指纹与人脸识别、犯罪现场特征提取......
+七、SURF
+Sift算法的优点是特征稳定，对旋转、尺度变换、亮度保持不变性，对视角变换、噪声也有一定程度的稳定性；缺点是实时性不高，并且对于边缘光滑目标的特征点提取能力较弱。
+Surf（Speeded Up Robust Features）改进了特征的提取和描述方式，用一种更为高效的方式完成特征的提取和描述。
+具体实现流程如下：
+1. 构建Hessian（黑塞矩阵），生成所有的兴趣点，用于特征的提取；
+2. 构建尺度空间
+3. 特征点定位
+4. 特征点主方向分配
+5. 生成特征点描述子
+6. 特征点匹配
+八、距离度量方法
+（1）、欧式距离
+欧氏距离是最常见的两点之间或多点之间的距离表示法，又称之为欧几里得度量，它定义于欧几里得空间中。
+（2）、曼哈顿距离
+可以定义曼哈顿距离的正式意义为L1-距离或城市区块距离，也就是在欧几里得空间的固定直角坐标系上两点所形成的线段对轴产生的投影的距离总和。
+（3）、切比雪夫距离
+各对应坐标数值差的最大值。
+（4）、闵可夫斯基距离
+闵氏距离不是一种距离，而是上述三组距离的总定义。
+（5）、标准化欧氏距离
+标准化欧氏距离是针对简单欧氏距离的缺点而作的一种改进方案。标准欧氏距离的思路：既然数据各维分量的分布不一样，那先将各个分量都“标准化”到均值、方差相等。

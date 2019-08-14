@@ -1,0 +1,49 @@
+机器学习资料：书籍，资源，方法
+机器学习经典书籍：http://www.cnblogs.com/xmphoenix/p/3683870.html
+介绍几本专业书籍（文章写成于2012年左右）：http://blog.csdn.net/xiaxiazls/article/details/46713781
+知乎：https://www.zhihu.com/question/21714701
+推荐！国外程序员整理的机器学习资源大全: http://blog.jobbole.com/73806/
+自然语言资料： http://www.52nlp.cn/resources
+Deep Learning学习笔记整理：http://blog.csdn.net/zouxy09/article/details/8775360/
+数学基础
+微积分：偏导数，梯度等等 概率论与数理统计：极大似然估计，中央极限定理，大数法则 最优化：梯度下降，牛顿-拉普拉斯，变分法（欧拉-拉格朗日方程），凸优化等
+1.线性代数:
+Introduction to Linear Algebra
+http://open.163.com/special/opencourse/daishu.html
+http://open.163.com/special/opencourse/mitxianxingdaishuxitike.html
+2.概率论
+http://open.163.com/special/Khan/probability.html
+3.统计学
+几种类型的书：
+http://open.163.com/special/Khan/khstatistics.html
+4.微积分
+http://v.163.com/special/sp/singlevariablecalculus.html
+重点：http://open.163.com/special/opencourse/weijifen.html
+5.数值优化 ：Numerical_Optimization admm（boyd优化算法论文）
+http://stanford.edu/class/ee364a/index.html
+机器学习公开课 ：
+Stanford Machine Learning 课程， 里面的notes很不错。
+http://cs229.stanford.edu/materials.html
+ML by Andrew Ng in coursera : 这个比较适入门的时候看，可以配合 三个机器学习教材）
+http://open.163.com/special/opencourse/machinelearning.html
+Machine Learning Notes in cousera ： 如果没有时间看2中的视频的话，可以直接看这个博客：
+http://www.cnblogs.com/jerrylead/tag/Machine%20Learning/default.html?page=1
+进阶（选择）学习：
+Pattern Recognition And Machine Learning（有点偏Bayesian了，初学者看起来可能有些困难，可以和机器学习，统计学习方法，机器学习公开课视频结合起来看）
+The Elements of Statistical Learning
+Machine Learning: A Probabilistic Perspective
+《PRML》、《ESL》、《MLAPP》这类进阶类书籍。包涵大量理论知识和数学推导（尤其是习题），有助于了解Machine Learning方法背后的本质和思想。
+Machine Learning学习的过程，就是一个 what -> how -> why 的过程。而PRML，或者说同类的ESL等书籍，最大的作用就是让你知道为什么会有这样的方法，为什么会有这样的模型，它背后的intuition和motivation是什么。而这恰恰是一个Machine Learning Researcher想要进一步使用模型、看懂别人paper中的模型、甚至自己提出新模型的基础。看PRML会带给你在Machine Learning上的理解和使用能力一个质的飞跃。
+Convex Optimization: Boyd
+下面是专业方向书籍）
+Introduction to Information Retrieval（信息检索入门书籍）
+Modern Information Retrieval（现代信息检索第二版）
+Foundations of Statistical Natural Language Processing（自然语言处理经典之作）
+斯坦福自然语言处理公开课： http://www.52ml.net/14247.html
+http://www.52nlp.cn/category/mit-nlp
+深度学习方面：
+Deep learning 书籍
+斯坦福在线深度学习教程：http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B （中文）
+http://ufldl.stanford.edu/wiki/index.php/UFLDL_Tutorial （英文）
+Neural Networks and Deep Learning（免费在线书籍）：http://neuralnetworksanddeeplearning.com/index.html
+深度学习框架：tensorflow caffe 等（ 使用学习， 源代码学习）

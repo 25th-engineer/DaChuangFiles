@@ -1,0 +1,25 @@
+以下内容均来自： https://ptorch.com/news/11.html
+word embedding也叫做word2vec简单来说就是语料中每一个单词对应的其相应的词向量，目前训练词向量的方式最常使用的应该是word2vec（参考 http://www.cnblogs.com/bamtercelboo/p/7181899.html）
+Word Embedding
+在自然语言处理中词向量是很重要的，首先介绍一下词向量。
+之前做分类问题的时候大家应该都还记得我们会使用one-hot编码，比如一共有5类，那么属于第二类的话，它的编码就是(0, 1, 0, 0, 0)，对于分类问题，这样当然特别简明，但是对于单词，这样做就不行了，比如有1000个不同的词，那么使用one-hot这样的方法效率就很低了，所以我们必须要使用另外一种方式去定义每一个单词，这就引出了word embedding。
+我们可以先举三个例子，比如
+The cat likes playing ball.
+The kitty likes playing wool.
+The dog likes playing ball.
+The boy likes playing ball.
+假如我们使用一个二维向量(a, b)来定义一个词，其中a，b分别代表这个词的一种属性，比如a代表是否喜欢玩飞盘，b代表是否喜欢玩毛线，并且这个数值越大表示越喜欢，这样我们就可以区分这三个词了，为什么呢？
+比如对于cat，它的词向量就是(-1, 4)，对于kitty，它的词向量就是(-2, 5)，对于dog，它的词向量就是(3, -2)，对于boy，它的词向量就是(-2, -3)，我们怎么去定义他们之间的相似度呢，我们可以通过他们之间的夹角来定义他们的相似度。
+上面这张图就显示出了不同的词之间的夹角，我们可以发现kitty和cat是非常相似的，而dog和boy是不相似的。
+而对于一个词，我们自己去想它的属性不是很困难吗，所以这个时候就可以交给神经网络了，我们只需要定义我们想要的维度，比如100，然后通过神经网络去学习它的每一个属性的大小，而我们并不用关心到底这个属性代表着什么，我们只需要知道词向量的夹角越小，表示他们之间的语义更加接近。
+下面我们使用pytorch来实现一个word embedding
+代码
+在pytorch里面实现word embedding是通过一个函数来实现的:nn.Embedding
+# -*- coding: utf-8 -*- import numpy as np import torch import torch.nn as nn import torch.nn.functional as F from torch.autograd import Variable word_to_ix = {'hello': 0, 'world': 1} embeds = nn.Embedding(2, 5) hello_idx = torch.LongTensor([word_to_ix['hello']]) hello_idx = Variable(hello_idx) hello_embed = embeds(hello_idx) print(hello_embed)
+这就是我们输出的hello这个词的word embedding，代码会输出如下内容，接下来我们解析一下代码：
+Variable containing: 0.4606 0.6847 -1.9592 0.9434 0.2316 [torch.FloatTensor of size 1x5]
+首先我们需要word_to_ix = {'hello': 0, 'world': 1}，每个单词我们需要用一个数字去表示他，这样我们需要hello的时候，就用0来表示它。
+接着就是word embedding的定义nn.Embedding(2, 5)，这里的2表示有2个词，5表示5维度，其实也就是一个2x5的矩阵，所以如果你有1000个词，每个词希望是100维，你就可以这样建立一个word embedding，nn.Embedding(1000, 100)。如何访问每一个词的词向量是下面两行的代码，注意这里的词向量的建立只是初始的词向量，并没有经过任何修改优化，我们需要建立神经网络通过learning的办法修改word embedding里面的参数使得word embedding每一个词向量能够表示每一个不同的词。
+hello_idx = torch.LongTensor([word_to_ix['hello']]) hello_idx = Variable(hello_idx)
+接着这两行代码表示得到一个Variable，它的值是hello这个词的index，也就是0。这里要特别注意一下我们需要Variable，因为我们需要访问nn.Embedding里面定义的元素，并且word embeding算是神经网络里面的参数，所以我们需要定义Variable。
+hello_embed = embeds(hello_idx)这一行表示得到word embedding里面关于hello这个词的初始词向量，最后我们就可以print出来。

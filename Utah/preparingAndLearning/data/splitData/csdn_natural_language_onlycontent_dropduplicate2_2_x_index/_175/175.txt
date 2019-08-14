@@ -1,0 +1,44 @@
+博主github：https://github.com/MichaelBeechan
+博主CSDN：https://blog.csdn.net/u011344545
+Natural Language Processing
+自然语言处理（NLP）团队
+1、The Berkeley NLP Group
+加州大学伯克利分校
+http://nlp.cs.berkeley.edu/index.shtml
+2、The Stanford NLP Group
+斯坦福大学
+https://nlp.stanford.edu/
+Chris Manning
+statistical natural language processing, natural language understanding and deep learning
+Dan Jurafsky
+natural language understanding, conversational speech and dialog, NLP for the behavioral and social sciences
+Percy Liang
+semantic parsing, probabilistic models for NLP, machine learning, program induction
+3、The Language Technologies Institute at Carnegie Mellon
+卡内基梅隆大学
+https://www.lti.cs.cmu.edu/
+4、Natural Language Processing Group Notre Dame
+圣母大学
+https://nlp.nd.edu/
+5、Harvard NLP
+哈佛大学
+http://nlp.seas.harvard.edu/
+http://nlp.seas.harvard.edu/code/
+Unsupervised Recurrent Neural Network Grammars
+Learning Neural Templates for Text Generation
+6、中科院计算所自然语言处理研究组
+http://nlp.ict.ac.cn/2017/introduction.php
+自然语言处理研究组隶属于中国科学院计算技术研究所智能信息处理重点实验室。研究组主要从事自然语言处理和机器翻译相关的研究工作，主要研究方向包括机器翻译、人机对话、多语言词法分析、句法分析等。研究组自2004年开展统计机器翻译方面的研究并取得重大突破，并于2015年起转向神经机器翻译并取得很大进展。研究组在自然语言处理的顶级国际刊物CL、AI和顶级国际学术会议ACL、IJCAI、AAAI、EMNLP、COLING上发表高水平论文90余篇，并获ACL颁发的“亚洲自然语言处理优秀论文奖”，多次在CWMT评测和IWSLT评测中获得第一名，并获得最权威的国家机器翻译评测NIST评测国内最好成绩,。部分研究成果获北京市科技进步奖、钱伟长中文信息处理科学技术奖。研究组已完成和正在承担的国家自然科学基金、863计划、科技支撑计划、国际合作等课题40余项，在自然语言处理和机器翻译领域取得了多项创新性研究成果。研究组已经成功将自主开发的统计机器翻译和神经机器翻译技术推广到汉语、维吾尔语、藏语、蒙古语、英语、韩语、泰语、日语、阿拉伯语等多种语言，并与腾讯、华为、中移动、三星等公司以及部分政府机关开展合作，部分语种的翻译系统已经在相关领域得到了实际应用，获得用户的好评。
+7、哥伦比亚大学
+http://www.cs.columbia.edu/people/faculty/
+http://www.cs.columbia.edu/areas/speech/
+8、哈工大社会计算与信息检索研究中心
+http://ir.hit.edu.cn/teams
+哈工大社会计算与信息检索研究中心 (HIT-SCIR) 成立于2000 年9月，隶属于计算机科学与技术学院。研究中心主任刘挺教授，副主任秦兵教授，教师包括张宇教授、车万翔教授、刘铭副教授/博导、张伟男副教授、丁效博士（讲师）、冯骁骋博士（助理研究员）、行政主管李冰老师、李艺雯老师。还有多位校内其他院系的老师参与实验室的研究工作，包括赵妍妍副教授/博导、张紫琼教授/博士后、景东讲师等。
+研究方向包括语言分析、信息抽取、情感分析、问答系统、社会媒体处理和用户画像6个方面。已完成或正在承担的国家973课题、国家自然科学基金重点项目、国家863重点项目、国际合作、企业合作等课题60余项。在这些项目的支持下打造出“语言技术平台LTP”，并免费共享给400多家研究机构，百度、腾讯、华为、金山等企业付费使用，获2010年钱伟长中文信息处理科学技术一等奖。
+9、自然语言处理研究小组
+http://nlpr-web.ia.ac.cn/cip/introduction.htm
+自然语言处理是利用计算机技术处理人类自然语言的一门交叉型学科，涉及计算机科学、数学、逻辑学、语言学和认知科学等多个领域。模式识别国家重点实验室自然语言处理组主要从事自然语言处理基础、机器翻译、信息抽取和问答系统等相关研究工作，力图在自然语言处理的理论模型和应用系统开发方面做出创新成果。目前研究组的主要方向包括：自然语言处理基础技术（汉语词语切分、句法分析、语义分析和篇章分析等）、多语言机器翻译、信息抽取（实体识别、实体关系抽取、观点挖掘等）和智能问答系统（基于知识库的问答系统、知识推理、社区问答等）。
+近年来，研究组注重于自然语言处理基础理论和应用基础的相关研究，取得了一批优秀成果，承担了一系列包括国家自然科学基金项目、“973”计划课题、“863”计划项目和支撑计划项目等在内的基础研究和应用基础研究类项目，以及一批企业应用合作项目。在自然语言处理及相关领域顶级国际期刊（CL、TASLP、TKDE、JMLR、TACL、Information Sciences、Intelligent Systems等）和学术会议（AAAI、IJCAI、ACL、SIGIR、WWW等）上发表了一系列高水平的研究论文。2009年获得第23届亚太语言、信息与计算国际会议（PACLIC）最佳论文奖，2012年获得第一届自然语言处理与中文计算会议（NLPCC）最佳论文奖，2014年获得第25届国际计算语言学大会（COLING）最佳论文奖。获得了10余项国家发明专利。
+10、Natural Language Computing（微软自然语言处理计算）
+https://www.microsoft.com/en-us/research/group/natural-language-computing/

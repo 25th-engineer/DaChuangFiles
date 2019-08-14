@@ -1,0 +1,133 @@
+本来 是 在 windows 下 开发 的 Opencv 但是 很多 
+opencv 代码 是 在 Ubuntu 下 跑 的 为了 能够 
+把 那个 代码 跑起来 就 只能 将 整个 开发环境 移植 
+到 CentOS7 下了 整个 过程 比较 的 艰辛 因为 很多 
+依赖 包 没有 导入 而 导致 最后 没 成功 所以 
+必须 按照 一 下步 奏 来 安装 Opencv 本文 全部 
+在 root 用户 下面 进行 配置 1 .     
+            安装 依赖 yum install 
+cmake gcc gcc c + + gtk2 devel gimp develgimp 
+devel tools gimp help browser zlib devel libtiff devel libjpeg 
+devellibpng devel gstreamer devel libavc1394 devel libraw1394 devel libdc1394 develjasper 
+devel jasper utils swig python libtool nasm2 .     
+            下载 opencvhttp / / 
+sourceforge . net / projects / opencvlibrary / files / 
+opencv unix / 2 . 4.9 / opencv 2 . 
+4.9 . zip / download 拷贝到 / usr / local 
+/ 路径 之下 命令 unzip opencv 2 . 4.9 . 
+zip 解 压出 opencv 的 源码 命令 cd opencv 2 
+. 4.9 进入 源码 文件夹 命令 cmake CMakeLists . txt 
+生成 build 文件 命令 make 完成 opencv 的 编译 命令 
+make install 完成 opencv 的 安装 安装 完成 后   
+Opencv 的 头文件 在 / usr / local / include 
+目 录下 Opencv 的 库文件 在 / usr / local 
+/ lib 目录 下命令 cd / etc / ld . 
+so . conf . d / 进入 库文件 环境变量 配置 
+文件夹 命令 ls 可以 查看 当前 文件 夹下 已 有的 
+库文件 配置 命令 vim opencv . conf 按下 i 输入 
+opencv 的 库 文件目录 / usr / local / lib 
+保存 退出 wq 命令 ldconfig 加载 库文件 配置 环境变量 配置 
+vim / etc / bashrc 添加 PKG _ CONFIG _ 
+PATH = $ PKG _ CONFIG _ PATH / usr 
+/ local / lib / pkgconfigexport PKG _ CONFIG _ 
+PATH 保存 之后 执行 source / etc / bashrc 测试 
+安装 是否 成功 cd / usr / local / opencv 
+2 . 4.9 / samples / c 命令 . / 
+build _ all . sh 编译 结束 之后 执行 . 
+/ facedetect cascade = / usr / local / share 
+/ OpenCV / haarcascades / haarcascade _ frontalface _ alt 
+. xml scale = 1.5 lena . jpg 如果 安装 
+成功 的话 lena 脸 上会 有 一个 蓝色 的 圈 
+补充 出现 一些 小 问题 / var / run / 
+yum . pid   已被 锁定 PID   为   
+3021   的 另一个 程序 正在 运行 解决办法 直接 在 
+终端 运行 rm f / var / run / yum 
+. pid 将该 文件 删除 然后 再次 运行 yum 本来 是 在 windows 下 开发 的 Opencv 但是 很多 
+opencv 代码 是 在 Ubuntu 下 跑 的 为了 能够 
+把 那个 代码 跑起来 就 只能 将 整个 开发环境 移植 
+到 CentOS7 下了 整个 过程 比较 的 艰辛 因为 很多 
+依赖 包 没有 导入 而 导致 最后 没 成功 所以 
+必须 按照 一 下步 奏 来 安装 Opencv 本文 全部 
+在 root 用户 下面 进行 配置 1 .     
+            安装 依赖 yum install 
+cmake gcc gcc c + + gtk2 devel gimp develgimp 
+devel tools gimp help browser zlib devel libtiff devel libjpeg 
+devellibpng devel gstreamer devel libavc1394 devel libraw1394 devel libdc1394 develjasper 
+devel jasper utils swig python libtool nasm2 .     
+            下载 opencvhttp / / 
+sourceforge . net / projects / opencvlibrary / files / 
+opencv unix / 2 . 4.9 / opencv 2 . 
+4.9 . zip / download 拷贝到 / usr / local 
+/ 路径 之下 命令 unzip opencv 2 . 4.9 . 
+zip 解 压出 opencv 的 源码 命令 cd opencv 2 
+. 4.9 进入 源码 文件夹 命令 cmake CMakeLists . txt 
+生成 build 文件 命令 make 完成 opencv 的 编译 命令 
+make install 完成 opencv 的 安装 安装 完成 后   
+Opencv 的 头文件 在 / usr / local / include 
+目 录下 Opencv 的 库文件 在 / usr / local 
+/ lib 目录 下命令 cd / etc / ld . 
+so . conf . d / 进入 库文件 环境变量 配置 
+文件夹 命令 ls 可以 查看 当前 文件 夹下 已 有的 
+库文件 配置 命令 vim opencv . conf 按下 i 输入 
+opencv 的 库 文件目录 / usr / local / lib 
+保存 退出 wq 命令 ldconfig 加载 库文件 配置 环境变量 配置 
+vim / etc / bashrc 添加 PKG _ CONFIG _ 
+PATH = $ PKG _ CONFIG _ PATH / usr 
+/ local / lib / pkgconfigexport PKG _ CONFIG _ 
+PATH 保存 之后 执行 source / etc / bashrc 测试 
+安装 是否 成功 cd / usr / local / opencv 
+2 . 4.9 / samples / c 命令 . / 
+build _ all . sh 编译 结束 之后 执行 . 
+/ facedetect cascade = / usr / local / share 
+/ OpenCV / haarcascades / haarcascade _ frontalface _ alt 
+. xml scale = 1.5 lena . jpg 如果 安装 
+成功 的话 lena 脸 上会 有 一个 蓝色 的 圈 
+补充 出现 一些 小 问题 / var / run / 
+yum . pid   已被 锁定 PID   为   
+3021   的 另一个 程序 正在 运行 解决办法 直接 在 
+终端 运行 rm f / var / run / yum 
+. pid 将该 文件 删除 然后 再次 运行 yum 本来 是 在 windows 下 开发 的 Opencv 但是 很多 
+opencv 代码 是 在 Ubuntu 下 跑 的 为了 能够 
+把 那个 代码 跑起来 就 只能 将 整个 开发环境 移植 
+到 CentOS7 下了 整个 过程 比较 的 艰辛 因为 很多 
+依赖 包 没有 导入 而 导致 最后 没 成功 所以 
+必须 按照 一 下步 奏 来 安装 Opencv 本文 全部 
+在 root 用户 下面 进行 配置 1 .     
+            安装 依赖 yum install 
+cmake gcc gcc c + + gtk2 devel gimp develgimp 
+devel tools gimp help browser zlib devel libtiff devel libjpeg 
+devellibpng devel gstreamer devel libavc1394 devel libraw1394 devel libdc1394 develjasper 
+devel jasper utils swig python libtool nasm2 .     
+            下载 opencvhttp / / 
+sourceforge . net / projects / opencvlibrary / files / 
+opencv unix / 2 . 4.9 / opencv 2 . 
+4.9 . zip / download 拷贝到 / usr / local 
+/ 路径 之下 命令 unzip opencv 2 . 4.9 . 
+zip 解 压出 opencv 的 源码 命令 cd opencv 2 
+. 4.9 进入 源码 文件夹 命令 cmake CMakeLists . txt 
+生成 build 文件 命令 make 完成 opencv 的 编译 命令 
+make install 完成 opencv 的 安装 安装 完成 后   
+Opencv 的 头文件 在 / usr / local / include 
+目 录下 Opencv 的 库文件 在 / usr / local 
+/ lib 目录 下命令 cd / etc / ld . 
+so . conf . d / 进入 库文件 环境变量 配置 
+文件夹 命令 ls 可以 查看 当前 文件 夹下 已 有的 
+库文件 配置 命令 vim opencv . conf 按下 i 输入 
+opencv 的 库 文件目录 / usr / local / lib 
+保存 退出 wq 命令 ldconfig 加载 库文件 配置 环境变量 配置 
+vim / etc / bashrc 添加 PKG _ CONFIG _ 
+PATH = $ PKG _ CONFIG _ PATH / usr 
+/ local / lib / pkgconfigexport PKG _ CONFIG _ 
+PATH 保存 之后 执行 source / etc / bashrc 测试 
+安装 是否 成功 cd / usr / local / opencv 
+2 . 4.9 / samples / c 命令 . / 
+build _ all . sh 编译 结束 之后 执行 . 
+/ facedetect cascade = / usr / local / share 
+/ OpenCV / haarcascades / haarcascade _ frontalface _ alt 
+. xml scale = 1.5 lena . jpg 如果 安装 
+成功 的话 lena 脸 上会 有 一个 蓝色 的 圈 
+补充 出现 一些 小 问题 / var / run / 
+yum . pid   已被 锁定 PID   为   
+3021   的 另一个 程序 正在 运行 解决办法 直接 在 
+终端 运行 rm f / var / run / yum 
+. pid 将该 文件 删除 然后 再次 运行 yum 

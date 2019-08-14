@@ -1,0 +1,24 @@
+小伙伴们注意了！
+小编在这里给大家送上关注福利：
+转发本文，关注+私信小编“资料”即可领取小编精心准备的资料一份！
+英语文本几乎无处不在。
+如果我们的系统能够理解并自动生成它，那将是最好的。
+然而，理解自然语言是一项复杂的任务。
+它是如此复杂，以至于许多研究人员花了一生的时间来做它。
+现在，已经发布了很多工具来完成自然语言处理工作。
+以下是我收集的8个工具。
+我还验证了它们都被某些应用程序至少使用一次，因此它们都是可运行的。
+有些来自工业公司，有些来自研究机构。
+它提供了解析、自动查找主题等功能。
+OpenNLP: a Java package to do text tokenization, part-of-speech tagging, chunking, etc. (tutorial)
+Stanford Parser: a Java implementation of probabilistic natural language parsers, both highly optimized PCFG* and lexicalized dependency parsers, and a lexicalized PCFG parser
+ScalaNLP: Natural Language Processing and machine learning.
+Snowball: a stemmer, support C and Java.
+MALLET: a Java-based package for statistical natural language processing, document classification, clustering, topic modeling, information extraction, and other machine learning applications to text.
+JGibbLDA: LDA in Java
+Apache Lucene Core: a Java library for stop-words removal and stemming
+Stanford Topic Modelling Toolbox: CVB0 algorithm, etc.
+最后，想学习Java的小伙伴们！
+转发！
+转发后关注+私信回复：“资料”就可以拿到一份我为大家准备的Java学习资料！
+小编V❤： suxueJava

@@ -1,0 +1,181 @@
+现在 计算机 视觉 领域 深度 学习 已经 成为 主流 我 
+在 美 读研 的 时候 深度 学习 并未 取得 大 
+的 突破 当时 流行 的 图像 识别 分类器 多 采用 
+手工 设计 特征 + 编码 + SVM 支持 向量 机 
+框架 下 的 算法 终于 到了 2012年 我 刚 毕业 
+在 ILSVRC 上 alexnet 的 横空出世 将 分类 错误率 从 
+之前 的 25.7% 降 到了 15.3% 这 只是 一个 5 
+卷积 层 + 2 全 连接 层 的 卷积 神经网络 
+却 一下 取得 了 10% 的 突破 这是 深度 学习 
+在 CV 领域 的 一次 翻身仗 自此以后 ImageNet 的 参赛者 
+几乎 全体 转向 了 基于 卷积 神经 网络 的 深度 
+学习 算法 基于 此 的 应用 如 雨后春笋 般 一夜 
+之间 全 冒了 出来 深度 学习 尤其 是 卷积 神经 
+网络 就 如同 万能 的 大杀器 在 计算机 视觉 的 
+各个 领域 开始 发挥 作用 cuda 的 应用 在 这一 
+进程 中 起到 了 毋庸置疑 的 作用 所以 想 要在 
+这一 领域 开展 工作 使用 正确 的 硬件 和 计算 
+框架 是 很 重要 的 本文 提供 了 一个 快速 
+搭建 MXNET 环境 的 方案 虽然 TensorFlow 和 Caffe 是 
+更加 主流 但是 MXnet 作为 Amazon 主推 的 深度 学习 
+平台 具有 轻量级 高 性能 等 特点 并且 支持 多种 
+语言 可以 说 是 一个 非常 具有 潜力 的 框架 
+我 的 硬件 环境 是 一台 GPU 服务器 有 2块 
+tesla p100 进行 GPU 运算 对于 一般 人 来说 你 
+的 硬件 至少 需要 一个 支持 cuda 的 英伟达 显卡 
+并且 安装 了 任意 linux 环境 常规 安装 教程 很多 
+但 都很 繁琐 由于 我 是 用 docker 进行 部署 
+所以 可以 非常 快速 的 进行 环境 搭建 会用 docker 
+并且 想 省去 安装 过程 的 同学 可以 参考 以下 
+教程 前提 是 你 的 linux 环境 中 已经 安装 
+了 docker nvidia cuda 驱动 NVIDIA docker 等 这些 步骤 
+在 网上 有 很多 的 教程 在此 不表 获取 镜像 
+https / / hub . docker . com / search 
+/ isAutomated = 0 & isOfficial = 0 & page 
+= 1 & pullCount = 0 & q = mxnet 
+& starCount = 0     在 docker 官方 取得 
+你 需要 镜像 的 信息 并 执行 docker pull 命令 
+docker pull mxnet / python 你 的 版本 tag 如果 
+镜像 下载 速度 慢 可以 搜 一些 国内 镜像 服务器 
+的 地址 例如   docker pull registry . docker cn 
+. com / mxnet / python 1 . 3.0 _ 
+gpu _ cu90 _ mkl 随后 启动 该 镜像 启动 
+镜像 执行 docker ps a 获取 你 刚 pull 的 
+镜像 的 id 即 下文 命令 commit 后面 的 字段 
+给 你 的 镜像 取 一个 名字 docker commit 90b97b96394a 
+example 0.1 随后 启动 该 镜像 如果 需要 进行 外部 
+访问 比如 启动 一个 jupyter 在 浏览器 中 进行 编码 
+需要 配置 端口映射 全部 命令 如下 docker run itd runtime 
+= nvidia   name = example p 19999 8888 p 
+16007 6006 example 0.2 / bin / bash 这时 镜像 
+应该 已经 启动 使用 docker ps a 指令 查看 容器 
+运行 状态 如果 正常 运行 即可 进入 容器 执行命令   
+    docker exec it example bash 进入 容器 此时 
+已经 配 好了 mxnet 环境 进入 python 随便 敲 几行 
+代码 进行 测试 我 在 实际 使用 过程 中 发现该 
+容器 缺 了 很多 基础 组件 如 python dev matplotlib 
+等 甚至连 vi / vim 都 没有 所以 要 安装 
+jupyter 的话 注意 添加 相关 依赖 如果 报错 缺 包 
+安装 这些 包 即可 jupyter 安装 教程 也 很多 在此 
+不表 启动 jupyter 后 即可 愉快 的 进行 各种 实验 
+啦 ~ 现在 计算机 视觉 领域 深度 学习 已经 成为 主流 我 
+在 美 读研 的 时候 深度 学习 并未 取得 大 
+的 突破 当时 流行 的 图像 识别 分类器 多 采用 
+手工 设计 特征 + 编码 + SVM 支持 向量 机 
+框架 下 的 算法 终于 到了 2012年 我 刚 毕业 
+在 ILSVRC 上 alexnet 的 横空出世 将 分类 错误率 从 
+之前 的 25.7% 降 到了 15.3% 这 只是 一个 5 
+卷积 层 + 2 全 连接 层 的 卷积 神经网络 
+却 一下 取得 了 10% 的 突破 这是 深度 学习 
+在 CV 领域 的 一次 翻身仗 自此以后 ImageNet 的 参赛者 
+几乎 全体 转向 了 基于 卷积 神经 网络 的 深度 
+学习 算法 基于 此 的 应用 如 雨后春笋 般 一夜 
+之间 全 冒了 出来 深度 学习 尤其 是 卷积 神经 
+网络 就 如同 万能 的 大杀器 在 计算机 视觉 的 
+各个 领域 开始 发挥 作用 cuda 的 应用 在 这一 
+进程 中 起到 了 毋庸置疑 的 作用 所以 想 要在 
+这一 领域 开展 工作 使用 正确 的 硬件 和 计算 
+框架 是 很 重要 的 本文 提供 了 一个 快速 
+搭建 MXNET 环境 的 方案 虽然 TensorFlow 和 Caffe 是 
+更加 主流 但是 MXnet 作为 Amazon 主推 的 深度 学习 
+平台 具有 轻量级 高 性能 等 特点 并且 支持 多种 
+语言 可以 说 是 一个 非常 具有 潜力 的 框架 
+我 的 硬件 环境 是 一台 GPU 服务器 有 2块 
+tesla p100 进行 GPU 运算 对于 一般 人 来说 你 
+的 硬件 至少 需要 一个 支持 cuda 的 英伟达 显卡 
+并且 安装 了 任意 linux 环境 常规 安装 教程 很多 
+但 都很 繁琐 由于 我 是 用 docker 进行 部署 
+所以 可以 非常 快速 的 进行 环境 搭建 会用 docker 
+并且 想 省去 安装 过程 的 同学 可以 参考 以下 
+教程 前提 是 你 的 linux 环境 中 已经 安装 
+了 docker nvidia cuda 驱动 NVIDIA docker 等 这些 步骤 
+在 网上 有 很多 的 教程 在此 不表 获取 镜像 
+https / / hub . docker . com / search 
+/ isAutomated = 0 & isOfficial = 0 & page 
+= 1 & pullCount = 0 & q = mxnet 
+& starCount = 0     在 docker 官方 取得 
+你 需要 镜像 的 信息 并 执行 docker pull 命令 
+docker pull mxnet / python 你 的 版本 tag 如果 
+镜像 下载 速度 慢 可以 搜 一些 国内 镜像 服务器 
+的 地址 例如   docker pull registry . docker cn 
+. com / mxnet / python 1 . 3.0 _ 
+gpu _ cu90 _ mkl 随后 启动 该 镜像 启动 
+镜像 执行 docker ps a 获取 你 刚 pull 的 
+镜像 的 id 即 下文 命令 commit 后面 的 字段 
+给 你 的 镜像 取 一个 名字 docker commit 90b97b96394a 
+example 0.1 随后 启动 该 镜像 如果 需要 进行 外部 
+访问 比如 启动 一个 jupyter 在 浏览器 中 进行 编码 
+需要 配置 端口映射 全部 命令 如下 docker run itd runtime 
+= nvidia   name = example p 19999 8888 p 
+16007 6006 example 0.2 / bin / bash 这时 镜像 
+应该 已经 启动 使用 docker ps a 指令 查看 容器 
+运行 状态 如果 正常 运行 即可 进入 容器 执行命令   
+    docker exec it example bash 进入 容器 此时 
+已经 配 好了 mxnet 环境 进入 python 随便 敲 几行 
+代码 进行 测试 我 在 实际 使用 过程 中 发现该 
+容器 缺 了 很多 基础 组件 如 python dev matplotlib 
+等 甚至连 vi / vim 都 没有 所以 要 安装 
+jupyter 的话 注意 添加 相关 依赖 如果 报错 缺 包 
+安装 这些 包 即可 jupyter 安装 教程 也 很多 在此 
+不表 启动 jupyter 后 即可 愉快 的 进行 各种 实验 
+啦 ~ 现在 计算机 视觉 领域 深度 学习 已经 成为 主流 我 
+在 美 读研 的 时候 深度 学习 并未 取得 大 
+的 突破 当时 流行 的 图像 识别 分类器 多 采用 
+手工 设计 特征 + 编码 + SVM 支持 向量 机 
+框架 下 的 算法 终于 到了 2012年 我 刚 毕业 
+在 ILSVRC 上 alexnet 的 横空出世 将 分类 错误率 从 
+之前 的 25.7% 降 到了 15.3% 这 只是 一个 5 
+卷积 层 + 2 全 连接 层 的 卷积 神经网络 
+却 一下 取得 了 10% 的 突破 这是 深度 学习 
+在 CV 领域 的 一次 翻身仗 自此以后 ImageNet 的 参赛者 
+几乎 全体 转向 了 基于 卷积 神经 网络 的 深度 
+学习 算法 基于 此 的 应用 如 雨后春笋 般 一夜 
+之间 全 冒了 出来 深度 学习 尤其 是 卷积 神经 
+网络 就 如同 万能 的 大杀器 在 计算机 视觉 的 
+各个 领域 开始 发挥 作用 cuda 的 应用 在 这一 
+进程 中 起到 了 毋庸置疑 的 作用 所以 想 要在 
+这一 领域 开展 工作 使用 正确 的 硬件 和 计算 
+框架 是 很 重要 的 本文 提供 了 一个 快速 
+搭建 MXNET 环境 的 方案 虽然 TensorFlow 和 Caffe 是 
+更加 主流 但是 MXnet 作为 Amazon 主推 的 深度 学习 
+平台 具有 轻量级 高 性能 等 特点 并且 支持 多种 
+语言 可以 说 是 一个 非常 具有 潜力 的 框架 
+我 的 硬件 环境 是 一台 GPU 服务器 有 2块 
+tesla p100 进行 GPU 运算 对于 一般 人 来说 你 
+的 硬件 至少 需要 一个 支持 cuda 的 英伟达 显卡 
+并且 安装 了 任意 linux 环境 常规 安装 教程 很多 
+但 都很 繁琐 由于 我 是 用 docker 进行 部署 
+所以 可以 非常 快速 的 进行 环境 搭建 会用 docker 
+并且 想 省去 安装 过程 的 同学 可以 参考 以下 
+教程 前提 是 你 的 linux 环境 中 已经 安装 
+了 docker nvidia cuda 驱动 NVIDIA docker 等 这些 步骤 
+在 网上 有 很多 的 教程 在此 不表 获取 镜像 
+https / / hub . docker . com / search 
+/ isAutomated = 0 & isOfficial = 0 & page 
+= 1 & pullCount = 0 & q = mxnet 
+& starCount = 0     在 docker 官方 取得 
+你 需要 镜像 的 信息 并 执行 docker pull 命令 
+docker pull mxnet / python 你 的 版本 tag 如果 
+镜像 下载 速度 慢 可以 搜 一些 国内 镜像 服务器 
+的 地址 例如   docker pull registry . docker cn 
+. com / mxnet / python 1 . 3.0 _ 
+gpu _ cu90 _ mkl 随后 启动 该 镜像 启动 
+镜像 执行 docker ps a 获取 你 刚 pull 的 
+镜像 的 id 即 下文 命令 commit 后面 的 字段 
+给 你 的 镜像 取 一个 名字 docker commit 90b97b96394a 
+example 0.1 随后 启动 该 镜像 如果 需要 进行 外部 
+访问 比如 启动 一个 jupyter 在 浏览器 中 进行 编码 
+需要 配置 端口映射 全部 命令 如下 docker run itd runtime 
+= nvidia   name = example p 19999 8888 p 
+16007 6006 example 0.2 / bin / bash 这时 镜像 
+应该 已经 启动 使用 docker ps a 指令 查看 容器 
+运行 状态 如果 正常 运行 即可 进入 容器 执行命令   
+    docker exec it example bash 进入 容器 此时 
+已经 配 好了 mxnet 环境 进入 python 随便 敲 几行 
+代码 进行 测试 我 在 实际 使用 过程 中 发现该 
+容器 缺 了 很多 基础 组件 如 python dev matplotlib 
+等 甚至连 vi / vim 都 没有 所以 要 安装 
+jupyter 的话 注意 添加 相关 依赖 如果 报错 缺 包 
+安装 这些 包 即可 jupyter 安装 教程 也 很多 在此 
+不表 启动 jupyter 后 即可 愉快 的 进行 各种 实验 
+啦 ~ 

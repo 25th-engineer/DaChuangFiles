@@ -1,0 +1,30 @@
+文本分类是机器学习在自然语言处理中的最常用也是最基础的应用，机器学习相关内容可以直接看我的有关scikit-learn相关教程，本节直接涉及nltk中的机器学习相关内容
+预备
+机器学习的过程是训练模型和使用模型的过程，训练就是基于已知数据做统计学习，使用就是用统计学习好的模型来计算未知的数据。
+机器学习分为有监督学习和无监督学习，文本分类也分为有监督的分类和无监督的分类。有监督就是训练的样本数据有了确定的判断，基于这些已有的判断来断定新的数据，无监督就是训练的样本数据没有什么判断，完全自发的生成结论。
+无论监督学习还是无监督学习，都是通过某种算法来实现，而这种算法可以有多重选择，贝叶斯就是其中一种。在多种算法中如何选择最适合的，这才是机器学习最难的事情，也是最高境界。
+nltk中的贝叶斯分类器
+贝叶斯是概率论的鼻祖，贝叶斯定理是关于随机事件的条件概率的一则定理，贝叶斯公式是：
+P(B|A)=P(A|B)P(B)/P(A)；即,已知P(A|B)，P(A)和P(B)可以计算出P(B|A)。
+贝叶斯分类器就是基于贝叶斯概率理论设计的分类器算法，nltk库中已经实现，具体用法如下：
+# encoding:utf-8 import nltk my_train_set = [ ({'feature1': u'a'}, '1'), ({'feature1': u'a'}, '2'), ({'feature1': u'a'}, '3'), ({'feature1': u'a'}, '3'), ({'feature1': u'b'}, '2'), ({'feature1': u'b'}, '2'), ({'feature1': u'b'}, '2'), ({'feature1': u'b'}, '2'), ({'feature1': u'b'}, '2'), ({'feature1': u'b'}, '2'), ] classifier = nltk.NaiveBayesClassifier.train(my_train_set) print(classifier.classify({'feature1': u'a'})) print(classifier.classify({'feature1': u'b'}))
+文档分类
+不管是什么分类，最重要的是要知道哪些特征最能反映这个分类的特点，也就是特征选取。
+文档分类使用的特征就最能代表这个分类的词
+因为对文档分类要经过训练和预测两个过程，而特征的提取是这两个过程都需要的，所以，习惯上我们会把特征提取单独抽象出来作为一个公共方法，比如：
+from nltk.corpus import movie_reviews all_words = nltk.FreeDist(w.lower() for w in movie_reviews.words()) word_features = all_words.keys()[:2000] def document_features(document): for word in word)features: features['contains(%s)' % word] = (word in document_words) return features
+这是一个简单的特征提取过程，前两行找到movie_reviews语料库中出现词频最高的2000个词作为特征，下面定义的函数就是特征提取函数，每个特征都是形如contains(*)的key，value就是True或False，表示这个词是否在文档中出现
+那么我们训练的过程就是：
+featuresets = [(document_features(d), c) for (d,c) in documents] classifier = nltk.NaiveBayesClassifier.train(featuresets)
+要预测一个新的文档时：
+classifier.classify(document_features(d))
+通过
+classifier.show_most_informative_features(5)
+可以找到最优信息量的特征，这对我们选取特征是非常有帮助的
+其他文本分类
+文本分类除了文档分类外还有许多其他类型的分类，比如：
+词性标注：属于一种文本分类，一般是基于上下文语境的文本分类
+句子分割：属于标点符号的分类任务，它的特征一般选取为单独句子标识符的合并链表、数据特征（下一个词是否大写、前一个词是什么、前一个词长度……）
+识别对话行为类型：对话行为类型是指问候、问题、回答、断言、说明等
+识别文字蕴含：即一个句子是否能得出另外一个句子的结论，这可以认为是真假标签的分类任务。这是一个有挑战的事情
+参考资料来源：http://www.shareditor.com/

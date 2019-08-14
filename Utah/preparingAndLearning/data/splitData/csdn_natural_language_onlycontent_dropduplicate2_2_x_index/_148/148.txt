@@ -1,0 +1,25 @@
+例子是我学习的教程的一个例子，收集了一些客户对于饭店的评价，目标是将他们进行分类，分成好评和差评。
+数据的前5项：
+这里用到了一个之前没用到的包NLTK对我们的文本数据进行必要的处理，转化，使其变成能够进入我们模型的数据，本文针对一个例子进行介绍，详细可以查看官方文档对于这个包的说明。
+NLTK的介绍：
+NLTK是一个高效的Python构建的平台，用来处理人类自然语言数据。它提供了易于使用的接口，通过这些接口可以访问超过50个语料库和词汇资源（如WordNet），还有一套用于分类、标记化、词干标记、解析和语义推理的文本处理库。
+实现的大致步骤：
+对文本进行处理（去除标点符号，单词提取，大小写转化…）
+提取出来的单词需要进一步的清理（去除虚词，单词词根化…）词根化处理是为了避免相同单词的不同形式影响到我们的模型。（因为最终模型对于结果的处理是通过统计词出现的频率所属的类别并依此来对新样本进行分类的）
+对提取结果进行稀疏矩阵化操作，转化为可进入模型的数据。
+代码：
+import pandas as pd import numpy as np import re #正则用到的库 import nltk #文本处理用 from nltk.corpus import stopwords #处理文本中的虚词 nltk.download('stopwords') #将包含的虚词的加载下来，用于后面的比对，去除虚词 from nltk.stem.porter import PorterStemmer dataset = pd.read_csv('Restaurant_Reviews.tsv',delimiter='\t') #加载数据 pocket = [] #用于存储处理后的文本
+for i in range(dataset.shape[0]): review = dataset['Review'][i] review = re.sub('[^a-zA-Z]' , ' ' , review) #进行正则化处理，留下字母（不区分大小写），其余替换为空格，防止处理后单词连接在一起，破坏了词意 review = review.lower() #将大写的字母变成小写 review = review.split() ps = PorterStemmer() #词根化 review = [ps.stem(word) for word in review if not word in set(stopwords.words('english'))] ''' 这里的大致作用是遍历review中提取的单词，筛选出不在虚词包中的单词，并进行词根化。 ''' review = ' '.join(review) #对筛选结果重新组合成句子。 pocket.append(review)
+关于词根化：维基百科
+from sklearn.feature_extraction.text import CountVectorizer tool = CountVectorizer(max_features=1500) #将文本序列进行稀疏矩阵转化 x = tool.fit_transform(pocket).toarray() #shape(1000, 1565) ''' 这里是指我们的数据有1000个样本，1565个单词，CountVectorizer(max_features=1500)，这里限制了特征最大为1500 所以之后我们x.shape会是（1000，1500）也可以根据需求进行调整。 ''' y = dataset.iloc[:,1]
+from sklearn.model_selection import train_test_split x_train,x_test,y_train,y_test = train_test_split(x,y,test_size = 0.2,random_state = 0) from sklearn.naive_bayes import GaussianNB classifer = GaussianNB() classifer = classifer.fit(x_train,y_train) y_pre = classifer.predict(x_test) #利用贝叶斯进行拟合训练集，并做出测试集的预测。
+from sklearn.metrics import confusion_matrix score = confusion_matrix(y_test,y_pre) print(score) point = (score[0,0]+score[1,1])/x_test.shape[0] print('分类器在测试集上的表现：'+str(point)) #利用混淆矩阵进行预测结果准确的检验。
+输出：
+[[55 42] [12 91]] 分类器在测试集上的表现：0.73
+使用随机森林试试：
+from sklearn.ensemble import RandomForestClassifier classifer = RandomForestClassifier(n_estimators=10000,random_state=0) classifer = classifer.fit(x_train,y_train)
+y_pre = classifer.predict(x_test) score = confusion_matrix(y_test,y_pre) print(score) point = (score[0,0]+score[1,1])/x_test.shape[0] print('分类器在测试集上的表现：'+str(point))
+输出：
+[[74 23] [38 65]] 分类器在测试集上的表现：0.695 #准确度不如贝叶斯。。
+至此例子结束。这个只是入门级别，更深层次的用法会对文本进行更加细化的处理，利用更好的模型。
+如有错误，还请指出，万分感谢。

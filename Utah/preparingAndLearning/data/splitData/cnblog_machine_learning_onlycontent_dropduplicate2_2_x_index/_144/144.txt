@@ -1,0 +1,186 @@
+python机器学习实战（三）
+版权声明：本文为博主原创文章，转载请指明转载地址
+www.cnblogs.com/fydeblog/p/7277205.html
+前言
+这篇博客是关于机器学习中基于概率论的分类方法--朴素贝叶斯，内容包括朴素贝叶斯分类器，垃圾邮件的分类，解析RSS源数据以及用朴素贝叶斯来分析不同地区的态度.
+操作系统：ubuntu14.04 运行环境：anaconda-python2.7-jupyter notebook 参考书籍：机器学习实战和源码,机器学习（周志华） notebook writer ----方阳
+注意事项：在这里说一句，默认环境python2.7的notebook，用python3.6的会出问题，还有我的目录可能跟你们的不一样，你们自己跑的时候记得改目录，我会把notebook和代码以及数据集放到结尾的百度云盘，方便你们下载！
+1. 基于贝叶斯决策理论的分类方法
+朴素贝叶斯的特点
+优 点: 在数据较少的情况下仍然有效,可以处理多类别问题。
+缺 点: 对于输入数据的准备方式较为敏感。
+适用数据类型:标称型数据。
+贝叶斯决策理论的核心思想：选择具有最高概率的决策。（最小化每个样本的条件风险，则总体风险也就最小，就是选择最高概率，减小风险）
+2. 条件概率
+2.1 简单回顾
+条件概率在朴素贝叶斯里面是必不可少的一环，下面来简单介绍介绍
+假设现在有一个装了7块石头的罐子,其中3块是灰色的, 4块是黑色的 。如果从罐子中随机取出一块石头,那么是灰色石头的可能性是多少? 由于取石头有 7 种可能 ,其中 3种为灰色 ,所以取出灰色石头的概率为 3/7 。那么取到黑色石头的概率又是多少呢?很显然 ,是4/7 。
+如果这7块石头放在两个桶中,那么上述概率应该如何计算? （设两个桶分为A，B，A桶装了2个灰色和2个黑色的石头，B桶装了1个灰色和2个黑色的石头）
+要计算P(gray)或者P(black) ,事先得知道石头所在桶的信息会不会改变结果?你有可能巳经想到计算从B桶中取到灰色石头的概率的办法,这就是所谓的条件概率.
+来计算P(gray|bucketB),这个是条件概率，在已知是从B桶拿出石头的条件下，拿到灰色石头的概率。
+计算公式：P(gray|bucketB) = P(gray and bucketB) / P(bucketB) （将两者同时发生的概率除以前提条件发生的概率）
+我们知道P(bucketB)就是3/7，B桶的石头数/总石头数， P(gray and bucketB) 是1/7，B桶中的灰色石头数/总石头数，所以P(gray|bucketB) = 1/3
+这里说一下P(gray and bucketB) ，它等于P(bucketB|gray)乘以P(gray)的，先发生gray,然后在gray的基础上发生bucketB，就是gray and bucketB
+所以这里的公式还可以变一下，P(gray|bucketB) = P(gray and bucketB) / P(bucketB) =P(bucketB|gray)* P(gray) / P(bucketB)
+一般情况下，写成 p(c|x) = p(x|c)* p(c) / p(x) 这就是贝叶斯准则
+2.2 使用条件概率进行分类
+贝叶斯决策论中真正比较的是条件概率p(c1|x,y)和p(c2|x,y)，这些符号所代表的具体意义是，给定某个由x，y表示的数据点，想知道该数据点来自类别c1的概率是多少?数据点来自类别c2的概率又是多少?
+如果 p(c1|x,y) > p(c2|x,y) ，属于类别c1 如果 p(c2|x,y) > p(c1|x,y) ，属于类别c2
+这些概率可以有2.1的贝叶斯准则计算
+3. 使用朴素贝叶斯进行留言分类
+朴素贝叶斯的一般过程
+(1) 收集数据:可以使用任何方法。本章使用RSS源。
+(2) 准备数据:需要数值型或者布尔型数据。
+(3) 分析数据:有大量特征时,绘制特征作用不大,此时使用直方图效果更好。
+(4) 训练算法:计算不同的独立特征的条件概率。
+(5) 测试算法:计算错误率。
+(6) 使用算法:一个常见的朴素贝叶斯应用是文档分类。可以在任意的分类场景中使用朴素贝叶斯命类器,不一定非要是文本
+朴素贝叶斯的两个假设 (1) 特征之间是统计独立的，即一个特征或者单词出现的可能性与它和其他单词相邻没有关系。 (2) 每个特征同等重要。
+以上两个假设是有问题的，不够严谨，但处理方便，实际效果却很好。
+3.1 准备数据：从文本中构建词向量
+词表到向量的转换函数如下：
+1 def loadDataSet(): 2 postingList=[['my', 'dog', 'has', 'flea', 'problems', 'help', 'please'], 3 ['maybe', 'not', 'take', 'him', 'to', 'dog', 'park', 'stupid'], 4 ['my', 'dalmation', 'is', 'so', 'cute', 'I', 'love', 'him'], 5 ['stop', 'posting', 'stupid', 'worthless', 'garbage'], 6 ['mr', 'licks', 'ate', 'my', 'steak', 'how', 'to', 'stop', 'him'], 7 ['quit', 'buying', 'worthless', 'dog', 'food', 'stupid']] 8 classVec = [0,1,0,1,0,1] #1 is abusive, 0 not 9 return postingList,classVec 10 11 def createVocabList(dataSet): 12 vocabSet = set([]) #create empty set 13 for document in dataSet: 14 vocabSet = vocabSet | set(document) #union of the two sets 15 return list(vocabSet) 16 17 def setOfWords2Vec(vocabList, inputSet): 18 returnVec = [0]*len(vocabList) 19 for word in inputSet: 20 if word in vocabList: 21 returnVec[vocabList.index(word)] = 1 22 else: print "the word: %s is not in my Vocabulary!" % word 23 return returnVec
+第一个loadDataSet函数是返回词条切分后的文档集合postlist（选自斑点犬爱好者留言板）和类别标签集合classvec（1代表侮辱，0则是正常言论）
+第二个createVocabList函数会返回输入数据集所有不重复词汇的列表
+第三个setOfWords2Vec函数的功能是遍历输入vocablist的所有单词,如果当初出现了InputSet中的单词，returnVec对应位数的值返回1，无则返回0
+简单来讲，第一个函数的作用是界定训练类别，看之后的文档是否含有类别中的词汇，第二个函数的作用是将一篇文档做成列表，方便后面进行标记。第三个函数则是将第二个函数生成的列表根据第一个类别词汇进行标记，将单词转化成数字，方便后面计算条件概率。
+测试一下吧(所有函数都放在bayes中)
+cd 桌面/machinelearninginaction/Ch04
+/home/fangyang/桌面/machinelearninginaction/Ch04
+import bayes
+listOPosts,listClasses = bayes.loadDataSet()
+myVocabList = bayes.createVocabList(listOPosts)
+myVocabList
+bayes.setOfWords2Vec(myVocabList,listOPosts[0])
+bayes.setOfWords2Vec(myVocabList,listOPosts[3])
+3.2 训练算法 :从词向量计算概率
+根据上面介绍的三个函数，我们知道如何将一组单词转换为一组数字，也知道一个词是否出现在一篇文档中。现在已知文档的类别，让我们使用转换得到的数字来计算条件概率吧
+还是根据上面的贝叶斯准则来计算条件概率，不过公式会有一点不一样
+p(ci|w) = p(w|ci)* p(ci) / p(w) (这里的ci表示所属类别，这里有两种可能性1和0，w为向量，由多个数值组成)
+我们根据上面的公式对每个类进行计算，然后比较这两个概率值的大小。计算过程如下
+首先可以通过类别 i ( 侮辱性留言或非侮辱性留言)中文档数除以总的文档数来计算概率p(ci)，接下来计算p(w|ci)，由于p(w|ci) = p(w0,w1,w2..wn|ci)，又因为所有词都相互独立，所以p(w|ci) = p(w0|ci)p(w1|ci)p(w2|ci)...p(wn|ci)
+于是函数的伪代码相应如下
+计算每个类别中的文档数目 对每篇训练文档: 对每个类别: 如果词条出现文档中―增加该词条的计数值 增加所有词条的计数值 对每个类别: 对每个词条: 将该词条的数目除以总词条数目得到条件概率 返回每个类别的条件概率
+参考代码如下
+1 def trainNB0(trainMatrix,trainCategory): 2 numTrainDocs = len(trainMatrix) 3 numWords = len(trainMatrix[0]) 4 pAbusive = sum(trainCategory)/float(numTrainDocs) 5 p0Num = zeros(numWords); p1Num = zeros(numWords) 6 p0Denom = 0.0; p1Denom = 0.0 7 for i in range(numTrainDocs): 8 if trainCategory[i] == 1: 9 p1Num += trainMatrix[i] 10 p1Denom += sum(trainMatrix[i]) 11 else: 12 p0Num += trainMatrix[i] 13 p0Denom += sum(trainMatrix[i]) 14 p1Vect = p1Num/p1Denom 15 p0Vect = p0Num/p0Denom 16 return p0Vect,p1Vect,pAbusive
+输入的trainMatrix是文档经过setOfWords2Vec函数转换后的列表，trainCategory是每篇文档构成类别标签向量。输出是返回每个类别的概率，pAbusive等于类别和除以训练的样本数，这个就是说明一下文档类别的概率分布，没有什么其他意思
+由于要算每一个词语的概率，这里用到里numpy的array数组，可以很方便的计算每个词语的概率，即是用p0Num和p1Num来统计不同类别样本的词语所出现的次数，最后对每个元素除以该类别中的总词数
+来测试一下吧
+from numpy import *
+reload(bayes)
+<module 'bayes' from 'bayes.py'>
+listOPosts,listClasses = bayes.loadDataSet()
+myVocabList = bayes.createVocabList(listOPosts)
+trainMat = []
+for postinDoc in listOPosts: trainMat.append(bayes.setOfWords2Vec(myVocabList,postinDoc))
+p0V , p1V, pAb = bayes.trainNB0(trainMat,listClasses)
+p0V
+p1V
+看一看在给定文档类别条件下词汇表中单词的出现概率, 看看是否正确.
+词汇表中的第一个词是cute , 其在类别 0中出现1次 ,而在类别1中从未出现。对应的条件概率分别为 0.04166667 与 0.0,该计算是正确的
+我们找找所有概率中的最大值,该值出现在p(1)数组第21个下标位置,大小为 0.15789474.可以查到该单词是stupid，这意味着它最能表征类别1的单词。
+3.3 测试算法：根据现实情况修改分类器
+利用贝叶斯分类器进行文档文类时，要计算每个元素的条件概率并相乘，若其中有一个概率值等于0，那么最后的乘积也为0，为降低这种影响，可以将所有词的出现数初始化为1 ,并将分母初始化为2 。
+相应的trainNB0()的第4行和第5行修改为：
+p0Num = ones(numWords);  p1Num = ones(numWords)      #change to ones()
+p0Denom = 2.0; p1Denom = 2.0                                             #change to 2.0
+另一个问题是向下溢出，乘积p(w0|ci)p(w1|ci)p(w2|ci)...p(wn|ci)太小的缘故 解决的办法是对乘积取对数
+相应的trainNB0()的第13行和第14行修改为：
+p1Vect = log(p1Num/p1Denom)        #change to log()
+p0Vect = log(p0Num/p0Denom)        #change to log()
+将更改好的函数命名为trainNB0_change
+现在已经准备好构建完整的分类器了。当使用numpy向量处理功能时 , 这一切变得十分简单.
+参考代码如下：
+1 def classifyNB(vec2Classify, p0Vec, p1Vec, pClass1): 2 p1 = sum(vec2Classify * p1Vec) + log(pClass1) #element-wise mult 3 p0 = sum(vec2Classify * p0Vec) + log(1.0 - pClass1) 4 if p1 > p0: 5 return 1 6 else: 7 return 0 8 def testingNB(): 9 listOPosts,listClasses = loadDataSet() 10 myVocabList = createVocabList(listOPosts) 11 trainMat=[] 12 for postinDoc in listOPosts: 13 trainMat.append(setOfWords2Vec(myVocabList, postinDoc)) 14 p0V,p1V,pAb = trainNB0_change(array(trainMat),array(listClasses)) 15 testEntry = ['love', 'my', 'dalmation'] 16 thisDoc = array(setOfWords2Vec(myVocabList, testEntry)) 17 print testEntry,'classified as: ',classifyNB(thisDoc,p0V,p1V,pAb) 18 testEntry = ['stupid', 'garbage'] 19 thisDoc = array(setOfWords2Vec(myVocabList, testEntry)) 20 print testEntry,'classified as: ',classifyNB(thisDoc,p0V,p1V,pAb)
+第一个函数就是两个类别的条件概率进行比较，输出最终的类别信息。 第二个函数就是一个测试函数，函数前面部分跟上面一样，后面引入两个测试样本，进行分类。
+reload(bayes)
+<module 'bayes' from 'bayes.pyc'>
+bayes.testingNB()
+['love', 'my', 'dalmation'] classified as: 0 ['stupid', 'garbage'] classified as: 1
+3.4 文档词袋模型
+我们将每个词的出现与否作为一个特征,这可以被描述为词集模型，上面就是词集模型。
+如果一个词在文档中出现不止一次,这可能意味着包含该词是否出现在文档中所不能表达的某种信息,这种方法被称为词袋模型。
+词集和词袋的区别：在词袋中,每个单词可以出现多次 ,而在词集中,每个词只能出现一次。
+为适应词袋模型 ,需要对函数setOfWords2Vec稍加修改，修改后的函数为bagOfWords2Vec，代码如下：
+1 def bagOfWords2VecMN(vocabList, inputSet): 2 returnVec = [0]*len(vocabList) 3 for word in inputSet: 4 if word in vocabList: 5 returnVec[vocabList.index(word)] += 1 6 return returnVec
+这个返回的列表表现的是单词出现的次数，还不再是是否出现
+4. 使用朴素贝叶斯过滤垃圾邮件
+4.1 准备数据：切分文本
+前面介绍的词向量是直接给定的，下面来介绍如何从文本中构建自己的词列表
+先从一个文本字符串介绍
+mySent = ' This book is the best book on python or M.L. I have ever laid eyes upon.'
+mySent.split()
+可以看到, 切分的结果不错, 但是标点符号也被当成了词的一部分.
+解决方法：可以使用正则表示式来切分句子 ,其中分隔符是除单词、数字外的任意字符串
+import re
+regEx = re.compile('\\W*')
+listOfTokens = regEx.split(mySent)
+listOfTokens
+可以看到里面的标点没有了，但剩下一些空字符，还要进行一步，去掉这些空字符。
+[tok for tok in listOfTokens if len(tok) >0]
+空字符消掉了，我们可以看到，有的词首字母是大写的，这对句子查找很有用，但我们是构建词袋模型，所以还是希望格式统一，还要处理一下
+[tok.lower() for tok in listOfTokens if len(tok) >0]
+可以看到大写全部变成了小写，如果是想从小写变成大写，只需将tok.lower()改成top.upper()即可
+我们构建一个testParse函数，来切分文本，代码如下
+1 def textParse(bigString): #input is big string, #output is word list 2 import re 3 listOfTokens = re.split(r'\W*', bigString) 4 return [tok.lower() for tok in listOfTokens if len(tok) > 2]
+4.2 测试算法：使用朴素贝叶斯进行交叉验证
+参考代码如下：
+1 def spamTest(): 2 docList=[]; classList = []; fullText =[] 3 for i in range(1,26): 4 wordList = textParse(open('email/spam/%d.txt' % i).read()) 5 docList.append(wordList) 6 fullText.extend(wordList) 7 classList.append(1) 8 wordList = textParse(open('email/ham/%d.txt' % i).read()) 9 docList.append(wordList) 10 fullText.extend(wordList) 11 classList.append(0) 12 vocabList = createVocabList(docList)#create vocabulary 13 trainingSet = range(50); testSet=[] #create test set 14 for i in range(10): 15 randIndex = int(random.uniform(0,len(trainingSet))) 16 testSet.append(trainingSet[randIndex]) 17 del(trainingSet[randIndex]) 18 trainMat=[]; trainClasses = [] 19 for docIndex in trainingSet:#train the classifier (get probs) trainNB0 20 trainMat.append(bagOfWords2VecMN(vocabList, docList[docIndex])) 21 trainClasses.append(classList[docIndex]) 22 p0V,p1V,pSpam = trainNB0(array(trainMat),array(trainClasses)) 23 errorCount = 0 24 for docIndex in testSet: #classify the remaining items 25 wordVector = bagOfWords2VecMN(vocabList, docList[docIndex]) 26 if classifyNB(array(wordVector),p0V,p1V,pSpam) != classList[docIndex]: 27 errorCount += 1 28 print "classification error",docList[docIndex] 29 print 'the error rate is: ',float(errorCount)/len(testSet) 30 #return vocabList,fullText
+第一个循环是对垃圾邮件和非垃圾邮件进行切分，然后生成词列表和类标签
+第二个循环是0到50个数中随机生成10个序号
+第三个循环是将第二个循环得到的序号映射到词列表，得到训练集和相应的类别，然后进行训练算法
+第四个循环是进行错误率计算，分类出的类别与实际类别相比较，累计错误的样本数，最后除以总数，得到错误率
+bayes.spamTest()
+the error rate is: 0.0
+bayes.spamTest()
+每次运行得出的结果可能不太一样，因为是随机选的序号
+5. 使用朴素贝叶斯分类器从个人广告中获取区域倾向
+在这个最后的例子当中,我们将分别从美国的两个城市中选取一些人,通过分析这些人发布的征婚广告信息,来比较这两个城市的人们在广告用词上是否不同。如果结论确实是不同,那么他们各自常用的词是哪些?从人们的用词当中,我们能否对不同城市的人所关心的内容有所了解？
+下面将使用来自不同城市的广告训练一个分类器,然后观察分类器的效果。我们的目的并不是使用该分类器进行分类,而是通过观察单词和条件概率值来发现与特定城市相关的内容。
+5.1 收集数据：导入RSS源
+接下来要做的第一件事是使用python下载文本,而利用RSS，这很容易得到，而Universal Feed Parser 是python最常用的RSS程序库。
+由于python默认不会安装feedparser，所以需要自己手动安装，这里附上ubuntu下的安装方法
+第一步：wget http://pypi.python.org/packages/source/f/feedparser/feedparser-5.1.3.tar.gz#md5=f2253de78085a1d5738f626fcc1d8f71
+第二步：tar zxf feedparser-5.1.3.tar.gz
+第三步：cd feedparser-5.1.3
+第四步：python setup.py install
+具体可以看到这个链接：blog.csdn.net/tinkle181129/article/details/45343267
+相关文档：http://code.google.com/p/feedparser/
+import feedparser
+ny = feedparser.parse('http://newyork.craigslist.org/stp/index.rss')
+上面是打开了Craigslist上的RSS源，要访问所有条目的列表，输入以下代码
+ny['entries']
+len(ny['entries'])
+Out：25
+可以构建一个类似spamTest的函数来对测试过程自动化
+1 def calcMostFreq(vocabList,fullText): 2 import operator 3 freqDict = {} 4 for token in vocabList: 5 freqDict[token]=fullText.count(token) 6 sortedFreq = sorted(freqDict.iteritems(), key=operator.itemgetter(1), reverse=True) 7 return sortedFreq[:30] 8 9 def localWords(feed1,feed0): 10 import feedparser 11 docList=[]; classList = []; fullText =[] 12 minLen = min(len(feed1['entries']),len(feed0['entries'])) 13 for i in range(minLen): 14 wordList = textParse(feed1['entries'][i]['summary']) 15 docList.append(wordList) 16 fullText.extend(wordList) 17 classList.append(1) #NY is class 1 18 wordList = textParse(feed0['entries'][i]['summary']) 19 docList.append(wordList) 20 fullText.extend(wordList) 21 classList.append(0) 22 vocabList = createVocabList(docList)#create vocabulary 23 top30Words = calcMostFreq(vocabList,fullText) #remove top 30 words 24 for pairW in top30Words: 25 if pairW[0] in vocabList: vocabList.remove(pairW[0]) 26 trainingSet = range(2*minLen); testSet=[] #create test set 27 for i in range(20): 28 randIndex = int(random.uniform(0,len(trainingSet))) 29 testSet.append(trainingSet[randIndex]) 30 del(trainingSet[randIndex]) 31 trainMat=[]; trainClasses = [] 32 for docIndex in trainingSet:#train the classifier (get probs) trainNB0 33 trainMat.append(bagOfWords2VecMN(vocabList, docList[docIndex])) 34 trainClasses.append(classList[docIndex]) 35 p0V,p1V,pSpam = trainNB0(array(trainMat),array(trainClasses)) 36 errorCount = 0 37 for docIndex in testSet: #classify the remaining items 38 wordVector = bagOfWords2VecMN(vocabList, docList[docIndex]) 39 if classifyNB(array(wordVector),p0V,p1V,pSpam) != classList[docIndex]: 40 errorCount += 1 41 print 'the error rate is: ',float(errorCount)/len(testSet) 42 return vocabList,p0V,p1V
+localWords函数与之前介绍的spamTest函数类似，不同的是它是使用两个RSS作为参数。
+上面还新增了一个辅助函数calcMostFreq,该函数遍历词汇表中的每个词并统计它在文本中出现的次数,然后根据出现次数从高到低对词典进行排序 , 最后返回排序最高的30个单词
+下面来测试一下
+cd 桌面/machinelearninginaction/Ch04
+/home/fangyang/桌面/machinelearninginaction/Ch04
+import bayes
+import feedparser
+ny = feedparser.parse('http://newyork.craigslist.org/stp/index.rss')
+sf = feedparser.parse('http://sfbay.craigslist.org/stp/index.rss')
+vocabList,pSF,pNY = bayes.localWords(ny,sf)
+the error rate is ：0.15
+vocabList,pSF,pNY = bayes.localWords(ny,sf)
+the error rate is ：0.4
+我们会发现这里的错误率要远高于垃圾邮件中的错误率，这是因为这里关注的是单词概率而不是实际分类，可以通过calcMostFreq函数改变移除单词数，降低错误率，因为次数最多的前30个单词涵盖了所有用词的30%，产生这种现象的原因是语言中大部分都是冗余和结构辅助性内容。
+5.2 分析数据：显示地域相关的用词
+将pSF和pNY进行排序，然后按照顺序将词打印出来，这里用getTopWords函数表示这个功能
+1 def getTopWords(ny,sf): 2 import operator 3 vocabList,p0V,p1V=localWords(ny,sf) 4 topNY=[]; topSF=[] 5 for i in range(len(p0V)): 6 if p0V[i] > -6.0 : topSF.append((vocabList[i],p0V[i])) 7 if p1V[i] > -6.0 : topNY.append((vocabList[i],p1V[i])) 8 sortedSF = sorted(topSF, key=lambda pair: pair[1], reverse=True) 9 print "SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**" 10 for item in sortedSF: 11 print item[0] 12 sortedNY = sorted(topNY, key=lambda pair: pair[1], reverse=True) 13 print "NY**NY**NY**NY**NY**NY**NY**NY**NY**NY**NY**NY**NY**NY**NY**NY**" 14 for item in sortedNY: 15 print item[0]
+输入是两个RSS源，然后训练并测试朴素贝叶斯分类器，返回使用的概率值然后创建两个列表用于元组的存储。与之前返回排名最高的x个单词不同,这里可以返回大于某个阈值的所有词。这些元组会按照它们的条件概率进行排序。
+bayes.getTopWords(ny,sf)
+值得注意的现象是,程序输出了大量的停用词。移除固定的停用词（比如 there等等）看看结果会如何变化，依本书作者的经验来看,这样会使分类错误率降低。
+小结
+（1）对于分类而言,使用概率有时要比使用硬规则更为有效
+（2）贝叶斯概率及贝叶斯准则提供了一种利用已知值来估计未知概率的有效方法
+（3）独立性假设是指一个词的出现概率并不依赖于文档中的其他词，这个假设过于简单。这就是之所以称为朴素贝叶斯的原因。
+（4）下溢出就是其中一个问题,它可以通过对概率取对数来解决
+（5）词袋模型在解决文档分类问题上比词集模型有所提高
+（6）移除停用词，可降低错误率
+（7）花大量时间对切分器进行优化
+百度云链接：https://pan.baidu.com/s/1LgKUL7f4ja7mz0js-y62qg
+import feedparser

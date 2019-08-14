@@ -1,0 +1,22 @@
+工业界
+腾讯人工智能实验室（Tencent AI Lab）
+百度自然语言处理（Baidu NLP）：对外提供了百度AI开放平台，王海峰（现任百度副总裁，AI技术平台体系AIG总负责人）
+微软亚洲研究院自然语言计算组（Natural Language Computing - Microsoft Research）、在NLP方向与哈工大、清华有联合实验室
+科大讯飞（与哈工大的语言认知计算联合实验室）
+搜狗实验室（Sogou Labs）
+头条人工智能实验室（Toutiao AI Lab）
+华为诺亚方舟实验室（Noah's Ark Lab）
+学术界
+哈工大SCIR实验室（哈尔滨工业大学社会计算与信息检索研究中心）：刘挺
+复旦大学自然语言处理研究组（Fudan Natural Language Processing Group）
+清华大学自然语言处理与社会人文计算实验室：清华计算机系前院长孙茂松教授是他们的leader
+北京大学计算语言学研究所：北大计算机学科比较有实力的一个研究方向之一
+中科院计算所自然语言处理组：尤其专长在机器翻译领域，组长为刘群研究员，大家常使用的中文分词工具ICTCLAS就是他们参与开发的
+苏州大学的自然语言处理实验室（Natural Language Processing Lab）、人类语言技术研究所（Institute of Human Language Technology）
+东北大学自然语言处理实验室（Natural Language Processing Laboratory at Northeastern University）
+南京大学自然语言处理研究组
+厦门大学智能科学与技术系自然语言处理实验室
+参考：
+国内有哪些自然语言处理的牛人或团队？ - 知乎
+国内外自然语言处理(NLP)研究组
+欢迎留言完善～

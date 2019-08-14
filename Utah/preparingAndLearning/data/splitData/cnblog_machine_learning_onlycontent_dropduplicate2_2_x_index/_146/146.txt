@@ -1,0 +1,62 @@
+selenium是一个用于web应用程序测试的工具，Selenium测试直接运行在浏览器中，就像真正的用户在操作一样。支持的浏览器包括IE、Mozilla Firefox、Mozilla Suite等。这个工具的主要功能包括：测试与浏览器的兼容性——测试你的应用程序看是否能够很好得工作在不同浏览器和操作系统之上。测试系统功能——创建衰退测试检验软件功能和用户需求。支持自动录制动作和自动生成。Net、Java、Perl等不同语言的测试脚本。Selenium 是ThoughtWorks专门为Web应用程序编写的一个验收测试工具。
+要使用selenium之前呢必须得先下载浏览器驱动器，我知道的浏览器只有这些
+，Chrome浏览器 指定浏览器 Firefox ：火狐 Opera 歌剧院 ， Ie浏览器，Safari 苹果浏览器
+其中我只用过火狐和Chrome浏览器
+Chrome浏览器的驱动下载地址是：http://chromedriver.storage.googleapis.com/index.html
+要下载的版本必须是你现在使用的版本最近的或一样，然后把你下载的驱动解压放在你的浏览器的文件中就可以来了    要是不行的话就重启一下
+火狐浏览器的驱动下载地址是：https://github.com/mozilla/geckodriver/releases
+他的操作也跟上边的一样 ，不过他的驱动就下最新版的就可以了
+接下来就是selenium操作了
+#导报
+from selenium import webdriver
+import time
+import requests
+
+#建立浏览器对象 ,Chrome浏览器 指定浏览器 Firefox ：火狐 Opera 歌剧院 ， Ie浏览器，Safari 苹果浏览器
+browser = webdriver.Chrome()
+#使用浏览器访问网站
+browser.get('https://www.baidu.com')
+#向文本框填充文本
+browser.find_element_by_id("kw").send_keys('男神鹏')
+time.sleep(1)
+#模拟点击
+browser.find_element_by_id("su").click()
+time.sleep(5)
+#匹配多个节点
+# elist = browser.find_elements('css selector','h3')
+elist = browser.find_elements_by_class_name('t')
+text_str = str(elist[0].text)
+print(text_str)
+#点击链接
+browser.find_element_by_link_text(text_str).click()
+#暂停
+time.sleep(50)
+#关闭浏览器
+browser.quit()
+注意 ：每次连接一个地址都给浏览器缓冲时间   一秒也行，最后别忘了关闭浏览器，这是我简单的一个操作流程， 他的流程就是先打开百度 然后 搜索：男生鹏  然后进第一个页面  。
+下面的就是一些selenium操作
+最简单粗暴却失传已久的8种定位
+据说这种定位方式在江湖上都快要失传了，实在想不通为什么，明明写起来最简单粗暴啊~
+driver.find_element("name","wd").send_keys("Selenium2")
+driver.find_element("id","su").click()
+大家一定会和我一样觉得这种方式的定位实在是太省事了~只要写find_element就好啦，下面我们来总结一下这8种写法与基本定位方法类比过来该怎么写：
+by_id -> find_element("id","")
+by_xpath -> find_element("xpath","")
+by_link_text -> find_element("link text","")
+by_partial_text -> find_element("partial link text","")
+by_name -> find_element("name","")
+by_tag_name -> find_element("tag name","")
+by_class_name -> find_element("class name","")
+by_css_selector -> find_element("css selector","")
+elements复数定位
+在上面的例举的八中基本定位方式种，都有对应的复数形式，分别是下面这些：
+id复数定位find_elements_by_id()
+name复数定位find_elements_by_name()
+class复数定位find_elements_by_class_name()
+tag复数定位find_elements_by_tag_name()
+link复数定位find_elements_by_link_text()
+partial_link复数定位find_elements_by_partial_link_text()
+xpath复数定位find_elements_by_xpath()
+css复数定位find_elements_by_css_selector()
+这些复数定位方式每次取到的都是具有相同类型属性的一组元素，所以返回的是一个list队列，我们也可以利用这个去定位单个的元素。比如百度首页种，右上角有新闻、视频、地图、贴吧等一些链接，我们通过f12查看源码可以发现，这些链接都有共同的class， class="mnav"。
+selenium基础操作就是这些了 ，希望对你们有帮助！！

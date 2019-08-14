@@ -1,0 +1,74 @@
+网络公开课：
+麻省理工公开课 单变量微积分
+麻省理工公开课 多变量微积分
+麻省理工公开课 线性代数
+麻省理工公开课 概率论
+麻省理工公开课 算法导论
+斯坦福大学公开课 CS229 机器学习 → Coursera：吴恩达机器学习（Deep Learning）
+斯坦福大学公开课 CS231n Convolutional Neural Networks for Visual Recognition
+斯坦福大学公开课 CS224n Natural Language Processing with Deep Learning
+台湾大学公开课 机器学习基石
+台湾大学公开课 机器学习技法
+台湾大学公开课 Machine Learning and having it deep and structured
+Coursera公开课 Machine Learning
+Coursera公开课 Neural Networks for Machine Learning
+概率统计：
+An introduction to statistical learning
+All of statistics
+Probability Theory and Examples (Probability: Theory & Examples)
+数据结构和算法：
+算法
+算法的乐趣
+数据结构和算法
+Python：
+Python编程：从入门到实践
+Python编程快速上手
+Python 机器人编程实战
+Python网络数据采集
+利用Python进行数据分析
+Python源码剖析
+Python 机器学习经典实例
+机器学习实战
+机器学习：
+数据挖掘导论
+集体智慧编程
+机器学习实战
+统计学习方法
+机器学习
+Python machine learning
+贝叶斯方法:概率编程与贝叶斯推断
+推荐系统实践
+数据库：
+MySQL必知必会
+MySQL for Python
+Hadoop & Spark：
+Hive编程指南
+Spark快速大数据分析
+自然语言处理：
+数学之美
+什么是数学
+TensorFlow:实战Google深度学习框架
+大数据智能:互联网时代的机器学习和自然语言处理技术
+其他方面书籍：
+追寻记忆的痕迹
+人工智能的未来
+人脑之谜
+GEB
+生理心理学
+人工智能哲学
+计算机与人脑
+智能时代
+意识的宇宙
+机器人叛乱
+科学的极致：漫谈人工智能
+KK三部曲
+控制论与科学方法论
+皇帝新脑
+智能化未来
+科技之巅
+程序之美
+黑客与画家
+程序员的思维修炼
+编码：藏匿在计算机硬件背后的语言
+给大家看的设计书
+设计模式之禅

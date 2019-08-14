@@ -1,0 +1,133 @@
+转自：http://www.sohu.com/a/206338786_100007727
+2018年【计算机视觉&机器学习&人工智能】国际重要会议汇总
+每年全世界都会举办很多计算机视觉（Computer Vision，CV）、 机器学习（Machine Learning，ML）、人工智能（Artificial Intelligence ，AI）领域的学术会议。笔者选取了其中影响力较大，有代表性的重要会议进行了汇总。如有遗漏，还请留言补充。
+AAAI 2018（美国新奥尔良）
+全称：the Association for the Advancement of Artificial Intelligence
+时间：2018.02.02-07
+地点：Hilton New Orleans Riverside, New Orleans, Lousiana, USA
+介绍：人工智能领域顶级会议
+官网：https://aaai.org/Conferences/AAAI-18/
+MMM2018 (泰国曼谷)
+全称：the 24rd International Conference on MultiMedia Modeling
+时间：2018.02.05-08
+地点：Dusit Thani Hotel, Bangkok, Thailand
+介绍：多媒体建模及应用领域国际权威会议
+官网：http://mmm2018.chula.ac.th/
+ICIGP 2018（中国香港）
+全称：INTERNATIONAL CONFERENCE ON IMAGE AND GRAPHICS PROCESSING
+时间：2018.02.24-26
+地点：Regal Oriental Hotel，Hong Kong
+介绍：促进学术界和工业界交流的图形图像处理会议
+官网：http://icigp.org/
+ACM - ICIAI 2018（中国上海）
+全称：2018 2nd International Conference on Innovation in Artificial Intelligence
+时间：2018.03.09-12
+地点：Shanghai, China
+网址：http://www.iciai.org/
+WACV 2018 (美国内华达州)
+全称：IEEE Winter Conference on Applications of Computer Vision
+时间：2018.03.12-15
+地点：Harvey’s Casino in Lake Tahoe, Nevada，U.S.
+介绍：侧重计算机视觉应用的国际知名会议
+网址：http://wacv18.uccs.us/
+ICASSP 2018（加拿大卡尔加里）
+全称：International Conference on Acoustics, Speech and Signal Processing
+时间：2018.04.15-20
+地点：ELUS Convention Center, Calgary, Alberta, Canada
+介绍：声学、语音与信号处理及其应用国际顶级会议
+官网：https://2018.ieeeicassp.org/
+CVM2018（中国上海）
+全称：Computational Visual Media conference
+时间：2018.4.18-20
+地点：上海，上海交通大学
+介绍：计算机视觉相关的基础研究和应用会议
+官网：http://iccvm.org/2018/
+ICLR 2018（加拿大温哥华）
+全称：6th International Conference on Learning Representations
+时间：2018.04.30-05.03
+地点：Vancouver Convention Center, Vancouver, BC, Canada
+主题：deep learning，compositional modeling, structured prediction, reinforcement learning, large-scale learning，non-convex optimization
+官网：http://www.iclr.cc/doku.php?id=ICLR2018:main&redirect=1
+ICRA 2018（澳大利亚昆士兰）
+全称：IEEE International Conference on Robotics and Automation
+时间：2018.05.21-25
+地点：The Brisbane Convention & Exhibition Venue,, Brisbane, Queensland Australia
+介绍：机器人及自动化领域国际顶级会议
+官网：http://icra2018.org/
+CVPR 2018（美国盐湖城）
+全称：IEEE Conference on Computer Vision and Pattern Recognition
+时间：2018.06.18-22
+地点：SALT LAKE CITY, UTAH，USA
+介绍：计算机视觉及模式识别领域国际三大顶级会议之一
+官网： http://cvpr2018.thecvf.com/
+ICML 2018（瑞典斯德哥尔摩）
+全称：Thirty-fifth International Conference on Machine Learning
+时间：2018.07.10-15
+地点：Stockholm Sweden
+介绍：机器学习国际著名会议
+官网：https://2017.icml.cc/
+IJCAI-ECAI 2018（瑞典斯德哥尔摩）
+全称： 27th International Joint Conference on Artificial Intelligence and the 23rd European Conference on Artificial Intelligence
+时间：2018.07.13-19
+地点：Stockholm, Sweden
+介绍：国际顶级人工智能联合大会
+官网：https://www.ijcai-18.org/
+SIGGRAPH 2018（加拿大温哥华）
+时间：2018.08.12-16
+地点：Vancouver, Canada
+介绍：计算机图形学领域最权威、影响力最大的国际会议
+官网：http://s2018.siggraph.org/conference/conference-overview/
+ICPR 2018(中国北京)
+全称：24th International Conference on Pattern Recognition
+时间：2018.08.20-24
+地点：Beijing, China
+介绍：模式识别国际著名会议
+官网：http://www.icpr2018.org/
+BMVC 2018（英国纽卡斯尔）
+全称： 29TH BRITISH MACHINE VISION CONFERENCE
+时间：2018.09.03-06
+地点：Northumbria University， North East of England
+介绍：计算机视觉领域著名国际会议
+官网：http://bmvc2018.org/
+3D VISON 2018(意大利维罗那)
+全称：International Conference on 3D Vision
+时间：2018.09.05-08
+地点： Verona, Italy
+主题：3D视觉研究及应用的著名会议
+官网：http://3dv18.uniud.it/
+ECCV 2018（德国慕尼黑）
+全称：European Conference on Computer Vision
+时间：2018.09.08-14
+地点：Munich, Germany
+介绍：计算机视觉国际三大顶级会议之一
+官网：https://eccv2018.org/
+ICCVG 2018（波兰华沙）
+全称：International Conference on Computer Vision and Graphics
+时间：2018.09.17-19
+地点：Warsaw, Poland
+官网：http://iccvg.wzim.sggw.pl/
+IROS 2018（西班牙马德里）
+全称：IEEE/RSJ International Conference on Intelligent Robots and Systems
+时间：2018.10.01-05
+地点：Madrid, Spain
+介绍：智能机器人系统领域国际顶级会议
+官网：http://www.iros2018.org/
+ICIP 2018 （希腊雅典）
+全称：2017 IEEE International Conference on Image Processing
+时间：2018.10.07-10
+地点：Athens, Greece
+介绍：图像处理领域国际著名会议
+官网：https://2018.ieeeicip.org/
+NIPS 2018（加拿大蒙特利尔）
+全称：The Conference and Workshop on Neural Information Processing Systems
+时间：2018.12.03-08
+地点：Palais des Congrès de Montréal, Montréal CANADA
+介绍：Machine learning , computational neuroscience领域国际顶级会议
+官网：https://nips.cc/Conferences/2018
+JCRAI 2018 （埃及开罗）
+全称：International Joint Conference on Robotics and Artificial Intelligence
+时间：2018.12.21-23
+地点：Cairo Egypt
+介绍：图像处理领域国际会议
+官网：http://www.jcrai.org/
+转自：http://www.sohu.com/a/206338786_100007727

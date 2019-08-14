@@ -1,0 +1,454 @@
+最近 在 几个 地方 都 看到 有人 问 C + 
++ 下用 什么 矩阵 运算 库 比较好 顺便 做了 个 
+调查 做 一些 相关 的 推荐 吧 主要 针对 稠密 
+矩阵 有 时间 会 再写 一个 稀疏 矩阵 的 推荐 
+Armadillo C + + 下 的 Matlab 替代品 地址 http 
+/ / arma . sourceforge . net / 许可证 MPL 
+2.0 目前 使用 比较 广的C/nr + + 矩阵 运算 库 
+之一 是 在 C + + 下 使用 Matlab 方式 
+操作 矩阵 很好 的 选择 许多 Matlab 的 矩阵 操作 
+函数 都 可以 找到 对应 这对 习惯了 Matlab 的 人 
+来说 实在 是 非常 方便 另外 如果 要将 Matlab 下 
+做 研究 的 代码 改写 成C+/nr + 使用 Armadillo 也会 
+很 方便 这里 有 一个 简易 的 Matlab 到 Armadillo 
+的 语法 转换 下面 列 了 一些 Armadillo 的 特性 
+支持 整数 浮点数 和 复数 矩阵 支持 矩阵 逐 元素 
+操作 包括 abs conj conv _ to eps imag / 
+real misc functions exp log pow sqrt round sign . 
+. . trigonometric functions cos sin . . . 等等 
+支持 矩阵 分块 操作 支持 对 整体 矩阵 的 操作 
+diagvec min / max prod sum statistics mean stddev . 
+. .   accu as _ scalar det dot / 
+cdot / norm _ dot log _ det norm rank 
+trace 等等 Matlab 用户 你 甚至 可以 找到 你 熟悉 
+的 hist   histc   unique   cumsum   sort 
+_ index   find   repmat   linspace 等 函数 
+除了 自带 的 矩阵 基本 运算 之外 可 自动 检测 
+是否 安装 有 BLAS 或 更快 的   OpenBLAS Intel 
+  MKL AMD   ACML 并 使用 他们 替代 自带 
+基本 运算 实现 提供 接口 使用 LAPACK 进 行矩阵 分解 
+运算 svd   qr   lu   fft 等等 提供 
+了 稀疏 矩阵 类 支持 常用 操作 但 暂时 没有 
+矩阵 分解 的 实现 更新 比较 活跃 有 一些 计算机 
+视觉 机器学习 物理 方面 的 开源 项目 在 使用 比如 
+MLPACK   Machine Learning Library 总体 来讲 很好用 的 矩阵 
+库 速度 上 因为 可以 使用 OpenBLAS 等 库 进行 
+加速 因此 还是 不错 的 网上 可以 找到 一个 叫 
+  Nghia Ho 的 人 写 的 关于 和 eigen 
+及 opencv 的 速度 比较 做 参考 速度 略 优 
+不过 也 由于 依赖 LAPACK 等 库 完成 矩阵 分解 
+计算 在 windows 上 运行 可能 会 比较 痛苦 Eigen3 
+强大 且 只需 头文件 地址 http / / eigen . 
+tuxfamily . org / 许可证 主要 为 MPL 2.0 部分/n 
+有/v 来自/v 第三/m 方的/nr 代码/n 为/p LGPL/w 非常/d 强大/a 的/uj 
+矩阵/n 运算/vn 库/n 我 一直 在 用 大家 用了 都 
+说好 使用 类似 Matlab 的 方式 操作 矩阵 可以 在 
+这里 查看 官方 的 与 Maltab 的 对应 关系 个人感觉 
+单纯 讲和 Matlab 的 对应 的话 可能 不如 Armadillo 对应 
+的 好 但 功能 绝对 强大 Eigen 包含 了 绝大部分 
+你 能 用到 的 矩阵 算法 同时 提供 许多 第三 
+方的/nr 接口 Eigen 一个 重要 特点 是 没有 什么 依赖 
+的 库 本身 仅 有 许多 头文件 组成 因此 非常 
+轻量 而 易于 跨平台 你 要做 的 就是 把 用到 
+的 头文件 和你的/nr 代码 放在 一起 就 可以 了 Eigen 
+的 一些 特性 支持 整数 浮点数 复数 使用 模板 编程 
+可以 为 特殊 的 数据 结构 提供 矩阵 操作 比如 
+在用 ceres solver 进行 做 优化 问题 比如 bundle adjustment 
+的 时候 有时候 需要用 模板 编程 写 一个 目标函数 ceres 
+可以 将 模板 自动 替换 为 内部 的 一个 可以 
+自动 求 微分 的 特殊 的 double 类型 而 如果 
+要 在 这个 模板 函数 中进 行矩阵 计算 使用 Eigen 
+就会 非常 方便 支持 逐 元素 分块 和 整体 的 
+矩阵 操作 内含 大量 矩阵 分解 算法 包括 LU LDLt 
+QR SVD 等等 支持 使用 Intel   MKL 加速 部分 
+功能 支持 多线程 稀疏 矩阵 支持 良好 到 今年 新出 
+的 Eigen3 . 2 已经 自 带了 SparseLU SparseQR 共轭 
+梯度 C o n j u g a t e 
+G r a d i e n t solver bi 
+conjugate gradient stabilized solver 等 解 稀疏 矩阵 的 功能 
+同时 提供 SPQR UmfPack 等 外部 稀疏 矩阵 库 的 
+接口 支持 常用 几何 运算 包括 旋转 矩阵 四元数 矩阵 
+变换 AngleAxis 欧拉角 与 Rodrigues 变换 等等 更新 活跃 用户 
+众多 Google WilliowGarage 也 在用 使用 Eigen 的 比较 著名 
+的 开源 项目 有 ROS 机器人 操作系统 PCL 点 云 
+处理 库 Google   Ceres 优化 算法 OpenCV 自 带到 
+Eigen 的 接口 总体 来讲 如果 经常 做 一些 比较 
+复杂 的 矩阵 计算 的话 或者 想要 跨平台 的话 非常 
+值得 一用 OpenCV 方便 的 计算机 视觉 计算 库 地址 
+http / / opencv . org / 许可证 目前 是 
+BSDOpenCV 在 计算机 视觉 领域 名气 实在 是 太大 了 
+而且 最 近几年 库里 的 算法 开始 爆炸式 的 增长 
+最近 貌似 计划 推出 OpenCV 3 了 参见 这里 有人 
+开始 抱怨 OpenCV 现在 内容 太 杂 了 不过 这样 
+的 好处 就是 从是/nr 研究 开发 的话 一个 库 就 
+可以 得到 大 部分 计算机 视觉 的 流行 算法 省去 
+了 很多 麻烦 OpenCV 自带 的 矩阵 计算 功能 算不上 
+是 专业 的 矩阵 计算 库 但是 如果 你 用 
+C + + 写 机器学习 计算机 视觉 的 程序 一定 
+会 经常 用到 OpenCV 的 矩阵 计算 功能 还 算 
+比较 完善 虽然 速度 略 差劲 但 用在 大多数 的 
+开发 和 研究 领域 也是 足够 了 特别 是 OpenCV 
+2.2 之后 提供 了 类 Matlab 的 矩阵 C + 
++ 接口 使得 直接 使用 OpenCV 进 行矩阵 计算 变得 
+简单易用 列 两个 比较 值得一提 的 特点 大量 计算机 视觉 
+机器学习 相关 的 矩阵 操作 非常 方便 比如 PCA LDA 
+三维空间 投影 等等 自带 并行 加速 的 矩阵 计算 功能 
+其中 cv gpu 模块 提供 了 CUDA 支持 的 GPU 
+矩阵 计算 功能 cv ocl 模块 提供 了 OpenCL 支持 
+的 并行 矩阵 计算 功能 可以 非常 方便 的 进行 
+并 行矩阵 计算 不过 不足 的 是 这 两个 模块 
+还 暂时 缺少 矩阵 分解 的 实现 我 曾 见过 
+朋友 在做 深度 学习 的 时候 用 cv ocl 模块 
+进行 大 矩阵 乘法 貌似 效果 还 不错 ViennaCL 并 
+行矩阵 计算 网址 http / / viennacl . sourceforge . 
+net / 许可证 MIT 作者 Karl Rupp 来自 维也纳 大学 
+开发 了 一套 Vienna * 系列 的 开源 软件 其中 
+还包括 ViennaMath symbolic math 符号计算 ViennaFEM 有限元 等等 ViennaCL 在 
+后台 支持 OpenCL OpenMP 和 CUDA 可以 方便 地 使用 
+各种 型号 的 CPU 或 GPU 进行 并行计算 目前 矩阵 
+类型 支持 float 和 double 1 . 4.2 版 尚 
+不支持 复数 矩阵 支持 常用 的 矩阵 运算 和 分解 
+接口 很 有好 并 提供 接 口到 uBLAS Eigen MTL 
+4 等 矩阵 库 安装 使用 有 非常 详细 的 
+官方 文档 PETSc 大 规模 并行 科学计算 网站 http / 
+/ www . mcs . anl . gov / petsc 
+/ 许可证 Copyright University of Chicago GPL compatible PETSc Portable 
+Extensible Toolkit for Scientific Computation     是 美国 能源部 
+ODE2000 支持 开发 的 20 多个 ACTS 工具箱 之一 由 
+Argonne 国家 实验室 开发 的 可移植 可扩展 科学计算 工具箱 主要 
+用于 在 分布式 存储 环境 高效 求解 偏微分 方程组 及 
+相关 问题 PETSc 所有 消息传递 通信 均 采用 MPI 标准 
+实现 线性方程组 求解 器 是 PETSc 的 核心 组件 之一 
+PETSc 几乎 提供 了 所有 求解 线性方程组 的 高效 求解 
+器 既有 串行 求解 也有 并行 求解 既有 直 接法 
+求解 也有 迭代法 求解 对于 大 规模 线性方程组 PETSc 提供 
+了 大量 基于 Krylov 子空间 方法 和 各种 预 条件 
+子 的 成熟 而 有效 的 迭代 方法 以及 其他 
+通用 程序 和 用户 程序 的 接口 PETSc 具有 一般 
+库 软件 所 具备 的 高性能 可移植 等 优点 而且 
+面向对象 技术 使得 PETSc 内部 功能 部件 的 使用 非常 
+方便 接口 简单 而又 适用 面广 可以 缩短 开发周期 减少 
+工作量 直接 粘 百度 百科 了 PETSc 在 网上 可 
+一找 到 很多 英文 资料 使用 也 比较 广泛 不过 
+在 学校 实验室 的 一般 的 科学计算 可能 接触 的 
+还 比较 少 推荐 一个 YouTube 可能要 FQ 的 五集 
+PETSc 简单 入门 PRACE Video Tutorial PETSc Tutorial 其他 的 
+矩阵 计算 库 和 资料 在 Stackexchange 上 有一个 帖子 
+Recommendations for a usable fast C + + matrix library 
+里面 搜罗 了 许多 矩阵 运算 库 另外 INRIA 有人 
+写 了 一个 文档 Linear Algebra Libraries 对 常见 的 
+矩阵 运算 库 进行 了 总结 除了 上面 提到 的 
+几个 库 之外 下面 还有 一些 比较 常用 或 坚持 
+更新 的 矩阵 库 uBLAS Boost 包 中的 BLAS 库 
+接口 据说 速度 一般 GSL GNU Scientific Library 自带 的 
+矩阵 运算 据说 速度 一般 MTL 4 Matrix Template Library 
+  version 4 类似 Eigen 和 Armadillo 有 开源 版本 
+Trilinos 和 PETSc 同是 美国能源部 ODE2000 支持 开发 的 20 
+多个 ACTS 工具箱 之一 用于 大 规模 计算 来自 http 
+/ / cvnote . infoArmadillo   C + +   
+Eigen3   Matrix   OpenCV   PETSc   Scientific Computing 
+  ViennaCL   矩阵 分解   矩阵 计算   科学计算 
+Address   http / / cvnote . info / cpp 
+matrix library / 最近 在 几个 地方 都 看到 有人 问 C + 
++ 下用 什么 矩阵 运算 库 比较好 顺便 做了 个 
+调查 做 一些 相关 的 推荐 吧 主要 针对 稠密 
+矩阵 有 时间 会 再写 一个 稀疏 矩阵 的 推荐 
+Armadillo C + + 下 的 Matlab 替代品 地址 http 
+/ / arma . sourceforge . net / 许可证 MPL 
+2.0 目前 使用 比较 广的C/nr + + 矩阵 运算 库 
+之一 是 在 C + + 下 使用 Matlab 方式 
+操作 矩阵 很好 的 选择 许多 Matlab 的 矩阵 操作 
+函数 都 可以 找到 对应 这对 习惯了 Matlab 的 人 
+来说 实在 是 非常 方便 另外 如果 要将 Matlab 下 
+做 研究 的 代码 改写 成C+/nr + 使用 Armadillo 也会 
+很 方便 这里 有 一个 简易 的 Matlab 到 Armadillo 
+的 语法 转换 下面 列 了 一些 Armadillo 的 特性 
+支持 整数 浮点数 和 复数 矩阵 支持 矩阵 逐 元素 
+操作 包括 abs conj conv _ to eps imag / 
+real misc functions exp log pow sqrt round sign . 
+. . trigonometric functions cos sin . . . 等等 
+支持 矩阵 分块 操作 支持 对 整体 矩阵 的 操作 
+diagvec min / max prod sum statistics mean stddev . 
+. .   accu as _ scalar det dot / 
+cdot / norm _ dot log _ det norm rank 
+trace 等等 Matlab 用户 你 甚至 可以 找到 你 熟悉 
+的 hist   histc   unique   cumsum   sort 
+_ index   find   repmat   linspace 等 函数 
+除了 自带 的 矩阵 基本 运算 之外 可 自动 检测 
+是否 安装 有 BLAS 或 更快 的   OpenBLAS Intel 
+  MKL AMD   ACML 并 使用 他们 替代 自带 
+基本 运算 实现 提供 接口 使用 LAPACK 进 行矩阵 分解 
+运算 svd   qr   lu   fft 等等 提供 
+了 稀疏 矩阵 类 支持 常用 操作 但 暂时 没有 
+矩阵 分解 的 实现 更新 比较 活跃 有 一些 计算机 
+视觉 机器学习 物理 方面 的 开源 项目 在 使用 比如 
+MLPACK   Machine Learning Library 总体 来讲 很好用 的 矩阵 
+库 速度 上 因为 可以 使用 OpenBLAS 等 库 进行 
+加速 因此 还是 不错 的 网上 可以 找到 一个 叫 
+  Nghia Ho 的 人 写 的 关于 和 eigen 
+及 opencv 的 速度 比较 做 参考 速度 略 优 
+不过 也 由于 依赖 LAPACK 等 库 完成 矩阵 分解 
+计算 在 windows 上 运行 可能 会 比较 痛苦 Eigen3 
+强大 且 只需 头文件 地址 http / / eigen . 
+tuxfamily . org / 许可证 主要 为 MPL 2.0 部分/n 
+有/v 来自/v 第三/m 方的/nr 代码/n 为/p LGPL/w 非常/d 强大/a 的/uj 
+矩阵/n 运算/vn 库/n 我 一直 在 用 大家 用了 都 
+说好 使用 类似 Matlab 的 方式 操作 矩阵 可以 在 
+这里 查看 官方 的 与 Maltab 的 对应 关系 个人感觉 
+单纯 讲和 Matlab 的 对应 的话 可能 不如 Armadillo 对应 
+的 好 但 功能 绝对 强大 Eigen 包含 了 绝大部分 
+你 能 用到 的 矩阵 算法 同时 提供 许多 第三 
+方的/nr 接口 Eigen 一个 重要 特点 是 没有 什么 依赖 
+的 库 本身 仅 有 许多 头文件 组成 因此 非常 
+轻量 而 易于 跨平台 你 要做 的 就是 把 用到 
+的 头文件 和你的/nr 代码 放在 一起 就 可以 了 Eigen 
+的 一些 特性 支持 整数 浮点数 复数 使用 模板 编程 
+可以 为 特殊 的 数据 结构 提供 矩阵 操作 比如 
+在用 ceres solver 进行 做 优化 问题 比如 bundle adjustment 
+的 时候 有时候 需要用 模板 编程 写 一个 目标函数 ceres 
+可以 将 模板 自动 替换 为 内部 的 一个 可以 
+自动 求 微分 的 特殊 的 double 类型 而 如果 
+要 在 这个 模板 函数 中进 行矩阵 计算 使用 Eigen 
+就会 非常 方便 支持 逐 元素 分块 和 整体 的 
+矩阵 操作 内含 大量 矩阵 分解 算法 包括 LU LDLt 
+QR SVD 等等 支持 使用 Intel   MKL 加速 部分 
+功能 支持 多线程 稀疏 矩阵 支持 良好 到 今年 新出 
+的 Eigen3 . 2 已经 自 带了 SparseLU SparseQR 共轭 
+梯度 C o n j u g a t e 
+G r a d i e n t solver bi 
+conjugate gradient stabilized solver 等 解 稀疏 矩阵 的 功能 
+同时 提供 SPQR UmfPack 等 外部 稀疏 矩阵 库 的 
+接口 支持 常用 几何 运算 包括 旋转 矩阵 四元数 矩阵 
+变换 AngleAxis 欧拉角 与 Rodrigues 变换 等等 更新 活跃 用户 
+众多 Google WilliowGarage 也 在用 使用 Eigen 的 比较 著名 
+的 开源 项目 有 ROS 机器人 操作系统 PCL 点 云 
+处理 库 Google   Ceres 优化 算法 OpenCV 自 带到 
+Eigen 的 接口 总体 来讲 如果 经常 做 一些 比较 
+复杂 的 矩阵 计算 的话 或者 想要 跨平台 的话 非常 
+值得 一用 OpenCV 方便 的 计算机 视觉 计算 库 地址 
+http / / opencv . org / 许可证 目前 是 
+BSDOpenCV 在 计算机 视觉 领域 名气 实在 是 太大 了 
+而且 最 近几年 库里 的 算法 开始 爆炸式 的 增长 
+最近 貌似 计划 推出 OpenCV 3 了 参见 这里 有人 
+开始 抱怨 OpenCV 现在 内容 太 杂 了 不过 这样 
+的 好处 就是 从是/nr 研究 开发 的话 一个 库 就 
+可以 得到 大 部分 计算机 视觉 的 流行 算法 省去 
+了 很多 麻烦 OpenCV 自带 的 矩阵 计算 功能 算不上 
+是 专业 的 矩阵 计算 库 但是 如果 你 用 
+C + + 写 机器学习 计算机 视觉 的 程序 一定 
+会 经常 用到 OpenCV 的 矩阵 计算 功能 还 算 
+比较 完善 虽然 速度 略 差劲 但 用在 大多数 的 
+开发 和 研究 领域 也是 足够 了 特别 是 OpenCV 
+2.2 之后 提供 了 类 Matlab 的 矩阵 C + 
++ 接口 使得 直接 使用 OpenCV 进 行矩阵 计算 变得 
+简单易用 列 两个 比较 值得一提 的 特点 大量 计算机 视觉 
+机器学习 相关 的 矩阵 操作 非常 方便 比如 PCA LDA 
+三维空间 投影 等等 自带 并行 加速 的 矩阵 计算 功能 
+其中 cv gpu 模块 提供 了 CUDA 支持 的 GPU 
+矩阵 计算 功能 cv ocl 模块 提供 了 OpenCL 支持 
+的 并行 矩阵 计算 功能 可以 非常 方便 的 进行 
+并 行矩阵 计算 不过 不足 的 是 这 两个 模块 
+还 暂时 缺少 矩阵 分解 的 实现 我 曾 见过 
+朋友 在做 深度 学习 的 时候 用 cv ocl 模块 
+进行 大 矩阵 乘法 貌似 效果 还 不错 ViennaCL 并 
+行矩阵 计算 网址 http / / viennacl . sourceforge . 
+net / 许可证 MIT 作者 Karl Rupp 来自 维也纳 大学 
+开发 了 一套 Vienna * 系列 的 开源 软件 其中 
+还包括 ViennaMath symbolic math 符号计算 ViennaFEM 有限元 等等 ViennaCL 在 
+后台 支持 OpenCL OpenMP 和 CUDA 可以 方便 地 使用 
+各种 型号 的 CPU 或 GPU 进行 并行计算 目前 矩阵 
+类型 支持 float 和 double 1 . 4.2 版 尚 
+不支持 复数 矩阵 支持 常用 的 矩阵 运算 和 分解 
+接口 很 有好 并 提供 接 口到 uBLAS Eigen MTL 
+4 等 矩阵 库 安装 使用 有 非常 详细 的 
+官方 文档 PETSc 大 规模 并行 科学计算 网站 http / 
+/ www . mcs . anl . gov / petsc 
+/ 许可证 Copyright University of Chicago GPL compatible PETSc Portable 
+Extensible Toolkit for Scientific Computation     是 美国 能源部 
+ODE2000 支持 开发 的 20 多个 ACTS 工具箱 之一 由 
+Argonne 国家 实验室 开发 的 可移植 可扩展 科学计算 工具箱 主要 
+用于 在 分布式 存储 环境 高效 求解 偏微分 方程组 及 
+相关 问题 PETSc 所有 消息传递 通信 均 采用 MPI 标准 
+实现 线性方程组 求解 器 是 PETSc 的 核心 组件 之一 
+PETSc 几乎 提供 了 所有 求解 线性方程组 的 高效 求解 
+器 既有 串行 求解 也有 并行 求解 既有 直 接法 
+求解 也有 迭代法 求解 对于 大 规模 线性方程组 PETSc 提供 
+了 大量 基于 Krylov 子空间 方法 和 各种 预 条件 
+子 的 成熟 而 有效 的 迭代 方法 以及 其他 
+通用 程序 和 用户 程序 的 接口 PETSc 具有 一般 
+库 软件 所 具备 的 高性能 可移植 等 优点 而且 
+面向对象 技术 使得 PETSc 内部 功能 部件 的 使用 非常 
+方便 接口 简单 而又 适用 面广 可以 缩短 开发周期 减少 
+工作量 直接 粘 百度 百科 了 PETSc 在 网上 可 
+一找 到 很多 英文 资料 使用 也 比较 广泛 不过 
+在 学校 实验室 的 一般 的 科学计算 可能 接触 的 
+还 比较 少 推荐 一个 YouTube 可能要 FQ 的 五集 
+PETSc 简单 入门 PRACE Video Tutorial PETSc Tutorial 其他 的 
+矩阵 计算 库 和 资料 在 Stackexchange 上 有一个 帖子 
+Recommendations for a usable fast C + + matrix library 
+里面 搜罗 了 许多 矩阵 运算 库 另外 INRIA 有人 
+写 了 一个 文档 Linear Algebra Libraries 对 常见 的 
+矩阵 运算 库 进行 了 总结 除了 上面 提到 的 
+几个 库 之外 下面 还有 一些 比较 常用 或 坚持 
+更新 的 矩阵 库 uBLAS Boost 包 中的 BLAS 库 
+接口 据说 速度 一般 GSL GNU Scientific Library 自带 的 
+矩阵 运算 据说 速度 一般 MTL 4 Matrix Template Library 
+  version 4 类似 Eigen 和 Armadillo 有 开源 版本 
+Trilinos 和 PETSc 同是 美国能源部 ODE2000 支持 开发 的 20 
+多个 ACTS 工具箱 之一 用于 大 规模 计算 来自 http 
+/ / cvnote . infoArmadillo   C + +   
+Eigen3   Matrix   OpenCV   PETSc   Scientific Computing 
+  ViennaCL   矩阵 分解   矩阵 计算   科学计算 
+Address   http / / cvnote . info / cpp 
+matrix library / 最近 在 几个 地方 都 看到 有人 问 C + 
++ 下用 什么 矩阵 运算 库 比较好 顺便 做了 个 
+调查 做 一些 相关 的 推荐 吧 主要 针对 稠密 
+矩阵 有 时间 会 再写 一个 稀疏 矩阵 的 推荐 
+Armadillo C + + 下 的 Matlab 替代品 地址 http 
+/ / arma . sourceforge . net / 许可证 MPL 
+2.0 目前 使用 比较 广的C/nr + + 矩阵 运算 库 
+之一 是 在 C + + 下 使用 Matlab 方式 
+操作 矩阵 很好 的 选择 许多 Matlab 的 矩阵 操作 
+函数 都 可以 找到 对应 这对 习惯了 Matlab 的 人 
+来说 实在 是 非常 方便 另外 如果 要将 Matlab 下 
+做 研究 的 代码 改写 成C+/nr + 使用 Armadillo 也会 
+很 方便 这里 有 一个 简易 的 Matlab 到 Armadillo 
+的 语法 转换 下面 列 了 一些 Armadillo 的 特性 
+支持 整数 浮点数 和 复数 矩阵 支持 矩阵 逐 元素 
+操作 包括 abs conj conv _ to eps imag / 
+real misc functions exp log pow sqrt round sign . 
+. . trigonometric functions cos sin . . . 等等 
+支持 矩阵 分块 操作 支持 对 整体 矩阵 的 操作 
+diagvec min / max prod sum statistics mean stddev . 
+. .   accu as _ scalar det dot / 
+cdot / norm _ dot log _ det norm rank 
+trace 等等 Matlab 用户 你 甚至 可以 找到 你 熟悉 
+的 hist   histc   unique   cumsum   sort 
+_ index   find   repmat   linspace 等 函数 
+除了 自带 的 矩阵 基本 运算 之外 可 自动 检测 
+是否 安装 有 BLAS 或 更快 的   OpenBLAS Intel 
+  MKL AMD   ACML 并 使用 他们 替代 自带 
+基本 运算 实现 提供 接口 使用 LAPACK 进 行矩阵 分解 
+运算 svd   qr   lu   fft 等等 提供 
+了 稀疏 矩阵 类 支持 常用 操作 但 暂时 没有 
+矩阵 分解 的 实现 更新 比较 活跃 有 一些 计算机 
+视觉 机器学习 物理 方面 的 开源 项目 在 使用 比如 
+MLPACK   Machine Learning Library 总体 来讲 很好用 的 矩阵 
+库 速度 上 因为 可以 使用 OpenBLAS 等 库 进行 
+加速 因此 还是 不错 的 网上 可以 找到 一个 叫 
+  Nghia Ho 的 人 写 的 关于 和 eigen 
+及 opencv 的 速度 比较 做 参考 速度 略 优 
+不过 也 由于 依赖 LAPACK 等 库 完成 矩阵 分解 
+计算 在 windows 上 运行 可能 会 比较 痛苦 Eigen3 
+强大 且 只需 头文件 地址 http / / eigen . 
+tuxfamily . org / 许可证 主要 为 MPL 2.0 部分/n 
+有/v 来自/v 第三/m 方的/nr 代码/n 为/p LGPL/w 非常/d 强大/a 的/uj 
+矩阵/n 运算/vn 库/n 我 一直 在 用 大家 用了 都 
+说好 使用 类似 Matlab 的 方式 操作 矩阵 可以 在 
+这里 查看 官方 的 与 Maltab 的 对应 关系 个人感觉 
+单纯 讲和 Matlab 的 对应 的话 可能 不如 Armadillo 对应 
+的 好 但 功能 绝对 强大 Eigen 包含 了 绝大部分 
+你 能 用到 的 矩阵 算法 同时 提供 许多 第三 
+方的/nr 接口 Eigen 一个 重要 特点 是 没有 什么 依赖 
+的 库 本身 仅 有 许多 头文件 组成 因此 非常 
+轻量 而 易于 跨平台 你 要做 的 就是 把 用到 
+的 头文件 和你的/nr 代码 放在 一起 就 可以 了 Eigen 
+的 一些 特性 支持 整数 浮点数 复数 使用 模板 编程 
+可以 为 特殊 的 数据 结构 提供 矩阵 操作 比如 
+在用 ceres solver 进行 做 优化 问题 比如 bundle adjustment 
+的 时候 有时候 需要用 模板 编程 写 一个 目标函数 ceres 
+可以 将 模板 自动 替换 为 内部 的 一个 可以 
+自动 求 微分 的 特殊 的 double 类型 而 如果 
+要 在 这个 模板 函数 中进 行矩阵 计算 使用 Eigen 
+就会 非常 方便 支持 逐 元素 分块 和 整体 的 
+矩阵 操作 内含 大量 矩阵 分解 算法 包括 LU LDLt 
+QR SVD 等等 支持 使用 Intel   MKL 加速 部分 
+功能 支持 多线程 稀疏 矩阵 支持 良好 到 今年 新出 
+的 Eigen3 . 2 已经 自 带了 SparseLU SparseQR 共轭 
+梯度 C o n j u g a t e 
+G r a d i e n t solver bi 
+conjugate gradient stabilized solver 等 解 稀疏 矩阵 的 功能 
+同时 提供 SPQR UmfPack 等 外部 稀疏 矩阵 库 的 
+接口 支持 常用 几何 运算 包括 旋转 矩阵 四元数 矩阵 
+变换 AngleAxis 欧拉角 与 Rodrigues 变换 等等 更新 活跃 用户 
+众多 Google WilliowGarage 也 在用 使用 Eigen 的 比较 著名 
+的 开源 项目 有 ROS 机器人 操作系统 PCL 点 云 
+处理 库 Google   Ceres 优化 算法 OpenCV 自 带到 
+Eigen 的 接口 总体 来讲 如果 经常 做 一些 比较 
+复杂 的 矩阵 计算 的话 或者 想要 跨平台 的话 非常 
+值得 一用 OpenCV 方便 的 计算机 视觉 计算 库 地址 
+http / / opencv . org / 许可证 目前 是 
+BSDOpenCV 在 计算机 视觉 领域 名气 实在 是 太大 了 
+而且 最 近几年 库里 的 算法 开始 爆炸式 的 增长 
+最近 貌似 计划 推出 OpenCV 3 了 参见 这里 有人 
+开始 抱怨 OpenCV 现在 内容 太 杂 了 不过 这样 
+的 好处 就是 从是/nr 研究 开发 的话 一个 库 就 
+可以 得到 大 部分 计算机 视觉 的 流行 算法 省去 
+了 很多 麻烦 OpenCV 自带 的 矩阵 计算 功能 算不上 
+是 专业 的 矩阵 计算 库 但是 如果 你 用 
+C + + 写 机器学习 计算机 视觉 的 程序 一定 
+会 经常 用到 OpenCV 的 矩阵 计算 功能 还 算 
+比较 完善 虽然 速度 略 差劲 但 用在 大多数 的 
+开发 和 研究 领域 也是 足够 了 特别 是 OpenCV 
+2.2 之后 提供 了 类 Matlab 的 矩阵 C + 
++ 接口 使得 直接 使用 OpenCV 进 行矩阵 计算 变得 
+简单易用 列 两个 比较 值得一提 的 特点 大量 计算机 视觉 
+机器学习 相关 的 矩阵 操作 非常 方便 比如 PCA LDA 
+三维空间 投影 等等 自带 并行 加速 的 矩阵 计算 功能 
+其中 cv gpu 模块 提供 了 CUDA 支持 的 GPU 
+矩阵 计算 功能 cv ocl 模块 提供 了 OpenCL 支持 
+的 并行 矩阵 计算 功能 可以 非常 方便 的 进行 
+并 行矩阵 计算 不过 不足 的 是 这 两个 模块 
+还 暂时 缺少 矩阵 分解 的 实现 我 曾 见过 
+朋友 在做 深度 学习 的 时候 用 cv ocl 模块 
+进行 大 矩阵 乘法 貌似 效果 还 不错 ViennaCL 并 
+行矩阵 计算 网址 http / / viennacl . sourceforge . 
+net / 许可证 MIT 作者 Karl Rupp 来自 维也纳 大学 
+开发 了 一套 Vienna * 系列 的 开源 软件 其中 
+还包括 ViennaMath symbolic math 符号计算 ViennaFEM 有限元 等等 ViennaCL 在 
+后台 支持 OpenCL OpenMP 和 CUDA 可以 方便 地 使用 
+各种 型号 的 CPU 或 GPU 进行 并行计算 目前 矩阵 
+类型 支持 float 和 double 1 . 4.2 版 尚 
+不支持 复数 矩阵 支持 常用 的 矩阵 运算 和 分解 
+接口 很 有好 并 提供 接 口到 uBLAS Eigen MTL 
+4 等 矩阵 库 安装 使用 有 非常 详细 的 
+官方 文档 PETSc 大 规模 并行 科学计算 网站 http / 
+/ www . mcs . anl . gov / petsc 
+/ 许可证 Copyright University of Chicago GPL compatible PETSc Portable 
+Extensible Toolkit for Scientific Computation     是 美国 能源部 
+ODE2000 支持 开发 的 20 多个 ACTS 工具箱 之一 由 
+Argonne 国家 实验室 开发 的 可移植 可扩展 科学计算 工具箱 主要 
+用于 在 分布式 存储 环境 高效 求解 偏微分 方程组 及 
+相关 问题 PETSc 所有 消息传递 通信 均 采用 MPI 标准 
+实现 线性方程组 求解 器 是 PETSc 的 核心 组件 之一 
+PETSc 几乎 提供 了 所有 求解 线性方程组 的 高效 求解 
+器 既有 串行 求解 也有 并行 求解 既有 直 接法 
+求解 也有 迭代法 求解 对于 大 规模 线性方程组 PETSc 提供 
+了 大量 基于 Krylov 子空间 方法 和 各种 预 条件 
+子 的 成熟 而 有效 的 迭代 方法 以及 其他 
+通用 程序 和 用户 程序 的 接口 PETSc 具有 一般 
+库 软件 所 具备 的 高性能 可移植 等 优点 而且 
+面向对象 技术 使得 PETSc 内部 功能 部件 的 使用 非常 
+方便 接口 简单 而又 适用 面广 可以 缩短 开发周期 减少 
+工作量 直接 粘 百度 百科 了 PETSc 在 网上 可 
+一找 到 很多 英文 资料 使用 也 比较 广泛 不过 
+在 学校 实验室 的 一般 的 科学计算 可能 接触 的 
+还 比较 少 推荐 一个 YouTube 可能要 FQ 的 五集 
+PETSc 简单 入门 PRACE Video Tutorial PETSc Tutorial 其他 的 
+矩阵 计算 库 和 资料 在 Stackexchange 上 有一个 帖子 
+Recommendations for a usable fast C + + matrix library 
+里面 搜罗 了 许多 矩阵 运算 库 另外 INRIA 有人 
+写 了 一个 文档 Linear Algebra Libraries 对 常见 的 
+矩阵 运算 库 进行 了 总结 除了 上面 提到 的 
+几个 库 之外 下面 还有 一些 比较 常用 或 坚持 
+更新 的 矩阵 库 uBLAS Boost 包 中的 BLAS 库 
+接口 据说 速度 一般 GSL GNU Scientific Library 自带 的 
+矩阵 运算 据说 速度 一般 MTL 4 Matrix Template Library 
+  version 4 类似 Eigen 和 Armadillo 有 开源 版本 
+Trilinos 和 PETSc 同是 美国能源部 ODE2000 支持 开发 的 20 
+多个 ACTS 工具箱 之一 用于 大 规模 计算 来自 http 
+/ / cvnote . infoArmadillo   C + +   
+Eigen3   Matrix   OpenCV   PETSc   Scientific Computing 
+  ViennaCL   矩阵 分解   矩阵 计算   科学计算 
+Address   http / / cvnote . info / cpp 
+matrix library / 

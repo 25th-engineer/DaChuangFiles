@@ -1,0 +1,73 @@
+I need to see today：
+谷歌大脑深度学习：https://www.tinymind.cn/collections/11
+微软系列培训：https://www.msaischool.com/courses
+Hinton神经网络：http://study.163.com/course/courseMain.htm?courseId=1003842018
+pytorch-book：https://github.com/QueenJuliaZxx/pytorch-book
+Docker入门和进阶：https://cloud.tencent.com/developer/article/1004996
+一个神奇的网站:http://www.zhuanzhi.ai/timeline
+我的github：https://github.com/QueenJuliaZxx
+论文速递：
+1、https://handong1587.github.io/deep_learning/2015/10/09/object-detection.html
+2、https://github.com/amusi/awesome-object-detection
+3、知乎：目标检测
+4、项目集结号：https://www.zhihu.com/people/zhao95/posts
+书籍资料：
+1、数字图像处理
+2、计算机图形学
+3、斯坦福大学吴恩达机器学习
+http://cs229.stanford.edu/syllabus.html
+http://open.163.com/special/opencourse/machinelearning.html
+4、斯坦福大学吴恩达深度学习
+5、opencv图像处理（c++）
+6、周志华-西瓜书
+7、张志华-深度学习译本
+9、计算机算法与应用
+10、李宏毅 深度学习
+11、tensorflow 、keras、pytorch（caffe）
+12、python图像处理
+13、算法设计与分析
+专栏：
+深度学习与计算机视觉
+计算机视觉编程与cuda
+课程：
+1、cs231n
+2、cs231a
+3、cs131c
+其他
+cs229 Machine Learning，
+cs229T Statistical Learning Theory，
+cs231N Convolutional Neural Networks for Visual Recognition，
+cs231A Computer Vision:From 3D Recontruct to Recognition，
+cs231B The Cutting Edge of Computer Vision，
+cs221 Artificial Intelligence: Principles & Techniques，
+cs131 Computer Vision: Foundations and Applications，
+cs369L A Theoretical Perspective on Machine Learning，
+cs205A Mathematical Methods for Robotics, Vision & Graph，
+cs231MMobile Computer Vision，
+项目练习：
+To Myself ：我的AI之路
+【深度学习】写诗机器人tensorflow实现
+【深度学习】谷歌deepdream原理及tensorflow实现
+《使用OpenCV开发机器视觉项目》
+GitHub 最受欢迎深度学习应用项目 Top 16
+深度学习的一些演示项目
+github收藏
+项目管理：
+学做项目管理：https://blog.csdn.net/column/details/14834.html
+炫酷简历：
+简历的开源地址：https://github.com/sitexa/anires
+实际效果地址：https://www.sitexa.org/anires/public
+技术和启发来自：http://strml.net/
+专栏：https://www.zhihu.com/question/26836846
+
+Ready！！！
+数据结构与算法
+计算机网络
+操作系统
+计算机组成原理
+Mysql数据库
+计算机视觉算法；深度学习基础；数字图像处理；OpenCV基础；
+概率与数理统计；
+计算机视觉重要的知识点：
+重要1：https://blog.csdn.net/Murray_/article/details/79952076
+重要2：https://www.nowcoder.com/discuss/66114

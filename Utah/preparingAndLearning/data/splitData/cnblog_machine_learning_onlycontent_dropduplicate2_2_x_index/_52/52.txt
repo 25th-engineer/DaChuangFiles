@@ -1,0 +1,151 @@
+1、介绍
+决策树（decision tree）是一种有监督的机器学习算法，是一个分类算法。在给定训练集的条件下，生成一个自顶而下的决策树，树的根为起点，树的叶子为样本的分类，从根到叶子的路径就是一个样本进行分类的过程。
+下图为一个决策树的例子，见http://zh.wikipedia.org/wiki/%E5%86%B3%E7%AD%96%E6%A0%91
+可见，决策树上的判断节点是对某一个属性进行判断，生成的路径数量为该属性可能的取值，最终到叶子节点时，就完成一个分类（或预测）。决策树具有直观、易于解释的特性。
+2、决策树生成算法
+本文主要讨论如何由一个给定的训练集生成一个决策树。如果都一个数据集合$D$，其特征集合为$A$，那么以何种顺序对A中的特征进行判断就成为决策树生成过程中的关键。首先给出一个决策树生成算法-ID3算法（参考《统计学习方法》李航著）
+--------------------我是算法开始分割线-------------------------------------------
+ID3算法：
+输入：训练数据集D，特征集A，阈值e
+输出：决策树T
+（1）若D中所有样本属于同一类Ck，则T为单节点树，并将类Ck作为该节点的类标记，返回T；
+（2）A为空集，T为单节点树，将D中实例数最大的类Ck作为该节点的类标记，返回T；
+（3）否则，计算A中各特征对D的信息增益，选择信息增益最大的特征值Ag；
+（4）如果Ag<e，则置T为单节点树，将D中实例数最大的类Ck作为该节点的类标记，返回T；
+（5）否则，对Ag的每一个可能的取值ai，依Ag=ai将D分割为若干非空子集Di，将Di中实例数最大的类作为标记，构建子节点，由节点及其子节点构成树T，返回T；
+（6）对第i个子节点，以Di为训练集，以 A-{Ag}为特征集，递归调用（1）~（5）步，得到子树Ti，返回Ti。
+--------------------我是算法结束分割线-------------------------------------------
+算法第（3）步中，信息增益是评估每一个特征值对D的划分效果，划分的原则为将无序的数据变得尽量有序。评价随机变量不确定性的一个概念是熵，熵越大，不确定性越大。如果确定一个特征Ag，在确定该特征前后，D的熵的变化值就是特征Ag的信息增益。
+3、熵及信息增益
+熵：
+设X是一个取有限个值（n）的离散随机变量，其概率分布为
+\[P(X=x_{i})=P_{i}, i=1,2,...,n\]
+则随机变量X的熵定义为
+\[H(x) =  - \sum\limits_{i = 1}^n {{P_i}\log {P_i}} \]
+信息增益：
+训练集为\(D\)，\(|D|\)为样本容量，设有k个类\({C_k}\),k=1,...k, \({|C_k|}\)为类\({C_k}\)的样本个数，且有\(\sum\limits_{i = 1}^k {|{C_k}|}  = |D|\)
+设特征A有n个不同取值\(\{ {a_{1,}}{a_2}, \cdots ,{a_n}\} \)  ，根据A的值，将D划分为n个子集\({D_1},{D_2}, \cdots ,{D_n}\)， \({|D_i|}\)为\({D_i}\) 的样本数，\(\sum\limits_{i = 1}^n {|{D_i}|}  = |D|\)。
+记子集\({D_i}\)中属于类\({C_k}\)的样本集合为\({D_{ik}}\)，即\({D_{ik}} = {D_i} \cap {C_k}\)。
+\({|D_{ik}|}\)为\({D_{ik}}\)的样本个数。
+（1）数据集D的经验熵H(D)
+\[H(D) =  - \sum\limits_{k = 1}^K {\frac{{|{C_k}|}}{{|D|}}{{\log }_2}} \frac{{|{C_k}|}}{{|D|}}\]
+（2）特征A对数据集D的经验条件熵H(D|A)
+\[H(D|A) = \sum\limits_{i = 1}^n {\frac{{|{D_i}|}}{{|D|}}H({D_i}) =  - } \sum\limits_{i = 1}^n {\frac{{|{D_i}|}}{{|D|}}\sum\limits_{k = 1}^K {\frac{{|{D_{ik}}|}}{{|{D_i}|}}} } {\log _2}\frac{{|{D_{ik}}|}}{{|{D_i}|}}\]
+（3）计算信息增益
+\[g(D,A) = H(D) - H(D|A)\]
+信息增益越大，表示A对D趋于有序的贡献越大。
+-------------------------------分割线------------------------------------------------
+决策树的R语言实现如下：
+library(plyr)
+# 测试数据集 http://archive.ics.uci.edu/ml/datasets/Car+Evaluation
+##计算训练集合D的熵H（D）
+##输入：trainData 训练集，类型为数据框
+##      nClass 指明训练集中第nClass列为分类结果
+##输出：训练集的熵
+cal_HD <- function(trainData, nClass){
+if ( !(is.data.frame(trainData) & is.numeric(nClass)) )
+"input error"
+if (length(trainData) < nClass)
+"nClass is larger than the length of trainData"
+rownum <- nrow(trainData)
+#对第nClass列的值统计频数
+calss.freq <- count(trainData,nClass)
+#计算每个取值的  概率*log2(概率)
+calss.freq <- mutate(calss.freq, freq2 = (freq / rownum)*log2(freq / rownum))
+-sum(calss.freq[,"freq2"])
+#使用arrange代替order，方便的按照多列对数据框进行排序
+#mtcars.new2 <- arrange(mtcars, cyl, vs, gear)
+}
+#cal_HD(mtcars,11)
+##计算训练集合D对特征值A的条件熵H（D|A）
+##输入：trainData 训练集，类型为数据框
+##      nClass 指明训练集中第nClass列为分类结果
+##      nA 指明trainData中条件A的列号
+##输出：训练集trainData对特征A的条件熵
+cal_HDA <- function(trainData, nClass, nA){
+rownum <- nrow(trainData)
+#对第nA列的特征A计算频数
+nA.freq <- count(trainData,nA)
+i <- 1
+sub.hd <- c()
+for (nA.value in nA.freq[,1]){
+#取特征值A取值为na.value的子集
+sub.trainData <- trainData[which(trainData[,nA] == nA.value),]
+sub.hd[i] <- cal_HD(sub.trainData,nClass)
+i <- i+1
+}
+nA.freq <- mutate(nA.freq, freq2 = (freq / rownum)*sub.hd)
+sum(nA.freq[,"freq2"])
+}
+##计算训练集合D对特征值A的信息增益g(D,A)
+##输入：trainData 训练集，类型为数据框
+##      nClass 指明训练集中第nClass列为分类结果
+##      nA 指明trainData中特征A的列号
+##输出：训练集trainData对特征A的信息增益
+g_DA <- function(trainData, nClass, nA){
+cal_HD(trainData, nClass) - cal_HDA(trainData, nClass, nA)
+}
+##根据训练集合生成决策树
+##输入：trainData 训练集，类型为数据框
+##      strRoot 指明根节点的属性名称
+##      strRootAttri 指明根节点的属性取值
+##      nClass 指明训练集中第nClass列为分类结果
+##      cAttri 向量，表示当前可用的特征集合，用列号表示
+##      e 如果特征的最大信息增益小于e，则剩余作为一个分类，类频数最高的最为分类结果
+##输出：决策树T
+gen_decision_tree <- function(trainData, strRoot, strRootAttri, nClass, cAttri, e){
+# 树的描述，（上级节点名称、上级节点属性值、自己节点名称，自己节点的取值）
+decision_tree <- data.frame()
+nClass.freq <- count(trainData,nClass)   ##类别出现的频数
+nClass.freq <- arrange(nClass.freq, desc(freq))  ##按频数从低到高排列
+col.name <- names(trainData) ##trainData的列名
+##1、如果D中所有属于同一类Ck，则T为单节点树
+if nrow(nClass.freq) == 1{
+rbind(decision_tree, c(strRoot, strRootAttri, nClass.freq[1,1], ''))
+return decision_tree
+}
+##2、如果属性cAttri为空，将D中频数最高的类别返回
+if length(cAttri) == 0{
+rbind(decision_tree, c(strRoot, strRootAttri, nClass.freq[1,1], ''))
+return decision_tree
+}
+##3、计算cAttri中各特征值对D的信息增益，选择信息增益最大的特征值Ag及其信息增益
+maxDA <- 0    #记录最大的信息增益
+maxAttriName <- ''   #记录最大信息增益对应的属性名称
+maxAttriIndex <- ''   #记录最大信息增益对应的属性列号
+for(i in cAttri){
+curDA <- g_DA(trainData,nClass,i)
+if (maxDA <= curDA){
+maxDA <- curDA
+maxAttriName <- col.name[i]
+}
+}
+##4、如果最大信息增益小于阈值e，将D中频数最高的类别返回
+if (maxDA < e){
+rbind(decision_tree, c(strRoot, strRootAttri, nClass.freq[1,1], ''))
+return decision_tree
+}
+##5、否则，对Ag的每一可能值ai，依Ag=ai将D分割为若干非空子集Di
+##   将Di中实例数最大的类作为标记，构建子节点
+##   由节点及其子节点构成树T，返回T
+for (oneValue in unique(trainData[,maxAttriName])){
+sub.train <- trainData[which(trainData[,maxAttriName] == oneValue),]  #Di
+#sub.trian.freq <- count(sub.train,nClass)   ##类别出现的频数
+#sub.trian.freq <- arrange(sub.trian.freq, desc(freq))  ##按频数从低到高排列
+rbind(decision_tree, c(strRoot, strRootAttri, maxAttriName , oneValue))
+##6、递归构建下一步
+# 剔除已经使用的属性
+next.cAttri <- cAttri[which(cAttri !=maxAttriIndex)]
+# 递归调用
+next.dt <-gen_decision_tree(sub.train, maxAttriName,
+oneValue, nClass, next.cAttri, e)
+rbind(decision_tree, next.dt)
+}
+names(decision_tree) <- c('preName','preValue','curName','curValue')
+decision_tree
+}
+---------------决策树总结-------------------
+1、R中有实现决策树算法的包rpart，和画出决策树的包rpart.plot，本例自己实现决策树算法是为了更好的理解。
+2、由于决策树只能处理离散属性，因此连续属性应首先进行离散化。
+3、决策树易于理解，对业务的解释性较强。
+4、ID3算法容易引起过拟合，需考虑树的剪枝。

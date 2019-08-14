@@ -1,0 +1,502 @@
+在 碎片化 阅读 充斥 眼球 的 时代 越来越少 的 人 
+会去 关注 每篇 论文 背后 的 探索 和 思考 在 
+这个 栏目 里 你 会 快速 get 每篇 精选 论文 
+的 亮点 和 痛点 时刻 紧跟 AI 前沿 成果 点击 
+本文 底部 的 「 阅读 原文 」 即刻 加入 社区 
+查看 更多 最新 论文 推荐 这是 PaperDaily 的 第   
+71   篇文章 本期 推荐 的 论文 笔记 来自 PaperWeekly 
+社区 用户   @ jamiechoi 本文 主要 讨论 自适应 的 
+注意力 机制 在 Image Caption 中 的 应用 作者 提出 
+了 带有 视觉 标记 的 自适应 Attention 模型 在 每一个 
+time step 由 模型 决定 更 依赖 于 图像 还是 
+视觉 标记 ■   论文 | Knowing When to Look 
+Adaptive Attention via A Visual Sentinel for Image Captioning ■ 
+链接 | www . paperweekly . site / papers / 
+219 ■ 源码 |   github . com / jiasenlu 
+/ A d a p t i v e A 
+t t e n t i o n I n 
+t r o d u c t i o n 
+目前 大多数 的 基于 Attention 机制 的 Image Captioning 模型 
+采用 的 都是 encoder decoder 框架 然而 在 decode 的 
+时候 decoder 应该 对 不同 的 词 有 不同 的 
+Attention 策略 例如 the of 等 词 或者 是 跟在 
+cell 后面 的 phone 等 组合 词 这类 词 叫做 
+非 视觉 词 Non visual Word 更多 依赖 的 是 
+语义 信息 而 不是 视觉 信息 而且 在 生成 caption 
+的 过程 中 非 视觉 词 的 梯度 会 误导 
+或者 降低 视觉 信息 的 有效性 因此 本文 提出 了 
+带有 视觉 标记 的 自适应 Attention 模型 Adative Attention Model 
+with a Visual Sentinel 在 每一个 time step 模型 决定 
+更 依赖 于 图像 还是 Visual Sentinel 其中 visual sentinel 
+存放 了 decoder 已经 知道 的 信息 本文 的 贡献 
+在于 提出 了 带有 视觉 标记 的 自适应 Attention 模型 
+提出 了 新的 Spatial Attention 机制 提出 了 LSTM 的 
+扩展 在 hidden state 以外 加入 了 一个 额外 的 
+Visual Sentinel V e c t o r M e 
+t h o d p a t i a l 
+Attention Model 文章 介绍 了 普通 的 encoder decoder 框架 
+这里 不再 赘述 但 文章 定义 了 context vector ct 
+对于 没有 attention 机制 的 模型 ct   就是 图 
+像 经过 CNN 后 提取 出 的 feature map 是 
+不变 的 而 对于 有 attention 机制 的 模型 基于 
+hidden state decoder 会 关注 图像 的 不同 区域 ct 
+  就是 该 区域 经过 CNN 后 提取 出 的 
+feature map 文章 对 ct   的 定义 如下 其中 
+g 是 attention function V = v1 . . . 
+vk 代表 k 个 区域 的 图像 feature ht 是 
+t 时刻 RNN 的 hidden state 由此 可以 得到 k 
+个 区域 的 attention 分布 α t 这里 把 V 
+与 ht 相加 而 有些 论文 则 使用 一个 双线性 
+矩阵 来 连接 它们 其中 是 所有 元素 为 1 
+的 向量 目的 是 让 相乘 得到 k * k 
+大小 的 矩阵 最终 本文 的 ct   为 与 
+  show attend and tell   1   www . 
+ruishengks . com   www . cnzhaotai . com 使用 
+ht − 1 的 做法 不同 本文 使用 的 是 
+ht 结构 如下 作者 认为 ct   可以 看作 ht 
+的 残差 连接 可以 在 预测 下 一个 词 时 
+降低 不确定性 或者 提供 情报 不是 应该 做 一个 实验 
+验证 使用 ht 和 ht − 1 的 差别 并且 
+发现 这种 Spatial Attention 方式 比 其他 模型 表现 更好 
+Adaptive Attention Modeldecoder 存储/l 了/ul 长时/i 和/c 短时/b 的/uj 视觉/n 
+和/c 语义/n 信息/n 而 Visual Sentinel   st   作为 
+从 里面 提取 的 一个 新的 元件 用来 扩展 上述 
+的 Spatial Attention Model 就 得到 了 Adaptive Attention Model 
+具体 的 扩展 方式 就是 在 原有 的 LSTM 基础上 
+加 了 两个 公式 其中   xt   是 LSTM 
+的 输入 mt   是 memory cell 有些 论文 里 
+用   ct   表示 这里 的   gt   
+叫 sentinel gate 公式 形式 类似于 LSTM 中的 input gate 
+forget gate output   gate 决定了 模型 到底 关注 图像 
+还是 visual sentinel 而   st   公式 的 构造 
+与 LSTM 中的 ht = ot ⊙ tanh ct 类似 
+Adaptive Attention Model 中的 Context Vector β t ∈ 0 
+1 可以 视为 真正 意义 上 的 sentinel gate 控制 
+模型 关注 visual sentinel 和 ct   的 程度 与此同时 
+Spatial Attention 部分 k 个 区域 的 attention 分布   
+α t   也被 扩展 成了   α t ^ 
+做法 是 在   zt   后面 拼接 上 一个 
+元素 扩展 后的/nr α t ^ 有 k + 1 
+个 元素 而 β t = α t ^ k 
++ 1 CVPR 和 arXiv 版本 的 原文 都写 的 
+是 β t = α t k + 1 我 
+在 Github 上 问了 作者 这 确实 是 个 笔误 
+  2 这里 的 Wg 与 中的 Wg 是 相同 
+的 为什么 这样 做 Wh 也 一样 吗 作者 在 
+这里 没有 提到 在 后续 论文   3   里 
+的 公式 9 提到 了 上述 公式 可以 简化 为 
+最终 单词 的 概率分布 具体 架构 如下 Implementation Details 文章 
+选择 了 ResNet 的 最后 一层 卷积 层 的 特征 
+来 表示 图像 维度 是 2048x7x7 并使 用来 表示 k 
+个 局部 图像 特征 而 全局 图像 特征 则是 局部 
+特征 的 平均 局部 图像 特征 需要 经过 转换 最终 
+全局 图像 特征 将与 word embedding 拼接 在 一起 成为 
+LSTM 的 输入 xt = wt vg 局部 图像 特征 
+则 用在 了 attention 部分 ExperimentTable 1 在 test splits 
+上 对比 了 在 Flickr30k 和 MSCOCO 数据 集上 模型 
+与 其他 模型 的 表现 可以 看到 模型 的 Spatial 
+Attention 部分 就 已经 比 其他 模型 表现 好了 而 
+加入 了 Adaptive Attention 部分 以 后 表现 更加 出色 
+Table 2 在 COCO server 上 对比 了 模型 与 
+其他 模型 的 表现 可以 看到 Adaptive Attention 模型 emsemble 
+后 的 表现 是 当时 SOTA 的 结果 Fig 4 
+是 Spatial Attention 的 权重 α 的 可视化 结果 前 
+两列 是 成功 的 样本 最后 一 列 是 失败 
+的 样本 模型 进行 attention 的 区域 基本 都是/nr 合理 
+的 只是 可能 对 一些 物体 的 材质 判断 失误 
+Fig 5 主要 是 sentinel gate 1 − β 的 
+可视化 对于 视觉 词 模型 给出 的 概率 较大 即 
+更 倾向 于 关注 图像 特征   ct 对于 非 
+视觉 词 的 概率 则 比较 小 同时 同 一个 
+词 在 不同 的 上下 文中 的 概率 也是 不 
+一样 的 如 a 在 一 开始 的 概率 较高 
+因为 开始 时 没有 任何 的 语义 信息 可以 依赖 
+以及 需要 确定 单复数 Fig 6 对 COCO 和 Flickr30k 
+中 词典 中的 词 被 认为 是 视觉 词 的 
+平均 概率 进行 了 排序 来 看看 模型 能否 分辨出 
+视觉 词 与非 视觉 词 两个 数据集 间 的 相关性 
+为 0.483 其中 1 . 对于 一些 实际上 是 视觉 
+词 但是 与 其他 词 有 很大 关联性 的 词 
+模型 也 会把 它 视为 非 视觉 词 如 phone 
+一般 都 跟在 cell 后面 2 . 不同 数据集 上 
+不同 的 词 的 概率 不 一样 如 UNK 可能 
+是 由于 训练 数据分布 的 不同 3 . 对于 一些 
+有 相近 意义 的 同源词 如 crossing cross crossed 他们 
+的 概率 却 相差 很大 为什么 模型 没有 依赖 外部 
+的 语料 信息 完全 是 自动 地 发现 这些 趋势 
+Fig 11 显示 了 使用 弱 监督 方法 生成 的 
+bounding box 与 真实 bounding box 的 对比 本文 是 
+第一 个 使用 这种 方法 来 评估 image caption 的 
+attention 效果 的 具体 生成 方法 是 对于 某个 单词 
+而言 先用 NLTK 将其 映 射到 大类 上 如 boy 
+girl 映 射到 people 然后 图像 中 attention weight 小于 
+阈值 每个 单词 的 阈值 都 不一样 的 部分 就 
+会被 分割 出来 取 分割 后的/nr 最大 连通 分量 来 
+生成 bounding box 并 计算 生成 的 和 真实 bounding 
+box 的 IOU intersection over union 对于 spatial attention 和 
+adaptive attention 模型 其 平均 定位 准确 率 分别为 0.362 
+和 0.373 说明了 知道 何时 关注 图像 也 能让 模型 
+更 清楚 到底 要 去 关注 图像 的 哪个 部分 
+Fig 7 显示 了 top 45 个 COCO 数据 集中 
+出现 最 频繁 的 词 的 定位 准确性 对于 一些 
+体积 较小 的 物体 其 准确率 是 比较 低 的 
+这 是因为 attention map 是从 7x7 的 feature map 中 
+直接 放大 的 而 7x7 的 feature map 并 不能 
+很好 地 包含 这些 小 物体 的 信息 Fig 8 
+显示 了 单词 of 在 spatial attention 和 adaptive attention 
+模型 中的 attention map 如果 没有 visual sentinel 非 视觉 
+词 如 of 的 attention 就会 高度 集中 在 图像 
+的 边缘 部分 可能会 在 反向 传播 时 形成 噪声 
+影响 训练 总结 本文 提出 了 Adaptive Attention 机制 其 
+模型 公式 都 非常 简单 Adaptive Attention 部分 增加 的 
+几个 变量 也 非常 简洁 但却 对模型 的 表现 有了/nr 
+很大 的 提升 文章 进行 的 详尽 的 实验 又 
+进一步 验证 了 Adaptive Attention 的 有效性 可谓 非常 巧妙 
+相关 链接 1 .   Show Attend and www . 
+dfgj157 . com Tell Neural Image www . leyouzaixan . 
+cn   Caption Generation with Visual Attentionhttps / / arxiv 
+. org / abs / www . michenggw . com 
+www . qinlinyule . cn / 1502.03044 2 . 笔误 
+https / / github . com / jiasenlu / A 
+d a p t i v e A t t 
+e n t i o n / issues / 14 
+3 . Neural Baby Talkhttps / / www . paperweekly 
+. www . jxbaxi . com / site / papers 
+/ 1801 本文 由 AI 学术 社区 PaperWeekly 精选 推荐 
+社区 目前 已 覆盖 自然语言 处理 计算机 视觉 人工智能 机器学习 
+数据挖掘 和 信息检索 等 研究 方向 点击 「 阅读 原文 
+」 即刻 加入 社区 www . leyouzaixan . cn 在 碎片化 阅读 充斥 眼球 的 时代 越来越少 的 人 
+会去 关注 每篇 论文 背后 的 探索 和 思考 在 
+这个 栏目 里 你 会 快速 get 每篇 精选 论文 
+的 亮点 和 痛点 时刻 紧跟 AI 前沿 成果 点击 
+本文 底部 的 「 阅读 原文 」 即刻 加入 社区 
+查看 更多 最新 论文 推荐 这是 PaperDaily 的 第   
+71   篇文章 本期 推荐 的 论文 笔记 来自 PaperWeekly 
+社区 用户   @ jamiechoi 本文 主要 讨论 自适应 的 
+注意力 机制 在 Image Caption 中 的 应用 作者 提出 
+了 带有 视觉 标记 的 自适应 Attention 模型 在 每一个 
+time step 由 模型 决定 更 依赖 于 图像 还是 
+视觉 标记 ■   论文 | Knowing When to Look 
+Adaptive Attention via A Visual Sentinel for Image Captioning ■ 
+链接 | www . paperweekly . site / papers / 
+219 ■ 源码 |   github . com / jiasenlu 
+/ A d a p t i v e A 
+t t e n t i o n I n 
+t r o d u c t i o n 
+目前 大多数 的 基于 Attention 机制 的 Image Captioning 模型 
+采用 的 都是 encoder decoder 框架 然而 在 decode 的 
+时候 decoder 应该 对 不同 的 词 有 不同 的 
+Attention 策略 例如 the of 等 词 或者 是 跟在 
+cell 后面 的 phone 等 组合 词 这类 词 叫做 
+非 视觉 词 Non visual Word 更多 依赖 的 是 
+语义 信息 而 不是 视觉 信息 而且 在 生成 caption 
+的 过程 中 非 视觉 词 的 梯度 会 误导 
+或者 降低 视觉 信息 的 有效性 因此 本文 提出 了 
+带有 视觉 标记 的 自适应 Attention 模型 Adative Attention Model 
+with a Visual Sentinel 在 每一个 time step 模型 决定 
+更 依赖 于 图像 还是 Visual Sentinel 其中 visual sentinel 
+存放 了 decoder 已经 知道 的 信息 本文 的 贡献 
+在于 提出 了 带有 视觉 标记 的 自适应 Attention 模型 
+提出 了 新的 Spatial Attention 机制 提出 了 LSTM 的 
+扩展 在 hidden state 以外 加入 了 一个 额外 的 
+Visual Sentinel V e c t o r M e 
+t h o d p a t i a l 
+Attention Model 文章 介绍 了 普通 的 encoder decoder 框架 
+这里 不再 赘述 但 文章 定义 了 context vector ct 
+对于 没有 attention 机制 的 模型 ct   就是 图 
+像 经过 CNN 后 提取 出 的 feature map 是 
+不变 的 而 对于 有 attention 机制 的 模型 基于 
+hidden state decoder 会 关注 图像 的 不同 区域 ct 
+  就是 该 区域 经过 CNN 后 提取 出 的 
+feature map 文章 对 ct   的 定义 如下 其中 
+g 是 attention function V = v1 . . . 
+vk 代表 k 个 区域 的 图像 feature ht 是 
+t 时刻 RNN 的 hidden state 由此 可以 得到 k 
+个 区域 的 attention 分布 α t 这里 把 V 
+与 ht 相加 而 有些 论文 则 使用 一个 双线性 
+矩阵 来 连接 它们 其中 是 所有 元素 为 1 
+的 向量 目的 是 让 相乘 得到 k * k 
+大小 的 矩阵 最终 本文 的 ct   为 与 
+  show attend and tell   1   www . 
+ruishengks . com   www . cnzhaotai . com 使用 
+ht − 1 的 做法 不同 本文 使用 的 是 
+ht 结构 如下 作者 认为 ct   可以 看作 ht 
+的 残差 连接 可以 在 预测 下 一个 词 时 
+降低 不确定性 或者 提供 情报 不是 应该 做 一个 实验 
+验证 使用 ht 和 ht − 1 的 差别 并且 
+发现 这种 Spatial Attention 方式 比 其他 模型 表现 更好 
+Adaptive Attention Modeldecoder 存储/l 了/ul 长时/i 和/c 短时/b 的/uj 视觉/n 
+和/c 语义/n 信息/n 而 Visual Sentinel   st   作为 
+从 里面 提取 的 一个 新的 元件 用来 扩展 上述 
+的 Spatial Attention Model 就 得到 了 Adaptive Attention Model 
+具体 的 扩展 方式 就是 在 原有 的 LSTM 基础上 
+加 了 两个 公式 其中   xt   是 LSTM 
+的 输入 mt   是 memory cell 有些 论文 里 
+用   ct   表示 这里 的   gt   
+叫 sentinel gate 公式 形式 类似于 LSTM 中的 input gate 
+forget gate output   gate 决定了 模型 到底 关注 图像 
+还是 visual sentinel 而   st   公式 的 构造 
+与 LSTM 中的 ht = ot ⊙ tanh ct 类似 
+Adaptive Attention Model 中的 Context Vector β t ∈ 0 
+1 可以 视为 真正 意义 上 的 sentinel gate 控制 
+模型 关注 visual sentinel 和 ct   的 程度 与此同时 
+Spatial Attention 部分 k 个 区域 的 attention 分布   
+α t   也被 扩展 成了   α t ^ 
+做法 是 在   zt   后面 拼接 上 一个 
+元素 扩展 后的/nr α t ^ 有 k + 1 
+个 元素 而 β t = α t ^ k 
++ 1 CVPR 和 arXiv 版本 的 原文 都写 的 
+是 β t = α t k + 1 我 
+在 Github 上 问了 作者 这 确实 是 个 笔误 
+  2 这里 的 Wg 与 中的 Wg 是 相同 
+的 为什么 这样 做 Wh 也 一样 吗 作者 在 
+这里 没有 提到 在 后续 论文   3   里 
+的 公式 9 提到 了 上述 公式 可以 简化 为 
+最终 单词 的 概率分布 具体 架构 如下 Implementation Details 文章 
+选择 了 ResNet 的 最后 一层 卷积 层 的 特征 
+来 表示 图像 维度 是 2048x7x7 并使 用来 表示 k 
+个 局部 图像 特征 而 全局 图像 特征 则是 局部 
+特征 的 平均 局部 图像 特征 需要 经过 转换 最终 
+全局 图像 特征 将与 word embedding 拼接 在 一起 成为 
+LSTM 的 输入 xt = wt vg 局部 图像 特征 
+则 用在 了 attention 部分 ExperimentTable 1 在 test splits 
+上 对比 了 在 Flickr30k 和 MSCOCO 数据 集上 模型 
+与 其他 模型 的 表现 可以 看到 模型 的 Spatial 
+Attention 部分 就 已经 比 其他 模型 表现 好了 而 
+加入 了 Adaptive Attention 部分 以 后 表现 更加 出色 
+Table 2 在 COCO server 上 对比 了 模型 与 
+其他 模型 的 表现 可以 看到 Adaptive Attention 模型 emsemble 
+后 的 表现 是 当时 SOTA 的 结果 Fig 4 
+是 Spatial Attention 的 权重 α 的 可视化 结果 前 
+两列 是 成功 的 样本 最后 一 列 是 失败 
+的 样本 模型 进行 attention 的 区域 基本 都是/nr 合理 
+的 只是 可能 对 一些 物体 的 材质 判断 失误 
+Fig 5 主要 是 sentinel gate 1 − β 的 
+可视化 对于 视觉 词 模型 给出 的 概率 较大 即 
+更 倾向 于 关注 图像 特征   ct 对于 非 
+视觉 词 的 概率 则 比较 小 同时 同 一个 
+词 在 不同 的 上下 文中 的 概率 也是 不 
+一样 的 如 a 在 一 开始 的 概率 较高 
+因为 开始 时 没有 任何 的 语义 信息 可以 依赖 
+以及 需要 确定 单复数 Fig 6 对 COCO 和 Flickr30k 
+中 词典 中的 词 被 认为 是 视觉 词 的 
+平均 概率 进行 了 排序 来 看看 模型 能否 分辨出 
+视觉 词 与非 视觉 词 两个 数据集 间 的 相关性 
+为 0.483 其中 1 . 对于 一些 实际上 是 视觉 
+词 但是 与 其他 词 有 很大 关联性 的 词 
+模型 也 会把 它 视为 非 视觉 词 如 phone 
+一般 都 跟在 cell 后面 2 . 不同 数据集 上 
+不同 的 词 的 概率 不 一样 如 UNK 可能 
+是 由于 训练 数据分布 的 不同 3 . 对于 一些 
+有 相近 意义 的 同源词 如 crossing cross crossed 他们 
+的 概率 却 相差 很大 为什么 模型 没有 依赖 外部 
+的 语料 信息 完全 是 自动 地 发现 这些 趋势 
+Fig 11 显示 了 使用 弱 监督 方法 生成 的 
+bounding box 与 真实 bounding box 的 对比 本文 是 
+第一 个 使用 这种 方法 来 评估 image caption 的 
+attention 效果 的 具体 生成 方法 是 对于 某个 单词 
+而言 先用 NLTK 将其 映 射到 大类 上 如 boy 
+girl 映 射到 people 然后 图像 中 attention weight 小于 
+阈值 每个 单词 的 阈值 都 不一样 的 部分 就 
+会被 分割 出来 取 分割 后的/nr 最大 连通 分量 来 
+生成 bounding box 并 计算 生成 的 和 真实 bounding 
+box 的 IOU intersection over union 对于 spatial attention 和 
+adaptive attention 模型 其 平均 定位 准确 率 分别为 0.362 
+和 0.373 说明了 知道 何时 关注 图像 也 能让 模型 
+更 清楚 到底 要 去 关注 图像 的 哪个 部分 
+Fig 7 显示 了 top 45 个 COCO 数据 集中 
+出现 最 频繁 的 词 的 定位 准确性 对于 一些 
+体积 较小 的 物体 其 准确率 是 比较 低 的 
+这 是因为 attention map 是从 7x7 的 feature map 中 
+直接 放大 的 而 7x7 的 feature map 并 不能 
+很好 地 包含 这些 小 物体 的 信息 Fig 8 
+显示 了 单词 of 在 spatial attention 和 adaptive attention 
+模型 中的 attention map 如果 没有 visual sentinel 非 视觉 
+词 如 of 的 attention 就会 高度 集中 在 图像 
+的 边缘 部分 可能会 在 反向 传播 时 形成 噪声 
+影响 训练 总结 本文 提出 了 Adaptive Attention 机制 其 
+模型 公式 都 非常 简单 Adaptive Attention 部分 增加 的 
+几个 变量 也 非常 简洁 但却 对模型 的 表现 有了/nr 
+很大 的 提升 文章 进行 的 详尽 的 实验 又 
+进一步 验证 了 Adaptive Attention 的 有效性 可谓 非常 巧妙 
+相关 链接 1 .   Show Attend and www . 
+dfgj157 . com Tell Neural Image www . leyouzaixan . 
+cn   Caption Generation with Visual Attentionhttps / / arxiv 
+. org / abs / www . michenggw . com 
+www . qinlinyule . cn / 1502.03044 2 . 笔误 
+https / / github . com / jiasenlu / A 
+d a p t i v e A t t 
+e n t i o n / issues / 14 
+3 . Neural Baby Talkhttps / / www . paperweekly 
+. www . jxbaxi . com / site / papers 
+/ 1801 本文 由 AI 学术 社区 PaperWeekly 精选 推荐 
+社区 目前 已 覆盖 自然语言 处理 计算机 视觉 人工智能 机器学习 
+数据挖掘 和 信息检索 等 研究 方向 点击 「 阅读 原文 
+」 即刻 加入 社区 www . leyouzaixan . cn 在 碎片化 阅读 充斥 眼球 的 时代 越来越少 的 人 
+会去 关注 每篇 论文 背后 的 探索 和 思考 在 
+这个 栏目 里 你 会 快速 get 每篇 精选 论文 
+的 亮点 和 痛点 时刻 紧跟 AI 前沿 成果 点击 
+本文 底部 的 「 阅读 原文 」 即刻 加入 社区 
+查看 更多 最新 论文 推荐 这是 PaperDaily 的 第   
+71   篇文章 本期 推荐 的 论文 笔记 来自 PaperWeekly 
+社区 用户   @ jamiechoi 本文 主要 讨论 自适应 的 
+注意力 机制 在 Image Caption 中 的 应用 作者 提出 
+了 带有 视觉 标记 的 自适应 Attention 模型 在 每一个 
+time step 由 模型 决定 更 依赖 于 图像 还是 
+视觉 标记 ■   论文 | Knowing When to Look 
+Adaptive Attention via A Visual Sentinel for Image Captioning ■ 
+链接 | www . paperweekly . site / papers / 
+219 ■ 源码 |   github . com / jiasenlu 
+/ A d a p t i v e A 
+t t e n t i o n I n 
+t r o d u c t i o n 
+目前 大多数 的 基于 Attention 机制 的 Image Captioning 模型 
+采用 的 都是 encoder decoder 框架 然而 在 decode 的 
+时候 decoder 应该 对 不同 的 词 有 不同 的 
+Attention 策略 例如 the of 等 词 或者 是 跟在 
+cell 后面 的 phone 等 组合 词 这类 词 叫做 
+非 视觉 词 Non visual Word 更多 依赖 的 是 
+语义 信息 而 不是 视觉 信息 而且 在 生成 caption 
+的 过程 中 非 视觉 词 的 梯度 会 误导 
+或者 降低 视觉 信息 的 有效性 因此 本文 提出 了 
+带有 视觉 标记 的 自适应 Attention 模型 Adative Attention Model 
+with a Visual Sentinel 在 每一个 time step 模型 决定 
+更 依赖 于 图像 还是 Visual Sentinel 其中 visual sentinel 
+存放 了 decoder 已经 知道 的 信息 本文 的 贡献 
+在于 提出 了 带有 视觉 标记 的 自适应 Attention 模型 
+提出 了 新的 Spatial Attention 机制 提出 了 LSTM 的 
+扩展 在 hidden state 以外 加入 了 一个 额外 的 
+Visual Sentinel V e c t o r M e 
+t h o d p a t i a l 
+Attention Model 文章 介绍 了 普通 的 encoder decoder 框架 
+这里 不再 赘述 但 文章 定义 了 context vector ct 
+对于 没有 attention 机制 的 模型 ct   就是 图 
+像 经过 CNN 后 提取 出 的 feature map 是 
+不变 的 而 对于 有 attention 机制 的 模型 基于 
+hidden state decoder 会 关注 图像 的 不同 区域 ct 
+  就是 该 区域 经过 CNN 后 提取 出 的 
+feature map 文章 对 ct   的 定义 如下 其中 
+g 是 attention function V = v1 . . . 
+vk 代表 k 个 区域 的 图像 feature ht 是 
+t 时刻 RNN 的 hidden state 由此 可以 得到 k 
+个 区域 的 attention 分布 α t 这里 把 V 
+与 ht 相加 而 有些 论文 则 使用 一个 双线性 
+矩阵 来 连接 它们 其中 是 所有 元素 为 1 
+的 向量 目的 是 让 相乘 得到 k * k 
+大小 的 矩阵 最终 本文 的 ct   为 与 
+  show attend and tell   1   www . 
+ruishengks . com   www . cnzhaotai . com 使用 
+ht − 1 的 做法 不同 本文 使用 的 是 
+ht 结构 如下 作者 认为 ct   可以 看作 ht 
+的 残差 连接 可以 在 预测 下 一个 词 时 
+降低 不确定性 或者 提供 情报 不是 应该 做 一个 实验 
+验证 使用 ht 和 ht − 1 的 差别 并且 
+发现 这种 Spatial Attention 方式 比 其他 模型 表现 更好 
+Adaptive Attention Modeldecoder 存储/l 了/ul 长时/i 和/c 短时/b 的/uj 视觉/n 
+和/c 语义/n 信息/n 而 Visual Sentinel   st   作为 
+从 里面 提取 的 一个 新的 元件 用来 扩展 上述 
+的 Spatial Attention Model 就 得到 了 Adaptive Attention Model 
+具体 的 扩展 方式 就是 在 原有 的 LSTM 基础上 
+加 了 两个 公式 其中   xt   是 LSTM 
+的 输入 mt   是 memory cell 有些 论文 里 
+用   ct   表示 这里 的   gt   
+叫 sentinel gate 公式 形式 类似于 LSTM 中的 input gate 
+forget gate output   gate 决定了 模型 到底 关注 图像 
+还是 visual sentinel 而   st   公式 的 构造 
+与 LSTM 中的 ht = ot ⊙ tanh ct 类似 
+Adaptive Attention Model 中的 Context Vector β t ∈ 0 
+1 可以 视为 真正 意义 上 的 sentinel gate 控制 
+模型 关注 visual sentinel 和 ct   的 程度 与此同时 
+Spatial Attention 部分 k 个 区域 的 attention 分布   
+α t   也被 扩展 成了   α t ^ 
+做法 是 在   zt   后面 拼接 上 一个 
+元素 扩展 后的/nr α t ^ 有 k + 1 
+个 元素 而 β t = α t ^ k 
++ 1 CVPR 和 arXiv 版本 的 原文 都写 的 
+是 β t = α t k + 1 我 
+在 Github 上 问了 作者 这 确实 是 个 笔误 
+  2 这里 的 Wg 与 中的 Wg 是 相同 
+的 为什么 这样 做 Wh 也 一样 吗 作者 在 
+这里 没有 提到 在 后续 论文   3   里 
+的 公式 9 提到 了 上述 公式 可以 简化 为 
+最终 单词 的 概率分布 具体 架构 如下 Implementation Details 文章 
+选择 了 ResNet 的 最后 一层 卷积 层 的 特征 
+来 表示 图像 维度 是 2048x7x7 并使 用来 表示 k 
+个 局部 图像 特征 而 全局 图像 特征 则是 局部 
+特征 的 平均 局部 图像 特征 需要 经过 转换 最终 
+全局 图像 特征 将与 word embedding 拼接 在 一起 成为 
+LSTM 的 输入 xt = wt vg 局部 图像 特征 
+则 用在 了 attention 部分 ExperimentTable 1 在 test splits 
+上 对比 了 在 Flickr30k 和 MSCOCO 数据 集上 模型 
+与 其他 模型 的 表现 可以 看到 模型 的 Spatial 
+Attention 部分 就 已经 比 其他 模型 表现 好了 而 
+加入 了 Adaptive Attention 部分 以 后 表现 更加 出色 
+Table 2 在 COCO server 上 对比 了 模型 与 
+其他 模型 的 表现 可以 看到 Adaptive Attention 模型 emsemble 
+后 的 表现 是 当时 SOTA 的 结果 Fig 4 
+是 Spatial Attention 的 权重 α 的 可视化 结果 前 
+两列 是 成功 的 样本 最后 一 列 是 失败 
+的 样本 模型 进行 attention 的 区域 基本 都是/nr 合理 
+的 只是 可能 对 一些 物体 的 材质 判断 失误 
+Fig 5 主要 是 sentinel gate 1 − β 的 
+可视化 对于 视觉 词 模型 给出 的 概率 较大 即 
+更 倾向 于 关注 图像 特征   ct 对于 非 
+视觉 词 的 概率 则 比较 小 同时 同 一个 
+词 在 不同 的 上下 文中 的 概率 也是 不 
+一样 的 如 a 在 一 开始 的 概率 较高 
+因为 开始 时 没有 任何 的 语义 信息 可以 依赖 
+以及 需要 确定 单复数 Fig 6 对 COCO 和 Flickr30k 
+中 词典 中的 词 被 认为 是 视觉 词 的 
+平均 概率 进行 了 排序 来 看看 模型 能否 分辨出 
+视觉 词 与非 视觉 词 两个 数据集 间 的 相关性 
+为 0.483 其中 1 . 对于 一些 实际上 是 视觉 
+词 但是 与 其他 词 有 很大 关联性 的 词 
+模型 也 会把 它 视为 非 视觉 词 如 phone 
+一般 都 跟在 cell 后面 2 . 不同 数据集 上 
+不同 的 词 的 概率 不 一样 如 UNK 可能 
+是 由于 训练 数据分布 的 不同 3 . 对于 一些 
+有 相近 意义 的 同源词 如 crossing cross crossed 他们 
+的 概率 却 相差 很大 为什么 模型 没有 依赖 外部 
+的 语料 信息 完全 是 自动 地 发现 这些 趋势 
+Fig 11 显示 了 使用 弱 监督 方法 生成 的 
+bounding box 与 真实 bounding box 的 对比 本文 是 
+第一 个 使用 这种 方法 来 评估 image caption 的 
+attention 效果 的 具体 生成 方法 是 对于 某个 单词 
+而言 先用 NLTK 将其 映 射到 大类 上 如 boy 
+girl 映 射到 people 然后 图像 中 attention weight 小于 
+阈值 每个 单词 的 阈值 都 不一样 的 部分 就 
+会被 分割 出来 取 分割 后的/nr 最大 连通 分量 来 
+生成 bounding box 并 计算 生成 的 和 真实 bounding 
+box 的 IOU intersection over union 对于 spatial attention 和 
+adaptive attention 模型 其 平均 定位 准确 率 分别为 0.362 
+和 0.373 说明了 知道 何时 关注 图像 也 能让 模型 
+更 清楚 到底 要 去 关注 图像 的 哪个 部分 
+Fig 7 显示 了 top 45 个 COCO 数据 集中 
+出现 最 频繁 的 词 的 定位 准确性 对于 一些 
+体积 较小 的 物体 其 准确率 是 比较 低 的 
+这 是因为 attention map 是从 7x7 的 feature map 中 
+直接 放大 的 而 7x7 的 feature map 并 不能 
+很好 地 包含 这些 小 物体 的 信息 Fig 8 
+显示 了 单词 of 在 spatial attention 和 adaptive attention 
+模型 中的 attention map 如果 没有 visual sentinel 非 视觉 
+词 如 of 的 attention 就会 高度 集中 在 图像 
+的 边缘 部分 可能会 在 反向 传播 时 形成 噪声 
+影响 训练 总结 本文 提出 了 Adaptive Attention 机制 其 
+模型 公式 都 非常 简单 Adaptive Attention 部分 增加 的 
+几个 变量 也 非常 简洁 但却 对模型 的 表现 有了/nr 
+很大 的 提升 文章 进行 的 详尽 的 实验 又 
+进一步 验证 了 Adaptive Attention 的 有效性 可谓 非常 巧妙 
+相关 链接 1 .   Show Attend and www . 
+dfgj157 . com Tell Neural Image www . leyouzaixan . 
+cn   Caption Generation with Visual Attentionhttps / / arxiv 
+. org / abs / www . michenggw . com 
+www . qinlinyule . cn / 1502.03044 2 . 笔误 
+https / / github . com / jiasenlu / A 
+d a p t i v e A t t 
+e n t i o n / issues / 14 
+3 . Neural Baby Talkhttps / / www . paperweekly 
+. www . jxbaxi . com / site / papers 
+/ 1801 本文 由 AI 学术 社区 PaperWeekly 精选 推荐 
+社区 目前 已 覆盖 自然语言 处理 计算机 视觉 人工智能 机器学习 
+数据挖掘 和 信息检索 等 研究 方向 点击 「 阅读 原文 
+」 即刻 加入 社区 www . leyouzaixan . cn 

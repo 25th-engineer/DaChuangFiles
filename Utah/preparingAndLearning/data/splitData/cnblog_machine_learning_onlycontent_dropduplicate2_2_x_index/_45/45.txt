@@ -1,0 +1,24 @@
+1024G——前沿技术资料百度云链接：
+人工智能：链接：http://pan.baidu.com/s/1nvk5AaP 密码：dpg5
+深度学习：链接：http://pan.baidu.com/s/1slvSHpN 密码：v3ro
+数据分析：链接：http://pan.baidu.com/s/1slALMPJ 密码：drgs
+算法：链接：http://pan.baidu.com/s/1bpmlTKz 密码：5xh3
+推荐系统：链接：http://pan.baidu.com/s/1i4CNNpz 密码：hyft
+行业报告：链接：http://pan.baidu.com/s/1slJ9r8h 密码：0a0u
+训练数据集：链接:https://pan.baidu.com/s/1dEHGaKL 密码:xjhz
+自然语言处理(NLP)：链接：http://pan.baidu.com/s/1geTMLQb 密码：cf5c
+机器学习：链接：http://pan.baidu.com/s/1nuUq8kh 密码：wk11
+Docker：链接：http://pan.baidu.com/s/1o8LbsOq 密码：er09
+Fluent：链接：http://pan.baidu.com/s/1pLIXyC7 密码：ke6n
+Hadoop：链接：http://pan.baidu.com/s/1kVO5rlt 密码：v2a7
+HBase：链接：http://pan.baidu.com/s/1nvwaQjn 密码：nwnl
+Kafka：链接：http://pan.baidu.com/s/1kUGh4DT 密码：ou16
+MySql：链接：http://pan.baidu.com/s/1o8i1C8M 密码：w2s4
+OpenStack：链接：http://pan.baidu.com/s/1skUOvsp 密码：gz9x
+Python：链接：http://pan.baidu.com/s/1o7IdpZs 密码：v0fj
+Redis：链接：http://pan.baidu.com/s/1i5foaZN 密码：a9jl
+R语言：链接：http://pan.baidu.com/s/1dFql6tb 密码：xw49
+Spark：链接：http://pan.baidu.com/s/1o8sAY9c 密码：unx9
+Storm：链接：http://pan.baidu.com/s/1slKpoRj 密码：0bsd
+峰会资料：链接：http://pan.baidu.com/s/1cby5Ee 密码：nvtg
+众所周知：百度云盘经常抽风，请大家花样打开内容！！遇到连接失效，我们也正在抢修，修好了会再更新不要着急。从一级 菜单进入就存入自己的云盘 不然有可能会出现里面没内容或没有密码的的情况 存入自己的盘之后就好了。

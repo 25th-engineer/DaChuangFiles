@@ -1,0 +1,64 @@
+计算机视觉学习资料整理
+1、理论
+1.1、图像处理
+1.2、机器学习
+1.3、深度学习
+1.4、计算机视觉
+2、实践
+2.1、Python编程
+2.2、多维数组运算Numpy
+2.3、绘图Matplotlib
+2.4、数据分析Pandas
+2.5、SciPy
+2.6、Scikits_Learn
+2.7、Tensorflow
+2.8、Keras
+1、理论
+1.1、图像处理
+Opencv—Python
+Scikit-Image
+1.2、机器学习
+吴恩达机器学习
+林轩田机器学习基石
+林轩田机器学习技法
+《统计学习方法》
+《机器学习西瓜书》
+《南瓜书》
+1.3、深度学习
+吴恩达深度学习
+《深度学习》花书
+1.4、计算机视觉
+李飞飞视觉课
+2、实践
+2.1、Python编程
+菜鸟教程
+廖雪峰
+官网
+中文教程
+2.2、多维数组运算Numpy
+Numpy 中文学习网址
+Numpy 官方
+Numpy 源码
+2.3、绘图Matplotlib
+Matplotlib 中文
+Matplotlib 官网
+Matplotlib 源码
+2.4、数据分析Pandas
+Pandas 中文学习网址
+Pandas 英文
+Pandas 官网
+Pandas 源码
+2.5、SciPy
+SciPy 官网
+SciPy 源码
+2.6、Scikits_Learn
+官方网站
+源码
+2.7、Tensorflow
+中文网站
+官网
+源码
+2.8、Keras
+中文网站
+英文网站
+源码

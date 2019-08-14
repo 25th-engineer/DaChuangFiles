@@ -1,0 +1,72 @@
+机器学习 Machine Learning 简称 ML 和 计算机 视觉 Computer Vision 
+简称 CV 是 非常 令人 着迷 非常 酷炫 颇具 挑战性 
+同时 也 是 涉及面 很广 的 领域 本文 整理 了 
+机器 学习 和 计算机 视觉 的 相关 学习 资源 目的 
+是 帮助 许多 和我/nr 一样 希望 深刻理解 智能 背后 原理 
+的 人 用 最为 高效 的 方式 学习 最为 前沿 
+的 技术 和 知识 另外 请见 我 后 一篇 博客 
+里 列 的 数据 挖掘 的 学习 资源 wikipedia . 
+org 历史 领域 概述 资源 链接 Machine learning 介绍 了 
+ML 所 处理 的 问题 常用 算法 应用 软件 等 
+右侧 列举 了 细分 条目 List of machine learning concepts 
+Category Machine learning 列 举出 了 更多 ML 相关 概念 
+和 条目 Computer vision 同样 介绍 了 CV 所 处理 
+的 问题 常用 方法 应用 等 底部 列举 了 细分 
+条目 List of computer vision topics Category Computer vision 列举 
+了 更多 CV 相关 条目 大学 课程 在线教程 Stanford 关于 
+ML 和 CV 计算机 课程 按 推荐 排序 cs229   
+Machine Learning cs229T   Statistical Learning Theory cs231N   Convolutional 
+Neural Networks for Visual Recognition cs231A   Computer Vision From 
+3D Recontruct to Recognition cs231B The Cutting Edge of Computer 
+Vision cs221 Artificial Intelligence Principles & Techniques cs131 Computer Vision 
+Foundations and Applications cs369L A Theoretical Perspective on Machine Learning 
+cs205A Mathematical Methods for Robotics Vision & Graph cs231M Mobile 
+Computer Vision 这些 课程 大 都 可以 下载 PPT 更多 
+课程 请见 Courses | Stanford Computer Science Open class room 
+的 ML 课程 Machine Learning Unsupervised Feature Learning and Deep 
+Learning Coursera 的 ML 课程 Machine Learning 以及 Stanford 在线教程 
+Deep learning tuorial 更多 大学 课程 可以用 machine learning course 
+或 computer vision course 为 关键字 搜索 这里 是 Google 
+的 国内 镜像 这样 就 不 需要 FanQiang 了 专著 
+书籍 ML 机器学习 周志华 2016 统计 学习 方法 李航 2012 
+Deep Learning Methods and Applications   Li Deng and Dong 
+Yu 2014 Introduction to Machine Learning 3rd ed .   
+Ethem Alpaydin 2014 Machine Learning An Algorithmic Perspective   2nd 
+ed .   Stephen Marsland 2015 Deep Learning 一本 在线 
+书籍 Neural Networks and Learning Machines 3rd ed .   
+Simon O . Haykin 2008 有 中文 译本 神经 网络 
+与 机器学习 Pattern Recognition and Machine Learning   Christopher Bishop 
+2006 有 中文 译本 模式识别 与 机器学习 Machine Learning a 
+Probabilistic Perspective   Kevin P . Murphy 2012 CV Concise 
+Computer Vision An Introduction into Theory and Algorithms   Klette 
+Reinhard 2014 Computer Vision Algorithms and Applications Szeliski Richard 2011 
+有 中文 译本 计算机 视觉 算法 与 应用 Multiple View 
+Geometry in Computer Vision 2nd ed .   Richard Hartley 
+and Andrew Zisserman  2004 An Invitation to 3 D 
+Vision From Images to Geometric Models     Yi Ma 
+Stefano Soatto Jana Kosecka  . Shankar Sastry  2004 
+Robot vision   Berthold K . P . Horn 1986 
+有 中文 译本 机器 视觉 Image Processing Analysis and Machine 
+Vision 3rd ed .   Milan Sonka Vaclav Hlavac Roger 
+Boyle  2007 有 中文 译本 图像处理 分析 与 机器 
+视觉 推荐 一个 非常 好 的 搜索 英文 电子书 的 
+网站 Library Genesis 学术论文 ML CV 领域 的 顶级 期刊 
+TPAMI IJCV 学术会议 ACL CVPR ICML ICCV NIPS ECCV ACCV 
+等 CVPapers 对 CV 领域 学术论文 做了 很好 的 整理 
+ImageNet 每年 举办 的 图像 识别 比赛 很能 代表 CV 
+最高 水平 MS COCO 是 类似 比赛 KITTI 上 有 
+很多 数据 以及 CV 算法 的 排名 这里 是 一个 
+数据集 的 列表 这里 是 CV 数据集 arXiv . org 
+很多 最新 论文 首先 发表 在 这里 当然 还是 推荐 
+Google Scholar 这里 是 一个 镜像网站 学习 网站 deeplearning . 
+net 一个 非常 好 的 机器学习 网站 有 dataset software 
+reading list 连接 VisionBib . Com 学术 大牛 整理 的 
+CV 资源 CVonline 有 一个 非常 全面 的 资源 链接 
+新 智 元和 机器 之心 是 很好 的 机器学习 资讯 
+平台 另外 推荐 一些 微信 公众 号 机器学习 研究会 程序 
+媛 的 日常 程序 库 OpenCV 一个 C + + 
+视觉 库 使用 广泛 Torch Theano 两个 很 强大 的 
+支持 CUDA 显卡 加速 的 Python 机器学习 库 Caffe 很多 
+研究 者 使用 的 Deep Learning 库 R 语言 一个 
+方便 开发 机器学习 程序 的 环境 更多 的 程序库 这里 
+做 了 很好 的 总结 

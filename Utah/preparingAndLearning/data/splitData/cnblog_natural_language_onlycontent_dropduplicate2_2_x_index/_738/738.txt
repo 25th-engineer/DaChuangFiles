@@ -1,0 +1,26 @@
+认知计算代表一种全新的计算模式，它包含信息分析，自然语言处理和机器学习领域的大量创新技术。
+Cognnitive computing refers to systems that learn at scale, reason with purpose and interact with humans nautally.
+认知计算是一种学习系统，有规模、有原因、有目的地学会和人类交互。
+认知计算主要分为三个阶段：
+打孔机时代-> 编程时代 -> 认知时代
+代表性的项目：
+IBM watson (2006)，Google大脑(2011)，百度大脑(2011)
+代表人物：
+吴恩达
+和人工智能（Artificial Intelligence）比较：
+人工智能：
+Artificial, Explicity Programmed, Deterministic, Human not involved, Measured by Turing Test or minic humans, 会给出一个确切的结果，是或否。
+认知计算：
+Cognitive, Learn and reason, Interactions with human and enviornments, Measured in more practical way, 会通过学习给出一个概率。
+适合的领域：
+Large Scale, Complex, Interactive, Unstructured data, Probability.
+生命科学，金融，教育，政府，商业智能BI，交通。
+包含的知识：
+Natural Language Processing 自然语言处理
+Question Answering Technolog 问答技术
+High Performance Compting 高性能计算
+Knowledge Representation and Reasoning 知识表达和理解
+Machine Learning 机器学习
+Unstructured Information Management 非结构化信息管理
+和生物学关联：
+可视化、心理学、神经网络、深度学习

@@ -1,0 +1,14 @@
+会议：
+AAAI 每年一次，年初开会
+ICLR 每年一次，春季开会
+CVPR 每年一次，夏季开会
+ICML 每年一次，夏季开会 , cvpr附近
+IJCAI 每年一次，夏季开会，cvpr附近
+ICCV 两年一次，奇数年，cvpr之后
+ECCV 两年一次，偶数年，cvpr之后
+NIPS 每年一次，冬季开会，iccv或eccv以后
+期刊：
+TPAMI
+IJCV
+TIP
+PR

@@ -1,0 +1,272 @@
+序号
+著作或期刊名称
+作者或出版者
+适用对象及要求
+1
+An Introduction to Corpus Linguistics(语料库语言学入门)
+Graeme Kennedy
+硕士必读
+2
+Aspects of the Theory of Syntax(语法理论方面)
+Chomsky
+硕士选读
+3
+Comprehension: A Paradigm for Cognition(理解： 一个 范式 的 认知)
+Kintsch
+博士选读
+4
+Computational Linguistics(计算 语言学)
+The Association for Computational Linguistics
+硕士选读
+博士必读
+5
+Conceptual Information Processing(信息处理的概念)
+Schank
+博士选读
+6
+Corpus Linguistics
+Douglas Biber, etc.
+硕士选读
+7
+Dynamic Memory(Dynamic Memory）”理论)http://blog.csdn.net/xifeng_2008/article/details/3043638
+Schank
+博士选读
+8
+Form and Style: Research Papers, Reports and Theses (Tenth edition), （如何写研究论文与学术报告）
+Carole Slade
+硕士、博士必读
+9
+Foundations of Statistical Natural Language Processing (统计自然语言处理基础)
+Christopher D. Manning, Hinrich Schütze (苑春法等译)
+硕士选读
+博士必读
+10
+HNC(概念层次网络)理论导论
+苗传江
+硕士必读
+11
+HNC(概念层次网络)理论——计算机理解语言研究的新思路
+黄曾阳
+硕士、博士必读
+12
+Knowledge of Language: Its Nature, Origins and Use
+Chomsky
+硕士、博士选读
+13
+Lectures on Government and Binding
+Chomsky
+博士选读
+14
+Linguistic Semantics: An Introduction
+John Lyons
+硕士、博士必读
+15
+Natural Language Understanding
+(自然语言理解)
+James Allen
+(刘群等译)
+硕士、博士必读
+16
+Pragmatics: An Introduction
+Jacob L. Mey
+硕士、博士选读
+17
+Scripts, Plans, Goals, and Understanding
+Schank and Abelson
+博士选读
+18
+Semantics
+John I. Saeed
+硕士、博士选读
+19
+Semantics
+John Lyons
+硕士、博士选读
+20
+Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition (自然语言处理综论)
+Daniel Jurafsky, James H. Martin (冯志伟、孙乐译)
+硕士、博士必读
+21
+Statistics in Language Studies （语言研究中的统计方法）
+Anthony Woods, etc. （陈小荷、徐娟译）
+硕士必读
+22
+The Case for Case (格辨)
+Fillmore (胡明扬译)
+硕士、博士必读
+23
+The Logical Structure of Linguistics Theory
+Chomsky
+博士选读
+24
+词汇语义和计算语言学
+林杏光
+硕士必读
+25
+汉语计算语义学——关系、关系语义场和形式分析
+吴蔚天
+博士选读
+26
+汉语认知研究
+彭聃龄
+硕士、博士选读
+27
+汉语语法的意合网络
+鲁川
+硕士选读
+28
+汉语语法分析问题
+吕叔湘
+硕士选读
+29
+计算语言学导论
+翁富良、王野翊
+硕士选读
+30
+计算语言学概论
+俞士汶
+硕士选读
+31
+计算语言学基础
+冯志伟
+硕士必读
+32
+计算语言学视窗
+靳光瑾
+硕士选读
+33
+逻辑语义学
+方立
+硕士、博士选读
+34
+面向计算机的现代汉语词汇研究概论
+许嘉璐
+硕士、博士必读
+35
+普通语言学教程
+索绪尔
+硕士、博士必读
+36
+全国计算语言学联合学术会议论文集
+中国中文信息学会
+硕士、博士选读
+37
+人工智能及其应用
+蔡自兴、徐光祐
+博士选读
+38
+实验心理语言学纲要——语言的感知、理解和产生
+桂诗春
+硕士、博士选读
+39
+西方语言学名著选读
+胡明扬
+硕士选读
+40
+现代汉语八百词
+吕叔湘
+硕士选读
+41
+现代汉语动词语义计算理论
+靳光瑾
+博士选读
+42
+现代汉语自动分析——Visual C++实现
+陈小荷
+硕士必读
+43
+新编心理语言学
+桂诗春
+硕士、博士选读
+44
+形式语义学引论
+蒋严、潘海华
+硕士、博士选读
+45
+训诂学基础
+陈绂
+硕士、博士选读
+46
+应用语言学
+桂诗春
+硕士选读
+47
+应用语言学导论
+S.皮特·科德
+硕士选读
+48
+应用语言学概论
+于根元
+硕士选读
+49
+应用语言学纲要
+齐沪扬、陈昌来
+硕士选读
+50
+应用语言学综论
+冯志伟
+硕士选读
+51
+语法答问
+朱德熙
+硕士选读
+52
+语言概念空间的基本定理和数学物理表示式
+黄曾阳
+硕士、博士必读
+53
+语言文字学及其应用研究
+许嘉璐
+硕士选读
+54
+语言文字应用
+教育部语言文字应用研究所
+硕士、博士必读
+55
+语义学
+徐烈炯
+硕士、博士必读
+56
+语义学导论
+伍谦光
+硕士选读
+57
+语义学教程
+李福印
+硕士、博士必读
+58
+语用学概要
+何兆熊
+硕士、博士选读
+59
+中国现代应用语言学史纲
+于根元
+硕士、博士选读
+60
+中文文本自动分词和标注
+刘开瑛
+硕士选读
+61
+中文信息处理应用平台工程
+陈力为、袁琦
+硕士、博士选读
+62
+中文信息学报
+中国中文信息学会
+硕士、博士必读
+63
+自然语言处理
+刘开瑛、郭炳炎
+硕士选读
+64
+自然语言处理技术基础
+王小捷、常宝宝
+硕士选读
+65
+自然语言理解——一种让机器懂得人类语言的研究
+姚天顺等
+硕士、博士选读
+66
+自然语言逻辑研究
+邹崇理
+博士选读

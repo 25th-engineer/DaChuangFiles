@@ -1,0 +1,18 @@
+我们 不止 可以 读取 数据库 的 内容 还 可以 读取 
+xlsx 文件 的 内容 这个 库 有在/nr 有些 情况 还是 
+挺 实用 的 首先 我们 想 读取 这个 文件 的 
+时候 必须 得 现 有个 seaborn 库 下载 命令 就是 
+pip install   seaborn 我 写了 个 案例 就是 把 
+读取 的 内容 在 小提琴 图上 显示出来 还有 在 对比 
+柱形图 上 显示 出来 # 导报 import numpy as npimport 
+pandas as pdimport matplotlib . pyplot as pltimport seaborn as 
+snsif _ _ name _ _ = = _ _ 
+main _ _ # 读取 数据集 df = pd . 
+read _ excel test . xlsx sheet1 print df # 
+绘制 小提琴 图 sns . violinplot df Sales df Gender 
+# 初始化 数据 sns . despine # 绘制 plt . 
+show # # # 这个 是 对比 柱状图 # 声明 
+绘图 对象 Sales 销售额 myexcel = df . groupby BMI 
+Gender . Sales . sum # # 绘制 对比 柱形图 
+myexcel . unstack . plot kind = bar stacked = 
+True color = red blue # 绘制 plt . show 

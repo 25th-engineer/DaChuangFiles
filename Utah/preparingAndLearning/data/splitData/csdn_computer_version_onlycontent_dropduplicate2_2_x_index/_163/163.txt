@@ -1,0 +1,94 @@
+作者：xiabodan 出处：http://blog.csdn.net/xiabodan/
+一般要去国外找资料，翻墙是第一道工序，也是一件一劳永逸的事情，会为以后的研究，资料查找节约很多的时间。后面有一些收集到的资源网站，不是每一个都标注了的，可以根据自己的喜好自行选择。
+想要在如茫茫大海的互联网中找到你想要的资料，没有一定技巧是不行的。搜索要做的第一件事就是极力的找一篇很好的paper的参考文献，无论google，即使像一篇国内的垃圾期刊也会有几篇比较好的参考文章，再通过参考文章的参考文章继续搜索。这样一层一层的总会找到本领域相关的大牛，只要找到一个大牛，那就很好办了，因为大牛们都是成群结队的，不论是文章的参考文祥要互相应用，连youtube等等这些他们也会互相评论、关注的，接下来你就只需要去关注他们，看看有什么成果是和自己相关的就OK了。
+一般来说了解一个领域需要从以下几个方面着手，专利，论文，博客，研究机构主页
+学习专利公开课，论文的话就不贴出来了，直接google或者在校内网搜索
+专利：
+如何查到一篇文献的DOI号或通过DOI找到原始文献? | 参考咨询知识库
+Resolve a DOI
+中文DOI
+crossref.org
+中国专利下载
+FPO IP Research & Communities
+佰腾网——中国专利和科技创新服务门户网站 - 网站首页
+SooPAT 专利搜索
+学习、公开课
+(电子书资源下载)Electronic library
+coursera     免费在线教育
+慕课网：http://www.imooc.com/course/list  各种C/C++ JAVA PHP Linux ............完全免费，极力推荐推荐
+TED: Ideas worth spreading
+网易公开课：http://open.163.com/
+斯坦福大学公开课：机器人学    http://open.163.com/special/opencourse/robotics.html
+麻省理工大学公开课：算法导论 http://open.163.com/special/opencourse/algorithms.html
+斯坦福大学公开课：编程范式  http://open.163.com/special/opencourse/paradigms.html
+斯坦福大学公开课：编程方法学  http://open.163.com/special/sp/programming.html
+youtube 视频，国外大牛的成果基本都会在youtube上公布，可以选择自己喜欢的大牛关注其动态。下图是我的网易课程与youtube关注
+https://www.youtube.com/?gl=HK&tab=w1
+zynq&&cortex-a9 FPGA研究
+新加坡国立大学real-time football cup     多核计算     hamsterworks  一个开源的FPGA project主页     VAST LAB(丛京生实验室)     ZYNQ研究shakith Fernando的博客主页，主要做图像处理FPGA，GPU并行加速，其实验室位于荷兰埃因霍芬理工大学并行计算研究室http://parse.ele.tue.nl/     荷兰埃因霍芬理工大学：University of Technology Eindhoven     FPGA 2015国际研讨会     linaro文件系统          博洛尼亚大学 FPGA立体视觉     Home :: OpenCores   一个开源的FPGA IP库
+Xilinx wiki开源网站  包含了Xilinx公司各种demo  project
+目标检测跟踪研究
+1、USC Computer 研究组 （美国南加州大学）
+研究方向：图像分割，运动分析，大数据分析，模型分析，目标跟踪与识别。
+http://iris.usc.edu/USC-Computer-Vision.html
+2、The Center for vision ,Cognition ,Learning,and Art （美国加利福尼亚洛杉矶分校）
+研究方向：视觉，识别，学习，行为分析
+3、ETHZ Computer Vision Laboratory 研究组 （瑞士苏黎世联邦理工学院）
+研究方向：医学图像分析，目标识别，手势分析，跟踪，场景理解与建模
+http://www.vision.ee.ethz.ch/research/projects_icu.cgi?topic=3
+4、EPFLComputer Vision Laboratory 研究组 （瑞士洛桑联邦理工学院）
+研究方向：图像描述子，可变形的外表建模，目标跟踪，人体建模
+http://cvlab.epfl.ch/research/body/surv
+5、learning ，Recognition,and Surveillance 研究组（奥地利格拉茨技术大学）
+研究方向：机器学习，目标识别，目标检测与跟踪
+http://lrs.icg.tugraz.at/research/classifiergrid/classifiergrid.php
+6、The Australian Center for Visual Technologies 研究组 （澳大利亚阿德莱德大学）
+研究方向：增强现实，机器学习，3D建模，参数估计，监控，跟踪
+http://blogs.adelaide.edu.au/acvt/
+7、香港中文大学多媒体实验室
+研究方向：深度学习，面部分析，视频监控跟踪，图像视频搜索
+http://mmlab.ie.cuhk.edu.hk/projects.html
+8：KLT（光流法特征跟踪）
+http://web.yonsei.ac.kr/jksuhr/articles/Kanade-Lucas-Tomasi%20Tracker.pdf
+http://www.ces.clemson.edu/~stb/klt/
+http://vision.ucla.edu//MASKS/labs.html
+部分图像处理，机器视觉研究机构主页
+此博客收集大量的计算机视觉牛人的主页，以及很有实力的研究机构 http://blog.csdn.net/carson2005/article/details/6601109
+科学网博客，转载了许多机器视觉的资源网址收藏： http://blog.sciencenet.cn/blog-454498-456241.html
+机器学习资料大汇总 | 我爱机器学习
+(普林斯顿大学视觉组)Sliding Shapes for 3D Object Detection in Depth Images
+(德国慕尼黑大学增强现实与计算机视觉)Chair for Computer Aided Medical Procedures and Augmented Reality - Lehrstuhl für Informatikanwendungen in der Medizin und Augmented Reality
+(加州理工大学计算机视觉)Computational Vision: [Research]
+(计算机视觉大牛主页code)Hernan Badino's Homepage
+斯坦福人工智能实验室    斯坦福大学机器视觉主页    Cvlibs Andreas Geiger 主页    (国外知名的视觉数据库code)The KITTI Vision Benchmark Suite ：www.cvlibs.net/datasets/kitti/    Albert Huang - MIT    项志宇-浙江大学 人工智能实验室个人主页    卡内基梅隆大学机器人实验室paper    西雅图机器人协会Seattle Robotics Society Encoder    （单目视觉里程计，google code）Monocular Visual Odometry » Dr. Rainer Hessmer
+Kinect Fusion 微软的kinect 应用
+Projects « CMP 机器感知研究
+部分机器人、视觉、图像处理库
+Marco Zuliani's web page（matlab图像处理库）    MRPT | Mobile Robot Programming Toolkit library 移动机器人开发库，包含图像处理，视觉，导航，定位，相机标定等    BoofCV(java图像处理机器视觉库)    Peter Kovesi（MATLAB视觉库）    微软研究院 ： http://research.microsoft.com/en-us/um/people/kahe/  不说了 太牛了啥都有
+(图像处理库)IPOL Journal · Image Processing On Line     math-neon(ARM下neon实现的数学运算库)    Image Stitching（图像拼接库code）    Stan Birchfield（付澄提供网站）    (多媒体处理参考)HIPR Table of Contents and Main Index    opencv图像处理http://docs.opencv.org/    OpenSLAM.org 开源SLAM库
+matlab 单/双目相机标定 Camera Calibration Toolbox for Matlab
+工作笔试相关
+首先推荐 协议森林 - Vamei - 博客园  包含算法与数据结构  Linux网络协议森林
+排序算法详解 C语言版 Sorting Algorithm Animations
+在线算法题目测试Problems | LeetCode OJ
+笔试题-面试题 - lionel的专栏 - 博客频道 - CSDN.NET
+C++ - 标签 - Alexia(minmin) - 博客园    02：C语言 - 随笔分类 - cv_ml_张欣男 - 博客园    程序员面试笔试宝典学习记录（一）（常见面试笔试题目） - weixliu - 博客园
+笔试面试必会代码 以及必看书籍 http://blog.csdn.net/liuqiyao_01/article/details/16960695
+Linux相关
+POSIX Threads Programming
+Linux下多线程和共享内存混合编程实例-liuyang_430068-ChinaUnix博客
+c - POSIX pthread programming - Stack Overflow
+Windows多线程 - MoreWindows Blog - 博客频道 - CSDN.NET
+相关书籍（嵌入式软开方向）网络编程 + Linux驱动/应用程序设计 + 数据结构与算法（重点）+ C/C++，边看边写程序
+APUE（advance programming UNIX environment）
+编程珠玑
+Linux设备驱动程序
+Linux系统编程
+Linux网络编程
+并行程序设计导论
+数据结构与算法分析
+程序员面试宝典（第四版） 小心点看，有很多错误的地方
+关注的公司
+actel China  IEEE Xplore - IEEE Std 1164-1993   Linear Technology - 主页  Microchip Technology Inc  ModelSim - Advanced Simulation and Debugging  ModelSim ASIC and FPGA Design Simulator - Mentor Graphics  PLX Technology xiabodan@263.com xiabo891219  windriver Download free trial  亚德诺半导体 Analog Devices 半导体和信号处理IC  全面可编程和器件  来自Maxim的模拟、线性、混合信号器件  模拟, 半导体, 数字信号处理 - 德州仪器  细节决定成败，细节创造利润--周立功单片机  Kontron - Embedded Computers, Industrial PC  Lytro  PCI-A429 - ARINC PCI接口卡 - ARINC - 阿尔塔数据技术  英飞凌——半导体与系统解决方案 - Infineon Technologies  DDC - Data Device Corporation | Supplier of MIL-STD-1553, ARINC 429, and other data interface products.  Altera – FPGA、CPLD、ASIC和可编程逻辑  USB.org - Documents  Standards & Documents Search | JEDEC  International Rectifier - High Reliability  Vishay - 威世半导体 - 威世品牌  Discrete, Analog and Logic Semiconductor Components | Diodes, Inc.  ON Semiconductor  Allied Electronics – Electronic Parts and Components Distributor  Micron Technology, Inc. DRAM, NAND Flash, NOR Flash, MCP, Hybrid Memory Cube, SSD  Cadence OrCAD Downloads  arm inc.460557758@qq.com Xiabo891219  micrium.com summer wMUunio3iX3M  dililentchina  zedboard  digilent  logicbricks(xilinx-IP)  adapteva(f傅立叶公司 芯片)  omnitek（XILINX）  beecube  zrobot  freeRTOS
+国内论坛 （很少看）
+amoBBS 阿莫电子论坛 首页   FPGA-CPLD - 电子工程世界-论坛  queuequeue - C++ Reference  【新提醒】一伙儿网 - Yihuor  个人中心 - 程序员联合开发网   中国电子顶级开发网论坛(EETOP) 国内最顶级的电子论坛，最活跃的电子工程师交流社区  看雪安全论坛 - www.pediy  第九单片机论坛 -帐号  Local configuration register配置  Xilinx 大学计划：开发板组合  创新网altium中文社区   OpenHW-中国首个开放源码硬件社区  论坛 - SoC Vista -- 中国芯动力 -- SoC/FPGA/ASIC设计家园 - Powered by Discuz!  MATLAB中文论坛|Simulink中文论坛 xiabodan Xiabo891219  love in C++, live on MFC - C++博客  Forum for Electronics(电子论坛)  Index - Arduino Forum  fpga4fun.com - I2C  最活跃FPGA论坛推荐社区  德州仪器在线技术支持社区  上海库源电气科技有限公司-PSpice技术支持中心（Cadence代理 Allegro代理 OrCAD代理 PSpice代理） - Powered by phpwind  库源电气-Cadence代理、OrCAD代理、Allegro代理、PSpice代理，为您提供最专业的Cadence PCB解决方案  Download - OpenCV China ：图像处理,计算机视觉库,Image Processing, Computer Vision  freeIP与参考设计  立即注册 - OpenCV论坛  iVeia Git • Index page  电子发烧友论坛-中国电子技术论坛 - 最好最受欢迎电子论坛!  综合电子论坛 good  eclipse  xilinx.eetrend.com  XILINX开源网站  ohwr(开源硬件)  中电网(在线培训)  电路网  elements  matlab  adept forums  chinaunix  u-boot

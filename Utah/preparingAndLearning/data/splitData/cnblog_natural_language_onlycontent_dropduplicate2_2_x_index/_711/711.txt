@@ -1,0 +1,37 @@
+自然语言处理是计算机科学领域与人工智能领域中的一个重要方向。自然语言工具箱（NLTK，Natural Language Toolkit）是一个基于Python语言的类库。它也是当前最为流行的自然语言编程与开发工具。在进行自然语言处理研究和应用时，恰当利用NLTK中提供的函数能够大幅度地提高效率。本文就将通过一些实例来向读者介绍NLTK的使用。
+开发环境：我所使用的Python版本号是最新的3.5.1。NLTK版本号是3.2。Python的安装不在本文的讨论范围内，我们略去不表。
+你能够从NLTK的官网上http://www.nltk.org/ 获得最新版本号的NLTK。
+Anyway。使用pip指令来完毕NLTK包的下载和安装无疑是最简便的方法。
+当然，当你完毕这一步时。事实上还不够。因为NLTK是由很多很多的包来构成的，此时执行Python，并输入以下的指令（当然，第一条指令还是要导入NLTK包）
+>>> import nltk >>> nltk.download()
+然后，Python Launcher会弹出以下这个界面，建议你选择安装全部的Packages。以免去日后一而再、再而三的进行安装。也为你的兴许开发提供一个稳定的环境。某些包的Status显示“out of date”，你能够不必理会，它基本不影响你的使用与开发。
+既然你已经成功安装，我们来小试牛刀一下。
+当然本文涉及的主要任务都是自然语言处理中最经常使用，最基础的pre-processing过程。结合机器学习的高级应用我们会在兴许文章中再进行介绍。
+1、 Sentences Segment（分句）
+也就是说我们手头有一段文本，我们希望把它分成一个一个的句子。此时能够使用NLTK中的 punkt sentence segmenter。
+来看演示样例代码
+>>> sent_tokenizer = nltk.data.load('tokenizers/punkt/english.pickle') >>> paragraph = "The first time I heard that song was in Hawaii on radio. ... I was just a kid, and loved it very much! What a fantastic song!" >>> sentences = sent_tokenizer.tokenize(paragraph) >>> sentences ['The first time I heard that song was in Hawaii on radio.', 'I was just a kid, and loved it very much!', 'What a fantastic song!']
+由此，我们便把一段话成功分句了。
+2、Tokenize sentences （分词）
+接下来我们要把每一个句话再分割成逐个单词。最简单的方法是使用NLTK 包中的 WordPunct tokenizer。
+来看演示样例代码
+>>> from nltk.tokenize import WordPunctTokenizer >>> sentence = "Are you old enough to remember Michael Jackson attending ... the Grammys with Brooke Shields and Webster sat on his lap during the show?" >>> words = WordPunctTokenizer().tokenize(sentence) >>> words ['Are', 'you', 'old', 'enough', 'to', 'remember', 'Michael', 'Jackson', 'attending', 'the', 'Grammys', 'with', 'Brooke', 'Shields', 'and', 'Webster', 'sat', 'on', 'his', 'lap', 'during', 'the', 'show', '?']
+我们的分词任务仍然完毕的非常好。除了WordPunct tokenizer之外。NLTK中还提供有另外三个分词方法，
+TreebankWordTokenizer，PunktWordTokenizer和WhitespaceTokenizer，并且他们的使用方法与WordPunct tokenizer也相似。然而，显然我们并不满足于此。对于比較复杂的词型，WordPunct tokenizer往往并不胜任。此时我们须要借助正則表達式的强大能力来完毕分词任务。此时我所使用的函数是regexp_tokenize()。
+来看以下这段话
+>>> text = 'That U.S.A. poster-print costs $12.40...'
+眼下市面上能够參考的在Python下进行自然语言处理的书籍是由Steven Bird、Ewan Klein、Edward Loper编写的《Python 自然语言处理》。
+可是该书的编写时间距今已有近十年的时间，因为软件包更新等语言。在新环境下进行开发时，书中的某些代码并不能非常正常的执行。最后，我们举一个书中代码out of date的样例（对上面这就话进行分词），并给出对应的解决的方法。首先来看书中的一段节录
+>>> text = 'That U.S.A. poster-print costs $12.40...' >>> pattern = r'''(?x) # set flag to allow verbose regexps ... ([A-Z]\.)+ # abbreviations, e.g. U.S.A. ... | \w+(-\w+)* # words with optional internal hyphens ... | \$?\d+(\.\d+)?%? # currency and percentages, e.g. $12.40, 82% ... | \.\.\. # ellipsis ... | [][.,;"'?():-_`] # these are separate tokens; includes ], [ ... ''' >>> nltk.regexp_tokenize(text, pattern)
+我们预期得到输出应该是这种
+['That', 'U.S.A.', 'poster-print', 'costs', '$12.40', '...']
+可是我们实际得到的输出却是这种（注意我们所使用的NLTK版本号）
+[('', '', ''), ('A.', '', ''), ('', '-print', ''), ('', '', ''), ('', '', '.40'), ('', '', '')]
+会出现这种问题是因为nltk.internals.compile_regexp_to_noncapturing()在V3.1版本号的NLTK中已经被抛弃（虽然在更早的版本号中它仍然能够执行），为此我们把之前定义的pattern稍作改动
+pattern = r"""(?
+x) # set flag to allow verbose regexps (?:[A-Z]\.)+ # abbreviations, e.g. U.S.A. |\d+(?:\.\d+)?
+%?
+# numbers, incl. currency and percentages |\w+(?:[-']\w+)* # words w/ optional internal hyphens/apostrophe |\.\.\. # ellipsis |(?:[.,;"'?():-_`]) # special characters with meanings """
+再次执行前面的语句，便会得到
+>>> nltk.regexp_tokenize(text, pattern) ['That', 'U.S.A.', 'poster-print', 'costs', '12.40', '...']
+以上便是我们对NLTK这个自然语言处理工具包的初步探索。日后主页君将结合机器学习中的方法再来探讨一些更为深入的应用。最后。我想说《Python 自然语言处理》仍然是当前非常值得推荐的一本讲述利用NLTK和Python进行自然语言处理技术的非常值得推荐的书籍。

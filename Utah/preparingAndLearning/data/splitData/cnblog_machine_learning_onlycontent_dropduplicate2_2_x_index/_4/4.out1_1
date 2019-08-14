@@ -1,0 +1,52 @@
+# 对 coursera 上 Andrew Ng 老师 开 的 机器学习 
+课程 的 笔记 和 心得 # 注 此 笔记 是 
+我 自己 认为 本节 课 里 比较 重要 难理解 或 
+容易 忘记 的 内容 并 做了 些 补充 并非 是 
+课堂 详细 笔记 和 要点 # 标记 为 补充 的 
+是 我 自己 加 的 内容 而非 课堂 内容 参考文献 
+列于 文末 博主 能力 有限 若 有错误 恳请 指正 # 
+# 多层 神经网络 模型 补充 每 一个 单元 有 一定 
+数量 的 实值 输入 产生 单一 的 实值 输出 可以 
+是 其他 很多 单元 的 输入 符号 标记 ai j 
+activation of unit   i   in layer   j 
+  Ɵ j   matrix of parameters controlling the function 
+mapping from layer   j   to layer   j 
++ 1 # # 神经 网络 的 cost function 前 
+一项 的 目的 是 使 所有 单元 的 误差 和 
+最小 采用 对数 损失 函数 后 一项 是 regularization 项 
+旨在 控制 模型 复杂度 防止 overfitting # # forward propagation 
+前 向 传播 补充 其实 也 就是 通过 神经网络 从 
+输入 参 数到 输出 结果 的 计算 过程 只 计算 
+一次 参数 的 计算 如下 其中 g x 是 sigmoid 
+函数 # # Back propagation 反向 传播 与 前 向 
+传播 非常 类似 从 结果 层 倒 推回 输入 层 
+计算 每层 δ 的 过程 δ 为 误差 其中 l 
+指 第几层 注 第一层 是 输入 层 没有 δ 1项 
+最后 一层 输出 层 的 δ 不是 按此 式 计算 
+见 下例 δ 4   = a4     y 
+δ 3   = Ɵ 3 T   δ 4 
+  . * a3   . *   1   
+a3 δ 2   = Ɵ 2 T   δ 
+3   . * a2   . *   1 
+  a2 # # Back propagation algorithm 反向 传播 算法 
+补充 一个 最 优化 问题 目的 是 在使 cost function 
+值 最小 这里 是 通过 偏 导 最小 来 实现 
+的 情况 下 训 练出 神经网络 各个 参数 的 权值 
+算法 如下 1 给出 训练 集 作为 输入 将 delta 
+值 设为 0 2 进行 下列 过程 直至 性能 满足 
+要求 为止 对于 每 一 训练 采样 输入 a 通过 
+前 向 传播 计算 所得 输出 b 通过 反向 传播 
+计算 每层 的 δ 值 c 更新 delta 值 3 
+得到 神经网络 参数 的 权值 其中 # # 几则 关于 
+神经 网络 的 问题 和 解决 办法 1 Gradient checking 
+反向 传播 算法 有 很多 细节 非常 容易 出错 Gradient 
+checking 有助于 cost   function   J Ɵ 的 准确性 
+原理 比较/d 由/p 反向/v 传播/vn 计算/v 得到/v 的/uj DVec/w 和/c 
+梯度/n 计算/v 得到/v 的/uj gradApprox/w 两者/n 是否/v 相/v 近似/a 来/v 
+判断/v 补充 其实 是 用了 微积分 当中 导数 的 概念 
+注 在 训练 数据 时 需要 将 Gradient checking 代码 
+注释 掉 因为 gradApprox 的 计算 是 很 耗时 的 
+2 Random initialization 反向 传播 算法 是 局部 收敛 的 
+需 多次 选 起始 点 训练 来 减少 最终 局部收敛 
+的 可能性 # # 参考文献 machine learning by Tom Mitchell 
+couresra 课程   standford machine learning by   Andrew Ng 

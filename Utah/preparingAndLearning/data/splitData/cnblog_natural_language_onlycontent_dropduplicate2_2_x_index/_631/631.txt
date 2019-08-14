@@ -1,0 +1,137 @@
+深度学习领域发展迅猛，江湖风起云涌。在此，咪博士为大家细细盘点、比较，各大深度学习框架。也祝大家都能训出好模型，调出好参数。
+以下是咪博士的观点，供大家参考：
+如果你是初学者，那么推荐选择 Keras 或 Gluon 这样简单易用的接口入门。至于是 Keras 还是 Gluon 就不必太纠结了，因为二者都很容易上手，完全可以都学一下。如果非要分个先后的话，可以先试试 Gluon 毕竟开发者是中国人，有官方出品的中文教程带你入门。
+学完 Keras 或 Gluon “前端”框架之后，再选择一个“后端”框架深入学习，TensorFlow (Keras 后端) 或 MXNet (Gluon 后端) 是咪博士推荐的 2 个后端框架。TensorFlow 谷歌 (Google) 出品，MXNet 有 亚马逊 (Amazon) 支持，它们都是非常优秀的深度学习框架。至于是 TensorFlow 还是 MXNet，那就得看你的需求了。TensorFlow 受众更广，但是性能较差，而且不支持动态计算图；MXNet 目前还比较小众，但性能较好，而且支持动态计算图，十分方便搞自然语言处理 (NLP) 的朋友。
+学习完后端框架之后，你就可以非常灵活地定制自己的神经网络，自由地在深度学习的世界里翱翔了。这里候，如果你有兴趣（或需要），可以试试其他的一些框架，如 PyTorch (灵活多变，适合研究), Caffe2 (性能优化，手机也能跑), Deeplearning4j (Java 首选，整合 Hadoop, Spark), 以及 ConvNetJS (Js 开发，浏览器上玩深度学习)。
+其他一些深度学习框架，诸如 Theano (Lasagne, 以及 Blocks), Torch, Caffe, CNTK, Chainer, Paddle, DSSTNE, DyNet, BigDL, Neon 等，由于众多原因，咪博士就不给大家推荐了。
+下面是详细的比较和说明：
+一、推荐使用
+Keras
+受到 Torch 启发，Keras 提供了简单易用的 API 接口，特别适合初学者入门。其后端采用 TensorFlow, CNTK，以及 Theano。另外，Deeplearning4j 的 Python 也是基于 Keras 实现的。Keras 几乎已经成了 Python 神经网络的接口标准。
+Gluon
+亚马逊 (Amazon) 和 微软 (Microsoft) 于 2017 年 10 月联合推出的深度学习 API。Gluon 类似 Keras，提供了简单易用的 API 接口。但和 Keras 不一样的地方是，Gluon 还支持动态计算图（对自然语言处理特别有用）。Gluon 后端目前采用 MXNet，未来还将支持微软的 CNTK。
+TensorFlow
+谷歌 (Google) 大厂出品，追随者众多。相比其他框架，TensorFlow 速度较慢，但它提供的 TensorBoard 可视化工具还是很不错的。
+MXNet
+已被 亚马逊 (Amazon) 选为 AWS 上的深度学习框架，支持动态图计算。MXNet 有许多中国开发者，因而有非常良好的中文文档支持。Gluon 接口使得 MXNet 像 Keras 一样简单易用。
+二、值得一试
+PyTorch
+背后金主是 脸书 (Facebook) ，同样支持动态计算图，提供很好的灵活性，适合研究。
+Caffe2
+同样是 脸书 (Facebook) 出品，为生产环境设计，提供在各种平台（包括移动设备）的运行时。
+Deeplearning4j
+与其他（大多数）基于 Python 的深度学习框架不同，Deeplearning4j 基于 Java 开发，与 Hadoop, Spark 生态结合得很好。尤其令人称道的是其优秀的文档，官司方文档直接就有中文版本。另外，虽然是面向 Java 的框架，Deeplearning4j 也提供了 Python 的接口（基于 Keras 实现）
+ConvNetJS
+基于 Javascript 的深度学习框架，可以在浏览器中训练深度神经网络。最重要的用途是帮助学习 Deep Learning
+三、不推荐
+Theano, Lasagne, 以及 Blocks
+Yoshua Bengio 于 2017 年 09 月宣布不再维护 Theano，所以这个项目事实上已经宣告死亡了。其他基于 Theano 的库，如 Lasagne 和 Blocks，也可以散了。
+Torch
+虽然设计精良（Keras 就是参考 Torch 设计的），但它基于 Lua 语言，太过小众了。而且 Facebook 已经推出了 Python 版本的 PyTorch 了。
+Caffe
+Caffe2 已经正式发布了，彻底取代 Caffe 只是时间问题罢了。
+CNTK
+微软出品，授权协议有一些特别，而且似乎也没有什么特别亮眼的地方。
+Chainer
+曾经是动态计算图的首选框架，特别适用于自然语言处理。但是，现在许多其他的框架，如 MXNet, PyTorch, 以及 DyNet 也支持该特性，所以 Chainer 的这一优势也就不复存在了。
+Paddle
+百度的深度学习框架，受众太小。
+DSSTNE
+曾是亚马逊的深度学习引擎，但是很小众，而且现在亚马逊又选择了 MXNet，所以 DSSTNE 的前途就更渺茫了。
+DyNet
+源自卡耐基梅隆大学，支持动态计算图，但是太小众了。
+BigDL
+Intel 基于 spark 的深度学习库，但只能运行在 Intel 芯片之上。
+Neon
+据说速度很快，但太过小众，而且发展还不完善，许多特性还不支持。
+参考
+https://deeplearning4j.org/compare-dl4j-tensorflow-pytorch
+http://docs.chainer.org/en/stable/comparison.html
+http://www.ipaomi.com/2017/11/06/2018-年-深度学习框架-盘点-比较-推荐/
+出处：http://www.cnblogs.com/ipaomi/p/7798656.html
+================================================================================
+对于希望在应用中整合深度学习功能的开发者来说，GitHub上其实还有很多不错的开源项目值得关注
+一、Caffe。https://github.com/BVLC/caffe源自加州伯克利分校的Caffe被广泛应用，包括Pinterest这样的web大户。与TensorFlow一样，Caffe也是由C++开发，Caffe也是Google今年早些时候发布的DeepDream项目（可以识别喵星人的人工智能神经网络）的基础。
+二、Theano https://github.com/Theano/Theano 2008年诞生于蒙特利尔理工学院，Theano派生出了大量深度学习Python软件包，最著名的包括Blocks  和 Keras 。
+三、Torch https://github.com/torch/torch7 Torch诞生已经有十年之久，但是真正起势得益于去年Facebook开源了大量Torch的深度学习模块和扩展。Torch另外一个特殊之处是采用了不怎么流行的编程语言Lua（该语言曾被用来开发视频游戏）。
+除了以上三个比较成熟知名的项目，还有很多有特色的深度学习开源框架也值得关注：
+四、Brainstorm https://github.com/IDSIA/brainstorm。来自瑞士人工智能实验室IDSIA的一个非常发展前景很不错的深度学习软件包，Brainstorm能够处理上百层的超级深度神经网络——所谓的公路网络Highway Networks http://people.idsia.ch/%7Erupesh/very_deep_learning/index.html。
+五、Chainer https://github.com/pfnet/chainer。来自一个日本的深度学习创业公司Preferred Networks，今年6月发布的一个Python框架。Chainer的设计基于define by run原则，也就是说，该网络在运行中动态定义，而不是在启动时定义，这里有Chainer的详细文档http://docs.chainer.org/en/stable/tutorial/basic.html。
+六、Deeplearning4j https://github.com/deeplearning4j/deeplearning4j。 顾名思义，Deeplearning4j是”for Java”的深度学习框架，也是首个商用级别的深度学习开源库。Deeplearning4j由创业公司Skymind于2014年6月发布，使用 Deeplearning4j的不乏埃森哲、雪弗兰、博斯咨询和IBM等明星企业。http://deeplearning4j.org/
+DeepLearning4j是一个面向生产环境和商业应用的高成熟度深度学习开源库，可与Hadoop和Spark集成，即插即用，方便开发者在APP中快速集成深度学习功能，可应用于以下深度学习领域：
+人脸/图像识别
+语音搜索
+语音转文字（Speech to text）
+垃圾信息过滤（异常侦测）
+电商欺诈侦测
+七、Marvin https://github.com/PrincetonVision/marvin。是普林斯顿大学视觉工作组http://vision.princeton.edu/新推出的C++框架。该团队还提供了一个文件https://github.com/PrincetonVision/marvin/tree/master/tools/converter_caffe用于将Caffe模型转化成语Marvin兼容的模式。
+八、ConvNetJS https://github.com/karpathy/convnetjs。这是斯坦福大学博士生Andrej Karpathy开发浏览器插件，基于万能的JavaScript可以在你的游览器中训练神经网络。Karpathy还写了一个ConvNetJS的入门教程，以及一个简洁的浏览器演示项目http://cs.stanford.edu/people/karpathy/convnetjs/index.html。
+九、MXNet https://github.com/dmlc/mxnet。出自CXXNet、Minerva、Purine等项目的开发者之手，主要用C++编写。MXNet强调提高内存使用的效率，甚至能在智能手机上运行诸如图像识别等任务。
+十、Neon https://github.com/NervanaSystems/neon。由创业公司Nervana Systems于今年五月开源，在某些基准测试中，由Python和Sass开发的Neon的测试成绩甚至要优于Caffeine、Torch和谷歌的TensorFlow。
+出处：http://www.cnblogs.com/hulubrother/articles/5950413.html 深度学习领域发展迅猛，江湖风起云涌。在此，咪博士为大家细细盘点、比较，各大深度学习框架。也祝大家都能训出好模型，调出好参数。
+以下是咪博士的观点，供大家参考：
+如果你是初学者，那么推荐选择 Keras 或 Gluon 这样简单易用的接口入门。至于是 Keras 还是 Gluon 就不必太纠结了，因为二者都很容易上手，完全可以都学一下。如果非要分个先后的话，可以先试试 Gluon 毕竟开发者是中国人，有官方出品的中文教程带你入门。
+学完 Keras 或 Gluon “前端”框架之后，再选择一个“后端”框架深入学习，TensorFlow (Keras 后端) 或 MXNet (Gluon 后端) 是咪博士推荐的 2 个后端框架。TensorFlow 谷歌 (Google) 出品，MXNet 有 亚马逊 (Amazon) 支持，它们都是非常优秀的深度学习框架。至于是 TensorFlow 还是 MXNet，那就得看你的需求了。TensorFlow 受众更广，但是性能较差，而且不支持动态计算图；MXNet 目前还比较小众，但性能较好，而且支持动态计算图，十分方便搞自然语言处理 (NLP) 的朋友。
+学习完后端框架之后，你就可以非常灵活地定制自己的神经网络，自由地在深度学习的世界里翱翔了。这里候，如果你有兴趣（或需要），可以试试其他的一些框架，如 PyTorch (灵活多变，适合研究), Caffe2 (性能优化，手机也能跑), Deeplearning4j (Java 首选，整合 Hadoop, Spark), 以及 ConvNetJS (Js 开发，浏览器上玩深度学习)。
+其他一些深度学习框架，诸如 Theano (Lasagne, 以及 Blocks), Torch, Caffe, CNTK, Chainer, Paddle, DSSTNE, DyNet, BigDL, Neon 等，由于众多原因，咪博士就不给大家推荐了。
+下面是详细的比较和说明：
+一、推荐使用
+Keras
+受到 Torch 启发，Keras 提供了简单易用的 API 接口，特别适合初学者入门。其后端采用 TensorFlow, CNTK，以及 Theano。另外，Deeplearning4j 的 Python 也是基于 Keras 实现的。Keras 几乎已经成了 Python 神经网络的接口标准。
+Gluon
+亚马逊 (Amazon) 和 微软 (Microsoft) 于 2017 年 10 月联合推出的深度学习 API。Gluon 类似 Keras，提供了简单易用的 API 接口。但和 Keras 不一样的地方是，Gluon 还支持动态计算图（对自然语言处理特别有用）。Gluon 后端目前采用 MXNet，未来还将支持微软的 CNTK。
+TensorFlow
+谷歌 (Google) 大厂出品，追随者众多。相比其他框架，TensorFlow 速度较慢，但它提供的 TensorBoard 可视化工具还是很不错的。
+MXNet
+已被 亚马逊 (Amazon) 选为 AWS 上的深度学习框架，支持动态图计算。MXNet 有许多中国开发者，因而有非常良好的中文文档支持。Gluon 接口使得 MXNet 像 Keras 一样简单易用。
+二、值得一试
+PyTorch
+背后金主是 脸书 (Facebook) ，同样支持动态计算图，提供很好的灵活性，适合研究。
+Caffe2
+同样是 脸书 (Facebook) 出品，为生产环境设计，提供在各种平台（包括移动设备）的运行时。
+Deeplearning4j
+与其他（大多数）基于 Python 的深度学习框架不同，Deeplearning4j 基于 Java 开发，与 Hadoop, Spark 生态结合得很好。尤其令人称道的是其优秀的文档，官司方文档直接就有中文版本。另外，虽然是面向 Java 的框架，Deeplearning4j 也提供了 Python 的接口（基于 Keras 实现）
+ConvNetJS
+基于 Javascript 的深度学习框架，可以在浏览器中训练深度神经网络。最重要的用途是帮助学习 Deep Learning
+三、不推荐
+Theano, Lasagne, 以及 Blocks
+Yoshua Bengio 于 2017 年 09 月宣布不再维护 Theano，所以这个项目事实上已经宣告死亡了。其他基于 Theano 的库，如 Lasagne 和 Blocks，也可以散了。
+Torch
+虽然设计精良（Keras 就是参考 Torch 设计的），但它基于 Lua 语言，太过小众了。而且 Facebook 已经推出了 Python 版本的 PyTorch 了。
+Caffe
+Caffe2 已经正式发布了，彻底取代 Caffe 只是时间问题罢了。
+CNTK
+微软出品，授权协议有一些特别，而且似乎也没有什么特别亮眼的地方。
+Chainer
+曾经是动态计算图的首选框架，特别适用于自然语言处理。但是，现在许多其他的框架，如 MXNet, PyTorch, 以及 DyNet 也支持该特性，所以 Chainer 的这一优势也就不复存在了。
+Paddle
+百度的深度学习框架，受众太小。
+DSSTNE
+曾是亚马逊的深度学习引擎，但是很小众，而且现在亚马逊又选择了 MXNet，所以 DSSTNE 的前途就更渺茫了。
+DyNet
+源自卡耐基梅隆大学，支持动态计算图，但是太小众了。
+BigDL
+Intel 基于 spark 的深度学习库，但只能运行在 Intel 芯片之上。
+Neon
+据说速度很快，但太过小众，而且发展还不完善，许多特性还不支持。
+参考
+https://deeplearning4j.org/compare-dl4j-tensorflow-pytorch
+http://docs.chainer.org/en/stable/comparison.html
+http://www.ipaomi.com/2017/11/06/2018-年-深度学习框架-盘点-比较-推荐/ 对于希望在应用中整合深度学习功能的开发者来说，GitHub上其实还有很多不错的开源项目值得关注
+一、Caffe。https://github.com/BVLC/caffe源自加州伯克利分校的Caffe被广泛应用，包括Pinterest这样的web大户。与TensorFlow一样，Caffe也是由C++开发，Caffe也是Google今年早些时候发布的DeepDream项目（可以识别喵星人的人工智能神经网络）的基础。
+二、Theano https://github.com/Theano/Theano 2008年诞生于蒙特利尔理工学院，Theano派生出了大量深度学习Python软件包，最著名的包括Blocks  和 Keras 。
+三、Torch https://github.com/torch/torch7 Torch诞生已经有十年之久，但是真正起势得益于去年Facebook开源了大量Torch的深度学习模块和扩展。Torch另外一个特殊之处是采用了不怎么流行的编程语言Lua（该语言曾被用来开发视频游戏）。
+除了以上三个比较成熟知名的项目，还有很多有特色的深度学习开源框架也值得关注：
+四、Brainstorm https://github.com/IDSIA/brainstorm。来自瑞士人工智能实验室IDSIA的一个非常发展前景很不错的深度学习软件包，Brainstorm能够处理上百层的超级深度神经网络——所谓的公路网络Highway Networks http://people.idsia.ch/%7Erupesh/very_deep_learning/index.html。
+五、Chainer https://github.com/pfnet/chainer。来自一个日本的深度学习创业公司Preferred Networks，今年6月发布的一个Python框架。Chainer的设计基于define by run原则，也就是说，该网络在运行中动态定义，而不是在启动时定义，这里有Chainer的详细文档http://docs.chainer.org/en/stable/tutorial/basic.html。
+六、Deeplearning4j https://github.com/deeplearning4j/deeplearning4j。 顾名思义，Deeplearning4j是”for Java”的深度学习框架，也是首个商用级别的深度学习开源库。Deeplearning4j由创业公司Skymind于2014年6月发布，使用 Deeplearning4j的不乏埃森哲、雪弗兰、博斯咨询和IBM等明星企业。http://deeplearning4j.org/
+DeepLearning4j是一个面向生产环境和商业应用的高成熟度深度学习开源库，可与Hadoop和Spark集成，即插即用，方便开发者在APP中快速集成深度学习功能，可应用于以下深度学习领域：
+人脸/图像识别
+语音搜索
+语音转文字（Speech to text）
+垃圾信息过滤（异常侦测）
+电商欺诈侦测
+七、Marvin https://github.com/PrincetonVision/marvin。是普林斯顿大学视觉工作组http://vision.princeton.edu/新推出的C++框架。该团队还提供了一个文件https://github.com/PrincetonVision/marvin/tree/master/tools/converter_caffe用于将Caffe模型转化成语Marvin兼容的模式。
+八、ConvNetJS https://github.com/karpathy/convnetjs。这是斯坦福大学博士生Andrej Karpathy开发浏览器插件，基于万能的JavaScript可以在你的游览器中训练神经网络。Karpathy还写了一个ConvNetJS的入门教程，以及一个简洁的浏览器演示项目http://cs.stanford.edu/people/karpathy/convnetjs/index.html。
+九、MXNet https://github.com/dmlc/mxnet。出自CXXNet、Minerva、Purine等项目的开发者之手，主要用C++编写。MXNet强调提高内存使用的效率，甚至能在智能手机上运行诸如图像识别等任务。
+十、Neon https://github.com/NervanaSystems/neon。由创业公司Nervana Systems于今年五月开源，在某些基准测试中，由Python和Sass开发的Neon的测试成绩甚至要优于Caffeine、Torch和谷歌的TensorFlow。

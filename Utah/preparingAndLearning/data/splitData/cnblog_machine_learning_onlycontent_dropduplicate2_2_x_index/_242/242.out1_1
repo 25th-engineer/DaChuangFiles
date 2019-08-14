@@ -1,0 +1,45 @@
+不多 说 直接 上 干货 目前 啊 都 知道 大 
+数据 集群 管理 方式 分为 手工 方式 Apache hadoop 和 
+工具 方式 Ambari + hdp 和 Cloudera Manger + CDH 
+手工 部署 呢 需 配置 太多 参数 但是 好 理解 
+其 原理 建议 初学 这样做 能学 到 很多 该 方式 
+啊 均 得 由 用户 执行 细节 太多 切当 设计 
+多个 组件 时 用户 须 自己解决 组件 间 版本 兼容问题 
+工具 部署 呢 比如 Ambari 或 Cloudera Manger 当前 两 
+大 最主流 的 集群 管理工具 前者 是 Hortonworks 公司 后者 
+是 Cloudera 公司 使用工具 来 可以 说 是 一键 操作 
+难点 都在 工具 Ambari 或 Cloudera Manger 本身 部署 上 
+手工 方式 工具 方式 难易度 难 几乎 不 可能 成功 
+简单 易行 兼容性 自己解决 组件 兼容性问题 自动 安装 兼容 组件 
+组件 支持 数 支持 全部 组件 支持 常用 组件 优点 
+对 组件 和 集群 管理 深刻   简单 容易 可行 
+缺点 太 复杂 不 可能 成功 屏蔽 太多 细节 妨碍 
+对 组件 理解 工 具名 所属 机构 开源 性 社区 
+支持 性 易用性 稳定性 市场占有率 Cloudera Manger     Cloudera 
+  商用 不支持 易用 稳定     高 Ambari Hortonwork 
+开源 支持 较 易用 较 稳定   较高 常见 的 
+情况 是 Cloudera Manger 去 部署 CDHAmbari 去 部署 HDP 
+当然 两者 也 可以 互相 也 可以 去 部署 Apache 
+HadoopCloudera Manager 安装 之 利用 parcels 方式 安装 3 节点 
+集群 包含 最新 稳定 版本 或 指定 版本 的 安装 
+添加 服务 Ambari 安装 之 部署 3个 节点 的 HA 
+分布式 集群 欢迎 大家 加入 我 的 微信 公众 号 
+大 数据 躺过 的 坑         人工智能 
+躺过 的 坑 同时 大家 可以 关注 我 的 个人 
+博客 http / / www . cnblogs . com / 
+zlslch /       和 /nr       http 
+/ / www . cnblogs . com / lchzls / 
+          http / / www . 
+cnblogs . com / sunnyDream / 详情 请见 http / 
+/ www . cnblogs . com / zlslch / p 
+/ 7473861 . html 人生 苦短 我 愿 分享 本 
+公众 号 将 秉持 活到老 学到老 学习 无休止 的 交流 
+分享 开源 精神 汇聚/v 于/p 互联网/n 和/c 个人/n 学习/v 工作/vn 
+的/uj 精华/nz 干货/n 知识/v 一切 来 于 互联网 反馈 回 
+互联网 目前 研究 领域 大 数据 机器学习 深度 学习 人工智能 
+数据挖掘 数据分析 语言 涉及 Java Scala Python Shell Linux 等 
+同时 还 涉及 平常 所 使用 的 手机 电脑 和 
+互联 网上 的 使用 技巧 问题 和 实用软件 只要 你 
+一直 关注 和 呆在 群 里 每天/r 必须/d 有/v 收获/v 
+对应/vn 本/r 平台/n 的/uj 讨论/v 和/c 答疑/v QQ/w 群/n 大 
+数据 和 人工智能 躺过 的 坑 总 群 161156071 

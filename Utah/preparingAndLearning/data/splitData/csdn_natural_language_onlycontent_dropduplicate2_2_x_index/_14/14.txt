@@ -1,0 +1,18 @@
+1 请列出几种文本特征提取算法
+答：文档频率、信息增益、互信息、X^2统计、TF-IDF
+2 简述几种自然语言处理开源工具包
+答：LingPipe、FudanNLP、OpenNLP、CRF++、Standord CoreNLP、IKAnalyzer
+3 简述无监督和有监督算法的区别
+答：
+（1）有监督学习：对具有概念标记（分类）的训练样本进行学习，以尽可能对训练样本集外的数据进行标记（分类）预测。这里，所有的标记（分类）是已知的。因此，训练样本的岐义性低。
+无监督学习：对没有概念标记（分类）的训练样本进行学习，以发现训练样本集中的结构性知识。这里，所有的标记（分类）是未知的。因此，训练样本的岐义性高。聚类就是典型的无监督学习
+（2）有监督学习的样本全部带标记，无监督学习的样本全部不带标记。
+PS:部分带标记的是半监督学习
+（3）训练集有输入有输出是有监督，包括所有的回归算法分类算法，比如线性回归、决策树、神经网络、KNN、SVM等；训练集只有输入没有输出是无监督，包括所有的聚类算法，比如k-means 、PCA、 GMM等
+4 请简述几种熟悉的分类算法
+答：kNN，kMeans，决策树，随机森林等
+5 以下代码是Java实现中文分词，请简述分词过程
+public class SplitChineseCharacter { public static void main(String[] args) { String input = "太好了，今天是星期六啊"; new Split(input).start(); } } class Split { private String[] dictionary = {"今天", "是", "星期", "星期六"}; private String input = null; public Split(String input) { this.input = input; } public void start() { String temp = null; System.out.println(this.input.length()); for(int i = 0; i < this.input.length(); i++) { temp = this.input.substring(i); if(this.isInDictionay(temp)) { System.out.println(temp); this.input = this.input.replace(temp, ""); i = - 1; } } if(null != this.input && !"".equals(this.input)) { this.input = this.input.substring(0, this.input.length() - 1); this.start(); } } public boolean isInDictionay(String temp) { for(int i = 0; i < this.dictionary.length; i++) { if(temp.equals(this.dictionary[i])) { return true; } } return false; } }
+运行结果：
+星期六 是 今天
+更多内容请关注微信公众号

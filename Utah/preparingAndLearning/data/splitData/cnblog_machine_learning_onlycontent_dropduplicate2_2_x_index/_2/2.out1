@@ -1,0 +1,72 @@
+# 对 coursera 上 Andrew Ng 老师 开 的 机器学习 
+课程 的 笔记 和 心得 # 注 此 笔记 是 
+我 自己 认为 本节 课 里 比较 重要 难理解 或 
+容易 忘记 的 内容 并 做了 些 补充 并非 是 
+课堂 详细 笔记 和 要点 # 标记 为 补充 的 
+是 我 自己 加 的 内容 而非 课堂 内容 参考文献 
+列于 文末 博主 能力 有限 若 有错误 恳请 指正 # 
+# # 下面 这个 概念 对 理解 机器学习 非常 有 
+帮助 但是 我 发现 很多 小伙伴 不 了解 这个 补充 
+机器学习 三要素 模型 model 策略 strategy 算法 algorithm 模型 就是 
+所 要 学习 条件 概率分布 或 决策函数 我们 常见 的 
+一些 方法 像 隐 马 模型 HMM SVM 模型 决策树 
+模型 等等 都 归于 此类 策略 是 指 按照 什么样 
+的 准则 来 学习 或者 挑选 模型 像 课上 讲 
+的 J Θ 损失 函数 属于 此类 这里 的 算法 
+是 指 学习 模型 的 具体 计算方法 即用 什么样 的 
+方法 来 求得 最优 解 像 课上 讲 的 梯度 
+下 降法 其他 如 牛顿 法 拟 牛顿 法 属于 
+此类 # # # 回到 课堂 上 讲 的 当 
+一个 方法 的 预测 结果 明显 有 问题 时 可采用 
+如下 方法 1 Get more examples   helps to fix 
+high variance Not good if you have high bias 2 
+Smaller set of features fixes high variance overfitting not good 
+if you have high bias 3 Try adding additional features 
+fixes high bias because hypothesis is too simple make hypothesis 
+more specific 4 Add polynomial terms fixes high bias problem 
+5 Decreasing   λ   fixes high bias 6 Increases 
+  λ fixes high variance # # 模型 评估 与 
+模型 选择 补充 用 训练 集 来 训练 模型 验证 
+集 用于 模型 的 选择 测试 集 用于 最终 对 
+学习 方法 的 评估 补充 用 训练 误差 和 测试 
+误差 来 评估 学习 方法 训练 误差 对 判断 给定 
+的 问题 是否 容易 学习 是 有 意义 的 但 
+本质上 不重要 测试 误差 反映 了 学习 方法 对 未知 
+数据 的 预测 能力 比较 两 种 学习 方法 的 
+好坏 不考虑 计算速度 空间 等 因素 测试 误差 小 的 
+方法 显然 更好 # # 诊断 bias vs . variancex 
+= degree of polynomial d y = error for both 
+training and cross validation two lines if d is too 
+small this probably corresponds to a high bias problemif d 
+is too large this probably corresponds to a high variance 
+problemFor the high bias case we find both   cross 
+validation   and training error are highDoesn t   fit 
+training data wellDoesn t   generalize eitherFor high variance we 
+find the cross validation error is high but training error 
+is lowSo we suffer from overfitting training is low   
+cross validation   is high i . e . training 
+set fits wellBut generalizes poorly # # 学习曲线 learning curve 
+学习曲线 可以 通过 判断 模型 High bias 还是 High variance 
+来 提高 性能 suffering from high bias 需要 增加 模型 
+复杂度 增加 数据 无效 suffering from high   variance 增加 
+数据 有效 也可 尝试 增加 正则 项 # # 学习 
+器 的 几个 评价 指标 精确 率 precision = true 
+positives / # predicted positive = true positives / true 
+positive + false positive 召回率 recall =   true positives 
+/ # actual positives = true positive / true positive 
++ false negative F1 值 = 2 * PR / 
+P + R If P = 0 or R = 
+0 the   Fscore = 0 精确 率 与 召回率 
+都高/nr F1 值 也会 高 准确率 accuracy = true positives 
++ true negative / # total dataset = true positives 
++ true negative / true positive + true negative + 
+  false positive + false negative # # 平衡 trade 
+off 精确 率 和 召回率 很多 时候 我们 需要 平衡 
+精确 率 和 召回率 例子 Trained a logistic regression c 
+l a s s i f i e r P 
+r e d i c t 1 if   h 
+θ x = 0 . 5Predict 0 if   h 
+θ x 0.5 调整 阈值 对 精确 率 和 召回率 
+的 影响 见 下图 # # 参考文献 统计 学习 方法 
+李航 著 machine learning by Tom Mitchell couresra 课程   
+standford machine learning by   Andrew Ng 

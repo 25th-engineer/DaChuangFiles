@@ -1,0 +1,8 @@
+###机器学习和深度学习库速查表
+##Numpy库
+##Pandas
+##Scipy
+##Matplotlib
+##Scikit Learn
+##Keras
+##Neural Networks Zoo

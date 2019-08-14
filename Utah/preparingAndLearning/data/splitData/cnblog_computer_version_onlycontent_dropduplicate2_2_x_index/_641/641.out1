@@ -1,0 +1,1255 @@
+行人 检测 资源 上 综述 文献   http / / 
+www . cvrobot . net / pedestrian detection resource 1 
+summary review survey / 行人 检测 资源 下 代码 数据 
+  http / / www . cvrobot . net / 
+pedestrian detection resource 2 code and dataset / 行人 检测 
+具有 极其 广泛 的 应用 智能 辅助 驾驶 智能 监控 
+行人 分析 以及 智能 机器人 等 领域 从 2005 年以来 
+行人 检测 进入 了 一个 快速 的 发展 阶段 但是 
+也 存在 很多 问题 还 有待 解决 主要 还是 在 
+性能 和 速度 方面 还 不能 达到 一个 权衡 近年 
+以 谷歌 为首 的 自动 驾驶 技术 的 研发 正 
+如火如荼 的 进行 这也 迫切 需要 能对/nr 行人 进行 快速 
+有效 的 检测 以 保证 自动驾驶 期间 对 行人 的 
+安全 不 会 产生 威胁 1     行人 检测 
+的 现状 大概 可以 分为 两类 1.1       
+基于 背景 建模 利用 背景 建模 方法 提取 出 前景 
+运动 的 目标 在 目标 区域 内 进行 特征提取 然后 
+利用 分类器 进行 分类 判断 是否 包含 行人 背景 建模 
+目前 主要 存在 的 问题 1 必须 适应 环境 的 
+变化 比如 光照 的 变化 造成 图像 色度 的 变化 
+2 相机 抖动 引起 画面 的 抖动 比如 手持 相机 
+拍照 时候 的 移动 3 图像 中 密集 出现 的 
+物体 比如 树叶 或 树 干等 密集 出现 的 物体 
+要 正确 的 检测 出来 4 必须 能够 正确 的 
+检测 出 背景 物体 的 改变 比如 新 停下 的 
+车 必须 及时 的 归为 背景 物体 而有 静止 开始 
+移动 的 物体 也 需要 及时 的 检测 出来 5 
+物体 检测 中 往往 会 出现 Ghost 区域 Ghost 区域 
+也 就是 指 当 一个 原本 静止 的 物体 开始 
+运动 背静 差 检测 算法 可能会 将 原来 该 物体 
+所 覆盖 的 区域 错误 的 检测 为 运动 的 
+这块 区域 就 成为 Ghost 当然 原来 运动 的 物体 
+变为 静止 的 也会 引入 Ghost 区域 Ghost 区域 在 
+检测 中 必须 被 尽快 的 消除 1.2     
+  基于 统计 学习 的 方法 这也 是 目前 行人 
+检测 最 常用 的 方法 根据 大量 的 样本 构建 
+行人 检测 分类器 提取 的 特征 主要 有 目标 的 
+灰度 边缘 纹理 颜色 梯度 直方图 等 信息 分类器 主要 
+包括 神经网络 SVM adaboost 以及 现在 被 计算机 视觉 视为 
+宠儿 的 深度 学习 统计 学习 目前 存在 的 难点 
+1 行人 的 姿态 服饰 各不相同 复杂 的 背景 不同 
+的 行人 尺度 以及 不同 的 光照 环境 2 提取 
+的 特征 在 特征 空间 中 的 分布 不够 紧凑 
+3 分类器 的 性能 受 训练样本 的 影响 较大 4 
+离线 训练 时的负/nr 样本 无法 涵盖 所有 真实 应用 场景 
+的 情况 目前 的 行人 检测 基本上 都是/nr 基于 法国 
+研究 人员 Dalal 在 2005 的 CVPR 发表 的 HOG 
++ SVM 的 行人 检测 算法 Histograms of Oriented Gradients 
+for Human Detection Navneet Dalel Bill Triggs CVPR2005 HOG + 
+SVM 作为 经典 算法 也 集成 到 opencv 里面 去了 
+可以 直接 调用 实现 行人 检测 为了 解决 速度 问题 
+可以 采用 背景 差分法 的 统计 学习 行人 检测 前提 
+是 背景 建模 的 方法 足够 有效 即 效果 好 
+速度 快 目前 获得 比较 好 的 检测 效果 的 
+方法 通常 采用 多 特征 融合 的 方法 以及 级联 
+分类器 常用 的 特征 有 Harry like Hog 特征 LBP 
+特征 Edgelet 特征 CSS 特征 COV 特征 积分 通道 特征 
+以及 CENTRIST 特征 2       综述 类 的 
+文章 2.1       行人 检测 十年 回顾 Ten 
+Years of Pedestrian Detection What Have We Learned 一篇 2014年 
+ECCV 的 文章 是 对 pedestrian detectiond 过去 十年 发展 
+的 回顾 从 dataset main approaches 的 角度 分析 了 
+近 10年 的 40多 篇 论文 提出 的 方法 并对 
+提高 feature 复杂度 的 影响 进行 了 评估 下载 http 
+/ / rodrigob . github . io / documents / 
+2014 _ eccvw _ ten _ years _ of _ 
+pedestrian _ detection _ with _ supplementary _ material . 
+pdf 学习 笔记 http / / blog . csdn . 
+net / mduke / article / details / 465824432.2   
+    P . Dollar   PAMI 2012 上 的 
+综述 P . Dollar   C .   Wojek B 
+.   Schiele   et   al .   Pedestrian 
+  detection   an   evaluation   of   the 
+  state   of   the   art   J 
+. IEEE   Transactions   on   Pattern Analysis   
+and Machine   Intelligence   2012   34 4   
+743 761.2012年 PAMI 上 发表 的 一篇 关于 行人 检测 
+的 综述 性 文章 PDF 格式 共 20页 对 常见 
+的 16种 行人 检测 算法 进行 了 简单 描述 并在 
+6个 公开 测试 库 上 进行 测试 给出 了 各种 
+方法 的 优缺点 及 适用 情况 另外 指出 了 未来 
+行人 检测 的 发展 方向 和 趋势 下载 http / 
+/ vision . ucsd . edu / ~ pdollar / 
+files / papers / DollarPAMI12peds . pdf2 . 3   
+    CVPR2010 HOF 和 CSShttps / / www . 
+d2 . mpi inf . mpg . de / C 
+V P R 1 0 P e d e s 
+t r i a n s N e w Features 
+and Insights for Pedestrian Detection 文中 使用 改进 的 HOG 
+即 HOF 和 CSS color self similarity 特征 使用 HIK 
+SVM 分类器 本文 的 作者 是 德国人 Stefen Walk 目前 
+Stefan Walk 在 苏黎世 联邦 理工大学 任教 2.4     
+  Integral Channel Features 加州理工学院 2009年 行人 检测 的 文章 
+Integral Channel Features 积分 通道 特征 这 篇 文章 与 
+2012年 PAMI 综述 文章 是 同一 作者 作者 Piotr DollarPaper 
+下载 http / / pages . ucsd . edu / 
+~ ztu / publication / d o l l a 
+r B M V C 0 9 C h n 
+F t r s _ 0 . pdf 中文 笔记 
+http / / blog . csdn . net / carson2005 
+/ article / details / 84558372.5       The 
+Fastest Pedestrian Detector in the WestDollar 在 2010 年 BMVC 
+的 The fastest pedestrian detector in the west 一文 中 
+提出 了 一种 新的 思想 这种 思想 只 需要 训练 
+一个 标准 model 检测 N / K K ≈ 10 
+然后 其余 的 N N / K 种 大小 的 
+图片 的 特征 不 需要 再 进行 这种 复杂 的 
+计算 而是 跟 据 这 N / K 次 的 
+结果 由 另外 一种 简单 的 算法 给 估计 出来 
+这种 思想 实现 的 基础 是 大小 相近 的 图像 
+的 特征 可以 被 足够 精确 的 估计 出来 下载 
+http / / vision . ucsd . edu / sites 
+/ default / files / FPDW _ 0 . pdf2 
+. 6       DPM 算法 做 目标 检测 
+CVPR2008 A Discriminatively Trained Multiscale Deformable Part ModelPAMI2010 Object Detection 
+with Discriminatively Trained Part Based ModelsCVPR2010 Cascade Object Detection with 
+Deformable Part Models 以上 三 篇文章 都是 作者 研究 DPM 
+算法 做 目标 检测 的 文章 有源 代码 可以 下载 
+作者 的 个人 主页 http / / cs . brown 
+. edu / ~ pff / papers / 2.7   
+    利用 DPM 模型 检测 粘连 Detection and Tracking 
+of Occluded PeopleIJCV2014 年的/nr 文章 利用 DPM 模型 检测 粘连 
+情况 很 严重 的 行人 效果 很好 下载 http / 
+/ www . bmva . org / bmvc / 2012 
+/ BMVC / paper009 / 2.8       UDN 
+算法 ICCV2013 1 Joint Deep Learning for Pedestrian Detection2 Multi 
+Stage Contextual Deep Learning for Pedestrian Detection 简 称 UDN 
+算法 从文中 描述 的 检测 效果 来看 该 方法 是 
+所有 方法 中 最好 的 并且 效果 远 超过 其他 
+方法 经过 对 论文 和该/nr 算法 源码 的 研究 该 
+算法 是 与 作者 另外 一篇 论文 的 方法 另外 
+的 论文 算法 做 图片 扫描 得到 矩形框 然后 用 
+该 方法 对 矩形框 进行 进一步 确认 以及 降低 误 
+警 率 和漏警/nr 率 另外 的 论文 是 Multi Stage 
+Contextual Deep Learning for Pedestrian Detection 这 篇 文章 是 
+用 深度 学习 的 CNN 做 candidate window 的 确认 
+而 主要 的 行人 检测 的 算法 还是 HOG + 
+CSS + adaboost 香港中文大学 Joint Deep Learning for Pedestrian Detection 
+行人 检测 论文 的 相关 资源 http / / www 
+. ee . cuhk . edu . hk / ~ 
+wlouyang / projects / o u y a n g 
+W i c c v 1 3 J o i 
+n t / index . html2 . 9     
+  Monocular   pedestrian   d e t e c 
+t i o n E n z w e i 
+l e r   and   D . Gavrila . 
+  Monocular   pedestrian   detection   survey   and 
+  experiments   J . IEEE   Transactions   on 
+  Pattern   Analysis   and Machine   Intelligence 2009 
+  31 12   2179 2195 . 下载 http / 
+/ www . gavrila . net / pami09 . pdf2 
+. 10             Survey   
+of   pedestrian   detection   for   advanced   
+driver assistance   systemsGeronimo   A .   M . 
+Lopez   and   A .   D .   
+Sappa   et   al .   Survey   of 
+  pedestrian   detection   for   advanced   driver 
+assistance   systems   J .   IEEE   Transactionson 
+  Pattern   Analysis   and   Machine   Intelligence 
+  2010   32 7   1239 1258 . 百度 
+文库 下载 http / / wenku . baidu . com 
+/ link url = xLDWZTdLXT1 _ f i Z o 
+U z N F i y Q t Z T 
+w n y L l Z H h T I 
+0 B 8 7 v k I E 6 U 
+E D r K z 6 i z 8 z 
+p K m m P v Z q 7 k 
+t l X 6 W R x y V x 
+c j k 8 B y m g l 5 
+3 Q B f z B E K g Y 
+P Z m s i 1 l _ 2.11   
+          Vision based Pedestrian Protection Systems 
+for Intelligent VehiclesGeronimo and A . M . Lopez . 
+Vision based Pedestrian Protection Systems for Intelligent Vehicles BOOK 2014 
+. 下载 http / / bookzz . org / book 
+/ 2167094 / e 216392.12           
+  行人 检测 技术 综述 苏松 志   李绍滋/nr   
+陈 淑媛 等 .   行人 检测 技术 综述 J 
+.   电子学报   2012   40 4   814 
+820 . 下载 行人 检测 技术 综述 2.13     
+        车辆 辅助 驾驶 系统 中 基于 
+计算机 视觉 的 行人 检测 研究 综述 贾 慧星  /i 
+章毓晋/nr ./i 车辆/n 辅助/vn 驾驶/v 系统/n 中/f 基于/p 计算机/n 视觉/n 
+的/uj 行人/n 检测/vn 研究/vn 综述/vn J   自动化 学报   
+2007   33 1   84 90 . 下载 车辆 
+辅助 驾驶 系统 中 基于 计算机 视觉 的 行人 检测 
+研究 综述 2.14             行人 
+检测 系统 研究 新 进展 及 关键 技术 展望 许 
+言午 曹先彬/nr 乔红 . 行人 检测 系统 研究 新 进展 
+及 关键 技术 展望 J 电子学报 2008 36 5 368 
+376 . 下载 行人 检测 系统 研究 新 进展 及 
+关键 技术 展望 2.15             
+基于 视觉 的 人 的 运动 识别 综述 杜友田/nr 陈峰 
+徐文 立 李永 彬 基于 视觉 的 人 的 运动 
+识别 综述 电子学报   2007 . 35 1 84 90 
+. 下载 基于 视觉 的 人 的 运动 识别 综述 
+2.16             基于 机器 学习 
+的 行人 检测 关键 技术 研究 朱 文佳 .   
+基于 机器学习 的 行人 检测 关键 技术 研究 D . 
+  第一章   硕士 学位 论文   上海 交通 大学 
+.   2008 .   指导 教师   戚 飞虎 
+. 这是 行人 检测 相关 资源 的 第二 部分 源码 
+和 数据集 考虑 到 实际 应用 的 实时 性要求 源码 
+主要 是 C / C + + 的 源码 和 
+数据集 的 网址 经过 测试 都可 访问 并 注明 了 
+这些 网址 最后 更新 的 日期 供 学习 和 研究 
+进行 参考 欢迎 补充 更多 的 资源 1     
+          Source   Code1 . 1 
+      INRIA Object Detection and Localization Toolkithttp / 
+/ pascal . inrialpes . fr / soft / olt 
+/ Dalal 于 2005年 提出 了 基于 HOG 特征 的 
+行人 检测 方法 行人 检测 领域 中 的 经典 文章 
+之一 HOG 特征 目前 也 被用 在 其他 的 目标 
+检测 与 识别 图像 检索 和 跟踪 等 领域 中 
+更新 20081.2       Real time   Pedestrian   
+Detection . http / / cs . nju . edu 
+. cn / wujx / projects / C4 / C4 
+. htmJianxin   Wu 实现 的 快速 行人 检测 方法 
+Real Time Human Detection Using Contour Cues http / / 
+c2inet . sce . ntu . edu . sg / 
+Jianxin / paper / ICRA _ final . pdf 更新 
+20121.3       霍夫 变换 实现 的 多目标 检测 
+http / / graphics . cs . msu . ru 
+/ en / science / research / machinelearning / houghOlga 
+  Barinova   CVPR   2010   Paper   On 
+  detection   of   multiple   object   instances 
+  using   Hough   Transforms 源码 C + + 
+更新 20101.4       HIKSVMhttp / / ttic . 
+uchicago . edu / ~ smaji / projects / fiksvm 
+/ Classification Using Intersection Kernel SVMs is efficientHOG + LBP 
++ HIKSVM   行人 检测 的 经典 方法 . 源码 
+C / C + + 更新 20121.5       
+GroundHOGhttp / / www . mmp . rwth aachen . 
+de / projects / groundhogGPU based   Object   Detection 
+  with   Geometric   Constraints   In   ICVS 
+  2011 .     CUDA 版本 的 HOG + 
+SVM 源码 C / C + + 更新 20111.6   
+    doppia   codehttps / / bitbucket . org 
+/ rodrigob / doppia 这 是 一个 代码 集合 包含 
+如下 Pedestrian   detection   at   100   frames 
+  per   second   R .   Benenson . 
+    CVPR   2012 .   实时 的 Stixels 
+estimation without depth map computationFast stixels estimation for fast pedestrian 
+detectionSeeking the strongest rigid detectorTen years of pedestrian detection what 
+have we learned Face detection without bells and whistles 源码 
+C / C + + 更新 20151.7       
+Multiple   camera   pedestrian   detection . POM Occupancy 
+map estimation for people detectionhttp / / cvlab . epfl 
+. ch / software / pom / Paper Multi Camera 
+People Tracking with a Probabilistic Occupancy Map 源码 更新 20141.8 
+      Pitor Dollar Detector . Piotr s Computer 
+Vision Matlab Toolboxhttp / / vision . ucsd . edu 
+/ ~ pdollar / toolbox / doc / index . 
+htmlThe toolbox is divided into 7 parts arranged by directory 
+channels Robust image features including HOG for fast object detection 
+. classify Fast clustering random ferns RBF functions PCA etc 
+. detector Aggregate Channel Features ACF object detection code . 
+filters Routines for filtering images . images Routines for manipulating 
+and displaying images . matlab General Matlab functions that should 
+have been a part of Matlab . videos Routines for 
+annotating and displaying videos . 源码 matlab 更新 20142   
+            DataSets2 . 1   
+    MIT 数据库 http / / cbcl . mit 
+. edu / software datasets / PedestrianData . html 介绍 
+该 数据库 为 较早 公开 的 行人 数据库 共 924张 
+行人 图片 ppm 格式 宽 高为/nr 64 × 128 肩 
+到 脚 的 距离 约 80 象素 该 数据库 只含 
+正面 和 背面 两个 视角 无 负 样本 未 区分 
+训练 集 和 测试 集 Dalal 等 采用 HOG + 
+SVM 在 该 数据库 上 的 检测 准确率 接近 100% 
+更新 20002.2       INRIA Person Datasethttp / / 
+pascal . inrialpes . fr / data / human / 
+介绍 该 数据库 是 HOG + SVM 的 作者 Dalal 
+创建 的 该 数据库 是 目前 使用 最多 的 静态 
+行人 检测 数据库 提供 原始 图片 及 相应 的 标注 
+文件 训练 集 有正/nr 样本 614张 包含 2416个 行人 负 
+样本 1218张 测试 集 有正/nr 样本 288张 包含 1126个 行人 
+负 样本 453张 图片 中 人体 大部分 为 站立 姿势 
+且 高度 大于 100个 象素 部分 标注 可能 不 正确 
+图片 主要 来源于 GRAZ 01 个人 照片 及 google 因此 
+图片 的 清晰度 较高 在 XP 操作系统 下 部分 训练 
+或者 测试 图片 无法 看 清楚 但 可用 OpenCV 正常 
+读取 和 显示 更新 20052.3       Daimler 行人 
+数据库 http / / www . gavrila . net / 
+Research / Pedestrian _ Detection / Daimler _ Pedestrian _ 
+Benchmark _ D / 该 数据库 采用 车载 摄像机 获取 
+分为 检测 和 分类 两个 数据集 检测/vn 数据集/i 的/uj 训练/vn 
+样/n 本集/i 有正/nr 样本/n 大小/b 为/p 18/m ×/i 36/m 和/c 
+48/m ×/i 96/m 的/uj 图片/n 各/r 15560/m 3915 × 4 
+张 行人 的 最小 高度 为 72个 象素 负 样本 
+6744张 大小 为 640 × 480 或 360 × 288 
+测试 集为 一段 27 分钟 左右 的 视频 分辨率 为 
+640 × 480 共 21790张 图片 包含 56492个 行人 分类/n 
+数据库/n 有/v 三个/m 训练/vn 集/q 和/c 两个/m 测试/vn 集/q 每个 
+数据集 有 4800张 行人 图片 5000 张非 行人 图片 大小 
+均为 18 × 36 另外 还有 3个 辅助 的 非 
+行人 图片集 各 1200张 图片 更新 2009 2.4     
+  Caltech Pedestrian Detectionhttp / / www . vision . 
+caltech . edu / Image _ Datasets / C a 
+l t e c h P e d e s 
+t r i a n s / 该 数据库 是 
+目前 规模 较大 的 行人 数据库 采用 车载 摄像头 拍摄 
+约 10 个 小时 左右 视频 的 分辨率 为 640 
+× 480 30 帧 / 秒 标注 了 约 250 
+000 帧 约 137 分钟 350000个 矩形框 2300个 行人 另外 
+还对 矩形框 之间 的 时间 对应 关系 及其 遮挡 的 
+情况 进行 标注 数据集 分为 set00 ~ set10 其中 set00 
+~ set05 为 训练 集 set06 ~ set10 为 测试 
+集 标注 信息 尚未 公开 性能 评估 方法 有 以下 
+三种 1 用 外部 数据 进行 训练 在 set06 ~ 
+set10 进行 测试 2 6 fold 交叉 验证 选择 其中 
+的 5个 做 训练 另外 一个 做 测试 调整 参数 
+最后 给出 训练 集上 的 性能 3 用 set00 ~ 
+set05 训练 set06 ~ set10 做 测试 由于 测试 集 
+的 标注 信息 没有 公开 需要 提交 给 Pitor   
+Dollar 结果 提交 方法 为 每 30 帧 做 一个 
+测试 将 结果 保存 在 txt 文档 中 文件 的 
+命名 方式 为 I00029 . txt   I00059 . txt 
+  每个 txt 文件 中的 每行 表示 检测 到 一个 
+行人 格式 为 left   top width   height   
+score 如果 没有 检测 到 任何 行人 则 txt 文档 
+为 空 该 数据库 还 提供 了 相应 的 Matlab 
+工具包 包括 视频 标注 信息 的 读取 画 ROC Receiver 
+  O p e r a t i n g 
+c h a r a c t e r i 
+s t i c   Curve 曲线图 和非/nr 极大值 抑制 
+等 工具 更新 20142.5       TUD 行人 数据库 
+https / / www . mpi inf . mpg . 
+de / departments / multi cue onboard pedestrian detection / 
+介绍 TUD 行人 数据库 为 评估 运动 信息 在 行人 
+检测 中 的 作用 提供 图像 对 以便 计算 光 
+流 信息 训练 集 的 正 样 本为 1092对 图像 
+图片大小 为 720 × 576 包含 1776个 行人 负 样 
+本为 192对 非 行人 图像 手持 摄像机 85对 车载 摄像机 
+107对 另外 还 提供 26对 车载 摄像机 拍摄 的 图像 
+包含 183个 行人 作为 附加 训练 集 测试 集 有 
+508对 图像 图像 对 的 时间 间隔 为 1秒 分辨率 
+为 640 × 480 共有 1326个 行人 Andriluka 等 也 
+构建 了 一个 数据库 用于 验证 他们 提出 的 检测 
+与 跟踪 相结合 的 行人 检测 技术 该 数据集 的 
+训练 集 提供 了 行人 的 矩形 框 信息 分割 
+掩膜 及其 各部位 脚 小腿 大腿 躯干 和 头部 的 
+大小 和 位置 信息 测试 集为 250张 图片 包含 311个 
+完全 可见 的 行人 用于 测试 检测器 的 性能 2个 
+视频 序列 TUD Campus 和 TUD Crossing 用于 评估 跟踪器 
+的 性能 更新 20102.6       NICTA 行人 数据库 
+http / / www . nicta . com . au 
+/ category / research / computer vision / tools / 
+automap datasets / 该 数据库 是 目前 规模 较大 的 
+静态 图像 行人 数据库 25551张 含 单人 的 图片 5207张 
+高分辨率 非 行人 图片 数据库 中 已 分好 训练 集 
+和 测试 集 方便 不同 分类器 的 比较 Overett 等用 
+RealBoost + Haar 评估 训练样本 的 平移 旋转 和 宽高比 
+等 各种 因素 对 分类 性能 的 影响 1 行人 
+高度 至少 要 大于 40个 象素 2 在 低分辨率 下 
+对于 Haar 特征 来说 增加 样本 宽度 的 性能 好于 
+增加 样本 高度 的 性能 3 训练 图片 的 大小 
+要 大于 行人 的 实际 大小 即 背景 信息 有助于 
+提高 性能 4 对 训练 样本 进行 平移 提高 检测 
+性能 旋转 对 性能 的 提高 影响 不大 以上 的 
+结论 对于 构建 行人 数据库 具有 很好 的 指导 意义 
+更新 20082.7       ETHZ 行人 数据库 Robust Multi 
+Person Tracking from Mobile Platformshttps / / data . vision 
+. ee . ethz . ch / cvl / aess 
+/ dataset / Ess 等 构建 了 基于 双目 视觉 
+的 行人 数据库 用于 多人 的 行人 检测 与 跟踪 
+研究 该 数据库 采用 一 对 车载 的 AVT   
+Marlins   F033C 摄像头 进行 拍摄 分辨率 为 640 × 
+480 帧率 13 14fps 给出 标定 信息 和 行人 标注 
+信息 深度 信息 采用 置信度 传播 方法 获取 更新 20102.8 
+      CVC 行人 数据库 http / / www 
+. cvc . uab . es / adas / site 
+/ q = node / 7 该 数据库 目前 包含 
+三个 数据集 CVC 01 CVC 02 和 CVC Virtual 主要 
+用于 车辆 辅助 驾驶 中 的 行人 检测 研究 CVC 
+01 Geronimo 2007 有 1000个 行人 样本 6175个 非 行人 
+样本 来自 于 图片 中 公路 区域 中的 非 行人 
+图片 不像 有的 行人 数据库 非行 人样 本为 天空 沙滩 
+和 树木 等 自然 图像 CVC 02 包含 三 个子 
+数据集 CVC 02 CG CVC 02 Classification 和 CVC 02 
+System 分别 针对 行人 检测 的 三个 不同 任务 感兴趣 
+区域 的 产生 分类 和 系统 性能 评估 图像 的 
+采集 采用 Bumblebee2 立体 彩色 视觉 系统 分辨率 640 × 
+480 焦距 6mm 对 距离 摄像头 0 ~ 50m 的 
+行人 进行 标注 最小 的 行人 图片 为 12 × 
+24 CVC 02 CG 主要 针对 候选 区域 的 产生 
+有 100张 彩色图像 包含 深度 和 3D 点 信息 CVC 
+02 Classification 主要 针对 行人 分类 训练 集 有 1016 
+张正 样本 7650张 负 样本 测试 集 分为 基于 切割 
+窗口 的 分类 570张 行人 7500 张非 行人 和 整张 
+图片 的 检测 250张 包含 行人 的 图片 共 587个 
+行人 CVC 02 System 主要 用于 系统 的 性能 评估 
+包含 15个 视频 序列 4364 帧 7983个 行人 CVC Virtual 
+是 通过 Half Life   2 图像 引擎 产生 的 
+虚拟 行人 数据集 共 包含 1678 虚拟 行人 2048个 非 
+行人 图片 用于 测试 更新 2015 目前 已经 更新 到 
+CVC 08 了 2.9       USC 行人 数据库 
+http / / iris . usc . edu / Vision 
+Users / OldUsers / bowu / DatasetWebpage / dataset . 
+html 该 数据库 包含 三组 数据集 USC A USC B 
+和 USC C 以 XML 格式 提供 标注 信息 USC 
+A Wu   2005 的 图片 来自 于 网络 共 
+205张 图片 313个 站立 的 行人 行 人间 不存在 相互 
+遮挡 拍摄 角度 为 正面 或者 背面 USC B 的 
+图片 主要 来自 于 CAVIAR 视频 库 包括 各种 视角 
+的 行人 行人 之间 有的/nr 相互 遮挡 共 54张 图片 
+271个 行人 USC C 有 100张 图片 来自 网络 的 
+图片 232个 行人 多角度 行人 之间 无 相互 遮挡 更新 
+20073               其他 资料 
+1 Video Pedestrian Detection The State of the Arthttp / 
+/ research . microsoft . com / apps / video 
+/ default . aspx id = 135046 & r = 
+1A video talk byPitor Dollar . Pitor Dollar 做 了 
+很多 关于 行人 检测 方法 的 研究 他们 研究 小组 
+的 Caltech Pedestrian Dataset 也很 出名 2 Statistical and Structural 
+Recognition of Human Actions . ECCV 2010 Tutorial by Ivan 
+Laptev and Greg Mori . 注 要用 爬墙 软件 才能 
+访 问到 3 Human Action Recognition in realistic scenarios 一份 
+很好 的 硕士生 毕业论文 开题 资料 行人 检测 资源 上 综述 文献   http / / 
+www . cvrobot . net / pedestrian detection resource 1 
+summary review survey / 行人 检测 资源 下 代码 数据 
+  http / / www . cvrobot . net / 
+pedestrian detection resource 2 code and dataset / 行人 检测 
+具有 极其 广泛 的 应用 智能 辅助 驾驶 智能 监控 
+行人 分析 以及 智能 机器人 等 领域 从 2005 年以来 
+行人 检测 进入 了 一个 快速 的 发展 阶段 但是 
+也 存在 很多 问题 还 有待 解决 主要 还是 在 
+性能 和 速度 方面 还 不能 达到 一个 权衡 近年 
+以 谷歌 为首 的 自动 驾驶 技术 的 研发 正 
+如火如荼 的 进行 这也 迫切 需要 能对/nr 行人 进行 快速 
+有效 的 检测 以 保证 自动驾驶 期间 对 行人 的 
+安全 不 会 产生 威胁 1     行人 检测 
+的 现状 大概 可以 分为 两类 1.1       
+基于 背景 建模 利用 背景 建模 方法 提取 出 前景 
+运动 的 目标 在 目标 区域 内 进行 特征提取 然后 
+利用 分类器 进行 分类 判断 是否 包含 行人 背景 建模 
+目前 主要 存在 的 问题 1 必须 适应 环境 的 
+变化 比如 光照 的 变化 造成 图像 色度 的 变化 
+2 相机 抖动 引起 画面 的 抖动 比如 手持 相机 
+拍照 时候 的 移动 3 图像 中 密集 出现 的 
+物体 比如 树叶 或 树 干等 密集 出现 的 物体 
+要 正确 的 检测 出来 4 必须 能够 正确 的 
+检测 出 背景 物体 的 改变 比如 新 停下 的 
+车 必须 及时 的 归为 背景 物体 而有 静止 开始 
+移动 的 物体 也 需要 及时 的 检测 出来 5 
+物体 检测 中 往往 会 出现 Ghost 区域 Ghost 区域 
+也 就是 指 当 一个 原本 静止 的 物体 开始 
+运动 背静 差 检测 算法 可能会 将 原来 该 物体 
+所 覆盖 的 区域 错误 的 检测 为 运动 的 
+这块 区域 就 成为 Ghost 当然 原来 运动 的 物体 
+变为 静止 的 也会 引入 Ghost 区域 Ghost 区域 在 
+检测 中 必须 被 尽快 的 消除 1.2     
+  基于 统计 学习 的 方法 这也 是 目前 行人 
+检测 最 常用 的 方法 根据 大量 的 样本 构建 
+行人 检测 分类器 提取 的 特征 主要 有 目标 的 
+灰度 边缘 纹理 颜色 梯度 直方图 等 信息 分类器 主要 
+包括 神经网络 SVM adaboost 以及 现在 被 计算机 视觉 视为 
+宠儿 的 深度 学习 统计 学习 目前 存在 的 难点 
+1 行人 的 姿态 服饰 各不相同 复杂 的 背景 不同 
+的 行人 尺度 以及 不同 的 光照 环境 2 提取 
+的 特征 在 特征 空间 中 的 分布 不够 紧凑 
+3 分类器 的 性能 受 训练样本 的 影响 较大 4 
+离线 训练 时的负/nr 样本 无法 涵盖 所有 真实 应用 场景 
+的 情况 目前 的 行人 检测 基本上 都是/nr 基于 法国 
+研究 人员 Dalal 在 2005 的 CVPR 发表 的 HOG 
++ SVM 的 行人 检测 算法 Histograms of Oriented Gradients 
+for Human Detection Navneet Dalel Bill Triggs CVPR2005 HOG + 
+SVM 作为 经典 算法 也 集成 到 opencv 里面 去了 
+可以 直接 调用 实现 行人 检测 为了 解决 速度 问题 
+可以 采用 背景 差分法 的 统计 学习 行人 检测 前提 
+是 背景 建模 的 方法 足够 有效 即 效果 好 
+速度 快 目前 获得 比较 好 的 检测 效果 的 
+方法 通常 采用 多 特征 融合 的 方法 以及 级联 
+分类器 常用 的 特征 有 Harry like Hog 特征 LBP 
+特征 Edgelet 特征 CSS 特征 COV 特征 积分 通道 特征 
+以及 CENTRIST 特征 2       综述 类 的 
+文章 2.1       行人 检测 十年 回顾 Ten 
+Years of Pedestrian Detection What Have We Learned 一篇 2014年 
+ECCV 的 文章 是 对 pedestrian detectiond 过去 十年 发展 
+的 回顾 从 dataset main approaches 的 角度 分析 了 
+近 10年 的 40多 篇 论文 提出 的 方法 并对 
+提高 feature 复杂度 的 影响 进行 了 评估 下载 http 
+/ / rodrigob . github . io / documents / 
+2014 _ eccvw _ ten _ years _ of _ 
+pedestrian _ detection _ with _ supplementary _ material . 
+pdf 学习 笔记 http / / blog . csdn . 
+net / mduke / article / details / 465824432.2   
+    P . Dollar   PAMI 2012 上 的 
+综述 P . Dollar   C .   Wojek B 
+.   Schiele   et   al .   Pedestrian 
+  detection   an   evaluation   of   the 
+  state   of   the   art   J 
+. IEEE   Transactions   on   Pattern Analysis   
+and Machine   Intelligence   2012   34 4   
+743 761.2012年 PAMI 上 发表 的 一篇 关于 行人 检测 
+的 综述 性 文章 PDF 格式 共 20页 对 常见 
+的 16种 行人 检测 算法 进行 了 简单 描述 并在 
+6个 公开 测试 库 上 进行 测试 给出 了 各种 
+方法 的 优缺点 及 适用 情况 另外 指出 了 未来 
+行人 检测 的 发展 方向 和 趋势 下载 http / 
+/ vision . ucsd . edu / ~ pdollar / 
+files / papers / DollarPAMI12peds . pdf2 . 3   
+    CVPR2010 HOF 和 CSShttps / / www . 
+d2 . mpi inf . mpg . de / C 
+V P R 1 0 P e d e s 
+t r i a n s N e w Features 
+and Insights for Pedestrian Detection 文中 使用 改进 的 HOG 
+即 HOF 和 CSS color self similarity 特征 使用 HIK 
+SVM 分类器 本文 的 作者 是 德国人 Stefen Walk 目前 
+Stefan Walk 在 苏黎世 联邦 理工大学 任教 2.4     
+  Integral Channel Features 加州理工学院 2009年 行人 检测 的 文章 
+Integral Channel Features 积分 通道 特征 这 篇 文章 与 
+2012年 PAMI 综述 文章 是 同一 作者 作者 Piotr DollarPaper 
+下载 http / / pages . ucsd . edu / 
+~ ztu / publication / d o l l a 
+r B M V C 0 9 C h n 
+F t r s _ 0 . pdf 中文 笔记 
+http / / blog . csdn . net / carson2005 
+/ article / details / 84558372.5       The 
+Fastest Pedestrian Detector in the WestDollar 在 2010 年 BMVC 
+的 The fastest pedestrian detector in the west 一文 中 
+提出 了 一种 新的 思想 这种 思想 只 需要 训练 
+一个 标准 model 检测 N / K K ≈ 10 
+然后 其余 的 N N / K 种 大小 的 
+图片 的 特征 不 需要 再 进行 这种 复杂 的 
+计算 而是 跟 据 这 N / K 次 的 
+结果 由 另外 一种 简单 的 算法 给 估计 出来 
+这种 思想 实现 的 基础 是 大小 相近 的 图像 
+的 特征 可以 被 足够 精确 的 估计 出来 下载 
+http / / vision . ucsd . edu / sites 
+/ default / files / FPDW _ 0 . pdf2 
+. 6       DPM 算法 做 目标 检测 
+CVPR2008 A Discriminatively Trained Multiscale Deformable Part ModelPAMI2010 Object Detection 
+with Discriminatively Trained Part Based ModelsCVPR2010 Cascade Object Detection with 
+Deformable Part Models 以上 三 篇文章 都是 作者 研究 DPM 
+算法 做 目标 检测 的 文章 有源 代码 可以 下载 
+作者 的 个人 主页 http / / cs . brown 
+. edu / ~ pff / papers / 2.7   
+    利用 DPM 模型 检测 粘连 Detection and Tracking 
+of Occluded PeopleIJCV2014 年的/nr 文章 利用 DPM 模型 检测 粘连 
+情况 很 严重 的 行人 效果 很好 下载 http / 
+/ www . bmva . org / bmvc / 2012 
+/ BMVC / paper009 / 2.8       UDN 
+算法 ICCV2013 1 Joint Deep Learning for Pedestrian Detection2 Multi 
+Stage Contextual Deep Learning for Pedestrian Detection 简 称 UDN 
+算法 从文中 描述 的 检测 效果 来看 该 方法 是 
+所有 方法 中 最好 的 并且 效果 远 超过 其他 
+方法 经过 对 论文 和该/nr 算法 源码 的 研究 该 
+算法 是 与 作者 另外 一篇 论文 的 方法 另外 
+的 论文 算法 做 图片 扫描 得到 矩形框 然后 用 
+该 方法 对 矩形框 进行 进一步 确认 以及 降低 误 
+警 率 和漏警/nr 率 另外 的 论文 是 Multi Stage 
+Contextual Deep Learning for Pedestrian Detection 这 篇 文章 是 
+用 深度 学习 的 CNN 做 candidate window 的 确认 
+而 主要 的 行人 检测 的 算法 还是 HOG + 
+CSS + adaboost 香港中文大学 Joint Deep Learning for Pedestrian Detection 
+行人 检测 论文 的 相关 资源 http / / www 
+. ee . cuhk . edu . hk / ~ 
+wlouyang / projects / o u y a n g 
+W i c c v 1 3 J o i 
+n t / index . html2 . 9     
+  Monocular   pedestrian   d e t e c 
+t i o n E n z w e i 
+l e r   and   D . Gavrila . 
+  Monocular   pedestrian   detection   survey   and 
+  experiments   J . IEEE   Transactions   on 
+  Pattern   Analysis   and Machine   Intelligence 2009 
+  31 12   2179 2195 . 下载 http / 
+/ www . gavrila . net / pami09 . pdf2 
+. 10             Survey   
+of   pedestrian   detection   for   advanced   
+driver assistance   systemsGeronimo   A .   M . 
+Lopez   and   A .   D .   
+Sappa   et   al .   Survey   of 
+  pedestrian   detection   for   advanced   driver 
+assistance   systems   J .   IEEE   Transactionson 
+  Pattern   Analysis   and   Machine   Intelligence 
+  2010   32 7   1239 1258 . 百度 
+文库 下载 http / / wenku . baidu . com 
+/ link url = xLDWZTdLXT1 _ f i Z o 
+U z N F i y Q t Z T 
+w n y L l Z H h T I 
+0 B 8 7 v k I E 6 U 
+E D r K z 6 i z 8 z 
+p K m m P v Z q 7 k 
+t l X 6 W R x y V x 
+c j k 8 B y m g l 5 
+3 Q B f z B E K g Y 
+P Z m s i 1 l _ 2.11   
+          Vision based Pedestrian Protection Systems 
+for Intelligent VehiclesGeronimo and A . M . Lopez . 
+Vision based Pedestrian Protection Systems for Intelligent Vehicles BOOK 2014 
+. 下载 http / / bookzz . org / book 
+/ 2167094 / e 216392.12           
+  行人 检测 技术 综述 苏松 志   李绍滋/nr   
+陈 淑媛 等 .   行人 检测 技术 综述 J 
+.   电子学报   2012   40 4   814 
+820 . 下载 行人 检测 技术 综述 2.13     
+        车辆 辅助 驾驶 系统 中 基于 
+计算机 视觉 的 行人 检测 研究 综述 贾 慧星  /i 
+章毓晋/nr ./i 车辆/n 辅助/vn 驾驶/v 系统/n 中/f 基于/p 计算机/n 视觉/n 
+的/uj 行人/n 检测/vn 研究/vn 综述/vn J   自动化 学报   
+2007   33 1   84 90 . 下载 车辆 
+辅助 驾驶 系统 中 基于 计算机 视觉 的 行人 检测 
+研究 综述 2.14             行人 
+检测 系统 研究 新 进展 及 关键 技术 展望 许 
+言午 曹先彬/nr 乔红 . 行人 检测 系统 研究 新 进展 
+及 关键 技术 展望 J 电子学报 2008 36 5 368 
+376 . 下载 行人 检测 系统 研究 新 进展 及 
+关键 技术 展望 2.15             
+基于 视觉 的 人 的 运动 识别 综述 杜友田/nr 陈峰 
+徐文 立 李永 彬 基于 视觉 的 人 的 运动 
+识别 综述 电子学报   2007 . 35 1 84 90 
+. 下载 基于 视觉 的 人 的 运动 识别 综述 
+2.16             基于 机器 学习 
+的 行人 检测 关键 技术 研究 朱 文佳 .   
+基于 机器学习 的 行人 检测 关键 技术 研究 D . 
+  第一章   硕士 学位 论文   上海 交通 大学 
+.   2008 .   指导 教师   戚 飞虎 
+. 这是 行人 检测 相关 资源 的 第二 部分 源码 
+和 数据集 考虑 到 实际 应用 的 实时 性要求 源码 
+主要 是 C / C + + 的 源码 和 
+数据集 的 网址 经过 测试 都可 访问 并 注明 了 
+这些 网址 最后 更新 的 日期 供 学习 和 研究 
+进行 参考 欢迎 补充 更多 的 资源 1     
+          Source   Code1 . 1 
+      INRIA Object Detection and Localization Toolkithttp / 
+/ pascal . inrialpes . fr / soft / olt 
+/ Dalal 于 2005年 提出 了 基于 HOG 特征 的 
+行人 检测 方法 行人 检测 领域 中 的 经典 文章 
+之一 HOG 特征 目前 也 被用 在 其他 的 目标 
+检测 与 识别 图像 检索 和 跟踪 等 领域 中 
+更新 20081.2       Real time   Pedestrian   
+Detection . http / / cs . nju . edu 
+. cn / wujx / projects / C4 / C4 
+. htmJianxin   Wu 实现 的 快速 行人 检测 方法 
+Real Time Human Detection Using Contour Cues http / / 
+c2inet . sce . ntu . edu . sg / 
+Jianxin / paper / ICRA _ final . pdf 更新 
+20121.3       霍夫 变换 实现 的 多目标 检测 
+http / / graphics . cs . msu . ru 
+/ en / science / research / machinelearning / houghOlga 
+  Barinova   CVPR   2010   Paper   On 
+  detection   of   multiple   object   instances 
+  using   Hough   Transforms 源码 C + + 
+更新 20101.4       HIKSVMhttp / / ttic . 
+uchicago . edu / ~ smaji / projects / fiksvm 
+/ Classification Using Intersection Kernel SVMs is efficientHOG + LBP 
++ HIKSVM   行人 检测 的 经典 方法 . 源码 
+C / C + + 更新 20121.5       
+GroundHOGhttp / / www . mmp . rwth aachen . 
+de / projects / groundhogGPU based   Object   Detection 
+  with   Geometric   Constraints   In   ICVS 
+  2011 .     CUDA 版本 的 HOG + 
+SVM 源码 C / C + + 更新 20111.6   
+    doppia   codehttps / / bitbucket . org 
+/ rodrigob / doppia 这 是 一个 代码 集合 包含 
+如下 Pedestrian   detection   at   100   frames 
+  per   second   R .   Benenson . 
+    CVPR   2012 .   实时 的 Stixels 
+estimation without depth map computationFast stixels estimation for fast pedestrian 
+detectionSeeking the strongest rigid detectorTen years of pedestrian detection what 
+have we learned Face detection without bells and whistles 源码 
+C / C + + 更新 20151.7       
+Multiple   camera   pedestrian   detection . POM Occupancy 
+map estimation for people detectionhttp / / cvlab . epfl 
+. ch / software / pom / Paper Multi Camera 
+People Tracking with a Probabilistic Occupancy Map 源码 更新 20141.8 
+      Pitor Dollar Detector . Piotr s Computer 
+Vision Matlab Toolboxhttp / / vision . ucsd . edu 
+/ ~ pdollar / toolbox / doc / index . 
+htmlThe toolbox is divided into 7 parts arranged by directory 
+channels Robust image features including HOG for fast object detection 
+. classify Fast clustering random ferns RBF functions PCA etc 
+. detector Aggregate Channel Features ACF object detection code . 
+filters Routines for filtering images . images Routines for manipulating 
+and displaying images . matlab General Matlab functions that should 
+have been a part of Matlab . videos Routines for 
+annotating and displaying videos . 源码 matlab 更新 20142   
+            DataSets2 . 1   
+    MIT 数据库 http / / cbcl . mit 
+. edu / software datasets / PedestrianData . html 介绍 
+该 数据库 为 较早 公开 的 行人 数据库 共 924张 
+行人 图片 ppm 格式 宽 高为/nr 64 × 128 肩 
+到 脚 的 距离 约 80 象素 该 数据库 只含 
+正面 和 背面 两个 视角 无 负 样本 未 区分 
+训练 集 和 测试 集 Dalal 等 采用 HOG + 
+SVM 在 该 数据库 上 的 检测 准确率 接近 100% 
+更新 20002.2       INRIA Person Datasethttp / / 
+pascal . inrialpes . fr / data / human / 
+介绍 该 数据库 是 HOG + SVM 的 作者 Dalal 
+创建 的 该 数据库 是 目前 使用 最多 的 静态 
+行人 检测 数据库 提供 原始 图片 及 相应 的 标注 
+文件 训练 集 有正/nr 样本 614张 包含 2416个 行人 负 
+样本 1218张 测试 集 有正/nr 样本 288张 包含 1126个 行人 
+负 样本 453张 图片 中 人体 大部分 为 站立 姿势 
+且 高度 大于 100个 象素 部分 标注 可能 不 正确 
+图片 主要 来源于 GRAZ 01 个人 照片 及 google 因此 
+图片 的 清晰度 较高 在 XP 操作系统 下 部分 训练 
+或者 测试 图片 无法 看 清楚 但 可用 OpenCV 正常 
+读取 和 显示 更新 20052.3       Daimler 行人 
+数据库 http / / www . gavrila . net / 
+Research / Pedestrian _ Detection / Daimler _ Pedestrian _ 
+Benchmark _ D / 该 数据库 采用 车载 摄像机 获取 
+分为 检测 和 分类 两个 数据集 检测/vn 数据集/i 的/uj 训练/vn 
+样/n 本集/i 有正/nr 样本/n 大小/b 为/p 18/m ×/i 36/m 和/c 
+48/m ×/i 96/m 的/uj 图片/n 各/r 15560/m 3915 × 4 
+张 行人 的 最小 高度 为 72个 象素 负 样本 
+6744张 大小 为 640 × 480 或 360 × 288 
+测试 集为 一段 27 分钟 左右 的 视频 分辨率 为 
+640 × 480 共 21790张 图片 包含 56492个 行人 分类/n 
+数据库/n 有/v 三个/m 训练/vn 集/q 和/c 两个/m 测试/vn 集/q 每个 
+数据集 有 4800张 行人 图片 5000 张非 行人 图片 大小 
+均为 18 × 36 另外 还有 3个 辅助 的 非 
+行人 图片集 各 1200张 图片 更新 2009 2.4     
+  Caltech Pedestrian Detectionhttp / / www . vision . 
+caltech . edu / Image _ Datasets / C a 
+l t e c h P e d e s 
+t r i a n s / 该 数据库 是 
+目前 规模 较大 的 行人 数据库 采用 车载 摄像头 拍摄 
+约 10 个 小时 左右 视频 的 分辨率 为 640 
+× 480 30 帧 / 秒 标注 了 约 250 
+000 帧 约 137 分钟 350000个 矩形框 2300个 行人 另外 
+还对 矩形框 之间 的 时间 对应 关系 及其 遮挡 的 
+情况 进行 标注 数据集 分为 set00 ~ set10 其中 set00 
+~ set05 为 训练 集 set06 ~ set10 为 测试 
+集 标注 信息 尚未 公开 性能 评估 方法 有 以下 
+三种 1 用 外部 数据 进行 训练 在 set06 ~ 
+set10 进行 测试 2 6 fold 交叉 验证 选择 其中 
+的 5个 做 训练 另外 一个 做 测试 调整 参数 
+最后 给出 训练 集上 的 性能 3 用 set00 ~ 
+set05 训练 set06 ~ set10 做 测试 由于 测试 集 
+的 标注 信息 没有 公开 需要 提交 给 Pitor   
+Dollar 结果 提交 方法 为 每 30 帧 做 一个 
+测试 将 结果 保存 在 txt 文档 中 文件 的 
+命名 方式 为 I00029 . txt   I00059 . txt 
+  每个 txt 文件 中的 每行 表示 检测 到 一个 
+行人 格式 为 left   top width   height   
+score 如果 没有 检测 到 任何 行人 则 txt 文档 
+为 空 该 数据库 还 提供 了 相应 的 Matlab 
+工具包 包括 视频 标注 信息 的 读取 画 ROC Receiver 
+  O p e r a t i n g 
+c h a r a c t e r i 
+s t i c   Curve 曲线图 和非/nr 极大值 抑制 
+等 工具 更新 20142.5       TUD 行人 数据库 
+https / / www . mpi inf . mpg . 
+de / departments / multi cue onboard pedestrian detection / 
+介绍 TUD 行人 数据库 为 评估 运动 信息 在 行人 
+检测 中 的 作用 提供 图像 对 以便 计算 光 
+流 信息 训练 集 的 正 样 本为 1092对 图像 
+图片大小 为 720 × 576 包含 1776个 行人 负 样 
+本为 192对 非 行人 图像 手持 摄像机 85对 车载 摄像机 
+107对 另外 还 提供 26对 车载 摄像机 拍摄 的 图像 
+包含 183个 行人 作为 附加 训练 集 测试 集 有 
+508对 图像 图像 对 的 时间 间隔 为 1秒 分辨率 
+为 640 × 480 共有 1326个 行人 Andriluka 等 也 
+构建 了 一个 数据库 用于 验证 他们 提出 的 检测 
+与 跟踪 相结合 的 行人 检测 技术 该 数据集 的 
+训练 集 提供 了 行人 的 矩形 框 信息 分割 
+掩膜 及其 各部位 脚 小腿 大腿 躯干 和 头部 的 
+大小 和 位置 信息 测试 集为 250张 图片 包含 311个 
+完全 可见 的 行人 用于 测试 检测器 的 性能 2个 
+视频 序列 TUD Campus 和 TUD Crossing 用于 评估 跟踪器 
+的 性能 更新 20102.6       NICTA 行人 数据库 
+http / / www . nicta . com . au 
+/ category / research / computer vision / tools / 
+automap datasets / 该 数据库 是 目前 规模 较大 的 
+静态 图像 行人 数据库 25551张 含 单人 的 图片 5207张 
+高分辨率 非 行人 图片 数据库 中 已 分好 训练 集 
+和 测试 集 方便 不同 分类器 的 比较 Overett 等用 
+RealBoost + Haar 评估 训练样本 的 平移 旋转 和 宽高比 
+等 各种 因素 对 分类 性能 的 影响 1 行人 
+高度 至少 要 大于 40个 象素 2 在 低分辨率 下 
+对于 Haar 特征 来说 增加 样本 宽度 的 性能 好于 
+增加 样本 高度 的 性能 3 训练 图片 的 大小 
+要 大于 行人 的 实际 大小 即 背景 信息 有助于 
+提高 性能 4 对 训练 样本 进行 平移 提高 检测 
+性能 旋转 对 性能 的 提高 影响 不大 以上 的 
+结论 对于 构建 行人 数据库 具有 很好 的 指导 意义 
+更新 20082.7       ETHZ 行人 数据库 Robust Multi 
+Person Tracking from Mobile Platformshttps / / data . vision 
+. ee . ethz . ch / cvl / aess 
+/ dataset / Ess 等 构建 了 基于 双目 视觉 
+的 行人 数据库 用于 多人 的 行人 检测 与 跟踪 
+研究 该 数据库 采用 一 对 车载 的 AVT   
+Marlins   F033C 摄像头 进行 拍摄 分辨率 为 640 × 
+480 帧率 13 14fps 给出 标定 信息 和 行人 标注 
+信息 深度 信息 采用 置信度 传播 方法 获取 更新 20102.8 
+      CVC 行人 数据库 http / / www 
+. cvc . uab . es / adas / site 
+/ q = node / 7 该 数据库 目前 包含 
+三个 数据集 CVC 01 CVC 02 和 CVC Virtual 主要 
+用于 车辆 辅助 驾驶 中 的 行人 检测 研究 CVC 
+01 Geronimo 2007 有 1000个 行人 样本 6175个 非 行人 
+样本 来自 于 图片 中 公路 区域 中的 非 行人 
+图片 不像 有的 行人 数据库 非行 人样 本为 天空 沙滩 
+和 树木 等 自然 图像 CVC 02 包含 三 个子 
+数据集 CVC 02 CG CVC 02 Classification 和 CVC 02 
+System 分别 针对 行人 检测 的 三个 不同 任务 感兴趣 
+区域 的 产生 分类 和 系统 性能 评估 图像 的 
+采集 采用 Bumblebee2 立体 彩色 视觉 系统 分辨率 640 × 
+480 焦距 6mm 对 距离 摄像头 0 ~ 50m 的 
+行人 进行 标注 最小 的 行人 图片 为 12 × 
+24 CVC 02 CG 主要 针对 候选 区域 的 产生 
+有 100张 彩色图像 包含 深度 和 3D 点 信息 CVC 
+02 Classification 主要 针对 行人 分类 训练 集 有 1016 
+张正 样本 7650张 负 样本 测试 集 分为 基于 切割 
+窗口 的 分类 570张 行人 7500 张非 行人 和 整张 
+图片 的 检测 250张 包含 行人 的 图片 共 587个 
+行人 CVC 02 System 主要 用于 系统 的 性能 评估 
+包含 15个 视频 序列 4364 帧 7983个 行人 CVC Virtual 
+是 通过 Half Life   2 图像 引擎 产生 的 
+虚拟 行人 数据集 共 包含 1678 虚拟 行人 2048个 非 
+行人 图片 用于 测试 更新 2015 目前 已经 更新 到 
+CVC 08 了 2.9       USC 行人 数据库 
+http / / iris . usc . edu / Vision 
+Users / OldUsers / bowu / DatasetWebpage / dataset . 
+html 该 数据库 包含 三组 数据集 USC A USC B 
+和 USC C 以 XML 格式 提供 标注 信息 USC 
+A Wu   2005 的 图片 来自 于 网络 共 
+205张 图片 313个 站立 的 行人 行 人间 不存在 相互 
+遮挡 拍摄 角度 为 正面 或者 背面 USC B 的 
+图片 主要 来自 于 CAVIAR 视频 库 包括 各种 视角 
+的 行人 行人 之间 有的/nr 相互 遮挡 共 54张 图片 
+271个 行人 USC C 有 100张 图片 来自 网络 的 
+图片 232个 行人 多角度 行人 之间 无 相互 遮挡 更新 
+20073               其他 资料 
+1 Video Pedestrian Detection The State of the Arthttp / 
+/ research . microsoft . com / apps / video 
+/ default . aspx id = 135046 & r = 
+1A video talk byPitor Dollar . Pitor Dollar 做 了 
+很多 关于 行人 检测 方法 的 研究 他们 研究 小组 
+的 Caltech Pedestrian Dataset 也很 出名 2 Statistical and Structural 
+Recognition of Human Actions . ECCV 2010 Tutorial by Ivan 
+Laptev and Greg Mori . 注 要用 爬墙 软件 才能 
+访 问到 3 Human Action Recognition in realistic scenarios 一份 
+很好 的 硕士生 毕业论文 开题 资料 行人 检测 资源 上 综述 文献   http / / 
+www . cvrobot . net / pedestrian detection resource 1 
+summary review survey / 行人 检测 资源 下 代码 数据 
+  http / / www . cvrobot . net / 
+pedestrian detection resource 2 code and dataset / 行人 检测 
+具有 极其 广泛 的 应用 智能 辅助 驾驶 智能 监控 
+行人 分析 以及 智能 机器人 等 领域 从 2005 年以来 
+行人 检测 进入 了 一个 快速 的 发展 阶段 但是 
+也 存在 很多 问题 还 有待 解决 主要 还是 在 
+性能 和 速度 方面 还 不能 达到 一个 权衡 近年 
+以 谷歌 为首 的 自动 驾驶 技术 的 研发 正 
+如火如荼 的 进行 这也 迫切 需要 能对/nr 行人 进行 快速 
+有效 的 检测 以 保证 自动驾驶 期间 对 行人 的 
+安全 不 会 产生 威胁 1     行人 检测 
+的 现状 大概 可以 分为 两类 1.1       
+基于 背景 建模 利用 背景 建模 方法 提取 出 前景 
+运动 的 目标 在 目标 区域 内 进行 特征提取 然后 
+利用 分类器 进行 分类 判断 是否 包含 行人 背景 建模 
+目前 主要 存在 的 问题 1 必须 适应 环境 的 
+变化 比如 光照 的 变化 造成 图像 色度 的 变化 
+2 相机 抖动 引起 画面 的 抖动 比如 手持 相机 
+拍照 时候 的 移动 3 图像 中 密集 出现 的 
+物体 比如 树叶 或 树 干等 密集 出现 的 物体 
+要 正确 的 检测 出来 4 必须 能够 正确 的 
+检测 出 背景 物体 的 改变 比如 新 停下 的 
+车 必须 及时 的 归为 背景 物体 而有 静止 开始 
+移动 的 物体 也 需要 及时 的 检测 出来 5 
+物体 检测 中 往往 会 出现 Ghost 区域 Ghost 区域 
+也 就是 指 当 一个 原本 静止 的 物体 开始 
+运动 背静 差 检测 算法 可能会 将 原来 该 物体 
+所 覆盖 的 区域 错误 的 检测 为 运动 的 
+这块 区域 就 成为 Ghost 当然 原来 运动 的 物体 
+变为 静止 的 也会 引入 Ghost 区域 Ghost 区域 在 
+检测 中 必须 被 尽快 的 消除 1.2     
+  基于 统计 学习 的 方法 这也 是 目前 行人 
+检测 最 常用 的 方法 根据 大量 的 样本 构建 
+行人 检测 分类器 提取 的 特征 主要 有 目标 的 
+灰度 边缘 纹理 颜色 梯度 直方图 等 信息 分类器 主要 
+包括 神经网络 SVM adaboost 以及 现在 被 计算机 视觉 视为 
+宠儿 的 深度 学习 统计 学习 目前 存在 的 难点 
+1 行人 的 姿态 服饰 各不相同 复杂 的 背景 不同 
+的 行人 尺度 以及 不同 的 光照 环境 2 提取 
+的 特征 在 特征 空间 中 的 分布 不够 紧凑 
+3 分类器 的 性能 受 训练样本 的 影响 较大 4 
+离线 训练 时的负/nr 样本 无法 涵盖 所有 真实 应用 场景 
+的 情况 目前 的 行人 检测 基本上 都是/nr 基于 法国 
+研究 人员 Dalal 在 2005 的 CVPR 发表 的 HOG 
++ SVM 的 行人 检测 算法 Histograms of Oriented Gradients 
+for Human Detection Navneet Dalel Bill Triggs CVPR2005 HOG + 
+SVM 作为 经典 算法 也 集成 到 opencv 里面 去了 
+可以 直接 调用 实现 行人 检测 为了 解决 速度 问题 
+可以 采用 背景 差分法 的 统计 学习 行人 检测 前提 
+是 背景 建模 的 方法 足够 有效 即 效果 好 
+速度 快 目前 获得 比较 好 的 检测 效果 的 
+方法 通常 采用 多 特征 融合 的 方法 以及 级联 
+分类器 常用 的 特征 有 Harry like Hog 特征 LBP 
+特征 Edgelet 特征 CSS 特征 COV 特征 积分 通道 特征 
+以及 CENTRIST 特征 2       综述 类 的 
+文章 2.1       行人 检测 十年 回顾 Ten 
+Years of Pedestrian Detection What Have We Learned 一篇 2014年 
+ECCV 的 文章 是 对 pedestrian detectiond 过去 十年 发展 
+的 回顾 从 dataset main approaches 的 角度 分析 了 
+近 10年 的 40多 篇 论文 提出 的 方法 并对 
+提高 feature 复杂度 的 影响 进行 了 评估 下载 http 
+/ / rodrigob . github . io / documents / 
+2014 _ eccvw _ ten _ years _ of _ 
+pedestrian _ detection _ with _ supplementary _ material . 
+pdf 学习 笔记 http / / blog . csdn . 
+net / mduke / article / details / 465824432.2   
+    P . Dollar   PAMI 2012 上 的 
+综述 P . Dollar   C .   Wojek B 
+.   Schiele   et   al .   Pedestrian 
+  detection   an   evaluation   of   the 
+  state   of   the   art   J 
+. IEEE   Transactions   on   Pattern Analysis   
+and Machine   Intelligence   2012   34 4   
+743 761.2012年 PAMI 上 发表 的 一篇 关于 行人 检测 
+的 综述 性 文章 PDF 格式 共 20页 对 常见 
+的 16种 行人 检测 算法 进行 了 简单 描述 并在 
+6个 公开 测试 库 上 进行 测试 给出 了 各种 
+方法 的 优缺点 及 适用 情况 另外 指出 了 未来 
+行人 检测 的 发展 方向 和 趋势 下载 http / 
+/ vision . ucsd . edu / ~ pdollar / 
+files / papers / DollarPAMI12peds . pdf2 . 3   
+    CVPR2010 HOF 和 CSShttps / / www . 
+d2 . mpi inf . mpg . de / C 
+V P R 1 0 P e d e s 
+t r i a n s N e w Features 
+and Insights for Pedestrian Detection 文中 使用 改进 的 HOG 
+即 HOF 和 CSS color self similarity 特征 使用 HIK 
+SVM 分类器 本文 的 作者 是 德国人 Stefen Walk 目前 
+Stefan Walk 在 苏黎世 联邦 理工大学 任教 2.4     
+  Integral Channel Features 加州理工学院 2009年 行人 检测 的 文章 
+Integral Channel Features 积分 通道 特征 这 篇 文章 与 
+2012年 PAMI 综述 文章 是 同一 作者 作者 Piotr DollarPaper 
+下载 http / / pages . ucsd . edu / 
+~ ztu / publication / d o l l a 
+r B M V C 0 9 C h n 
+F t r s _ 0 . pdf 中文 笔记 
+http / / blog . csdn . net / carson2005 
+/ article / details / 84558372.5       The 
+Fastest Pedestrian Detector in the WestDollar 在 2010 年 BMVC 
+的 The fastest pedestrian detector in the west 一文 中 
+提出 了 一种 新的 思想 这种 思想 只 需要 训练 
+一个 标准 model 检测 N / K K ≈ 10 
+然后 其余 的 N N / K 种 大小 的 
+图片 的 特征 不 需要 再 进行 这种 复杂 的 
+计算 而是 跟 据 这 N / K 次 的 
+结果 由 另外 一种 简单 的 算法 给 估计 出来 
+这种 思想 实现 的 基础 是 大小 相近 的 图像 
+的 特征 可以 被 足够 精确 的 估计 出来 下载 
+http / / vision . ucsd . edu / sites 
+/ default / files / FPDW _ 0 . pdf2 
+. 6       DPM 算法 做 目标 检测 
+CVPR2008 A Discriminatively Trained Multiscale Deformable Part ModelPAMI2010 Object Detection 
+with Discriminatively Trained Part Based ModelsCVPR2010 Cascade Object Detection with 
+Deformable Part Models 以上 三 篇文章 都是 作者 研究 DPM 
+算法 做 目标 检测 的 文章 有源 代码 可以 下载 
+作者 的 个人 主页 http / / cs . brown 
+. edu / ~ pff / papers / 2.7   
+    利用 DPM 模型 检测 粘连 Detection and Tracking 
+of Occluded PeopleIJCV2014 年的/nr 文章 利用 DPM 模型 检测 粘连 
+情况 很 严重 的 行人 效果 很好 下载 http / 
+/ www . bmva . org / bmvc / 2012 
+/ BMVC / paper009 / 2.8       UDN 
+算法 ICCV2013 1 Joint Deep Learning for Pedestrian Detection2 Multi 
+Stage Contextual Deep Learning for Pedestrian Detection 简 称 UDN 
+算法 从文中 描述 的 检测 效果 来看 该 方法 是 
+所有 方法 中 最好 的 并且 效果 远 超过 其他 
+方法 经过 对 论文 和该/nr 算法 源码 的 研究 该 
+算法 是 与 作者 另外 一篇 论文 的 方法 另外 
+的 论文 算法 做 图片 扫描 得到 矩形框 然后 用 
+该 方法 对 矩形框 进行 进一步 确认 以及 降低 误 
+警 率 和漏警/nr 率 另外 的 论文 是 Multi Stage 
+Contextual Deep Learning for Pedestrian Detection 这 篇 文章 是 
+用 深度 学习 的 CNN 做 candidate window 的 确认 
+而 主要 的 行人 检测 的 算法 还是 HOG + 
+CSS + adaboost 香港中文大学 Joint Deep Learning for Pedestrian Detection 
+行人 检测 论文 的 相关 资源 http / / www 
+. ee . cuhk . edu . hk / ~ 
+wlouyang / projects / o u y a n g 
+W i c c v 1 3 J o i 
+n t / index . html2 . 9     
+  Monocular   pedestrian   d e t e c 
+t i o n E n z w e i 
+l e r   and   D . Gavrila . 
+  Monocular   pedestrian   detection   survey   and 
+  experiments   J . IEEE   Transactions   on 
+  Pattern   Analysis   and Machine   Intelligence 2009 
+  31 12   2179 2195 . 下载 http / 
+/ www . gavrila . net / pami09 . pdf2 
+. 10             Survey   
+of   pedestrian   detection   for   advanced   
+driver assistance   systemsGeronimo   A .   M . 
+Lopez   and   A .   D .   
+Sappa   et   al .   Survey   of 
+  pedestrian   detection   for   advanced   driver 
+assistance   systems   J .   IEEE   Transactionson 
+  Pattern   Analysis   and   Machine   Intelligence 
+  2010   32 7   1239 1258 . 百度 
+文库 下载 http / / wenku . baidu . com 
+/ link url = xLDWZTdLXT1 _ f i Z o 
+U z N F i y Q t Z T 
+w n y L l Z H h T I 
+0 B 8 7 v k I E 6 U 
+E D r K z 6 i z 8 z 
+p K m m P v Z q 7 k 
+t l X 6 W R x y V x 
+c j k 8 B y m g l 5 
+3 Q B f z B E K g Y 
+P Z m s i 1 l _ 2.11   
+          Vision based Pedestrian Protection Systems 
+for Intelligent VehiclesGeronimo and A . M . Lopez . 
+Vision based Pedestrian Protection Systems for Intelligent Vehicles BOOK 2014 
+. 下载 http / / bookzz . org / book 
+/ 2167094 / e 216392.12           
+  行人 检测 技术 综述 苏松 志   李绍滋/nr   
+陈 淑媛 等 .   行人 检测 技术 综述 J 
+.   电子学报   2012   40 4   814 
+820 . 下载 行人 检测 技术 综述 2.13     
+        车辆 辅助 驾驶 系统 中 基于 
+计算机 视觉 的 行人 检测 研究 综述 贾 慧星  /i 
+章毓晋/nr ./i 车辆/n 辅助/vn 驾驶/v 系统/n 中/f 基于/p 计算机/n 视觉/n 
+的/uj 行人/n 检测/vn 研究/vn 综述/vn J   自动化 学报   
+2007   33 1   84 90 . 下载 车辆 
+辅助 驾驶 系统 中 基于 计算机 视觉 的 行人 检测 
+研究 综述 2.14             行人 
+检测 系统 研究 新 进展 及 关键 技术 展望 许 
+言午 曹先彬/nr 乔红 . 行人 检测 系统 研究 新 进展 
+及 关键 技术 展望 J 电子学报 2008 36 5 368 
+376 . 下载 行人 检测 系统 研究 新 进展 及 
+关键 技术 展望 2.15             
+基于 视觉 的 人 的 运动 识别 综述 杜友田/nr 陈峰 
+徐文 立 李永 彬 基于 视觉 的 人 的 运动 
+识别 综述 电子学报   2007 . 35 1 84 90 
+. 下载 基于 视觉 的 人 的 运动 识别 综述 
+2.16             基于 机器 学习 
+的 行人 检测 关键 技术 研究 朱 文佳 .   
+基于 机器学习 的 行人 检测 关键 技术 研究 D . 
+  第一章   硕士 学位 论文   上海 交通 大学 
+.   2008 .   指导 教师   戚 飞虎 
+. 这是 行人 检测 相关 资源 的 第二 部分 源码 
+和 数据集 考虑 到 实际 应用 的 实时 性要求 源码 
+主要 是 C / C + + 的 源码 和 
+数据集 的 网址 经过 测试 都可 访问 并 注明 了 
+这些 网址 最后 更新 的 日期 供 学习 和 研究 
+进行 参考 欢迎 补充 更多 的 资源 1     
+          Source   Code1 . 1 
+      INRIA Object Detection and Localization Toolkithttp / 
+/ pascal . inrialpes . fr / soft / olt 
+/ Dalal 于 2005年 提出 了 基于 HOG 特征 的 
+行人 检测 方法 行人 检测 领域 中 的 经典 文章 
+之一 HOG 特征 目前 也 被用 在 其他 的 目标 
+检测 与 识别 图像 检索 和 跟踪 等 领域 中 
+更新 20081.2       Real time   Pedestrian   
+Detection . http / / cs . nju . edu 
+. cn / wujx / projects / C4 / C4 
+. htmJianxin   Wu 实现 的 快速 行人 检测 方法 
+Real Time Human Detection Using Contour Cues http / / 
+c2inet . sce . ntu . edu . sg / 
+Jianxin / paper / ICRA _ final . pdf 更新 
+20121.3       霍夫 变换 实现 的 多目标 检测 
+http / / graphics . cs . msu . ru 
+/ en / science / research / machinelearning / houghOlga 
+  Barinova   CVPR   2010   Paper   On 
+  detection   of   multiple   object   instances 
+  using   Hough   Transforms 源码 C + + 
+更新 20101.4       HIKSVMhttp / / ttic . 
+uchicago . edu / ~ smaji / projects / fiksvm 
+/ Classification Using Intersection Kernel SVMs is efficientHOG + LBP 
++ HIKSVM   行人 检测 的 经典 方法 . 源码 
+C / C + + 更新 20121.5       
+GroundHOGhttp / / www . mmp . rwth aachen . 
+de / projects / groundhogGPU based   Object   Detection 
+  with   Geometric   Constraints   In   ICVS 
+  2011 .     CUDA 版本 的 HOG + 
+SVM 源码 C / C + + 更新 20111.6   
+    doppia   codehttps / / bitbucket . org 
+/ rodrigob / doppia 这 是 一个 代码 集合 包含 
+如下 Pedestrian   detection   at   100   frames 
+  per   second   R .   Benenson . 
+    CVPR   2012 .   实时 的 Stixels 
+estimation without depth map computationFast stixels estimation for fast pedestrian 
+detectionSeeking the strongest rigid detectorTen years of pedestrian detection what 
+have we learned Face detection without bells and whistles 源码 
+C / C + + 更新 20151.7       
+Multiple   camera   pedestrian   detection . POM Occupancy 
+map estimation for people detectionhttp / / cvlab . epfl 
+. ch / software / pom / Paper Multi Camera 
+People Tracking with a Probabilistic Occupancy Map 源码 更新 20141.8 
+      Pitor Dollar Detector . Piotr s Computer 
+Vision Matlab Toolboxhttp / / vision . ucsd . edu 
+/ ~ pdollar / toolbox / doc / index . 
+htmlThe toolbox is divided into 7 parts arranged by directory 
+channels Robust image features including HOG for fast object detection 
+. classify Fast clustering random ferns RBF functions PCA etc 
+. detector Aggregate Channel Features ACF object detection code . 
+filters Routines for filtering images . images Routines for manipulating 
+and displaying images . matlab General Matlab functions that should 
+have been a part of Matlab . videos Routines for 
+annotating and displaying videos . 源码 matlab 更新 20142   
+            DataSets2 . 1   
+    MIT 数据库 http / / cbcl . mit 
+. edu / software datasets / PedestrianData . html 介绍 
+该 数据库 为 较早 公开 的 行人 数据库 共 924张 
+行人 图片 ppm 格式 宽 高为/nr 64 × 128 肩 
+到 脚 的 距离 约 80 象素 该 数据库 只含 
+正面 和 背面 两个 视角 无 负 样本 未 区分 
+训练 集 和 测试 集 Dalal 等 采用 HOG + 
+SVM 在 该 数据库 上 的 检测 准确率 接近 100% 
+更新 20002.2       INRIA Person Datasethttp / / 
+pascal . inrialpes . fr / data / human / 
+介绍 该 数据库 是 HOG + SVM 的 作者 Dalal 
+创建 的 该 数据库 是 目前 使用 最多 的 静态 
+行人 检测 数据库 提供 原始 图片 及 相应 的 标注 
+文件 训练 集 有正/nr 样本 614张 包含 2416个 行人 负 
+样本 1218张 测试 集 有正/nr 样本 288张 包含 1126个 行人 
+负 样本 453张 图片 中 人体 大部分 为 站立 姿势 
+且 高度 大于 100个 象素 部分 标注 可能 不 正确 
+图片 主要 来源于 GRAZ 01 个人 照片 及 google 因此 
+图片 的 清晰度 较高 在 XP 操作系统 下 部分 训练 
+或者 测试 图片 无法 看 清楚 但 可用 OpenCV 正常 
+读取 和 显示 更新 20052.3       Daimler 行人 
+数据库 http / / www . gavrila . net / 
+Research / Pedestrian _ Detection / Daimler _ Pedestrian _ 
+Benchmark _ D / 该 数据库 采用 车载 摄像机 获取 
+分为 检测 和 分类 两个 数据集 检测/vn 数据集/i 的/uj 训练/vn 
+样/n 本集/i 有正/nr 样本/n 大小/b 为/p 18/m ×/i 36/m 和/c 
+48/m ×/i 96/m 的/uj 图片/n 各/r 15560/m 3915 × 4 
+张 行人 的 最小 高度 为 72个 象素 负 样本 
+6744张 大小 为 640 × 480 或 360 × 288 
+测试 集为 一段 27 分钟 左右 的 视频 分辨率 为 
+640 × 480 共 21790张 图片 包含 56492个 行人 分类/n 
+数据库/n 有/v 三个/m 训练/vn 集/q 和/c 两个/m 测试/vn 集/q 每个 
+数据集 有 4800张 行人 图片 5000 张非 行人 图片 大小 
+均为 18 × 36 另外 还有 3个 辅助 的 非 
+行人 图片集 各 1200张 图片 更新 2009 2.4     
+  Caltech Pedestrian Detectionhttp / / www . vision . 
+caltech . edu / Image _ Datasets / C a 
+l t e c h P e d e s 
+t r i a n s / 该 数据库 是 
+目前 规模 较大 的 行人 数据库 采用 车载 摄像头 拍摄 
+约 10 个 小时 左右 视频 的 分辨率 为 640 
+× 480 30 帧 / 秒 标注 了 约 250 
+000 帧 约 137 分钟 350000个 矩形框 2300个 行人 另外 
+还对 矩形框 之间 的 时间 对应 关系 及其 遮挡 的 
+情况 进行 标注 数据集 分为 set00 ~ set10 其中 set00 
+~ set05 为 训练 集 set06 ~ set10 为 测试 
+集 标注 信息 尚未 公开 性能 评估 方法 有 以下 
+三种 1 用 外部 数据 进行 训练 在 set06 ~ 
+set10 进行 测试 2 6 fold 交叉 验证 选择 其中 
+的 5个 做 训练 另外 一个 做 测试 调整 参数 
+最后 给出 训练 集上 的 性能 3 用 set00 ~ 
+set05 训练 set06 ~ set10 做 测试 由于 测试 集 
+的 标注 信息 没有 公开 需要 提交 给 Pitor   
+Dollar 结果 提交 方法 为 每 30 帧 做 一个 
+测试 将 结果 保存 在 txt 文档 中 文件 的 
+命名 方式 为 I00029 . txt   I00059 . txt 
+  每个 txt 文件 中的 每行 表示 检测 到 一个 
+行人 格式 为 left   top width   height   
+score 如果 没有 检测 到 任何 行人 则 txt 文档 
+为 空 该 数据库 还 提供 了 相应 的 Matlab 
+工具包 包括 视频 标注 信息 的 读取 画 ROC Receiver 
+  O p e r a t i n g 
+c h a r a c t e r i 
+s t i c   Curve 曲线图 和非/nr 极大值 抑制 
+等 工具 更新 20142.5       TUD 行人 数据库 
+https / / www . mpi inf . mpg . 
+de / departments / multi cue onboard pedestrian detection / 
+介绍 TUD 行人 数据库 为 评估 运动 信息 在 行人 
+检测 中 的 作用 提供 图像 对 以便 计算 光 
+流 信息 训练 集 的 正 样 本为 1092对 图像 
+图片大小 为 720 × 576 包含 1776个 行人 负 样 
+本为 192对 非 行人 图像 手持 摄像机 85对 车载 摄像机 
+107对 另外 还 提供 26对 车载 摄像机 拍摄 的 图像 
+包含 183个 行人 作为 附加 训练 集 测试 集 有 
+508对 图像 图像 对 的 时间 间隔 为 1秒 分辨率 
+为 640 × 480 共有 1326个 行人 Andriluka 等 也 
+构建 了 一个 数据库 用于 验证 他们 提出 的 检测 
+与 跟踪 相结合 的 行人 检测 技术 该 数据集 的 
+训练 集 提供 了 行人 的 矩形 框 信息 分割 
+掩膜 及其 各部位 脚 小腿 大腿 躯干 和 头部 的 
+大小 和 位置 信息 测试 集为 250张 图片 包含 311个 
+完全 可见 的 行人 用于 测试 检测器 的 性能 2个 
+视频 序列 TUD Campus 和 TUD Crossing 用于 评估 跟踪器 
+的 性能 更新 20102.6       NICTA 行人 数据库 
+http / / www . nicta . com . au 
+/ category / research / computer vision / tools / 
+automap datasets / 该 数据库 是 目前 规模 较大 的 
+静态 图像 行人 数据库 25551张 含 单人 的 图片 5207张 
+高分辨率 非 行人 图片 数据库 中 已 分好 训练 集 
+和 测试 集 方便 不同 分类器 的 比较 Overett 等用 
+RealBoost + Haar 评估 训练样本 的 平移 旋转 和 宽高比 
+等 各种 因素 对 分类 性能 的 影响 1 行人 
+高度 至少 要 大于 40个 象素 2 在 低分辨率 下 
+对于 Haar 特征 来说 增加 样本 宽度 的 性能 好于 
+增加 样本 高度 的 性能 3 训练 图片 的 大小 
+要 大于 行人 的 实际 大小 即 背景 信息 有助于 
+提高 性能 4 对 训练 样本 进行 平移 提高 检测 
+性能 旋转 对 性能 的 提高 影响 不大 以上 的 
+结论 对于 构建 行人 数据库 具有 很好 的 指导 意义 
+更新 20082.7       ETHZ 行人 数据库 Robust Multi 
+Person Tracking from Mobile Platformshttps / / data . vision 
+. ee . ethz . ch / cvl / aess 
+/ dataset / Ess 等 构建 了 基于 双目 视觉 
+的 行人 数据库 用于 多人 的 行人 检测 与 跟踪 
+研究 该 数据库 采用 一 对 车载 的 AVT   
+Marlins   F033C 摄像头 进行 拍摄 分辨率 为 640 × 
+480 帧率 13 14fps 给出 标定 信息 和 行人 标注 
+信息 深度 信息 采用 置信度 传播 方法 获取 更新 20102.8 
+      CVC 行人 数据库 http / / www 
+. cvc . uab . es / adas / site 
+/ q = node / 7 该 数据库 目前 包含 
+三个 数据集 CVC 01 CVC 02 和 CVC Virtual 主要 
+用于 车辆 辅助 驾驶 中 的 行人 检测 研究 CVC 
+01 Geronimo 2007 有 1000个 行人 样本 6175个 非 行人 
+样本 来自 于 图片 中 公路 区域 中的 非 行人 
+图片 不像 有的 行人 数据库 非行 人样 本为 天空 沙滩 
+和 树木 等 自然 图像 CVC 02 包含 三 个子 
+数据集 CVC 02 CG CVC 02 Classification 和 CVC 02 
+System 分别 针对 行人 检测 的 三个 不同 任务 感兴趣 
+区域 的 产生 分类 和 系统 性能 评估 图像 的 
+采集 采用 Bumblebee2 立体 彩色 视觉 系统 分辨率 640 × 
+480 焦距 6mm 对 距离 摄像头 0 ~ 50m 的 
+行人 进行 标注 最小 的 行人 图片 为 12 × 
+24 CVC 02 CG 主要 针对 候选 区域 的 产生 
+有 100张 彩色图像 包含 深度 和 3D 点 信息 CVC 
+02 Classification 主要 针对 行人 分类 训练 集 有 1016 
+张正 样本 7650张 负 样本 测试 集 分为 基于 切割 
+窗口 的 分类 570张 行人 7500 张非 行人 和 整张 
+图片 的 检测 250张 包含 行人 的 图片 共 587个 
+行人 CVC 02 System 主要 用于 系统 的 性能 评估 
+包含 15个 视频 序列 4364 帧 7983个 行人 CVC Virtual 
+是 通过 Half Life   2 图像 引擎 产生 的 
+虚拟 行人 数据集 共 包含 1678 虚拟 行人 2048个 非 
+行人 图片 用于 测试 更新 2015 目前 已经 更新 到 
+CVC 08 了 2.9       USC 行人 数据库 
+http / / iris . usc . edu / Vision 
+Users / OldUsers / bowu / DatasetWebpage / dataset . 
+html 该 数据库 包含 三组 数据集 USC A USC B 
+和 USC C 以 XML 格式 提供 标注 信息 USC 
+A Wu   2005 的 图片 来自 于 网络 共 
+205张 图片 313个 站立 的 行人 行 人间 不存在 相互 
+遮挡 拍摄 角度 为 正面 或者 背面 USC B 的 
+图片 主要 来自 于 CAVIAR 视频 库 包括 各种 视角 
+的 行人 行人 之间 有的/nr 相互 遮挡 共 54张 图片 
+271个 行人 USC C 有 100张 图片 来自 网络 的 
+图片 232个 行人 多角度 行人 之间 无 相互 遮挡 更新 
+20073               其他 资料 
+1 Video Pedestrian Detection The State of the Arthttp / 
+/ research . microsoft . com / apps / video 
+/ default . aspx id = 135046 & r = 
+1A video talk byPitor Dollar . Pitor Dollar 做 了 
+很多 关于 行人 检测 方法 的 研究 他们 研究 小组 
+的 Caltech Pedestrian Dataset 也很 出名 2 Statistical and Structural 
+Recognition of Human Actions . ECCV 2010 Tutorial by Ivan 
+Laptev and Greg Mori . 注 要用 爬墙 软件 才能 
+访 问到 3 Human Action Recognition in realistic scenarios 一份 
+很好 的 硕士生 毕业论文 开题 资料 

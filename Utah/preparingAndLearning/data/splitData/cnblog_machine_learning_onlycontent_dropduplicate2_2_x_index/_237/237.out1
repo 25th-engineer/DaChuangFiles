@@ -1,0 +1,94 @@
+不多 说 直接 上 干货 我 的 集群 机器 情况 
+是   bigdatamaster 192.168 . 80.10 bigdataslave1 192.168 . 80.11 
+和 bigdataslave2 192.168 . 80.12 然后 安装 目录 是 在 
+/ home / hadoop / app 下 官方 建议 在 
+master 机器 上 安装 Hue 我 这里 也 不 例外 
+安装 在 bigdatamaster 机器 上 Hue 版本 hue 3 . 
+9.0 cdh5 . 5.4 需要 编译 才能 使用 联网 说 
+给 大家 的 话 大家 电脑 的 配置 好 的话 
+一定 要 安装 cloudera manager 毕竟 是 一家人 的 同时 
+我 也 亲身 经历 过 会 有 部分 组件 版本 
+出现问题 安装 起来 要 个大 半天 时间 去 排除 做好 
+心里 准备 废话 不多 说 因为 我 目前 读研 自己 
+笔记本电脑 最大 8G 只 能玩 手动 来 练手 纯粹/a 是/v 
+为了/p 给/p 身边/s 没/v 高配且/nr 条件/n 有限/a 的/uj 学生/n 党看的/nr 
+但 我 已经 在 实验室 机器 群 里 搭建 好 
+cloudera manager 以及 ambari 都有 大 数据 领域 两 大 
+最主流 集群 管理工具 Ambari 和 Cloudera MangerCloudera 安装 搭建 部署 
+大 数据 集群 图文 分 五 大步 详解 博主 强烈推荐 
+Ambari 安装 搭建 部署 大 数据 集群 图文 分 五 
+大步 详解 博主 强烈推荐 一 默认 的 spark 配置文件 # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # Settings to configure the Spark 
+application . # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # # spark # Host 
+address of the Livy Server . # # livy _ 
+server _ host = localhost # Port of the Livy 
+Server . # # livy _ server _ port = 
+8998 # Configure livy to start with process thread or 
+yarn workers . # # livy _ server _ session 
+_ kind = process # If livy should use proxy 
+users when submitting a job . # # livy _ 
+impersonation _ enabled = true # List of available types 
+of snippets # # languages = { name Scala Shell 
+type spark } { name PySpark Shell type pyspark } 
+{ name R Shell type r } { name Jar 
+type Jar } { name Python type py } { 
+name Impala SQL type impala } { name Hive SQL 
+type hive } { name Text type text } 二 
+以下 是 跟 我 机器 集群 匹配 的 配置文件 非 
+HA 集群 下 怎么 配置 Hue 的 spark 模块 我 
+的 spark 是 安装 在 bigdatamaster bigdataslave1 和 bigdataslave2 机器 
+上 注意 要在 Hue 中 使用 Spark 还 需要 安装 
+spark jobserver 但是 这个 东西 没在 CDH 中 所以 我们 
+必须 手动 安装 spark jobserver 先要 安装 SBT SBT = 
+not so Simple Build Tool 是 scala 的 构建 工具 
+与 java 的 maven 地位 相同 curl https / / 
+bintray . com / sbt / rpm / rpm bintray 
+sbt rpm . repo sudo mv bintray sbt rpm . 
+repo / etc / yum . repos . d / 
+sudo yum install sbt 安装 好 SBT 后 安装 spark 
+jobservergit clone https / / github . com / ooyala 
+/ spark jobserver . git cd spark jobserver sbt re 
+start 编辑 jobserver 配置文件 将 jobserver 跟 你 的 spark 
+master 连接 上 编辑   job server / src / 
+main / resources / application . conf 修改 master 属性 
+master = spark / / bigdatamaster 7077 编辑 hue . 
+ini 找到 spark 段落 修改   server _ url 为 
+正确 的 地址 spark # URL of the REST Spark 
+Job Server . server _ url = http / / 
+host1 8090 / 三 以下 是 跟 我 机器 集群 
+匹配 的 配置文件 HA 集群 下 怎么 配置 Hue 的 
+pig 模块 跟 非 HA 集群 一样 的 配法 欢迎 
+大家 加入 我 的 微信 公众 号 大 数据 躺过 
+的 坑         人工智能 躺过 的 坑 
+同时 大家 可以 关注 我 的 个人 博客 http / 
+/ www . cnblogs . com / zlslch /   
+    和 /nr       http / / www 
+. cnblogs . com / lchzls /       
+    http / / www . cnblogs . com 
+/ sunnyDream / 详情 请见 http / / www . 
+cnblogs . com / zlslch / p / 7473861 . 
+html 人生 苦短 我 愿 分享 本 公众 号 将 
+秉持 活到老 学到老 学习 无休止 的 交流 分享 开源 精神 
+汇聚/v 于/p 互联网/n 和/c 个人/n 学习/v 工作/vn 的/uj 精华/nz 干货/n 
+知识/v 一切 来 于 互联网 反馈 回 互联网 目前 研究 
+领域 大 数据 机器学习 深度 学习 人工智能 数据挖掘 数据分析 语言 
+涉及 Java Scala Python Shell Linux 等 同时 还 涉及 
+平常 所 使用 的 手机 电脑 和 互联 网上 的 
+使用 技巧 问题 和 实用软件 只要 你 一直 关注 和 
+呆在 群 里 每天/r 必须/d 有/v 收获/v 对应/vn 本/r 平台/n 
+的/uj 讨论/v 和/c 答疑/v QQ/w 群/n 大 数据 和 人工智能 
+躺过 的 坑 总 群 161156071 

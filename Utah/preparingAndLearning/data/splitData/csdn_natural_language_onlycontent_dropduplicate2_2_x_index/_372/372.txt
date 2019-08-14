@@ -1,0 +1,38 @@
+自然语言处理是如今计算机科学领域比较火热的一个方向，其也确实有很大的应用场景。前面说过，我参加了微软编程之美的比赛，这个比赛其所基于的就是自然语言处理。我本身并不是学自然语言处理的，甚至连这门课也没有选过，可是为了完成资格赛我自己在网上找了一些资料。
+时间所限，也是能力所限，我当然不会自己去实现一些诸如中文分词与词性标注的自然语言处理算法。自然的，我想到了在网上找一些开源包。我主要考虑的是三个包，首先是斯坦福大学的一系列自然语言处理工具，作为国际知名高校自然人们都会认为斯坦福的技术会更高一点，可是我在网上并没有找到太多的使用文档，而且软件也比较大，简单使用也并不需要太高深的技术。然后呢，我又找到了哈工大的LTP，这个是我们自己学校的东西，而且也广受认可，所以天然的，我倾向于使用它。但是我发现LTP不是开源的，如果要索要代码还需要签署一些协议，哎。。。最后我选择使用复旦大学的自然语言处理开源包FNLP，它的优点在于获取方便，而且是比较轻量级的，简单使用比较方便。下面给出入门教程：
+FNLP入门
+1.下载跟编译
+GitHub上下载FNLP压缩包；
+下载相应的模型文件，放在第一步下载的文件里的models目录；
+下载Maven，并按照教程配置（其实就是解压缩和配置环境变量）
+在命令行中进入FNLP的源码目录（即“README.md”所在的目录），执行如下命令进行编译：
+mvn install -Dmaven.test.skip=true
+（更新2018.4.25：win10系统如果进入的是powershell， 则使用命令
+mvn install '-Dmaven.test.skip=true' ）
+这会编译四个Jar包：fnlp-core、fnlp-dev、fnlp-train、fnlp-app、fnlp-demo。它们分别位于源码目录中，各自对应目录中的”target”目录之中，例如fnlp-core的软件包位于： fnlp-core/target/fnlp-core-2.0-SNAPSHOT.jar
+2.命令行使用
+FNLP的源码目录下的命令行（可以Win+R 输入cmd，然后进入源码目录；也可以在源码目录下，按住shift右键进入命令行），执行maven命令：
+mvn dependency:copy-dependencies -DoutputDirectory=libs
+这样jar包都会copy到工程目录下的libs里面
+输入 java -Xmx1024m -Dfile.encoding=UTF-8 -classpath ".;fnlp-core/target/fnlp-core-2.1-SNAPSHOT.jar;libs/trove4j-3.0.3.jar;libs/commons-cli-1.2.jar" org.fnlp.nlp.cn.tag.CWSTagger -s models/seg.m "自然语言是人类交流和思维的主要工具，是人类智慧的结晶。" 可以使用分词功能，也可以测试是否安装成功（windows系统下）。结果如图：
+3.调用FNLP库（eclipse下使用）
+在eclipse左侧的Project Explorer中选择项目名称，右击，在菜单中选择Build Path，Add External Archives…，则会弹出文件选择对话框，依次查找并添加下列文件（第二步获得的一些jar包，可以在lib等文件夹下找到）：
+fnlp-core-2.1-SNAPSHOT.jar
+trove4j-3.0.3.jar
+commons-cli-1.2.jar
+修改虚拟机最大内存量（网上有教程）；
+模型文件指词典、训练后的中文分词器、POS标注器等，它们位于FNLP源码目录下的“models”目录之中。将此目录复制到Eclipse项目目录之下即可。
+接下来就可以编程调用了。
+FNLP提供了一系列中文处理工具，其中中文分词、词性标注、实体名识别等基础功能已经封装在工厂类CNFactory之中。CNFactory位于org.fnlp.nlp.cn包之中，经过初始化后就可以使用其提供的全部功能：
+import org.fnlp.nlp.cn.CNFactory; CNFactory factory = CNFactory.getInstance("models");
+以上代码创建了一个CNFactory对象，并载入位于“models”目录下的模型文件。接下来就可以使用CNFactory的对象来进行各种中文语言处理任务。
+中文分词
+public static void main(String[] args) throws Exception { // 创建中文处理工厂对象，并使用“models”目录下的模型文件初始化 CNFactory factory = CNFactory.getInstance("models"); // 使用分词器对中文句子进行分词，得到分词结果 String[] words = factory.seg("关注自然语言处理、语音识别、深度学习等方向的前沿技术和业界动态。"); // 打印分词结果 for(String word : words) { System.out.print(word + " "); } System.out.println(); }
+结果： 关注 自然 语言 处理 、 语音 识别 、 深度 学习 等 方向 的 前沿 技术 和 业界 动态 。
+中文词性标注
+public static void main(String[] args) throws Exception { // 创建中文处理工厂对象，并使用“models”目录下的模型文件初始化 CNFactory factory = CNFactory.getInstance("models"); // 使用标注器对中文句子进行标注，得到标注结果 String result = factory.tag2String("关注自然语言处理、语音识别、深度学习等方向的前沿技术和业界动态。"); // 显示标注结果 System.out.println(result); }
+结果：关注/动词 自然/名词 语言/名词 处理/动词 、/标点 语音/名词 识别/名词 、/标点 。。。
+实体名识别
+public static void main(String[] args) throws Exception { // 创建中文处理工厂对象，并使用“models”目录下的模型文件初始化 CNFactory factory = CNFactory.getInstance("models"); // 使用标注器对包含实体名的句子进行标注，得到结果 HashMap<String, String> result = factory.ner("詹姆斯·默多克和丽贝卡·布鲁克斯 鲁珀特·默多克旗下的美国小报《纽约邮报》的职员被公司律师告知，保存任何也许与电话窃听及贿赂有关的文件。"); // 显示标注结果 System.out.println(result); }
+结果：
+{詹姆斯·默多克=人名, 鲁珀特·默多克旗=人名, 丽贝卡·布鲁克斯=人名, 纽约=地名, 美国=地名}

@@ -1,0 +1,12 @@
+项目地址：https://github.com/liuhuanyong/LanguageResources
+致力于利用web公开信息,采用爬虫脚本,加工处理形成语言资源包括词汇知识库,领域语料等语言资源,该资源可用于自然语言处理任务.
+1、　corpus_resources.py:词库，包括：
+name:人民日报语料 link:https://pan.baidu.com/s/1_E2YA7u61s_ZSSFV0IrHJA pwd:ux12 desc:人民日报199801语料 name:领域小说文本语料 link:https://pan.baidu.com/s/1JC3UyOu8PuJrnn_JUyF9UQ pwd:bguf desc:13个领域的小说文本集合，5000+小说文本 name:字幕文本语料 link:https://pan.baidu.com/s/19BI81W7rFwvLKEjVBPXaUA pwd:mpfz desc:基于字幕网抓取，70W字幕文本语料 name:段子文本语料 link:https://pan.baidu.com/s/1go84Pt8O-AHJJOgJhkG89Q pwd:eju6 desc:基于内涵段子等短文本网站抓取，约50W name:歌词文本语料 link:https://pan.baidu.com/s/1IOCH9EfZInTdI_GvnuedJA pwd:nq69 desc:基于歌词网站抓取，歌词数量约20W
+2 word_resources.py:领域语料
+包括：
+name:语义词库 link:https://pan.baidu.com/s/1b663-MVQ2UG69wvmKg912g pwd:flg8 desc:语法信息词典，知网义原、程度副词、现代汉语词典、否定词、同义词词林等 name:领域词库 link:https://pan.baidu.com/s/1fzwE94sC77PDo-36IKCkWg pwd:x57t desc:33个领域词词库 name:情感词库 link:https://pan.baidu.com/s/10KECT0kxiRDt43vuSBOdeA pwd:mn5u desc:通用、微博、食物、财经等领域情感词，以及公开情感词（清华、台湾大学、大连理工等） name:敏感词词库 link:https://pan.baidu.com/s/1DIkV-RyiEVaNMPNYiiKVsA pwd:asol desc:敏感词词库，可用于敏感信息检测 name:搜狗输入法词库 link:https://pan.baidu.com/s/11H8L0021TgnWEs8p4cjGkQ pwd:wpr8 desc:基于搜狗输入法抓取与转换生成，1W+个词库文本
+3 wordvector_resource.py:预训练词向量文件
+name:多领域词向量 link:https://pan.baidu.com/s/10j2Ozt9rOspVDsn_UNIfdw pwd:cw04 desc:基于腾讯历时滚动新闻训练的多领域词向量，包括财经、军事、体育、科技等领域 *********** name:中文字向量 link:https://pan.baidu.com/s/1m7E86igkOglQsl7hwn0QVw pwd:b2mg desc:基于维基百科生成的字向量
+资源已经共享至百度网盘,详细见相应的.py文件
+If any question about the project or me ,see https://liuhuanyong.github.io/
+项目地址：https://github.com/liuhuanyong/LanguageResources

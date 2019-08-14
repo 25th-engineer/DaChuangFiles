@@ -1,0 +1,43 @@
+7.6   Relation Extraction  关系抽取
+Once named entities have been identified in a text, we then want to extract the relations that exist between them. As indicated earlier, we will typically be looking for relations between specified types of named entity. One way of approaching this task is to initially look for all triples of the form (X, α, Y), where X and Y are named entities of the required types, and α is the string of words that intervenes between（在…之间） X and Y. We can then use regular expressions to pull out（抽出） just those instances of α that express the relation that we are looking for. The following example searches for strings that contain the word in. The special regular expression (?!\b.+ing\b) is a negative lookahead assertion（否定预测先行断言？） that allows us to disregard（忽视） strings such as success in supervising the transition of, where in is followed by a gerund（动名词）.
+>>> IN = re.compile(r'.*\bin\b(?!\b.+ing)')
+>>> for doc in nltk.corpus.ieer.parsed_docs('NYT_19980315'):
+...     for rel in nltk.sem.extract_rels('ORG', 'LOC', doc,
+...                                      corpus='ieer', pattern = IN):
+...         print nltk.sem.show_raw_rtuple(rel)
+[ORG: 'WHYY'] 'in' [LOC: 'Philadelphia']
+[ORG: 'McGlashan &AMP; Sarrail'] 'firm in' [LOC: 'San Mateo']
+[ORG: 'Freedom Forum'] 'in' [LOC: 'Arlington']
+[ORG: 'Brookings Institution'] ', the research group in' [LOC: 'Washington']
+[ORG: 'Idealab'] ', a self-described business incubator based in' [LOC: 'Los Angeles']
+[ORG: 'Open Text'] ', based in' [LOC: 'Waterloo']
+[ORG: 'WGBH'] 'in' [LOC: 'Boston']
+[ORG: 'Bastille Opera'] 'in' [LOC: 'Paris']
+[ORG: 'Omnicom'] 'in' [LOC: 'New York']
+[ORG: 'DDB Needham'] 'in' [LOC: 'New York']
+[ORG: 'Kaplan Thaler Group'] 'in' [LOC: 'New York']
+[ORG: 'BBDO South'] 'in' [LOC: 'Atlanta']
+[ORG: 'Georgia-Pacific'] 'in' [LOC: 'Atlanta']
+Searching for the keyword in works reasonably well, though it will also retrieve false positives such as [ORG: House Transportation Committee] , secured the most money in the [LOC: New York]; there is unlikely to be simple string-based method of excluding filler strings such as this.
+As shown above, the conll2002 Dutch corpus contains not just named entity annotation but also part-of-speech tags. This allows us to devise patterns that are sensitive to these tags, as shown in the next example. The method show_clause() prints out the relations in a clausal form, where the binary relation（二元关系） symbol is specified as the value of parameter relsym.
+>>> from nltk.corpus import conll2002
+>>> vnv = """
+... (
+... is/V|    # 3rd sing present and
+... was/V|   # past forms of the verb zijn ('be')
+... werd/V|  # and also present
+... wordt/V  # past of worden ('become)
+... )
+... .*       # followed by anything
+... van/Prep # followed by van ('of')
+... """
+>>> VAN = re.compile(vnv, re.VERBOSE)
+>>> for doc in conll2002.chunked_sents('ned.train'):
+...     for r in nltk.sem.extract_rels('PER', 'ORG', doc,
+...                            corpus='conll2002', pattern=VAN):
+...         print  nltk.sem.show_clause(r, relsym="VAN")
+VAN("cornet_d'elzius", 'buitenlandse_handel')
+VAN('johan_rottiers', 'kardinaal_van_roey_instituut')
+VAN('annie_lennox', 'eurythmics')
+Note
+Your Turn: Replace the last line, by print show_raw_rtuple(rel, lcon=True, rcon=True). This will show you the actual words that intervene between the two NEs and also their left and right context, within a default 10-word window. With the help of a Dutch dictionary, you might be able to figure out why the result VAN('annie_lennox', 'eurythmics') is a false hit.

@@ -1,0 +1,54 @@
+计算机视觉——图像理解简介
+图像理解的三个层次
+一是分类（Classification）
+将图像结构化为某一类别的信息，用事先确定好的类别(string)或实例ID来描述图片。
+二是检测（Detection）
+检测关注特定的物体目标，要求同时获得这一目标的类别信息和位置信息。
+三是分割（Segmentation）
+分割包括语义分割（semantic segmentation）和实例分割（instance segmentation）
+简单来说，前者不区分属于相同类别的不同实例，而后者区分
+相关网络
+Faster RCNN [2016]
+经过R-CNN和Fast RCNN的积淀，Ross B. Girshick在2016年提出了Faster RCNN
+将CNN引入目标检测的开山之作
+网络结构如下：
+Conv layers
+作为一种CNN网络目标检测方法，Faster RCNN首先使用一组基础的conv+relu+pooling层提取image的feature maps。该feature maps被共享用于后续RPN层和全连接层。
+Region Proposal Networks
+RPN网络用于生成region proposals（表示物体可能存在的位置）
+Faster RCNN则抛弃了传统的滑动窗口和SS(Selective Search)方法，直接使用RPN生成检测框
+极大提升检测框的生成速度
+ROI Pooling
+该层收集输入的feature maps和proposals，综合这些信息后提取proposal feature maps，送入后续全连接层判定目标类别。
+可以显著加速training和testing速度
+Classification
+利用proposal feature maps计算proposal的类别，同时再次bounding box regression获得检测框最终的精确位置。
+Mask RCNN [2017]
+by Kaiming He & Georgia Gkioxari & Piotr Dollar & Ross Girshick
+沿用了Faster RCNN的思想，特征提取采用ResNet-FPN的架构，另外多加了一个Mask预测分支
+网络结构：
+Mask RCNN只是在ROI pooling（实际上用到的是ROIAlign）之后添加卷积层，进行mask预测的任务
+Mask R-CNN提出了RoIAlign（双线性内插）的方法来取代ROI pooling
+Mask Scoring RCNN [2019.3]
+一作黄钊金，华中科技大学的硕士生，师从华中科技大学电信学院副教授王兴刚
+在COCO图像实例分割任务上超越了何恺明的Mask R-CNN
+Mask RCNN虽然输出结果是一个蒙版，但打分却是和边界框目标检测共享的，都是针对目标区域分类置信度算出来的分数。
+这个分数，和图像分割蒙版的质量可未必一致，用来评价蒙版的质量，可能就会出偏差。
+提出了一种给算法的“实例分割假设”打分的新方法：
+不仅仅直接依靠检测得到的分类算分，而且还让模型单独学一个针对蒙版的得分规则：MaskIoU head
+MaskIoU head是在经典评估指标AP（平均正确率）启发下得到的，会拿预测蒙版与物体特征进行对比
+同时考虑分类得分与蒙版的质量得分，去评估算法质量
+评测方法公平公正，模型性能自然也上去了
+Tensorflow object detection api
+The TensorFlow Object Detection API is an open source framework built on top of TensorFlow that makes it easy to construct, train and deploy object detection models.
+可以使用自己的数据集进行训练，不过必须先把它转换为TFRecord文件格式
+在Tensorflow detection model zoo有多种预训练的模型，可直接使用
+在自己的照片上进行探测
+可执行多分类任务，也可以指定识别对象
+Tensorflow DeepLab
+(Deep Labelling for Semantic Image Segmentation)
+DeepLab is a state-of-art deep learning model for semantic image segmentation, where the goal is to assign semantic labels (e.g., person, dog, cat and so on) to every pixel in the input image.
+Resources
+ROI pooling详解
+tensorflow object_detection
+tensorflow deeplab

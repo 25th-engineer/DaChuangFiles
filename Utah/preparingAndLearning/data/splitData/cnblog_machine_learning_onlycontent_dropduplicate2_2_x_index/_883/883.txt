@@ -1,0 +1,10 @@
+随着iOS11的发布，苹果公司也正式加入了机器学习的战场。在新的iOS11中内置了CoreML，虽然还是Beta版本，但是功能已经非常强大了。
+在这个CoreML库里面，已经集成了一些训练好的模型，可以在App中直接使用这些模型进行预测。
+下面是苹果对于Core ML的介绍。
+CoreML让你将很多机器学习模型集成到你的app中。除了支持层数超过30层的深度学习之外，还支持决策树的融合，SVM（支持向量机），线性模型。由于其底层建立在Metal 和Accelerate等技术上，所以可以最大限度的发挥CPU和GPU的优势。你可以在移动设备上运行机器学习模型，数据可以不离开设备直接被分析。
+Vision：这部分是关于图像分析和图像识别的。其中包括人脸追踪，人脸识别，航标（landmarks），文本识别，区域识别，二维码识别，物体追踪，图像识别等。
+其中使用的模型包括：Places205-GoogLeNet，ResNet50，Inception v3，VGG16。
+这些模型最小的25M，对于app还是可以接受的，最大的有550M，不知道如何集成到app中。
+NLPAPI：这部分是自然语言处理的API，包括语言识别，分词，词性还原，词性判定，实体辨识。
+GamePlayKit：这部分的话，应该是制作游戏时候，提供一些随机数生成，寻找路径（pathfinding），人工智能的库。感觉上可能还带有强化学习的一些功能（提到了agent behavior，这个可能是强化学习 Q-Learning的一些术语吧0）。其中也有一些Decision Trees的API，但是不知道和传统的决策树是否一致。
+从图中可以看到，Core ML 的底层是Accelerate 和 BNNS，BNNS（Basic neural network subroutines），框架中已经集成了神经网络了，并且对于大规模计算和图形计算进行了一定的优化了。Metal Performance Shaders看介绍应该是能够使得app充分使用GPU的组件。

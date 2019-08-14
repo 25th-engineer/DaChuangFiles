@@ -1,0 +1,1600 @@
+一点 背景 知识 OpenCV   是 一个 开源 的 计算机 
+视觉 和 机器学习 库 它 包含 成千上万 优 化过 的 
+算法 为 各种 计算机 视觉 应用 提供 了 一个 通用 
+工具包 根据 这个 项目 的 关于 页面 OpenCV 已被 广泛 
+运用 在 各种 项目 上 从 谷歌 街景 的 图片 
+拼接 到 交互 艺术 展览 的 技术 实现 中 都有 
+OpenCV 的 身影 OpenCV 起始 于 1999 年 Intel 的 
+一个 内部 研究 项目 从那时起 它 的 开发 就 一直 
+很 活跃 进化 到 现在 它 已 支持 如 OpenCL 
+和 OpenGL 等 现代 技术 也 支持 如   iOS 
+  和 /nr Android   等 平台 1999 年 半条命 发布 
+后 大红 大热 Intel 奔腾 3 处理器 是 当时 最 
+高级 的 CPU 400 500 MHZ 的 时钟 频率 已 
+被 认为 是 相当 快 2006 年 OpenCV 1.0 版本 
+发布 的 时候 当时 主流 CPU 的 性能 也 只和 
+iPhone 5 的 A6 处理器 相当 尽管 计算机 视觉 从 
+传统 上 被 认为 是 计算 密集型 应用 但 我们 
+的 移动 设备 性能 已 明显 地 超出 能够 执行 
+有用 的 计算机 视觉 任务 的 阈值 带着 摄像头 的 
+移动 设备 可以 在 计算机 视觉 平台 上 大 有所 
+为 在 本文 中 我会 从 一个 iOS 开发者 的 
+视角 概述 一下 OpenCV 并 介绍 一点 基础 的 类 
+和 概念 随后 会讲 到 如何 集成 OpenCV 到 你 
+的 iOS 项目 中 以及 一些   Objective C + 
++ 基础知识 最后 我们 会 看 一个 demo 项目 看看 
+如何 在 iOS 设备 上 使用 OpenCV 实现 人脸 检测 
+与 人脸识别 OpenCV 概述 概念 OpenCV 的 API 是 C 
++ + 的 它 由 不同 的 模块 组成 这些 
+模块 中 包含 范围 极为 广泛 的 各种 方法 从 
+底层 的 图像 颜色 空间 转换 到 高层 的 机器学习 
+工具 使用 C + + API 并 不是 绝大多数 iOS 
+开发者 每天 都做的/nr 事 你 需要 使用 Objective C + 
++ 文件 来 调用 OpenCV 的 函数 也 就是说 你 
+不能 在   Swift   或者 Objective C 语言 内 
+调用 OpenCV 的 函数 这篇 OpenCV 的   iOS 教程 
+告诉 你 只要 把 所有 用到 OpenCV 的 类 的 
+文件 后缀名 改为   . mm   就行了 包括 视图 
+控制 器类 也是 如此 这么/r 干/v 或许/d 能/v 行得通/n 却 
+不是 什么 好 主意 正确 的 方式 是 给 所有 
+你 要在 app 中 使用 到 的 OpenCV 功 能写 
+一层 Objective C + + 封装 这些 Objective C + 
++ 封装 把 OpenCV 的 C + + API 转化 
+为 安全 的 Objective C API 以 方便 地 在 
+所有 Objective C 类 中 使用 走 封装 的 路子 
+你 的 工程 中 就 可以 只 在 这些 封装 
+中 调用 C + + 代码 从而 避免 掉 很多 
+让 人 头痛 的 问题 比如 直接 改 文件 后缀名 
+会 因为 在 错误 的 文件 中 引用 了 一个 
+C + + 头文件 而 产生 难以 追踪 的 编译 
+错误 OpenCV 声 明了 命名 空间   cv 因此 OpenCV 
+的 类 的 前面 会 有个   cv   前缀 
+就像   cv Mat   cv Algorithm   等等 你 
+也 可以 在   . mm   文件 中 使用 
+  using namespace cv   来 避免 在 一堆 类名 
+前 使用   cv   前缀 但是 在 某些 类名 
+前 你 必须 使用 命名 空间 前缀 比如   cv 
+Rect   和 /nr cv Point 因为 它们 会跟 定义 在 
+  MacTypes . h   中的   Rect   和 /nr 
+Point   相冲突 尽管 这 只是 个人 偏好 问题 我 
+还是 偏向 在 任何 地方 都 使用   cv   
+以 保持 一致性 模块 下面 是 在 官方 文档 中 
+列出 的 最重要 的 模块 core 简洁 的 核心 模块 
+定义 了 基本 的 数据 结构 包括 稠密 多维 数组 
+  Mat   和 其他 模块 需要 的 基本 函数 
+imgproc 图像处理 模块 包括 线性 和 非线性 图像 滤波 几何 
+图像 转换 缩放 仿射 与 透视 变换 一般性 基于 表 
+的 重 映射 颜色 空间 转换 直方图 等等 video 视频 
+分析 模块 包括 运动 估计 背景 消除 物体 跟踪 算法 
+calib3d 包括 基本 的 多视角 几何 算法 单体 和 立体 
+相机 的 标定 对象 姿态 估计 双目 立体匹配 算法 和 
+元素 的 三维重建 features2d 包含 了 显著 特征 检测 算法 
+描述 算子 和 算子 匹配 算法 objdetect 物体 检测 和 
+一些 预 定义 的 物体 的 检测 如 人脸 眼睛 
+杯子 人 汽车 等 ml 多种 机器学习 算法 如 K 
+均值 支持 向量 机 和 神经 网络 highgui 一个 简单易用 
+的 接口 提供 视频 捕捉 图像 和 视频编码 等功能 还有 
+简单 的 UI 接口 iOS 上 可用 的 仅 是 
+其 一个 子集 gpu OpenCV 中 不同 模块 的 GPU 
+加 速算法 iOS 上 不可用 ocl 使用 OpenCL 实现 的 
+通用 算法 iOS 上 不可用 一些 其它 辅助 模块 如 
+Python 绑定 和 用户 贡献 的 算法 基础 类 和 
+操作 OpenCV 包含 几百个 类 为 简便 起见 我们 只看 
+几个 基础 的 类 和 操作 进一步 阅读 请 参考 
+全部 文档 过 一遍 这几个 核心 类 应该 足以 对 
+这个 库 的 机理 产生 一些 感觉 认识 cv Matcv 
+Mat   是 OpenCV 的 核心 数据结构 用来 表示 任意 
+N 维 矩阵 因为 图像 只是 2 维 矩阵 的 
+一个 特殊 场景 所以 也 是 使用   cv Mat 
+  来 表示 的 也 就是说 cv Mat   将 
+是 你 在 OpenCV 中用 到 最多 的 类 一个 
+  cv Mat   实例 的 作用 就 像是 图像 
+数据 的 头 其中 包含 着 描述 图像格式 的 信息 
+图像 数据 只是 被 引用 并能 为 多个   cv 
+Mat   实例 共享 OpenCV 使用 类似 于 ARC 的 
+引用 计数 方法 以 保证 当 最后 一个 来自   
+cv Mat   的 引用 也 消失 的 时候 图像 
+数据 会 被 释放 图像 数据 本身 是 图像 连续 
+的 行 的 数组 对 N 维 矩阵 来说 这个 
+数据 是 由 连续 的 N 1 维 数据 组成 
+的 数组 使用   step   数组 中 包含 的 
+值 图像 的 任一 像素 地址 都可 通过 下面 的 
+指针 运算 得到 uchar * pixelPtr = cvMat . data 
++ rowIndex * cvMat . step 0 + colIndex * 
+cvMat . step 1 每个 像素 的 数据 格式 可以 
+通过   type   方法 获得 除了 常用 的 每 
+通道 8 位 无符号 整数 的 灰度 图 1 通道 
+CV _ 8UC1 和 彩色 图 3 通道 CV _ 
+8UC3 OpenCV 还 支持 很多 不 常用 的 格式 例如 
+  CV _ 16SC3   每 像素 3 通道 每 
+通道 使用 16 位 有 符号 整数 甚至   CV 
+_ 64FC4   每 像素 4 通道 每 通道 使用 
+64 位 浮点数 cv A l g o r i 
+t h m A l g o r i t 
+h m   是 OpenCV 中 实现 的 很多 算法 
+的 抽象 基类 包括 将 在 我们 的 demo 工程 
+中 用到 的   FaceRecognizer 它 提供 的 API 与 
+苹果 的 Core Image 框架 中的   CIFilter   有些 
+相似之处 创建 一个   Algorithm   的 时候 使用 算法 
+的 名字 来 调用   Algorithm create 并且 可以 通过 
+  get   和 /nr set 方法 来 获取 和 设置 
+各个 参数 这 有点 像是 键值 编码 另外 Algorithm/w  /i 
+从/p 底层/n 就/d 支持/v 从/向/nr XML 或 YAML 文件 加载 
+/ 保存 参数 的 功能 在 iOS 上 使用 OpenCV 
+添加 OpenCV 到 你 的 工程 中 集成 OpenCV 到 
+你 的 工程 中 有三种 方法 使用 CocoaPods 就好   
+pod OpenCV 下载 官方   iOS 框架 发 行包 并把 
+它 添加 到 工程 里 从 /nr GitHub   拉下 代码 
+并 根据 教程 自己 编译 OpenCV 库 Objective C + 
++ 如 前面 所说 OpenCV 是 一个 C + + 
+的 API 因此 不能 直接 在 Swift 和 Objective C 
+代码 中 使用 但 能在 Objective C + + 文件 
+中 使用 Objective C + + 是 Objective C 和 
+C + + 的 混合物 让 你 可以 在 Objective 
+C 类 中 使用 C + + 对象 clang 编译器 
+会把 所有 后缀 名为   . mm   的 文件 
+都 当做 是 Objective C + + 一般来说 它 会 
+如 你 所 期望 的 那样 运行 但 还是 有 
+一些 使用 Objective C + + 的 注意 事项 内存管理 
+是 你 最 应该 格外 注意 的 点 因为 ARC 
+只对 Objective C 对象 有效 当 你 使用 一个 C 
++ + 对象 作为 类 属性 的 时候 其 唯一 
+有效 的 属性 就是   assign 因此 你 的   
+dealloc   函数 应 确保 C + + 对象 被 
+正确 地 释放 了 第二 重要 的 点 就是 如果 
+你 在 Objective C + + 头文件 中 引入 了 
+C + + 头文件 当 你 在 工程 中 使用 
+该 Objective C + + 文件 的 时候 就 泄露 
+了 C + + 的 依赖 任何 引入 你 的 
+Objective C + + 类 的 Objective C 类 也会 
+引入 该 C + + 类 因此 该 Objective C 
+文件 也 要被 声 明为 Objective C + + 的 
+文件 这会 像 森林 大火 一样 在 工程 中 迅速 
+蔓延 所以 应该 把 你 引入 C + + 文件 
+的 地方 都用   # ifdef _ _ cplusplus   
+包起来 并且 只要 可能 就 尽量 只在   . mm 
+  实现 文件 中 引入 C + + 头文件 要 
+获得 更多 如何 混用 C + + 和 Objective C 
+的 细节 请 查看   Matt Galloway   写 的 
+这篇 教程 Demo 人脸 检测 与 识别 现在 我们 对 
+OpenCV 及 如何 把 它 集成 到 我们 的 应用 
+中 有了 大概 认识 那让/nr 我们 来 做 一个 小 
+demo 应用 从 iPhone 的 摄像头 获取 视频流 对 它 
+持续 进行 人脸 检测 并在 屏幕 上 标出来 当 用户 
+点击 一个 脸孔 时 应用 会 尝试 识别 这个人 如果 
+识别 结果 正确 用户 必须 点击 Correct 如果 识别 错误 
+用户 必须 选择 正确 的 人名 来 纠正 错误 我们 
+的 人脸 识别 器 就会 从 错误 中 学习 变得 
+越来越 好 本 demo 应用 的 源码 可从   GitHub 
+  获得 视频 拍摄 OpenCV 的 highgui 模块 中 有个 
+类 CvVideoCamera 它 把 iPhone 的 摄像机 抽象 出来 让 
+我们 的 app 通过 一个 代理 函数   void processImage 
+cv Mat & image   来 获得 视频流 CvVideoCamera   
+实例 可 像 下面 这样 进行 设置 CvVideoCamera * videoCamera 
+= CvVideoCamera alloc i n i t W i t 
+h P a r e n t V i e 
+w view videoCamera . d e f a u l 
+t A V C a p t u r e 
+D e v i c e P o s i 
+t i o n = A V C a p 
+t u r e D e v i c e 
+P o s i t i o n F r 
+o n t videoCamera . d e f a u 
+l t A V C a p t u r 
+e e s s i o n P r e 
+s e t = A V C a p t 
+u r e e s s i o n P 
+r e s e t 6 4 0 x 4 
+8 0 videoCamera . d e f a u l 
+t A V C a p t u r e 
+V i d e o O r i e n 
+t a t i o n = A V C 
+a p t u r e V i d e 
+o O r i e n t a t i 
+o n P o r t r a i t 
+videoCamera . defaultFPS = 30 videoCamera . grayscaleMode = NO 
+videoCamera . delegate = self 摄像头 的 帧率 被 设置 
+为 30 帧 每秒 我们 实现 的   processImage   
+函数 将 每秒 被 调用 30 次 因为 我们 的 
+app 要 持续 不断 地 检测 人脸 所以 我们 应该 
+在 这个 函数 里 实现 人脸 的 检测 要 注意 
+的 是 如果 对 某一 帧 进行 人脸 检测 的 
+时间 超过 1/30 秒 就 会 产生 掉 帧 现象 
+人脸 检测 其实 你 并不 需要 使用 OpenCV 来做 人脸 
+检测 因为 Core Image 已经 提供 了   CIDetector   
+类 用 它 来做 人脸 检测 已经 相当 好了 并且 
+它 已经 被 优 化过 使用 起来 也 很容易 CIDetector 
+* faceDetector = CIDetector detectorOfType C I D e t 
+e c t o r T y p e F 
+a c e context context options @ { C I 
+D e t e c t o r A c 
+c u r a c y C I D e 
+t e c t o r A c c u 
+r a c y H i g h } NSArray 
+* faces = faceDetector featuresInImage image 从该/nr 图片 中 检测 
+到 的 每一张 面孔 都在 数组   faces   中 
+保存 着 一个   CIFaceFeature   实例 这个 实例 中 
+保存 着 这张 面孔 的 所处 的 位置 和宽高/nr 除此之外 
+眼睛 和嘴的/nr 位置 也是 可选 的 另一方面 OpenCV 也 提供 
+了 一套 物体 检测 功能 经过 训练 后 能够 检测 
+出 任何 你 需要 的 物体 该 库 为 多个 
+场景 自带 了 可以 直接 拿来 用 的 检测 参数 
+如 人脸 眼睛 嘴 身体 上半身 下半身 和 笑脸 检测 
+引擎 由 一些 非常 简单 的 检测器 的 级联 组成 
+这些 检测器 被称为 Haar 特征 检测器 它们 各自 具有 不同 
+的 尺度 和 权重 在 训练 阶段 决策树 会 通过 
+已知 的 正确 和 错误 的 图片 进行 优化 关于 
+训练 与 检测 过程 的 详情 可 参考 此 原始 
+论文 当 正确 的 特征 级联 及其 尺度 与 权重 
+通过训练 确立 以后 这些 参数 就 可被 加载 并 初始化 
+级联 分类器 了 / / 正面 人脸 检测器 训练 参数 
+的 文件 路径 NSString * faceCascadePath = NSBundle mainBundle pathForResource 
+@ haarcascade _ frontalface _ alt2 ofType @ xml const 
+CFIndex CASCADE _ NAME _ LEN = 2048 char * 
+CASCADE _ NAME = char * malloc CASCADE _ NAME 
+_ LEN C F t r i n g G 
+e t F i l e y s t e 
+m R e p r e s e n t 
+a t i o n CFStringRef faceCascadePath CASCADE _ NAME 
+CASCADE _ NAME _ LEN C a s c a 
+d e C l a s s i f i 
+e r faceDetector faceDetector . load CASCADE _ NAME 这些 
+参数 文件 可在 OpenCV 发行 包里 的   data / 
+haarcascades   文件夹 中找到 在 使用 所 需要 的 参数 
+对 人脸 检测器 进行 初始化 后 就 可以 用 它 
+进行 人脸 检测 了 cv Mat img vector cv Rect 
+faceRects double scalingFactor = 1.1 int minNeighbors = 2 int 
+flags = 0 cv Size minimumSize 30 30 faceDetector . 
+detectMultiScale img faceRects scalingFactor minNeighbors flags cv Size 30 30 
+检测 过程 中 已 训 练好 的 分类器 会用 不同 
+的 尺度 遍历 输入 图像 的 每一个 像素 以 检测 
+不同 大小 的 人脸 参数 scalingFactor   决定 每次 遍历 
+分类器 后 尺度 会 变大 多少倍 参数   minNeighbors   
+指定 一个 符合 条件 的 人脸 区域 应该 有 多少 
+个 符合 条件 的 邻居 像素 才被 认为 是 一个 
+可能 的 人脸 区域 如果 一个 符合 条件 的 人脸 
+区域 只 移动 了 一个 像素 就 不再 触发 分类器 
+那么 这个 区域 非常 可能 并 不是 我们 想要 的 
+结果 拥有 少于   minNeighbors   个 符合 条件 的 
+邻居 像素 的 人脸 区域 会 被 拒绝 掉 如果 
+  minNeighbors   被 设置 为 0 所有 可能 的 
+人脸 区域 都 会被 返回 回来 参数   flags   
+是 OpenCV 1 . x 版本 API 的 遗留物 应该 
+始终 把 它 设置 为 0 最后 参数   minimumSize 
+  指定 我们 所 寻找 的 人脸 区域 大小 的 
+最小值 faceRects   向量 中将 会 包含 对   img 
+  进行 人脸识别 获得 的 所有 人脸 区域 识别 的 
+人脸 图像 可以 通过   cv Mat   的   
+运算符 提取 出来 调用 方式 很 简单 cv Mat faceImg 
+= img aFaceRect 不管 是 使用   CIDetector   还是 
+OpenCV 的   C a s c a d e 
+C l a s s i f i e r 
+只要 我们 获得 了 至少 一个 人脸 区域 我们 就 
+可以 对 图像 中的 人 进行 识别 了 人脸识别 OpenCV 
+自 带了 三个 人脸识别 算法 Eigenfaces Fisherfaces 和 局部 二 
+值 模式 直方图 LBPH 如果 你 想 知道 它们 的 
+工作 原理 及 相互 之间 的 区别 请 阅读 OpenCV 
+的 详细 文档 针对 于 我们 的 demo app 我们 
+将 采用 LBPH 算法 因为 它 会 根据 用户 的 
+输入 自动更新 而 不 需要 在 每 添加 一个人 或 
+纠正 一次 出错 的 判断 的 时候 都要/nr 重新 进行 
+一次 彻底 的 训练 要 使用 LBPH 识别器 我们 也 
+用 Objective C + + 把 它 封装 起来 这个 
+封装 中 暴露 以下 函数 + FJFaceRecognizer * f a 
+c e R e c o g n i z 
+e r W i t h F i l e 
+NSString * path NSString * predict UIImage * img confidence 
+double * confidence void updateWithFace UIImage * img name NSString 
+* name 像 下面 这样 用 工厂 方法来 创建 一个 
+LBPH 实例 + FJFaceRecognizer * f a c e R 
+e c o g n i z e r W 
+i t h F i l e NSString * path 
+{ FJFaceRecognizer * fr = FJFaceRecognizer new fr _ faceClassifier 
+= c r e a t e L B P 
+H F a c e R e c o g 
+n i z e r fr _ faceClassifier load path 
+. UTF8String return fr } 预测 函数 可以 像 下面 
+这样 实现 NSString * predict UIImage * img confidence double 
+* confidence { cv Mat src = img c v 
+M a t R e p r e s e 
+n t a t i o n G r a 
+y int label self _ faceClassifier predict src label * 
+confidence return _ labelsArray label } 请注意 我们 要 使用 
+一个 类别 方法 把   UIImage   转化 为   
+cv Mat 此 转换 本身 倒是 相当 简单 直接 使用 
+C G B i t m a p C o 
+n t e x t C r e a t 
+e   创建 一个 指向   cv Image   中的 
+  data   指针 所 指向 的 数据 的   
+CGContextRef 当 我们 在 此 图形 上下文 中 绘制 此 
+  UIImage   的 时候 cv Image   的   
+data   指针 所指 就是 所 需要 的 数据 更 
+有趣 的 是 我们 能对/nr 一个 Objective C 类 创建 
+一个 Objective C + + 的 类别 并且 确实 管用 
+另外 OpenCV 的 人脸 识别 器 仅 支持 整数 标签 
+但是 我们 想 使用 人 的 名字 作 标签 所以 
+我们 得 通过 一个   NSArray   属性 来 对 
+二者 实现 简单 的 转换 一旦 识别器 给 了 我们 
+一个 识别 出来 的 标签 我们 把 此 标签 给用户 
+看 这时候 就 需要 用户 给 识别器 一个 反馈 用户 
+可以 选择 是的 识别 正确 也 可以 选择 不 这是 
+Y 不是 X 在 这 两种 情况 下 我们/r 都/d 
+可以/c 通过/p 人脸/n 图像/n 和/c 正确/ad 的/uj 标签/n 来/v 更新/d 
+LBPH 模型 以 提高 未来 识别 的 性能 使用 用户 
+的 反馈 来 更新 人脸 识别 器 的 方式 如下 
+void updateWithFace UIImage * img name NSString * name { 
+cv Mat src = img c v M a t 
+R e p r e s e n t a 
+t i o n G r a y NSInteger label 
+= _ labelsArray indexOfObject name if label = = NSNotFound 
+{ _ labelsArray addObject name label = _ labelsArray indexOfObject 
+name } vector cv Mat images = vector cv Mat 
+images . push _ back src vector int labels = 
+vector int labels . push _ back int label self 
+_ faceClassifier update images labels } 这里 我们 又 做了 
+一次 了 从 /nr UIImage   到   cv Mat int 
+  到   NSString   标签 的 转换 我们 还得 
+如 OpenCV 的 FaceRecognizer update   API 所 期望 的 
+那样 把 我们 的 参数 放到   std vector   
+实例 中去 如此 预测 获得 反馈 更新 循环 就是 文献 
+上 所说 的 监督 式 学习 结论 OpenCV 是 一个 
+强大 而 用途 广泛 的 库 覆盖 了 很多 现如今 
+仍在 活跃 的 研究 领域 想在 一篇 文章 中 给出 
+详细 的 使用 说明 只会 是 让人 徒劳 的 事情 
+因此 本文 仅 意 在从 较高 层次 对 OpenCV 库 
+做 一个 概述 同时 还 试图 就 如何 集成 OpenCV 
+库 到 你 的 iOS 工程 中 给出 一些 实用 
+建议 并 通过 一个 人脸 识别 的 例子 来向 你 
+展示 如何 在 一个 真正 的 项目 中 使用 OpenCV 
+如果 你 觉得 OpenCV 对 你 的 项目 有用 OpenCV 
+的 官方 文档 写得 非常好 非常 详细 请 继续 前行 
+创造出 下 一个 伟大 的 app 这里 是 识别 而 
+不是 人脸 检测 检测 部分 前面 我 已经 说过 是 
+一种 基于 adaboost 的 级联 决策 算法 能够 高 精度 
+的 检测 出 人脸 所在 的 区域 前面 我们 转载 
+了 几篇 人脸识别 网上 的 资源 大家 可能 知道 如何 
+在 OpenCV 中 使用 人脸识别 这个 库 但是 对于 其中 
+算法 的 深层 含义 还 远 没有 彻底 弄懂 所以 
+我 通过 一篇 论文 的 阅读 基于 LBP 和 Fisher 
+face 的 人脸 算法 研究 讲解 现在 人脸识别 算法 的 
+具体 含义 CV _ EXPORTS _ W Ptr FaceRecognizer * 
+* c r e a t e E i g 
+e n F a c e R e c o 
+g n i z e r * * int num 
+_ components = 0 double threshold = DBL _ MAX 
+CV _ EXPORTS _ W Ptr FaceRecognizer * * c 
+r e a t e F i s h e 
+r F a c e R e c o g 
+n i z e r * * int num _ 
+components = 0 double threshold = DBL _ MAX CV 
+_ EXPORTS _ W Ptr FaceRecognizer * * c r 
+e a t e L B P H F a 
+c e R e c o g n i z 
+e r * * int radius = 1 int neighbors 
+= 8 int grid _ x = 8 int grid 
+_ y = 8 double threshold = DBL _ MAX 
+12341234OpenCV 中 比较 好 认识 的 就是 基于 LBP 算子 
+的 人脸 识别 算法 我们 首先 讲解 这个 算子 的 
+过程 还是 先 看下 OpenCV 下 的 结果 我们 使用 
+的 是 ORL 人脸 数据库 每个人 有 10张 包含 了 
+40 个人 vector Mat images vector int labels / / 
+images for first person images . push _ back imread 
+ORL \ \ s1 \ \ 1 . bmp CV 
+_ LOAD _ IMAGE _ GRAYSCALE labels . push _ 
+back 1 images . push _ back imread ORL \ 
+\ s1 \ \ 2 . bmp CV _ LOAD 
+_ IMAGE _ GRAYSCALE labels . push _ back 1 
+images . push _ back imread ORL \ \ s1 
+\ \ 3 . bmp CV _ LOAD _ IMAGE 
+_ GRAYSCALE labels . push _ back 1 images . 
+push _ back imread ORL \ \ s1 \ \ 
+4 . bmp CV _ LOAD _ IMAGE _ GRAYSCALE 
+labels . push _ back 1 images . push _ 
+back imread ORL \ \ s1 \ \ 5 . 
+bmp CV _ LOAD _ IMAGE _ GRAYSCALE labels . 
+push _ back 1 images . push _ back imread 
+ORL \ \ s1 \ \ 6 . bmp CV 
+_ LOAD _ IMAGE _ GRAYSCALE labels . push _ 
+back 1 images . push _ back imread ORL \ 
+\ s1 \ \ 7 . bmp CV _ LOAD 
+_ IMAGE _ GRAYSCALE labels . push _ back 1 
+images . push _ back imread ORL \ \ s1 
+\ \ 8 . bmp CV _ LOAD _ IMAGE 
+_ GRAYSCALE labels . push _ back 1 1 2 
+3 4 5 6 7 8 9 1 0 1 
+1 1 2 1 3 1 4 1 5 1 
+6 1 7 1 8 1 9 1 2 3 
+4 5 6 7 8 9 1 0 1 1 
+1 2 1 3 1 4 1 5 1 6 
+1 7 1 8 1 9 这是 第一 个人 的 
+信息 大家 可以 按照 这个 规律 进行 人脸 的 扩展 
+Ptr FaceRecognizer model = c r e a t e 
+E i g e n F a c e R 
+e c o g n i z e r model 
+train images labels Mat img = imread ORL \ \ 
+s1 \ \ 8 . bmp CV _ LOAD _ 
+IMAGE _ GRAYSCALE double confidence int predicted model predict img 
+predicted confidence 1 2 3 4 5 6 7 1 
+2 3 4 5 6 7 c o n f 
+i d e n c e 是 预测 的 置信度 
+可以 在 构造 c r e a t e E 
+i g e n F a c e R e 
+c o g n i z e r 的 时候 
+设置 阈值 参数 如果 超过 了 这个 参数 那么 得到 
+的 结果 就是 1 表示 没有 合适 的 分类 基于 
+LBP 的 人脸 识别 LBP 是 local binary pattern 的 
+简写 局部 二 值 模式 原始 LBP 算子 最初 是 
+在 3 * 3 的 矩形 窗口 上 定义 的 
+以 矩形 窗口 心 中点 的 灰度 值 作为 阈值 
+将 邻 域内 各 像素点 像素 值 与 阈值 进行 
+比较 将 比较 结果 进行 二 值 化 处理 然后 
+各 邻域 像素点 根据 位置 的 不同 进行 加权 求 
+和和 到 该 窗口 中心 的 LBP 值 为了 满足 
+旋转 性 将该 二 值 串 进行 循环 移动 然后 
+使用 权值 加权 – 如下 对 所有 情况 中 选择 
+值 最小 的 作为 这个 点 的 LBP 值 当然 
+后面 提出 了 基于 圆形 的 任意 半径 只是 一个 
+扩展 也 很好 理解 接着 在 圆形 LBP 的 基础 
+上 发现 局部 二 值 模式 在 提取 局部 纹理 
+特征 过程 中 二进制 模式 种类 数 是 对着 采样 
+像素点 的 个数 增加 而 增加 的 比如 3 * 
+3 的 矩形 框 中的 二进制 模式 就有 28 = 
+256种 当 变成 5 * 5 的 时候 二进制 模式 
+的 值 会成 指数 增加 实际上 模式 的 个数 就是 
+对应 了 最终 的 特征 直方图 的 维数 维数 大 
+那么 处理 起来 就 比较 费时 了 为了 解决 这 
+一 问题 Ojala 等人 提出 了 一致性 模式 方法 Uniform 
+Pattern 方法 他们 认为 当 某个 二进制 串 相连成 环状 
+时 如果 二进制 位数 变换 至多 2次 那么 就是 一致性 
+模式 其余 的 则 就 是非 一致性 模式 注意 对于 
+3 × 3 邻 域内 8个 采样 点 来说 二进制 
+模式 由 原始 的 256种 减少 为 58种 即 它 
+把 值 分为 59类 58个 uniform pattern 为 一类 其它 
+的 所有 值 为 第 59类 当 我们 知道 某 
+一个 点 属于 哪个 模式 后 接下来 我们 基于 这些 
+LBP 值 进行 人脸识别 LBP 被 运用 于 计算机 人脸识别 
+领域 时 提取 出来 的 人脸 特征 通常 是以 LBP 
+直方图 向量 进行 表达 的 1 . 对 预处理 后的/nr 
+人脸 图像 进行 分块 2 . 对 分块 后的各/nr 小块 
+图像 区域 进行 LBP 特征提取 变换 3 . 使用 LBP 
+直 返 图 向量 作为 人脸 特征 的 描述 一般 
+分 块数 越多 人脸 表达 的 效果 就 会 越好 
+但是 分块 数 越多 会 直接 导致 特征向量 维数 的 
+增加 会 增加 计算 的 复杂度 对 每个 分块 计算 
+LBP 值 的 直方图 然后 将 所有 分块 直方图 进行 
+连接 得到 最终 的 直方图 特征向量 这个 特征向量 代表 原来 
+的 人脸 图像 可以 用来 描述 整体 图像 对于 这个 
+融合 的 直方图 我们 进行 特征 分类 如果 训练样本 数量 
+越大 分类 的 效果 也 会 越好 在 基于 LBP 
+的 人脸 识别 中 通常 采用 基于 直方图 的 相似性 
+度量 的 最近 邻 分类 方法 来 分类 我们 可以 
+在 OpenCV 源码 中 找到 他 的 实现 sources \ 
+modules \ contrib \ src \ facerec . cpp 函数 
+void LBPH predict InputArray _ src int & minClass double 
+& minDist const11 部分 源码 如下 / / find 1 
+nearest neighbor minDist = DBL _ MAX minClass = 1 
+for size _ t sampleIdx = 0 sampleIdx _ histograms 
+. size sampleIdx + + { double dist = compareHist 
+_ histograms sampleIdx query CV _ COMP _ CHISQR if 
+dist minDist & & dist _ threshold { minDist = 
+dist minClass = _ labels . at int int sampleIdx 
+} } 1 2 3 4 5 6 7 8 
+9 1 0 1 2 3 4 5 6 7 
+8 9 1 0 可以 看出 是 在 所有 图像 
+的 直方图 中 找出 距离 最近 的 作为 返回值 Fisher 
+face 方法 为了 提高 识别 效率 在对 特征向量 进行 降 
+维 的 同时 还 需要 寻求 更 有 利用 分类 
+的 向量 Fisher Fface 方法 是 主 成分 分析 PCA 
+与 Fisher 线性 判别分析 FLD Fisher Linear Discriminant Analysis 相 
+结合 的 算法 算法 首先 对 高维 特征 样本 进行 
+PCA 降 维 投影 到 低维 特征 空间 再 采用 
+LDA 方法 得到 最优 判别 向量 主 成分 分析 方法 
+是 基于 K L 变换 的 基础 上 实现 的 
+K L 变换 首先 利用 样本 的 数据 构建 协方差 
+矩阵 计算出 协方差 矩阵 的 特征值 和 对应 的 特征向量 
+通过 特征向量 来 找出 促使 样本 离散 程度 达到 最大 
+的 特征向量 投影 方法 PCA 方法 的 核心 思想 是 
+首先 将 经过 预处理 后的/nr 人脸 特征 表达 向量 进行 
+K L 变换 以 消除 原有 向量 各个 分量 之间 
+的 相关性 在 K L 变换 过程 中 去掉 了 
+那些 带有 少量 信息 的 分量 特征 空间 的 维数 
+也 相应 降低 了 Turk 和 Pentland 把 PCA 方法 
+引入 到 人脸识别 领域 中 并 取得 了 成功 随 
+后主 成分 分析法 就 成为 了 人脸 识别 的 主要 
+方法 之一 K L 变换 的 核心 问题 的 方法 
+是 计算 出 协方差 矩阵 的 特征值 和 特征向量 待 
+测 样本 的 特征向量 通过 K L 变换 后 去掉 
+了 那些 带有 少量 信息 的 分量 保留 了 带有 
+绝大部分 信息 的 正交 特征向量 因此 K L 变换 具有 
+特征提取 降低 特征向量 维数 的 优点 基于 主 成分 分析 
+的 人脸 识别 算法 思想 如下 假设 参加 训练 的 
+人脸 图像 有N幅/nr 将 每 一幅 图像 转化 为 一维 
+向量 将 m * n 的 矩阵 变成 D = 
+1 * mn 然后 建立 一个 大小 为 D * 
+N 的 所有 图像 的 全 数据 矩阵 按照 上式 
+的 结果 可知 协方差 矩阵 的 大小 为 D * 
+D 对 构造 出来 的 协方差 矩阵 进行 特征值 求解 
+计算出 特征值 对应 的 特征向量 将 特征向量 进行 组合 就是 
+变换 后的新/nr 向量空间 利用 奇异 值 分解 定理 可以 将 
+协方差 矩阵 的 计算 量 进行 简化 就是 先 计算 
+ATA 的 特征值 和 特征向量 然后 通过 变换 关系 导出 
+AAT 的 特征向量 Fisher 线性 判别分析 基本 思想 是 计算 
+出使 Fisher 准则 函数 达到 极值 的 向量 并 将此 
+向量 作为 最佳 投影 方向 样本 在 该 方向 上 
+进行 投影 投 影后 的 特征向量 具有 类 间离 散度 
+最大 类 内 离 散度 最小 特点 将 特征向量 直接 
+将 图像 转换 成1*/nr mn 映 射到 K 个 低维 
+的 向量 上 这 K 个 低维 的 向量 就是 
+判别 向量 然后 判 断离 哪个 类别 最近 就 属于 
+哪 个人 的 人脸 c r e a t e 
+E i g e n F a c e R 
+e c o g n i z e r 使用 
+的 是 将 特征向量 直接 将 图像 转换 成1*/nr mn 
+进行 PCA 降 维 然后 使用 距离 函数 循环 训练 
+的 数据 判断 属于 哪个 类别 一点 背景 知识 OpenCV   是 一个 开源 的 计算机 
+视觉 和 机器学习 库 它 包含 成千上万 优 化过 的 
+算法 为 各种 计算机 视觉 应用 提供 了 一个 通用 
+工具包 根据 这个 项目 的 关于 页面 OpenCV 已被 广泛 
+运用 在 各种 项目 上 从 谷歌 街景 的 图片 
+拼接 到 交互 艺术 展览 的 技术 实现 中 都有 
+OpenCV 的 身影 OpenCV 起始 于 1999 年 Intel 的 
+一个 内部 研究 项目 从那时起 它 的 开发 就 一直 
+很 活跃 进化 到 现在 它 已 支持 如 OpenCL 
+和 OpenGL 等 现代 技术 也 支持 如   iOS 
+  和 /nr Android   等 平台 1999 年 半条命 发布 
+后 大红 大热 Intel 奔腾 3 处理器 是 当时 最 
+高级 的 CPU 400 500 MHZ 的 时钟 频率 已 
+被 认为 是 相当 快 2006 年 OpenCV 1.0 版本 
+发布 的 时候 当时 主流 CPU 的 性能 也 只和 
+iPhone 5 的 A6 处理器 相当 尽管 计算机 视觉 从 
+传统 上 被 认为 是 计算 密集型 应用 但 我们 
+的 移动 设备 性能 已 明显 地 超出 能够 执行 
+有用 的 计算机 视觉 任务 的 阈值 带着 摄像头 的 
+移动 设备 可以 在 计算机 视觉 平台 上 大 有所 
+为 在 本文 中 我会 从 一个 iOS 开发者 的 
+视角 概述 一下 OpenCV 并 介绍 一点 基础 的 类 
+和 概念 随后 会讲 到 如何 集成 OpenCV 到 你 
+的 iOS 项目 中 以及 一些   Objective C + 
++ 基础知识 最后 我们 会 看 一个 demo 项目 看看 
+如何 在 iOS 设备 上 使用 OpenCV 实现 人脸 检测 
+与 人脸识别 OpenCV 概述 概念 OpenCV 的 API 是 C 
++ + 的 它 由 不同 的 模块 组成 这些 
+模块 中 包含 范围 极为 广泛 的 各种 方法 从 
+底层 的 图像 颜色 空间 转换 到 高层 的 机器学习 
+工具 使用 C + + API 并 不是 绝大多数 iOS 
+开发者 每天 都做的/nr 事 你 需要 使用 Objective C + 
++ 文件 来 调用 OpenCV 的 函数 也 就是说 你 
+不能 在   Swift   或者 Objective C 语言 内 
+调用 OpenCV 的 函数 这篇 OpenCV 的   iOS 教程 
+告诉 你 只要 把 所有 用到 OpenCV 的 类 的 
+文件 后缀名 改为   . mm   就行了 包括 视图 
+控制 器类 也是 如此 这么/r 干/v 或许/d 能/v 行得通/n 却 
+不是 什么 好 主意 正确 的 方式 是 给 所有 
+你 要在 app 中 使用 到 的 OpenCV 功 能写 
+一层 Objective C + + 封装 这些 Objective C + 
++ 封装 把 OpenCV 的 C + + API 转化 
+为 安全 的 Objective C API 以 方便 地 在 
+所有 Objective C 类 中 使用 走 封装 的 路子 
+你 的 工程 中 就 可以 只 在 这些 封装 
+中 调用 C + + 代码 从而 避免 掉 很多 
+让 人 头痛 的 问题 比如 直接 改 文件 后缀名 
+会 因为 在 错误 的 文件 中 引用 了 一个 
+C + + 头文件 而 产生 难以 追踪 的 编译 
+错误 OpenCV 声 明了 命名 空间   cv 因此 OpenCV 
+的 类 的 前面 会 有个   cv   前缀 
+就像   cv Mat   cv Algorithm   等等 你 
+也 可以 在   . mm   文件 中 使用 
+  using namespace cv   来 避免 在 一堆 类名 
+前 使用   cv   前缀 但是 在 某些 类名 
+前 你 必须 使用 命名 空间 前缀 比如   cv 
+Rect   和 /nr cv Point 因为 它们 会跟 定义 在 
+  MacTypes . h   中的   Rect   和 /nr 
+Point   相冲突 尽管 这 只是 个人 偏好 问题 我 
+还是 偏向 在 任何 地方 都 使用   cv   
+以 保持 一致性 模块 下面 是 在 官方 文档 中 
+列出 的 最重要 的 模块 core 简洁 的 核心 模块 
+定义 了 基本 的 数据 结构 包括 稠密 多维 数组 
+  Mat   和 其他 模块 需要 的 基本 函数 
+imgproc 图像处理 模块 包括 线性 和 非线性 图像 滤波 几何 
+图像 转换 缩放 仿射 与 透视 变换 一般性 基于 表 
+的 重 映射 颜色 空间 转换 直方图 等等 video 视频 
+分析 模块 包括 运动 估计 背景 消除 物体 跟踪 算法 
+calib3d 包括 基本 的 多视角 几何 算法 单体 和 立体 
+相机 的 标定 对象 姿态 估计 双目 立体匹配 算法 和 
+元素 的 三维重建 features2d 包含 了 显著 特征 检测 算法 
+描述 算子 和 算子 匹配 算法 objdetect 物体 检测 和 
+一些 预 定义 的 物体 的 检测 如 人脸 眼睛 
+杯子 人 汽车 等 ml 多种 机器学习 算法 如 K 
+均值 支持 向量 机 和 神经 网络 highgui 一个 简单易用 
+的 接口 提供 视频 捕捉 图像 和 视频编码 等功能 还有 
+简单 的 UI 接口 iOS 上 可用 的 仅 是 
+其 一个 子集 gpu OpenCV 中 不同 模块 的 GPU 
+加 速算法 iOS 上 不可用 ocl 使用 OpenCL 实现 的 
+通用 算法 iOS 上 不可用 一些 其它 辅助 模块 如 
+Python 绑定 和 用户 贡献 的 算法 基础 类 和 
+操作 OpenCV 包含 几百个 类 为 简便 起见 我们 只看 
+几个 基础 的 类 和 操作 进一步 阅读 请 参考 
+全部 文档 过 一遍 这几个 核心 类 应该 足以 对 
+这个 库 的 机理 产生 一些 感觉 认识 cv Matcv 
+Mat   是 OpenCV 的 核心 数据结构 用来 表示 任意 
+N 维 矩阵 因为 图像 只是 2 维 矩阵 的 
+一个 特殊 场景 所以 也 是 使用   cv Mat 
+  来 表示 的 也 就是说 cv Mat   将 
+是 你 在 OpenCV 中用 到 最多 的 类 一个 
+  cv Mat   实例 的 作用 就 像是 图像 
+数据 的 头 其中 包含 着 描述 图像格式 的 信息 
+图像 数据 只是 被 引用 并能 为 多个   cv 
+Mat   实例 共享 OpenCV 使用 类似 于 ARC 的 
+引用 计数 方法 以 保证 当 最后 一个 来自   
+cv Mat   的 引用 也 消失 的 时候 图像 
+数据 会 被 释放 图像 数据 本身 是 图像 连续 
+的 行 的 数组 对 N 维 矩阵 来说 这个 
+数据 是 由 连续 的 N 1 维 数据 组成 
+的 数组 使用   step   数组 中 包含 的 
+值 图像 的 任一 像素 地址 都可 通过 下面 的 
+指针 运算 得到 uchar * pixelPtr = cvMat . data 
++ rowIndex * cvMat . step 0 + colIndex * 
+cvMat . step 1 每个 像素 的 数据 格式 可以 
+通过   type   方法 获得 除了 常用 的 每 
+通道 8 位 无符号 整数 的 灰度 图 1 通道 
+CV _ 8UC1 和 彩色 图 3 通道 CV _ 
+8UC3 OpenCV 还 支持 很多 不 常用 的 格式 例如 
+  CV _ 16SC3   每 像素 3 通道 每 
+通道 使用 16 位 有 符号 整数 甚至   CV 
+_ 64FC4   每 像素 4 通道 每 通道 使用 
+64 位 浮点数 cv A l g o r i 
+t h m A l g o r i t 
+h m   是 OpenCV 中 实现 的 很多 算法 
+的 抽象 基类 包括 将 在 我们 的 demo 工程 
+中 用到 的   FaceRecognizer 它 提供 的 API 与 
+苹果 的 Core Image 框架 中的   CIFilter   有些 
+相似之处 创建 一个   Algorithm   的 时候 使用 算法 
+的 名字 来 调用   Algorithm create 并且 可以 通过 
+  get   和 /nr set 方法 来 获取 和 设置 
+各个 参数 这 有点 像是 键值 编码 另外 Algorithm/w  /i 
+从/p 底层/n 就/d 支持/v 从/向/nr XML 或 YAML 文件 加载 
+/ 保存 参数 的 功能 在 iOS 上 使用 OpenCV 
+添加 OpenCV 到 你 的 工程 中 集成 OpenCV 到 
+你 的 工程 中 有三种 方法 使用 CocoaPods 就好   
+pod OpenCV 下载 官方   iOS 框架 发 行包 并把 
+它 添加 到 工程 里 从 /nr GitHub   拉下 代码 
+并 根据 教程 自己 编译 OpenCV 库 Objective C + 
++ 如 前面 所说 OpenCV 是 一个 C + + 
+的 API 因此 不能 直接 在 Swift 和 Objective C 
+代码 中 使用 但 能在 Objective C + + 文件 
+中 使用 Objective C + + 是 Objective C 和 
+C + + 的 混合物 让 你 可以 在 Objective 
+C 类 中 使用 C + + 对象 clang 编译器 
+会把 所有 后缀 名为   . mm   的 文件 
+都 当做 是 Objective C + + 一般来说 它 会 
+如 你 所 期望 的 那样 运行 但 还是 有 
+一些 使用 Objective C + + 的 注意 事项 内存管理 
+是 你 最 应该 格外 注意 的 点 因为 ARC 
+只对 Objective C 对象 有效 当 你 使用 一个 C 
++ + 对象 作为 类 属性 的 时候 其 唯一 
+有效 的 属性 就是   assign 因此 你 的   
+dealloc   函数 应 确保 C + + 对象 被 
+正确 地 释放 了 第二 重要 的 点 就是 如果 
+你 在 Objective C + + 头文件 中 引入 了 
+C + + 头文件 当 你 在 工程 中 使用 
+该 Objective C + + 文件 的 时候 就 泄露 
+了 C + + 的 依赖 任何 引入 你 的 
+Objective C + + 类 的 Objective C 类 也会 
+引入 该 C + + 类 因此 该 Objective C 
+文件 也 要被 声 明为 Objective C + + 的 
+文件 这会 像 森林 大火 一样 在 工程 中 迅速 
+蔓延 所以 应该 把 你 引入 C + + 文件 
+的 地方 都用   # ifdef _ _ cplusplus   
+包起来 并且 只要 可能 就 尽量 只在   . mm 
+  实现 文件 中 引入 C + + 头文件 要 
+获得 更多 如何 混用 C + + 和 Objective C 
+的 细节 请 查看   Matt Galloway   写 的 
+这篇 教程 Demo 人脸 检测 与 识别 现在 我们 对 
+OpenCV 及 如何 把 它 集成 到 我们 的 应用 
+中 有了 大概 认识 那让/nr 我们 来 做 一个 小 
+demo 应用 从 iPhone 的 摄像头 获取 视频流 对 它 
+持续 进行 人脸 检测 并在 屏幕 上 标出来 当 用户 
+点击 一个 脸孔 时 应用 会 尝试 识别 这个人 如果 
+识别 结果 正确 用户 必须 点击 Correct 如果 识别 错误 
+用户 必须 选择 正确 的 人名 来 纠正 错误 我们 
+的 人脸 识别 器 就会 从 错误 中 学习 变得 
+越来越 好 本 demo 应用 的 源码 可从   GitHub 
+  获得 视频 拍摄 OpenCV 的 highgui 模块 中 有个 
+类 CvVideoCamera 它 把 iPhone 的 摄像机 抽象 出来 让 
+我们 的 app 通过 一个 代理 函数   void processImage 
+cv Mat & image   来 获得 视频流 CvVideoCamera   
+实例 可 像 下面 这样 进行 设置 CvVideoCamera * videoCamera 
+= CvVideoCamera alloc i n i t W i t 
+h P a r e n t V i e 
+w view videoCamera . d e f a u l 
+t A V C a p t u r e 
+D e v i c e P o s i 
+t i o n = A V C a p 
+t u r e D e v i c e 
+P o s i t i o n F r 
+o n t videoCamera . d e f a u 
+l t A V C a p t u r 
+e e s s i o n P r e 
+s e t = A V C a p t 
+u r e e s s i o n P 
+r e s e t 6 4 0 x 4 
+8 0 videoCamera . d e f a u l 
+t A V C a p t u r e 
+V i d e o O r i e n 
+t a t i o n = A V C 
+a p t u r e V i d e 
+o O r i e n t a t i 
+o n P o r t r a i t 
+videoCamera . defaultFPS = 30 videoCamera . grayscaleMode = NO 
+videoCamera . delegate = self 摄像头 的 帧率 被 设置 
+为 30 帧 每秒 我们 实现 的   processImage   
+函数 将 每秒 被 调用 30 次 因为 我们 的 
+app 要 持续 不断 地 检测 人脸 所以 我们 应该 
+在 这个 函数 里 实现 人脸 的 检测 要 注意 
+的 是 如果 对 某一 帧 进行 人脸 检测 的 
+时间 超过 1/30 秒 就 会 产生 掉 帧 现象 
+人脸 检测 其实 你 并不 需要 使用 OpenCV 来做 人脸 
+检测 因为 Core Image 已经 提供 了   CIDetector   
+类 用 它 来做 人脸 检测 已经 相当 好了 并且 
+它 已经 被 优 化过 使用 起来 也 很容易 CIDetector 
+* faceDetector = CIDetector detectorOfType C I D e t 
+e c t o r T y p e F 
+a c e context context options @ { C I 
+D e t e c t o r A c 
+c u r a c y C I D e 
+t e c t o r A c c u 
+r a c y H i g h } NSArray 
+* faces = faceDetector featuresInImage image 从该/nr 图片 中 检测 
+到 的 每一张 面孔 都在 数组   faces   中 
+保存 着 一个   CIFaceFeature   实例 这个 实例 中 
+保存 着 这张 面孔 的 所处 的 位置 和宽高/nr 除此之外 
+眼睛 和嘴的/nr 位置 也是 可选 的 另一方面 OpenCV 也 提供 
+了 一套 物体 检测 功能 经过 训练 后 能够 检测 
+出 任何 你 需要 的 物体 该 库 为 多个 
+场景 自带 了 可以 直接 拿来 用 的 检测 参数 
+如 人脸 眼睛 嘴 身体 上半身 下半身 和 笑脸 检测 
+引擎 由 一些 非常 简单 的 检测器 的 级联 组成 
+这些 检测器 被称为 Haar 特征 检测器 它们 各自 具有 不同 
+的 尺度 和 权重 在 训练 阶段 决策树 会 通过 
+已知 的 正确 和 错误 的 图片 进行 优化 关于 
+训练 与 检测 过程 的 详情 可 参考 此 原始 
+论文 当 正确 的 特征 级联 及其 尺度 与 权重 
+通过训练 确立 以后 这些 参数 就 可被 加载 并 初始化 
+级联 分类器 了 / / 正面 人脸 检测器 训练 参数 
+的 文件 路径 NSString * faceCascadePath = NSBundle mainBundle pathForResource 
+@ haarcascade _ frontalface _ alt2 ofType @ xml const 
+CFIndex CASCADE _ NAME _ LEN = 2048 char * 
+CASCADE _ NAME = char * malloc CASCADE _ NAME 
+_ LEN C F t r i n g G 
+e t F i l e y s t e 
+m R e p r e s e n t 
+a t i o n CFStringRef faceCascadePath CASCADE _ NAME 
+CASCADE _ NAME _ LEN C a s c a 
+d e C l a s s i f i 
+e r faceDetector faceDetector . load CASCADE _ NAME 这些 
+参数 文件 可在 OpenCV 发行 包里 的   data / 
+haarcascades   文件夹 中找到 在 使用 所 需要 的 参数 
+对 人脸 检测器 进行 初始化 后 就 可以 用 它 
+进行 人脸 检测 了 cv Mat img vector cv Rect 
+faceRects double scalingFactor = 1.1 int minNeighbors = 2 int 
+flags = 0 cv Size minimumSize 30 30 faceDetector . 
+detectMultiScale img faceRects scalingFactor minNeighbors flags cv Size 30 30 
+检测 过程 中 已 训 练好 的 分类器 会用 不同 
+的 尺度 遍历 输入 图像 的 每一个 像素 以 检测 
+不同 大小 的 人脸 参数 scalingFactor   决定 每次 遍历 
+分类器 后 尺度 会 变大 多少倍 参数   minNeighbors   
+指定 一个 符合 条件 的 人脸 区域 应该 有 多少 
+个 符合 条件 的 邻居 像素 才被 认为 是 一个 
+可能 的 人脸 区域 如果 一个 符合 条件 的 人脸 
+区域 只 移动 了 一个 像素 就 不再 触发 分类器 
+那么 这个 区域 非常 可能 并 不是 我们 想要 的 
+结果 拥有 少于   minNeighbors   个 符合 条件 的 
+邻居 像素 的 人脸 区域 会 被 拒绝 掉 如果 
+  minNeighbors   被 设置 为 0 所有 可能 的 
+人脸 区域 都 会被 返回 回来 参数   flags   
+是 OpenCV 1 . x 版本 API 的 遗留物 应该 
+始终 把 它 设置 为 0 最后 参数   minimumSize 
+  指定 我们 所 寻找 的 人脸 区域 大小 的 
+最小值 faceRects   向量 中将 会 包含 对   img 
+  进行 人脸识别 获得 的 所有 人脸 区域 识别 的 
+人脸 图像 可以 通过   cv Mat   的   
+运算符 提取 出来 调用 方式 很 简单 cv Mat faceImg 
+= img aFaceRect 不管 是 使用   CIDetector   还是 
+OpenCV 的   C a s c a d e 
+C l a s s i f i e r 
+只要 我们 获得 了 至少 一个 人脸 区域 我们 就 
+可以 对 图像 中的 人 进行 识别 了 人脸识别 OpenCV 
+自 带了 三个 人脸识别 算法 Eigenfaces Fisherfaces 和 局部 二 
+值 模式 直方图 LBPH 如果 你 想 知道 它们 的 
+工作 原理 及 相互 之间 的 区别 请 阅读 OpenCV 
+的 详细 文档 针对 于 我们 的 demo app 我们 
+将 采用 LBPH 算法 因为 它 会 根据 用户 的 
+输入 自动更新 而 不 需要 在 每 添加 一个人 或 
+纠正 一次 出错 的 判断 的 时候 都要/nr 重新 进行 
+一次 彻底 的 训练 要 使用 LBPH 识别器 我们 也 
+用 Objective C + + 把 它 封装 起来 这个 
+封装 中 暴露 以下 函数 + FJFaceRecognizer * f a 
+c e R e c o g n i z 
+e r W i t h F i l e 
+NSString * path NSString * predict UIImage * img confidence 
+double * confidence void updateWithFace UIImage * img name NSString 
+* name 像 下面 这样 用 工厂 方法来 创建 一个 
+LBPH 实例 + FJFaceRecognizer * f a c e R 
+e c o g n i z e r W 
+i t h F i l e NSString * path 
+{ FJFaceRecognizer * fr = FJFaceRecognizer new fr _ faceClassifier 
+= c r e a t e L B P 
+H F a c e R e c o g 
+n i z e r fr _ faceClassifier load path 
+. UTF8String return fr } 预测 函数 可以 像 下面 
+这样 实现 NSString * predict UIImage * img confidence double 
+* confidence { cv Mat src = img c v 
+M a t R e p r e s e 
+n t a t i o n G r a 
+y int label self _ faceClassifier predict src label * 
+confidence return _ labelsArray label } 请注意 我们 要 使用 
+一个 类别 方法 把   UIImage   转化 为   
+cv Mat 此 转换 本身 倒是 相当 简单 直接 使用 
+C G B i t m a p C o 
+n t e x t C r e a t 
+e   创建 一个 指向   cv Image   中的 
+  data   指针 所 指向 的 数据 的   
+CGContextRef 当 我们 在 此 图形 上下文 中 绘制 此 
+  UIImage   的 时候 cv Image   的   
+data   指针 所指 就是 所 需要 的 数据 更 
+有趣 的 是 我们 能对/nr 一个 Objective C 类 创建 
+一个 Objective C + + 的 类别 并且 确实 管用 
+另外 OpenCV 的 人脸 识别 器 仅 支持 整数 标签 
+但是 我们 想 使用 人 的 名字 作 标签 所以 
+我们 得 通过 一个   NSArray   属性 来 对 
+二者 实现 简单 的 转换 一旦 识别器 给 了 我们 
+一个 识别 出来 的 标签 我们 把 此 标签 给用户 
+看 这时候 就 需要 用户 给 识别器 一个 反馈 用户 
+可以 选择 是的 识别 正确 也 可以 选择 不 这是 
+Y 不是 X 在 这 两种 情况 下 我们/r 都/d 
+可以/c 通过/p 人脸/n 图像/n 和/c 正确/ad 的/uj 标签/n 来/v 更新/d 
+LBPH 模型 以 提高 未来 识别 的 性能 使用 用户 
+的 反馈 来 更新 人脸 识别 器 的 方式 如下 
+void updateWithFace UIImage * img name NSString * name { 
+cv Mat src = img c v M a t 
+R e p r e s e n t a 
+t i o n G r a y NSInteger label 
+= _ labelsArray indexOfObject name if label = = NSNotFound 
+{ _ labelsArray addObject name label = _ labelsArray indexOfObject 
+name } vector cv Mat images = vector cv Mat 
+images . push _ back src vector int labels = 
+vector int labels . push _ back int label self 
+_ faceClassifier update images labels } 这里 我们 又 做了 
+一次 了 从 /nr UIImage   到   cv Mat int 
+  到   NSString   标签 的 转换 我们 还得 
+如 OpenCV 的 FaceRecognizer update   API 所 期望 的 
+那样 把 我们 的 参数 放到   std vector   
+实例 中去 如此 预测 获得 反馈 更新 循环 就是 文献 
+上 所说 的 监督 式 学习 结论 OpenCV 是 一个 
+强大 而 用途 广泛 的 库 覆盖 了 很多 现如今 
+仍在 活跃 的 研究 领域 想在 一篇 文章 中 给出 
+详细 的 使用 说明 只会 是 让人 徒劳 的 事情 
+因此 本文 仅 意 在从 较高 层次 对 OpenCV 库 
+做 一个 概述 同时 还 试图 就 如何 集成 OpenCV 
+库 到 你 的 iOS 工程 中 给出 一些 实用 
+建议 并 通过 一个 人脸 识别 的 例子 来向 你 
+展示 如何 在 一个 真正 的 项目 中 使用 OpenCV 
+如果 你 觉得 OpenCV 对 你 的 项目 有用 OpenCV 
+的 官方 文档 写得 非常好 非常 详细 请 继续 前行 
+创造出 下 一个 伟大 的 app 这里 是 识别 而 
+不是 人脸 检测 检测 部分 前面 我 已经 说过 是 
+一种 基于 adaboost 的 级联 决策 算法 能够 高 精度 
+的 检测 出 人脸 所在 的 区域 前面 我们 转载 
+了 几篇 人脸识别 网上 的 资源 大家 可能 知道 如何 
+在 OpenCV 中 使用 人脸识别 这个 库 但是 对于 其中 
+算法 的 深层 含义 还 远 没有 彻底 弄懂 所以 
+我 通过 一篇 论文 的 阅读 基于 LBP 和 Fisher 
+face 的 人脸 算法 研究 讲解 现在 人脸识别 算法 的 
+具体 含义 CV _ EXPORTS _ W Ptr FaceRecognizer * 
+* c r e a t e E i g 
+e n F a c e R e c o 
+g n i z e r * * int num 
+_ components = 0 double threshold = DBL _ MAX 
+CV _ EXPORTS _ W Ptr FaceRecognizer * * c 
+r e a t e F i s h e 
+r F a c e R e c o g 
+n i z e r * * int num _ 
+components = 0 double threshold = DBL _ MAX CV 
+_ EXPORTS _ W Ptr FaceRecognizer * * c r 
+e a t e L B P H F a 
+c e R e c o g n i z 
+e r * * int radius = 1 int neighbors 
+= 8 int grid _ x = 8 int grid 
+_ y = 8 double threshold = DBL _ MAX 
+12341234OpenCV 中 比较 好 认识 的 就是 基于 LBP 算子 
+的 人脸 识别 算法 我们 首先 讲解 这个 算子 的 
+过程 还是 先 看下 OpenCV 下 的 结果 我们 使用 
+的 是 ORL 人脸 数据库 每个人 有 10张 包含 了 
+40 个人 vector Mat images vector int labels / / 
+images for first person images . push _ back imread 
+ORL \ \ s1 \ \ 1 . bmp CV 
+_ LOAD _ IMAGE _ GRAYSCALE labels . push _ 
+back 1 images . push _ back imread ORL \ 
+\ s1 \ \ 2 . bmp CV _ LOAD 
+_ IMAGE _ GRAYSCALE labels . push _ back 1 
+images . push _ back imread ORL \ \ s1 
+\ \ 3 . bmp CV _ LOAD _ IMAGE 
+_ GRAYSCALE labels . push _ back 1 images . 
+push _ back imread ORL \ \ s1 \ \ 
+4 . bmp CV _ LOAD _ IMAGE _ GRAYSCALE 
+labels . push _ back 1 images . push _ 
+back imread ORL \ \ s1 \ \ 5 . 
+bmp CV _ LOAD _ IMAGE _ GRAYSCALE labels . 
+push _ back 1 images . push _ back imread 
+ORL \ \ s1 \ \ 6 . bmp CV 
+_ LOAD _ IMAGE _ GRAYSCALE labels . push _ 
+back 1 images . push _ back imread ORL \ 
+\ s1 \ \ 7 . bmp CV _ LOAD 
+_ IMAGE _ GRAYSCALE labels . push _ back 1 
+images . push _ back imread ORL \ \ s1 
+\ \ 8 . bmp CV _ LOAD _ IMAGE 
+_ GRAYSCALE labels . push _ back 1 1 2 
+3 4 5 6 7 8 9 1 0 1 
+1 1 2 1 3 1 4 1 5 1 
+6 1 7 1 8 1 9 1 2 3 
+4 5 6 7 8 9 1 0 1 1 
+1 2 1 3 1 4 1 5 1 6 
+1 7 1 8 1 9 这是 第一 个人 的 
+信息 大家 可以 按照 这个 规律 进行 人脸 的 扩展 
+Ptr FaceRecognizer model = c r e a t e 
+E i g e n F a c e R 
+e c o g n i z e r model 
+train images labels Mat img = imread ORL \ \ 
+s1 \ \ 8 . bmp CV _ LOAD _ 
+IMAGE _ GRAYSCALE double confidence int predicted model predict img 
+predicted confidence 1 2 3 4 5 6 7 1 
+2 3 4 5 6 7 c o n f 
+i d e n c e 是 预测 的 置信度 
+可以 在 构造 c r e a t e E 
+i g e n F a c e R e 
+c o g n i z e r 的 时候 
+设置 阈值 参数 如果 超过 了 这个 参数 那么 得到 
+的 结果 就是 1 表示 没有 合适 的 分类 基于 
+LBP 的 人脸 识别 LBP 是 local binary pattern 的 
+简写 局部 二 值 模式 原始 LBP 算子 最初 是 
+在 3 * 3 的 矩形 窗口 上 定义 的 
+以 矩形 窗口 心 中点 的 灰度 值 作为 阈值 
+将 邻 域内 各 像素点 像素 值 与 阈值 进行 
+比较 将 比较 结果 进行 二 值 化 处理 然后 
+各 邻域 像素点 根据 位置 的 不同 进行 加权 求 
+和和 到 该 窗口 中心 的 LBP 值 为了 满足 
+旋转 性 将该 二 值 串 进行 循环 移动 然后 
+使用 权值 加权 – 如下 对 所有 情况 中 选择 
+值 最小 的 作为 这个 点 的 LBP 值 当然 
+后面 提出 了 基于 圆形 的 任意 半径 只是 一个 
+扩展 也 很好 理解 接着 在 圆形 LBP 的 基础 
+上 发现 局部 二 值 模式 在 提取 局部 纹理 
+特征 过程 中 二进制 模式 种类 数 是 对着 采样 
+像素点 的 个数 增加 而 增加 的 比如 3 * 
+3 的 矩形 框 中的 二进制 模式 就有 28 = 
+256种 当 变成 5 * 5 的 时候 二进制 模式 
+的 值 会成 指数 增加 实际上 模式 的 个数 就是 
+对应 了 最终 的 特征 直方图 的 维数 维数 大 
+那么 处理 起来 就 比较 费时 了 为了 解决 这 
+一 问题 Ojala 等人 提出 了 一致性 模式 方法 Uniform 
+Pattern 方法 他们 认为 当 某个 二进制 串 相连成 环状 
+时 如果 二进制 位数 变换 至多 2次 那么 就是 一致性 
+模式 其余 的 则 就 是非 一致性 模式 注意 对于 
+3 × 3 邻 域内 8个 采样 点 来说 二进制 
+模式 由 原始 的 256种 减少 为 58种 即 它 
+把 值 分为 59类 58个 uniform pattern 为 一类 其它 
+的 所有 值 为 第 59类 当 我们 知道 某 
+一个 点 属于 哪个 模式 后 接下来 我们 基于 这些 
+LBP 值 进行 人脸识别 LBP 被 运用 于 计算机 人脸识别 
+领域 时 提取 出来 的 人脸 特征 通常 是以 LBP 
+直方图 向量 进行 表达 的 1 . 对 预处理 后的/nr 
+人脸 图像 进行 分块 2 . 对 分块 后的各/nr 小块 
+图像 区域 进行 LBP 特征提取 变换 3 . 使用 LBP 
+直 返 图 向量 作为 人脸 特征 的 描述 一般 
+分 块数 越多 人脸 表达 的 效果 就 会 越好 
+但是 分块 数 越多 会 直接 导致 特征向量 维数 的 
+增加 会 增加 计算 的 复杂度 对 每个 分块 计算 
+LBP 值 的 直方图 然后 将 所有 分块 直方图 进行 
+连接 得到 最终 的 直方图 特征向量 这个 特征向量 代表 原来 
+的 人脸 图像 可以 用来 描述 整体 图像 对于 这个 
+融合 的 直方图 我们 进行 特征 分类 如果 训练样本 数量 
+越大 分类 的 效果 也 会 越好 在 基于 LBP 
+的 人脸 识别 中 通常 采用 基于 直方图 的 相似性 
+度量 的 最近 邻 分类 方法 来 分类 我们 可以 
+在 OpenCV 源码 中 找到 他 的 实现 sources \ 
+modules \ contrib \ src \ facerec . cpp 函数 
+void LBPH predict InputArray _ src int & minClass double 
+& minDist const11 部分 源码 如下 / / find 1 
+nearest neighbor minDist = DBL _ MAX minClass = 1 
+for size _ t sampleIdx = 0 sampleIdx _ histograms 
+. size sampleIdx + + { double dist = compareHist 
+_ histograms sampleIdx query CV _ COMP _ CHISQR if 
+dist minDist & & dist _ threshold { minDist = 
+dist minClass = _ labels . at int int sampleIdx 
+} } 1 2 3 4 5 6 7 8 
+9 1 0 1 2 3 4 5 6 7 
+8 9 1 0 可以 看出 是 在 所有 图像 
+的 直方图 中 找出 距离 最近 的 作为 返回值 Fisher 
+face 方法 为了 提高 识别 效率 在对 特征向量 进行 降 
+维 的 同时 还 需要 寻求 更 有 利用 分类 
+的 向量 Fisher Fface 方法 是 主 成分 分析 PCA 
+与 Fisher 线性 判别分析 FLD Fisher Linear Discriminant Analysis 相 
+结合 的 算法 算法 首先 对 高维 特征 样本 进行 
+PCA 降 维 投影 到 低维 特征 空间 再 采用 
+LDA 方法 得到 最优 判别 向量 主 成分 分析 方法 
+是 基于 K L 变换 的 基础 上 实现 的 
+K L 变换 首先 利用 样本 的 数据 构建 协方差 
+矩阵 计算出 协方差 矩阵 的 特征值 和 对应 的 特征向量 
+通过 特征向量 来 找出 促使 样本 离散 程度 达到 最大 
+的 特征向量 投影 方法 PCA 方法 的 核心 思想 是 
+首先 将 经过 预处理 后的/nr 人脸 特征 表达 向量 进行 
+K L 变换 以 消除 原有 向量 各个 分量 之间 
+的 相关性 在 K L 变换 过程 中 去掉 了 
+那些 带有 少量 信息 的 分量 特征 空间 的 维数 
+也 相应 降低 了 Turk 和 Pentland 把 PCA 方法 
+引入 到 人脸识别 领域 中 并 取得 了 成功 随 
+后主 成分 分析法 就 成为 了 人脸 识别 的 主要 
+方法 之一 K L 变换 的 核心 问题 的 方法 
+是 计算 出 协方差 矩阵 的 特征值 和 特征向量 待 
+测 样本 的 特征向量 通过 K L 变换 后 去掉 
+了 那些 带有 少量 信息 的 分量 保留 了 带有 
+绝大部分 信息 的 正交 特征向量 因此 K L 变换 具有 
+特征提取 降低 特征向量 维数 的 优点 基于 主 成分 分析 
+的 人脸 识别 算法 思想 如下 假设 参加 训练 的 
+人脸 图像 有N幅/nr 将 每 一幅 图像 转化 为 一维 
+向量 将 m * n 的 矩阵 变成 D = 
+1 * mn 然后 建立 一个 大小 为 D * 
+N 的 所有 图像 的 全 数据 矩阵 按照 上式 
+的 结果 可知 协方差 矩阵 的 大小 为 D * 
+D 对 构造 出来 的 协方差 矩阵 进行 特征值 求解 
+计算出 特征值 对应 的 特征向量 将 特征向量 进行 组合 就是 
+变换 后的新/nr 向量空间 利用 奇异 值 分解 定理 可以 将 
+协方差 矩阵 的 计算 量 进行 简化 就是 先 计算 
+ATA 的 特征值 和 特征向量 然后 通过 变换 关系 导出 
+AAT 的 特征向量 Fisher 线性 判别分析 基本 思想 是 计算 
+出使 Fisher 准则 函数 达到 极值 的 向量 并 将此 
+向量 作为 最佳 投影 方向 样本 在 该 方向 上 
+进行 投影 投 影后 的 特征向量 具有 类 间离 散度 
+最大 类 内 离 散度 最小 特点 将 特征向量 直接 
+将 图像 转换 成1*/nr mn 映 射到 K 个 低维 
+的 向量 上 这 K 个 低维 的 向量 就是 
+判别 向量 然后 判 断离 哪个 类别 最近 就 属于 
+哪 个人 的 人脸 c r e a t e 
+E i g e n F a c e R 
+e c o g n i z e r 使用 
+的 是 将 特征向量 直接 将 图像 转换 成1*/nr mn 
+进行 PCA 降 维 然后 使用 距离 函数 循环 训练 
+的 数据 判断 属于 哪个 类别 一点 背景 知识 OpenCV   是 一个 开源 的 计算机 
+视觉 和 机器学习 库 它 包含 成千上万 优 化过 的 
+算法 为 各种 计算机 视觉 应用 提供 了 一个 通用 
+工具包 根据 这个 项目 的 关于 页面 OpenCV 已被 广泛 
+运用 在 各种 项目 上 从 谷歌 街景 的 图片 
+拼接 到 交互 艺术 展览 的 技术 实现 中 都有 
+OpenCV 的 身影 OpenCV 起始 于 1999 年 Intel 的 
+一个 内部 研究 项目 从那时起 它 的 开发 就 一直 
+很 活跃 进化 到 现在 它 已 支持 如 OpenCL 
+和 OpenGL 等 现代 技术 也 支持 如   iOS 
+  和 /nr Android   等 平台 1999 年 半条命 发布 
+后 大红 大热 Intel 奔腾 3 处理器 是 当时 最 
+高级 的 CPU 400 500 MHZ 的 时钟 频率 已 
+被 认为 是 相当 快 2006 年 OpenCV 1.0 版本 
+发布 的 时候 当时 主流 CPU 的 性能 也 只和 
+iPhone 5 的 A6 处理器 相当 尽管 计算机 视觉 从 
+传统 上 被 认为 是 计算 密集型 应用 但 我们 
+的 移动 设备 性能 已 明显 地 超出 能够 执行 
+有用 的 计算机 视觉 任务 的 阈值 带着 摄像头 的 
+移动 设备 可以 在 计算机 视觉 平台 上 大 有所 
+为 在 本文 中 我会 从 一个 iOS 开发者 的 
+视角 概述 一下 OpenCV 并 介绍 一点 基础 的 类 
+和 概念 随后 会讲 到 如何 集成 OpenCV 到 你 
+的 iOS 项目 中 以及 一些   Objective C + 
++ 基础知识 最后 我们 会 看 一个 demo 项目 看看 
+如何 在 iOS 设备 上 使用 OpenCV 实现 人脸 检测 
+与 人脸识别 OpenCV 概述 概念 OpenCV 的 API 是 C 
++ + 的 它 由 不同 的 模块 组成 这些 
+模块 中 包含 范围 极为 广泛 的 各种 方法 从 
+底层 的 图像 颜色 空间 转换 到 高层 的 机器学习 
+工具 使用 C + + API 并 不是 绝大多数 iOS 
+开发者 每天 都做的/nr 事 你 需要 使用 Objective C + 
++ 文件 来 调用 OpenCV 的 函数 也 就是说 你 
+不能 在   Swift   或者 Objective C 语言 内 
+调用 OpenCV 的 函数 这篇 OpenCV 的   iOS 教程 
+告诉 你 只要 把 所有 用到 OpenCV 的 类 的 
+文件 后缀名 改为   . mm   就行了 包括 视图 
+控制 器类 也是 如此 这么/r 干/v 或许/d 能/v 行得通/n 却 
+不是 什么 好 主意 正确 的 方式 是 给 所有 
+你 要在 app 中 使用 到 的 OpenCV 功 能写 
+一层 Objective C + + 封装 这些 Objective C + 
++ 封装 把 OpenCV 的 C + + API 转化 
+为 安全 的 Objective C API 以 方便 地 在 
+所有 Objective C 类 中 使用 走 封装 的 路子 
+你 的 工程 中 就 可以 只 在 这些 封装 
+中 调用 C + + 代码 从而 避免 掉 很多 
+让 人 头痛 的 问题 比如 直接 改 文件 后缀名 
+会 因为 在 错误 的 文件 中 引用 了 一个 
+C + + 头文件 而 产生 难以 追踪 的 编译 
+错误 OpenCV 声 明了 命名 空间   cv 因此 OpenCV 
+的 类 的 前面 会 有个   cv   前缀 
+就像   cv Mat   cv Algorithm   等等 你 
+也 可以 在   . mm   文件 中 使用 
+  using namespace cv   来 避免 在 一堆 类名 
+前 使用   cv   前缀 但是 在 某些 类名 
+前 你 必须 使用 命名 空间 前缀 比如   cv 
+Rect   和 /nr cv Point 因为 它们 会跟 定义 在 
+  MacTypes . h   中的   Rect   和 /nr 
+Point   相冲突 尽管 这 只是 个人 偏好 问题 我 
+还是 偏向 在 任何 地方 都 使用   cv   
+以 保持 一致性 模块 下面 是 在 官方 文档 中 
+列出 的 最重要 的 模块 core 简洁 的 核心 模块 
+定义 了 基本 的 数据 结构 包括 稠密 多维 数组 
+  Mat   和 其他 模块 需要 的 基本 函数 
+imgproc 图像处理 模块 包括 线性 和 非线性 图像 滤波 几何 
+图像 转换 缩放 仿射 与 透视 变换 一般性 基于 表 
+的 重 映射 颜色 空间 转换 直方图 等等 video 视频 
+分析 模块 包括 运动 估计 背景 消除 物体 跟踪 算法 
+calib3d 包括 基本 的 多视角 几何 算法 单体 和 立体 
+相机 的 标定 对象 姿态 估计 双目 立体匹配 算法 和 
+元素 的 三维重建 features2d 包含 了 显著 特征 检测 算法 
+描述 算子 和 算子 匹配 算法 objdetect 物体 检测 和 
+一些 预 定义 的 物体 的 检测 如 人脸 眼睛 
+杯子 人 汽车 等 ml 多种 机器学习 算法 如 K 
+均值 支持 向量 机 和 神经 网络 highgui 一个 简单易用 
+的 接口 提供 视频 捕捉 图像 和 视频编码 等功能 还有 
+简单 的 UI 接口 iOS 上 可用 的 仅 是 
+其 一个 子集 gpu OpenCV 中 不同 模块 的 GPU 
+加 速算法 iOS 上 不可用 ocl 使用 OpenCL 实现 的 
+通用 算法 iOS 上 不可用 一些 其它 辅助 模块 如 
+Python 绑定 和 用户 贡献 的 算法 基础 类 和 
+操作 OpenCV 包含 几百个 类 为 简便 起见 我们 只看 
+几个 基础 的 类 和 操作 进一步 阅读 请 参考 
+全部 文档 过 一遍 这几个 核心 类 应该 足以 对 
+这个 库 的 机理 产生 一些 感觉 认识 cv Matcv 
+Mat   是 OpenCV 的 核心 数据结构 用来 表示 任意 
+N 维 矩阵 因为 图像 只是 2 维 矩阵 的 
+一个 特殊 场景 所以 也 是 使用   cv Mat 
+  来 表示 的 也 就是说 cv Mat   将 
+是 你 在 OpenCV 中用 到 最多 的 类 一个 
+  cv Mat   实例 的 作用 就 像是 图像 
+数据 的 头 其中 包含 着 描述 图像格式 的 信息 
+图像 数据 只是 被 引用 并能 为 多个   cv 
+Mat   实例 共享 OpenCV 使用 类似 于 ARC 的 
+引用 计数 方法 以 保证 当 最后 一个 来自   
+cv Mat   的 引用 也 消失 的 时候 图像 
+数据 会 被 释放 图像 数据 本身 是 图像 连续 
+的 行 的 数组 对 N 维 矩阵 来说 这个 
+数据 是 由 连续 的 N 1 维 数据 组成 
+的 数组 使用   step   数组 中 包含 的 
+值 图像 的 任一 像素 地址 都可 通过 下面 的 
+指针 运算 得到 uchar * pixelPtr = cvMat . data 
++ rowIndex * cvMat . step 0 + colIndex * 
+cvMat . step 1 每个 像素 的 数据 格式 可以 
+通过   type   方法 获得 除了 常用 的 每 
+通道 8 位 无符号 整数 的 灰度 图 1 通道 
+CV _ 8UC1 和 彩色 图 3 通道 CV _ 
+8UC3 OpenCV 还 支持 很多 不 常用 的 格式 例如 
+  CV _ 16SC3   每 像素 3 通道 每 
+通道 使用 16 位 有 符号 整数 甚至   CV 
+_ 64FC4   每 像素 4 通道 每 通道 使用 
+64 位 浮点数 cv A l g o r i 
+t h m A l g o r i t 
+h m   是 OpenCV 中 实现 的 很多 算法 
+的 抽象 基类 包括 将 在 我们 的 demo 工程 
+中 用到 的   FaceRecognizer 它 提供 的 API 与 
+苹果 的 Core Image 框架 中的   CIFilter   有些 
+相似之处 创建 一个   Algorithm   的 时候 使用 算法 
+的 名字 来 调用   Algorithm create 并且 可以 通过 
+  get   和 /nr set 方法 来 获取 和 设置 
+各个 参数 这 有点 像是 键值 编码 另外 Algorithm/w  /i 
+从/p 底层/n 就/d 支持/v 从/向/nr XML 或 YAML 文件 加载 
+/ 保存 参数 的 功能 在 iOS 上 使用 OpenCV 
+添加 OpenCV 到 你 的 工程 中 集成 OpenCV 到 
+你 的 工程 中 有三种 方法 使用 CocoaPods 就好   
+pod OpenCV 下载 官方   iOS 框架 发 行包 并把 
+它 添加 到 工程 里 从 /nr GitHub   拉下 代码 
+并 根据 教程 自己 编译 OpenCV 库 Objective C + 
++ 如 前面 所说 OpenCV 是 一个 C + + 
+的 API 因此 不能 直接 在 Swift 和 Objective C 
+代码 中 使用 但 能在 Objective C + + 文件 
+中 使用 Objective C + + 是 Objective C 和 
+C + + 的 混合物 让 你 可以 在 Objective 
+C 类 中 使用 C + + 对象 clang 编译器 
+会把 所有 后缀 名为   . mm   的 文件 
+都 当做 是 Objective C + + 一般来说 它 会 
+如 你 所 期望 的 那样 运行 但 还是 有 
+一些 使用 Objective C + + 的 注意 事项 内存管理 
+是 你 最 应该 格外 注意 的 点 因为 ARC 
+只对 Objective C 对象 有效 当 你 使用 一个 C 
++ + 对象 作为 类 属性 的 时候 其 唯一 
+有效 的 属性 就是   assign 因此 你 的   
+dealloc   函数 应 确保 C + + 对象 被 
+正确 地 释放 了 第二 重要 的 点 就是 如果 
+你 在 Objective C + + 头文件 中 引入 了 
+C + + 头文件 当 你 在 工程 中 使用 
+该 Objective C + + 文件 的 时候 就 泄露 
+了 C + + 的 依赖 任何 引入 你 的 
+Objective C + + 类 的 Objective C 类 也会 
+引入 该 C + + 类 因此 该 Objective C 
+文件 也 要被 声 明为 Objective C + + 的 
+文件 这会 像 森林 大火 一样 在 工程 中 迅速 
+蔓延 所以 应该 把 你 引入 C + + 文件 
+的 地方 都用   # ifdef _ _ cplusplus   
+包起来 并且 只要 可能 就 尽量 只在   . mm 
+  实现 文件 中 引入 C + + 头文件 要 
+获得 更多 如何 混用 C + + 和 Objective C 
+的 细节 请 查看   Matt Galloway   写 的 
+这篇 教程 Demo 人脸 检测 与 识别 现在 我们 对 
+OpenCV 及 如何 把 它 集成 到 我们 的 应用 
+中 有了 大概 认识 那让/nr 我们 来 做 一个 小 
+demo 应用 从 iPhone 的 摄像头 获取 视频流 对 它 
+持续 进行 人脸 检测 并在 屏幕 上 标出来 当 用户 
+点击 一个 脸孔 时 应用 会 尝试 识别 这个人 如果 
+识别 结果 正确 用户 必须 点击 Correct 如果 识别 错误 
+用户 必须 选择 正确 的 人名 来 纠正 错误 我们 
+的 人脸 识别 器 就会 从 错误 中 学习 变得 
+越来越 好 本 demo 应用 的 源码 可从   GitHub 
+  获得 视频 拍摄 OpenCV 的 highgui 模块 中 有个 
+类 CvVideoCamera 它 把 iPhone 的 摄像机 抽象 出来 让 
+我们 的 app 通过 一个 代理 函数   void processImage 
+cv Mat & image   来 获得 视频流 CvVideoCamera   
+实例 可 像 下面 这样 进行 设置 CvVideoCamera * videoCamera 
+= CvVideoCamera alloc i n i t W i t 
+h P a r e n t V i e 
+w view videoCamera . d e f a u l 
+t A V C a p t u r e 
+D e v i c e P o s i 
+t i o n = A V C a p 
+t u r e D e v i c e 
+P o s i t i o n F r 
+o n t videoCamera . d e f a u 
+l t A V C a p t u r 
+e e s s i o n P r e 
+s e t = A V C a p t 
+u r e e s s i o n P 
+r e s e t 6 4 0 x 4 
+8 0 videoCamera . d e f a u l 
+t A V C a p t u r e 
+V i d e o O r i e n 
+t a t i o n = A V C 
+a p t u r e V i d e 
+o O r i e n t a t i 
+o n P o r t r a i t 
+videoCamera . defaultFPS = 30 videoCamera . grayscaleMode = NO 
+videoCamera . delegate = self 摄像头 的 帧率 被 设置 
+为 30 帧 每秒 我们 实现 的   processImage   
+函数 将 每秒 被 调用 30 次 因为 我们 的 
+app 要 持续 不断 地 检测 人脸 所以 我们 应该 
+在 这个 函数 里 实现 人脸 的 检测 要 注意 
+的 是 如果 对 某一 帧 进行 人脸 检测 的 
+时间 超过 1/30 秒 就 会 产生 掉 帧 现象 
+人脸 检测 其实 你 并不 需要 使用 OpenCV 来做 人脸 
+检测 因为 Core Image 已经 提供 了   CIDetector   
+类 用 它 来做 人脸 检测 已经 相当 好了 并且 
+它 已经 被 优 化过 使用 起来 也 很容易 CIDetector 
+* faceDetector = CIDetector detectorOfType C I D e t 
+e c t o r T y p e F 
+a c e context context options @ { C I 
+D e t e c t o r A c 
+c u r a c y C I D e 
+t e c t o r A c c u 
+r a c y H i g h } NSArray 
+* faces = faceDetector featuresInImage image 从该/nr 图片 中 检测 
+到 的 每一张 面孔 都在 数组   faces   中 
+保存 着 一个   CIFaceFeature   实例 这个 实例 中 
+保存 着 这张 面孔 的 所处 的 位置 和宽高/nr 除此之外 
+眼睛 和嘴的/nr 位置 也是 可选 的 另一方面 OpenCV 也 提供 
+了 一套 物体 检测 功能 经过 训练 后 能够 检测 
+出 任何 你 需要 的 物体 该 库 为 多个 
+场景 自带 了 可以 直接 拿来 用 的 检测 参数 
+如 人脸 眼睛 嘴 身体 上半身 下半身 和 笑脸 检测 
+引擎 由 一些 非常 简单 的 检测器 的 级联 组成 
+这些 检测器 被称为 Haar 特征 检测器 它们 各自 具有 不同 
+的 尺度 和 权重 在 训练 阶段 决策树 会 通过 
+已知 的 正确 和 错误 的 图片 进行 优化 关于 
+训练 与 检测 过程 的 详情 可 参考 此 原始 
+论文 当 正确 的 特征 级联 及其 尺度 与 权重 
+通过训练 确立 以后 这些 参数 就 可被 加载 并 初始化 
+级联 分类器 了 / / 正面 人脸 检测器 训练 参数 
+的 文件 路径 NSString * faceCascadePath = NSBundle mainBundle pathForResource 
+@ haarcascade _ frontalface _ alt2 ofType @ xml const 
+CFIndex CASCADE _ NAME _ LEN = 2048 char * 
+CASCADE _ NAME = char * malloc CASCADE _ NAME 
+_ LEN C F t r i n g G 
+e t F i l e y s t e 
+m R e p r e s e n t 
+a t i o n CFStringRef faceCascadePath CASCADE _ NAME 
+CASCADE _ NAME _ LEN C a s c a 
+d e C l a s s i f i 
+e r faceDetector faceDetector . load CASCADE _ NAME 这些 
+参数 文件 可在 OpenCV 发行 包里 的   data / 
+haarcascades   文件夹 中找到 在 使用 所 需要 的 参数 
+对 人脸 检测器 进行 初始化 后 就 可以 用 它 
+进行 人脸 检测 了 cv Mat img vector cv Rect 
+faceRects double scalingFactor = 1.1 int minNeighbors = 2 int 
+flags = 0 cv Size minimumSize 30 30 faceDetector . 
+detectMultiScale img faceRects scalingFactor minNeighbors flags cv Size 30 30 
+检测 过程 中 已 训 练好 的 分类器 会用 不同 
+的 尺度 遍历 输入 图像 的 每一个 像素 以 检测 
+不同 大小 的 人脸 参数 scalingFactor   决定 每次 遍历 
+分类器 后 尺度 会 变大 多少倍 参数   minNeighbors   
+指定 一个 符合 条件 的 人脸 区域 应该 有 多少 
+个 符合 条件 的 邻居 像素 才被 认为 是 一个 
+可能 的 人脸 区域 如果 一个 符合 条件 的 人脸 
+区域 只 移动 了 一个 像素 就 不再 触发 分类器 
+那么 这个 区域 非常 可能 并 不是 我们 想要 的 
+结果 拥有 少于   minNeighbors   个 符合 条件 的 
+邻居 像素 的 人脸 区域 会 被 拒绝 掉 如果 
+  minNeighbors   被 设置 为 0 所有 可能 的 
+人脸 区域 都 会被 返回 回来 参数   flags   
+是 OpenCV 1 . x 版本 API 的 遗留物 应该 
+始终 把 它 设置 为 0 最后 参数   minimumSize 
+  指定 我们 所 寻找 的 人脸 区域 大小 的 
+最小值 faceRects   向量 中将 会 包含 对   img 
+  进行 人脸识别 获得 的 所有 人脸 区域 识别 的 
+人脸 图像 可以 通过   cv Mat   的   
+运算符 提取 出来 调用 方式 很 简单 cv Mat faceImg 
+= img aFaceRect 不管 是 使用   CIDetector   还是 
+OpenCV 的   C a s c a d e 
+C l a s s i f i e r 
+只要 我们 获得 了 至少 一个 人脸 区域 我们 就 
+可以 对 图像 中的 人 进行 识别 了 人脸识别 OpenCV 
+自 带了 三个 人脸识别 算法 Eigenfaces Fisherfaces 和 局部 二 
+值 模式 直方图 LBPH 如果 你 想 知道 它们 的 
+工作 原理 及 相互 之间 的 区别 请 阅读 OpenCV 
+的 详细 文档 针对 于 我们 的 demo app 我们 
+将 采用 LBPH 算法 因为 它 会 根据 用户 的 
+输入 自动更新 而 不 需要 在 每 添加 一个人 或 
+纠正 一次 出错 的 判断 的 时候 都要/nr 重新 进行 
+一次 彻底 的 训练 要 使用 LBPH 识别器 我们 也 
+用 Objective C + + 把 它 封装 起来 这个 
+封装 中 暴露 以下 函数 + FJFaceRecognizer * f a 
+c e R e c o g n i z 
+e r W i t h F i l e 
+NSString * path NSString * predict UIImage * img confidence 
+double * confidence void updateWithFace UIImage * img name NSString 
+* name 像 下面 这样 用 工厂 方法来 创建 一个 
+LBPH 实例 + FJFaceRecognizer * f a c e R 
+e c o g n i z e r W 
+i t h F i l e NSString * path 
+{ FJFaceRecognizer * fr = FJFaceRecognizer new fr _ faceClassifier 
+= c r e a t e L B P 
+H F a c e R e c o g 
+n i z e r fr _ faceClassifier load path 
+. UTF8String return fr } 预测 函数 可以 像 下面 
+这样 实现 NSString * predict UIImage * img confidence double 
+* confidence { cv Mat src = img c v 
+M a t R e p r e s e 
+n t a t i o n G r a 
+y int label self _ faceClassifier predict src label * 
+confidence return _ labelsArray label } 请注意 我们 要 使用 
+一个 类别 方法 把   UIImage   转化 为   
+cv Mat 此 转换 本身 倒是 相当 简单 直接 使用 
+C G B i t m a p C o 
+n t e x t C r e a t 
+e   创建 一个 指向   cv Image   中的 
+  data   指针 所 指向 的 数据 的   
+CGContextRef 当 我们 在 此 图形 上下文 中 绘制 此 
+  UIImage   的 时候 cv Image   的   
+data   指针 所指 就是 所 需要 的 数据 更 
+有趣 的 是 我们 能对/nr 一个 Objective C 类 创建 
+一个 Objective C + + 的 类别 并且 确实 管用 
+另外 OpenCV 的 人脸 识别 器 仅 支持 整数 标签 
+但是 我们 想 使用 人 的 名字 作 标签 所以 
+我们 得 通过 一个   NSArray   属性 来 对 
+二者 实现 简单 的 转换 一旦 识别器 给 了 我们 
+一个 识别 出来 的 标签 我们 把 此 标签 给用户 
+看 这时候 就 需要 用户 给 识别器 一个 反馈 用户 
+可以 选择 是的 识别 正确 也 可以 选择 不 这是 
+Y 不是 X 在 这 两种 情况 下 我们/r 都/d 
+可以/c 通过/p 人脸/n 图像/n 和/c 正确/ad 的/uj 标签/n 来/v 更新/d 
+LBPH 模型 以 提高 未来 识别 的 性能 使用 用户 
+的 反馈 来 更新 人脸 识别 器 的 方式 如下 
+void updateWithFace UIImage * img name NSString * name { 
+cv Mat src = img c v M a t 
+R e p r e s e n t a 
+t i o n G r a y NSInteger label 
+= _ labelsArray indexOfObject name if label = = NSNotFound 
+{ _ labelsArray addObject name label = _ labelsArray indexOfObject 
+name } vector cv Mat images = vector cv Mat 
+images . push _ back src vector int labels = 
+vector int labels . push _ back int label self 
+_ faceClassifier update images labels } 这里 我们 又 做了 
+一次 了 从 /nr UIImage   到   cv Mat int 
+  到   NSString   标签 的 转换 我们 还得 
+如 OpenCV 的 FaceRecognizer update   API 所 期望 的 
+那样 把 我们 的 参数 放到   std vector   
+实例 中去 如此 预测 获得 反馈 更新 循环 就是 文献 
+上 所说 的 监督 式 学习 结论 OpenCV 是 一个 
+强大 而 用途 广泛 的 库 覆盖 了 很多 现如今 
+仍在 活跃 的 研究 领域 想在 一篇 文章 中 给出 
+详细 的 使用 说明 只会 是 让人 徒劳 的 事情 
+因此 本文 仅 意 在从 较高 层次 对 OpenCV 库 
+做 一个 概述 同时 还 试图 就 如何 集成 OpenCV 
+库 到 你 的 iOS 工程 中 给出 一些 实用 
+建议 并 通过 一个 人脸 识别 的 例子 来向 你 
+展示 如何 在 一个 真正 的 项目 中 使用 OpenCV 
+如果 你 觉得 OpenCV 对 你 的 项目 有用 OpenCV 
+的 官方 文档 写得 非常好 非常 详细 请 继续 前行 
+创造出 下 一个 伟大 的 app 这里 是 识别 而 
+不是 人脸 检测 检测 部分 前面 我 已经 说过 是 
+一种 基于 adaboost 的 级联 决策 算法 能够 高 精度 
+的 检测 出 人脸 所在 的 区域 前面 我们 转载 
+了 几篇 人脸识别 网上 的 资源 大家 可能 知道 如何 
+在 OpenCV 中 使用 人脸识别 这个 库 但是 对于 其中 
+算法 的 深层 含义 还 远 没有 彻底 弄懂 所以 
+我 通过 一篇 论文 的 阅读 基于 LBP 和 Fisher 
+face 的 人脸 算法 研究 讲解 现在 人脸识别 算法 的 
+具体 含义 CV _ EXPORTS _ W Ptr FaceRecognizer * 
+* c r e a t e E i g 
+e n F a c e R e c o 
+g n i z e r * * int num 
+_ components = 0 double threshold = DBL _ MAX 
+CV _ EXPORTS _ W Ptr FaceRecognizer * * c 
+r e a t e F i s h e 
+r F a c e R e c o g 
+n i z e r * * int num _ 
+components = 0 double threshold = DBL _ MAX CV 
+_ EXPORTS _ W Ptr FaceRecognizer * * c r 
+e a t e L B P H F a 
+c e R e c o g n i z 
+e r * * int radius = 1 int neighbors 
+= 8 int grid _ x = 8 int grid 
+_ y = 8 double threshold = DBL _ MAX 
+12341234OpenCV 中 比较 好 认识 的 就是 基于 LBP 算子 
+的 人脸 识别 算法 我们 首先 讲解 这个 算子 的 
+过程 还是 先 看下 OpenCV 下 的 结果 我们 使用 
+的 是 ORL 人脸 数据库 每个人 有 10张 包含 了 
+40 个人 vector Mat images vector int labels / / 
+images for first person images . push _ back imread 
+ORL \ \ s1 \ \ 1 . bmp CV 
+_ LOAD _ IMAGE _ GRAYSCALE labels . push _ 
+back 1 images . push _ back imread ORL \ 
+\ s1 \ \ 2 . bmp CV _ LOAD 
+_ IMAGE _ GRAYSCALE labels . push _ back 1 
+images . push _ back imread ORL \ \ s1 
+\ \ 3 . bmp CV _ LOAD _ IMAGE 
+_ GRAYSCALE labels . push _ back 1 images . 
+push _ back imread ORL \ \ s1 \ \ 
+4 . bmp CV _ LOAD _ IMAGE _ GRAYSCALE 
+labels . push _ back 1 images . push _ 
+back imread ORL \ \ s1 \ \ 5 . 
+bmp CV _ LOAD _ IMAGE _ GRAYSCALE labels . 
+push _ back 1 images . push _ back imread 
+ORL \ \ s1 \ \ 6 . bmp CV 
+_ LOAD _ IMAGE _ GRAYSCALE labels . push _ 
+back 1 images . push _ back imread ORL \ 
+\ s1 \ \ 7 . bmp CV _ LOAD 
+_ IMAGE _ GRAYSCALE labels . push _ back 1 
+images . push _ back imread ORL \ \ s1 
+\ \ 8 . bmp CV _ LOAD _ IMAGE 
+_ GRAYSCALE labels . push _ back 1 1 2 
+3 4 5 6 7 8 9 1 0 1 
+1 1 2 1 3 1 4 1 5 1 
+6 1 7 1 8 1 9 1 2 3 
+4 5 6 7 8 9 1 0 1 1 
+1 2 1 3 1 4 1 5 1 6 
+1 7 1 8 1 9 这是 第一 个人 的 
+信息 大家 可以 按照 这个 规律 进行 人脸 的 扩展 
+Ptr FaceRecognizer model = c r e a t e 
+E i g e n F a c e R 
+e c o g n i z e r model 
+train images labels Mat img = imread ORL \ \ 
+s1 \ \ 8 . bmp CV _ LOAD _ 
+IMAGE _ GRAYSCALE double confidence int predicted model predict img 
+predicted confidence 1 2 3 4 5 6 7 1 
+2 3 4 5 6 7 c o n f 
+i d e n c e 是 预测 的 置信度 
+可以 在 构造 c r e a t e E 
+i g e n F a c e R e 
+c o g n i z e r 的 时候 
+设置 阈值 参数 如果 超过 了 这个 参数 那么 得到 
+的 结果 就是 1 表示 没有 合适 的 分类 基于 
+LBP 的 人脸 识别 LBP 是 local binary pattern 的 
+简写 局部 二 值 模式 原始 LBP 算子 最初 是 
+在 3 * 3 的 矩形 窗口 上 定义 的 
+以 矩形 窗口 心 中点 的 灰度 值 作为 阈值 
+将 邻 域内 各 像素点 像素 值 与 阈值 进行 
+比较 将 比较 结果 进行 二 值 化 处理 然后 
+各 邻域 像素点 根据 位置 的 不同 进行 加权 求 
+和和 到 该 窗口 中心 的 LBP 值 为了 满足 
+旋转 性 将该 二 值 串 进行 循环 移动 然后 
+使用 权值 加权 – 如下 对 所有 情况 中 选择 
+值 最小 的 作为 这个 点 的 LBP 值 当然 
+后面 提出 了 基于 圆形 的 任意 半径 只是 一个 
+扩展 也 很好 理解 接着 在 圆形 LBP 的 基础 
+上 发现 局部 二 值 模式 在 提取 局部 纹理 
+特征 过程 中 二进制 模式 种类 数 是 对着 采样 
+像素点 的 个数 增加 而 增加 的 比如 3 * 
+3 的 矩形 框 中的 二进制 模式 就有 28 = 
+256种 当 变成 5 * 5 的 时候 二进制 模式 
+的 值 会成 指数 增加 实际上 模式 的 个数 就是 
+对应 了 最终 的 特征 直方图 的 维数 维数 大 
+那么 处理 起来 就 比较 费时 了 为了 解决 这 
+一 问题 Ojala 等人 提出 了 一致性 模式 方法 Uniform 
+Pattern 方法 他们 认为 当 某个 二进制 串 相连成 环状 
+时 如果 二进制 位数 变换 至多 2次 那么 就是 一致性 
+模式 其余 的 则 就 是非 一致性 模式 注意 对于 
+3 × 3 邻 域内 8个 采样 点 来说 二进制 
+模式 由 原始 的 256种 减少 为 58种 即 它 
+把 值 分为 59类 58个 uniform pattern 为 一类 其它 
+的 所有 值 为 第 59类 当 我们 知道 某 
+一个 点 属于 哪个 模式 后 接下来 我们 基于 这些 
+LBP 值 进行 人脸识别 LBP 被 运用 于 计算机 人脸识别 
+领域 时 提取 出来 的 人脸 特征 通常 是以 LBP 
+直方图 向量 进行 表达 的 1 . 对 预处理 后的/nr 
+人脸 图像 进行 分块 2 . 对 分块 后的各/nr 小块 
+图像 区域 进行 LBP 特征提取 变换 3 . 使用 LBP 
+直 返 图 向量 作为 人脸 特征 的 描述 一般 
+分 块数 越多 人脸 表达 的 效果 就 会 越好 
+但是 分块 数 越多 会 直接 导致 特征向量 维数 的 
+增加 会 增加 计算 的 复杂度 对 每个 分块 计算 
+LBP 值 的 直方图 然后 将 所有 分块 直方图 进行 
+连接 得到 最终 的 直方图 特征向量 这个 特征向量 代表 原来 
+的 人脸 图像 可以 用来 描述 整体 图像 对于 这个 
+融合 的 直方图 我们 进行 特征 分类 如果 训练样本 数量 
+越大 分类 的 效果 也 会 越好 在 基于 LBP 
+的 人脸 识别 中 通常 采用 基于 直方图 的 相似性 
+度量 的 最近 邻 分类 方法 来 分类 我们 可以 
+在 OpenCV 源码 中 找到 他 的 实现 sources \ 
+modules \ contrib \ src \ facerec . cpp 函数 
+void LBPH predict InputArray _ src int & minClass double 
+& minDist const11 部分 源码 如下 / / find 1 
+nearest neighbor minDist = DBL _ MAX minClass = 1 
+for size _ t sampleIdx = 0 sampleIdx _ histograms 
+. size sampleIdx + + { double dist = compareHist 
+_ histograms sampleIdx query CV _ COMP _ CHISQR if 
+dist minDist & & dist _ threshold { minDist = 
+dist minClass = _ labels . at int int sampleIdx 
+} } 1 2 3 4 5 6 7 8 
+9 1 0 1 2 3 4 5 6 7 
+8 9 1 0 可以 看出 是 在 所有 图像 
+的 直方图 中 找出 距离 最近 的 作为 返回值 Fisher 
+face 方法 为了 提高 识别 效率 在对 特征向量 进行 降 
+维 的 同时 还 需要 寻求 更 有 利用 分类 
+的 向量 Fisher Fface 方法 是 主 成分 分析 PCA 
+与 Fisher 线性 判别分析 FLD Fisher Linear Discriminant Analysis 相 
+结合 的 算法 算法 首先 对 高维 特征 样本 进行 
+PCA 降 维 投影 到 低维 特征 空间 再 采用 
+LDA 方法 得到 最优 判别 向量 主 成分 分析 方法 
+是 基于 K L 变换 的 基础 上 实现 的 
+K L 变换 首先 利用 样本 的 数据 构建 协方差 
+矩阵 计算出 协方差 矩阵 的 特征值 和 对应 的 特征向量 
+通过 特征向量 来 找出 促使 样本 离散 程度 达到 最大 
+的 特征向量 投影 方法 PCA 方法 的 核心 思想 是 
+首先 将 经过 预处理 后的/nr 人脸 特征 表达 向量 进行 
+K L 变换 以 消除 原有 向量 各个 分量 之间 
+的 相关性 在 K L 变换 过程 中 去掉 了 
+那些 带有 少量 信息 的 分量 特征 空间 的 维数 
+也 相应 降低 了 Turk 和 Pentland 把 PCA 方法 
+引入 到 人脸识别 领域 中 并 取得 了 成功 随 
+后主 成分 分析法 就 成为 了 人脸 识别 的 主要 
+方法 之一 K L 变换 的 核心 问题 的 方法 
+是 计算 出 协方差 矩阵 的 特征值 和 特征向量 待 
+测 样本 的 特征向量 通过 K L 变换 后 去掉 
+了 那些 带有 少量 信息 的 分量 保留 了 带有 
+绝大部分 信息 的 正交 特征向量 因此 K L 变换 具有 
+特征提取 降低 特征向量 维数 的 优点 基于 主 成分 分析 
+的 人脸 识别 算法 思想 如下 假设 参加 训练 的 
+人脸 图像 有N幅/nr 将 每 一幅 图像 转化 为 一维 
+向量 将 m * n 的 矩阵 变成 D = 
+1 * mn 然后 建立 一个 大小 为 D * 
+N 的 所有 图像 的 全 数据 矩阵 按照 上式 
+的 结果 可知 协方差 矩阵 的 大小 为 D * 
+D 对 构造 出来 的 协方差 矩阵 进行 特征值 求解 
+计算出 特征值 对应 的 特征向量 将 特征向量 进行 组合 就是 
+变换 后的新/nr 向量空间 利用 奇异 值 分解 定理 可以 将 
+协方差 矩阵 的 计算 量 进行 简化 就是 先 计算 
+ATA 的 特征值 和 特征向量 然后 通过 变换 关系 导出 
+AAT 的 特征向量 Fisher 线性 判别分析 基本 思想 是 计算 
+出使 Fisher 准则 函数 达到 极值 的 向量 并 将此 
+向量 作为 最佳 投影 方向 样本 在 该 方向 上 
+进行 投影 投 影后 的 特征向量 具有 类 间离 散度 
+最大 类 内 离 散度 最小 特点 将 特征向量 直接 
+将 图像 转换 成1*/nr mn 映 射到 K 个 低维 
+的 向量 上 这 K 个 低维 的 向量 就是 
+判别 向量 然后 判 断离 哪个 类别 最近 就 属于 
+哪 个人 的 人脸 c r e a t e 
+E i g e n F a c e R 
+e c o g n i z e r 使用 
+的 是 将 特征向量 直接 将 图像 转换 成1*/nr mn 
+进行 PCA 降 维 然后 使用 距离 函数 循环 训练 
+的 数据 判断 属于 哪个 类别 

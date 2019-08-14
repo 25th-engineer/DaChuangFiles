@@ -1,0 +1,31 @@
+对模型的评价是在test set上进行的，本文首先介绍测试集应该满足的特征，然后介绍四种评价方法。
+一、测试集的选择
+1、首先，测试集必须是严格独立于训练集的，否则评价结果一定很高，但是虚高，不适用于新案例。
+2、如果分类的类别比较少，比如只有两个，而且每类的样本数大致相等，那100个样本大小的测试集也是够用的；但如果类别数比较多，且分布十分不均，那测试集的大小要保证最稀少的种类的样本数不少于50；此外，如果测试集的样本相互之间比较相似，就要适当的扩大测试集来弥补多样性的缺乏对评价的影响。当样本数比较大时，通常的做法是取整个数据集的10%作为测试集。
+3、测试集和训练集样本之间的相似度问题。相似度越高，评价的可信度就越低。举一个错误的例子：随机地分配来自同一个题材多篇文章的句子来组建测试集和训练集。代码如下：
+>>> import random >>> from nltk.corpus import brown >>> tagged_sents = list(brown.tagged_sents(categories='news')) >>> random.shuffle(tagged_sents) >>> size = int(len(tagged_sents) * 0.1) >>> train_set, test_set = tagged_sents[size:], tagged_sents[:size]
+这是非常愚蠢的做法，因为不同的文章，作者不同，句子的特征就会不同，来自不同文章的句子可以认为具有不同的特征，这对于模型测试是有利的。但是使用random.shuffle()将所用句子的顺序打乱，来自同一篇文章的句子就同时分布在测试集和训练集中，两者的相似度更高了，使原有的优势消失。一个改进的做法是保证测试集和训练集来自不同的文章，如下：
+>>> file_ids = brown.fileids(categories='news') >>> size = int(len(file_ids) * 0.1) >>> train_set = brown.tagged_sents(file_ids[size:]) >>> test_set = brown.tagged_sents(file_ids[:size])
+如果想进一步改进，则可以使测试集和训练集来自不同的题材：
+>>> train_set = brown.tagged_sents(categories='news') >>> test_set = brown.tagged_sents(categories='fiction')
+二、评价方法/指标
+1、accuracy
+这是最常用的指标，就是用测试集中分类器正确分类的样本数除以测试集的总样本数。用nltk.classify.accuracy(classifier,test_set)方法可以得到，其中test_set是测试集，classifier是分类器。
+使用这个指标时一定要考虑测试集中样本的频率分布。原因在percision&recall中会解释
+2、precision&recall
+在搜索任务中accuracy通常不适用。比如在文献检索（information retrieval）中不相关的文档远远多于相关的文档，这样如果分类器将所有文档都标记为不相关，那它的准确率也将近100%。
+为了构建适用于搜索任务的指标，我们先来定义几个概念：
+Ture positive：TP，相关的被标记为相关
+Ture negative:TN，不相关的被标记为不相关
+False positive:FP，不相关的错标记为相关（第一类错误）
+False negative:FN，相关的被错标为不想关（第二类错误）
+然后基于以上概念，就可以构建一下指标：
+precision=TP/(TP+FP)
+recall=TP/(TP+NF)
+F-Measure=(2*precision*recall)/(precision+recall)
+3、confusion matrices（混淆矩阵）
+混淆矩阵的意思是，其中的元素[i,j]表示当正确的分类是i时，样本被分成j类的比例（相对于总样本数），即对角线上为正确分类的比例。代码如下：
+>>> def tag_list(tagged_sents): ... return [tag for sent in tagged_sents for (word, tag) in sent] >>> def apply_tagger(tagger, corpus): ... return [tagger.tag(nltk.tag.untag(sent)) for sent in corpus] >>> gold = tag_list(brown.tagged_sents(categories='editorial')) >>> test = tag_list(apply_tagger(t2, brown.tagged_sents(categories='editorial'))) >>> cm = nltk.ConfusionMatrix(gold, test) >>> print(cm.pretty_format(sort_by_count=True, show_percents=True, truncate=9)) | N | | N I A J N V N | | N N T J . S , B P | ----+----------------------------------------------------------------+ NN | <11.8%> 0.0% . 0.2% . 0.0% . 0.3% 0.0% | IN | 0.0% <9.0%> . . . 0.0% . . . | AT | . . <8.6%> . . . . . . | JJ | 1.7% . . <3.9%> . . . 0.0% 0.0% | . | . . . . <4.8%> . . . . | NNS | 1.5% . . . . <3.2%> . . 0.0% | , | . . . . . . <4.4%> . . | VB | 0.9% . . 0.0% . . . <2.4%> . | NP | 1.0% . . 0.0% . . . . <1.8%>| ----+----------------------------------------------------------------+ (row = reference; col = test)
+代码是从参考书上copy的，第六行的t2不明白是什么？在pythonwin上也无法正确运行，之后弄明白再修改。
+4、cross-validation（交叉验证）
+所谓交叉验证，就是讲整个数据集等分成N份，其中一份用作测试，N-1份用作训练，测试集不断的改变，总共进行N次，再取N次测试所得指标的平均值作为最后的评价结果。交叉验证的优点在于它使我们能够看到模型在不同的训练集上的稳定性，如果评价结果变化不大，则可以认为结果是准确的。

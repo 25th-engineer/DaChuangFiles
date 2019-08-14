@@ -1,0 +1,96 @@
+Witmart.com帮你担保，做网络兼职也能轻轻松松赚美元，提现无忧可靠安全。
+深度学习(10)：自然语言处理 2018-03-01
+自然语言处理（Natural Language Processing，NLP)是人工智能和语言学领域的学科分支，它研究实现人与计算机之间使用自然语言进行有效通信的各种理论和方法。
+词嵌入
+前面介绍过，处理文本序列时，通常用建立字典后以one-hot的形式表示某个词，进而表示某个句子的方法。这种表示方法孤立了每个词，无法表现各个词之间的相关性，满足不了NLP的要求。
+词嵌入（Word Embedding）是NLP中语言模型与表征学习技术的统称，概念上而言，它是指把一个维数为所有词的数量的高维空间（one-hot形式表示的词）“嵌入”到一个维数低得多的连续向量空间中，每个单词或词组被映射为实数域上的向量。
+Word Embedding
+如上图中，各列分别组成的向量是词嵌入后获得的第一行中几个词的词向量的一部分。这些向量中的值，可代表该词与第一列中几个词的相关程度。
+使用2008年van der Maaten和Hinton在论文[Visualizing Data using t-SNE]中提出的t-SNE数据可视化算法，将词嵌入后获得的一些词向量进行非线性降维，可到下面的映射结果：
+t-SNE映射
+其中可发现，各词根据它们的语义及相关程度，分别汇聚在了一起。
+对大量词汇进行词嵌入后获得的词向量，可用来完成命名实体识别（Named Entity Recognition)等任务。其中可充分结合迁移学习，以降低学习成本，提高效率。
+好比前面讲过的用Siamese网络进行人脸识别过程，使用词嵌入方法获得的词向量可实现词汇的类比及相似度度量。例如给定对应关系“男性（Man）”对“女性（Woman）”，要求机器类比出“国王（King）”对应的词汇，通过上面的表格，可发现词向量存在数学关系“Man - Woman ≈≈ King - Queen”，也可以从可视化结果中看出“男性（Man）”到“女性（女性）”的向量与“国王（King）”到“王后（Queen）”的向量相似。词嵌入具有的这种特性，在2013年Mikolov等发表的论文[Linguistic Regularities in Continuous Space Word Representations]中提出，成为词嵌入领域具有显著影响力的研究成果。
+上述思想可写成一个余弦（cos）相似度函数：
+sim(u,v)=uTv∣∣u∣∣2∣∣v∣∣2sim(u,v)=uTv∣∣u∣∣2∣∣v∣∣2
+以此度量词向量的相似度。
+词嵌入方法
+词嵌入的方法包括人工神经网络、对词语同现矩阵降维、概率模型以及单词所在上下文的显式表示等。以词汇的one-hot形式作为输入，不同的词嵌入方法能以不同的方式学习到一个嵌入矩阵（Embedding Matrix），最后输出某个词的词向量。
+将字典中位置为ii的词以one-hot形式表示为oioi，嵌入矩阵用EE表示，词嵌入后生成的词向量用eiei表示，则三者存在数学关系：
+E⋅oi=eiE⋅oi=ei
+例如字典中包含10000个词，每个词的one-hot形式就是个大小为10000×110000×1的列向量，采用某种方法学习到的嵌入矩阵大小为300×10000300×10000的话，将生成大小为300×1300×1的词向量。
+神经概率语言模型
+采用神经网络建立语言模型是学习词嵌入的有效方法之一。2003年Bengio等人的经典之作[A Neural Probabilistic Language Model]中，提出的神经概率语言模型，是早期最成功的词嵌入方法之一。
+模型中，构建了了一个能够通过上下文来预测未知词的神经网络，在训练这个语言模型的同时学习词嵌入。例如将下图中上面的句子作为下面的神经网络的输入：
+语言模型
+经过隐藏层后，最后经Softmax将输出预测结果。其中的嵌入矩阵EE与ww、bb一样，是该网络中的参数，需通过训练得到。训练过程中取语料库中的某些词作为目标词，以目标词的部分上下文作为输入，训练网络输出的预测结果为目标词。得到了嵌入矩阵，就能通过前面所述的数学关系式求得词嵌入后的词向量。
+WORD2VEC
+Word2Vec（Word To Vectors）是现在最常用、最流行的词嵌入算法，它由2013年由Mikolov等人在论文[Efficient Estimation of Word Representations in Vector Space]中提出。
+Word2Vec中的Skip-Gram模型，所做的是在语料库中选定某个词（Context），随后在该词的正负10个词距内取一些目标词（Target）与之配对，构造一个用Context预测输出为Target的监督学习问题，训练一个如下图结构的网络：
+Skip-Gram网络
+该网络仅有一个Softmax单元，输出Context下Target出现的条件概率：
+p(t∣c)=exp(θTtec)∑mj=1exp(θTjec)p(t∣c)=exp(θtTec)∑j=1mexp(θjTec)
+上式中θtθt是一个与输出的Target有关的参数，其中省略了用以纠正偏差的参数。训练过程中还是用交叉熵损失函数。
+选定的Context是常见或不常见的词将影响到训练结果，在实际中，Context并不是单纯地通过在语料库均匀随机采样得到，而是采用了一些策略来平衡选择。
+Word2Vec中还有一种CBOW（Continuous Bag-of-Words Model）模型，它的工作方式是采样上下文中的词来预测中间的词，与Skip-Gram相反。
+以上方法的Softmax单元中产生的计算量往往过大，改进方法之一是使用分级Softmax分类器（Hierarchical Softmax Classifier），采用霍夫曼树（Huffman Tree）来代替隐藏层到输出Softmax层的映射。
+此外，Word2Vec的作者在后续论文[Distributed Representations of Words and Phrases and their Compositionality]中提出了负采样（Negative Sampling）模型，进一步改进和简化了词嵌入方法。
+负采样模型中构造了一个预测给定的单词是否为一对Context-Target的新监督学习问题，采用的网络结构和前面类似：
+负采样
+训练过程中，从语料库中选定Context，输入的词为一对Context-Target，则标签设置为1。另外任取kk对非Context-Target，作为负样本，标签设置为0。只有较少的训练数据，kk的值取5~20的话，能达到比较好的效果；拥有大量训练数据，kk的取值取2~5较为合适。
+原网络中的Softmax变成多个Sigmoid单元，输出Context-Target（c,t）对为正样本（y=1y=1)的概率：
+p(y=1∣c,t)=σ(θTtec)p(y=1∣c,t)=σ(θtTec)
+其中的θtθt、ecec分别代表Target及Context的词向量。通过这种方法将之前的一个复杂的多分类问题变成了多个简单的二分类问题，而降低计算成本。
+模型中还包含了对负样本的采样算法。从本质上来说，选择某个单词来作为负样本的概率取决于它出现频率，对于更经常出现的单词，将更倾向于选择它为负样本，但这样会导致一些极端的情况。模型中采用一下公式来计算选择某个词作为负样本的概率：
+p(wi)=f(wi)34∑mj=0f(wj)34p(wi)=f(wi)34∑j=0mf(wj)34
+其中f(wi)f(wi)代表语料库中单词wiwi出现的频率。
+GLOVE
+GloVe（Global Vectors）是另一种现在流行的词嵌入算法,它在2014年由Pennington等人在论文[GloVe: Global Vectors for Word Representation]中提出。
+Glove模型中，首先基于语料库统计了词的共现矩阵XX，XX中的元素为Xi,jXi,j，表示整个语料库中单词ii和单词jj彼此接近的频率，也就是它们共同出现在一个窗口中的次数。之后要做的，就是优化以下代价函数：
+J=∑i,jNf(Xi,j)(θTiej+bi+bj−log(Xi,j))2J=∑i,jNf(Xi,j)(θiTej+bi+bj−log(Xi,j))2
+其中θiθi、ejej分是单词ii和单词jj的词向量，bibi、bjbj是两个偏差项，f()f()是一个用以防止Xi,j=0Xi,j=0时log(Xi,j)log(Xi,j)无解的权重函数，词汇表的大小为NN。
+（以上优化函数的推导过程见参考资料中的“理解GloVe模型”）
+最后要说明的是，使用各种词嵌入方法学习到的词向量，并不像最开始介绍词嵌入时展示的表格中Man、Woman、King、Queen的词向量那样，其中的值能够代表着与Gender、Royal等词的的相关程度，实际上它们大都超出了人们的能够理解范围。
+词嵌入应用：情感分类器
+NLP中的情感分类，是对某段文字中所表达的情感做出分类，它能在很多个方面得到应用。训练情感分类模型时，面临的挑战之一可能是标记好的训练数据不够多。然而有了词嵌入得到的词向量，只需要中等数量的标记好的训练数据，就能构建出一个表现出色的情感分类器。
+情感分类
+如上图，要训练一个将左边的餐厅评价转换为右边评价所属星级的情感分类器，也就是实现xx到yy的映射。有了用词嵌入方法获得的嵌入矩阵EE，一种简单的实现方法如下：
+简单方法
+方法中计算出句中每个单词的词向量后，取这些词向量的平均值输入一个Softmax单元，输出预测结果。这种简单的方法适用于任何长度的评价，但忽略了词的顺序，对于某些包含多个正面评价词的负面评价，很容易预测到错误结果。
+采用RNN能实现一个表现更加出色的情感分类器，此时构建的模型如下：
+RNN情感分类
+这是一个“多对一”结构的循环神经网络，每个词的词向量作为网络的输入，由Softmax输出结果。由于词向量是从一个大型的语料库中获得的，这种方法将保证了词的顺序的同时能够对一些词作出泛化。
+词嵌入除偏
+在词嵌入过程中所使用的语料库中，往往会存在一些性别、种族、年龄、性取向等方面的偏见，从而导致获得的词向量中也包含这些偏见。比如使用未除偏的词嵌入结果进行词汇类比时，“男性（Man）”对“程序员（Computer Programmer）”将得到类似“女性（Woman）”对“家务料理人（Homemaker）”的性别偏见结果。2016年Bolukbasi等人在论文[Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings]中提出了一些消除词嵌入中的偏见的方法。
+这里列举消除词向量存在的性别偏见的过程，来说明这些方法。（摘自第二周课后作业）
+1.中和本身与性别无关词汇
+中和（Neutralize）“医生（doctor）”、“老师（teacher）”、“接待员（receptionist）”等本身与性别无关词汇中的偏见，首先计算g=ewoman−emang=ewoman−eman，用“女性（woman）”的词向量减去“男性（man）”的词向量，得到的向量gg就代表了“性别（gender）”。假设现有的词向量维数为50，那么对某个词向量，将50维空间分成两个部分：与性别相关的方向gg和与gg正交的其他49个维度g⊥g⊥。如下左图：
+本身与性别无关
+除偏的步骤，是将要除偏的词向量，左图中的ereceptionistereceptionist，在向量gg方向上的值置为00，变成右图所示的edebiasedreceptionistereceptionistdebiased。所用的公式如下:
+ebiascomponent=e⋅g||g||22×gecomponentbias=e⋅g||g||22×g
+edebiasedreceptionist=e−ebiascomponentereceptionistdebiased=e−ecomponentbias
+2.均衡本身与性别有关词汇
+对“男演员（actor）”、“女演员（actress）”、“爷爷（grandfather）”等本身与性别有关词汇，如下左图，假设“女演员（actress）”的词向量比“男演员（actor）”更靠近于“婴儿看护人（babysit）”。中和“婴儿看护人（babysit）”中存在的性别偏见后，还是无法保证它到“女演员（actress）”与到“男演员（actor）”的距离相等。对一对这样的词，除偏的过程是均衡（Equalization）它们的性别属性。
+本身与性别有关
+均衡过程的核心思想是确保一对词（actor和actress）到g⊥g⊥的距离相等的同时，也确保了它们到除偏后的某个词（babysit）的距离相等，如上右图。
+对需要除偏的一对词w1w1、w2w2，选定与它们相关的某个未中和偏见的单词BB之后，均衡偏见的过程如下公式：
+μ=ew1+ew22μ=ew1+ew22
+μB=μ⋅bias_axis||bias_axis||22×bias_axisμB=μ⋅bias_axis||bias_axis||22×bias_axis
+μ⊥=μ−μBμ⊥=μ−μB
+ew1B=ew1⋅bias_axis||bias_axis||22×bias_axisew1B=ew1⋅bias_axis||bias_axis||22×bias_axis
+ew2B=ew2⋅bias_axis||bias_axis||22×bias_axisew2B=ew2⋅bias_axis||bias_axis||22×bias_axis
+ecorrectedw1B=|1−||μ⊥||22|−−−−−−−−−√×ew1B−μB||(ew1−μ⊥)−μB)||2ew1Bcorrected=|1−||μ⊥||22|×ew1B−μB||(ew1−μ⊥)−μB)||2
+ecorrectedw2B=|1−||μ⊥||22|−−−−−−−−−√×ew2B−μB||(ew1−μ⊥)−μB)||2ew2Bcorrected=|1−||μ⊥||22|×ew2B−μB||(ew1−μ⊥)−μB)||2
+e1=ecorrectedw1B+μ⊥e1=ew1Bcorrected+μ⊥
+e2=ecorrectedw2B+μ⊥e2=ew2Bcorrected+μ⊥
+参考资料
+吴恩达-序列模型-网易云课堂
+Andrew Ng-Sequence Model-Coursera
+deeplearning.ai
+Deep Learning in NLP（一）词向量和语言模型
+从SNE到t-SNE再到LargeVis
+word2vec前世今生
+Word2Vec导学第二部分-负采样-csdn
+理解GloVe模型-csdn
+课程代码与资料-GitHub
+注：本文涉及的图片及资料均整理翻译自Andrew Ng的Deep Learning系列课程，版权归其所有。翻译整理水平有限，如有不妥的地方欢迎指出。

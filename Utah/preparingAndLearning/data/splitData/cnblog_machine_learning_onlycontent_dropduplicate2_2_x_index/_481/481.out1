@@ -1,0 +1,562 @@
+常见 分类 模型 与 算法 距离 判别 法 即 最 
+近邻 算法 KNN 贝叶斯 分类器 线性 判别 法 即 逻辑 
+回归 算法 决策树 支持 向量 机 神经网络 1 .   
+KNN 分类 算法 原理 及 应用 1.1   KNN 概述 
+K 最 近邻 k Nearest Neighbor KNN 分类 算法 是 
+最简单 的 机器学习 算法 KNN 算法 的 指导 思想 是 
+近朱者赤 近墨者黑 由 你 的 邻居 来 推断 你 的 
+类型 本质上 KNN 算法 就是 用 距离 来 衡量 样本 
+之间 的 相似 度 1.2 算法/n 图示/n 从/p 训练/vn 集/q 
+中找到/i 和新/nr 数据/n 最/d 接近/v 的/uj k/w 条/n 记录/n 然后 
+根据 多数 类 来 决定 新 数据 类别 算法 涉及 
+3个 主要 因素 1   训练 数据集 2   距离 
+或 相似 度 的 计算 衡量 3 k 的 大小 
+算法 描述 1   已知 两类 先验 数据 分别/d 是/v 
+蓝/nr 方块/n 和红/nr 三角/m 他们 分布 在 一个 二 维空间 
+中 2   有 一个 未知 类别 的 数据 绿 
+点 需要 判断 它 是 属于 蓝 方块 还是 红 
+三角 类 3   考察 离 绿 点 最近 的 
+3个 或 k 个 数 据点 的 类别 占 多数 
+的 类别 即为 绿 点 判定 类别 1.3   算法 
+要点 1 . 3.1   计算 步骤 计算 步骤 如下 
+1   算 距离 给定 测试 对象 计算 它 与 
+训练 集中 的 每个 对象 的 距离 2   找 
+邻居 圈定 距离 最近 的 k 个 训练 对象 作为 
+测试 对象 的 近邻 3   做 分类 根据 这 
+k 个 近邻 归属 的 主要 类别 来 对 测试 
+对象 分类 1 . 3.2   相似 度 的 衡量 
+距离 越近/nr 应该 意味着 这 两个 点 属于 一个 分类 
+的 可能性 越大 但 距离 不能 代表 一切 有些 数据 
+的 相似 度 衡量 并 不适 合用 距离 相似 度 
+衡量 方法 包括 欧式 距离 夹角 余弦 等 简单 应用 
+中 一般 使用 欧式 距离 但 对于 文本 分类 来说 
+使用 余弦 来 计算 相似 度 就比 欧式 距离 更 
+合适 1 . 3.3   类别 的 判定 简单 投票 
+法 少数 服从 多数 近邻 中 哪个 类别 的 点 
+最多 就 分为 该类 加权 投票 法 根据 距离 的 
+远近 对 近邻 的 投票 进行 加权 距离 越近则/nr 权重 
+越大 权重 为 距离 平方 的 倒数 1.4   算法 
+不足之处 1 .   样本 不平衡 容易 导致 结果 错误 
+如 一个 类 的 样本容量 很大 而 其他 类 样本容量 
+很 小时 有 可能 导致 当 输入 一个 新 样本 
+时 该 样本 的 K 个 邻居 中 大容量 类 
+的 样本 占多数 改善 方法 对此 可以 采用 权值 的 
+方法 和该/nr 样本 距离 小 的 邻居 权值 大 来 
+改进 2 .   计算 量 较大 因为 对 每一个 
+待 分类 的 文本 都要 计算 它 到 全体 已知 
+样本 的 距离 才能 求得 它 的 K 个 最 
+近邻 点 改善 方法 实现 对 已知 样本点 进行 剪辑 
+事先 去除 对 分类 作用 不大 的 样本 注 该 
+方法 比较 适用 于 样本容量 比 较大 的 类 域 
+的 类 域 的 分类 而 那些 样本容量 较小 的 
+类 域 采用 这种 算法 比较 容易 产生 误 分 
+1.5   KNN 分类 算法 Python 实战 KNN 简单 数据 
+分类 实践 1 . 5.1   需求 计算 地理位置 的 
+相似 度 有 以下 先验 数据 使用 KNN 算法 对 
+未知 类别 数据 分类 属性 1 属性 2 类别 1.00 
+. 9A1 . 01.0 A 0.10 . 2B0 . 00.1 
+B 未知 类别 数据 属性 1 属性 2 类别 1 
+. 21.0 0 . 10.3 1 . 5.2   Python 
+实现 首先 我们 新建 一个 KNN . py 脚本文件 文件 
+里面 包含 两个 函数 一个 用来 生成 小 数据集 一个 
+实现 KNN 分类 算法 代码 如下 # # # # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # KNN k Nearest Neighbors # 输入 newInput 
+1xN 的 待 分类 向量 # dataSet NxM 的 训练 
+数据集 # labels 训练 数据集 的 类别 标签 向量 # 
+k 近邻 数 # 输出 可能性 最大 的 分类 标签 
+# # # # # # # # # # 
+# # # # # # # # # # 
+# # # # # # from numpy import import 
+operator # 创建 一个 数据集 包含 2个 类别 共 4个 
+样本 def createDataSet # 生成 一个 矩阵 每行 表示 一个 
+样本 group = array 1.0 0.9 1.0 1.0 0.1 0.2 
+0.0 0.1 # 4个 样本 分别 所属 的 类别 labels 
+= A A B B return group labels # KNN 
+分类 算法 函数 定义 def KNNClassify newInput dataSet labels k 
+numSamples = dataSet . shape 0 # shape 0 表示 
+行数 # # step1 计算 距离 # tile A reps 
+构造 一个 矩阵 通过 A 重复 reps 次 得到 # 
+the following copy numSamples rows for dataSet diff = tile 
+newInput numSamples 1 dataSet # 按 元素 求 差值 squareDiff 
+= diff * * 2 # 将 差值 平方 squareDist 
+= sum squaredDiff axis = 1 # 按 行 累加 
+# # step2 对 距离 排序 # argsort 返回 排序 
+后的/nr 索引 值 s o r t e d D 
+i s t I n d i c e s 
+= argsort distance classCount = { } # define a 
+dictionary can be append element for i in xrange k 
+# # step 3 选择 k 个 最 近邻 voteLabel 
+= labels s o r t e d D i 
+s t I n d i c e s i 
+# # step 4 计算 k 个 最 近邻 中 
+各类 别 出现 的 次数 # when the key voteLabel 
+is not in dictionary classCount get # will return 0 
+classCount voteLabel = classCount . get voteLabel 0 + 1 
+# # step 5 返回 出现 次数 最多 的 类别 
+标签 maxCount = 0 for key value in classCount . 
+items if value maxCount maxCount = value maxIndex = key 
+return maxIndex 然后 调用 算法 进行 测试 import KNN from 
+numpy import * # 生成 数据集 和 类别 标签 dataSet 
+labels = KNN . createDataSet # 定义 一个 未知 类别 
+的 数据 testX = array 1.2 1.0 k = 3 
+# 调用 分类 函数 对 未知 数据 分类 outputLabel = 
+KNN . KNNClassify testX dataSet labels 3 print Your input 
+is testX and classified to class outputLabel testX = array 
+0.1 0.3 outputLabel = KNN . KNNClassify testX dataSet labels 
+3 print Your input is testX and classified to class 
+outputLabel 这时候 会 输出 Your input is 1.2 1.0 and 
+classified to class A Your input is 0.1 0.3 and 
+classified to class B2 . 朴素 贝叶斯 分类 算法 原理 
+2.1   概述 贝叶斯 分类 算法 时一/nr 大类 分类 算法 
+的 总称 贝叶斯 分类 算法 以 样本 可能 属于 某类 
+的 概率 来 作为 分类 依据 朴素 贝叶斯 分类 算法 
+时 贝叶斯 分类 算法 中 最简单 的 一种 注 朴素 
+的 意思 时 条件概率 独立性 2.2   算法 思想 朴素 
+贝叶斯 的 思想 是 这样 的 如果 一个 事物 在 
+一些 属性 条件 发生 的 情况 下 事物 属于 A 
+的 概率 属于 B 的 概率 则 判定 事物 属于 
+A 通俗 来说 比如 在某 条 大街 上 有 100人 
+其中 有 50个 美国人 50个 非洲人 看到 一个 讲 英语 
+的 黑人 那么 我们 是 怎么 去 判断 他 来自 
+哪里 提取 特征 肤色 黑 语言 英语 先验 知识 P 
+黑色 | 非洲人 = 0.8 P 讲 英语 | 非洲人 
+= 0.1 P 黑色 | 美国人 = 0.2 P 讲 
+英语 | 美国人 = 0.9 要 判断 的 概率 是 
+P 非洲人 | 讲 英语 黑色 P 美国人 | 讲 
+英语 黑色 思考 过程 P 非洲人 | 讲 英语 黑色 
+    的 分子 = 0.1 * 0.8 * 0.5 
+= 0.04 P 美国人 | 讲 英语 黑色     
+的 分子 = 0.9 * 0.2 * 0.5 = 0.09 
+从而 比较 这 两个 概率 的 大小 就 等价 于 
+比较 这 两个 分子 的 值 可以 得出 结论 此人 
+应该 是 美国人 其 蕴含 的 数学原理 如下 p A 
+| xy = p Axy / p xy = p 
+Axy / p x p y = p A / 
+p x * p A / p y * p 
+xy / p xy = p A | x p 
+A | y 朴素 贝叶斯 分类器 讲了 上面 的 小故事 
+我们 来 朴素 贝叶斯 分类器 的 表示 形式 当 特征 
+为 为 x 时 计算 所有 类别 的 条件概率 选取 
+条件概率 最大 的 类别 作为 待 分类 的 类别 由于 
+上 公式 的 分母 对 每个 类别 都是/nr 一样 的 
+因此 计算 时 可以 不 考虑 分母 即 朴素 贝叶斯 
+的 朴素 体现 在其 对 各个 条件 的 独立性 假设 
+上 加上 独立 假设 后 大大 减少 了 参数 假设 
+空间 2.3   算法 要点 2 . 3.1   算法 
+步骤 1 .   分解 各类 先验 样本数据 中的 特征 
+2 .   计算 各类 数据 中 各 特征 的 
+条件 概率 比如 特征 1 出现 的 情况 下 属于 
+A 类 的 概率 p A | 特征 1 属于 
+B 类 的 概率 p B | 特征 1 属于 
+C 类 的 概率 p C | 特征 1 . 
+. . . . . 3 .   分解 待 
+分类 数据 中 的 特征 特征 1 特征 2 特征 
+3 特征 4 . . . . . . 4 
+.   计算 各 特征 的 各 条件概率 的 乘积 
+如下 所示 判断 为 A 类 的 概率 p A 
+| 特征 1 *   p A | 特征 2 
+* p A | 特征 3 * p A | 
+特征 4 . . . . . . 判断 为 
+B 类 的 概率 p B | 特征 1 * 
+  p B | 特征 2 * p B | 
+特征 3 * p B | 特征 4 . . 
+. . . . 判断 为 C 类 的 概率 
+p C | 特征 1 *   p C | 
+特征 2 * p C | 特征 3 * p 
+C | 特征 4 . . . . . . 
+. . . . . . 5 .   结果 
+中的 最大值 就是 该 样本 所属 的 类别 2 . 
+3.2   算法 应用 举例 大众 点评 淘宝 等 电商 
+上 都会 有 大量 的 用户 评论 比如 1 衣服 
+质量 太差 了 颜色 根本 不纯 2 我 有一/nr 有种 
+上当受骗 的 感觉 3 质量 太差 衣服 拿 到手 感觉 
+像 旧货 4 上身 漂亮 合身 很帅 给 卖家 点 
+赞 5 穿上 衣服 帅呆了 给点 一万个 赞 6 我 
+在 他家 买了 三 件 衣服 质量 都 很差 000110 
+其中 1/2 / 3/6 是 差评 4/5 是 好评 现在 
+需要 使用 朴素 贝叶斯 分类 算法 来 自动 分类 其他 
+的 评论 比如 a 这么 差 的 衣服 以后 再也 
+不 买了 b 帅 有逼格/nr 2 . 3.3   算法 
+应用 流程 1 .   分解 出 先验 数据 中的 
+各 特征 即 分词 比如 衣服 质量 太差 差 不纯 
+帅 漂亮 赞 . . . . . . 2 
+.   计算 各 类别 好评 差评 中 各 特征 
+的 条件 概率 比如   p 衣服 |   差评 
+p 衣服 |   好评 p 差 | 好评 p 
+差 |   差评 . . . . . . 
+3 .   计算 类别 概率 p 好评 | c1 
+c2 c5 c8 的 分子 = p c1 | 好评 
+*   p c2 | 好评 * p c3 | 
+好评 * . . . . . . p 好评 
+p 差评 | c1 c2 c5 c8 的 分子 = 
+p c1 | 差评 *   p c2 | 差评 
+* p c3 | 差评 * . . . . 
+. . p 差评 4 .   显然 p 差评 
+的 结果 值 更大 因此 a 被判 别为 差评 2.4 
+  朴素 贝叶斯 分类 算法 案例 2 . 4.1   
+需求 利用 大量 邮件 先验 数据 使用 朴素 贝叶斯 分类 
+算法 来 自动识别 垃圾邮件 2 . 4.2   python 实现 
+# 过滤 垃圾邮件 def textParse bigString # 正则表达式 进行 文本 
+解析 import re listOfTokens = re . split r \ 
+W * bigString return tok . lower for tok in 
+listOfTokens if len tok 2 def spamTest docList = classList 
+= fullText = for i in range 1 26 # 
+导入 并 解析 文本文件 wordList = textParse open email / 
+spam / % d . txt % i . read 
+docList . append wordList fullText . extend wordList classList . 
+append 1 wordList = textParse open email / ham / 
+% d . txt % i . read docList . 
+append wordList fullText . extend wordList classList . append 0 
+vocabList = createVocabList docList trainingSet = range 50 testSet = 
+for i in range 10 # 随机 构建 训练 集 
+randIndex = int random . uniform 0 len trainingSet testSet 
+. append trainingSet randIndex # 随机 挑选 一个 文档 索引号 
+放入 测试 集 del trainingSet randIndex # 将该 文档 索引号 
+从 训练 集中 剔除 trainMat = trainClasses = for docIndex 
+in trainingSet trainMat . append setOfWords2Vec vocabList docList docIndex trainClasses 
+. append classList docIndex p0V p1V pSpam = trainNBO array 
+trainMat array trainClasses errorCount = 0 for docIndex in testSet 
+# 对 测试 集 进行 分类 wordVector = setOfWords2Vec vocabList 
+docList docIndex if classifyNB array wordVector p0V p1V = classList 
+docIndex errorCount + = 1 print the error rate is 
+float errorCount / len testSet 3 .   logistic 逻辑 
+回归 分类 算法 及 应用 3.1   概述 Lineage 逻辑 
+回归 是 一种 简单 而又 效果 不错 的 分类 算法 
+什么 是 回归 比如说 我们 有 两类 数据 各有 50个 
+点 组成 当 我们 把 这些 点 画出来 会有 一条线 
+区分 这 两组 数据 我们 拟合 出 这个 曲线 因为 
+很 有可能 是 非线性 的 就是 回归 我们 通过 大量 
+的 数据 找出 这条 线 并 拟 合出 这条 线 
+的 表达式 再有 新 数据 我们 就 以 这条 线 
+为 区分 来 实现 分类 下图 是 一个 数据集 的 
+两组 数据 中间 有 一条 区分 两组 数据 的 线 
+显然 只有 这种 线性 可分 的 数据分布 才 适合 用 
+线性 逻辑 回归 3.2   算法 思想 Lineage 回归 分类 
+算法 就是 将 线性 回归 应用在 分类 场景 中 在 
+该 场景 中 计算 结果 是 要 得到 对 样本数据 
+的 分类 标签 而 不是 得到 那条 回归直线 3 . 
+2.1   算法 图示 1   算法 目标 大白话 计算 
+各点 的 y 值 到 拟 合线 的 垂直距离 如果 
+距离 0 分为 类 A 距离 0 分为 类 B 
+2   如何 得到 拟合 线呢 大白话 只能 先 假设 
+因为/c 线或/l 面的/i 函数/n 都/d 可以/c 表达/v 成y/nr 拟合 = 
+w1 * x1 + w2 * x2 + w3 * 
+x3 + . . . 其中 的 w 是 待定 
+参数 而 x 是 数据 的 各 维度 特征值 因而 
+上述 问题 就 变成 了 样本 y x y 拟合 
+0 A B3   如何 求解 出 一套 最优 的 
+w 参数 呢 基本思路 代入 先验 数据 来 逆 推 
+求解 但 针对 不等式 求解 参数 极其 困难 通用 的 
+解决 方法 将对 不等式 的 求解 做一个 转换 a . 
+将 样本 y x y 拟合 的 差值 压缩 到 
+一个 0 ~ 1 的 小区 间 b . 然后 
+代入 大量 的 样本 特征值 从而 得到 一 系列 的 
+输出 结果 c . 再将 这些 输出 结果 跟 样本 
+的 先验 类别 比较 并 根据 比较 情况 来 调整 
+拟 合线 的 参数值 从 而是 拟 合线 的 参数 
+逼近 最优 从而 将 问题 转化 为 逼近 求解 的 
+典型 数学 问题 3 . 2.2   sigmoid 函数 上述 
+算法 思路 中 通常 使用 sigmoid 函数 作为 转换 函数 
+函数 表达式 注 此处 的 x 是 向量 函数 曲线 
+之所以 使用 sigmoid 函数 就是 让 样板点 经过 运算 后 
+得到 的 结果 限制 在 0 ~ 1 之间 压缩 
+数据 的 巨幅 震荡 从而 方便 得到 样本点 的 分类 
+标签 分类 以 sigmoid 函数 的 计算 结果 是否 大于 
+0.5 为依据 3.3   算法 实现 分析 1 . 3.1 
+  实现 思路 算法 思想 的 数学 表述 把 数据集 
+的 特征值 设为 x1 x2 x3 . . . . 
+. . 求出 它们 的 回归系数 wj 设 z = 
+w1 * x1 + w2 * x2 . . . 
+. . . 然后 将 z 值 代入 sigmoid 函数 
+并 判断 结果 即可 得到 分类 标签 问题 在于 如何 
+得到 一组 合适 的 参数 wj 通过 解析 的 途径 
+很难 求解 而 通过 迭代 的 方法 可以 比较 便捷 
+地 找到 最优 解 简单 来说 就是 不断 用 样本 
+特征值 代入 算式 计算 出 结果 后跟 其 实际 标签 
+进行 比较 根据 差值 来 修正 参数 然后再 代入 新的 
+样 本值 计算 循环往复 直到 无需 修正 或 已 到达 
+预设 的 迭代 次数 注 此 过程 用 梯度 上升 
+来 实现 1 . 3.2   梯度 上升 算法 梯度 
+上升 是 指 找到 函数 增长 的 方向 在 具体 
+实现 的 过程 中 不停 地 迭代 运算 直到 w 
+的 值 几乎 不再 变化 为止 如图所示 3.4 Lineage 逻辑 
+回归 分类 Python 实战 3 . 4.1   需求 对 
+给定 的 先验 数据集 使用 logistic 回归 算法 对 新 
+数据 分类 3 . 4.2   python 实现 3.4 . 
+2.1   定义 sigmoid 函数 def loadDataSet dataMat = labelMat 
+= fr = open d / testSet . txt for 
+line in fr . readlines lineArr = line . strip 
+. split dataMat . append 1.0 float lineArr 0 float 
+lineArr 1 labelMat . append int lineArr 2 return dataMat 
+labelMat def sigmoid inX return 1.0 / 1 + exp 
+inX 3.4 . 2.2   返回 回归系数 对应 于 每个 
+特征值 for 循环 实现 了 递归 梯度 上升 算法 def 
+gradAscent dataMatln classLabels dataMatrix = mat dataMatln # 将 先验 
+数据集 转换 为 NumPy 矩阵 labelMat = mat classLabels . 
+transpose # 将 先验 数据 的 类 标签 转换 为 
+NumPy 矩阵 m n = shape dataMatrix alpha = 0.001 
+# 设置 逼近 步长 调整 系数 maxCycles = 500 # 
+设置 最大 迭代 次数 为 500 weights = ones n 
+1 # weights 即为 需要 迭代 求解 的 参数 向量 
+for k in range maxCycles # heavy on matrix operations 
+h = sigmoid dataMatrix * weights # 代入 样本 向量 
+求得 样本 y sigmoid 转换 值 error = labelMat h 
+# 求差 weights = weights + alpha * dataMatrix . 
+transpose * error # 根据 差值 调整 参数 向量 return 
+weights 我们 的 数据集 有 两个 特征值 分别 是 x1 
+x2 在 代码 中 又 增设 了 x0 变量 结果 
+返回 了 特征值 的 回归系数 4.12414349 0.48007329 0.6168482 我们 得出 
+x1 和 x2 的 关系 设 x0 = 1 0 
+= 4.12414349 + 0.48007329 * x1 0.6168482 * x 23.4 
+. 2.3   线性 拟 合线 画出 x1 与 x2 
+的 关系 图 线性 拟 合线 4 . 决策树 Decision 
+Tree 分类 算法 原理 及 应用 4.1   概述 决策树 
+是 一种 被 广泛 使用 的 分类 算法 相比 贝叶斯 
+算法 决策树 的 优势 在于 构造 过程 不 需要 任何 
+领域 知识 或 参数设置 在 实际 应用 中 对于 探测 
+式 的 知识发现 决策树 更加 适用 决策树 通常 有 三个 
+步骤 特征选择 决策树 的 生成 决策树 的 修剪 4.2   
+算法 思想 通俗 来说 决策树 分类 的 思想 类似于 找对象 
+现 想象 一个 女孩 的 母亲 要 给 这个 女孩 
+介绍 男朋友 于是 有了/nr 下面 的 对话 女儿 多大 年纪 
+了 母亲 26 女儿 长 的 帅 不帅 母亲 挺 
+帅的/nr 女儿 收入 高不 母亲 不算 很高 中 等 情况 
+女儿 是 公务员 吗 母亲 是 公务员 在 税务局 上班 
+呢 女儿 那好 我 去 见见 这个 女孩 的 决策 
+过程 就是 典型 的 分类 树 决策 实质 通过 年龄 
+长相 收入 和 是否 公务员 将 男人 分为 两个 类别 
+见 和 不见 假设 这个 女孩 对 男人 的 要求 
+是 30 岁 以下 长相 中等 以上 并且 是 高收入者 
+或 中等 以上 收入 的 公务员 那么 这个 可以 用 
+下图 表示 女孩 的 决策 逻辑 上图 完整 表达 了 
+这个 女孩 决定 是否 见 一个 约会对象 的 策略 其中 
+绿色 节点 表示 判断 条件 橙色 节点 表示 决策 结果 
+箭头 表示 在 一个 判断 条件 在 不同 情况下 的 
+决策 路径 图中 红色 箭头 表示 了 上面 例子 中 
+女孩 的 决策 过程 这幅 图 基本 可以 算是 一颗 
+决策树 说 它 基本 可以 算 是 因为 图中 的 
+判定 条件 没有 量化 如 收入 高中低 等等 还 不能 
+算是 严格 意义 上 的 决策树 如果 将 所有 条件 
+量化 则 就 变成 真正 的 决策树 了 决策树 分类 
+算法 的 关键 就是 根据 先验 数据 构造 一棵 最佳 
+的 决策树 用以 预测 未知 数据 的 类别 决策树 是 
+一个 树结构 可以 是 二叉树 或非 二叉树 其 每个 非 
+叶 节点 表示 一个 特征 属性 上 的 测试 每个 
+分支 代表 这个 特征 属性 在 某个 值域 上 的 
+输出 而 每个 叶 节点 存放 一个 类别 使用 决策树 
+进行 决策 的 过程 就是 从根/nr 节点 开始 测试 待 
+分 类项 中 相应 的 特征 属性 并 按照 其 
+值 选择 输出 分支 直到 到达 叶子 节点 将 叶子 
+节点 存放 的 类别 作为 决策 结果 4.3   决策树 
+构造 4 . 3.1   决策树 构造 样例 假如 有 
+以下 判断 苹果 好坏 的 数据 样本 样本     
+  红  /nr     大           
+好 苹果 0             1 
+          1         
+        11           
+  1           0     
+            12       
+      0           1 
+                03   
+          0         
+  0                 
+0 样本 中有 2个 属性 A0 表示 是否 红苹果 A1 
+表示 是否 大 于 苹果 假如 要 根据 这个 数据 
+样本 构建 一棵 自动 判断 苹果 好坏 的 决策树 由于 
+本例 中 的 数据 只有 2个 属性 因此 我们 可以 
+穷举 所有 可能 构造 出来 的 决策树 就 2 课 
+树 如下 图 所示 显然 左边 先 使用 A0 红色 
+做 划分 依据 的 决策树 要 优于 右边 用 A1 
+大小 做 划分 依据 的 决策树 当然 这是 直觉 的 
+认知 而 直觉 显然 不 适合 转化成 程序 的 实现 
+所以 需要 有 一种 定量 的 考察 来 评价 这 
+两棵树 的 性能 好坏 决策树 的 评价 所用 的 定量 
+考察 方法 为 计算 每种 划分 情况 的 信息熵 增益 
+如果 经过 某个 选定 的 属性 进行 数据 划分 后的/nr 
+信息 熵 下降 最多 则 这个 划分 属性 是 最优 
+选择 4 . 3.2   属性 划分 选择 即 构造 
+决策树 的 依据 熵 信息论 的 奠基人 香农 定义 的 
+用来 信息量 的 单位 简单 来说 熵 就是 无序 混乱 
+的 程度 公式 H X = Σ pi * logpi 
+i = 1 2 . . . n pi 为 
+一个 特征 的 概率 通过 计算 来 理解 1 原始 
+样本数据 的 熵 样例 总数 4 好 苹果 2 坏 
+苹果 2 熵 1/2 * log 1/2 + 1/2 * 
+log 1/2 = 1 信息熵 为 1 表示 当前 处于 
+最 混乱 最 无序 的 状态 2 两颗 决策树 的 
+划分 结果 熵 增益 计算 树 1 先 选 A0 
+作 划分 各 子 节点 信息熵 计算 如下 0 1 
+叶子 节点 有 2个 正 例 0个 负 例 信息熵 
+为 e1 = 2/2 * log 2/2 + 0/2 * 
+log 0/2 = 0 2 3 叶子 节点 有 0个 
+正 例 2个 负 例 信息熵 为 e2 = 0/2 
+* log 0/2 + 2/2 * log 2/2 = 0 
+因此 选择 A0 划分 后的/nr 信息 熵 为 每个 子 
+节点 的 信息 熵 所占 比重 的 加权 和 E 
+= e1 * 2/4 + e2 * 2/4 = 0 
+选择 A0 做 划分 的 信息 熵 增益 G S 
+A0 = S E = 1 0 = 1 事实上 
+决策 树叶子 节点 表示 已经 都 属于 相同 类别 因此 
+信息熵 一定 为 0 树 2 先 选 A1 作 
+划分 各 子 节点 信息熵 计算 如下 0 2 子 
+节点 有 1个 正 例 1个 负 例 信息熵 为 
+e1 = 1/2 * log 1/2 + 1/2 * log 
+1/2 = 1 1 3 子 节点 有 1个 正 
+例 1个 负 例 信息熵 为 e2 = 1/2 * 
+log 1/2 + 1/2 * log 1/2 = 1 因此 
+选择 A1 划分 后的/nr 信息 熵 为 每个 子 节点 
+的 信息 熵 所占 比重 的 加权 和 E = 
+e1 * 2/4 + e2 * 2/4 = 1 也 
+就是说 分了 跟 没分 一样 选择 A1 做 划分 的 
+信息 熵 增益 G S A1 = S E = 
+1 1 = 0 因此 每次 划分 之前 我们 只 
+需要 计算出 信息熵 增益 最大 的 那种 划分 即可 4.4 
+  算法 要点 4 . 4.1   指导思想 经过 决策 
+属性 的 划分 后 数据 的 无序 度 越来越 低 
+也 就是 信息熵 越来越 小 4 . 4.2   算法 
+实现 梳理 出 数据 中 的 属性 比较 按照 某 
+特定 属性 划分 后的/nr 数据 的 信息 熵 增益 选择 
+信息熵 增益 最大 的 那个 属性 作为 第一 划分 依据 
+然后 继续 选择 第二 属性 以此类推 4.5   决策树 分类 
+算法 Python 实战 4 . 5.1   案例 需求 我们 
+的 任务 就是 训练 一个 决策树 分类器 输入 身高 和 
+体重 分类器 能给 出 这个 人 是 胖子 还是 瘦子 
+所用 的 训练 数据 如下 这个 数据 一 共有 8个 
+样本 每个 样本 有 2个 属性 分别 为 头发 和 
+声音 第三 列为 性别 标签 表示 男 或 女 该 
+数据 保存 在 1 . txt 中 头发 声音 性别 
+长粗 男 短粗 男 短粗 男 长 细 女 短 
+细 女 短粗 女 长粗 女 长粗 女 4 . 
+5.2   模型 分析 决策树 对于 是非 的 二 值 
+逻辑 的 分枝 相当 自然 本例 决策树 的 任务 是 
+找到 头发 声音 将其 样本 两两 分类 自顶向下 构建 决策树 
+在 这里 我们 列出 两种 方案 ① 先 根据 头发 
+判断 若 判断 不出 再 根据 声音 判断 于是 画了 
+一幅 图 如下 于是 一个 简单 直观 的 决策 树 
+就这么 出来了 头 发长 声音 粗 就是 男生 头 发长 
+声音 细 就是 女生 头 发短 声音 粗 是 男生 
+头 发短 声音 细 是 女生 ②   先 根据 
+声音 判断 然后 再 根据 头 发来 判断 决策树 如下 
+那么 问题 来了 方案 ① 和 方案 ② 哪个 的 
+决策树 好些 计算机 做 决策树 的 时候 面对 多个 特征 
+该 如何 选 哪个 特征 为 最佳 多得 划分 特征 
+划分 数据集 的 大 原则 是 将 无序 的 数据 
+变得 更加 有序 我们 可以 使用 多种 方法 划分 数据集 
+但是/c 每/zg 种/m 方法/n 都有/nr 各自/r 的/uj 优缺点/n 于是 我们 
+这么 想 如果 我们 能 测量 数据 的 复杂度 对比 
+按 不同 特征 分类 后的/nr 数据 复杂度 若按 某一 特征 
+分类 后 复杂度 减少 的 更多 那么 这个 特征 即为 
+最佳 分类 特征 为此 Claude Shannon 定义 了 熵 和 
+信息 增益 用 熵 来 表示 信息 的 复杂度 熵 
+越大 则 信息 越 复杂 信息 增益 表示 两个 信息熵 
+的 差值 首先 计算 未分类 前 的 熵 总共有 8位 
+同学 男生 3位 女生 5位 熵 总 =   3/8 
+* log2 3/8 5/8 * log2 5/8 =/i 0.9544/mx 接着/c 
+分别/d 计算/v 方案/n ①/i 和/c 方案/n ②/i 分类/n 后/f 信息熵/n 
+方案 ① 首 先按 头发 分类 分类 后的/nr 结果 为 
+长头发 中有 1 男 3 女 短 头发 中有 2 
+男 2 女 熵 长发 =   1/4 * log2 
+1/4 3/4 * log2 3/4 = 0.8113 熵 短发 = 
+  2/4 * log2 2/4 2/4 * log2 2/4 = 
+1 熵 方案 ① =   4/8 * 0.8113 + 
+4/8 * 1 = 0.9057 4/8 为 长头 发有 4人 
+短 头 发有 4人 信息 增益 方案 ① =   
+熵 总   熵 方案 ① = 0.9544 0.9057 = 
+0.0487 同理 按 方案 ② 的 方法 首 先按 声音 
+特征 来 分 分类 后的/nr 结果 为 声音 粗 中有 
+3 男 3 女 声音 细 中有 0 男 2 
+女 熵 声音 粗 =   3/6 * log2 3/6 
+3/6 * log2 3/6 = 1 熵 声音 细 = 
+  2/2 * log2 2/2 = 0 熵 方案 ② 
+=   6/8 * 1 + 2/8 * 0 = 
+0.75 6/8 为 声音 粗 有 6人 2/8 为 声音 
+细 有 2人 信息 增益 方案 ② =   熵 
+总   熵 方案 ② = 0.9544 0.75 = 0.2087 
+按照 方案 ② 的 方法 先按 声音 特征 分类 信息 
+增益 更大 区分 样本 的 能力 更强 更 具有 代表性 
+以上 就是 决策树 ID3 算法 的 核心 思想 4 . 
+5.3   python 实现 ID3 算法 from math import log 
+import operator def calcShannonEnt dataSet # 计算 数据 的 熵 
+entropy numEntries = len dataSet # 数据 条数 labelCounts = 
+{ } for featVec in dataSet currentLabel = featVec 1 
+# 每行 数据 的 最后 一个 字 类别 if currentLabel 
+not in labelCounts . keys labelCounts currentLabel = 0 labelCounts 
+currentLabel + = 1 # 统计 有 多少 个 类 
+以及 每个 类 的 数量 shannonEnt = 0 for key 
+in labelCounts prob = float labelCounts key / numEntries # 
+计算 单个 类 的 熵值 shannonEnt = prob * log 
+prob 2 # 累加 每个 类 的 熵值 return shannonEnt 
+def createDataSet1 # 创造 示例 数据 dataSet = 长 粗 
+男 短 粗 男 短 粗 男 长 细 女 
+短 细 女 短 粗 女 长 粗 女 长 
+粗 女 labels = 头发 声音 # 两个 特征 return 
+dataSet labels def splitDataSet dataSet axis value # 按 某个 
+特征 分类 后的/nr 数据 retDataSet = for featVec in dataSet 
+if featVec axis = = value reducedFeatVec = featVec axis 
+reducedFeatVec . extend featVec axis + 1 retDataSet . append 
+reducedFeatVec return retDataSet def c h o o s e 
+B e s t F e a t u r 
+e T o p l i t dataSet # 选择 
+最优 的 分类 特征 numFeatures = len dataSet 0 1 
+print numFeatures baseEntropy = calcShannonEnt dataSet # 原始 的 熵 
+bestInfoGain = 0 bestFeature = 1 for i in range 
+numFeatures featList = example i for example in dataSet uniqueVals 
+= set featList newEntropy = 0 for value in uniqueVals 
+subDataSet = splitDataSet dataSet i value prob = len subDataSet 
+/ float len dataSet newEntropy + = prob * calcShannonEnt 
+subDataSet # 按 特征 分类 后的熵/nr infoGain = baseEntropy newEntropy 
+# 原始 熵 与 按 特征 分类 后的熵/nr 的 差值 
+if infoGain bestInfoGain # 若按 某 特征 划分 后 熵值 
+减少 的 最大 则 次 特征 为 最优 分类 特征 
+bestInfoGain = infoGain bestFeature = i return bestFeature def majorityCnt 
+classList # 按 分类 后 类别 数量 排序 比如 最后 
+分类 为 2 男 1 女 则 判定 为 男 
+classCount = { } for vote in classList if vote 
+not in classCount . keys classCount vote = 0 classCount 
+vote + = 1 sortedClassCount = sorted classCount . items 
+key = operator . itemgetter 1 reverse = True return 
+sortedClassCount 0 0 def createTree dataSet labels classList = example 
+1 for example in dataSet # 类别 男 或 女 
+if classList . count classList 0 = = len classList 
+return classList 0 if len dataSet 0 = = 1 
+return majorityCnt classList bestFeat = c h o o s 
+e B e s t F e a t u 
+r e T o p l i t dataSet # 
+选择 最优 特征 bestFeatLabel = labels bestFeat myTree = { 
+bestFeatLabel { } } # 分类 结果 以 字典 形式 
+保存 del labels bestFeat featValues = example bestFeat for example 
+in dataSet # print featValues uniqueVals = set featValues for 
+value in uniqueVals subLabels = labels myTree bestFeatLabel value = 
+createTree splitDataSet dataSet bestFeat value subLabels return myTree if _ 
+_ name _ _ = = _ _ main _ 
+_ dataSet labels = createDataSet1 # 创造 示例 数据 print 
+createTree dataSet labels # 输出 决策树 模型 结果 这 时候 
+会 输出 { 声音 { 细 女 粗 { 头发 
+{ 长 女 短 男 } } } } 4 
+. 5.4   决策树 的 保存 一棵 决策树 的 学习 
+训练 是 非常 耗费 运算 时间 的 因此 决策树 训练出来 
+后 可 进行 保存 以便 在 预测 新的 数据 时只/nr 
+需要 直接 加载 训 练好 的 决策树 即可 本 案例 
+的 代码 中 已经 把 决策树 的 结构 写入 了 
+tree . dot 中 打开 该 文件 很容易 画出 决策树 
+还 可以 看到 决策树 的 更多 分类信息 本例 的 tree 
+. dot 如下 所示 digraph Tree { 0 label = 
+X 1 = 55.0000 \ nentropy = 0.954434002925 \ nsamples 
+= 8 shape = box 1 label = entropy = 
+0.0000 \ nsamples = 2 \ nvalue = 2 . 
+0 . shape = box 0 1 2 label = 
+X 1 = 70.0000 \ nentropy = 0.650022421648 \ nsamples 
+= 6 shape = box 0 2 3 label = 
+X 0 = 1.6500 \ nentropy = 0.918295834054 \ nsamples 
+= 3 shape = box 2 3 4 label = 
+entropy = 0.0000 \ nsamples = 2 \ nvalue = 
+0 . 2 . shape = box 3 4 5 
+label = entropy = 0.0000 \ nsamples = 1 \ 
+nvalue = 1 . 0 . shape = box 3 
+5 6 label = entropy = 0.0000 \ nsamples = 
+3 \ nvalue = 0 . 3 . shape = 
+box 2 6 } 根据 这个 信息 决策树 应该 长 
+的 如下 这个样子 参考资料 https / / blog . csdn 
+. net / csqazwsxedc / article / details / 65697652 

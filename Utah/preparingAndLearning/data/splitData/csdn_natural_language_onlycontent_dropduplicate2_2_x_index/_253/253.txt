@@ -1,0 +1,23 @@
+更多内容请至南木博客主页查看哦
+中文分词工具
+Jieba
+SnowNLP
+THULAC
+NLPIR
+NLPIR
+StanfordCoreNLP
+HanLP
+英文分词工具
+nltk
+nltk
+nltk
+Spacy
+Spacy
+StanfordCoreNLP
+更多关于自然语言处理的内容，请转至
+自然语言处理（一）——中英文分词
+自然语言处理（二）——词性标注与命名实体识别
+自然语言处理（三）——句法分析与依存句法分析
+哈工大依存句法分析工具——LTP的使用与安装
+进行查看
+同时也欢迎各位关注我的微信公众号 南木的下午茶

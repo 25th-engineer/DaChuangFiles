@@ -1,0 +1,72 @@
+机器学习简易入门（二） - 分类
+摘要：本文简单叙述了如何通过分类算法来评估银行发放贷款的模型
+声明：（本文的内容非原创，但经过本人翻译和总结而来，转载请注明出处）
+本文内容来源：https://www.dataquest.io/mission/57/classification-basics
+在你向银行申请信用卡或者贷款时，银行会使用根据过往的数据所建立的模型，再根据你的实际情况来决定是否接受你的申请。
+原始数据展现
+银行在以往的某段时间为了训练这个评分模型，向所有申请者都发放了贷款，然后记录全部人是否有还款以及他们的评分情况，paid字段表明该申请人是否有如实还款，1是正常还款，0是违约。model_score字段表明该申请人在获得贷款前在评分模型中的得分
+import pandas credit = pandas.read_csv("credit.csv")
+评估模型
+根据上面的历史数据，找到适合的阀值（model_score究竟为多少分时才接受贷款申请），然后获取最大的利润
+准确率
+我们通过设置一个model_score的阀值来决定是否接受贷款申请，如果该申请者的model_score大于该阀值就接受，反之亦然，通过控制这个阀值来控制新客户量。衡量一个模型的准确性是通过公示：准确率 = 正确预测数 / 样本总量
+# 设置阀值为0.5，计算这个模型的准确率（评分大于0.5，且如实还款） pred = credit["model_score"] > 0.5 accuracy = sum(pred == credit["paid"]) / len(pred) # paid字段为1，且model_score大于0.5
+这个结果表明如果只向model_score大于0.5的申请者发放贷款，大概会有86%的人还款
+混淆矩阵
+下表描述二元分类问题的混淆矩阵，表中每个表项Fij表示实际类标号为i但被预测为类j的记录数，例如，F01代表原本属于类0但被误分为类1的记录数，按照混淆矩阵中的表项，被分类模型正确预测的样本总数是（F11 + F00），而被错误预测的样本总数是（F10 + F01）
+预测的类
+类
+= 1
+类
+= 0
+实际的类
+类
+= 1
+F
+11
+F
+10
+类
+= 0
+F
+01
+F
+00
+在本文中的混淆矩阵是这样的
+实际上会还款
+实际上不会还款
+预测会还款
+TP
+FP
+预测不会还款
+FN
+TN
+真正（True Positive , TP）被模型预测为正的正样本；
+假负（False Negative , FN）被模型预测为负的正样本；
+假正（False Positive , FP）被模型预测为正的负样本；
+真负（True Negative , TN）被模型预测为负的负样本
+真正率（True Positive Rate , TPR）或灵敏度（sensitivity）：TPR = TP /（TP + FN） （正样本预测结果数 / 正样本实际数）
+假负率（False Negative Rate , FNR）：FNR = FN /（TP + FN） （被预测为负的正样本结果数 / 正样本实际数 ）
+假正率（False Positive Rate , FPR）：FPR = FP /（FP + TN） （被预测为正的负样本结果数 /负样本实际数）
+真负率（True Negative Rate , TNR）或特指度（specificity）：TNR = TN /（TN + FP） （负样本预测结果数 / 负样本实际数）
+# 把阀值设置为0.5，分别计算上面的混淆矩阵 TP = sum(((credit['model_score'] > 0.5) == 1) & (credit['paid'] == 1)) FN = sum(((credit['model_score'] <= 0.5) == 1) & (credit['paid'] == 1)) FP = sum(((credit['model_score'] > 0.5) == 1) & (credit['paid'] == 0)) TN = sum(((credit['model_score'] <= 0.5) == 1) & (credit['paid'] == 0))
+只要我们的模型中真正率（TPR）大于假正率（FPR），就能保证还款的人要比违约的人多，从而保证银行不会亏本
+计算ROC曲线
+ROC曲线（receiver operating characteristic curve），又称为感受性曲线（sensitivity curve）。得此名的原因在于曲线上各点反映着相同的感受性，它们都是对同一信号刺激的反应，只不过是在几种不同的判定标准下所得的结果而已。接受者操作特性曲线就是以虚惊概率为横轴，击中概率为纵轴所组成的坐标图，和被试在特定刺激条件下由于采用不同的判断标准得出的不同结果画出的曲线
+根据上文所述，现在要寻找一个阀值，使得真正率大于假正率
+import numpy def roc_curve(observed, probs): # 将阀值由1到0，分成100个小数 thresholds = numpy.asarray([(100-j)/100 for j in range(100)]) # 初始化为全0 fprs = numpy.asarray([0. for j in range(100)]) tprs = numpy.asarray([0. for j in range(100)]) # 对每个阀值进行循环 for j, thres in enumerate(thresholds): pred = probs > thres FP = sum((observed == 0) & (pred == 1)) TN = sum((observed == 0) & (pred == 0)) FPR = float(FP / (FP + TN)) TP = sum((observed == 1) & (pred == 1)) FN = sum((observed == 1) & (pred == 0)) TPR = float(TP / (TP + FN)) fprs[j] = FPR tprs[j] = TPR return fprs, tprs, thresholds fpr, tpr, thres = roc_curve(credit["paid"], credit["model_score"]) idx = numpy.where(fpr>0.20)[0][0] # 选择假正率为0.2的阀值，理由在下面 print('FPR: 0.2') print('TPR: {}'.format(tpr[idx])) print('Threashold: {}'.format(thres[idx])) # 以假正率做x轴，真正率做y轴作图 plt.plot(fpr, tpr) plt.xlabel('FPR') plt.ylabel('TPR') plt.show()
+说明了当阀值设置为0.38时，FPR = 0.2，TPR = 0.93
+在上图中可见，当FPR（假正率）达到了0.2之后，整条曲线都变平了，也就是说当FPR大于0.2之后，违约的人数增加了，不违约的人数却没有增加多少。
+计算AUC
+如果用两个模型分别作出了不同的ROC曲线，那么要怎样对比这两条ROC曲线的优异程度呢？可以使用AUC，AUC通过测量ROC曲线下面的面积来获得。如果一个模型是完美的，那么他的TPR就会是1，所以AUC也是1，而如果一个模型的TPR是0那么AUC也会是0.所以可以通过比较AUC的大小来比较两个模型的优异，越高的AUC意味着模型越完美
+可以通过roc_auc_score函数来计算
+#一个简单的例子 from sklearn.metrics import roc_auc_score probs = [ 0.98200848, 0.92088976, 0.13125231, 0.0130085, 0.35719083, 0.34381803, 0.46938187, 0.53918899, 0.63485958, 0.56959959] obs = [1, 1, 0, 0, 1, 0, 1, 0, 0, 1] testing_auc = roc_auc_score(obs, probs) print("Example AUC: {auc}".format(auc=testing_auc))
+计算本文的AUC
+auc = roc_auc_score(credit["paid"], credit["model_score"])
+召回率和准确率
+除了上面用来计算ROC的TPR和FPR之外，还有两个重要的指标：正确率（precision）和召回率（recall）
+在本文中，越高的正确率说明在发放贷款之后，还款率要比违约率高，越高的召回率说明潜在客户（那些有能力还款，但是被银行拒绝了发放贷款）的流失率越低
+# 以阀值0.5来计算 pred = credit["model_score"] > 0.5 # True Positives TP = sum(((pred == 1) & (credit["paid"] == 1))) # False Positives FP = sum(((pred == 0) & (credit["paid"] == 1))) # False Negatives FN = sum(((pred == 1) & (credit["paid"] == 0))) precision = TP / (TP + FP) recall = TP / (TP + FN) print('precision: {}'.format(precision)) print('recall: {}'.format(recall))
+类似于ROC曲线，作出正确率与召回率曲线
+from sklearn.metrics import precision_recall_curve precision, recall, thresholds = precision_recall_curve(credit["paid"], credit["model_score"]) plt.plot(recall, precision) plt.xlabel('Recall') plt.ylabel('Precision') plt.show()
+在上图中，曲线在Recall = 0.8的时候才陡然下降，此时的Precision = 0.9，说明了此时只流失了少量的潜在客户，同时违约率也很低

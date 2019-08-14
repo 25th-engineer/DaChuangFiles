@@ -1,0 +1,10 @@
+ML.NET 是面向.NET开发人员的开源和跨平台机器学习框架（Windows，Linux，macOS）,通过使用ML.NET,.NET开发人员可以利用他们现有的工具和技能组，为情感分析，推荐，图像分类等常见场景创建自定义机器学习模型，将开发自定义AI并注入其应用程序之中，微软.NET团队在官方博客[https://devblogs.microsoft.com/dotnet/announcing-ml-net-1-0-rc-machine-learning-for-net/]发布了ML.NET 1.0 RC（Release Candidate）（版本1.0.0-preview）, 这是在2019年第二季度发布最终 ML.NET 1.0 RTM 之前的最后预览版本, 我猜测发布的时间点应该是微软5月6-8举办的 Build开发者大会上【https://www.microsoft.com/en-us/build】。下图是从2018年5月份开源发布ML.NET 0.1版本以来到1.0 RTM之前的预览时间图：
+在此版本（ML.NET 1.0 RC）中，主要是API更改完成，进入稳定。对于下一个sprint，我们专注于改进文档和示例，并在需要时解决主要的关键问题。
+ML.NET包的稳定版与预览版的分离：
+ML.NET 的包现在分成 1.0 RC 和 0.12 版本预览版，ML.NET中的大部分功能（约95％）将作为稳定版本发布，下列这些包是稳定的进入1.0 RC https://docs.microsoft.com/zh-cn/dotnet/api/index?view=ml-dotnet
+有一些功能在发布ML.NET 1.0时仍然不会处于RTM状态。仍保留为预览的这些功能被归类为具有该版本的预览包0.12.0-preview：https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.ml?view=ml-dotnet-preview
+主要是
+TensorFlow组件
+Onnx 组件
+TimeSeries 组件
+Recommendadtions 组件

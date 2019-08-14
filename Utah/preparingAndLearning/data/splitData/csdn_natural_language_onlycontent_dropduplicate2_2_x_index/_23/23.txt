@@ -1,0 +1,46 @@
+1.先解释何为CFG及PCFG：
+一个栗子：
+2.CKY算法（或称CYK算法）
+“在计算机科学领域，CYK算法（也称为Cocke–Younger–Kasami算法）是一种用来对 上下文无关文法（CFG，Context Free Grammar）进行语法分析（parsing）的算法。该算法最早由John Cocke, Daniel Younger and Tadao Kasami分别独立提出，其中John Cocke还是1987年度的图灵奖得主。CYK算法是基于动态规划思想设计的一种自底向上语法分析算法。”
+CYK算法可以在O(n3)的时间内得出结果。
+CKY算法:
+CYK处理的CFG必须是CNF形式的。所以算法首先要把非CNF形式的CFG转化到（弱等价）CNF形式。CYK是一种自底向上的算法。
+乔姆斯基范式：
+乔姆斯基范式：CNF
+或者，ABC都为非终结符，为终结符。
+那个这个CFG就是采用CNF形式的，可见CNF语法都是二分叉的。任何语法都可以转化成一个弱等价的CNF形式，具体方法如下：（之后会有拓展版的，不只二元了，还有空的与一元的。）
+方法：
+CKY算法用于PCFG下的句法分析
+实现句子fish people fish tanks的句法树分析，实现最可能的统计句法树。
+基于概率的上下文无关语法（PCFG） 是一个五元组, 其定义为(T,  N，S，R，P). 可以看到, 这基本上与 CFG 类似, 只是多出来一个元素 p, 表示在语料中规则出现的概率. 使用p 可以定义一棵语法树出现的概率为树中所有规则出现概率之积. 这样, 当一个句子在可选的范围内有多棵可能的语法树时, 我们选择先验概率大的那棵树, 这样能最大程度避免解析错误。其中，
+N代表非终结符集合
+T代表终结符集合
+S代表初始非终结符
+R代表产生规则集
+P 代表每个产生规则的统计概率
+栗子：
+拓展版：加入了一元。
+CKY：
+动态规划：
+具体算法（类似填表的方法）：
+贴一个：
+维基百科的CYK算法用于CFG。
+https://en.wikipedia.org/wiki/CYK_algorithm#/media/File:CYK_algorithm_animation_showing_every_step_of_a_sentence_parsing.gif
+第一部分：
+下载stanford-parser-full-2018-10-17.zip
+解压：打开eclipse创建一个项目,导入在build path中引入stanford-parser-3.9.2-models.jar，stanford-parser.jar， slf4j-api.jar等相关库.
+调参：
+主要代码：
+结果：
+句法树：
+GUI界面：
+相关教程连接：
+http://www.cnblogs.com/Denise-hzf/p/6612574.html
+第二部分：
+Python3.5，pycharm.
+动态规划PCFG+CKY程序:
+链接：
+http://f.dataguru.cn/thread-693052-1-1.html
+PCFG 的训练
+对于 PCFG 中的 CFG 部分, 一般是由领域相关的专家给出的, 例如英语专家规定英语的 CFG. 而PCFG 中的 p 是从语料中统计而来. 运用最大似然估计, 可以有: P(X -> Y) = count(X->Y)/count(X)
+注意到, 规则中包括终端词与非终端词两种元素. 在一个适当规模的语料中, 我们可以认为所有的非终端词都会出现, 但是认为所有的终端词都会出现却是不现实的(想一下我们常听到的那个美国农民日常使用的英语单词只有数千个, 而所有的英语单词却有数万个的情况). 当语料中没有出现, 而在我们的测试样本中却出现了少见的单词时, PCFG 会对所有的语法树都给出概率为0的估计, 这对 PCFG 的模型是一个致命的问题.通常的补救措施是, 对语料中所有单词出现次数进行统计, 然后将出现频率少于 t 的所有单词都换成同一个 symbol. 在进行测试时, 先查找测试句子中的所有单词是否在句子中出现, 若没有出现, 则使用 symbol 代替. 通过这种方法, 可以避免 PCFG 模型给出概率为0 的估计, 同时也不会损失太多的信息.

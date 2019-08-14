@@ -1,0 +1,26 @@
+前言
+预测词汇的相关性算是自然语言中的HelloWolrd。本文主要根据百度PaddlePaddle示例word2vec，对句子中下一个单词的预测。该示例使用4个词语来预测下一个词。
+1. 数据集以及字典、Reader构建
+示例采用Penn Treebank （PTB）数据集（经Tomas Mikolov预处理过的版本），直接使用数据集中的data文件夹下的ptb.train.txt和ptb.test.txt即可。这两个文件是英语语句组成的训练集，所以直接读取文件再用split将句子分开既可以得到单词列表。
+单词是不定长的，所以往往将单词映射为一个序号。例如'a'用1表示，‘an’用2表示等等。这样以来我们就必须构建字典，然后对字典中的单词进行编号。示例使用了训练集和数据集制作字典，同时统计单词出现的次数，设置了min_word_freq来对出现次数少的单词进行剔除。
+def word_count(f, word_freq=None): if word_freq is None: word_freq = collections.defaultdict(int) for l in f: for w in l.strip().split(): #删除前后端空格，并且切分单词，每个单词计数 word_freq[w] += 1 word_freq['<s>'] += 1 word_freq['<e>'] += 1 return word_freq def build_dict(data_path,min_word_freq=50): """ 构建字典 """ train_filename = './simple-examples/data/ptb.train.txt' test_filename = './simple-examples/data/ptb.valid.txt' with tarfile.open(data_path) as tf: trainf = tf.extractfile(train_filename) testf = tf.extractfile(test_filename) word_freq = word_count(testf, word_count(trainf)) if '<unk>' in word_freq: # remove <unk> for now, since we will set it as last index del word_freq['<unk>'] word_freq = filter(lambda x: x[1] > min_word_freq, word_freq.items()) #滤除掉小于min_word的单词 word_freq_sorted = sorted(word_freq, key=lambda x: (-x[1], x[0])) #排序，次数多优先，首字母次之 words, _ = list(zip(*word_freq_sorted)) word_idx = dict(zip(words, xrange(len(words)))) #构建字典，字典顺序与次序无关 word_idx['<unk>'] = len(words) return word_idx
+Reader的构建也十分简单，直接读取数据集，然后根据字典得到各个单词的索引号即可：
+def reader_creator(data_path,filename,word_idx,n): def reader(): with tarfile.open(data_path) as tf: f = tf.extractfile(filename) UNK = word_idx['<e>'] for l in f:#按照每行读取 assert n > -1, 'Invalid gram length' l = ['<s>'] + l.strip().split() + ['<e>'] #头尾巴添加start 和 end if len(l) >= n: l = [word_idx.get(w, UNK) for w in l] #如果字典找不到，则返回'<e>'的索引 for i in range(n, len(l) + 1): yield tuple(l[i - n:i]) return reader
+2. 离散型特征处理
+从上面可知，单词可以根据字典从原本一个不定长的字符串映射到一个简单的离散整形数据。但是，这种离散的数据类似于分类问题，而非连续的回归问题，很少会直接作为网络的输入或者输出，而是选择特定的编码进行代替。例如，在手写识别数字识别中，我们希望从网络得到的记过是0～9的数据，但是网络输出采用对10个标签进行softmax的形式来获取最大几率的标签。例如1，则表示为[0 1 0 0 0 0 0 0 0 0]，2则表示为[0 0 1 0 0 0 0 0 0 0]，以此类推，这种编码称为独热码（one-hot）。显然，在这里同样可以使用独热码对单词索引进行编码，但是编码的维度等于字典的维度，这样导致了向量的稀疏。另一个问题是，我们是试图预测单词之间的相关性，这种编码难以表征单词间的相关性，因为他们的L1距离（曼哈顿距离）都是一样的。
+为了解决这个问题，深度学习中采用了embedding层，将one-hot编码映射到较小的维度向量中，而且向量中的每个元素都是连续的，而且该层的参数是可训练的。虽然对于每个输入都取了embedding，但是这4层的参数都是共享的。
+first_word = fluid.layers.data(name='firstw', shape=[1], dtype='int64') embed_first = fluid.layers.embedding( input=first_word, size=[dict_size, EMBED_SIZE], dtype='float32', is_sparse=is_sparse, param_attr='shared_w')
+3. 构建训练网络
+该网络比较简单，经过word embedding后，直接采用两层的全连接层。由于是分类问题，后面采用了softmax的输出字典长度的向量，查找几率最大的单词。
+def inference_program(is_sparse): first_word = fluid.layers.data(name='firstw', shape=[1], dtype='int64') second_word = fluid.layers.data(name='secondw', shape=[1], dtype='int64') third_word = fluid.layers.data(name='thirdw', shape=[1], dtype='int64') fourth_word = fluid.layers.data(name='fourthw', shape=[1], dtype='int64') embed_first = fluid.layers.embedding( input=first_word, size=[dict_size, EMBED_SIZE], dtype='float32', is_sparse=is_sparse, param_attr='shared_w') embed_second = fluid.layers.embedding( input=second_word, size=[dict_size, EMBED_SIZE], dtype='float32', is_sparse=is_sparse, param_attr='shared_w') embed_third = fluid.layers.embedding( input=third_word, size=[dict_size, EMBED_SIZE], dtype='float32', is_sparse=is_sparse, param_attr='shared_w') embed_fourth = fluid.layers.embedding( input=fourth_word, size=[dict_size, EMBED_SIZE], dtype='float32', is_sparse=is_sparse, param_attr='shared_w') concat_embed = fluid.layers.concat( input=[embed_first, embed_second, embed_third, embed_fourth], axis=1) hidden1 = fluid.layers.fc( input=concat_embed, size=HIDDEN_SIZE, act='sigmoid') predict_word = fluid.layers.fc(input=hidden1, size=dict_size, act='softmax') return predict_word
+4、训练以及结果
+分类问题，故采用交叉熵作为损失函数即可：
+def train_program(is_sparse): predict_word = inference_program(is_sparse) next_word = fluid.layers.data(name='nextw', shape=[1], dtype='int64') cost = fluid.layers.cross_entropy(input=predict_word, label=next_word) avg_cost = fluid.layers.mean(cost) return avg_cost
+我们输入among a group of得到的结果为
+Step 0: Average Cost 7.323672 Step 10: Average Cost 6.127039 softmax result= [[0.03509435 0.03092922 0.00015478 ... 0.00019624 0.00020122 0.02606127]] amog a group of : the
+对于4个embedding layer，输入[20 20 20 20]获取前两个单词的映射结果如下，可见这4个embedding layerd的参数是共享的。所做的映射都是相同的。
+first word embeding result: [[-0.03654227 0.03615221 -0.00636815 0.04953869 0.00659253 -0.03805562 -0.03781673 -0.00323956 0.04304311 -0.02775818 -0.02895659 -0.02973305 0.03278778 0.02302501 0.03120029 0.01132151 -0.03574367 -0.03974182 0.00527415 -0.02988834 -0.04431479 -0.03779307 -0.00829562 0.02014677 0.01256767 0.04155278 0.0176531 0.03231385 0.02013639 0.01016513 -0.01383959 -0.00534514]] second word embeding result: [[-0.03654227 0.03615221 -0.00636815 0.04953869 0.00659253 -0.03805562 -0.03781673 -0.00323956 0.04304311 -0.02775818 -0.02895659 -0.02973305 0.03278778 0.02302501 0.03120029 0.01132151 -0.03574367 -0.03974182 0.00527415 -0.02988834 -0.04431479 -0.03779307 -0.00829562 0.02014677 0.01256767 0.04155278 0.0176531 0.03231385 0.02013639 0.01016513 -0.01383959 -0.00534514]]
+结语
+该示例看似简单，但是embeding layer仍不知如何操作，或者甚至再训练过程中，参数如何得到优化，有待以后学习。
+参考：PaddlePaddle-book
+本文源码：Github

@@ -1,0 +1,54 @@
+前言 python 是 一种 功能 强大 和 适用 面 很广 
+的 开发 语言 在 大 数据 应用 和 机器学习 日益 
+流行 的 年代 python 凭借 其 简洁 易用 和 可扩展性 
+获得 很多 用户 的 支持 近年来 使用率 高速 增长 python 
+环境 下 集成 了 科学计算 扩展 库 NumPy SciPy 和 
+matplotlib 它们 分别 为 Python 提供 了 快速 数组 处理 
+数值 运算 以及 绘图 功能 因此 Python 语言 及 其 
+众多 的 扩展 库 所 构成 的 开发 环境 十分 
+适合 工程技术 科研 人员 处理 实验 数据 制作 图表 甚至 
+开发 科学计算 程序 Python Plugins 的 安装 Idea 缺省 是 
+没有 安装 Python 的 需要 在 plugins 里 安装 具体方法 
+见 下图 等 它 下载 完 会 要求 重启 idea 
+关闭 idea 并 重启 创建 Python 工程 在 idea 里面 
+File new projects   在 弹出 的 工程 界面 选择 
+sdk 然后 一路 next 下去 最后 点击 finish 就 可以 
+创建 自己 的 python 工程 了 在 python 工程 中 
+添加 module 在 自己 的 python 工程 如 myPythonProject 下 
+可以 建立 自己 的 module 在 module 下 可以 建立 
+自己 的 文件 需要 注意 的 是 一定 要 带入 
+后缀名 py 编写 hello world 好吧 继续 编写 helloworld 程序 
+在 HelloWorld . py 文件 里面 写入 如下 代码 def 
+hello name strHello = Hello + name return strHello print 
+hello Python 在 程序 文件 上 右键 执行 执行 情况 
+如下 外部 环境 中 执行 虽然在 idea 里面 可以 执行 
+这个 程序 在 外部 环境 里 也 可以 执行 这个 
+程序 进入 这个 程序 所在 路径 执行 python 程序 文件名 
+这样 也与 idea 环境 中 一样 几个 库 说明 前面 
+建立 工程 和 module 的 时候 有 出现 如下 的 
+内容 这里 简要 做 一下 说明 Django 是 用 Python 
+开发 的 一个 免费 开源 的 Web 框架 可以 用于 
+快速 搭建 高性能 优雅 的 网站 Google App Engine   
+是 一种 让 您 可以 在   Google   的 
+基础 架构 上 运行 您 的 网络 应用 程序 SQL 
+Support 是 支持 SQL 的 框架 欢迎 大家 加入 我 
+的 微信 公众 号 大 数据 躺过 的 坑   
+      人工智能 躺过 的 坑 同时 大家 可以 
+关注 我 的 个人 博客 http / / www . 
+cnblogs . com / zlslch /       和 /nr 
+      http / / www . cnblogs . 
+com / lchzls /           http 
+/ / www . cnblogs . com / sunnyDream / 
+详情 请见 http / / www . cnblogs . com 
+/ zlslch / p / 7473861 . html 人生 苦短 
+我 愿 分享 本 公众 号 将 秉持 活到老 学到老 
+学习 无休止 的 交流 分享 开源 精神 汇聚/v 于/p 互联网/n 
+和/c 个人/n 学习/v 工作/vn 的/uj 精华/nz 干货/n 知识/v 一切 来 
+于 互联网 反馈 回 互联网 目前 研究 领域 大 数据 
+机器学习 深度 学习 人工智能 数据挖掘 数据分析 语言 涉及 Java Scala 
+Python Shell Linux 等 同时 还 涉及 平常 所 使用 
+的 手机 电脑 和 互联 网上 的 使用 技巧 问题 
+和 实用软件 只要 你 一直 关注 和 呆在 群 里 
+每天/r 必须/d 有/v 收获/v 对应/vn 本/r 平台/n 的/uj 讨论/v 和/c 
+答疑/v QQ/w 群/n 大 数据 和 人工智能 躺过 的 坑 
+总 群 161156071 

@@ -1,0 +1,473 @@
+Updated 1st 2011.8.6
+CHAPTER 2
+Accessing Text Corpora and Lexical Resources
+访问文本语料库和词汇资源
+Practical work in Natural Language Processing typically uses large bodies of linguistic data, or corpora. The goal of this chapter is to answer the following questions:
+1. What are some useful text corpora and lexical resources, and how can we access them with Python?
+什么是有用的文本预料可和词汇资源，我们如何通过Python访问它们？
+2. Which Python constructs are most helpful for this work?
+Python构造的哪个方面对于这一项工作是最有帮助的？
+3. How do we avoid repeating ourselves when writing Python code?
+在写Python代码的时候，我们如何避免重复？
+This chapter continues to present programming concepts by example, in the context of a linguistic processing task. We will wait until later before exploring each Python construct systematically. Don’t worry if you see an example that contains something unfamiliar; simply try it out and see what it does, and—if you’re game(勇敢的)—modify it by substituting(代替) some part of the code with a different text or word. This way you will associate（联系） a task with a programming idiom, and learn the hows and whys later.
+2.1 Accessing Text Corpora 访问文本语料库
+As just mentioned, a text corpus is a large body of text. Many corpora are designed to contain a careful balance of material in one or more genres. We examined some small text collections in Chapter 1, such as the speeches known as the US Presidential Inaugural Addresses. This particular corpus actually contains dozens of individual texts—one per address—but for convenience we glued them end-to-end and treated them as a single text. Chapter 1 also used various predefined texts that we accessed by typing from book import *. However, since we want to be able to work with other texts, this section examines a variety of text corpora. We’ll see how to select individual texts, and how to work with them.
+Gutenberg Corpus
+NLTK includes a small selection of texts from the Project Gutenberg electronic text archive(古腾堡电子文本存档), which contains some 25,000(现在是36,000了) free electronic books, hosted at http://www.gutenberg.org/. We begin by getting the Python interpreter to load the NLTK package, then ask to see nltk.corpus.gutenberg.fileids(), the file identifiers in this corpus:
+>>> import nltk
+>>> nltk.corpus.gutenberg.fileids()
+['austen-emma.txt', 'austen-persuasion.txt', 'austen-sense.txt', 'bible-kjv.txt', 'blake-poems.txt', 'bryant-stories.txt', 'burgess-busterbrown.txt', 'carroll-alice.txt','chesterton-ball.txt', 'chesterton-brown.txt', 'chesterton-thursday.txt', 'edgeworth-parents.txt', 'melville-moby_dick.txt', 'milton-paradise.txt', 'shakespeare-caesar.txt', 'shakespeare-hamlet.txt', 'shakespeare-macbeth.txt', 'whitman-leaves.txt']
+Let’s pick out the first of these texts—Emma by Jane Austen—and give it a short name, emma, then find out how many words it contains:
+>>> emma = nltk.corpus.gutenberg.words('austen-emma.txt')
+>>> len(emma)
+192427
+In Section 1.1, we showed how you could carry out concordancing of a text such as text1 with the command text1.concordance(). However, this assumes that you are using one of the nine texts obtained as a result of doing from nltk.book import *. Now that you have started examining data from nltk.corpus, as in the previous example, you have to employ the following pair of statements to perform concordancing and other tasks from Section 1.1:
+>>> emma = nltk.Text(nltk.corpus.gutenberg.words('austen-emma.txt'))
+>>> emma.concordance("surprize")
+When we defined emma, we invoked the words() function of the gutenberg object in NLTK’s corpus package. But since it is cumbersome(累赘的) to type such long names all the time, Python provides another version of the import statement, as follows:
+>>> from nltk.corpus import gutenberg
+>>> gutenberg.fileids()
+['austen-emma.txt', 'austen-persuasion.txt', 'austen-sense.txt', ...]
+>>> emma = gutenberg.words('austen-emma.txt')
+Let’s write a short program to display other information about each text, by looping over all the values of fileid（文件标识） corresponding to the gutenberg file identifiers listed earlier and then computing statistics for each text. For a compact output display, we will make sure that the numbers are all integers, using int().
+>>> for fileid in gutenberg.fileids():
+...     num_chars = len(gutenberg.raw(fileid)) ①
+...     num_words = len(gutenberg.words(fileid))
+...     num_sents = len(gutenberg.sents(fileid))
+...     num_vocab = len(set([w.lower() for w in gutenberg.words(fileid)]))
+...           print int(num_chars/num_words), int(num_words/num_sents),     int(num_words/num_vocab), fileid
+...
+4 21 26 austen-emma.txt
+4 23 16 austen-persuasion.txt
+4 24 22 austen-sense.txt
+4 33 79 bible-kjv.txt
+4 18 5 blake-poems.txt
+4 17 14 bryant-stories.txt
+4 17 12 burgess-busterbrown.txt
+4 16 12 carroll-alice.txt
+4 17 11 chesterton-ball.txt
+4 19 11 chesterton-brown.txt
+4 16 10 chesterton-thursday.txt
+4 18 24 edgeworth-parents.txt
+4 24 15 melville-moby_dick.txt
+4 52 10 milton-paradise.txt
+4 12 8 shakespeare-caesar.txt
+4 13 7 shakespeare-hamlet.txt
+4 13 6 shakespeare-macbeth.txt
+4 35 12 whitman-leaves.txt
+This program displays three statistics for each text: average word length平均字长, average sentence length平均句长, and the number of times each vocabulary item appears in the text on average本文中每个词汇平均出现数量 (our lexical diversity score我们的词汇多样性得分). Observe that average word length appears to be a general property of English, since it has a recurrent（周期性的） value of 4. (In fact, the average word length is really 3, not 4, since the num_chars variable counts space characters.) By contrast average sentence length and lexical diversity appear to be characteristics of particular authors.
+The previous example also showed how we can access the “raw” text of the book①, not split up into tokens. The raw() function gives us the contents of the file without any linguistic processing(对文件的内容不进行任何语言处理). So, for example, len(gutenberg.raw('blake-poems.txt') tells us how many letters occur in the text, including the spaces between words. The sents() function divides the text up into its sentences, where each sentence is a list of words（把文本分割成句子，每个句子是一个由单词组成的列表）:
+>>> macbeth_sentences = gutenberg.sents('shakespeare-macbeth.txt')
+>>> macbeth_sentences
+[['[', 'The', 'Tragedie', 'of', 'Macbeth', 'by', 'William', 'Shakespeare', '1603', ']'], ['Actus', 'Primus', '.'], ...]
+>>> macbeth_sentences[1037]
+['Good', 'night', ',', 'and', 'better', 'health', 'Attend', 'his', 'Maiesty']
+>>> longest_len = max([len(s) for s in macbeth_sentences])
+>>> [s for s in macbeth_sentences if len(s) == longest_len]
+[['Doubtfull', 'it', 'stood', ',', 'As', 'two', 'spent', 'Swimmers', ',', 'that', 'doe', 'cling', 'together', ',', 'And', 'choake', 'their', 'Art', ':', 'The', 'mercilesse', 'Macdonwald', ...], ...]
+Most NLTK corpus readers include a variety of access methods apart from words(), raw(), and sents(). Richer linguistic content is available from some corpora, such as part-of-speech tags, dialogue tags, syntactic trees, and so forth; we will see these in later chapters.
+Web and Chat Text   Web和聊天文本
+Although Project Gutenberg contains thousands of books, it represents established literature. It is important to consider less formal language as well. NLTK’s small collection of web text includes content from a Firefox discussion forum, conversations overheard（无意听到的） in New York, the movie script of Pirates of the Carribean（加勒比海盗）, personal advertisements, and wine reviews:
+>>> from nltk.corpus import webtext
+>>> for fileid in webtext.fileids():
+...     print fileid, webtext.raw(fileid)[:65], '...'
+...
+firefox.txt Cookie Manager: "Don't allow sites that set removed cookies to se...
+grail.txt SCENE 1: [wind] [clop clop clop] KING ARTHUR: Whoa there!  [clop...
+overheard.txt White guy: So, do you have any plans for this evening? Asian girl...
+pirates.txt PIRATES OF THE CARRIBEAN: DEAD MAN'S CHEST, by Ted Elliott & Terr...
+singles.txt 25 SEXY MALE, seeks attrac older single lady, for discreet encoun...
+wine.txt Lovely delicate, fragrant Rhone wine. Polished leather and strawb...
+There is also a corpus of instant messaging chat sessions, originally collected by the Naval Postgraduate School for research on automatic detection of Internet predators（捕食者）.The corpus contains over 10,000 posts（帖子）, anonymized by replacing usernames with generic names(通用名) of the form “UserNNN”, and manually edited to remove any other identifying information. The corpus is organized into 15 files, where each file contains several hundred posts collected on a given date, for an age-specific chatroom (teens, 20s, 30s, 40s, plus a generic adults chatroom). The filename contains the date, chat-room, and number of posts; e.g., 10-19-20s_706posts.xml contains 706 posts gathered from the 20s chat room on 10/19/2006.
+>>> from nltk.corpus import nps_chat
+>>> chatroom = nps_chat.posts('10-19-20s_706posts.xml')
+>>> chatroom[123]
+['i', 'do', "n't", 'want', 'hot', 'pics', 'of', 'a', 'female', ',','I', 'can', 'look', 'in', 'a', 'mirror','.']
+Brown Corpus  布朗语料库
+The Brown Corpus was the first million-word electronic corpus of English, created in 1961 at Brown University. This corpus contains text from 500 sources, and the sources have been categorized by genre, such as news, editorial, and so on. Table 2-1 gives an example of each genre (for a complete list, see http://icame.uib.no/brown/bcm-los.html).
+ID
+File
+Genre
+Description
+A16
+ca16
+news
+Chicago Tribune: Society Reportage
+B02
+cb02
+editorial
+Christian Science Monitor: Editorials
+C17
+cc17
+reviews
+Time Magazine: Reviews
+D12
+cd12
+religion
+Underwood: Probing the Ethics of Realtors
+E36
+ce36
+hobbies
+Norling: Renting a Car in Europe
+F25
+cf25
+lore
+Boroff: Jewish Teenage Culture
+G22
+cg22
+belles_lettres
+Reiner: Coping with Runaway Technology
+H15
+ch15
+government
+US Office of Civil and Defence Mobilization: The Family Fallout Shelter
+J17
+cj19
+learned
+Mosteller: Probability with Statistical Applications
+K04
+ck04
+fiction
+W.E.B. Du Bois: Worlds of Color
+L13
+cl13
+mystery
+Hitchens: Footsteps in the Night
+M01
+cm01
+science_fiction
+Heinlein: Stranger in a Strange Land
+N14
+cn15
+adventure
+Field: Rattlesnake Ridge
+P12
+cp12
+romance
+Callaghan: A Passion in Rome
+R06
+cr06
+humor
+Thurber: The Future, If Any, of Comedy
+Table 2-1. Example document for each section of the Brown Corpus
+We can access the corpus as a list of words or a list of sentences (where each sentence is itself just a list of words). We can optionally specify particular categories or files to read:
+>>> from nltk.corpus import brown
+>>> brown.categories()
+['adventure', 'belles_lettres', 'editorial', 'fiction', 'government', 'hobbies',
+'humor', 'learned', 'lore', 'mystery', 'news', 'religion', 'reviews', 'romance',
+'science_fiction']
+>>> brown.words(categories='news')
+['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', ...]
+>>> brown.words(fileids=['cg22'])
+['Does', 'our', 'society', 'have', 'a', 'runaway', ',', ...]
+>>> brown.sents(categories=['news', 'editorial', 'reviews'])
+[['The', 'Fulton', 'County'...], ['The', 'jury', 'further'...], ...]
+The Brown Corpus is a convenient resource for studying systematic differences between genres, a kind of linguistic inquiry(语言学研究) known as stylistics（文体学）. Let’s compare genres in their usage of modal verbs. The first step is to produce the counts for a particular genre. Remember to import nltk before doing the following:
+>>> from nltk.corpus import brown
+>>> news_text = brown.words(categories='news')
+>>> fdist = nltk.FreqDist([w.lower() for w in news_text])
+>>> modals = ['can', 'could', 'may', 'might', 'must', 'will']
+>>> for m in modals:
+...     print m + ':', fdist[m],
+...
+can: 94 could: 87 may: 93 might: 38 must: 53 will: 389
+Your Turn: Choose a different section of the Brown Corpus, and adapt the preceding example to count a selection of wh words, such as what, when, where, who and why.
+Next, we need to obtain counts for each genre of interest. We’ll use NLTK’s support for conditional frequency distributions. These are presented systematically in  Section 2.2, where we also unpick(拆散) the following code line by line. For the moment, you can ignore the details and just concentrate on the output（忽略细节，专注于结果）.
+>>> cfd = nltk.ConditionalFreqDist(
+...           (genre, word)
+...           for genre in brown.categories()
+...           for word in brown.words(categories=genre))
+>>> genres = ['news', 'religion', 'hobbies', 'science_fiction', 'romance', 'humor']
+>>> modals = ['can', 'could', 'may', 'might', 'must', 'will']
+>>> cfd.tabulate(conditions=genres, samples=modals)
+can  could  may might must will
+news   93   86   66   38   50  389
+religion   82   59   78   12   54   71
+hobbies  268   58  131   22   83  264
+science_fiction  16   49    4   12    8   16
+romance   74  193   11   51   45   43
+humor   16   30    8    8    9   13
+Observe that the most frequent modal in the news genre is will, while the most frequent modal in the romance genre is could. Would you have predicted this? The idea that word counts might distinguish（区分） genres will be taken up（采纳） again in Chapter 6.
+Reuters Corpus  路透社语料库
+The Reuters Corpus contains 10,788 news documents totaling 1.3 million words. The documents have been classified into 90 topics, and grouped into two sets, called “training” and “test”（训练和测试）; thus, the text with fileid 'test/14826' is a document drawn from the test set. This split（分割） is for training and testing algorithms that automatically detect the topic of a document, as we will see in Chapter 6.
+>>> from nltk.corpus import reuters
+>>> reuters.fileids()
+['test/14826', 'test/14828', 'test/14829', 'test/14832', ...]
+>>> reuters.categories()
+['acq', 'alum', 'barley', 'bop', 'carcass', 'castor-oil', 'cocoa',
+'coconut', 'coconut-oil', 'coffee', 'copper', 'copra-cake', 'corn',
+'cotton', 'cotton-oil', 'cpi', 'cpu', 'crude', 'dfl', 'dlr', ...]
+Unlike the Brown Corpus, categories in the Reuters Corpus overlap with each other（相互覆盖，也就是内容有重复）, simply because a news story often covers multiple topics. We can ask for the topics covered by one or more documents, or for the documents included in one or more categories. For convenience, the corpus methods accept a single fileid or a list of fileids.
+>>> reuters.categories('training/9865')
+['barley', 'corn', 'grain', 'wheat']
+>>> reuters.categories(['training/9865', 'training/9880'])
+['barley', 'corn', 'grain', 'money-fx', 'wheat']
+>>> reuters.fileids('barley')
+['test/15618', 'test/15649', 'test/15676', 'test/15728', 'test/15871', ...]
+>>> reuters.fileids(['barley', 'corn'])
+['test/14832', 'test/14858', 'test/15033', 'test/15043', 'test/15106',
+'test/15287', 'test/15341', 'test/15618', 'test/15618', 'test/15648', ...]
+Similarly, we can specify the words or sentences we want in terms of（按照） files or categories. The first handful（少数） of words in each of these texts are the titles, which by convention（按照惯例） are stored as uppercase.
+>>> reuters.words('training/9865')[:14]
+['FRENCH', 'FREE', 'MARKET', 'CEREAL', 'EXPORT', 'BIDS',
+'DETAILED', 'French', 'operators', 'have', 'requested', 'licences', 'to', 'export']
+>>> reuters.words(['training/9865', 'training/9880'])
+['FRENCH', 'FREE', 'MARKET', 'CEREAL', 'EXPORT', ...]
+>>> reuters.words(categories='barley')
+['FRENCH', 'FREE', 'MARKET', 'CEREAL', 'EXPORT', ...]
+>>> reuters.words(categories=['barley', 'corn'])
+['THAI', 'TRADE', 'DEFICIT', 'WIDENS', 'IN', 'FIRST', ...]
+Inaugural Address Corpus  就职演说语料库
+In Section 1.1, we looked at the Inaugural Address Corpus, but treated it as a single text. The graph in Figure 1-2 used “word offset”（单词位移） as one of the axes; this is the numerical index of the word in the corpus, counting from the first word of the first address. However, the corpus is actually a collection of 55 texts, one for each presidential address. An interesting property of this collection is its time dimension（时间维度，奥巴马的也有）:
+>>> from nltk.corpus import inaugural
+>>> inaugural.fileids()
+['1789-Washington.txt', '1793-Washington.txt', '1797-Adams.txt', ...]
+>>> [fileid[:4] for fileid in inaugural.fileids()]
+['1789', '1793', '1797', '1801', '1805', '1809', '1813', '1817', '1821', ...]
+Notice that the year of each text appears in its filename. To get the year out of the filename, we extracted the first four characters, using fileid[:4].
+Let’s look at how the words America and citizen are used over time. The following code converts the words in the Inaugural corpus to lowercase using w.lower()①, then checks whether they start with either of the “targets” america or citizen using startswith()①. Thus it will count words such as American’s and Citizens. We’ll learn about conditional frequency distributions in Section 2.2; for now, just consider the output, shown in Figure 2-1.
+>>> cfd = nltk.ConditionalFreqDist(
+...           (target, file[:4])
+...           for fileid in inaugural.fileids()
+...           for w in inaugural.words(fileid)
+...           for target in ['america', 'citizen']
+...           if w.lower().startswith(target)) ①
+>>> cfd.plot()
+运行有问题，类型错误
+Traceback (most recent call last):
+File "E:/Test/NLTK/2.1.py", line 6, in <module>
+for fileid in inaugural.fileids()
+File "C:\Python26\lib\site-packages\nltk\probability.py", line 1740, in __init__
+for (cond, sample) in cond_samples:
+File "E:/Test/NLTK/2.1.py", line 9, in <genexpr>
+if w.lower().startswith(target))
+TypeError: 'type' object is unsubscriptable
+Figure 2-1. Plot of a conditional frequency distribution: All words in the Inaugural Address Corpus that begin with america or citizen are counted; separate counts are kept for each address; these are plotted so that trends in usage over time can be observed; counts are not normalized for document length.
+Annotated Text Corpora  注释文本语料库
+Many text corpora contain linguistic annotations, representing part-of-speech tags, named entities, syntactic structures（句法结构）, semantic roles（语义角色）, and so forth. NLTK provides convenient ways to access several of these corpora, and has data packages containing corpora and corpus samples, freely downloadable for use in teaching and research. Table 2-2 lists some of the corpora. For information about downloading them, see http://www.nltk.org/data .For more examples of how to access NLTK corpora, please consult the Corpus HOWTO at http://www.nltk.org/howto .
+Table 2-2. Some of the corpora and corpus samples distributed with NLTK
+Corpus
+Compiler
+Contents
+Brown Corpus
+Francis, Kucera
+15 genres, 1.15M words, tagged, categorized
+CESS Treebanks
+CLiC-UB
+1M words, tagged and parsed (Catalan, Spanish)
+Chat-80 Data Files
+Pereira & Warren
+World Geographic Database
+CMU Pronouncing Dictionary
+CMU
+127k entries
+CoNLL 2000 Chunking Data
+CoNLL
+270k words, tagged and chunked
+CoNLL 2002 Named Entity
+CoNLL
+700k words, pos- and named-entity-tagged (Dutch, Spanish)
+CoNLL 2007 Dependency Treebanks (sel)
+CoNLL
+150k words, dependency parsed (Basque, Catalan)
+Dependency Treebank
+Narad
+Dependency parsed version of Penn Treebank sample
+Floresta Treebank
+Diana Santos et al
+9k sentences, tagged and parsed (Portuguese)
+Gazetteer Lists
+Various
+Lists of cities and countries
+Genesis Corpus
+Misc web sources
+6 texts, 200k words, 6 languages
+Gutenberg (selections)
+Hart, Newby, et al
+18 texts, 2M words
+Inaugural Address Corpus
+CSpan
+US Presidential Inaugural Addresses (1789-present)
+Indian POS-Tagged Corpus
+Kumaran et al
+60k words, tagged (Bangla, Hindi, Marathi, Telugu)
+MacMorpho Corpus
+NILC, USP, Brazil
+1M words, tagged (Brazilian Portuguese)
+Movie Reviews
+Pang, Lee
+2k movie reviews with sentiment polarity classification
+Names Corpus
+Kantrowitz, Ross
+8k male and female names
+NIST 1999 Info Extr (selections)
+Garofolo
+63k words, newswire and named-entity SGML markup
+NPS Chat Corpus
+Forsyth, Martell
+10k IM chat posts, POS-tagged and dialogue-act tagged
+PP Attachment Corpus
+Ratnaparkhi
+28k prepositional phrases, tagged as noun or verb modifiers
+Proposition Bank
+Palmer
+113k propositions, 3300 verb frames
+Question Classification
+Li, Roth
+6k questions, categorized
+Reuters Corpus
+Reuters
+1.3M words, 10k news documents, categorized
+Roget's Thesaurus
+Project Gutenberg
+200k words, formatted text
+RTE Textual Entailment
+Dagan et al
+8k sentence pairs, categorized
+SEMCOR
+Rus, Mihalcea
+880k words, part-of-speech and sense tagged
+Senseval 2 Corpus
+Pedersen
+600k words, part-of-speech and sense tagged
+Shakespeare texts (selections)
+Bosak
+8 books in XML format
+State of the Union Corpus
+CSPAN
+485k words, formatted text
+Stopwords Corpus
+Porter et al
+2,400 stopwords for 11 languages
+Swadesh Corpus
+Wiktionary
+comparative wordlists in 24 languages
+Switchboard Corpus (selections)
+LDC
+36 phonecalls, transcribed, parsed
+Univ Decl of Human Rights
+United Nations
+480k words, 300+ languages
+Penn Treebank (selections)
+LDC
+40k words, tagged and parsed
+TIMIT Corpus (selections)
+NIST/LDC
+audio files and transcripts for 16 speakers
+VerbNet 2.1
+Palmer et al
+5k verbs, hierarchically organized, linked to WordNet
+Wordlist Corpus
+OpenOffice.org et al
+960k words and 20k affixes for 8 languages
+WordNet 3.0 (English)
+Miller, Fellbaum
+145k synonym sets
+Corpora in Other Languages  其他语言的语料库
+NLTK comes with corpora for many languages, though in some cases you will need to learn how to manipulate character encodings in Python before using these corpora (see Section 3.3).
+>>> nltk.corpus.cess_esp.words()
+['El', 'grupo', 'estatal', 'Electricit\xe9_de_France', ...]
+>>> nltk.corpus.floresta.words()
+['Um', 'revivalismo', 'refrescante', 'O', '7_e_Meio', ...]
+>>> nltk.corpus.indian.words('hindi.pos')
+['\xe0\xa4\xaa\xe0\xa5\x82\xe0\xa4\xb0\xe0\xa5\x8d\xe0\xa4\xa3',
+'\xe0\xa4\xaa\xe0\xa5\x8d\xe0\xa4\xb0\xe0\xa4\xa4\xe0\xa4\xbf\xe0\xa4\xac\xe0\xa4
+\x82\xe0\xa4\xa7', ...]
+>>> nltk.corpus.udhr.fileids()
+['Abkhaz-Cyrillic+Abkh', 'Abkhaz-UTF8', 'Achehnese-Latin1', 'Achuar-Shiwiar-Latin1',
+'Adja-UTF8', 'Afaan_Oromo_Oromiffa-Latin1', 'Afrikaans-Latin1', 'Aguaruna-Latin1',
+'Akuapem_Twi-UTF8', 'Albanian_Shqip-Latin1', 'Amahuaca', 'Amahuaca-Latin1', ...]
+>>> nltk.corpus.udhr.words('Javanese-Latin1')[11:]
+[u'Saben', u'umat', u'manungsa', u'lair', u'kanthi', ...]
+The last of these corpora, udhr, contains the Universal Declaration of Human Rights（国际人权宣言）in over 300 languages. The fileids for this corpus include information about the character encoding used in the file, such as UTF8 or Latin1. Let’s use a conditional frequency distribution to examine the differences in word lengths for a selection of languages included in the udhr corpus. The output is shown in Figure 2-2 (run the program yourself to see a color plot). Note that True and False are Python’s built-in Boolean values.
+>>> from nltk.corpus import udhr
+>>> languages = ['Chickasaw', 'English', 'German_Deutsch',
+...     'Greenlandic_Inuktikut', 'Hungarian_Magyar', 'Ibibio_Efik']
+>>> cfd = nltk.ConditionalFreqDist(
+...           (lang, len(word))
+...           for lang in languages
+...           for word in udhr.words(lang + '-Latin1'))
+>>> cfd.plot(cumulative=True)
+Figure 2-2. Cumulative word length distributions: Six translations of the Universal Declaration of Human Rights are processed; this graph shows that words having five or fewer letters account for about 80% of Ibibio text, 60% of German text, and 25% of Inuktitut text.
+Your Turn: Pick a language of interest in udhr.fileids(), and define a variable raw_text = udhr.raw(Language-Latin1). Now plot a frequency distribution of the letters of the text using nltk.FreqDist(raw_text).plot().
+不知道为什么Chinese_Mandarin-UTF8不能用，留下该问题继续看
+Unfortunately, for many languages, substantial corpora are not yet available. Often there is insufficient（不足的） government or industrial support for developing language resources, and individual efforts are piecemeal（零碎的） and hard to discover or reuse. Some languages have no established writing system, or are endangered. (See Section 2.7 for suggestions on how to locate(查找) language resources.)
+Text Corpus Structure 文本语料库结构
+We have seen a variety of corpus structures so far; these are summarized in Figure 2-3. The simplest kind lacks any structure: it is just a collection of texts. Often, texts are grouped into categories that might correspond to genre, source, author, language, etc. Sometimes these categories overlap, notably（尤其） in the case of topical（时事问题） categories, as a text can be relevant to more than one topic. Occasionally, text collections have temporal structure（时态结构）, news collections being the most common example. NLTK’s corpus readers support efficient access to a variety of corpora, and can be used to work with new corpora. Table 2-3 lists functionality provided by the corpus readers.
+Figure 2-3. Common structures for text corpora: The simplest kind of corpus is a collection of isolated texts with no particular organization; some corpora are structured into categories, such as genre (Brown Corpus); some categorizations overlap, such as topic categories (Reuters Corpus); other corpora represent language use over time (Inaugural Address Corpus).4种不同类型的语料库
+Table 2-3. Basic corpus functionality defined in NLTK: More documentation can be found using help(nltk.corpus.reader) and by reading the online Corpus HOWTO at http://www.nltk.org/howto .
+Example
+Description
+fileids()
+The files of the corpus
+fileids([categories])
+The files of the corpus corresponding to these categories
+categories()
+The categories of the corpus
+categories([fileids])
+The categories of the corpus corresponding to these files
+raw()
+The raw content of the corpus
+raw(fileids=[f1,f2,f3])
+The raw content of the specified files
+raw(categories=[c1,c2])
+The raw content of the specified categories
+words()
+The words of the whole corpus
+words(fileids=[f1,f2,f3])
+The words of the specified fileids
+words(categories=[c1,c2])
+The words of the specified categories
+sents()
+The sentences of the specified categories
+sents(fileids=[f1,f2,f3])
+The sentences of the specified fileids
+sents(categories=[c1,c2])
+The sentences of the specified categories
+abspath(fileid)
+The location of the given file on disk
+encoding(fileid)
+The encoding of the file (if known)
+open(fileid)
+Open a stream for reading the given corpus file
+root()
+The path to the root of locally installed corpus
+readme()
+The contents of the README file of the corpus
+We illustrate the difference between some of the corpus access methods here:
+>>> raw = gutenberg.raw("burgess-busterbrown.txt")
+>>> raw[1:20]     #这个按单个字符算的
+'The Adventures of B'
+>>> words = gutenberg.words("burgess-busterbrown.txt")
+>>> words[1:20]        #这个按单个词和符号数字算的
+['The', 'Adventures', 'of', 'Buster', 'Bear', 'by', 'Thornton', 'W', '.',
+'Burgess', '1920', ']', 'I', 'BUSTER', 'BEAR', 'GOES', 'FISHING', 'Buster',
+'Bear']
+>>> sents = gutenberg.sents("burgess-busterbrown.txt")
+>>> sents[1:20]  #按句子，那么这个I为啥算单独的一句？
+[['I'], ['BUSTER', 'BEAR', 'GOES', 'FISHING'], ['Buster', 'Bear', 'yawned', 'as',
+'he', 'lay', 'on', 'his', 'comfortable', 'bed', 'of', 'leaves', 'and', 'watched',
+'the', 'first', 'early', 'morning', 'sunbeams', 'creeping', 'through', ...], ...]
+Loading Your Own Corpus  装载你自己的语料库
+If you have a your own collection of text files that you would like to access using the methods discussed earlier, you can easily load them with the help of NLTK’s Plain textCorpusReader. Check the location of your files on your file system; in the following example, we have taken this to be the directory /usr/share/dict（这是Linux的吧）. Whatever the location, set this to be the value of corpus_root①. The second parameter of the PlaintextCorpusReader initializer②can be a list of fileids, like ['a.txt', 'test/b.txt'], or a pattern that matches all fileids, like '[abc]/.*\.txt' (see Section 3.4 for information about regular expressions).
+>>> from nltk.corpus import PlaintextCorpusReader
+>>> corpus_root = '/usr/share/dict' ①
+>>> wordlists = PlaintextCorpusReader(corpus_root, '.*') ②
+>>> wordlists.fileids()
+['README', 'connectives', 'propernames', 'web2', 'web2a', 'words']
+>>> wordlists.words('connectives')
+['the', 'of', 'and', 'to', 'a', 'in', 'that', 'is', ...]
+As another example, suppose you have your own local copy of Penn Treebank (release 3), in C:\corpora. We can use the BracketParseCorpusReader to access this corpus. We specify the corpus_root to be the location of the parsed Wall Street Journal component of the corpus①, and give a file_pattern that matches the files contained within its subfolders② (using forward slashes斜杠).
+>>> from nltk.corpus import BracketParseCorpusReader
+>>> corpus_root = r"C:\corpora\penntreebank\parsed\mrg\wsj" ①
+>>> file_pattern = r".*/wsj_.*\.mrg"  ②
+>>> ptb = BracketParseCorpusReader(corpus_root, file_pattern)
+>>> ptb.fileids()
+['00/wsj_0001.mrg','00/wsj_0002.mrg', '00/wsj_0003.mrg', '00/wsj_0004.mrg', ...]
+>>> len(ptb.sents())
+49208
+>>> ptb.sents(fileids='20/wsj_2013.mrg')[19]
+['The', '55-year-old', 'Mr.', 'Noriega', 'is', "n't", 'as', 'smooth', 'as', 'the',
+'shah', 'of', 'Iran', ',', 'as', 'well-born', 'as', 'Nicaragua', "'s", 'Anastasio',
+'Somoza', ',', 'as', 'imperial', 'as', 'Ferdinand', 'Marcos', 'of', 'the', 'Philippines',
+'or', 'as', 'bloody', 'as', 'Haiti', "'s", 'Baby', Doc', 'Duvalier', '.']

@@ -1,0 +1,130 @@
+注：正则化是用来防止过拟合的方法。在最开始学习机器学习的课程时，只是觉得这个方法就像某种魔法一样非常神奇的改变了模型的参数。但是一直也无法对其基本原理有一个透彻、直观的理解。直到最近再次接触到这个概念，经过一番苦思冥想后终于有了我自己的理解。
+0. 正则化（Regularization ）
+前面使用多项式回归，如果多项式最高次项比较大，模型就容易出现过拟合。正则化是一种常见的防止过拟合的方法，一般原理是在代价函数后面加上一个对参数的约束项，这个约束项被叫做正则化项（regularizer）。在线性回归模型中，通常有两种不同的正则化项：
+加上所有参数（不包括$\theta_0$）的绝对值之和，即$l1$范数，此时叫做Lasso回归；
+加上所有参数（不包括$\theta_0$）的平方和，即$l2$范数，此时叫做岭回归.
+看过不少关于正则化原理的解释，但是都没有获得一个比较直观的理解。下面用代价函数的图像以及正则化项的图像来帮助解释正则化之所以起作用的原因。
+0.1 代价函数的图像
+为了可视化，选择直线方程进行优化。假设一个直线方程以及代价函数如下：
+$\hat{h}_{\theta} = \theta_0 + \theta_1 x$，该方程只有一个特征$x$，两个参数$\theta_0$和$\theta_1$
+$J(\theta) = \frac{1}{m} \sum_{i=1}^{m}{(\theta_0 + \theta_1 x^{(i)} - y^{(i)})^2}$，该代价函数为均方误差函数（MSE），其中$m$表示样本量.
+为了保持简单，只取一个样本点$(1, 1)$代入上面的代价函数方程中，可得$J(\theta) = (\theta_0 + \theta_1 - 1)^2$. 该式是一个二元一次方程，可以在3维空间中作图（下面利用网站GeoGebra画出该方程的图像）：
+-1，代入样本点$(1, 1)$后的代价函数MSE的图像
+由于多个样本点的代价函数是所有样本点代价函数之和，且不同的样本点只是相当于改变了代价函数中两个变量的参数（此时$\theta_0$和$\theta_1$是变量，样本点的取值是参数）。因此多样本的代价函数MSE的图像只会在-1上发生缩放和平移，而不会发生过大的形变。
+对于坐标轴，表示如下：
+使用$J$轴表示蓝色轴线，上方为正向；
+使用$\theta_1$表示红色轴线，左边为正向；
+使用$\theta_0$表示绿色轴线，指向屏幕外的方向为正向.
+此时的函数图像相当于一条抛物线沿着平面$J = 0$上直线$\theta_0 = - \theta_1$平移后形成的图像。
+0.2 正则化项的图像
+这里使用$L1$范数作为正则化项，加上正则化项之后MSE代价函数变成：
+$J(\theta) = \frac{1}{m} \sum_{i=1}^{m}{(\theta_0 + \theta_1 x^{(i)} - y^{(i)})^2}  + \lambda ||\theta_1||_1$,
+上式中$\lambda$是正则化项的参数，为了简化取$\lambda = 1$。由于正则化项中始终不包含截距项$\theta_0$，此时的$L1$范数相当于参数$\theta_1$的绝对值，函数图像如下：
+-2，$L1$正则化项的图像
+此时的函数图像相当于一张对折后，半张开的纸。纸的折痕与平面$J = 0$上$\theta_0$轴重叠。
+0.3 代价函数与正则化项图像的叠加
+直接将这两个图像放在一起的样子：
+-3，同时显示代价函数与正则化项的图像
+将两个方程相加之后，即$J(\theta) = (\theta_0 + \theta_1 - 1)^2 + |\theta_1|$，做图可以得到下面的图像：
+-4，加入正则化项之后代价函数的图像
+此时的图像，就像是一个圆锥体被捏扁了之后，立在坐标原点上。观察添加正则化项前后的图像，我们会发现：
+加上正则化项之后，此时损失函数就分成了两部分：第1项为原来的MSE函数，第2项为正则化项，最终的结果是这两部分的线性组合;
+在第1项的值非常小但在第2项的值非常大的区域，这些值会受到正则化项的巨大影响，从而使得这些区域的值变的与正则化项近似：例如原来的损失函数沿$\theta_0 = -\theta_1$，$J$轴方向上的值始终为0，但是加入正则化项$J = |\theta_1|$后，该直线上原来为0的点，都变成了$\theta_1$的绝对值。这就像加权平均值一样，哪一项的权重越大，对最终结果产生的影响也越大;
+如果想象一种非常极端的情况：在参数的整个定义域上，第2项的取值都远远大于第一项的取值，那么最终的损失函数几乎100%都会由第2项决定，也就是整个代价函数的图像会非常类似于$J=|\theta_1|$（-2）而不是原来的MSE函数的图像（-1）。这时候就相当于$\lambda$的取值过大的情况，最终的全局最优解将会是坐标原点，这就是为什么在这种情况下最终得到的解全都为0.
+1. 岭回归
+岭回归与多项式回归唯一的不同在于代价函数上的差别。岭回归的代价函数如下：
+$$J(\theta) = \frac{1}{m} \sum_{i=1}^{m}{(y^{(i)} - (w x^{(i)} + b))^2}  + \lambda ||w||_2^2 = MSE(\theta) + \lambda \sum_{i = 1}^{n}{\theta_i^2} \ \quad \cdots \ (1 - 1)$$
+为了方便计算导数，通常也写成下面的形式：
+$$J(\theta) = \frac{1}{2m} \sum_{i=1}^{m}{(y^{(i)} - (w x^{(i)} + b))^2}  + \frac{\lambda}{2} ||w||_2^2 = \frac{1}{2}MSE(\theta) + \frac{\lambda}{2} \sum_{i = 1}^{n}{\theta_i^2} \ \quad \cdots \ (1 - 2)$$
+上式中的$w$是长度为$n$的向量，不包括截距项的系数$\theta_0$；$\theta$是长度为$n + 1$的向量，包括截距项的系数$\theta_0$；$m$为样本数；$n$为特征数.
+岭回归的代价函数仍然是一个凸函数，因此可以利用梯度等于0的方式求得全局最优解（正规方程）：
+$$\theta = (X^T X + \lambda I)^{-1}(X^T y)$$
+上述正规方程与一般线性回归的正规方程相比，多了一项$\lambda I$，其中$I$表示单位矩阵。假如$X^T X$是一个奇异矩阵（不满秩），添加这一项后可以保证该项可逆。由于单位矩阵的形状是对角线上为1其他地方都为0，看起来像一条山岭，因此而得名。
+除了上述正规方程之外，还可以使用梯度下降的方式求解（求梯度的过程可以参考一般线性回归，3.2.2节）。这里采用式子$1 - 2$来求导：
+$$\nabla_{\theta} J(\theta) = \frac{1}{m} X^T \cdot (X \cdot \theta - y)  + \lambda w \ \quad \cdots \ (1 - 3) $$
+因为式子$1- 2$中和式第二项不包含$\theta_0$，因此求梯度后，上式第二项中的$w$本来也不包含$\theta_0$。为了计算方便，添加$\theta_0 = 0$到$w$.
+因此在梯度下降的过程中，参数的更新可以表示成下面的公式：
+$$\theta = \theta - (\frac{\alpha}{m} X^T \cdot (X \cdot \theta - y)  + \lambda w) \ \quad \cdots \ (1 - 4) $$
+其中$\alpha$为学习率，$\lambda$为正则化项的参数
+1.1 数据以及相关函数
+1 import numpy as np 2 import matplotlib.pyplot as plt 3 from sklearn.preprocessing import PolynomialFeatures 4 from sklearn.metrics import mean_squared_error 5 6 data = np.array([[ -2.95507616, 10.94533252], 7 [ -0.44226119, 2.96705822], 8 [ -2.13294087, 6.57336839], 9 [ 1.84990823, 5.44244467], 10 [ 0.35139795, 2.83533936], 11 [ -1.77443098, 5.6800407 ], 12 [ -1.8657203 , 6.34470814], 13 [ 1.61526823, 4.77833358], 14 [ -2.38043687, 8.51887713], 15 [ -1.40513866, 4.18262786]]) 16 m = data.shape[0] # 样本大小 17 X = data[:, 0].reshape(-1, 1) # 将array转换成矩阵 18 y = data[:, 1].reshape(-1, 1)
+继续使用多项式回归中的数据。
+1.2 岭回归的手动实现
+有了上面的理论基础，就可以自己实现岭回归了，下面是Python代码：
+1 # 代价函数 2 def L_theta(theta, X_x0, y, lamb): 3 """ 4 lamb: lambda, the parameter of regularization 5 theta: (n+1)·1 matrix, contains the parameter of x0=1 6 X_x0: m·(n+1) matrix, plus x0 7 """ 8 h = np.dot(X_x0, theta) # np.dot 表示矩阵乘法 9 theta_without_t0 = theta[1:] 10 L_theta = 0.5 * mean_squared_error(h, y) + 0.5 * lamb * np.sum(np.square(theta_without_t0)) 11 return L_theta 12 13 # 梯度下降 14 def GD(lamb, X_x0, theta, y, alpha): 15 """ 16 lamb: lambda, the parameter of regularization 17 alpha: learning rate 18 X_x0: m·(n+1), plus x0 19 theta: (n+1)·1 matrix, contains the parameter of x0=1 20 """ 21 for i in range(T): 22 h = np.dot(X_x0, theta) 23 theta_with_t0_0 = np.r_[np.zeros([1, 1]), theta[1:]] # set theta[0] = 0 24 theta -= (alpha * 1/m * np.dot(X_x0.T, h - y) + lamb*(theta_with_t0_0)) # add the gradient of regularization term 25 if i%50000==0: 26 print(L_theta(theta, X_x0, y, lamb)) 27 return theta 28 29 T = 1200000 # 迭代次数 30 degree = 11 31 theta = np.ones((degree + 1, 1)) # 参数的初始化，degree = 11，一个12个参数 32 alpha = 0.0000000006 # 学习率 33 # alpha = 0.003 # 学习率 34 lamb = 0.0001 35 # lamb = 0 36 poly_features_d = PolynomialFeatures(degree=degree, include_bias=False) 37 X_poly_d = poly_features_d.fit_transform(X) 38 X_x0 = np.c_[np.ones((m, 1)), X_poly_d] # ADD X0 = 1 to each instance 39 theta = GD(lamb=lamb, X_x0=X_x0, theta=theta, y=y, alpha=alpha)
+上面第10行对应公式$1-2$，第24行对应公式$1-3$。由于自由度比较大，此时利用梯度下降的方法训练模型比较困难，学习率稍微大一点就会出现出现损失函数的值越过最低点不断增长的情况。下面是训练结束后的参数以及代价函数值：
+[[ 1.00078848e+00] [ -1.03862735e-05] [ 3.85144400e-05] [ -3.77233288e-05] [ 1.28959318e-04] [ -1.42449160e-04] [ 4.42760996e-04] [ -5.11518471e-04] [ 1.42533716e-03] [ -1.40265037e-03] [ 3.13638870e-03] [ 1.21862016e-03]] 3.59934190413
+从上面的结果看，截距项的参数最大，高阶项的参数都比较小。下面是比较原始数据和训练出来的模型之间的关系：
+1 X_plot = np.linspace(-2.99, 1.9, 1000).reshape(-1, 1) 2 poly_features_d_with_bias = PolynomialFeatures(degree=degree, include_bias=True) 3 X_plot_poly = poly_features_d_with_bias.fit_transform(X_plot) 4 y_plot = np.dot(X_plot_poly, theta) 5 plt.plot(X_plot, y_plot, 'r-') 6 plt.plot(X, y, 'b.') 7 plt.xlabel('x') 8 plt.ylabel('y') 9 plt.show()
+-1，手动实现岭回归的效果
+图中模型与原始数据的匹配度不是太好，但是过拟合的情况极大的改善了，模型变的更简单了。
+1.2 正规方程
+下面使用正规方程求解：
+其中$\lambda = 10$
+1 theta2 = np.linalg.inv(np.dot(X_x0.T, X_x0) + 10*np.identity(X_x0.shape[1])).dot(X_x0.T).dot(y) 2 print(theta2) 3 print(L_theta(theta2, X_x0, y, lamb)) 4 5 X_plot = np.linspace(-3, 2, 1000).reshape(-1, 1) 6 poly_features_d_with_bias = PolynomialFeatures(degree=degree, include_bias=True) 7 X_plot_poly = poly_features_d_with_bias.fit_transform(X_plot) 8 y_plot = np.dot(X_plot_poly, theta2) 9 plt.plot(X_plot, y_plot, 'r-') 10 plt.plot(X, y, 'b.') 11 plt.xlabel('x') 12 plt.ylabel('y') 13 plt.show()
+参数即代价函数的值：
+[[ 0.56502653] [-0.12459546] [ 0.26772443] [-0.15642405] [ 0.29249514] [-0.10084392] [ 0.22791769] [ 0.1648667 ] [-0.05686718] [-0.03906615] [-0.00111673] [ 0.00101724]] 0.604428719639
+从参数来看，截距项的系数减小了，1-7阶都有比较大的参数都比较大，后面更高阶项的参数越来越小，下面是函数图像：
+-2，使用正规方程求解
+从图中可以看到，虽然模型的自由度没变，还是11，但是过拟合的程度得到了改善。
+1.3 使用scikit-learn
+scikit-learn中有专门计算岭回归的函数，而且效果要比上面的方法好。使用scikit-learn中的岭回归，只需要输入以下参数：
+alpha: 上面公式中的$\lambda$，正则化项的系数；
+solver: 求解方法；
+X: 训练样本；
+y: 训练样本的标签.
+1 from sklearn.linear_model import Ridge 2 3 # 代价函数 4 def L_theta_new(intercept, coef, X, y, lamb): 5 """ 6 lamb: lambda, the parameter of regularization 7 theta: (n+1)·1 matrix, contains the parameter of x0=1 8 X_x0: m·(n+1) matrix, plus x0 9 """ 10 h = np.dot(X, coef) + intercept # np.dot 表示矩阵乘法 11 L_theta = 0.5 * mean_squared_error(h, y) + 0.5 * lamb * np.sum(np.square(coef)) 12 return L_theta 13 14 lamb = 10 15 ridge_reg = Ridge(alpha=lamb, solver="cholesky") 16 ridge_reg.fit(X_poly_d, y) 17 print(ridge_reg.intercept_, ridge_reg.coef_) 18 print(L_theta_new(intercept=ridge_reg.intercept_, coef=ridge_reg.coef_.T, X=X_poly_d, y=y, lamb=lamb)) 19 20 X_plot = np.linspace(-3, 2, 1000).reshape(-1, 1) 21 X_plot_poly = poly_features_d.fit_transform(X_plot) 22 h = np.dot(X_plot_poly, ridge_reg.coef_.T) + ridge_reg.intercept_ 23 plt.plot(X_plot, h, 'r-') 24 plt.plot(X, y, 'b.') 25 plt.show()
+训练结束后得到的参数为（分别表示截距，特征的系数；代价函数的值）：
+[ 3.03698398] [[ -2.95619849e-02 6.09137803e-02 -4.93919290e-02 1.10593684e-01 -4.65660197e-02 1.06387336e-01 5.14340826e-02 -2.29460359e-02 -1.12705709e-02 -1.73925386e-05 2.79198986e-04]] 0.213877232488
+-3，使用scikit-learn训练岭回归
+经过与前面两种方法得到的结果比较，这里得到的曲线更加平滑，不仅降低了过拟合的风险，代价函数的值也非常低。
+2. Lasso回归
+Lasso回归于岭回归非常相似，它们的差别在于使用了不同的正则化项。最终都实现了约束参数从而防止过拟合的效果。但是Lasso之所以重要，还有另一个原因是：Lasso能够将一些作用比较小的特征的参数训练为0，从而获得稀疏解。也就是说用这种方法，在训练模型的过程中实现了降维(特征筛选)的目的。
+Lasso回归的代价函数为：
+$$J(\theta) = \frac{1}{2m} \sum_{i=1}^{m}{(y^{(i)} - (w x^{(i)} + b))^2}  + \lambda ||w||_1 = \frac{1}{2}MSE(\theta) + \lambda \sum_{i = 1}^{n}{|\theta_i|} \ \quad \cdots \ (2 - 1)$$
+上式中的$w$是长度为$n$的向量，不包括截距项的系数$θ_0$, $θ$是长度为$n+1$的向量，包括截距项的系数$θ_0$，$m$为样本数，$n$为特征数.
+$||w||_1$表示参数$w$的$l1$范数，也是一种表示距离的函数。加入$w$表示3维空间中的一个点$(x, y, z)$，那么$||w||_1 = |x| + |y| + |z|$，即各个方向上的绝对值（长度）之和。
+式子$2-1$的梯度为：
+$$\nabla_{\theta}MSE(\theta) + \lambda \begin{pmatrix} sign(\theta_1) \\  sign(\theta_2) \\ \vdots \\ sign(\theta_n) \end{pmatrix} \quad \cdots \ (2-2)$$
+其中$sign(\theta_i)$由$\theta_i$的符号决定: $\theta_i > 0, sign(\theta_i) = 1; \ \theta_i = 0, sign(\theta_i) = 0; \ \theta_i < 0, sign(\theta_i) = -1$.
+2.1 Lasso的实现
+直接使用scikit-learn中的函数：
+可以参考官方文档，http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html
+下面模型中的参数alpha就是公式(2-1)中的参数$\lambda$，是正则化项的系数，可以取大于0的任意值。alpha的值越大，对模型中参数的惩罚力度越大，因此会有更多的参数被训练为0（只对线性相关的参数起作用），模型也就变得更加简单了。
+1 from sklearn.linear_model import Lasso 2 3 lamb = 0.025 4 lasso_reg = Lasso(alpha=lamb) 5 lasso_reg.fit(X_poly_d, y) 6 print(lasso_reg.intercept_, lasso_reg.coef_) 7 print(L_theta_new(intercept=lasso_reg.intercept_, coef=lasso_reg.coef_.T, X=X_poly_d, y=y, lamb=lamb)) 8 9 X_plot = np.linspace(-3, 2, 1000).reshape(-1, 1) 10 X_plot_poly = poly_features_d.fit_transform(X_plot) 11 h = np.dot(X_plot_poly, lasso_reg.coef_.T) + lasso_reg.intercept_ 12 plt.plot(X_plot, h, 'r-') 13 plt.plot(X, y, 'b.') 14 plt.show()
+最终获得的参数以及代价函数的值为：
+其中计算代价函数值的函数"L_theta_new"需要修改其中的"L_theta"为"L_theta = 0.5 * mean_squared_error(h, y) + lamb * np.sum(np.abs(coef))"
+[ 2.86435179] [ -0.00000000e+00 5.29099723e-01 -3.61182017e-02 9.75614738e-02 1.61971116e-03 -3.42711766e-03 2.78782527e-04 -1.63421713e-04 -5.64291215e-06 -1.38933655e-05 1.02036898e-06]
+0.0451291096773
+从结果可以看到，截距项的值最大，一次项的系数为0，二次项的系数是剩下的所有项中值最大的，也比较符合数据的真实来源。这里也可以看出来，更高阶的项虽然系数都非常小但不为0，这是因为这些项之间的关系是非线性的，无法用线性组合互相表示。
+-1，Lasso回归得到的图像
+-1是目前在$degree=11$的情况下，得到的最好模型。
+3. 弹性网络（ Elastic Net）
+弹性网络是结合了岭回归和Lasso回归，由两者加权平均所得。据介绍这种方法在特征数大于训练集样本数或有些特征之间高度相关时比Lasso更加稳定。
+其代价函数为：
+$$J(\theta) = \frac{1}{2}MSE(\theta) + r\lambda \sum_{i = 1}^{n}{|\theta_i|} + \frac{1-r}{2} \lambda \sum_{i=1}^{n} {\theta_i^2} \ \quad \cdots \ (3 - 1)$$
+其中$r$表示$l1$所占的比例。
+使用scikit-learn的实现：
+1 from sklearn.linear_model import ElasticNet 2 3 # 代价函数 4 def L_theta_ee(intercept, coef, X, y, lamb, r): 5 """ 6 lamb: lambda, the parameter of regularization 7 theta: (n+1)·1 matrix, contains the parameter of x0=1 8 X_x0: m·(n+1) matrix, plus x0 9 """ 10 h = np.dot(X, coef) + intercept # np.dot 表示矩阵乘法 11 L_theta = 0.5 * mean_squared_error(h, y) + r * lamb * np.sum(np.abs(coef)) + 0.5 * (1-r) * lamb * np.sum(np.square(coef)) 12 return L_theta 13 14 elastic_net = ElasticNet(alpha=0.5, l1_ratio=0.8) 15 elastic_net.fit(X_poly_d, y) 16 print(elastic_net.intercept_, elastic_net.coef_) 17 print(L_theta_ee(intercept=elastic_net.intercept_, coef=elastic_net.coef_.T, X=X_poly_d, y=y, lamb=0.1, r=0.8)) 18 19 X_plot = np.linspace(-3, 2, 1000).reshape(-1, 1) 20 X_plot_poly = poly_features_d.fit_transform(X_plot) 21 h = np.dot(X_plot_poly, elastic_net.coef_.T) + elastic_net.intercept_ 22 plt.plot(X_plot, h, 'r-') 23 plt.plot(X, y, 'b.') 24 plt.show()
+得到的结果为：
+[ 3.31466833] [ -0.00000000e+00 0.00000000e+00 -0.00000000e+00 1.99874040e-01 -1.21830209e-02 2.58040545e-04 3.01117857e-03 -8.54952421e-04 4.35227606e-05 -2.84995639e-06 -8.36248799e-06] 0.0807738447192
+该方法中得到了，更多的0，当然这也跟参数的设置有关。
+-1，使用elastic-net得到的结果
+4. 正则化项的使用以及l1与l2的比较
+根据吴恩达老师的机器学习公开课，建议使用下面的步骤来确定$\lambda$的值：
+创建一个$\lambda$值的列表，例如$\lambda \in {0, 0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28, 2.56, 5.12, 10.24}$;
+创建不同degree的模型（或改变其他变量）;
+遍历不同的模型和不同的$\lambda$值;
+使用学习到的参数$\theta$（包含正则化项）计算验证集上的误差（计算误差时不包含正则化项），$J_{CV}(\theta)$;
+选择在验证集上误差最小的参数组合（degree和$\lambda$）;
+使用选出来的参数和$\lambda$在测试集上测试，计算$J_{test}(\theta)$.
+下面通过一张图像来比较一下岭回归和Lasso回归：
+-1，Lasso与岭回归的比较（俯瞰图）
+上图中，左上方表示$l1$（图中菱形图案）和代价函数（图中深色椭圆环）；左下方表示$l2$（椭圆形线圈）和代价函数（图中深色椭圆环）。同一条线上（或同一个环上），表示对应的函数值相同；图案中心分别表示$l1, l2$范数以及代价函数的最小值位置。
+右边表示代价函数加上对应的正则化项之后的图像。添加正则化项之后，会影响原来的代价函数的最小值的位置，以及梯度下降时的路线（如果参数调整合适的话，最小值应该在距离原来代价函数最小值附近且与正则化项的图像相交，因为此时这两项在相互约束的情况下都取到最小值，它们的和也最小）。右上图，显示了Lasso回归中参数的变化情况，最终停留在了$\theta_2 = 0$这条线上；右下方的取值由于受到了$l2$范数的约束，也产生了位移。
+当正则化项的权重非常大的时候，会产生左侧黄色点标识的路线，最终所有参数都为0，但是趋近原点的方式不同。这是因为对于范数来说，原点是它们的最小值点。
+Reference
+http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html
+Géron A. Hands-on machine learning with Scikit-Learn and TensorFlow: concepts, tools, and techniques to build intelligent systems[M]. " O'Reilly Media, Inc.", 2017. github
+https://www.coursera.org/learn/machine-learning
+edx: UCSanDiegoX - DSE220x Machine Learning Fundamentals

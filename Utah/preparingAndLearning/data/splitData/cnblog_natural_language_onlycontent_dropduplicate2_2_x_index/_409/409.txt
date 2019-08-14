@@ -1,0 +1,23 @@
+前言：
+我们在做自然语言学习的过程中使用Python进行编程。是用解析器的方式确实有些麻烦。在这里给大家推荐一款集成开发环境IDE可以很方便的对Python进行项目管理，代码自动提示，运行调试等。
+简介：
+这里不做其它IDE的推荐，直接推荐pycharm。它是大名顶顶的JetBrains公司出品的基于IntelliJ引擎。这里有很多童鞋应该很熟悉了吧。IntelliJ引擎的IDE产品很多，例如PHP的PhpStorm，玩H5开发的WebStorm等。并且pycharm现在有完全免费的社区提供同学们使用真实福利满满啊。
+下载安装：
+地址：http://www.jetbrains.com/pycharm/download/
+这里有两个版本一个是收费的Professional和免费的社区版本Community。
+Professional版本是支持支付宝支付的这点还是比较贴心中国用户的。我们下面的学习会使用Community版本，因为这个版本已经足够了。
+*大家可以点击Communtiy下面的DOWNLOAD按钮跳转到如下页面
+继续点击direct link 下载就可以了。
+在CentOS中大家可以使用自带的浏览器Firefox使用上述网页方式下载。这里推荐使用第二种方法地址直接下载方式。
+*在桌面空白出单击鼠标右->在终端中打开->输入 cd /usr/local 后回车
+注意：一般情况下CentOS中用户自己安装的软件程序会放在 ／usr/local目录下（当然你也可以放在桌面）
+*输入->wget wget https://download.jetbrains.8686c.com/python/pycharm-community-2016.2.3.tar.gz 回车
+下载完毕后 我们输入ls看一下
+红色显示的就是我们刚刚下载的包
+*输入 tar -zxvf pycharm-community-2016.2.3.tar.gz 进行包解压
+*解压完毕 我们进入解压后的目录 输入：cd pycharm-community-2016.2.3/
+进入目录后可以使用ls显示目录下内容
+注意：一般情况下CentOS的可运行程序会存放在bin目录中，所以我们继续进入bin目录 输入：cd bin/
+*进入目录后可以ls可以看到 pycharm.sh这就是运行文件了，和windows的批处理文件很像。我们输入：./pycharm.sh
+回车
+PyCharm启动了。后面的学习将基于PyCharm进行，下一篇也会简单的介绍PyCharm玩Python的一些技巧，这些都是我们以后学习工作中用的到的。好吧让我们继续努力吧。

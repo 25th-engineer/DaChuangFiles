@@ -1,0 +1,3 @@
+PASCAL VOC和ImageNet ILSVRC竞赛关注于物体识别。
+COCO
+LSUN（Large-scale Scene Understanding Challenge）比赛：在CVPR上举办的竞赛，主要针对场景识别问题，包括场景分类、显著性预测、房间布局估计、生成caption等。

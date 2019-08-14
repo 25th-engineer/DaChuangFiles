@@ -1,0 +1,70 @@
+计算机视觉系列教程 (二)卷积与滤波详解
+
+
+什么是滤波？
+要了解什么是滤波，首先要知道什么是波。
+图像原本只是一种随时间推移的波形图，也就是图像一开始处于时域状态，而我们并不能从时域图像中看出什么东西（除了一堆突起），而伟大的傅里叶公式让图像从时域中转换到的频域中。
+
+引用一幅图 会看的更加清楚http://blog.jobbole.com/70549/
+
+从这幅图中可以看出来，图像其实是由不同频率的波长组成的，存在着高频部分和低频部分，当然这之间没有明确界限，我们需要知道的是高频部分和低频部分到底代表着什么。
+高频部分其实就是代表着这幅图像的边缘信息，也就是锐度。
+低频部分刚好相反，代表的是这幅图像的灰度变化信息，也就是内容。
+那么我们把高频部分的波称作为高频波，低频部分的则称为低频波。这就是波。
+那么什么事滤波呢，顾名思义，就是将某一部分波过滤掉。
+
+
+
+什么是卷积？
+卷积的运用很广泛，在数据结构中也有相对应 的卷积，而在图像处理中，卷积就更加有用了。
+通俗的讲，卷积其实就是加权求和，卷积模板就是权值。
+比如 下面这幅图
+
+我们挑选这点（2，2）的周围（3*3）区域作为卷积对象，首先，我们要设定卷积模板（当然模板也要3*3）
+首先 我们假定这3*3区域内的灰度值为  （3，3，3；2，2，1；1，2，3）；
+那么我们假定一个卷积模板为（1，2，1；0，0，0，-1，-2，-1）；
+则我们做卷积运算，对应加权求和：   sum=1*3+3*2+3*1+0*2+0*2+0*1+（-1）*1+（-2）*2+（-1）*3；
+算下来为sum=4；
+我们把灰度值4作为（2，2）点的新灰度，就完成了这次卷积运算。很简单是不是。
+了解过卷积以后，我们就懂了一个新的名词————滤波器，滤波器就是一个特定的公式导出的一个特定的卷积模板。
+高通滤波器
+高通滤波器 就是让图像高频波通过，滤掉低频波部分，保留边缘信息。
+我们常见的高通滤波器有：sobel，Laplacian等
+Sobel算子，就是对图像求导（一阶导数），x方向 y方向对应着两个不同的算子
+x方向（1，0，-1；2，0，-2，；1，0，-1）；
+y方向（1，2，1；0，0，0；-1，-2，-1）；
+Laplacian算子 这个算子是对图像求二阶导数，就一个算子
+（0，1，0；1，-4，1；0，1，0）；
+为了亮度归一化 算子求和一般为0；
+我们写个小程序来试一下效果，首先我们利用自己的算法来实现一下。
+首先我们建立一个Laplacian小模板（3*3）的；
+Mat ModelLaplacian(3,3,CV_8SC1); ModelLaplacian.at<char>(0,0)=0; ModelLaplacian.at<char>(0,1)=1; ModelLaplacian.at<char>(0,2)=0; ModelLaplacian.at<char>(1,0)=1; ModelLaplacian.at<char>(1,1)=-4; ModelLaplacian.at<char>(1,2)=1; ModelLaplacian.at<char>(2,0)=0; ModelLaplacian.at<char>(2,1)=1; ModelLaplacian.at<char>(2,2)=0;
+
+然后我们对每一个图像点进行加权赋值（注意边界点的处理，可以摄取，也可以利用半模板加权）
+Mat lapimage=Mat(image.rows,image.cols,CV_8UC1); for (int i=1;i<image.rows-1;i++){ for(int j=1;j<image.cols-1;j++){ int sum=0;//加权求和 for (int m=0;m<3;m++){ for(int n=0;n<3;n++){ sum+=((int)ModelLaplacian.at<char>(m,n)*(int)image.at<uchar>(i+m-1,j+n-1)); } } lapimage.at<uchar>(i,j)=sum; } }
+这样就完成了整个过程 下面是所有代码：
+#include <iostream> #include <opencv.hpp> using namespace cv; using namespace std; int main(){ Mat image=imread("mountain.jpg",1); //imshow("result",image); //waitKey(0); GaussianBlur(image,image,cvSize(5,5),5,5);//高斯模糊 cvtColor(image,image,CV_RGB2GRAY); //cout<<image; Mat ModelLaplacian(3,3,CV_8SC1); ModelLaplacian.at<char>(0,0)=0; ModelLaplacian.at<char>(0,1)=1; ModelLaplacian.at<char>(0,2)=0; ModelLaplacian.at<char>(1,0)=1; ModelLaplacian.at<char>(1,1)=-4; ModelLaplacian.at<char>(1,2)=1; ModelLaplacian.at<char>(2,0)=0; ModelLaplacian.at<char>(2,1)=1; ModelLaplacian.at<char>(2,2)=0; Mat lapimage=Mat(image.rows,image.cols,CV_8UC1); for (int i=1;i<image.rows-1;i++){ for(int j=1;j<image.cols-1;j++){ int sum=0;//加权求和 for (int m=0;m<3;m++){ for(int n=0;n<3;n++){ sum+=((int)ModelLaplacian.at<char>(m,n)*(int)image.at<uchar>(i+m-1,j+n-1)); } } lapimage.at<uchar>(i,j)=sum; } } imshow("result",lapimage); waitKey(0); system("pause"); return 0; }
+下面是效果：
+
+
+
+
+
+
+
+
+
+
+低通滤波器
+低通滤波器就是将高频部分滤掉，保留低频部分，其实就是模糊，降噪。
+通常低通滤波器有高斯滤波器等。
+高斯滤波就是利用了正态分布方程作为卷积模板的建立方程，所能去除的是高斯噪声。
+函数实现起来也很简单 和上面的滤波一样 只是卷积模板要通过高斯方程求解一下而已。
+opencvAPI也就一句话 GaussianBlur，这个函数利用了高斯方程的高阶可分离性，将二位的卷积计算转化为两次一维运算，大大减少运行时间。
+
+
+滤波器的作用
+滤波器通常用在预处理图像上，就比如我刚刚想要用拉普拉斯算子做二阶边缘提取，我先是用了高斯模糊去除了高斯噪声，因为拉普拉斯算子对噪声非常敏感，如果不去除高斯噪声将会像下图一样
+
+
+很乱 很难看 很没有价值 很多时候，一个好的预处理可以将一个算法提高到一个新的效果。滤波就担任着这样的职责！！！

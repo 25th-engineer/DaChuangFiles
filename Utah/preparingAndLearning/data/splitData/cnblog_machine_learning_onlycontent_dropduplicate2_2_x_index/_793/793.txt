@@ -1,0 +1,41 @@
+英文：Quora
+译文：CSDN CODE
+链接：http://code.csdn.net/news/2822818
+GraphLab
+GraphLab是一种新的面向机器学习的并行框架。
+GraphLab提供了一个完整的平台，让机构能够使用可扩展的机器学习系统建立大数据以分析产品，该公司客户包含Zillow、Adobe、Zynga、Pandora、Bosch、ExxonMobil等，它们从别的应用程序或者服务中抓取数据，通过推荐系统、欺诈监測系统、情感及社交网络分析系统等系统模式将大数据理念转换为生产环境下能够使用的预測应用程序。
+项目主页： http://graphlab.org/
+Vowpal Wabbit
+Vowpal Wabbit(Fast Online Learning)最初是由雅虎研究院建设的一个机器学习平台。眼下该项目在微软研究院。
+它是由John Langford启动并主导的项目。
+项目地址： http://hunch.net/~vw/
+scikits.learn
+scikit-learn是一个开源的、构建在SciPy之上用于机器学习的 Python 模块。它包含简单而高效的工具，可用于数据挖掘和数据分析。适合于不论什么人，可在各种情况下反复使用、构建在 NumPy、SciPy和 matplotlib 之上，遵循BSD 协议。
+项目地址： http://scikit-learn.org/stable
+Theano
+Theano是一个python库，用来定义、优化和模拟数学表达式计算，用于高效的解决多维数组的计算问题。
+它使得写深度学习模型更加easy，同一时候也给出了一些关于在GPU上训练它们的选项。
+项目地址： http://deeplearning.net/software/theano/
+Mahout
+Mahout 是 Apache Software Foundation（ASF） 旗下的一个开源项目。提供一些可扩展的机器学习领域经典算法的实现。旨在帮助开发者更加方便快捷地创建智能应用程序。
+Mahout包括很多实现。包括聚类、分类、推荐过滤、频繁子项挖掘。此外，通过使用 Apache Hadoop 库，Mahout 能够有效地扩展到云中。
+项目主页： http://mahout.apache.org/
+pybrain
+pybrain是Python的一个机器学习模块，它的目标是为机器学习任务提供灵活、易应、强大的机器学习算法。pybrain包含神经网络、强化学习(及二者结合)、无监督学习、进化算法。以神经网络为核心，全部的训练方法都以神经网络为一个实例。
+项目主页： http://pybrain.org/
+OpenCV
+OpenCV是一个基于（开源）发行的跨平台计算机视觉库。能够执行在Linux、Windows和Mac OS操作系统上。它轻量级并且高效——由一系列 C 函数和少量 C++ 类构成。同一时候提供了Python、Ruby、MATLAB等语言的接口，实现了图像处理和计算机视觉方面的非常多通用算法。
+项目主页： http://opencv.org/
+Orange
+Orange 是一个基于组件的数据挖掘和机器学习软件套装，它的功能即友好，又非常强大，高速而又多功能的可视化编程前端。以便浏览数据分析和可视化，基绑定了 Python以进行脚本开发。
+它包括了完整的一系列的组件以进行数据预处理，并提供了数据帐目，过渡。建模，模式评估和勘探的功能。
+项目主页： http://orange.biolab.si/
+NLTK
+NLTK（natural language toolkit)是python的自然语言处理工具包。
+2001年推出。至今发展很活跃。它的主要作用是为了教学。至今已经在20多个国家60多所高校使用。里面包含了大量的词料库，以及自然语言处理方面的算法实现：分词， 词根计算。 分类， 语义分析等。
+项目主页： http://nltk.org/
+Nupic
+Nupic是一个开源的人工智能平台。
+该项目由Grok（原名 Numenta）公司开发，当中包含了公司的算法和软件架构。 NuPIC 的运作接近于人脑，“当模式变化的时候，它会忘掉旧模式，记忆新模式”。
+如人脑一样。CLA 算法可以适应新的变化。
+项目主页： http://numenta.org/nupic.html

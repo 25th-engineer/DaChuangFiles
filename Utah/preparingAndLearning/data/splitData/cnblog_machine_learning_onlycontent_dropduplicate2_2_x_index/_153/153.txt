@@ -1,0 +1,63 @@
+《机器学习》 --周志华版（西瓜书）--课后参考答案
+对机器学习一直很感兴趣，也曾阅读过李航老师的《统计学习导论》和Springer的《统计学习导论-基于R应用》等相关书籍，但总感觉自己缺乏深入的理解和系统的实践。最近从实验室角落觅得南京大学周志华老师《机器学习》一书，随意翻看之间便被本书内容文笔深深吸引，如获至宝。遂决定要认真学习本书并将学习过程记录下来。感觉若以读书笔记的形式做记录未免枯燥（且网上已有大量相关内容）。那就暂且将课后练习的个人思路和答案写成系列博客，希望得到朋友们的交流指导。
+从刚开始学习机器学习到现在也有几个月了，期间看过PDF，上过MOOC，总感觉知道一点了又不是特别明白，最后趁某东买书大减价弄了几本相关的书来看看，其中一本就是西瓜书。一口气看了前10章，感觉每章内容都很少，看完感觉还是和以前一样。每章的习题都只是挑了几个简单的看看，没做认真的分析，现在回过头认真做做每章的习题。别的不说了，希望可以坚持到全部做完。
+- 目录
+第一章 绪论
+http://blog.csdn.net/icefire_tyh/article/details/52065224
+第二章 模型评估与选择
+http://blog.csdn.net/icefire_tyh/article/details/52065867
+第三章 线性模型
+http://blog.csdn.net/icefire_tyh/article/details/52069025
+第四章 决策树
+http://blog.csdn.net/icefire_tyh/article/details/52082054
+[2016.12.20]决策树代码太乱，近期重写[2017.1.16][完成]
+第五章 神经网络
+http://blog.csdn.net/icefire_tyh/article/details/52106899
+[2016.12.20]缺第6，10题，第10题近期补上
+第六章 支持向量机
+http://blog.csdn.net/icefire_tyh/article/details/52135662
+缺第10题，暂不补
+第七章 贝叶斯分类器
+http://blog.csdn.net/icefire_tyh/article/details/52167273
+缺第9，10题，暂不补
+第八章 集成学习
+http://blog.csdn.net/icefire_tyh/article/details/52194771
+缺第9题，暂不补
+第九章 聚类
+http://blog.csdn.net/icefire_tyh/article/details/52224676
+缺第8题，暂不补
+第十章 降纬与度量学习
+http://blog.csdn.net/icefire_tyh/article/details/52243773
+第十一章 特征选择与稀疏学习
+http://blog.csdn.net/icefire_tyh/article/details/52254580
+第十二章 计算理论学习
+http://blog.csdn.net/icefire_tyh/article/details/52270432
+第十三章 半监督学习
+http://blog.csdn.net/icefire_tyh/article/details/52345060
+第十四章 概率图模型
+http://blog.csdn.net/icefire_tyh/article/details/53509879
+缺第10题，暂不补
+第十五章 规则学习
+http://blog.csdn.net/icefire_tyh/article/details/53691563
+缺第3，5题，代码缺6，10，暂不补
+第十六章 强化学习
+http://blog.csdn.net/icefire_tyh/article/details/53691569
+缺第9，10题，暂不补
+目录：
+周志华《机器学习》课后习题解答系列（二）：Ch1 - 绪论
+周志华《机器学习》课后习题解答系列（三）：Ch2 - 模型评估与选择
+周志华《机器学习》课后习题解答系列（四）：Ch3 - 线性模型
+周志华《机器学习》课后习题解答系列（四）：Ch3.3 - 编程实现对率回归
+周志华《机器学习》课后习题解答系列（四）：Ch3.4 - 交叉验证法练习
+周志华《机器学习》课后习题解答系列（四）：Ch3.5 - 编程实现线性判别分析
+周志华《机器学习》课后习题解答系列（五）：Ch4 - 决策树
+周志华《机器学习》课后习题解答系列（五）：Ch4.3 - 编程实现ID3算法
+周志华《机器学习》课后习题解答系列（五）：Ch4.4 - 编程实现CART算法与剪枝操作
+周志华《机器学习》课后习题解答系列（六）：Ch5 - 神经网络
+周志华《机器学习》课后习题解答系列（六）：Ch5.5 - BP算法实现
+周志华《机器学习》课后习题解答系列（六）：Ch5.6 - BP算法改进
+周志华《机器学习》课后习题解答系列（六）：Ch5.7 - RBF网络实验
+周志华《机器学习》课后习题解答系列（六）：Ch5.8 - SOM网络实验
+周志华《机器学习》课后习题解答系列（六）：Ch5.10 - 卷积神经网络实验
+参考：http://blog.csdn.net/snoopy_yuan/article/details/62045353
+课程代码：https://github.com/Tsingke/Machine-Learning_ZhouZhihua

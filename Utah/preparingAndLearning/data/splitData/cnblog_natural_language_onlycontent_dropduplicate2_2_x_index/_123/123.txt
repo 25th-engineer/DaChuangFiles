@@ -1,0 +1,110 @@
+CoreNLP
+斯坦福大学出品的基于Java的全栈自然语言处理工具，CoreNLP还提供了一套文本标注工具，对文本标注流程做了一些规范。CoreNLP提供了6种使用最广泛的语言（阿拉伯、汉语、英语、法语、德语、西班牙语）的词库。
+Github
+官方文档
+Apache OpenNLP
+基于Java的自然语言处理全栈工具，它提供了API和命令行两种接口。官网地址：http://opennlp.apache.org/
+初学自然语言处理，了解一些NLP全栈工具的功能是很好的。
+语言检测（Language Detect）：发现给定文本是哪种语言
+OpenNLP的语言检测功能基于莱比锡数据集。
+莱比锡位于德国东部的莱比锡盆地中央，在魏塞埃尔斯特河与普莱塞河的交汇处，面积141平方公里，人口约60万，是原东德的第二大城市。莱比锡数据集（Leipzig Corpora Collection）是为自然语言处理提供文本数据，项目发起者为莱比锡大学计算机学院。它实际上只提供两个数据集：（1）各种语言的按年份列出的文章；（2）用于情感分析的标注数据集。http://wortschatz.uni-leipzig.de/en/download
+句子检测（Sentence Detect）:把一篇文章拆分成若干个句子
+汉语中，直接通过标点符号就够了。英语中的“.”具有多种含义，例如每个缩写词后面都跟着一个“.”
+分词（Tokenizer）
+命名实体识别（Name Finder）
+文档分类 （Document Categorizer）
+语义标注（Part of Speech Tagger）
+提取主干（Lemmatizer）：对于单词可以提取词干，这个功能由Stemmer完成；对于句子可以进行缩句，这个功能由Lemaatizer完成
+分层分段（Chunker）：给定一篇文章，按照意思把文章分成若干段落或者把一段分成若干层。
+句法分析（Parser）
+指代消解（Coreference Resolution）
+NLP4j
+NLP4j的前身是clearNLP，是一个Java实现的自然语言处理库。
+Github
+HanLP
+和CoreNLP、OpenNLP是同类产品，基于Java、全栈自然语言处理工具包。不需要学习CoreNLP、OpenNLP，直接学习HanLP足够了。
+polyglot
+多语言、全栈、纯Python的自然语言处理库：https://github.com/aboSamoor/polyglot
+Tokenization (165 Languages)
+Language detection (196 Languages)
+Named Entity Recognition (40 Languages)
+Part of Speech Tagging (16 Languages)
+Sentiment Analysis (136 Languages)
+Word Embeddings (137 Languages)
+Morphological analysis (135 Languages)
+Transliteration (69 Languages)
+pattern
+pattern是一个基于Python的web挖掘模块，功能包括：
+爬虫，包括HTTP请求模块和HTML解析模块，内置爬取谷歌、Twitter、维基等）
+自然语言处理：part-of-speech taggers, n-gram search, sentiment analysis, WordNet
+机器学习：machine learning (vector space model, clustering, SVM)
+网络分析：network analysis
+可视化
+https://pypi.org/project/pattern3/3.0.0/
+TextBlob
+TextBlob是一个纯Python写的全栈自然语言处理库。
+名词词组抽取：Noun phrase extraction
+语义标注：Part-of-speech tagging
+情感分析：Sentiment analysis，情感分析是文本分类的一种特殊问题，可以说是最常见的文本分类问题。
+文本分类：Classification (Naive Bayes, Decision Tree)
+翻译：Language translation and detection powered by Google Translate，TextBlob的翻译通过网络请求访问Google，并没有提供翻译的实现。
+分词：Tokenization (splitting text into words and sentences)
+词、词组频率统计：Word and phrase frequencies
+语法分析：Parsing
+n元语法模型：n-grams
+词语映射，如寻找词根：Word inflection (pluralization and singularization) and lemmatization
+拼写纠错：Spelling correction
+便于扩展：Add new models or languages through extensions
+集成了WordNet：WordNet integration
+官方文档
+snowNLP
+SnowNLP是一个python写的类库，可以方便的处理中文文本内容，是受到了TextBlob的启发而写的，由于现在大部分的自然语言处理库基本都是针对英文的，于是写了一个方便处理中文的类库，并且和TextBlob不同的是，这里没有用NLTK，所有的算法都是自己实现的，并且自带了一些训练好的字典。注意本程序都是处理的unicode编码，所以使用时请自行decode成unicode。
+该库功能包括：分词、标注、情感分析。snowNLP提供的功能是TextBlob的子集。
+https://github.com/isnowfy/snownlp
+nlpir
+中科院出品的基于C++实现的自然语言全站工具，提供Java、C#等多种语言的封装。主要功能包括中文分词；英文分词；词性标注；命名实体识别；新词识别；关键词提取；支持用户专业词典与微博分析。NLPIR系统支持多种编码、多种操作系统、多种开发语言与平台。
+http://ictclas.nlpir.org/
+Github
+NLTK
+老牌的Python全栈自然语言处理库。
+AllenNLP
+AllenNLP是纯Python（只提供Python3.6以上版本的包）、基于Pytorch实现的全栈自然语言处理包，过去的自然语言处理包大都是传统方法，AllenNLP中包含了大量的深度学习方法。AllenNLP是由Allen机构发布的，Allen是一个AI研究机构。
+Github地址
+AllenNLP官网
+spaCy
+spaCy是基于Python和Cython的高效、商业化、支持45种以上语言的自然语言处理工具包。该库对汉语支持略显不足。
+Github
+MontyLingua
+支持Python和Java两种语言、只针对英语的自然语言处理库。http://alumni.media.mit.edu/~hugo/montylingua/
+NiuTrans
+东北大学朱靖波实验室的基于统计的机器翻译模型：http://www.niutrans.com/niutrans/NiuTrans.ch.html
+foolNLTK
+国人开发，基于Python
+gensim
+功能包括词向量和文档主题发现。
+glove
+C++实现的词向量工具，词向量生成有三种方式：glove、cbow、skip-gram。
+fasttext
+提供了词向量工具和文本分类功能。
+分词器
+jieba：最流行的Python分词器
+jieba-analysis：Java版的jieba
+ansj：孙健的分词器
+IKAnalyzer：常见于Solr和Lucene
+mmseg4j
+jcseg
+斯坦福福瓷器
+pkuseg北大分词器
+FudanNLP：复旦分词器
+paoding：老牌分词器
+smartcn
+ictclas：中科院基于HMM的分词器
+nlpir：中科院分词器
+smallseg
+snailseg
+thulac：清华分词器
+ltp：哈工大分词器
+bosen波森
+波森是一个web服务，提供自然语言处理全栈服务。明明是国产，非要起个外国名字。
+https://bosonnlp.com/about
+自然语言处理的库非常丰富，质量却也良莠不齐。许多库的作者都是一个人开发的，维护也不到位。

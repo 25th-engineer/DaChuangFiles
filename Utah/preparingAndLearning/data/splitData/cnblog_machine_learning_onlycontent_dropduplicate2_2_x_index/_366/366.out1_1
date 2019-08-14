@@ -1,0 +1,37 @@
+前提 Tomcat * 的 下载 绿色版/n 和/c 安装版/n 都/d 适用/v 
+Tomcat * 的 安装 和 运行 绿色版/n 和/c 安装版/n 都/d 
+适用/v Tomcat 的 配置文件 在 $ TOMCAT _ HOME 下 
+的 conf 我 这里 是 1 打开 server . xml 
+我们 可以 在 server . xml 文件 中 修改 端口号 
+找到 conf 文件夹 打开 其中 的 server . xml 目前 
+设置 的 端口号 是 8080 修改 保存 后 重新 打开 
+浏览器 试试 关闭 tomcat 重新 再启动 tomcat 如果 想 调整 
+回去 先 关闭 tomcat 再 修改 该 配置文件 将 8089 
+改为 8080 再 重新 启动 tomcat 即可 2 tomcat users 
+. xml 如果 想 进入 tomcat 管理 页面 点击 Manager 
+App 点击 取消 说明 需要 配置 tomcat users . xml 
+role rolename = manager gui / user username = tomcat 
+password = tomcat roles = manager gui / 保存 后 
+重新 关闭 tomcat 再 重新 启动 tomcat 之后 再 使用 
+配置 的 用户名 密码 即 都是 tomcat 进入 成功 3 
+web . xml4 context . xml5 后续 更新 欢迎 大家 
+加入 我 的 微信 公众 号 大 数据 躺过 的 
+坑         人工智能 躺过 的 坑 同时 
+大家 可以 关注 我 的 个人 博客 http / / 
+www . cnblogs . com / zlslch /     
+  和 /nr       http / / www . 
+cnblogs . com / lchzls /         
+  http / / www . cnblogs . com / 
+sunnyDream / 详情 请见 http / / www . cnblogs 
+. com / zlslch / p / 7473861 . html 
+人生 苦短 我 愿 分享 本 公众 号 将 秉持 
+活到老 学到老 学习 无休止 的 交流 分享 开源 精神 汇聚/v 
+于/p 互联网/n 和/c 个人/n 学习/v 工作/vn 的/uj 精华/nz 干货/n 知识/v 
+一切 来 于 互联网 反馈 回 互联网 目前 研究 领域 
+大 数据 机器学习 深度 学习 人工智能 数据挖掘 数据分析 语言 涉及 
+Java Scala Python Shell Linux 等 同时 还 涉及 平常 
+所 使用 的 手机 电脑 和 互联 网上 的 使用 
+技巧 问题 和 实用软件 只要 你 一直 关注 和 呆在 
+群 里 每天/r 必须/d 有/v 收获/v 对应/vn 本/r 平台/n 的/uj 
+讨论/v 和/c 答疑/v QQ/w 群/n 大 数据 和 人工智能 躺过 
+的 坑 总 群 161156071 

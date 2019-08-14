@@ -1,0 +1,13 @@
+数据挖掘、机器学习、模式识别、人工智能的关系应该是：人工智能>模式识别>数据挖掘>机器学习
+机器学习：机器学习是人工智能的一个分支，它是关于让机器具有学习能力的一些算法。许多情况这种算法给一些数据和从这些数据属性的推出的信息对将来出现的新的数据做出预测。之所以可以这么做是因为大多数的非随机的数据包含一些模式，这些模式可以让机器去做泛化。
+机器学习的相关概念：
+监督式学习：训练数据中包含输入的向量集合并且有相应的目标值（labeled样例）
+例如分类（Classification）、关联规则、回归(Regression)
+非监督式学习：训练数据中不包含labeled样例
+例如聚类(Cluster)、Density estimation、Visualization.
+半监督式学习：组合了labled和unlabeled的Example去生成一个函数或分类
+泛化（Generalization）：通过训练数据训练之后能够识别新的数据。
+特征提取(Feature Extraction): 为了降维去除不想关的特征，在数据预处理阶段把数据转化成容易处理的。
+分类（Classification）：Assign each input vector to one of a finite number of discrete categories，if the desired output consists of one or more continuous variables, then the task is called Regression Density estimation: To determine the distribution of data within the input space Visualization: to projection the data from a high-dimensional space down to two or three dimensions.
+机器学习的局限性：
+机器学习在大量的模式面前的泛化能力是不同的，如果一个模式不同于以前所看到的，那么这个算法很容易被误解。由于当前的数据量不够，不能涵盖各种将来的情况，所以机器学习的方法很容易出现过度泛化，从而出现不准确性。

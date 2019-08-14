@@ -1,0 +1,106 @@
+人工智能系统Google开源的TensorFlow官方文档中文版
+2015年11月9日，Google发布人工智能系统TensorFlow并宣布开源，机器学习作为人工智能的一种类型，可以让软件根据大量的数据来对未来的情况进行阐述或预判。如今，领先的科技巨头无不在机器学习下予以极大投入。Facebook、苹果、微软，甚至国内的百度。Google 自然也在其中。「TensorFlow」是 Google 多年以来内部的机器学习系统。如今，Google 正在将此系统成为开源系统，并将此系统的参数公布给业界工程师、学者和拥有大量编程能力的技术人员，这意味着什么呢？
+打个不太恰当的比喻，如今 Google 对待 TensorFlow 系统，有点类似于该公司对待旗下移动操作系统 Android。如果更多的数据科学家开始使用 Google 的系统来从事机器学习方面的研究，那么这将有利于 Google 对日益发展的机器学习行业拥有更多的主导权。
+Google TensorFlow项目负责人Jeff Dean为该中文翻译项目回信称："看到能够将TensorFlow翻译成中文我非常激动，我们将TensorFlow开源的主要原因之一是为了让全世界的人们能够从机器学习与人工智能中获益，类似这样的协作翻译能够让更多的人更容易地接触到TensorFlow项目，很期待接下来该项目在全球范围内的应用!"
+总览 | TensorFlow 官方文档中文版
+http://www.tensorfly.cn/tfdoc/tutorials/overview.html
+TensorFlow官方文档中文版_TensorFlow中文教程_TensorFlow开发中文手册[PDF]下载-极客学院Wiki
+http://wiki.jikexueyuan.com/project/tensorflow-zh/
+-----------------------------
+面向机器学习初学者的 MNIST 初级教程
+如果你是机器学习领域的新手, 我们推荐你从本文开始阅读. 本文通过讲述一个经典的问题, 手写数字识别 (MNIST), 让你对多类分类 (multiclass classification) 问题有直观的了解.
+面向机器学习专家的 MNIST 高级教程
+如果你已经对其它深度学习软件比较熟悉, 并且也对 MNIST 很熟悉, 这篇教程能够引导你对 TensorFlow 有初步了解.
+TensorFlow 使用指南
+这是一篇技术教程, 详细介绍了如何使用 TensorFlow 架构训练大规模模型. 本文继续使用MNIST 作为例子.
+卷积神经网络
+这篇文章介绍了如何使用 TensorFlow 在 CIFAR-10 数据集上训练卷积神经网络. 卷积神经网络是为图像识别量身定做的一个模型. 相比其它模型, 该模型利用了平移不变性(translation invariance), 从而能够更更简洁有效地表示视觉内容.
+单词的向量表示
+本文让你了解为什么学会使用向量来表示单词, 即单词嵌套 (word embedding), 是一件很有用的事情. 文章中介绍的 word2vec 模型, 是一种高效学习嵌套的方法. 本文还涉及了对比噪声(noise-contrastive) 训练方法的一些高级细节, 该训练方法是训练嵌套领域最近最大的进展.
+循环神经网络 (Recurrent Neural Network, 简称 RNN)
+一篇 RNN 的介绍文章, 文章中训练了一个 LSTM 网络来预测一个英文句子的下一个单词(该任务有时候被称作语言建模).
+Mandelbrot 集合
+TensorFlow 可以用于与机器学习完全无关的其它计算领域. 这里实现了一个原生的 Mandelbrot 集合的可视化程序.
+偏微分方程
+这是另外一个非机器学习计算的例子, 我们利用一个原生实现的偏微分方程, 对雨滴落在池塘上的过程进行仿真.
+MNIST 数据下载
+一篇关于下载 MNIST 手写识别数据集的详细教程.
+视觉物体识别 (Visual Object Recognition)
+我们将毫无保留地发布已经选训练好的, 目前最先进的 Inception 物体识别模型.
+Deep Dream 视幻觉软件
+我们将发布一个 TensorFlow 版本的 Deep Dream,这是一款基于 Inception 识别模型的神经网络视幻觉软件.
+-------------------------------
+TensorFlow 官方文档中文版
+1. 新手入门
+1.1. 介绍
+1.2. 下载及安装
+1.3. 基本用法
+2. 完整教程
+2.1. 总览
+2.2. MNIST 数据下载
+2.3. MNIST 入门
+2.4. MNIST 进阶
+2.5. TENSORFLOW 运作方式入门
+2.6. 卷积神经网络
+2.7. 字词的向量表示
+2.8. 递归神经网络
+2.9. 曼德布洛特(MANDELBROT)集合
+2.10. 偏微分方程
+3. 进阶指南
+3.1. 总览
+3.2. 变量:创建、初始化、保存和加载
+3.3. TENSORBOARD:可视化学习
+3.4. TENSORBOARD:图表可视化
+3.5. 读取数据
+3.6. 线程和队列
+3.7. 添加新的OP
+3.8. 自定义数据读取
+3.9. 使用GPU
+3.10. 共享变量
+4. 资源
+4.1. 总览
+4.2. BIBTEX 引用
+4.3. 示例使用
+4.4. FAQ
+4.5. 术语表
+4.6. TENSOR排名、形状和类型
+5. 其他
+5.1. 更多TF相关资源
+5.2. 更多机器学习资源
+6. API DOC
+6.1. Cc API
+6.1.1. CLASS ENV
+6.1.2. CLASS ENV WRAPPER
+6.1.3. CLASS RANDOM ACCESS FILE
+6.1.4. CLASS SESSION
+6.1.5. CLASS STATUS
+6.1.6. CLASS TENSOR
+6.1.7. CLASS TENSOR BUFFER
+6.1.8. CLASS TENSOR SHAPE
+6.1.9. CLASS TENSOR SHAPE ITER
+6.1.10. CLASS TENSOR SHAPE UTILS
+6.1.11. CLASS THREAD
+6.1.12. CLASS WRITABLE FILE
+6.1.13. STRUCT SESSION OPTIONS
+6.1.14. STRUCT STATE
+6.1.15. STRUCT TENSOR SHAPE DIM
+6.1.16. STRUCT THREAD OPTIONS
+6.1.17. INDEX
+6.2. Images API
+6.2.1. INDEX
+6.3. Python API
+6.3.1. ARRAY OPS
+6.3.2. CLIENT
+6.3.3. CONSTANT OP
+6.3.4. CONTROL FLOW OPS
+6.3.5. FRAMEWORK
+6.3.6. IMAGE
+6.3.7. INDEX
+6.3.8. IO OPS
+6.3.9. MATH OPS
+6.3.10. NN
+6.3.11. PYTHON IO
+6.3.12. SPARSE OPS
+6.3.13. STATE OPS
+6.3.14. TRAIN
+PUBLISHED WITH GITBOOK

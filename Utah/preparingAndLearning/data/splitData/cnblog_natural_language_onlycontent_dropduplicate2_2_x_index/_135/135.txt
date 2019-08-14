@@ -1,0 +1,31 @@
+MIT开放式课程“自然语言处理”介绍
+发表于 2009年01月2号 由 52nlp
+从订阅的Google快讯上知道这个“麻省理工学院“开放式课程网页” | 电机工程与计算机科学 | 6.881 2004秋季课程：自然语言处理 | 课堂讲稿”网站，看介绍是MIT开放课程的中文翻译计划，但是浏览这个网站时我并没有找到具体讲稿的中文翻译，只是下载到了相关的英文课件，顺势去了MIT官方课程的英文网站，也找到了这些课件。很想知道是否有相关的翻译，并萌生了一个想法：结合自己的经验来翻译和解释相关的课件，也权当一个学习和深化的过程。只是怕版权的问题，所以仔细阅读了一下MIT的“创作共享规范”，最终的结论是“如果不是商业行为，我是可以在这里翻译部分课件的，只要署名MIT及相关作者就行”。这里先介绍一下这个课程24课时的内容：
+1 简介和概述（Introduction and Overview）
+2 语言统计学基础；齐普夫法则（Basic Language Statistics; Zipf’s Law）
+3 语言模型；平滑估计(Language Models; Smoothed Estimation )
+4 标注；基于转换的学习；隐马尔可夫模型标注器（Tagging; Transformation Based Learning; HMM Taggers )
+5 最大熵标注器(Maximum Entropy Tagger )
+6 句法介紹；概率上下文无关文法(Introduction to Syntax; Probabilistic Context Free Grammars)
+7 句法分析(Syntactic Parsing)
+8 EM算法介紹(Introduction to EM)
+9 无监督语法归纳(Unsupervised Grammar Induction )
+10 分布相似性；聚类(Distributional Similarity; Clustering )
+11 分布相似性（续）(Distributional Similarity (cont.))
+12 词义消歧；协作训练(Word Sense Disambiguation; Co-training )
+13 文本切分(Text Segmentation )
+14 学习篇章结构(Learning Discourse Structure )
+15 修辞分析(Rhetorical Parsing )
+16 文本摘要(Text Summarization )
+17 文本摘要（续）(Text Summarization (cont.))
+18 期中考试(Midterm)
+19 信息检索(Information Retrieval )
+20 机器翻译 I(Machine Translation I )
+21 机器翻译 II(Machine Translation II )
+22 机器翻译II（续）(Machine Translation II (cont.))
+23 专题陈述(Project Presentations)
+24 专题陈述（续）(Project Presentations (cont.))
+附：课程及课件pdf下载MIT英文网页地址：
+http://people.csail.mit.edu/regina/6881/
+麻省理工学院“开放式课程网页” | 电机工程与计算机科学 | 6.881 2004秋季课程：自然语言处理 | 课堂讲稿|中文计划：网站链接
+注：原创文章，转载请注明出处“我爱自然语言处理”：www.52nlp.cn

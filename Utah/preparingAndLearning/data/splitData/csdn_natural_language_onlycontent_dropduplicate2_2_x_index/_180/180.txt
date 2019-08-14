@@ -1,0 +1,30 @@
+参考书籍《Python自然语言处理》，书籍中的版本是Python2和NLTK2，我使用的版本是Python3和NLTK3
+实验环境Windows8.1，已有Python3.4，并安装了NumPy, Matplotlib，参考：http://blog.csdn.net/monkey131499/article/details/50734183
+安装NLTK3，Natural Language Toolkit，自然语言工具包，地址：http://www.nltk.org/
+安装命令：pip install nltk
+安装完成后测试：import nltk
+没有报错即表明安装成功。
+NLTK包含大量的软件、数据和文档，可以进行文本分析和语言结构分析等。数据资源可以自行下载使用。地址：http://www.nltk.org/data.html，数据列表：http://www.nltk.org/nltk_data/
+下载NLTK-Data，在Python中输入命令：
+>>>import nltk
+>>>nltk.download()
+弹出新的窗口，用于选择下载的资源
+点击File可以更改下载安装的路径。all表示全部数据集合，all-corpora表示只有语料库和没有语法或训练的模型，book表示只有书籍中例子或练习的数据。需要注意一点，就是数据的保存路径，要么在C盘中，要么在Python的根目录下，否则后面程序调用数据的时候会因为找不到而报错。
+【注意：软件安装需求：Python、NLTK、NLTK-Data必须安装，NumPy和Matplotlin推荐安装，NetworkX和Prover9可选安装】
+简单测试NLTK分词功能：
+但是在词性标注上就出现问题了，百度也没有明确的解决办法，若有大神知道是什么原因请不吝赐教！
+词性标注功能就先暂且放一放。
+下面看一下NLTK数据的几种方法：
+1.加载数据
+from nltk.book import *
+2.搜索文本
+print(text1.concordance('monstrous'))
+3.相似文本
+print(text1.similar('monstrous'))
+4.共用词汇的上下文
+print(text2.common_contexts(['monstrous','very']))
+5.词汇分布图
+text4.dispersion_plot(['citizens','democracy','freedom','duties','America'])
+6.词汇统计
+#encoding=utf-8 import nltk from nltk.book import * print('~~~~~~~~~~~~~~~~~~~~~~~~~') print('文档text3的长度：',len(text3)) print('文档text3词汇和标识符排序：',sorted(set(text3))) print('文档text3词汇和标识符总数：',len(set(text3))) print('单个词汇平均使用次数：',len(text3)*1.0/len(set(text3))) print('单词 Abram在text3中使用次数：',text3.count('Abram')) print('单词Abram在text3中使用百分率：',text3.count('Abram')*100/len(text3))
+暂时先练习到这里，基本上对NLTK-Data有了一定的了解，以及学会了其基本使用方法。

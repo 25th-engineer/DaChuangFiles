@@ -1,0 +1,129 @@
+Python 自然语言处理（NLP）工具汇总
+NLTK
+简介：
+NLTK 在使用 Python 处理自然语言的工具中处于领先的地位。它提供了 WordNet 这种方便处理词汇资源的接口，以及分类、分词、词干提取、标注、语法分析、语义推理等类库。
+网站：
+Natural Language Toolkit
+安装：
+安装 NLTK:
+[root@master ~]# pip install nltk Collecting nltk Downloading nltk-3.2.1.tar.gz (1.1MB) 100% |████████████████████████████████| 1.1MB 664kB/s Installing collected packages: nltk Running setup.py install for nltk ... done Successfully installed nltk-3.2.1
+注意事项：
+安装完以后还要下载nltk语料库才可以使用,下载的是压缩文件,需要解压到nltk_data下面。目录结构如下：
+zang@ZANG-PC D:\nltk_data > ls -al total 44 drwxrwx---+ 1 Administrators None 0 Oct 25 2015 . drwxrwx---+ 1 SYSTEM SYSTEM 0 May 30 10:55 .. drwxrwx---+ 1 Administrators None 0 Oct 25 2015 chunkers drwxrwx---+ 1 Administrators None 0 Oct 25 2015 corpora drwxrwx---+ 1 Administrators None 0 Oct 25 2015 grammers drwxrwx---+ 1 Administrators None 0 Oct 25 2015 help drwxrwx---+ 1 Administrators None 0 Oct 25 2015 stemmers drwxrwx---+ 1 Administrators None 0 Oct 25 2015 taggers drwxrwx---+ 1 Administrators None 0 Oct 25 2015 tokenizers
+Pattern
+简介：
+Pattern是基于web的Python挖掘模块，包含如下工具：
+* 数据挖掘：Web服务接口(Google,Twitter,Wikipedia),网络爬虫,HTML DOM 解析。
+* 自然语言处理：POS词性标注,n-gram搜索,情感分析,词云。
+* 机器学习：向量空间模型(VSM),聚类,分类(KNN,SVM,Perceptron)。
+* 网络分析：图中心和可视化。
+网站：
+GitHub主页
+安装:
+[root@master ~]# pip install pattern Collecting pattern Downloading pattern-2.6.zip (24.6MB) 100% |████████████████████████████████| 24.6MB 43kB/s Installing collected packages: pattern Running setup.py install for pattern ... done Successfully installed pattern-2.6 [root@master ~]#
+TextBlob
+简介：
+TextBlob 是基于NLTK和pattern的工具, 有两者的特性。如下：
+名词短语提前
+POS标注
+情感分析
+分类 (Naive Bayes, Decision Tree)
+谷歌翻译
+分词和分句
+词频和短语频率统计
+句法解析
+n-grams模型
+词型转换和词干提取
+拼写校正
+通过词云整合添加新的语言和模型
+网站：
+TextBlob: Simplified Text Processing
+安装：
+[root@master ~]# pip install -U textblob Collecting textblob Downloading textblob-0.11.1-py2.py3-none-any.whl (634kB) 100% |████████████████████████████████| 634kB 1.1MB/s Requirement already up-to-date: nltk>=3.1 in /usr/lib/python2.7/site-packages (from textblob) Installing collected packages: textblob Successfully installed textblob-0.11.1 [root@master ~]# python -m textblob.download_corpora [nltk_data] Downloading package brown to /root/nltk_data... [nltk_data] Unzipping corpora/brown.zip. [nltk_data] Downloading package punkt to /root/nltk_data... [nltk_data] Unzipping tokenizers/punkt.zip. [nltk_data] Downloading package wordnet to /root/nltk_data... [nltk_data] Unzipping corpora/wordnet.zip. [nltk_data] Downloading package averaged_perceptron_tagger to [nltk_data] /root/nltk_data... [nltk_data] Unzipping taggers/averaged_perceptron_tagger.zip. [nltk_data] Downloading package conll2000 to /root/nltk_data... [nltk_data] Unzipping corpora/conll2000.zip. [nltk_data] Downloading package movie_reviews to /root/nltk_data... [nltk_data] Unzipping corpora/movie_reviews.zip. Finished.
+Gensim
+简介：
+Gensim 是一个 Python 库，用于对大型语料库进行主题建模、文件索引、相似度检索等。它可以处理大于内存的输入数据。作者说它是“纯文本上无监督的语义建模最健壮、高效、易用的软件。”
+网站：
+Gensim HomePage
+GitHub - piskvorky/gensim: Topic Modelling for Humans
+安装：
+[root@master ~]# pip install -U gensim Collecting gensim Downloading gensim-0.12.4.tar.gz (2.4MB) 100% |████████████████████████████████| 2.4MB 358kB/s Collecting numpy>=1.3 (from gensim) Downloading numpy-1.11.0-cp27-cp27mu-manylinux1_x86_64.whl (15.3MB) 100% |████████████████████████████████| 15.3MB 66kB/s Collecting scipy>=0.7.0 (from gensim) Downloading scipy-0.17.1-cp27-cp27mu-manylinux1_x86_64.whl (39.5MB) 100% |████████████████████████████████| 39.5MB 27kB/s Requirement already up-to-date: six>=1.5.0 in /usr/lib/python2.7/site-packages/six-1.10.0-py2.7.egg (from gensim) Collecting smart_open>=1.2.1 (from gensim) Downloading smart_open-1.3.3.tar.gz Collecting boto>=2.32 (from smart_open>=1.2.1->gensim) Downloading boto-2.40.0-py2.py3-none-any.whl (1.3MB) 100% |████████████████████████████████| 1.4MB 634kB/s Requirement already up-to-date: bz2file in /usr/lib/python2.7/site-packages (from smart_open>=1.2.1->gensim) Collecting requests (from smart_open>=1.2.1->gensim) Downloading requests-2.10.0-py2.py3-none-any.whl (506kB) 100% |████████████████████████████████| 512kB 1.4MB/s Installing collected packages: numpy, scipy, boto, requests, smart-open, gensim Found existing installation: numpy 1.10.1 Uninstalling numpy-1.10.1: Successfully uninstalled numpy-1.10.1 Found existing installation: scipy 0.12.1 DEPRECATION: Uninstalling a distutils installed project (scipy) has been deprecated and will be removed in a future version. This is due to the fact that uninstalling a distutils project will only partially uninstall the project. Uninstalling scipy-0.12.1: Successfully uninstalled scipy-0.12.1 Found existing installation: boto 2.38.0 Uninstalling boto-2.38.0: Successfully uninstalled boto-2.38.0 Found existing installation: requests 2.8.1 Uninstalling requests-2.8.1: Successfully uninstalled requests-2.8.1 Found existing installation: smart-open 1.3.1 Uninstalling smart-open-1.3.1: Successfully uninstalled smart-open-1.3.1 Running setup.py install for smart-open ... done Found existing installation: gensim 0.12.3 Uninstalling gensim-0.12.3: Successfully uninstalled gensim-0.12.3 Running setup.py install for gensim ... done Successfully installed boto-2.40.0 gensim-0.12.4 numpy-1.11.0 requests-2.6.0 scipy-0.17.1 smart-open-1.3.3
+PyNLPI
+简介：
+它的全称是：Python 自然语言处理库（Python Natural Language Processing Library，音发作: pineapple） 是一个用于自然语言处理任务库。它集合了各种独立或松散互相关的，那些常见的、不常见的、对NLP 任务有用的模块。PyNLPI 可以用来处理 N 元搜索，计算频率表和分布，建立语言模型。它还可以处理向优先队列这种更加复杂的数据结构，或者像 Beam 搜索这种更加复杂的算法。
+网站：
+Github
+PyNLPI HomePage
+安装：
+从Github上下载源码，解压以后编译安装。
+[root@master pynlpl-master]# python setup.py install Preparing build running install running bdist_egg running egg_info creating PyNLPl.egg-info writing requirements to PyNLPl.egg-info/requires.txt writing PyNLPl.egg-info/PKG-INFO writing top-level names to PyNLPl.egg-info/top_level.txt writing dependency_links to PyNLPl.egg-info/dependency_links.txt writing manifest file 'PyNLPl.egg-info/SOURCES.txt' reading manifest file 'PyNLPl.egg-info/SOURCES.txt' writing manifest file 'PyNLPl.egg-info/SOURCES.txt' installing library code to build/bdist.linux-x86_64/egg running install_lib running build_py creating build creating build/lib creating build/lib/pynlpl copying pynlpl/tagger.py -> build/lib/pynlpl ...... byte-compiling build/bdist.linux-x86_64/egg/pynlpl/__init__.py to __init__.pyc byte-compiling build/bdist.linux-x86_64/egg/pynlpl/mt/__init__.py to __init__.pyc byte-compiling build/bdist.linux-x86_64/egg/pynlpl/mt/wordalign.py to wordalign.pyc byte-compiling build/bdist.linux-x86_64/egg/pynlpl/statistics.py to statistics.pyc creating build/bdist.linux-x86_64/egg/EGG-INFO copying PyNLPl.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO copying PyNLPl.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO copying PyNLPl.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO copying PyNLPl.egg-info/not-zip-safe -> build/bdist.linux-x86_64/egg/EGG-INFO copying PyNLPl.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO copying PyNLPl.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO creating dist creating 'dist/PyNLPl-0.9.2-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it removing 'build/bdist.linux-x86_64/egg' (and everything under it) Processing PyNLPl-0.9.2-py2.7.egg creating /usr/lib/python2.7/site-packages/PyNLPl-0.9.2-py2.7.egg Extracting PyNLPl-0.9.2-py2.7.egg to /usr/lib/python2.7/site-packages Adding PyNLPl 0.9.2 to easy-install.pth file Installed /usr/lib/python2.7/site-packages/PyNLPl-0.9.2-py2.7.egg Processing dependencies for PyNLPl==0.9.2 Searching for httplib2>=0.6 Reading https://pypi.python.org/simple/httplib2/ Best match: httplib2 0.9.2 Downloading https://pypi.python.org/packages/ff/a9/5751cdf17a70ea89f6dde23ceb1705bfb638fd8cee00f845308bf8d26397/httplib2-0.9.2.tar.gz#md5=bd1b1445b3b2dfa7276b09b1a07b7f0e Processing httplib2-0.9.2.tar.gz Writing /tmp/easy_install-G32Vg8/httplib2-0.9.2/setup.cfg Running httplib2-0.9.2/setup.py -q bdist_egg --dist-dir /tmp/easy_install-G32Vg8/httplib2-0.9.2/egg-dist-tmp-IgKi70 zip_safe flag not set; analyzing archive contents... httplib2.__init__: module references __file__ Adding httplib2 0.9.2 to easy-install.pth file Installed /usr/lib/python2.7/site-packages/httplib2-0.9.2-py2.7.egg Searching for numpy==1.11.0 Best match: numpy 1.11.0 Adding numpy 1.11.0 to easy-install.pth file Using /usr/lib64/python2.7/site-packages Searching for lxml==3.2.1 Best match: lxml 3.2.1 Adding lxml 3.2.1 to easy-install.pth file Using /usr/lib64/python2.7/site-packages Finished processing dependencies for PyNLPl==0.9.2
+spaCy
+简介：
+这是一个商业的开源软件。结合了Python 和Cython 优异的 NLP 工具。是快速的，最先进的自然语言处理工具。
+网站：
+HomePage
+GitHub
+安装：
+[root@master pynlpl-master]# pip install spacy Collecting spacy Downloading spacy-0.101.0-cp27-cp27mu-manylinux1_x86_64.whl (5.7MB) 100% |████████████████████████████████| 5.7MB 161kB/s Collecting thinc<5.1.0,>=5.0.0 (from spacy) Downloading thinc-5.0.8-cp27-cp27mu-manylinux1_x86_64.whl (1.4MB) 100% |████████████████████████████████| 1.4MB 287kB/s Collecting murmurhash<0.27,>=0.26 (from spacy) Downloading murmurhash-0.26.4-cp27-cp27mu-manylinux1_x86_64.whl Collecting cloudpickle (from spacy) Downloading cloudpickle-0.2.1-py2.py3-none-any.whl Collecting plac (from spacy) Downloading plac-0.9.1.tar.gz (151kB) 100% |████████████████████████████████| 153kB 3.2MB/s Requirement already satisfied (use --upgrade to upgrade): numpy>=1.7 in /usr/lib64/python2.7/site-packages (from spacy) Requirement already satisfied (use --upgrade to upgrade): six in /usr/lib/python2.7/site-packages/six-1.10.0-py2.7.egg (from spacy) Collecting cymem<1.32,>=1.30 (from spacy) Downloading cymem-1.31.2-cp27-cp27mu-manylinux1_x86_64.whl (66kB) 100% |████████████████████████████████| 71kB 4.3MB/s Collecting preshed<0.47,>=0.46.1 (from spacy) Downloading preshed-0.46.4-cp27-cp27mu-manylinux1_x86_64.whl (223kB) 100% |████████████████████████████████| 225kB 2.4MB/s Collecting sputnik<0.10.0,>=0.9.2 (from spacy) Downloading sputnik-0.9.3-py2.py3-none-any.whl Collecting semver (from sputnik<0.10.0,>=0.9.2->spacy) Downloading semver-2.5.0.tar.gz Installing collected packages: murmurhash, cymem, preshed, thinc, cloudpickle, plac, semver, sputnik, spacy Running setup.py install for plac ... done Running setup.py install for semver ... done Successfully installed cloudpickle-0.2.1 cymem-1.31.2 murmurhash-0.26.4 plac-0.9.1 preshed-0.46.4 semver-2.5.0 spacy-0.101.0 sputnik-0.9.3 thinc-5.0.8
+Polyglot
+简介：
+Polyglot 支持大规模多语言应用程序的处理。它支持165种语言的分词，196中语言的辨识，40种语言的专有名词识别，16种语言的词性标注，136种语言的情感分析，137种语言的嵌入，135种语言的形态分析，以及69种语言的翻译。特性如下：
+Tokenization (165 Languages)
+Language detection (196 Languages)
+Named Entity Recognition (40 Languages)
+Part of Speech Tagging (16 Languages)
+Sentiment Analysis (136 Languages)
+Word Embeddings (137 Languages)
+Morphological analysis (135 Languages)
+Transliteration (69 Languages)
+网站：
+Github
+安装：
+[root@master pynlpl-master]# pip install polyglot Collecting polyglot Downloading polyglot-15.10.03-py2.py3-none-any.whl (54kB) 100% |████████████████████████████████| 61kB 153kB/s Collecting pycld2>=0.3 (from polyglot) Downloading pycld2-0.31.tar.gz (14.3MB) 100% |████████████████████████████████| 14.3MB 71kB/s Collecting wheel>=0.23.0 (from polyglot) Downloading wheel-0.29.0-py2.py3-none-any.whl (66kB) 100% |████████████████████████████████| 71kB 4.2MB/s Collecting futures>=2.1.6 (from polyglot) Downloading futures-3.0.5-py2-none-any.whl Requirement already satisfied (use --upgrade to upgrade): six>=1.7.3 in /usr/lib/python2.7/site-packages/six-1.10.0-py2.7.egg (from polyglot) Collecting PyICU>=1.8 (from polyglot) Downloading PyICU-1.9.3.tar.gz (179kB) 100% |████████████████████████████████| 184kB 2.9MB/s Collecting morfessor>=2.0.2a1 (from polyglot) Downloading Morfessor-2.0.2alpha3.tar.gz Installing collected packages: pycld2, wheel, futures, PyICU, morfessor, polyglot Running setup.py install for pycld2 ... done Running setup.py install for PyICU ... done Running setup.py install for morfessor ... done Successfully installed PyICU-1.9.3 futures-3.0.5 morfessor-2.0.2a3 polyglot-15.10.3 pycld2-0.31 wheel-0.29.0
+MontyLingua
+简介：
+MontyLingua 是一个免费的、功能强大的、端到端的英文处理工具。在 MontyLingua 输入原始英文文本 ，输出就会得到这段文本的语义解释。它适用于信息检索和提取，请求处理，问答系统。从英文文本中，它能提取出主动宾元组，形容词、名词和动词短语，人名、地名、事件，日期和时间等语义信息。
+网站：
+HomePage
+Github
+安装：
+无
+Usage
+Webservice
+python server.py
+The webservice runs on port 8001 at /service by default. For parameters etc see the NIF spec.
+Therefore you can curl your query like this
+curl “http://localhost:8001/service?nif=true&input-type=text&input=This%20is%20a%20city%20called%20Berlin.”
+or simply use your browser to query the target.
+Console
+python nif.py
+But this method is mainly for debugging purposes and supports only hardcoded options.
+BLLIP Parser
+简介：
+BLLIP Parser（也叫做 Charniak-Johnson parser）是一个集成了生成成分分析器和最大熵排序的统计自然语言分析器。它包括命令行和python接口。
+网站：
+GitHub
+HomePage
+安装：
+[root@master pynlpl-master]# pip install --user bllipparser Collecting bllipparser Downloading bllipparser-2015.12.3.tar.gz (548kB) 100% |████████████████████████████████| 552kB 1.2MB/s Requirement already satisfied (use --upgrade to upgrade): six in /usr/lib/python2.7/site-packages/six-1.10.0-py2.7.egg (from bllipparser) Building wheels for collected packages: bllipparser Running setup.py bdist_wheel for bllipparser ... done Stored in directory: /root/.cache/pip/wheels/6f/7a/d8/037a4aa0fa275f43e1129008eb7834dc8522ef158d2e96534b Successfully built bllipparser Installing collected packages: bllipparser Successfully installed bllipparser
+Quepy
+简介：
+Quepy 是一个 Python 框架，提供了将自然语言问题转换成为数据库查询语言中的查询。它可以方便地自定义自然语言中不同类型的问题和数据库查询。所以，通过 Quepy，仅仅修改几行代码，就可以构建你自己的自然语言查询数据库系统。
+网站：
+GitHub - machinalis/quepy: A python framework to transform natural language questions to queries in a database query language.
+Quepy: A Python framework to transform natural language questions to queries.
+安装
+[root@master pynlpl-master]# pip install quepy Collecting quepy Downloading quepy-0.2.tar.gz (42kB) 100% |████████████████████████████████| 51kB 128kB/s Collecting refo (from quepy) Downloading REfO-0.13.tar.gz Requirement already satisfied (use --upgrade to upgrade): nltk in /usr/lib/python2.7/site-packages (from quepy) Collecting SPARQLWrapper (from quepy) Downloading SPARQLWrapper-1.7.6.zip Collecting rdflib>=4.0 (from SPARQLWrapper->quepy) Downloading rdflib-4.2.1.tar.gz (889kB) 100% |████████████████████████████████| 890kB 823kB/s Collecting keepalive>=0.5 (from SPARQLWrapper->quepy) Downloading keepalive-0.5.zip Collecting isodate (from rdflib>=4.0->SPARQLWrapper->quepy) Downloading isodate-0.5.4.tar.gz Requirement already satisfied (use --upgrade to upgrade): pyparsing in /usr/lib/python2.7/site-packages (from rdflib>=4.0->SPARQLWrapper->quepy) Collecting html5lib (from rdflib>=4.0->SPARQLWrapper->quepy) Downloading html5lib-0.9999999.tar.gz (889kB) 100% |████████████████████████████████| 890kB 854kB/s Requirement already satisfied (use --upgrade to upgrade): six in /usr/lib/python2.7/site-packages/six-1.10.0-py2.7.egg (from html5lib->rdflib>=4.0->SPARQLWrapper->quepy) Building wheels for collected packages: quepy, refo, SPARQLWrapper, rdflib, keepalive, isodate, html5lib Running setup.py bdist_wheel for quepy ... done Stored in directory: /root/.cache/pip/wheels/c8/04/bf/495b88a68aa5c1e9dd1629b09ab70261651cf517d1b1c27464 Running setup.py bdist_wheel for refo ... done Stored in directory: /root/.cache/pip/wheels/76/97/81/825976cf0a2b9ad759bbec13a649264938dffb52dfd56ac6c8 Running setup.py bdist_wheel for SPARQLWrapper ... done Stored in directory: /root/.cache/pip/wheels/50/fe/25/be6e98daa4f576494df2a18d5e86a182e3d7e0735d062cc984 Running setup.py bdist_wheel for rdflib ... done Stored in directory: /root/.cache/pip/wheels/fb/93/10/4f8a3e95937d8db410a490fa235bd95e0e0d41b5f6274b20e5 Running setup.py bdist_wheel for keepalive ... done Stored in directory: /root/.cache/pip/wheels/16/4f/c1/121ddff67b131a371b66d682feefac055fbdbb9569bfde5c51 Running setup.py bdist_wheel for isodate ... done Stored in directory: /root/.cache/pip/wheels/61/c0/d2/6b4a10c222ba9261ab9872a8f05d471652962284e8c677e5e7 Running setup.py bdist_wheel for html5lib ... done Stored in directory: /root/.cache/pip/wheels/6f/85/6c/56b8e1292c6214c4eb73b9dda50f53e8e977bf65989373c962 Successfully built quepy refo SPARQLWrapper rdflib keepalive isodate html5lib Installing collected packages: refo, isodate, html5lib, rdflib, keepalive, SPARQLWrapper, quepy Successfully installed SPARQLWrapper-1.7.6 html5lib-0.9999999 isodate-0.5.4 keepalive-0.5 quepy-0.2 rdflib-4.2.1 refo-0.13
+MBSP
+简介：
+MBSP is a text analysis system based on the TiMBL and MBT memory based learning applications developed at CLiPS and ILK. It provides tools for Tokenization and Sentence Splitting, Part of Speech Tagging, Chunking, Lemmatization, Relation Finding and Prepositional Phrase Attachment.
+The general English version of MBSP has been trained on data from the Wall Street Journal corpus.
+网站：
+HomePage
+Github
+安装：
+下载，解压，编译安装：
+[root@master MBSP]# python setup.py install .....编译的信息..... .....2分钟左右.....
+参考：
+李岩知乎回答：目前常用的自然语言处理开源项目/开发包有哪些？
+数盟：用Python做自然语言处理必知的八个工具

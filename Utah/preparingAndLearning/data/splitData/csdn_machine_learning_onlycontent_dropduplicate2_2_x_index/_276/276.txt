@@ -1,0 +1,33 @@
+字典特征的抽取：
+import sklearn from sklearn.feature_extraction import DictVectorizer dv = DictVectorizer() instances = [{'city': '北京','temperature':100},{'city': '上海','temperature':60}, {'city': '深圳','temperature':150}] data = dv.fit_transform(instances).toarray() print(data) print(dv.get_feature_names()) print(dv.inverse_transform(data))
+[[ 0. 1. 0. 100.] [ 1. 0. 0. 60.] [ 0. 0. 1. 150.]] ['city=上海', 'city=北京', 'city=深圳', 'temperature'] [{'city=北京': 1.0, 'temperature': 100.0}, {'city=上海': 1.0, 'temperature': 60.0}, {'city=深圳': 1.0, 'temperature': 150.0}]
+文本特征的提取
+from sklearn.feature_extraction.text import CountVectorizer content = ["life is short,i like python","life is too long,i dislike python"] vectorizer = CountVectorizer() print(vectorizer.fit_transform(content).toarray())
+[[0 1 1 1 0 1 1 0] [1 1 1 0 1 1 0 1]]
+中文文本特征抽取
+from sklearn.feature_extraction.text import CountVectorizer content = ["我不喜欢python","life is too long,i dislike python"] vectorizer = CountVectorizer() print(vectorizer.fit_transform(content).toarray())
+[[0 0 0 0 0 0 1] [1 1 1 1 1 1 0]]
+中文特征化处理
+import jieba import numpy as np from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer def cutword(): """ 分词后的字符串结果 :return: c1,c2,c3 """ # 将内容进行分词 content1 = jieba.cut('今天很残酷，明天更残酷，后天很美好，但绝对大部分是死在明天晚上，所以每个人不要放弃今天。') content2 = jieba.cut('我们看到的从很远星系来的光是在几百万年之前发出的，这样当我们看到宇宙时，我们是在看它的过去。') content3 = jieba.cut('如果只用一种方式了解某样事物，你就不会真正了解它。了解事物真正含义的秘密取决于如何将其与我们所了解的事物相联系。') # 建立列表取出迭代器数据 con1 = [] con2 = [] con3 = [] for word in content1: con1.append(word) for word in content2: con2.append(word) for word in content3: con3.append(word) # 将列表转换成字符串 c1 = ' '.join(con1) c2 = ' '.join(con2) c3 = ' '.join(con3) return c1, c2, c3 # 中文特征值化 def countvec(): """ 文本特征抽取 :return: None """ # 调用分词分割中文文章 c1, c2, c3 = cutword() print("分词结果：",c1, c2, c3) # 实例化 cv = CountVectorizer() data = cv.fit_transform([c1, c2, c3]) print(cv.get_feature_names()) print(data.toarray()) return None # 中文特征值化tf-idf def tfidfvec(): """ 文本特征抽取 :return: None """ # 调用分词分割中文文章 c1, c2, c3 = cutword() print("分词结果：",c1, c2, c3) # 实例化 tf = TfidfVectorizer(stop_words=['一种', '不会']) data = tf.fit_transform([c1, c2, c3]) print(tf.get_feature_names()) print(data.toarray()) return None countvec()
+分词结果： 今天 很 残酷 ， 明天 更 残酷 ， 后天 很 美好 ， 但 绝对 大部分 是 死 在 明天 晚上 ， 所以 每个 人 不要 放弃 今天 。 我们 看到 的 从 很 远 星系 来 的 光是在 几百万年 之前 发出 的 ， 这样 当 我们 看到 宇宙 时 ， 我们 是 在 看 它 的 过去 。 如果 只用 一种 方式 了解 某样 事物 ， 你 就 不会 真正 了解 它 。 了解 事物 真正 含义 的 秘密 取决于 如何 将 其 与 我们 所 了解 的 事物 相 联系 。 ['一种', '不会', '不要', '之前', '了解', '事物', '今天', '光是在', '几百万年', '发出', '取决于', '只用', '后天', '含义', '大部分', '如何', '如果', '宇宙', '我们', '所以', '放弃', '方式', '明天', '星系', '晚上', '某样', '残酷', '每个', '看到', '真正', '秘密', '绝对', '美好', '联系', '过去', '这样'] [[0 0 1 0 0 0 2 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 2 0 1 0 2 1 0 0 0 1 1 0 0 0] [0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 0 0 1 3 0 0 0 0 1 0 0 0 0 2 0 0 0 0 0 1 1] [1 1 0 0 4 3 0 0 0 0 1 1 0 1 0 1 1 0 1 0 0 1 0 0 0 1 0 0 0 2 1 0 0 1 0 0]]
+归一化代码化示例：
+from sklearn.preprocessing import MinMaxScaler def mms(): minmax = MinMaxScaler(feature_range=(2,4)) #data = minmax.fit_transform([[90,2,10,46],[60,4,15,45],[75,3,13,46]]) data = minmax.fit_transform([[90, 2, 10, 46],[60,4,15,45],[75,3,13,46]]) print(data) mms()
+[[4. 2. 2. 4. ] [2. 4. 4. 2. ] [3. 3. 3.2 4. ]]
+标准化代码化示例：
+from sklearn.preprocessing import StandardScaler def standard(): std = StandardScaler() data = std.fit_transform([[1.,-1.,3.],[2.,4.,2.],[4.,6.,-1.]]); print(data) standard()
+[[-1.06904497 -1.35873244 0.98058068] [-0.26726124 0.33968311 0.39223227] [ 1.33630621 1.01904933 -1.37281295]]
+Imputer代码使用示例：
+from sklearn.preprocessing import Imputer def standard(): std = Imputer() data = std.fit_transform([[1.,-1.,3.],[2.,4.,2.],[4.,6.,-1.]]); print(data) standard()
+[[ 1. -1. 3.] [ 2. 4. 2.] [ 4. 6. -1.]]
+aitest_08_Imputer缺失值
+from sklearn.preprocessing import Imputer import numpy as np def im(): imp = Imputer(missing_values='NaN',strategy ='mean',axis=0) data = imp.fit_transform([[1,2],[np.nan,3],[7,6]]); print(data) im()
+[[1. 2.] [4. 3.] [7. 6.]]
+过滤
+from sklearn.feature_selection.variance_threshold import VarianceThreshold import numpy as np def variance(): van = VarianceThreshold(threshold=0.0) data = van.fit_transform([[0,2,0,3],[0,1,4,3],[0,1,1,3]]); print(data) variance()
+[[2 0] [1 4] [1 1]]
+PCA代码示例
+from sklearn.decomposition import PCA import numpy as np def pca(): pa = PCA(n_components=3) data = pa.fit_transform([[2,8,4,5],[6,3,0,8],[5,4,9,1]]); print(data) pca()
+[[ 1.28620952e-15 3.82970843e+00 5.26052119e-16] [ 5.74456265e+00 -1.91485422e+00 5.26052119e-16] [-5.74456265e+00 -1.91485422e+00 5.26052119e-16]]
+性别预测代码示例：
+from sklearn import tree features=[[178,1],[155,0],[177,0],[165,0],[169,1],[160,0]] labels=['male','female','male','female','male','female'] #创建决策树clf clf=tree.DecisionTreeClassifier() #将数据交给决策树进行训练 clf=clf.fit(features,labels) #假设此时有一个158的没有胡子的人，机器会如何判断性别？ result =clf.predict([[158,0]]) print(result) #再次判断172有胡子的人 result=clf.predict([[172,1]]) print(result)
+['female'] ['male']

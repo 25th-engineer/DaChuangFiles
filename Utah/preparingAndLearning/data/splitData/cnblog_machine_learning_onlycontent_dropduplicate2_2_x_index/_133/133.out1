@@ -1,0 +1,20 @@
+import numpy as np from sklearn import datasets linear _ 
+model from sklearn . model _ selection import train _ 
+test _ split def load _ data diabetes = datasets 
+. load _ diabetes return train _ test _ split 
+diabetes . data diabetes . target test _ size = 
+0.25 random _ state = 0 # 线性 回归模型 def 
+test _ LinearRegression * data X _ train X _ 
+test y _ train y _ test = data regr 
+= linear _ model . LinearRegression regr . fit X 
+_ train y _ train print Coefficients % s intercept 
+% . 2f % regr . coef _ regr . 
+intercept _ print Residual sum of squares % . 2f 
+% np . mean regr . predict X _ test 
+y _ test * * 2 print Score % . 
+2f % regr . score X _ test y _ 
+test # 产生 用于 回归 问题 的 数据集 X _ 
+train X _ test y _ train y _ test 
+= load _ data # 调用 test _ LinearRegression test 
+_ LinearRegression X _ train X _ test y _ 
+train y _ test 

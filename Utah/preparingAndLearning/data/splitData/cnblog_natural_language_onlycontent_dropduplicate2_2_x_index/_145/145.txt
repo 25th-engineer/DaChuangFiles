@@ -1,0 +1,65 @@
+MIT自然语言处理第二讲：单词计数（第一部分）
+发表于 2009年01月8号 由 52nlp
+自然语言处理：单词计数
+Natural Language Processing: (Simple) Word Counting
+作者：Regina Barzilay（MIT,EECS Department, November 15, 2004)
+译者：我爱自然语言处理（www.52nlp.cn ，2009年1月8日）
+这一讲主要内容（Today):
+1、语料库及其性质（Corpora and its properties）；
+2、Zipf 法则( Zipf’s Law )；
+3、标注语料库例子（Examples of annotated corpora）；
+4、分词算法（Word segmentation algorithm）；
+一、 语料库及其性质（Corpora and its properties）：
+a) 什么是语料库（Corpora）
+i. 一个语料库就是一份自然发生的语言文本的载体，以机器可读形式存储（A corpus is a body of naturally occurring text, stored in a machine-readable form）；
+ii. 一种平衡语料库尝试在语言或者其他领域具有代表性（A balanced corpus tries to be representative across a language or other domains）；
+b) 译者注：平行语料库与平衡语料库的特点与区别
+i. 平行语料库（parallel corpus）通常是由双语或多语的对应语料构成，常常是翻译文本构成。例如：Babel English-Chinese Parallel Corpus。平行语料库常被用做对比和翻译研究之用。
+ii. 平衡语料库（balanced corpus）主要是指其语料的取样上是均衡的，有代表性的。这种语料可以用作得出有关某种语言特性的一般性的结论。例如：Lancaster Corpus of Mandarin Chinese以及Academia Sinica Balanced Corpus of Modern Chinese
+c) 单词计数（Word Counts）
+i. 在文本中最常见的单词是哪些（What are the most common words in the text）?
+ii. 在文本中有多少个单词（How many words are there in the text）?
+iii. 在大规模语料库中单词分布的特点是什么（What are the properties of word distribution in large corpora）?
+d) 我们以马克吐温的《汤姆•索耶历险记》为例（We will consider Mark Twain’s Tom Sawyer）：
+单词(word)　　频率（Freq)　　用法(Use)
+the　　　　　　3332　　　　　determiner (article)
+and　　　　　　2972　　　　　conjunction
+a　　　　　　　1775　　　　　determiner
+to　　　　　　　1725　　　　　preposition, inf. marker
+of　　　　　　　1440　　　　　preposition
+was　　　　　　1161　　　　　auxiliary verb
+it　　　　　　　1027　　　　　pronoun
+in　　　　　　　906　　　　　preposition
+that　　　　　　877　　　　　complementizer
+Tom　　　　　　678　　　　　proper name
+i. 一些观察结果（Some observations）：
+1. 虚词占了大多数（Dominance of function words）；
+2. 语料库依赖的主题词也占了一部分，例如”Tom”（Presence of corpus-dependent items (e.g., “Tom”)）
+ii. 思考：是否有可能建立一个真正具有“代表性”的英文样本语料库（Is it possible to create a truly “representative” sample of English）?
+e) 这个例句里有多少个单词（How Many Words Are There）：
+They picnicked by the pool, then lay back on the grass and looked at the stars.
+i. “型”(Type) ——语料库中不同单词的数目，词典容量（ number of distinct words in a corpus,vocabulary size)
+ii. “例”(Token) — 语料中总的单词数目（total number of words in a corpus）
+iii. 注：以上定义参考自《自然语言处理综论》
+iv. 汤姆•索耶历险记（Tom Sawyer）中有：
+1. 词型（word types） — 8, 018
+2. 词例（word tokens）— 71, 370
+3. 平均频率（average frequency）— 9（注：词例/词型）
+f) 词频的频率（Frequencies of Frequencies）：
+词频（Word Frequency）　词频的频率(Frequency of Frequency)
+1　　　　　　　　　　　　　3993
+2　　　　　　　　　　　　　1292
+3　　　　　　　　　　　　　664
+4　　　　　　　　　　　　　410
+5　　　　　　　　　　　　　243
+6　　　　　　　　　　　　　199
+7　　　　　　　　　　　　　172
+8　　　　　　　　　　　　　131
+9　　　　　　　　　　　　　82
+10　　　　　　　　　　　　 91
+11-50　　　　　　　　　　 540
+51-100　　　　　　　　　　99
+大多数词在语料库中仅出现一次（Most words in a corpus appear only once）!
+附：课程及课件pdf下载MIT英文网页地址：
+http://people.csail.mit.edu/regina/6881/
+注：本文遵照麻省理工学院开放式课程创作共享规范翻译发布，转载请注明出处“我爱自然语言处理”：www.52nlp.cn

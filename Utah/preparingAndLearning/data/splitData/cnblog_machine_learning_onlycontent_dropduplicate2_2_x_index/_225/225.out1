@@ -1,0 +1,46 @@
+不多 说 直接 上 干货 StreamSets 是 一个 侧重 数据 
+集成 数据 加工 流程 构建 的 平台 也 是 一个 
+开源 的 产品 通过 StreamSets 用户 可以 方便 的 接入 
+不同 的 数据 源 并且 完成 数据 加工 流程 的 
+构建 SteamSets 有 可视化 的 数据流 构建 工具 并且 能够 
+对 运行 态 的 数据 应用 进行 监控 相对于 CDAP 
+StreamSets 更 侧重于 数据 的 接入 和 数据流 的 构建 
+监控 和 管理 StreamSets 数据 操作 平台 是 唯一 旨在 
+简化 如何 构建 执行 和 操作 企业 数据流 的 平台 
+构 建在 开源 核 心上 开发 人员 可以 轻松 构建 
+批处理 和 流式 数据流 而且 代码 少 而 运营商 使用 
+云 本地 产品 将 数十 或 数百个 数据流 聚 合到 
+拓扑 中 并 通过 实时 可 见性 和 性能 控制 
+集中管理 其 官网 地址 https / / streamsets . com 
+其 对 数据流 采用 pipeline 方式 进行 处理 源 端 
+数据 可以 来自 多个 组件 kafka directory mysql redis 等 
+pipeline 的 destination 也 可以 有 丰富 的 终端 组件 
+kafka directory mysql redis hdfs 等 中间 处理 节点 也 
+有 很多 丰富 的 节点 待会儿 搭建 好 之后 就 
+可以 在 http / / hadoop03 18630 的 浏览器 右端 
+可以 看到 每 一个 新 的 组件 我们 的 看看 
+他 长 什么样 的 接下来 我们 就 可以 在 官网 
+进行 下载 安装包 https / / streamsets . com / 
+opensource / 地址 中 选择 自己 平台 需要 的 版本 
+进行 下载 StreamSets 的 官网 https / / streamsets . 
+com / https / / streamsets . com / products 
+/ sdc 欢迎 大家 加入 我 的 微信 公众 号 
+大 数据 躺过 的 坑         人工智能 
+躺过 的 坑 同时 大家 可以 关注 我 的 个人 
+博客 http / / www . cnblogs . com / 
+zlslch /       和 /nr       http 
+/ / www . cnblogs . com / lchzls / 
+          http / / www . 
+cnblogs . com / sunnyDream / 详情 请见 http / 
+/ www . cnblogs . com / zlslch / p 
+/ 7473861 . html 人生 苦短 我 愿 分享 本 
+公众 号 将 秉持 活到老 学到老 学习 无休止 的 交流 
+分享 开源 精神 汇聚/v 于/p 互联网/n 和/c 个人/n 学习/v 工作/vn 
+的/uj 精华/nz 干货/n 知识/v 一切 来 于 互联网 反馈 回 
+互联网 目前 研究 领域 大 数据 机器学习 深度 学习 人工智能 
+数据挖掘 数据分析 语言 涉及 Java Scala Python Shell Linux 等 
+同时 还 涉及 平常 所 使用 的 手机 电脑 和 
+互联 网上 的 使用 技巧 问题 和 实用软件 只要 你 
+一直 关注 和 呆在 群 里 每天/r 必须/d 有/v 收获/v 
+对应/vn 本/r 平台/n 的/uj 讨论/v 和/c 答疑/v QQ/w 群/n 大 
+数据 和 人工智能 躺过 的 坑 总 群 161156071 

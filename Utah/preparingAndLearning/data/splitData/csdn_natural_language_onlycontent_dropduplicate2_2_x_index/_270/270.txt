@@ -1,0 +1,21 @@
+本文是《从自然语言处理到机器学习入门》系列课程的第二次作业，由于我的作业环境没有配好（配了n次了还是不行T_T），但是为了保证这一系列作业的完整性，于是经罗曜强律师同意，人工智能A7论坛授权，转载他的作业笔记。
+1 基本要求
+通过自己训练的语言模型编程，判断每句话中是否存在a an用错的问题(所谓用错 指a an用反了 比如 i have a apple是错误的； i have an apple 是正确的)
+2 准备工作
+（1）实验的环境Ubuntu16.04，Python 版本 2.7
+（2）使用kenlm训练一个语言模型，首先要准备kenlm所需要的语料，按照http://kheafield.com/code/kenlm/官方文档上使用说明，训练的文件会被训练成.arpa的格式。
+（3）训练模型：例如:我有名为test.txt的文件需要训练成kenlm指定的.arpa格式文件,训练后的文件为text.arpa，我需要在Ubuntu的Teminal终端使用如下命令进行训练：
+bin/lmplz -o 5 <test.txt > text.arpa
+-o Required. Order of the language model to estimate
+-o 5 代表使用5ngram
+将arpa文件转换为binary文件，这样可以对arpa文件进行压缩，提高后续在python中加载的速度。
+bin/build_binary -s text.arpa text.bin
+3 具体实验
+做好上述前置准备工作后，接着就是在Python下运行text.arpa
+主要分为以下几个步骤：
+#导入训练所需要的包 import kenlm import nltk from itertools import combinations, permutations #将文件导入kenlm语言模型 model = kenlm.LanuageModel(text.bin) #判断a或者an在互换前的得分和互换后的得分，如果互换前的得分高于互换后的得分，则说明a或an没有错误，如果互换后的得分高于互换前的得分则说明a或者an语法错误 def judge_a_or_an(sentence): #创建一个空list，用于存放sentence s = [] #将句子进行分词 """ Model.score函数输出的是对数概率，bos=False, eos=False意思是不自动添加句首和句末标记符 """ pre_score = model.score(‘ ’.join(sentence), bos = True, eos = True) #通过循环的方式替换a或an然后进行评分对比 for word in sentence: #如果word里面有a，则把a换成an If word == ‘a’: s.append(‘an’) #如果word里面有an，则把an换成a elif word == ‘an’: s.append(‘a’) #如果word里面没有a或者an，按照原句输出 else: s.append(word) after_score = model.score(‘ ’.join(s), bos = True, eos = True) #对话置换前，置换后的得分，如果置换前得分高于置换后，则返回0，否则返回1 if pre_score > after_score return 0 else: return 1 #打开文件 inputs = open(‘text.arpa’, ’r’) outputs = open(‘text_after.txt’, ‘r’) for line in inputs: data = nltk.tokenize.word_tokenize(line) #调用judge_a_or_an函数 label = judge_a_or_an(data) #格式化输出0或1 print(line + ‘\t%d’ %(label)) #关闭IO流 outputs.close() inputs.close()
+4 常见错误
+（1）ModuleNotFoundError: No module named ‘kenlm’
+Kenlm安装错误，导致无法正常调用kenlm、
+（2）打开文件后未关闭IO流致使文件无法正常输出
+（3）其他语法错误

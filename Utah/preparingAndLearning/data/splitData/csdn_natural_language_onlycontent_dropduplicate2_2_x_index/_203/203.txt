@@ -1,0 +1,13 @@
+如何学习自然语言处理(52nlp)
+1.几篇文章介绍相关技术
+nlper:
+http://nlpers.blogspot.my/
+2.标准书籍
+《统计自然语言处理基础》
+《自然语言处理综论》（涉猎广，有门槛）
+《自然语言理解》
+nltk工具包，《用python进行自然语言处理》 e－book:http://code.google.com/p/brishen/downloads/list
+3.ACL anthology
+或者到作者主页去进一步follow，或者去其导师主页看看是否有进一步相关文献
+4.多参加会议
+大体流程就是：博客入门－书籍系统了解－论文跟进－会议感受

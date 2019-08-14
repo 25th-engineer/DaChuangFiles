@@ -1,0 +1,243 @@
+在 之前 写 的 上百 篇 机器学习 博客 中 不时 
+会 使用 矩阵 向量 求导 的 方法 来 简化 公式 
+推演 但是 并 没有 系统性 的 进行 过 讲解 因此 
+让 很多 朋友 迷惑 矩阵 向量 求导 的 具体 过程 
+为什么 会 是 这样 的 这里 准备用 几篇 博文 来 
+讨论 下 机器学习 中的 矩阵 向量 求导 今天 是 第一 
+篇 本 系列 主要 参考 文献 为 维基 百科 的 
+Matrix Caculas/w 和张/nr 贤达/a 的/uj 矩阵分析 与 应用 1 . 
+  矩阵 向量 求导 引入 在 高等数学 里面 我们 已 
+经学 过了 标量 对 标量 的 求导 比如 标量 $ 
+y $ 对 标量 $ x $ 的 求导 可以 
+表示 为 $ \ frac { \ partial y } 
+{ \ partial x } $ 有些 时候 我们 会 
+有 一组 标量 $ y _ i i = 1 
+2 . . . m $ 来 对 一个 标量 
+$ x $ 的 求导 那么 我们 会 得到 一组 
+标量 求导 的 结果 $ $ \ frac { \ 
+partial y _ i } { \ partial x } 
+i = 1 2 . m $ $ 如果 我们 
+把 这组 标量 写成 向量 的 形式 即 得到 维度 
+为 m 的 一个 向量 $ \ mathbf { y 
+} $ 对 一个 标量 $ x $ 的 求导 
+那么 结果 也 是 一个 m 维 的 向量 $ 
+\ frac { \ partial \ mathbf { y } 
+} { \ partial x } $ 可见 所谓 向量 
+对 标量 的 求导 其实 就是 向量 里 的 每个 
+分量 分别 对 标量 求导 最后 把 求导 的 结果 
+排列 在 一起 按 一个 向量 表示 而已 类似 的 
+结论 也 存在 于 标量 对 向量 的 求导 向量 
+对 向量 的 求导 向量 对 矩阵 的 求导 矩阵 
+对 向量 的 求导 以及 矩阵 对 矩阵 的 求导 
+等 总而言之 所谓 的 向量 矩阵 求导 本质 上 就是 
+多元 函数 求导 仅仅 是 把把 函数 的 自变量 因变量 
+以及 标量 求导 的 结果 排列 成了 向量 矩阵 的 
+形式 方便 表达 与 计算 更加 简洁 而已 为了 便于 
+描述 后面 如果 没有 指明 则 求导 的 自变量 用 
+$ x $ 表示 标量 $ \ mathbf { x 
+} $ 表示 n 维 向量 $ \ mathbf { 
+X } $ 表示 $ m \ times n $ 
+维度 的 矩阵 求导 的 因变量 用 $ y $ 
+表示 标量 $ \ mathbf { y } $ 表示 
+m 维 向量 $ \ mathbf { Y } $ 
+表示 $ p \ times q $ 维度 的 矩阵 
+2 .   矩阵 向量 求导 定义 根据 求导 的 
+自变量 和 因变量 是 标量 向量 还是 矩阵 我们 有 
+9种 可能 的 矩阵 求导 定义 如下 自变量 \ 因变量 
+标量 $ y $ 向量 $ \ mathbf { y 
+} $ 矩阵 $ \ mathbf { Y } $ 
+标量 $ x $ $ \ frac { \ partial 
+y } { \ partial x } $ $ \ 
+frac { \ partial   \ mathbf { y } 
+} { \ partial x } $ $ \ frac 
+{ \ partial   \ mathbf { Y } } 
+{ \ partial x } $ 向量 $ \ mathbf 
+{ x } $ $ \ frac { \ partial 
+y } { \ partial \ mathbf { x } 
+} $ $ \ frac { \ partial   \ 
+mathbf { y } } { \ partial \ mathbf 
+{ x } } $ $ \ frac { \ 
+partial   \ mathbf { Y } } { \ 
+partial \ mathbf { x } } $ 矩阵 $ 
+\ mathbf { X } $ $ \ frac { 
+\ partial y } { \ partial \ mathbf { 
+X } } $ $ \ frac { \ partial 
+  \ mathbf { y } } { \ partial 
+\ mathbf { X } } $ $ \ frac 
+{ \ partial   \ mathbf { Y } } 
+{ \ partial \ mathbf { X } } $ 
+这 9种 里面 标量 对 标量 的 求导 高数/nr 里面 
+就有 不 需要 我们 单独 讨论 在 剩下 的 8种 
+情况 里面 我们 先 讨论 上 图中 标量 对 向量 
+或 矩阵 求导 向量 或 矩阵 对 标量 求导 以及 
+向量 对 向量 求导 这 5种 情况 另外 三种 向量 
+对 矩阵 的 求导 矩阵 对 向量 的 求导 以及 
+矩阵 对 矩阵 的 求导 我们 在 后面 再讲 现在 
+我们 回 看 第一节 讲到 的 例子 维度 为 m 
+的 一个 向量 $ \ mathbf { y } $ 
+对 一个 标量 $ x $ 的 求导 那么 结果 
+也 是 一个 m 维 的 向量 $ \ frac 
+{ \ partial \ mathbf { y } } { 
+\ partial x } $ 这 是 我们 表格 里面 
+向量 对 标量 求导 的 情况 这里 有 一个 问题 
+没有 讲到 就是 这个 m 维 的 求导 结果 排列成 
+的 m 维 向量 到底 应该 是 列 向量 还是 
+行向量 这个 问题 的 答案 是 行向量 或者 列 向量 
+皆可 毕竟 我们 求导 的 本质 只是 把 标量 求导 
+的 结果 排列 起来 至于 是 按 行 排列 还是 
+按 列 排列 都是 可以 的 但是 这样 也 有 
+问题 在 我们 机器学习 算法 法 优化 过程 中 如果 
+行向量 或者 列 向量 随便 写 那么 结果 就不 唯一 
+乱套 了 为了 解决 这个 问题 我们 引入 求导 布局 
+的 概念 3 .   矩阵 向量 求导 布局 为了 
+解决 矩阵 向量 求导 的 结果 不 唯一 我们 引入 
+求导 布局 最 基本 的 求导 布局 有 两个 分子 
+布局 numerator layout 和 分母 布局 denominator layout 对于 分子 
+布局 来说 我们 求导 结果 的 维度 以 分子 为主 
+比如 对于 我们 上 面对 标量 求导 的 例子 结果 
+的 维度 和 分子 的 维度 是 一致 的 也 
+就是说 如果 向量 $ \ mathbf { y } $ 
+是 一个 m 维 的 列 向量 那么 求导 结果 
+$ \ frac { \ partial \ mathbf { y 
+} } { \ partial x } $ 也 是 
+一个 m 维 列 向量 如果 如果 向量 $ \ 
+mathbf { y } $ 是 一个 m 维 的 
+行向量 那么 求导 结果 $ \ frac { \ partial 
+\ mathbf { y } } { \ partial x 
+} $ 也 是 一个 m 维 行向量 对于 分母 
+布局 来说 我们 求导 结果 的 维度 以 分母 为主 
+比如 对于 我们 上 面对 标量 求导 的 例子 如果 
+向量 $ \ mathbf { y } $ 是 一个 
+m 维 的 列 向量 那么 求导 结果 $ \ 
+frac { \ partial \ mathbf { y } } 
+{ \ partial x } $ 是 一个 m 维 
+行向量 如果 如果 向量 $ \ mathbf { y } 
+$ 是 一个 m 维 的 行向量 那么 求导 结果 
+$ \ frac { \ partial \ mathbf { y 
+} } { \ partial x } $ 是 一个 
+m 维 的 列 向量 向量 可见 对于 分子 布局 
+和 分母 布局 的 结果 来说 两者 相差 一个 转置 
+再举 一个 例子 标量 $ y $ 对 矩阵 $ 
+  \ mathbf { X } $ 求导 那么 如果 
+按 分母 布局 则 求导 结果 的 维度 和 矩阵 
+$ X $ 的 维度 $ m \ times n 
+$ 是 一致 的 如果 是 分子 布局 则 求导 
+结果 的 维度 为 $ n \ times m $ 
+这样 对于 标量 对 向量 或者 矩阵 求导 向量 或者 
+矩阵 对 标量 求导 这 4种 情况 对应 的 分子 
+布局 和 分母 布局 的 排列 方式 已经 确定 了 
+稍微 麻烦 点 的 是 向量 对 向量 的 求导 
+本文 只 讨 论列 向量 对列 向量 的 求导 其他 
+的 行向量 求导 只是 差 一个 转置 而已 比如 m 
+维 列 向量 $ \ mathbf { y } $ 
+对 n 维 列 向量 $ \ mathbf { x 
+} $ 求导 它 的 求导 结果 在 分子 布局 
+和 分母 布局 各 是 什么 呢 对于 这 2个 
+向量 求导 那么 一 共有 $ mn $ 个 标量 
+对 标量 的 求导 求导 的 结果 一般 是 排列 
+为 一个 矩阵 如果 是 分子 布局 则 矩阵 的 
+第一 个 维度 以 分子 为准 即 结果 是 一个 
+$ m \ times n $ 的 矩阵 如下 $ 
+$ \ frac { \ partial   \ mathbf { 
+y } } { \ partial \ mathbf { x 
+} } = \ left \ begin { array } 
+{ ccc } \ frac { \ partial y _ 
+1 } { \ partial x _ 1 } & 
+\ frac { \ partial y _ 1 } { 
+\ partial x _ 2 } & \ ldots & 
+\ frac { \ partial y _ 1 } { 
+\ partial x _ n } \ \   \ 
+frac { \ partial y _ 2 } { \ 
+partial x _ 1 } & \ frac { \ 
+partial y _ 2 } { \ partial x _ 
+2 }   & \ ldots & \ frac { 
+\ partial y _ 2 } { \ partial x 
+_ n } \ \     \ vdots & 
+    \ vdots &     \ ddots & 
+\ vdots \ \   \ frac { \ partial 
+y _ m } { \ partial x _ 1 
+} &   \ frac { \ partial y _ 
+m } { \ partial x _ 2 }   
+& \ ldots &   \ frac { \ partial 
+y _ m } { \ partial x _ n 
+}   \ end { array } \ right $ 
+$ 上边 这个 按 分子 布局 的 向量 对 向量 
+求导 的 结果 矩阵 我们 一般 叫做 雅 克比 Jacobian 
+矩阵 有的/nr 资料 上 会 使用 $   \ frac 
+{ \ partial   \ mathbf { y } } 
+{ \ partial \ mathbf { x ^ T } 
+} $ 来 定义 雅 克比 矩阵 意义 是 一样 
+的 如果 是 按 分母 布局 则 求导 的 结果 
+矩阵 的 第一 维度 会 以 分母 为准 即 结果 
+是 一个 $ n \ times m $ 的 矩阵 
+如下 $ $ \ frac { \ partial   \ 
+mathbf { y } } { \ partial \ mathbf 
+{ x } } = \ left \ begin { 
+array } { ccc } \ frac { \ partial 
+y _ 1 } { \ partial x _ 1 
+} & \ frac { \ partial y _ 2 
+} { \ partial x _ 1 } & \ 
+ldots & \ frac { \ partial y _ m 
+} { \ partial x _ 1 } \ \ 
+  \ frac { \ partial y _ 1 } 
+{ \ partial x _ 2 } & \ frac 
+{ \ partial y _ 2 } { \ partial 
+x _ 2 }   & \ ldots & \ 
+frac { \ partial y _ m } { \ 
+partial x _ 2 } \ \     \ 
+vdots &     \ vdots &     \ 
+ddots & \ vdots \ \   \ frac { 
+\ partial y _ 1 } { \ partial x 
+_ n } &   \ frac { \ partial 
+y _ 2 } { \ partial x _ n 
+}   & \ ldots &   \ frac { 
+\ partial y _ m } { \ partial x 
+_ n }   \ end { array } \ 
+right $ $ 上边 这个 按 分母 布局 的 向量 
+对 向量 求导 的 结果 矩阵 我们 一般 叫做 梯度 
+矩阵 有的/nr 资料 上 会 使用 $   \ frac 
+{ \ partial   \ mathbf { y ^ T 
+} } { \ partial \ mathbf { x } 
+} $ 来 定义 梯度 矩阵 意义 是 一样 的 
+有了 布局 的 概念 我们 对于 上面 5种 求导 类型 
+可以 各 选择 一种 布局 来 求导 但是 对于 某 
+一种 求导 类型 不能 同时 使用 分子 布局 和 分母 
+布局 求导 但是 在 机器学习 算法 原理 的 资料 推导 
+里 我们 并 没有 看到 说 正在 使用 什么 布局 
+也 就是说 布局 被 隐含 了 这 就 需要 自己 
+去 推演 比较 麻烦 但是 一般来说 我们 会 使用 一种 
+叫 混合 布局 的 思路 即 如果 是 向量 或者 
+矩阵 对 标量 求导 则 使用 分子 布局 为准 如果 
+是 标量 对 向量 或者 矩阵 求导 则以 分母 布局 
+为准 对于 向量 对对 向量 求导 有些 分歧 我 的 
+所有 文章 中会 以 分子 布局 的 雅 克比 矩阵 
+为主 具体 总结 如下 自变量 \ 因变量 标量 $ y 
+$ 列 向量 $ \ mathbf { y } $ 
+矩阵 $ \ mathbf { Y } $ 标量 $ 
+x $ / $ \ frac { \ partial   
+\ mathbf { y } } { \ partial x 
+} $ 分子 布局 m 维 列 向量 默认 布局 
+分母 布局 m 维 行向量 $ \ frac { \ 
+partial   \ mathbf { Y } } { \ 
+partial x } $ 分子 布局 $ p \ times 
+q $ 矩阵 默认 布局 分母 布局 $ q \ 
+times p $ 矩 阵列 向量 $ \ mathbf { 
+x } $ $ \ frac { \ partial y 
+} { \ partial \ mathbf { x } } 
+$ 分子 布局 n 维 行向量 分母 布局 n 维 
+列 向量 默认 布局 $ \ frac { \ partial 
+  \ mathbf { y } } { \ partial 
+\ mathbf { x } } $ 分子 布局 $ 
+m \ times n $ 雅 克比 矩阵 默认 布局 
+分母 布局 $ n \ times m $ 梯度 矩阵 
+/ 矩阵 $ \ mathbf { X } $ $ 
+\ frac { \ partial y } { \ partial 
+\ mathbf { X } } $ 分子 布局 $ 
+n \ times m $ 矩阵 分母 布局 $ m 
+\ times n $ 矩阵 默认 布局 / / 4 
+.   矩阵 向量 求导 基础 总结 有了 矩阵 向量 
+求导 的 定义 和 默认 布局 我们 后续 就 可以 
+对 上表 中的 5种 矩阵 向量 求导 过程 进行 一些 
+常见 的 求导 推导 总结 求导 方法 并 讨论 向量 
+求导 的 链式法则 欢迎 转载 转载 请 注明 出处 欢迎 
+沟通交流 liujianping ok @ 163 . com 

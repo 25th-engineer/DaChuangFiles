@@ -1,0 +1,39 @@
+作者：NiceCui
+本文谢绝转载，如需转载需征得作者本人同意，谢谢。
+本文链接：http://www.cnblogs.com/NiceCui/p/8315674.html
+邮箱：moyi@moyibolg.com
+日期：2017-01-19
+基础到入门的整体学习路线图：http://www.cnblogs.com/NiceCui/p/7976595.html
+TensorFlow官方文档
+TensorFlow教程和最新API入门的示例
+深度学习（TensorFlow，Theano，Caffe，Keras），scikit-learn，Kaggle，大数据（Spark，Hadoop MapReduce，HDFS），matplotlib，pandas，NumPy，SciPy，Python必备，AWS以及各种命令线。笔记资料
+TensorFlow - 专门的资源清单
+TensorFlow教程和最佳实践。
+人工智能技术的起源、发展和未来方向，以及机器学习和深度学习的基本、工具和应用。网易课堂
+百度人工智能学习平台PaddlePaddle 百度DeepSpeech架构的TensorFlow实现
+7步掌握Python机器学习
+2 个月从零开始入门 AI ，我是如何做到的？
+跟上AI / ML / CV / UNameIt的基本指南
+Python的深度学习库。在TensorFlow，Theano或CNTK上运行
+使用TensorFlow构建模型和示例 Python
+真棒机器学习
+深度学习 - 论文 - 阅读 - 路线图
+AWS发布深度学习框架MXNet 1.0.0版本，新功能将简化深度学习训练
+腾讯实验室 机器学习实验室
+普通程序员如何自学机器学习？这里有一份指南~
+吴恩达计算机视觉：12堂课学习心得
+深度学习框架 ：TensorFlow/Caffe/MXNet/Keras/PyTorch
+TensorFlow 广度和深度学习的教程
+读懂概率图模型：从基本概念和参数估计开始
+中科院计算所开源深度文本匹配开源工具 MatchZoo
+23 个热门深度学习库的排名
+深度学习算法识别猫，竟然抓住大鼠，9行tensorflow程序
+TensorFlow 资源大全中文版
+如果你还不了解机器学习的简史，请看这篇文章
+神经网络系列课 ——Google Brain Hugo Larochelle
+高性能分布式机器学习平台
+将屏幕截图转换为静态网站的神经网络
+斯坦福大学TensorFlow的教学大纲
+机器学习入门 github团队采集的学习列表
+后续还有相关学习视频，敬请关注本博客；
+微信公众号：

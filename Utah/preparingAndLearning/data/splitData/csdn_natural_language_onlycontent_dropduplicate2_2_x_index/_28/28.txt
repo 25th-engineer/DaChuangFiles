@@ -1,0 +1,18 @@
+1.自然语言处理要解决哪些任务？
+（1）解剖类：分词、词性标注、命名实体识别、word2vec
+（2）生成类：文本分类、主题识别、关键词提取、自动摘要、情感分析、文本生成
+（3）情感分析、智能问答系统和知识图谱
+为了直观理解这些任务，推荐这个网站：http://ictclas.nlpir.org/nlpir/
+比较商业成熟一些的网站：http://www.datagrand.com/
+2.对应 不同的任务所需要掌握的技能树有哪些？
+数据清洗：正则表达式匹配
+基础处理：one hot,bag of words(文本数字化)，tf-idf
+分词：英文nltk,spacy, 中文jieba
+词性标注：英文：nltk,spacy，中文:jieba,CRF(条件随机场)，HMM(隐马)
+命名实体识别：英文: nltk,spacy; 中文：CRF、Stanford CoreNLP
+主题识别：plsa和LDA
+文本分类：Word2vec+CNN
+文本生成：RNN, LSTM
+情感分析:关键词打分机制，比如AFINN-111
+3.正则表达式匹配：https://blog.csdn.net/qq_28633249/article/details/77686976
+这篇博客讲得挺全的,另外附上规则表。

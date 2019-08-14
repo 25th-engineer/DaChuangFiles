@@ -1,0 +1,60 @@
+NLP概述
+NLP是利用计算机为工具，对人类特有的书面形式和口头形式的自然语言的信息进行各种类型处理和加工的技术.
+NLP内容结构
+NLP基础技术
+词法分析
+词法分析目的是从句子中分出单词，找出词汇的各个词素，从中获得单词的语言学信息并确定单词的词性. 词法分析是很多中文信息处理任务的必要步骤.
+自动分词
+命名实体识别
+词性标注
+句法分析
+句法分析是对句子和短语结构进行分析，如句子的形式结构：主语、谓语、宾语等. 句法分析是语言学理论和实际的自然语言应用的一个重要桥梁. 一个实用的、完备的、准确的句法分析将是计算机真正理解自然语言的基础.
+短语结构分析(宾州树库)
+依存分析
+语义分析
+解释自然语言句子或篇章各部分(词、词组、句子、段落、篇章)的意义. 目前语义计算的理论、方法、模型尚不成熟.
+词义消歧(词)
+语义归纳、推理(词)
+语义角色标注(句子)
+篇章分析
+指超越单个句子范围的各种可能分析，包括句子（语段）之间的关系以及关系类型的划分，段落之间的关系的判断，跨越单个句子的词与词之间的关系分析，话题的继承与变迁等.
+NLP核心应用
+机器翻译(Machine translation, MT)
+信息检索(Information Retrieval)
+信息抽取(Information Extraction)
+自动文摘(Automatic summarization/abstracting)
+问答系统(Question-Answering system)
+阅读理解(Machine Reading)
+文档分类(Document categorization)
+情感分类(Sentimental classification)
+信息推荐与过滤(Formation Recommendation and Filtering)
+NLP技术及应用架构
+NLP领域的学术会议
+ACL（Association of Computational Linguistics）
+Coling（International Conference on Computational Linguistics）
+EMNLP（Conference on Empirical Methods in Natural language Processing）
+EACL(European Chapter of ACL)
+IJCNLP(International Joint Conference on Natural language Processing)
+SIGIR(SIG Information Retrieval)
+TREC(Text REtrievalConference)
+JSCL(全国计算语言学联合学术会议)
+国内NLP研究组
+Tencent AI Lab
+苏州大学NLP实验室
+微软亚洲研究院自然语言计算组NaturalLanguageComputing(NLC)Group
+头条人工智能实验室
+清华大学自然语言处理与社会人文计算实验室
+清华大学智能技术与系统国家重点实验室信息检索组
+北京大学计算语言学教育部重点实验室
+北京大学计算机科学技术研究所语言计算与互联网挖掘研究室
+哈工大社会计算与信息检索研究中心
+哈工大机器智能与翻译研究室
+哈尔滨工业大学智能技术与自然语言处理实验室
+中科院计算所自然语言处理研究组
+中科院自动化研究所语音语言技术研究组
+南京大学自然语言处理研究组
+复旦大学自然语言处理研究组
+东北大学自然语言处理实验室
+厦门大学智能科学与技术系自然语言处理实验室
+参考资料
+中国科学院大学-NLP课程课件(IIE胡玥老师主讲)

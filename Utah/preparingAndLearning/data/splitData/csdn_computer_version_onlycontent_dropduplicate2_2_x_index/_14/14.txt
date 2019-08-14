@@ -1,0 +1,45 @@
+1. IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2018)
+* Location / Date: Salt Lake City, June 18-21, 2018
+* Paper Submission Deadline: November 15, 2017
+* Acceptance rate: 20% ~ 30%
+* http://cvpr2018.thecvf.com/
+2.  The 15th European Conference on Computer Vision (ECCV 2018) (两年一次)
+* Location / Date: Munich, Germany; September 8-14, 2018
+* Paper Submission Deadline: March 14, 2018 (23:59 CET)
+* Acceptance rate: 20% ~ 30%
+* https://eccv2018.org/
+3. IEEE International Conference on Computer Vision (ICCV 2018)
+* Location / Date: Istanbul, Turkey; January 30-31, 2018
+* Paper Submission Deadline: November 30, 2017
+* Acceptance rate: 20% ~ 30%
+* http://www.guide2research.com/conference/iccv-2018
+4. Conference on Neural Information Processing Systems (NIPS 2018)
+* Location / Date: Montreal, Canada; December 03-08, 2018
+* Paper Submission Deadline: May 18, 2018
+* Acceptance rate: 20%~ 30%
+* https://nips.cc/
+5. The 14th Asian Conference on Computer Vision (ACCV 2018)
+* Location / Date:Perth, Australia; December 02-06, 2018
+* Paper Submission Deadline: July 05, 2018
+* Acceptance rate: ~ 30%
+* http://accv2018.net/
+6. The 29th British Machine Vision Conference (BMVC 2018)
+* Location / Date:Northumbria University; September 03-06, 2018
+* Paper Submission Deadline: May 07, 2018
+* Acceptance rate: ~ 40%
+* http://bmvc2018.org/index.html
+7. IEEE International Conference on Image Processing (ICIP 2018)
+* Location / Date: Athens, Greece; October 7-10, 2018
+* Paper Submission Deadline: February 07, 2018
+* Acceptance rate: ~ 45%
+* https://2018.ieeeicip.org/
+8. The 24th International Conference on Pattern Recognition (ICPR 2018)
+* Location / Date: Beijing, China; August 20-24, 2018
+* Paper Submission Deadline: January 22, 2018
+* Acceptance rate: ~ 55%
+* http://www.icpr2018.org/
+9. The Thirty-Second AAAI Conference on Artificial Intelligence (AAAI 2018)
+* Location / Date: Louisiana, USA; February 2-7, 2018
+* Paper Submission Deadline: October 13, 2017
+* Acceptance rate:
+* https://aaai.org/Conferences/AAAI-18/

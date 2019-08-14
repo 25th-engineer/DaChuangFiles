@@ -1,0 +1,1852 @@
+Author JW . ZHOU2014 / 6 / 13Paper 毕竟 是 
+死 的 写 Paper 的 人才 是 活 的 那么 
+现在 就 研究 一下 CV 圈 的 格局 按 师承 
+关系 总结 成 一个 树形 结构 参考 1 David Marr 
+Shimon Ullman Weizmann Eric Grimson MIT Daniel Huttenlocher Cornell Pedro 
+Felzenszwalb Chicago Thomas Binford Stanford David Lowe UBC Jitendra Malik 
+UC Berkeley Pietro Perona Caltech Stefano Soatto UCLA Fei Fei 
+Li Princeton Jianbo Shi UPenn Yizhou Yu UIUC Christoph Bregler 
+NYU Serge Belongie UCSD Alyosha Efros CMU Andrew Blake Microsoft 
+Research Cambridge Andrew Zisserman Oxford Andrew Fitzgibbon Microsoft Research Cambridge 
+Roberto Cipolla Cambridge Alan Yuille UCLA UK 这个 学派 的 
+师承 关系 不 太 清楚   这是 我 听说 加上 
+自己 猜测 的 .   事实上   几个 非常 优秀 
+的 researcher 如 Vladimir Kolmogorov 虽然 不是 Andrew Blake 的 
+学生   但是 也 属于 这个 学派 . Thomas Huang 
+UIUC Yong Rui Microsoft Research Redmond Nebojsa Jojic Microsoft Research 
+Redmond Ying Wu Northwestern University Hai Tao UCSC Yuncai Liu 
+SJTU Huang 这个 系 的 人 太多   而且 很 
+怪 的 是 UIUC 的 web 上 信息 不全   
+在此 仅 列出 我 知道 的 . 此外   还有 
+Takeo Kanade 等 非常 有名 的 大牛   囿于 篇幅 
+  不 一一列举 .   从上 得知   加州 派 
+基本 占了 cv 的 半壁江山 .   最 近几年   
+特别 活跃 的 cv guys 是 USAJitendra Malik UC BerkeleyPietro 
+Perona CaltechSerge Belongie UCSDJianbo Shi UPennStefano Soatto UCLAFei Fei Li 
+PrincetonWilliam Freeman MITTrevor Darrell MITSimon Baker CMUYanxi Liu CMUSongchun Zhu 
+UCLAAlan Yuille UCLAYi Ma UIUCMichael Black BrownCarlo Tomasi DukeRamin Zabih 
+CornellShree Nayar ColumbiaRama Chellappa MarylandSteve Seitz University of W a 
+s h i n g t o n E u 
+r o p e A n d r e w 
+Zisserman Oxford UKAndrew Fitzgibbon Microsoft Research Cambridge UKRoberto Cipolla Cambridge 
+UKJean Ponce INRIA FranceCordelia Schmid INRIA FranceBill Triggs LEAR FranceYair 
+Weiss Hebrew University IsraelAnat Levin Hebrew University IsraelMichal Irani Weizmann 
+IsraelLuc van Gool University of Leuven / ETH Zurich C 
+z e c h i c C h i n 
+a H a r r y Shum MSRAXiaoou Tang MSRA 
+/ CUHKJian Sun MSRASteve Lin MSRAYasuyuki Matsushita MSRAZhouchen Lin MSRALong 
+Quan HKUSTChi Keung Tang HKUSTOlivier Faugeras Ponce     UIUC 
+lazebnik Zhengyou Zhang     MSR Martial Hebert     
+CMUMit AI labpoggio Oliva serreFreeman 80 年代 还来 太原理工 扶贫 
+了 Y . Weiss Levin Antonio Torralba   research scientist 
+Trevor Darrell Grauman 补充 一下   Zisserman 还有 一个 不错 
+的 学生 lifeifei 的 合作者 Rob Fergus 按 研究 方向 
+分分 应该 更 合理 一些 现在 计算机 视觉 计算机 图形图像 
+机器学习 开始 融合 到 一起 了吧 J . Malik Zhu 
+Songchu 偏 segmentation D . Lowe . Ullman Poggio   
+偏于 从 生物 视觉 的 启发 来 研究 视觉 Zisserman 
+Schmid Lowe 研究 局部 特征 Luc Van Goo   Long 
+Quanl 三维重建 Perona Li Feife   Freeman 视觉 i 学习 
+物体 分类 还有 运动 分析 视觉 跟踪 纹理 分析 . 
+. . . . . . . . . . 
+. . MIT 的 Brain & Cognitive Science Dept 和 
+CSAIL 里面 聚集 了 一帮 人 有的 作 low level 
+有的 作 mid level to high level 的 他们 的 
+工作 是 值得 关注 的 当然 说 视觉 还是 要从 
+伟大 的 David Marr 开始 Tomaso Poggio Richard Whitman 是 
+Marr 的 同事 传承 了 其 理念 一直 往下走 Poggio 
+最 近几年 比较 重点 的 工作 放在 他 那个 hierarchical 
+model 上 T . Poggio 的 第一 个 PhD 学生 
+是 Christof Koch   kLab at Caltech 哦 顺便 说 
+一下 Koch 的 另外 一个 导师 是 Valentino Breitenberg 同样 
+是 影响 了 一个 时代 的 大人物 Koch 研究 重点 
+兴趣 在 consciousness 上 在 Nature 上 的 很多 文章 
+体现 了 他 的 研究 思想 不过 他们 也 做 
+不少 初级 的 视觉 问题 诸如 attention Koch 比较 知名 
+的 弟子 比如 Laurent Itti 和 Li Feifei Richard Whitman 
+  年纪 比较 大了 个人 不是 很 关注 他 现在 
+做 的 东西 不过 他 所在 的 Perceptual Science Group 
+是 一个 非常 有 影响力 的 地方 这个 组 其他 
+大家 比较 熟悉 的 老师 有 Aude Oliva 和 EH 
+Adelson Adelson 最 著名 的 一个 事儿 是 色彩 恒常 
+相关 的 视错觉 93年 发在 Science 上 的 那篇 关于 
+Oliva 前面 的 帖子 错了 她 不是 Poggio 的 学生 
+这家伙 和 Torralba 是 老乡 同 在 法国 念书 主要 
+从 心理学 那条 路子 开始 做 成名 之 役 是 
+hybrid image 和 Antonio Torrralba 一起 搞 的 这个 Hybrid 
+Image   其实 80 年代 就 有了 但是 最 开始 
+从 心理学 方向 上 探讨 没有 非常 有 影响力 的 
+文章 后来 开始 靠谱 作 自然 图像 统计 得到 Gist 
+theory 当然 这个 illusion 本身 后来 转 投 SIGGRAPH 其 
+影响 是 深远 的 嗯 这个 和 CV 关系不大 Perceptual 
+Science Group 出 了 不少 牛人 他们 的 alumni list 
+可谓 超 豪华 阵容 Yair Weiss Josh Tenenbaum Pawan Sinha 
+Bill Freeman 以下 材料 参考 2 感谢 ChenLee _ 1 
+的 整理 以下 链接 是 本人 整理 的 关于 计算机 
+视觉 ComputerVision CV 相关 领域 的 网站 链接 其中 有 
+CV 牛人 的 主页 CV 研究 小组 的 主页 CV 
+领域 的 paper 代码 CV 领域 的 最新 动态 国内 
+的 应用 情况 等等 打算 从事 这个 行业 或者 刚 
+入门 的 朋友 可以 多 关注 这些 网站 多 了解 
+一些 CV 的 具体 应用 搞 研究 的 朋友 也 
+可以 从中 了解 到 很多 牛人 的 研究 动态 招生 
+情况 等 总之 我 认为 知识 只有 分享 才能 产生 
+更大 的 价值 真诚 希望 下面 的 链接 能对 朋友们 
+有所 帮助 1 google Research 2 MIT 博士 汤晓欧/nr 学生/n 
+林达/nr 华/ns 3 MIT 博士后 Douglas Lanman 4 opencv 中文网站 
+5 Stanford 大学 vision 实验室 6 Stanford 大学 博士 崔 
+靖宇 7 UCLA 教授 朱松 纯 8 中国 人 工 
+智能网 9 中国 视觉 网 10 中科院 自动化所 11 中科院 
+自动化所 李子 青 研究员 12 中科院计算所 山世光/nr 研究员 13 人脸识别 
+主页 14 加州 大学 伯克利 分校 CV 小组 15 南加州 
+大学 CV 实验室 16 卡内基 梅隆 大学 CV 主页 17 
+微软 CV 研究员 Richard Szeliski 18 微软 亚洲 研究院 计算机 
+视觉 研究组 19 微软 剑桥 研究院 ML 与 CV 研究组 
+20 研 学 论坛 21 美国 Rutgers 大学 助理 教授 
+刘青山 22 计算机 视觉 最新 资讯 网 23 运动 检测 
+阴影 跟踪 的 测试 视频 下载 24 香港 中文 大学 
+助理 教授 王晓刚 25 香港 中文 大学 多 媒体 实验室 
+汤晓鸥/nr 26 U . C . San Diego . computer 
+vision 27 CV online 28 computer vision software 29 Computer 
+Vision Resource 30 computer vision research groups 31 computer vision 
+center 32   浙江大学 图像 技术 研究 与 应用 ITRA 
+团队 33 自动识别 网 34 清华大学/nt 章毓晋/nr 教授/n 35 顶级 
+民用 机器人 研究 小组 Porf . Gary 领导 的 Willow 
+Garage 36 上海 交通 大学 图像 处理 与 模式识别 研究所 
+37 上海 交通 大学 计算机 视觉 实验室 刘允 才 教授 
+38 德克萨斯州 大学 奥斯汀 分校 助理 教授 Kristen Grauman   
+图像 分解 检索 39 清华大学电子工程系 智能 图文 信息处理 实验室 丁晓青 
+教授 40 北京大学 高文 教授 41 清华大学 艾 海舟 教授 
+42 中科院 生物 识别 与 安全 技术 研究中心 43 瑞士 
+巴塞尔 大学 Thomas Vetter 教授 44 俄勒冈 州立大学 Rob Hess 
+博士 45 深圳大学 于仕祺/nr 副教授 46 西安交通大学 人工智能 与 机器人 
+研究所 47 卡内基 梅隆 大学 研究员 Robert T . Collins 
+48 MIT 博士 Chris Stauffer 49 美国 密歇根 州立 大学 
+生物 识别 研究组 Anil K . Jain 教授 50 美国 
+伊利 诺 伊州 立 大学 Thomas . Huang 51 武汉大学 
+数字 摄影 测量 与 计算机 视觉 研究中心 52 瑞士 巴塞尔 
+大学 Sami Romdhani 助理 研究员 53 CMU 大学 研究员 Yang 
+Wang 54 英国曼彻斯特大学 Tim Cootes 教授 55 美国 罗彻斯特 大学教授 
+Jiebo Luo 56 美国 普渡大学 机器人 视觉 实验室 57 美国 
+宾利 州立大学 感知 运动 与 认识 实验室 58 美国宾夕法尼亚大学 GRASP 
+实验室 59 美国 内 达 华 大学 里 诺 校区 
+CV 实验室 60 美国 密西根 大学 vision 实验室 61 University 
+of Massachusetts 麻省 大学 视觉 实验室 62 华盛顿大学 博士后 Iva 
+Kemelmacher 63 以色列 魏茨曼 科技大学 Ronen Basri 64 瑞士 ETH 
+Zurich 大学 CV 实验室 65 微软 CV 研究员 张正友 66 
+中科院 自动化所 医学影像 研究室 67 中科院 田捷 研究员 68 微软 
+Redmond 研究院 研究员 Simon Baker 69 普林斯顿 大学 教授 李凯 
+70 普林斯顿 大学 博士 贾登 71 牛津 大学 教授 Andrew 
+Zisserman 72 英国 leeds 大学 研究员 Mark Everingham 73 英国 
+爱丁堡 大学 教授 Chris William 74 微软 剑桥 研究院 研究员 
+John Winn 75 佐治亚 理工学院 教授 Monson H . Hayes 
+76 微软 亚洲 研究院 研究员 孙剑 77 微软 亚洲 研究院 
+研究员 马毅/nr 78 英国 哥伦比亚 大学 教授 David Lowe 79 
+英国 爱丁堡 大学 教授 Bob Fisher 80 加州大学 圣地亚哥 分校 
+教授 Serge J . Belongie 81 威斯康星 大学 教授 Charles 
+R . Dyer 82 多伦多 大学 教授 Allan . Jepson 
+83 伦斯勒 理工学院 教授 Qiang Ji 84 CMU 研究员 Daniel 
+Huber 85 多伦多 大学 教授 David J . Fleet 86 
+伦敦大学 玛丽 女王 学院 教授 Andrea Cavallaro 87 多伦多 大学 
+教授 Kyros Kutulakos 88 杜克 大学 教授 Carlo Tomasi 89 
+CMU 教授 Martial Hebert 90 MIT 助理 教授 Antonio Torralba 
+91 马里兰 大学 研究员 Yasel Yacoob 92 康奈尔 大学 教授 
+Ramin Zabih 93 CMU 博士 田渊栋/nr 94 CMU 副教授 Srinivasa 
+Narasimhan 95 CMU 大学 ILIM 实验室 96 哥伦比亚 大学 教授 
+Sheer K . Nayar 97 三菱 电子 研究院 研究员 Fatih 
+Porikli 98 康奈尔 大学 教授 Daniel Huttenlocher 99 南京 大学 
+教授 周志华 100 芝加哥 丰田 技术 研究所 助理 教授 Devi 
+Parikh 101 瑞士 联邦 理工学院 博士后 Helmut Grabner 102 香港 
+中文 大学 教授 贾 佳亚 103 南京 大学 教授 吴建 
+鑫 104 GE 研究院 研究员 李关/nr 105 佐治亚 理工学院 教授 
+Monson Hayes 106 图片 检索 国际 竞赛 PASCAL VOC 微软 
+剑桥 研究院 组织 107 机器 视觉 开源 处理 库 汇总 
+108 布朗 大学 教授 Benjamin Kimia 109 数据 堂 图像 
+处理 相关 的 样本数据 110 东软 基于 CV 的 汽车 
+辅助 驾驶 系统 111 马里兰 大学 教授 Rema Chellappa 112 
+芝加哥 丰田 研究 中心 助理 教授 Devi Parikh 113 宾夕法尼亚 
+大学 助理 教授 石建 波 114 比利时 鲁汶 大学教授 Luc 
+Van Gool 115 行人 检测 主页 116 法国 学习 算法 
+与 系统 实验室 Basilio Noris 博士 117 美国 马里兰 大学 
+LARRY . DAVIS 教授 118 计算机 视觉 论文 分类 导航 
+119 计算机 视觉 分类信息 导航 120 西班牙 马德里 理工大学 博士 
+Marcos Nieto 121 香港理工大学 副教授 张磊 122 以色列 技术 学院 
+教授 Michael Elad 123 韩国 启明 大学 计算机 视觉 与 
+模式识别 实验室 124 英国 诺丁汉 大学 Michel Valstar 博士 125 
+卡内基 梅隆 大学 Takeo Kanade 教授 126 微软 学术 搜索 
+127 比利时 天主教 鲁汶 大学 Radu Timofte 博士 交通标志 检测 
+定位 3D 跟踪 128 迪斯尼 匹兹堡 研究院 研究员 Iain Matthews 
+AAM 三维重建 http / / www . ri . cmu 
+. edu / person . html type = publications & 
+person _ id = 741 129 康奈尔大学 视觉 与 图像 
+分析 组 医学 图像处理 130 密西根 州立 大学 生物 识别 
+研究组 人脸识别 指纹识别 图像 检索 131 柏林 科技 大学 计算机 
+视觉 与 遥感 实验室 图像 分析 物体 重建 基于 图像 
+的 表面 测量 医学 图像处理 132 英国 布里 斯托 大学 
+数字 多媒体 研究组 运动 检测 与 跟踪 视频压缩 3D 重建 
+字符 定位 133 英国 萨利 大学 视觉 语音 与 信号 
+处理 中心   人脸识别 监控 3D 视频 检索 134 北 
+卡莱罗纳 大学 教堂山 分校 Marc Pollefeys 教授 基于 视频 的 
+3D 模型 生成 相机 标定 运动 检测 与 分析 3D 
+重建 135 澳大利亚 国立 大学 Richard Hartley 教授 运动 估计 
+稀疏 子空间 跟踪 136 百度 技术 副总监 于凯 深度 学习 
+稀疏 表示 图像 分类 137 西安电子科技大学 高新 波 教授 质量 
+评判 水印 稀疏 表示 超 分辨率 138 加州 大学 伯克利 
+分校 Michael I . Jordan 教授 机器学习 139 加州 理工 
+行人 检测 相关 资料 140 微软 Redmond 研究院 研究员 Piotr 
+Dollar   行人 检测 特征提取 141 视觉 计算 研究 论坛 
+中科院 视觉 计算 研究 小组 的 论坛 142 美国 坦桑尼亚 
+州立大学 稀疏 学习 软件包 稀疏 学习 143 美国加州大学 圣地亚哥 分校 
+Jacob Whitehill 博士 机器学习 144 美国 布朗 大学 Michael J 
+. Black 教授   人 的 姿态 估计 和 跟踪 
+145 美国加州大学 圣地亚哥 分校 David Kriegman 教授 人脸识别 146 南加州 
+大学 Paul Debevec 教授   将 CV 和 CG 结合 
+研究   人脸 捕捉 重建 技术 147 伊利诺伊大学 D . 
+A . Forsyth 教授 三维重建 148 英国牛津大学 Ian Reid 教授 
+  跟踪 和 机器 人 导航 149 CMU 大学 Alyosha 
+Efros 教授   图像 纹理 合成 150 加州 大学 伯克利 
+分校 Jitendra Malik 教授   轮廓 检测 图像 / 视频 
+分割 图形 匹配 目标 识别 151 MIT 教授 William Freeman 
+  图像 纹理 合成 152 CMU 博士 Henry Schneiderman   
+目标 检测 和 识别 153 微软 研究员 Paul Viola   
+AdaBoost 算法 154 微软 研究员 Antonio Criminisi   图像 修补 
+三维重建 目标 检测 与 跟踪 155 魏茨曼 科学 研究所 教授 
+Michal Irani   超 分辨率 156 瑞士 洛桑 理工学院 Pascal 
+Fua 教授 立体 视觉 增强 现实 157 佐治亚 理工学院 Irfan 
+Essa 教授 人脸 表情 识别 158 中科院 助理 教授 樊彬/nr 
+特征描述 159 斯坦福大学 Sebastian Thrun 教授   机器人 160 多伦多 
+大学 Geoffrey E . Hinton 教授   深度 学习 161 
+凤巢 系统 架构师 张栋博 士 162 2012年 龙星 计划 机器学习 
+课程 163 中科院 自动化所 肖 柏华 教授   文字 识别 
+人脸识别 质量 评判 164 图像 视频 质量 评判 165 纽约大学 
+Yann LeCun 教授   手写体 数字 识别 166 二维 条码 
+识别 开源 库 zxing 167 布朗 大学 Pedro Felzenszwalb 教授 
+  特征提取 Deformable Part Model 168 伊利诺伊 香槟 大学 Svetlana 
+Lazebnik 教授 特征提取 聚 类 图像 检索 169 荷兰 乌德勒支 
+大学 图像 与 多媒体 研究 中心   图像 多媒体 检索 
+与 匹配 170 英国 格拉斯 哥 大学 信息检索 小组   
+文本 图像 视频 检索 171 中科院 自动化所 孙哲 南 助理 
+教书   虹膜 识别 掌纹 识别 人脸识别 172 南京 信息 
+工程 大学 刘青山 教授   人脸 图像 分析 医学 图像 
+分析 173 清华大学 助理 教授 冯 建江   指纹识别 174 
+北航 助理 教授 黄迪   3D 人脸识别 175 中山大学 助理 
+教授 郑伟 诗   人脸识别 特征 匹配 聚 类 检索 
+176 google 瑞士 苏黎世 的 工程师 Thomas Deselaers     
+图像 检索 177 百度 深度 学习 研究 中心 博士后 余轶南/nr 
+  目标 检测 图像 检索 178 威 兹曼 科技 大学 
+超 分辨率 179 德克萨斯 大学 奥斯汀 分校 Al Bovik 教授 
+  图像 视频 质量 判别 特征提取 180 以色列 希伯来 大学 
+Yair Weiss 教授   机器学习 超 分辨率 181 以色列 希伯来 
+大学 Daniel Zoran 博士   超 分辨率 去 噪 182 
+美国加州大学 Peyman Milanfar 教授   去 噪 183 中科院计算所 副研究员 
+常虹/nr   图像 检索 半 监督 学习 超 分辨率 184 
+以色列 威茨 曼 大学 Anat Levin 教授   去 噪 
+去模糊 185 以色列 威茨 曼 大学 Daniel Glasner 博士后   
+超 分辨率 分割 姿态 估计 186 密西根 大学 助理 教授 
+Honglak Lee     机器学习 特征提取 去 噪 稀疏 表示 
+187 MIT 周博 磊 博士   聚集 分析 运动 检测 
+188 美国 田纳西 大学 Li He 博士 稀疏 表示 超 
+分辨率 189 Adobe 研究院 Jianchao Yang 研究员   稀疏 表示 
+超 分辨率 图片 检索 去 噪 去模糊 190 Deep Learning 
+主页   深度 学习 论文 软件 代码 demo 数据 等 
+191 斯坦福大学 Andrew Ng 教授 深度 神经网络 深度 学习 192 
+Elefant   机器学习 开源 库 193 微软 研究员 Ce Liu 
+    去 噪 超 分辨率 去模糊 分割 194 West 
+Virginia 大学 助理 教授 Xin Li     边缘 检测 
+降噪 去模糊 195   深度 学习 去 噪 编码 压缩感知 
+超 分辨率 聚 类 分割 等 相关 代码 集合 196 
+西班牙 格拉纳达 大学 超 分辨率 重建 项目组 197 清华大学 程明明 
+博士   图像 分割 检索 198 牛津 布鲁克斯 大学 Philip 
+H . . Torr 教授   分割 三维重建 199 佐治亚 
+理工学院 James M . Rehg 教授 分割 行人 检测 特征描述 
+200 大 规模 图像 分类 检测 竞赛 ILSVRC Stanford Google 
+举办 201 加州大学 尔湾 分校 Deva Ramanan 助理 教授   
+目标 检测 行人 检测 跟踪 稀疏 表示 202 人脸识别 测试 
+图片集 203 美国 西北 大学 博士 Ming Yang   人脸识别 
+图像 检索 204 美国加州大学伯克利分校 博士后 Ross B . Girshick 目标 
+检测 DPM 205 中文 语言 资源 联盟 内有 很多 语言识别 
+字符识别 的 训练 测试 库 206 西班牙 巴塞罗那 大学 计算机 
+视觉 中心 检测 跟踪 3D 行人 检测 汽车 辅助 驾驶 
+207 德国 戴姆勒 研究所 Prof . Dr . Dariu M 
+. Gavrila 跟踪 行人 检测 208 苏黎世 联邦 理工学院 Andreas 
+Ess 博士后 行人 检测 行为 检测 跟踪 CV _ GUYS 
+以下 材料 参考 3 感谢 整理 92   Terrence Sejnowski 
+  UCSD IEEE Fellow   Member of the Institute of 
+Medicine89   Hector Garcia Molina   Stanford ACM Fellow Member 
+of the National Academy of Engineering87   Jeffrey D . 
+Ullman   Stanford ACM Fellow Member of the National Academy 
+of Engineering82   Robert Tarjan   Princeton Turing Award ACM 
+Fellow Member of the National Academy of Engineering80   Deborah 
+Estrin   UCLA ACM Fellow IEEE Fellow Member of the 
+National Academy of Engineering79   Christos H . Papadimitriou   
+Berkeley ACM Fellow Member of the National Academy of Engineering77 
+  Don Towsley   U Mass Amherst ACM Fellow IEEE 
+Fellow73   Ian Foster   Argonne National Laboratory & U 
+Chicago 71   Scott Shenker   Berkeley ACM Fellow IEEE 
+Fellow70   David Culler   Berkeley ACM Fellow Member of 
+the National Academy of Engineering70   David Haussler   UC 
+Santa Cruz 69   Nick Jennings   U Southampton Fellow 
+of the Royal Academy of Engineering68   Michael I . 
+Jordan   Berkeley AAAS Fellow IEEE Fellow AAAI Fellow68   
+Takeo Kanade   CMU ACM Fellow IEEE Fellow Member of 
+the National Academy of Engineering64   Demetri Terzopoulos   UCLA 
+ACM Fellow IEEE Fellow Member of the European Academy of 
+Sciences64   Martin Vetterli   EPFL IEEE Fellow63   Marco 
+Dorigo   U Libre de Bruxelles 62   Alon Halevy 
+Alon Levy   Google ACM Fellow61   Mario Gerla   
+UCLA IEEE Fellow58   Luca Cardelli   Microsoft ACM Fellow58 
+  Ronald Fagin   IBM Almaden ACM Fellow IEEE Fellow 
+AAAS Fellow ACM SIGMOD Edgar F . Codd Innovations Award58 
+  Anil K . Jain   Michigan State U ACM 
+Fellow IEEE Fellow58   Amit Sheth   Wright State U 
+IEEE Fellow57   Martin Abadi   UC Santa Cruz and 
+Microsoft ACM Fellow57   Mihir Bellare   UCSD 57   
+Sushil Jajodia   George Mason U 57   Leslie Lamport 
+  Microsoft Member of the National Academy of Engineering56   
+David Dill   Stanford ACM Fellow IEEE Fellow56   Randy 
+H . Katz   Berkeley ACM Fellow IEEE Fellow Member 
+of the National Academy of Engineering56   Steven Salzberg   
+U Maryland 56   HongJiang Zhang   Microsoft ACM Fellow 
+IEEE Fellow55   Jennifer Widom   Stanford ACM Fellow Member 
+of the National Academy of Engineering54   Jack Dongarra   
+U Tennessee ACM Fellow IEEE Fellow Member of the National 
+Academy of Engineering54   David E . Goldberg   UIUC 
+54   Ken Kennedy   Rice ACM Fellow IEEE Fellow 
+Member of the National Academy of Engineering54   Amir Pnueli 
+  Weizmann and New York   University Turing Award ACM 
+Fellow Member of the National Academy of Engineering54   Herbert 
+A . Simon   CMU Turing Award ACM Fellow Nobel 
+Laureate54   Jeffrey Vitter   Texas A & M ACM 
+Fellow IEEE Fellow54   Philip . Yu   UIC ACM 
+Fellow IEEE Fellow53   Tim Finin   UMBC 53   
+Sally Floyd   ICSI ACM Fellow53   Tomaso Poggio   
+MIT 53   Eduardo Sontag   Rutgers IEEE Fellow52   
+Rakesh Agrawal   Microsoft ACM Fellow IEEE Fellow Member of 
+the National Academy of Engineering52   Stanley Osher   UCLA 
+Member of the National Academy of Sciences51   Jiawei Han 
+  UIUC ACM Fellow51   Richard Karp   Berkeley Turing 
+Award ACM Fellow Member of the National Academy of Engineering51 
+  Alex Pentland   MIT 50   Andrew B . 
+Kahng   UCSD 50   Alberto Sangiovanni Vincentelli   Berkeley 
+Member of the National Academy of Engineering50   Lixia Zhang 
+  UCLA ACM Fellow49   Serge Abiteboul   INRIA 49 
+  Rajeev Alur   U Penn ACM Fellow IEEE Fellow49 
+  Rama Chellappa   U Maryland 49   W . 
+Bruce Croft   U Mass Amherst ACM Fellow49   Jon 
+Crowcroft   U Cambridge ACM Fellow IEEE Fellow49   David 
+J . DeWitt   Wisconsin ACM Fellow Member of the 
+National Academy of Engineering49   Mark Handley   U College 
+London 49   Daphne Koller   Stanford ACM Infosys Foundation 
+Award49   Maurizio Lenzerini   Sapienza Universita di Roma 49 
+  John McCarthy   Stanford Turing Award Member of the 
+National Academy of Engineering49   Michael Stonebraker   MIT ACM 
+Fellow Member of the National Academy of Engineering49   Sebastian 
+Thrun   Stanford 48   Michael J . Carey   
+UC Irvine ACM Fellow Member of the National Academy of 
+Engineering48   Kai Li   Princeton ACM Fellow48   Pavel 
+Pevzner   UCSD 48   Mihalis Yannakakis   Columbia ACM 
+Fellow47   Wil van der Aalst   TU Eindhoven 47 
+  Leonard Kleinrock   UCLA ACM Fellow IEEE Fellow Member 
+of the National Academy of Engineering47   Jim Kurose   
+U Mass Amherst ACM Fellow IEEE Fellow47   Richard Lipton 
+  Georgia Tech ACM Fellow Member of the National Academy 
+of Engineering47   Judea Pearl   UCLA IEEE Fellow Member 
+of the National Academy of Engineering47   Ben Shneiderman   
+U Maryland ACM Fellow46   Norman I . Badler   
+U Penn 46   Hari Balakrishnan   MIT ACM Fellow46 
+  David Harel   The Weizmann Institute of Science ACM 
+Fellow IEEE Fellow46   Geoffrey E . Hinton   Toronto 
+46   Thomas . Huang   UIUC IEEE Fellow Member 
+of the National Academy of Engineering46   Gordon Plotkin   
+U Edinburgh 46   Tuomas Sandholm   CMU ACM Fellow46 
+  Douglas C . Schmidt   Vanderbilt University 46   
+John A . Stankovic   U Virginia ACM Fellow45   
+Olivier Faugeras   INRIA Member of the French Academy of 
+Sciences45   Jose Joaquin Garcia Luna Aceves   UC Santa 
+Cruz ACM Fellow IEEE Fellow45   Jim Gray   Microsoft 
+Turing Award ACM Fellow45   M . Frans Kaashoek   
+MIT ACM Fellow45   Carl Kesselman   USC / ISI 
+45   Vipin Kumar   U Minnesota ACM Fellow IEEE 
+Fellow45   Victor Lesser   U Mass Amherst AAAI Fellow45 
+  Heikki Mannila   U Helsinki 45   Rajeev Motwani 
+  Stanford ACM Fellow45   Badri Nath B R Badrinath 
+  Rutgers 45   Prabhakar Raghavan   Yahoo Research ACM 
+Fellow IEEE Fellow45   Eero P . Simoncelli   NYU 
+IEEE Fellow45   Moshe Y . Vardi   Rice ACM 
+Fellow Member of the National Academy of Engineering44   Victor 
+Basili   U Maryland ACM Fellow44   Christos Faloutsos   
+CMU 44   Oded Goldreich   Weizmann 44   H 
+. V . Jagadish   U Michigan ACM Fellow44   
+Amin Vahdat   UCSD 43   Michael Franklin   Berkeley 
+ACM Fellow43   Joseph Goguen   UCSD 43   Ramesh 
+Govindan   USC 43   Simon Peyton Jones   Microsoft 
+ACM Fellow43 Won Kim Sung Kyun Kwan University ACM Fellow43 
+  Barbara Liskov   MIT Turing Award ACM Fellow Member 
+of the National Academy of Engineering43   David Maier   
+Portland State U ACM Fellow43   Robin Milner   U 
+Cambridge UK Turing Award ACM Fellow43   Vern Paxson   
+ICSI ACM Fellow43   Krithi Ramamritham   IIT Bombay ACM 
+Fellow IEEE Fellow43   Ronald L . Rivest   MIT 
+Turing Award ACM Fellow Member of the National Academy of 
+Engineering42   Michael Arbib   USC 42   Barry Boehm 
+  USC ACM Fellow42   Pat Hanrahan   Stanford ACM 
+Fellow Member of the National Academy of Engineering42   Thomas 
+A . Henzinger   EPFL ACM Fellow42   Donald E 
+. Knuth   Stanford Turing Award ACM Fellow Member of 
+the National Academy of Engineering42   Teuvo Kohonen   Academy 
+of Finland 42   Miron Livny   Wisconsin 42   
+Jose Meseguer   UIUC 42   Erkki Oja   Helsinki 
+U of Technology 42   David A . Patterson   
+Berkeley ACM Fellow IEEE Fellow Member of the National Academy 
+of Engineering42   Micha Sharir   Tel Aviv University ACM 
+Fellow42   Andrew . Tanenbaum   Vrije U The Netherlands 
+ACM Fellow IEEE Fellow42   Willy Zwaenepoel   EPFL ACM 
+Fellow IEEE Fellow41   Alex Aiken   Stanford ACM Fellow41 
+  Stefano Ceri   Politecnico di Milano 41   Didier 
+Dubois   CNRS Toulouse 41   Michael Kearns   U 
+Penn 41   Jon Kleinberg   Cornell ACM Infosys Foundation 
+Award41   Monica . Lam   Stanford ACM Fellow41   
+Kim G . Larsen   Aalborg U 41   Jitendra 
+Malik   Berkeley ACM Fellow41   Deborah L . McGuinness 
+  RPI 41   Raymond Mooney   UT Austin 41 
+  Alex Nicolau   UC Irvine 41   Miodrag Potkonjak 
+  UCLA 41   Thomas W . Reps   U 
+Wisconsin ACM Fellow41   Milind Tambe   USC AAAI Fellow41 
+  Gene Tsudik   UC Irvine 41   Philip Wadler 
+  U Edinburgh ACM Fellow40   Andrew Appel   Princeton 
+ACM Fellow40   Richard Baraniuk   Rice University IEEE Fellow40 
+  Craig Chambers   U Washington 40   Edmund M 
+. Clarke   CMU Turing Award ACM Fellow IEEE Fellow 
+Member of the National Academy of Engineering40   Jason Cong 
+  UCLA ACM Fellow40   Ingemar J . Cox   
+U College London IEEE Fellow40   Herbert Edelsbrunner   Duke 
+U 40   Saul Greenberg   University of Calgary Member 
+of the ACM CHI Academy40   Rajiv Gupta   UC 
+Riverside IEEE Fellow40   Christian . Jensen   Aalborg U 
+IEEE Fellow40   David . Johnson   AT & T 
+Labs ACM Fellow40   George Karypis   U Minnesota 40 
+  Henry Levy U Washington ACM Fellow IEEE Fellow40   
+Nancy Lynch   MIT ACM Fellow Member of the National 
+Academy of Engineering40   Maja Mataric   USC 40   
+John Mitchell   Stanford ACM Fellow40   Charles E . 
+Perkins   Nokia Siemens Networks 40   Benjamin Pierce   
+U Penn 40   Raghu Ramakrishnan   Wisconsin ACM Fellow40 
+  George Varghese   UCSD ACM Fellow40   Ian Witten 
+  U Waikato ACM Fellow40   Andrew Zisserman   University 
+of Oxford 以下 资料 来源 于 参考 4 牛人 主页 
+主页 有 很多 论文 代码 Serge Belongie   at UC 
+San DiegoAntonio Torralba   at MITAlexei Ffros   at CMUCe 
+Liu   at Microsoft Research New EnglandVittorio Ferrari   at 
+Univ . of EdinburghKristen Grauman   at UT AustinDevi Parikh 
+  at   TTI Chicago   Marr Prize at ICCV2011 
+John Wright   at Columbia Univ . Piotr Dollar   
+at CalTechBoris Babenko   at UC San DiegoDavid Ross   
+at Google / YoutubeDavid Donoho   at Stanford Univ . 
+大神 们 William T . Freeman   at MITRoberto Cipolla 
+  at CambridgeDavid Lowe   at Univ . of British 
+ColumbiaMubarak Shah   at Univ . of Central FloridaYi Ma 
+  at MSRATinne Tuytelaars   at K . U . 
+LeuvenTrevor Darrell   at U . C . BerkeleyMichael J 
+. Black   at Brown Univ . 重要 研究组 Computer 
+Vision Group   at UC BerkeleyRobotics Research Group   at 
+Univ . of OxfordLEAR   at INRIAComputer Vision Lab   
+at StanfordComputer Vision Lab   at EPFLComputer Vision Lab   
+at ETH ZurichComputer Vision Lab   at Seoul National Univ 
+. Computer Vision Lab   at UC San DiegoComputer Vision 
+Lab   at UC Santa CruzComputer Vision Lab   at 
+Univ . of Southern C a l i f o 
+r n i a C o m p u t 
+e r Vision Lab   at Univ . of Central 
+FloridaComputer Vision Lab   at Columbia Univ . UCLA Vision 
+LabMotion and Shape Computing Group   at George Mason Univ 
+. Robust Image Understanding Lab   at Rutgers Univ . 
+Intelligent Vision Systems Group   at Univ . of BonnInstitute 
+for Computer Graphics and Vision   at Graz Univ . 
+of Tech . Computer Vision Lab .   at Vienna 
+Univ . of Tech . Computational Image Analysis and Radiology 
+  at Medical Univ . of ViennaPersonal   Robotics   
+Lab   at CMUVisual Perception Lab   at Purdue Univ 
+. 潜力 牛人 Juergen Gall   at   ETH ZurichMatt 
+Flagg   at Georgia Tech . Mathieu Salzmann   at 
+TTI ChicagoGerg Shakhnarovich   at TTI ChicagoTaeg Sang Cho   
+at MITJianchao Yang   at UIUCStefan Roth   at TU 
+DarmstadtPeter Kontschieder   at Graz Univ . of Tech . 
+Dominik Alexander Klein   at Univ . of BonnYinan Yu 
+  at CASIA PASCAL VOC 2010 Detection Challenge Winner Zdenek 
+Kalal   at FPFLJulien Pilet   at FPFLKenji OkumaAndrea Fusiello 
+计算机 视觉 中的 几何 教程 Elements of Geometric Computer Visionhttp 
+/ / homepages . inf . ed . ac . 
+uk / rbf / CVonline / LOCAL _ COPIES / 
+FUSIELLO4 / tutorial . html # x1 520007 有关 马尔可夫 
+蒙特卡罗 方法 的 资料 An introduction to Markov chain Monte 
+Carlohttp / / homepages . inf . ed . ac 
+. uk / rbf / CVonline / LOCAL _ COPIES 
+/ SENEGAS / mcmc . htmlMarkov Chain Monte Carlo for 
+Computer Vision A tutorial at ICCV05http / / civs . 
+stat . ucla . edu / MCMC / MCMC _ 
+tutorial . htm 有关 独立 成分 分析 Independent Component Analysis 
+ICA 的 资料 An ICA Pagehttp / / www . 
+cnl . salk . edu / ~ tony / ica 
+. htmlFast ICAhttp / / www . cis . hut 
+. fi / projects / ica / fastica / The 
+Kalman Filter 介绍 卡尔曼 滤波器 的 终极 网页 http / 
+/ www . cs . unc . edu / ~ 
+welch / kalman / index . htmlCached   k d 
+tree search for ICP algorithmshttp / / kos . informatik 
+. uni osnabrueck . de / download / 3dim2007 / 
+paper . html 几个 计算机 视觉 研究 工具 Machine Vision 
+Toolbox for Matlabhttp / / www . petercorke . com 
+/ Machine % 20Vision % 20Toolbox . htmlMatlab and Octave 
+Function for Computer Vision and Image Processinghttp / / www 
+. csse . uwa . edu . au / ~ 
+pk / research / matlabfns / Bayes Net Toolbox for 
+Matlabhttp / / www . cs . ubc . ca 
+/ ~ murphyk / Software / BNT / bnt . 
+htmlOpenCV Chinese http / / www . opencv . org 
+. cn / index . php / % E 9% 
+A 6% 96% E 9% A 1% B5Gandalf A Computer 
+Vision and Numerical Algorithm Labrary http / / gandalf library 
+. sourceforge . net / CMU Computer Vision Home Pagehttp 
+/ / www . cs . cmu . edu / 
+afs / cs / project / cil / ftp / 
+html / vision . htmlMachine Learning Resource Linkshttp / / 
+www . cse . ust . hk / ~ ivor 
+/ resource . htmThe Bayesian Filtering Libraryhttp / / www 
+. orocos . org / bflOptical Flow Algorithm Evaluation 提供 
+了 一个 动态 贝叶斯 网络 框架 例如 递归 信息 处理 
+与 分析 卡尔曼滤波 粒子 滤波 序列 蒙特卡罗 方法 等 C 
++ + 写 的 http / / of eval . 
+sourceforge . net / MATLAB code for ICP algorithmhttp / 
+/ www . usenet . com / newsgroups / comp 
+. graphics . visualization / msg00102 . html 牛人 主页 
+朱松 纯 Song Chun Zhu http / / www . 
+stat . ucla . edu / ~ sczhu / David 
+Lowe SIFT 很帅 的 一个 老头 哦 ^ ^ http 
+/ / www . cs . ubc . ca / 
+~ lowe / Andrea Vedaldi SIFT http / / vision 
+. ucla . edu / ~ vedaldi / index . 
+htmlPedro F . Felzenszwalbhttp / / people . cs . 
+uchicago . edu / ~ pff / Dougla Dlanman Brown 
+的 一个 研究生 在其 主页 上 搜集 了 大量 算法 
+教程 和 源码 http / / mesh . brown . 
+edu / dlanman / courses . htmlJianbo Shi Ncuts 的 
+始作俑者 http / / www . cis . upenn . 
+edu / ~ jshi / Active Vision Group Oxford 的 
+一个 机器 视觉 研究 团队 特色 是 SLAM 监视 导航 
+http / / www . robots . ox . ac 
+. uk / ActiveVision / index . htmlJuyang Weng 机器 
+学习 的 专家 Autonomous Mental Development   是 其 特色 
+http / / www . cse . msu . edu 
+/ ~ weng /     测试 图片 或 视频 
+Middlebury College s Stereo Vision Data Sethttp / / cat 
+. middlebury . edu / stereo / data . htmlIntelligent 
+Vehicle IVSource   www . ivsoruce . netRobot Car   
+http / / www . plyojump . com / robot 
+_ cars . htmlHow to Build a Robot The Computer 
+Vision Part   http / / www . societyofrobots . 
+com / programming _ computer _ vision _ tutorial . 
+shtml 收集 的 一般 牛人 主页 带 代码 Xiaofei He 
+machine learning code http / / people . cs . 
+uchicago . edu / ~ xiaofei / YingNian Wu active 
+base model code http / / www . stat . 
+ucla . edu / ~ ywu / research . html 
+布朗 大学 计算机 主页 可 找到 该校 CS 牛人 博客 
+http / / www . cs . brown . edu 
+/ research / areas . htmlNavneet Dalal Histograms of Oriented 
+Gradients for Human Detection http / / www . navneetdalal 
+. com / softwarePaul Viola Robust Real time Object Detection 
+http / / research . microsoft . com / en 
+us / um / people / viola / 关于 机器学习 
+的 一些 资料 Active Learninghttp / / active learning . 
+net / 这里 包括 了 关于 Active Learning 理论 以及 
+应用 的 一些 文章 特别 是 那篇 Survey Transfer Learninghttp 
+/ / www . cse . ust . hk / 
+TL / 包括 经典 的 论文 以及 附 带有 源码 
+很 方便 Gaussian Processeshttp / / www . gaussianprocess . 
+org   包括 相关 的 书籍 有 Carl Edward Rasmussen 
+的 书 相关 的 程序 以及 分类 的 paper 列表 
+这也 是由 Carl 自己 维护 的 他 应该 是 将 
+GP 引入 machine learning 最早 的 人 之一 了吧 Hinton 
+的 学生 Nonparametric Bayesian Methodshttp / / www . cs 
+. berkeley . edu / ~ jordan / npb . 
+html   这个 一看 就 知道 是 Jordan 维护 的 
+主要 包括 Dirichlet process 以及 相关 的 其他 随机 过程 
+在 machine learning 里面 如何 进行 建模 如何 进行 approximate 
+inference 主要 是 文章 列表 Probabilistic Graphical Modelhttp / / 
+www . cs . ubc . ca / ~ murphyk 
+/ Bayes / bnintro . html   是 Kevin Murphy 
+所 维护 的 关于 Bayesian belief networks 的 介绍 含有 
+最 基本 的 概念 相关 的 文献 和 软件 的 
+链接 罕见 的 UCB 出来 的 不是 Jordan 的 学生 
+老板 是 Stuart Russel http / / www . cs 
+. berkeley . edu / ~ jordan / graphical . 
+html   是 Jordan 系 关于 这个 方面 的 论文 
+汇编 http / / www . inference . phy . 
+cam . ac . uk / hmw26 / crf / 
+  是 关于 Conditional Random Fields 方面 论文 和 软件 
+的 收集 由 Hanna Wallach 维护 Compressed Sensinghttp / / 
+www dsp . rice . edu / cs   这是 
+Rice 大学 维护 的 论文 分类 列表 软件 链接 等 
+推荐 Emmanuel Cand è s 所写 的 tutorial 这人 是 
+David Donoho 的 学生 Tensorhttp / / csmr . ca 
+. sandia . gov / ~ tgkolda / pubs / 
+index . html   关于 tensor 的 一些 偏 数学 
+的 文章 Deep Belief Networkhttp / / www . cs 
+. toronto . edu / ~ hinton / csc2515 / 
+deeprefs . html   是 Geoffrey Hinton 为 研究生 开设 
+的 machine learning 课程 的 DBN 的 reading list Kernel 
+Methodshttp / / www . cs . berkeley . edu 
+/ ~ jordan / kernels . html   是 Jordan 
+维护 的 关于 kernel methods 的 文章 列表 Markov Logichttp 
+/ / ai . cs . washington . edu / 
+pubs   是 UW AI 组 的 文章 里面 关于 
+Markov logic 的 比较 多 因为 Pedro Domingos 就是 这个 
+组 的 Machine learning theoryhttp / / hunch . net 
+/ 这个 网站 主要 是 一些 learning theory 的 东西 
+比较 多 想在 machine learning 理论 上 有所 建树 的 
+同志 们 可以 去 看看 Iasonas Kokkinos 搞 统计模型 视觉 
+http / / vision . mas . ecp . fr 
+/ Personnel / iasonas / index . html 人工智能 与 
+模式识别 国际 顶级 期刊 会议 目录 包含 该 领域 最 
+权威 的 期刊 和 会议 参考 文献 和 资料 来源 
+1 http / / blog . sciencenet . cn / 
+blog 43092 22895 . html2 http / / blog . 
+csdn . net / carson2005 / article / details / 
+66011093 http / / blog . sina . com . 
+cn / s / blog _ 569d6df80100ww30 . html4 http 
+/ / www . cnblogs . com / kshenf / 
+archive / 2012/02 / 07/2342034 . html Author JW . ZHOU2014 / 6 / 13Paper 毕竟 是 
+死 的 写 Paper 的 人才 是 活 的 那么 
+现在 就 研究 一下 CV 圈 的 格局 按 师承 
+关系 总结 成 一个 树形 结构 参考 1 David Marr 
+Shimon Ullman Weizmann Eric Grimson MIT Daniel Huttenlocher Cornell Pedro 
+Felzenszwalb Chicago Thomas Binford Stanford David Lowe UBC Jitendra Malik 
+UC Berkeley Pietro Perona Caltech Stefano Soatto UCLA Fei Fei 
+Li Princeton Jianbo Shi UPenn Yizhou Yu UIUC Christoph Bregler 
+NYU Serge Belongie UCSD Alyosha Efros CMU Andrew Blake Microsoft 
+Research Cambridge Andrew Zisserman Oxford Andrew Fitzgibbon Microsoft Research Cambridge 
+Roberto Cipolla Cambridge Alan Yuille UCLA UK 这个 学派 的 
+师承 关系 不 太 清楚   这是 我 听说 加上 
+自己 猜测 的 .   事实上   几个 非常 优秀 
+的 researcher 如 Vladimir Kolmogorov 虽然 不是 Andrew Blake 的 
+学生   但是 也 属于 这个 学派 . Thomas Huang 
+UIUC Yong Rui Microsoft Research Redmond Nebojsa Jojic Microsoft Research 
+Redmond Ying Wu Northwestern University Hai Tao UCSC Yuncai Liu 
+SJTU Huang 这个 系 的 人 太多   而且 很 
+怪 的 是 UIUC 的 web 上 信息 不全   
+在此 仅 列出 我 知道 的 . 此外   还有 
+Takeo Kanade 等 非常 有名 的 大牛   囿于 篇幅 
+  不 一一列举 .   从上 得知   加州 派 
+基本 占了 cv 的 半壁江山 .   最 近几年   
+特别 活跃 的 cv guys 是 USAJitendra Malik UC BerkeleyPietro 
+Perona CaltechSerge Belongie UCSDJianbo Shi UPennStefano Soatto UCLAFei Fei Li 
+PrincetonWilliam Freeman MITTrevor Darrell MITSimon Baker CMUYanxi Liu CMUSongchun Zhu 
+UCLAAlan Yuille UCLAYi Ma UIUCMichael Black BrownCarlo Tomasi DukeRamin Zabih 
+CornellShree Nayar ColumbiaRama Chellappa MarylandSteve Seitz University of W a 
+s h i n g t o n E u 
+r o p e A n d r e w 
+Zisserman Oxford UKAndrew Fitzgibbon Microsoft Research Cambridge UKRoberto Cipolla Cambridge 
+UKJean Ponce INRIA FranceCordelia Schmid INRIA FranceBill Triggs LEAR FranceYair 
+Weiss Hebrew University IsraelAnat Levin Hebrew University IsraelMichal Irani Weizmann 
+IsraelLuc van Gool University of Leuven / ETH Zurich C 
+z e c h i c C h i n 
+a H a r r y Shum MSRAXiaoou Tang MSRA 
+/ CUHKJian Sun MSRASteve Lin MSRAYasuyuki Matsushita MSRAZhouchen Lin MSRALong 
+Quan HKUSTChi Keung Tang HKUSTOlivier Faugeras Ponce     UIUC 
+lazebnik Zhengyou Zhang     MSR Martial Hebert     
+CMUMit AI labpoggio Oliva serreFreeman 80 年代 还来 太原理工 扶贫 
+了 Y . Weiss Levin Antonio Torralba   research scientist 
+Trevor Darrell Grauman 补充 一下   Zisserman 还有 一个 不错 
+的 学生 lifeifei 的 合作者 Rob Fergus 按 研究 方向 
+分分 应该 更 合理 一些 现在 计算机 视觉 计算机 图形图像 
+机器学习 开始 融合 到 一起 了吧 J . Malik Zhu 
+Songchu 偏 segmentation D . Lowe . Ullman Poggio   
+偏于 从 生物 视觉 的 启发 来 研究 视觉 Zisserman 
+Schmid Lowe 研究 局部 特征 Luc Van Goo   Long 
+Quanl 三维重建 Perona Li Feife   Freeman 视觉 i 学习 
+物体 分类 还有 运动 分析 视觉 跟踪 纹理 分析 . 
+. . . . . . . . . . 
+. . MIT 的 Brain & Cognitive Science Dept 和 
+CSAIL 里面 聚集 了 一帮 人 有的 作 low level 
+有的 作 mid level to high level 的 他们 的 
+工作 是 值得 关注 的 当然 说 视觉 还是 要从 
+伟大 的 David Marr 开始 Tomaso Poggio Richard Whitman 是 
+Marr 的 同事 传承 了 其 理念 一直 往下走 Poggio 
+最 近几年 比较 重点 的 工作 放在 他 那个 hierarchical 
+model 上 T . Poggio 的 第一 个 PhD 学生 
+是 Christof Koch   kLab at Caltech 哦 顺便 说 
+一下 Koch 的 另外 一个 导师 是 Valentino Breitenberg 同样 
+是 影响 了 一个 时代 的 大人物 Koch 研究 重点 
+兴趣 在 consciousness 上 在 Nature 上 的 很多 文章 
+体现 了 他 的 研究 思想 不过 他们 也 做 
+不少 初级 的 视觉 问题 诸如 attention Koch 比较 知名 
+的 弟子 比如 Laurent Itti 和 Li Feifei Richard Whitman 
+  年纪 比较 大了 个人 不是 很 关注 他 现在 
+做 的 东西 不过 他 所在 的 Perceptual Science Group 
+是 一个 非常 有 影响力 的 地方 这个 组 其他 
+大家 比较 熟悉 的 老师 有 Aude Oliva 和 EH 
+Adelson Adelson 最 著名 的 一个 事儿 是 色彩 恒常 
+相关 的 视错觉 93年 发在 Science 上 的 那篇 关于 
+Oliva 前面 的 帖子 错了 她 不是 Poggio 的 学生 
+这家伙 和 Torralba 是 老乡 同 在 法国 念书 主要 
+从 心理学 那条 路子 开始 做 成名 之 役 是 
+hybrid image 和 Antonio Torrralba 一起 搞 的 这个 Hybrid 
+Image   其实 80 年代 就 有了 但是 最 开始 
+从 心理学 方向 上 探讨 没有 非常 有 影响力 的 
+文章 后来 开始 靠谱 作 自然 图像 统计 得到 Gist 
+theory 当然 这个 illusion 本身 后来 转 投 SIGGRAPH 其 
+影响 是 深远 的 嗯 这个 和 CV 关系不大 Perceptual 
+Science Group 出 了 不少 牛人 他们 的 alumni list 
+可谓 超 豪华 阵容 Yair Weiss Josh Tenenbaum Pawan Sinha 
+Bill Freeman 以下 材料 参考 2 感谢 ChenLee _ 1 
+的 整理 以下 链接 是 本人 整理 的 关于 计算机 
+视觉 ComputerVision CV 相关 领域 的 网站 链接 其中 有 
+CV 牛人 的 主页 CV 研究 小组 的 主页 CV 
+领域 的 paper 代码 CV 领域 的 最新 动态 国内 
+的 应用 情况 等等 打算 从事 这个 行业 或者 刚 
+入门 的 朋友 可以 多 关注 这些 网站 多 了解 
+一些 CV 的 具体 应用 搞 研究 的 朋友 也 
+可以 从中 了解 到 很多 牛人 的 研究 动态 招生 
+情况 等 总之 我 认为 知识 只有 分享 才能 产生 
+更大 的 价值 真诚 希望 下面 的 链接 能对 朋友们 
+有所 帮助 1 google Research 2 MIT 博士 汤晓欧/nr 学生/n 
+林达/nr 华/ns 3 MIT 博士后 Douglas Lanman 4 opencv 中文网站 
+5 Stanford 大学 vision 实验室 6 Stanford 大学 博士 崔 
+靖宇 7 UCLA 教授 朱松 纯 8 中国 人 工 
+智能网 9 中国 视觉 网 10 中科院 自动化所 11 中科院 
+自动化所 李子 青 研究员 12 中科院计算所 山世光/nr 研究员 13 人脸识别 
+主页 14 加州 大学 伯克利 分校 CV 小组 15 南加州 
+大学 CV 实验室 16 卡内基 梅隆 大学 CV 主页 17 
+微软 CV 研究员 Richard Szeliski 18 微软 亚洲 研究院 计算机 
+视觉 研究组 19 微软 剑桥 研究院 ML 与 CV 研究组 
+20 研 学 论坛 21 美国 Rutgers 大学 助理 教授 
+刘青山 22 计算机 视觉 最新 资讯 网 23 运动 检测 
+阴影 跟踪 的 测试 视频 下载 24 香港 中文 大学 
+助理 教授 王晓刚 25 香港 中文 大学 多 媒体 实验室 
+汤晓鸥/nr 26 U . C . San Diego . computer 
+vision 27 CV online 28 computer vision software 29 Computer 
+Vision Resource 30 computer vision research groups 31 computer vision 
+center 32   浙江大学 图像 技术 研究 与 应用 ITRA 
+团队 33 自动识别 网 34 清华大学/nt 章毓晋/nr 教授/n 35 顶级 
+民用 机器人 研究 小组 Porf . Gary 领导 的 Willow 
+Garage 36 上海 交通 大学 图像 处理 与 模式识别 研究所 
+37 上海 交通 大学 计算机 视觉 实验室 刘允 才 教授 
+38 德克萨斯州 大学 奥斯汀 分校 助理 教授 Kristen Grauman   
+图像 分解 检索 39 清华大学电子工程系 智能 图文 信息处理 实验室 丁晓青 
+教授 40 北京大学 高文 教授 41 清华大学 艾 海舟 教授 
+42 中科院 生物 识别 与 安全 技术 研究中心 43 瑞士 
+巴塞尔 大学 Thomas Vetter 教授 44 俄勒冈 州立大学 Rob Hess 
+博士 45 深圳大学 于仕祺/nr 副教授 46 西安交通大学 人工智能 与 机器人 
+研究所 47 卡内基 梅隆 大学 研究员 Robert T . Collins 
+48 MIT 博士 Chris Stauffer 49 美国 密歇根 州立 大学 
+生物 识别 研究组 Anil K . Jain 教授 50 美国 
+伊利 诺 伊州 立 大学 Thomas . Huang 51 武汉大学 
+数字 摄影 测量 与 计算机 视觉 研究中心 52 瑞士 巴塞尔 
+大学 Sami Romdhani 助理 研究员 53 CMU 大学 研究员 Yang 
+Wang 54 英国曼彻斯特大学 Tim Cootes 教授 55 美国 罗彻斯特 大学教授 
+Jiebo Luo 56 美国 普渡大学 机器人 视觉 实验室 57 美国 
+宾利 州立大学 感知 运动 与 认识 实验室 58 美国宾夕法尼亚大学 GRASP 
+实验室 59 美国 内 达 华 大学 里 诺 校区 
+CV 实验室 60 美国 密西根 大学 vision 实验室 61 University 
+of Massachusetts 麻省 大学 视觉 实验室 62 华盛顿大学 博士后 Iva 
+Kemelmacher 63 以色列 魏茨曼 科技大学 Ronen Basri 64 瑞士 ETH 
+Zurich 大学 CV 实验室 65 微软 CV 研究员 张正友 66 
+中科院 自动化所 医学影像 研究室 67 中科院 田捷 研究员 68 微软 
+Redmond 研究院 研究员 Simon Baker 69 普林斯顿 大学 教授 李凯 
+70 普林斯顿 大学 博士 贾登 71 牛津 大学 教授 Andrew 
+Zisserman 72 英国 leeds 大学 研究员 Mark Everingham 73 英国 
+爱丁堡 大学 教授 Chris William 74 微软 剑桥 研究院 研究员 
+John Winn 75 佐治亚 理工学院 教授 Monson H . Hayes 
+76 微软 亚洲 研究院 研究员 孙剑 77 微软 亚洲 研究院 
+研究员 马毅/nr 78 英国 哥伦比亚 大学 教授 David Lowe 79 
+英国 爱丁堡 大学 教授 Bob Fisher 80 加州大学 圣地亚哥 分校 
+教授 Serge J . Belongie 81 威斯康星 大学 教授 Charles 
+R . Dyer 82 多伦多 大学 教授 Allan . Jepson 
+83 伦斯勒 理工学院 教授 Qiang Ji 84 CMU 研究员 Daniel 
+Huber 85 多伦多 大学 教授 David J . Fleet 86 
+伦敦大学 玛丽 女王 学院 教授 Andrea Cavallaro 87 多伦多 大学 
+教授 Kyros Kutulakos 88 杜克 大学 教授 Carlo Tomasi 89 
+CMU 教授 Martial Hebert 90 MIT 助理 教授 Antonio Torralba 
+91 马里兰 大学 研究员 Yasel Yacoob 92 康奈尔 大学 教授 
+Ramin Zabih 93 CMU 博士 田渊栋/nr 94 CMU 副教授 Srinivasa 
+Narasimhan 95 CMU 大学 ILIM 实验室 96 哥伦比亚 大学 教授 
+Sheer K . Nayar 97 三菱 电子 研究院 研究员 Fatih 
+Porikli 98 康奈尔 大学 教授 Daniel Huttenlocher 99 南京 大学 
+教授 周志华 100 芝加哥 丰田 技术 研究所 助理 教授 Devi 
+Parikh 101 瑞士 联邦 理工学院 博士后 Helmut Grabner 102 香港 
+中文 大学 教授 贾 佳亚 103 南京 大学 教授 吴建 
+鑫 104 GE 研究院 研究员 李关/nr 105 佐治亚 理工学院 教授 
+Monson Hayes 106 图片 检索 国际 竞赛 PASCAL VOC 微软 
+剑桥 研究院 组织 107 机器 视觉 开源 处理 库 汇总 
+108 布朗 大学 教授 Benjamin Kimia 109 数据 堂 图像 
+处理 相关 的 样本数据 110 东软 基于 CV 的 汽车 
+辅助 驾驶 系统 111 马里兰 大学 教授 Rema Chellappa 112 
+芝加哥 丰田 研究 中心 助理 教授 Devi Parikh 113 宾夕法尼亚 
+大学 助理 教授 石建 波 114 比利时 鲁汶 大学教授 Luc 
+Van Gool 115 行人 检测 主页 116 法国 学习 算法 
+与 系统 实验室 Basilio Noris 博士 117 美国 马里兰 大学 
+LARRY . DAVIS 教授 118 计算机 视觉 论文 分类 导航 
+119 计算机 视觉 分类信息 导航 120 西班牙 马德里 理工大学 博士 
+Marcos Nieto 121 香港理工大学 副教授 张磊 122 以色列 技术 学院 
+教授 Michael Elad 123 韩国 启明 大学 计算机 视觉 与 
+模式识别 实验室 124 英国 诺丁汉 大学 Michel Valstar 博士 125 
+卡内基 梅隆 大学 Takeo Kanade 教授 126 微软 学术 搜索 
+127 比利时 天主教 鲁汶 大学 Radu Timofte 博士 交通标志 检测 
+定位 3D 跟踪 128 迪斯尼 匹兹堡 研究院 研究员 Iain Matthews 
+AAM 三维重建 http / / www . ri . cmu 
+. edu / person . html type = publications & 
+person _ id = 741 129 康奈尔大学 视觉 与 图像 
+分析 组 医学 图像处理 130 密西根 州立 大学 生物 识别 
+研究组 人脸识别 指纹识别 图像 检索 131 柏林 科技 大学 计算机 
+视觉 与 遥感 实验室 图像 分析 物体 重建 基于 图像 
+的 表面 测量 医学 图像处理 132 英国 布里 斯托 大学 
+数字 多媒体 研究组 运动 检测 与 跟踪 视频压缩 3D 重建 
+字符 定位 133 英国 萨利 大学 视觉 语音 与 信号 
+处理 中心   人脸识别 监控 3D 视频 检索 134 北 
+卡莱罗纳 大学 教堂山 分校 Marc Pollefeys 教授 基于 视频 的 
+3D 模型 生成 相机 标定 运动 检测 与 分析 3D 
+重建 135 澳大利亚 国立 大学 Richard Hartley 教授 运动 估计 
+稀疏 子空间 跟踪 136 百度 技术 副总监 于凯 深度 学习 
+稀疏 表示 图像 分类 137 西安电子科技大学 高新 波 教授 质量 
+评判 水印 稀疏 表示 超 分辨率 138 加州 大学 伯克利 
+分校 Michael I . Jordan 教授 机器学习 139 加州 理工 
+行人 检测 相关 资料 140 微软 Redmond 研究院 研究员 Piotr 
+Dollar   行人 检测 特征提取 141 视觉 计算 研究 论坛 
+中科院 视觉 计算 研究 小组 的 论坛 142 美国 坦桑尼亚 
+州立大学 稀疏 学习 软件包 稀疏 学习 143 美国加州大学 圣地亚哥 分校 
+Jacob Whitehill 博士 机器学习 144 美国 布朗 大学 Michael J 
+. Black 教授   人 的 姿态 估计 和 跟踪 
+145 美国加州大学 圣地亚哥 分校 David Kriegman 教授 人脸识别 146 南加州 
+大学 Paul Debevec 教授   将 CV 和 CG 结合 
+研究   人脸 捕捉 重建 技术 147 伊利诺伊大学 D . 
+A . Forsyth 教授 三维重建 148 英国牛津大学 Ian Reid 教授 
+  跟踪 和 机器 人 导航 149 CMU 大学 Alyosha 
+Efros 教授   图像 纹理 合成 150 加州 大学 伯克利 
+分校 Jitendra Malik 教授   轮廓 检测 图像 / 视频 
+分割 图形 匹配 目标 识别 151 MIT 教授 William Freeman 
+  图像 纹理 合成 152 CMU 博士 Henry Schneiderman   
+目标 检测 和 识别 153 微软 研究员 Paul Viola   
+AdaBoost 算法 154 微软 研究员 Antonio Criminisi   图像 修补 
+三维重建 目标 检测 与 跟踪 155 魏茨曼 科学 研究所 教授 
+Michal Irani   超 分辨率 156 瑞士 洛桑 理工学院 Pascal 
+Fua 教授 立体 视觉 增强 现实 157 佐治亚 理工学院 Irfan 
+Essa 教授 人脸 表情 识别 158 中科院 助理 教授 樊彬/nr 
+特征描述 159 斯坦福大学 Sebastian Thrun 教授   机器人 160 多伦多 
+大学 Geoffrey E . Hinton 教授   深度 学习 161 
+凤巢 系统 架构师 张栋博 士 162 2012年 龙星 计划 机器学习 
+课程 163 中科院 自动化所 肖 柏华 教授   文字 识别 
+人脸识别 质量 评判 164 图像 视频 质量 评判 165 纽约大学 
+Yann LeCun 教授   手写体 数字 识别 166 二维 条码 
+识别 开源 库 zxing 167 布朗 大学 Pedro Felzenszwalb 教授 
+  特征提取 Deformable Part Model 168 伊利诺伊 香槟 大学 Svetlana 
+Lazebnik 教授 特征提取 聚 类 图像 检索 169 荷兰 乌德勒支 
+大学 图像 与 多媒体 研究 中心   图像 多媒体 检索 
+与 匹配 170 英国 格拉斯 哥 大学 信息检索 小组   
+文本 图像 视频 检索 171 中科院 自动化所 孙哲 南 助理 
+教书   虹膜 识别 掌纹 识别 人脸识别 172 南京 信息 
+工程 大学 刘青山 教授   人脸 图像 分析 医学 图像 
+分析 173 清华大学 助理 教授 冯 建江   指纹识别 174 
+北航 助理 教授 黄迪   3D 人脸识别 175 中山大学 助理 
+教授 郑伟 诗   人脸识别 特征 匹配 聚 类 检索 
+176 google 瑞士 苏黎世 的 工程师 Thomas Deselaers     
+图像 检索 177 百度 深度 学习 研究 中心 博士后 余轶南/nr 
+  目标 检测 图像 检索 178 威 兹曼 科技 大学 
+超 分辨率 179 德克萨斯 大学 奥斯汀 分校 Al Bovik 教授 
+  图像 视频 质量 判别 特征提取 180 以色列 希伯来 大学 
+Yair Weiss 教授   机器学习 超 分辨率 181 以色列 希伯来 
+大学 Daniel Zoran 博士   超 分辨率 去 噪 182 
+美国加州大学 Peyman Milanfar 教授   去 噪 183 中科院计算所 副研究员 
+常虹/nr   图像 检索 半 监督 学习 超 分辨率 184 
+以色列 威茨 曼 大学 Anat Levin 教授   去 噪 
+去模糊 185 以色列 威茨 曼 大学 Daniel Glasner 博士后   
+超 分辨率 分割 姿态 估计 186 密西根 大学 助理 教授 
+Honglak Lee     机器学习 特征提取 去 噪 稀疏 表示 
+187 MIT 周博 磊 博士   聚集 分析 运动 检测 
+188 美国 田纳西 大学 Li He 博士 稀疏 表示 超 
+分辨率 189 Adobe 研究院 Jianchao Yang 研究员   稀疏 表示 
+超 分辨率 图片 检索 去 噪 去模糊 190 Deep Learning 
+主页   深度 学习 论文 软件 代码 demo 数据 等 
+191 斯坦福大学 Andrew Ng 教授 深度 神经网络 深度 学习 192 
+Elefant   机器学习 开源 库 193 微软 研究员 Ce Liu 
+    去 噪 超 分辨率 去模糊 分割 194 West 
+Virginia 大学 助理 教授 Xin Li     边缘 检测 
+降噪 去模糊 195   深度 学习 去 噪 编码 压缩感知 
+超 分辨率 聚 类 分割 等 相关 代码 集合 196 
+西班牙 格拉纳达 大学 超 分辨率 重建 项目组 197 清华大学 程明明 
+博士   图像 分割 检索 198 牛津 布鲁克斯 大学 Philip 
+H . . Torr 教授   分割 三维重建 199 佐治亚 
+理工学院 James M . Rehg 教授 分割 行人 检测 特征描述 
+200 大 规模 图像 分类 检测 竞赛 ILSVRC Stanford Google 
+举办 201 加州大学 尔湾 分校 Deva Ramanan 助理 教授   
+目标 检测 行人 检测 跟踪 稀疏 表示 202 人脸识别 测试 
+图片集 203 美国 西北 大学 博士 Ming Yang   人脸识别 
+图像 检索 204 美国加州大学伯克利分校 博士后 Ross B . Girshick 目标 
+检测 DPM 205 中文 语言 资源 联盟 内有 很多 语言识别 
+字符识别 的 训练 测试 库 206 西班牙 巴塞罗那 大学 计算机 
+视觉 中心 检测 跟踪 3D 行人 检测 汽车 辅助 驾驶 
+207 德国 戴姆勒 研究所 Prof . Dr . Dariu M 
+. Gavrila 跟踪 行人 检测 208 苏黎世 联邦 理工学院 Andreas 
+Ess 博士后 行人 检测 行为 检测 跟踪 CV _ GUYS 
+以下 材料 参考 3 感谢 整理 92   Terrence Sejnowski 
+  UCSD IEEE Fellow   Member of the Institute of 
+Medicine89   Hector Garcia Molina   Stanford ACM Fellow Member 
+of the National Academy of Engineering87   Jeffrey D . 
+Ullman   Stanford ACM Fellow Member of the National Academy 
+of Engineering82   Robert Tarjan   Princeton Turing Award ACM 
+Fellow Member of the National Academy of Engineering80   Deborah 
+Estrin   UCLA ACM Fellow IEEE Fellow Member of the 
+National Academy of Engineering79   Christos H . Papadimitriou   
+Berkeley ACM Fellow Member of the National Academy of Engineering77 
+  Don Towsley   U Mass Amherst ACM Fellow IEEE 
+Fellow73   Ian Foster   Argonne National Laboratory & U 
+Chicago 71   Scott Shenker   Berkeley ACM Fellow IEEE 
+Fellow70   David Culler   Berkeley ACM Fellow Member of 
+the National Academy of Engineering70   David Haussler   UC 
+Santa Cruz 69   Nick Jennings   U Southampton Fellow 
+of the Royal Academy of Engineering68   Michael I . 
+Jordan   Berkeley AAAS Fellow IEEE Fellow AAAI Fellow68   
+Takeo Kanade   CMU ACM Fellow IEEE Fellow Member of 
+the National Academy of Engineering64   Demetri Terzopoulos   UCLA 
+ACM Fellow IEEE Fellow Member of the European Academy of 
+Sciences64   Martin Vetterli   EPFL IEEE Fellow63   Marco 
+Dorigo   U Libre de Bruxelles 62   Alon Halevy 
+Alon Levy   Google ACM Fellow61   Mario Gerla   
+UCLA IEEE Fellow58   Luca Cardelli   Microsoft ACM Fellow58 
+  Ronald Fagin   IBM Almaden ACM Fellow IEEE Fellow 
+AAAS Fellow ACM SIGMOD Edgar F . Codd Innovations Award58 
+  Anil K . Jain   Michigan State U ACM 
+Fellow IEEE Fellow58   Amit Sheth   Wright State U 
+IEEE Fellow57   Martin Abadi   UC Santa Cruz and 
+Microsoft ACM Fellow57   Mihir Bellare   UCSD 57   
+Sushil Jajodia   George Mason U 57   Leslie Lamport 
+  Microsoft Member of the National Academy of Engineering56   
+David Dill   Stanford ACM Fellow IEEE Fellow56   Randy 
+H . Katz   Berkeley ACM Fellow IEEE Fellow Member 
+of the National Academy of Engineering56   Steven Salzberg   
+U Maryland 56   HongJiang Zhang   Microsoft ACM Fellow 
+IEEE Fellow55   Jennifer Widom   Stanford ACM Fellow Member 
+of the National Academy of Engineering54   Jack Dongarra   
+U Tennessee ACM Fellow IEEE Fellow Member of the National 
+Academy of Engineering54   David E . Goldberg   UIUC 
+54   Ken Kennedy   Rice ACM Fellow IEEE Fellow 
+Member of the National Academy of Engineering54   Amir Pnueli 
+  Weizmann and New York   University Turing Award ACM 
+Fellow Member of the National Academy of Engineering54   Herbert 
+A . Simon   CMU Turing Award ACM Fellow Nobel 
+Laureate54   Jeffrey Vitter   Texas A & M ACM 
+Fellow IEEE Fellow54   Philip . Yu   UIC ACM 
+Fellow IEEE Fellow53   Tim Finin   UMBC 53   
+Sally Floyd   ICSI ACM Fellow53   Tomaso Poggio   
+MIT 53   Eduardo Sontag   Rutgers IEEE Fellow52   
+Rakesh Agrawal   Microsoft ACM Fellow IEEE Fellow Member of 
+the National Academy of Engineering52   Stanley Osher   UCLA 
+Member of the National Academy of Sciences51   Jiawei Han 
+  UIUC ACM Fellow51   Richard Karp   Berkeley Turing 
+Award ACM Fellow Member of the National Academy of Engineering51 
+  Alex Pentland   MIT 50   Andrew B . 
+Kahng   UCSD 50   Alberto Sangiovanni Vincentelli   Berkeley 
+Member of the National Academy of Engineering50   Lixia Zhang 
+  UCLA ACM Fellow49   Serge Abiteboul   INRIA 49 
+  Rajeev Alur   U Penn ACM Fellow IEEE Fellow49 
+  Rama Chellappa   U Maryland 49   W . 
+Bruce Croft   U Mass Amherst ACM Fellow49   Jon 
+Crowcroft   U Cambridge ACM Fellow IEEE Fellow49   David 
+J . DeWitt   Wisconsin ACM Fellow Member of the 
+National Academy of Engineering49   Mark Handley   U College 
+London 49   Daphne Koller   Stanford ACM Infosys Foundation 
+Award49   Maurizio Lenzerini   Sapienza Universita di Roma 49 
+  John McCarthy   Stanford Turing Award Member of the 
+National Academy of Engineering49   Michael Stonebraker   MIT ACM 
+Fellow Member of the National Academy of Engineering49   Sebastian 
+Thrun   Stanford 48   Michael J . Carey   
+UC Irvine ACM Fellow Member of the National Academy of 
+Engineering48   Kai Li   Princeton ACM Fellow48   Pavel 
+Pevzner   UCSD 48   Mihalis Yannakakis   Columbia ACM 
+Fellow47   Wil van der Aalst   TU Eindhoven 47 
+  Leonard Kleinrock   UCLA ACM Fellow IEEE Fellow Member 
+of the National Academy of Engineering47   Jim Kurose   
+U Mass Amherst ACM Fellow IEEE Fellow47   Richard Lipton 
+  Georgia Tech ACM Fellow Member of the National Academy 
+of Engineering47   Judea Pearl   UCLA IEEE Fellow Member 
+of the National Academy of Engineering47   Ben Shneiderman   
+U Maryland ACM Fellow46   Norman I . Badler   
+U Penn 46   Hari Balakrishnan   MIT ACM Fellow46 
+  David Harel   The Weizmann Institute of Science ACM 
+Fellow IEEE Fellow46   Geoffrey E . Hinton   Toronto 
+46   Thomas . Huang   UIUC IEEE Fellow Member 
+of the National Academy of Engineering46   Gordon Plotkin   
+U Edinburgh 46   Tuomas Sandholm   CMU ACM Fellow46 
+  Douglas C . Schmidt   Vanderbilt University 46   
+John A . Stankovic   U Virginia ACM Fellow45   
+Olivier Faugeras   INRIA Member of the French Academy of 
+Sciences45   Jose Joaquin Garcia Luna Aceves   UC Santa 
+Cruz ACM Fellow IEEE Fellow45   Jim Gray   Microsoft 
+Turing Award ACM Fellow45   M . Frans Kaashoek   
+MIT ACM Fellow45   Carl Kesselman   USC / ISI 
+45   Vipin Kumar   U Minnesota ACM Fellow IEEE 
+Fellow45   Victor Lesser   U Mass Amherst AAAI Fellow45 
+  Heikki Mannila   U Helsinki 45   Rajeev Motwani 
+  Stanford ACM Fellow45   Badri Nath B R Badrinath 
+  Rutgers 45   Prabhakar Raghavan   Yahoo Research ACM 
+Fellow IEEE Fellow45   Eero P . Simoncelli   NYU 
+IEEE Fellow45   Moshe Y . Vardi   Rice ACM 
+Fellow Member of the National Academy of Engineering44   Victor 
+Basili   U Maryland ACM Fellow44   Christos Faloutsos   
+CMU 44   Oded Goldreich   Weizmann 44   H 
+. V . Jagadish   U Michigan ACM Fellow44   
+Amin Vahdat   UCSD 43   Michael Franklin   Berkeley 
+ACM Fellow43   Joseph Goguen   UCSD 43   Ramesh 
+Govindan   USC 43   Simon Peyton Jones   Microsoft 
+ACM Fellow43 Won Kim Sung Kyun Kwan University ACM Fellow43 
+  Barbara Liskov   MIT Turing Award ACM Fellow Member 
+of the National Academy of Engineering43   David Maier   
+Portland State U ACM Fellow43   Robin Milner   U 
+Cambridge UK Turing Award ACM Fellow43   Vern Paxson   
+ICSI ACM Fellow43   Krithi Ramamritham   IIT Bombay ACM 
+Fellow IEEE Fellow43   Ronald L . Rivest   MIT 
+Turing Award ACM Fellow Member of the National Academy of 
+Engineering42   Michael Arbib   USC 42   Barry Boehm 
+  USC ACM Fellow42   Pat Hanrahan   Stanford ACM 
+Fellow Member of the National Academy of Engineering42   Thomas 
+A . Henzinger   EPFL ACM Fellow42   Donald E 
+. Knuth   Stanford Turing Award ACM Fellow Member of 
+the National Academy of Engineering42   Teuvo Kohonen   Academy 
+of Finland 42   Miron Livny   Wisconsin 42   
+Jose Meseguer   UIUC 42   Erkki Oja   Helsinki 
+U of Technology 42   David A . Patterson   
+Berkeley ACM Fellow IEEE Fellow Member of the National Academy 
+of Engineering42   Micha Sharir   Tel Aviv University ACM 
+Fellow42   Andrew . Tanenbaum   Vrije U The Netherlands 
+ACM Fellow IEEE Fellow42   Willy Zwaenepoel   EPFL ACM 
+Fellow IEEE Fellow41   Alex Aiken   Stanford ACM Fellow41 
+  Stefano Ceri   Politecnico di Milano 41   Didier 
+Dubois   CNRS Toulouse 41   Michael Kearns   U 
+Penn 41   Jon Kleinberg   Cornell ACM Infosys Foundation 
+Award41   Monica . Lam   Stanford ACM Fellow41   
+Kim G . Larsen   Aalborg U 41   Jitendra 
+Malik   Berkeley ACM Fellow41   Deborah L . McGuinness 
+  RPI 41   Raymond Mooney   UT Austin 41 
+  Alex Nicolau   UC Irvine 41   Miodrag Potkonjak 
+  UCLA 41   Thomas W . Reps   U 
+Wisconsin ACM Fellow41   Milind Tambe   USC AAAI Fellow41 
+  Gene Tsudik   UC Irvine 41   Philip Wadler 
+  U Edinburgh ACM Fellow40   Andrew Appel   Princeton 
+ACM Fellow40   Richard Baraniuk   Rice University IEEE Fellow40 
+  Craig Chambers   U Washington 40   Edmund M 
+. Clarke   CMU Turing Award ACM Fellow IEEE Fellow 
+Member of the National Academy of Engineering40   Jason Cong 
+  UCLA ACM Fellow40   Ingemar J . Cox   
+U College London IEEE Fellow40   Herbert Edelsbrunner   Duke 
+U 40   Saul Greenberg   University of Calgary Member 
+of the ACM CHI Academy40   Rajiv Gupta   UC 
+Riverside IEEE Fellow40   Christian . Jensen   Aalborg U 
+IEEE Fellow40   David . Johnson   AT & T 
+Labs ACM Fellow40   George Karypis   U Minnesota 40 
+  Henry Levy U Washington ACM Fellow IEEE Fellow40   
+Nancy Lynch   MIT ACM Fellow Member of the National 
+Academy of Engineering40   Maja Mataric   USC 40   
+John Mitchell   Stanford ACM Fellow40   Charles E . 
+Perkins   Nokia Siemens Networks 40   Benjamin Pierce   
+U Penn 40   Raghu Ramakrishnan   Wisconsin ACM Fellow40 
+  George Varghese   UCSD ACM Fellow40   Ian Witten 
+  U Waikato ACM Fellow40   Andrew Zisserman   University 
+of Oxford 以下 资料 来源 于 参考 4 牛人 主页 
+主页 有 很多 论文 代码 Serge Belongie   at UC 
+San DiegoAntonio Torralba   at MITAlexei Ffros   at CMUCe 
+Liu   at Microsoft Research New EnglandVittorio Ferrari   at 
+Univ . of EdinburghKristen Grauman   at UT AustinDevi Parikh 
+  at   TTI Chicago   Marr Prize at ICCV2011 
+John Wright   at Columbia Univ . Piotr Dollar   
+at CalTechBoris Babenko   at UC San DiegoDavid Ross   
+at Google / YoutubeDavid Donoho   at Stanford Univ . 
+大神 们 William T . Freeman   at MITRoberto Cipolla 
+  at CambridgeDavid Lowe   at Univ . of British 
+ColumbiaMubarak Shah   at Univ . of Central FloridaYi Ma 
+  at MSRATinne Tuytelaars   at K . U . 
+LeuvenTrevor Darrell   at U . C . BerkeleyMichael J 
+. Black   at Brown Univ . 重要 研究组 Computer 
+Vision Group   at UC BerkeleyRobotics Research Group   at 
+Univ . of OxfordLEAR   at INRIAComputer Vision Lab   
+at StanfordComputer Vision Lab   at EPFLComputer Vision Lab   
+at ETH ZurichComputer Vision Lab   at Seoul National Univ 
+. Computer Vision Lab   at UC San DiegoComputer Vision 
+Lab   at UC Santa CruzComputer Vision Lab   at 
+Univ . of Southern C a l i f o 
+r n i a C o m p u t 
+e r Vision Lab   at Univ . of Central 
+FloridaComputer Vision Lab   at Columbia Univ . UCLA Vision 
+LabMotion and Shape Computing Group   at George Mason Univ 
+. Robust Image Understanding Lab   at Rutgers Univ . 
+Intelligent Vision Systems Group   at Univ . of BonnInstitute 
+for Computer Graphics and Vision   at Graz Univ . 
+of Tech . Computer Vision Lab .   at Vienna 
+Univ . of Tech . Computational Image Analysis and Radiology 
+  at Medical Univ . of ViennaPersonal   Robotics   
+Lab   at CMUVisual Perception Lab   at Purdue Univ 
+. 潜力 牛人 Juergen Gall   at   ETH ZurichMatt 
+Flagg   at Georgia Tech . Mathieu Salzmann   at 
+TTI ChicagoGerg Shakhnarovich   at TTI ChicagoTaeg Sang Cho   
+at MITJianchao Yang   at UIUCStefan Roth   at TU 
+DarmstadtPeter Kontschieder   at Graz Univ . of Tech . 
+Dominik Alexander Klein   at Univ . of BonnYinan Yu 
+  at CASIA PASCAL VOC 2010 Detection Challenge Winner Zdenek 
+Kalal   at FPFLJulien Pilet   at FPFLKenji OkumaAndrea Fusiello 
+计算机 视觉 中的 几何 教程 Elements of Geometric Computer Visionhttp 
+/ / homepages . inf . ed . ac . 
+uk / rbf / CVonline / LOCAL _ COPIES / 
+FUSIELLO4 / tutorial . html # x1 520007 有关 马尔可夫 
+蒙特卡罗 方法 的 资料 An introduction to Markov chain Monte 
+Carlohttp / / homepages . inf . ed . ac 
+. uk / rbf / CVonline / LOCAL _ COPIES 
+/ SENEGAS / mcmc . htmlMarkov Chain Monte Carlo for 
+Computer Vision A tutorial at ICCV05http / / civs . 
+stat . ucla . edu / MCMC / MCMC _ 
+tutorial . htm 有关 独立 成分 分析 Independent Component Analysis 
+ICA 的 资料 An ICA Pagehttp / / www . 
+cnl . salk . edu / ~ tony / ica 
+. htmlFast ICAhttp / / www . cis . hut 
+. fi / projects / ica / fastica / The 
+Kalman Filter 介绍 卡尔曼 滤波器 的 终极 网页 http / 
+/ www . cs . unc . edu / ~ 
+welch / kalman / index . htmlCached   k d 
+tree search for ICP algorithmshttp / / kos . informatik 
+. uni osnabrueck . de / download / 3dim2007 / 
+paper . html 几个 计算机 视觉 研究 工具 Machine Vision 
+Toolbox for Matlabhttp / / www . petercorke . com 
+/ Machine % 20Vision % 20Toolbox . htmlMatlab and Octave 
+Function for Computer Vision and Image Processinghttp / / www 
+. csse . uwa . edu . au / ~ 
+pk / research / matlabfns / Bayes Net Toolbox for 
+Matlabhttp / / www . cs . ubc . ca 
+/ ~ murphyk / Software / BNT / bnt . 
+htmlOpenCV Chinese http / / www . opencv . org 
+. cn / index . php / % E 9% 
+A 6% 96% E 9% A 1% B5Gandalf A Computer 
+Vision and Numerical Algorithm Labrary http / / gandalf library 
+. sourceforge . net / CMU Computer Vision Home Pagehttp 
+/ / www . cs . cmu . edu / 
+afs / cs / project / cil / ftp / 
+html / vision . htmlMachine Learning Resource Linkshttp / / 
+www . cse . ust . hk / ~ ivor 
+/ resource . htmThe Bayesian Filtering Libraryhttp / / www 
+. orocos . org / bflOptical Flow Algorithm Evaluation 提供 
+了 一个 动态 贝叶斯 网络 框架 例如 递归 信息 处理 
+与 分析 卡尔曼滤波 粒子 滤波 序列 蒙特卡罗 方法 等 C 
++ + 写 的 http / / of eval . 
+sourceforge . net / MATLAB code for ICP algorithmhttp / 
+/ www . usenet . com / newsgroups / comp 
+. graphics . visualization / msg00102 . html 牛人 主页 
+朱松 纯 Song Chun Zhu http / / www . 
+stat . ucla . edu / ~ sczhu / David 
+Lowe SIFT 很帅 的 一个 老头 哦 ^ ^ http 
+/ / www . cs . ubc . ca / 
+~ lowe / Andrea Vedaldi SIFT http / / vision 
+. ucla . edu / ~ vedaldi / index . 
+htmlPedro F . Felzenszwalbhttp / / people . cs . 
+uchicago . edu / ~ pff / Dougla Dlanman Brown 
+的 一个 研究生 在其 主页 上 搜集 了 大量 算法 
+教程 和 源码 http / / mesh . brown . 
+edu / dlanman / courses . htmlJianbo Shi Ncuts 的 
+始作俑者 http / / www . cis . upenn . 
+edu / ~ jshi / Active Vision Group Oxford 的 
+一个 机器 视觉 研究 团队 特色 是 SLAM 监视 导航 
+http / / www . robots . ox . ac 
+. uk / ActiveVision / index . htmlJuyang Weng 机器 
+学习 的 专家 Autonomous Mental Development   是 其 特色 
+http / / www . cse . msu . edu 
+/ ~ weng /     测试 图片 或 视频 
+Middlebury College s Stereo Vision Data Sethttp / / cat 
+. middlebury . edu / stereo / data . htmlIntelligent 
+Vehicle IVSource   www . ivsoruce . netRobot Car   
+http / / www . plyojump . com / robot 
+_ cars . htmlHow to Build a Robot The Computer 
+Vision Part   http / / www . societyofrobots . 
+com / programming _ computer _ vision _ tutorial . 
+shtml 收集 的 一般 牛人 主页 带 代码 Xiaofei He 
+machine learning code http / / people . cs . 
+uchicago . edu / ~ xiaofei / YingNian Wu active 
+base model code http / / www . stat . 
+ucla . edu / ~ ywu / research . html 
+布朗 大学 计算机 主页 可 找到 该校 CS 牛人 博客 
+http / / www . cs . brown . edu 
+/ research / areas . htmlNavneet Dalal Histograms of Oriented 
+Gradients for Human Detection http / / www . navneetdalal 
+. com / softwarePaul Viola Robust Real time Object Detection 
+http / / research . microsoft . com / en 
+us / um / people / viola / 关于 机器学习 
+的 一些 资料 Active Learninghttp / / active learning . 
+net / 这里 包括 了 关于 Active Learning 理论 以及 
+应用 的 一些 文章 特别 是 那篇 Survey Transfer Learninghttp 
+/ / www . cse . ust . hk / 
+TL / 包括 经典 的 论文 以及 附 带有 源码 
+很 方便 Gaussian Processeshttp / / www . gaussianprocess . 
+org   包括 相关 的 书籍 有 Carl Edward Rasmussen 
+的 书 相关 的 程序 以及 分类 的 paper 列表 
+这也 是由 Carl 自己 维护 的 他 应该 是 将 
+GP 引入 machine learning 最早 的 人 之一 了吧 Hinton 
+的 学生 Nonparametric Bayesian Methodshttp / / www . cs 
+. berkeley . edu / ~ jordan / npb . 
+html   这个 一看 就 知道 是 Jordan 维护 的 
+主要 包括 Dirichlet process 以及 相关 的 其他 随机 过程 
+在 machine learning 里面 如何 进行 建模 如何 进行 approximate 
+inference 主要 是 文章 列表 Probabilistic Graphical Modelhttp / / 
+www . cs . ubc . ca / ~ murphyk 
+/ Bayes / bnintro . html   是 Kevin Murphy 
+所 维护 的 关于 Bayesian belief networks 的 介绍 含有 
+最 基本 的 概念 相关 的 文献 和 软件 的 
+链接 罕见 的 UCB 出来 的 不是 Jordan 的 学生 
+老板 是 Stuart Russel http / / www . cs 
+. berkeley . edu / ~ jordan / graphical . 
+html   是 Jordan 系 关于 这个 方面 的 论文 
+汇编 http / / www . inference . phy . 
+cam . ac . uk / hmw26 / crf / 
+  是 关于 Conditional Random Fields 方面 论文 和 软件 
+的 收集 由 Hanna Wallach 维护 Compressed Sensinghttp / / 
+www dsp . rice . edu / cs   这是 
+Rice 大学 维护 的 论文 分类 列表 软件 链接 等 
+推荐 Emmanuel Cand è s 所写 的 tutorial 这人 是 
+David Donoho 的 学生 Tensorhttp / / csmr . ca 
+. sandia . gov / ~ tgkolda / pubs / 
+index . html   关于 tensor 的 一些 偏 数学 
+的 文章 Deep Belief Networkhttp / / www . cs 
+. toronto . edu / ~ hinton / csc2515 / 
+deeprefs . html   是 Geoffrey Hinton 为 研究生 开设 
+的 machine learning 课程 的 DBN 的 reading list Kernel 
+Methodshttp / / www . cs . berkeley . edu 
+/ ~ jordan / kernels . html   是 Jordan 
+维护 的 关于 kernel methods 的 文章 列表 Markov Logichttp 
+/ / ai . cs . washington . edu / 
+pubs   是 UW AI 组 的 文章 里面 关于 
+Markov logic 的 比较 多 因为 Pedro Domingos 就是 这个 
+组 的 Machine learning theoryhttp / / hunch . net 
+/ 这个 网站 主要 是 一些 learning theory 的 东西 
+比较 多 想在 machine learning 理论 上 有所 建树 的 
+同志 们 可以 去 看看 Iasonas Kokkinos 搞 统计模型 视觉 
+http / / vision . mas . ecp . fr 
+/ Personnel / iasonas / index . html 人工智能 与 
+模式识别 国际 顶级 期刊 会议 目录 包含 该 领域 最 
+权威 的 期刊 和 会议 参考 文献 和 资料 来源 
+1 http / / blog . sciencenet . cn / 
+blog 43092 22895 . html2 http / / blog . 
+csdn . net / carson2005 / article / details / 
+66011093 http / / blog . sina . com . 
+cn / s / blog _ 569d6df80100ww30 . html4 http 
+/ / www . cnblogs . com / kshenf / 
+archive / 2012/02 / 07/2342034 . html Author JW . ZHOU2014 / 6 / 13Paper 毕竟 是 
+死 的 写 Paper 的 人才 是 活 的 那么 
+现在 就 研究 一下 CV 圈 的 格局 按 师承 
+关系 总结 成 一个 树形 结构 参考 1 David Marr 
+Shimon Ullman Weizmann Eric Grimson MIT Daniel Huttenlocher Cornell Pedro 
+Felzenszwalb Chicago Thomas Binford Stanford David Lowe UBC Jitendra Malik 
+UC Berkeley Pietro Perona Caltech Stefano Soatto UCLA Fei Fei 
+Li Princeton Jianbo Shi UPenn Yizhou Yu UIUC Christoph Bregler 
+NYU Serge Belongie UCSD Alyosha Efros CMU Andrew Blake Microsoft 
+Research Cambridge Andrew Zisserman Oxford Andrew Fitzgibbon Microsoft Research Cambridge 
+Roberto Cipolla Cambridge Alan Yuille UCLA UK 这个 学派 的 
+师承 关系 不 太 清楚   这是 我 听说 加上 
+自己 猜测 的 .   事实上   几个 非常 优秀 
+的 researcher 如 Vladimir Kolmogorov 虽然 不是 Andrew Blake 的 
+学生   但是 也 属于 这个 学派 . Thomas Huang 
+UIUC Yong Rui Microsoft Research Redmond Nebojsa Jojic Microsoft Research 
+Redmond Ying Wu Northwestern University Hai Tao UCSC Yuncai Liu 
+SJTU Huang 这个 系 的 人 太多   而且 很 
+怪 的 是 UIUC 的 web 上 信息 不全   
+在此 仅 列出 我 知道 的 . 此外   还有 
+Takeo Kanade 等 非常 有名 的 大牛   囿于 篇幅 
+  不 一一列举 .   从上 得知   加州 派 
+基本 占了 cv 的 半壁江山 .   最 近几年   
+特别 活跃 的 cv guys 是 USAJitendra Malik UC BerkeleyPietro 
+Perona CaltechSerge Belongie UCSDJianbo Shi UPennStefano Soatto UCLAFei Fei Li 
+PrincetonWilliam Freeman MITTrevor Darrell MITSimon Baker CMUYanxi Liu CMUSongchun Zhu 
+UCLAAlan Yuille UCLAYi Ma UIUCMichael Black BrownCarlo Tomasi DukeRamin Zabih 
+CornellShree Nayar ColumbiaRama Chellappa MarylandSteve Seitz University of W a 
+s h i n g t o n E u 
+r o p e A n d r e w 
+Zisserman Oxford UKAndrew Fitzgibbon Microsoft Research Cambridge UKRoberto Cipolla Cambridge 
+UKJean Ponce INRIA FranceCordelia Schmid INRIA FranceBill Triggs LEAR FranceYair 
+Weiss Hebrew University IsraelAnat Levin Hebrew University IsraelMichal Irani Weizmann 
+IsraelLuc van Gool University of Leuven / ETH Zurich C 
+z e c h i c C h i n 
+a H a r r y Shum MSRAXiaoou Tang MSRA 
+/ CUHKJian Sun MSRASteve Lin MSRAYasuyuki Matsushita MSRAZhouchen Lin MSRALong 
+Quan HKUSTChi Keung Tang HKUSTOlivier Faugeras Ponce     UIUC 
+lazebnik Zhengyou Zhang     MSR Martial Hebert     
+CMUMit AI labpoggio Oliva serreFreeman 80 年代 还来 太原理工 扶贫 
+了 Y . Weiss Levin Antonio Torralba   research scientist 
+Trevor Darrell Grauman 补充 一下   Zisserman 还有 一个 不错 
+的 学生 lifeifei 的 合作者 Rob Fergus 按 研究 方向 
+分分 应该 更 合理 一些 现在 计算机 视觉 计算机 图形图像 
+机器学习 开始 融合 到 一起 了吧 J . Malik Zhu 
+Songchu 偏 segmentation D . Lowe . Ullman Poggio   
+偏于 从 生物 视觉 的 启发 来 研究 视觉 Zisserman 
+Schmid Lowe 研究 局部 特征 Luc Van Goo   Long 
+Quanl 三维重建 Perona Li Feife   Freeman 视觉 i 学习 
+物体 分类 还有 运动 分析 视觉 跟踪 纹理 分析 . 
+. . . . . . . . . . 
+. . MIT 的 Brain & Cognitive Science Dept 和 
+CSAIL 里面 聚集 了 一帮 人 有的 作 low level 
+有的 作 mid level to high level 的 他们 的 
+工作 是 值得 关注 的 当然 说 视觉 还是 要从 
+伟大 的 David Marr 开始 Tomaso Poggio Richard Whitman 是 
+Marr 的 同事 传承 了 其 理念 一直 往下走 Poggio 
+最 近几年 比较 重点 的 工作 放在 他 那个 hierarchical 
+model 上 T . Poggio 的 第一 个 PhD 学生 
+是 Christof Koch   kLab at Caltech 哦 顺便 说 
+一下 Koch 的 另外 一个 导师 是 Valentino Breitenberg 同样 
+是 影响 了 一个 时代 的 大人物 Koch 研究 重点 
+兴趣 在 consciousness 上 在 Nature 上 的 很多 文章 
+体现 了 他 的 研究 思想 不过 他们 也 做 
+不少 初级 的 视觉 问题 诸如 attention Koch 比较 知名 
+的 弟子 比如 Laurent Itti 和 Li Feifei Richard Whitman 
+  年纪 比较 大了 个人 不是 很 关注 他 现在 
+做 的 东西 不过 他 所在 的 Perceptual Science Group 
+是 一个 非常 有 影响力 的 地方 这个 组 其他 
+大家 比较 熟悉 的 老师 有 Aude Oliva 和 EH 
+Adelson Adelson 最 著名 的 一个 事儿 是 色彩 恒常 
+相关 的 视错觉 93年 发在 Science 上 的 那篇 关于 
+Oliva 前面 的 帖子 错了 她 不是 Poggio 的 学生 
+这家伙 和 Torralba 是 老乡 同 在 法国 念书 主要 
+从 心理学 那条 路子 开始 做 成名 之 役 是 
+hybrid image 和 Antonio Torrralba 一起 搞 的 这个 Hybrid 
+Image   其实 80 年代 就 有了 但是 最 开始 
+从 心理学 方向 上 探讨 没有 非常 有 影响力 的 
+文章 后来 开始 靠谱 作 自然 图像 统计 得到 Gist 
+theory 当然 这个 illusion 本身 后来 转 投 SIGGRAPH 其 
+影响 是 深远 的 嗯 这个 和 CV 关系不大 Perceptual 
+Science Group 出 了 不少 牛人 他们 的 alumni list 
+可谓 超 豪华 阵容 Yair Weiss Josh Tenenbaum Pawan Sinha 
+Bill Freeman 以下 材料 参考 2 感谢 ChenLee _ 1 
+的 整理 以下 链接 是 本人 整理 的 关于 计算机 
+视觉 ComputerVision CV 相关 领域 的 网站 链接 其中 有 
+CV 牛人 的 主页 CV 研究 小组 的 主页 CV 
+领域 的 paper 代码 CV 领域 的 最新 动态 国内 
+的 应用 情况 等等 打算 从事 这个 行业 或者 刚 
+入门 的 朋友 可以 多 关注 这些 网站 多 了解 
+一些 CV 的 具体 应用 搞 研究 的 朋友 也 
+可以 从中 了解 到 很多 牛人 的 研究 动态 招生 
+情况 等 总之 我 认为 知识 只有 分享 才能 产生 
+更大 的 价值 真诚 希望 下面 的 链接 能对 朋友们 
+有所 帮助 1 google Research 2 MIT 博士 汤晓欧/nr 学生/n 
+林达/nr 华/ns 3 MIT 博士后 Douglas Lanman 4 opencv 中文网站 
+5 Stanford 大学 vision 实验室 6 Stanford 大学 博士 崔 
+靖宇 7 UCLA 教授 朱松 纯 8 中国 人 工 
+智能网 9 中国 视觉 网 10 中科院 自动化所 11 中科院 
+自动化所 李子 青 研究员 12 中科院计算所 山世光/nr 研究员 13 人脸识别 
+主页 14 加州 大学 伯克利 分校 CV 小组 15 南加州 
+大学 CV 实验室 16 卡内基 梅隆 大学 CV 主页 17 
+微软 CV 研究员 Richard Szeliski 18 微软 亚洲 研究院 计算机 
+视觉 研究组 19 微软 剑桥 研究院 ML 与 CV 研究组 
+20 研 学 论坛 21 美国 Rutgers 大学 助理 教授 
+刘青山 22 计算机 视觉 最新 资讯 网 23 运动 检测 
+阴影 跟踪 的 测试 视频 下载 24 香港 中文 大学 
+助理 教授 王晓刚 25 香港 中文 大学 多 媒体 实验室 
+汤晓鸥/nr 26 U . C . San Diego . computer 
+vision 27 CV online 28 computer vision software 29 Computer 
+Vision Resource 30 computer vision research groups 31 computer vision 
+center 32   浙江大学 图像 技术 研究 与 应用 ITRA 
+团队 33 自动识别 网 34 清华大学/nt 章毓晋/nr 教授/n 35 顶级 
+民用 机器人 研究 小组 Porf . Gary 领导 的 Willow 
+Garage 36 上海 交通 大学 图像 处理 与 模式识别 研究所 
+37 上海 交通 大学 计算机 视觉 实验室 刘允 才 教授 
+38 德克萨斯州 大学 奥斯汀 分校 助理 教授 Kristen Grauman   
+图像 分解 检索 39 清华大学电子工程系 智能 图文 信息处理 实验室 丁晓青 
+教授 40 北京大学 高文 教授 41 清华大学 艾 海舟 教授 
+42 中科院 生物 识别 与 安全 技术 研究中心 43 瑞士 
+巴塞尔 大学 Thomas Vetter 教授 44 俄勒冈 州立大学 Rob Hess 
+博士 45 深圳大学 于仕祺/nr 副教授 46 西安交通大学 人工智能 与 机器人 
+研究所 47 卡内基 梅隆 大学 研究员 Robert T . Collins 
+48 MIT 博士 Chris Stauffer 49 美国 密歇根 州立 大学 
+生物 识别 研究组 Anil K . Jain 教授 50 美国 
+伊利 诺 伊州 立 大学 Thomas . Huang 51 武汉大学 
+数字 摄影 测量 与 计算机 视觉 研究中心 52 瑞士 巴塞尔 
+大学 Sami Romdhani 助理 研究员 53 CMU 大学 研究员 Yang 
+Wang 54 英国曼彻斯特大学 Tim Cootes 教授 55 美国 罗彻斯特 大学教授 
+Jiebo Luo 56 美国 普渡大学 机器人 视觉 实验室 57 美国 
+宾利 州立大学 感知 运动 与 认识 实验室 58 美国宾夕法尼亚大学 GRASP 
+实验室 59 美国 内 达 华 大学 里 诺 校区 
+CV 实验室 60 美国 密西根 大学 vision 实验室 61 University 
+of Massachusetts 麻省 大学 视觉 实验室 62 华盛顿大学 博士后 Iva 
+Kemelmacher 63 以色列 魏茨曼 科技大学 Ronen Basri 64 瑞士 ETH 
+Zurich 大学 CV 实验室 65 微软 CV 研究员 张正友 66 
+中科院 自动化所 医学影像 研究室 67 中科院 田捷 研究员 68 微软 
+Redmond 研究院 研究员 Simon Baker 69 普林斯顿 大学 教授 李凯 
+70 普林斯顿 大学 博士 贾登 71 牛津 大学 教授 Andrew 
+Zisserman 72 英国 leeds 大学 研究员 Mark Everingham 73 英国 
+爱丁堡 大学 教授 Chris William 74 微软 剑桥 研究院 研究员 
+John Winn 75 佐治亚 理工学院 教授 Monson H . Hayes 
+76 微软 亚洲 研究院 研究员 孙剑 77 微软 亚洲 研究院 
+研究员 马毅/nr 78 英国 哥伦比亚 大学 教授 David Lowe 79 
+英国 爱丁堡 大学 教授 Bob Fisher 80 加州大学 圣地亚哥 分校 
+教授 Serge J . Belongie 81 威斯康星 大学 教授 Charles 
+R . Dyer 82 多伦多 大学 教授 Allan . Jepson 
+83 伦斯勒 理工学院 教授 Qiang Ji 84 CMU 研究员 Daniel 
+Huber 85 多伦多 大学 教授 David J . Fleet 86 
+伦敦大学 玛丽 女王 学院 教授 Andrea Cavallaro 87 多伦多 大学 
+教授 Kyros Kutulakos 88 杜克 大学 教授 Carlo Tomasi 89 
+CMU 教授 Martial Hebert 90 MIT 助理 教授 Antonio Torralba 
+91 马里兰 大学 研究员 Yasel Yacoob 92 康奈尔 大学 教授 
+Ramin Zabih 93 CMU 博士 田渊栋/nr 94 CMU 副教授 Srinivasa 
+Narasimhan 95 CMU 大学 ILIM 实验室 96 哥伦比亚 大学 教授 
+Sheer K . Nayar 97 三菱 电子 研究院 研究员 Fatih 
+Porikli 98 康奈尔 大学 教授 Daniel Huttenlocher 99 南京 大学 
+教授 周志华 100 芝加哥 丰田 技术 研究所 助理 教授 Devi 
+Parikh 101 瑞士 联邦 理工学院 博士后 Helmut Grabner 102 香港 
+中文 大学 教授 贾 佳亚 103 南京 大学 教授 吴建 
+鑫 104 GE 研究院 研究员 李关/nr 105 佐治亚 理工学院 教授 
+Monson Hayes 106 图片 检索 国际 竞赛 PASCAL VOC 微软 
+剑桥 研究院 组织 107 机器 视觉 开源 处理 库 汇总 
+108 布朗 大学 教授 Benjamin Kimia 109 数据 堂 图像 
+处理 相关 的 样本数据 110 东软 基于 CV 的 汽车 
+辅助 驾驶 系统 111 马里兰 大学 教授 Rema Chellappa 112 
+芝加哥 丰田 研究 中心 助理 教授 Devi Parikh 113 宾夕法尼亚 
+大学 助理 教授 石建 波 114 比利时 鲁汶 大学教授 Luc 
+Van Gool 115 行人 检测 主页 116 法国 学习 算法 
+与 系统 实验室 Basilio Noris 博士 117 美国 马里兰 大学 
+LARRY . DAVIS 教授 118 计算机 视觉 论文 分类 导航 
+119 计算机 视觉 分类信息 导航 120 西班牙 马德里 理工大学 博士 
+Marcos Nieto 121 香港理工大学 副教授 张磊 122 以色列 技术 学院 
+教授 Michael Elad 123 韩国 启明 大学 计算机 视觉 与 
+模式识别 实验室 124 英国 诺丁汉 大学 Michel Valstar 博士 125 
+卡内基 梅隆 大学 Takeo Kanade 教授 126 微软 学术 搜索 
+127 比利时 天主教 鲁汶 大学 Radu Timofte 博士 交通标志 检测 
+定位 3D 跟踪 128 迪斯尼 匹兹堡 研究院 研究员 Iain Matthews 
+AAM 三维重建 http / / www . ri . cmu 
+. edu / person . html type = publications & 
+person _ id = 741 129 康奈尔大学 视觉 与 图像 
+分析 组 医学 图像处理 130 密西根 州立 大学 生物 识别 
+研究组 人脸识别 指纹识别 图像 检索 131 柏林 科技 大学 计算机 
+视觉 与 遥感 实验室 图像 分析 物体 重建 基于 图像 
+的 表面 测量 医学 图像处理 132 英国 布里 斯托 大学 
+数字 多媒体 研究组 运动 检测 与 跟踪 视频压缩 3D 重建 
+字符 定位 133 英国 萨利 大学 视觉 语音 与 信号 
+处理 中心   人脸识别 监控 3D 视频 检索 134 北 
+卡莱罗纳 大学 教堂山 分校 Marc Pollefeys 教授 基于 视频 的 
+3D 模型 生成 相机 标定 运动 检测 与 分析 3D 
+重建 135 澳大利亚 国立 大学 Richard Hartley 教授 运动 估计 
+稀疏 子空间 跟踪 136 百度 技术 副总监 于凯 深度 学习 
+稀疏 表示 图像 分类 137 西安电子科技大学 高新 波 教授 质量 
+评判 水印 稀疏 表示 超 分辨率 138 加州 大学 伯克利 
+分校 Michael I . Jordan 教授 机器学习 139 加州 理工 
+行人 检测 相关 资料 140 微软 Redmond 研究院 研究员 Piotr 
+Dollar   行人 检测 特征提取 141 视觉 计算 研究 论坛 
+中科院 视觉 计算 研究 小组 的 论坛 142 美国 坦桑尼亚 
+州立大学 稀疏 学习 软件包 稀疏 学习 143 美国加州大学 圣地亚哥 分校 
+Jacob Whitehill 博士 机器学习 144 美国 布朗 大学 Michael J 
+. Black 教授   人 的 姿态 估计 和 跟踪 
+145 美国加州大学 圣地亚哥 分校 David Kriegman 教授 人脸识别 146 南加州 
+大学 Paul Debevec 教授   将 CV 和 CG 结合 
+研究   人脸 捕捉 重建 技术 147 伊利诺伊大学 D . 
+A . Forsyth 教授 三维重建 148 英国牛津大学 Ian Reid 教授 
+  跟踪 和 机器 人 导航 149 CMU 大学 Alyosha 
+Efros 教授   图像 纹理 合成 150 加州 大学 伯克利 
+分校 Jitendra Malik 教授   轮廓 检测 图像 / 视频 
+分割 图形 匹配 目标 识别 151 MIT 教授 William Freeman 
+  图像 纹理 合成 152 CMU 博士 Henry Schneiderman   
+目标 检测 和 识别 153 微软 研究员 Paul Viola   
+AdaBoost 算法 154 微软 研究员 Antonio Criminisi   图像 修补 
+三维重建 目标 检测 与 跟踪 155 魏茨曼 科学 研究所 教授 
+Michal Irani   超 分辨率 156 瑞士 洛桑 理工学院 Pascal 
+Fua 教授 立体 视觉 增强 现实 157 佐治亚 理工学院 Irfan 
+Essa 教授 人脸 表情 识别 158 中科院 助理 教授 樊彬/nr 
+特征描述 159 斯坦福大学 Sebastian Thrun 教授   机器人 160 多伦多 
+大学 Geoffrey E . Hinton 教授   深度 学习 161 
+凤巢 系统 架构师 张栋博 士 162 2012年 龙星 计划 机器学习 
+课程 163 中科院 自动化所 肖 柏华 教授   文字 识别 
+人脸识别 质量 评判 164 图像 视频 质量 评判 165 纽约大学 
+Yann LeCun 教授   手写体 数字 识别 166 二维 条码 
+识别 开源 库 zxing 167 布朗 大学 Pedro Felzenszwalb 教授 
+  特征提取 Deformable Part Model 168 伊利诺伊 香槟 大学 Svetlana 
+Lazebnik 教授 特征提取 聚 类 图像 检索 169 荷兰 乌德勒支 
+大学 图像 与 多媒体 研究 中心   图像 多媒体 检索 
+与 匹配 170 英国 格拉斯 哥 大学 信息检索 小组   
+文本 图像 视频 检索 171 中科院 自动化所 孙哲 南 助理 
+教书   虹膜 识别 掌纹 识别 人脸识别 172 南京 信息 
+工程 大学 刘青山 教授   人脸 图像 分析 医学 图像 
+分析 173 清华大学 助理 教授 冯 建江   指纹识别 174 
+北航 助理 教授 黄迪   3D 人脸识别 175 中山大学 助理 
+教授 郑伟 诗   人脸识别 特征 匹配 聚 类 检索 
+176 google 瑞士 苏黎世 的 工程师 Thomas Deselaers     
+图像 检索 177 百度 深度 学习 研究 中心 博士后 余轶南/nr 
+  目标 检测 图像 检索 178 威 兹曼 科技 大学 
+超 分辨率 179 德克萨斯 大学 奥斯汀 分校 Al Bovik 教授 
+  图像 视频 质量 判别 特征提取 180 以色列 希伯来 大学 
+Yair Weiss 教授   机器学习 超 分辨率 181 以色列 希伯来 
+大学 Daniel Zoran 博士   超 分辨率 去 噪 182 
+美国加州大学 Peyman Milanfar 教授   去 噪 183 中科院计算所 副研究员 
+常虹/nr   图像 检索 半 监督 学习 超 分辨率 184 
+以色列 威茨 曼 大学 Anat Levin 教授   去 噪 
+去模糊 185 以色列 威茨 曼 大学 Daniel Glasner 博士后   
+超 分辨率 分割 姿态 估计 186 密西根 大学 助理 教授 
+Honglak Lee     机器学习 特征提取 去 噪 稀疏 表示 
+187 MIT 周博 磊 博士   聚集 分析 运动 检测 
+188 美国 田纳西 大学 Li He 博士 稀疏 表示 超 
+分辨率 189 Adobe 研究院 Jianchao Yang 研究员   稀疏 表示 
+超 分辨率 图片 检索 去 噪 去模糊 190 Deep Learning 
+主页   深度 学习 论文 软件 代码 demo 数据 等 
+191 斯坦福大学 Andrew Ng 教授 深度 神经网络 深度 学习 192 
+Elefant   机器学习 开源 库 193 微软 研究员 Ce Liu 
+    去 噪 超 分辨率 去模糊 分割 194 West 
+Virginia 大学 助理 教授 Xin Li     边缘 检测 
+降噪 去模糊 195   深度 学习 去 噪 编码 压缩感知 
+超 分辨率 聚 类 分割 等 相关 代码 集合 196 
+西班牙 格拉纳达 大学 超 分辨率 重建 项目组 197 清华大学 程明明 
+博士   图像 分割 检索 198 牛津 布鲁克斯 大学 Philip 
+H . . Torr 教授   分割 三维重建 199 佐治亚 
+理工学院 James M . Rehg 教授 分割 行人 检测 特征描述 
+200 大 规模 图像 分类 检测 竞赛 ILSVRC Stanford Google 
+举办 201 加州大学 尔湾 分校 Deva Ramanan 助理 教授   
+目标 检测 行人 检测 跟踪 稀疏 表示 202 人脸识别 测试 
+图片集 203 美国 西北 大学 博士 Ming Yang   人脸识别 
+图像 检索 204 美国加州大学伯克利分校 博士后 Ross B . Girshick 目标 
+检测 DPM 205 中文 语言 资源 联盟 内有 很多 语言识别 
+字符识别 的 训练 测试 库 206 西班牙 巴塞罗那 大学 计算机 
+视觉 中心 检测 跟踪 3D 行人 检测 汽车 辅助 驾驶 
+207 德国 戴姆勒 研究所 Prof . Dr . Dariu M 
+. Gavrila 跟踪 行人 检测 208 苏黎世 联邦 理工学院 Andreas 
+Ess 博士后 行人 检测 行为 检测 跟踪 CV _ GUYS 
+以下 材料 参考 3 感谢 整理 92   Terrence Sejnowski 
+  UCSD IEEE Fellow   Member of the Institute of 
+Medicine89   Hector Garcia Molina   Stanford ACM Fellow Member 
+of the National Academy of Engineering87   Jeffrey D . 
+Ullman   Stanford ACM Fellow Member of the National Academy 
+of Engineering82   Robert Tarjan   Princeton Turing Award ACM 
+Fellow Member of the National Academy of Engineering80   Deborah 
+Estrin   UCLA ACM Fellow IEEE Fellow Member of the 
+National Academy of Engineering79   Christos H . Papadimitriou   
+Berkeley ACM Fellow Member of the National Academy of Engineering77 
+  Don Towsley   U Mass Amherst ACM Fellow IEEE 
+Fellow73   Ian Foster   Argonne National Laboratory & U 
+Chicago 71   Scott Shenker   Berkeley ACM Fellow IEEE 
+Fellow70   David Culler   Berkeley ACM Fellow Member of 
+the National Academy of Engineering70   David Haussler   UC 
+Santa Cruz 69   Nick Jennings   U Southampton Fellow 
+of the Royal Academy of Engineering68   Michael I . 
+Jordan   Berkeley AAAS Fellow IEEE Fellow AAAI Fellow68   
+Takeo Kanade   CMU ACM Fellow IEEE Fellow Member of 
+the National Academy of Engineering64   Demetri Terzopoulos   UCLA 
+ACM Fellow IEEE Fellow Member of the European Academy of 
+Sciences64   Martin Vetterli   EPFL IEEE Fellow63   Marco 
+Dorigo   U Libre de Bruxelles 62   Alon Halevy 
+Alon Levy   Google ACM Fellow61   Mario Gerla   
+UCLA IEEE Fellow58   Luca Cardelli   Microsoft ACM Fellow58 
+  Ronald Fagin   IBM Almaden ACM Fellow IEEE Fellow 
+AAAS Fellow ACM SIGMOD Edgar F . Codd Innovations Award58 
+  Anil K . Jain   Michigan State U ACM 
+Fellow IEEE Fellow58   Amit Sheth   Wright State U 
+IEEE Fellow57   Martin Abadi   UC Santa Cruz and 
+Microsoft ACM Fellow57   Mihir Bellare   UCSD 57   
+Sushil Jajodia   George Mason U 57   Leslie Lamport 
+  Microsoft Member of the National Academy of Engineering56   
+David Dill   Stanford ACM Fellow IEEE Fellow56   Randy 
+H . Katz   Berkeley ACM Fellow IEEE Fellow Member 
+of the National Academy of Engineering56   Steven Salzberg   
+U Maryland 56   HongJiang Zhang   Microsoft ACM Fellow 
+IEEE Fellow55   Jennifer Widom   Stanford ACM Fellow Member 
+of the National Academy of Engineering54   Jack Dongarra   
+U Tennessee ACM Fellow IEEE Fellow Member of the National 
+Academy of Engineering54   David E . Goldberg   UIUC 
+54   Ken Kennedy   Rice ACM Fellow IEEE Fellow 
+Member of the National Academy of Engineering54   Amir Pnueli 
+  Weizmann and New York   University Turing Award ACM 
+Fellow Member of the National Academy of Engineering54   Herbert 
+A . Simon   CMU Turing Award ACM Fellow Nobel 
+Laureate54   Jeffrey Vitter   Texas A & M ACM 
+Fellow IEEE Fellow54   Philip . Yu   UIC ACM 
+Fellow IEEE Fellow53   Tim Finin   UMBC 53   
+Sally Floyd   ICSI ACM Fellow53   Tomaso Poggio   
+MIT 53   Eduardo Sontag   Rutgers IEEE Fellow52   
+Rakesh Agrawal   Microsoft ACM Fellow IEEE Fellow Member of 
+the National Academy of Engineering52   Stanley Osher   UCLA 
+Member of the National Academy of Sciences51   Jiawei Han 
+  UIUC ACM Fellow51   Richard Karp   Berkeley Turing 
+Award ACM Fellow Member of the National Academy of Engineering51 
+  Alex Pentland   MIT 50   Andrew B . 
+Kahng   UCSD 50   Alberto Sangiovanni Vincentelli   Berkeley 
+Member of the National Academy of Engineering50   Lixia Zhang 
+  UCLA ACM Fellow49   Serge Abiteboul   INRIA 49 
+  Rajeev Alur   U Penn ACM Fellow IEEE Fellow49 
+  Rama Chellappa   U Maryland 49   W . 
+Bruce Croft   U Mass Amherst ACM Fellow49   Jon 
+Crowcroft   U Cambridge ACM Fellow IEEE Fellow49   David 
+J . DeWitt   Wisconsin ACM Fellow Member of the 
+National Academy of Engineering49   Mark Handley   U College 
+London 49   Daphne Koller   Stanford ACM Infosys Foundation 
+Award49   Maurizio Lenzerini   Sapienza Universita di Roma 49 
+  John McCarthy   Stanford Turing Award Member of the 
+National Academy of Engineering49   Michael Stonebraker   MIT ACM 
+Fellow Member of the National Academy of Engineering49   Sebastian 
+Thrun   Stanford 48   Michael J . Carey   
+UC Irvine ACM Fellow Member of the National Academy of 
+Engineering48   Kai Li   Princeton ACM Fellow48   Pavel 
+Pevzner   UCSD 48   Mihalis Yannakakis   Columbia ACM 
+Fellow47   Wil van der Aalst   TU Eindhoven 47 
+  Leonard Kleinrock   UCLA ACM Fellow IEEE Fellow Member 
+of the National Academy of Engineering47   Jim Kurose   
+U Mass Amherst ACM Fellow IEEE Fellow47   Richard Lipton 
+  Georgia Tech ACM Fellow Member of the National Academy 
+of Engineering47   Judea Pearl   UCLA IEEE Fellow Member 
+of the National Academy of Engineering47   Ben Shneiderman   
+U Maryland ACM Fellow46   Norman I . Badler   
+U Penn 46   Hari Balakrishnan   MIT ACM Fellow46 
+  David Harel   The Weizmann Institute of Science ACM 
+Fellow IEEE Fellow46   Geoffrey E . Hinton   Toronto 
+46   Thomas . Huang   UIUC IEEE Fellow Member 
+of the National Academy of Engineering46   Gordon Plotkin   
+U Edinburgh 46   Tuomas Sandholm   CMU ACM Fellow46 
+  Douglas C . Schmidt   Vanderbilt University 46   
+John A . Stankovic   U Virginia ACM Fellow45   
+Olivier Faugeras   INRIA Member of the French Academy of 
+Sciences45   Jose Joaquin Garcia Luna Aceves   UC Santa 
+Cruz ACM Fellow IEEE Fellow45   Jim Gray   Microsoft 
+Turing Award ACM Fellow45   M . Frans Kaashoek   
+MIT ACM Fellow45   Carl Kesselman   USC / ISI 
+45   Vipin Kumar   U Minnesota ACM Fellow IEEE 
+Fellow45   Victor Lesser   U Mass Amherst AAAI Fellow45 
+  Heikki Mannila   U Helsinki 45   Rajeev Motwani 
+  Stanford ACM Fellow45   Badri Nath B R Badrinath 
+  Rutgers 45   Prabhakar Raghavan   Yahoo Research ACM 
+Fellow IEEE Fellow45   Eero P . Simoncelli   NYU 
+IEEE Fellow45   Moshe Y . Vardi   Rice ACM 
+Fellow Member of the National Academy of Engineering44   Victor 
+Basili   U Maryland ACM Fellow44   Christos Faloutsos   
+CMU 44   Oded Goldreich   Weizmann 44   H 
+. V . Jagadish   U Michigan ACM Fellow44   
+Amin Vahdat   UCSD 43   Michael Franklin   Berkeley 
+ACM Fellow43   Joseph Goguen   UCSD 43   Ramesh 
+Govindan   USC 43   Simon Peyton Jones   Microsoft 
+ACM Fellow43 Won Kim Sung Kyun Kwan University ACM Fellow43 
+  Barbara Liskov   MIT Turing Award ACM Fellow Member 
+of the National Academy of Engineering43   David Maier   
+Portland State U ACM Fellow43   Robin Milner   U 
+Cambridge UK Turing Award ACM Fellow43   Vern Paxson   
+ICSI ACM Fellow43   Krithi Ramamritham   IIT Bombay ACM 
+Fellow IEEE Fellow43   Ronald L . Rivest   MIT 
+Turing Award ACM Fellow Member of the National Academy of 
+Engineering42   Michael Arbib   USC 42   Barry Boehm 
+  USC ACM Fellow42   Pat Hanrahan   Stanford ACM 
+Fellow Member of the National Academy of Engineering42   Thomas 
+A . Henzinger   EPFL ACM Fellow42   Donald E 
+. Knuth   Stanford Turing Award ACM Fellow Member of 
+the National Academy of Engineering42   Teuvo Kohonen   Academy 
+of Finland 42   Miron Livny   Wisconsin 42   
+Jose Meseguer   UIUC 42   Erkki Oja   Helsinki 
+U of Technology 42   David A . Patterson   
+Berkeley ACM Fellow IEEE Fellow Member of the National Academy 
+of Engineering42   Micha Sharir   Tel Aviv University ACM 
+Fellow42   Andrew . Tanenbaum   Vrije U The Netherlands 
+ACM Fellow IEEE Fellow42   Willy Zwaenepoel   EPFL ACM 
+Fellow IEEE Fellow41   Alex Aiken   Stanford ACM Fellow41 
+  Stefano Ceri   Politecnico di Milano 41   Didier 
+Dubois   CNRS Toulouse 41   Michael Kearns   U 
+Penn 41   Jon Kleinberg   Cornell ACM Infosys Foundation 
+Award41   Monica . Lam   Stanford ACM Fellow41   
+Kim G . Larsen   Aalborg U 41   Jitendra 
+Malik   Berkeley ACM Fellow41   Deborah L . McGuinness 
+  RPI 41   Raymond Mooney   UT Austin 41 
+  Alex Nicolau   UC Irvine 41   Miodrag Potkonjak 
+  UCLA 41   Thomas W . Reps   U 
+Wisconsin ACM Fellow41   Milind Tambe   USC AAAI Fellow41 
+  Gene Tsudik   UC Irvine 41   Philip Wadler 
+  U Edinburgh ACM Fellow40   Andrew Appel   Princeton 
+ACM Fellow40   Richard Baraniuk   Rice University IEEE Fellow40 
+  Craig Chambers   U Washington 40   Edmund M 
+. Clarke   CMU Turing Award ACM Fellow IEEE Fellow 
+Member of the National Academy of Engineering40   Jason Cong 
+  UCLA ACM Fellow40   Ingemar J . Cox   
+U College London IEEE Fellow40   Herbert Edelsbrunner   Duke 
+U 40   Saul Greenberg   University of Calgary Member 
+of the ACM CHI Academy40   Rajiv Gupta   UC 
+Riverside IEEE Fellow40   Christian . Jensen   Aalborg U 
+IEEE Fellow40   David . Johnson   AT & T 
+Labs ACM Fellow40   George Karypis   U Minnesota 40 
+  Henry Levy U Washington ACM Fellow IEEE Fellow40   
+Nancy Lynch   MIT ACM Fellow Member of the National 
+Academy of Engineering40   Maja Mataric   USC 40   
+John Mitchell   Stanford ACM Fellow40   Charles E . 
+Perkins   Nokia Siemens Networks 40   Benjamin Pierce   
+U Penn 40   Raghu Ramakrishnan   Wisconsin ACM Fellow40 
+  George Varghese   UCSD ACM Fellow40   Ian Witten 
+  U Waikato ACM Fellow40   Andrew Zisserman   University 
+of Oxford 以下 资料 来源 于 参考 4 牛人 主页 
+主页 有 很多 论文 代码 Serge Belongie   at UC 
+San DiegoAntonio Torralba   at MITAlexei Ffros   at CMUCe 
+Liu   at Microsoft Research New EnglandVittorio Ferrari   at 
+Univ . of EdinburghKristen Grauman   at UT AustinDevi Parikh 
+  at   TTI Chicago   Marr Prize at ICCV2011 
+John Wright   at Columbia Univ . Piotr Dollar   
+at CalTechBoris Babenko   at UC San DiegoDavid Ross   
+at Google / YoutubeDavid Donoho   at Stanford Univ . 
+大神 们 William T . Freeman   at MITRoberto Cipolla 
+  at CambridgeDavid Lowe   at Univ . of British 
+ColumbiaMubarak Shah   at Univ . of Central FloridaYi Ma 
+  at MSRATinne Tuytelaars   at K . U . 
+LeuvenTrevor Darrell   at U . C . BerkeleyMichael J 
+. Black   at Brown Univ . 重要 研究组 Computer 
+Vision Group   at UC BerkeleyRobotics Research Group   at 
+Univ . of OxfordLEAR   at INRIAComputer Vision Lab   
+at StanfordComputer Vision Lab   at EPFLComputer Vision Lab   
+at ETH ZurichComputer Vision Lab   at Seoul National Univ 
+. Computer Vision Lab   at UC San DiegoComputer Vision 
+Lab   at UC Santa CruzComputer Vision Lab   at 
+Univ . of Southern C a l i f o 
+r n i a C o m p u t 
+e r Vision Lab   at Univ . of Central 
+FloridaComputer Vision Lab   at Columbia Univ . UCLA Vision 
+LabMotion and Shape Computing Group   at George Mason Univ 
+. Robust Image Understanding Lab   at Rutgers Univ . 
+Intelligent Vision Systems Group   at Univ . of BonnInstitute 
+for Computer Graphics and Vision   at Graz Univ . 
+of Tech . Computer Vision Lab .   at Vienna 
+Univ . of Tech . Computational Image Analysis and Radiology 
+  at Medical Univ . of ViennaPersonal   Robotics   
+Lab   at CMUVisual Perception Lab   at Purdue Univ 
+. 潜力 牛人 Juergen Gall   at   ETH ZurichMatt 
+Flagg   at Georgia Tech . Mathieu Salzmann   at 
+TTI ChicagoGerg Shakhnarovich   at TTI ChicagoTaeg Sang Cho   
+at MITJianchao Yang   at UIUCStefan Roth   at TU 
+DarmstadtPeter Kontschieder   at Graz Univ . of Tech . 
+Dominik Alexander Klein   at Univ . of BonnYinan Yu 
+  at CASIA PASCAL VOC 2010 Detection Challenge Winner Zdenek 
+Kalal   at FPFLJulien Pilet   at FPFLKenji OkumaAndrea Fusiello 
+计算机 视觉 中的 几何 教程 Elements of Geometric Computer Visionhttp 
+/ / homepages . inf . ed . ac . 
+uk / rbf / CVonline / LOCAL _ COPIES / 
+FUSIELLO4 / tutorial . html # x1 520007 有关 马尔可夫 
+蒙特卡罗 方法 的 资料 An introduction to Markov chain Monte 
+Carlohttp / / homepages . inf . ed . ac 
+. uk / rbf / CVonline / LOCAL _ COPIES 
+/ SENEGAS / mcmc . htmlMarkov Chain Monte Carlo for 
+Computer Vision A tutorial at ICCV05http / / civs . 
+stat . ucla . edu / MCMC / MCMC _ 
+tutorial . htm 有关 独立 成分 分析 Independent Component Analysis 
+ICA 的 资料 An ICA Pagehttp / / www . 
+cnl . salk . edu / ~ tony / ica 
+. htmlFast ICAhttp / / www . cis . hut 
+. fi / projects / ica / fastica / The 
+Kalman Filter 介绍 卡尔曼 滤波器 的 终极 网页 http / 
+/ www . cs . unc . edu / ~ 
+welch / kalman / index . htmlCached   k d 
+tree search for ICP algorithmshttp / / kos . informatik 
+. uni osnabrueck . de / download / 3dim2007 / 
+paper . html 几个 计算机 视觉 研究 工具 Machine Vision 
+Toolbox for Matlabhttp / / www . petercorke . com 
+/ Machine % 20Vision % 20Toolbox . htmlMatlab and Octave 
+Function for Computer Vision and Image Processinghttp / / www 
+. csse . uwa . edu . au / ~ 
+pk / research / matlabfns / Bayes Net Toolbox for 
+Matlabhttp / / www . cs . ubc . ca 
+/ ~ murphyk / Software / BNT / bnt . 
+htmlOpenCV Chinese http / / www . opencv . org 
+. cn / index . php / % E 9% 
+A 6% 96% E 9% A 1% B5Gandalf A Computer 
+Vision and Numerical Algorithm Labrary http / / gandalf library 
+. sourceforge . net / CMU Computer Vision Home Pagehttp 
+/ / www . cs . cmu . edu / 
+afs / cs / project / cil / ftp / 
+html / vision . htmlMachine Learning Resource Linkshttp / / 
+www . cse . ust . hk / ~ ivor 
+/ resource . htmThe Bayesian Filtering Libraryhttp / / www 
+. orocos . org / bflOptical Flow Algorithm Evaluation 提供 
+了 一个 动态 贝叶斯 网络 框架 例如 递归 信息 处理 
+与 分析 卡尔曼滤波 粒子 滤波 序列 蒙特卡罗 方法 等 C 
++ + 写 的 http / / of eval . 
+sourceforge . net / MATLAB code for ICP algorithmhttp / 
+/ www . usenet . com / newsgroups / comp 
+. graphics . visualization / msg00102 . html 牛人 主页 
+朱松 纯 Song Chun Zhu http / / www . 
+stat . ucla . edu / ~ sczhu / David 
+Lowe SIFT 很帅 的 一个 老头 哦 ^ ^ http 
+/ / www . cs . ubc . ca / 
+~ lowe / Andrea Vedaldi SIFT http / / vision 
+. ucla . edu / ~ vedaldi / index . 
+htmlPedro F . Felzenszwalbhttp / / people . cs . 
+uchicago . edu / ~ pff / Dougla Dlanman Brown 
+的 一个 研究生 在其 主页 上 搜集 了 大量 算法 
+教程 和 源码 http / / mesh . brown . 
+edu / dlanman / courses . htmlJianbo Shi Ncuts 的 
+始作俑者 http / / www . cis . upenn . 
+edu / ~ jshi / Active Vision Group Oxford 的 
+一个 机器 视觉 研究 团队 特色 是 SLAM 监视 导航 
+http / / www . robots . ox . ac 
+. uk / ActiveVision / index . htmlJuyang Weng 机器 
+学习 的 专家 Autonomous Mental Development   是 其 特色 
+http / / www . cse . msu . edu 
+/ ~ weng /     测试 图片 或 视频 
+Middlebury College s Stereo Vision Data Sethttp / / cat 
+. middlebury . edu / stereo / data . htmlIntelligent 
+Vehicle IVSource   www . ivsoruce . netRobot Car   
+http / / www . plyojump . com / robot 
+_ cars . htmlHow to Build a Robot The Computer 
+Vision Part   http / / www . societyofrobots . 
+com / programming _ computer _ vision _ tutorial . 
+shtml 收集 的 一般 牛人 主页 带 代码 Xiaofei He 
+machine learning code http / / people . cs . 
+uchicago . edu / ~ xiaofei / YingNian Wu active 
+base model code http / / www . stat . 
+ucla . edu / ~ ywu / research . html 
+布朗 大学 计算机 主页 可 找到 该校 CS 牛人 博客 
+http / / www . cs . brown . edu 
+/ research / areas . htmlNavneet Dalal Histograms of Oriented 
+Gradients for Human Detection http / / www . navneetdalal 
+. com / softwarePaul Viola Robust Real time Object Detection 
+http / / research . microsoft . com / en 
+us / um / people / viola / 关于 机器学习 
+的 一些 资料 Active Learninghttp / / active learning . 
+net / 这里 包括 了 关于 Active Learning 理论 以及 
+应用 的 一些 文章 特别 是 那篇 Survey Transfer Learninghttp 
+/ / www . cse . ust . hk / 
+TL / 包括 经典 的 论文 以及 附 带有 源码 
+很 方便 Gaussian Processeshttp / / www . gaussianprocess . 
+org   包括 相关 的 书籍 有 Carl Edward Rasmussen 
+的 书 相关 的 程序 以及 分类 的 paper 列表 
+这也 是由 Carl 自己 维护 的 他 应该 是 将 
+GP 引入 machine learning 最早 的 人 之一 了吧 Hinton 
+的 学生 Nonparametric Bayesian Methodshttp / / www . cs 
+. berkeley . edu / ~ jordan / npb . 
+html   这个 一看 就 知道 是 Jordan 维护 的 
+主要 包括 Dirichlet process 以及 相关 的 其他 随机 过程 
+在 machine learning 里面 如何 进行 建模 如何 进行 approximate 
+inference 主要 是 文章 列表 Probabilistic Graphical Modelhttp / / 
+www . cs . ubc . ca / ~ murphyk 
+/ Bayes / bnintro . html   是 Kevin Murphy 
+所 维护 的 关于 Bayesian belief networks 的 介绍 含有 
+最 基本 的 概念 相关 的 文献 和 软件 的 
+链接 罕见 的 UCB 出来 的 不是 Jordan 的 学生 
+老板 是 Stuart Russel http / / www . cs 
+. berkeley . edu / ~ jordan / graphical . 
+html   是 Jordan 系 关于 这个 方面 的 论文 
+汇编 http / / www . inference . phy . 
+cam . ac . uk / hmw26 / crf / 
+  是 关于 Conditional Random Fields 方面 论文 和 软件 
+的 收集 由 Hanna Wallach 维护 Compressed Sensinghttp / / 
+www dsp . rice . edu / cs   这是 
+Rice 大学 维护 的 论文 分类 列表 软件 链接 等 
+推荐 Emmanuel Cand è s 所写 的 tutorial 这人 是 
+David Donoho 的 学生 Tensorhttp / / csmr . ca 
+. sandia . gov / ~ tgkolda / pubs / 
+index . html   关于 tensor 的 一些 偏 数学 
+的 文章 Deep Belief Networkhttp / / www . cs 
+. toronto . edu / ~ hinton / csc2515 / 
+deeprefs . html   是 Geoffrey Hinton 为 研究生 开设 
+的 machine learning 课程 的 DBN 的 reading list Kernel 
+Methodshttp / / www . cs . berkeley . edu 
+/ ~ jordan / kernels . html   是 Jordan 
+维护 的 关于 kernel methods 的 文章 列表 Markov Logichttp 
+/ / ai . cs . washington . edu / 
+pubs   是 UW AI 组 的 文章 里面 关于 
+Markov logic 的 比较 多 因为 Pedro Domingos 就是 这个 
+组 的 Machine learning theoryhttp / / hunch . net 
+/ 这个 网站 主要 是 一些 learning theory 的 东西 
+比较 多 想在 machine learning 理论 上 有所 建树 的 
+同志 们 可以 去 看看 Iasonas Kokkinos 搞 统计模型 视觉 
+http / / vision . mas . ecp . fr 
+/ Personnel / iasonas / index . html 人工智能 与 
+模式识别 国际 顶级 期刊 会议 目录 包含 该 领域 最 
+权威 的 期刊 和 会议 参考 文献 和 资料 来源 
+1 http / / blog . sciencenet . cn / 
+blog 43092 22895 . html2 http / / blog . 
+csdn . net / carson2005 / article / details / 
+66011093 http / / blog . sina . com . 
+cn / s / blog _ 569d6df80100ww30 . html4 http 
+/ / www . cnblogs . com / kshenf / 
+archive / 2012/02 / 07/2342034 . html 

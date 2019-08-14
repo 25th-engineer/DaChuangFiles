@@ -1,1 +1,0 @@
-{"content2":"学习《Python计算机视觉编程》笔记\n第43页上面代码运行不成功\n原因：sift.py文件中process_image()函数的\ncmmd = str(“sift \" + imagename + \" --output=” + resultname + \" \" + params)\nos.system(cmmd)\n执行不成功导致的\n解决办法：请参考一下内容：\n转载：Python计算机视觉编程练习1：Python 调用 SIFT\nhttp://www.itkeyword.com/doc/6844809060106985x122/python-sift"}

@@ -1,0 +1,107 @@
+table
+I translated it myself. It may not be authoritative.
+index
+English
+Chinese
+1
+Automatic speech recogniton
+自动语音识别
+2
+CCG supertagging
+CCG 超级标记
+3
+Common sense
+常识
+4
+Constituency parsing
+选区分析
+5
+Coreference resolution
+共指消解
+6
+Dependency parsing
+依存关系句法分析
+7
+Dialogue
+对话
+8
+Domain adaptation
+领域自适应
+9
+Entity linking
+实体链接
+10
+Grammatical error corrrection
+语法错误更正
+11
+Information extraction
+信息提取
+12
+Language modeling
+语言模型
+13
+Lexical normalization
+词汇规范化
+14
+Machine translation
+机器翻译
+15
+Multi-task learning
+多任务学习
+16
+Multi-model
+多模态
+17
+Named entity recognition
+命名实体识别
+18
+Natural language inference
+自然语言推理
+19
+Part-of-speech tagging
+词性标注
+20
+Question answering
+问答
+21
+Relation prediction
+关系预测
+22
+Relationship extraction
+关系提取
+23
+Semantic textual similarity
+语义文本相似性
+24
+Semantic parsing
+语义分析
+25
+Semantic role labeling
+语义角色标记
+26
+Sentiment analysis
+情感分析
+27
+Shallow syntax
+浅句法
+28
+Simplification
+简化
+29
+Stance detection
+姿态检测
+30
+Summarization
+摘要
+31
+Taxonomy learning
+分类学习
+32
+Temporal processing
+时间处理
+33
+Text classification
+文本分类
+34
+Word sense disambiguation
+词义消歧

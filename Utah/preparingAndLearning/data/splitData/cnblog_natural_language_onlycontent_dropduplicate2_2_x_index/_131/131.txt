@@ -1,0 +1,57 @@
+Information Retrieval这个术语产生于Calvin Mooers1948年在MIT的硕士论文。
+Information Retrieval(IR)：从文档集合中返回满足用户需求的相关信息的过程。作为一门学科，是研究信息的获取(acquisition)、表示(representation)、存储(storage)、组织(organization)和访问(access)的一门学问。
+信息检索可以看成计算机科学(Computer Science)和图书情报学(Library & Info. Science)的交叉学科。以计算机为手段，处理信息对象。和其他学科也融合：语言学、认知科学、
+检索来自英文单词Retrieval，有些人把它翻译成获取。其本义是“获得与输入要求相匹配的输出”。和我们平时所理解的搜索意义上的检索不一样。
+IR不仅仅是搜索，IR系统也不仅仅是搜索引擎。
+例1：返回与信息检索相关的网页􀃆搜索引擎(Search Engine, SE)
+例2：毛主席的生日是哪天？􀃆问答系统(Question Answering, QA)
+例3：返回联想PC的型号、配置、价格等信息􀃆信息抽取(Information Extraction, IE)
+例4：订阅有关NBA的新闻􀃆信息过滤(Information Filtering)、信息推荐(Information Recommending)
+也可以这样说，狭义的IR通常是指Information Search，而广义的IR包含非常多的内容(SE, QA, IE, …)
+形式上说，信息检索中的相关度是一个函数R，输入是查询Q、文档D和文档集合C，返回的是一个实数值R=f(Q,D,C)，信息检索就是给定一个查询Q，从文档集合C中计算每篇文档D与Q的相关度并排序(Ranking)。相关度通常只有相对意义，对一个Q，不同文档的相关度可以比较，而对于不同的Q的相关度不便比较。相关度的输入信息可以更多，比如用户的背景信息、用户的查询历史等等。现代信息检索中相关度不是唯一度量，如还有：重要度、权威度、新颖度等度量。或者说这些因子都影响“相关度”。Google中据说用了上百种排名因子
+信息检索的两种研究方式：1）以计算机为中心：IR的工作主要是建立索引、对用户查询进行处理、排序算法等等。2）以用户为中心：IR的主要工作是考察用户的行为、理解用户的需求、这些行为和需求如何影响检索系统的组织
+1948:
+C. N. Mooers在其MIT的硕士论文中第一次创造了“Information Retrieval”这个术语。
+1960－70年代：
+人们开始使用计算机为一些小规模科技和商业文献的摘要建立文本检索系统。产生了布尔模型(Boolean Model)、向量空间模型(Vector Space Model)和概率检索模型(Probabilistic Model)。
+康奈尔大学的Salton领导的研究小组是该领域研究的佼佼者。伦敦城市大学的Robertson及剑桥大学的SparckJones是概率模型的倡导者。
+1980年代：
+出现了一些商用的较大规模数据库检索系统：Lexis-Nexis，Dialog，MEDLINE
+1990’s:
+第一个网络搜索工具：1990年加拿大蒙特利尔McGill大学开发的FTP搜索工具Archie
+第一个WEB搜索引擎：1994年美国CMU开发的Lycos
+1995：斯坦福大学博士生开发的Yahoo
+1998：斯坦福大学博士生开发的Google，提出PageRank计算公式。
+1998：基于语言模型的IR模型提出。
+1990年代的其他重要事件:
+评测会议：NIST TREC
+推荐系统的出现：Ringo,Amazon,NetPerceptions
+文本分类和聚类的使用
+2000’s
+信息抽取:Whizbang,Fetch,Burning Glass
+问答系统:TREC Q/A track
+2001年，百度成立
+2000以来的其他重要事件：
+多媒体IR:Image,Video,Audio and music
+跨语言IR:DARPA Tides
+文本摘要:DUC评测
+图书情报学(Library & Info. Science)
+数据库管理(Database Management)
+人工智能(Artificial Intelligence)
+自然语言处理(Natural Language Processing)
+机器学习(Machine Learning)
+AI关注知识的表示、推理和智能行为。AI中知识的形式化表示:1)一阶谓词逻辑(First Order Predicate Logic).2)贝叶斯网络(Bayesian Networks).近年来Web本体及智能信息Agent方面研究使得IR和AI相互融合。
+NLP关注自然语言文本的语法(syntactic) 、语义(semantic)及语用(pragmatic)分析。NLP可以分析短语结构和语义，使得IR可以在短语上、或者从语义上进行处理，而不是仅仅基于单个关键词。
+NLP和IR天生就是融合的。通过上下文词义消歧(word sense disambiguation)来确定一个词在某个特定上下文的语义。通过一些NLP方法来获得文档中的一个语言片断(information extraction).通过NLP方法可以从文档集合中返回一些问题的答案(question answering)
+ML关注通过对经验的学习来提高计算机系统的性能。1)从标注好的例子中学习相关概念，然后进行自动分类(有监督的学习，supervised learning).2)将未标注的例子自动聚集到有意义的不同集合中(无监督的学习，unsupervised learning).
+文本分类(Text Categorization):自动层次分类(如Yahoo目录),自适应过滤或推荐(Adaptive filtering/recommending),垃圾过滤(Spam filtering)
+文本聚类(Text Clustering):IR结果的自动聚类,层次型类别体系的自动构建(如Yahoo!目录)
+IR的两种模式：pull 或者push (filtering).Pull: 用户是主动的发起请求，在一个相对稳定的数据集合上进行查询。Push:用户事先定义自己的兴趣，系统在不断到来的流动数据上进行操作，将满足用户兴趣的数据推送给用户
+文本处理(Text Operations)：对查询和文本进行的预处理操作，中文分词(Chinese Word Segmentation)，词干还原(Stemming)，停用词消除(Stopwordremoval)
+查询处理(Query operations)：对经过文本处理后的查询进行进一步处理，得到查询的内部表示Query Representation)
+查询扩展(Query Expansion)：利用同义词或者近义词对查询进行扩展
+查询重构(Query Reconstruction)：利用用户的相关反馈信息对查询进行修改
+文本标引(Indexing)：对经过文本处理后的文本进行进一步处理，得到文本的内部表示(Text Representation)，通常基于标引项(Term)来表示。向量化、概率计算。组成成倒排表进行存储
+搜索(Searching)：从文本中查找包含查询中标引项的文本
+排序(Ranking)：对搜索出的文本按照某种方式来计算其相关度
+Logical View：指的是查询或者文本的表示，通常采用一些关键词或者标引项(index term)来表示一段查询或者文本。

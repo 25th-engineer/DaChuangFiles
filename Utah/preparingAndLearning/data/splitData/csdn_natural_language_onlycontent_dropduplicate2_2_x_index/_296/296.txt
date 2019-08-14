@@ -1,0 +1,57 @@
+用Python进行自然语言处理（第一章）
+搜索文本
+text1.concordance("monstrous")#搜索文章中的词语 text3.concordance("lived") text1.similar("monstrous")#近义词 text2.common_contexts(["monstrous","very"])#两个词共同的上下文 text4.dispersion_plot(['citizens','democracy','freedom','duties','America'])#该函数需要依赖numpy和matplotlib库
+计数词汇
+set(text3)#text3中所有标点，单词的集合，去重 sorted(set(text3))#text3中的所有标点、单词排序之后，去重 len(set(text3))#text3的独一无二的标点、单词类型个数，称为唯一项目类型 print(len(text3) / len(set(text3)))#每个字平均被使用的次数 print(text3.count("smote"))#统计一个词语在一个文本中出现的次数 print(100 * text4.count('a') / len(text4))#'统计一个词语占全部词语的百分比是多少
+函数
+def关键字定义,lexical_diversity为函数名，text为参数 def lexical_diversity(text):    return len(text) / len(set(text)) print(lexical_diversity(text3)); def percentage(count, total):    return  100 * count / total
+将文本当作词链表
+a = ['Call','me','Ishmael','.'] print(a[1])#索引是从0开始的 print(text4[173]);#找到索引处的元素 print(text4.index('awaken'));#找到元素第一次出现的索引 print(text5[16715:16735])#获取链表中任意片段中的元素 sent = ['word1','word2','word3','word4','word5','word6','word7','word8','word9','word10']; print(sent[5:8])#sent[m:n] m:n-1 m represents index print(sent[:3])#from the first to index 3(exclude index3) print(sent[3:])#from index3 to the end sent[0] = 'First'#replace 'word1' to 'First' sent[1:9] = ['First','Last']#replace index 1~index 9 to the designated two words
+变量
+#assignment(赋值):variation = expression ,words ahead ,numbers and '_' is permitted my_sent = ['a','wwe','eee'] noun = my_sent[0:3] print(sorted(noun))#capital is ahead of lowercase
+字符串
+#operation on character string a = 'Monty' print(a[0])#'M' print(a[:4])#'Mont' #connect character string print(''.join(['Monty','Python','asd'])) #split two character string print('Monty Pytho n'.split())
+统计分布
+找出文本中最常见的50个词
+fdist = FreqDist(text1) vocabulary = fdist.keys() voc = list(vocabulary)#必须得转换成list才能用 print(fdist)#print the number of words print(voc[:50])#分片前50个 print(fdist['whale'])#the number of 'whale' fdist.plot(50,cumulative = True)#画出图案，需要安装pyqt
+找出text1中长度超过15个字符的词并排序
+V = set(text1) long_words = [w for w in V if len(w) > 15] print(sorted(long_words))
+找出长度超过7个字符并且出现次数超过7次的词
+fdist5 = FreqDist(text5) print(sorted([w for w in set(text5) if len(w) > 7 and fdist5[w] > 7]))
+搭配：经常出现的词的序列，词对、双连词：找到在一起出现的两个词
+print(bigrams(['more','is','said','than','done']))#找词对，有问题 text4.collocations()#找到出现频繁的双连词
+输出text1中每个词的长度
+print([len(w) for w in text1])
+文本中的词的长度的性质统计
+fdist = FreqDist(len(w) for w in text1)#FreqDist计数链表中每个长度出现的次数 print(fdist.keys())#输出的是包含的元素的不同词长 print(fdist.items())#以（a,b)输出a长度的词出现了b次 print(fdist.max())#输出出现次数最多的长度 print(fdist[3])#输出长度为3的词出现的次数 print(fdist.freq(3))#输出长度为3的词出现的次数占总词数的比例 print(fdist.N())#输出样本总数 fdist.plot()#绘制频率分布图 fdist.plot(cumulative=True)#绘制累积频率分布图
+决策
+[w for w in sent7 if len(w) < 4]#输出sent7中长度小于4的元素 sorted([w for w in set(text1) if w.endswith('ableness')])#输出以ableness结尾的单词并排序 s.startswith(t) #测试s是否以t开头 s.endswith(t) #测试s是否以t结尾 t in s #测试s是否包含t s.islower() #测试s中所有字符是否都是小写字母 s.isupper() #测试 s 中所有字符是否都是大写字母 s.isalpha() #测试 s 中所有字符是否都是字母 s.isalnum() #测试 s 中所有字符是否都是字母或数字 s.isdigit() #测试 s 中所有字符是否都是数字 s.istitle() #测试 s 是否首字母大写（s 中所有的词都首字母大写）
+控制
+对每个元素进行操作
+[len(w)for w in text1] [w.upper()for w in text1] #这些表达式形式为[f(w) for ...]或[w.f() for ...]，其中 f是一个函数，用来计算词长或把字母转换为大写 len(set(word.lower()for word in text1))#由于我们不重复计算像This和this这样仅仅大小写不同的词，就已经从词汇表计数中抹去了2,000个！ len(set(word.lower()for word in text1 if word.isalpha()))#通过过滤掉所有非字母元素，从词汇表中消除数字和标点符号
+嵌套代码块
+控制结构：
+if len(word) < 5:#（注意冒号）     print('word length is less than 5')#注意段首空tab ...#该行空出来，再下一行输出 #如果不满足if成立条件，没有输出 for word in ['Call','me','Ishmael','.']:     print(word) ...#空一行，下一行输出 sent1 = ['Call','me','Ishmael','.'] for word in sent1:     if word.endswith('l'):             print(word) ... Call Ishmael #在 if 和for语句所在行末尾——缩进开始之前——有一个冒号 #所有的Python控制结构都以冒号结尾。冒号表示当前语句与后面的缩进块有关联。 for token in sent1: ...     if token.islower(): ...             print(token,'is a lowercase word') ...     elif token.istitle(): ...             print(token,'is a titlecase word') ...     else : ...             print (token,'is punctuation') ... Call is a titlecase word me is a lowercase word Ishmael is a titlecase word . is punctuation tricky = sorted([w for w in set(text2) if 'cei' in w or 'cie' in w]) for word in tricky: ...     print(word) ...
+关于NLP-自动理解自然语言
+词意消歧
+我们要算出特定上下文中的词被赋予的是哪个意思
+自动消除歧义需要使用上下文，利用相邻词汇有相近含义这样一个简单的事实
+指代消解
+一种更深刻的语言理解是解决“谁对谁做了什么”，即检测主语和动词的宾语
+a. The thieves stole the paintings. They were subsequently sold .b. The thieves stole the paintings. They were subsequently caught .c. The thieves stole the paintings. They were subsequently found .要回答这个问题涉及到寻找代词they的先行词thieves或者paintings。处理这个问题的计算技术包括指代消解（anaphora resolution）——确定代词或名词短语指的是什么——和语义角色标注（semantic role labeling）——确定名词短语如何与动词相关联（如施事，受事，工具等）。
+自动生成语言
+如果我们能够解决自动语言理解等问题，我们将能够继续那些包含自动生成语言的任务，如自动问答和机器翻译。在自动问答中，一台机器要能够回答用户关于特定文本集的问题：
+a.Text : ... The thieves stole the paintings. They were subsequently sold. ...b.Human : Who or what was sold?c.Machine : The paintings. 机器的回答表明，它已经正确的计算出they是指paintings，而不是thieves。在机器翻译中，机器要能够把文本翻译成另一种语言文字，并准确传达原文的意思。正确的翻译实际上取决于对代词的正确理解。所有这些例子中，弄清楚词的含义、动作的主语以及代词的先行词是理解句子含义的步骤，也是我们希望语言理解系统能够做到的事情。
+机器翻译
+长久以来，机器翻译（MT）都是语言理解的圣杯，人们希望能找到从根本上提供高品质的符合语言习惯的任意两种语言之间的翻译。其历史可以追溯到冷战初期，当时自动翻译的许诺带来大量的政府赞助，它也是NLP本身的起源。
+今天，特定语言之间实用的翻译系统已经存在，有些已经集成到搜索引擎中了。但是，这些系统有一些严重的缺点，例如babelize_shell() 该函数在nltk3.0中已经不再可用机器翻译是困难的，因为一个给定的词可能有几种不同的解释（取决于它的意思），也因为必须改变词序才能与目标语言的语法结构保持一致。今天，这些困难遇到新情况，从 闻和政府网站发布的两种或两种以上的语言文档中可以收集到大量的相似文本。给出一个德文和英文双语的文档或者一个双语词典，我们就可以自动配对组成句子，这个过程叫做文本对齐。一旦我们有一百万或更多的句子对，就可以检测出相应的词和短语，并建立一个能用来翻译新文本的模型。
+人机对话系统
+在人工智能的历史，主要的智能测试是一个语言学测试，叫做图灵测试：一个响应用户文本输入的对话系统能否表现的自然到我们无法区分它是人工生成的响应？相比之下，今天的商业对话系统能力是非常有限的，但在较小的给定领域仍然有些作用
+S: How may I help you?U: When is Saving Private Ryan playing? S: For what theater? U: The Paramount theater. S: Saving Private Ryan is not playing at the Paramount theater, but it’s playing at the Madison theater at 3:00, 5:30, 8:00, and 10:30.你不能要求这个系统提供驾驶指示或附近餐馆的细节，除非所需的信息已经被保存并且合适的问题答案对已经被纳入语言处理系统。 请看，这个系统似乎了解用户的目标：用户询问电影上映的时间，系统正确的判断出用户是想要看电影。这一推断看起来如此明显，你可能都没有注意到它，一个自然语言系统需要被赋予这种自然的交互能力。没有它，当问到：“ 你知道拯救大兵瑞恩什么时候上映？ ”时，系统可能只会回答一个冷冷的毫无用处的“ 是的 ”。然而，商业对话系统的开发者使用上下文语境假设和业务逻辑确保在用户以不同方式表达需求或提供信息时对特定应用都能有效处理。因此，如果你输入 When is ...或者 I want to know when ...或者Can you tell me whe n ...时，这些简单的规则总是对应着放映时间，这就足够系统提供有益的服务了。举例：原始的对话系统import nltknltk.chat.chatbots()Which chatbot would you like to talk to? 1: Eliza (psycho-babble) 2: Iesha (teen anime junky) 3: Rude (abusive bot) 4: Suntsu (Chinese sayings) 5: Zen (gems of wisdom)
+Enter a number in the range 1-5: Error: bad chatbot number
+Enter a number in the range 1-5: 1
+文本的含义
+近年来，一个叫做文本含义识别(Recognizing Textual Entailment 简称 RTE)的公开的“共享任务”使语言理解所面临的挑战成为关注焦点。基本情形很简单：假设你想找到证据来支持一个假设：Sandra Goudie 被Max Purnell击败了。而你有一段简短的文字似乎是有关的， 例如：Sandra Goudie 在2002 年国会选举首次当选，通过击败工党候选人 Max Purnell 将现 任绿党下院议员 Jeanette Fitzsimons 推到第三位，以微弱优势赢得了 Coromandel 席位。文本 是否为你接受假说提供了足够的证据呢？在这种特殊情况下，答案是“否”。你可以很容易得 出这样的结论，但使用自动方法做出正确决策是困难的。RTE 挑战为竞赛者开发他们的系统提供数据，但这些数据对“蛮力”机器学习技术（我们将在第 6章讲述这一主题）来说是不 够的。因此，一些语言学分析是至关重要的。在前面的例子中，很重要的一点是让系统知道 Sandra Goudie 是假设中被击败的人，而不是文本中击败别人的人。思考下面的文本-假设对， 这是任务困难性的另一个例证：a. Text: David Golinkin is the editor or author of 18 books, and over 150 responsa, articles, sermons and books b. Hypothesis: Golinkin has written 18 books
+为了确定假说是否得到文本的支持，该系统需要以下背景知识： （一）如果有人是一本书的作者，那么他/她写了这本书; （二）如果有人是一本书的编辑，那么他/她（完全）没有写这本书; （三）如果有人是18 本书的编辑或作者，则无法断定他/她是18 本书的作者
+NLP的局限性
+尽管在很多如 RTE这样的任务中研究取得了进展，但在现实世界的应用中已经部署的语言理解系统仍不能进行常识推理或以一种一般的可靠的方式描绘这个世界的知识。我们在等待这些困难的人工智能问题得到解决的同时，接受一些在推理和知识能力上存在严重限制的自然语言系统是有必要的。因此，从一开始，自然语言处理研究的一个重要目标一直是使用浅显但强大的技术代替无边无际的知识和推理能力，促进构建“语言理解”技术的艰巨任务的不断取得进展。事实上，这是本书的目标之一，我们希望你能掌握这些知识和技能，构建有效的自然语言处理系统，并为构建智能机器这一长期的理想做出贡献。

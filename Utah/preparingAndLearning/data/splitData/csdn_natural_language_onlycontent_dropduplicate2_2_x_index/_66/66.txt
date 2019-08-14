@@ -1,0 +1,11 @@
+TextRank是自然语言处理领域一种比较常见的关键词提取算法，可用于提取关键词、短语和自动生成文本摘要。TextRank是由PageRank算法改进过来的，所以有大量借鉴PageRank的思想，其处理文本数据的过程主要包括以下几个步骤：
+（1）首先，将原文本拆分为句子，在每个句子中过滤掉停用词（可以不选），并只保留指定词性的单词，由此可以得到句子和单词的集合。
+（2）每个单词作为PageRank中的一个节点。设窗口大小为k，假设一个句子所组成的单词可以表示为w1,w2,w3,…, wn.
+则w1,w2, …, wk、w2,w3,…,wk+1、w3,w4,…,wk+2等都是一个窗口，在一个窗口内任意两个单词之间存在一条无向无权的边。
+（3）基于上面的节点和边构成图，可以据此计算出每个节点的重要性。最重要的若干单词可以作为区分文本类别和主题的关键词。
+基于荣耀V10手机评论数据的Python代码实现如下所示：
+# -*- coding: utf-8 -*- """ Created on Fri Feb  9 15:58:14 2018 @author: zch """ import codecs from textrank4zh import TextRank4Keyword, TextRank4Sentence #读取华为荣耀天猫旗舰店荣耀V10手机的评论文本数据 text = codecs.open('D://data/tmall/origin_tmall_review.txt', 'r', 'utf-8').read() tr4w = TextRank4Keyword() tr4w.analyze(text=text, lower=True, window=2) print( '关键词：' ) for item in tr4w.get_keywords(10, word_min_len=1):     print("{} 出现的频率为:{:.6f}".format(item.word, item.weight)) print( '关键短语：' ) for phrase in tr4w.get_keyphrases(keywords_num=10, min_occur_num=5):     print(phrase) tr4s = TextRank4Sentence() tr4s.analyze(text=text, lower=True, source = 'all_filters') print() print( '摘要：' ) for item in tr4s.get_key_sentences(num=3):     #index是语句在文本中位置，weight是权重     print("第{}句出现的频率为:{:.6f},内容为:{}".format(item.index, item.weight, item.sentence))
+输出的关键词如下图所示:
+输出的关键短语如下图所示：
+输出的摘要如下图所示：
+从上面的输出结果可以看出，华为荣耀V10的评论信息，大多数还是比较积极、正面的，能够基本反映出用户对这款手机产品的态度。

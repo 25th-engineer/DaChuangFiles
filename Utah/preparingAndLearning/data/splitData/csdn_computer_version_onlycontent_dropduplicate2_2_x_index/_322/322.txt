@@ -1,0 +1,19 @@
+第二届人工智能竞赛——题目二、目标检测
+文章目录
+第二届人工智能竞赛——题目二、目标检测
+一、简介
+二、题目要求
+三、参考资料
+一、简介
+目标检测作为图像处理和计算机视觉领域中的经典课题,在交通监控、图像检索、人机交互等方面有着广泛的应用。它旨在一个静态图像(或动态视频)中检测出人们感兴趣的目标对象。
+二、题目要求
+利用现有的深度学习模型实现目标检测，正确识别出视频流中的人的物体。
+利用 QT 设计 UI 界面，界面要求:友好、功能完善、简介。
+评估模型的效果，求 recall、roc 等曲线
+三、参考资料
+https://github.com/mystic123/tensorflow-yolo-v3
+https://github.com/pjreddie/darknet
+https://github.com/endernewton/tf-faster-rcnn
+https://github.com/hoya012/deep_learning_object_detection
+https://github.com/tensorflow/models/tree/master/research/object_detection
+UI界面可用QT编写

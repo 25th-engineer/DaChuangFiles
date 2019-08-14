@@ -1,0 +1,69 @@
+不多 说 直接 上 干货 MySQL 常见 的 数据 类型 
+一 数据类型 是 什么 数据类型 是 指 列 存储过程 参数 
+表达式 和 局部 变量 的 数据 特征 它 决定 了 
+数据 的 存储 格式 代表 了 不同 的 信息 类型 
+有 一些 数据 是 要 存储 为 数字 的 数字 
+当中 有些 是 要 存储 为 整数 小数 日期 型 
+等 . . . 二 MYSQL 常见 数据类型 MySQL 支持 
+多种 类型 大致 可以 分为 四类 数值 型 浮点 型 
+日期 / 时间 和 字符串 字符 类型 1 数 值类型 
+MySQL 支持 所有 标准 SQL 数值 数据类型 这些 数值 类型 
+包括 严格 数值 数据类型 INTEGER SMALLINT DECIMAL 和 NUMERIC 以及 
+近似 数值 数据类型 FLOAT REAL 和 DOUBLE PRECISION 关键字 INT 
+是 INTEGER 的 同义词 关键字 DEC 是 DECIMAL 的 同义词 
+作为 SQL 标准 的 扩展 MySQL 也 支持 整数 类型 
+TINYINT MEDIUMINT 和 BIGINT 下面 的 表 显示 了 需要 
+的 每个 整数 类型 的 存储 和 范围 2 浮点 
+型 比如 我们 发 的 工资 一般 都 带有 小数 
+3 日期/t 和/c 时间/n 类型/n 表示/v 时间/n 值/n 的/uj 日期/t 
+和/c 时间/n 类型/n 为/p DATETIME/w DATE TIMESTAMP TIME 和 YEAR 
+每个/r 时间/n 类型/n 有/v 一个/m 有效值/l 范围/n 和/c 一个/m 零 
+值 当 指定 不 合法 的 MySQL 不能 表示 的 
+值 时 使用 零 值 TIMESTAMP 类型 有 专有 的 
+自动 更新 特性 将 在后面 描述 在 生产 里 日期 
+时间 型 往往 用 的 比较 少 而是 用 数字 
+类型 来 取代 日期 类型 4   字符串 类型 字符串 
+类型 指 CHAR VARCHAR BINARY VARBINARY BLOB TEXT ENUM 和 
+SET 该 节 描述 了 这些 类型 如何 工作 以及 
+如何 在 查询 中 使用 这些 类型 CHAR 和 VARCHAR 
+类型 类似 但 它们 保存 和 检索 的 方式 不同 
+它们 的 最大 长度 和 是否 尾部 空格 被 保留 
+等 方面 也 不同 在 存储 或 检索 过程 中 
+不 进行 大小写 转换 BINARY/w 和/c VARBINARY/w 类/q 类似于/i CHAR/w 
+和/c VARCHAR/w 不同 的 是 它们 包含 二进制 字符串 而 
+不要 非 二进制 字符串 也 就是说 它们 包含 字节 字符串 
+而不是 字符 字符串 这说明 它们 没有 字符集 并且 排序 和 
+比较 基于 列 值 字节 的 数值 值 有 4种 
+TEXT 类型 TINYTEXT TEXT MEDIUMTEXT 和 LONGTEXT 这些 对应 4种 
+BLOB 类型 有/v 相同/d 的/uj 最大/a 长度/ns 和/c 存储/l 需求/v 
+ENUM 是 枚举 类型 SET 是 集合 类型 不同 于 
+ENUM 类型 它 是 一个 排列组合 假如有 abc 它 可以 
+选择 a 或 b 或 c 也有 选择 是 ab 
+ac bc 也 可以 选择 abc 总结 这些 数据类型 可以 
+用于 数据表 或 存储过程 或 以后 的 函数 中 也 
+就是说 只要 用到 数据类型 的 时候 可以 从 我们 刚 
+讲到 的 数值 型 浮点 型 日期 / 时间 和 
+字符串 字符 类型 中 任意 选择 欢迎 大家 加入 我 
+的 4个 微信 公众 号       大 数据 
+躺过 的 坑         Java 从 入门 
+到 架构师       人工智能 躺过 的 坑   
+      Java 全栈/nr 大联盟 同时 大家 可以 关注 
+我 的 个人 博客 http / / www . cnblogs 
+. com / zlslch /       和 /nr   
+    http / / www . cnblogs . com 
+/ lchzls /           http / 
+/ www . cnblogs . com / sunnyDream / 详情 
+请见 http / / www . cnblogs . com / 
+zlslch / p / 7473861 . html 人生 苦短 我 
+愿 分享 本 公众 号 将 秉持 活到老 学到老 学习 
+无休止 的 交流 分享 开源 精神 汇聚/v 于/p 互联网/n 和/c 
+个人/n 学习/v 工作/vn 的/uj 精华/nz 干货/n 知识/v 一切 来 于 
+互联网 反馈 回 互联网 目前 研究 领域 大 数据 机器学习 
+深度 学习 人工智能 数据挖掘 数据分析 语言 涉及 Java Scala Python 
+Shell Linux 等 同时 还 涉及 平常 所 使用 的 
+手机 电脑 和 互联 网上 的 使用 技巧 问题 和 
+实用软件 只要 你 一直 关注 和 呆在 群 里 每天/r 
+必须/d 有/v 收获/v 对应/vn 本/r 平台/n 的/uj 讨论/v 和/c 答疑/v 
+QQ/w 群/n 大 数据 和 人工智能 躺过 的 坑 总 
+群 161156071 打开 百度 App 扫 码 精彩文章 每天 更新 
+欢迎 关注 我 的 百家 号   九月 哥 快讯 

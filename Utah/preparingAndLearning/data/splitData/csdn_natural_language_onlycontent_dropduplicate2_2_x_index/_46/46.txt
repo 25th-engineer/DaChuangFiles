@@ -1,0 +1,11 @@
+MOOCs
+MIT 的 Natural Language Processing
+Stanford 的cs224n Natural Language Processing
+Stanford 的 CS224d: Deep Learning for Natural Language Processing ：讲述深度学习在自然语言处理方面比较成功的应用。
+BOOKs
+入门首选：吴军博士的《数学之美》：深入浅出的讲述了数学在计算机领域的应用，体现了数学的简单美，书中主要涉及了自然语言处理的一些内容。
+宗成庆的《统计自然语言处理》：全面介绍了统计自然语言处理的基本概念、理论方法和最新研究进展。尤其是讲述了中文的自然语言处理。
+《统计自然语言处理基础》：统计自然语言处理的一本著作。
+《Python自然语言处理》：主要讲NLTK这个包的使用。
+Libs
+NLTK：Python的自然语言处理包

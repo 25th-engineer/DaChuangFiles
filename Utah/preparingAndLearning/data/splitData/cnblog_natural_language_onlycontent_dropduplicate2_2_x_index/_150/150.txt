@@ -1,0 +1,40 @@
+MIT自然语言处理第四讲：标注（第三部分）
+发表于 2009年03月24号 由 52nlp
+自然语言处理：标注
+Natural Language Processing: Tagging
+作者：Regina Barzilay（MIT,EECS Department, November 15, 2004)
+译者：我爱自然语言处理（www.52nlp.cn ，2009年3月24日）
+三、 马尔科夫模型（Markov Model）
+a) 直观（Intuition）：对于序列中的每个单词挑选最可能的标记（Pick the most likely tag for each word of a sequence）
+i. 我们将对P(T,S)建模，其中T是一个标记序列，S是一个单词序列（We will model P(T,S), where T is a sequence of tags, and S is a sequence of words）
+ii.　P({T}delim{|}{S}{})={P(T,S)}/{sum{T}{}{P(T,S)}}
+Tagger(S)= argmax_{T in T^n}logP({T}delim{|}{S}{})
+= argmax_{T in T^n}logP({T,S}{})
+b) 参数估计（Parameter Estimation）
+i. 应用链式法则（Apply chain rule）:
+P(T,S)={prod{j=1}{n}{P({T_j}delim{|}{S_1,…S_{j-1},T_1,…,T_{j-1}}{})}}*
+P({S_j}delim{|}{S_1,…S_{j-1}T_1,…,T_{j}}{})
+ii. 独立性假设（马尔科夫假设）（Assume independence (Markov assumption)）:
+={prod{j=1}{n}{P({T_j}delim{|}{T_{j-2},T_{j-1}}{})}}*P({S_j}delim{|}{T_j}{})
+c) 举例（Example）
+i. They/PRP never/RB stop/VB thinking/VBG about/IN new/JJ 　ways/NNS to/TO harm/VB our/PROPcountry/NNand/CCour/PRP 　people/NN, and/CC neither/DT do/VB we/PRP.
+ii. P(T, S)=P(PRP|S, S)∗P(They|PRP)∗P(RB|S, PRP)∗P(never|RB)∗…
+d) 估计转移概率（Estimating Transition Probabilities）
+P({T_j}delim{|}{T_{j-2},T_{j-1}}{})=
+{lambda_1}*{{Count(T_{j-2},T_{j-1},T_j)}/{Count(T_{j-2},T_{j-1})}}
++{lambda_2}*{{Count(T_{j-1},T_j)}/{Count(T_{j-1})}}
++{lambda_3}*{{Count(T_j)}/{Count(sum{i}{}{T_i})}}
+e) 估计发射概率（Estimating Emission Probabilities）
+P({S_j}delim{|}{T_j}{})={Count(S_j,T_j)}/{Count(T_j)}
+i. 问题（Problem）: 未登录词或罕见词（unknown or rare words）
+1. 专有名词（Proper names）
+“King Abdullah of Jordan, the King of Morocco, I mean, there’s a series of places — Qatar, Oman – I mean, places that are developing— Bahrain — they’re all developing the habits of free societies.”
+2. 新词（New words）
+“They misunderestimated me.”
+f) 处理低频词（Dealing with Low Frequency Words）
+i. 将词表分为两个集合（Split vocabulary into two sets）
+1. 常用词（Frequent words）— 在训练集中出现超过5次的词（words occurring more than 5 times in training）
+2. 低频词（Low frequency words）— 训练集中的其他词（all other words）
+ii. 依据前缀、后缀等将低频词映射到一个小的、有限的集合中（Map low frequency words into a small, finite set, depending on prefixes, suffixes etc. (see Bikel et al., 1998)）
+附：课程及课件pdf下载MIT英文网页地址：
+http://people.csail.mit.edu/regina/6881/

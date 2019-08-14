@@ -1,0 +1,897 @@
+转 自 http / / www . cnblogs . com 
+/ scnucs / archive / 2012/04 / 18/2455447 . html 
+计算机 视觉 库   OpenCVOpenCV 是 Intel ® 开源 计算机 
+视觉 库 它 由 一系列 C 函数 和 少量 C 
++ + 类 构成 实现 了 图像 处理 和 计算机 
+视觉 方面 的 很多 通用 算法 OpenCV 拥有 包括 300 
+多个 C 函数 的 跨平台 的 中 高层 API 它 
+不 依赖 于 其它 的 外部 库 尽管 也 可以 
+使用 某些 外部 库 OpenCV 对 非商业 . . . 
+人脸识别   faceservice . cgifaceservice . cgi 是 一个 用来 
+进行 人脸 识别 的 CGI 程序 你 可以 通过 上传 
+图像 然后 该 程序 即 告诉 你 人脸 的 大概 
+坐标 位置 faceservice 是 采用 OpenCV 库 进行 开发 的 
+OpenCV 的 . NET 版   O p e n 
+C V D o t N e t O p 
+e n C V D o t N e t 
+是 一个 . NET 对 OpenCV 包的/nr 封装 人脸 检测 
+算法   j V i o l a j o 
+n e s j V i o l a j 
+o n e s 是 人脸 检测 算法 Viola Jones 
+的 一个 Java 实现 并能够 加载 OpenCV XML 文件 示例代码 
+http / / www . oschina . net / code 
+/ snippet _ 12 _ 2033Java 视觉 处理 库   
+JavaCVJavaCV 提供 了 在 计算机 视觉 领域 的 封装 库 
+包括 OpenCV ARToolKitPlus libdc1394 2 . x PGR FlyCapture 和 
+FFmpeg 此外 该 工具 可以 很容易 地 使用 Java 平台 
+的 功能 JavaCV 还 带有 硬件加速 的 全屏幕 图像 显示 
+CanvasFrame 易于 在 多个 内核 中 执行 并行 代码 并 
+. . . 运动 检测 程序   QMotionQMotion 是 一个 
+采用 OpenCV 开发 的 运动 检测 程序 基于 QT 视频 
+监控 系统   OpenVSSOpenVSS 开放 平台 的 视频 监控 系统 
+是 一个 系统 级别 的 视频 监控 软件 视频 分析 
+框架 VAF 的 视频 分析 与 检索 和 播放 服务 
+记录 和 索引 技术 它 被 设计 成 插件 式 
+的 支持 多 摄像头 平台 多 分析仪 模块 OpenCV 的 
+集成 以及 多 核心 架构 手势 识别   hand gesture 
+detection 手势 识别 用 OpenCV 实现 人脸 检测 识别   
+mcvai tracking 提供 人脸 检测 识别 与 检测 特定 人脸 
+的 功能 示例代码 cvReleaseImage & gray c v R e 
+l e a s e M e m t o 
+r a g e & storage c v R e 
+l e a s e H a a r C 
+l a s s i f i e r C 
+a s c a d e & cascade . . 
+. 人脸 检测 与 跟踪 库   asmlibraryActive Shape Model 
+Library ASMLibrary © SDK 用 OpenCV 开发 用于 人脸 检测 
+与 跟踪 Lua 视觉 开发 库   libecvECV 是 lua 
+的 计算机 视觉 开发 库 目前 只 提供 linux 支持 
+OpenCV 的 . Net 封装   O p e n 
+C V h a r p O p e n 
+C V h a r p 是 一个 OpenCV 的 
+. Net wrapper 应用 最新 的 OpenCV 库 开发 使用 
+习惯 比 EmguCV 更 接近 原始 的 OpenCV 有 详细 
+的 使用 样例 供参考 3D 视觉 库   fvision2010 基于 
+OpenCV 构建 的 图像 处理 和 3D 视觉 库 示例代码 
+I m a g e e q u e n 
+c e R e a d e r F a 
+c t o r y factory I m a g 
+e e q u e n c e R e 
+a d e r * reader = factory . pathRegex 
+c / a / im _ % 03d . jpg 
+0 20 / / I m a g e e 
+q u e n c e R e a d 
+e r * reader = factory . avi a . 
+avi if reader = = NULL { . . . 
+基于 QT 的 计算机 视觉 库   QVision 基于 QT 
+的 面向 对象 的 多平台 计算机 视觉 库 可以 方便 
+的 创建 图形化 应用程序 算法 库主 要从 OpenCV GSL CGAL 
+IPP Octave 等 高性能 库 借鉴 而来 图像 特征提取   
+cvBlobcvBlob 是 计算机 视觉 应用 中 在 二 值 图像 
+里 寻找 连通 域 的 库 . 能够 执行 连通 
+域 分析 与 特征提取 . 实时 图像 / 视频处理 滤波 
+开发包   GShowGShow is a real time image / video 
+processing filter development kit . It successfully integrates DirectX11 with 
+DirectShow framework . So it has the following features GShow 
+是 实时 图像 / 视频 处理 滤波 开发包 集成 DiretX11 
+. . . 视频 捕获 API   VideoManVideoMan 提供 一组 
+视频 捕获 API 支持 多种 视频流 同时 输入 视频 传输线 
+USB 摄像头 和 视频 文件 等 能 利用 OpenGL 对 
+输入 进行 处理 方便 的 与 OpenCV CUDA 等 集成 
+开发 计算机 视觉 系统 开放 模式识别 项目   OpenPRPattern Recognition 
+project 开放 模式识别 项目 致力 于 开发 出 一套 包含 
+图像处理 计算机 视觉 自然语言 处理 模式识别 机器 学习 和 相关 
+领域 算法 的 函数库 OpenCV 的 Python 封装   pyopencvOpenCV 
+的 Python 封装 主要 特性 包括 提供 与 OpenCV 2 
+. x 中 最新 的 C + + 接口 极为 
+相似 的 Python 接口 并且 包括 C + + 中 
+不 包括 的 C 接口 提供 对 OpenCV 2 . 
+x 中 所有 主要 部件 的 绑定 CxCORE almost complete 
+CxFLANN complete Cv complete CvAux C + + part almost 
+. . . 视觉 快速 开发平台   qcv 计算机 视觉 
+快速 开发平台 提供 测试 框架 使 开发 者 可以 专注 
+于 算法 研究 图像 捕获   libv4l2cam 对 函数库 v412 
+的 封装 从 网络 摄像头 等 硬件 获得 图像 数据 
+支持 YUYV 裸 数据 输出 和 BGR24 的 OpenCV   
+  IplImage 输出 计算机 视觉 算法   O p e 
+n V I D I A O p e n 
+V I D I A projects implement computer vision algorithms 
+running on on graphics hardware such as single or multiple 
+graphics processing units GPUs using OpenGL Cg and CUDA C 
+. Some samples will soon support OpenCL and Direct Compute 
+API & apos . . . 高斯 模型 点 集 
+配 准 算法   gmmreg 实现 了 基于 混合 高斯 
+模型 的 点 集 配 准 算法 该 算法 描述 
+在 论文 A Robust Algorithm for Point Set Registration Using 
+Mixture of Gaussians Bing Jian and Baba C . Vemuri 
+. 实现 了 C + + / Matlab / Python 
+接口 . . . 模式识别 和 视觉 库   RAVLRecognition 
+And Vision Library RAVL 是 一个 通用 C + + 
+库 包含 计算机 视觉 模式识别 等 模块 图像 处理 和 
+计算机 视觉 常用 算 法库   LTI LibLTI Lib 是/v 
+一个/m 包含/v 图像/n 处理/v 和/c 计算机/n 视觉/n 常用/b 算法/n 和/c 
+数据/n 结构/n 的/uj 面向对象/n 库/n 提供 Windows 下 的 VC 
+版本 和 Linux 下 的 gcc 版本 主要 包含 以下 
+几 方面 内容 1 线性代数 2 聚类分析 3 图像处理 4 
+可视化 和 绘图 工具 OpenCV 优化   opencv dsp acceleration 
+优化 了 OpenCV 库 在 DSP 上 的 速度 C 
++ + 计算机 视觉 库   Integrating Vision T o 
+o l k i t I n t e g 
+r a t i n g Vision Toolkit IVT 是 
+一个 强大 而 迅速 的 C + + 计算机 视觉 
+库 拥有 易用 的 接口 和 面向 对象 的 架构 
+并且 含 有 自己 的 一套 跨平台 GUI 组件 另外 
+可以 选择 集成 OpenCV 计算机 视觉 和 机器人 技术 的 
+工具包   EGTThe Epipolar Geometry Toolbox EGT is a toolbox 
+designed for Matlab by Mathworks Inc . . EGT provides 
+a wide set of functions to approach computer vision and 
+robotics problems with single and multiple views and with different 
+vision se . . . OpenCV 的 扩展 库   
+I m a g e N e t s I 
+m a g e N e t s 是 对 
+OpenCV 的 扩展 提供 对 机器人 视觉 算法 方面 友好 
+的 支持 使用 Nokia 的 QT 编写 界面 libvideogfx 视频处理 
+计算机 视觉 和 计算机 图形学 的 快速 开发 库 Matlab 
+计算机 视觉 包 /nr mVisionMatlab 的 计算机 视觉 包 包含 用于 
+观察 结果 的 GUI 组件 貌似 也 停止 开发 了 
+拿来 做 学习 用 挺 不错 的 Scilab 的 计算机 
+视觉 库   SIPSIP 是 Scilab 一种 免费 的 类 
+Matlab 编程 环境 的 图像 处理 和 计算机 视觉 库 
+SIP 可以 读写 JPEG / PNG / BMP 格式 的 
+图片 具备 图像 滤波 分割 边缘 检测 形态学 处理 和 
+形状 分析 等 功能 STAIR Vision LibrarySTAIR Vision Library SVL 
+最初 是 为 支持 斯坦福 智能 机器人 设计 的 提供 
+对 计算机 视觉 机器 学习 和 概率 统计模型 的 支持 
+SLAM 仿人 机器人 视觉 导航 图像 处理 与 计算机 视觉 
+开源 软件库 1 . OpenCv 计算机 视觉 必学 的 库 
+个人 认为 其 作用 相当 强悍 http / / opencv 
+. willowgarage . com / wiki / 2 . CVpaper 
+主页 上 推荐 的 开源 视觉 算 法库 最全 的 
+了 也 非常 新 强烈 推荐 大家 去 看看 http 
+/ / www . cvpapers . com / rr . 
+html3 . cmu 的 图像 处理 和 计算机 视觉 软件库 
+非常 全 但 有点 老了 但 都很 经典 资源 非常 
+丰富 http / / www . cs . cmu . 
+edu / ~ cil / v source . html4 . 
+在 网上 还 找到 很多 图像 处理 和 视觉 的 
+开源 软件 不过 没用过 用过 后再 陆续 更新 了 敬请期待 
+计算机 视觉 库   OpenCVOpenCV 是 Intel ® 开源 计算机 
+视觉 库 它 由 一系列 C 函数 和 少量 C 
++ + 类 构成 实现 了 图像 处理 和 计算机 
+视觉 方面 的 很多 通用 算法 OpenCV 拥有 包括 300 
+多个 C 函数 的 跨平台 的 中 高层 API 它 
+不 依赖 于 其它 的 外部 库 尽管 也 可以 
+使用 某些 外部 库 OpenCV 对 非商业 . . . 
+人脸识别   faceservice . cgifaceservice . cgi 是 一个 用来 
+进行 人脸 识别 的 CGI 程序 你 可以 通过 上传 
+图像 然后 该 程序 即 告诉 你 人脸 的 大概 
+坐标 位置 faceservice 是 采用 OpenCV 库 进行 开发 的 
+OpenCV 的 . NET 版   O p e n 
+C V D o t N e t O p 
+e n C V D o t N e t 
+是 一个 . NET 对 OpenCV 包的/nr 封装 人脸 检测 
+算法   j V i o l a j o 
+n e s j V i o l a j 
+o n e s 是 人脸 检测 算法 Viola Jones 
+的 一个 Java 实现 并能够 加载 OpenCV XML 文件 示例代码 
+http / / www . oschina . net / code 
+/ snippet _ 12 _ 2033Java 视觉 处理 库   
+JavaCVJavaCV 提供 了 在 计算机 视觉 领域 的 封装 库 
+包括 OpenCV ARToolKitPlus libdc1394 2 . x PGR FlyCapture 和 
+FFmpeg 此外 该 工具 可以 很容易 地 使用 Java 平台 
+的 功能 JavaCV 还 带有 硬件加速 的 全屏幕 图像 显示 
+CanvasFrame 易于 在 多个 内核 中 执行 并行 代码 并 
+. . . 运动 检测 程序   QMotionQMotion 是 一个 
+采用 OpenCV 开发 的 运动 检测 程序 基于 QT 视频 
+监控 系统   OpenVSSOpenVSS 开放 平台 的 视频 监控 系统 
+是 一个 系统 级别 的 视频 监控 软件 视频 分析 
+框架 VAF 的 视频 分析 与 检索 和 播放 服务 
+记录 和 索引 技术 它 被 设计 成 插件 式 
+的 支持 多 摄像头 平台 多 分析仪 模块 OpenCV 的 
+集成 以及 多 核心 架构 手势 识别   hand gesture 
+detection 手势 识别 用 OpenCV 实现 人脸 检测 识别   
+mcvai tracking 提供 人脸 检测 识别 与 检测 特定 人脸 
+的 功能 示例代码 cvReleaseImage & gray c v R e 
+l e a s e M e m t o 
+r a g e & storage c v R e 
+l e a s e H a a r C 
+l a s s i f i e r C 
+a s c a d e & cascade . . 
+. 人脸 检测 与 跟踪 库   asmlibraryActive Shape Model 
+Library ASMLibrary © SDK 用 OpenCV 开发 用于 人脸 检测 
+与 跟踪 Lua 视觉 开发 库   libecvECV 是 lua 
+的 计算机 视觉 开发 库 目前 只 提供 linux 支持 
+OpenCV 的 . Net 封装   O p e n 
+C V h a r p O p e n 
+C V h a r p 是 一个 OpenCV 的 
+. Net wrapper 应用 最新 的 OpenCV 库 开发 使用 
+习惯 比 EmguCV 更 接近 原始 的 OpenCV 有 详细 
+的 使用 样例 供参考 3D 视觉 库   fvision2010 基于 
+OpenCV 构建 的 图像 处理 和 3D 视觉 库 示例代码 
+I m a g e e q u e n 
+c e R e a d e r F a 
+c t o r y factory I m a g 
+e e q u e n c e R e 
+a d e r * reader = factory . pathRegex 
+c / a / im _ % 03d . jpg 
+0 20 / / I m a g e e 
+q u e n c e R e a d 
+e r * reader = factory . avi a . 
+avi if reader = = NULL { . . . 
+基于 QT 的 计算机 视觉 库   QVision 基于 QT 
+的 面向 对象 的 多平台 计算机 视觉 库 可以 方便 
+的 创建 图形化 应用程序 算法 库主 要从 OpenCV GSL CGAL 
+IPP Octave 等 高性能 库 借鉴 而来 图像 特征提取   
+cvBlobcvBlob 是 计算机 视觉 应用 中 在 二 值 图像 
+里 寻找 连通 域 的 库 . 能够 执行 连通 
+域 分析 与 特征提取 . 实时 图像 / 视频处理 滤波 
+开发包   GShowGShow is a real time image / video 
+processing filter development kit . It successfully integrates DirectX11 with 
+DirectShow framework . So it has the following features GShow 
+是 实时 图像 / 视频 处理 滤波 开发包 集成 DiretX11 
+. . . 视频 捕获 API   VideoManVideoMan 提供 一组 
+视频 捕获 API 支持 多种 视频流 同时 输入 视频 传输线 
+USB 摄像头 和 视频 文件 等 能 利用 OpenGL 对 
+输入 进行 处理 方便 的 与 OpenCV CUDA 等 集成 
+开发 计算机 视觉 系统 开放 模式识别 项目   OpenPRPattern Recognition 
+project 开放 模式识别 项目 致力 于 开发 出 一套 包含 
+图像处理 计算机 视觉 自然语言 处理 模式识别 机器 学习 和 相关 
+领域 算法 的 函数库 OpenCV 的 Python 封装   pyopencvOpenCV 
+的 Python 封装 主要 特性 包括 提供 与 OpenCV 2 
+. x 中 最新 的 C + + 接口 极为 
+相似 的 Python 接口 并且 包括 C + + 中 
+不 包括 的 C 接口 提供 对 OpenCV 2 . 
+x 中 所有 主要 部件 的 绑定 CxCORE almost complete 
+CxFLANN complete Cv complete CvAux C + + part almost 
+. . . 视觉 快速 开发平台   qcv 计算机 视觉 
+快速 开发平台 提供 测试 框架 使 开发 者 可以 专注 
+于 算法 研究 图像 捕获   libv4l2cam 对 函数库 v412 
+的 封装 从 网络 摄像头 等 硬件 获得 图像 数据 
+支持 YUYV 裸 数据 输出 和 BGR24 的 OpenCV   
+  IplImage 输出 计算机 视觉 算法   O p e 
+n V I D I A O p e n 
+V I D I A projects implement computer vision algorithms 
+running on on graphics hardware such as single or multiple 
+graphics processing units GPUs using OpenGL Cg and CUDA C 
+. Some samples will soon support OpenCL and Direct Compute 
+API & apos . . . 高斯 模型 点 集 
+配 准 算法   gmmreg 实现 了 基于 混合 高斯 
+模型 的 点 集 配 准 算法 该 算法 描述 
+在 论文 A Robust Algorithm for Point Set Registration Using 
+Mixture of Gaussians Bing Jian and Baba C . Vemuri 
+. 实现 了 C + + / Matlab / Python 
+接口 . . . 模式识别 和 视觉 库   RAVLRecognition 
+And Vision Library RAVL 是 一个 通用 C + + 
+库 包含 计算机 视觉 模式识别 等 模块 图像 处理 和 
+计算机 视觉 常用 算 法库   LTI LibLTI Lib 是/v 
+一个/m 包含/v 图像/n 处理/v 和/c 计算机/n 视觉/n 常用/b 算法/n 和/c 
+数据/n 结构/n 的/uj 面向对象/n 库/n 提供 Windows 下 的 VC 
+版本 和 Linux 下 的 gcc 版本 主要 包含 以下 
+几 方面 内容 1 线性代数 2 聚类分析 3 图像处理 4 
+可视化 和 绘图 工具 OpenCV 优化   opencv dsp acceleration 
+优化 了 OpenCV 库 在 DSP 上 的 速度 C 
++ + 计算机 视觉 库   Integrating Vision T o 
+o l k i t I n t e g 
+r a t i n g Vision Toolkit IVT 是 
+一个 强大 而 迅速 的 C + + 计算机 视觉 
+库 拥有 易用 的 接口 和 面向 对象 的 架构 
+并且 含 有 自己 的 一套 跨平台 GUI 组件 另外 
+可以 选择 集成 OpenCV 计算机 视觉 和 机器人 技术 的 
+工具包   EGTThe Epipolar Geometry Toolbox EGT is a toolbox 
+designed for Matlab by Mathworks Inc . . EGT provides 
+a wide set of functions to approach computer vision and 
+robotics problems with single and multiple views and with different 
+vision se . . . OpenCV 的 扩展 库   
+I m a g e N e t s I 
+m a g e N e t s 是 对 
+OpenCV 的 扩展 提供 对 机器人 视觉 算法 方面 友好 
+的 支持 使用 Nokia 的 QT 编写 界面 libvideogfx 视频处理 
+计算机 视觉 和 计算机 图形学 的 快速 开发 库 Matlab 
+计算机 视觉 包 /nr mVisionMatlab 的 计算机 视觉 包 包含 用于 
+观察 结果 的 GUI 组件 貌似 也 停止 开发 了 
+拿来 做 学习 用 挺 不错 的 Scilab 的 计算机 
+视觉 库   SIPSIP 是 Scilab 一种 免费 的 类 
+Matlab 编程 环境 的 图像 处理 和 计算机 视觉 库 
+SIP 可以 读写 JPEG / PNG / BMP 格式 的 
+图片 具备 图像 滤波 分割 边缘 检测 形态学 处理 和 
+形状 分析 等 功能 STAIR Vision LibrarySTAIR Vision Library SVL 
+最初 是 为 支持 斯坦福 智能 机器人 设计 的 提供 
+对 计算机 视觉 机器 学习 和 概率 统计模型 的 支持 
+转 自 http / / www . cnblogs . com 
+/ scnucs / archive / 2012/04 / 18/2455447 . html 
+计算机 视觉 库   OpenCVOpenCV 是 Intel ® 开源 计算机 
+视觉 库 它 由 一系列 C 函数 和 少量 C 
++ + 类 构成 实现 了 图像 处理 和 计算机 
+视觉 方面 的 很多 通用 算法 OpenCV 拥有 包括 300 
+多个 C 函数 的 跨平台 的 中 高层 API 它 
+不 依赖 于 其它 的 外部 库 尽管 也 可以 
+使用 某些 外部 库 OpenCV 对 非商业 . . . 
+人脸识别   faceservice . cgifaceservice . cgi 是 一个 用来 
+进行 人脸 识别 的 CGI 程序 你 可以 通过 上传 
+图像 然后 该 程序 即 告诉 你 人脸 的 大概 
+坐标 位置 faceservice 是 采用 OpenCV 库 进行 开发 的 
+OpenCV 的 . NET 版   O p e n 
+C V D o t N e t O p 
+e n C V D o t N e t 
+是 一个 . NET 对 OpenCV 包的/nr 封装 人脸 检测 
+算法   j V i o l a j o 
+n e s j V i o l a j 
+o n e s 是 人脸 检测 算法 Viola Jones 
+的 一个 Java 实现 并能够 加载 OpenCV XML 文件 示例代码 
+http / / www . oschina . net / code 
+/ snippet _ 12 _ 2033Java 视觉 处理 库   
+JavaCVJavaCV 提供 了 在 计算机 视觉 领域 的 封装 库 
+包括 OpenCV ARToolKitPlus libdc1394 2 . x PGR FlyCapture 和 
+FFmpeg 此外 该 工具 可以 很容易 地 使用 Java 平台 
+的 功能 JavaCV 还 带有 硬件加速 的 全屏幕 图像 显示 
+CanvasFrame 易于 在 多个 内核 中 执行 并行 代码 并 
+. . . 运动 检测 程序   QMotionQMotion 是 一个 
+采用 OpenCV 开发 的 运动 检测 程序 基于 QT 视频 
+监控 系统   OpenVSSOpenVSS 开放 平台 的 视频 监控 系统 
+是 一个 系统 级别 的 视频 监控 软件 视频 分析 
+框架 VAF 的 视频 分析 与 检索 和 播放 服务 
+记录 和 索引 技术 它 被 设计 成 插件 式 
+的 支持 多 摄像头 平台 多 分析仪 模块 OpenCV 的 
+集成 以及 多 核心 架构 手势 识别   hand gesture 
+detection 手势 识别 用 OpenCV 实现 人脸 检测 识别   
+mcvai tracking 提供 人脸 检测 识别 与 检测 特定 人脸 
+的 功能 示例代码 cvReleaseImage & gray c v R e 
+l e a s e M e m t o 
+r a g e & storage c v R e 
+l e a s e H a a r C 
+l a s s i f i e r C 
+a s c a d e & cascade . . 
+. 人脸 检测 与 跟踪 库   asmlibraryActive Shape Model 
+Library ASMLibrary © SDK 用 OpenCV 开发 用于 人脸 检测 
+与 跟踪 Lua 视觉 开发 库   libecvECV 是 lua 
+的 计算机 视觉 开发 库 目前 只 提供 linux 支持 
+OpenCV 的 . Net 封装   O p e n 
+C V h a r p O p e n 
+C V h a r p 是 一个 OpenCV 的 
+. Net wrapper 应用 最新 的 OpenCV 库 开发 使用 
+习惯 比 EmguCV 更 接近 原始 的 OpenCV 有 详细 
+的 使用 样例 供参考 3D 视觉 库   fvision2010 基于 
+OpenCV 构建 的 图像 处理 和 3D 视觉 库 示例代码 
+I m a g e e q u e n 
+c e R e a d e r F a 
+c t o r y factory I m a g 
+e e q u e n c e R e 
+a d e r * reader = factory . pathRegex 
+c / a / im _ % 03d . jpg 
+0 20 / / I m a g e e 
+q u e n c e R e a d 
+e r * reader = factory . avi a . 
+avi if reader = = NULL { . . . 
+基于 QT 的 计算机 视觉 库   QVision 基于 QT 
+的 面向 对象 的 多平台 计算机 视觉 库 可以 方便 
+的 创建 图形化 应用程序 算法 库主 要从 OpenCV GSL CGAL 
+IPP Octave 等 高性能 库 借鉴 而来 图像 特征提取   
+cvBlobcvBlob 是 计算机 视觉 应用 中 在 二 值 图像 
+里 寻找 连通 域 的 库 . 能够 执行 连通 
+域 分析 与 特征提取 . 实时 图像 / 视频处理 滤波 
+开发包   GShowGShow is a real time image / video 
+processing filter development kit . It successfully integrates DirectX11 with 
+DirectShow framework . So it has the following features GShow 
+是 实时 图像 / 视频 处理 滤波 开发包 集成 DiretX11 
+. . . 视频 捕获 API   VideoManVideoMan 提供 一组 
+视频 捕获 API 支持 多种 视频流 同时 输入 视频 传输线 
+USB 摄像头 和 视频 文件 等 能 利用 OpenGL 对 
+输入 进行 处理 方便 的 与 OpenCV CUDA 等 集成 
+开发 计算机 视觉 系统 开放 模式识别 项目   OpenPRPattern Recognition 
+project 开放 模式识别 项目 致力 于 开发 出 一套 包含 
+图像处理 计算机 视觉 自然语言 处理 模式识别 机器 学习 和 相关 
+领域 算法 的 函数库 OpenCV 的 Python 封装   pyopencvOpenCV 
+的 Python 封装 主要 特性 包括 提供 与 OpenCV 2 
+. x 中 最新 的 C + + 接口 极为 
+相似 的 Python 接口 并且 包括 C + + 中 
+不 包括 的 C 接口 提供 对 OpenCV 2 . 
+x 中 所有 主要 部件 的 绑定 CxCORE almost complete 
+CxFLANN complete Cv complete CvAux C + + part almost 
+. . . 视觉 快速 开发平台   qcv 计算机 视觉 
+快速 开发平台 提供 测试 框架 使 开发 者 可以 专注 
+于 算法 研究 图像 捕获   libv4l2cam 对 函数库 v412 
+的 封装 从 网络 摄像头 等 硬件 获得 图像 数据 
+支持 YUYV 裸 数据 输出 和 BGR24 的 OpenCV   
+  IplImage 输出 计算机 视觉 算法   O p e 
+n V I D I A O p e n 
+V I D I A projects implement computer vision algorithms 
+running on on graphics hardware such as single or multiple 
+graphics processing units GPUs using OpenGL Cg and CUDA C 
+. Some samples will soon support OpenCL and Direct Compute 
+API & apos . . . 高斯 模型 点 集 
+配 准 算法   gmmreg 实现 了 基于 混合 高斯 
+模型 的 点 集 配 准 算法 该 算法 描述 
+在 论文 A Robust Algorithm for Point Set Registration Using 
+Mixture of Gaussians Bing Jian and Baba C . Vemuri 
+. 实现 了 C + + / Matlab / Python 
+接口 . . . 模式识别 和 视觉 库   RAVLRecognition 
+And Vision Library RAVL 是 一个 通用 C + + 
+库 包含 计算机 视觉 模式识别 等 模块 图像 处理 和 
+计算机 视觉 常用 算 法库   LTI LibLTI Lib 是/v 
+一个/m 包含/v 图像/n 处理/v 和/c 计算机/n 视觉/n 常用/b 算法/n 和/c 
+数据/n 结构/n 的/uj 面向对象/n 库/n 提供 Windows 下 的 VC 
+版本 和 Linux 下 的 gcc 版本 主要 包含 以下 
+几 方面 内容 1 线性代数 2 聚类分析 3 图像处理 4 
+可视化 和 绘图 工具 OpenCV 优化   opencv dsp acceleration 
+优化 了 OpenCV 库 在 DSP 上 的 速度 C 
++ + 计算机 视觉 库   Integrating Vision T o 
+o l k i t I n t e g 
+r a t i n g Vision Toolkit IVT 是 
+一个 强大 而 迅速 的 C + + 计算机 视觉 
+库 拥有 易用 的 接口 和 面向 对象 的 架构 
+并且 含 有 自己 的 一套 跨平台 GUI 组件 另外 
+可以 选择 集成 OpenCV 计算机 视觉 和 机器人 技术 的 
+工具包   EGTThe Epipolar Geometry Toolbox EGT is a toolbox 
+designed for Matlab by Mathworks Inc . . EGT provides 
+a wide set of functions to approach computer vision and 
+robotics problems with single and multiple views and with different 
+vision se . . . OpenCV 的 扩展 库   
+I m a g e N e t s I 
+m a g e N e t s 是 对 
+OpenCV 的 扩展 提供 对 机器人 视觉 算法 方面 友好 
+的 支持 使用 Nokia 的 QT 编写 界面 libvideogfx 视频处理 
+计算机 视觉 和 计算机 图形学 的 快速 开发 库 Matlab 
+计算机 视觉 包 /nr mVisionMatlab 的 计算机 视觉 包 包含 用于 
+观察 结果 的 GUI 组件 貌似 也 停止 开发 了 
+拿来 做 学习 用 挺 不错 的 Scilab 的 计算机 
+视觉 库   SIPSIP 是 Scilab 一种 免费 的 类 
+Matlab 编程 环境 的 图像 处理 和 计算机 视觉 库 
+SIP 可以 读写 JPEG / PNG / BMP 格式 的 
+图片 具备 图像 滤波 分割 边缘 检测 形态学 处理 和 
+形状 分析 等 功能 STAIR Vision LibrarySTAIR Vision Library SVL 
+最初 是 为 支持 斯坦福 智能 机器人 设计 的 提供 
+对 计算机 视觉 机器 学习 和 概率 统计模型 的 支持 
+SLAM 仿人 机器人 视觉 导航 图像 处理 与 计算机 视觉 
+开源 软件库 1 . OpenCv 计算机 视觉 必学 的 库 
+个人 认为 其 作用 相当 强悍 http / / opencv 
+. willowgarage . com / wiki / 2 . CVpaper 
+主页 上 推荐 的 开源 视觉 算 法库 最全 的 
+了 也 非常 新 强烈 推荐 大家 去 看看 http 
+/ / www . cvpapers . com / rr . 
+html3 . cmu 的 图像 处理 和 计算机 视觉 软件库 
+非常 全 但 有点 老了 但 都很 经典 资源 非常 
+丰富 http / / www . cs . cmu . 
+edu / ~ cil / v source . html4 . 
+在 网上 还 找到 很多 图像 处理 和 视觉 的 
+开源 软件 不过 没用过 用过 后再 陆续 更新 了 敬请期待 
+计算机 视觉 库   OpenCVOpenCV 是 Intel ® 开源 计算机 
+视觉 库 它 由 一系列 C 函数 和 少量 C 
++ + 类 构成 实现 了 图像 处理 和 计算机 
+视觉 方面 的 很多 通用 算法 OpenCV 拥有 包括 300 
+多个 C 函数 的 跨平台 的 中 高层 API 它 
+不 依赖 于 其它 的 外部 库 尽管 也 可以 
+使用 某些 外部 库 OpenCV 对 非商业 . . . 
+人脸识别   faceservice . cgifaceservice . cgi 是 一个 用来 
+进行 人脸 识别 的 CGI 程序 你 可以 通过 上传 
+图像 然后 该 程序 即 告诉 你 人脸 的 大概 
+坐标 位置 faceservice 是 采用 OpenCV 库 进行 开发 的 
+OpenCV 的 . NET 版   O p e n 
+C V D o t N e t O p 
+e n C V D o t N e t 
+是 一个 . NET 对 OpenCV 包的/nr 封装 人脸 检测 
+算法   j V i o l a j o 
+n e s j V i o l a j 
+o n e s 是 人脸 检测 算法 Viola Jones 
+的 一个 Java 实现 并能够 加载 OpenCV XML 文件 示例代码 
+http / / www . oschina . net / code 
+/ snippet _ 12 _ 2033Java 视觉 处理 库   
+JavaCVJavaCV 提供 了 在 计算机 视觉 领域 的 封装 库 
+包括 OpenCV ARToolKitPlus libdc1394 2 . x PGR FlyCapture 和 
+FFmpeg 此外 该 工具 可以 很容易 地 使用 Java 平台 
+的 功能 JavaCV 还 带有 硬件加速 的 全屏幕 图像 显示 
+CanvasFrame 易于 在 多个 内核 中 执行 并行 代码 并 
+. . . 运动 检测 程序   QMotionQMotion 是 一个 
+采用 OpenCV 开发 的 运动 检测 程序 基于 QT 视频 
+监控 系统   OpenVSSOpenVSS 开放 平台 的 视频 监控 系统 
+是 一个 系统 级别 的 视频 监控 软件 视频 分析 
+框架 VAF 的 视频 分析 与 检索 和 播放 服务 
+记录 和 索引 技术 它 被 设计 成 插件 式 
+的 支持 多 摄像头 平台 多 分析仪 模块 OpenCV 的 
+集成 以及 多 核心 架构 手势 识别   hand gesture 
+detection 手势 识别 用 OpenCV 实现 人脸 检测 识别   
+mcvai tracking 提供 人脸 检测 识别 与 检测 特定 人脸 
+的 功能 示例代码 cvReleaseImage & gray c v R e 
+l e a s e M e m t o 
+r a g e & storage c v R e 
+l e a s e H a a r C 
+l a s s i f i e r C 
+a s c a d e & cascade . . 
+. 人脸 检测 与 跟踪 库   asmlibraryActive Shape Model 
+Library ASMLibrary © SDK 用 OpenCV 开发 用于 人脸 检测 
+与 跟踪 Lua 视觉 开发 库   libecvECV 是 lua 
+的 计算机 视觉 开发 库 目前 只 提供 linux 支持 
+OpenCV 的 . Net 封装   O p e n 
+C V h a r p O p e n 
+C V h a r p 是 一个 OpenCV 的 
+. Net wrapper 应用 最新 的 OpenCV 库 开发 使用 
+习惯 比 EmguCV 更 接近 原始 的 OpenCV 有 详细 
+的 使用 样例 供参考 3D 视觉 库   fvision2010 基于 
+OpenCV 构建 的 图像 处理 和 3D 视觉 库 示例代码 
+I m a g e e q u e n 
+c e R e a d e r F a 
+c t o r y factory I m a g 
+e e q u e n c e R e 
+a d e r * reader = factory . pathRegex 
+c / a / im _ % 03d . jpg 
+0 20 / / I m a g e e 
+q u e n c e R e a d 
+e r * reader = factory . avi a . 
+avi if reader = = NULL { . . . 
+基于 QT 的 计算机 视觉 库   QVision 基于 QT 
+的 面向 对象 的 多平台 计算机 视觉 库 可以 方便 
+的 创建 图形化 应用程序 算法 库主 要从 OpenCV GSL CGAL 
+IPP Octave 等 高性能 库 借鉴 而来 图像 特征提取   
+cvBlobcvBlob 是 计算机 视觉 应用 中 在 二 值 图像 
+里 寻找 连通 域 的 库 . 能够 执行 连通 
+域 分析 与 特征提取 . 实时 图像 / 视频处理 滤波 
+开发包   GShowGShow is a real time image / video 
+processing filter development kit . It successfully integrates DirectX11 with 
+DirectShow framework . So it has the following features GShow 
+是 实时 图像 / 视频 处理 滤波 开发包 集成 DiretX11 
+. . . 视频 捕获 API   VideoManVideoMan 提供 一组 
+视频 捕获 API 支持 多种 视频流 同时 输入 视频 传输线 
+USB 摄像头 和 视频 文件 等 能 利用 OpenGL 对 
+输入 进行 处理 方便 的 与 OpenCV CUDA 等 集成 
+开发 计算机 视觉 系统 开放 模式识别 项目   OpenPRPattern Recognition 
+project 开放 模式识别 项目 致力 于 开发 出 一套 包含 
+图像处理 计算机 视觉 自然语言 处理 模式识别 机器 学习 和 相关 
+领域 算法 的 函数库 OpenCV 的 Python 封装   pyopencvOpenCV 
+的 Python 封装 主要 特性 包括 提供 与 OpenCV 2 
+. x 中 最新 的 C + + 接口 极为 
+相似 的 Python 接口 并且 包括 C + + 中 
+不 包括 的 C 接口 提供 对 OpenCV 2 . 
+x 中 所有 主要 部件 的 绑定 CxCORE almost complete 
+CxFLANN complete Cv complete CvAux C + + part almost 
+. . . 视觉 快速 开发平台   qcv 计算机 视觉 
+快速 开发平台 提供 测试 框架 使 开发 者 可以 专注 
+于 算法 研究 图像 捕获   libv4l2cam 对 函数库 v412 
+的 封装 从 网络 摄像头 等 硬件 获得 图像 数据 
+支持 YUYV 裸 数据 输出 和 BGR24 的 OpenCV   
+  IplImage 输出 计算机 视觉 算法   O p e 
+n V I D I A O p e n 
+V I D I A projects implement computer vision algorithms 
+running on on graphics hardware such as single or multiple 
+graphics processing units GPUs using OpenGL Cg and CUDA C 
+. Some samples will soon support OpenCL and Direct Compute 
+API & apos . . . 高斯 模型 点 集 
+配 准 算法   gmmreg 实现 了 基于 混合 高斯 
+模型 的 点 集 配 准 算法 该 算法 描述 
+在 论文 A Robust Algorithm for Point Set Registration Using 
+Mixture of Gaussians Bing Jian and Baba C . Vemuri 
+. 实现 了 C + + / Matlab / Python 
+接口 . . . 模式识别 和 视觉 库   RAVLRecognition 
+And Vision Library RAVL 是 一个 通用 C + + 
+库 包含 计算机 视觉 模式识别 等 模块 图像 处理 和 
+计算机 视觉 常用 算 法库   LTI LibLTI Lib 是/v 
+一个/m 包含/v 图像/n 处理/v 和/c 计算机/n 视觉/n 常用/b 算法/n 和/c 
+数据/n 结构/n 的/uj 面向对象/n 库/n 提供 Windows 下 的 VC 
+版本 和 Linux 下 的 gcc 版本 主要 包含 以下 
+几 方面 内容 1 线性代数 2 聚类分析 3 图像处理 4 
+可视化 和 绘图 工具 OpenCV 优化   opencv dsp acceleration 
+优化 了 OpenCV 库 在 DSP 上 的 速度 C 
++ + 计算机 视觉 库   Integrating Vision T o 
+o l k i t I n t e g 
+r a t i n g Vision Toolkit IVT 是 
+一个 强大 而 迅速 的 C + + 计算机 视觉 
+库 拥有 易用 的 接口 和 面向 对象 的 架构 
+并且 含 有 自己 的 一套 跨平台 GUI 组件 另外 
+可以 选择 集成 OpenCV 计算机 视觉 和 机器人 技术 的 
+工具包   EGTThe Epipolar Geometry Toolbox EGT is a toolbox 
+designed for Matlab by Mathworks Inc . . EGT provides 
+a wide set of functions to approach computer vision and 
+robotics problems with single and multiple views and with different 
+vision se . . . OpenCV 的 扩展 库   
+I m a g e N e t s I 
+m a g e N e t s 是 对 
+OpenCV 的 扩展 提供 对 机器人 视觉 算法 方面 友好 
+的 支持 使用 Nokia 的 QT 编写 界面 libvideogfx 视频处理 
+计算机 视觉 和 计算机 图形学 的 快速 开发 库 Matlab 
+计算机 视觉 包 /nr mVisionMatlab 的 计算机 视觉 包 包含 用于 
+观察 结果 的 GUI 组件 貌似 也 停止 开发 了 
+拿来 做 学习 用 挺 不错 的 Scilab 的 计算机 
+视觉 库   SIPSIP 是 Scilab 一种 免费 的 类 
+Matlab 编程 环境 的 图像 处理 和 计算机 视觉 库 
+SIP 可以 读写 JPEG / PNG / BMP 格式 的 
+图片 具备 图像 滤波 分割 边缘 检测 形态学 处理 和 
+形状 分析 等 功能 STAIR Vision LibrarySTAIR Vision Library SVL 
+最初 是 为 支持 斯坦福 智能 机器人 设计 的 提供 
+对 计算机 视觉 机器 学习 和 概率 统计模型 的 支持 
+转 自 http / / www . cnblogs . com 
+/ scnucs / archive / 2012/04 / 18/2455447 . html 
+计算机 视觉 库   OpenCVOpenCV 是 Intel ® 开源 计算机 
+视觉 库 它 由 一系列 C 函数 和 少量 C 
++ + 类 构成 实现 了 图像 处理 和 计算机 
+视觉 方面 的 很多 通用 算法 OpenCV 拥有 包括 300 
+多个 C 函数 的 跨平台 的 中 高层 API 它 
+不 依赖 于 其它 的 外部 库 尽管 也 可以 
+使用 某些 外部 库 OpenCV 对 非商业 . . . 
+人脸识别   faceservice . cgifaceservice . cgi 是 一个 用来 
+进行 人脸 识别 的 CGI 程序 你 可以 通过 上传 
+图像 然后 该 程序 即 告诉 你 人脸 的 大概 
+坐标 位置 faceservice 是 采用 OpenCV 库 进行 开发 的 
+OpenCV 的 . NET 版   O p e n 
+C V D o t N e t O p 
+e n C V D o t N e t 
+是 一个 . NET 对 OpenCV 包的/nr 封装 人脸 检测 
+算法   j V i o l a j o 
+n e s j V i o l a j 
+o n e s 是 人脸 检测 算法 Viola Jones 
+的 一个 Java 实现 并能够 加载 OpenCV XML 文件 示例代码 
+http / / www . oschina . net / code 
+/ snippet _ 12 _ 2033Java 视觉 处理 库   
+JavaCVJavaCV 提供 了 在 计算机 视觉 领域 的 封装 库 
+包括 OpenCV ARToolKitPlus libdc1394 2 . x PGR FlyCapture 和 
+FFmpeg 此外 该 工具 可以 很容易 地 使用 Java 平台 
+的 功能 JavaCV 还 带有 硬件加速 的 全屏幕 图像 显示 
+CanvasFrame 易于 在 多个 内核 中 执行 并行 代码 并 
+. . . 运动 检测 程序   QMotionQMotion 是 一个 
+采用 OpenCV 开发 的 运动 检测 程序 基于 QT 视频 
+监控 系统   OpenVSSOpenVSS 开放 平台 的 视频 监控 系统 
+是 一个 系统 级别 的 视频 监控 软件 视频 分析 
+框架 VAF 的 视频 分析 与 检索 和 播放 服务 
+记录 和 索引 技术 它 被 设计 成 插件 式 
+的 支持 多 摄像头 平台 多 分析仪 模块 OpenCV 的 
+集成 以及 多 核心 架构 手势 识别   hand gesture 
+detection 手势 识别 用 OpenCV 实现 人脸 检测 识别   
+mcvai tracking 提供 人脸 检测 识别 与 检测 特定 人脸 
+的 功能 示例代码 cvReleaseImage & gray c v R e 
+l e a s e M e m t o 
+r a g e & storage c v R e 
+l e a s e H a a r C 
+l a s s i f i e r C 
+a s c a d e & cascade . . 
+. 人脸 检测 与 跟踪 库   asmlibraryActive Shape Model 
+Library ASMLibrary © SDK 用 OpenCV 开发 用于 人脸 检测 
+与 跟踪 Lua 视觉 开发 库   libecvECV 是 lua 
+的 计算机 视觉 开发 库 目前 只 提供 linux 支持 
+OpenCV 的 . Net 封装   O p e n 
+C V h a r p O p e n 
+C V h a r p 是 一个 OpenCV 的 
+. Net wrapper 应用 最新 的 OpenCV 库 开发 使用 
+习惯 比 EmguCV 更 接近 原始 的 OpenCV 有 详细 
+的 使用 样例 供参考 3D 视觉 库   fvision2010 基于 
+OpenCV 构建 的 图像 处理 和 3D 视觉 库 示例代码 
+I m a g e e q u e n 
+c e R e a d e r F a 
+c t o r y factory I m a g 
+e e q u e n c e R e 
+a d e r * reader = factory . pathRegex 
+c / a / im _ % 03d . jpg 
+0 20 / / I m a g e e 
+q u e n c e R e a d 
+e r * reader = factory . avi a . 
+avi if reader = = NULL { . . . 
+基于 QT 的 计算机 视觉 库   QVision 基于 QT 
+的 面向 对象 的 多平台 计算机 视觉 库 可以 方便 
+的 创建 图形化 应用程序 算法 库主 要从 OpenCV GSL CGAL 
+IPP Octave 等 高性能 库 借鉴 而来 图像 特征提取   
+cvBlobcvBlob 是 计算机 视觉 应用 中 在 二 值 图像 
+里 寻找 连通 域 的 库 . 能够 执行 连通 
+域 分析 与 特征提取 . 实时 图像 / 视频处理 滤波 
+开发包   GShowGShow is a real time image / video 
+processing filter development kit . It successfully integrates DirectX11 with 
+DirectShow framework . So it has the following features GShow 
+是 实时 图像 / 视频 处理 滤波 开发包 集成 DiretX11 
+. . . 视频 捕获 API   VideoManVideoMan 提供 一组 
+视频 捕获 API 支持 多种 视频流 同时 输入 视频 传输线 
+USB 摄像头 和 视频 文件 等 能 利用 OpenGL 对 
+输入 进行 处理 方便 的 与 OpenCV CUDA 等 集成 
+开发 计算机 视觉 系统 开放 模式识别 项目   OpenPRPattern Recognition 
+project 开放 模式识别 项目 致力 于 开发 出 一套 包含 
+图像处理 计算机 视觉 自然语言 处理 模式识别 机器 学习 和 相关 
+领域 算法 的 函数库 OpenCV 的 Python 封装   pyopencvOpenCV 
+的 Python 封装 主要 特性 包括 提供 与 OpenCV 2 
+. x 中 最新 的 C + + 接口 极为 
+相似 的 Python 接口 并且 包括 C + + 中 
+不 包括 的 C 接口 提供 对 OpenCV 2 . 
+x 中 所有 主要 部件 的 绑定 CxCORE almost complete 
+CxFLANN complete Cv complete CvAux C + + part almost 
+. . . 视觉 快速 开发平台   qcv 计算机 视觉 
+快速 开发平台 提供 测试 框架 使 开发 者 可以 专注 
+于 算法 研究 图像 捕获   libv4l2cam 对 函数库 v412 
+的 封装 从 网络 摄像头 等 硬件 获得 图像 数据 
+支持 YUYV 裸 数据 输出 和 BGR24 的 OpenCV   
+  IplImage 输出 计算机 视觉 算法   O p e 
+n V I D I A O p e n 
+V I D I A projects implement computer vision algorithms 
+running on on graphics hardware such as single or multiple 
+graphics processing units GPUs using OpenGL Cg and CUDA C 
+. Some samples will soon support OpenCL and Direct Compute 
+API & apos . . . 高斯 模型 点 集 
+配 准 算法   gmmreg 实现 了 基于 混合 高斯 
+模型 的 点 集 配 准 算法 该 算法 描述 
+在 论文 A Robust Algorithm for Point Set Registration Using 
+Mixture of Gaussians Bing Jian and Baba C . Vemuri 
+. 实现 了 C + + / Matlab / Python 
+接口 . . . 模式识别 和 视觉 库   RAVLRecognition 
+And Vision Library RAVL 是 一个 通用 C + + 
+库 包含 计算机 视觉 模式识别 等 模块 图像 处理 和 
+计算机 视觉 常用 算 法库   LTI LibLTI Lib 是/v 
+一个/m 包含/v 图像/n 处理/v 和/c 计算机/n 视觉/n 常用/b 算法/n 和/c 
+数据/n 结构/n 的/uj 面向对象/n 库/n 提供 Windows 下 的 VC 
+版本 和 Linux 下 的 gcc 版本 主要 包含 以下 
+几 方面 内容 1 线性代数 2 聚类分析 3 图像处理 4 
+可视化 和 绘图 工具 OpenCV 优化   opencv dsp acceleration 
+优化 了 OpenCV 库 在 DSP 上 的 速度 C 
++ + 计算机 视觉 库   Integrating Vision T o 
+o l k i t I n t e g 
+r a t i n g Vision Toolkit IVT 是 
+一个 强大 而 迅速 的 C + + 计算机 视觉 
+库 拥有 易用 的 接口 和 面向 对象 的 架构 
+并且 含 有 自己 的 一套 跨平台 GUI 组件 另外 
+可以 选择 集成 OpenCV 计算机 视觉 和 机器人 技术 的 
+工具包   EGTThe Epipolar Geometry Toolbox EGT is a toolbox 
+designed for Matlab by Mathworks Inc . . EGT provides 
+a wide set of functions to approach computer vision and 
+robotics problems with single and multiple views and with different 
+vision se . . . OpenCV 的 扩展 库   
+I m a g e N e t s I 
+m a g e N e t s 是 对 
+OpenCV 的 扩展 提供 对 机器人 视觉 算法 方面 友好 
+的 支持 使用 Nokia 的 QT 编写 界面 libvideogfx 视频处理 
+计算机 视觉 和 计算机 图形学 的 快速 开发 库 Matlab 
+计算机 视觉 包 /nr mVisionMatlab 的 计算机 视觉 包 包含 用于 
+观察 结果 的 GUI 组件 貌似 也 停止 开发 了 
+拿来 做 学习 用 挺 不错 的 Scilab 的 计算机 
+视觉 库   SIPSIP 是 Scilab 一种 免费 的 类 
+Matlab 编程 环境 的 图像 处理 和 计算机 视觉 库 
+SIP 可以 读写 JPEG / PNG / BMP 格式 的 
+图片 具备 图像 滤波 分割 边缘 检测 形态学 处理 和 
+形状 分析 等 功能 STAIR Vision LibrarySTAIR Vision Library SVL 
+最初 是 为 支持 斯坦福 智能 机器人 设计 的 提供 
+对 计算机 视觉 机器 学习 和 概率 统计模型 的 支持 
+SLAM 仿人 机器人 视觉 导航 图像 处理 与 计算机 视觉 
+开源 软件库 1 . OpenCv 计算机 视觉 必学 的 库 
+个人 认为 其 作用 相当 强悍 http / / opencv 
+. willowgarage . com / wiki / 2 . CVpaper 
+主页 上 推荐 的 开源 视觉 算 法库 最全 的 
+了 也 非常 新 强烈 推荐 大家 去 看看 http 
+/ / www . cvpapers . com / rr . 
+html3 . cmu 的 图像 处理 和 计算机 视觉 软件库 
+非常 全 但 有点 老了 但 都很 经典 资源 非常 
+丰富 http / / www . cs . cmu . 
+edu / ~ cil / v source . html4 . 
+在 网上 还 找到 很多 图像 处理 和 视觉 的 
+开源 软件 不过 没用过 用过 后再 陆续 更新 了 敬请期待 
+计算机 视觉 库   OpenCVOpenCV 是 Intel ® 开源 计算机 
+视觉 库 它 由 一系列 C 函数 和 少量 C 
++ + 类 构成 实现 了 图像 处理 和 计算机 
+视觉 方面 的 很多 通用 算法 OpenCV 拥有 包括 300 
+多个 C 函数 的 跨平台 的 中 高层 API 它 
+不 依赖 于 其它 的 外部 库 尽管 也 可以 
+使用 某些 外部 库 OpenCV 对 非商业 . . . 
+人脸识别   faceservice . cgifaceservice . cgi 是 一个 用来 
+进行 人脸 识别 的 CGI 程序 你 可以 通过 上传 
+图像 然后 该 程序 即 告诉 你 人脸 的 大概 
+坐标 位置 faceservice 是 采用 OpenCV 库 进行 开发 的 
+OpenCV 的 . NET 版   O p e n 
+C V D o t N e t O p 
+e n C V D o t N e t 
+是 一个 . NET 对 OpenCV 包的/nr 封装 人脸 检测 
+算法   j V i o l a j o 
+n e s j V i o l a j 
+o n e s 是 人脸 检测 算法 Viola Jones 
+的 一个 Java 实现 并能够 加载 OpenCV XML 文件 示例代码 
+http / / www . oschina . net / code 
+/ snippet _ 12 _ 2033Java 视觉 处理 库   
+JavaCVJavaCV 提供 了 在 计算机 视觉 领域 的 封装 库 
+包括 OpenCV ARToolKitPlus libdc1394 2 . x PGR FlyCapture 和 
+FFmpeg 此外 该 工具 可以 很容易 地 使用 Java 平台 
+的 功能 JavaCV 还 带有 硬件加速 的 全屏幕 图像 显示 
+CanvasFrame 易于 在 多个 内核 中 执行 并行 代码 并 
+. . . 运动 检测 程序   QMotionQMotion 是 一个 
+采用 OpenCV 开发 的 运动 检测 程序 基于 QT 视频 
+监控 系统   OpenVSSOpenVSS 开放 平台 的 视频 监控 系统 
+是 一个 系统 级别 的 视频 监控 软件 视频 分析 
+框架 VAF 的 视频 分析 与 检索 和 播放 服务 
+记录 和 索引 技术 它 被 设计 成 插件 式 
+的 支持 多 摄像头 平台 多 分析仪 模块 OpenCV 的 
+集成 以及 多 核心 架构 手势 识别   hand gesture 
+detection 手势 识别 用 OpenCV 实现 人脸 检测 识别   
+mcvai tracking 提供 人脸 检测 识别 与 检测 特定 人脸 
+的 功能 示例代码 cvReleaseImage & gray c v R e 
+l e a s e M e m t o 
+r a g e & storage c v R e 
+l e a s e H a a r C 
+l a s s i f i e r C 
+a s c a d e & cascade . . 
+. 人脸 检测 与 跟踪 库   asmlibraryActive Shape Model 
+Library ASMLibrary © SDK 用 OpenCV 开发 用于 人脸 检测 
+与 跟踪 Lua 视觉 开发 库   libecvECV 是 lua 
+的 计算机 视觉 开发 库 目前 只 提供 linux 支持 
+OpenCV 的 . Net 封装   O p e n 
+C V h a r p O p e n 
+C V h a r p 是 一个 OpenCV 的 
+. Net wrapper 应用 最新 的 OpenCV 库 开发 使用 
+习惯 比 EmguCV 更 接近 原始 的 OpenCV 有 详细 
+的 使用 样例 供参考 3D 视觉 库   fvision2010 基于 
+OpenCV 构建 的 图像 处理 和 3D 视觉 库 示例代码 
+I m a g e e q u e n 
+c e R e a d e r F a 
+c t o r y factory I m a g 
+e e q u e n c e R e 
+a d e r * reader = factory . pathRegex 
+c / a / im _ % 03d . jpg 
+0 20 / / I m a g e e 
+q u e n c e R e a d 
+e r * reader = factory . avi a . 
+avi if reader = = NULL { . . . 
+基于 QT 的 计算机 视觉 库   QVision 基于 QT 
+的 面向 对象 的 多平台 计算机 视觉 库 可以 方便 
+的 创建 图形化 应用程序 算法 库主 要从 OpenCV GSL CGAL 
+IPP Octave 等 高性能 库 借鉴 而来 图像 特征提取   
+cvBlobcvBlob 是 计算机 视觉 应用 中 在 二 值 图像 
+里 寻找 连通 域 的 库 . 能够 执行 连通 
+域 分析 与 特征提取 . 实时 图像 / 视频处理 滤波 
+开发包   GShowGShow is a real time image / video 
+processing filter development kit . It successfully integrates DirectX11 with 
+DirectShow framework . So it has the following features GShow 
+是 实时 图像 / 视频 处理 滤波 开发包 集成 DiretX11 
+. . . 视频 捕获 API   VideoManVideoMan 提供 一组 
+视频 捕获 API 支持 多种 视频流 同时 输入 视频 传输线 
+USB 摄像头 和 视频 文件 等 能 利用 OpenGL 对 
+输入 进行 处理 方便 的 与 OpenCV CUDA 等 集成 
+开发 计算机 视觉 系统 开放 模式识别 项目   OpenPRPattern Recognition 
+project 开放 模式识别 项目 致力 于 开发 出 一套 包含 
+图像处理 计算机 视觉 自然语言 处理 模式识别 机器 学习 和 相关 
+领域 算法 的 函数库 OpenCV 的 Python 封装   pyopencvOpenCV 
+的 Python 封装 主要 特性 包括 提供 与 OpenCV 2 
+. x 中 最新 的 C + + 接口 极为 
+相似 的 Python 接口 并且 包括 C + + 中 
+不 包括 的 C 接口 提供 对 OpenCV 2 . 
+x 中 所有 主要 部件 的 绑定 CxCORE almost complete 
+CxFLANN complete Cv complete CvAux C + + part almost 
+. . . 视觉 快速 开发平台   qcv 计算机 视觉 
+快速 开发平台 提供 测试 框架 使 开发 者 可以 专注 
+于 算法 研究 图像 捕获   libv4l2cam 对 函数库 v412 
+的 封装 从 网络 摄像头 等 硬件 获得 图像 数据 
+支持 YUYV 裸 数据 输出 和 BGR24 的 OpenCV   
+  IplImage 输出 计算机 视觉 算法   O p e 
+n V I D I A O p e n 
+V I D I A projects implement computer vision algorithms 
+running on on graphics hardware such as single or multiple 
+graphics processing units GPUs using OpenGL Cg and CUDA C 
+. Some samples will soon support OpenCL and Direct Compute 
+API & apos . . . 高斯 模型 点 集 
+配 准 算法   gmmreg 实现 了 基于 混合 高斯 
+模型 的 点 集 配 准 算法 该 算法 描述 
+在 论文 A Robust Algorithm for Point Set Registration Using 
+Mixture of Gaussians Bing Jian and Baba C . Vemuri 
+. 实现 了 C + + / Matlab / Python 
+接口 . . . 模式识别 和 视觉 库   RAVLRecognition 
+And Vision Library RAVL 是 一个 通用 C + + 
+库 包含 计算机 视觉 模式识别 等 模块 图像 处理 和 
+计算机 视觉 常用 算 法库   LTI LibLTI Lib 是/v 
+一个/m 包含/v 图像/n 处理/v 和/c 计算机/n 视觉/n 常用/b 算法/n 和/c 
+数据/n 结构/n 的/uj 面向对象/n 库/n 提供 Windows 下 的 VC 
+版本 和 Linux 下 的 gcc 版本 主要 包含 以下 
+几 方面 内容 1 线性代数 2 聚类分析 3 图像处理 4 
+可视化 和 绘图 工具 OpenCV 优化   opencv dsp acceleration 
+优化 了 OpenCV 库 在 DSP 上 的 速度 C 
++ + 计算机 视觉 库   Integrating Vision T o 
+o l k i t I n t e g 
+r a t i n g Vision Toolkit IVT 是 
+一个 强大 而 迅速 的 C + + 计算机 视觉 
+库 拥有 易用 的 接口 和 面向 对象 的 架构 
+并且 含 有 自己 的 一套 跨平台 GUI 组件 另外 
+可以 选择 集成 OpenCV 计算机 视觉 和 机器人 技术 的 
+工具包   EGTThe Epipolar Geometry Toolbox EGT is a toolbox 
+designed for Matlab by Mathworks Inc . . EGT provides 
+a wide set of functions to approach computer vision and 
+robotics problems with single and multiple views and with different 
+vision se . . . OpenCV 的 扩展 库   
+I m a g e N e t s I 
+m a g e N e t s 是 对 
+OpenCV 的 扩展 提供 对 机器人 视觉 算法 方面 友好 
+的 支持 使用 Nokia 的 QT 编写 界面 libvideogfx 视频处理 
+计算机 视觉 和 计算机 图形学 的 快速 开发 库 Matlab 
+计算机 视觉 包 /nr mVisionMatlab 的 计算机 视觉 包 包含 用于 
+观察 结果 的 GUI 组件 貌似 也 停止 开发 了 
+拿来 做 学习 用 挺 不错 的 Scilab 的 计算机 
+视觉 库   SIPSIP 是 Scilab 一种 免费 的 类 
+Matlab 编程 环境 的 图像 处理 和 计算机 视觉 库 
+SIP 可以 读写 JPEG / PNG / BMP 格式 的 
+图片 具备 图像 滤波 分割 边缘 检测 形态学 处理 和 
+形状 分析 等 功能 STAIR Vision LibrarySTAIR Vision Library SVL 
+最初 是 为 支持 斯坦福 智能 机器人 设计 的 提供 
+对 计算机 视觉 机器 学习 和 概率 统计模型 的 支持 

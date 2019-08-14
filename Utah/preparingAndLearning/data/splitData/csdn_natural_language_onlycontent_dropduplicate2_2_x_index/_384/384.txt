@@ -1,0 +1,37 @@
+自然语言处理相关学习资料（转）
+book
+宗成庆. 统计自然语言处理. 清华大学出版社. 2008. 此书为统计观点，适合CS背景做NLP的人读。
+2.Manning, C. D Foundations of Statistical Natural Language Processing. MIT Press. 1999.
+冯志伟. 自然语言处理的形式模型. 中国科技大学出版社. 2010. 此书讲涵盖句法、语义各个层面 ps：作者是从Linguistic角度去分析自然语言处理
+Model:
+Yoshua Bengio. A Neural Probabilistic Language Model. JMLR(2003). 2003. 神经网络语言模型的开山之作，MileStone论文，引用率634(Google Scholar)。
+Frederic Morin, Yoshua Bengio. Hierarchical Probabilistic Neural Network Language Model. Innovations in Machine Learning(2006). 2006.提出了Hierarchical NPLM
+Andriy Mnih, Geoffrey Hinton. Three New Graphical Models for Statistical Language Modelling. ICML(2007). 2007. 提出了三个Model，其中提的较多的是A Log-Bilinear Language Model，后续论文多引用此模型
+Andriy Mnih, Geoffrey Hinton. A Scalable Hierarchical Distributed Language Model. NIPS(2008). 2008. 提出HLBL
+Ronan Collobert, Jason Weston. A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning. ICML(2008). 2008. 旧瓶新酒-TDNN Multitask Learning
+Ronan Collobert Jason Weston et al.Natural Language Processing (Almost) from Scratch. JMLR(2011). 2011. 对SENNA进行解释的论文，注意SENNA要区别[5]中的C&W embedding.
+Eric H. Huang, Richard Socher, etc. ImprovingWord Representations via Global Context and MultipleWord Prototypes. ACL(2012). 2012. 此篇paper把全局信息加入模型，模型求解用了[5]中的方法
+word2vec系列paper：
+Distributed Representations ofWords and Phrases and their Compositionality
+Efficient Estimation of Word Representations in Vector Space
+word2vec Explained: Deriving Mikolov et al.’s Negative
+Sampling Word-Embedding Method 解释性的paper 发布arxiv上的，和有道那个可以一起看
+Nitish Srivastava, Ruslan Salakhutdinov,Geoffrey Hinton. Modeling Documents with a Deep Boltzmann Machine. UAI(2013). 类似于LDA的一种topic model
+RNN系列, Recurrent NN能model long term dependency, 训练出的结果比Feed Forward NN结果更好 但训练复杂度更大 这个系列word2vec作者Mikolov研究较多，比如其博士论文
+Linguistic Regularities in Continuous SpaceWord Representations
+Recurrent neural network based language model
+Recursive NN这个主要用在句法分析上，model自然语言存在的递归结构 这个主要是Richard Socher的paper
+Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank
+Parsing Natural Scenes and Natural Language with Recursive Neural Networks
+Joseph Turian, Lev Ratinov, Yoshua Bengio. Word representations: A simple and general method for semi-supervised learning. ACL(2010) 对现有的word Representation做了对比 提供一个新的word embedding 读者可以自行复现（见Section 13）。
+Jeffrey Pennington，Richard Socher, Chris Manning. GloVe: Global Vectors for Word Representation. EMNLP(2014)
+GloVe与word2vec对比的效果曾经被质疑过 其实word2vec效果差不多
+Omer Levy, Yoav Goldberg.Neural Word Embedding as Implicit Matrix Factorization. NIPS. 2014.
+将SGNS(Skip Gram with Negative Sampling)和矩阵分解等价分析，SGNS等价于分解PMI矩阵。文中作者基于谱方法（SVD）分解shifted PPMI的矩阵，得到了不错的效果（word sim上和word2vec类似）。作者还在arxiv提交了一个分析SGNS的note，结合看更加。
+Q.V. Le, T. Mikolov.Distributed Representations of Sentences and Documents.ICML(2014). 2014. 文中各个实验都体现了好的效果，但是可复现性一直遭到质疑，最近在word2vec的google group上公布了复现方法，已经有人复现出92.6%的结果。
+Tutorial：
+Tomas Mikolov. Statistical Language Models Based on Neural Networks
+Richard Socher. Recursive Deep Learning for Modeling Semantic Compositionality
+Ruchard Socher, Christpher Manning. Deep Learning for Natural Language Processing (without Magic)
+Evaluation：
+Yanqing Chen, etc. The Expressive Power of Word Embeddings. ICML(2013). 实验评价了四个model–HLBL[4],SENNA[11],Turian’s[12], Huang’s[6].

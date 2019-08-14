@@ -1,0 +1,86 @@
+Index
+Awesome
+备注
+1
+Awesome Machine Learning
+机器学习资源大全中文版
+2
+Awesome Artificial Intelligence
+人工智能
+3
+Awesome Awesomeness
+Awesome
+Awesome的平方，
+还有个立方但是不经典
+4
+Awesome Deep Learning
+深度学习
+5
+Awesome Very Deep Learning
+非常深的深度学习
+6
+Applied Deep Learning Resources
+深度学习应用相关资源
+7
+Deep Learning Applications
+深度学习相关应用
+8
+Awesome Deep Vision
+深度视觉
+9
+100 Best GitHub: Deep Learning
+深度学习百佳GitHub，不只是代码
+10
+Top Deep Learning Projects
+按照GitHub星数排名的DL项目
+11
+Awesome – Most Cited Deep Learning Papers
+引用最多的深度学习文章
+12
+100 Best Deep Learning Videos
+深度学习百佳视频
+13
+Machine Learning & Deep Learning Tutorials
+百佳机器学习深度学习指南
+14
+Awesome RNN
+RNN
+15
+Awesome Torch
+Torch
+16
+Awesome TensorFlow
+TensorFlow
+17
+Awesome Tensorflow Implementations
+Tensorflow实现
+18
+Deep Learning for NLP resources
+深度学习自然语言处理相关资源
+19
+Awesome NLP
+自然语言处理
+20
+Speech and Natural Language Processing
+语音和自然语言处理
+21
+Awesome 2Vec
+深度学习 2Vec 系列
+22
+Awesome Computer Vision
+计算机视觉
+23
+Awesome Big Data
+大数据
+24
+Awesome Data Science
+数据科学
+25
+Awesome Random Forest
+随机森林
+26
+Awesome Public Datasets
+公开数据集
+27
+Awesome Reinforcement Learning
+强化学习

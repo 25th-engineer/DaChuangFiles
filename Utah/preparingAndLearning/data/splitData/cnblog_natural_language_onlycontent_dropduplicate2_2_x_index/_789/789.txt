@@ -1,0 +1,15 @@
+问题：长期以来MYSQL搜索对于中文来说不太理想，InnoDB引擎对FULLTEXT索引的支持是MySQL5.6新引入的特性，但是用“初级”一词在“我是一名初级开发者”搜索时是无法出现结果的，原因在于搜索是以空格来分词。因此仅能由第三方插件来完成搜索任务。在MySQL 5.7.6中我们能使用一个新的全文索引插件来处理它们：n-gram parser.
+1 安装环境，推荐使用最新的MYSQL https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.18-winx64.zip
+2 ngram_token_size=2 #用中文检索分词插件ngram之前，先得在MySQL配置文件里面设置他的分词大小.
+例词  '信息系统' 在设置为不同值时的分词情况
+ngram_token_size=1 : '信', '息', '系', '统'
+ngram_token_size=2 : '信息', '息系', '系统';
+ngram_token_size=3 : '信息系', '息系统';
+ngram_token_size=4 : '信息系统';
+查看指定全文检索表源（仅查看分词情况，可不做，不影响索引）
+set global innodb_ft_aux_table='db/table'; 　　　　SELECT * FROM information_schema.`INNODB_FT_INDEX_TABLE`;
+3 全文索引建立
+a 新建
+CREATE TABLE table( `id` int(11) DEFAULT NULL, `name` varchar(512) DEFAULT NULL, `content` text, FULLTEXT KEY idx_name(name), FULLTEXT KEY idx_content(content) WITH PARSER ngram ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+b 修改
+ALTER TABLE `table` ADD FULLTEXT (`content`) WITH PARSER ngram;

@@ -1,0 +1,892 @@
+1 最有 影响力 的 30篇 计算机 视觉 会 议论文 选取 
+论文 的 原则 1 会 议论文 主要 来源于 以下 会议 
+CVPR ICCV ECCV BMVC FG ICIP ICPR WACV ICASSP MM 
+IJCAI UAI AAAI 其实 后面 的 几个 会议 都是/nr 打酱油 
+的 AI/w 类/q 的/uj 期刊/n 也/d 木/n 有/v 高引/nr CV/w 
+文章/n 事实 也 是 如此 没有 收录 ICML 和 NIPS 
+等 见谅 2 发表 在 2000年 以后 数据 来源 于 
+微软 学术 搜索 http / / academic . research . 
+microsoft . com / 2012年 12 月初 的 检索 结果 
+3 检索 次数 大于 200 PER 50 微软 学术 搜索 
+的 被 检索 次数 未必 精确 但能 反应 大概 趋势 
+PER 指 意味着 每年 检索 量 自 发表 次年 算到 
+2012年 PER = Cited / 2012 YEAR 榜单 Top 30 
+如下 欢迎 拾遗补缺 1       Rapid Object Detection 
+using a Boosted Cascade of Simple Features   Citations 3296 
+PER = 299.64 Paul A . Viola   Michael J 
+. Jones   @ CVPR   vol . 1 pp 
+. 511 518 2001 2       Histograms of 
+Oriented Gradients for Human Detection   Citations 1704 PER = 
+243.43 Navneet Dalal   Bill Triggs   @ CVPR   
+vol . 1 pp . 886 893 2005 3   
+    SURF Speeded Up Robust Features   Citations 1054 
+PER = 175.67 Herbert Bay   Tinne Tuytelaars   Luc 
+J . Van Gool   @ ECCV   pp . 
+404 417 2006 4       Beyond Bags of 
+Features Spatial Pyramid Matching for Recognizing Natural Scene Categories   
+Citations 873 PER = 145.5 Svetlana Lazebnik   Cordelia Schmid 
+  Jean Ponce   @ CVPR   vol . 2 
+pp . 2169 2178 2006 5       Object 
+Class Recognition by Unsupervised   Scale Invariant Learning   Citations 
+1071 PER = 119 Robert Fergus   Pietro Perona   
+Andrew Zisserman   @ CVPR   vol . 2 pp 
+. 264 271 2003 6       Robust Real 
+Time Face Detection   Citations 1092 PER = 99.27 Paul 
+A . Viola   Michael J . Jones   @ 
+  ICCV   2001 7       A Bayesian 
+hierarchical model for learning natural scene categories   Citations 677 
+PER = 96.71 Fei Fei Li   Pietro Perona   
+@ CVPR   vol . 2 pp . 524 531 
+2005 8       Scalable Recognition with a Vocabulary 
+Tree   Citations 570 PER = 95 David Nist é 
+r   Henrik Stew é nius   @ CVPR   
+vol . 2 pp . 2161 2168 2006 9   
+    Real Time Tracking of Non Rigid Objects Using 
+Mean Shift   Citations 1132 PER = 94.33 Dorin Comaniciu 
+  Visvanathan Ramesh   Peter Meer   @ CVPR   
+vol . 2 pp . 2142 149 vol . 2 
+2000 10 Visual Categorization with Bags of Keypoints   Citations 
+745 PER = 93.13 Gabriella Csurka   Christopher R . 
+Dance   Lixin Fan etc @ ECCV   2004 11 
+Video Google A Text Retrieval Approach to Object Matching in 
+Videos   Citations 790 PER = 87.78 Josef Sivic   
+Andrew Zisserman   @   ICCV   pp . 1470 
+1477 2003 12 What Energy Functions Can Be Minimized via 
+Graph Cuts   Citations 842 PER = 84.2 Vladimir Kolmogorov 
+  Ramin Zabih   @ ECCV   pp . 65 
+81 2002 13 Overview of the Face Recognition Grand Challenge 
+  Citations 578 PER = 82.57 P . Jonathon Phillips 
+  Patrick J . Flynn   W . Todd Scruggs 
+etc @ CVPR   vol . 1 pp . 947 
+954 2005 14 Robust wide baseline stereo from maximally stable 
+extremal regions   Citations 810 PER = 81 Jiri Matas 
+  Ondrej Chum   Martin Urban   etc   @ 
+BMVC   vol . 1 2002 15 PCA SIFT A 
+More Distinctive Representation for Local Image Descriptors   Citations 639 
+PER = 79.88 Yan Ke   Rahul Sukthankar   @ 
+CVPR   vol . 2 pp . 506 513 2004 
+16 Interactive Graph Cuts for Optimal Boundary and Region Segmentation 
+of Objects in ND Images   Citations 796 PER = 
+72.36 Yuri Y . Boykov   Marie pierre Jolly   
+@   ICCV   pp . 105 112 2001 17 
+An extended set of Haar like features for rapid object 
+detection   Citations 710 PER = 71 Rainer Lienhart   
+Jochen Maydt   @ ICIP   vol . 1 pp 
+. 900 903 2002 18 A Database of Human Segmented 
+Natural Images and its Application to Evaluating Segmentation Algorithms and 
+Measuring Ecological Statistics Citations 750 PER = 68.18 David R 
+. Martin   Charless Fowlkes   Doron Tal   etc 
+  @   ICCV   pp . 416 425 2001 
+19 Detecting Pedestrians Using Patterns of Motion and Appearance   
+Citations 584 PER = 64.89 Paul A . Viola   
+Michael J . Jones   Daniel Snow   @   
+ICCV   pp . 734 741 2003 20 Object Recognition 
+as Machine Translation Learning a Lexicon for a Fixed Image 
+Vocabulary   Citations 603 PER = 60.3 Pinar Duygulu   
+Kobus Barnard   Jo ã o F . G . 
+De Freitas   etc   @ ECCV   pp . 
+97 112 2002 21 Real Time Simultaneous Localisation and Mapping 
+with a Single Camera   Citations 527 PER = 58.56 
+Andrew J . Davison   @   ICCV   pp 
+. 1403 1410 2003 22 Recognizing Human Actions A Local 
+SVM Approach   Citations 440 PER = 55 Christian Sch 
+ü ldt   Ivan Laptev   Barbara Caputo   @ 
+ICPR   pp . 32 36 2004 23 Actions as 
+Space Time Shapes   Citations 379 PER = 54.14 Moshe 
+Blank   Lena Gorelick   Eli Shechtman etc @   
+ICCV   vol . 2 pp . 1395 1402 2005 
+24 A Discriminatively Trained Multiscale Deformable Part Model   Citations 
+215 PER = 53.75 Pedro F . Felzenszwalb   David 
+A . Mcallester   Deva Ramanan   @ CVPR   
+pp . 1 8 2008 25 Non parametric Model for 
+Background Subtraction   Citations 642 PER = 53.5 Ahmed M 
+. Elgammal   David Harwood   Larry . Davis   
+@ ECCV   pp . 751 767 2000 26 A 
+Comparison and Evaluation of Multi View Stereo Reconstruction Algorithms   
+Citations 318 PER = 53 Steven M . Seitz   
+Brian Curless   James Diebel etc @ CVPR   vol 
+. 1 pp . 519 528 2006 27 Comprehensive Database 
+for Facial Expression Analysis   Citations 636 PER = 53 
+Takeo Kanade   Yingli Tian   Jeffrey F . Cohn 
+  @ FG   pp . 46 53 2000 28 
+Learning Realistic Human Actions from Movies   Citations 211 PER 
+= 52.75 Ivan Laptev   Marcin Marszalek   Cordelia Schmid 
+  etc   @ CVPR   pp . 1 8 
+2008 29 Object Retrieval with Large Vocabularies and Fast Spatial 
+Matching   Citations 258 PER = 51.6 James Philbin   
+Ondrej Chum   Michael Isard etc @ CVPR   2007 
+30 Statistical Shape Influence in Geodesic Active Contours   Citations 
+616 PER = 51.33 Michael E . Leventon   W 
+. Eric L . Grimson   Olivier D . Faugeras 
+  @ CVPR   vol . 1 pp . 1316 
+1323 2000 简单 小结 总共 30篇 会议 文章 其中 CVPR 
+14篇 ECCV 5篇 ICCV 7篇 BMVC FG ICIP ICPR 各 
+1篇 每年 发表 的 论文 数 如图所示 个人 比较 关注 
+3 个 方面 1 检测 Detection 比如 基于 Harr like 
+的 Viola Jones 的 3 篇文章 1 6 19 还有 
+17 基于 HOG 的 2 以及 在 PASCAL VOC 上 
+大放 光芒 的 DPM 24 2 基于 Bag of Words 
+Features 和/c LDA/w 的/uj 图像/n 检索/vn Retrieval/w 和/c 类别/n 学习/v 
+Categorization/w 比如 基于 BoW 的 10 11 之后 的 8 
+29 以及 非常 流行 的 SPM 4 基于 LDA 的 
+7 等 3 特征 Features 比如说 提到 的 Harr like 
+SURF 3 HOG 2 MSER 14 PCA SIFT 15 等 
+值得 注意 的 是 排在 前面 的 大部分 作者 都是 
+CV 界 的 成名 人物 非常 值得 关注 他们 的 
+其他 一些 论文 PS 12 的 作者 Ramin Zabih 从 
+TPAMI 的 主编 位置 上 退下 20 的 作者 David 
+Forsyth 成为 TPAMI 新的 掌舵者 大家 有 什么 看法 最后 
+额外 推荐 几篇 ML 的 方法 来自/v 于/p ICML/w 和/c 
+NIPS/w 1     Reinforcement learning An introduction   Citations 
+5592 Richard . Sutton   Andrew G . Barto   
+@ NIPS   vol . 9 no . 5 pp 
+. 1054 1054 1998 2       Experiments with 
+a New   Boosting Algorithm   Citations 2489 Yoav Freund 
+  Robert E . Schapire   @ ICML   pp 
+. 148 156 1996 3     Conditional Random Fields 
+Probabilistic Models for Segmenting and Labeling Sequence Data   Citations 
+2436 John D . Lafferty   Andrew McCallum   Fernando 
+C . N . Pereira   @ ICML   pp 
+. 282 289 2001 4       Latent Dirichlet 
+Allocation   Citations 1548 David M . Blei   Andrew 
+Y . Ng   Michael I . Jordan   @ 
+NIPS   pp . 601 608 2001 5     
+  On   Spectral Clustering Analysis and an algorithm   
+Citations 1230 Andrew Y . Ng   Michael I . 
+Jordan   Yair Weiss   @ NIPS   pp . 
+849 856 2001 6       Algorithms for   
+Nonnegative Matrix Factorization   Citations 1162 Daniel D . Lee 
+  H . Sebastian Seung   @ NIPS   vol 
+. 13 pp . 556 562 2000 7     
+  Semi Supervised Learning Using Gaussian Fields and Harmonic Functions 
+  Citations 665 Xiaojin Zhu   Zoubin Ghahramani   John 
+D . Lafferty   @ ICML   pp . 912 
+919 20032   最有 影响力 的 20篇 计算机 视觉 期刊论文 
+选取 论文 的 原则 1 期刊论文 主要 来源于 以下 期刊 
+TPAMI IJCV TIP CVIU IVC MVA PR JMIV IJPRAI 2 
+发表 在 2000年 以后 3 SCI 检索 次数 大于 1000 
+来源于 Web of Science 数据库 2012年 12 月初 的 检索 
+结果 Top 20 榜单 原文 请见 http / / www 
+. cnblogs . com / youth0826 / archive / 2012/12 
+/ 04/2801481 . html 看了 一下 这 20篇 博文 总体上 
+感觉 很 熟悉 很多 文章 确实 是 视觉 领域 2000年 
+以来 的 重要 工作 于是 就很 想聊 一下 自己 的 
+看法 和 大家 交流 我 简单 按照 所属 领域 划分 
+统计 了 一下 其中 与 人脸 检测 识别 直接 相关 
+的 有 3篇 间接 相关 的 1篇 直接 相关 的 
+包括 7 基于 adaboost 的 人脸 检测 19 人脸 检测 
+的 综述 12 经典 的 人脸 识别 测试 集 FERET 
+的 说明 间接 相关 的 是 AAM AAM 是 人脸 
+alignment 的 最 经典 文章 但是 由于 其 提出 时并/nr 
+没有 现 定于 人脸 所以 划分为 间接 相关 与 局部 
+描述 子 直接 相关 的 有 3篇 分别 是 1 
+sift 15 local descriptor 的 综述 17 LBP 与 立体 
+视觉 相关 的 有 3篇 9 摄像机 标注 方法 10 
+图像 配 准 综述 14 这 篇 文章 我 不熟悉 
+所以 这样 划分 是否 合理 也 不是 很 确信 与 
+图像 分割 直接 相关 的 有 2篇 间接 相关 的 
+有 1篇 直接 相关 的 包括 2 normlized cut 13 
+graph cut 的 应用 间接 相关 的 是 4 mean 
+shift mean shfit 可以 应用于 图像 分割 也 可以 应用于 
+目标 跟踪 算是 间接 相关 与 物体 检测 跟踪 为了 
+简单 把 检测 和 跟踪 划分 到 一起 其实 这 
+两类 方法 在 思路 上 差别 很大 单独 划分 更 
+合理 但是 从 功能 角度 确实 很 相似 直接 相关 
+的 2篇 间接 相关 的 有 1篇 3 基于 轮廓 
+的 物体 检测 方法 16 基于 kernel 的 tracking 方法 
+一篇 是 检测 一篇 是 跟踪 而 基于 mean shift 
+的 跟踪 方法 是 particle filter 之前 最 经典 的 
+方法 算是 间接 相关 与 图像 检索 匹配 相关 的 
+文章 2篇 6 综述 11 shape context 此外 还包括 一篇 
+统计 模式识别 的 综述 8 一篇 图像 质量 评估 的 
+方法 5 行为 识别 18 一篇 关于 行为 识别 的 
+系统 的 文章 用到 了 跟踪 摄像机 标定 行为 识别 
+等 其中 mean shift 被 计算 了 两次 所以 和是/nr 
+21篇 按照 每个 领域 的 文章 数量 由 多到 少 
+的 顺序 我 讲 一下 自己 的 观点 人脸识别 领域 
+的 论文 出现 次数 最多 这 可能 和我/nr 自己 重点 
+关注 人脸识别 领域 有关 是 让 我 比较 意外 的 
+不过 这 说明 从 2000年 开始 人脸识别 方法 得到 了 
+大家 的 重点 关注 是 视觉 领域 的 一个 热点 
+这 几篇 文章 中 viola 的 基于 adaboost + haar 
+的 人脸 检测 方法 是 经典 中 的 经典 其 
+思想 不仅 被 广泛 应用于 物体 检测 领域 同时 在 
+启发 了 狠 多 特征选择 领域 的 工作 同时 也 
+帮助 adaboost 一跃 成为 和 svm 并列 的 两 大 
+machine learning 利器 我 一直 认为 这 篇文章 和和 lowe 
+的 sift 都是 视觉 领域 工程 方面 的 经典之作 而 
+AAM 方法 也 是 十分 重要 的 模型 尤其 是 
+对于 脸部 特征点 定位 而言 基于 aam 的 改进 工作 
+极大 促进 了 特征点 定位 的 精度 其实 这种 全局 
+形状 约束 + 局部 表观 模型 的 思路 在 其他 
+如 物体 检测 领域 也 有 很多 类似 思路 局部 
+描述 子 基本上 是 视觉 领域 表示 方面 十年 来 
+最大 的 一个 亮点 和 趋势 我们 知道 模式识别 包含 
+两 个 方面 的 内容 一个 是 特征提取 用于 提供 
+更有 鉴别力 的 表示 一个 是 机器学习 用来 对于 特征 
+表示 之后 的 数据 上 学习 得到 分类 模型 而 
+局部 描述 子 已经 成 为特征 表示 的 一个 共识 
+无论是 物体 匹配 检索 物体 检测 识别 采用 多种 局部 
+描述 子 表示 已经 成为 基本 选择 而 这 其中 
+sift 无疑 是 影响 最大 的 工作 之一 其 在 
+物体 匹配 物体 检索 物体 检测 物体/n 识别/v 等/u 领域/n 
+都有/nr 大量/n 应用/v 而 LBP 特征 作为 一种 局部 描述 
+特征 是 继 Gabor 之后 最 重要 的 纹理 描述 
+特征 当然 sift 的 变种 hog 也是 之一 其 有 
+很多 变种 在 人脸识别 物体 检测 目标 分类 领域 也 
+得到 了 大量 应用 立体 视觉 我 不熟悉 我 就不 
+献丑 了 对于/p 9/m 和/c 14两/mq 篇/q 文章/n 有/v 这么/r 
+高的引/nr 用率/n 不 知道 谁能 讲讲 背后 的 背景 图像 
+分割 可以 通过 将 分割 问题 看作 是 一个 分组 
+问题 然后 定义 一个 优化 目标 通过 最 优化 这个 
+目标 来 得到 最优 的 模型 参数 而 graph cut 
+是 将 每个 pixel 看作 图中 的 一个 节点 将 
+图像 分割 转化 为 一个 图 分割 问题 而 graph 
+cut 是 通过 最小 分割 和 最小 流来 得到 一个 
+最优 模型 2 normlized cut 是 为了 克服 graph cut 
+的 缺点 的 一种 改进 第/m 2/m 高的引/nr 用率/n 应该/v 
+说明/v 这种/r 方法/n 可以/c 应用/v 于/p 很多/m 领域/n 包括 图像 
+分割 和聚类/nr 物体 检测 跟踪 领域 是 一个 十分 活跃 
+的 领域 而/c 3/m 和/c 16/m 有/v 这么/r 高的引/nr 用率/n 
+很/zg 出乎/v 我/r 的/uj 意料/n 因为 这 两种 思路 在 
+最近 基本 都 不算 是 主流 思路 也许 是 当年 
+曾经 火 过 一段 时间 吧 物体 检测 识别 的 
+经典 思路 应该 有 两种 一种 是 基于 滑动 窗口 
+搜索 的 就是 viola 人脸 检测 文章 中 使用 过 
+的 后来 有 基于 hog + svm 的 行人 检测 
+的 经典 论文 也 是 相近 的 框架 还有 一种 
+是 基于 图像 全局 表示 的 经典 的 方法 是 
+基于 bag of word 的 方法 在 图像 检测 图像 
+分类 图像/n 检索/vn 等/u 领域/n 都有/nr 重要/a 应用/v 而 跟踪 
+的 方法 比较 经典 的 包括 基于 mean shift 的 
+方法 基于 particle filter 的 方法 以及 基于 online learning 
+的 方法 而 后来 的 发展 也 越来越 将 detection 
+和 tracking 结合 到 一起 将 二者 结合 到 一个 
+框架 其本质 思想 就是 把 tracking 看作 是 一个 区分 
+前景 目标 和 背景 目标 的 分类 问题 而 detection 
+提供 了 前景 目标 的 off line 模型 tracking 提供 
+了 on line 模型 这个 领域 论文 很多 有 一篇 
+综述 写得 还不错 图像 检索 是 当前 视觉 领域 一个 
+十分 热 的 方向 在 搜索引擎 购物 等 领域 受到 
+很多 关注 而 6 和 11 远远 不能 涵盖 这个 
+领域 的 经典 11 是 早期 物体 匹配 的 经典 
+方法 但是 现在 用 的 已经 很少 而 这 方面 
+的 最 经典 工作 还 应该 是 基于 bag of 
+word 的 工作 这个工作 借鉴 了 文字 搜索 领域 的 
+工作 通过 视觉 词 将 图像 转化 为 类似 文字 
+中 的 文章 视觉 特 征用 视觉 词频 表示 然后 
+通过 倒排 的 方式 使得 大 规模 图像 检索 成为可能 
+其它 的 三 篇文章 8 作为 综述 确实 没有 什么 
+疑问 5/m 有/v 这么/r 高的/nr 引用/v 我 有点 迷惑 图像 
+质量 评估 虽然 在 实际 中 十分 重要 但是 是个 
+不太 活跃 的 领域 有/v 这么/r 高的/nr 应用/v 有点/n 意外/a 
+18 的 工作 比较 早 当时 能 提出 基于 跟踪 
+摄像机 标定 行为 识别 和 事件 检测 这样 的 框架 
+确实 有 很棒 的 前瞻性 可能 是 因为 近几年 智能 
+视频 监控 应用 火热 之后 做 这个 方向 的 工作 
+多 起来 的 原因 吧 一点 建议 1 建议 将 
+综述 排除 出去 20篇 论文 里 面有 5篇 综述 虽然 
+综述 很重要 5篇 也 不是 很多 但是 在 引用 次数 
+上 综述 确实会 占 很大 便宜 建议 将 综述 排除 
+出去 只对 提出 新 方法 的 文章 单独 排名 才能 
+让 大家 对 哪些 新 方法 的 影响力 最广 更 
+了解 2 我 不 知道 这个 排名 方法 是否 存在 
+瑕疵 或者 是 数据 是否 完全 正确 因为 我 觉得 
+从 目前 的 结论 来看 这 20篇 文章 还 不能 
+算是 最 有 影响力 的 20篇 原文 https / / 
+blog . csdn . net / tiandijun / article / 
+details / 48949463 1 最有 影响力 的 30篇 计算机 视觉 会 议论文 选取 
+论文 的 原则 1 会 议论文 主要 来源于 以下 会议 
+CVPR ICCV ECCV BMVC FG ICIP ICPR WACV ICASSP MM 
+IJCAI UAI AAAI 其实 后面 的 几个 会议 都是/nr 打酱油 
+的 AI/w 类/q 的/uj 期刊/n 也/d 木/n 有/v 高引/nr CV/w 
+文章/n 事实 也 是 如此 没有 收录 ICML 和 NIPS 
+等 见谅 2 发表 在 2000年 以后 数据 来源 于 
+微软 学术 搜索 http / / academic . research . 
+microsoft . com / 2012年 12 月初 的 检索 结果 
+3 检索 次数 大于 200 PER 50 微软 学术 搜索 
+的 被 检索 次数 未必 精确 但能 反应 大概 趋势 
+PER 指 意味着 每年 检索 量 自 发表 次年 算到 
+2012年 PER = Cited / 2012 YEAR 榜单 Top 30 
+如下 欢迎 拾遗补缺 1       Rapid Object Detection 
+using a Boosted Cascade of Simple Features   Citations 3296 
+PER = 299.64 Paul A . Viola   Michael J 
+. Jones   @ CVPR   vol . 1 pp 
+. 511 518 2001 2       Histograms of 
+Oriented Gradients for Human Detection   Citations 1704 PER = 
+243.43 Navneet Dalal   Bill Triggs   @ CVPR   
+vol . 1 pp . 886 893 2005 3   
+    SURF Speeded Up Robust Features   Citations 1054 
+PER = 175.67 Herbert Bay   Tinne Tuytelaars   Luc 
+J . Van Gool   @ ECCV   pp . 
+404 417 2006 4       Beyond Bags of 
+Features Spatial Pyramid Matching for Recognizing Natural Scene Categories   
+Citations 873 PER = 145.5 Svetlana Lazebnik   Cordelia Schmid 
+  Jean Ponce   @ CVPR   vol . 2 
+pp . 2169 2178 2006 5       Object 
+Class Recognition by Unsupervised   Scale Invariant Learning   Citations 
+1071 PER = 119 Robert Fergus   Pietro Perona   
+Andrew Zisserman   @ CVPR   vol . 2 pp 
+. 264 271 2003 6       Robust Real 
+Time Face Detection   Citations 1092 PER = 99.27 Paul 
+A . Viola   Michael J . Jones   @ 
+  ICCV   2001 7       A Bayesian 
+hierarchical model for learning natural scene categories   Citations 677 
+PER = 96.71 Fei Fei Li   Pietro Perona   
+@ CVPR   vol . 2 pp . 524 531 
+2005 8       Scalable Recognition with a Vocabulary 
+Tree   Citations 570 PER = 95 David Nist é 
+r   Henrik Stew é nius   @ CVPR   
+vol . 2 pp . 2161 2168 2006 9   
+    Real Time Tracking of Non Rigid Objects Using 
+Mean Shift   Citations 1132 PER = 94.33 Dorin Comaniciu 
+  Visvanathan Ramesh   Peter Meer   @ CVPR   
+vol . 2 pp . 2142 149 vol . 2 
+2000 10 Visual Categorization with Bags of Keypoints   Citations 
+745 PER = 93.13 Gabriella Csurka   Christopher R . 
+Dance   Lixin Fan etc @ ECCV   2004 11 
+Video Google A Text Retrieval Approach to Object Matching in 
+Videos   Citations 790 PER = 87.78 Josef Sivic   
+Andrew Zisserman   @   ICCV   pp . 1470 
+1477 2003 12 What Energy Functions Can Be Minimized via 
+Graph Cuts   Citations 842 PER = 84.2 Vladimir Kolmogorov 
+  Ramin Zabih   @ ECCV   pp . 65 
+81 2002 13 Overview of the Face Recognition Grand Challenge 
+  Citations 578 PER = 82.57 P . Jonathon Phillips 
+  Patrick J . Flynn   W . Todd Scruggs 
+etc @ CVPR   vol . 1 pp . 947 
+954 2005 14 Robust wide baseline stereo from maximally stable 
+extremal regions   Citations 810 PER = 81 Jiri Matas 
+  Ondrej Chum   Martin Urban   etc   @ 
+BMVC   vol . 1 2002 15 PCA SIFT A 
+More Distinctive Representation for Local Image Descriptors   Citations 639 
+PER = 79.88 Yan Ke   Rahul Sukthankar   @ 
+CVPR   vol . 2 pp . 506 513 2004 
+16 Interactive Graph Cuts for Optimal Boundary and Region Segmentation 
+of Objects in ND Images   Citations 796 PER = 
+72.36 Yuri Y . Boykov   Marie pierre Jolly   
+@   ICCV   pp . 105 112 2001 17 
+An extended set of Haar like features for rapid object 
+detection   Citations 710 PER = 71 Rainer Lienhart   
+Jochen Maydt   @ ICIP   vol . 1 pp 
+. 900 903 2002 18 A Database of Human Segmented 
+Natural Images and its Application to Evaluating Segmentation Algorithms and 
+Measuring Ecological Statistics Citations 750 PER = 68.18 David R 
+. Martin   Charless Fowlkes   Doron Tal   etc 
+  @   ICCV   pp . 416 425 2001 
+19 Detecting Pedestrians Using Patterns of Motion and Appearance   
+Citations 584 PER = 64.89 Paul A . Viola   
+Michael J . Jones   Daniel Snow   @   
+ICCV   pp . 734 741 2003 20 Object Recognition 
+as Machine Translation Learning a Lexicon for a Fixed Image 
+Vocabulary   Citations 603 PER = 60.3 Pinar Duygulu   
+Kobus Barnard   Jo ã o F . G . 
+De Freitas   etc   @ ECCV   pp . 
+97 112 2002 21 Real Time Simultaneous Localisation and Mapping 
+with a Single Camera   Citations 527 PER = 58.56 
+Andrew J . Davison   @   ICCV   pp 
+. 1403 1410 2003 22 Recognizing Human Actions A Local 
+SVM Approach   Citations 440 PER = 55 Christian Sch 
+ü ldt   Ivan Laptev   Barbara Caputo   @ 
+ICPR   pp . 32 36 2004 23 Actions as 
+Space Time Shapes   Citations 379 PER = 54.14 Moshe 
+Blank   Lena Gorelick   Eli Shechtman etc @   
+ICCV   vol . 2 pp . 1395 1402 2005 
+24 A Discriminatively Trained Multiscale Deformable Part Model   Citations 
+215 PER = 53.75 Pedro F . Felzenszwalb   David 
+A . Mcallester   Deva Ramanan   @ CVPR   
+pp . 1 8 2008 25 Non parametric Model for 
+Background Subtraction   Citations 642 PER = 53.5 Ahmed M 
+. Elgammal   David Harwood   Larry . Davis   
+@ ECCV   pp . 751 767 2000 26 A 
+Comparison and Evaluation of Multi View Stereo Reconstruction Algorithms   
+Citations 318 PER = 53 Steven M . Seitz   
+Brian Curless   James Diebel etc @ CVPR   vol 
+. 1 pp . 519 528 2006 27 Comprehensive Database 
+for Facial Expression Analysis   Citations 636 PER = 53 
+Takeo Kanade   Yingli Tian   Jeffrey F . Cohn 
+  @ FG   pp . 46 53 2000 28 
+Learning Realistic Human Actions from Movies   Citations 211 PER 
+= 52.75 Ivan Laptev   Marcin Marszalek   Cordelia Schmid 
+  etc   @ CVPR   pp . 1 8 
+2008 29 Object Retrieval with Large Vocabularies and Fast Spatial 
+Matching   Citations 258 PER = 51.6 James Philbin   
+Ondrej Chum   Michael Isard etc @ CVPR   2007 
+30 Statistical Shape Influence in Geodesic Active Contours   Citations 
+616 PER = 51.33 Michael E . Leventon   W 
+. Eric L . Grimson   Olivier D . Faugeras 
+  @ CVPR   vol . 1 pp . 1316 
+1323 2000 简单 小结 总共 30篇 会议 文章 其中 CVPR 
+14篇 ECCV 5篇 ICCV 7篇 BMVC FG ICIP ICPR 各 
+1篇 每年 发表 的 论文 数 如图所示 个人 比较 关注 
+3 个 方面 1 检测 Detection 比如 基于 Harr like 
+的 Viola Jones 的 3 篇文章 1 6 19 还有 
+17 基于 HOG 的 2 以及 在 PASCAL VOC 上 
+大放 光芒 的 DPM 24 2 基于 Bag of Words 
+Features 和/c LDA/w 的/uj 图像/n 检索/vn Retrieval/w 和/c 类别/n 学习/v 
+Categorization/w 比如 基于 BoW 的 10 11 之后 的 8 
+29 以及 非常 流行 的 SPM 4 基于 LDA 的 
+7 等 3 特征 Features 比如说 提到 的 Harr like 
+SURF 3 HOG 2 MSER 14 PCA SIFT 15 等 
+值得 注意 的 是 排在 前面 的 大部分 作者 都是 
+CV 界 的 成名 人物 非常 值得 关注 他们 的 
+其他 一些 论文 PS 12 的 作者 Ramin Zabih 从 
+TPAMI 的 主编 位置 上 退下 20 的 作者 David 
+Forsyth 成为 TPAMI 新的 掌舵者 大家 有 什么 看法 最后 
+额外 推荐 几篇 ML 的 方法 来自/v 于/p ICML/w 和/c 
+NIPS/w 1     Reinforcement learning An introduction   Citations 
+5592 Richard . Sutton   Andrew G . Barto   
+@ NIPS   vol . 9 no . 5 pp 
+. 1054 1054 1998 2       Experiments with 
+a New   Boosting Algorithm   Citations 2489 Yoav Freund 
+  Robert E . Schapire   @ ICML   pp 
+. 148 156 1996 3     Conditional Random Fields 
+Probabilistic Models for Segmenting and Labeling Sequence Data   Citations 
+2436 John D . Lafferty   Andrew McCallum   Fernando 
+C . N . Pereira   @ ICML   pp 
+. 282 289 2001 4       Latent Dirichlet 
+Allocation   Citations 1548 David M . Blei   Andrew 
+Y . Ng   Michael I . Jordan   @ 
+NIPS   pp . 601 608 2001 5     
+  On   Spectral Clustering Analysis and an algorithm   
+Citations 1230 Andrew Y . Ng   Michael I . 
+Jordan   Yair Weiss   @ NIPS   pp . 
+849 856 2001 6       Algorithms for   
+Nonnegative Matrix Factorization   Citations 1162 Daniel D . Lee 
+  H . Sebastian Seung   @ NIPS   vol 
+. 13 pp . 556 562 2000 7     
+  Semi Supervised Learning Using Gaussian Fields and Harmonic Functions 
+  Citations 665 Xiaojin Zhu   Zoubin Ghahramani   John 
+D . Lafferty   @ ICML   pp . 912 
+919 20032   最有 影响力 的 20篇 计算机 视觉 期刊论文 
+选取 论文 的 原则 1 期刊论文 主要 来源于 以下 期刊 
+TPAMI IJCV TIP CVIU IVC MVA PR JMIV IJPRAI 2 
+发表 在 2000年 以后 3 SCI 检索 次数 大于 1000 
+来源于 Web of Science 数据库 2012年 12 月初 的 检索 
+结果 Top 20 榜单 原文 请见 http / / www 
+. cnblogs . com / youth0826 / archive / 2012/12 
+/ 04/2801481 . html 看了 一下 这 20篇 博文 总体上 
+感觉 很 熟悉 很多 文章 确实 是 视觉 领域 2000年 
+以来 的 重要 工作 于是 就很 想聊 一下 自己 的 
+看法 和 大家 交流 我 简单 按照 所属 领域 划分 
+统计 了 一下 其中 与 人脸 检测 识别 直接 相关 
+的 有 3篇 间接 相关 的 1篇 直接 相关 的 
+包括 7 基于 adaboost 的 人脸 检测 19 人脸 检测 
+的 综述 12 经典 的 人脸 识别 测试 集 FERET 
+的 说明 间接 相关 的 是 AAM AAM 是 人脸 
+alignment 的 最 经典 文章 但是 由于 其 提出 时并/nr 
+没有 现 定于 人脸 所以 划分为 间接 相关 与 局部 
+描述 子 直接 相关 的 有 3篇 分别 是 1 
+sift 15 local descriptor 的 综述 17 LBP 与 立体 
+视觉 相关 的 有 3篇 9 摄像机 标注 方法 10 
+图像 配 准 综述 14 这 篇 文章 我 不熟悉 
+所以 这样 划分 是否 合理 也 不是 很 确信 与 
+图像 分割 直接 相关 的 有 2篇 间接 相关 的 
+有 1篇 直接 相关 的 包括 2 normlized cut 13 
+graph cut 的 应用 间接 相关 的 是 4 mean 
+shift mean shfit 可以 应用于 图像 分割 也 可以 应用于 
+目标 跟踪 算是 间接 相关 与 物体 检测 跟踪 为了 
+简单 把 检测 和 跟踪 划分 到 一起 其实 这 
+两类 方法 在 思路 上 差别 很大 单独 划分 更 
+合理 但是 从 功能 角度 确实 很 相似 直接 相关 
+的 2篇 间接 相关 的 有 1篇 3 基于 轮廓 
+的 物体 检测 方法 16 基于 kernel 的 tracking 方法 
+一篇 是 检测 一篇 是 跟踪 而 基于 mean shift 
+的 跟踪 方法 是 particle filter 之前 最 经典 的 
+方法 算是 间接 相关 与 图像 检索 匹配 相关 的 
+文章 2篇 6 综述 11 shape context 此外 还包括 一篇 
+统计 模式识别 的 综述 8 一篇 图像 质量 评估 的 
+方法 5 行为 识别 18 一篇 关于 行为 识别 的 
+系统 的 文章 用到 了 跟踪 摄像机 标定 行为 识别 
+等 其中 mean shift 被 计算 了 两次 所以 和是/nr 
+21篇 按照 每个 领域 的 文章 数量 由 多到 少 
+的 顺序 我 讲 一下 自己 的 观点 人脸识别 领域 
+的 论文 出现 次数 最多 这 可能 和我/nr 自己 重点 
+关注 人脸识别 领域 有关 是 让 我 比较 意外 的 
+不过 这 说明 从 2000年 开始 人脸识别 方法 得到 了 
+大家 的 重点 关注 是 视觉 领域 的 一个 热点 
+这 几篇 文章 中 viola 的 基于 adaboost + haar 
+的 人脸 检测 方法 是 经典 中 的 经典 其 
+思想 不仅 被 广泛 应用于 物体 检测 领域 同时 在 
+启发 了 狠 多 特征选择 领域 的 工作 同时 也 
+帮助 adaboost 一跃 成为 和 svm 并列 的 两 大 
+machine learning 利器 我 一直 认为 这 篇文章 和和 lowe 
+的 sift 都是 视觉 领域 工程 方面 的 经典之作 而 
+AAM 方法 也 是 十分 重要 的 模型 尤其 是 
+对于 脸部 特征点 定位 而言 基于 aam 的 改进 工作 
+极大 促进 了 特征点 定位 的 精度 其实 这种 全局 
+形状 约束 + 局部 表观 模型 的 思路 在 其他 
+如 物体 检测 领域 也 有 很多 类似 思路 局部 
+描述 子 基本上 是 视觉 领域 表示 方面 十年 来 
+最大 的 一个 亮点 和 趋势 我们 知道 模式识别 包含 
+两 个 方面 的 内容 一个 是 特征提取 用于 提供 
+更有 鉴别力 的 表示 一个 是 机器学习 用来 对于 特征 
+表示 之后 的 数据 上 学习 得到 分类 模型 而 
+局部 描述 子 已经 成 为特征 表示 的 一个 共识 
+无论是 物体 匹配 检索 物体 检测 识别 采用 多种 局部 
+描述 子 表示 已经 成为 基本 选择 而 这 其中 
+sift 无疑 是 影响 最大 的 工作 之一 其 在 
+物体 匹配 物体 检索 物体 检测 物体/n 识别/v 等/u 领域/n 
+都有/nr 大量/n 应用/v 而 LBP 特征 作为 一种 局部 描述 
+特征 是 继 Gabor 之后 最 重要 的 纹理 描述 
+特征 当然 sift 的 变种 hog 也是 之一 其 有 
+很多 变种 在 人脸识别 物体 检测 目标 分类 领域 也 
+得到 了 大量 应用 立体 视觉 我 不熟悉 我 就不 
+献丑 了 对于/p 9/m 和/c 14两/mq 篇/q 文章/n 有/v 这么/r 
+高的引/nr 用率/n 不 知道 谁能 讲讲 背后 的 背景 图像 
+分割 可以 通过 将 分割 问题 看作 是 一个 分组 
+问题 然后 定义 一个 优化 目标 通过 最 优化 这个 
+目标 来 得到 最优 的 模型 参数 而 graph cut 
+是 将 每个 pixel 看作 图中 的 一个 节点 将 
+图像 分割 转化 为 一个 图 分割 问题 而 graph 
+cut 是 通过 最小 分割 和 最小 流来 得到 一个 
+最优 模型 2 normlized cut 是 为了 克服 graph cut 
+的 缺点 的 一种 改进 第/m 2/m 高的引/nr 用率/n 应该/v 
+说明/v 这种/r 方法/n 可以/c 应用/v 于/p 很多/m 领域/n 包括 图像 
+分割 和聚类/nr 物体 检测 跟踪 领域 是 一个 十分 活跃 
+的 领域 而/c 3/m 和/c 16/m 有/v 这么/r 高的引/nr 用率/n 
+很/zg 出乎/v 我/r 的/uj 意料/n 因为 这 两种 思路 在 
+最近 基本 都 不算 是 主流 思路 也许 是 当年 
+曾经 火 过 一段 时间 吧 物体 检测 识别 的 
+经典 思路 应该 有 两种 一种 是 基于 滑动 窗口 
+搜索 的 就是 viola 人脸 检测 文章 中 使用 过 
+的 后来 有 基于 hog + svm 的 行人 检测 
+的 经典 论文 也 是 相近 的 框架 还有 一种 
+是 基于 图像 全局 表示 的 经典 的 方法 是 
+基于 bag of word 的 方法 在 图像 检测 图像 
+分类 图像/n 检索/vn 等/u 领域/n 都有/nr 重要/a 应用/v 而 跟踪 
+的 方法 比较 经典 的 包括 基于 mean shift 的 
+方法 基于 particle filter 的 方法 以及 基于 online learning 
+的 方法 而 后来 的 发展 也 越来越 将 detection 
+和 tracking 结合 到 一起 将 二者 结合 到 一个 
+框架 其本质 思想 就是 把 tracking 看作 是 一个 区分 
+前景 目标 和 背景 目标 的 分类 问题 而 detection 
+提供 了 前景 目标 的 off line 模型 tracking 提供 
+了 on line 模型 这个 领域 论文 很多 有 一篇 
+综述 写得 还不错 图像 检索 是 当前 视觉 领域 一个 
+十分 热 的 方向 在 搜索引擎 购物 等 领域 受到 
+很多 关注 而 6 和 11 远远 不能 涵盖 这个 
+领域 的 经典 11 是 早期 物体 匹配 的 经典 
+方法 但是 现在 用 的 已经 很少 而 这 方面 
+的 最 经典 工作 还 应该 是 基于 bag of 
+word 的 工作 这个工作 借鉴 了 文字 搜索 领域 的 
+工作 通过 视觉 词 将 图像 转化 为 类似 文字 
+中 的 文章 视觉 特 征用 视觉 词频 表示 然后 
+通过 倒排 的 方式 使得 大 规模 图像 检索 成为可能 
+其它 的 三 篇文章 8 作为 综述 确实 没有 什么 
+疑问 5/m 有/v 这么/r 高的/nr 引用/v 我 有点 迷惑 图像 
+质量 评估 虽然 在 实际 中 十分 重要 但是 是个 
+不太 活跃 的 领域 有/v 这么/r 高的/nr 应用/v 有点/n 意外/a 
+18 的 工作 比较 早 当时 能 提出 基于 跟踪 
+摄像机 标定 行为 识别 和 事件 检测 这样 的 框架 
+确实 有 很棒 的 前瞻性 可能 是 因为 近几年 智能 
+视频 监控 应用 火热 之后 做 这个 方向 的 工作 
+多 起来 的 原因 吧 一点 建议 1 建议 将 
+综述 排除 出去 20篇 论文 里 面有 5篇 综述 虽然 
+综述 很重要 5篇 也 不是 很多 但是 在 引用 次数 
+上 综述 确实会 占 很大 便宜 建议 将 综述 排除 
+出去 只对 提出 新 方法 的 文章 单独 排名 才能 
+让 大家 对 哪些 新 方法 的 影响力 最广 更 
+了解 2 我 不 知道 这个 排名 方法 是否 存在 
+瑕疵 或者 是 数据 是否 完全 正确 因为 我 觉得 
+从 目前 的 结论 来看 这 20篇 文章 还 不能 
+算是 最 有 影响力 的 20篇 原文 https / / 
+blog . csdn . net / tiandijun / article / 
+details / 48949463 1 最有 影响力 的 30篇 计算机 视觉 会 议论文 选取 
+论文 的 原则 1 会 议论文 主要 来源于 以下 会议 
+CVPR ICCV ECCV BMVC FG ICIP ICPR WACV ICASSP MM 
+IJCAI UAI AAAI 其实 后面 的 几个 会议 都是/nr 打酱油 
+的 AI/w 类/q 的/uj 期刊/n 也/d 木/n 有/v 高引/nr CV/w 
+文章/n 事实 也 是 如此 没有 收录 ICML 和 NIPS 
+等 见谅 2 发表 在 2000年 以后 数据 来源 于 
+微软 学术 搜索 http / / academic . research . 
+microsoft . com / 2012年 12 月初 的 检索 结果 
+3 检索 次数 大于 200 PER 50 微软 学术 搜索 
+的 被 检索 次数 未必 精确 但能 反应 大概 趋势 
+PER 指 意味着 每年 检索 量 自 发表 次年 算到 
+2012年 PER = Cited / 2012 YEAR 榜单 Top 30 
+如下 欢迎 拾遗补缺 1       Rapid Object Detection 
+using a Boosted Cascade of Simple Features   Citations 3296 
+PER = 299.64 Paul A . Viola   Michael J 
+. Jones   @ CVPR   vol . 1 pp 
+. 511 518 2001 2       Histograms of 
+Oriented Gradients for Human Detection   Citations 1704 PER = 
+243.43 Navneet Dalal   Bill Triggs   @ CVPR   
+vol . 1 pp . 886 893 2005 3   
+    SURF Speeded Up Robust Features   Citations 1054 
+PER = 175.67 Herbert Bay   Tinne Tuytelaars   Luc 
+J . Van Gool   @ ECCV   pp . 
+404 417 2006 4       Beyond Bags of 
+Features Spatial Pyramid Matching for Recognizing Natural Scene Categories   
+Citations 873 PER = 145.5 Svetlana Lazebnik   Cordelia Schmid 
+  Jean Ponce   @ CVPR   vol . 2 
+pp . 2169 2178 2006 5       Object 
+Class Recognition by Unsupervised   Scale Invariant Learning   Citations 
+1071 PER = 119 Robert Fergus   Pietro Perona   
+Andrew Zisserman   @ CVPR   vol . 2 pp 
+. 264 271 2003 6       Robust Real 
+Time Face Detection   Citations 1092 PER = 99.27 Paul 
+A . Viola   Michael J . Jones   @ 
+  ICCV   2001 7       A Bayesian 
+hierarchical model for learning natural scene categories   Citations 677 
+PER = 96.71 Fei Fei Li   Pietro Perona   
+@ CVPR   vol . 2 pp . 524 531 
+2005 8       Scalable Recognition with a Vocabulary 
+Tree   Citations 570 PER = 95 David Nist é 
+r   Henrik Stew é nius   @ CVPR   
+vol . 2 pp . 2161 2168 2006 9   
+    Real Time Tracking of Non Rigid Objects Using 
+Mean Shift   Citations 1132 PER = 94.33 Dorin Comaniciu 
+  Visvanathan Ramesh   Peter Meer   @ CVPR   
+vol . 2 pp . 2142 149 vol . 2 
+2000 10 Visual Categorization with Bags of Keypoints   Citations 
+745 PER = 93.13 Gabriella Csurka   Christopher R . 
+Dance   Lixin Fan etc @ ECCV   2004 11 
+Video Google A Text Retrieval Approach to Object Matching in 
+Videos   Citations 790 PER = 87.78 Josef Sivic   
+Andrew Zisserman   @   ICCV   pp . 1470 
+1477 2003 12 What Energy Functions Can Be Minimized via 
+Graph Cuts   Citations 842 PER = 84.2 Vladimir Kolmogorov 
+  Ramin Zabih   @ ECCV   pp . 65 
+81 2002 13 Overview of the Face Recognition Grand Challenge 
+  Citations 578 PER = 82.57 P . Jonathon Phillips 
+  Patrick J . Flynn   W . Todd Scruggs 
+etc @ CVPR   vol . 1 pp . 947 
+954 2005 14 Robust wide baseline stereo from maximally stable 
+extremal regions   Citations 810 PER = 81 Jiri Matas 
+  Ondrej Chum   Martin Urban   etc   @ 
+BMVC   vol . 1 2002 15 PCA SIFT A 
+More Distinctive Representation for Local Image Descriptors   Citations 639 
+PER = 79.88 Yan Ke   Rahul Sukthankar   @ 
+CVPR   vol . 2 pp . 506 513 2004 
+16 Interactive Graph Cuts for Optimal Boundary and Region Segmentation 
+of Objects in ND Images   Citations 796 PER = 
+72.36 Yuri Y . Boykov   Marie pierre Jolly   
+@   ICCV   pp . 105 112 2001 17 
+An extended set of Haar like features for rapid object 
+detection   Citations 710 PER = 71 Rainer Lienhart   
+Jochen Maydt   @ ICIP   vol . 1 pp 
+. 900 903 2002 18 A Database of Human Segmented 
+Natural Images and its Application to Evaluating Segmentation Algorithms and 
+Measuring Ecological Statistics Citations 750 PER = 68.18 David R 
+. Martin   Charless Fowlkes   Doron Tal   etc 
+  @   ICCV   pp . 416 425 2001 
+19 Detecting Pedestrians Using Patterns of Motion and Appearance   
+Citations 584 PER = 64.89 Paul A . Viola   
+Michael J . Jones   Daniel Snow   @   
+ICCV   pp . 734 741 2003 20 Object Recognition 
+as Machine Translation Learning a Lexicon for a Fixed Image 
+Vocabulary   Citations 603 PER = 60.3 Pinar Duygulu   
+Kobus Barnard   Jo ã o F . G . 
+De Freitas   etc   @ ECCV   pp . 
+97 112 2002 21 Real Time Simultaneous Localisation and Mapping 
+with a Single Camera   Citations 527 PER = 58.56 
+Andrew J . Davison   @   ICCV   pp 
+. 1403 1410 2003 22 Recognizing Human Actions A Local 
+SVM Approach   Citations 440 PER = 55 Christian Sch 
+ü ldt   Ivan Laptev   Barbara Caputo   @ 
+ICPR   pp . 32 36 2004 23 Actions as 
+Space Time Shapes   Citations 379 PER = 54.14 Moshe 
+Blank   Lena Gorelick   Eli Shechtman etc @   
+ICCV   vol . 2 pp . 1395 1402 2005 
+24 A Discriminatively Trained Multiscale Deformable Part Model   Citations 
+215 PER = 53.75 Pedro F . Felzenszwalb   David 
+A . Mcallester   Deva Ramanan   @ CVPR   
+pp . 1 8 2008 25 Non parametric Model for 
+Background Subtraction   Citations 642 PER = 53.5 Ahmed M 
+. Elgammal   David Harwood   Larry . Davis   
+@ ECCV   pp . 751 767 2000 26 A 
+Comparison and Evaluation of Multi View Stereo Reconstruction Algorithms   
+Citations 318 PER = 53 Steven M . Seitz   
+Brian Curless   James Diebel etc @ CVPR   vol 
+. 1 pp . 519 528 2006 27 Comprehensive Database 
+for Facial Expression Analysis   Citations 636 PER = 53 
+Takeo Kanade   Yingli Tian   Jeffrey F . Cohn 
+  @ FG   pp . 46 53 2000 28 
+Learning Realistic Human Actions from Movies   Citations 211 PER 
+= 52.75 Ivan Laptev   Marcin Marszalek   Cordelia Schmid 
+  etc   @ CVPR   pp . 1 8 
+2008 29 Object Retrieval with Large Vocabularies and Fast Spatial 
+Matching   Citations 258 PER = 51.6 James Philbin   
+Ondrej Chum   Michael Isard etc @ CVPR   2007 
+30 Statistical Shape Influence in Geodesic Active Contours   Citations 
+616 PER = 51.33 Michael E . Leventon   W 
+. Eric L . Grimson   Olivier D . Faugeras 
+  @ CVPR   vol . 1 pp . 1316 
+1323 2000 简单 小结 总共 30篇 会议 文章 其中 CVPR 
+14篇 ECCV 5篇 ICCV 7篇 BMVC FG ICIP ICPR 各 
+1篇 每年 发表 的 论文 数 如图所示 个人 比较 关注 
+3 个 方面 1 检测 Detection 比如 基于 Harr like 
+的 Viola Jones 的 3 篇文章 1 6 19 还有 
+17 基于 HOG 的 2 以及 在 PASCAL VOC 上 
+大放 光芒 的 DPM 24 2 基于 Bag of Words 
+Features 和/c LDA/w 的/uj 图像/n 检索/vn Retrieval/w 和/c 类别/n 学习/v 
+Categorization/w 比如 基于 BoW 的 10 11 之后 的 8 
+29 以及 非常 流行 的 SPM 4 基于 LDA 的 
+7 等 3 特征 Features 比如说 提到 的 Harr like 
+SURF 3 HOG 2 MSER 14 PCA SIFT 15 等 
+值得 注意 的 是 排在 前面 的 大部分 作者 都是 
+CV 界 的 成名 人物 非常 值得 关注 他们 的 
+其他 一些 论文 PS 12 的 作者 Ramin Zabih 从 
+TPAMI 的 主编 位置 上 退下 20 的 作者 David 
+Forsyth 成为 TPAMI 新的 掌舵者 大家 有 什么 看法 最后 
+额外 推荐 几篇 ML 的 方法 来自/v 于/p ICML/w 和/c 
+NIPS/w 1     Reinforcement learning An introduction   Citations 
+5592 Richard . Sutton   Andrew G . Barto   
+@ NIPS   vol . 9 no . 5 pp 
+. 1054 1054 1998 2       Experiments with 
+a New   Boosting Algorithm   Citations 2489 Yoav Freund 
+  Robert E . Schapire   @ ICML   pp 
+. 148 156 1996 3     Conditional Random Fields 
+Probabilistic Models for Segmenting and Labeling Sequence Data   Citations 
+2436 John D . Lafferty   Andrew McCallum   Fernando 
+C . N . Pereira   @ ICML   pp 
+. 282 289 2001 4       Latent Dirichlet 
+Allocation   Citations 1548 David M . Blei   Andrew 
+Y . Ng   Michael I . Jordan   @ 
+NIPS   pp . 601 608 2001 5     
+  On   Spectral Clustering Analysis and an algorithm   
+Citations 1230 Andrew Y . Ng   Michael I . 
+Jordan   Yair Weiss   @ NIPS   pp . 
+849 856 2001 6       Algorithms for   
+Nonnegative Matrix Factorization   Citations 1162 Daniel D . Lee 
+  H . Sebastian Seung   @ NIPS   vol 
+. 13 pp . 556 562 2000 7     
+  Semi Supervised Learning Using Gaussian Fields and Harmonic Functions 
+  Citations 665 Xiaojin Zhu   Zoubin Ghahramani   John 
+D . Lafferty   @ ICML   pp . 912 
+919 20032   最有 影响力 的 20篇 计算机 视觉 期刊论文 
+选取 论文 的 原则 1 期刊论文 主要 来源于 以下 期刊 
+TPAMI IJCV TIP CVIU IVC MVA PR JMIV IJPRAI 2 
+发表 在 2000年 以后 3 SCI 检索 次数 大于 1000 
+来源于 Web of Science 数据库 2012年 12 月初 的 检索 
+结果 Top 20 榜单 原文 请见 http / / www 
+. cnblogs . com / youth0826 / archive / 2012/12 
+/ 04/2801481 . html 看了 一下 这 20篇 博文 总体上 
+感觉 很 熟悉 很多 文章 确实 是 视觉 领域 2000年 
+以来 的 重要 工作 于是 就很 想聊 一下 自己 的 
+看法 和 大家 交流 我 简单 按照 所属 领域 划分 
+统计 了 一下 其中 与 人脸 检测 识别 直接 相关 
+的 有 3篇 间接 相关 的 1篇 直接 相关 的 
+包括 7 基于 adaboost 的 人脸 检测 19 人脸 检测 
+的 综述 12 经典 的 人脸 识别 测试 集 FERET 
+的 说明 间接 相关 的 是 AAM AAM 是 人脸 
+alignment 的 最 经典 文章 但是 由于 其 提出 时并/nr 
+没有 现 定于 人脸 所以 划分为 间接 相关 与 局部 
+描述 子 直接 相关 的 有 3篇 分别 是 1 
+sift 15 local descriptor 的 综述 17 LBP 与 立体 
+视觉 相关 的 有 3篇 9 摄像机 标注 方法 10 
+图像 配 准 综述 14 这 篇 文章 我 不熟悉 
+所以 这样 划分 是否 合理 也 不是 很 确信 与 
+图像 分割 直接 相关 的 有 2篇 间接 相关 的 
+有 1篇 直接 相关 的 包括 2 normlized cut 13 
+graph cut 的 应用 间接 相关 的 是 4 mean 
+shift mean shfit 可以 应用于 图像 分割 也 可以 应用于 
+目标 跟踪 算是 间接 相关 与 物体 检测 跟踪 为了 
+简单 把 检测 和 跟踪 划分 到 一起 其实 这 
+两类 方法 在 思路 上 差别 很大 单独 划分 更 
+合理 但是 从 功能 角度 确实 很 相似 直接 相关 
+的 2篇 间接 相关 的 有 1篇 3 基于 轮廓 
+的 物体 检测 方法 16 基于 kernel 的 tracking 方法 
+一篇 是 检测 一篇 是 跟踪 而 基于 mean shift 
+的 跟踪 方法 是 particle filter 之前 最 经典 的 
+方法 算是 间接 相关 与 图像 检索 匹配 相关 的 
+文章 2篇 6 综述 11 shape context 此外 还包括 一篇 
+统计 模式识别 的 综述 8 一篇 图像 质量 评估 的 
+方法 5 行为 识别 18 一篇 关于 行为 识别 的 
+系统 的 文章 用到 了 跟踪 摄像机 标定 行为 识别 
+等 其中 mean shift 被 计算 了 两次 所以 和是/nr 
+21篇 按照 每个 领域 的 文章 数量 由 多到 少 
+的 顺序 我 讲 一下 自己 的 观点 人脸识别 领域 
+的 论文 出现 次数 最多 这 可能 和我/nr 自己 重点 
+关注 人脸识别 领域 有关 是 让 我 比较 意外 的 
+不过 这 说明 从 2000年 开始 人脸识别 方法 得到 了 
+大家 的 重点 关注 是 视觉 领域 的 一个 热点 
+这 几篇 文章 中 viola 的 基于 adaboost + haar 
+的 人脸 检测 方法 是 经典 中 的 经典 其 
+思想 不仅 被 广泛 应用于 物体 检测 领域 同时 在 
+启发 了 狠 多 特征选择 领域 的 工作 同时 也 
+帮助 adaboost 一跃 成为 和 svm 并列 的 两 大 
+machine learning 利器 我 一直 认为 这 篇文章 和和 lowe 
+的 sift 都是 视觉 领域 工程 方面 的 经典之作 而 
+AAM 方法 也 是 十分 重要 的 模型 尤其 是 
+对于 脸部 特征点 定位 而言 基于 aam 的 改进 工作 
+极大 促进 了 特征点 定位 的 精度 其实 这种 全局 
+形状 约束 + 局部 表观 模型 的 思路 在 其他 
+如 物体 检测 领域 也 有 很多 类似 思路 局部 
+描述 子 基本上 是 视觉 领域 表示 方面 十年 来 
+最大 的 一个 亮点 和 趋势 我们 知道 模式识别 包含 
+两 个 方面 的 内容 一个 是 特征提取 用于 提供 
+更有 鉴别力 的 表示 一个 是 机器学习 用来 对于 特征 
+表示 之后 的 数据 上 学习 得到 分类 模型 而 
+局部 描述 子 已经 成 为特征 表示 的 一个 共识 
+无论是 物体 匹配 检索 物体 检测 识别 采用 多种 局部 
+描述 子 表示 已经 成为 基本 选择 而 这 其中 
+sift 无疑 是 影响 最大 的 工作 之一 其 在 
+物体 匹配 物体 检索 物体 检测 物体/n 识别/v 等/u 领域/n 
+都有/nr 大量/n 应用/v 而 LBP 特征 作为 一种 局部 描述 
+特征 是 继 Gabor 之后 最 重要 的 纹理 描述 
+特征 当然 sift 的 变种 hog 也是 之一 其 有 
+很多 变种 在 人脸识别 物体 检测 目标 分类 领域 也 
+得到 了 大量 应用 立体 视觉 我 不熟悉 我 就不 
+献丑 了 对于/p 9/m 和/c 14两/mq 篇/q 文章/n 有/v 这么/r 
+高的引/nr 用率/n 不 知道 谁能 讲讲 背后 的 背景 图像 
+分割 可以 通过 将 分割 问题 看作 是 一个 分组 
+问题 然后 定义 一个 优化 目标 通过 最 优化 这个 
+目标 来 得到 最优 的 模型 参数 而 graph cut 
+是 将 每个 pixel 看作 图中 的 一个 节点 将 
+图像 分割 转化 为 一个 图 分割 问题 而 graph 
+cut 是 通过 最小 分割 和 最小 流来 得到 一个 
+最优 模型 2 normlized cut 是 为了 克服 graph cut 
+的 缺点 的 一种 改进 第/m 2/m 高的引/nr 用率/n 应该/v 
+说明/v 这种/r 方法/n 可以/c 应用/v 于/p 很多/m 领域/n 包括 图像 
+分割 和聚类/nr 物体 检测 跟踪 领域 是 一个 十分 活跃 
+的 领域 而/c 3/m 和/c 16/m 有/v 这么/r 高的引/nr 用率/n 
+很/zg 出乎/v 我/r 的/uj 意料/n 因为 这 两种 思路 在 
+最近 基本 都 不算 是 主流 思路 也许 是 当年 
+曾经 火 过 一段 时间 吧 物体 检测 识别 的 
+经典 思路 应该 有 两种 一种 是 基于 滑动 窗口 
+搜索 的 就是 viola 人脸 检测 文章 中 使用 过 
+的 后来 有 基于 hog + svm 的 行人 检测 
+的 经典 论文 也 是 相近 的 框架 还有 一种 
+是 基于 图像 全局 表示 的 经典 的 方法 是 
+基于 bag of word 的 方法 在 图像 检测 图像 
+分类 图像/n 检索/vn 等/u 领域/n 都有/nr 重要/a 应用/v 而 跟踪 
+的 方法 比较 经典 的 包括 基于 mean shift 的 
+方法 基于 particle filter 的 方法 以及 基于 online learning 
+的 方法 而 后来 的 发展 也 越来越 将 detection 
+和 tracking 结合 到 一起 将 二者 结合 到 一个 
+框架 其本质 思想 就是 把 tracking 看作 是 一个 区分 
+前景 目标 和 背景 目标 的 分类 问题 而 detection 
+提供 了 前景 目标 的 off line 模型 tracking 提供 
+了 on line 模型 这个 领域 论文 很多 有 一篇 
+综述 写得 还不错 图像 检索 是 当前 视觉 领域 一个 
+十分 热 的 方向 在 搜索引擎 购物 等 领域 受到 
+很多 关注 而 6 和 11 远远 不能 涵盖 这个 
+领域 的 经典 11 是 早期 物体 匹配 的 经典 
+方法 但是 现在 用 的 已经 很少 而 这 方面 
+的 最 经典 工作 还 应该 是 基于 bag of 
+word 的 工作 这个工作 借鉴 了 文字 搜索 领域 的 
+工作 通过 视觉 词 将 图像 转化 为 类似 文字 
+中 的 文章 视觉 特 征用 视觉 词频 表示 然后 
+通过 倒排 的 方式 使得 大 规模 图像 检索 成为可能 
+其它 的 三 篇文章 8 作为 综述 确实 没有 什么 
+疑问 5/m 有/v 这么/r 高的/nr 引用/v 我 有点 迷惑 图像 
+质量 评估 虽然 在 实际 中 十分 重要 但是 是个 
+不太 活跃 的 领域 有/v 这么/r 高的/nr 应用/v 有点/n 意外/a 
+18 的 工作 比较 早 当时 能 提出 基于 跟踪 
+摄像机 标定 行为 识别 和 事件 检测 这样 的 框架 
+确实 有 很棒 的 前瞻性 可能 是 因为 近几年 智能 
+视频 监控 应用 火热 之后 做 这个 方向 的 工作 
+多 起来 的 原因 吧 一点 建议 1 建议 将 
+综述 排除 出去 20篇 论文 里 面有 5篇 综述 虽然 
+综述 很重要 5篇 也 不是 很多 但是 在 引用 次数 
+上 综述 确实会 占 很大 便宜 建议 将 综述 排除 
+出去 只对 提出 新 方法 的 文章 单独 排名 才能 
+让 大家 对 哪些 新 方法 的 影响力 最广 更 
+了解 2 我 不 知道 这个 排名 方法 是否 存在 
+瑕疵 或者 是 数据 是否 完全 正确 因为 我 觉得 
+从 目前 的 结论 来看 这 20篇 文章 还 不能 
+算是 最 有 影响力 的 20篇 原文 https / / 
+blog . csdn . net / tiandijun / article / 
+details / 48949463 

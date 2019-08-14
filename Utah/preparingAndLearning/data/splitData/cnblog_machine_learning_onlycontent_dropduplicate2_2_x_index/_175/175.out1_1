@@ -1,0 +1,388 @@
+一 Caffe Convolutional Architecture for Fast Feature Embedding BVLCWe believe 
+that Caffe is the fastest convnet implementation available . caffe 
+的 官网 是 http / / caffe . berkeleyvision . 
+org / Caffe 是 一个 清晰 而 高效 的 深度 
+学习 框架 其 作者 是 博士 毕业 于 UC Berkeley 
+的 贾扬清/nr 目前 在 Google 工作 Caffe 是 纯粹 的 
+C + + / CUDA 架构 支持 命令行 Python 和 
+MATLAB 接口 可以 在 CPU 和 GPU 直接 无缝切换 Caffe 
+set _ mode Caffe GPU 在 Caffe 中 图层 需要 
+使用 C + + 定义 而 网络 则 使用 Protobuf 
+定义 Caffe 是 一个 深度 卷积 神经 网络 的 学习 
+框架 使用 Caffe 可以 比较 方便 地 进行 CNN 模型 
+的 训练 和 测试 精于 CV 领域 Caffe 作为 快速 
+开发 和 工程 应用 是 非常 适合 的 caffe 官方 
+提供 了 大量 examples 照着 examples 写 caffe 只 要求 
+会写 prototxt 就行 它 的 训练 过程 梯度 下降 算法 
+等等 都 实现 封装 好了 懂了 prototxt 的 语法 了 
+基本 就 能 自己 构造 神经 网络 了 caffe 作为 
+C + + 语言 以及 配合 了 CUDA 开发 的 
+框架 训练 效率 也 有保证 这 也是 caffe 适合 于 
+工业 应用 的 原因 代码 易懂 好 理解 高效 实用 
+上手 简单 使用方便 比较 成熟 和 完善 实现 基础 算法 
+方便快捷 开发 新 算法 不是 特别 灵活 适合 工业 快速 
+应用 实现 . Caffe 的 优势 一 方面 是 调 
+参 改 网络 很 方便 开源 做得 很好 另一方面 CNN 
+在 CV 里 用 的 很多 这 也是 Caffe 的 
+优势 上 手快 配置文件 简单 易 上手 文档 齐全 模型 
+与 相应 优化 都 是以 文本 形式 而非 代码 形式 
+给出 Caffe 给 出了 模型 的 定义 最优化 设置 以及 
+预 训练 的 权重 方便 立即 上手 速度快 Google Protocol 
+Buffer 数据 标准 为 Caffe 提升 了 效率 能够 运行 
+最 棒 的 模型 与 海量 的 数据 Caffe 与 
+cuDNN 结合 使用 测试 AlexNet 模型 在 K40 上 处理 
+每张 图片 只 需要 1 . 17ms . 模块化 允许 
+对 新 数据格式 网络层 和 损失 函数 进行 扩展 方便 
+扩展 到 新的 任务 和 设置 上 可以 使用 Caffe 
+提供 的 各层 类型 来 定义 自己 的 模型 开放性 
+公开 的 代码 和 参考模型 用于 再现 社区 好 可以 
+通过 BSD 2 参与 开发 与 讨论 学术论文 采用 此 
+模型 较多 不少 论文 都与 Caffe 有关 R CNN DSN 
+最近 还 有人 用 Caffe 实现 LSTM 缺点 灵活性 差 
+不同 版本 接口 不兼容 可 定制 性 较低 不能 很 
+方便 得 扩展 到 其它 模型 Caffe 可能 是 第一 
+个 主流 的 工业级 深度 学习 工具 它 开始 于 
+2013 年底 具有 出色 的 卷积 神经 网络 实现 在 
+计算机 视觉 领域 Caffe 依然 是 最 流行 的 工具包 
+它 有 很多 扩展 但是 由于 一些 遗留 的 架构 
+问题 它 对 递归 网络 和 语言 建模 的 支持 
+很差 二 MXNet 百度 DMLC 分布式 机器学习 社区 简称 深 
+盟 内存优化 做得好 MXNet 结合 命令式 和声 明式 编程 的 
+优点 既 可以 对 系统 做 大量 的 优化 又 
+可以 方便 调试 资源 和 计算 的 调度 内存分配 资源管理 
+数据 的 表示 计算 优化 等 都很 值得 学习 的 
+原生 支持 分布式 训练 的 对于 一个 优秀 的 深度 
+学习 系统 或者 更广 来说 优秀 的 科学 计算 系统 
+最 重要 的 是 编程 接口 的 设计 他们 都 
+采用 将 一个 领域 特定 语言 domain specific language 嵌入 
+到 一个 主语 言中 例如 numpy 将 矩阵 运算 嵌入 
+到 python 中 这类 嵌入 一般 分为 两种 其中 一种 
+嵌入 的 较浅 其中 每个 语句 都按/nr 原来 的 意思 
+执行 且 通常 采用 命令式 编程 imperative programming 其中 numpy 
+和 Torch 就是 属于 这种 而 另一种 则 用 一种 
+深 的 嵌入 方式 提供 一整套 针对 具体 应用 的 
+迷你 语言 这 一种 通常 使用 声 明式 语言 declarative 
+programing 既 用户 只 需要 声明 要 做什么 而 具体 
+执行 则由 系统 完成 这类 系统 包括 Caffe theano 和 
+TensorFlow 这 两种 方式 各有利弊 总结 如下 命令式 编程 如何 
+执行 a = b + 1 需要 b 已经 被 
+赋值 立即 执行 加法 将 结果 保存 在 a 中 
+优点 语义上 容易 理解 灵活 可以 精确 控制 行为 通常 
+可以 无缝 地 和主/nr 语言 交互 方便 地 利用 主 
+语言 的 各类 算法 工具包 debug 和 性能 调试器 缺点 
+实现 统一 的 辅助 函数 和 提供 整体 优化 都很 
+困难 声 明式 编程 如何 执行 a = b + 
+1 返回 对应 的 计算 图 computation graph 我们 可以 
+之后 对 b 进行 赋值 然后再 执行 加法 运算 优点 
+在 真正 开始 计算 的 时候 已经 拿到 了 整个 
+计 算图 所以 我们 可以 做 一系列 优化 来 提升 
+性能 实现 辅助 函数 也 容易 例如/v 对/p 任何/r 计/n 
+算图/i 都/d 提供/v forward/w 和/c backward/w 函数/n 对 计 算图 
+进行 可视化 将/d 图/n 保存/v 到/v 硬盘/n 和从/nr 硬盘/n 读取/v 
+缺点 很多 主 语言 的 特性 都 用不上 某些 在 
+主 语言 中 实现 简单 但 在 这里 却 经常 
+麻烦 例如 if else 语句 debug 也 不容易 例如 监视 
+一个 复杂 的 计算 图中 的 某个 节点 的 中间 
+结果 并不 简单 目前 现有 的 系统 大 部分 都 
+采用 上 两种 编程 模式 的 一种 与 它们 不同 
+的 是 MXNet 尝试 将 两种 模式 无缝 的 结合 
+起来 在 命令 式 编程 上 MXNet 提供 张量 运算 
+而 声 明式 编程 中 MXNet 支持 符号 表达式 用户 
+可以 自由 的 混合 它们 来 快速 实现 自己 的 
+想法 例如 我们 可以 用 声 明式 编程 来 描述 
+神经网络 并 利用 系统 提供 的 自动 求导 来 训练 
+模型 另一 方便 模型 的 迭代 训练 和 更新 模型 
+法则 中 可能 涉及 大量 的 控制 逻辑 因此 我们 
+可以 用 命令 式 编程 来 实现 同时 我们 用 
+它 来 进行 方便地 调式 和与主/nr 语言 交互 数据 下表 
+我们 比较 MXNet 和 其他 流行 的 深度 学习 系统 
+框架                   
+Caffe                   
+                    
+  Torch                 
+          Theano         
+      TensorFlow             
+      MXNet 主 语言         
+  C + +             
+                    
+                Lua   
+                    
+    Python               
+  C + +             
+                    
+C + + 从 语言           
+Python Matlab                 
+x                   
+            x       
+                  Python 
+                    
+        Python R Julia Scala Javascript Matlab 
+Go 硬件                 
+  CPU GPU               
+  CPU GPU FPGA       CPU GPU   
+      CPU GPU mobile         
+CPU GPU mobile 分布式           x 
+                    
+        x           
+                    
+x                   
+        v           
+                    
+        v 命令式         
+  x                 
+            v       
+                    
+    v               
+            x       
+                    
+            v 声 明式   
+        v           
+                  x 
+                    
+          x         
+                  v 
+                    
+                  vSymbol 
+声 明式 的 符号 表达式 MXNet 使用 多值 输出 的 
+符号 表达式 来 声明 计 算图 符号 是由 操作 子 
+构建 而来 一个 操作 子 可以 是 一个 简单 的 
+矩阵 运算 + 也 可以 是 一个 复杂 的 神经 
+网络 里面 的 层 例如 卷积 层 一个/m 操作/v 子/ng 
+可以/c 有/v 多个/m 输入/v 变量/vn 和/c 多个/m 输出/v 变量/vn 还 
+可以 有 内部 状态变量 一个 变量 既 可以 是 自由 
+的 我们 可以 之后 对其 赋值 也 可以 是 某个 
+操作 子 的 输出 在 执行 一个 符号 表达式 前 
+我们 需要 对 所有 的 自由 变量 进行 赋值 NDArray 
+命令式/n 的/uj 张/q 量计算/l MXNet/w 提供/v 命令式/n 的/uj 张/q 量计/v 
+算来/v 桥接/n 主/b 语言/n 的/uj 和/c 符号/n 表达式/n 另一方面 NDArray 
+可以 无缝 和 符号 表达式 进行 对接 KVStore 多 设备 
+间 的 数据 交互 MXNet 提供 一个 分布式 的 key 
+value 存储 来 进行 数据 交换 它 主要 有 两个 
+函数 push 将 key value 对 从 一个 设备 push 
+进 存储 pull 将 某个 key 上 的 值 从 
+存储 中 pull 出来 此外 KVStore 还 接受 自定义 的 
+更新 函数 来 控制 收到 的 值 如何 写入 到 
+存储 中 最后 KVStore 提供 数种 包含 最终 一致性 模型 
+和 顺序 一致性 模型 在内 的 数据 一致性 模型 读入 
+数据 模块 数据 读取 在 整体 系统 性能 上 占 
+重要 地位 MXNet/w 提供/v 工具/n 能将/i 任意/v 大小/b 的/uj 样本/n 
+压缩/v 打包/v 成/n 单个/b 或者/c 数/n 个/q 文件/n 来/v 加速/v 
+顺序/n 和/c 随机/d 读取/v 训练 模块 MXNet 实现 了 常用 
+的 优化 算法 来 训练 模型 用户 只 需要 提供 
+数据 数据 迭代 器 和 神经 网络 的 Symbol 便可 
+此外 用户 可以 提供 额外 的 KVStore 来 进行 分布式 
+的 训练 过去 现状 和 未来 大半年 数个 优秀 的 
+C + + 机器学习 系统 的 开发 人员 成立 了 
+DMLC 本意 是 更 方便 共享 各自 项目 的 代码 
+并给 用户 提供 一致 的 体验 当时 我们 有 两个 
+深度 学习 的 项目 一个 是 CXXNet 其 通过 配置 
+来 定义 和 训练 神经网络 另 一个 是 Minerva 提供 
+类似 numpy 一样 的 张 量计算 接口 前者 在 图片 
+分类 等 使用 卷积 网络 上 很 方便 而 后者 
+更 灵活 那时候/i 我们/r 想/v 能/v 不能/v 做/v 一个/m 两者/n 
+功能/n 都/d 具备/v 的/uj 系统/n 于是/nr 这样 就 有了 MXNet 
+其 名字 来自 Minerva 的 M 和 CXXNet 的 XNet 
+其中 Symbol 的 想法 来自 CXXNet 而 NDArray 的 想法 
+来自 Minerva 我们 也 常把 MXNet 叫 mix net MXNet 
+的 目的 是 做 一个 有意思 的 系统 能够 让 
+大家 用着 方便 的 系统 一个/m 轻量/n 的/uj 和/c 可以/c 
+快速/d 测试/vn 系统/n 和/c 算法/n 想法/v 的/uj 系统/n 未来 主要 
+关注 下面 四个 方向 支持 更多 的 硬件 目前 在 
+积极 考虑 支持 AMD GPU 高通 GPU Intel Phi FPGA 
+和 更多 智能 设备 相信 MXNet 的 轻量 和 内存 
+节省 可以 在 这些 上 大有作为 更加 完善 的 操作 
+子 目前 不论是 Symbol 还是 NDArray 支持 的 操作 还是 
+有限 我们 希望 能够 尽快 的 扩充 他们 更多 编程语言 
+除了 C + + 目前 MXNet 对 Python R 和 
+Julia 的 支持 比较 完善 但 我们 希望 还能 有 
+很多 的 语言 例如 javascript 更多 的 应用 我们 之前 
+花了/nr 很多 精力 在 图片 分类上 下面 我们 会 考虑 
+很多 的 应用 三 Torch           
+    Facebook     Google DeepMind     Twitter 
+    FAIR 核心 的 计算 单元 使用 C 或者 
+cuda 做了 很好 的 优化 在此 基础 之上 使用 lua 
+构建 了 常见 的 模型 另外 torch7 构建 的 是 
+一个 生态系统 安装 新 的 模型 实现 模块 只需要 luarocks 
+install package . 比如 luarocks install rnn 之后 就 可以 
+欢乐 地 使用 rnn 模型 了 torch7 的 缺点 可能 
+就是 1 . wrapper 是 lua 语言 需要 一点 时间 
+来 学习 2 . 优化 新的 计算 单元 可能会 比较 
+麻烦 backend 修改 起来 会 比较 麻烦 . 核心 特征 
+的 总结 1 . 一个 强大 的 n 维 数组 
+2 . 很多 实现 索引 切片 移调 transposing 的 例程 
+3 . 惊人 的 通过 LuaJIT 的 C 接口 4 
+. 线性代数 例程 5 . 神经网络 并 基于 能量 的 
+模型 6 . 数值 优化 例程 7 . 快速 高效 
+的 GPU 支持 8 . 可 嵌入 可移植 到 iOS 
+Android 和 FPGA 的 后台 优势 1 . 构建 模型 
+简单 一层层 搭积木 即可 2 . 高度 模块化 一层 就是 
+一个 模块 写 新 模块 也 方便 套用 接口 就行 
+用 tensor 运算 不必 写 cuda 也 能用 GPU 3 
+. 底层 的 tensor 由 C 和 cuda 实现 速度 
+不会 比 caffe 差 甚至 某些 运算 可能 更快 4 
+. 使用 GPU 方便 把 tensor 数据 送到 GPU 只要 
+简单 的 tensor cuda 5 . lua 入门 快 堪比 
+python 6 . 很 重要 的 一点 nngraph 理论 上 
+可以 用 nn 里 的 模块 实现 任何 DAG 构造 
+的 网络 当然 也 包括 RNN LSTM 之类 的 劣势 
+1 . 对于 不少 人 来说 lua 要 新学 2 
+. 除了 deep learning 方面 其他 好用 的 机器学习 library 
+较少 3 . 数据 文件格式 比较 麻烦 一般 原始数据 没有 
+torch 专用 的 t7 格式文件 需要 通过 mat 等 格式 
+中转 转换 四 Theanothe LISA group at the University of 
+Montreal 蒙特利尔 Theano 是 一个 Python 库 用来 定义 优化 
+和 计算数学 表达式 用于 高效 的 解决 多维 数组 的 
+计算 问题 优点 集成 NumPy 使用 numpy . ndarray 使用 
+GPU 加速 计算 比 CPU 快 140倍 只 针对 32位 
+float 类型 有效 的 符号 微分 计算 一元 或 多元 
+函数 的 导数 速度 和 稳定性 优化 比如 能 计算 
+很小 的 x 的 函数 log 1 + x 的 
+值 动态地 生成 C 代码 更快 地 计算 广泛地 单元测试 
+和 自我 验证 检测 和 诊断 多种 错误 灵活 性好 
+缺点 1 . scan 中 糟糕 参数 的 传递 限制 
+immutable 机制 导致 function compile 时候 的 时间 过长 2 
+. theano 定义 function 时 缺乏 灵活 的 多态 机制 
+3 . 困难 的 调试 方法 五 T e n 
+s o r F l o w G o o 
+g l e T e n s o r F 
+l o w 是 谷歌 基于 DistBelief 进行 研发 的 
+第二 代 人工智能 学习 系统 其 命名 来源于 本身 的 
+运行 原理 Tensor 张量 意味着 N 维 数组 Flow 流 
+意味着 基于 数据流 图 的 计算 TensorFlow 为 张量 从 
+图象 的 一端 流动 到 另一 端 计算 过程 TensorFlow 
+是 将 复杂 的 数据 结构 传输 至 人工智能 神经网 
+中 进行 分析 和 处理 过程 的 系统 TensorFlow 表达 
+了 高 层次 的 机器学习 计算 大幅 简化 了 第一 
+代 系统 并且 具备 更好 的 灵活性 和可/nr 延展性 TensorFlow 
+一大 亮点 是 支持 异构 设备 分布式计算 它 能够 在 
+各个 平台 上 自动 运行 模型 从 电话 单个 CPU 
+/ GPU 到 成百上千 GPU 卡 组成 的 分布式系统 从 
+目前 的 文档 看 TensorFlow 支持 CNN RNN 和 LSTM 
+算法 拥有 C + + / Python 编程 接口 这都 
+是 目前 在 Image Speech 和 NLP 最 流行 的 
+深度 神经网络 模型 TensorFlow 的 数据 结构 tensor 它 相当于 
+N 维 的 array 或者 list 与 MXNet 类似 都是 
+采用 了 以 python 调用 的 形式 展现 出来 某个 
+定义 好 的 tensor 的 数据 类型 是 不变 的 
+但是 维数 可以 动态 改变 用 tensor rank 和 TensorShape 
+来 表示 它 的 维数 例如 rank 为 2 可以 
+看成 矩阵 rank 为 1 可以 看成 向量 tensor 是个 
+比较 中规中矩 的 类型 唯一 特别 的 地方 在于 在 
+TensorFlow 构成 的 网络 中 tensor 是 唯一 能够 传递 
+的 类型 而 类似 于 array list 这种 不 能 
+当成 输入 TensorFlow 的 网络 实现 方式 选择 的 是 
+符号 计算 方式 它 的 程序 分为 计算 构造 阶段 
+和 执行 阶段 构造 阶段 是 构造 出 computation graph 
+computation graph 就是 包含 一系列 符号 操作 Operation 和 Tensor 
+数据对象 的 流程图 跟 mxnet 的 symbol 类似 它 定义 
+好了 如何 进行 计算 加减乘除 等 数据 通过 不同 计算 
+的 顺序 也 就是 flow 数据 在 符号 操作 之间 
+流动 的 感觉 但是 暂时 并不 读取 输入 来 计算 
+获得 输出 而是 由 后面 的 执行 阶段 启动 session 
+的 run 来 执行 已经 定义 好 的 graph 这样 
+的 方式 跟 mxnet 很 相似 应该 都是/nr 借鉴 了 
+theano 的 想法 其中 TensorFlow 还 引入 了 Variable 类型 
+它 不像 mxnet 的 Variable 属于 symbol tf 的 operation 
+类似 mxnet 的 symbol 而是 一个 单独 的 类型 主要 
+作用 是 存储 网络 权重 参数 从而 能够 在 运行 
+过程 中 动态 改变 tf 将 每一个 操作 抽象 成了/nr 
+一个 符号 Operation 它 能够 读取 0个 或者 多个 Tensor 
+对象 作为 输入 输出 操作 内容 包括 基本 的 数学 
+运算 支持 reduce segment 对 tensor 中 部分 进行 运算 
+TensorFlow 的 优点 1 TensorFlow 则是 功能 很 齐全 能够 
+搭建 的 网络 更 丰富 而 不是 像 caffe 仅仅 
+局限 在 CNN 2 TensorFlow 的 深度 学习 部分 能够 
+在 一个 模型 中 堆积 了 许多 不同 的 模型 
+和 转换 你 能够 在 一个 模型 中 方便 地 
+处理 文本 图片 和 规则 分类 以及 连续变量 同时 实现 
+多 目标 和多/nr 损失 工作 3 TensorFlow 的 管道 部分 
+能够 将 数据 处理 和 机器 学习 放在 一个 框架 
+中 TensorFlow 指引 了 方向 TensorFlow 是 一个 理想 的 
+RNN 递归 神经网络 API 和 实现 TensorFlow 使用 了 向量 
+运算 的 符号图 方法 使得 新 网络 的 指定 变得 
+相当 容易 但 TensorFlow 并不 支持 双向 RNN 和 3D 
+卷积 同时 公共 版本 的 图 定义 也 不支持 循环 
+和 条件 控制 这 使得 RNN 的 实现 并不 理想 
+因为 必须 要 使用 Python 循环 且 无法 进行 图 
+编译 优化 六 CNTK             
+微软 深度 学习 工具包 微软 将 人工智能 成果   CNTK 
+  开源 放上   GitHub 称 是 运算 速度 最快 
+的   Toolkit 是 一个 统一 的 深度 学习 工具包 
+它 将 神经 网络 描述 成在/nr 有向 图上 的 一系列 
+计算 步骤 在 这个 有向 图中 叶子 结点 表示 输入 
+层 或 网络 参数 其它 的 结点 表示 成在/nr 输入 
+层 上 的 矩阵 操作 在 CNTK 上 可以 很 
+容易 的 实现 及 结合 当今 流行 的 模型 例如 
+前馈 神经网络 DNNs 卷积 神经网络 CNNs 循环 神经网络 RNNs / 
+LSTMs 在 实现 随机 梯度 下降 学习 时 能够 自动 
+计算 梯度 而且还 能 通过 多个 GPUs 或 服务器 实现 
+并行计算 CNTK 是 微软 在 Cortana 数字 助理 和 Skype 
+翻译 应用 中 使用 的 语音 识别 的 系统 框架 
+CNTK 最大 的 优点 是 可以 并行 多个 GPU 或 
+服务器 微软/a 首席/n 科学家/n 黄学东/nr 说/v 谷歌 公开 的 TensorFlow 
+并 没有 这个 功能 CNTK 的 另外 一个 优点 是 
+支持 Microsoft Windows 但是 这个 开源 工具 是 用 C 
++ + 写 的 微软 计划 将 尽快 公开 对应 
+的 Python 和C#/nr 版本 十个 值得 尝试 的 开源 深度 
+学习 框架 本周 早些 时候 开源 中国 社区 公布 了 
+Google 开源 了 TensorFlow GitHub 消息 此举 在 深度 学习 
+领域 影响 巨大 因为 Google 在 人工智能 领域 的 研发 
+成绩斐然 有着 雄厚 的 人才 储备 而且 Google 自己 的 
+Gmail 和 搜索 引擎 都在 使用 自行 研发 的 深度 
+学习 工具 无疑 来自 Google 军火库 的 TensorFlow 必然 是 
+开源 深度 学习 软件 中 的 明星 产品 登陆 GitHub 
+当天 就 成为 最 受 关注 的 项目 当周 获得 
+评 星 数 就 轻松 超过 1 万个 对于 希望 
+在 应用 中 整合 深度 学习 功能 的 开发 者 
+来说 GitHub 上 其实 还有 很多 不错 的 开源 项目 
+值得 关注 首先 我们 推荐 目前 规模 人气 最高 的 
+TOP3 Caffe 源自 加州 伯克利 分校 的 Caffe 被 广泛 
+应用 包括 Pinterest 这样 的 web 大户 与 TensorFlow 一样 
+Caffe 也 是由 C + + 开发 Caffe 也是 Google 
+今年 早些 时候 发布 的 DeepDream 项目 可以 识别 喵星人 
+的 人工智能 神经网络 的 基础 Theano2008/i 年/m 诞生/v 于/p 蒙特利尔/ns 
+理工学院/nt Theano 派 生出 了 大量 深度 学习 Python 软件包 
+最 著名 的 包括 Blocks 和 Keras TorchTorch 诞生 已经 
+有 十年 之久 但是/c 真正/d 起势/i 得益/v 于/p 去年/t Facebook/w 
+开源/n 了/ul 大量/n Torch/w 的/uj 深度/ns 学习/v 模块/n 和/c 扩展/v 
+Torch 另外 一个 特殊 之处 是 采用 了 不怎么 流行 
+的 编程语言 Lua 该 语言 曾被 用来 开发 视频 游戏 
+除了 以上 三 个 比较 成熟 知名 的 项目 还有 
+很多 有 特色 的 深度 学习 开源 框架 也 值得 
+关注 Brainstorm 来自 瑞士 人工智能 实验室 IDSIA 的 一个 非常 
+发展 前景 很 不错 的 深度 学习 软件包 Brainstorm 能够 
+处理 上 百层 的 超级 深度 神经网络 所谓 的 公路 
+网络 Highway Networks Chainer 来自 一个 日本 的 深度 学习 
+创业 公司 Preferred Networks 今年 6月 发布 的 一个 Python 
+框架 Chainer 的 设计 基于 define by run 原则 也 
+就是说 该 网络 在 运行 中 动态 定义 而 不是 
+在 启动 时 定义 这里有 Chainer 的 详细 文档 Deeplearning4j 
+顾名思义 Deeplearning4j 是 for Java 的 深度 学习 框架 也是 
+首个 商用 级别 的 深度 学习 开源 库 Deeplearning4j 由 
+创业 公司 Skymind 于 2014年 6月 发布 使用 Deeplearning4j 的 
+不乏 埃森哲 雪弗兰 博斯 咨询 和 IBM 等 明星 企业 
+DeepLearning4j/i 是/v 一个/m 面向/n 生产/vn 环境/n 和/c 商业/n 应用/v 的/uj 
+高/a 成熟度/n 深度/ns 学习/v 开源/n 库/n 可与 Hadoop 和 Spark 
+集成 即插即用 方便 开发者 在 APP 中 快速 集成 深度 
+学习 功能 可 应用于 以下 深度 学习 领域 人脸 / 
+图像识别 语音 搜索 语音 转 文字 Speech to text 垃圾 
+信息 过滤 异常 侦测 电商 欺诈 侦测 Marvin 是 普林斯顿大学 
+视觉 工作组 新 推出 的 C + + 框架 该 
+团队 还 提供 了 一个 文件 用于 将 Caffe 模型 
+转化 成语 Marvin 兼容 的 模式 ConvNetJS 这是 斯坦福 大学 
+博士生 Andrej Karpathy 开发 浏览器 插件 基于 万能 的 JavaScript 
+可以 在 你 的 游览器 中 训练 神经网络 Karpathy 还 
+写 了 一个 ConvNetJS 的 入门教程 以及 一个 简洁 的 
+浏览器 演示 项目 github 主页 https / / github . 
+com / karpathy / convnetjsMXNet 出自 CXXNet Minerva Purine 等 
+项目 的 开发 者 之手 主要 用 C + + 
+编写 MXNet 强调 提高 内存 使用 的 效率 甚至能 在 
+智能 手机 上 运行 诸如 图像 识别 等 任务 Neon 
+由 创业 公司 Nervana Systems 于 今年 五月 开源 在 
+某些 基准测试 中 由 Python 和 Sass 开发 的 Neon 
+的 测试 成绩 甚至 要 优于 Caffeine Torch 和 谷歌 
+的 TensorFlow 6642   iNaturalist 项目 连接 自然 挑战 2017 
+数据集 1707 06436   未来 的 计算机 视觉 调查 通过 
+对 2016年 的 1600篇 论文 的 调研 6342 ThiNet 一个 
+滤波器 级别 的 调谐 方法 用于 深度 网络 压缩 6292 
+  STag 一个 基准 的 标记 系统 

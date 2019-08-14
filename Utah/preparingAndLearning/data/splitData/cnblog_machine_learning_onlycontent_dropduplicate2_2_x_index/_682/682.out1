@@ -1,0 +1,513 @@
+模糊逻辑 穿越 障碍 模糊逻辑 另 一个 我们 经常 听到 的 
+术语 但 它 的 真正 含义 是 什么 它 是否 
+意味着 不止 一件事 我们 马上 就 会 知道 答案 我们 
+将 使用 模糊逻辑 来 帮助 引导 一辆 自动 驾驶 汽车 
+绕过 障碍 如果 我们 做 得 正确 我们 将 避开 
+沿途 的 障碍 我们 的 自动 导航 车辆 AGV 将在 
+障碍物 周围 导航 感知 其 路径 上 的 障碍物 它 
+将 使用 一个 推理 系统 来 帮助 引导 它 前进 
+你 或者 用户 将 能够 创造 障碍 或 通过 的 
+方式 AGV 必须 避开 或 通过 你 可以 观察 跟踪 
+光束 的 工作 以及 跟踪 AGV 的 路径 沿 其 
+路线 AGV 所 采取 的 每一步 都 将在 用户界面 上 
+进行 更新 这样 您 就 可以 看到 发生 了 什么 
+在 布尔逻辑 中 事物 或 真 或 假 或 黑 
+或 白 许多人 不 知道 的 是 还有 一种 被 
+称为 多值逻辑 的 东西 它 的 真实 值 介于 1 
+和0/nr 之间 模糊逻辑 是 处理 部分 真理 的 多值逻辑 的 
+概念 实现 例如 很多 人 也 不 知道 的 著名 
+的 sigmoid 函数 它 是 一种 模糊化 的 方法 维基百科 
+建议 大家 多 使用 这个 百科 百度 百科 真的 只能 
+用 呵呵 来 形容 对此 有 很好 的 描述 如下 
+维基百科 In this image the meanings of the expressions cold 
+warm and hot are represented by functions mapping a temperature 
+scale . A point on that scale has three truth 
+values one for each of the three functions . The 
+vertical line in the image represents a particular temperature that 
+the three arrows truth values gauge . Since the red 
+arrow points to zero this temperature may be interpreted as 
+not hot . The orange arrow pointing at 0.2 may 
+describe it as slightly warm and the blue arrow pointing 
+at 0.8 fairly cold . 在 这幅 图中 cold 冷 
+warm 暖 和 hot 热 表达式 的 含义 由 映射 
+一个 温标 的 函数 表示 这个 尺度 上 的 一个 
+点 有 三个 真值 三个 函数 各 有一个 图像 中的 
+垂直线 表示 三个 箭头 真值 测量 的 特定 温度 由于 
+红色 箭头 指向 零 这个 温度 可以 解释 为 不热 
+橙色 的 箭头 指向 0.2 可以 描述 为 轻微 温暖 
+蓝色 的 箭头 指向 0.8 可以 描述 为 轻微 温暖 
+或 很冷 我们 为什么 要 展示 这个 因为 这个 图表 
+和 描述 非常 准确 地 描述 了 什么 是 模糊逻辑 
+我们 将 使用 AForge . NET 开源 机器学习 框架 这 
+是 一个 很好 的 框架 它 展示 了 使用 推理 
+引擎 完成 任务 是 多么 容易 在 这 一章 中 
+我们 将 讨论 模糊逻辑 避障 与 识别 AGV 模糊逻辑 我们 
+的 应用 程序 将 有 两个 简单 的 按钮 一个 
+用于 运行 模糊集 测试 另 一个 用于 运行 语言 变量 
+测试 下面 是 示例 应用 程序 的 快速 快照 创建 
+此 示例 的 代码 相对 较小 且 简单 这是 当 
+我们 点击 Run Fuzzy Set Test 按钮 时的/nr 样子 我们 
+将 创建 两个 模糊集 一个 用于 凉爽 一个 用于 温暖 
+并为 每个 模糊集 添加 一些 成员 数据 值 然后 绘制 
+它们 # region 创建 两个 模糊集 来 表示 凉 和暖 
+的 温度 # region 凉 T r a p e 
+z o i d a l F u n c 
+t i o n function1 = new T r a 
+p e z o i d a l F u 
+n c t i o n 13 18 23 28 
+FuzzySet fsCool = new FuzzySet 凉 function1 double coolValues = 
+new double 20 2 for int i = 10 i 
+30 i + + { coolValues i 10 0 = 
+i coolValues i 10 1 = fsCool . GetMembership i 
+} chart . UpdateDataSeries 凉 coolValues # endregion 凉 # 
+region 暖 T r a p e z o i 
+d a l F u n c t i o 
+n function2 = new T r a p e z 
+o i d a l F u n c t 
+i o n 23 28 33 38 FuzzySet fsWarm = 
+new FuzzySet 暖 function2 double warmValues = new double 20 
+2 for int i = 20 i 40 i + 
++ { warmValues i 20 0 = i warmValues i 
+20 1 = fsWarm . GetMembership i } chart . 
+UpdateDataSeries 暖 warmValues # endregion 暖 # endregion 创建 两个 
+模糊集 来 表示 凉 和暖 的 温度 运行 语言 变量 
+测试 的 代码 如下 同样 我们 创建 模糊集 但 这次 
+我们 创建 4个 而不是 2个 与 我们 的 第一 个 
+测试 一样 我们 首先 添加 成员 数据 然 后绘图 L 
+i n g u i s t i c V 
+a r i a b l e lvTemperature = new 
+L i n g u i s t i c 
+V a r i a b l e 温度 0 
+80 T r a p e z o i d 
+a l F u n c t i o n 
+function1 = new T r a p e z o 
+i d a l F u n c t i 
+o n 10 15 T r a p e z 
+o i d a l F u n c t 
+i o n . EdgeType . Right FuzzySet fsCold = 
+new FuzzySet 冷 function1 lvTemperature . AddLabel fsCold T r 
+a p e z o i d a l F 
+u n c t i o n function2 = new 
+T r a p e z o i d a 
+l F u n c t i o n 10 
+15 20 25 FuzzySet fsCool = new FuzzySet 凉 function2 
+lvTemperature . AddLabel fsCool T r a p e z 
+o i d a l F u n c t 
+i o n function3 = new T r a p 
+e z o i d a l F u n 
+c t i o n 20 25 30 35 FuzzySet 
+fsWarm = new FuzzySet 暖 function3 lvTemperature . AddLabel fsWarm 
+T r a p e z o i d a 
+l F u n c t i o n function4 
+= new T r a p e z o i 
+d a l F u n c t i o 
+n 30 35 T r a p e z o 
+i d a l F u n c t i 
+o n . EdgeType . Left FuzzySet fsHot = new 
+FuzzySet 热 function4 lvTemperature . AddLabel fsHot double chartValues = 
+new double 4 for int i = 0 i 4 
+i + + chartValues i = new double 160 2 
+最后 我们 画出 这些 值 # region 语言 变量 的 
+形状 它 的 标签 从 开始 到 结束 的 形状 
+int j = 0 for float x = 0 x 
+80 x + = 0.5 f j + + { 
+double y1 = lvTemperature . G e t L a 
+b e l M e m b e r s 
+h i p 冷 x double y2 = lvTemperature . 
+G e t L a b e l M e 
+m b e r s h i p 凉 x 
+double y3 = lvTemperature . G e t L a 
+b e l M e m b e r s 
+h i p 暖 x double y4 = lvTemperature . 
+G e t L a b e l M e 
+m b e r s h i p 热 x 
+chartValues 0 j 0 = x chartValues 0 j 1 
+= y1 chartValues 1 j 0 = x chartValues 1 
+j 1 = y2 chartValues 2 j 0 = x 
+chartValues 2 j 1 = y3 chartValues 3 j 0 
+= x chartValues 3 j 1 = y4 } chart 
+. UpdateDataSeries 冷 chartValues 0 chart . UpdateDataSeries 凉 chartValues 
+1 chart . UpdateDataSeries 暖 chartValues 2 chart . UpdateDataSeries 
+热 chartValues 3 # endregion 语言 变量 的 形状 它 
+的 标签 从 开始 到 结束 的 形状 语言 变量 
+的 形状 正如 所 看到 的 我们 能够 很容易 地 
+展示 出 维基百科 定义 所 展示 的 视觉 定义 模糊 
+的 自主 移动 小车 在 我们 继续 之前 先看 一下 
+我们 的 应用 程序 将 是 什么 样子 的 然后 
+对 推理 引擎 进行 简要 的 解释 尽管 AForge . 
+NET 使得 我们 很 容易 和 透明 的 创建 一个 
+InferenceSystem 推理 系统 对象 让 我 先来 解释 下 什么 
+是 模糊推理 系统 模糊推理 系统 是 一种 能够 进行 模糊 
+计算 的 模型 这是 使用 数据库 语言 变量 和 规则 
+库 完成 的 所有 这些 都 可以 存储 在 内存 
+中 模糊推理 系统 的 典型 操作 如下 获取 数字 输入 
+结合 激活 规则 的 结果 得到 一个 模糊 输出 验证 
+输入 激活 了 来自 规则 库 的 哪些 规则 利用 
+带有 语言 变量 的 数据库 获取 每个 数字 输入 的 
+语言 意义 对于 我们 来讲 大 部分 工作 将 在 
+初始化 我们 的 模糊 逻辑系统 时 进行 让 我们 将其 
+分解为 前面 概述 的 各个 步骤 首先 我们 需要 准备 
+语言 标签 模糊集 组成 的 距离 他们 分别 是 Near 
+近 Medium 中 和 Far 远 # region 构成 这些 
+距离 的 语言 标签 模糊集           
+            FuzzySet fsNear = new 
+FuzzySet Near new T r a p e z o 
+i d a l F u n c t i 
+o n 15 50 T r a p e z 
+o i d a l F u n c t 
+i o n . EdgeType . Right       
+                FuzzySet fsMedium 
+= new FuzzySet Medium new T r a p e 
+z o i d a l F u n c 
+t i o n 15 50 60 100     
+                  FuzzySet 
+fsFar = new FuzzySet Far new T r a p 
+e z o i d a l F u n 
+c t i o n 60 100 T r a 
+p e z o i d a l F u 
+n c t i o n . EdgeType . Left 
+                    
+  # endregion 构成 这些 距离 的 语言 标签 模糊集 
+接下来 我们 初始化 所需 的 语言 变量 第一个 是 lvRight 
+它 将 是 右侧 测量 距离 的 变量 # region 
+右侧 测量 距离 输入             
+          L i n g u 
+i s t i c V a r i a 
+b l e lvRight = new L i n g 
+u i s t i c V a r i 
+a b l e RightDistance 0 120       
+                lvRight . 
+AddLabel fsNear                 
+      lvRight . AddLabel fsMedium       
+                lvRight . 
+AddLabel fsFar                 
+      # endregion 右侧 测量 距离 输入 现在 
+我们 对 左侧 测量 距离 的 变量 做 同样 的 
+操作 # region 左侧 测量 距离 输入       
+                L i 
+n g u i s t i c V a 
+r i a b l e lvLeft = new L 
+i n g u i s t i c V 
+a r i a b l e LeftDistance 0 120 
+                    
+  lvLeft . AddLabel fsNear           
+            lvLeft . AddLabel fsMedium 
+                    
+  lvLeft . AddLabel fsFar           
+    # endregion 左侧 测量 距离 输入 最后 一个 
+语言 变量 是 前方 测量 距离 # region 前方 测量 
+距离 输入                 
+      L i n g u i s 
+t i c V a r i a b l 
+e lvFront = new L i n g u i 
+s t i c V a r i a b 
+l e FrontalDistance 0 120           
+            lvFront . AddLabel fsNear 
+                    
+  lvFront . AddLabel fsMedium           
+            lvFront . AddLabel fsFar 
+              # endregion 前方 
+测量 距离 输入 现在 我们 关注 组成 这个 角度 的 
+语言 标签 模糊集 我们 需要 完成 这 一步 这样 才能 
+创建 最终 的 语言 变量 # region 组成 角度 的 
+语言 标签 模糊集               
+        FuzzySet fsVN = new FuzzySet VeryNegative 
+new T r a p e z o i d 
+a l F u n c t i o n 
+40 35 T r a p e z o i 
+d a l F u n c t i o 
+n . EdgeType . Right           
+            FuzzySet fsN = new 
+FuzzySet Negative new T r a p e z o 
+i d a l F u n c t i 
+o n 40 35 25 20         
+              FuzzySet fsLN = 
+new FuzzySet LittleNegative new T r a p e z 
+o i d a l F u n c t 
+i o n 25 20 10 5       
+                FuzzySet fsZero 
+= new FuzzySet Zero new T r a p e 
+z o i d a l F u n c 
+t i o n 10 5 5 10     
+                  FuzzySet 
+fsLP = new FuzzySet LittlePositive new T r a p 
+e z o i d a l F u n 
+c t i o n 5 10 20 25   
+                    
+FuzzySet fsP = new FuzzySet Positive new T r a 
+p e z o i d a l F u 
+n c t i o n 20 25 35 40 
+                    
+  FuzzySet fsVP = new FuzzySet VeryPositive new T r 
+a p e z o i d a l F 
+u n c t i o n 35 40 T 
+r a p e z o i d a l 
+F u n c t i o n . EdgeType 
+. Left               # 
+endregion 组成 角度 的 语言 标签 模糊集 现在 我们 可以 
+创建 角度 的 最终 语言 变量 # region 角   
+                    
+L i n g u i s t i c 
+V a r i a b l e lvAngle = 
+new L i n g u i s t i 
+c V a r i a b l e Angle 
+50 50                 
+      lvAngle . AddLabel fsVN       
+                lvAngle . 
+AddLabel fsN                 
+      lvAngle . AddLabel fsLN       
+                lvAngle . 
+AddLabel fsZero                 
+      lvAngle . AddLabel fsLP       
+                lvAngle . 
+AddLabel fsP                 
+      lvAngle . AddLabel fsVP       
+        # endregion 角 现在 我们 可以 
+继续 创建 我们 的 模糊 数据库 对于 我们 的 应用 
+程序 这 是 一个 语言 变量 的 内存 字典 如果 
+您 愿意 的话 可以 将 其 实现 为 SQL NoSQL 
+或 任何 其他 类型 的 具体 数据库 # region 数据库 
+                    
+  Database fuzzyDB = new Database         
+              fuzzyDB . AddVariable 
+lvFront                   
+    fuzzyDB . AddVariable lvLeft         
+              fuzzyDB . AddVariable 
+lvRight                   
+    fuzzyDB . AddVariable lvAngle         
+      # endregion 数据库 接下来 我们 将 创建 
+主 推理 引擎 下 一行 代码 中最 有趣 的 是 
+C e n t r o i d D i 
+f u z z i f i e r 在 
+推理 过程 的 最后 我们 需要 一个 数值 来 控制 
+过程 的 其他 部分 为了 得到 这个 数字 我们 采用 
+了 一种 去 模糊化 的 方法 我们 的 模糊推理 系统 
+的 输出 是 一组 点火 强度 大于 零 的 规则 
+这种 点火 强度 对 随后 的 模糊 规则 集 施加 
+了 约束 当 我们 把 这些 模糊 集合 放在 一起 
+时 它们 会 形成 一个 形状 这 就是 语言 输出 
+的 意义 重 心法 将 计算 我们 的 形状 面积 
+的 中心 以 获得 输出 的 数值 表示 它 使用 
+近似 数 所以 会 选择 几个 区间 进行 计算 随着 
+时间 间隔 的 增加 输出 的 精度 也 会 增加 
+/ / 创建 推理 系统 IS = new InferenceSystem fuzzyDB 
+new C e n t r o i d D 
+e f u z z i f i e r 
+1000 接下来 我们 可以 开始 向 我们 的 推理 系统 
+添加 规则 / / 直走           
+            IS . NewRule 规则 
+1 IF FrontalDistance IS Far THEN Angle IS Zero   
+                    
+/ / 直走 如果 可以 走 到 任何 地方   
+                    
+IS . NewRule 规则 2 IF FrontalDistance IS Far AND 
+RightDistance IS Far AND LeftDistance IS Far THEN Angle IS 
+Zero                   
+    / / 右侧 有墙/nr         
+              IS . NewRule 
+规则 3 IF RightDistance IS Near AND LeftDistance IS Not 
+Near THEN Angle IS LittleNegative           
+            / / 左侧 有墙/nr 
+                    
+  IS . NewRule 规则 4 IF RightDistance IS Not 
+Near AND LeftDistance IS Near THEN Angle IS LittlePositive   
+                    
+/ / 前方 有墙/nr 房间 在 右侧       
+                IS . 
+NewRule 规则 5 IF RightDistance IS Far AND FrontalDistance IS 
+Near THEN Angle IS Positive           
+            / / 前方 有墙/nr 
+房间 在 左侧               
+        IS . NewRule 规则 6 IF 
+LeftDistance IS Far AND FrontalDistance IS Near THEN Angle IS 
+Negative                   
+    / / 前方 有墙/nr 两边 都是/nr 房间 向右走 
+                    
+  IS . NewRule 规则 7 IF RightDistance IS Far 
+AND LeftDistance IS Far AND FrontalDistance IS Near THEN Angle 
+IS Positive 经过 所有 这些 工作 我们 的 推理 系统 
+就 已经 准备好 了 if FirstInference         
+                    
+  GetMeasures                 
+      try             
+          {         
+                    
+  DoInference                 
+              MoveAGV     
+                    
+      GetMeasures             
+          }         
+              catch Exception ex 
+                    
+  {                 
+              Debug . WriteLine 
+ex               } 应用 
+程序 的 主 代码 循环 如下 所示 我们 将 详细描述 
+每个 功能 让 我们 快速 看一下 GetMeasures 函数 获取 当前 
+地图 以及 AGV 的 位置 后 调用 HandleAGVOnWall 函数 用于 
+处理 AGV 碰到 墙壁 无法 移动 的 情况 在这之后 DrawAGV 
+在 地图 中 绘制 AGV 最后 RefreshTerrain 刷 新地图 / 
+/ / summary               
+/ / / 得到 传感器 的 测量 结果     
+          / / / / summary 
+              private void GetMeasures 
+              {     
+                  # 
+region 获得 自主 移动 小车 的 位置       
+                pbTerrain . 
+Image = CopyImage OriginalMap             
+          Bitmap b = Bitmap pbTerrain 
+. Image                 
+      Point pPos = new Point pbRobot . 
+Left pbTerrain . Left + 5 pbRobot . Top pbTerrain 
+. Top + 5             
+          # endregion 获得 自主 移动 
+小车 的 位置               
+        HandleAGVOnWall b pPos       
+                DrawAGV pPos 
+b                   
+    RefreshTerrain               
+} DrawAGV 向左 和 向右 遇到 任何 障碍 时 如果 
+选中 Show beam 复选框 就会 看到 前面 左边/f 和/c 右边/f 
+的/uj 避/v 束/nr 检测器/n 显示/v / / / summary   
+            / / / 绘制 
+AGV               / / 
+/ / summary               
+/ / / param name = pPos 坐标 / param 
+              / / / 
+param name = b 位图 / param       
+        private void DrawAGV Point pPos Bitmap 
+b               {   
+                    
+Point pFrontObstacle = GetObstacle pPos b 1 0     
+                  Point 
+pLeftObstacle = GetObstacle pPos b 1 90       
+                Point pRightObstacle 
+= GetObstacle pPos b 1 90         
+              # region 显示 
+线束                   
+    Graphics g = Graphics . FromImage b   
+                    
+if cbLasers . Checked             
+          {         
+                    
+  g . DrawLine new Pen Color . Red 1 
+pFrontObstacle pPos                 
+              g . DrawLine 
+new Pen Color . Red 1 pLeftObstacle pPos     
+                    
+      g . DrawLine new Pen Color . 
+Red 1 pRightObstacle pPos             
+          }         
+              # endregion 显示 
+线束                   
+    # region 绘制 AGV         
+              if btnRun . 
+Text = RunLabel               
+        {           
+                    
+g . FillEllipse new SolidBrush Color . Blue pPos . 
+X 5 pPos . Y 5 10 10     
+                  } 
+                    
+  g . DrawImage b 0 0       
+                g . 
+Dispose                   
+    # endregion 绘制 AGV         
+              # region 更新 
+显示 的 距离               
+        txtFront . Text = GetDistance pPos 
+pFrontObstacle . ToString               
+        txtLeft . Text = GetDistance pPos 
+pLeftObstacle . ToString               
+        txtRight . Text = GetDistance pPos 
+pRightObstacle . ToString               
+        # endregion 更新 显示 的 距离 
+      } DoInference 函数 运行 我们 的 模糊推理 
+系统 的 一个 历元 实例 生成 等等 最终 它 负责 
+确定 AGV 的 下 一个 角度 / / / summary 
+              / / / 
+运行 模糊推理 系统 的 一个 纪元         
+      / / / / summary     
+          private void DoInference     
+          {         
+              / / 输入 
+设置                   
+    IS . SetInput RightDistance Convert . ToSingle txtRight 
+. Text                 
+      IS . SetInput LeftDistance Convert . ToSingle 
+txtLeft . Text               
+        IS . SetInput FrontalDistance Convert . 
+ToSingle txtFront . Text             
+          / / 输出 设置   
+                    
+try                   
+    {               
+                double NewAngle 
+= IS . Evaluate Angle           
+                    
+txtAngle . Text = NewAngle . ToString # # 0 
+. # 0               
+                Angle + 
+= NewAngle                 
+      }             
+          catch Exception       
+                {   
+                    
+}     } MoveAGV 函数 负责 将 AGV 移动 
+一步 如果 您 检查 了 跟踪 路径 的话 会 发现 
+这个 函数 中 大约 50% 的 代码 时 用于 绘制 
+AGV 的 历史 轨迹 的 / / / summary   
+            / / / 移动 
+AGV               / / 
+/ / summary               
+private void MoveAGV               
+{                   
+    double rad = Angle + 90 * Math 
+. PI / 180             
+          int Offset = 0   
+                    
+int Inc = 4             
+          Offset + = Inc   
+                    
+int IncX = Convert . ToInt32 Offset * Math . 
+Cos rad                 
+      int IncY = Convert . ToInt32 Offset 
+* Math . Sin rad           
+            if cbTrajeto . Checked 
+                    
+  {                 
+              Graphics g = 
+Graphics . FromImage OriginalMap             
+                  Point 
+p1 = new Point pbRobot . Left pbTerrain . Left 
++ pbRobot . Width / 2 pbRobot . Top pbTerrain 
+. Top + pbRobot . Height / 2     
+                    
+      Point p2 = new Point p1 . 
+X + IncX p1 . Y + IncY     
+                    
+      g . DrawLine new Pen new SolidBrush 
+Color . Green p1 p2           
+                    
+g . DrawImage OriginalMap 0 0         
+                    
+  g . Dispose             
+          }         
+              pbRobot . Top 
+= pbRobot . Top + IncY         
+              pbRobot . Left 
+= pbRobot . Left + IncX     } 主要 
+应用 与 显示 光束 的 选择 随着 应用 程序 的 
+运行 AGV 成功 导航 障碍物 显示 路径 和 光束 角度 
+是 AGV 当前 所 面对 的 角度 传感器 读数 与 
+前 左 右 波束 传感器 有关 我们 的 AGV 成功 
+地 完成 了 穿越 障碍 并 继续 运行 轨迹 路径 
+和 显示 光束 可 单独 选择 总 结在 这 一章 
+中 我们 学习 了 各种 类型 的 模糊逻辑 实现 并 
+看到 了 使用 AForge . NET 将 这种 逻辑 添加 
+到 我们 的 应用 程序 中 是 多么 的 容易 
+在 我们 的 下一 章中 我们 将 开始 深入 研究 
+自组织 地图 将 我们 的 机器 学习 技能 提升 到 
+一个 新的 层次 如果 你 还记得 小学 时上的/nr 美术课 这 
+一章 一定会 给 你 带来 回忆 

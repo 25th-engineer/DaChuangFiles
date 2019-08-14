@@ -1,0 +1,54 @@
+人工智能工程师学习路线/自然语言处理算法工程师学习路径
+人工智能工程师学习路线自然语言处理算法工程师学习路径
+1入门级别
+1 数据结构
+2 算法重点
+3python
+2进阶阶段
+1 机器学习算法
+2深度学习算法
+3深度学习框架
+4 大数据计算框架
+3高阶
+1 强化学习
+2 迁移学习
+3自然语言处理
+1入门级别
+1.1 数据结构
+1.2 算法（重点）
+面试必考。参考学习地址：
+麻省理工学院公开课：算法导论 http://open.163.com/special/opencourse/algorithms.html
+1.3python
+包括python基础、面向对象要懂。
+2进阶阶段
+2.1 机器学习算法
+特征工程、特征分析
+监督学习算法
+非监督学习算法
+参考学习地址：
+1. Coursera 斯坦福吴恩达课程❤❤❤
+2. 能使用sklearn解决一些小的机器学习任务。
+参考书本：《西瓜书》
+2.2深度学习算法
+视频：
+1. Andrew Ng (吴恩达) 深度学习专项课程 by Coursera and deeplearning.ai❤❤❤
+2. 或者Hinton 大神的coursera 面向机器学习的神经网络
+3. Udacity 深度学习（中/英）by Google。你将通过项目和任务接触完整的机器学习系统 TensorFlow。
+书：《AI圣经 深度学习》
+2.3深度学习框架
+keras
+tensorflow
+掌握好编程的利器，参考视频资料：
+1. 斯坦福大学深度学习课程: CS 20SI: Tensorflow for Deep Learning Research。准确的说，这门课程主要是针对深度学习工具Tensorflow的❤❤❤
+2.4 大数据计算框架
+hadoop
+spark
+因为深度学习工程师一般面对的是大数据，所以公司的分布式计算平台要熟悉会用。
+3高阶
+3.1 强化学习
+理论与实践
+3.2 迁移学习
+理论与实践
+3.3自然语言处理
+斯坦福课程深度学习应用课程。这门课程融合了两位授课者之前在斯坦福大学的授课课程，分别是自然语言处理课程 cs224n (Natural Language Processing)和面向自然语言处理的深度学习课程 cs224d( Deep Learning for Natural Language Processing).
+牛津大学Deep Learning for Natural Language Processing: 2016-2017<深度NLP>http://study.163.com/course/introduction/1004336028.htm ❤❤❤

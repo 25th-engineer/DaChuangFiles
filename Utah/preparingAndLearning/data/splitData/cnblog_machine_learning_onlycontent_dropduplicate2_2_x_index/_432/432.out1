@@ -1,0 +1,190 @@
+在 机器学习 中的 矩阵 向量 求导 二 矩阵 向量 求导 
+之 定 义法 中 我们 讨论 了 定义 法 求解 
+矩阵 向量 求导 的 方法 但是 这个 方法 对 于 
+比较 复杂 的 求导 式子 中间 运算 会 很复杂 同时 
+排列 求 导出 的 结果 也 很麻烦 因此 我们 需要 
+其他 的 一些 求导 方法 本文 我们 讨论 使用 微 
+分法 来 求解 标量 对 向量 的 求导 以及 标量 
+对 矩阵 的 求导 本文 的 标量 对 向量 的 
+求导 以及 标量 对 矩阵 的 求导 使用 分母 布局 
+如果 遇到 其他 资料 求导 结果 不同 请先 确认 布局 
+是否 一样 1 . 矩阵/n 微/n 分在/v 高数/nr 里面/f 我们/r 
+学习/v 过/ug 标量/n 的/uj 导数/n 和/c 微分/n 他们 之间 有 
+这样 的 关系 $ df = f x dx $ 
+如果 是 多 变量 的 情况 则 微分 可以 写成 
+$ $ df = \ sum \ limits _ { 
+i = 1 } ^ n \ frac { \ 
+partial f } { \ partial x _ i } 
+dx _ i = \ frac { \ partial f 
+} { \ partial \ mathbf { x } } 
+^/i Td/w \/i mathbf/w {/i x/w }/i $/i $/i 从/p 
+上次/t 我们/r 可以/c 发现/v 标量/n 对/p 向量/n 的/uj 求导/v 和它的/nr 
+向量/n 微分/n 有一个/i 转置/v 的/uj 关系/n 现在 我们 再 推广 
+到 矩阵 对于 矩阵 微分 我们 的 定义 为 $ 
+$ df = \ sum \ limits _ { i 
+= 1 } ^ m \ sum \ limits _ 
+{ j = 1 } ^ n \ frac { 
+\ partial f } { \ partial X _ { 
+ij } } dX _ { ij } = tr 
+\ frac { \ partial f } { \ partial 
+\ mathbf { X } } ^ Td \ mathbf 
+{ X } $ $ 其中 第二 步 使用 了 
+矩阵 迹 的 性质 即 迹 函数 等于 主 对角线 
+的 和 即 $ $ tr A ^ TB = 
+\ sum \ limits _ { i j } A 
+_ { ij } B _ { ij } $ 
+$ 从 上面 矩阵 微分 的 式子 我们 可以 看到 
+矩阵 微分 和它的/nr 导数 也 有一个 转置 的 关系 不过 
+在 外面 套 了 一个 迹 函数 而已 由于 标量 
+的 迹 函数 就是 它 本身 那么 矩阵 微分 和 
+向量 微分 可以 统一 表示 即 $ $ df = 
+  tr \ frac { \ partial f } { 
+\ partial \ mathbf { X } } ^ Td 
+\ mathbf { X } \ \ \ df = 
+tr \ frac { \ partial f } { \ 
+partial \ mathbf { x } } ^ Td \ 
+mathbf { x } $ $ 2 . 矩阵 微分 
+的 性质 我们 在 讨论 如何 使用 矩阵 微 分来 
+求导 前 先 看看 矩阵 微分 的 性质 1 微分 
+加减法 $ d X + Y = dX + dY 
+d X Y = dX dY $ 2   微分 
+乘法 $ d XY = dX Y + X dY 
+$ 3   微分 转置 $ d X ^ T 
+= dX ^ T $ 4   微分 的 迹 
+$ dtr X = tr dX $ 5   微分 
+哈达 马 乘积 $ d X \ odot Y = 
+X \ odot dY + dX \ odot Y $ 
+6 逐 元素 求导 $ d \ sigma X = 
+\ sigma X \ odot dX $ 7 逆 矩阵 
+微分 $ d X ^ { 1 } = X 
+^ { 1 } dXX ^ { 1 } $ 
+8 行列式 微分 $ d | X | = | 
+X | tr X ^ { 1 } dX $ 
+有了 这些 性质 我们 再 来 看看 如何 由 矩阵 
+微 分来 求 导数 3 . 使用/v 微/n 分法/n 求解/v 
+矩阵/n 向量/n 求导/v 由于/c 第一节/m 我们/r 已经/d 得到/v 了/ul 矩阵/n 
+微分/n 和/c 导数/n 关系/n 现在 我们 就 来 使用 微 
+分法 求解 矩阵 向量 求导 若 标量 函数 $ f 
+$ 是 矩阵 $ X $ 经 加减 乘法 逆 
+行列式 逐 元素 函 数等 运算 构成 则 使用 相应 
+的 运算法则 对 $ f $ 求 微分 再使用 迹 
+函数 技巧 给 $ df $ 套上 迹 并将 其它 
+项 交换 至 $ dX $ 左侧 那么 对于 迹 
+函数 里面 在 $ dX $ 左边 的 部分 我们 
+只 需要 加 一个 转置 就 可以 得到 导 数了 
+这里 需要 用到 的 迹 函数 的 技巧 主要 有 
+这么 几个 1   标量 的 迹 等于 自己 $ 
+tr x = x $ 2   转置 不变 $ 
+tr A ^ T = tr A $ 3   
+交换 率 $ tr AB = tr BA $ 需要 
+满足 $ A B ^ T $ 同 维度 4 
+  加减法 $ tr X + Y = tr X 
++ tr Y tr X Y = tr X tr 
+Y $ 5 矩阵 乘法 和迹/nr 交换 $ tr A 
+\ odot B ^ TC = tr A ^ T 
+B \ odot C $ 需要 满足 $ A B 
+C $ 同 维度 我们 先看 第一 个 例子 我们 
+使用 上 一篇 定 义法 中 的 一个 求导 问题 
+$ $ y = \ mathbf { a } ^ 
+T \ mathbf { X } \ mathbf { b 
+} \ frac { \ partial y } { \ 
+partial \ mathbf { X } } $ $ 首先 
+我们 使用 微分 乘法 的 性质 对 $ f $ 
+求 微分 得到 $ $ dy = d \ mathbf 
+{ a } ^ T \ mathbf { X } 
+\ mathbf { b } + \ mathbf { a 
+} ^ Td \ mathbf { X } \ mathbf 
+{ b } +   \ mathbf { a } 
+^ T \ mathbf { X } d \ mathbf 
+{ b } =   \ mathbf { a } 
+^ Td \ mathbf { X } \ mathbf { 
+b } $ $ 第二步 就是 两边 套上 迹 函数 
+即 $ $ dy = tr dy = tr \ 
+mathbf { a } ^ Td \ mathbf { X 
+} \ mathbf { b } = tr \ mathbf 
+{ b } \ mathbf { a } ^ Td 
+\ mathbf { X } $ $ 其中 第一 到 
+第二 步 使用 了 上面 迹 函数性质 1 第三步/m 到/v 
+第四/m 步/n 用到/v 了/ul 上面/f 迹/n 函数/n 的/uj 性质/n 3/m 
+./i 根据/p 我们/r 矩阵/n 导数/n 和/c 微分/n 的/uj 定义/n 迹 
+函数 里面 在 $ dX $ 左边 的 部分 $ 
+\ mathbf { b } \ mathbf { a } 
+^ T $ 加上 一个 转置 即 为 我们 要求 
+的 导数 即 $ $ \ frac { \ partial 
+f } { \ partial \ mathbf { X } 
+} = \ mathbf { b } \ mathbf { 
+a } ^ T ^ T = ab ^ T 
+$ $ 以上 就是 微 分法 的 基本 流程 先 
+求 微分 再做 迹 函数 变换 最后 得到 求导 结果 
+比起 定 义法 我们 现在 不 需要 去 对 矩阵 
+中的 单个 标 量 进行 求导 了 再 来 看看 
+$ $ y = \ mathbf { a } ^ 
+Texp \ mathbf { X } \ mathbf { b 
+} \ frac { \ partial y } { \ 
+partial \ mathbf { X } } $ $ $ 
+$ dy = tr dy = tr \ mathbf { 
+a } ^ Tdexp \ mathbf { X } \ 
+mathbf { b } =   tr \ mathbf { 
+a } ^ T exp \ mathbf { X } 
+\ mathbf { b } \ odot d \ mathbf 
+{ X } \ mathbf { b } = tr 
+\ mathbf { a }   \ odot exp \ 
+mathbf { X } \ mathbf { b } ^ 
+T d \ mathbf { X } \ mathbf { 
+b } =     tr \ mathbf { b 
+} \ mathbf { a }   \ odot exp 
+\ mathbf { X } \ mathbf { b } 
+^ T d \ mathbf { X }     
+$ $ 其中 第三 步到第/nr 4步 使用 了 上面 迹 
+函数 的 性质 5 . 这样 我们 的 求导 结果 
+为 $ $ \ frac { \ partial y } 
+{ \ partial \ mathbf { X } } = 
+\ mathbf { a }   \ odot exp \ 
+mathbf { X } \ mathbf { b } b 
+^ T $ $ 以上 就是 微 分法 的 基本 
+思路 4 . 迹 函数 对 向量 矩阵 求导 由于 
+微 分法 使用 了 迹 函数 的 技巧 那么 迹 
+函数 对对 向量 矩阵 求导 这 一大 类 问题 使用 
+微 分法 是 最简单 直接 的 下面 给 出 一些 
+常见 的 迹 函数 的 求导 过程 也 顺便 给 
+大家 熟练掌握 微 分法 的 技巧 首先 是 $ \ 
+frac { \ partial tr AB } { \ partial 
+A } = B ^ T \ frac { \ 
+partial tr AB } { \ partial B } = 
+A ^ T $ 这个 直接 根据 矩阵 微分 的 
+定义 即可 得到 再 来 看看 $ \ frac { 
+\ partial tr W ^ TAW } { \ partial 
+W } $ $ $ d tr W ^ TAW 
+= tr dW ^ TAW + W ^ TAdW = 
+tr dW ^ TAW + tr W ^ TAdW = 
+tr dW ^ TAW + tr W ^ TAdW = 
+tr W ^ TA ^ TdW +   tr W 
+^ TAdW = tr W ^ T A + A 
+^ T dW   $ $ 因此 可以 得到 $ 
+$ \ frac { \ partial tr W ^ TAW 
+} { \ partial W } = A + A 
+^ T W $ $ 最后 来 个 更加 复杂 
+的 迹 函数 求导 $ \ frac { \ partial 
+tr B ^ TX ^ TCXB } { \ partial 
+X }   $ $ $ d tr B ^ 
+TX ^ TCXB = tr B ^ TdX ^ TCXB 
++ tr B ^ TX ^ TCdXB = tr dX 
+^ TCXBB ^ T + tr BB ^ TX ^ 
+TCdX = tr BB ^ TX ^ TC ^ TdX 
++ tr BB ^ TX ^ TCdX = tr BB 
+^ TX ^ TC ^ T + BB ^ TX 
+^ TC dX $ $ 因此 可以 得到 $ $ 
+\ frac { \ partial tr B ^ TX ^ 
+TCXB } { \ partial X } = C + 
+C ^ T XBB ^ T $ $ 5 . 
+微 分法 求导 小结 使用 矩阵 微分 可以 在 不对 
+向量 或 矩阵 中的 某一 元素 单独 求导 再 拼接 
+因此 会 比较 方便 当然 熟练 使用 的 前提 是 
+对 上面 矩阵 微分 的 性质 以及 迹 函数 的 
+性质 熟练 运用 还有 一些 场景 求导/v 的/uj 自变量/l 和/c 
+因变量/n 直接/ad 有/v 复杂/a 的/uj 多层/m 链式/n 求导/v 的/uj 关系/n 
+此时 微 分法 使用 起来 也 有些 麻烦 如果 我们 
+可以 利用 一些 常用 的 简单 求导 结果 再使用 链式 
+求导 法则 则会 非常 的 方便 因此 下 一篇 我们 
+讨论 向量 矩阵 求导 的 链式法则 欢迎 转载 转载 请 
+注明 出处 欢迎 沟通交流 liujianping ok @ 163 . com 

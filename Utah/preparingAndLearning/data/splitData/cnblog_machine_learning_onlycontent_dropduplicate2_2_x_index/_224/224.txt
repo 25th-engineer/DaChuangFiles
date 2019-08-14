@@ -1,0 +1,22 @@
+不多说，直接上干货！
+Redis Desktop Manager是一个可视化的Redis数据库管理工具，使用非常简单。
+官网下载：https://redisdesktop.com/download
+github地址：https://github.com/uglide/RedisDesktopManager/releases
+一、下载 Redis Desktop Manager
+百度网盘：http://pan.baidu.com/s/1kU8sY3P
+文件名称：redis-desktop-manager-0.8.8.384.exe
+二、安装Redis Desktop Manager
+redis-desktop-manager-0.8.8.384.exe   傻瓜式安装，点击下一步就行。
+安装完成桌面会生成如下快捷图标，双击启动如右图。
+三、创建连接
+默认如下,密码为空
+而我在，
+Windows里如何正确安装Redis以服务运行（博主推荐）（图文详解）
+已经将密码设置为123456
+欢迎大家，加入我的微信公众号：大数据躺过的坑        人工智能躺过的坑
+同时，大家可以关注我的个人博客：
+http://www.cnblogs.com/zlslch/   和     http://www.cnblogs.com/lchzls/      http://www.cnblogs.com/sunnyDream/
+详情请见：http://www.cnblogs.com/zlslch/p/7473861.html
+人生苦短，我愿分享。本公众号将秉持活到老学到老学习无休止的交流分享开源精神，汇聚于互联网和个人学习工作的精华干货知识，一切来于互联网，反馈回互联网。
+目前研究领域：大数据、机器学习、深度学习、人工智能、数据挖掘、数据分析。 语言涉及：Java、Scala、Python、Shell、Linux等 。同时还涉及平常所使用的手机、电脑和互联网上的使用技巧、问题和实用软件。 只要你一直关注和呆在群里，每天必须有收获
+对应本平台的讨论和答疑QQ群：大数据和人工智能躺过的坑（总群）（161156071）

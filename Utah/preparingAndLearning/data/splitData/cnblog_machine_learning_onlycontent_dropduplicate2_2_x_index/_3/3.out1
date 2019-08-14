@@ -1,0 +1,97 @@
+# 对 coursera 上 Andrew Ng 老师 开 的 机器学习 
+课程 的 笔记 和 心得 # 注 此 笔记 是 
+我 自己 认为 本节 课 里 比较 重要 难理解 或 
+容易 忘记 的 内容 并 做了 些 补充 并非 是 
+课堂 详细 笔记 和 要点 # 标记 为 补充 的 
+是 我 自己 加 的 内容 而非 课堂 内容 参考文献 
+列于 文末 博主 能力 有限 若 有错误 恳请 指正 # 
+# 补充 支持 向量 机 方法 的 三要素 若 不了解 
+机器学习 模型 策略 算法 的 具体 意义 可 参考 机器学习 
+三要素 基本 模型 间隔 最大 的 线性 分类器 若 用上 
+核 技巧 成为 实质上 的 非线性 分类器 学习策略 间隔 最大化 
+可 形式化 为 一个 求解 凸 二次 规划 的 问题 
+学习 算法 求解 凸 二次 规划 的 最优化 算法 如 
+序列 最小 最优 算法 SMO # # 由 logistic regression 
+引出 SVMlogistic function sigmoid function g z = 1 / 
+1 + e z z = Θ Tx 预测 函数 
+logistic 函数 的 图形 当 Θ Tx 远大于 0时 h 
+θ x 接近于 0 logistic 回归 的 cost function 当 
+y = 1时 上式 变为 log 1 + e z 
+见 图形 SVM 的 cost function 对 logistic 回归 的 
+cost function 做了 改变 当 y = 1时 SVM 的 
+cost function 记为 cost1 θ T   x 分为 两部分 
+见 下图 紫 线 当 z 1时 cost1 Θ Tx 
+= 0 当 z 1时 cost1 Θ Tx 是 条 
+直线 这样 做 有 两个 好处 一是 计算 更快 从 
+计算 logistic 函数 转变为 计算 直线 函数 二 是 更 
+有利于 后来 的 优化 同理 对 y = 0时 做 
+同样 的 处理 得到 cost0 θ T   x 下图 
+紫 线 由此 我们 得到 cost0 θ T   x 
+和 cost1 Θ Tx 由此 我们 从 最小化 logistic 回归 
+的 cost function 得到 下式 再 令 C = 1 
+/ λ 去掉 1 / m m 是 常数 不影响 
+计算 优化 结果 得到 最终 SVM 的 cost function # 
+# Large margin intuition 再 来看 SVM 的 cost0 θ 
+T   x 和 cost1 Θ Tx 注意 SVM wants 
+a bit more than that   doesn t   want 
+to * just * get it right but have the 
+value be quite a bit bigger than zeroThrows in an 
+extra safety margin factor 对于 训练 数据 SVM 不仅 要求 
+是 分 的 对 而且 还有 额外 的 间隔 条件 
+来 保证 分 的 好 The green and magenta lines 
+are functional decision boundaries which could be chosen by logistic 
+regressionBut they probably don t generalize too wellThe black line 
+by contrast is the the chosen by the SVM because 
+of this safety net imposed by the optimization g r 
+a p h M a t h e m a 
+t i c a l l y that black line 
+has a larger minimum distance margin from any of the 
+training examplesMore robust   separatorBy   separating   with the 
+largest margin you incorporate robustness into your decision making process 
+补充 什么 是 支持 向量 support vector 下图 中 两个 
+支撑 着 中间 的 gap 的 超平面 它们 到 中间 
+的 纯 红线 separating hyper plane 的 距离 相等 即 
+我们 所 能 得到 的 最大 的 geometrical margin 而 
+支撑 这 两个 超平面 的 必定 会 有一些 点 而 
+这些 支撑 的 点 便 叫做 支持 向量 Support Vector 
+C 的 选择 对 SVM 的 影响 C 选 的 
+合适 时 C 太大 时 造成 过拟合 紫 线 补充 
+最大 间隔 分离 超平面 存在 唯一性 若 训练 数据 线性 
+可分 这是 前提 则 可将 训练 数据 的 样本点 完全正确 
+分开 的 最大 间隔 分离 超平面 存在 且 唯一 # 
+# Kernels 补充 当 训练 数据 线性 可分 或 近似 
+线性 可 分时 通过 间隔 最大化 学习 一个 线性 分类器 
+当 训练 数据 线性 不可 分时 使用 核 技巧 kernel 
+trick 学习 非线性 分类器 补充 核 函数 kernel function 表示 
+将 输入 从 输入 空间 映 射到 特征 空间 得到 
+的 特征向量 之间 的 内积 通过 使用 核 函数 可以 
+学习 非线性 支持 向量 机 等价 于 隐式 地 在 
+高维空间 的 特征 空间 中 学习 线性 支持 向量 机 
+也 就是说 在 核 函数 K x z 给定 的 
+条件 下 可以 利用 解 线性 分类 问题 的 方法 
+去 求解 非线性 分类 问题 的 支持 向量 机 学习 
+是 隐式 的 在 特征 空间 进行 的 不 需要 
+显 式 地 定义 特征 空间 和 映射函数 这样 的 
+技巧 称作 核 技巧 几个 常用 核 函数 Gaussian kernel 
+使用 最多 的 Need to define   σ σ 2 
+linear kernel no kernel others Polynomial Kernel String kernel Chi 
+squared kernel . . . # # Logistic regression vs 
+. SVMIf n features is large vs . m training 
+set e . g . text classification problemFeature vector dimension 
+is 10 000Training set is 10 1000Then use logistic regression 
+or SVM with a linear kernelIf n is small and 
+m is intermediaten = 1 1000m = 10 10 000Gaussian 
+kernel is goodIf n is small and m is largen 
+= 1 1000m = 50 000 + SVM will be 
+slow to run with Gaussian kernelIn that caseManually create or 
+add more featuresUse logistic regression of SVM with a linear 
+kernelLogistic regression and SVM with a linear kernel are pretty 
+similarDo similar thingsGet similar performanceA lot of SVM s power 
+is using diferent kernels to learn complex non linear functionsFor 
+all these regimes a well designed NN should workBut for 
+some of these problems a NN might be slower SVM 
+well implemented would be fasterSVM has a convex optimization problem 
+so you get a global minimum # # 参考文献 统计 
+学习 方法 李航 著 理解 SVM 的 三层 境界 支持 
+向量 机 通俗 导论 July pluskid 著 standford machine learning 
+by   Andrew Ng 

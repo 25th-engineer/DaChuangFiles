@@ -1,0 +1,60 @@
+机器学习-概率分布-伯努利分布
+概率论在机器学习领域发挥了重要的作用。目前机器学习的很多方法本质上是统计学习，而统计学习的本质则是概率论。在概率论中概率分布是一个非常重要的工具。概率分布
+p(x)
+p(\mathbf{x}) 描述的是随机变量
+x
+\mathbf{x} 的概率密度分布。
+首先介绍最简单的一种分布-伯努利分布。变量
+x∈{0,1}
+x\in\{0, 1\} 即变量
+x
+x 要么为
+1
+1 要么为
+0
+0。真实世界中的一个例子是抛硬币，设硬币正面朝上表示
+1
+1, 反面朝上表示为
+0
+0。假设硬币经过了特定设计，那么正面朝上的概率和反面朝上的概率是不一样的，设正面朝上的概率为
+μ,0<μ<1
+\mu, 0<\mu<1。那么我们抛一次硬币，正面朝上的概率可表示为：
+p(x=1|μ)=u
+p(x=1|\mu)=u
+同理，反面朝上的概率为：
+p(x=0|μ)=1−u
+p(x=0|\mu)=1-u
+因此，变量
+x
+x的概率可写为：
+p(x)=ux(1−u)1−x
+p(x)=u^x(1-u)^{1-x}
+假设我们抛硬币抛了
+N
+N次，得到了
+N
+N次结果
+D={x1,x2,⋯,xN}
+\mathcal{D}=\{x_1,x_2,\cdots,x_N\}，那么这些观测变量的似然为：
+p(D|μ)=∏n=1Np(xn|μ)=∏n=1Nuxn(1−μ)1−xn
+p(\mathcal{D}|\mu)=\prod_{n=1}^Np(x_n|\mu)=\prod_{n=1}^Nu^{x_n}(1-\mu)^{1-x_n}
+我们可以通过最大似然来估计概率分布的参数
+μ
+\mu。最大化似然等价于最大化对数似然。对上述求对数
+lnp(D|μ)=∑n=1N{xnlnμ+(1−xn)ln(1−μ)}
+\ln p(\mathcal{D}|\mu)=\sum_{n=1}^N\left\{x_n\ln\mu+\left(1-x_n\right)\ln\left(1-\mu\right)\right\}
+最大化上面的对数似然就可以得到参数
+μ
+\mu的最大似然估计。具体过程为：
+lnp(D|μ)
+\ln p(\mathcal{D}|\mu)对
+mu
+mu求导并令其为
+0
+0，可得：
+0μ==∑n=1Nxn1μ−∑n=1N(1−xn)11−μ1N∑n=1Nxn
+\begin{eqnarray*} 0&=&\sum_{n=1}^Nx_n\frac{1}{\mu}-\sum_{n=1}^N(1-x_n)\frac{1}{1-\mu}\\ \mu&=&\frac{1}{N}\sum_{n=1}^Nx_n \end{eqnarray*}
+我们用python来实现上述的参数估计过程，用scipy包中的bernoulli分布来生成样本，再根据这些样本估计bernoulli分布的参数。下面的代码表示bernoulli分布的参数为0.32，我们用这个分布生成了10000个样本。再用这10000个样本估计该分布的参数。看看估计出来的参数是多少。减少生成样本的个数(size)，重新估计参数，看有什么变化。
+代码
+估计伯努利分布的参数：
+from scipy.stats import bernoulli,poisson,norm,expon import numpy X=bernoulli.rvs(0.32,size=10000) #根据伯努利分布来生成样本# mu=numpy.mean(X)#用样本来估计参数# print(mu)

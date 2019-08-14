@@ -1,0 +1,28 @@
+1.爬python官网，解析页面html信息，python3使用urllib库
+import urllib.request
+1. request type
+req = urllib.request.Request("http://python.org/")
+resp1 = urllib.request.urlopen(req)
+print("*********req1*************")
+print(resp1.read())
+print("**********************")
+2. request type
+resp2 = urllib.request.urlopen("http://python.org/")
+print("*********req2*************")
+print(resp2.read())
+print("**********************")
+#########################################
+url path get response
+#########################################
+def getPageHtml(url):
+response = urllib.request.urlopen(url)
+return response.read()
+split page html data
+def splitPageHtml(resouceData):
+dataArr = [data for data in resouceData.split()]
+print("dataArr len is :" + len(dataArr))
+print("dataArr is start:")
+print(dataArr[0:100])
+print("dataArr is end:")
+resource = getPageHtml("http://python.org")
+print(splitPageHtml(resource))

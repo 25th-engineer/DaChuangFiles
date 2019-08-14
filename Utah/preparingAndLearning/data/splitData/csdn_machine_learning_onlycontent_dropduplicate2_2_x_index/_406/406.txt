@@ -1,0 +1,39 @@
+机器学习领域
+最重要的国际学术会议是
+①国际机器学习会议(ICML)
+②国际神经信息处理系统会议(NIPS)
+③国际学习理论会议(COLT)
+重要的区域性会议有
+①欧洲机器学习会议(ECML)
+②亚洲机器学习会议(ACML)
+最重要的国际学术期刊是
+①Journal of Machine Learning Research
+②Machine Learning
+人工智能领域
+重要会议如
+①IJCAI
+②AAAI
+重要期刊
+①Artificial Intelligence
+②Journal of Artificial Intelligence Research
+数据挖掘领域
+重要会议
+①KDD
+②ICDM
+重要期刊
+①ACM Transactions on Knowledge Discovery from data
+②Data Mining and Knowledge Discovery
+计算机视觉与模式识别领域
+重要会议
+①CVPR
+重要期刊
+①IEEE Transactions on Pattern Analysis and machine Intelligence
+神经网络领域
+重要期刊
+①Neural Computation.
+②IEEE mmactions on Neural Networks and Learning Systems
+统计学领域
+重要期刊
+①Annals ofStatistics
+更多内容访问omegaxyz.com
+摘自周志华《机器学习》

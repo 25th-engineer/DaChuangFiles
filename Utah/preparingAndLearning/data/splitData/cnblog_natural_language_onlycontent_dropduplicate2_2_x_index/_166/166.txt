@@ -1,0 +1,15 @@
+PHP虽然不是人工智能语言,但做人工智能理论上没问题,下面本人整理了一些PHP人工智能库.
+1.NLPTools(http://php-nlp-tools.com/)
+NLPTools是一个PHP自然语言处理库.能进行文本分级,聚类等操作.
+2.Prediction Builder(https://github.com/denissimon/prediction-builder)
+一个用PHP写成的机器学习预测库,使用了线性回归算法.
+3.AIML(http://www.alicebot.org/aiml.html)
+AIML是用于搭建聊天机器人平台的标记语言,可被PHP调用.
+4.PHP Classifier(https://github.com/Dachande663/PHP-Classifier)
+PHP朴素贝叶斯分类库.
+5.PHP-FANN(https://github.com/bukka/php-fann)
+PHP人工神经网络库.
+6.ANN(http://ann.thwien.de/index.php?title=Main_Page)
+PHP人工神经网络库.
+7.PHP-ML(https://github.com/php-ai/php-ml)
+PHP机器学习库,可进行支持向量机,神经网络等操作.

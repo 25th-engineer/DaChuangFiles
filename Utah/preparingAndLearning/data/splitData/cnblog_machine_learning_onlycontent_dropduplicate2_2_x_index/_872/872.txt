@@ -1,0 +1,50 @@
+链接：oschina.net/news/78629/beginners-how-to-learn-from-zero-artificial-intelligence
+此文是想要进入人工智能这个领域、但不知道从哪里开始的初学者最佳的学习资源列表。
+一、机器学习
+有关机器学习领域的最佳介绍，请观看Coursera的Andrew Ng机器学习课程。 它解释了基本概念，并让你很好地理解最重要的算法。
+有关ML算法的简要概述，查看这个TutsPlus课程“Machine Learning Distilled”。
+“Programming Collective Intelligence”这本书是一个很好的资源，可以学习ML 算法在Python中的实际实现。 它需要你通过许多实践项目，涵盖所有必要的基础。
+这些不错的资源你可能也感兴趣:
+Perer Norvig 的Udacity Course on ML（ML Udacity 课程）
+Tom Mitchell 在卡梅隆大学教授的 Another course on ML（另一门ML课程）
+YouTube上的机器学习教程 mathematicalmonk
+二、深度学习
+关于深度学习的最佳介绍，我遇到最好的是 Deep Learning With Python。它不会深入到困难的数学，也没有一个超长列表的先决条件，而是描述了一个简单的方法开始DL，解释如何快速开始构建并学习实践上的一切。它解释了最先进的工具（Keras，TensorFlow），并带你通过几个实际项目，解释如何在所有最好的DL应用程序中实现最先进的结果。
+在Google上也有一个great introductory DL course，还有Sephen Welch的great explanation of neural networks。
+之后，为了更深入地了解，这里还有一些有趣的资源：
+Geoffrey Hinton 的coursera 课程“Neural Networks for Machine Learning”。这门课程会带你了解 ANN 的经典问题——MNIST 字符识别的过程，并将深入解释一切。
+MIT Deep Learning（深度学习）一书。
+UFLDL tutorial by Stanford （斯坦福的 UFLDL 教程）
+deeplearning.net教程
+Michael Nielsen 的 Neural Networks and Deep Learning（神经网络和深度学习）一书
+Simon O. Haykin 的Neural Networks and Learning Machines （神经网络和机器学习）一书
+三、人工智能
+“Artificial Intelligence: A Modern Approach (AIMA)” （人工智能：现代方法） 是关于“守旧派” AI最好的一本书籍。这本书总体概述了人工智能领域，并解释了你需要了解的所有基本概念。
+来自加州大学伯克利分校的 Artificial Intelligence course（人工智能课程）是一系列优秀的视频讲座，通过一种非常有趣的实践项目（训练AI玩Pacman游戏 ）来解释基本知识。我推荐在视频的同时可以一起阅读AIMA，因为它是基于这本书，并从不同的角度解释了很多类似的概念，使他们更容易理解。它的讲解相对较深，对初学者来说是非常不错的资源。
+大脑如何工作
+如果你对人工智能感兴趣，你可能很想知道人的大脑是怎么工作的，下面的几本书会通过直观有趣的方式来解释最好的现代理论。
+Jeff Hawkins 的 On Intelligence（有声读物）
+Gödel, Escher, Bach
+我建议通过这两本书入门，它们能很好地向你解释大脑工作的一般理论。
+其他资源：
+Ray Kurzweil的 How to Create a Mind （如何创建一个头脑Ray Kurzweil） (有声读物).
+Principles of Neural Science （神经科学原理）是我能找到的最好的书，深入NS。 它谈论的是核心科学，神经解剖等。 非常有趣，但也很长 – 我还在读它。
+四、数学
+以下是你开始学习AI需要了解的非常基本的数学概念：
+微积分学
+Khan Academy Calculus videos（可汗学院微积分视频）
+MIT lectures on Multivariable Calculus（MIT关于多变量微积分的讲座）
+线性代数
+Khan Academy Linear Algebra videos（可汗学院线性代数视频）
+MIT linear algebra videos by Gilbert Strang（Gilbert Strang的MIT线性代数视频）
+Coding the Matrix （编码矩阵） – 布朗大学线程代数CS课程
+概率和统计
+可汗学院 Probability（概率）与 Statistics（统计）视频
+edx probability course （edx概率课程）
+五、计算机科学
+要掌握AI，你要熟悉计算机科学和编程。
+如果你刚刚开始，我建议阅读 Dive Into Python 3 （深入Python 3）这本书，你在Python编程中所需要的大部分知识都会提到。
+要更深入地了解计算机编程的本质 – 看这个经典的 MIT course （MIT课程）。这是一门关于lisp和计算机科学的基础的课程，基于 CS -结构和计算机程序的解释中最有影响力的书之一。
+六、其他资源
+Metacademy  – 是你知识的“包管理器”。 你可以使用这个伟大的工具来了解你需要学习不同的ML主题的所有先决条件。
+kaggle  – 机器学习平台

@@ -1,0 +1,85 @@
+# 对 coursera 上 Andrew Ng 老师 开 的 机器学习 
+课程 的 笔记 和 心得 # 注 此 笔记 是 
+我 自己 认为 本节 课 里 比较 重要 难理解 或 
+容易 忘记 的 内容 并 做了 些 补充 并非 是 
+课堂 详细 笔记 和 要点 # 标记 为 补充 的 
+是 我 自己 加 的 内容 而非 课堂 内容 参考文献 
+列于 文末 博主 能力 有限 若 有错误 恳请 指正 # 
+# 这 一周 的 内容 是 机器学习 介绍 和 梯度 
+下 降法 作为 入门 NG 的 这个 课 已足够 想 
+较 深入 理解 的话 强烈 建议 去 听 coursera 上 
+台湾大学 机器学习 的 内容 # # 什么 是 机器学习 Tom 
+Mitchell 给出 的 定义 A computer program is said to 
+learn   from experience E with respect to some task 
+T   and some performance measure P if its   
+performance on T as measured by P improves   with 
+experience E . 换句话说 我们 想 让 机器 在 某些 
+方面 有所 提高 如 商品 推荐 的 准确率 就 喂 
+给 机器 一些 数据 用户 资料 网购 记录 等等 然后 
+让 机器 从 这些 数据 中 学习 达到 某个 准确率 
+提高 的 目的 # # 机器学习 按照 数据 标 记分 
+可分为 四类 监督 式 学习 无 监督 学习 半 监督 
+学习 和 增强 学习 supervised learning 监督 式 Application in 
+which the training data comprises examples of the input vectors 
+along with their correspongding target vectors are known . 关键词 
+right answer given 有 标签 classification regression unsupervised learning 无 
+监督 The training data consists of a set of input 
+vectors X without any corresponding target values . 关键词   
+无 标签 clusering density estimation visualization Semi supervised learning 半 
+监督   is a class of   machine learning   
+techniques that make use of both labeled and unlabeled   
+data   for training typically   a small amount of 
+labeled data   with a large amount of unlabeled data 
+. 关键词   部分 有 标签 reinforcement learning 增强 学习 
+a teacher only says to   classifier   whether it 
+is right   when suggesting a   category for a 
+pattern . The teacher does not tell   what the 
+correct category is . 就是说 一个 评价 仅仅 给 出 
+某种 判断 是 对 还是 错 而 没有 给 出错 
+在 哪里 补充 根据 输入输出 变量 的 不同 类型 对 
+预测 任务 给予 不同 的 名称 输入输出 变量 均为 连续 
+回归 问题 输出 变量 为 有限 个 离散 变量 分类 
+问题 输入输出 变量 均为 变量 序列 标注 问题 # # 
+补充 机器学习 三要素 模型 model 策略 strategy 算法 algorithm 模型 
+就是 所 要 学习 条件 概率分布 或 决策函数 模型 的 
+假设 空间 包含 所有 可能 的 条件 概率分布 或者 决策函数 
+我们 常见 的 一些 方法 像 隐 马 模型 HMM 
+SVM 模型 决策树 模型 等等 都 归于 此类 策略 是 
+指 按照 什么样 的 准则 来 学习 或者 挑选 模型 
+常 用到 经验 风险 最小化 或者 结构 风险 最小化 像 
+课上 讲 的 J Θ 损失 函数 属于 此类 这里 
+的 算法 是 指 学习 模型 的 具体 计算方法 即用 
+什么样 的 方法 来 求得 最优 解 机器学习 问题 归结为 
+最优化 问题 像 课上 讲 的 梯度 下 降法 其他 
+如 牛顿 法 拟 牛顿 法 属于 此类 # # 
+cost function J theta 的 几张 图 非常 有助于 理解 
+单 参数 的 bell shape 双 参数 的 3D plot 
+和 等高线 plot   学习 速率 α 的 大小 很重要 
+小了 导致 梯度 下降 变慢 大了 导致 不 收敛 所以 
+要 解决 局部 最优 问题 改变 α 可能 不是 一个 
+好 办法 还是 选 多个 初始 位 点来 的 安全 
+# # batch gradient descent 求解 思路 1 将 J 
+theta 对 theta 求 偏 导 得到 每个 theta 对应 
+的 的 梯度 2 每次 移动 的 时候 考虑 所有 
+的 实验点 按 每个 参数 theta 的 梯度 负 方向 
+来 更新 每个 theta # # stochastic gradient descent 求解 
+思路 扫描 每个 点 的 时候 就 决定 了 参数 
+的 按照 该点 的 梯度 进行 参数 调整 每次 参数 
+调整 只 考虑 当前 一个 试验点 # # 补充 标准 
+梯度 下降 和 随机 梯度 下降 的 关键 区别 1 
+标准 梯度 下降 在 权值 更新 前 对 所有 样例 
+汇总 误差 而 随机 梯度 下降 的 权值 是 通过考察 
+每个 训练 实例 来 更新 的 2 标准 梯度 下降 
+中 权值 更新 每一步 对 多个 样例 求和 需要 更多 
+计算 另外 其 使用 的 是 真正 的 梯度 故 
+每一次 权值 更新 经常 使用 比 随机 梯度 下降 大 
+的 步长 3 两者 都 不能 保证 找到 全局 最优 
+解 随机 梯度 下降 有时 能够 避免 陷入 局部 极小值 
+因为 它 使用 不同 的 梯度 来 引导 搜索 梯度 
+下 降法 一般 适用 于 计算 过程 的 前期 迭代 
+或 作为 间 插 步骤 当 接近 极 小点 时 
+用 梯度 下 降法 不利于 达到 迭代 的 终止 # 
+# 参考文献 统计 学习 方法 李航 著 machine learning by 
+Tom Mitchell couresra 课程   standford machine learning by   
+Andrew Ng couresra 课程 台湾大学 機 器 學 習 基石 
+by   林軒田/nr 

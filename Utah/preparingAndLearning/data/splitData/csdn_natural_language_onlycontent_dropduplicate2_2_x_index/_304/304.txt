@@ -1,0 +1,165 @@
+目录
+一、自然语言处理介绍
+概念
+子领域
+数据集
+工具包
+二、API
+Jieba (分词)
+Pyltp (分词、词性标注、命名实体识别、句法依存树、语义角色标注)
+NLTK (词性、词性标注、提取词频、提取词根、词形还原、编辑距离)
+Pre-trained BERT (特征提取)
+GloVe (词嵌入向量)
+Spacy (词嵌入向量)
+Gensim (词嵌入训练)
+其他
+三、相关算法
+一、自然语言处理介绍
+概念
+通俗而言，自然语言处理 (Natural Language Processing) 即为处理与人类语言相关的各项任务。与计算机视觉类似，是一个由来已久，却在近几年被神经网络颠覆的传统领域，在人机对话、搜索引擎、后台广告推荐、机器翻译、语音识别等领域有广泛应用。传统的自然语言处理以统计学为根基，发展出了各具特色的优异模型，其中最为著名的包括 朴素贝叶斯、隐马尔科夫模型 (HMM)、条件随机场 (CRF)。神经网络的出现使得 NLP 领域得到空前的发展，从 Word2Vec (2013) 到 Attention机制 (2014)、Transformer (2017)、号称开启 NLP 新纪元的集大成者 BERT (2018)，再到近期卡内基梅隆大学的团队研发的 XLNet (2019)，NLP 在不断树立新的里程碑，走在人工智能的前沿。
+子领域
+语音文本
+文本朗读（Text to Speech）
+语音合成（Speech Synthesis）
+语音识别（Speech Recognition）
+自然语言理解
+中文分词（Chinese Word Segmentation）
+词性标注（Part-of-Speech Tagging）
+句法分析（Parsing）
+情绪分析（Sentiment Analysis）
+文字蕴涵（Textual Entailment）
+自然语言生成（Natural Language Generation）
+问答系统（Question Answering）
+人机对话（Man-Machine Interaction）
+文字校对（Text-Proofing）
+机器翻译（Machine Translation）
+大型文本分析
+信息抽取（Information Extraction）
+自动摘要（Automatic Summarization）
+文本分类（Text Categorization）
+信息检索（Information Retrieval）
+字符串处理
+模式匹配（Pattern Matching）
+文本相似度（Text Similarity）
+文本压缩（Text Compression）
+数据集
+数据集
+内容
+领域
+语言
+数量
+IWSLT
+TED演讲多国语言字幕
+机器翻译
+中英
+不限
+SQuAD
+维基百科词条
+文档问答
+英文
+150,000+
+DuReader
+用户日志
+文档问答
+中文
+-
+CoQA
+人为对话
+对话问答
+英文
+127,000+
+LOB
+历史文献
+词性标注
+英文
+1,000,000
+这里只呈现笔者自己熟悉的数据集，网上有很多关于开源数据集的总结博文，这里推荐几篇：https://www.jiqizhixin.com/articles/2018-09-05-2
+https://blog.csdn.net/enohtzvqijxo00atz3y8/article/details/80163069
+工具包
+中文 NLP 领域著名的 Python 工具包列示如下：
+Python Language Technology Platform (Pyltp)
+Pyltp 是 LTP 的 Python 封装，提供了分词，词性标注，命名实体识别，依存句法分析，语义角色标注的功能。
+Jieba
+专业提供分词功能的工具包。
+Standford NLP
+除可以实现 Pyltp 的功能以外，还能进行情绪分析，但安装较为复杂，需要通过 Java 安装并设置 Python 接口。
+英文 NLP 领域有：
+Natural Language Toolkit (NLTK)
+A Python library that provides modules for processing text, classifying, frequency analyzing, tokenizing, stemming, part-of-speech tagging, parsing, and more.
+Apache OpenNLP
+A machine learning toolkit that provides tokenizers, sentence segmentation, part-of-speech tagging, named entity extraction, chunking, parsing, coreference resolution, and more.
+Standford NLP
+A suite of NLP tools that provide part-of-speech tagging, the named entity recognizer, coreference resolution system, sentiment analysis, and more.
+GlounNLP
+Provides implementations of the state-of-the-art (SOTA) deep learning models in NLP, and build blocks for text data pipelines and models. It is designed for engineers, researchers, and students to fast prototype research ideas and products based on these models.
+二、API
+笔者将分词、词性标注、命名实体识别、句法分析、语义角色标注等应用领域底层的 NLP 任务定义为基础 NLP 任务。在实际的应用研究与开发时，由于语料库的准备成本较高，预训练通常也耗时过长。在研究时，这一部分任务通常可以通过调用第三方专业机构预训练好的模型实现，将更多的注意力集中到上层模型的设计和搭建。特别地，当预训练的模型无法满足实际的业务需求时，可以通过定义用户词典修正模型结果。本章详细列示基础 NLP 任务的 API 实现。
+由于中文的特殊性，中文 NLP 与 英文 NLP 的一大不同在于中文文本处理需要借助语料库预先对语句进行分词，而英文只需要通过空格即可完成。在 Python 语言环境下，运用 Nshort 中文分词算法的 Jieba 出于杰出的分词效果，以及安装和使用方便，成为最为著名的中文分词工具。在其他的基础 NLP 任务上，哈尔滨工业大学开发的 Pyltp 库更为专业和全面，词库储备也更为丰富，在学术界和工业界得到广泛应用。
+Jieba (分词)
+关于 Jieba，以下仅列示分词相关代码：
+import jieba sentence = '里约热内卢的奶牛拿榴莲牛奶以折足之姿跑到委内瑞拉拿了蜂花护发素送给红鲤鱼与绿鲤鱼与驴' wordlist = jieba.cut(sentence) #精确模式 wordlist = jieba.cut(sentence, cut_all=True) #全模式 wordlist = jieba.cut_for_search(sentence) #搜索引擎模式 jieba.load_userdict(open(r'D:\NLP resources\jieba userdict.txt',encoding='gbk')) #导入用户词典
+精确模式：试图将句子最精确地切开，适合文本分析；
+全模式：把句子中所有的可以成词的词语都扫描出来, 速度非常快，但是不能解决歧义；
+搜索引擎模式：在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词；
+使用用户词典：由用户自行选择地址新建词典 txt 文档，需要满足每行’词语 词频 词性’的编写要求，例：‘榴莲牛奶 5 n’。
+Pyltp (分词、词性标注、命名实体识别、句法依存树、语义角色标注)
+from pyltp import * sentence = '里约热内卢的奶牛拿榴莲牛奶，以折足之姿跑到委内瑞拉拿了蜂花护发素，送给红鲤鱼与绿鲤鱼与驴' # 分词 segmentor = Segmentor() segmentor.load(r'D:\NLP resources\cws.model') words = segmentor.segment(sentence) print("|".join(words)) # 词性标注 pos_tagger = Postagger() pos_tagger.load(r'D:\NLP resources\pos.model') pos_tags = pos_tagger.postag(words) for word,pos_tag in zip(words,pos_tags): print(word+'/'+pos_tag) # 命名实体识别 recognizer = NamedEntityRecognizer() recognizer.load(r'D:\NLP resources\ner.model') ne_tags = recognizer.recognize(words,pos_tags) for word,pos_tag,ne_tag in zip(words,pos_tags,ne_tags): print(word+' / '+pos_tag+' / '+ne_tag) # 句法依存树 import nltk from nltk.tree import Tree from nltk.grammar import DependencyGrammar from nltk.parse import * import re parser = Parser() parser.load(r'D:\NLP resources\parser.model') arcs = parser.parse(words,pos_tags) conll = '' for i in range(len(arcs)): if arcs[i].head == 0: arcs[i].relation = 'ROOT' conll += '\n' + words[i] + '(' + pos_tags[i] + ')\t' + pos_tags[i] + '\t' + str(arcs[i].head) + '\t' + arcs[i].relation print(conll) conlltree = DependencyGraph(conll) tree = conlltree.tree() tree.draw() # 语义角色标注 labeller = SementicRoleLabeller() labeller.load(r'D:\NLP resources\pisrl_win.model') roles = labeller.label(words, pos_tags, arcs) for role in roles: print([words[role.index], ' '.join(['%s:%s'%(arg.name, ''.join(words[arg.range.start:arg.range.end+1])) for arg in role.arguments])])
+NLTK (词性、词性标注、提取词频、提取词根、词形还原、编辑距离)
+import nltk article = "Beyoncé Giselle Knowles-Carter (/biːˈjɒnseɪ/ bee-YON-say) (born September 4, 1981) is an American singer, songwriter, record producer and actress. Born and raised in Houston, Texas, she performed in various singing and dancing competitions as a child, and rose to fame in the late 1990s as lead singer of R&B girl-group Destiny's Child." # 常用功能 tokens = nltk.word_tokenize(article) #分词 nltk.pos_tag(tokens) #词性标注 nltk.FreqDist(w.lower() for w in tokens) #提取词频 nltk.PorterStemmer().stem('lying') #提取词根 nltk.stem.WordNetLemmatizer().lemmatize('dancing','v') #词形还原 nltk.edit_distance('humble','dumpy') #编辑距离 # 查看nltk词性标注分类 nltk.help.upenn_tagset() # 下载功能包 nltk.download()
+Pre-trained BERT (特征提取)
+当前最受欢迎的预训练 BERT 库，需要预先下载参数文件，Github 地址。 名为 BERT，实则同时包含了 GPT、Transformer-XL、GPT-2 的预训练参数。提取隐藏状态后可直接嫁接于任何下游任务。
+import torch from pytorch_pretrained_bert import BertTokenizer, BertModel, BertForMaskedLM # tokens text = "[CLS] Who was Henson? [SEP] Jim [MASK] was a puppeteer [SEP]" tokenizer = BertTokenizer.from_pretrained(r'D:\NLP\BERT\pytorch-pretrained-BERT\bert-tokenization-vocabulary.txt') #这里文本改为"bert-base-uncased"将自动下载参数文件(下同) tokens = tokenizer.tokenize(text) indicies = tokenizer.convert_tokens_to_ids(tokens) tokens_tensor = torch.tensor([indicies]) tokens_tensor = tokens_tensor.to('cuda') #迁移至GPU运行 # segments segments_ids = [0,0,0,0,0,0,1,1,1,1,1,1,1] segments_tensor = torch.tensor([segments_ids]) segments_tensor = segments_tensor.to('cuda') # model model = BertModel.from_pretrained(r'D:\NLP\BERT\pytorch-pretrained-BERT\bert-base-uncased.tar.gz') model.to('cuda') # forward with torch.no_grad(): encoded_layers,_ = model(tokens_tensor,segments_tensor)
+GloVe (词嵌入向量)
+GloVe 是斯坦福大学提供的专业词嵌入算法，在官网同时开放源码和预训练词向量供免费下载。
+# 使用预训练词向量模型 from tqdm import tqdm import numpy as np X = np.empty((400000,300)) word_to_id, id_to_word, idx = {},{},0 with open(r'D:\NLP\glove.6B\glove.6B.300d.txt', 'r', encoding='utf-8') as f: #载入前需提前下载 for line in tqdm(f, total=400000): line = line.strip().split(' ') vector = list(map(float, line[1:])) X[idx,:] = vector word_to_id[line[0]] = idx id_to_word[idx] = line[0] idx += 1 # 查看词向量空间分布 import pandas as pd import matplotlib.pyplot as plt def pca(X): #PCA将词向量降至二维 X = pd.DataFrame(X) X = (X - X.mean()) / X.std() X = np.matrix(X) cov = (X.T * X) / X.shape[0] U, S, V = np.linalg.svd(cov) return U U = pca(X) #提取正交矩阵 Y = np.dot(X, U[:,:2]) #获取降维数据 ax = plt.subplot(111) for word in list(word_to_id.keys())[:20]: coordinate = Y[word_to_id[word],:] ax.scatter(coordinate[0,0],coordinate[0,1]) ax.annotate(word, xy=(coordinate[0,0], coordinate[0,1]), #坐标点 xycoords='data', #坐标点类型 xytext=(+5, +5), #标注文字相对位置 textcoords='offset points', #标注文字类型 fontsize=16) #标注文字大小 plt.show()
+Spacy (词嵌入向量)
+Spacy 是一个相较于 NLTK 执行效率更高，各基础任务准确度也更高的专业 NLP 工具包，在这里仅列示词嵌入向量的代码，感兴趣的读者可自行检索。
+# 使用预训练词向量模型 import spacy import numpy as np library = spacy.load('en_core_web_lg') #载入前需提前下载 article = 'let coward father mother brother sister juice milk is are be to 2013 2014 2015 2016 2017 2018' tokens = library(article) X = np.empty((0,300)) word_to_id, id_to_word, idx = {},{},0 for token in tokens: X = np.vstack((X,token.vector)) word_to_id[str(token)] = idx id_to_word[idx] = str(token) idx += 1 # 查看词向量空间分布 import pandas as pd import matplotlib.pyplot as plt def pca(X): #PCA将词向量降至二维 X = pd.DataFrame(X) X = (X - X.mean()) / X.std() X = np.matrix(X) cov = (X.T * X) / X.shape[0] U, S, V = np.linalg.svd(cov) return U U = pca(X) #提取正交矩阵 Y = np.dot(X, U[:,:2]) #获取降维数据 ax = plt.subplot(111) for word in word_to_id.keys(): coordinate = Y[word_to_id[word],:] ax.scatter(coordinate[0,0],coordinate[0,1]) ax.annotate(word, xy=(coordinate[0,0], coordinate[0,1]), #坐标点 xycoords='data', #坐标点类型 xytext=(+5, +5), #标注文字相对位置 textcoords='offset points', #标注文字类型 fontsize=16) #标注文字大小 plt.show()
+Gensim (词嵌入训练)
+# 自行训练词向量 from gensim.models import Word2Vec sentences = [["cat", "say", "meow"], ["dog", "say", "woof"]] model = Word2Vec(min_count=1) model.build_vocab(sentences) #搭建语料库 model.train(sentences, total_examples=model.corpus_count, epochs=model.epochs) #训练 model.wv['cat'] #查看词向量 model.save('/word2vec') #保存模型 model.vocabulary.load('/word2vec') #读取模型
+其他
+# 拼写相似度 import difflib difflib.SequenceMatcher(None,'sequence','sequential').ratio()
+三、相关算法
+每一种应用都有经过长期考验，效果最佳的算法，列示如下。部分算法笔者提供代码实现，其余请读者自行搜索开放源码。
+算法
+应用
+链接
+朴素贝叶斯 (Naive Bayes)
+文本分类
+代码
+隐马尔科夫模型 (HMM)
+语音识别
+代码
+最大熵模型 (MEM)
+词性标注
+代码
+条件随机场 (CRF)
+中文分词、语义组块
+-
+TF-IDF + BM25
+搜索引擎、广告推荐
+-
+LDA (Latent Dirichelt Allocation)
+文本相似度
+-
+ARC-1/ARC-2
+文本相似度
+-
+bi-LSTM + CRF
+命名实体识别、IOB/BIE序列标注
+-
+Seq2Seq
+机器翻译、文本会话、图像字幕、自然语言生成
+-
+DCN
+文档问答系统
+-
+BERT
+特征提取
+-
+GPT-2
+特征提取
+-
+XLNet
+特征提取
+-

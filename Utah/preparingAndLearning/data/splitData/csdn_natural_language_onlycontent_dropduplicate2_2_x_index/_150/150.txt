@@ -1,0 +1,176 @@
+关于“如何学习自然语言处理”，有很多同学通过不同的途径留过言，这方面虽然很早之前写过几篇小文章：《如何学习自然语言处理》和《几本自然语言处理入门书》，但是更推崇知乎上这个问答：自然语言处理怎么最快入门，里面有微软亚洲研究院周明老师的系统回答和清华大学刘知远老师的倾情奉献：初学者如何查阅自然语言处理（NLP）领域学术资料，当然还包括其他同学的无私分享。
+不过，对于希望入门NLP的同学来说，推荐你们先看一下这本书: Speech and Language Processing，第一版中文名译为《自然语言处理综论》，作者都是NLP领域的大大牛：斯坦福大学 Dan Jurafsky 教授和科罗拉多大学的 James H. Martin 教授。这也是我当年的入门书，我读过这本书的中文版（翻译自第一版英文版）和英文版第二版，该书第三版正在撰写中，作者已经完成了不少章节的撰写，所完成的章节均可下载：Speech and Language Processing (3rd ed. draft)。从章节来看，第三版增加了不少和NLP相关的深度学习的章节，内容和篇幅相对于之前有了更多的更新：
+Chapter
+Slides
+Relation to 2nd ed.
+1:
+Introduction
+[Ch. 1 in 2nd ed.]
+2:
+Regular Expressions, Text Normalization, and Edit Distance
+Text [pptx] [pdf]
+Edit Distance [pptx] [pdf]
+[Ch. 2 and parts of Ch. 3 in 2nd ed.]
+3:
+Finite State Transducers
+4:
+Language Modeling with N-Grams
+LM [pptx] [pdf]
+[Ch. 4 in 2nd ed.]
+5:
+Spelling Correction and the Noisy Channel
+Spelling [pptx] [pdf]
+[expanded from pieces in Ch. 5 in 2nd ed.]
+6:
+Naive Bayes Classification and Sentiment
+NB [pptx] [pdf]
+Sentiment [pptx] [pdf]
+[new in this edition]
+7:
+Logistic Regression
+8:
+Neural Nets and Neural Language Models
+9:
+Hidden Markov Models
+[Ch. 6 in 2nd ed.]
+10:
+Part-of-Speech Tagging
+[Ch. 5 in 2nd ed.]
+11:
+Formal Grammars of English
+[Ch. 12 in 2nd ed.]
+12:
+Syntactic Parsing
+[Ch. 13 in 2nd ed.]
+13:
+Statistical Parsing
+14:
+Dependency Parsing
+[new in this edition]
+15:
+Vector Semantics
+Vector [pptx] [pdf]
+[expanded from parts of Ch. 19 and 20 in 2nd ed.]
+16:
+Semantics with Dense Vectors
+Dense Vector [pptx] [pdf]
+[new in this edition]
+17:
+Computing with Word Senses: WSD and WordNet
+Intro, Sim [pptx] [pdf]
+WSD [pptx] [pdf]
+[expanded from parts of Ch. 19 and 20 in 2nd ed.]
+18:
+Lexicons for Sentiment and Affect Extraction
+SentLex [pptx] [pdf]
+[new in this edition]
+19:
+The Representation of Sentence Meaning
+20:
+Computational Semantics
+21:
+Information Extraction
+[Ch. 22 in 2nd ed.]
+22:
+Semantic Role Labeling and Argument Structure
+SRL [pptx] [pdf]
+Select [pptx] [pdf]
+[expanded from parts of Ch. 19 and 20 in 2nd ed.]
+23:
+Neural Models of Sentence Meaning (RNN, LSTM, CNN, etc.)
+24:
+Coreference Resolution and Entity Linking
+25:
+Discourse Coherence
+26:
+Seq2seq Models and Summarization
+27:
+Machine Translation
+28:
+Question Answering
+29:
+Conversational Agents
+30:
+Speech Recognition
+31:
+Speech Synthesis
+另外该书作者之一斯坦福大学 Dan Jurafsky 教授曾经在Coursera上开设过一门自然语言处理课程：Natural Language Processing，该课程目前貌似在Coursera新课程平台上已经查询不到，不过我们在百度网盘上做了一个备份，包括该课程视频和该书的第二版英文，两个一起看，效果更佳：
+链接: https://pan.baidu.com/s/1kUCrV8r 密码: jghn 。
+对于一直寻找如何入门自然语言处理的同学来说，先把这本书和这套课程拿下来才是一个必要条件，万事先有个基础。
+同时欢迎大家关注我们的公众号：NLPJob，回复"slp"获取该书和课程最新资源。
+本条目发布于2017年07月24号。属于自然语言处理分类，被贴了 Dan Jurafsky、James H. Martin、NLP书籍、NLP入门、NLP课程、Speech and Language Processing、斯坦福大学，科罗拉多大学、深度学习、自然语言处理、自然语言处理书籍、自然语言处理入门、自然语言处理综论、自然语言处理课程 标签。作者是52nlp。
+
+这里推荐一批学习自然语言处理相关的书籍，当然，不止是自然语言处理，国内的书籍相对比较便宜，值得购买。
+1、《自然语言处理综论》，当年的入门书，不过翻译的是第一版，英文名《Speech and Language Processing>, 第三版据说很快就要出版（2016年），有条件的同学建议直接看英文版第二版。
+2、《统计自然语言处理基础》，另一本入门书籍，这本书的英文版貌似没有更新，但是中文版貌似也不再发售了，当然，优先推荐读英文版。
+3、《Python自然语言处理》，NLTK配套丛书，有了上面两本书的介绍，再加上一些Python基础，通过这本书进行相关的文本挖掘实战，很不错的一个路径。
+4、宗成庆老师的《统计自然语言处理（第2版）》，当年读书的时候大致看过第一版，作为入门书籍不错。
+5、国内青年学者刘知远老师等合著的《互联网时代的机器学习和自然语言处理技术大数据智能》，没有仔细看过，仅供参考。
+6、南大周志华老师的西瓜书《机器学习》，最近出版的书籍，国内难得学习机器学习的高质量书籍，评价非常高，强烈推荐。
+7、CMU机器学习系主任Tom Mitchell院士的 《机器学习》，机器学习老牌经典书籍，历久弥新。
+华章引进的英文版也不贵，不过貌似没货：《机器学习（英文版》
+8、比较新的一本机器学习书籍，被誉为内容全面的机器学习教程 Machine Learning期刊主编力作：《机器学习》
+9、李航老师的这本《统计学习基础》挺不错的，简洁明了：《统计学习基础》
+10、王斌老师翻译的《大数据 互联网大规模数据挖掘与分布式处理（第2版）》，质量挺不错的，对应的英文书籍是《Mining of Massive Datasets》，有相应的官方主页，提供相应的英文PDF，课程和课件资源。
+————————————————————————————
+自然语言处理中的若干问题（http://blog.csdn.net/yueyedeai/article/details/14524151）
+一、语言模型
+（一）N元语言模型
+（二）语言模型性能评价
+（三）数据平滑
+（四）语言模型自适应方法
+二、汉语自动分词和词性标注
+（一）基本分词方法
+（二）未登陆词处理方法
+（三）基于多特征的命名实体模型
+（四）词性标注
+（五）词性标注的一致性检查和自动校对
+三、句法分析
+（一）统计句法分析以及句法分析的检查
+（二）层次化汉语长句结构分析
+（三）浅层句法分析
+（四）依据句法理论与依存句法分析
+四、语义消歧
+（一）有监督的语义消歧
+（二）基于词典的语义消歧
+（三）无监督的语义消歧
+（四）语义消歧系统评测
+五、文本分类
+（一）文本表示
+（二）文本 特征选择方法
+（三）特征权重计算方法
+（四）分类器设计
+（五）文本分类器性能评估方法
+六、自动文摘和信息抽取
+（一）多文档摘要
+（二）单文档摘要
+（三）信息抽取
+七、文档聚类
+（一）聚类算法
+（二）聚类结果评估
+八、自然语言处理的主要范畴
+1．文本朗读（Text to speech）/语音合成（Speech synthesis）
+2．语音识别（Speech recognition）
+3．中文自动分词（Chinese word segmentation）
+4．词性标注（Part-of-speech tagging）
+5．句法分析（Parsing）
+6．自然语言生成（Natural language generation）
+7．文本分类（Text categorization）
+8．信息检索（Information retrieval）
+9．信息抽取（Information extraction）
+10．文字校对（Text-proofing）
+11．问答系统（Question answering）
+12．机器翻译（Machine translation）
+13．自动摘要（Automatic summarization）
+14．文字蕴涵（Textual entailment）
+九、自然语言处理研究的难点
+1． 单词的边界界定
+在口语中，词与词之间通常是连贯的，而界定字词边界通常使用的办法是取用能让给定的上下文最为通顺且在文法上无误的一种最佳组合。在书写上，汉语也没有词与词之间的边界。
+2．词义的消歧
+许多字词不单只有一个意思，因而我们必须选出使句意最为通顺的解释。
+3．句法的模糊性
+自然语言的文法通常是模棱两可的，针对一个句子通常可能会剖析（Parse）出多棵剖析树（Parse Tree），而我们必须要仰赖语意及前后文的资讯才能在其中选择一棵最为适合的剖析树。
+4．有瑕疵的或不规范的输入
+例如语音处理时遇到外国口音或地方口音，或者在文本的处理中处理拼写，语法或者光学字符识别（OCR）的错误。
+5．语言行为与计划
+句子常常并不只是字面上的意思；例如，“你能把盐递过来吗”，一个好的回答应当是把盐递过去；在大多数上下文环境中，“能”将是糟糕的回答，虽说 回答“不”或者“太远了我拿不到”也是可以接受的。再者，如果一门课程去年没开设，对于提问“这门课程去年有多少学生没通过？”回答“去年没开这门课”要 比回答“没人没通过”好。

@@ -1,0 +1,96 @@
+目录
+摘要
+NER问题定义
+常用数据集
+CoNLL 2003
+OntoNotes 5.0 / CoNNLL 2012
+NLPBA2004
+Enron Emails
+BosonNLP
+人民日报1998
+SOTA算法在主流数据集上的表现
+CoNLL 2003
+OntoNotes 5.0 / CoNNLL 2012
+中文NER
+API接口资源
+Google NLP API
+百度NLP接口
+BOSON NER接口
+总结
+附录
+推荐论文资源
+推荐源代码资源
+Tensorflow - Named Entity Recognition
+BLOG POSTS
+摘要
+命名实体识别的任务是识别句子中的实体，并且标注实体的类别，如人（PER），组织（ORG），位置（LOC）。本博文试图系统整理与命名实体识别技术相关的数据、算法及各类开源资源以便对命名实体识别技术有应用需求的个人和机构能够各取所需。
+NER问题定义
+命名实体识别的任务是识别句子中的实体，并且标注实体的类别，如人（PER），组织（ORG），位置（LOC）。此外，如果一个完整的实体是由多个单词构成，可将每个单词单独标注。
+David
+Beckham
+was
+with
+AC
+Milan
+B-PER
+I-PER
+O
+O
+I-ORG
+I-ORG
+以上：
+David标注为B-PER，B（Beginning）代表实体的起始部分；
+Beckham标注为I-PER，I代表实体的中间部分。
+关于单词的单独标注，有不同的惯例，如IOB（Inside，Outside，Beginning）体系和IOBES（Inside，Outside，Beginning，End，Singleton）体系。
+命名实体识别的标注实体类别和标注方式不存在统一的标准，可以根据具体的业务定制标注体系。例如在BosonNLP网站上提供的中文命名实体识别API中，标注的类型包括：product_name，time，person_name，org_name，location，company_name等，不同于常见的NER任务中只标注PER，ORG，LOC，用于标准的字符串格式也不一样（如person_name vs. PER）。另外其标注的方式是整个实体，即整个单次或短句为单位进行标注，并未针对每个字去标注他在实体中的位置。
+常用数据集
+CoNLL 2003
+CoNLL 2003应该算是很经典的NER数据集了。想2018年横空出世的Google BERT论文中也用CoNLL 2003的NER任务来作为BERT性能的炼金石（参见另一篇博文《Google BERT概览（一） -它解决了哪些问题？》）。
+以下是官网上提供的数据样本。数据一共包含四列，第一列为单次，第二列为a part-of-speech (POS) 标签，第三列为syntactic chunk标签，第四列为NER标注。
+关于CoNLL 2003数据集的其他信息，读者可移步该数据集的官网介绍，或者在下载了完整数据集后自行探索。
+OntoNotes 5.0 / CoNNLL 2012
+以下是官网上提供的中文数据样本。这里不得不吐槽一下，选取样本的时候就不能上点心，挑些文明得体的样本吗？可以看到OntoNotes 5.0数据中，除了标注NER，也包含了如POS标签等其他标签，可以用于其他类型的以单词或短语为单位的NLP文字识别任务。
+关于OntoNotes 5.0数据集的其他信息，读者可移步该数据集的官网介绍，或者在下载了完整数据集后自行探索。
+NLPBA2004
+关于NLPBA2004数据集的信息，读者可移步该数据集的官网介绍。
+Enron Emails
+Enron Emails数据集包含了Enron公司内部158名员工相互间发送的60多万Email. Enron Emails数据集的详细信息，读者可移步维基百科上对该数据集的介绍。
+BosonNLP
+BosonNLP中文命名实体识别数据集包含了2000条句子（下载地址）。以下展示了其原始数据中对命名实体的标注方式。
+{{product_name:浙江在线杭州}}{{time:4月25日}}讯（记者{{person_name: 施宇翔}} 通讯员 {{person_name:方英}}）毒贩很“时髦”，用{{product_name:微信}}交易毒品。没料想警方也很“潮”，将计就计，一举将其擒获。记者从{{org_name:杭州江干区公安分局}}了解到，经过一个多月的侦查工作，{{org_name:江干区禁毒专案组}}抓获吸贩毒人员5名，缴获“冰毒”400余克，毒资30000余元，扣押汽车一辆。{{location:黑龙江}}籍男子{{person_name:钱某}}长期落脚于宾馆、单身公寓，经常变换住址。他有一辆车，经常半夜驾车来往于{{location:杭州主城区}}的各大宾馆和单身公寓，并且常要活动到{{time:凌晨6、7点钟}}，{{time:白天}}则在家里呼呼大睡。
+人民日报1998
+以1998年人民日报语料为对象，由北京大学计算语言学研究所和富士通研究开发中心有限公司共同制作的标注语料库。该语料库对600多万字节的中文文章进行了分词及词性标注。以下展示了其原始数据的大致样式。
+19980101-01-001-007/m １９９７年/t ，/w 是/v 中国/ns 发展/vn 历史/n 上/f 非常/d 重要/a 的/u 很/d 不/d 平凡/a 的/u 一/m 年/q 。/w 中国/ns 人民/n 决心/d 继承/v 邓/nr 小平/nr 同志/n 的/u 遗志/n ，/w 继续/v 把/p 建设/v 有/v 中国/ns 特色/n 社会主义/n 事业/n 推向/v 前进/v 。/w [中国/ns 政府/n]nt 顺利/ad 恢复/v 对/p 香港/ns 行使/v 主权/n ，/w 并/c 按照/p “/w 一国两制/j ”/w 、/w “/w 港人治港/l ”/w 、/w 高度/d 自治/v 的/u 方针/n 保持/v 香港/ns 的/u 繁荣/an 稳定/an 。/w [中国/ns 共产党/n]nt 成功/a 地/u 召开/v 了/u 第十五/m 次/q 全国/n 代表大会/n ，/w 高举/v 邓小平理论/n 伟大/a 旗帜/n ，/w 总结/v 百年/m 历史/n ，/w 展望/v 新/a 的/u 世纪/n ，/w 制定/v 了/u 中国/ns 跨/v 世纪/n 发展/v 的/u 行动/vn 纲领/n 。/w
+SOTA算法在主流数据集上的表现
+注：2019年初，一个专门收集人工智能领域优秀论文及开源代码的网站https://paperswithcode.com/被公之于众，读者可以移步这里查看在NER领域的最新研究成果。本文提供部分主流数据集的leaderboards（截图时间：2019年2月）。
+从以下leaderboards来看，在NER领域表现比较突出的深度学习技术包括BiLSTM+CRF，Transformer（如BERT就是基于Transformer的）等。而BERT，Flair则提供了非常通用的NLP框架，这些框架不但在NER问题上取得了不错的成绩，由于其构建了非常抽象的NLP底层框架，他们在NLI，QA等问题上也有不错的表现。
+CoNLL 2003
+OntoNotes 5.0 / CoNNLL 2012
+中文NER
+中文NER方面统一的评估平台似乎并不多。在paperwithcode网站上罗列了数个leaderboard，但其中每个leaderboard的参与者也只有一两个。以下为相关的截图。
+API接口资源
+Google NLP API
+在Google Cloud NLP API官网上直接进行测试（测试时间2019年2月）。测试结果如下。
+再来一段中文的测试。结果如下。
+百度NLP接口
+在百度AI开放平台上直接进行测试（测试时间2019年2月）。测试结果如下。
+BOSON NER接口
+参考BOSON官方API文档说明中的Python调用示例对进行命名实体识别测试（测试时间2019年1月）：
+import json import requests NER_URL = 'http://api.bosonnlp.com/ner/analysis' s = ['最近，一则名叫《啥是佩奇》的短视频在网上刷屏。' '该视频讲述的是一个生活在大山里的留守老人为给城里的孙子' '准备新年礼物问遍全村啥是佩奇的故事。' '老人广寻佩奇最终亲手打造了一个“硬核佩奇”。'] data = json.dumps(s) headers = { 'X-Token': KeyManager.BOSON_API_KEY, 'Content-Type': 'application/json' } resp = requests.post(NER_URL, headers=headers, data=data.encode('utf-8')) for item in resp.json(): for entity in item['entity']: print(''.join(item['word'][entity[0]:entity[1]]), entity[2])
+输出结果为：
+《啥是佩奇》 product_name 佩奇 person_name 佩奇 person_name
+总结
+命名实体识别是自然语言处理中的一个常见课题。主流的AI公司也通过API的形式提供各类命名实体识别服务。当前主流的技术包括BiLSTM+CRF、Transformer等。在BERT，FLAIR等NLP开源框架中也有针对NER的解决方案。国外的NER研究主要集中于利用CoNLL 2003，OntoNotes 5.0等数据集，研究成果相对集中。国内的NER研究常用的数据集包括人民日报1998数据集。但是作者在发文的时候还没有看到类似于CoNLL 2003那样比较集中和权威的性能测评和对比。
+附录
+推荐论文资源
+Bidirectional LSTM-CRF Models for Sequence Tagging by Huang, Xu and Yu
+Neural Architectures for Named Entity Recognition by Lample et al.
+End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF by Ma et Hovy
+其他优秀论文可以参看paperwithcode网站上关于NER相关资源的总结。
+推荐源代码资源
+Tensorflow - Named Entity Recognition
+项目地址：https://github.com/guillaumegenthial/tf_ner
+其他优秀论文可以参看paperwithcode网站上关于NER相关资源的总结。
+BLOG POSTS
+https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html
+https://guillaumegenthial.github.io/introduction-tensorflow-estimator.html

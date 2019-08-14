@@ -1,0 +1,17 @@
+记录文字处理的各种简介的代码表示
+1.快速去除中文标点（read的时候要以utf8格式）
+def clean_str(string): string = re.sub("[^\u4e00-\u9fff]", " ", string) string = re.sub(r"\s{2,}", " ", string)#合并多个空格为一个 return string.strip()
+2.快速分词,默认一行为一样本
+def seperate_line(string): return ''.join([word + ' ' for word in jieba.cut(string)]) f=open("xxx",'r',encoding="utf8") lines = list(f.readlines()) lines = [clean_str(seperate_line(line)) for line in lines]
+3.分行，使得一行为一句
+for line in lines line.replace('\n','').replace('，','\n').replace('。','\n').replace('！','\n').replace('？','\n') 重新写入
+4.语料训练集生成
+def load_positive_negative_data_files(positive_data_file_path, negative_data_file_path): positive_example_lists = read_and_clean_zh_file(positive_data_file_path) #positive_example_lists ---> 0维度上为样本有多少句句子，1维度上为每句的string，单词间空格隔开 negative_example_lists = read_and_clean_zh_file(negative_data_file_path) #positive_example_lists ---> 形式同上 # Combine data x_text = positive_example_lists + negative_example_lists # Generate labels positive_labels = [[1] for _ in positive_example_lists] negative_labels = [[0] for _ in negative_example_lists] y = np.concatenate([positive_labels, negative_labels], 0) return [x_text, y]
+5.句子填充
+def padding_sentences(input_sentences, padding_token, padding_sentence_length = None): sentences = [sentence.split(' ') for sentence in input_sentences] if padding_sentence_length !=None: max_sentence_length=padding_sentence_length else: max_sentence_length=max([len(sentence) for sentence in sentences]) for i,sentence in generate(sentences): if len(sentence) > max_sentence_length: sentences[i] = sentence[:max_sentence_length] else: sentence.extend([padding_token] * (max_sentence_length - len(sentence))) return (sentences, max_sentence_length)
+6.从gensim训练模型拿词向量
+model加载 all_vectors = [] embeddingDim = w2vModel.vector_size embeddingUnknown = [0 for i in range(embeddingDim)] for sentence in sentences: this_vector = [] for word in sentence: if word in w2vModel.wv.vocab: this_vector.append(w2vModel[word]) else: this_vector.append(embeddingUnknown) all_vectors.append(this_vector) return all_vectors
+7.打乱np矩阵的方法
+x=[0,1,2,3,4,5,6] x=np.array(x) np.random.seed(10) shuffle_indices = np.random.permutation(np.arange(len(x))) print(shuffle_indices) x_shuffled = x[shuffle_indices] print(x_shuffled) 输出 [2 6 0 3 4 5 1] [2 6 0 3 4 5 1]
+8.分离部分样本为训练集和验证集
+1.打乱样本顺序（参考上面代码） 2.按比例截断

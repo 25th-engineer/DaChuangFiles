@@ -1,0 +1,41 @@
+简介
+安装pip
+安装prot
+安装mlpy等机器学习模块
+安装opencv并配置到python2.7上
+搭建基于eclipse的pydev环境
+1.简介
+首先，选择Mac是因为省事，因为其预装了R和python，我用的是OS X Yosemite 10.10(黑苹果 穷人买不起白苹果就用小y做了个黑苹果T^T)所以学习机器学习实践的两大语言都不用下载安装了，但是python需要配置一下，我的10.10预装的python 2.7.10,科学模块里预装了numpy，需要下载的包有scipy,matplotlib(作图用),mlpy(machine learning py也就是机器学习模块),BeautifulSoup(抓取web‘爬虫’模块),Neurolab(神经网络模块)和cv2，其中cv2是python引入opencv的接口模块，顺利安装如上模块也就能在终端用python写机器学习代码了，但是最后介绍一下我用的eclipse上的pydev开发环境，eclipse上写代码还是挺人性化的，至少自动补全来说还挺给力。
+2.安装pip
+pip是python的一个管理模块用的，用easy_install下载
+`easy_install pip`
+3.安装port
+见网盘：http://pan.baidu.com/s/1eQ6j9om
+若版本低于10.10或者网盘被河蟹就百度 macports下载 就行
+4.安装mlpy等机器学习模块
+用第二步的pip安装python模块
+终端输入如下：
+pip install scipy pip install beautifulsoup pip install neurolab pip install mlpy
+5.安装opencv并配置到python2.7上
+第一种方法简单粗暴：
+sudo port install opencv +python27
+第二种方法：
+百度 opencv for mac 和 cmake.dmg 两个文件自行下载，cmake直接安装,opencv下载完解压到用户目录（cd:~的那个目录）然后执行以下代码：
+mkdir release cd ./release cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON -D BUILD_EXAMPLES=ON .. make sudo make install
+然后让python识别到opencv：
+打开一个终端，cd ~
+vim .profile
+添加export PYTHONPATH=/usr/local/lib/python2.7/site-packages/(路径具体根据自己的来，不知道就which python2.7，定位到site-packages文件夹)
+source .profile
+此时终端打开python查看所有包中有没有上述安装的包并导入这些包:
+help('modules') import mlpy import numpy import matplotlib import neurolab import cv2
+如果缺哪个再自行下载安装
+6.搭建基于eclipse的pydev环境
+1).自行下载一个mac版的eclipse和PyDev压缩包
+2).解压eclipse和pydev压缩包，分别把pydev文件夹中的两个子文件夹plugins和features分别和eclipse文件夹下的子文件夹合并
+3).打开eclipse->偏好设置->PyDev->Interpreter - Python -> new
+Interpreter Name名字随便写
+Interpreter Executable写python路径，不知道的去终端which python2.7，如果本机安装了同一个版本放两个位置，但是各有各的包，那就在下面导入存放包的文件夹即可。
+至此，环境搭建完毕。可以自己新建一个python工程，工程中新建一个.py文件，并向工程文件夹里拖拽两个jpg图片分别重命名为1.jpg和2.jpg就可以测试下面的代码:
+import numpy as np import mlpy import cv2 print 'hello' wenjian2 = '2.jpg' wenjian1 = '1.jpg' img1 = cv2.imread(wenjian1) img2 = cv2.imread(wenjian2) chang = min(img1.shape[0],img2.shape[0]) kuan = min(img1.shape[1],img2.shape[1]) img3 = np.zeros((chang,kuan,3),np.uint8) print u'fixing two jpg (%d x %d)'%(chang,kuan) for i in range(chang): for j in range(kuan): for k in range(3): img3[i,j,k] = int(img1[i,j,k]*0.5) + int(img2[i,j,k]*0.5) if i%100 == 0: print '.', cv2.namedWindow(u'img1') cv2.imshow(u'img1',img1) cv2.namedWindow('img2') cv2.imshow('img2',img2) cv2.namedWindow('img3') cv2.imshow('img3',img3) cv2.imwrite('/Users/haoran/Pictures/3.jpg',img3) cv2.waitKey() cv2.destroyAllWindows()
+等大概一分钟后自动弹出三个图片窗口，分别是1.jpg,2.jpg和将1、2图片合成到一个图片的3.jpg并保存到用户图片文件夹中，如果通过则说明以上环境都配好啦。

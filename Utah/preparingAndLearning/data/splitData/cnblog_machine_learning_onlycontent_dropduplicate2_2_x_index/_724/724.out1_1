@@ -1,0 +1,82 @@
+特征选择 亦即 降 维 是 数据 预处理 中 非常 重要 
+的 一个 步骤 对于 分类 来说 特征选择 可以 从 众多 
+的 特征 中 选择 对 分类 最 重要 的 那些 
+特征 去除 原 数据 中 的 噪音 主 成分 分析 
+PCA 与 线性 判别式 分析 LDA 是 两种 最 常用 
+的 特征选择 算法 关于 PCA 的 介绍 可以 见 我 
+的 另一 篇 博文 这里 主要 介绍 线性 判别式 分析 
+LDA 主要 基于 Fisher Discriminant Analysis with Kernals 1 和 
+Fisher Linear Discriminant Analysis 2 两篇 文献 LDA 与 PCA 
+的 一大 不同 点 在于 LDA 是 有 监督 的 
+算法 而 PCA 是 无 监督 的 因为 PCA 算法 
+没有 考虑 数据 的 标签 类别 只是 把 原 数据 
+映射 到 一些 方差 比 较大 的 方向 基 上去 
+而已 而 LDA 算 法则 考虑 了 数据 的 标签 
+文献 2 中举 了 一个 非常 形象 的 例子 说明了 
+在 有些 情况 下 PCA 算法 的 性能 很差 如 
+下图 我们 用 不同 的 颜色 标注 C1 C2 两个 
+不同 类别 的 数据 根据 PCA 算法 数据 应该 映 
+射到 方差 最大 的 那个 方向 亦即 Y 轴 方向 
+但是 如果 映 射到 Y 轴 方向 C1 C2 两个 
+不同 类别 的 数据 将 完全 混合 在 一起 很难 
+区分 开 所以 使用 PCA 算法 进行 降 维 后再 
+进行 分类 的 效果 会 非常 差 但是 使用 LDA 
+算法 数据 会 映 射到 X 轴 方向 LDA 算法 
+会 考虑到 数据 的 类别 属性 给定 两个 类别 C1 
+C2 我们 希望 找到 一个 向量 ω 当 数据 映 
+射到 ω 的 方向 上 时 来自 两个 类 的 
+数据 尽可能 的 分开 同一个 类 内 的 数据 尽可能 
+的 紧凑 数据 的 映射 公式 为 z = ω 
+Tx   其中 z 是 数据 x 到 ω 上 
+的 投影 因而 也 是 一个 d 维 到 1 
+维 的 维度 归约 令 m1 和 m1 分别 表示 
+C 1类 数据 投影 之 前个 投影 之后 的 均值 
+易知 m1 = ω Tm1 同理/n m2/i =/i ω/i Tm2/i 
+令/v s12/i 和/c s22/i 分别/d 表示/v C1/i 和C/nr 2类/mq 数据/n 
+在/p 投影/n 之后/f 的/uj 散布/v scatter 亦即 s12 = ∑ 
+ω Txt m1 2rt s22 = ∑ ω Txt m2 
+2 1 rt 其中 如果 xt ∈ C1 则 rt 
+= 1 否则 rt = 0 我们 希望 | m1 
+m2 | 尽可能 的 大 而 s12 + s22 尽可能 
+的 小 Fisher 线性 判别式 就是 最大化 下面 式子 的 
+ω J ω = m1 m2 2 / s12 + 
+s22     式子 1 改写 式子 1中 的 分子 
+  m1 m2 2 =   ω Tm1 ω Tm2 
+2 = ω T m1 m2 m1 m2 T ω 
+= ω TSB ω 其中 SB = m1 m2 m1 
+m2 T     式子 2 是 类 间 散布 
+矩阵 between class scatter matrix 改写 式子 1 中的 分母 
+∑ ω Txt m1 2rt = ∑ ω T xt 
+m1 xt m1 T ω rt = ω TS1 ω 
+其中 S1 = ∑ rt xt m1 xt m1 T 
+是 C1 的 类 内 散布 矩阵 within class scatter 
+matrix 令 SW = S1 + S2 是 类 内 
+散布 的 总和 则 s12 + s22 = ω TSW 
+ω 所以 式子 1 可以 改写 为 J ω = 
+ω TSB ω / ω TSW ω     式子 
+3 我们 只 需要 使 式子 3 对于 ω 求导 
+然后 使 导数 等于 0 便 可以 求出 ω 的 
+值 ω = cSW 1 m1 m2 其中 c 是 
+一个 参数 我们 只对 ω 的 方向 感兴趣 所以 c 
+可以 取值 为 1 . 另外 最后 求得 的   
+J ω 的 值 等于 λ k λ k 是 
+SW 1SB 的 最大 的 特征值 而 ω 则是 SW 
+1SB 的 最大 特征值 所 对应 的 特征向量 最后 有 
+一些 关于 LDA 算法 的 讨论 出自 文献 1 1 
+. Fisher LDA 对 数据 的 分布 做 了 一些 
+很强 的 假设 比如 每个 类 的 数据 都是 高斯分布 
+各个 类 的 协方差 相等 虽然 这些 强 假设 很可能 
+在 实际 数据 中 并不 满足 但是 Fisher LDA 已经 
+被 证明 是 非常 有效 地 降 维 算法 其中 
+的 原因 是 线性 模型 对于 噪音 的 鲁棒性 比较好 
+不 容易 过拟合 缺点 是 模型 简单 表达能力 不强 为了 
+增强 Fisher LDA 算法 的 表达 能力 可以 引入 核 
+函数 参见 我 的 另外 一篇 博客 机器学习 核 Fisher 
+LDA 算法 2 . 准确 的 估计 数据 的 散布 
+矩阵 是 非常 重要 的 很 可能会 有 较大 的 
+偏置 用 式子 2 进行 估计 在 样本数据 比较 少 
+相对于 维数 来说 时会/nr 产生 较大 的 变异性 参考文献 1 
+Fisher Discriminant Analysis with Kernals . Sebastian Mika Gunnar Ratsch 
+Jason Weston Bernhadr Scholkopf Klaus Robert Muller . 2 Fisher 
+Linear Discriminant Analysis . Max Welling . 3 机器学习 导论 
+Ethem Alpaydin 

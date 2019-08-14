@@ -1,0 +1,12 @@
+不多说，直接上干货！
+问题详情
+查看日志/var/log/cloudera-scm-agent/，得知
+解决办法
+$> ps -ef | grep supervisord $> kill -9 <processID> sudo service cloudera-scm-agent restart
+欢迎大家，加入我的微信公众号：大数据躺过的坑        人工智能躺过的坑
+同时，大家可以关注我的个人博客：
+http://www.cnblogs.com/zlslch/   和     http://www.cnblogs.com/lchzls/      http://www.cnblogs.com/sunnyDream/
+详情请见：http://www.cnblogs.com/zlslch/p/7473861.html
+人生苦短，我愿分享。本公众号将秉持活到老学到老学习无休止的交流分享开源精神，汇聚于互联网和个人学习工作的精华干货知识，一切来于互联网，反馈回互联网。
+目前研究领域：大数据、机器学习、深度学习、人工智能、数据挖掘、数据分析。 语言涉及：Java、Scala、Python、Shell、Linux等 。同时还涉及平常所使用的手机、电脑和互联网上的使用技巧、问题和实用软件。 只要你一直关注和呆在群里，每天必须有收获
+对应本平台的讨论和答疑QQ群：大数据和人工智能躺过的坑（总群）（161156071）

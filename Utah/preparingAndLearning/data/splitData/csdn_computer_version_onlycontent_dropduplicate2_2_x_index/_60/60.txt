@@ -1,0 +1,29 @@
+Python计算机视觉工具安装
+由于刚刚接触Python没多久，对于python软件安装较生疏，但近想学习利用Python处理计算视觉，故着手安装各种包，遇到一些，经过查询相关资料，最终解决了，故总结了此篇博客。
+PIL安装使用
+PIL（图像处理类库）提供了通用的图像处理功能，以及大量有用的基本图像操作，比如图像缩放、裁剪。、颜色转换等。它是免费的。下面是安装和使用PIL库的一些总结。
+1）安装PIL库，首先下载PIL-1.1.7.win32-py2.7.exe，然后点击安装即可。
+2）使用过程中，show()函数不能正常显示图片，修改方法如下：
+将 D:\setup\Python2.7.11\Lib\site-packages\PIL\ImageShow.py中的第99行代码（return “start /wait %s && del /f %s” % (file, file)）修改为return “start /wait %s && PING 127.0.0.1 -n 5 > NUL && del /f %s” % (file, file) 即可。
+注意：一定要确定路径，该路径下不仅包括ImageShow.py还包括对应的ImageShow.pyc和ImageShow.pyo。
+Numpy安装使用
+Numpy是非常有名的Python科学计算工具包，其中包含了大量有用的思想，如数组对象（用来表示向量、矩阵、图像等）以及线性代数函数。它可以帮助完成矩阵中重要的操作，如矩阵乘积、转置、解方程系统、向量乘积和归一化等，它为图像变形、图像分类、图像聚类等提供了基础。其安装过程如下：
+1）下载，可以下载.whl或.exe格式，然后对应进行安装即可。
+2）下载完成后，其使用需要依赖其他一些工具或包。安装提示的错误等，对应安装即可。
+scipy安装使用
+Scipy是建立在Numpy基础上，用于数值运算的开源工具包。Scipy提供很多高效的操作，可以实现数值积分、优化、统计、信号处理，以及重要的一些图像处理等。其下载安装如下：
+1）下载，官网为http://scipy.org/install.html
+2）然后执行安装即可。也可下在网上找那种可以直接下载.exe的文件进行安装。
+Matplotlib安装使用
+Matplotlib主要是Python中绘制高质量图表的工具。其下载安装如下：
+1)下载对应软件，然后执行安装即可。
+2）Matplotib的使用，需要dateutil和pyparsing，对应进行安装即可。
+pyLab绘图基本颜色、线性、标记命令如下：
+b：蓝色，g：绿色，r：红色，c：青色，m：品红，y：黄色，k：黑色，w：白色。
+-：实线，–：虚线，：：点线
+.：点，o:圆圈，s：正方形，*：星形，+：加号，×：叉号
+Python2与Python3处理
+由于在Windows 7下既安装了Python2和Python3相应版本，故在安装软件，一直出现安装不明确问题，为解决这一问题，使得将应的工具安装到自己想要安装的版本Python上，可以使用如下命令：
+py -2 -m pip install … （安装到Python2下）
+py -3 -m pip install … （安装到Python3下）
+参考文献: Python计算机视觉编程

@@ -1,0 +1,62 @@
+MIT自然语言处理第三讲：概率语言模型（第六部分）
+发表于 2009年02月16号 由 52nlp
+自然语言处理：概率语言模型
+Natural Language Processing: Probabilistic Language Modeling
+作者：Regina Barzilay（MIT,EECS Department, November 15, 2004)
+译者：我爱自然语言处理（www.52nlp.cn ，2009年2月16日）
+六、 插值及回退
+a) The Bias-Variance Trade-Off
+i. 未平滑的三元模型估计(Unsmoothed trigram estimate)：
+P_ML({w_i}/{w_{i-2},w_{i-1}})={Count(w_{i-2}w_{i-1}w_{i})}/{Count(w_{i-2},w_{i-1})}
+ii. 未平滑的二元模型估计(Unsmoothed bigram estimate）：
+P_ML({w_i}/{w_{i-1}})={Count(w_{i-1}w_{i})}/{Count(w_{i-1})}
+iii. 未平滑的一元模型估计(Unsmoothed unigram estimate)：
+P_ML({w_i})={Count(w_{i})}/sum{j}{}{Count(w_{j})}
+iv. 这些不同的估计中哪个和“真实”的P({w_i}/{w_{i-2},w_{i-1}})概率最接近（How close are these different estimates to the “true” probability P({w_i}/{w_{i-2},w_{i-1}}))?
+b) 插值（Interpolation）
+i. 一种解决三元模型数据稀疏问题的方法是在模型中混合使用受数据稀疏影响较小的二元模型和一元模型（One way of solving the sparseness in a trigram model is to mix that model with bigram and unigram models that suffer less from data sparseness）。
+ii. 权值可以使用期望最大化算法（EM）或其它数值优化技术设置（The weights can be set using the Expectation-Maximization Algorithm or another numerical optimization technique）
+iii. 线性插值（Linear Interpolation)
+hat{P}({w_i}/{w_{i-2},w_{i-1}})={lambda_1}*P_ML({w_i}/{w_{i-2},w_{i-1}})
++{lambda_2}*P_ML({w_i}/w_{i-1})+{lambda_3}*P_ML({w_i})
+这里{lambda_1}+{lambda_2}+{lambda_3}=1并且{lambda_i}>=0 对于所有的 i
+iv. 参数估计（Parameter Estimation）
+1. 取出训练集的一部分作为“验证”数据（Hold out part of training set as “validation” data）
+2. 定义Count_2(w_1,w_2,w_3)作为验证集中三元集 w_1,w_2,w_3 的出现次数（Define Count_2(w_1,w_2,w_3) to be the number of times the trigram w_1,w_2,w_3is seen in validation set）
+3. 选择{lambda_i}去最大化(Choose {lambda_i} to maximize):
+L({lambda_1},{lambda_2},{lambda_3})=sum{(w_1,w_2,w_3)in{upsilon}}{}{Count_2(w_1,w_2,w_3)}log{hat{P}}({w_3}/{w_2,w_1})
+这里{lambda_1}+{lambda_2}+{lambda_3}=1并且{lambda_i}>=0 对于所有的 i
+注：关于参数估计的其他内容，由于公式太多，这里略，请参考原始课件
+c)Kats回退模型-两元（Katz Back-Off Models (Bigrams)）：
+i. 定义两个集合（Define two sets）：
+A(w_{i-1})=delim{lbrace}{w:Count(w_{i-1},w)>0}{rbrace}
+B(w_{i-1})=delim{lbrace}{w:Count(w_{i-1},w)=0}{rbrace}
+ii. 一种两元模型（A bigram model）：
+P_K({w_i}/w_{i-1})=delim{lbrace}{matrix{2}{2}{{{Count^{*}(w_{i-1},w)}/{Count(w_{i-1})}>0} {if{w_i}{in}{A(w_{i-1})}} {alpha(w_{i-1}){{P_ML(w_{i})}/sum{w{in}B(w_{i-1})}{}{P_ML(w)}} } {if{w_i}{in}{B(w_{i-1})}} }}{}
+{alpha(w_{i-1})=1-sum{w{in}A(w_{i-1})}{}{{Count^{*}(w_{i-1},w)}/{Count(w_{i-1})}}}
+iii. Count^*定义（Count^*definitions）
+1. Kats对于Count(x)<5使用Good-Turing方法,对于Count(x)>=5令Count^*(x)=Count(x)(Katz uses Good-Turing method for Count(x)< 5, and Count^*(x)=Count(x)for Count(x)>=5)
+2. “Kneser-Ney”方法（“Kneser-Ney” method）：
+Count^*(x)=Count(x)-D,其中 D={n_1}/{n_1+n_2}
+n_1是频率为1的元素个数（n_1 is a number of elements with frequency 1)
+n_2是频率为2的元素个数（n_2 is a number of elements with frequency 2)
+七、 综述
+a) N元模型的弱点（Weaknesses of n-gram Models）
+i. 有何想法（Any ideas）?
+短距离（Short-range）
+中距离（Mid-range）
+长距离（Long-range）
+b) 更精确的模型（More Refined Models）
+i. 基于类的模型（Class-based models）
+ii. 结构化模型（Structural models）
+iii. 主题和长距离模型（Topical and long-range models）
+c) 总结（Summary）
+i. 从一个词表开始（Start with a vocabulary）
+ii. 选择一种模型（Select type of model）
+iii. 参数估计（Estimate Parameters）
+d) 工具包参考：
+i. CMU-Cambridge language modeling toolkit:
+http://mi.eng.cam.ac.uk/~prc14/toolkit.html
+ii.SRILM – The SRI Language Modeling Toolkit:
+http://www.speech.sri.com/projects/srilm/
+第三讲结束！

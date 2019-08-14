@@ -1,0 +1,139 @@
+服务机器人缺少了语音交互的话，就会让人觉得不像个机器人。在当前非常多的服务机器人上，语音交互成为一个非常大的亮点。
+当然如果我们从头做起，这样就太麻烦，还好当前有很多公司提供了解决方案。科大讯飞、百度语音等都提供了非常好的语音识别和语音合成工具。
+1.1 简介
+这里我采用图灵机器人作为语义理解的工具，搭建一个语音机器人。
+具体可以参考图灵机器人官网http://www.tuling123.com/help/h_cent_andriodsdk.jhtml?nav=doc
+大致框架如下：
+1.2 概念解释
+（1）语音识别：Automatic Speech Recognition（ASR），也称自动语音识别，其目标是将人类的语音中的词汇内容转换相应的文本。
+（2）自然语言理解：Natural Language Understanding（NLU），俗称人机对话，是人工智能的分支学科。本学科通过电子计算机模拟人的语言交际过程，从而使计算机能理解和运用人类社会的自然语言，实现人机之间的自然语言通信，进而代替人的部分脑力劳动，包括查询资料、解答问题、摘录文献、汇编资料以及一切有关自然语言信息的加工处理。
+（3）TRClient：TRClient 是一个封装了语音采集、处理、网络收发、语义理解等功能的语音识别和语义解析整体解决方案。
+（4）应用程序：在开发中使用了 TRClient，具有语音识别功能的产品线产品。
+1.3功能介绍
+（1）语音识别：将语音识别成相应的文本。
+（2）语义理解：将文本识别成领域相关的语义结果。
+（3）语音合成 : 将文本转化成语音读出
+1.4 环境搭建
+1.4.1 添加TRClient到工程
+1. 添加libs到工程
+开发者需要将Demo包中的libs目录整体Copy到工程目录，Libs目录包括了语音识别合成所需的so库以及jar包
+对于android studio的操作环境，配置jar包和so文件，
+Jar包拷贝入app->libs文件
+在android studio中添加 file->project structure添加jar目录
+在app->src->main->jniLibs新建当前目录，copy->armeabi的so文件
+1.4.2 权限声明
+名称
+用途
+android.permission.RECORD_AUDIO
+允许使用麦克风录音
+android.permission.INTERNET
+允许联网，发送语音数据至服务器，获得识别结果
+android.permission.ACCESS_NETWORK_STATE
+允许获取当前网络状态，优化录音参数及网络参数
+android.permission.READ_PHONE_STATE
+允许获取用户手机的电话状态信息
+android.permission.MODIFY_AUDIO_SETTINGS
+允许蓝牙录音
+android.permission.BROADCAST_STICKY
+某些手机启动 SCO 音频连接需要此权限
+android.permission.BLUETOOTH
+允许蓝牙录音检测耳机状态
+android.permission.WRITE_SETTINGS
+允许修改和读取系统配置信息
+android.permission.WRITE_EXTERNAL_STORAGE
+允许向存储设备中写入
+需要在 AndroidManifest.xml 文件， 增加以上七个权限：
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+<uses-permission android:name="android.permission.BROADCAST_STICKY" />
+<uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_CONTACTS" />
+如果需要使用蓝牙设备作为输入源， 需要额外在AndroidManifest.xml 文件添加下列权限：
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+<uses-permission android:name="android.permission.BROADCAST_STICKY "/>
+<uses-permission android:name="android.permission.BLUETOOTH "/>
+1.4.3 Progurad配置
+如果应用配置了代码混淆， 需要在 Proguard配置文件增加以下参数：
+-keep class com.baidu.android.**{*;}
+-keep class com.baidu.voicerecognition.android.**{*;}
+-keep class com.turing.androidsdk.**{*;}
+1.5语音识别
+语音识别部分主要包括以下四个步骤
+1.5.1 实例化VoiceRecognizerManager
+实例化VoiceRecognizerManager，由于目前我们使用百度ASR方式，使用百度ASR，使用构造方法：
+VoiceRecognizerManager(Context context,String bdAPI_KEY,String bdSECRET_KEY)
+参数: bdAPI_KEY和bdSECRET_KEY
+这里的bdAPI_KEY和bdSECRET_KEY，需要自己到百度官方去申请，位置如图所示：
+百度语音开放平台的网址为：http://yuyin.baidu.com/
+1.5.2 设定ASR状态监听
+设定ASR状态监听
+示例：VoiceRecognizerManager.setVoiceRecognizeListener(listener);
+这个listener就是需要实现接口VoiceRecognizeListener，在不同的识别状态下回调其不同的方法。
+1.5.3 调用语音识别方法
+调用语音识别方法
+VoiceRecognizerManager.startRecognize();
+这个方法就是开始进行识别
+1.5.4 获取识别结果
+获取识别结果，在步骤2里listener的回调方法onRecognizeResult中获取识别结果。
+public void onRecognizeResult(String result)
+{
+handleRecognizeResult(result);
+}
+这里的result就是返回的结果
+1.6 语义理解
+语义理解部分主要包括以下四个步骤
+1.6.1 SDKInit类
+SDKInit类初始化
+调用SDKInit.init
+public static void init(SDKInitBuilder builder,InitListener initListener)
+参数：（1）SDKInitBuilder是封装了初始化的各种参数，这个类的变量说明
+Contex为上下文
+Secret为官网上机器人详情页中自动生成的一个secret（默认采用非加密模式，若采用加密模式时才开启），如下图
+turingKey为该机器人帐号的apikey，可在“机器人详情”页获取
+uniqueId为自己添加的一个标示符，如邮箱、手机号等等
+（2）参数InitListener是一个初始化后回调方法的接口
+onComplete()是成功后，回调的方法
+onFail(java.lang.String error)是失败后，回调的方法
+1.6.2 实例化TuringApiManager类
+实例化TuringApiManager类
+这里一定要在上一步SDKInit初始化成功后，再初始化TuringApiManager，否则很多功能将无法使用
+推荐的代码：
+onComplete()
+{
+TuringApiManager m = new TuringApiManager (this);
+}
+1.6.3 设置监听
+添加监听：
+public void setHttpListener(HttpConnectionListener httpConnectionListener)
+参数：httpConnectionListener用于监听联网请求结果的回调
+代码形式如下：
+TuringApiManager m = new TuringApiManager (this);
+m.setHttpListener(httpConnectionListener);
+其中httpConnectionListener就是实现接口HttpConnectionListener
+1.6.4 发出请求
+发出请求
+public void requestTuringAPI(String requestInfo)
+参数：requestInfo为传递的文本
+比如requestInfo = “你好”,那么在上一步的public void onSuccess(RequestResult result) 中result可以得到一串json字符串，其中json字符串根据不同的类型会有不同的格式
+1.7 语音合成（TTS）
+语音合成部分主要包括以下四个步骤
+1.7.1 实例化TTSManager类
+实例化TTSManager类
+该类为语音合成的管理类，要使用语音合成功能，首先要创建TTSManager的对象实例
+选用百度在线TTS，其构造函数如下：
+public TTSManager(Context context, String bdAPI_KEY, String bdSECRET_KEY)
+这里的bdAPI_KEY和bdSECRET_KEY
+1.7.2 设置监听
+添加监听：
+TTSManager.setTTSListener(mTTSListener)
+mTTSListener需要实现接口TTSListener ，可以在不同的语音合成状态下回调其不同的方法
+1.7.3 开始语音合成
+调用TTSManager.startTTS(String ttsContent) 方法来进行语音合成
+参数：ttsContent就是需要被合成的文本，比如 ttsContent=“你好”,那么就会读出 你好。
+1.7.4 处理合成完成
+语音合成后，就会触发onSpeechFinish(),这样即可在其方法中添加相应的逻辑。

@@ -1,0 +1,56 @@
+本人看过的关联规则博文，很少有清晰的把关联规则的算法说很明白的，希望读者读完本文可以有新的收获。本文是在默认读者有相关机器学习算法基础的，总结和提升对关联规则代码实现的理解，并介绍相关案例。语言：python
+一 引言
+关联规则起初是在购物篮分析中发现的，沃尔玛超市在美国某地区啤酒和尿布放在一起卖，这种关联规则有利于市场营销决策的制定。
+关联规则是非监督学习的一种。
+二 两个重要的概念
+我们认定满足支持度和置信度的规则是有趣的，
+支持度：P(A)，及项集A出现的概率（频数）；
+置信度：P（B / A）, 条件概率;　P（B / A）= P（AB）/P（A），所以支持度可以用来计算置信度，代码是学习算法最好的途径。
+三 Apriori算法
+网上很多文章介绍Apriori算法都是云里雾里，下面梳理一下脉络。
+核心是apriori原理：如果某个项集是频繁的，那么它是所有子集也是频繁的。
+apriori原理的精妙在于他的逆否命题，若子集不是频繁的，则所有包含它的项集都是不频繁的。这样剪掉不频繁项集时，就可以同时剪掉很多包含这个项集的不频繁的项集了。若蛮力查找大频项集，时间复杂度是指数型，例如4个项集，它的所有组合的复杂度是15。同理，可以剪掉后件不满足置信度规则时，同时剪掉后件包含这个规则后件的规则。形象的说，看下图：
+eg
+项集{0,1,2,3}，计算所有的组合情况如下图，好像一个格，时间复杂度是指数型的，按照项集元素数由小到大计算每个组合的支持度，{2，3}黑色圈不满足最小支持度，由apriori定理，则所有以它为子集的项集均不满足最小支持度，需要剪掉。
+下面继续考虑置信度，规则{012}->{3}不满足最小置信度，由apriori定理，所有后件包含这条规则后件的规则需要剪掉，即二后件规则：{01}->{23},{02}->{1,3},{12}->{03}和三后件规则{0}->{123},{1}->{023},{2}->{013}。
+读到这里有关联规则基础的人应该会有感悟，通过下面代码介绍可以细致的明白apriori算法的机制。
+四 apriori实现
+1 加载demo数据集(可以改成真实数据集，读文件):
+from numpy import * def loadDataSet(): return [[1, 3, 4], [2, 3, 5], [1, 2, 3, 5], [2, 5]]
+2 生成一频繁项集作为起始点，即长度为1的频繁集，图中的第一层：使用frozenset结构是因为set不可以作为dict的关键字
+def createC1(dataSet):#create one item C1 = [] for transaction in dataSet: for item in transaction: if not [item] in C1: C1.append([item]) C1.sort() # print C1 return map(frozenset, C1)#use frozen set so we #can use it as a key in a dict
+3 计算Ck支持度，并剪掉不满足最小指出的项集。
+def scanD(D, Ck, minSupport):#create one or more big frequence item ssCnt = {} for tid in D: for can in Ck: if can.issubset(tid): if not ssCnt.has_key(can): ssCnt[can]=1 else: ssCnt[can] += 1 numItems = float(len(D)) retList = [] supportData = {} for key in ssCnt: support = ssCnt[key]/numItems if support >= minSupport: retList.insert(0,key) supportData[key] = support return retList, supportData
+4 由m频繁项集生成m+1频繁项集：举例，Ck为1频繁项集{01}{12}{02},生成{012}，有个技巧，只合并前m-2项一样的项集，这样不会重复操作，如这个例子，{01}和{12}不合并，{12}{02}也不合并，只有{01}{02}合并，生成最后的{012}；否则前几个合并都是重复的。值得注意的是0-3项集要排好序，否则前k-2个没有比较的必要。
+def aprioriGen(Lk, k): #creates Ck retList = [] lenLk = len(Lk) # print Lk for i in range(lenLk): for j in range(i+1, lenLk): L1 = list(Lk[i])[:k-2]; L2 = list(Lk[j])[:k-2] L1.sort(); L2.sort() # print L1,'--',L2 if L1==L2: #if first k-2 elements are equal retList.append(Lk[i] | Lk[j]) #set union # print retList return retList
+5 生成打频项集的算法：
+思路，生成1频项集，根据最小支持度过滤；依次由m频项集生成m+1频项集,直到m+1频项集为空停止迭代。
+def apriori(dataSet, minSupport = 0.5): C1 = createC1(dataSet) D = map(set, dataSet) L1, supportData = scanD(D, C1, minSupport)#create one big frequence item L1 # print L1 L = [L1] k = 2 # print L while (len(L[k-2]) > 0): # print 'L[k-2]',L[k-2] # print L Ck = aprioriGen(L[k-2], k) Lk, supK = scanD(D, Ck, minSupport)#scan DB to get Lk supportData.update(supK) L.append(Lk) k += 1 return L, supportData
+以上都是大频项集的生成算法，下面继续有趣的关联规则的发现算法：
+6 计算后件为H的规则的置信度，代码可以看出只是一个条件概率公式而已；根据最小置信度，筛选出有趣的规则；
+def calcConf(freqSet, H, supportData, brl, minConf=0.7): prunedH = [] #create new list to return for conseq in H: conf = supportData[freqSet]/supportData[freqSet-conseq] #calc confidence if conf >= minConf: brl.append((freqSet-conseq, conseq, conf)) prunedH.append(conseq) return prunedH
+7 由后件数为m的规则集生成后件为后件数为m+1的规则集，并计算置信度；递归到没有可以合并的规则集停止；
+直观的过程可以查看上图的格，eq {23}->{01}和{12}->{03} 合并为{2}->{013};因为标红处前k-2相同，为了避免重复的合并操作，同上面打大频项集合并。
+def rulesFromConseq(freqSet, H, supportData, brl, minConf=0.7):if (len(freqSet) > (m + 1)): #try further merging Hmp1 = aprioriGen(H, m+1)#create Hm+1 new candidates Hmp1 = calcConf(freqSet, Hmp1, supportData, brl, minConf)if (len(Hmp1) > 1): #need at least two sets to merge rulesFromConseq(freqSet, Hmp1, supportData, brl, minConf)
+8 产生关联规则的最后算法：
+思路，由于规则的前后件均不能为空，所以只有二频繁项集才能产生关联规则；
+1）首先由二频繁项集生成规则集，遍历所有的二频繁项集（每个元素轮流作为后件），根据最小置信度过滤规则集；
+eg 二频繁项集{12},则计算规则{1}->{2}和{2}->{1}的置信度；
+2）依次迭代，在三大频项集生成规则集（每个元素轮流作为后件），需要考虑规则的合并，
+eg 三大频项集{123},则{12}->{3},{13}->{2},{23}->{1}，此外考虑合并，{1}->{23},{2}->{13},{3}->{12},还要继续合并：根据后件，前k-2个同的合并，本例前k-2个同的个数为0，所以停止，复杂的情况看步骤7；
+def generateRules(L, supportData, minConf=0.7): #supportData is a dict coming from scanD bigRuleList = [] for i in range(1, len(L)):#only get the sets with two or more items for freqSet in L[i]: H1 = [frozenset([item]) for item in freqSet] if (i > 1): rulesFromConseq(freqSet, H1, supportData, bigRuleList, minConf) else: calcConf(freqSet, H1, supportData, bigRuleList, minConf) return bigRuleList
+五 应用
+关联规则可以应用到哪些问题呢？
+购物篮分析，搜索引擎的查询词，国会投票，毒蘑菇的相似特征提取等；
+六 毒蘑菇的相似特征提取
+毒蘑菇部分数据集如下:
+1 3 9 13 23 25 34 36 38 40 52 54 59 63 67 76 85 86 90 93 98 107 113 2 3 9 14 23 26 34 36 39 40 52 55 59 63 67 76 85 86 90 93 99 108 114 2 4 9 15 23 27 34 36 39 41 52 55 59 63 67 76 85 86 90 93 99 108 115 1 3 10 15 23 25 34 36 38 41 52 54 59 63 67 76 85 86 90 93 98 107 113 2 3 9 16 24 28 34 37 39 40 53 54 59 63 67 76 85 86 90 94 99 109 114 2 3 10 14 23 26 34 36 39 41 52 55 59 63 67 76 85 86 90 93 98 108 114 2 4 9 15 23 26 34 36 39 42 52 55 59 63 67 76 85 86 90 93 98 108 115 2 4 10 15 23 27 34 36 39 41 52 55 59 63 67 76 85 86 90 93 99 107 115 1 3 10 15 23 25 34 36 38 43 52 54 59 63 67 76 85 86 90 93 98 110 114 2 4 9 14 23 26 34 36 39 42 52 55 59 63 67 76 85 86 90 93 98 107 115 2 3 10 14 23 27 34 36 39 42 52 55 59 63 67 76 85 86 90 93 99 108 114 2 3 10 14 23 26 34 36 39 41 52 55 59 63 67 76 85 86 90 93 98 107 115
+每一行代表一个蘑菇的特征，第一列是决策类，1代表有毒，2代表五毒；
+加载数据集：
+dataset=[line.split() for line in open('mashroom.dat'),readline()]
+查找大频率项集：
+L，supp=apriori(dataset,0.3)
+apriori函数在算法部分已经实现，直接调用即可。
+有时候我们只需要查找大频项集，并不需要关联规则，具体问题具体分析即可。
+七 总结
+整体算法就有两个核心，1计算满足最小支持度的大频率项集，2挖掘满足最小置信度的有趣规则；暴力遍历每种组 合的方式指数级，利用了apriori定理，剪掉了不满足要求的小项集和小后件规则的同时，剪掉包含他们的大频度项集和大后件规则；还有一点主意的是。按 照图中格的形式，一层一层有小到大迭代。

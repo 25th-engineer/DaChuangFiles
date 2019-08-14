@@ -1,0 +1,1581 @@
+不多 说 直接 上 干货 本篇 博客 的 目地 是 
+对 工作 学习 过程 中 所 遇 所见 的 一些 
+有关 深度 学习 机器 学习 的 优质 资源 作 分类汇总 
+方便 自己 查阅 也 方便 他人 学习 借用 主要 会 
+涉及 一些 优质 的 理论 书籍 和 论文 一些 实惠 
+好用 的 工具 库 和 开源 库 一些 供 入门 
+该 理论 入门 所用 的 demo 等等 由于 本 博客 
+将不 定期 更新 尽量 将 较为 前沿 的 深度 学习 
+机器学习 内容 整理 下来 需要 转载 的 同学 尽量 附上 
+本文 的 链接 方便 获得 最新 的 内容 机器学习 领域 
+相关 的 大牛 推荐 陆续 更新 相关 的 理论 书籍 
+论文 课程 博客 Book Yoshua Bengio Ian Goodfellow Aaron Courville 
+.   Deep Learning . 2015 . Book Michael Nielsen 
+.   Neural Networks and Deep Learning . 2015 . 
+Course   Convolutional Neural Networks for Visual Recognition . 2015 
+Course   Deep Learning for Natural Language Processing . 2015 
+. Blog   Hacker s Guide to Neural Networks . 
+Book   Notes on Convolutional Neural Networks Book   A 
+guide to convolution arithmetic for deep   learning 相关 的 
+库 工具 Theano   Python Libraries based on Theano   
+Lasagne   Keras   Pylearn2Caffe   C + + with 
+Python wrapper TensorFlow   Python C + + Torch   
+Lua ConvNetJS   Javascript Deeplearning4j   Java MatConvNet   Matlab 
+Spark   machine learning library Java scala python LIBSVM A 
+Library for Support Vector Machines C / C + + 
+Java and other   languages 相关 的 开源 项目 demoFacial 
+Keypoint DetectionDeep D r e a m E y e 
+s c r e a m D e e p 
+Q network   Atari game player Caffe to Theano Model 
+Conversion   use Caffe pretrained model in Lasagne R CNNFast 
+R C N N M e t h o d 
+V O C 2 0 0 7 V O C 
+2 0 1 0 V O C 2 0 1 
+2 I L V R C 2013MSCOCO 2 0 1 
+5 p e e d O v e r F 
+e a t 24.3% R CNN AlexNet 58.5% 53.7% 53.3% 
+31.4% R CNN VGG16 66.0% SPP _ net ZF 5 
+54.2% 1 model 60.9% 2 model 31.84% 1 model 35.11% 
+6 model DeepID N e t 64.1% 50.3% N o 
+C 73.3% 68.8% Fast RCNN VGG16 70.0% 68.8% 68.4% 19.7% 
+@ 0.5 0.95 35.9% @ 0.5 MR C N N 
+78.2% 73.9% Faster RCNN VGG16 78.8% 75.9% 21.9% @ 0.5 
+0.95 42.7% @ 0.5 198msFaster RCNN ResNet 101 85.6% 83.8% 
+37.4% @ 0.5 0.95 59.0% @ 0.5 SSD300 VGG16 77.2% 
+75.8% 25.1% @ 0.5 0.95 43.1% @ 0.5 46 fpsSSD512 
+VGG16 79.8% 78.5% 28.8% @ 0.5 0.95 48.5% @ 0.5 
+19 fpsION79 . 2 % 76.4% CRAFT75 . 7 % 
+71.3% 48.5% OHEM78 . 9 % 76.3% 25.5% @ 0.5 
+0.95 45.9% @ 0.5 R FCN ResNet 50 77.4% 0 
+. 12sec K40 0 . 09sec TitianX R FCN ResNet 
+101 79.5% 0 . 17sec K40 0 . 12sec TitianX 
+R FCN ResNet 101 multi sc train83 . 6 % 
+82.0% 31.5% @ 0.5 0.95 53.2% @ 0.5 PVANet 9 
+. 089.8 % 84.2% 750ms CPU 46ms TitianX L e 
+a d e r b o a r d D 
+e t e c t i o n Results VOC2012intro 
+Competition comp4 train on additional data homepage   http / 
+/ host . robots . ox . ac . uk 
+8080 / leaderboard / displaylb . php challengeid = 11 
+& compid = 4PapersDeep Neural Networks for Object Detectionpaper   
+http / / papers . nips . cc / paper 
+/ 5207 deep neural networks for object detection . pdfOverFeat 
+Integrated Recognition Localization and Detection using Convolutional Networksarxiv   http 
+/ / arxiv . org / abs / 1312 . 
+6229github   https / / github . com / sermanet 
+/ OverFeatcode   http / / cilvr . nyu . 
+edu / doku . php id = software overfeat startR 
+CNNRich feature hierarchies for accurate object detection and semantic s 
+e g m e n t a t i o 
+n i n t r o R CNNarxiv   http 
+/ / arxiv . org / abs / 1311 . 
+2524supp   http / / people . eecs . berkeley 
+. edu / ~ rbg / papers / r cnn 
+cvpr supp . pdfslides   http / / www . 
+image net . org / challenges / LSVRC / 2013 
+/ slides / r cnn ilsvrc2013 workshop . pdfslides   
+http / / www . cs . berkeley . edu 
+/ ~ rbg / slides / rcnn cvpr14 slides . 
+pdfgithub   https / / github . com / rbgirshick 
+/ rcnnnotes   http / / zhangliliang . com / 
+2014 / 07/23 / paper note rcnn / caffe pr 
+Make R CNN the Caffe detection example   https / 
+/ github . com / BVLC / caffe / pull 
+/ 4 8 2 M u l t i B 
+o x c a l a b l e Object 
+Detection using Deep Neural Networksintro first MultiBox . Train a 
+CNN to predict Region of Interest . arxiv   http 
+/ / arxiv . org / abs / 1312 . 
+2249github   https / / github . com / google 
+/ multiboxblog   https / / research . googleblog . 
+com / 2014/12 / high quality object detection at scale 
+. htmlScalable High Quality Object Detectionintro second MultiBoxarxiv   http 
+/ / arxiv . org / abs / 1412 . 
+1441github   https / / github . com / google 
+/ multiboxSPP NetSpatial Pyramid Pooling in Deep Convolutional Networks for 
+Visual Recognitionintro ECCV 2014 / TPAMI 2015arxiv   http / 
+/ arxiv . org / abs / 1406 . 4729github 
+  https / / github . com / ShaoqingRen / 
+SPP _ netnotes   http / / zhangliliang . com 
+/ 2014 / 09/13 / paper note sppnet / DeepID 
+NetDeepID Net Deformable Deep Convolutional Neural Networks for Object Detectionintro 
+PAMI 2016intro an extension of R CNN . box pre 
+training cascade on region proposals deformation layers and context r 
+e p r e s e n t a t 
+i o n s p r o j e c 
+t page   http / / www . ee . 
+cuhk . edu . hk / % CB % 9Cwlouyang 
+/ projects / imagenetDeepId / index . htmlarxiv   http 
+/ / arxiv . org / abs / 1412 . 
+5661Object Detectors Emerge in Deep Scene CNNsarxiv   http / 
+/ arxiv . org / abs / 1412 . 6856paper 
+  https / / www . robots . ox . 
+ac . uk / ~ vgg / rg / papers 
+/ zhou _ iclr15 . pdfpaper   https / / 
+people . csail . mit . edu / khosla / 
+papers / iclr2015 _ zhou . pdfslides   http / 
+/ places . csail . mit . edu / slide 
+_ iclr2015 . pdfsegDeepM Exploiting Segmentation and Context in Deep 
+Neural Networks for Object Detectionintro CVPR 2015project code + data 
+  https / / www . cs . toronto . 
+edu / ~ yukun / segdeepm . htmlarxiv   https 
+/ / arxiv . org / abs / 1502 . 
+04275github   https / / github . com / YknZhu 
+/ s e g D e e p M N 
+o C O b j e c t Detection Networks 
+on Convolutional Feature Mapsintro TPAMI 2015arxiv   http / / 
+arxiv . org / abs / 1504 . 06066Improving Object 
+Detection with Deep Convolutional Networks via Bayesian Optimization and Structured 
+Predictionarxiv   http / / arxiv . org / abs 
+/ 1504 . 03293slides   http / / www . 
+ytzhang . net / files / publications / 2015 cvpr 
+det slides . pdfgithub   https / / github . 
+com / YutingZhang / fgs objFast R CNNFast R CNNarxiv 
+  http / / arxiv . org / abs / 
+1504 . 08083slides   http / / tutorial . caffe 
+. berkeleyvision . org / caffe cvpr15 detection . pdfgithub 
+  https / / github . com / rbgirshick / 
+fast rcnngithub COCO branch   https / / github . 
+com / rbgirshick / fast rcnn / tree / cocowebcam 
+demo   https / / github . com / rbgirshick 
+/ fast rcnn / pull / 29notes   http / 
+/ zhangliliang . com / 2015 / 05/17 / paper 
+note fast rcnn / notes   http / / blog 
+. csdn . net / linj _ m / article 
+/ details / 48930179github Fast R CNN in MXNet   
+https / / github . com / precedenceguo / mx 
+rcnngithub   https / / github . com / mahyarnajibi 
+/ fast rcnn torchgithub   https / / github . 
+com / apple2373 / chainer simple fast rnngithub Tensorflow   
+https / / github . com / zplizzi / tensorflow 
+fast r c n n D e e p B 
+o x D e e p B o x Learning 
+Objectness with Convolutional Networksarxiv   http / / arxiv . 
+org / abs / 1505 . 02146github   https / 
+/ github . com / weichengkuo / DeepBoxMR CNNObject detection 
+via a multi region & semantic segmentation aware CNN modelintro 
+ICCV 2015 . MR CNNarxiv   http / / arxiv 
+. org / abs / 1505 . 01749github   https 
+/ / github . com / gidariss / mrcnn object 
+detectionnotes   http / / zhangliliang . com / 2015 
+/ 05/17 / paper note ms cnn / notes   
+http / / blog . cvmarcher . com / posts 
+/ 2015 / 05/17 / multi region semantic segmentation aware 
+cnn / my notes Who can tell me why there 
+are a bunch of duplicated sentences in section 7.2 Detection 
+error analysis DFaster R CNNFaster R CNN Towards Real Time 
+Object Detection with Region Proposal Networksintro NIPS 2015arxiv   http 
+/ / arxiv . org / abs / 1506 . 
+01497gitxiv   http / / www . gitxiv . com 
+/ posts / 8 p f p c v e 
+f D Y n 2 g g X k / 
+faster r cnn towards real time object detection with regionslides 
+  http / / web . cs . hacettepe . 
+edu . tr / ~ aykut / classes / spring2016 
+/ bil722 / slides / w05 FasterR CNN . pdfgithub 
+official Matlab   https / / github . com / 
+ShaoqingRen / faster _ rcnngithub   https / / github 
+. com / rbgirshick / py faster rcnngithub   https 
+/ / github . com / mitmul / chainer faster 
+rcnngithub   https / / github . com / andreaskoepf 
+/ faster rcnn . torchgithub   https / / github 
+. com / ruotianluo / Faster RCNN Densecap torchgithub   
+https / / github . com / smallcorgi / Faster 
+RCNN _ TFgithub   https / / github . com 
+/ CharlesShang / TFFRCNNgithub C + + demo   https 
+/ / github . com / YihangLou / FasterRCNN Encapsulation 
+Cplusplusgithub   https / / github . com / yhenon 
+/ keras frcnnFaster R CNN in MXNet with distributed implementation 
+and data p a r a l l e l 
+i z a t i o n g i t 
+h u b   https / / github . com 
+/ dmlc / mxnet / tree / master / example 
+/ rcnnContextual Priming and Feedback for Faster R CNNintro ECCV 
+2016 . Carnegie Mellon Universitypaper   http / / abhinavsh 
+. info / context _ priming _ feedback . pdfposter 
+  http / / www . eccv2016 . org / 
+files / posters / P 1A 20 . pdfAn Implementation 
+of Faster RCNN with Study for Region Samplingintro Technical Report 
+3 pages . CMUarxiv   https / / arxiv . 
+org / abs / 1702 . 02138github   https / 
+/ github . com / endernewton / tf faster rcnnYOLOYou 
+Only Look Once Unified Real Time Object Detectionarxiv   http 
+/ / arxiv . org / abs / 1506 . 
+02640code   http / / pjreddie . com / darknet 
+/ yolo / github   https / / github . 
+com / pjreddie / darknetblog   https / / pjreddie 
+. com / publications / yolo / slides   https 
+/ / docs . google . com / presentation / 
+d / 1 a e R v t K G 
+2 1 K H d D 5 l g 6 
+H g y h x 5 r P q _ 
+ZOsGjG5rJ1HP7BbA / pub start = false & loop = false 
+& delayms = 3000 & slide = id . preddit 
+  https / / www . reddit . com / 
+r / MachineLearning / comments / 3a3m0o / realtime _ 
+object _ detection _ with _ yolo / github   
+https / / github . com / gliese581gg / YOLO 
+_ tensorflowgithub   https / / github . com / 
+xingwangsfu / caffe yologithub   https / / github . 
+com / frankzhangrui / Darknet Yologithub   https / / 
+github . com / BriSkyHekun / py darknet yologithub   
+https / / github . com / tommy qichang / 
+yolo . torchgithub   https / / github . com 
+/ frischzenger / yolo windowsgtihub   https / / github 
+. com / AlexeyAB / yolo windowsdarkflow translate darknet to 
+tensorflow . Load trained weights retrain / fine tune them 
+using tensorflow export constant graph def to C + + 
+blog   https / / thtrieu . github . io 
+/ notes / yolo tensorflow graph buffer cppgithub   https 
+/ / github . com / thtrieu / darkflowStart Training 
+YOLO with Our Own Dataintro train with customized data and 
+class numbers / labels . Linux / Windows version for 
+darknet . blog   http / / guanghan . info 
+/ blog / en / my works / train yolo 
+/ github   https / / github . com / 
+Guanghan / darknetR CNN minus Rarxiv   http / / 
+arxiv . org / abs / 1506.06981 A t t 
+e n t i o n N e t A 
+t t e n t i o n N e 
+t Aggregating Weak Directions for Accurate Object Detectionintro ICCV 2015intro 
+state of the art performance of 65% AP on PASCAL 
+VOC 2007/2012 human detection taskarxiv   http / / arxiv 
+. org / abs / 1506 . 07704slides   https 
+/ / www . robots . ox . ac . 
+uk / ~ vgg / rg / slides / AttentionNet 
+. pdfslides   http / / image net . org 
+/ challenges / talks / lunit kaist slide . p 
+d f D e n s e B o x 
+D e n s e B o x Unifying Landmark 
+Localization with End to End Object Detectionarxiv   http / 
+/ arxiv . org / abs / 1509 . 04874demo 
+  http / / pan . baidu . com / 
+s / 1mgoWWsSKITTI result   http / / www . 
+cvlibs . net / datasets / kitti / eval _ 
+object . phpSSDSSD Single Shot MultiBox Detectorintro ECCV 2016 Oralarxiv 
+  http / / arxiv . org / abs / 
+1512 . 02325paper   http / / www . cs 
+. unc . edu / ~ wliu / papers / 
+ssd . pdfslides   http / / www . cs 
+. unc . edu / % 7Ewliu / papers / 
+ssd _ eccv2016 _ slide . pdfgithub   https / 
+/ github . com / weiliu89 / caffe / tree 
+/ ssdvideo   http / / weibo . com / 
+p / 2 3 0 4 4 4 7 a 
+2 3 2 6 d a 9 6 3 2 
+5 4 c 9 6 3 c 9 7 f 
+b 0 5 d d 3 a 9 7 3 
+g i t h u b   https / / 
+github . com / zhreshold / mxnet ssdgithub   https 
+/ / github . com / zhreshold / mxnet ssd 
+. cppgithub   https / / github . com / 
+rykov8 / ssd _ kerasgithub   https / / github 
+. com / balancap / SSD Tensorflowgithub   https / 
+/ github . com / amdegroot / ssd . pytorchInside 
+Outside Net ION Inside Outside Net Detecting Objects in Context 
+with Skip Pooling and Recurrent Neural Networksintro 0.8 s per 
+image on a Titan X GPU excluding proposal generation without 
+two stage bounding box regression and 1.15 s per image 
+with it . arxiv   http / / arxiv . 
+org / abs / 1512 . 04143slides   http / 
+/ www . seanbell . ca / tmp / ion 
+coco talk bell2015 . pdfcoco leaderboard   http / / 
+mscoco . org / dataset / # detections l e 
+a d e r b o a r d A 
+d a p t i v e Object Detection Using 
+Adjacency and Zoom Predictionintro CVPR 2016 . AZ Netarxiv   
+http / / arxiv . org / abs / 1512 
+. 07711github   https / / github . com / 
+luyongxi / az netyoutube   https / / www . 
+youtube . com / watch v = YmFtuNwxaNMG CNNG CNN 
+an Iterative Grid Based Object Detectorarxiv   http / / 
+arxiv . org / abs / 1512 . 07729Factors in 
+Finetuning Deep Model for object detectionFactors in Finetuning Deep Model 
+for Object Detection with Long tail D i s t 
+r i b u t i o n i n 
+t r o CVPR 2016 . rank 3rd for provided 
+data and 2nd for external data on ILSVRC 2015 object 
+detectionproject page   http / / www . ee . 
+cuhk . edu . hk / ~ wlouyang / projects 
+/ ImageNetFactors / CVPR16 . htmlarxiv   http / / 
+arxiv . org / abs / 1601 . 05150We don 
+t need no bounding boxes Training object class detectors using 
+only human v e r i f i c a 
+t i o n a r x i v   
+http / / arxiv . org / abs / 1602.08405 
+H y p e r N e t H y 
+p e r N e t Towards Accurate Region Proposal 
+Generation and Joint Object Detectionarxiv   http / / arxiv 
+. org / abs / 1604.00600 M u l t 
+i P a t h N e t A MultiPath 
+Network for Object Detectionintro BMVC 2016 . Facebook AI Research 
+FAIR arxiv   http / / arxiv . org / 
+abs / 1604 . 02135github   https / / github 
+. com / facebookresearch / m u l t i 
+p a t h n e t C R A 
+F T C R A F T Objects from Imagesintro 
+CVPR 2016 . Cascade Region proposal network And FasT rcnn 
+. an extension of Faster R CNNproject page   http 
+/ / byangderek . github . io / projects / 
+craft . htmlarxiv   https / / arxiv . org 
+/ abs / 1604 . 03239paper   http / / 
+www . cv foundation . org / openaccess / content 
+_ cvpr _ 2016 / papers / Yang _ CRAFT 
+_ Objects _ From _ CVPR _ 2016 _ paper 
+. pdfgithub   https / / github . com / 
+byangderek / C R A F T O H E 
+M T r a i n i n g Region 
+based Object Detectors with Online Hard Example Miningintro CVPR 2016 
+Oral . Online hard example mining OHEM arxiv   http 
+/ / arxiv . org / abs / 1604 . 
+03540paper   http / / www . cv foundation . 
+org / openaccess / content _ cvpr _ 2016 / 
+papers / Shrivastava _ Training _ Region Based _ Object 
+_ CVPR _ 2016 _ paper . pdfgithub Official   
+https / / github . com / abhi2610 / ohemauthor 
+page   http / / abhinav shrivastava . info / 
+Track and Transfer Watching Videos to Simulate Strong Human Supervision 
+for Weakly Supervised Object Detectionintro CVPR 2016arxiv   http / 
+/ arxiv . org / abs / 1604 . 05766Exploit 
+All the Layers Fast and Accurate CNN Object Detector with 
+Scale Dependent Pooling and Cascaded Rejection Classifiersintro scale dependent pooling 
+SDP cascaded rejection clas sifiers CRC paper   http / 
+/ www personal . umich . edu / ~ wgchoi 
+/ SDP CRC _ camready . pdfR FCNR FCN Object 
+Detection via Region based Fully Convolutional Networksarxiv   http / 
+/ arxiv . org / abs / 1605 . 06409github 
+  https / / github . com / daijifeng001 / 
+R FCNgithub   https / / github . com / 
+Orpine / py R FCNgithub PyTorch   https / / 
+github . com / PureDiors / pytorch _ RFCNgithub   
+https / / github . com / bharatsingh430 / py 
+R FCN multiGPUWeakly supervised object detection using pseudo strong labelsarxiv 
+  http / / arxiv . org / abs / 
+1607 . 04731Recycle deep features for better object detectionarxiv   
+http / / arxiv . org / abs / 1607 
+. 05066MS CNNA Unified Multi scale Deep Convolutional Neural Network 
+for Fast Object Detectionintro ECCV 2016intro 640 × 480 15 
+fps 960 × 720 8 fpsarxiv   http / / 
+arxiv . org / abs / 1607 . 07155github   
+https / / github . com / zhaoweicai / mscnnposter 
+  http / / www . eccv2016 . org / 
+files / posters / P 2B 38 . pdfMulti stage 
+Object Detection with Group Recursive Learningintro VOC2007 78.6% VOC2012 74.9% 
+arxiv   http / / arxiv . org / abs 
+/ 1608 . 05159Subcategory aware Convolutional Neural Networks for Object 
+Proposals and Detectionintro WACV 2017 . SubCNNarxiv   http / 
+/ arxiv . org / abs / 1604 . 04693github 
+  https / / github . com / yuxng / 
+u b C N N P V A N E 
+T P V A N E T Deep but Lightweight 
+Neural Networks for Real time Object Detectionintro less channels with 
+more layers concatenated ReLU Inception and HyperNet batch normalization residual 
+connectionsarxiv   http / / arxiv . org / abs 
+/ 1608 . 08021github   https / / github . 
+com / sanghoon / pva faster rcnnleaderboard PVANet 9.0   
+http / / host . robots . ox . ac 
+. uk 8080 / leaderboard / displaylb . php challengeid 
+= 11 & compid = 4PVANet Lightweight Deep Neural Networks 
+for Real time Object Detectionintro Presented at NIPS 2016 Workshop 
+on Efficient Methods for Deep Neural Networks EMDNN . Continuation 
+ofarXiv 1608 . 08021arxiv   https / / arxiv . 
+org / abs / 1611 . 08588GBD NetGated Bi directional 
+CNN for Object Detectionintro The Chinese University of Hong Kong 
+& Sensetime Group Limitedpaper   http / / link . 
+springer . com / chapter / 10 . 1007/978 3 
+319 46478 7 _ 22mirror   https / / pan 
+. baidu . com / s / 1dFohO7vCrafting GBD Net 
+for Object Detectionintro winner of the ImageNet object detection challenge 
+of 2016 . CUImage and CUVideointro gated bi directional CNN 
+GBD Net arxiv   https / / arxiv . org 
+/ abs / 1610 . 02579github   https / / 
+github . com / craftGBD / c r a f 
+t G B D t u f f N e 
+t t u f f N e t Using Stuff 
+to Improve Object Detectionarxiv   https / / arxiv . 
+org / abs / 1610 . 05861Generalized Haar Filter based 
+Deep Networks for Real Time Object Detection in Traffic Scenearxiv 
+  https / / arxiv . org / abs / 
+1610.09609 H i e r a r c h i 
+c a l Object Detection with Deep Reinforcement Learningintro Deep 
+Reinforcement Learning Workshop NIPS 2016 project page   https / 
+/ imatge upc . github . io / detection 2016 
+nipsws / arxiv   https / / arxiv . org 
+/ abs / 1611 . 03718slides   http / / 
+www . slideshare . net / xavigiro / hierarchical object 
+detection with deep reinforcement learninggithub   https / / github 
+. com / imatge upc / detection 2016 nipswsblog   
+http / / jorditorres . org / nips / Learning 
+to detect and localize many objects from few examplesarxiv   
+https / / arxiv . org / abs / 1611 
+. 05664Speed / accuracy trade offs for modern convolutional object 
+detectorsintro Google Researcharxiv   https / / arxiv . org 
+/ abs / 1611 . 10012SqueezeDet Unified Small Low Power 
+Fully Convolutional Neural Networks for Real Time Object Detection for 
+Autonomous Drivingarxiv   https / / arxiv . org / 
+abs / 1612 . 01051github   https / / github 
+. com / BichenWuUCB / s q u e e 
+z e D e t F e a t u 
+r e Pyramid Network FPN Feature Pyramid Networks for Object 
+Detectionintro Facebook AI Researcharxiv   https / / arxiv . 
+org / abs / 1612 . 03144Action Driven Object Detection 
+with Top Down Visual Attentionsarxiv   https / / arxiv 
+. org / abs / 1612 . 06704Beyond Skip Connections 
+Top Down Modulation for Object Detectionintro CMU & UC Berkeley 
+& Google Researcharxiv   https / / arxiv . org 
+/ abs / 1612.06851 Y O L O v 2 
+Y O L O 9 0 0 0 Better Faster 
+Strongerarxiv   https / / arxiv . org / abs 
+/ 1612 . 08242code   http / / pjreddie . 
+com / yolo9000 / github Chainer   https / / 
+github . com / leetenki / YOLOv2github Keras   https 
+/ / github . com / allanzelener / YAD2Kgithub PyTorch 
+  https / / github . com / longcw / 
+yolo2 pytorchgithub Tensorflow   https / / github . com 
+/ hizhangp / yolo _ tensorflowgithub Windows   https / 
+/ github . com / AlexeyAB / darknetgithub   https 
+/ / github . com / choasUp / caffe yolo9000Yolo 
+_ mark GUI for marking bounded boxes of objects in 
+images for training Yolo v2github   https / / github 
+. com / AlexeyAB / Yolo _ markDSSDDSSD Deconvolutional Single 
+Shot Detectorintro UNC Chapel Hill & Amazon Incarxiv   https 
+/ / arxiv . org / abs / 1701 . 
+06659Wide Residual Inception Networks for Real time Object Detectionintro Inha 
+Universityarxiv   https / / arxiv . org / abs 
+/ 1702 . 01243Attentional Network for Visual Object Detectionintro University 
+of Maryland & Mitsubishi Electric Research L a b o 
+r a t o r i e s a r 
+x i v   https / / arxiv . org 
+/ abs / 1702 . 01478CC NetLearning Chained Deep Features 
+and Classifiers for Cascade in Object Detectionintro chained cascade network 
+CC Net . 81.1% mAP on PASCAL VOC 2007arxiv   
+https / / arxiv . org / abs / 1702 
+. 07054DeNet Scalable Real time Object Detection with Directed Sparse 
+Samplinghttps / / arxiv . org / abs / 1703.10295 
+A Fast RCNN Hard Positive Generation via Adversary for Object 
+Detectionintro CVPR 2017paper   http / / abhinavsh . info 
+/ papers / pdfs / adversarial _ object _ detection 
+. pdfgithub Caffe   https / / github . com 
+/ xiaolonw / adversarial f r c n n D 
+i s c r i m i n a t 
+i v e Bimodal Networks for Visual Localization and Detection 
+with Natural Language Queriesintro CVPR 2017arxiv   https / / 
+arxiv . org / abs / 1704 . 03944Spatial Memory 
+for Context Reasoning in Object Detectionarxiv   https / / 
+arxiv . org / abs / 1704 . 04224Improving Object 
+Detection With One Line of Codeintro University of Marylandkeywords Soft 
+NMSarxiv   https / / arxiv . org / abs 
+/ 1704 . 04503github   https / / github . 
+com / bharatsingh430 / soft nmsAccurate Single Stage Detector Using 
+Recurrent Rolling Convolutionintro CVPR 2017arxiv   https / / arxiv 
+. org / abs / 1704 . 05776github   https 
+/ / github . com / xiaohaoChen / rrc _ 
+detectionDeep Occlusion Reasoning for Multi Camera Multi Target Detectionhttps / 
+/ arxiv . org / abs / 1704 . 05775Detection 
+From VideoLearning Object Class Detectors from Weakly Annotated Videointro CVPR 
+2012paper   https / / www . vision . ee 
+. ethz . ch / publications / papers / proceedings 
+/ eth _ biwi _ 00905 . pdfAnalysing domain shift 
+factors between videos and images for object detectionarxiv   https 
+/ / arxiv . org / abs / 1501 . 
+01186Video Object R e c o g n i t 
+i o n s l i d e s   
+http / / vision . princeton . edu / courses 
+/ COS598 / 2015sp / slides / VideoRecog / Video 
+% 20Object % 20Recognition . pptxDeep Learning for Saliency Prediction 
+in Natural Videointro Submitted on 12 Jan 2016keywords Deep learning 
+saliency map optical flow convolution network contrast featurespaper   https 
+/ / hal . archives ouvertes . fr / hal 
+01251614 / documentT CNNT CNN Tubelets with Convolutional Neural Networks 
+for Object Detection from Videosintro Winning solution in ILSVRC2015 Object 
+Detection from Video VID Taskarxiv   http / / arxiv 
+. org / abs / 1604 . 02532github   https 
+/ / github . com / myfavouritekk / T CNNObject 
+Detection from Video Tubelets with Convolutional Neural Networksintro CVPR 2016 
+Spotlight paperarxiv   https / / arxiv . org / 
+abs / 1604 . 04053paper   http / / www 
+. ee . cuhk . edu . hk / ~ 
+wlouyang / Papers / KangVideoDet _ CVPR16 . pdfgihtub   
+https / / github . com / myfavouritekk / vdetlibObject 
+Detection in Videos with Tubelets and Multi context Cuesintro SenseTime 
+Groupslides   http / / www . ee . cuhk 
+. edu . hk / ~ xgwang / CUvideo . 
+pdfslides   http / / image net . org / 
+challenges / talks / Object % 20Detection % 20in % 
+20Videos % 20with % 20Tubelets % 20and % 20Multi context 
+% 20Cues % 20 % 20Final . pdfContext Matters Refining 
+Object Detection in Video with Recurrent Neural Networksintro BMVC 2016keywords 
+pseudo labelerarxiv   http / / arxiv . org / 
+abs / 1607 . 04648paper   http / / vision 
+. cornell . edu / se3 / wp content / 
+uploads / 2016/07 / video _ object _ detection _ 
+BMVC . pdfCNN Based Object Detection in Large Video Imagesintro 
+WangTao @ 爱奇艺 keywords object retrieval object detection scene c 
+l a s s i f i c a t 
+i o n s l i d e s   
+http / / on demand . gputechconf . com / 
+gtc / 2016 / presentation / s6362 wang tao cnn 
+based object detection large video images . pdfObject Detection in 
+Videos with Tubelet Proposal Networksarxiv   https / / arxiv 
+. org / abs / 1702 . 06355Flow Guided Feature 
+Aggregation for Video Object Detectionintro MSRAarxiv   https / / 
+arxiv . org / abs / 1703 . 10025Video Object 
+Detection using Faster R CNNblog   http / / andrewliao11 
+. github . io / object _ detection / faster 
+_ rcnn / github   https / / github . 
+com / andrewliao11 / py faster rcnn imagenetObject Detection in 
+3DVote3Deep Fast Object Detection in 3D Point Clouds Using Efficient 
+Convolutional Neural Networksarxiv   https / / arxiv . org 
+/ abs / 1609 . 06666Object Detection on RGB DLearning 
+Rich Features from RGB D Images for Object Detection and 
+e g m e n t a t i o 
+n a r x i v   http / / 
+arxiv . org / abs / 1407 . 5736Differential Geometry 
+Boosts Convolutional Neural Networks for Object Detectionintro CVPR 2016paper   
+http / / www . cv foundation . org / 
+openaccess / content _ cvpr _ 2016 _ workshops / 
+w23 / html / Wang _ Differential _ Geometry _ 
+Boosts _ CVPR _ 2016 _ paper . htmlA Self 
+supervised Learning System for Object Detection using Physics Simulation and 
+Multi view Pose Estimationhttps / / arxiv . org / 
+abs / 1703 . 03347Salient Object DetectionThis task involves predicting 
+the salient regions of an image given by human eye 
+fixations . Best Deep Saliency Detection Models CVPR 2016 & 
+2015 http / / i . cs . hku . 
+hk / ~ yzyu / vision . htmlLarge scale optimization 
+of hierarchical features for saliency prediction in natural imagespaper   
+http / / coxlab . org / pdfs / cvpr2014 
+_ vig _ saliency . pdfPredicting Eye Fixations using Convolutional 
+Neural Networkspaper   http / / www . escience . 
+cn / system / file fileId = 72648Saliency Detection by 
+Multi Context Deep Learningpaper   http / / www . 
+cv foundation . org / openaccess / content _ cvpr 
+_ 2015 / papers / Zhao _ Saliency _ Detection 
+_ by _ 2015 _ CVPR _ paper . pdfDeepSaliency 
+Multi Task Deep Neural Network Model for Salient Object Detectionarxiv 
+  http / / arxiv . org / abs / 
+1510 . 05484SuperCNN A Superpixelwise Convolutional Neural Network for Salient 
+Object Detectionpaper   www . shengfenghe . com / supercnn 
+a superpixelwise convolutional neural network for salient object detection . 
+htmlShallow and Deep Convolutional Networks for Saliency Predictionarxiv   http 
+/ / arxiv . org / abs / 1603 . 
+00845github   https / / github . com / imatge 
+upc / saliency 2016 cvprRecurrent Attentional Networks for Saliency Detectionintro 
+CVPR 2016 . recurrent attentional convolutional deconvolution network RACDNN arxiv 
+  http / / arxiv . org / abs / 
+1604 . 03227Two Stream Convolutional Networks for Dynamic Saliency Predictionarxiv 
+  http / / arxiv . org / abs / 
+1607.04730 U n c o n s t r a 
+i n e d Salient Object D e t e 
+c t i o n U n c o n 
+s t r a i n e d Salient Object 
+Detection via Proposal Subset O p t i m i 
+z a t i o n i n t r 
+o CVPR 2016project page   http / / cs people 
+. bu . edu / jmzhang / sod . htmlpaper 
+  http / / cs people . bu . edu 
+/ jmzhang / SOD / CVPR16SOD _ camera _ ready 
+. pdfgithub   https / / github . com / 
+jimmie33 / SODcaffe model zoo   https / / github 
+. com / BVLC / caffe / wiki / Model 
+Zoo # cnn object proposal models for salient object detectionDHSNet 
+Deep Hierarchical Saliency Network for Salient Object Detectionpaper   http 
+/ / www . cv foundation . org / openaccess 
+/ content _ cvpr _ 2016 / papers / Liu 
+_ DHSNet _ Deep _ Hierarchical _ CVPR _ 2016 
+_ paper . pdfSalient Object Subitizingintro CVPR 2015intro predicting the 
+existence and the number of salient objects in an image 
+using holistic cuesproject page   http / / cs people 
+. bu . edu / jmzhang / sos . htmlarxiv 
+  http / / arxiv . org / abs / 
+1607 . 07525paper   http / / cs people . 
+bu . edu / jmzhang / SOS / SOS _ 
+preprint . pdfcaffe model zoo   https / / github 
+. com / BVLC / caffe / wiki / Model 
+Zoo # cnn models for salient object subitizingDeeply Supervised Recurrent 
+Convolutional Neural Network for Saliency Detectionintro ACMMM 2016 . deeply 
+supervised recurrent convolutional neural network DSRCNN arxiv   http / 
+/ arxiv . org / abs / 1608 . 05177Saliency 
+Detection via Combining Region Level and Pixel Level Predictions with 
+CNNsintro ECCV 2016arxiv   http / / arxiv . org 
+/ abs / 1608 . 05186Edge Preserving and Multi Scale 
+Contextual Neural Network for Salient Object Detectionarxiv   http / 
+/ arxiv . org / abs / 1608.08029 A Deep 
+Multi Level Network for Saliency Predictionarxiv   http / / 
+arxiv . org / abs / 1609 . 01064Visual Saliency 
+Detection Based on Multiscale Deep CNN Featuresintro IEEE Transactions on 
+Image Processingarxiv   http / / arxiv . org / 
+abs / 1609.02077 A Deep Spatial Contextual Long term Recurrent 
+Convolutional Network for Saliency Detectionintro DSCLRCNarxiv   https / / 
+arxiv . org / abs / 1610 . 01708Deeply supervised 
+salient object detection with short connectionsarxiv   https / / 
+arxiv . org / abs / 1611 . 04849Weakly Supervised 
+Top down Salient Object Detectionintro Nanyang Technological Universityarxiv   https 
+/ / arxiv . org / abs / 1611 . 
+05345SalGAN Visual Saliency Prediction with Generative Adversarial Networksproject page   
+https / / imatge upc . github . io / 
+saliency salgan 2017 / arxiv   https / / arxiv 
+. org / abs / 1701 . 01081Visual Saliency Prediction 
+Using a Mixture of Deep Neural Networksarxiv   https / 
+/ arxiv . org / abs / 1702.00372 A Fast 
+and Compact Salient Score Regression Network Based on Fully Convolutional 
+Networkarxiv   https / / arxiv . org / abs 
+/ 1702 . 00615Saliency Detection by Forward and Backward Cues 
+in Deep CNNshttps / / arxiv . org / abs 
+/ 1703 . 00152Supervised Adversarial Networks for Image Saliency Detectionhttps 
+/ / arxiv . org / abs / 1704 . 
+07242Saliency Detection in VideoDeep Learning For Video Saliency Detectionarxiv   
+https / / arxiv . org / abs / 1702 
+. 00871Visual Relationship DetectionVisual Relationship Detection with Language Priorsintro ECCV 
+2016 oralpaper   https / / cs . stanford . 
+edu / people / ranjaykrishna / vrd / vrd . 
+pdfgithub   https / / github . com / Prof 
+Lu Cewu / Visual Relationship DetectionViP CNN A Visual Phrase 
+Reasoning Convolutional Neural Network for Visual Relationship Detectionintro Visual Phrase 
+reasoning Convolutional Neural Network ViP CNN Visual Phrase Reasoning Structure 
+VPRS arxiv   https / / arxiv . org / 
+abs / 1702 . 07191Visual Translation Embedding Network for Visual 
+Relation Detectionarxiv   https / / www . arxiv . 
+org / abs / 1702 . 08319Deep Variation structured Reinforcement 
+Learning for Visual Relationship and Attribute Detectionintro CVPR 2017 spotlight 
+paperarxiv   https / / arxiv . org / abs 
+/ 1703 . 03054Detecting Visual Relationships with Deep Relational Networksintro 
+CVPR 2017 oral . The Chinese University of Hong Kongarxiv 
+  https / / arxiv . org / abs / 
+1704 . 03114Specific Object DetecitonFace DetecitonMulti view Face Detection Using 
+Deep Convolutional Neural Networksintro Yahooarxiv   http / / arxiv 
+. org / abs / 1502 . 02766github   https 
+/ / github . com / guoyilin / FaceDetection _ 
+CNNFrom Facial Parts Responses to Face Detection A Deep Learning 
+Approachproject page   http / / personal . ie . 
+cuhk . edu . hk / ~ ys014 / projects 
+/ Faceness / Faceness . htmlCompact Convolutional Neural Network Cascade 
+for Face Detectionarxiv   http / / arxiv . org 
+/ abs / 1508 . 01292github   https / / 
+github . com / Bkmz21 / FD EvaluationFace Detection with 
+End to End Integration of a ConvNet and a 3D 
+Modelintro ECCV 2016arxiv   https / / arxiv . org 
+/ abs / 1606 . 00850github MXNet   https / 
+/ github . com / tfwu / FaceDetection ConvNet 3DCMS 
+RCNN Contextual Multi Scale Region based CNN for Unconstrained Face 
+Detectionintro CMUarxiv   https / / arxiv . org / 
+abs / 1606 . 05413Finding Tiny Facesintro CMUproject page   
+http / / www . cs . cmu . edu 
+/ ~ peiyunh / tiny / index . htmlarxiv   
+https / / arxiv . org / abs / 1612 
+. 04402github   https / / github . com / 
+peiyunh / tinyTowards a Deep Learning Framework for Unconstrained Face 
+Detectionintro overlap with CMS RCNNarxiv   https / / arxiv 
+. org / abs / 1612 . 05322Supervised Transformer Network 
+for Efficient Face Detectionarxiv   http / / arxiv . 
+org / abs / 1607.05477 U n i t B 
+o x U n i t B o x An 
+Advanced Object Detection Networkintro ACM MM 2016arxiv   http / 
+/ arxiv . org / abs / 1608.01471 B o 
+o t s t r a p p i n 
+g Face Detection with Hard Negative Examplesauthor 万 韶华 @ 
+小米 . intro Faster R CNN hard negative mining . 
+state of the art on the FDDB datasetarxiv   http 
+/ / arxiv . org / abs / 1608 . 
+02236Grid Loss Detecting Occluded Facesintro ECCV 2016arxiv   https / 
+/ arxiv . org / abs / 1609 . 00129paper 
+  http / / lrs . icg . tugraz . 
+at / pubs / opitz _ eccv _ 16 . 
+pdfposter   http / / www . eccv2016 . org 
+/ files / posters / P 2A 34 . pdfA 
+Multi Scale Cascade Fully Convolutional Network Face Detectorintro ICPR 2016arxiv 
+  http / / arxiv . org / abs / 
+1609 . 03536MTCNNJoint Face Detection and Alignment using Multi task 
+Cascaded Convolutional NetworksJoint Face Detection and Alignment using Multi task 
+Cascaded Convolutional Neural Networksproject page   https / / kpzhang93 
+. github . io / MTCNN _ face _ detection 
+_ alignment / index . htmlarxiv   https / / 
+arxiv . org / abs / 1604 . 02878github Matlab 
+  https / / github . com / kpzhang93 / 
+MTCNN _ face _ detection _ alignmentgithub   https / 
+/ github . com / pangyupo / mxnet _ mtcnn 
+_ face _ detectiongithub   https / / github . 
+com / DaFuCoding / MTCNN _ Caffegithub MXNet   https 
+/ / github . com / Seanlinx / mtcnngithub   
+https / / github . com / Pi DeepLearning / 
+RaspberryPi FaceDetection MTCNN Caffe With Motiongithub Caffe   https / 
+/ github . com / f o r e v 
+e r Y o u n g G i t 
+H u b / MTCNNgithub   https / / github 
+. com / CongWeilin / mtcnn caffeFace Detection using Deep 
+Learning An Improved Faster RCNN Approachintro DeepIR Incarxiv   https 
+/ / arxiv . org / abs / 1701 . 
+08289Faceness Net Face Detection through Deep Facial Part Responsesintro An 
+extended version of ICCV 2015 paperarxiv   https / / 
+arxiv . org / abs / 1701 . 08393Multi Path 
+Region Based Convolutional Neural Network for Accurate Detection of Unconstrained 
+Hard Faces intro CVPR 2017 . MP RCNN MP RPNarxiv 
+  https / / arxiv . org / abs / 
+1703 . 09145End To End Face Detection and Recognitionhttps / 
+/ arxiv . org / abs / 1703 . 10818Facial 
+Point / Landmark DetectionDeep Convolutional Network Cascade for Facial Point 
+D e t e c t i o n h 
+o m e p a g e   http / 
+/ mmlab . ie . cuhk . edu . hk 
+/ archive / CNN _ FacePoint . htmpaper   http 
+/ / www . ee . cuhk . edu . 
+hk / ~ xgwang / papers / sunWTcvpr13 . pdfgithub 
+  https / / github . com / luoyetx / 
+deep landmarkFacial Landmark Detection by Deep Multi task Learningintro ECCV 
+2014project page   http / / mmlab . ie . 
+cuhk . edu . hk / projects / TCDCN . 
+htmlpaper   http / / personal . ie . cuhk 
+. edu . hk / ~ ccloy / files / 
+eccv _ 2014 _ deepfacealign . pdfgithub Matlab   https 
+/ / github . com / zhzhanp / TCDCN face 
+alignmentA Recurrent Encoder Decoder Network for Sequential Face Alignmentintro ECCV 
+2016arxiv   https / / arxiv . org / abs 
+/ 1608 . 05477Detecting facial landmarks in the video based 
+on a hybrid frameworkarxiv   http / / arxiv . 
+org / abs / 1609 . 06441Deep Constrained Local Models 
+for Facial Landmark Detectionarxiv   https / / arxiv . 
+org / abs / 1611 . 08657Effective face landmark localization 
+via single deep networkarxiv   https / / arxiv . 
+org / abs / 1702.02719 A Convolution Tree with Deconvolution 
+Branches Exploiting Geometric Relationships for Single Shot Keypoint Detectionhttps / 
+/ arxiv . org / abs / 1704 . 01880People 
+DetectionEnd to end people detection in crowded scenesarxiv   http 
+/ / arxiv . org / abs / 1506 . 
+04878github   https / / github . com / Russell91 
+/ reinspectipn   http / / nbviewer . ipython . 
+org / github / Russell91 / ReInspect / blob / 
+master / evaluation _ reinspect . ipynbDetecting People in Artwork 
+with CNNsintro ECCV 2016 Workshopsarxiv   https / / arxiv 
+. org / abs / 1610 . 08871Deep Multi camera 
+People Detectionarxiv   https / / arxiv . org / 
+abs / 1702 . 04593Person Head DetectionContext aware CNNs for 
+person head detectionarxiv   http / / arxiv . org 
+/ abs / 1511 . 07917github   https / / 
+github . com / aosokin / cnn _ head _ 
+d e t e c t i o n P 
+e d e s t r i a n D 
+e t e c t i o n P e 
+d e s t r i a n Detection aided 
+by Deep Learning Semantic Tasksintro CVPR 2015project page   http 
+/ / mmlab . ie . cuhk . edu . 
+hk / projects / TA CNN / paper   http 
+/ / arxiv . org / abs / 1412 . 
+0069Deep Learning Strong Parts for Pedestrian Detectionintro ICCV 2015 . 
+CUHK . DeepPartsintro Achieving 11.89% average miss rate on Caltech 
+Pedestrian Datasetpaper   http / / personal . ie . 
+cuhk . edu . hk / ~ pluo / pdf 
+/ tianLWTiccv15 . pdfDeep convolutional neural networks for pedestrian detectionarxiv 
+  http / / arxiv . org / abs / 
+1510 . 03608github   https / / github . com 
+/ DenisTome / DeepPedScale aware Fast R CNN for Pedestrian 
+Detectionarxiv   https / / arxiv . org / abs 
+/ 1510 . 08160New algorithm improves speed and accuracy of 
+pedestrian detectionblog   http / / www . eurekalert . 
+org / pub _ releases / 2016 02 / uoc 
+– nai020516 . phpPushing the Limits of Deep CNNs for 
+Pedestrian Detectionintro set a new record on the Caltech pedestrian 
+dataset lowering the log average miss rate from 11.7% to 
+8.9% arxiv   http / / arxiv . org / 
+abs / 1603.04525 A Real Time Deep Learning Pedestrian Detector 
+for Robot Navigationarxiv   http / / arxiv . org 
+/ abs / 1607.04436 A Real Time Pedestrian Detector using 
+Deep Learning for Human Aware Navigationarxiv   http / / 
+arxiv . org / abs / 1607 . 04441Is Faster 
+R CNN Doing Well for Pedestrian Detection intro ECCV 2016arxiv 
+  http / / arxiv . org / abs / 
+1607 . 07032github   https / / github . com 
+/ zhangliliang / RPN _ BF / tree / RPN 
+p e d e s t r i a n 
+R e d u c e d Memory Region Based 
+Deep Convolutional Neural Network Detectionintro IEEE 2016 ICCE Berlinarxiv   
+http / / arxiv . org / abs / 1609 
+. 02500Fused DNN A deep neural network fusion approach to 
+fast and robust pedestrian detectionarxiv   https / / arxiv 
+. org / abs / 1610.03466 M u l t 
+i s p e c t r a l Deep 
+Neural Networks for Pedestrian Detectionintro BMVC 2016 oralarxiv   https 
+/ / arxiv . org / abs / 1611 . 
+02644Expecting the Unexpected Training Detectors for Unusual Pedestrians with Adversarial 
+Impostersintro CVPR 2017project page   http / / ml . 
+cs . tsinghua . edu . cn 5000 / publications 
+/ synunity / arxiv   https / / arxiv . 
+org / abs / 1703 . 06283github Tensorflow   https 
+/ / github . com / huangshiyu13 / RPNplusVehicle DetectionDAVE 
+A Unified Framework for Fast Vehicle Detection and Annotationintro ECCV 
+2016arxiv   http / / arxiv . org / abs 
+/ 1607 . 04564Evolving Boxes for fast Vehicle Detectionarxiv   
+https / / arxiv . org / abs / 1702 
+. 00254Traffic Sign DetectionTraffic Sign Detection and Classification in the 
+Wildproject page code + dataset   http / / cg 
+. cs . tsinghua . edu . cn / traffic 
+sign / paper   http / / 120.52 . 73.11 
+/ www . cv foundation . org / openaccess / 
+content _ cvpr _ 2016 / papers / Zhu _ 
+Traffic Sign _ Detection _ and _ CVPR _ 2016 
+_ paper . pdfcode & model   http / / 
+cg . cs . tsinghua . edu . cn / 
+traffic sign / data _ model _ code / newdata0411 
+. zipBoundary / Edge / Contour D e t e 
+c t i o n H o l i s 
+t i c a l l y Nested Edge Detectionintro 
+ICCV 2015 Marr Prizepaper   http / / www . 
+cv foundation . org / openaccess / content _ iccv 
+_ 2015 / papers / Xie _ Holistically Nested _ 
+Edge _ Detection _ ICCV _ 2015 _ paper . 
+pdfarxiv   http / / arxiv . org / abs 
+/ 1504 . 06375github   https / / github . 
+com / s9xie / hedUnsupervised Learning of Edgesintro CVPR 2016 
+. Facebook AI Researcharxiv   http / / arxiv . 
+org / abs / 1511 . 04166zn blog   http 
+/ / www . leiphone . com / news / 
+201607 / b1trsg9j6GSMnjOP . htmlPushing the Boundaries of Boundary Detection 
+using Deep Learningarxiv   http / / arxiv . org 
+/ abs / 1511.07386 C o n v o l 
+u t i o n a l Oriented Boundariesintro ECCV 
+2016arxiv   http / / arxiv . org / abs 
+/ 1608.02755 C o n v o l u t 
+i o n a l Oriented Boundaries From Image Segmentation 
+to High Level Tasksproject page   http / / www 
+. vision . ee . ethz . ch / ~ 
+cvlsegmentation / arxiv   https / / arxiv . org 
+/ abs / 1701 . 04658github   https / / 
+github . com / kmaninis / COBRicher Convolutional Features for 
+Edge Detectionintro richer convolutional features RCF arxiv   https / 
+/ arxiv . org / abs / 1612 . 02103Skeleton 
+DetectionObject Skeleton Extraction in Natural Images by Fusing Scale associated 
+Deep Side Outputsarxiv   http / / arxiv . org 
+/ abs / 1603 . 09446github   https / / 
+github . com / zeakey / D e e p 
+k e l e t o n D e e 
+p k e l e t o n Learning Multi 
+task Scale associated Deep Side Outputs for Object Skeleton Extraction 
+in Natural Imagesarxiv   http / / arxiv . org 
+/ abs / 1609 . 03659SRN Side output Residual Network 
+for Object Symmetry Detection in the Wildintro CVPR 2017arxiv   
+https / / arxiv . org / abs / 1703 
+. 02243github   https / / github . com / 
+KevinKecc / SRNFruit DetectionDeep Fruit Detection in Orchardsarxiv   https 
+/ / arxiv . org / abs / 1610 . 
+03677Image Segmentation for Fruit Detection and Yield Estimation in Apple 
+Orchardsintro The Journal of Field Robotics in May 2016project page 
+  http / / confluence . acfr . usyd . 
+edu . au / display / AGPub / arxiv   
+https / / arxiv . org / abs / 1610 
+. 08120Part DetectionObjects as context for part detectionhttps / / 
+arxiv . org / abs / 1703 . 09529OthersDeep Deformation 
+Network for Object Landmark L o c a l i 
+z a t i o n a r x i 
+v   http / / arxiv . org / abs 
+/ 1605 . 01014Fashion Landmark Detection in the Wildintro ECCV 
+2016project page   http / / personal . ie . 
+cuhk . edu . hk / ~ lz013 / projects 
+/ FashionLandmarks . htmlarxiv   http / / arxiv . 
+org / abs / 1608 . 03049github Caffe   https 
+/ / github . com / liuziwei7 / fashion landmarksDeep 
+Learning for Fast and Accurate Fashion Item Detectionintro Kuznech Inc 
+. intro MultiBox and Fast R CNNpaper   https / 
+/ kddfashion2016 . mybluemix . net / kddfashion _ finalSubmissions 
+/ Deep % 20Learning % 20for % 20Fast % 20and 
+% 20Accurate % 20Fashion % 20Item % 20Detection . pdfOSMDeepOD 
+OSM and Deep Learning based Object Detection from Aerial Imagery 
+formerly known as OSM Crosswalk Detection github   https / 
+/ github . com / geometalab / OSMDeepODSelfie Detection by 
+Synergy Constraint Based Convolutional Neural Networkintro IEEE SITIS 2016arxiv   
+https / / arxiv . org / abs / 1611 
+. 04357Associative Embedding End to End Learning for Joint Detection 
+and Groupingarxiv   https / / arxiv . org / 
+abs / 1611 . 05424Deep Cuboid Detection Beyond 2D Bounding 
+Boxesintro CMU & Magic Leaparxiv   https / / arxiv 
+. org / abs / 1611 . 10010Automatic Model Based 
+Dataset Generation for Fast and Accurate Crop and Weeds Detectionarxiv 
+  https / / arxiv . org / abs / 
+1612 . 03019Deep Learning Logo Detection with Data Expansion by 
+Synthesising Contextarxiv   https / / arxiv . org / 
+abs / 1612 . 09322Pixel wise Ear Detection with Convolutional 
+Encoder Decoder Networksarxiv   https / / arxiv . org 
+/ abs / 1702 . 00307Automatic Handgun Detection Alarm in 
+Videos Using Deep Learningarxiv   https / / arxiv . 
+org / abs / 1702 . 05147results   https / 
+/ github . com / SihamTabik / Pistol Detection in 
+VideosObject P r o p o s a l D 
+e e p P r o p o s a 
+l Hunting Objects by Cascading Deep Convolutional Layersarxiv   http 
+/ / arxiv . org / abs / 1510 . 
+04445github   https / / github . com / aghodrati 
+/ d e e p p r o p o 
+s a l c a l e aware Pixel wise 
+Object Proposal Networksintro IEEE Transactions on Image Processingarxiv   http 
+/ / arxiv . org / abs / 1601 . 
+04798Attend Refine Repeat Active Box Proposal Generation via In Out 
+L o c a l i z a t i 
+o n i n t r o BMVC 2016 . 
+A t t r a c t i o N 
+e t a r x i v   https / 
+/ arxiv . org / abs / 1606 . 04446github 
+  https / / github . com / gidariss / 
+A t t r a c t i o N 
+e t L e a r n i n g 
+to Segment Object Proposals via Recursive Neural Networksarxiv   https 
+/ / arxiv . org / abs / 1612 . 
+01057Learning Detection with Diverse Proposalsintro CVPR 2017keywords differentiable Determinantal Point 
+Process DPP layer Learning Detection with Diverse Proposals LDDP arxiv 
+  https / / arxiv . org / abs / 
+1704 . 03533ScaleNet Guiding Object Proposal Generation in Supermarkets and 
+Beyondkeywords product detectionarxiv   https / / arxiv . org 
+/ abs / 1704 . 06752Improving Small Object Proposals for 
+Company Logo Detectionintro ICMR 2017arxiv   https / / arxiv 
+. org / abs / 1704.08881 L o c a 
+l i z a t i o n B e 
+y o n d Bounding Boxes Precise Localization of Objects 
+in Imagesintro PhD Thesishomepage   http / / www . 
+eecs . berkeley . edu / Pubs / TechRpts / 
+2015 / EECS 2015 193 . htmlphd thesis   http 
+/ / www . eecs . berkeley . edu / 
+Pubs / TechRpts / 2015 / EECS 2015 193 . 
+pdfgithub SDS using hypercolumns   https / / github . 
+com / bharath272 / sdsWeakly Supervised Object Localization with Multi 
+fold Multiple Instance Learningarxiv   http / / arxiv . 
+org / abs / 1503 . 00949Weakly Supervised Object Localization 
+Using Size Estimatesarxiv   http / / arxiv . org 
+/ abs / 1608 . 04314Active Object Localization with Deep 
+Reinforcement Learningintro ICCV 2015keywords Markov Decision Processarxiv   https / 
+/ arxiv . org / abs / 1511 . 06015Localizing 
+objects using referring expressionsintro ECCV 2016keywords LSTM multiple instance learning 
+MIL paper   http / / www . umiacs . 
+umd . edu / ~ varun / files / refexp 
+ECCV16 . pdfgithub   https / / github . com 
+/ varun nagaraja / referring e x p r e 
+s s i o n s L o c N 
+e t Improving Localization Accuracy for Object Detectionarxiv   http 
+/ / arxiv . org / abs / 1511 . 
+07763github   https / / github . com / gidariss 
+/ LocNetLearning Deep Features for Discriminative L o c a 
+l i z a t i o n h o 
+m e p a g e   http / / 
+cnnlocalization . csail . mit . edu / arxiv   
+http / / arxiv . org / abs / 1512 
+. 04150github Tensorflow   https / / github . com 
+/ jazzsaxmafia / Weakly _ detectorgithub   https / / 
+github . com / metalbubble / CAMgithub   https / 
+/ github . com / tdeboissiere / VGG16CAM k e 
+r a s C o n t e x t 
+L o c N e t Context Aware Deep Network 
+Models for Weakly Supervised L o c a l i 
+z a t i o n i n t r 
+o ECCV 2016project page   http / / www . 
+di . ens . fr / willow / research / 
+contextlocnet / arxiv   http / / arxiv . org 
+/ abs / 1609 . 04331github   https / / 
+github . com / vadimkantorov / c o n t 
+e x t l o c n e t T 
+u t o r i a l s / T 
+a l k s C o n v o l 
+u t i o n a l Feature Maps Elements 
+of efficient and accurate CNN based object detectionslides   http 
+/ / research . microsoft . com / en us 
+/ um / people / kahe / iccv15tutorial / iccv2015 
+_ tutorial _ convolutional _ feature _ maps _ kaiminghe 
+. pdfTowards Good Practices for Recognition & Detectionintro Hikvision Research 
+Institute . Supervised Data Augmentation SDA slides   http / 
+/ image net . org / challenges / talks / 
+2016 / Hikvision _ at _ ImageNet _ 2016 . 
+p d f P r o j e c t 
+s T e n s o r B o x 
+a simple framework for training neural networks to detect objects 
+in imagesintro The basic model implements the simple and robust 
+GoogLeNet OverFeat algorithm . We additionally provide an implementation of 
+theReInspect   algorithm github   https / / github . 
+com / Russell91 / TensorBoxObject detection in torch Implementation of 
+some object detection frameworks in torchgithub   https / / 
+github . com / fmassa / object detection . torchUsing 
+DIGITS to train an Object Detection networkgithub   https / 
+/ github . com / NVIDIA / DIGITS / blob 
+/ master / examples / object detection / README . 
+mdFCN MultiBox Detectorintro Full convolution MultiBox Detector like SSD implemented 
+in Torch . github   https / / github . 
+com / teaonly / FMD . torchKittiBox A car detection 
+model implemented in Tensorflow . keywords MultiNetintro KittiBox is a 
+collection of scripts to train out model FastBox on the 
+Kitti Object Detection Datasetgithub   https / / github . 
+com / MarvinTeichmann / K i t t i B 
+o x T o o l s B e a 
+v e r D a m Video annotation tool for 
+deep learning training labelshttps / / github . com / 
+antingshen / B e a v e r D a 
+m B l o g s C o n v 
+o l u t i o n a l Neural 
+Networks for Object Detectionhttp / / rnd . azoft . 
+com / convolutional neural networks object detection / Introducing automatic 
+object detection to visual search Pinterest keywords Faster R CNNblog 
+  https / / engineering . pinterest . com / 
+blog / introducing automatic object detection visual searchdemo   https 
+/ / engineering . pinterest . com / sites / 
+engineering / files / Visual % 20Search % 20V1 % 
+20 % 20Video . mp4review   https / / news 
+. developer . nvidia . com / pinterest introduces the 
+future of visual search / mkt _ tok = e 
+y J p I j o i T n p 
+a a 0 1 U W X p P R 
+E 0 x T U R F M i I 
+s I n Q i O i J J R 
+j c y b j k w T m t 
+m a l l O R U h L O 
+F F F O D B D c l F 
+q U l B 3 W l R V X 
+J X b 1 M r Q 0 1 3 
+T D R I M G x L Q W 
+l B c z F I e W g 0 
+T F R U d n N 2 U H 
+Y 2 Z W F i X C 9 Q 
+Q V w v Q z B H M 3 
+B 0 U z B Z b l p O 
+m U y U 1 F c L z N 
+P W X I 4 c m l 2 V 
+E R w T T J s O F w 
+v O E k 9 I n 0% 3DDeep Learning 
+for Object Detection with DIGITSblog   https / / devblogs 
+. nvidia . com / parallelforall / deep learning object 
+detection digits / Analyzing The Papers Behind Facebook s Computer 
+Vision Approachkeywords DeepMask SharpMask MultiPathNetblog   https / / adeshpande3 
+. github . io / adeshpande3 . github . io 
+/ Analyzing the Papers Behind Facebook s Computer Vision Approach 
+/ Easily Create High Quality Object Detectors with Deep Learningintro 
+dlib v19 . 2blog   http / / blog . 
+dlib . net / 2016/10 / easily create high quality 
+object . htmlHow to Train a Deep Learned Object Detection 
+Model in the Microsoft Cognitive Toolkitblog   https / / 
+blogs . technet . microsoft . com / machinelearning / 
+2016 / 10/25 / how to train a deep learned 
+object detection model in cntk / github   https / 
+/ github . com / Microsoft / CNTK / tree 
+/ master / Examples / Image / Detection / FastRCNNObject 
+Detection in Satellite Imagery a Low Overhead Approachpart 1   
+https / / medium . com / the downlinq / 
+object detection in satellite imagery a low overhead approach part 
+i cbd96154a1b7 # . 2csh4iwx9part 2   https / / 
+medium . com / the downlinq / object detection in 
+satellite imagery a low overhead approach part ii 893f40122f92 # 
+. f9b7dgf64You Only Look Twice     Multi Scale Object 
+Detection in Satellite Imagery With Convolutional Neural Networkspart 1   
+https / / medium . com / the downlinq / 
+you only look twice multi scale object detection in satellite 
+imagery with convolutional neural 38dad1cf7571 # . fmmi2o3ofpart 2   
+https / / medium . com / the downlinq / 
+you only look twice multi scale object detection in satellite 
+imagery with convolutional neural 34f72f659588 # . nwzarsz1tFaster R CNN 
+Pedestrian and Car Detectionblog   https / / bigsnarf . 
+wordpress . com / 2016 / 11/07 / faster r 
+cnn pedestrian and car detection / ipn   https / 
+/ gist . github . com / bigsnarfdude / 2 
+f 7 b 2 1 4 4 0 6 5 
+f 6 0 5 6 8 9 2 a 9 
+8 4 9 5 6 4 4 d 3 e 
+0 # file demo _ faster _ rcnn _ notebook 
+ipynbgithub   https / / github . com / bigsnarfdude 
+/ Faster RCNN _ TFSmall U Net for vehicle detectionblog 
+  https / / medium . com / @ vivek 
+. yadav / small u net for vehicle detection 9eec216f9fd6 
+# . md4u80kadRegion of interest pooling explainedblog   https / 
+/ deepsense . io / region of interest pooling explained 
+/ github   https / / github . com / 
+deepsense io / roi poolingDeep Learning 深度 学习 ufldl 的 
+2个 教程 这个 没得说 入门 绝对 的 好 教程 Ng 
+的 逻辑 清晰 有 练习 一 ufldl 的 2个 教程 
+这个 没得说 入门 绝对 的 好 教程 Ng 的 逻辑 
+清晰 有 练习 二 Bengio 团队 的 deep learning 教程 
+用 的 theano 库 主要 是 rbm 系列 搞 python 
+的 可以 参考 很不错 deeplearning . net 主页 里面 包含 
+的 信息 量 非常 多 有 software reading list research 
+lab dataset demo 等 强烈推荐 自己 去 发现 好 资料 
+Deep learning 的 toolbox matlab 实现 的 对应 源码 来 
+学习 一些 常见 的 DL 模型 很有帮助 这个 库 我 
+主要 是 用来 学习 算法 实现 过程 的 2013年 龙星 
+计划 深度 学习 教程 邓力/nr 大牛 主讲 虽然 老师 准备 
+得 不充分 不过 还是 很 有 收获 的 Hinton 大牛 
+在 coursera 上 开 的 神经 网络 课程 DL 部分 
+有 不少 非常 赞 没有 废话 课件 每 句话 都 
+包含 了 很多 信息 有 一定 DL 基础 后去 听 
+收获 更大 Larochelle 关于 DL 的 课件 逻辑 清晰 覆盖面广 
+包含 了 rbm 系列 autoencoder 系列 sparse coding 系列 还有 
+crf cnn rnn 等 虽然 网页 是 法文 但是 课件 
+是 英文 CMU 大学 2013年 的 deep learning 课程 有 
+不少 reading paper 可以 参考 达 慕思/nr 大学 Lorenzo Torresani 
+的 2013Deep learning 课程 reading list . Deep Learning Methods 
+for Vision 余凯 等在 cvpr2012 上 组织 一个 workshop 关于 
+DL 在 视觉 上 的 应用 斯坦福 Ng 团队 成员 
+链接 主页 可以 进入 团队 成员 的 主页 比较 熟悉 
+的 有 Richard Socher   Honglak Lee   Quoc Le 
+等 多伦多 ML 团队 成员 链接 主页 可以 进入 团队 
+成员 主页 包括 DL 鼻祖 hinton 还有 Ruslan Salakhutdinov   
+Alex Krizhevsky 等 蒙特利尔 大学 机器学习 团队 成员 链接 主页 
+包括 大牛 Bengio 还有 Ian Goodfellow   等 纽约 大学 
+的 机器学习 团队 成员 链接 主页 包括 大牛 Lecun 还有 
+Rob Fergus 等 Charlie Tang 个人主页 结合 DL + SVM 
+. 豆瓣 上 的 脑 与 deep learning 读书会 有/v 
+讲义/n 和/c 部分/n 视频/n 主要 介绍 了 一些 于 deep 
+learning 相关 的 生物 神经网络 Large Scale ML 的 课程 
+由 Lecun 和 Langford 讲 的 能不 推荐 么 Yann 
+Lecun 的 2014年 Deep Learning 课程 主页   视频 链接 
+吴立德 老师 深度 学习 课程 一些 常见 的 DL code 
+列表 csdn 博主 zouxy09 的 博文 Deep Learning 源代码 收集 
+持续 更新 Deep Learning for NLP without Magic 由 DL 
+界 5大 高手 之一 的 Richard Socher 小组 搞 的 
+他 主要 是 NLP 的 2012 Graduate Summer School Deep 
+Learning Feature Learning 高手 云集 深度 学习 盛宴 几乎 所有 
+的 DL 大牛 都有 参加 matlab 下 的 maxPooling 速度 
+优化 调用 C + + 实现 的 2014年 ACL 机器学习 
+领域 主席 Kevin Duh 的 深度 学习 入门 讲座 视频 
+R CNN code Regions with Convolutional Neural Network Features . 
+Machine Learning 机器学习 介绍 图 模型 的 一个 ppt 非常 
+的 赞 ppt 作者 总 结得 很给力 里面 还 包括 
+了 HMM MEM CRF 等 其它 图 模型 反正 看完 
+挺有 收获 的 机器学习 一个 视频教程 youtube 上 的 翻 
+吧 内容 很 全面 偏 概率 统计模型 每一 小集 只有 
+几 分钟 龙星 计划 2012 机器学习 由/p 余凯/nr 和张潼/nr 主讲/v 
+demonstrate 的 blog 关于 PGM 概率 图 模型 系列 主 
+要 按照 Daphne Koller 的 经典 PGM 教程 介绍 的 
+大家 依次 google 之 FreeMind 的 博客 主要 关于 机器 
+学习 的 Tom Mitchell 大牛 的 机器学习 课程 他 的 
+machine learning 教科书 非常 出名 CS109 Data Science 用 python 
+介绍 机器学习 算法 的 课程 CCF 主办 的 一些 视频 
+讲座 国外 技术 团队 博客 Netflix 技术 博客 很多 干货 
+Computer Vision 计算机 视觉 MIT2013 年 秋季 课程 Advances in 
+Computer Vision 有 练习题 有些 有 code . IPAM 一个 
+计算机 视觉 的 短期 课程 有 不少 牛人 参加 OpenCV 
+相关 http / / opencv . org / 2012 年 
+7月 4日 随着 opencv2 . 4.2 版本 的 发布 opencv 
+更改 了 其 最新 的 官方 网站 地址 http / 
+/ www . opencvchina . com / 好像 12年 才有 
+这个 论坛 的 比较 新 里面 有 针对 learning opencv 
+这 本书 的 视频 讲解 不过 视频 教学 还 没出 
+完 正在 更新 中 对 刚 入门 学习 opencv 的 
+人 来说 很 不错 http / / www . opencv 
+. org . cn / forum / opencv 中文论坛 对于 
+初次 接触 opencv 的 学者 来说 比较 不错 入门 资料 
+多 opencv 的 各种 英文 文档 也 翻译 成 中文 
+了 不足 是 感觉 这个 论坛 上 发帖 提问 很少 
+人 回答 也 就是说 讨论 不够 激烈 http / / 
+opencv . jp / opencv 的 日文 网站 里面 有 
+不少 例子 代码 看不懂 日文 可以用 网站 自带 的 翻译 
+能看 个 大概 http / / code . opencv . 
+org / projects / opencvopencv 版本 bug 修补 版本 更新 
+以及 各种 相关 大型 活动 安排 还 包含 了 opencv 
+最近 几个月 内 的 活动 路线 即 未来 将 增加 
+的 功能 等 可以 掌握 各种 关于 opencv 进展 情况 
+的 最新 进展 http / / tech . groups . 
+yahoo . com / group / OpenCV / opencv 雅虎 
+邮件 列表 据说 是 最好 的 opencv 论坛 信息 更新 
+最新 的 地方 不过 个人 认为 要 查找 相关 主题 
+的 内容 在 邮件 列表 中 非常 不方便 http / 
+/ www . cmlab . csie . ntu . edu 
+. tw / ~ jsyeh / wiki / doku . 
+php 台湾大学 暑假 集训 网站 内有 链 接到 与 opencv 
+集训 相关 的 网页 感觉 这种 教育 形式 还 蛮 
+不错 的 http / / sourceforge . net / projects 
+/ opencvlibrary / opencv 版本 发布 地方 http / / 
+code . opencv . org / projects / opencv / 
+wiki / ChangeLog # 241       http / 
+/ opencv . willowgarage . com / wiki / OpenCV 
+% 20Change % 20Logsopencv 版本 内容 更改 日志 网页 前面 
+那个 网页 更新 最快 http / / www . opencv 
+. org . cn / opencvdoc / 2 . 3.2 
+/ html / doc / tutorials / tutorials . htmlopencv 
+中文 教程 网页 分 几个 模块 讲解 有/v 代码/n 有/v 
+过程/n 内容 是 网友 翻译 opencv 自带 的 doc 文件 
+里 的 https / / netfiles . uiuc . edu 
+/ jbhuang1 / www / resources / vision / index 
+. html 网友 总结 的 常用 带有 cvpr 领域 常见 
+算法 code 链接 的 网址 感觉 非常 的 不错 http 
+/ / fossies . org / dox / OpenCV 2 
+. 4.2 / 该 网站 可以 查看 opencv 中 一些 
+函数 的 变量 接口 还会 列出 函数 之间 的 结构图 
+http / / opencv . itseez . com / opencv 
+的 函数 类 等 查找 网页 有 导航 查起来 感觉 
+不错 优化 submodual 优化 网页 Geoff Gordon 的 优化 课程 
+youtube 上有 对应 视频 数学 http / / www . 
+youku . com / playlist _ show / id _ 
+19465801 . html 计算机中 的 数学 系列 视频 8位 老师 
+10 讲 内容 生动 介绍 微积分 和 线性代数 基本 概念 
+在 计算机 学科 中 的 各种 有趣 应用 Linux 学习 
+资料 http / / itercast . com / library / 
+1linux 入门 的 基础 视频教程 对于 新手 可选择 看 第一 
+部分 视频 来源于 LinuxCast . net 网站 还不错 OpenNI + 
+Kinect 相关 http / / 1 . yuhuazou . sinaapp 
+. com / 网友 晨 宇 思远 的 博客 主攻 
+cvpr ai 等 http / / blog . csdn . 
+net / chenli2010 / article / details / 6887646kinect 和 
+openni 学习 资料 汇总 http / / blog . csdn 
+. net / moc062066 / article / category / 871261OpenCV 
+计算机 视觉 kinect 的 博客 http / / kheresy . 
+wordpress . com / index _ of _ openni _ 
+and _ kinect / comment page 5 / 网友 Heresy 
+的 博客 里面 有 不少 kinect 的 文章 写 的 
+比较 详细 http / / www . cnkinect . com 
+/ 体感 游戏 中文网 有 不少 新的 kinect 资讯 http 
+/ / www . kinectutorial . com / Kinect 体感 
+开 发网 http / / code . google . com 
+/ p / openni hand trackeropenni _ hand _ tracking 
+google code 项目 http / / blog . candescent . 
+ch / 网友 的 kinect 博客 里面 有 很多 手势 
+识别 方面 的 文章 介绍 还有 源码 不过 貌似 是 
+基于 c # 的 https / / sites . google 
+. com / site / colordepthfusion / 一些 关于 深度 
+信息 和 颜色 信息 融合 fusion 的 文章 http / 
+/ projects . ict . usc . edu / mxr 
+/ faast / kinect 新的 库 可以 结合 OpenNI 使用 
+https / / sites . google . com / a 
+/ chalearn . org / gesturechallenge / kinect 手势 识别 
+网站 http / / www . ros . org / 
+wiki / mit ros pkgmit 的 kinect 项目 有 code 
+主要 是 与 手势 识别 相关 http / / www 
+. thoughtden . co . uk / blog / 2012/08 
+/ kinecting people our top 6 kinect projects / kinect 
+2012 年度 最 具 创新 的 6 个 项目 有 
+视频 确实 够 创新 的 http / / www . 
+cnblogs . com / yangyangcv / archive / 2011/01 / 
+07/1930349 . htmlkinect 多 点触 控 的 一篇 博文 http 
+/ / sourceforge . net / projects / kinect mex 
+/ http / / www . mathworks . com / 
+matlabcentral / fileexchange / 30242 kinect matlab 有关 matlab for 
+kinect 的 一些 接口 http / / news . 9ria 
+. com / 2012 / 1212/25609 . htmlAIR 和 Kinect 
+的 结合 有 一些 手指 跟踪 的 code http / 
+/ eeeweba . ntu . edu . sg / computervision 
+/ people / home / renzhou / index . htm 
+研究 kinect 手势 识别 的 任洲/nr 刚 毕业 不久 其他 
+网友 cvpr 领域 的 链接 总结 http / / www 
+. cnblogs . com / kshenf / 网友 整理 常用 
+牛人 链接 总结 非常多 不过 个人 没有 没有 每个 网站 
+都去 试过 所以 本文 也是 我 自己 总结 自己 曾经 
+用过 的 或体 会过 的 OpenGL 有关 http / / 
+nehe . gamedev . net / NeHe 的 OpenGL 教程 
+英文版 http / / www . owlei . com / 
+DancingWind / NeHe 的 OpenGL 教程 对应 的 中文版 由 
+网友 周玮 翻译 的 http / / www . qiliang 
+. net / old / nehe _ qt / NeHe 
+的 OpengGL 对应 的 Qt 版 中文 教程 http / 
+/ blog . csdn . net / qp120291570 网友 左脑 
+设计 右脑 编程 的 Qt _ OpenGL 博客 写得 还不错 
+http / / guiliblearning . blogspot . com / 这个 
+博客 对 opengl 的 机制 有所 剖析 貌似 要 FQ 
+才能 进去 cvpr 综合 网站 论坛 博客 等 http / 
+/ www . cvchina . net / 中国 计算机 视觉 
+论坛 http / / www . cvchina . info / 
+这个 博客 很不错 每次 看完 都能 让人 兴奋 因为 有 
+很多 关于 cv 领域 的 科技 新闻 还 时不时 有 
+视频 显示 另外 这个 博客 里面 的 资源 也 整理 
+得 相当 不错 中文 的 http / / www . 
+bfcat . com / 一位 网友 的 个人 计算机 视觉 
+博客 有 很多 关于 计算机 视觉 前沿 的 东西 介绍 
+与 上面 的 博客 一样 看了 也能 让人 兴奋 http 
+/ / blog . csdn . net / v _ 
+JULY _ v / 牛人 博客 主攻 数据结构 机器学习 数据挖掘 
+算法 等 http / / blog . youtueye . com 
+/ 该 网友 上面 有 一些 计算机 视觉 方向 的 
+博客 博客 中 附 有 一些 实验 的 测试代码 . 
+http / / blog . sciencenet . cn / u 
+/ jingyanwang 多看 pami 才 扯谈 的 博客 其中 有 
+不少 pami 文章 的 中文 介绍 http / / chentingpc 
+. me / 做 网络 和 自然 语言 处理 的 
+有 不少 机器学习 方面 的 介绍 ML 常用 博客 资料 
+等 http / / freemind . pluskid . org / 
+由 pluskid 所 维护 的 blog 主要 记录 一些 机器学习 
+程序 设计 以及 各种 技术 和非/nr 技术 的 相关 内容 
+写得 很不错 http / / d a t a s 
+c i e n c e m a s t 
+e r s . org / 里面 包含 学 ML 
+/ DM 所 需要 的 一些 知识 链接 且 有些 
+给 出了 视频教程 网页 资料 电子书 开源 code 等 推荐 
+http / / cs . nju . edu . cn 
+/ zhouzh / index . htm 周志华 主页 不用 介绍 
+了 机器学习 大牛 更 可贵 的 是 他 的 很多 
+文章 都有 源码 公布 http / / www . eecs 
+. berkeley . edu / ~ jpaisley / Papers . 
+htmJohn Paisley 的 个人 主页 主要 研究 机器学习 领域 有些 
+文章 有 代码 提供 http / / foreveralbum . yo2 
+. cn / 里面 有 一些 常见 机器学习 算法 的 
+详细 推导 过程 http / / blog . csdn . 
+net / abcjennifer 浙江大学 CS 硕士 在读 关注 计算机 视觉 
+机器学习 算法 研究 博弈 人工智能 移动 互联网 等 学科 和 
+产业 该 博客 中 有 很多 机器学习 算法 方面 的 
+介绍 http / / www . wytk2008 . net / 
+无垠 天空 的 机器学习 博客 http / / www . 
+chalearn . org / index . html 机器学习 挑战赛 http 
+/ / licstar . net / licstar 的 技术 博客 
+偏 自然语言 处理 方向 国内 科研 团队 和 牛人 网页 
+http / / vision . ia . ac . cn 
+/ zh / index _ cn . html 中科院 自动化所 
+机器 视觉 课题 小组 有 相关 数据库 论文 课件 等 
+下载 http / / www . cbsr . ia . 
+ac . cn / users / szli / 李子 青 
+教授 个人主页 中科院 自动化所 cvpr 领域 牛叉 人 http / 
+/ www4 . comp . polyu . edu . hk 
+/ ~ cslzhang / 香港 理工大学 教授 lei zhang 个人主页 
+也是 cvpr 领域 一大 牛人 啊 cvpr iccv 各种 发表 
+更 重要 的 是 他 所以 牛叉 论文 的 code 
+全部 公开 非常 难得 http / / liama . ia 
+. ac . cn / wiki / start 中法 信息 
+自动化 与 应用 联合 实验室 里面 很多 内容 不 仅限 
+而 cvpr 还有 ai 领域 一些 其他 的 研究 http 
+/ / www . cogsci . xmu . edu . 
+cn / cvl / english / 厦门大学 特聘 教授 cv 
+领域 一位 牛人 研究 方向 主要 为 目标 检测 目标 
+跟踪 运动 估计 三维重建 鲁棒 统计学 光 流 计算 等 
+http / / idm . pku . edu . cn 
+/ index . aspx 北京大学 数字 视频编码 技术 国家 实验室 
+http / / www . csie . ntu . edu 
+. tw / ~ cjlin / libsvm / libsvm 项目 
+网址 台湾 大学 的 很 火 http / / www 
+. jdl . ac . cn / user / sgshan 
+/ index . htm 山世光/nr 人脸识别 研究 比较 牛 在 
+中国 科学院 智能 信息 处理 重点 实验室 国外 科研 团队 
+和 牛人 网页 https / / netfiles . uiuc . 
+edu / jbhuang1 / www / resources / vision / 
+index . html 常见 计算机 视觉 资源 整理 索引 国外 
+学者 整理 全是 出名 的 算法 并且 带有 代码 的 
+这个 非常 有 帮助 其 链接 都是 相关 领域 很 
+火 的 代码 http / / www . cs . 
+cmu . edu / afs / cs / project / 
+cil / ftp / html / txtv groups . html 
+国外 学者 整理 的 各高校 研究所 团队 网站 http / 
+/ research . microsoft . com / en us / 
+groups / vision / 微软 视觉 研究小组 不 解释 大家 
+懂 的 牛 http / / lear . inrialpes . 
+fr / index . php 法国 国家 信息 与 自动化 
+研究所 有 对应 牛人 的 链接 论文 项目 网页 链接 
+且 一些 code 对应 链接 等 http / / www 
+. cs . ubc . ca / ~ pcarbo / 
+objrecls / Learning to recognize objects with little supervision 该 
+篇 论文 的 项目 网页 有 对应 的 code 下载 
+另附 有 详细 说明 http / / www . eecs 
+. berkeley . edu / ~ lbourdev / poselets / 
+poselets 相关 研究 界面 关于 poselets 的 第一手 资料 http 
+/ / www . cse . oulu . fi / 
+CMV / Research 芬兰 奥卢大学 计算机 科学 与 工程学院 网页 
+里面 有 很多 cv 领域 相关 的 研究 比如说 人脸 
+脸部 表情 人体 行为 识别 跟踪 人机交互 等 cv 基本 
+都 涉及 有 http / / www . cs . 
+cmu . edu / ~ cil / vision . html 
+卡耐基 梅隆 大学 计算机 视觉 主页 内容 非常 多 可惜 
+的 是 该 网站 内容 只 更新 到了 2004年 http 
+/ / vision . stanford . edu / index . 
+html 斯坦福 大学 计算机 视觉 主页 里面 有 非常 非常 
+多 的 牛人 比如说 大家 熟悉 的 lifeifei . http 
+/ / www . wavelet . org / index . 
+php 关于 wavelet 研究 的 网页 http / / civs 
+. ucla . edu / 加州大学洛杉矶分校 统计 学院 关于 统计 
+学习 方面 各种 资料 且有 相应 的 网上 公开课 http 
+/ / www . cs . cmu . edu / 
+~ efros / 卡耐基 梅隆 大学 Alexei Alyosha Efros 教授 
+个人 网站 计算机 图形学 高手 http / / web . 
+mit . edu / torralba / www / / mit 
+牛人 Associate 教授 个人 网址 主要 研究 计算机 视觉 人体 
+视觉 感知 目标 识别 和 场景 理解 等 http / 
+/ people . csail . mit . edu / billf 
+/ mit 牛人 William T . Freeman 教授 主要 研究 
+计算机 视觉 和 图像 学 http / / www . 
+research . ibm . com / peoplevision / IBM 人体 
+视觉 研究中心 里面 除了 有其/nr 研究 小组 的 最新 成果 
+外 还有 很多 测试数据 特别 是 视频 供 下载 http 
+/ / www . vlfeat . org / vlfeat 主页 
+vlfeat 也 是 一个 开源 组织 主要 定位 在 一些 
+最 流行 的 视觉 算法 开源 上 Ｃ 编写 其 
+很多 算法 效果 比 opencv 要好 不过 数量 不全 但是 
+非常 有用 http / / www . robots . ox 
+. ac . uk / ~ az / Andrew Zisserman 
+的 个人 主页 这人 大家 应该 熟悉 计算机 视觉 中的 
+多 视 几何 这 本神 书 的 作者 之一 http 
+/ / www . cs . utexas . edu / 
+~ grauman / KristenGrauman 教授 的 个人 主页 是个 大美女 
+且 是 2011年 马尔 奖 获得者 马尔 奖 大家 都懂的/nr 
+计算机 视觉 领域 的 最高 奖项 目前 无 一个 国内 
+学者 获得 过 她 的 主要 研究 方法 是 视觉 
+识别 http / / groups . csail . mit . 
+edu / vision / welcome / mit 视觉 实验室 主页 
+http / / code . google . com / p 
+/ sixthsense / 曾经 在 网络 上 非常 出名 一个 
+视频 一个 作者 研究 的 第六感 装置 现在 这个 就是 
+其 开源 的 主页 http / / vision . ucsd 
+. edu / ~ pdollar / research . html # 
+B e h a v i o r R e 
+c o g n i t i o n A 
+n i m a l B e h a v 
+i o r P i o t r Dollar 的 
+个人 主要 主要 研究 方向 是 人体 行为 识别 http 
+/ / www . mmp . rwth aachen . de 
+/ 移动 多媒体 处理 将 移动 设备 计算机 图像 学 
+视觉 图像 处理 等 结合 的 领域 http / / 
+www . di . ens . fr / ~ laptev 
+/ index . htmlIvan Laptev 牛人 主页 主要 研究 人体 
+行为 识别 有 很多 数据库 可以 下载 http / / 
+blogs . oregonstate . edu / hess / Rob Hess 
+的 个人 主要 里面 有 源码 下载 比如说 粒子 滤波 
+他 写 的 粒子 滤波 在 网上 很 火 http 
+/ / m o r e t h a n 
+t e c h n i c a l . 
+googlecode . com / svn / trunk / cvpr 领域 
+一些 小型 的 开源 代码 http / / iica . 
+de / pd / index . py 做 行人 检测 
+的 一个 团队 内部 有 一些 行人 检测 的 代码 
+下载 http / / www . cs . utexas . 
+edu / ~ grauman / research / pubs . htmlUT 
+Austin 计算机 视觉 小组 包含 的 视觉 研究 方向 比较 
+广 且有 的 文章 有 源码 你 只 需要 填 
+一个 邮箱地址 系统 会 自动 发 跟 源码 相关 的 
+信息 过来 http / / www . robots . ox 
+. ac . uk / ~ vgg / index . 
+htmlvisual geometry group 图像 http / / blog . sina 
+. com . cn / s / blog _ 4cccd8d301012pw5 
+. html 交互式 图像 分割 代码 http / / vision 
+. csd . uwo . ca / code / graphcut 
+优化 代码 语音 http / / danielpovey . com / 
+kaldi lectures . html 语音 处理 中的 kaldi 学习 算法 
+分析 与 设计 计算机 领域 的 基础 算法 http / 
+/ www . 51nod . com / focus . html 
+该 网站 主要 是 讨论 一些 算法 题 里面 的 
+李 陶冶 是个 大牛 回答 了 很多 算法 题 一些 
+综合 topic 列表 http / / www . cs . 
+cornell . edu / courses / CS7670 / 2011fa / 
+计算机 视觉 中的 些 topic Special Topics in Computer Vision 
+截止到 2011年 为止 其 引用 的 文章 都是/nr 非常 顶级 
+的 topic 书籍 相关 网页 http / / www . 
+i m a g e p r o c e 
+s s i n g p l a c e 
+. com / index . htm 冈萨雷斯 的 数字图像处理 一 
+书 网站 包含 课程 材料 matlab 图像处理 工具包 课件 ppt 
+等 相关 素材 Consumer Depth Cameras for Computer Vision 很 
+优秀 的 一 本书 不过 很贵 买不起 啊 做 深度 
+信息 的 使用 这 本书 还 不错 google 图中 可以 
+预览 一部分 Making . Things . See 针对 Kinect 写 
+的 主要 关注 深度 信息 较 为 基础 书籍 中 
+有 不少 例子 貌似 是 java 写 的 国内 一些 
+AI 相关 的 研讨会 http / / www . iipl 
+. fudan . edu . cn / MLA13 / index 
+. htm 中国 机器学习 及 应用 研讨会 这个 是 2013年 
+的 期刊 会 议论文 下载 http / / cvpapers . 
+com / 几个 顶 级会 议论文 公开 下载 界面 比如说 
+ICCV CVPR ECCV ACCV ICPR SIGGRAPH 等 http / / 
+www . cvpr2012 . org / cvpr2012 的 官方 地址 
+里面/f 有/v 各种/r 资料/n 和/c 信息/n 其他 年份 的 地址 
+类似 推理 更改 即可 http / / www . sciencedirect 
+. com / science / journal / 02628856ICV 期刊 下载 
+http / / www . computer . org / portal 
+/ web / tpamiTPAMI 期刊 AI 领域 中 可以 算得 
+上 是 最 顶级 的 期刊 了 里面 有 不少 
+cvpr 方面 的 内容 http / / www . springerlink 
+. com / content / 100272 / IJCV 的 网址 
+http / / books . nips . cc / NIPS 
+官网 有 论文 下载 列表 http / / graphlab . 
+org / lsrs2013 / program / LSRS 会议 地址 大 
+规模 推荐 系统 其它 年份 依次 类推 会议 期刊 相关 
+信息 http / / conferences . visionbib . com / 
+Iris Conferences . html 该 网页 列出 了 图像处理 计算机 
+视觉 领域 相关 几乎 所有 比较 出名 的 会议 时间表 
+http / / conferences . visionbib . com / Browse 
+conf . php 上面 网页 的 一个 子网 页 列出 
+了 最近 的 CV 领域 提交 paper 的 deadline cvpr 
+相关 数据库 下载 http / / research . microsoft . 
+com / en us / um / people / jckrumm 
+/ WallFlower / TestImages . htm 微软 研究院 牛人 Wallflower 
+Paper 的 论文 中 用到 的 目标 检测 等 测试 
+图片 http / / archive . ics . uci . 
+edu / ml / UCI 数据库 列表 下载 最 常用 
+的 机器学习 数据库 列表 http / / www . cs 
+. rochester . edu / ~ rmessing / uradl / 
+人体 行为 识别 通过 关键点 的 跟踪 视频 数据库 Rochester 
+university 的 http / / www . research . ibm 
+. com / peoplevision / p e r f o 
+r m a n c e e v a l 
+u a t i o n . htmlIBM 人体 视觉 
+研究中心 有 视频 监控 等 非常 多 的 测试 视频 
+http / / www . cvpapers . com / datasets 
+. html 该 网站 上 列出 了 常见 的 cvpr 
+研究 的 数据库 http / / www . cs . 
+washington . edu / rgbd dataset / index . htmlRGB 
+D Object Dataset . 做 目标 识别 的 AI 相关 
+娱乐 网页 http / / en . akinator . com 
+/ 该 网站 很好玩 可以 测试 你 心里 想出 的 
+一个 人名 当然 前提 是 这个 人 必须 有 一定 
+的 知名度 然后 该 网站 会 提出 一 系列 的 
+问题 你 可以 选择 yes or no or I don 
+t know 等等 最后 系统 会 显示 你 心中 所想 
+的 那个 人 http / / www . doggelganger . 
+co . nz / 人与狗 的 匹配 游戏 摄像头 采集 
+人脸 呵呵 Android 相关 https / / code . google 
+. com / p / android ui utils / 该 
+网站 上 有一些 android 图标 菜单 等 跟 界面 有关 
+的 设计 工具 可以 用来 做 一些 简单 的 UI 
+设计 . 工具 和 code 下载 http / / lear 
+. inrialpes . fr / people / dorko / downloads 
+. html6 种 常见 的 图像 特征点 检测 子 linux 
+下 环境 运行 不过 只 提供 了 二进制 文件 不 
+提供 源码 http / / www . cs . ubc 
+. ca / ~ pcarbo / objrecls / index . 
+html # codessmcmc 的 matlab 代码 是 Learning to recognize 
+objects with little supervision 这 一系列 文章 用 的 源码 
+属于 目标 识别 方面 的 研究 http / / www 
+. robots . ox . ac . uk / ~ 
+timork / 仿射 无关 尺度 特征点 检测 算子 源码 还 
+有些 其它 算子 的 源码 或 二进制 文件 http / 
+/ www . vision . ee . ethz . ch 
+/ ~ bleibe / code / ism . html 隐式 
+形状 模型 ISM 项目 主页 作者 Bastian Leibe 提供 了 
+linux 下 运行 的 二进制 文件 http / / www 
+. di . ens . fr / ~ laptev / 
+download . html # stipIvan Laptev 牛人 主页 中的 STIP 
+特征点 检测 code 但是 也 只是 有 二进制 文件 无 
+源码 该 特征点 在 行为 识别 中 该 特征点 非常 
+有名 http / / ai . stanford . edu / 
+~ quocle / 斯坦福大学 Quoc V . Le 主页 上有 
+它 2011年 行为 识别 文章 的 代码 开源 软件 http 
+/ / mloss . org / software / 一些 ML 
+开源 软件 在 这里 基本 都 可以 搜到 有 上百 
+个 https / / github . com / myui / 
+hivemallScalable machine learning library for Hive / Hadoop . http 
+/ / scikit learn . org / stable / 基于 
+python 的 机器学习 开源 软件 文档 写得 不错 挑战赛 http 
+/ / www . chioka . in / kaggle competition 
+solutions / kaggle 一些 挑战赛 的 code . 公开课 网易 
+公开课 国内 做得 很 不错 的 公开课 翻译 了 一些 
+国外 出名 的 公开课 教程 与 国外 公开课 平台 coursera 
+有 合作 coursera 在线教育 网上 公开课 很新 有个 邮箱 注册 
+即可 学习 有 不少 课程 且有 对应 的 练习 特别 
+是 编程 练习 超 赞 斯坦福 网上 公开课 链接 有 
+统计 学习 凸 优化 等 课程 udacity 公开 课程 下载 
+链接 其实 速度 还 可以 里面 有 不少 好 教程 
+机器学习 公开课 的 连接 有 不少 课 在 最近 的 
+学习 中 看到 一些 有用 的 资源 就 记下 来了 
+现在 总结 一下 欢迎 补充 机器 视觉 开 源代码 合集 
+计算机 视觉 算法 与 代码 集锦 计算机 视觉 的 一些 
+测试 数据集 和 源码 站点 SIFT 官网 SURF PCA SIFT 
+and SIFT 开 源代码 总结 常用 图像 数据集 标注 检索 
+KTH TIPS2 image dataset 视频 中 行为 识别 公开 数据库 
+汇总 MSR Action Recognition Datasets and CodesSparse coding simulation software 
+稀疏 表示 Deep Learning 源代码 收集 持续 更新 Training a 
+deep autoencoder or a classifier on MNIST digitsCharlie Tang 本文 
+实现 了 09年 CVPR 的 文章 Kaggle 机器学习 竞赛 冠军 
+及 优胜者 的 源代码 汇总 Feature _ detection 机器学习 视频 
+公开课 机器学习 的 最佳 入门 学习 资源 http / / 
+blog . jobbole . com / 82630 / 国外 程序员 
+整理 的 机器学习 资源 大全 一些 下载 资源 的 链接 
+Some Useful LinksA Library for Large Linear Classification 本 博文 
+转 自 http / / blog . csdn . net 
+/ huixingshao / article / details / 71406084https / / 
+handong1587 . github . io / deep _ learning / 
+2015 / 10/09 / object detection . html # t 
+cnn 本人 常用 资源 整理 ing . . . 欢迎 
+大家 加入 我 的 微信 公众 号 大 数据 躺过 
+的 坑     免费 给 分享 同时 大家 可以 
+关注 我 的 个人 博客 http / / www . 
+cnblogs . com / zlslch /     和   
+http / / www . cnblogs . com / lchzls 
+/ 人生 苦短 我 愿 分享 本 公众 号 将 
+秉持 活到老 学到老 学习 无休止 的 交流 分享 开源 精神 
+汇聚/v 于/p 互联网/n 和/c 个人/n 学习/v 工作/vn 的/uj 精华/nz 干货/n 
+知识/v 一切 来 于 互联网 反馈 回 互联网 目前 研究 
+领域 大 数据 机器学习 深度 学习 人工智能 数据挖掘 数据分析 语言 
+涉及 Java Scala Python Shell Linux 等 同时 还 涉及 
+平常 所 使用 的 手机 电脑 和 互联 网上 的 
+使用 技巧 问题 和 实用软件 只要 你 一直 关注 和 
+呆在 群 里 每天 必须 有 收获 以及 对应 本 
+平台 的 QQ 群 161156071 大 数据 躺过 的 坑 

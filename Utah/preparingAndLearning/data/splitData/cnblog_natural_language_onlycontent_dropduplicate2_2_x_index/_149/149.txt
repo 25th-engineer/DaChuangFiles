@@ -1,0 +1,60 @@
+MIT自然语言处理第四讲：标注（第一部分）
+发表于 2009年02月24号 由 52nlp
+自然语言处理：标注
+Natural Language Processing: Tagging
+作者：Regina Barzilay（MIT,EECS Department, November 15, 2004)
+译者：我爱自然语言处理（www.52nlp.cn ，2009年2月24日）
+上一讲主要内容回顾（Last time）
+语言模型(Language modeling):
+n-gram模型（n-gram models）
+语言模型评测（LM evaluation）
+平滑(Smoothing):
+打折（Discounting）
+回退（Backoff）
+插值（Interpolation）
+本讲主要内容（Today）：
+标注（Tagging）
+一、 基本介绍
+a) 标注问题（Tagging）
+i. 任务（Task）: 在句子中为每个词标上合适的词性（Label each word in a sentence with its appropriate part of speech）
+ii. 输入（Input）: Our enemies are innovative and resourceful , and so are we. They never stop thinking about new ways to harm our country and our people, and neither do we.
+iii. 输出（Output）: Our/PRPenemies/NNSare/VBPinnovative/JJand/CCresourceful/JJ,/,and/CCso/RBare/VBwe/PRP?/?.They/PRPnever/RBstop/VBthinking/VBGabout/INnew/JJways/NNSto/TOharm/VBour/PROP country/NN and/CC our/PRP$ people/NN, and/CC neither/DT do/VB we/PRP.
+b) Motivation
+i. 词性标注对于许多应用领域是非常重要的（Part-of-speech(POS) tagging is important for many applications）
+1. 语法分析（Parsing）
+2. 语言模型（Language modeling）
+3. 问答系统和信息抽取（Q&A and Information extraction）
+4. 文本语音转换（Text-to-speech）
+ii. 标注技术可用于各种任务（Tagging techniques can be used for a variety of tasks）
+1. 语义标注（Semantic tagging）
+2. 对话标注（Dialogue tagging）
+c) 如何确定标记集（How to determine the tag set）?
+i. “The definition [of the parts of speech] are very far from having attained the degree of exactitude found in Euclidean geometry” Jespersen, The Philosophy of Grammar
+ii. 粗糙的词典类别划分基本达成一致至少对某些语言来说（Agreement on coarse lexical categories (at least, for some languages)）
+1. 封闭类（Closed class）: 介词，限定词，代词，小品词，助动词（prepositions, determiners, pronouns, particles, auxiliary verbs）
+2. 开放类（Open class）: 名词，动词，形容词和副词（nouns, verbs, adjectives and adverbs）
+iii. 各种粒度的多种标记集（Multiple tag sets of various granularity）
+1. Penn tag set (45 tags), Brown tag set (87 tags), CLAWS2 tag set (132 tags)
+2. 示例：Penn Tree Tags
+标记（Tag） 说明（Description） 举例（Example）
+CC 　　　　　conjunction 　　　　and, but
+DT 　　　　　determiner 　　　　　a, the
+JJ 　　　　　　adjective 　　　　　red
+NN 　　　　　noun, sing. 　　　　　rose
+RB 　　　　　　adverb 　　　　　　quickly
+VBD 　　　　verb, past tense 　　　grew
+d) 标注难吗（Is Tagging Hard）?
+i. 举例：“Time flies like an arrow”
+ii. 许多单词可能会出现在几种不同的类别中（Many words may appear in several categories）
+iii. 然而，大多数单词似乎主要在一个类别中出现（However, most words appear predominantly in one category）
+1. “Dumb”标注器在给单词标注最常用的标记时获得了90%的准确率（“Dumb” tagger which assigns the most common tag to each word achieves 90% accuracy (Charniak et al., 1993)）
+2. 对于90%的准确率我们满足吗（Are we happy with 90%）?
+iv. 标注的信息资源（Information Sources in Tagging）：
+1. 词汇（Lexical）: 观察单词本身（look at word itself）
+单词（Word） 名词（Noun） 动词（Verb） 介词（Preposition）
+flies 　　　　　21 　　　　　23 　　　　　0
+like 　　　　　10 　　　　　30 　　　　　21
+2. 组合（Syntagmatic）: 观察邻近单词（look at nearby words）
+——哪个组合更像（What is more likely）: “DT JJ NN” or “DT JJ VBP“?
+附：课程及课件pdf下载MIT英文网页地址：
+http://people.csail.mit.edu/regina/6881/

@@ -1,0 +1,436 @@
+==============================================
+copyright: KIRA-lzn
+==============================================
+转载请注明出处，这篇是我原创，翻版必究！！！！！！！！！！！！！！！！！！！
+==============================================
+如果觉得写个好，请留个言，点个赞。
+最喜欢吴军博士的一句话，和我本人的学习理念比较接近，所以对他的书也非常着迷：技术分为术 和 道，术 是具体做事的算法，道是其背后隐藏的根本机理。
+就像吴军博士说的那样，
+1.高大上的自然语言处理背后模型机理尽然如此简单(当然细节不简单)
+2.怎么像你奶奶解释搜索引擎？其实搜索引擎的背后机理其实简单的不能再简单了，就是布尔运算!!!三句话就能讲明白，一是下载尽可能多的网页，二是建立索引，三是根据相关性给网页排序!没了，这就是搜索引擎，任何智能的搜素引擎都逃不出布尔运算的框架。
+3…..
+以我个人愚见，首先得深刻理解道，然后再去发扬术会比较好。因为只有深刻理解道，然后才能举一反十!!!然后在你接触新东西的时候，能对以前学的知识加以联系，发现其中的隐含机理的相似性。并能把一个领域的经典研究方法带到另一个研究领域。
+先交代一下:
+1.这是我第一篇，突然想写点有质量的文章，来和大家分享知识，写的不好的地方欢迎拍砖。
+2.本人写过编译器，编译器根本不是什么高大上的东西，本质就是一种数据(信息/语言)处理的方法而已，和处理其他数据一样，并和处理自然语言进行对比
+3.下一篇是关于学完编译器之后，应该掌握的技能，即进阶信息安全的基础：
+关于一段c/c++代码，编译之后，生成怎么样的x86，calling convention，prolog/epilog，caller-saved/callee-saved register，堆栈平衡，所有变量的内存分布，函数符号修饰成什么样，静态链接，动态链接，地址修正，链接指示对编译过程的影响，如dllimport,dllexport,#pragma，函数声明顺便提一下链接器，以及windows下病毒的运行机理，我不会重点写什么是动态链接，而是解释为什么动态链接，及其背后隐藏的原因
+4.下一篇关于OO object model，本人对OO有一定了解，封装，继承(单一，多重，怎么解决菱形多重继承数据二义性问题，微软怎么解决？gcc怎么办？分析我们用的 prefix算法 实现对象模型的继承 ，并给出拓展)，多态，这篇以c++为基本，讲述c++ object model，并给出c++为什么转换指针会变化(Base* b = new Derived();编译器怎么理解对象模型的，怎么就能多态？？对象模型长成什么样，怎么样会造成覆盖，遮蔽？和多态在对象模型上有什么区别？遮蔽，覆盖为毛就不能多态了？)，并分析一下c++对象模型优缺点，容易受到什么攻击(堆溢出，堆喷射)，虽然hook 函数指针本质不是c++语言本身造成的。。但是c++对象模型如果对于大家都是好人的情况下，是很优秀的对象模型，but。。。
+5.下一篇准备写关于高级(多核)操作系统内核的理解，当然是基于MIT的 xv6 和 Yale的pios ,关于 Vitrual Memory:逻辑地址->线性地址->物理地址, fork/join/ret ,copy-on-write…..
+6.再下一篇可能是关于 内存数据库 新存储方式的新实现(本人拍脑袋想的)，并和 sqlite3，nosql，redis 等内存数据库进行 性能，实现方式 的比较
+本文参考了数学之美，编译器(虎书 和 龙书)，和在USTC老师教的，加上我自己写编译器过程的理解，
+最后加上我自己设计的final project：code generation(minijava->x86,AT&T,IA32)
+本人花了一个学期的时间，认真的写了一个编译器,差不多由以下部分组成:
+miniJava compiler ->
+implement: lexer,parser,AST,elabrator,garbage collector(Gimple algorithm)，
+code generation(minijava->C), code generation(minijava->java bytecode),
+code generation(minijava->x86,AT&T,IA32),
+object model(encapsulation,single inherit,polymorphism)
+theory: exception,closure,SSA(static single assignment),
+register allocation(graph coloring)
+optimiztion：CFG(liveness analysis，Reaching Definition analysis),DFG,SSA, Lattice, register allocation(graph coloring)
+写本文的目的：
+写完编译器，发现编译器更多的是一种数据处理的方法，而不是什么高大上的东西，我写这篇文章的目的，是想任何读完我文章的人，知道编译器到底在干吗，编译器到底能干些什么？学了编译器之后有神马好处？学完编译器应该掌握什么技能？？？
+我会不断提出问题，引发读者的思考，我喜欢有逻辑的思考问题，希望这样能让文章更有逻辑性。
+而且我写东西，不喜欢记流水账，比如这个应该怎么怎么样，而是写为什么要这样，我喜欢搞清楚其背后的原因。
+本文可能会很长，我会从背后隐含的原理去写，而不去探讨高大上的技术。
+好了，废话不多说，正文开始。
+1. 先说说自然语言处理吧(本人不是很懂)，一些基本概念，懂行的人直接跳过，谢谢。
+a.首先古老的文明为什么会出现文字？
+因为文字仅仅是信息的一种载体，意图还是想把信息记录下来，本质还是信息，古代没有文字的时候，人们比如到了冬天冷，会发出一些 ，"嗖嗖"的声音，肚子饿了，会发出一些什么什么声音，然后由于声音太多，信息太多，人们无法记住，也无法统一，如此才出现了文字，没有为什么，就是因为没有人能记住所有的声音，
+这样就需要一种文字，去记录那些信息。
+b.有了文字，就一定会有语句，N个文字用不同的语法规则去拼凑生成的语句，不同的语法规则，生成不同的语言，这个很好理解。
+c.随着文明的发展，信息越来越多，但是文字的数量不能成倍的增长，否则也不便于记忆，这样就出现了聚类，把一些相同概念的意思，归纳用一个字(词)去表示，比如一次多义，"日"表示太阳，表示太阳早上从东边升起，从西边落下，所以又可以表示一天，等等。
+第c条就是所谓的一词多义，绝对是困扰古今中外语言学者，包括计算机科学家的一个大问题，也就是理解这个词的意思，需要参照上下文(context)
+d.常识。
+The pen is in the box.
+The box is in the pen.
+第一句正常人都懂，第二句有点坑了，不过外国人很容易理解，由于外国人的常识，经验，所以外国人立马就明白，第二句的pen的意思是围栏。
+自然语言处理，想分析语句的语义就又多了一坑。
+其实我就是想说 c 和 d 是基于 编译器技术的 lexer+parser分析 自然语言的语义 上的一个大坑, 这个就是困扰计算机科学家，语言学家多年，以及阻碍处理自然语言的原因之一。
+e.为什么要分词？
+像英语这种基本不需要，因为空格就是活生生的分隔符(但是对于手写识别英文，空格不明显，还是需要分词的)，但是对于 中，日，韩，泰 等语言，比如 今天我学会了开汽车，中间没有分隔符，所以需要分词。
+分词其实也是一坑，比如：
+此地\安能\居住，其人\好不\悲伤
+此地安\能居住，其人好\不悲伤
+2.为什么要扯自然语言处理，这个和编译器到底有什么关系？
+听我慢慢道来。
+自然语言处理，其实就是处理比如，今天\我\学会了\开\汽车。 you \ are \ so \ cool.
+而基于编译器技术的 lexer + parser ，则也是一样， 今天\我\学会了\开\汽车，不过通常是处理计算机语言，类似，static void main(string[] args)等等。
+so:
+a.自然语言处理，处理的是自然语言，比如上面举得例子，The box is in the pen. 定义的上下文相关文法，即其中词语的意思不能确定(一次多义)，需要结合相应的语境才能知道pen的意思，和大家做的英文完形填空是差不多的。
+b.编译器的如java语法，static void main()定义的是上下文无关文法，注意，上下文无关文法的好处就是，只要你定义的好，不会发生歧义，因为不存在一次多义，稍稍举个小例子。
+exp -> NUM
+-> ID
+-> exp + exp
+-> exp * exp
+遇见exp就可以无条件分解为后面这四种情况，然后再不断的递归下降(recursive decendent parser/top-down parsing/predicative parsing)迭代，解析语句。
+为什么说只要定义的好呢？因为我们lab用的是ll(k)，也就是说，只支持从左到右parser，如果出现左递归就会出现永远循环下去，因为是无条件分解。
+定义左递归上下文无关文法坑：
+a.左递归->右递归
+b.歧义->提取公因式
+一些其他编译器应该支持lr(k)
+到这里看不懂没关系，这里只是随便提提。
+我只是想说，像编译器编译的 c/c++/java...，包括sql语句，都是上下文无关文法，都可以用基于编译器的技术，lexer + parser 去解决问题
+ok，有的人就要问了，那为什么基于编译器的技术，lexer + parser 把自然语言，先分解为一系列的token，之后生成语法树，然后用llk or lrk 去遍历这棵树，然后进行 语义分析， 为什么不能很好的处理自然语言？
+误区：原本科学家以为，随着语言学家对自然语言语法的概括越来越完备，计算机计算能力又在逐渐提高，基于编译器的技术应该能够很好的解决自然语言处理。
+but：一条很简单的上下文相关的语句，却能分析出很庞大复杂的 AST(parser 返回结果是 语法树)， 如果再复杂一点，基于语法树的分析根本行不通。
+考虑一句很长的文言文，此处省略100字。
+结论：所以说，基于编译器技术的lexer + parser 只适合解决上下文无关文法 定义出的语言。
+那上下文无关文法 就不能定义 自然语言了？？要不试试看？
+反正我不试。。原因如下：
+a.想要通过上下文无关文法定义汉语的50%语句，语言学家不仅会累死，而且由于一词多义，需要结合语境，所以还要在文法里定义各种语境，可以想象那个工作量  吗
+b.定义的上下文无关文法越多，越容易出现歧义(提取公因式)，而且会出现左递归(改成右递归)，如此，如此，会疯掉的。所以 无法涵盖所有语言语法不说，还有歧义，这个是要做成实际应用的，这样能忍吗？
+如此说来，20世纪50年代到70年代，用  基于编译器技术 lexer + parser 分析自然语言的语义，绝对是科学家们走的弯路。
+直到20世纪70年代，才有先驱重新认识这个问题，基于数学模型和统计，自然语言处理进入第二个阶段。
+再总结一下结论： 基于编译器技术 lexer + parser 分析语言的语义， 只适合 上下文无关文法， 而上下文无关文法 无法(不容易)定义 自然语言，so，不能用lexer + parser 去分析自然语言的语义。
+3. 那到底怎么处理自然语言呢？(本文不会详细写怎么处理，只写基本原理)，懂行的请自觉跳过，谢谢。
+从规则到统计，用数学的方法去描述语言规律。
+注意，统计语言模型的产生初衷是为了解决语音识别问题，也就是说 一句话，让你分析，这句话到底是不是具有正确意义的自然语言。
+用统计的思想思考：一个句子，由特定的单词串组成，s = w1,w2,...,wn ,一个句子有意义的概率是 P(s) ,
+由条件概率很容易得到 P(s) = P(w1) * P(w2 | w1) * ..... * P(wn | w1,w2,...,wn-1)
+只要算出这个语句有意义的概率，不就能判断到底这句话有木有意义了呢
+但是越到后面这个条件概率越难算了，怎么破？
+没关系，马尔可夫为我们想了一个偷懒而且颇为有效的方法就是，假设 一个词 wi 出现的 概率 只和它前面的那个词 wi-1 有关系，
+所以公式就简化为 P(S) = P(w1) * P(w2 | w1) * P(w3 | w2) *  .....  * P(wn | wn-1)
+当然，这个模型，很多人第一次见到，肯定会问，就这东东，能分析这么难文法的自然语言。。。。吗？
+答案是肯定的，Google 的 罗塞塔 系统，仅仅开发2年，就是基于类似这种数学统计模型，就一鸣惊人的获得了 NIST 评测的第一。
+当然，对于高阶一点的语言模型，其他模型，模型的训练，零概率问题，我在本文不想深入讨论，讨论的重点，主要还是想放在编译器上面。
+一点点思考：
+说到这里，说一点题外话。本人还写过内存数据库，所以，需要支持sql语句，为sql语句也写过 lexer 和 parser，用的也是上下文无关文法。
+考虑如果sql语言，如果发展足够强大，就像自然语言一样，语法越来越多，会不会出现 聚类(一词多义) ？如果出现聚类，那根据我的结论，
+lexer + paser这种方法不work了，那是不是得用到 自然语言处理的 某些方法，或者其他方法？？？
+由于目前的语言c/c++/java/sql 还是处于上下文无关文法就可以定义的语言，有个度(界限)的问题，如果跨越到自然语言，则以前的方法根本不能用了，是不是得考虑新的技术。
+啧啧，随便说说。
+4.关于自然语言处理 和 编译器相关技术处理 的浅薄关系 在上面已经说过了，接下来就是我要讲清楚，编译器到底在干什么？
+我之前说过，编译器也是对一种语言的处理过程，所以上文和自然语言处理进行了对比，然后引发了一点点小思考。
+ok，书上说编译器就是把高级语言翻译成低级语言，忘了，书上好像是这么写的。
+不过我理解的编译器应该是这样，
+a. 编译器会经过 lexer + parser + elabraor + code generation : IR(N种)  for optimization + 可能还链接一个garbage collector
+->然后生成object file(目标文件)，注意目标文件还是不能运行，但是就差那么一点点，这一点点是什么(对于外部符号，编译器不知道，只能进入符号表，等待链接器来修正)？
+比如你  cl /c main.c  这样只编译不链接，如果出现编译器不认识的符号，没关系，反正生成目标文件，那些符号就进入了符号表，等链接器下一步工作。
+但是你 cl main.c ，这样既编译又链接，如果有不认识的符号，直接报错（假设你其他目标文件也木有这个符号）
+总结：等链接器，把其他的目标文件link到一起(主要是地址修正)，然后生成可执行文件(静态链接/动态链接/动态链接静态加载/动态链接动态加载，不一样)， 这样就生成了可执行文件 .exe / a.out ... 芯片上跑去吧
+详细细节留给下一篇吧，要写就停不下来。。。
+b. 编译器确实是把高级语言翻译成低级语言，但是其中会经过很多种IR(中间代码)，大部分原因是因为优化，像gcc就经过N种优化，然后生成一个最简的x86机器码，然后跑在intel的芯片上，当然ARM,MIPS都可以。。。当然你翻译成java的bytecode ，在虚拟机上跑，都是可以的。
+IR嘛，举个例子，比如
+第一步我就要对AST进行优化，优化通常有 常量折叠，代数简化，标量代替聚量， 常量传播，拷贝传播，死代码删除，公共子表达式删除等等
+ne.g.: a = 0+b    ==>  a = b
+ne.g.: a = 1*b    ==>  a = b
+ne.g.: 2*a          ==>  a + a
+ne.g.: 2*a          ==>  a<<1         (strength reduction)
+ne.g.: *(&a)       ==>  a
+看吧，常量折叠很好理解吧，就是直接把AST给改了，
+这里暂时不讨论其他优化。
+note:
+像a++这种，我们称之为 "语法糖" 的东西，可能不是在优化器里把改为 a = a + 1; 可能在 parser 里面看到 就直接改了，呼呼。
+当然 a += 1,也是赤裸裸的  "语法糖"
+第二步，我可能要经过CFG(control flow graph)(SSA在后面讨论)
+那就要把IR翻译成三地址码，然后以跳转为分界线，把不跳转的部分组织成块，最后组织成图形结构
+第三步，可能是DFG优化，利用数据流方程进行优化
+第四步，可能是活性分析，寄存器分配(图着色)
+第五步，可能是基于离散数学，格(Lattice)的优化
+第N步， 等等 。。。。。。
+note:小插曲：
+编译器优化程序员永不失业理论 ： 因为没有一种优化能够总是起好的作用(视具体情况而定)，所以任何一种算法都不能把所有程序化简到最简。。。所以。。
+但有一种优化总能起好的作用，嘻嘻，那就是寄存器分配(前提是你得有几个寄存器。。。)，一定会让你的程序变快。
+要不再专门写一篇，讨论编译器优化，我有很多话想写。
+算了，详细不做讨论，在这里只想说，很多编译器为了进行优化，生成好多好多种IR，在每一层IR上进行不同的优化，就是为了用数学的方法，去不断简化程序员写的代码，因为不同的IR对不同的优化有不同的功效
+->目的很明显，就是为了生成最优的机器码
+note：为什么编译器要分 lexer + parser + elabraor + code generation 这么多层？ 合并几层不行吗？
+答案是当然可以，不过为什么这样分，有它的道理，原因就是模块化，比如，有专门的人研究lexer，比如有Flex等工具，专门的人研究parser。。。但一层一层向下，向上暴露的接口当然是一致的，这样的好处就是，可以专门研究某一层算法，然后直接替换某一层。
+初窥了什么是编译器，接下来，我想一步一步分析，到底lexer + parser + elabraor + code generation 这么多层，每层编译器在搞什么？
+a. lexer
+b. parser
+c. elabrator
+d. code generation
+e. 讨论 exception,closure,SSA(static single assignment) 是怎么样实现的
+f.  讨论一下garbage collector
+g. optimization
+h. 关于我们学校课程最后的 final project 思考，关于 java 反射机制，gc的世代收集，翻译成 go / js ，jvm ，还有本人写的 minijava 直接 -> x86，我几次推翻重写，不过最后完成了，还是很 happy (minijava没有很高深的java语法，仅仅是封装，继承，多态，我用x86模拟了而已)
+a. lexer -> translates the source program into a stream of lexical tokens
+输入: source program
+输出: a stream of lexical tokens
+先举个通俗易懂的例子，比如我要对以下java程序进行 lexer，怎么做 ？
+class TreeVisitor{
+public static void main(String[] a){
+System.out.println(new TV().Start());
+}
+}
+lexer的输出，很明显是，a stream of lexical tokens :class | TreeVisitor | { | public |  static | void | main | ( | String | [ | ] | a | ) | { | System | . | out | . | println | ( | new | TV | ( | ) | . | Start | ( | ) | ) | ; | } | }
+看一下 Token结构体长成神马样子？
+class Token{
+public Kind kind; // kind of the token
+public String lexeme; // extra lexeme for this token, if any
+public Integer lineNum; // on which line of the source file this token appears 目前可以忽略，只是为了输出
+......}
+看下输出,大家就明白了:
+TOKEN_CLASS: class : at line 5
+TOKEN_ID: TreeVisitor : at line 5
+TOKEN_LBRACE: <NONE> : at line 5
+TOKEN_PUBLIC: public : at line 6
+TOKEN_STATIC: static : at line 6
+TOKEN_VOID: void : at line 6
+TOKEN_MAIN: main : at line 6
+TOKEN_LPAREN: <NONE> : at line 6
+TOKEN_STRING: String : at line 6
+TOKEN_LBRACK: <NONE> : at line 6
+TOKEN_RBRACK: <NONE> : at line 6
+TOKEN_ID: a : at line 6
+TOKEN_RPAREN: <NONE> : at line 6
+TOKEN_LBRACE: <NONE> : at line 6
+..................
+ok，分解为了 a stream of lexical tokens ，很明显用一个 队列 去存储它们。
+note:
+非常建议用队列去存储，为什么？
+1.我们lab用的是直接在parser里面一个一个直接读取lexer分解出来的Token，即不能回滚，即上一个Token还得用一个value记录下来，当然你可以
+定义回滚几个，然后记录 rollbackToken1,rollbackToken2,rollbackToken3....等
+2.用队列虽然浪费了存储空间，但是可以任意回滚任意个数的Token
+so，建议看具体需要。
+神马情况下会遇到回滚Token?
+比如，
+MyVisitor v ;
+root = new Tree();
+由于是递归下降分析(在paser中详细讨论，看完paser再回来理解)，只能像微软的编译器一样，写c语言的时候，定义放在语句前面，如果你在中间某个地方写了，int a = fun(1,2);则微软编译器会报错，但是一个这样的小错误，微软的优化器会爆出各种错。。。让你根本就不知道哪错了
+回到正题：由于和c语言一样，本编译器算法是，前面是定义，后面是语句。
+so，检测到root 的时候 Token是个ID，没问题，但是后面发现Token 是 = 号，也就是你进入 定义和语句的 临界区域了，so，你的代码还在分析定义的代码里，怎么破？你得回滚，然后跳出整个 分析 定义的代码，进入分析语句的代码，然后 current Token 得回滚到 root (原来在=)。
+note:
+但是gcc支持语句中有定义，不是因为 ANSI c 支持，而是gcc进行的拓展。
+gcc怎么实现的？其实很容易，和c++/java 一样，加减符号表运算即可
+gcc的c还支持bool呢，呼呼。
+note:
+吐槽微软编译器：
+void fun(){}
+这样的空函数，微软还不优化，
+fun:
+push ebp
+mov ebp,esp
+push ebx
+push esi
+push edi
+这三个是 callee-saved 寄存器，微软还要入栈保存，是不是有点懒了，别说寄存器分配了，如果 寄存器分配(比如图着色) 只用到一个寄存器，这样入栈保存一个不就行了吗？
+note:算了，还是表扬下微软的编译器吧，比如你看到，
+push ebp
+mov ebp,esp
+push ecx    // 而不是  sub esp,4
+为什么不用sub esp,4 ? 。。。。。。。这个原因很深刻，因为，同样是往下开辟4个byte， push ecx 用的(指x86，ARM不知道)机器码更少哦
+其实我是想解释，为什么 lexer 要 translates the source program into a stream of lexical tokens ？而不分解为其他结构 ？
+想想中文为什么要分词？ eg，今天我学会了开汽车，你用指针去扫源代码的时候，扫到 unicode  "今" ，你能把它作为一个Token吗？明显不行，因为"今天"才是一个Token。。。那怎么样断句呢？即，怎么分词呢？最简单的方法就是查字典，这种方法最早是由北航的梁南元教授提出的。即，字典里有的词就表示出来，遇到复合词就最长匹配。
+但是最长匹配也有问题。
+比如， 上海大学城书店，你怎么分？
+最长匹配是： 上海大学/城/书店？
+显然不对，应该是 上海/大学城/书店
+这里不进一步讨论。
+好了，之前说过，像英文这样 I am so cool. 语句之间有标点符号，语句之中有空格，所以，不需要分词，Token很容易找到!!!!!!
+代码也是这样，大部分是有分隔符(以空格分开)的，但是也有例外，比如，
+/
+//
+/*
+遇到一个/，你能武断说这个Token是 / 吗？嗯，得看看后面跟的是啥。
+回到正题，为什么要分解为a stream of lexical tokens？
+因为比如自然语言是由一个一个单词组成的，单词组成的顺序，则是语法。
+你只有先把一个一个单词分解出来，然后去分析每个单词之间为什么这样排列(这就是分析这句话是神马语法 -> 找出它的语法规则 )，然后生成一棵语法树，存储起来。
+分词就是lexer干的事情，它的输出就是给 parser 的输入，parser 则负责生成 AST(抽象语法树)，并传给 elabrator。
+note:
+说道分词，编译器技术已经完美解决了这个问题(仅仅针对上下文无关文法)，即用 正则表达式。 NFA -> DFA
+我不想延伸，因为内容太多，以后有机会再写。
+当然lexer有很多，比如 flex, sml-lex, Ocaml-lex, JLex, C#lex ......
+说道这里，lexer我是否已经讲清楚了呢？？我觉得差不多了，以后有机会补充。
+b. parser -> 根据 递归下降 分析算法，生成语法树
+note:
+recursive decendent parser/top-down parsing/predicative parsing  这几个单词是一个算法，都是递归下降分析
+想了想怎么来说这个parser，我想我还是举个实例比较容易理解! 我不喜欢把一个很简单的东西，用很多数学公式去弄的很复杂，我觉得做学术，反而应该把复杂的东西，简单化，这样让更多人能看懂其背后的机理其实很easy。
+先随手写段程序好了,不要在意语义上的细节，只是为了说明parser工作机制。
+class TreeVisitor{
+public static void main(String[] a){
+System.out.println(new Visitor().Start());
+}
+}
+class Visitor {
+Tree l ;
+Tree r ;
+public int Strat(Tree n){
+int nti ;
+int a;
+while(n < 10)
+a = 1;
+if (n.GetHas_Right())
+a = 3;
+else
+a = 12 ;
+return a;
+}
+}
+递归下降，可以用一个词来来概括，其实就是 while循环。
+如果说要返回一个AST，这样当然需要先定义所有抽象语句的类，然后生成其对象，然后reference相互连起来，形成一棵树。
+parser 输出返回一棵AST -> theAst = parser.parse();
+ast.program.T prog = parseProgram();
+.......
+ast.mainClass.MainClass mainclass = parseMainClass();
+java.util.LinkedList<ast.classs.T> classes = parseClassDecls();
+......
+java.util.LinkedList<ast.classs.T> classes = new java.util.LinkedList<ast.classs.T>();
+ast.classs.T oneclass = null;
+while (current.kind == Kind.TOKEN_CLASS) {
+oneclass = parseClassDecl();
+classes.add(oneclass);
+}
+注意，我为什么说，递归下降就是while循环，上面漂绿的字体很明显了，当你分析某一种语法的时候，不断用while探测，如果进入下一个语法，则跳出while循环。
+再说细一点:
+int nti ;
+int a;
+while(n < 10)
+a = 1;
+if (n.GetHas_Right())
+a = 3;
+else
+a = 12 ;
+函数开始的时候，先分析 "定义" ，分析到 int nti; 没问题，是 "定义" ，然后到 int a; 也没问题，是 "定义"。
+但是到了 while 语句，则 编译器代码跳出 分析 “定义” 的代码，进入 分析 "语句" 的代码。
+注意一点即可，我上面举得例子。
+MyVisitor v ;
+root = new Tree();
+OK，返回了AST，好办了，可以直接 pretty print 出来了，因为你已经有了AST，即一棵树，所有这段程序的语义都存储起来了，你想怎么打印，
+不就怎么打印了？
+比如:
+@Override
+public void visit(ast.stm.If s)
+{
+this.sayln("");//if语句前换个行先
+this.printSpaces();
+this.say("if (");
+s.condition.accept(this);
+this.sayln(")");
+this.indent();
+s.thenn.accept(this);
+this.unIndent();
+this.printSpaces();
+this.sayln("else");
+this.indent();
+s.elsee.accept(this);
+this.unIndent();
+return;
+}
+note:
+这里用的是访问者模式，这里不做讨论。
+note:
+so，对于paser，可以pretty print,由此可见，类似vim / emac 等编辑器，是怎么样智能的处理了？ 本人自己想的其中一种方法。
+比如文件里有一段code，然后lexer + parser 之后生成了AST，然后修改AST，再把AST打印出来不就行了!!!!当然这个只是其中一种实现方式，
+具体vim / emac 怎么实现的，我没看过源码，不知道，我只是给出了一种我自己的想法。
+parser，就是分析语法(你自己定义的语言的上下文无关文法)，然后返回一颗语法树，存储起来，然后传给elabrator。
+关于parser，我应该说清楚了吧???
+c. elaborator -> 其实就是语义分析，这里被称为  “精细化”  ，其实本质是 type checking，我平常就称之为类型检查。
+工作职责:比如，看看类型，比如会不会出现类似 string = int + char ?  比如function call会不会调用参数个数是不是多一个，类型和声明的一不一样，否则报错，高级一点的elaborator，还会看看哪些变量，声明了，却没有用到，然后报出一个警告，等等。。。。。。。。。。。。。。
+传统的语义分析方法：
+Traditionally, semantics takes the form of natural language specification
+但是最新的论文，证明可以用数学的方法来完美解决这个技术:
+But recent research has revealed that semantics can also be addressed via math, it's rigorous and clean
+这篇论文的题目是 -> Quick Introduction to Type Systems   -> type judging
+举个例子
+上面是假设条件，hypothesis
+类型系统是可以计算的， 比如 int + int -> 如果返回 int ，则 juding 正确
+理论联系下实际:
+假设定义语义 : int + int -> int
+@Override
+public void visit(ast.exp.Add e)
+{
+e.left.accept(this);
+if (!this.type.toString().equals("@int"))
+error("operator '+' left expression must be int type",e.addleftexplineNum);
+ast.type.T leftty = this.type;
+e.right.accept(this);
+if (!this.type.toString().equals("@int"))
+error("operator '+' right expression must be int type" ,e.addrightexplineNum);
+this.type = new ast.type.Int(); //表示当前操作 add，完成之后，“返回”一个操作数类型为 int
+return;
+}
+note:
+这里不讨论关于继承(多态)，function call等再难一点的语义分析，不是本文重点。
+OK, elabrator 的工作，总结下，就是先扫一遍AST，然后生成相应的符号表(多态涉及prefix算法计算继承后的对象模型中虚函数表的函数指针排列顺序，这里不讨论)，然后进行类型系统的判断，报出一些语句出错的信息，或者警告信息。
+elabrator我是否已经讲清楚了呢？
+d. code generation -> 生成 IR
+本人做了 minijava -> java bytecode / c / x86
+minijava 直接 -> x86，我几次推翻重写，不过最后完成了，还是很 happy (minijava没有很高深的java语法，仅仅是封装，继承，多态，我用x86模拟了而已)
+还是有一定难度的，用汇编这种低级语言去模拟封装，继承，多态，还是有一定难度的，放在以后讨论吧，写不完了。
+e. 讨论 exception,closure,SSA(static single assignment) 是怎么样实现的
+exception:其实编译器通常有2种方法，
+1.基于异常栈
+2.基于异常表：pay as you go
+细节，不想在本文讨论了。
+closure: 我会讨论在java非要支持nested function之后，一步一步逃逸变量是怎么样不能够存储，然后引出closure的解决方法的，还会给出closure 和 object model 有什么区别？
+SSA(static single assignment) 真心是一种牛逼的IR，让很多优化变得非常简单。但是内容太多，写不完了。自从有的这个SSA，gcc版本从某一个版本，忘了，开始全部把基于 CFG , DFG 的优化，变成SSA了
+f.  讨论一下garbage collector
+gc实际上要有很大的篇幅去讨论，基本上有这几种，我来数数：
+1.基于引用计数的gc(浪费一个int大小要去存引用计数)
+2.基于微软的 mark & swap ，mark有个很trick的技巧
+3.copy收集 ，我们lab做的，基于tiger book，13.3节
+4.世代收集，关于代数，每代大小的阈值讨论，给予一个可靠的理论分析，本人喜欢用 平摊分析中的，基于动态表(其实就是c++的new)的方法
+5.并发的gc
+还是需要花大篇幅去讨论，这里不说了。
+g. optimization
+优化太多了，真是说不完啊，暂时不想写了。对于优化容易出错，或者直接违反语义的，极端激进的死代码删除等等，老师说，有句名言叫做
+1.请不要优化
+2.实在想优化，请参考第1条
+哈。
+h. 关于我们学校课程最后的 final project 思考，关于 java 反射机制，gc的世代收集，翻译成 go / js ，jvm ，还有本人写的 minijava 直接 -> x86，我几次推翻重写，不过最后完成了，还是很 happy (minijava没有很高深的java语法，仅仅是封装，继承，多态，我用x86模拟了而已)
+这个final project 实在是写不下，可能要花很长时间，才能把我是怎么想的写出来，先这样吧。。。
+5. 用编译器知识理解语言小细节
+1.比如到底应该写成 char* p; 还应该写成 char *p; 这种问题其实很好理解，为什么，编译器怎么处理指针？ 即，碰到类型后面碰到*，就把后面的变量当做指针，好理解了吗，这就是为神马 char* p1,p2;  p2不是指针的原因
+我个人喜好，就把 char* 当做一个类型，只需要注意 char* p1,p2;  p2 这种情况即可，很多人不是喜欢这样写typedef char* pchar吗，这不就是赤裸裸的认为char*就是一个类型吗？没错，我就喜欢把它当做一个类型。
+2.比如 const 修饰的 变量，总是分不清 ，
+const char* p;
+char const* p;
+char* const p;
+const char* const p;
+我说一句话，你就能永远分清，信不信？当然这个是我从effective c++里面学的，
+const 出现在*左边修饰的是指针指向的value，而出现在右边则是修饰的是指针，
+没错，你已经会了。
+前面2个一个意思，都是修饰value是const，第三个是修饰指针是const，第四个是2个都修饰。
+3.比如神马 前加加，后加加 ，搞不清楚  ++a;a++;....
+int a = 1;
+printf("%d",a++); 为毛答案还是1 ？
+int a = 1;
+printf("%d",++a); 为毛答案就是2了 ？
+你如果学过编译器，你就懂了，你可以这样理解：
+printf("%d",a++); 其实会被编译成2句话
+printf("%d",a);
+a++;(a = a + 1;)
+这样，答案是神马，不用我说了吧。这个就叫做后加，懂了吧
+printf("%d",++a);实际上也是会被编译成2句话
+a++;(a = a + 1;)
+printf("%d",a);
+为什么是2？一目了然，以后还分不清前加后加吗？嘻嘻。
+4. 其实 循环语句，其实对于x86来说就1种->跳转，当然跳转有2种，
+一是无条件跳转
+L:
+jmp L;
+二是有条件跳转
+L：
+cmp eax,3
+jb L;
+随便写的伪代码。
+当然有的人问了，do while，while ，for 3种循环，你不是打自己脸吗？
+我能说 其实翻译成 x86就是do while 吗，而 do while 不就是条件跳转吗？
+while 就是 do while，为什么？ 因为多一个入口检测而已
+for 就是 do while + 入口检测 + update而已。具体神马的，自己去想吧。。。
+结语：
+note：
+其实编译器技术，还有很多很多，我只是讨论了其中的九牛一毛，而且由于篇幅限制，我写不下太多。作为第一篇文章，暂时先这样吧，以后再更新。
+本人对信息安全也略懂，所以对底层的一些东西有一些自己的理解，其实这些都是基础，做安全最最重要的基础，是在课本上根本学不到的东西，最最精华的东西，在以后的文章中我会陆续提到：
+学完编译器，对语言的理解又更深了一步，比如你看到如下东西,
+int c =  4;
+int d;
+void fun(int a,int b)
+{   int n = 4;
+int i;
+for(i=0;i<n;i++)
+printf("a+b=%d\n",a+b);
+}
+int main()
+{
+fun(1,2);
+return 0;
+}
+要思考，编译之后，生成怎么样的x86，calling convention，prolog/epilog，caller-saved/callee-saved register，堆栈平衡，所有变量的内存分布，函数符号修饰成什么样，静态链接，动态链接，地址修正，链接指示对编译过程的影响，如dllimport,dllexport,#pragma，函数声明等等
+以后的文章我会陆续解释。
+其实学完编译器的真正效果，就是你看到上面的c，能想到，其实它就是神马。。。

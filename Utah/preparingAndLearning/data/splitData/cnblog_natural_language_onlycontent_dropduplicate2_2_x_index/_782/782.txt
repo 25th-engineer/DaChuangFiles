@@ -1,0 +1,18 @@
+这篇博客根据中文自然语言预处理的步骤分成几个板块。以做LDA实验为例，在处理数据之前，会写一个类似于实验报告的东西，用来指导做实验，OK，举例：
+一，实验数据预处理（python,结巴分词）
+1.对于爬取的评论做分词和词性标注处理(mac-result.txt)
+2.对于结果只用公版的停用词表去停用词，不进行人工筛选(mac-result1.txt)
+3.保留：名词，名词短语（两者为评论描述主题）
+形容词，动词，动词短语（对主题的描述）以及其他可能有实意的词
+去除：副词，标点,拟声词等无实意词包括/x /zg /uj /ul /e /d /uz /y
+结果为mac-result2.txt
+4.标准化处理，合并空格，去除空白字符，处理后的文档变为“词，空格，词，空格。。。。”的形式。结果为：mac-result3.txt
+5.复合词合成.分词结果不准确，有专有名词等，所以提取复合词 mac-result4.txt(提取的复合词表fuheci.txt)
+6.做或者不做复合词提取，每十行合并（mac-result5.txt)直接做LDA实验，抽取主题。
+标题是用Python做中文自然语言预处理，我将我所用的预处理全部贴到下面：
+1，分词.词性标注以及去停用词。见上一篇博客：http://www.cnblogs.com/nlp-yekai/p/3711360.html
+3，做词性筛选：
+#coding utf-8 import os import sys import re f1=open("/home/alber/data_base/jd_content/app-mac/mac-result1.txt",'r') txt=f1.readlines() f1.close() txtlist=[] cixing=["/x","/zg","/uj","/ul","/e","/d","/uz","/y"]#词列表为自己定义要过滤掉的词性 for line in txt: line_list2=re.split('[ ]', line) line_list=line_list2[:] for segs in line_list2: for K in cixing: if K in segs: line_list.remove(segs) break else: pass txtlist.extend(line_list) f2=open("/home/alber/data_base/jd_content/app-mac/mac-result2.txt",'a') resultlist=txtlist[:] for v in txtlist: if "/" in v: slope=v.index("/") letter=v[0:slope]+" " f2.write(letter) else: f2.write(v)
+4.标准化处理，去除空行，空白字符等。
+#coding=utf-8 import os import sys import re import time f1=open("/home/alber/data_base/jd_content/app-mac/mac-result2.txt",'r+') f2=open("/home/alber/data_base/jd_content/app-mac/mac-result3.txt","a") txt=f1.readlines() f1.close() list1=[] for line in txt: if len(line)>=2: line_clean=" ".join(line.split()) lines=line_clean+" "+"\n" f2.write(lines) else: pass f2.close()
+后面的以后再写吧，处理到这基本上可以导入各种模型跑起来了。

@@ -1,0 +1,556 @@
+图像 数据集 模型 需 要好 的 数据 才能 训练 出 
+结果 本文 总结 了 机器学习 图像 方面 常用 数据集 MNISTLink 
+机器学习 入门 的 标准 数据集 Hello World 10个 类别 0 
+9 手写 数字 包含 了 60 000 张 28x28 的 
+二 值 训练 图像 10 000 张 28x28 的 二 
+值 测试 图像 最早 的 深度 卷积 网络 LeNet 便 
+是 针对 MNIST 数据集 的 MNIST 数据集 之所以 是 机器 
+学习 的 Hello World 是 因为 当前 主流 深度 学习 
+框架 几乎 无一例外 将 MNIST 数据集 的 处理 作为 介绍 
+及 入门 第一 教程 其中   Tensorflow   关于 MNIST 
+的 教程 非常 详细 COCOLinkCOCO 是 一个 大 规模 的 
+对象 识别 分割 以及 Captioning 数据集 具有 以下 特点 Object 
+s e g m e n t a t i 
+o n R e c o g n i t 
+i o n in c o n t e x 
+t u p e r p i x e l 
+stuff segmentation330K images 200K labeled 1.5 million object instances80 object 
+categories91 stuff categories5 captions per image250 000 people with keypoints 
+以 2014 年的/nr 数据 为例 其 包含 两种 文件类型 训练 
+验证 文件 均有 Annotations 图片 信息 和 Images 图片 文件 
+本身 图 片名 即 Annotations 中的   file _ name 
+  字段 Annotations 文件 为 一些 超级 大 的 json 
+文件 分为 三 种 类型 object instances object keypoints 和 
+image captions 三种 类型 均以 以下 json 格式 存储 Copy 
+{ info info images image annotations annotation licenses license } 
+info { year int version str description str contributor str 
+url str date _ created datetime } image { id 
+int width int height int file _ name str license 
+int flickr _ url str coco _ url str date 
+_ captured datetime } license { id int name str 
+url str } 只有 每 种 类型 的   annotation 
+  格式 不同 如 Object Instance Annotations 格式 为 Copyannotation 
+{ id int image _ id int category _ id 
+int segmentation RLE or polygon area float bbox x y 
+width height iscrowd 0 or 1 } categories { id 
+int name str supercategory str } 具体 的 格式 信息 
+可以 在 这里 看到 I m a g e N 
+e t L i n k M N I T 
+将 初学者 领进 了 深度 学习 领域 而 ImageNet 数据集 
+对 深度 学习 的 浪潮 起了 巨大 的 推动 作用 
+深度 学习 领域 大牛 Hinton 在 2012年 发表 的 论文 
+ImageNet Classification with Deep Convolutional Neural Networks 在 计算机 视觉 
+领域 带来 了 一场 革命 此 论文 的 工作 正是 
+基于 ImageNet 数据集 ImageNet 数据集 有 1400多 万幅 图片 涵盖 
+2 万多个 类别 其中/r 有/v 超过/v 百万/m 的/uj 图片/n 有/v 
+明确/ad 的/uj 类别/n 标注/v 和/c 图像/n 中/f 物体/n 位置/v 的/uj 
+标注/v 具体 信息 如下 Total number of non empty synsets 
+21841Total number of images 14 197 122Number of images with 
+bounding box annotations 1 034 908Number of synsets with SIFT 
+features 1000Number of images with SIFT features 1.2 million 你 
+可以 下载 图片 urls 文件 或者 图片 文件 需要 注册 
+用于 非 商业 用途 图片 urls 文件 内容 为 图片 
+ID 和 url Copyn00015388 _ 12 http / / farm4 
+. static . flickr . com / 3040/2946102733 _ 9b9c9cf24e 
+. jpg n00015388 _ 24 http / / farm3 . 
+static . flickr . com / 2093/2288303747 _ c62c007531 . 
+jpg n00015388 _ 81 http / / www . theresevangelder 
+. nl / images / dierenportretten / dier4 . jpg 
+n00015388 _ 155 http / / www . zuidafrikaonline . 
+nl / images / zuid afrika reis giraffe . jpg 
+n00015388 _ 157 http / / farm1 . static . 
+flickr . com / 145/430300483 _ 21e993670c . jpg . 
+. . _   前面 部分 为 WordNet ID wnid 
+一个 wnid 代表 一个 synset 同义 词集 如   n02084071 
+  代表 dog domestic dog Canis familiaris 具体 信息 可以 
+看 官方 文档 ImageNet 的 Object Bounding Boxes 文件 采用 
+了 和 PASCAL VOC 数据集 相同 的 格式 因此 可以 
+使用 PASCAL Development Toolkit 解析 另外 ImageNet 的 Object Bounding 
+Boxes 文件 是 按照 synset 同义 词集 划 分子 文件夹 
+的 每个 压缩包 下面 是 同 语义 的 图片 文件 
+Annotation The PASCAL Visual Object C l a s s 
+e s L i n k P A C A 
+L VOC 挑战赛 是 视觉 对象 的 分类 识别 和 
+检测 的 一个 基准测试 提供/v 了/ul 检测/vn 算法/n 和/c 学习/v 
+性能/n 的/uj 标准/n 图像/n 注释/v 数据集/i 和/c 标准/n 的/uj 评估/vn 
+系统/n PASCAL VOC2007 之后 的 数据 集 包括 20个 类别 
+人类 动物 鸟 猫 牛 狗 马 羊 交通工具 飞机 
+自行车 船 公共汽车 小轿车 摩托车 火车 室内 瓶子 椅子 餐桌 
+盆栽植物 沙发 电视 PASCAL VOC 挑战赛 在 2012 年后 便 
+不再 举办 但 其 数据集 图像 质量 好 标注 完备 
+非常 适合 用来 测试 算法 性能 数据集 包括 图片 的 
+三种 信息 原始 图片 JPEGImages   文件夹 对象 像素 e 
+g m e n t a t i o n 
+C l a s s   文件夹 和 分类 像素 
+e g m e n t a t i o 
+n O b j e c t   文件夹 解压 
+之后 这些 图片 分别 放在 如下 文件夹 其中   Annotations 
+  文件夹 是 图片 描述 的 xml 文件 例如   
+JPEGImages   文件夹 中的   000007 . jpg   图片 
+就会 有 相应 的   000007 . xml   文件 
+描述 该 图片 包括 图片 的 宽 高 包含 的 
+Object 可以 有 多个 的 类别 坐标 等 信息 Copy 
+annotation folder VOC2007 / folder filename 000007 . jpg / 
+filename source database The VOC2007 Database / database annotation PASCAL 
+VOC2007 / annotation image flickr / image flickrid 194179466 / 
+flickrid / source owner flickrid monsieurrompu / flickrid name Thom 
+Zemanek / name / owner size / / 图像 尺寸 
+长宽 以及 通 道数 width 500 / width height 333 
+/ height depth 3 / depth / size segmented 0 
+/ segmented object name car / name / / 物体 
+类别 pose Unspecified / pose / / 拍摄角度 truncated 1 
+/ truncated / / 是否 被 截断 0 表示 完整 
+difficult 0 / difficult / / 目标 是否 难以 识别 
+0 表示 容易 识别 bndbox / / bounding box 包含 
+左下角 和 右上角 坐标 xmin 141 / xmin ymin 50 
+/ ymin xmax 500 / xmax ymax 330 / ymax 
+/ bndbox / object / annotation ImageSets 存放 的 是 
+每一年 的 Challenge 对应 的 图像 数据 不同 年份 数据 
+可能 不同 其中   Action   下 存放 的 是 
+人 的 动作 例如 running jumping 等等 这 也是 VOC 
+challenge 的 一部分 Layout   下 存放 的 是 具有 
+人体 部位 的 数据 人 的 head hand feet 等等 
+这 也是 VOC challenge 的 一部分 Main   文件 夹下 
+包含 了 各个 分类 的   * * * _ 
+train . txt * * * _ val . txt 
+和 */nr * * _ trainval . txt 如   aeroplane 
+_ train . txt 文件 每行 是 一个 图片 ID 
+以及 是否 为 正 样本 1 代表 正 样本 1 
+代表 负 样本 Segmentation   下 存放 的 是 验证 
+集 图片 ID val . txt   文件 训练 集 
+图片 ID train . txt   文件 以及 两者 的 
+合集 trainval . txt   文件 The CIFAR 10 dataset 
+and The CIFAR 100 datasetLinkCIFAR 10 和 CIFAR 100 数据集 
+是   80 million tiny images   的 子集 以 
+CIFAR 10 Python 版本 为例 包含 10 个 分类 60000 
+张 32x32 彩色图片 每个 分类 6000 张 图片 其中 50000 
+张是/nr 训练 图片 另外 10000 张是/nr 测试 图片 其中 50000 
+张 分成 了 5 个 训练 batches 剩下 的 10000 
+张是/nr test batch 训练 数据 每个 类 总共 包含 5000 
+张 但 每个 batch 每个 类 的 图片 数量 可能 
+并不 平均 每个 batch 文件 都是 Python pickle 生成 的 
+所以 可以 使用 pickle 读取 Copydef unpickle file import pickle 
+with open file rb as fo dict = pickle . 
+load fo encoding = bytes return dict 函数 返回 一个 
+  dict   对象 其中 有 两个 key 比较 重要 
+data 10000x3072 numpy array 每 一行 是 一个 32x32 彩色图片 
+每 1024 个 元素 依次 代表 R G B 像素 
+值 没有 归一化 取值 为 0 255 labels 每 一行 
+代表 图片 分类 取值 0 9 CIFAR 100 和 CIFAR 
+10 类似 只是 类别 为 100 个 实际上 CIFAR 10 
+和 MNIST 很 类似 Tiny Images DatasetLinkTiny Images dataset 包含 
+79 302 017 张 32x32 彩色图片 包含 5 个 文件 
+Image binary 227Gb 图片 本身 二进制 格式 Metadata binary 57Gb 
+图片 信息 filename search engine used ranking etc Gist binary 
+114Gb 图片 描述 Index data 7Mb Matlab 索引 文件 Matlab 
+Tiny Images toolbox 150Kb Matlab 索引 文件 代码 用来 加载 
+图片 FDDB Face Detection Data Set and B e n 
+c h m a r k L i n k 
+F D D B 是 全世界 最具 权威 的 人脸 
+检测 评测 平台 之一 包含 来自   Faces in the 
+Wild   的 2845张 图片 共有 5171个 人脸 数据 测试 
+集 范围 包括 不同 姿势 不同 分辨率 旋转 和 遮挡 
+等 图片 同时 包括 灰度 图 和 彩色 图 标准 
+的 人脸 标注 区域 为 椭圆形 FDDB 数据集 包含 以下内容 
+原始 图片 来自   Faces in the Wild   人脸 
+数据 Face annotations 检测 输出 包括 矩形 区域 和 椭圆 
+区域 其他 信息 原始 图片 原始 图片 可以 在 这里 
+下载 originalPics . tar . gz 解 压后 图片 的 
+路径 为   originalPics / year / month / day 
+/ big / * . jpg 人脸 数据 Face annotations 
+比较 重要 的 是 Face annotations 解压缩 FDDB folds . 
+tgz 文件 将 会 得到 FDDB folds 文件夹 包含 FDDB 
+fold xx . txt 和 FDDB fold xx ellipseList . 
+txt 文件 xx   代表 文件夹 索引 FDDB fold xx 
+. txt 文件 的 每 一行 指定 了 一个 上述 
+原始 图片 的 一个 文件名 如 2002 / 07/19 / 
+big / img _ 130 对应 originalPics / 2002 / 
+07/19 / big / img _ 130 . jpg . 
+对应 的 annotations 文件 FDDB fold xx ellipseList . txt 
+格式 如下 Copy . . . image name i number 
+of faces in this image = im face i1 face 
+i2 . . . face im . . . 每一个 
+face 即 一个 椭圆 区域 用 以下 格式 表示 Copy 
+长轴 半径 短 轴 半径 长轴 方向 x 轴 中 
+心坐标 y 轴 中 心坐标 1 示例 Copy2002 / 08/11 
+/ big / img _ 591 1 123.583300 85.549500 1.265839 
+269.693400 161.781200 1 2002 / 08/26 / big / img 
+_ 265 3 67.363819 44.511485 1.476417 105.249970 87.209036 1 41.936870 
+27.064477 1.471906 184.070915 129.345601 1 70.993052 43.355200 1.370217 340.894300 117.498951 
+1 2002 / 07/19 / big / img _ 423 
+1 87.080955 59.379319 1.550861 255.383099 133.767857 1 2002 / 08/24 
+/ big / img _ 490 1 54.692105 35.056825 1.384924 
+145.665694 78.101005 1 2002 / 08/31 / big / img 
+_ 17676 2 37.099961 29.000000 1.433107 28.453831 37.664572 1 79.589662 
+49.835046 1.457361 112.514300 92.364284 1 参考 PASCAL VOC 数据集 分析 
+深度 学习 视觉 领域 常用 数据集 汇总 图像 数据集 模型 需 要好 的 数据 才能 训练 出 
+结果 本文 总结 了 机器学习 图像 方面 常用 数据集 MNISTLink 
+机器学习 入门 的 标准 数据集 Hello World 10个 类别 0 
+9 手写 数字 包含 了 60 000 张 28x28 的 
+二 值 训练 图像 10 000 张 28x28 的 二 
+值 测试 图像 最早 的 深度 卷积 网络 LeNet 便 
+是 针对 MNIST 数据集 的 MNIST 数据集 之所以 是 机器 
+学习 的 Hello World 是 因为 当前 主流 深度 学习 
+框架 几乎 无一例外 将 MNIST 数据集 的 处理 作为 介绍 
+及 入门 第一 教程 其中   Tensorflow   关于 MNIST 
+的 教程 非常 详细 COCOLinkCOCO 是 一个 大 规模 的 
+对象 识别 分割 以及 Captioning 数据集 具有 以下 特点 Object 
+s e g m e n t a t i 
+o n R e c o g n i t 
+i o n in c o n t e x 
+t u p e r p i x e l 
+stuff segmentation330K images 200K labeled 1.5 million object instances80 object 
+categories91 stuff categories5 captions per image250 000 people with keypoints 
+以 2014 年的/nr 数据 为例 其 包含 两种 文件类型 训练 
+验证 文件 均有 Annotations 图片 信息 和 Images 图片 文件 
+本身 图 片名 即 Annotations 中的   file _ name 
+  字段 Annotations 文件 为 一些 超级 大 的 json 
+文件 分为 三 种 类型 object instances object keypoints 和 
+image captions 三种 类型 均以 以下 json 格式 存储 Copy 
+{ info info images image annotations annotation licenses license } 
+info { year int version str description str contributor str 
+url str date _ created datetime } image { id 
+int width int height int file _ name str license 
+int flickr _ url str coco _ url str date 
+_ captured datetime } license { id int name str 
+url str } 只有 每 种 类型 的   annotation 
+  格式 不同 如 Object Instance Annotations 格式 为 Copyannotation 
+{ id int image _ id int category _ id 
+int segmentation RLE or polygon area float bbox x y 
+width height iscrowd 0 or 1 } categories { id 
+int name str supercategory str } 具体 的 格式 信息 
+可以 在 这里 看到 I m a g e N 
+e t L i n k M N I T 
+将 初学者 领进 了 深度 学习 领域 而 ImageNet 数据集 
+对 深度 学习 的 浪潮 起了 巨大 的 推动 作用 
+深度 学习 领域 大牛 Hinton 在 2012年 发表 的 论文 
+ImageNet Classification with Deep Convolutional Neural Networks 在 计算机 视觉 
+领域 带来 了 一场 革命 此 论文 的 工作 正是 
+基于 ImageNet 数据集 ImageNet 数据集 有 1400多 万幅 图片 涵盖 
+2 万多个 类别 其中/r 有/v 超过/v 百万/m 的/uj 图片/n 有/v 
+明确/ad 的/uj 类别/n 标注/v 和/c 图像/n 中/f 物体/n 位置/v 的/uj 
+标注/v 具体 信息 如下 Total number of non empty synsets 
+21841Total number of images 14 197 122Number of images with 
+bounding box annotations 1 034 908Number of synsets with SIFT 
+features 1000Number of images with SIFT features 1.2 million 你 
+可以 下载 图片 urls 文件 或者 图片 文件 需要 注册 
+用于 非 商业 用途 图片 urls 文件 内容 为 图片 
+ID 和 url Copyn00015388 _ 12 http / / farm4 
+. static . flickr . com / 3040/2946102733 _ 9b9c9cf24e 
+. jpg n00015388 _ 24 http / / farm3 . 
+static . flickr . com / 2093/2288303747 _ c62c007531 . 
+jpg n00015388 _ 81 http / / www . theresevangelder 
+. nl / images / dierenportretten / dier4 . jpg 
+n00015388 _ 155 http / / www . zuidafrikaonline . 
+nl / images / zuid afrika reis giraffe . jpg 
+n00015388 _ 157 http / / farm1 . static . 
+flickr . com / 145/430300483 _ 21e993670c . jpg . 
+. . _   前面 部分 为 WordNet ID wnid 
+一个 wnid 代表 一个 synset 同义 词集 如   n02084071 
+  代表 dog domestic dog Canis familiaris 具体 信息 可以 
+看 官方 文档 ImageNet 的 Object Bounding Boxes 文件 采用 
+了 和 PASCAL VOC 数据集 相同 的 格式 因此 可以 
+使用 PASCAL Development Toolkit 解析 另外 ImageNet 的 Object Bounding 
+Boxes 文件 是 按照 synset 同义 词集 划 分子 文件夹 
+的 每个 压缩包 下面 是 同 语义 的 图片 文件 
+Annotation The PASCAL Visual Object C l a s s 
+e s L i n k P A C A 
+L VOC 挑战赛 是 视觉 对象 的 分类 识别 和 
+检测 的 一个 基准测试 提供/v 了/ul 检测/vn 算法/n 和/c 学习/v 
+性能/n 的/uj 标准/n 图像/n 注释/v 数据集/i 和/c 标准/n 的/uj 评估/vn 
+系统/n PASCAL VOC2007 之后 的 数据 集 包括 20个 类别 
+人类 动物 鸟 猫 牛 狗 马 羊 交通工具 飞机 
+自行车 船 公共汽车 小轿车 摩托车 火车 室内 瓶子 椅子 餐桌 
+盆栽植物 沙发 电视 PASCAL VOC 挑战赛 在 2012 年后 便 
+不再 举办 但 其 数据集 图像 质量 好 标注 完备 
+非常 适合 用来 测试 算法 性能 数据集 包括 图片 的 
+三种 信息 原始 图片 JPEGImages   文件夹 对象 像素 e 
+g m e n t a t i o n 
+C l a s s   文件夹 和 分类 像素 
+e g m e n t a t i o 
+n O b j e c t   文件夹 解压 
+之后 这些 图片 分别 放在 如下 文件夹 其中   Annotations 
+  文件夹 是 图片 描述 的 xml 文件 例如   
+JPEGImages   文件夹 中的   000007 . jpg   图片 
+就会 有 相应 的   000007 . xml   文件 
+描述 该 图片 包括 图片 的 宽 高 包含 的 
+Object 可以 有 多个 的 类别 坐标 等 信息 Copy 
+annotation folder VOC2007 / folder filename 000007 . jpg / 
+filename source database The VOC2007 Database / database annotation PASCAL 
+VOC2007 / annotation image flickr / image flickrid 194179466 / 
+flickrid / source owner flickrid monsieurrompu / flickrid name Thom 
+Zemanek / name / owner size / / 图像 尺寸 
+长宽 以及 通 道数 width 500 / width height 333 
+/ height depth 3 / depth / size segmented 0 
+/ segmented object name car / name / / 物体 
+类别 pose Unspecified / pose / / 拍摄角度 truncated 1 
+/ truncated / / 是否 被 截断 0 表示 完整 
+difficult 0 / difficult / / 目标 是否 难以 识别 
+0 表示 容易 识别 bndbox / / bounding box 包含 
+左下角 和 右上角 坐标 xmin 141 / xmin ymin 50 
+/ ymin xmax 500 / xmax ymax 330 / ymax 
+/ bndbox / object / annotation ImageSets 存放 的 是 
+每一年 的 Challenge 对应 的 图像 数据 不同 年份 数据 
+可能 不同 其中   Action   下 存放 的 是 
+人 的 动作 例如 running jumping 等等 这 也是 VOC 
+challenge 的 一部分 Layout   下 存放 的 是 具有 
+人体 部位 的 数据 人 的 head hand feet 等等 
+这 也是 VOC challenge 的 一部分 Main   文件 夹下 
+包含 了 各个 分类 的   * * * _ 
+train . txt * * * _ val . txt 
+和 */nr * * _ trainval . txt 如   aeroplane 
+_ train . txt 文件 每行 是 一个 图片 ID 
+以及 是否 为 正 样本 1 代表 正 样本 1 
+代表 负 样本 Segmentation   下 存放 的 是 验证 
+集 图片 ID val . txt   文件 训练 集 
+图片 ID train . txt   文件 以及 两者 的 
+合集 trainval . txt   文件 The CIFAR 10 dataset 
+and The CIFAR 100 datasetLinkCIFAR 10 和 CIFAR 100 数据集 
+是   80 million tiny images   的 子集 以 
+CIFAR 10 Python 版本 为例 包含 10 个 分类 60000 
+张 32x32 彩色图片 每个 分类 6000 张 图片 其中 50000 
+张是/nr 训练 图片 另外 10000 张是/nr 测试 图片 其中 50000 
+张 分成 了 5 个 训练 batches 剩下 的 10000 
+张是/nr test batch 训练 数据 每个 类 总共 包含 5000 
+张 但 每个 batch 每个 类 的 图片 数量 可能 
+并不 平均 每个 batch 文件 都是 Python pickle 生成 的 
+所以 可以 使用 pickle 读取 Copydef unpickle file import pickle 
+with open file rb as fo dict = pickle . 
+load fo encoding = bytes return dict 函数 返回 一个 
+  dict   对象 其中 有 两个 key 比较 重要 
+data 10000x3072 numpy array 每 一行 是 一个 32x32 彩色图片 
+每 1024 个 元素 依次 代表 R G B 像素 
+值 没有 归一化 取值 为 0 255 labels 每 一行 
+代表 图片 分类 取值 0 9 CIFAR 100 和 CIFAR 
+10 类似 只是 类别 为 100 个 实际上 CIFAR 10 
+和 MNIST 很 类似 Tiny Images DatasetLinkTiny Images dataset 包含 
+79 302 017 张 32x32 彩色图片 包含 5 个 文件 
+Image binary 227Gb 图片 本身 二进制 格式 Metadata binary 57Gb 
+图片 信息 filename search engine used ranking etc Gist binary 
+114Gb 图片 描述 Index data 7Mb Matlab 索引 文件 Matlab 
+Tiny Images toolbox 150Kb Matlab 索引 文件 代码 用来 加载 
+图片 FDDB Face Detection Data Set and B e n 
+c h m a r k L i n k 
+F D D B 是 全世界 最具 权威 的 人脸 
+检测 评测 平台 之一 包含 来自   Faces in the 
+Wild   的 2845张 图片 共有 5171个 人脸 数据 测试 
+集 范围 包括 不同 姿势 不同 分辨率 旋转 和 遮挡 
+等 图片 同时 包括 灰度 图 和 彩色 图 标准 
+的 人脸 标注 区域 为 椭圆形 FDDB 数据集 包含 以下内容 
+原始 图片 来自   Faces in the Wild   人脸 
+数据 Face annotations 检测 输出 包括 矩形 区域 和 椭圆 
+区域 其他 信息 原始 图片 原始 图片 可以 在 这里 
+下载 originalPics . tar . gz 解 压后 图片 的 
+路径 为   originalPics / year / month / day 
+/ big / * . jpg 人脸 数据 Face annotations 
+比较 重要 的 是 Face annotations 解压缩 FDDB folds . 
+tgz 文件 将 会 得到 FDDB folds 文件夹 包含 FDDB 
+fold xx . txt 和 FDDB fold xx ellipseList . 
+txt 文件 xx   代表 文件夹 索引 FDDB fold xx 
+. txt 文件 的 每 一行 指定 了 一个 上述 
+原始 图片 的 一个 文件名 如 2002 / 07/19 / 
+big / img _ 130 对应 originalPics / 2002 / 
+07/19 / big / img _ 130 . jpg . 
+对应 的 annotations 文件 FDDB fold xx ellipseList . txt 
+格式 如下 Copy . . . image name i number 
+of faces in this image = im face i1 face 
+i2 . . . face im . . . 每一个 
+face 即 一个 椭圆 区域 用 以下 格式 表示 Copy 
+长轴 半径 短 轴 半径 长轴 方向 x 轴 中 
+心坐标 y 轴 中 心坐标 1 示例 Copy2002 / 08/11 
+/ big / img _ 591 1 123.583300 85.549500 1.265839 
+269.693400 161.781200 1 2002 / 08/26 / big / img 
+_ 265 3 67.363819 44.511485 1.476417 105.249970 87.209036 1 41.936870 
+27.064477 1.471906 184.070915 129.345601 1 70.993052 43.355200 1.370217 340.894300 117.498951 
+1 2002 / 07/19 / big / img _ 423 
+1 87.080955 59.379319 1.550861 255.383099 133.767857 1 2002 / 08/24 
+/ big / img _ 490 1 54.692105 35.056825 1.384924 
+145.665694 78.101005 1 2002 / 08/31 / big / img 
+_ 17676 2 37.099961 29.000000 1.433107 28.453831 37.664572 1 79.589662 
+49.835046 1.457361 112.514300 92.364284 1 参考 PASCAL VOC 数据集 分析 
+深度 学习 视觉 领域 常用 数据集 汇总 图像 数据集 模型 需 要好 的 数据 才能 训练 出 
+结果 本文 总结 了 机器学习 图像 方面 常用 数据集 MNISTLink 
+机器学习 入门 的 标准 数据集 Hello World 10个 类别 0 
+9 手写 数字 包含 了 60 000 张 28x28 的 
+二 值 训练 图像 10 000 张 28x28 的 二 
+值 测试 图像 最早 的 深度 卷积 网络 LeNet 便 
+是 针对 MNIST 数据集 的 MNIST 数据集 之所以 是 机器 
+学习 的 Hello World 是 因为 当前 主流 深度 学习 
+框架 几乎 无一例外 将 MNIST 数据集 的 处理 作为 介绍 
+及 入门 第一 教程 其中   Tensorflow   关于 MNIST 
+的 教程 非常 详细 COCOLinkCOCO 是 一个 大 规模 的 
+对象 识别 分割 以及 Captioning 数据集 具有 以下 特点 Object 
+s e g m e n t a t i 
+o n R e c o g n i t 
+i o n in c o n t e x 
+t u p e r p i x e l 
+stuff segmentation330K images 200K labeled 1.5 million object instances80 object 
+categories91 stuff categories5 captions per image250 000 people with keypoints 
+以 2014 年的/nr 数据 为例 其 包含 两种 文件类型 训练 
+验证 文件 均有 Annotations 图片 信息 和 Images 图片 文件 
+本身 图 片名 即 Annotations 中的   file _ name 
+  字段 Annotations 文件 为 一些 超级 大 的 json 
+文件 分为 三 种 类型 object instances object keypoints 和 
+image captions 三种 类型 均以 以下 json 格式 存储 Copy 
+{ info info images image annotations annotation licenses license } 
+info { year int version str description str contributor str 
+url str date _ created datetime } image { id 
+int width int height int file _ name str license 
+int flickr _ url str coco _ url str date 
+_ captured datetime } license { id int name str 
+url str } 只有 每 种 类型 的   annotation 
+  格式 不同 如 Object Instance Annotations 格式 为 Copyannotation 
+{ id int image _ id int category _ id 
+int segmentation RLE or polygon area float bbox x y 
+width height iscrowd 0 or 1 } categories { id 
+int name str supercategory str } 具体 的 格式 信息 
+可以 在 这里 看到 I m a g e N 
+e t L i n k M N I T 
+将 初学者 领进 了 深度 学习 领域 而 ImageNet 数据集 
+对 深度 学习 的 浪潮 起了 巨大 的 推动 作用 
+深度 学习 领域 大牛 Hinton 在 2012年 发表 的 论文 
+ImageNet Classification with Deep Convolutional Neural Networks 在 计算机 视觉 
+领域 带来 了 一场 革命 此 论文 的 工作 正是 
+基于 ImageNet 数据集 ImageNet 数据集 有 1400多 万幅 图片 涵盖 
+2 万多个 类别 其中/r 有/v 超过/v 百万/m 的/uj 图片/n 有/v 
+明确/ad 的/uj 类别/n 标注/v 和/c 图像/n 中/f 物体/n 位置/v 的/uj 
+标注/v 具体 信息 如下 Total number of non empty synsets 
+21841Total number of images 14 197 122Number of images with 
+bounding box annotations 1 034 908Number of synsets with SIFT 
+features 1000Number of images with SIFT features 1.2 million 你 
+可以 下载 图片 urls 文件 或者 图片 文件 需要 注册 
+用于 非 商业 用途 图片 urls 文件 内容 为 图片 
+ID 和 url Copyn00015388 _ 12 http / / farm4 
+. static . flickr . com / 3040/2946102733 _ 9b9c9cf24e 
+. jpg n00015388 _ 24 http / / farm3 . 
+static . flickr . com / 2093/2288303747 _ c62c007531 . 
+jpg n00015388 _ 81 http / / www . theresevangelder 
+. nl / images / dierenportretten / dier4 . jpg 
+n00015388 _ 155 http / / www . zuidafrikaonline . 
+nl / images / zuid afrika reis giraffe . jpg 
+n00015388 _ 157 http / / farm1 . static . 
+flickr . com / 145/430300483 _ 21e993670c . jpg . 
+. . _   前面 部分 为 WordNet ID wnid 
+一个 wnid 代表 一个 synset 同义 词集 如   n02084071 
+  代表 dog domestic dog Canis familiaris 具体 信息 可以 
+看 官方 文档 ImageNet 的 Object Bounding Boxes 文件 采用 
+了 和 PASCAL VOC 数据集 相同 的 格式 因此 可以 
+使用 PASCAL Development Toolkit 解析 另外 ImageNet 的 Object Bounding 
+Boxes 文件 是 按照 synset 同义 词集 划 分子 文件夹 
+的 每个 压缩包 下面 是 同 语义 的 图片 文件 
+Annotation The PASCAL Visual Object C l a s s 
+e s L i n k P A C A 
+L VOC 挑战赛 是 视觉 对象 的 分类 识别 和 
+检测 的 一个 基准测试 提供/v 了/ul 检测/vn 算法/n 和/c 学习/v 
+性能/n 的/uj 标准/n 图像/n 注释/v 数据集/i 和/c 标准/n 的/uj 评估/vn 
+系统/n PASCAL VOC2007 之后 的 数据 集 包括 20个 类别 
+人类 动物 鸟 猫 牛 狗 马 羊 交通工具 飞机 
+自行车 船 公共汽车 小轿车 摩托车 火车 室内 瓶子 椅子 餐桌 
+盆栽植物 沙发 电视 PASCAL VOC 挑战赛 在 2012 年后 便 
+不再 举办 但 其 数据集 图像 质量 好 标注 完备 
+非常 适合 用来 测试 算法 性能 数据集 包括 图片 的 
+三种 信息 原始 图片 JPEGImages   文件夹 对象 像素 e 
+g m e n t a t i o n 
+C l a s s   文件夹 和 分类 像素 
+e g m e n t a t i o 
+n O b j e c t   文件夹 解压 
+之后 这些 图片 分别 放在 如下 文件夹 其中   Annotations 
+  文件夹 是 图片 描述 的 xml 文件 例如   
+JPEGImages   文件夹 中的   000007 . jpg   图片 
+就会 有 相应 的   000007 . xml   文件 
+描述 该 图片 包括 图片 的 宽 高 包含 的 
+Object 可以 有 多个 的 类别 坐标 等 信息 Copy 
+annotation folder VOC2007 / folder filename 000007 . jpg / 
+filename source database The VOC2007 Database / database annotation PASCAL 
+VOC2007 / annotation image flickr / image flickrid 194179466 / 
+flickrid / source owner flickrid monsieurrompu / flickrid name Thom 
+Zemanek / name / owner size / / 图像 尺寸 
+长宽 以及 通 道数 width 500 / width height 333 
+/ height depth 3 / depth / size segmented 0 
+/ segmented object name car / name / / 物体 
+类别 pose Unspecified / pose / / 拍摄角度 truncated 1 
+/ truncated / / 是否 被 截断 0 表示 完整 
+difficult 0 / difficult / / 目标 是否 难以 识别 
+0 表示 容易 识别 bndbox / / bounding box 包含 
+左下角 和 右上角 坐标 xmin 141 / xmin ymin 50 
+/ ymin xmax 500 / xmax ymax 330 / ymax 
+/ bndbox / object / annotation ImageSets 存放 的 是 
+每一年 的 Challenge 对应 的 图像 数据 不同 年份 数据 
+可能 不同 其中   Action   下 存放 的 是 
+人 的 动作 例如 running jumping 等等 这 也是 VOC 
+challenge 的 一部分 Layout   下 存放 的 是 具有 
+人体 部位 的 数据 人 的 head hand feet 等等 
+这 也是 VOC challenge 的 一部分 Main   文件 夹下 
+包含 了 各个 分类 的   * * * _ 
+train . txt * * * _ val . txt 
+和 */nr * * _ trainval . txt 如   aeroplane 
+_ train . txt 文件 每行 是 一个 图片 ID 
+以及 是否 为 正 样本 1 代表 正 样本 1 
+代表 负 样本 Segmentation   下 存放 的 是 验证 
+集 图片 ID val . txt   文件 训练 集 
+图片 ID train . txt   文件 以及 两者 的 
+合集 trainval . txt   文件 The CIFAR 10 dataset 
+and The CIFAR 100 datasetLinkCIFAR 10 和 CIFAR 100 数据集 
+是   80 million tiny images   的 子集 以 
+CIFAR 10 Python 版本 为例 包含 10 个 分类 60000 
+张 32x32 彩色图片 每个 分类 6000 张 图片 其中 50000 
+张是/nr 训练 图片 另外 10000 张是/nr 测试 图片 其中 50000 
+张 分成 了 5 个 训练 batches 剩下 的 10000 
+张是/nr test batch 训练 数据 每个 类 总共 包含 5000 
+张 但 每个 batch 每个 类 的 图片 数量 可能 
+并不 平均 每个 batch 文件 都是 Python pickle 生成 的 
+所以 可以 使用 pickle 读取 Copydef unpickle file import pickle 
+with open file rb as fo dict = pickle . 
+load fo encoding = bytes return dict 函数 返回 一个 
+  dict   对象 其中 有 两个 key 比较 重要 
+data 10000x3072 numpy array 每 一行 是 一个 32x32 彩色图片 
+每 1024 个 元素 依次 代表 R G B 像素 
+值 没有 归一化 取值 为 0 255 labels 每 一行 
+代表 图片 分类 取值 0 9 CIFAR 100 和 CIFAR 
+10 类似 只是 类别 为 100 个 实际上 CIFAR 10 
+和 MNIST 很 类似 Tiny Images DatasetLinkTiny Images dataset 包含 
+79 302 017 张 32x32 彩色图片 包含 5 个 文件 
+Image binary 227Gb 图片 本身 二进制 格式 Metadata binary 57Gb 
+图片 信息 filename search engine used ranking etc Gist binary 
+114Gb 图片 描述 Index data 7Mb Matlab 索引 文件 Matlab 
+Tiny Images toolbox 150Kb Matlab 索引 文件 代码 用来 加载 
+图片 FDDB Face Detection Data Set and B e n 
+c h m a r k L i n k 
+F D D B 是 全世界 最具 权威 的 人脸 
+检测 评测 平台 之一 包含 来自   Faces in the 
+Wild   的 2845张 图片 共有 5171个 人脸 数据 测试 
+集 范围 包括 不同 姿势 不同 分辨率 旋转 和 遮挡 
+等 图片 同时 包括 灰度 图 和 彩色 图 标准 
+的 人脸 标注 区域 为 椭圆形 FDDB 数据集 包含 以下内容 
+原始 图片 来自   Faces in the Wild   人脸 
+数据 Face annotations 检测 输出 包括 矩形 区域 和 椭圆 
+区域 其他 信息 原始 图片 原始 图片 可以 在 这里 
+下载 originalPics . tar . gz 解 压后 图片 的 
+路径 为   originalPics / year / month / day 
+/ big / * . jpg 人脸 数据 Face annotations 
+比较 重要 的 是 Face annotations 解压缩 FDDB folds . 
+tgz 文件 将 会 得到 FDDB folds 文件夹 包含 FDDB 
+fold xx . txt 和 FDDB fold xx ellipseList . 
+txt 文件 xx   代表 文件夹 索引 FDDB fold xx 
+. txt 文件 的 每 一行 指定 了 一个 上述 
+原始 图片 的 一个 文件名 如 2002 / 07/19 / 
+big / img _ 130 对应 originalPics / 2002 / 
+07/19 / big / img _ 130 . jpg . 
+对应 的 annotations 文件 FDDB fold xx ellipseList . txt 
+格式 如下 Copy . . . image name i number 
+of faces in this image = im face i1 face 
+i2 . . . face im . . . 每一个 
+face 即 一个 椭圆 区域 用 以下 格式 表示 Copy 
+长轴 半径 短 轴 半径 长轴 方向 x 轴 中 
+心坐标 y 轴 中 心坐标 1 示例 Copy2002 / 08/11 
+/ big / img _ 591 1 123.583300 85.549500 1.265839 
+269.693400 161.781200 1 2002 / 08/26 / big / img 
+_ 265 3 67.363819 44.511485 1.476417 105.249970 87.209036 1 41.936870 
+27.064477 1.471906 184.070915 129.345601 1 70.993052 43.355200 1.370217 340.894300 117.498951 
+1 2002 / 07/19 / big / img _ 423 
+1 87.080955 59.379319 1.550861 255.383099 133.767857 1 2002 / 08/24 
+/ big / img _ 490 1 54.692105 35.056825 1.384924 
+145.665694 78.101005 1 2002 / 08/31 / big / img 
+_ 17676 2 37.099961 29.000000 1.433107 28.453831 37.664572 1 79.589662 
+49.835046 1.457361 112.514300 92.364284 1 参考 PASCAL VOC 数据集 分析 
+深度 学习 视觉 领域 常用 数据集 汇总 

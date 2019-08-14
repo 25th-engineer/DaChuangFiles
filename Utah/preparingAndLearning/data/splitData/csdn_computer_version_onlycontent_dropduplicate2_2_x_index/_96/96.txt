@@ -1,0 +1,69 @@
+一、什么是计算机视觉？
+1. 计算机视觉的定义
+计算机视觉是一门研究如何使机器“看”的科学，更进一步的说，就是指用摄影机和计算机代替人眼对目标进行识别、跟踪和测量等机器视觉的应用。主要用于模拟人类视觉的优越能力和弥补人类视觉的缺陷。
+模拟人类视觉的优越能力：
+识别人、物体、场景
+估计立体空间、距离
+躲避障碍物进行导航
+想象并描述故事
+理解并讲解图片
+弥补人类视觉的缺陷：
+关注显著内容、容易忽略很多细节，不擅长精细感知
+描述主观、模棱两可
+不擅长长时间稳定的执行同一任务
+2. 计算机视觉的两个主要研究维度
+语义感知(Semantic)
+几何属性(Geometry)
+3. 计算机视觉的主要目标
+什么是人工智能（AI）？
+二、计算机视觉的基础及其应用(待细分扩展…….)
+1. 计算机视觉的基础
+数字图像处理
+空域分析及变换（Sobel，拉普拉斯，高斯，中值等）
+频域分析及变换（Fourier & Wavelet Transform）
+模板匹配，金字塔，滤波器组
+特征数据操作：主成分分析/PCA，奇异值分解/SVD，聚类/Cluster
+图像特征及描述
+颜色特征（RBG，HSV，Lab等）
+几何特征（Edge，Corner，Blob等）
+纹理特征（HOG，LBP，Gabor等）
+局部特征（SIFT，SURF，FAST等）
+2. 深度学习在计算机视觉中的应用
+图像分类(Image Classification)
+卷积神经网络CNN
+对应有没有问题？，有的话，给出属于某类概率的多少？
+图像检测(Image Detection)
+区域卷积神经网络R-CNN
+对应目标在哪儿问题？，用矩形框框出目标
+图像分割(Image Segmentation)
+全卷积神经网络FCN
+对应每个像素的类别问题？，用不同颜色画出图像中所有类别的区域轮廓
+图像识别(Image Identification)
+人脸识别、车牌识别、字符识别、行为识别等
+对应内容是什么问题？
+注意它和Image Verification的区别？
+图像描述(Image Captioning)
+迭代神经网络(Vanilla-RNN，LSTM，GRU)
+图像问答(Image Question Answering)
+迭代神经网络RNN
+图像生成(Image Generation)
+生成对抗网络GAN
+3. 图像检索(Content-based Image Retrieval)
+以文搜图、以图搜图、图文联搜，找出语义或图像相似的图片
+三、计算机视觉的主要研究挑战
+视角变化、光照变化、尺度变化、形态变化
+背景混淆干扰、遮挡、类内物体的外观差异
+四、实战环境配置
+win 10 下使用 win_anaconda3-4.2.0 百度云下载(python3.5) 安装 py-opencv
+从上面云盘链接下载并安装 Anaconda3-4.2.0
+打开 cmd，然后执行conda install -c https://conda.anaconda.org/menpo opencv3
+打开 ipython 测试一下：import cv2 print(cv2.__version__)
+win 10 下使用 win_anaconda3-4.2.0 百度云下载(python3.5) 安装 TensorFlow
+从上面云盘链接下载并安装 Anaconda3-4.2.0
+打开 cmd，然后执行pip install tensorflow # CPU 版 或 pip install tensorflow-gpu # GPU 版
+Ubuntu 下使用 linux_anaconda2-4.3.1 百度云下载(python2.7) 安装 TensorFlow
+按照此教程安装CUDA8.0 和 cuDNN v5.1
+安装 libcupti-dev library，sudo apt-get install libcupti-dev
+使用 Anaconda 创建虚拟环境，激活环境后，根据 Anaconda 中的 Python 版本选择 TF_PYTHON_URL 安装 TensorFLow
+# 创建虚拟环境 conda create -n tensorflow # 激活环境 source activate tensorflow # 根据 Anaconda 中的 Python 版本选择 TF_PYTHON_URL(即 upgrade 后面的链接)，然后安装 TensorFLow pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.1.0-cp27-none-linux_x86_64.whl # 安装完成后，可以打开 ipython 进行验证 >>> import tensorflow as tf >>> hello = tf.constant('Hello, TensorFlow!') >>> sess = tf.Session() >>> print sess.run(hello) Hello, TensorFlow! # 至此，TF 安装成功，当你想离开此环境时，使用以下命令即可 source deactivate
+使用jupyter notebook调用远程服务器，参考此链接中的第三点详细介绍

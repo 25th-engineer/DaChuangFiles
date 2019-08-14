@@ -1,0 +1,39 @@
+这周我来跟大家分享的是在Microsoft Build 2016上发布的微软聊天机器人的框架。
+现如今，各种人工智能充斥在我们的生活里。最典型的人工智能产品就是聊天机器人，它既可以陪我们聊天，也可以替代客服人员回答客户的问题，甚至还可以充当秘书帮助我们订电影票、飞机票等等。最成功的产品就是苹果公司的Siri和微软公司的Cortana。
+那么如何搭建一个自己的聊天机器人呢？今天我会用微软公司出品的 Bot Framework 来搭建一个聊天机器人。
+官网上介绍 Bot Framework 可以用C#, Node.js来编写，由于我个人技术限制问题，我只介绍C#的部分。大家可以使用Node.js来编写。你也可以从Github获取官方事例代码。
+前提准备
+Visual Studio 2015 或者 Visual Studio 2017
+在Visual Studio 中，将所有插件进行更新
+下载 Bot Framework 模板，将下载的zip文件夹直接复制到%USERPROFILE%\Documents\Visual Studio 2017\Templates\ProjectTemplates\Visual C#\
+创建你的机器人
+打开Visual Studio 并且创建一个C#项目，选择Bot Application作为项目的模板。
+使用 Bot Application作为项目模板创建出来的项目已经包含了一个简单的机器人。请检查一下项目是否包含了最新的Bot Application模板：
+右键点击项目，找到Manage NuGet Packages
+在Browse标签栏，输入“Microsoft.Bot.Builder”
+在结果中找到 Microsoft.Bot.Builder 并点击后面的更新按钮
+根据提示来更改并更新引用的程序包
+输入代码
+首先，编写 Controllers\MessagesController.cs文件中的Post方法来获得用户的消息并且调用根对话框
+C# [BotAuthentication] public class MessagesController : ApiController { /// <summary> /// POST: api/Messages /// Receive a message from a user and reply to it /// </summary> public async Task<HttpResponseMessage> Post([FromBody]Activity activity) { if (activity.Type == ActivityTypes.Message) { await Conversation.SendAsync(activity, () => new Dialogs.RootDialog()); } else { HandleSystemMessage(activity); } var response = Request.CreateResponse(HttpStatusCode.OK); return response; } ... }
+这个根对话框会处理消息并且生成一个回复，Dialogs\RootDialog.cs文件中的MessageRevicedAsync方法会回复用户的消息。
+C# [Serializable] public class RootDialog : IDialog<object> { public Task StartAsync(IDialogContext context) { context.Wait(MessageReceivedAsync); return Task.CompletedTask; } private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result) { var activity = await result as Activity; // calculate something for us to return int length = (activity.Text ?? string.Empty).Length; // return our reply to the user await context.PostAsync($"You sent {activity.Text} which was {length} characters"); context.Wait(MessageReceivedAsync); } }
+测试你的机器人
+下一步，使用 Bot Framework Emulator来测试你的机器人，首先你需要下载并安装它。
+运行你的机器人
+在安装完Bot Framework Emulator之后，你可以点击 "Microsoft Edge"按钮来运行它。
+运行成功界面如下图所示
+打开你的emulator并且连接到机器人
+首先，需要确保你的机器人正在本机上运行，之后打开emulator然后连接到你的机器人：
+在地址栏输入http://localhost:port-number/api/messages，port-number是你浏览器中显示的，机器人占用的端口号码
+点击 Connect,你不需要输入Microsoft App ID 和Microsoft App Password。现在他们是空白的也没有问题，在之后，如果你注册了bot， 你会得到这些信息。
+测试你的机器人
+现在你的机器人已经开始运行了，并且emulator已经开始工作了。你可以输入你想输入的任何东西。在输入后，你会看到*'You sent' and ending with the text 'which was ## characters', where ## is the total number of characters in the message that you sent.* 这样的回复。
+结语
+好啦，搭建自己的机器人是不是非常简单呢。但是，如果想搭建一个如Siri或者Cortana这样的机器人，那是需要海量数据来支持的，甚至还需要自学习算法以及人工智能的知识。因为当一个用户输入一段话的时候，机器人必须了解这句话的含义，甚至要去猜测这句话的意思，并给出正确或者接近的答案。这也是为什么能做聊天机器人的公司大都是搜索公司或者用户量极大的互联网公司。
+这个项目只是我们触及机器人的一小步，还有很多的知识来不及介绍，比如如何将Bot发布到服务器上，并且用微信或者Skype进行访问，如何将Bot和一些Cortana这些智能平台进行交互，这些大家可以自行到官网上去了解并学习。
+How the Bot Framework works
+Principles of bot design
+Bot Builder SDK for .NET
+Deploy a bot to the cloud
+Bot Framework FAQ

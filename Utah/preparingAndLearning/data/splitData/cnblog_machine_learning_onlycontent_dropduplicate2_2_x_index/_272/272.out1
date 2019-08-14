@@ -1,0 +1,151 @@
+人工智能 机器学习 都已 走进 了 我们 的 日常 尤其 是 
+愈 演 愈 热 的 大 数据 更是 跟 我们 
+的 生活 息息相关 做   人工智能 数据挖掘 的 人在 其他 
+人 眼中 感觉 是 很 高大 上 的 总 有 
+一种 遥不可及 的 感觉 在 我 司也/nr 经常 会 听到 
+数据 科学 部 的 同事 们 提到   机器学习 数据挖掘 
+  之类 的 词 但 这些 名词 真的 跟 我们 
+移动 开发 就 没 直接 关系 了吗 作为 移动 开发者 
+来说 无时无刻 不 被 这些 名词 狠狠 地 敲打 着 
+脆弱 的 内心 何时 才 能够 将 机器学习 深度 学习 
+应用 在 移动 端 敲响 移动 端 机器学习 工业化 的 
+大门 呢 想象 一下 某一天 你 身处 一个 完全 陌生 
+的 环境 周围 都是/nr 陌生 的 事物 而 运行 在 
+iPhone 的 某个 APP 却对 这个 环境 了如指掌 你 要做 
+的 就是 打开 这个 APP 输入 你 需要 了解 的 
+事物 iPhone 告诉 你 这个 事物 的 信息 你 也 
+就 没有 了 陌生 事物 了 世界 就 在眼前 如 
+下图 上面 物体 的 识别 准确率 还是 蛮 不错 的 
+基本 识别 出了 键盘 49% 的 概率 鼠标 46% 的 
+概率 和 水杯 24% 的 概率 但是 在 某些 事物 
+的 识别 准确度 方便 却 差强人意 比如 下图 Phone 6 
+被 识别 成了 iPod 59% 的 概率 而 iPod 的 
+却是 不怎么 敢 认 10% 的 概率 想想 最 崩溃 
+的 估计 是 iPhone 6 了 身价 直接 被 降了 
+好几 个 等级 上面 的 例子 来自 于 TensorFlow 官方 
+iOSDemo 暂且 不 评述 TensorFlow 的 识别 准确度 如何 毕竟 
+它 还年轻 但是 仅凭 其 识别 能力 的 体现 也给 
+机器学习 在 移动 端 的 运用 带来 了 无限 的 
+可能 一 TensorFlow 简称 TF 去年 Google 资深 系统 专家 
+Jeff Dean 在 湾区 机器学习 大会上 隆重 介绍 了 其 
+第二 代 深度 学习 系统 TensorFlow 一 时间 网络 上 
+针对 TensorFlow 的 文章 铺天盖地 揭秘 TensorFlow Google 开源 到底 
+开 的 是 什么 Google 开源 TensorFlow 系统 这/r 背后/f 
+都有/nr 什么/r 门道/n 如何 评价 Google 发布 的 第二 代 
+深度 学习 系统 TensorFlow 等等 文章 TensorFlow 的 燎原之火 一直 
+在 燃烧 蔓延 着 其 GitHub 上 的 开源 库 
+在 此文 撰写 时 也 已经 被 star 27550 fork 
+11054 了 不负众望 Google 一直 宣称 平台 移植性 非常好 的 
+TensorFlow 终于 在 2016年 6月 27日 发布 0.9 版本 宣布 
+移动 端 支持 TensorFlow v 0.9 now available with improved 
+mobile support 有墙/nr 同时 也 给出 了 移动 端的 Demo 
+对于 代码 为生 的 程序员 身处 大 数据 处理 为 
+主导 的 TalkingData 也 小试 身手 了 一把 下载 TensorFlow 
+源码 查看 编译 指南 开始 跳 坑 填坑 之路 也 
+成就 了此 篇 拙 文的/nr 产生 二 从 TensorFlow 到 
+iOS 静态 库 对于 iOS 平台 下 如何 使用 TensorFlow 
+TensorFlow 给出 了 详细 的 编译 脚本 命令 详情请 查看 
+官方 文档 的 命令 第一步 . 工具 准备 工欲善其事 必先利其器 
+在 开始 编译 工作 之前 需要 准备 一些 编译 所 
+必须 的 工具 Homebrew Mac os x 上 包 管理工具 
+具体 使用 方法 可 参考 Doc 1 $   / 
+usr / bin / ruby   e   $ curl 
+  fsSL   https / / raw . g i 
+t h u b u s e r c o 
+n t e n t . com / Homebrew / 
+install / master / install Homebrew 安装 好 之后 依次 
+安装 三个 辅助性 编译 工具 123 $   brew   
+install   libtool $   brew   install   autoconf 
+$   brew   install   automake 三个 工具 的 
+含义 请 参考 https / / en . wikipedia . 
+org / wiki / GNU _ Libtool 第二步 . 克隆 
+TensorFlowGoogle 以 Apache 2.0 开源 协议 将 TensorFlow 开源 在 
+GitHub 上 我们 可以 直接 使用 TensorFlow 源码 在 任意 
+你 想 存放 TensorFlow 源码 的 地方 建议 不要 放在 
+桌面 ^ _ ^ clone 项目 1 $   git 
+  clone   https / / github . com / 
+tensorflow / tensorflow 第三步 . 编译 前 准备 在 TensorFlow 
+的 tensorflow / contrib / makefile / 目 录下 有 
+很多 可 使用 的 编译 脚本 其中 build _ all 
+_ ios . sh 脚本 专门 用来 一键 编译 TensorFlow 
+iOS 静态 库 虽然 可以 直接 使用 此 脚本 进行 
+一键 编译 但是 因为 有墙/nr 某些 依赖 需要 提前 做 
+处理 1 下载 protobufprotobuf 是 编译 前 唯一 需要 特殊 
+处理 的 依赖 库 点击 下载 下载 protobuf 之后 解压 
+备用 2 下载 googlemock 虽然 protobuf 编译 脚本 autogen . 
+sh 中的 googlemock 链接 地址 https / / googlemock . 
+googlecode . com / files / gmock 1 . 7.0 
+. zip 无法 直接 下 载到 但是 细心 的 人 
+会 发现 在 浏览器 中 输入         
+          https / / googlemock . 
+googlecode . com / 地址 后 会跳 转到 https / 
+/ github . com / google / googlemock 地址 google 
+在 GiHub 上 的 仓库 地址 而 GitHub 上 的 
+仓库 我们 可以 直接 的 下载 克隆 等 我们 直接 
+在 GitHub 上 下载 googlemock 点击 下载 下载 完成 后 
+修改 压缩包 名字 为 gmock 1 . 7.0 . zip 
+修改后 将此 压缩包 移 至上 一步 protobuf 文件夹 目 录下 
+备用 3 修改 下载 依赖 脚本 移除 protobuf 的 下载 
+在 tensorflow / contrib / makefile / 目 录下 download 
+_ dependencies . sh 脚本 用来 下载 相关 依赖 打开 
+此 脚本文件 注释 掉 或者 直接 删掉 git clone https 
+/ / github . com / google / protobuf . 
+git $ { DOWNLOADS _ DIR } / protobuf 部分 
+目的 是 不让 脚本 去 下载 protobuf 上面 三步 准备好 
+后 接下来 就 进入 静态 库 编译 了 第四步 . 
+一键 编译 前面 已经 知道 在 TensorFlow 文件夹 tensorflow / 
+contrib / makefile / 目 录下 的 build _ all 
+_ ios . sh 脚本 是 用来 编译 iOS 静态 
+库 的 脚本 因此 可以 直接 执行 此 脚本 开始 
+静态 库 的 编译 工作 了 但是 有 一个 问题 
+大家 可能 会 发现 由于 编译 TensorFlow 需要 用到 protobuf 
+但是 protobuf 使 我们 自己 手动 下载 的 该 怎么 
+让 手动 下载 的 protobuf 能够 直接 让 build _ 
+all _ ios . sh 脚本 使用 呢 答案 是 
+复制 粘贴 可能 有些 low 但是 有效 执行命令   build 
+_ all _ ios . sh 之后 立即 把 之前 
+手动 下载 的 protobuf 文件夹 拷贝 进 tensorflow / contrib 
+/ makefile / downloads 目录 放心 你 拷贝 的 速度 
+会 很快 不会 影响 编译 的 执行 的 ^ _ 
+^ 1 $   build _ all _ ios . 
+sh 一切 准备就绪 接下来 就是 静静的 等待 编译 完成 了 
+在 Mac 编译 的 过程 中 建议 插上 电源 最好 
+不要 让 设备 休眠 断电 也 最好 不要 去 干 
+别的 东西 出去 溜达 一圈 回来 后就/nr 看到 战果 了 
+编译 完成 之后 会在 tensorflow / contrib / makefile / 
+gen / 目 录下 看到 编译 的 结果 关于 这些 
+静态 库 该 如何 使用 自己 的 项目 如何 应用 
+请 参考 TensorFlow iOS Examples 三 遇到 的 问题 1 
+googlecode . com 被 墙 了 需要 FQ 目前 测试 
+挂了 VPN 也 没用 这也 是 上面 编译 前 准备 
+为什么 要 那么 做 的 原因 1curl   7   
+Failed   to   connect   to   googlemock . 
+googlecode . com   port   443   Operation   
+timed   out 解决 请 参考 第三步 . 编译 前 
+准备 2 没有 Xcode 1234xcrun   error   SDK   
+iphoneos   cannot   be   locatedxcrun   error   
+SDK   iphoneos   cannot   be   locatedxcrun   
+error   unable   to   lookup   item   
+PlatformPath   in   SDK   iphoneos +   IPHONEOS 
+_ PLATFORM = 解决 安装 Xcode 从 上面 报错 的 
+命令 中 可以 看到 在 编译 静态 库 的 过程 
+中 使用 了 xcrun 而 此 命令 是 xCode 本身 
+具有 的 能力 3 你 的 Xcode 版本 不是 7.3 
+或 以后 或者 你 有 多个 Xcode 而 默认 的 
+安装 路径 版本 不是 7.3 或 以后 ` ` ` 
+error Xcode 7 . 3.0 or later is required . 
+exit 1 ` ` ` / 解决 更新 Xcode 至 
+最新 版本 并且 保证 默认 路径 下 是 最新 / 
+版本 如果 Xcode 是 7.3 并且 没有 条件 更新 Xcode 
+你 可以 修改 tensorflow / contrib / makefile / compile 
+_ ios _ tensorflow . sh   里 的 REQUIRED 
+_ XCODE _ VERSION = 7 . 3.0 为 REQUIRED 
+_ XCODE _ VERSION = 7.3 这样 修改 目前 还 
+不 确定 会 不会 带来 一些 其他 影响 最好 是 
+升级 你 的 Xcode 想 了解 TensorFlow 在 Android 平台 
+的 使用 可以 看看 TalkingData SDK Team 另一 篇 的 
+技术 博客 Tensorflow 在 Android 平台 的 移植 四 参考 
+链接 TensorFlow 中文 社区 TensorFlow for MobileCaffe TensorFlow MXnet 三个 
+开源 库 对比 如何 评价 Tensorflow 和 其它 深度 学习 
+系统 深度 学习 框架 大战 正在进行 谁将 夺取 深度 学习 
+工业 标准 的 荣耀 

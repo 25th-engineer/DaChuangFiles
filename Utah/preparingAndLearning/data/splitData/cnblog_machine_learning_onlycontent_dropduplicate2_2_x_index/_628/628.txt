@@ -1,0 +1,462 @@
+机器学习中的基本数学知识
+注：本文的代码是使用Python 3写的。
+机器学习中的基本数学知识
+线性代数（linear algebra）
+第一公式
+矩阵的操作
+换位(transpose)
+矩阵乘法
+矩阵的各种乘积
+内积
+外积
+元素积(element-wise product/point-wise product/Hadamard product
+加
+低等数学
+几何
+范数(norm)
+拉格朗日乘子法和KKT条件
+微分（differential）
+表示形式
+法则
+常见导数公式
+统计学/概率论
+信息论
+香农熵（Shannon Entropy）
+博弈论
+不知道放到哪儿
+机器学习
+激活函数
+损失函数
+附录
+希腊字母的含义和发音
+数学符号的含义和发音
+参照
+线性代数（linear algebra）
+第一公式
+\[ f(x) = xw^T + b \]
+这是在机器学习中，最常见的公式。我把这个称为机器学习的第一公式，实际上就是线性分类函数(linear classifier)。
+训练分类器的目标就是求出\((w, b)\)。
+其中：
+\(x\) 是一个一行矩阵 \([[x_1, x_2, ..., x_n]]\)。
+\(w\) 是一个一行矩阵 \([[w_1, w_2, ..., w_n]]\)。
+\(x\) 和 \(w\) 的维度相同。
+\(b\) 是一个数。
+\(xw^T = \sum_{i=1}^n x_iw_i\)，称为点积(dot product)。
+有时，我们也会见到这个公式表示为类似下面的样子，它们的基本含义都是一样的。
+\(f(x) = w x + b\)
+\(f(x) = w^T x + b\)
+\(f(x) = \vec{w} \cdot \vec{x} + b\)
+注：这里\(w\)表示为一个一维数组（或者向量、矢量（vector）） \([x_1, x_2, ..., x_n]\)。
+注：一维数组：在数学上，可以理解为向量，表示多维空间上的一个点。
+注：由于在线性代数中，矩阵乘法\(ab \ne ba\)，所以对于表达式\(w^Tx\)，严格地说，要把矢量（向量）看做一列的矩阵(而不是一行的矩阵)，才符合数学上的定义。
+注：表达式\(\vec{w} \cdot \vec{x}\)和\(w x\)是正确的，因为\(w\)和\(x\)是矢量，这个符合矢量计算的定义。
+矩阵的操作
+由于，这篇文章是从数学的角度写的，所以我们先关注矩阵的操作。
+换位(transpose)
+矩阵的换位操作：将矩阵中的数按照对角线交换。
+数学公式：\(w^T\)
+代码示例：
+# Matrix Transpose m = numpy.mat([[1, 2], [3, 4]]) print("Matrix.Transpose:") print(m.T) ''' Output: Matrix.Transpose: [[1 3] [2 4]] '''
+矩阵乘法
+矩阵相乘的含义
+如果一斤苹果10元，5斤苹果多少元？答案是：\(10 * 5=50\)
+如果一斤苹果10元，一斤梨20元，5斤苹果2斤梨一共多少元？
+答案是：
+\[ \begin{bmatrix} 10 & 20 \end{bmatrix} \begin{bmatrix} 5 \\ 2 \end{bmatrix} = 10 \times 5 + 20 \times 2 = 90 \]
+我们可以看出矩阵相乘的约束：乘数1的列数要和乘数2的行数相等。
+矩阵乘法不满足交换律
+\[m1 \cdot m2 \ne m2 \cdot m1\]
+我们再看看交换乘数后，计算的结果：
+\[ \begin{bmatrix} 10 \\ 20 \end{bmatrix} \begin{bmatrix} 5 & 2 \end{bmatrix} \\ = \begin{bmatrix} 10 \times 5 & 10 \times 2 \\ 20 \times 5 & 20 \times 2 \end{bmatrix} \\ = \begin{bmatrix} 50 & 20 \\ 100 & 40 \end{bmatrix} \]
+比如：数\(20\)的含义是2斤苹果多少钱。
+举例说明它们的不同之处：
+\[ m1 = \begin{bmatrix} 1 & 2 \end{bmatrix} \]
+\[ m2 = \begin{bmatrix} 10 \\ 20 \end{bmatrix} \]
+\(m1 \cdot m2\)的计算方法是：
+\[ m1 \cdot m2 = \begin{array}{|c|c|} \text{} & \begin{bmatrix} 10 \\ 20 \end{bmatrix} \\ \hline \begin{bmatrix} 1 & 2 \end{bmatrix} & 1 * 10 + 2 * 20 \end{array} = \begin{bmatrix} 50 \end{bmatrix} \]
+\(m2 \cdot m1\)的计算方法是：
+\[ m2 \cdot m1 = \begin{array}{|c|c|c|} \text{} & 1 & 2 \\ \hline 10 & 10 * 1 & 10 * 2 \\ 20 & 20 * 1 & 20 * 2 \\ \end{array} = \begin{bmatrix} 10 & 20 \\ 20 & 40 \end{bmatrix} \]
+计算公式
+矩阵相乘是：用矩阵1的每一行和矩阵2的每一列的点积，得到一个矩阵。
+\(l * m\) 的矩阵乘以 \(m * n\) 的矩阵，形成一个\(l * n\) 的矩阵。
+\[ \begin{array} \\ x \cdot y & = \begin{bmatrix} x_{1} & \cdots & x_{n} \\ \end{bmatrix} \begin{bmatrix} y_{1} \\ \cdots \\ y_{n} \end{bmatrix} \\ & = \begin{bmatrix} \sum_{i=1}^n x_{i}y_{i} \end{bmatrix} \end{array} \\ \begin{array} \\ x \cdot y & = \begin{bmatrix} x_{1} \\ \cdots \\ x_{m} \end{bmatrix} \begin{bmatrix} y_{1} & \cdots & y_{n} \\ \end{bmatrix} \\ & = \begin{bmatrix} x_{1}y_{1} & \cdots & x_{1}y_{n} \\ \cdots & \cdots & \cdots \\ x_{m}y_{1} & \cdots & x_{m}y_{n} \end{bmatrix} \end{array} \\ \begin{array} \\ x \cdot y & = \begin{bmatrix} x_{11} & \cdots & x_{1n} \\ x_{21} & \cdots & x_{2n} \\ \cdots & \cdots & \cdots \\ x_{m1} & \cdots & x_{mn} \end{bmatrix} \begin{bmatrix} y_{11} & \cdots & y_{1q} \\ y_{21} & \cdots & y_{2q} \\ \cdots & \cdots & \cdots \\ y_{n1} & \cdots & y_{nq} \end{bmatrix} \\ & = \begin{bmatrix} \sum_{i=1}^n x_{1i}y_{i1} & \cdots & \sum_{i=1}^n x_{1i}y_{iq} \\ \cdots & \cdots & \cdots \\ \sum_{i=1}^n x_{mi}y_{i1} & \cdots & \sum_{i=1}^n x_{mi}y_{iq} \end{bmatrix} \end{array} \]
+代码演示：
+# Matrix Multiplication print("Matrix Multiplication") a = numpy.mat([1, 2]) b = numpy.mat([[10], [20]]) print(a * b) print(a.T * b.T) a = numpy.mat([[1, 2], [3, 4]]) b = numpy.mat([[10, 20], [30, 40]]) print(a * b) ''' Output: [[50]] [[10 20] [20 40]] [[ 70 100] [150 220]] '''
+矩阵的各种乘积
+操作
+数学符号
+Python
+Demo
+点积(dot product)
+$a b$
+a.dot(b) numpy.dot(a, b)
+$$ \begin{array}\\ AB & = (1, 2) \begin{pmatrix} 10 \\ 20 \end{pmatrix} \\ & = 1 * 10 + 2 * 20 \\ & = 50 \end{array} $$
+内积(inner product)
+$a \cdot b$
+$\langle a,b \rangle$
+numpy.inner(a, b)
+$$ a \cdot b = a b^T $$
+外积(outer product)
+$a \otimes b$
+numpy.outer(a, b)
+$$ \begin{array}\\ A \otimes B & = \begin{pmatrix} 1 \\ 2 \end{pmatrix} \begin{pmatrix} 10 & 20 \end{pmatrix} \\ & = \begin{pmatrix} 1*10 & 1*20 \\ 2*10 & 2*20 \end{pmatrix} \\ & = \begin{pmatrix} 10 & 20 \\ 20 & 40 \end{pmatrix} \end{array} $$
+元素积(element-wise product, point-wise product, Hadamard product )
+$a \circ b$
+$a \odot b$
+numpy.multiply(a, b)
+$$ \begin{array}\\ A \odot B & = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} 10 & 20 \end{pmatrix} \\ & = \begin{pmatrix} 1*10 & 2*20 \\ 3*10 & 4*20 \end{pmatrix} \\ & = \begin{pmatrix} 10 & 40 \\ 30 & 80 \end{pmatrix} \end{array} $$
+注：Python中，矩阵数据可以表示为matrix和ndarray两种类型。
+这两种类型的操作非常接近，但是有细微的不同。
+ndarray * operation ：element-wise product.
+matrix * operation ：dot product.
+numpy.multiply for ndarray ：element-wise product. same.
+numpy.multiply for matrix ：element-wise product. same.
+numpy.dot for ndarray : inner product. 1-d array.
+numpy.dot for matrix ：dot product. shape determined by values.
+numpy.inner for ndarray ：inner product. 1-d array.
+numpy.inner for matrix ：inner product. shape determined by values.
+numpy.outer for ndarray ：outer product. same.
+numpy.outer for matrix ：outer product. same.
+内积
+英文: inner product, scalar product。
+矢量的降维运算，变成一个数。
+矩阵的内积是每行每列的内积的矩阵。
+\[ x y = \langle x,y \rangle = \textstyle \sum_{i=1}^n x_iy_i \]
+x = numpy.array([1, 2]) y = numpy.array([10, 20]) print("Array inner:") print(numpy.inner(x, y)) ''' Output： Array inner: 50 ''' x = numpy.mat([[1, 2], [3, 4]]) y = numpy.mat([10, 20]) print("Matrix inner:") print(numpy.inner(x, y)) ''' Output： Matrix inner: [[ 50] [110]] '''
+外积
+矢量的升维运算， \(m\)维矢量和\(n\)维矢量的外积是\(m * n\)为矩阵。
+矩阵的并集运算， \(a1 * a2\)维矢量和\(b1 * b2\)维矩阵的外积是\((a1 * a2) * (b1 * b2)\)为矩阵。
+\[ \begin{array} \\ x \otimes y & = \begin{bmatrix} x_1 & \cdots & x_{1n} \\ x_2 & \cdots & x_{2n} \\ \cdots & \cdots & \cdots \\ x_m & \cdots & x_{mn} \end{bmatrix} \begin{bmatrix} y_1 & \cdots & y_{1q} \\ y_2 & \cdots & y_{2q} \\ \cdots & \cdots & \cdots \\ y_p & \cdots & x_{pq} \end{bmatrix} \\ & = \begin{bmatrix} x_1y_1 & \cdots & x_1y_{1q} & x_1y_{2} & \cdots & x_1y_{pq} \\ \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\ x_{1n}y_1 & \cdots & x_{1n}y_{1q} & x_{1n}y_{2} & \cdots & x_{1n}y_{pq} \\ x_2y_1 & \cdots & x_2y_{1q} & x_2y_{2} & \cdots & x_2y_{pq} \\ \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\ x_{mn}y_1 & \cdots & x_{mn}y_{1q} & x_{mn}y_{2} & \cdots & x_{mn}y_{pq} \end{bmatrix} \end{array} \]
+x = numpy.array([1, 3]) y = numpy.array([10, 20]) print("Array outer:") print(numpy.outer(x, y)) ''' Output： Array outer: [[10 20] [30 60]] ''' x = numpy.mat([[1, 2], [3, 4]]) y = numpy.mat([10, 20]) print("Matrix outer:") print(numpy.outer(x, y)) ''' Output： Matrix outer: [[10 20] [20 40] [30 60] [40 80]] '''
+注：有没有发现matrix outer 是vector outer的并集。
+元素积(element-wise product/point-wise product/Hadamard product
+计算公式
+\[ \begin{array} \\ x \cdot y & = \begin{bmatrix} x_{1} & \cdots & x_{n} \\ \end{bmatrix} \begin{bmatrix} y_{1} & \cdots & y_{n} \end{bmatrix} \\ & = \begin{bmatrix} x_{1}y_{1} & \cdots x_ny_n \end{bmatrix} \end{array} \\ \begin{array} \\ x \cdot y & = \begin{bmatrix} x_{1} & \cdots & x_{n} \\ \end{bmatrix} \begin{bmatrix} y_{1} \\ \cdots \\ y_{m} \\ \end{bmatrix} \\ & = \begin{bmatrix} x_{1}y_{1} & \cdots & x_{n}y_{1} \\ \cdots & \cdots & \cdots \\ x_{1}y_{m} & \cdots & x_{n}y_{m} \end{bmatrix} \end{array} \\ \begin{array} \\ x \cdot y & = \begin{bmatrix} x_{11} & \cdots & x_{1n} \\ \cdots & \cdots & \cdots \\ x_{m1} & \cdots & x_{mn} \end{bmatrix} \begin{bmatrix} y_{11} & \cdots & y_{1n} \\ \cdots & \cdots & \cdots \\ y_{m1} & \cdots & x_{n} \end{bmatrix} \\ & = \begin{bmatrix} x_{11}y_{11} & \cdots & x_{1n}y_{1n} \\ \cdots & \cdots & \cdots \\ x_{m1}y_{m1} & \cdots & x_{mn}y_{nn} \end{bmatrix} \end{array} \]
+x = numpy.array([1, 3]) y = numpy.array([10, 20]) print("Array element-wise product:") print(x * y) ''' Output： Array element-wise product: [10 60] '''
+加
+x = numpy.mat([[1, 2], [3, 4]]) y = numpy.mat([[10, 20],[30, 40]]) print("Matrix Add :") print(x + y) ''' Output： Matrix Add : [[11 22] [33 44]] '''
+低等数学
+求总和公式
+这个大家应该都知道。
+\[ \sum_{i=1}^N x_i = x_1 + x_2 + \cdots + x_n \]
+求总积公式
+\[ \prod_{i=1}^N x_i = x_1 \times x_2 \times \cdots \times x_n \]
+对数
+对数的含义：
+求数的长度。
+将乘法转变成加法。
+解决下溢出问题：由于太多很小的数相乘造成的问题。
+数学表达
+\[ log(x) = \log_{10}x \\ \log_{2}x \\ ln(x) \]
+由于不同底的对数的结果是等比关系，所以，有时底数是谁，是无所谓的。
+等比
+\(a\)等比于\(b\)。可用于算法复杂度计算。
+\[ a ~ b \\ a \propto b \]
+下取整(floor)和上取整(ceil)
+\[ \text{floor: } \left \lfloor x \right \rfloor \\ \text{ceil: } \left \lceil x \right \rceil \]
+几何
+范数(norm)
+L1范数
+\(\lVert w \rVert_1\) : L1范数，也就是各项目绝对值的和。
+\[\lVert w \rVert_1 = \textstyle \sum_{i=1}^n |w_i|\]
+L2范数
+\(\lVert w \rVert \text{ or } \lVert w \rVert_2\) : L2范数，也就是各项目平方和的平方根。
+\[\lVert w \rVert = \sqrt {\textstyle \sum_{i=1}^n w_i^2}\]
+拉格朗日乘子法和KKT条件
+如果方程式\(f(x) = wx + b\)有不等式约束条件，拉格朗日乘子法和KKT条件提供了一种方法，可以计算\((w, b)\)
+\[ \mathcal{L}(w,b,\alpha) \]
+关于拉格朗日乘子法和KKT条件，请看：
+深入理解拉格朗日乘子法（Lagrange Multiplier)和KKT条件
+微分（differential）
+表示形式
+\[ {f'(x)} \\ \text{or partial differential in Leibniz notation:} \\ {\partial f(x) \over \partial x} \\ {dy \over dx} \\ \text{or:} \\ {\nabla f(x) \over \nabla x} \text{ : the gradient of f at x} \]
+含义
+\[ {df(x) \over dx} = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \\ where \\ {d \over dx} \text{ is an operation of f(x)} \]
+数学含义是在\(x\)点上，\(f(x)\)的变化除以\(x\)的变化。
+数学上可以认为是：斜率
+机器学习中指的是：梯度。
+计算梯度后，乘以一个比值（步长），可以得到矫正值，用于反向传播（矫正）权值。
+partial differential：偏微分，表示函数在某个维度上的微分。这时，可将其它维度看做常量。
+法则
+法则
+微分
+偏微分
+和法则(sum rule)
+$(f + g)' = f' + g'$
+$$\frac{\partial (u + v)}{\partial x} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial x}$$
+积法则(product rule)
+$(f \cdot g)' = f' \cdot g + f \cdot g'$
+$${\partial (u \cdot v) \over \partial x} = u \cdot {\partial v \over \partial x} + v \cdot {\partial u \over \partial x}$$
+链式法则(chain rule of differentiation)
+$(f(g(x)))' = f'(g(x))g'(x)$
+$${\partial z \over \partial x} = {\partial z \over \partial y} \cdot {\partial y \over \partial x}$$
+常见导数公式
+f(x)
+f'(x)
+$ax$
+$a$
+$x^n$
+$nx^{n-1}$
+$x + c$
+$1$
+$e^x$
+$e^x$
+$ln(x)$
+$\frac{1}{x}$
+统计学/概率论
+贝叶斯公式(Bayes formula)
+\[ p(A|B) = \frac{p(B|A)p(A)}{p(B)} \\ where \\ p(A) \text{ : the probability of observing event A.} \\ p(B) \text{ : the probability of observing event B.} \\ p(A|B) \text{ : the probability of observing event A given that B is true.} \\ p(B|A) \text{ : the probability of observing event B given that A is true.} \]
+比如：在判断垃圾邮件的算法中:
+P(A) ： 所有邮件中，垃圾邮件的概率。
+P(B) ： 出现某个单词的概率。
+P(B|A) : 垃圾邮件中，出现某个单词的概率。
+P(A|B) : 出现某个单词的邮件，是垃圾邮件的概率。
+信息论
+香农熵（Shannon Entropy）
+熵的定义
+在信息论中，熵是接收的每条消息中包含的信息的平均量，又被称为信息熵、信源熵、平均自信息量。
+熵定义为信息的期望值。
+熵实际是对随机变量的比特量和顺次发生概率相乘再总和的数学期望。
+熵的单位通常为比特, bit 或者sh(annon) (基于2)，但也用nat(基于自然对数)、Hart（基于10）计量，取决于定义用到对数的底。
+熵的单位不重要。（因为是求对数，所以是等比的。不理解这句话也无所谓。）
+熵值是一个>=0的值。
+如果为0，则表明结果可以准确预测。从下面的公式可以看出，其概率为1.
+熵的特征
+发生概率越小的信息，熵值越大。
+常识的熵为0。
+从计算损失的角度来说：熵值越大，说明损失越大。
+期望值
+在概率论和统计学中，一个离散性随机变量的期望值（或数学期望、或均值，亦简称期望，物理学中称为期待值）是试验中每次可能结果的概率乘以其结果的总和。
+比如掷骰子, 其点数的期望值是3.5：
+\(E(x) = 1 * 1 / 6 + 1 * 2 / 6 + 1 * 3 / 6 + 1 * 4 / 6 + 1 * 5 / 6 + 1 * 6 / 6 = 3.5\)
+通俗的理解
+信息熵是：
+各个 （值的概率 * 值的长度） 的总和。
+数据集的信息熵的计算公式
+\[ \begin{alignat}{2} H(X) & = E[I(X)] \\ & = E[-lnP(X)] \\ & = \sum\limits_{i=1}^n P(x_i)I(x_i) \\ & = - \sum\limits_{i=1}^n P(x_i)\log P(x_i) \end{alignat} \\ where \\ \qquad H(X) : 数据集合X的信息熵值。 \\ \qquad E() : 求期望值。 \\ \qquad I() : 求信息值（惊奇值）。 \\ \qquad X : 数据集合X。 \\ \qquad x_i : 数据集合X的标签的一个枚举值。 \\ \qquad I(x_i) ：x_i的资讯量 (information self). I(x_i) = -log(P(x_i)) \\ \qquad P(x_i) \text{ : 发生x_i的概率。x的机率质量函数（probability mass function）。} P(x_i) = count(x_i)/len(X). \]
+熵的作用
+计算损失(Loss function)
+用于调整梯度递减的步长。（本次熵（损失）比上次熵（损失）大，说明步长太大了。）
+用于决策树
+熵越大，说明特征(feature)的划分数据能力越强。
+博弈论
+倾向关系(preference relation)
+描述了玩家的倾向，\(x \succeq y\)意味着“x至少和y一样好”。
+不知道放到哪儿
+求最大化参数
+数学表示
+\(\underset{c}{argmax}P(c)\)
+解释
+可以用于返回一个可能性对大的分类。
+返回当P(c)为最大值时c的值。
+例如：
+\[ c \in \{1, 2\} \\ P(1) = 0.9 \\ P(2) = 0.1 \\ \therefore \\ \underset{c}{argmax}P(c) = 1 \]
+返回最大值
+数学表示
+\(\underset{a \in \mathcal{A}}{max}P(a)\)
+解释
+在所有\(a \in \mathcal{A}\)的计算中，返回最大值\(P(a)\)。
+约束条件(Subject to)
+数学表示
+\(y = 2x+1, \text{s.t. } x > 0\)
+解释
+当约束条件\(x > 0\)，成立时，有\(y = 2x+1\)。
+定义上相等
+数学表示
+\(A \doteq B\)
+解释
+A的定义为B。
+2补数(2's complement)
+一种使用2进制表示有符号数的方法。
+第一位为符号位，
+如果是0，则记做0;
+如果为1，则记做\(-2^{n-1} \text{, n is the size of the number}\)。
+例如： 0010为2; 1010为-6。
+机器学习
+激活函数
+请看我的另外一个博文：
+神经网络学习笔记 - 激活函数的作用、定义和微分证明
+损失函数
+请看我的另外一个博文：
+神经网络学习笔记 - 损失函数的定义和微分证明
+附录
+希腊字母的含义和发音
+大写
+小写
+English
+发音
+中文
+含义
+1
+Α
+α
+alpha
+a:lf
+阿尔法
+2
+Β
+β
+beta
+bet
+贝塔
+3
+Γ
+γ
+gamma
+ga:m
+伽马
+4
+Δ
+δ
+delta
+delt
+德尔塔
+δ: delta value，偏差值
+5
+Ε
+ε
+epsilon
+ep'silon
+伊普西龙
+6
+Ζ
+ζ
+zeta
+zat
+截塔
+7
+Η
+η
+eta
+eit
+艾塔
+8
+Θ
+θ
+thet
+θit
+西塔
+9
+Ι
+ι
+iot
+aiot
+约塔
+10
+Κ
+κ
+kappa
+kap
+卡帕
+11
+∧
+λ
+lambda
+lambd
+兰布达
+12
+Μ
+μ
+mu
+mju
+缪
+13
+Ν
+ν
+nu
+nju
+纽
+14
+Ξ
+ξ
+xi
+ksi
+克西
+ξ: slack variable，松弛变量
+15
+Ο
+ο
+omicron
+omik'ron
+奥密克戎
+16
+∏
+π
+pi
+pai
+派
+π: 圆周率
+17
+Ρ
+ρ
+rho
+rou
+肉
+18
+∑
+σ
+sigma
+'sigma
+西格马
+19
+Τ
+τ
+tau
+tau
+套
+20
+Υ
+υ
+upsilon
+jup'silon
+宇普西龙
+21
+Φ
+φ
+phi
+fai
+佛爱
+22
+Χ
+χ
+chi
+phai
+凯
+23
+Ψ
+ψ
+psi
+psai
+普西
+24
+Ω
+ω
+omega
+o'miga
+欧米伽
+松弛变量(slack variable):在SVM中，为了处理异常点（跑到另一个分类中的点），设定的容忍值。
+数学符号的含义和发音
+大写
+小写
+English
+发音
+中文
+含义
+1
+\(\partial\)
+partial
+-
+偏分
+偏分
+1
+\(\infty\)
+infinity
+-
+无穷
+无穷
+参照
+Bayes' theorem
+希腊字母表(配读音)
+cs231n.github.io
+矩阵乘法的本质是什么？
+如有希望介绍的数学概念，请写到评论中，我有空会加上。

@@ -1,0 +1,38 @@
+目录
+导数、偏导数和方向导数
+方向导数的推导过程
+方向导数和梯度
+References
+相关博客
+最近学习《最优化导论》，遇到了“方向导数”这一概念，故对其及相关概念进行一遍梳理。并给出方向导数的推导过程。
+导数、偏导数和方向导数
+在一元可导函数 \(y = f(x)\) 中，导数 \(f'(x_0)\) 即是曲线上 \(x = x_0\) 处的斜率。按照定义求导数：
+\[ f'(x) = \lim_{\Delta x \to 0}\frac{f(x+ \Delta x) - f(x)}{\Delta x} \tag{1} \]
+当然，我们也可以通过各种求导法则来计算导数。
+对一个 \(R^m \to R\) 的多元可导函数，\(y=f(\bm x),\bm x = [x_1, x_2, ..., x_m]^\top\)，我们能够求的导数就多，如偏导数、方向导数，但归根到底，这些导数都可以认为是曲面上一点在某个方向的斜率。对于 \(m\le 2\) 的情况，我们还能够通过坐标系很直观地了解；当 \(m > 2\) 时，我们可以从向量空间的角度理解。
+偏导数是指 \(y=f(\bm x)\) 对 \(\bm x = [x_1, x_2, ..., x_m]^\top\) 中的某一维进行求导，如下式（2）所示，对第 \(i\) 维求偏导数：
+\[ \begin{split} \frac{\partial f(\bm x)}{\partial x_i} &= \frac{\partial f(x_1, x_2, ...,x_i,..., x_m)}{\partial x_i} \\ &= \lim_{\Delta x_i \to 0}\frac{f(x_1, x_2, ...,x_i + \Delta x_i,..., x_m) - f(x_1, x_2, ...,x_i,..., x_m)}{\Delta x_i} \end{split} \tag{2} \]
+方向导数就更好理解了，\(y=f(\bm x)\) 对 \(\bm x = [x_1, x_2, ..., x_m]^\top\) 构成的向量空间 \(R^m\) 中某一方向 \(\bm d' = [\Delta x_1, \Delta x_2, ..., \Delta x_m]^\top\) 求导数，即得到该方向上的方向导数 \(\frac{\partial f(\bm x)}{\partial \bm d'}\)，如式（3）所示：
+\[ \begin{split} \frac{\partial f(\bm x)}{\partial \bm d'} &= \frac{\partial f(x_1, x_2,..., x_m)}{\partial x_i} \\ &= \lim_{\rho \to 0}\frac{f(x_1 + \Delta x_1, x_2 +\Delta x_2, ..., x_m +\Delta x_m) - f(x_1, x_2, ..., x_m)}{\rho} \\ &\rho = \sqrt{\Delta x_1^2 + \Delta x_2^2 + \cdots +\Delta x_m^2} \end{split} \tag{3} \]
+方向导数和偏导数是什么关系？对于多元可导函数 \(y=f(\bm x),\bm x = [x_1, x_2, ..., x_m]^\top\)，在其上任一点 \(\bm x_i\)，我们都可以在向量空间 \(R^m\) 中的每一个方向都可以计算一个方向导数，也就是超平面上点 \(\bm x_i\) 在每一个方向切线的“斜率”。这里“每一个方向”自然包括各个偏导数的方向。即偏导数构成的集合 A 是方向导数构成集合 B 的子集。
+方向导数的推导过程
+\(f(\boldsymbol x)\) 是一个 \(R^m \to R\) 的函数，如果我们要求 \(f(\boldsymbol x)\) 在任一点 \(\boldsymbol x_0 = [x_1^{0}, x_2^{0}, ..., x_m^{0}]^\top\) 点方向为 \(\boldsymbol d\) 的方向导数，那么按照定义，我们得到如下公式：
+\[ \frac{\partial f(\boldsymbol x)}{\partial \boldsymbol d}\mid_{\boldsymbol x = \boldsymbol x_0} = \lim_{\alpha \to 0}\frac{f(\boldsymbol x_0 + \alpha \boldsymbol d) - f(\boldsymbol x_0)}{\alpha} \tag{4} \]
+式（4）中，\(\boldsymbol d\) 为单位向量。公式（4）其实是公式（3）的向量形式。（plus：公式（3）中 \(d'\) 不是单位向量，故加上 \('\) 来区分）
+设 \(g(\alpha) = f(x_0+\alpha \boldsymbol d)\)，我们注意到，\(g(0) = f(x_0)\)，所以，式（4）又可以写为：
+\[ \begin{split} \frac{\partial f(\boldsymbol x)}{\partial \boldsymbol d}\mid_{\boldsymbol x = \boldsymbol x_0} & = \lim_{\alpha \to 0}\frac{g(\alpha) - g(0)}{\alpha} \\ &= \frac{d g(\alpha)}{d \alpha}\mid_{\alpha = 0} \\ &= \frac{d f(\boldsymbol x_0+\alpha \boldsymbol d)}{d \alpha}|_{\alpha = 0} \\ &= \nabla f(\boldsymbol x_0)^\top\boldsymbol d \\ &= <\nabla f(\boldsymbol x_0), \boldsymbol d> \\ &= \boldsymbol d^\top\nabla f(\boldsymbol x_0) \end{split} \tag{5} \]
+所以，
+\[ \frac{\partial f(\boldsymbol x)}{\partial \boldsymbol d}= \boldsymbol d^\top\nabla f(\boldsymbol x) \tag{6} \]
+方向导数和梯度
+首先明确，导数是一个值，代表切线的斜率，而梯度是一个向量。最大方向导数的方向就是梯度代表的方向。
+梯度是 \(f(\bm x)\) 对各个自变量\(\bm x = [x_1, x_2, ..., x_m]^\top\) 每一维分别求偏导数得到的向量。
+从式（5）和（6）中我们也可以知道，当 \(\bm d = \frac{\nabla f(\bm x)}{\|\nabla f(\bm x)\|}\)，方向导数最大。 最大方向导数的方向就是梯度，最大的方向导数就是梯度的欧几里德范数。
+References
+如何直观形象的理解方向导数与梯度以及它们之间的关系？-- 马同学
+方向导数与梯度——学习笔记 -- Reclusiveman
+[机器学习] ML重要概念：梯度（Gradient）与梯度下降法（Gradient Descent）-- WangBo_NLPR
+Edwin K. P. Chong, Stanislaw H. Zak-An Introduction to Optimization, 4th Edition
+相关博客
+【机器学习之数学】01 导数、偏导数、方向导数、梯度
+【机器学习之数学】02 梯度下降法、最速下降法、牛顿法、共轭方向法、拟牛顿法
+【机器学习之数学】03 有约束的非线性优化问题——拉格朗日乘子法、KKT条件、投影法

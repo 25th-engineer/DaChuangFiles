@@ -1,0 +1,173 @@
+机器视觉工程应用主要可划分为硬件和软件两大部分。
+硬件：工程应用的第一步就是硬件选型。硬件选型很关键，因为它是你后面工作的基础。主要是光源、工业相机和镜头选择。
+软件：目前业内商业库主要有Halcon，康耐视，DALSA，evision，NI等，开源库有OpenCV.其中NI的labview+vision模块。
+机器视觉工程应用的基本开发思路是：
+一、图像采集，二、图像分割，三、形态学处理，四、特征提取，五、输出结果。
+下面在Halcon下对这四个步骤进行讲解。
+一、图像采集：
+Halcon通过imageacquisition interfaces对各种图像采集卡及各种工业相机进行支持。其中包括：模拟视频信号，数字视频信号Camera Link,数字视频信号IEEE 1394,数字视频信号USB2.0,数字视频信号Gigabit Ethernet等。
+Halcon通过统一的接口封装上述不同相机的image acquisition interfaces,从而达到算子统一化。不同的相机只需更改几个参数就可变更使用。
+Halcon图像获取的思路：1、打开设备，获得该设备的句柄。2、调用采集算子，获取图像。
+1、打开设备，获得该设备的句柄。
+open_framegrabber('DahengCAM', 1, 1, 0, 0, 0, 0, 'interlaced', 8, 'gray', -1, 'false','HV-13xx', '1', 1, -1, AcqHandle) //连接相机，并设置相关参数
+Parameter
+Values
+Default
+Type
+Description
+Name
+'DahengCAM'
+string
+Name of the HALCON interface.
+HorizontalResolution
+1
+1
+1表示水平全部，2为水平1/2，表示图像截取。
+VerticalResolution
+1
+1
+同上，表示垂直方向。
+ImageWidth
+<width>
+0
+integer
+所需的图像部分的宽度（'0 '代表了完整的图像）。
+ImageHeight
+<height>
+0
+integer
+所需的图像部分的高度（0”是完整的图像）
+StartRow
+<width>
+0
+integer
+所需的图像部分左上方的像素行坐标
+StartColumn
+<column>
+0
+integer
+所需的图像部分左上方的像素列坐标
+Field
+忽视
+BitsPerChannel
+忽视
+ColorSpace
+'default', 'gray', 'rgb'
+'gray'
+string
+HALCON图像的通道模式
+Generic
+忽视
+ExternalTrigger
+'false', 'true'
+'false'
+string
+外部触发状态
+CameraType
+'HV-13xx', 'HV-20xx', 'HV-30xx', 'HV-31xx','HV-50xx', 'SV-xxxx'
+'HV-13xx'
+string
+所连接的摄像机系列型。
+Device
+'1', '2', '3', ...
+'1'
+string
+相机连接第一个设备号“1”，第二个设备编号“2”。
+Port
+忽视
+LineIn
+忽视
+2、调用采集算子，获取图像。
+grab_image (Image, AcqHandle) //（同步采集）完后处理图像，然后再采集图像。采集图像的速率受处理速度影响。
+grab_image_async (Image, AcqHandle,MaxDelay) //（异步采集），一幅画面采集完后相机马上采集下一幅画面，不受处理速度影响。其中第三个参数为：MaxDelay，表示异步采集时可以允许的最大延时，本次采集命令距上次采集命令的时间不能超出MaxDelay，超出即重新采集。
+图像采集其他相关算子：
+grab_image_start，该算子开始命令相机进行异步采集。只能与grab_image_async（异步采集）一起使用。
+例子：
+* Select a suitable image acquisition interface nameAcqName
+open_framegrabber(AcqName,1,1,0,0,0,0,'default',-1,'default',-1.0,\
+'default','default','default',-1,-1,AcqHandle)
+grab_image(Image1,AcqHandle)//进行同步采集
+* Start next grab
+grab_image_start(AcqHandle,-1.0)//命令相机进行异步图像采集开始
+* Process Image1 ...
+* Finish asynchronous grab + start next grab
+grab_image_async(Image2,AcqHandle,-1.0)//读取异步采集的图像
+* Process Image2 ...
+close_framegrabber(AcqHandle)
+3、相机参数读写
+读取相机参数：
+info_framegrabber( : : Name, Query : Information, ValueList)
+写相机参数：
+set_framegrabber_param( : : AcqHandle, Param, Value : )
+二、图像分割：
+图像分割的定义：
+所谓图像分割是指将图像中具有特殊含义的不同区域分割开来，这些区域是互相不交叉的，每个区域都满足特定区域的一致性。
+1、基于阈值的图像分割
+threshold —采用全局阈值分割图像。
+格式：    threshold(Image : Region : MinGray, MaxGray : )
+自动全局阈值分割的方法：
+（1）计算灰度直方图
+（2）寻找出现频率最多的灰度值（最大值）
+（3）在threshold中使用与最大值有一定距离的值作为阈值
+代码：
+gray_histo(Regions, Image，AbsoluteHisto, RelativeHisto) //计算出图像区域内的绝对和相对灰度值直方图。
+PeakGray := sort_index(AbsoluteHisto)[255] //求出出现频率最多的灰度值
+threshold(Image,Region,0,PeakGray-25)
+bin_threshold — 使用一个自动确定的阈值分割图像。
+格式：    bin_threshold(Image : Region : : )
+dyn_threshold —使用一个局部阈值分割图像。
+格式：    dyn_threshold(OrigImage, ThresholdImage : RegionDynThresh : Offset, LightDark : )
+例子：
+mean_image(Image,Mean,21,21)
+dyn_threshold(Image,Mean, RegionDynThresh,15,'dark')
+var_threshold —阈值图像局部均值和标准差的分析。
+格式：    var_threshold(Image : Region : MaskWidth, MaskHeight, StdDevScale, AbsThreshold, LightDark : )
+2、基于边缘的图像分割：寻找区域之间的边界
+watersheds —从图像中提取分水岭和盆地。
+格式：    watersheds(Image : Basins, Watersheds : : )
+watersheds_threshold —使用阈值从图像中提取分水岭和盆地。
+格式：    watersheds_threshold(Image : Basins : Threshold : )
+3、基于区域的图像分割：直接创建区域
+三、形态学处理
+形态学处理以集合运算为基础。
+腐蚀、膨胀、开操作、闭操作是所有形态学图像处理的基础。
+开操作（先腐蚀再膨胀）使对象的轮廓变得光滑，断开狭窄的间断和消除细的突出物。
+闭操作（先膨胀再腐蚀）消弥狭窄的间断和长细的鸿沟，消除小的孔洞，填补轮廓线的断裂。
+形体学基础算子：
+erosion1
+dilation1
+opening
+closing
+常用的形态学相关算子
+connection
+select_shape
+opening_circle
+closing_circle
+opening_rectangle1
+closing_rectangle1
+complement
+difference
+intersection
+union1
+shaps_trans
+fill_up
+形态学高级算子：
+boundary
+skeleton
+四、特征提取：
+1、区域特征：
+area
+moments
+smallest_rectangle1
+smallest_circle
+convexity：区域面积与凸包面积的比例
+contlength：区域边界的长度
+compactness
+2、灰度特征
+estimate_noise
+select_gray
+五、输出结果：
+（1）获取满足条件的区域
+（2）区域分类，比如OCR
+（3）测量
+（4）质量检测

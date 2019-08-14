@@ -1,0 +1,61 @@
+前言
+前面两篇主要写了一些机器学习的基础概念，从本篇开始我们来了解下深度学习。深度学习是机器学习的一个子集，是一种特殊的数学模型。同样是从输入到输出，深度学习在这两者之间会有很多层称为“隐层”（Hidden Layers）的层，每一层将会将输入内容进行计算并自我调节，最终得到合理模型，这种数学模型非常像人类目前对大脑工作原理的认知，所以也称之为“人工神经网络”。
+现在市面上有数十种深度学习框架：Wiki传送门。一个个学过来肯定精力不够，那我们就学综合评分最高的那个：Tensorflow。
+Tensorflow是由Google团队在2015年11月9日以Apache 2.0开源许可证开源的，但刚发布的版本有诸多缺陷：bug比较多、性能比较差、使用难度比较高。在2017年2月16日，Google宣布Tensorflow 1.0正式发布，该版本适用于工业生产场景。所以在该版本发布之后，对深度学习领域产生了极大的影响，其大大简化了编写深度学习的代码难度，并且在Google这面大旗下，被各种专业人员以及机器学习爱好者所推崇（截止2018年1月9日，Tensorflow在Github上已经有7193个Watch，85038个Star和41555个Fork）。
+Tensorflow在短短发布后的一年不到的时间里，已经跃居为综合排名第一的深度学习框架。为什么会如此火爆呢？我个人猜测理由如下：
+深度学习目前是大趋势（所以得抓紧学习，抓住机遇）
+Google的技术实力太强大，开源过很多项目都非常成功（比如Android），所以跟着Google走可能不会让我们失望
+接口丰富易用且支持多种语言（底层是C++实现的，这里指的是客户端调用底层API的语言），如Python、C++、Java、Go
+易于部署，包括分布式部署
+本机安装Tensorflow
+如果你的电脑性能还不错，可以考虑直接在本机安装Tensorflow（官方安装文档传送门），优先考虑使用Anaconda来安装，按照官方教程一步步执行即可。
+安装之后，需要在Pycharm中执行Tensorflow的代码，我们这里先用简单的输出常量的代码为例（此代码也是后文中demo1.py中的代码）：
+import tensorflow as tf node1 = tf.constant(3.0, dtype=tf.float32) node2 = tf.constant(4.0) # also tf.float32 implicitly print(node1, node2) sess = tf.Session() print(sess.run([node1, node2]))
+常见错误汇总
+执行代码的时候，你可能会遇到很多错误，我这里整理了一份我在此过程中遇到的错误以及对应的解决方案供大家参考：
+错误提示
+解决方案
+Anaconda installation is not found
+https://stackoverflow.com/questions/47624777/pycharm-anaconda-installation-is-not-found
+ImportError: Could not find 'cudart64_80.dll'. TensorFlow requires that this DLL be installed in a directory that is named in your %PATH% environment variable.
+由于目前Tensorflow是建立在CUDA 8.0之上的，而NVIDIA官网上默认是下载CUDA最新版本的（比如目前是9.0），所以需要打开如下页面： https://developer.nvidia.com/cuda-downloads 在页面的最下面找到Lagacy Releases并下载CUDA 8.0
+ImportError: Could not find 'cudnn64_6.dll'. TensorFlow requires that this DLL be installed in a directory that is named in your %PATH% environment variable. Note that installing cuDNN is a separate step from installing CUDA, and this DLL is often found in a different directory from the CUDA DLLs. You may install the necessary DLL by downloading cuDNN 6 from this URL: https://developer.nvidia.com/cudnn
+注册一个NVEDIA的开发者账号，然后下载cudnn64 for cuda8 on windows。 下载下来的文件解压之后，放到cuda目录下对应的地方（cuda比如是在C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0）
+解决了所有问题之后，如果看到以下输出内容，就表示能正常运行Tensorflow了：
+Tensor("Const:0", shape=(), dtype=float32) Tensor("Const_1:0", shape=(), dtype=float32) 2018-01-09 16:48:59.940050: I C:\tf_jenkins\home\workspace\rel-win\M\windows\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2 [3.0, 4.0] Process finished with exit code 0
+使用阿里云PAI来实验Tensorflow
+概述
+因为机器学习的过程非常耗性能，如果在一个比较大的数据集上进行学习，本机CPU使用就会达到99%，而且要持续很久，这个时候就无法干点别的事了。很幸运，阿里云提供了机器学习平台PAI（Platform for Artificial Intelligence），里面集成了很多主流的算法以及Tensorflow的不同版本（目前是1.0、1.1、1.2），而且目前公测阶段也可以开启2个GPU来加快执行。
+PAI的优势有：
+不需要本地繁琐的安装和解决各种安装坑
+可以调用云服务器资源，比起本地性能更好
+不影响、阻塞本机其他程序的使用，开始执行之后等着执行完毕即可
+算法、组件都是现成的，而且可以用拖拽的方式编排算法，非常方便、傻瓜化，我们唯一要做的就是提供数据和编写核心执行脚本
+现成的机器学习案例以及相关文档，可以快速从别人的经验中来帮助自己理解机器学习
+将实验直接共享到社区
+公测阶段免费
+操作概览
+开通PAI的过程并不复杂，大致步骤如下：
+首先你要有一个阿里云账号
+在阿里云后台进入大数据（数加）->机器学习菜单
+创建一个项目，如： my_project_name
+在项目管理页面，勾选my_project_name的开启GPU选项
+为了方便上传本地资源到PAI，建议安装OSS-Browser工具，下载地址： https://help.aliyun.com/document_detail/61872.html?spm=5176.doc31886.2.5.qwodVb （以阿里云后台最新下载地址为准），如果是少量文件上传的话，使用web版OSS文件管理系统来管理文件也可以（本例中我们直接使用web版）
+PS:开启GPU选项示意图：
+目前公测阶段虽然PAI本身是免费的，但是OSS是收费的，好在费用很低，仅作学习用的话，一天最多几分钱。
+详细实验步骤
+在OSS中创建测试目录tensorflowtest：
+进入tensorflowtest目录并上传脚本文件demo1.py（内容详见“本机安装Tensorflow”一节）：
+进入PAI后台首页，创建空白实验tensorflowdemo：
+在空白实验中加入读OSS Bucket组件和TensorFlow(V1.2)组件，并选中Tensorflow节点，在右侧的参数设置中，将Python代码参数选为我们在步骤1、2中上传的demo1.py文件：
+点击屏幕最下方的运行按钮执行实验：
+本例中读OSS Bucket组件并没有什么用，由于PAI实验中必须要数据源节点，因此添加空的读OSS Bucket组件作为数据源，因此在执行实验的时候，阿里云将检测并提示当前实验室作业实验，将会在24小时内删除。
+查看执行结果
+在实验运行后，每个节点右侧出现一个绿色的勾，表示已正确执行完毕，此时右键该节点，选择查看日志选项：
+在“查看日志”弹出框中，滚动到中间的位置，找到 http://logview.odps.aliyun.com 的链接，如图位置：
+鼠标左键点击进入之后，点击下图中红色框中的detail图标：
+在弹出的Log Detail页面上，按下图中的1、2、3顺序依次点击：
+在弹出的Logview[Stdout]页面上，可以最终看到脚本的实际输出内容，与在本地IDE中的输出一致：
+结语
+我已经用两种不同的方式，执行了第一个基于Tensorflow的demo，这个demo目前跟深度学习还完全搭不上边，只是能成功运行Tensorflow而已，后续的博文中，我将进一步深入研究。
+本文在我的博客园和我的个人博客上同步发布，作者保留版权，转载请注明来源。

@@ -1,0 +1,361 @@
+根据吴恩达机器学习教程总结，在matlab、octave均可使用
+Matlab进行标量运算
+>> 5 + 5
+ans =
+10
+>> 6 * 2
+ans =
+12
+>> 3^2
+ans =
+9
+>> 3/2
+ans =
+1.5000
+变量赋值
+>> a = 3
+a =
+3
+赋值语句后面加; 可以不输出结果
+>> q = 3;
+>> q
+q =
+3
+字符输入时必须是单引号
+>> b ='hi';
+>> b
+b =
+hi
+并 或 运算
+>> 1 && 0
+ans =
+0
+>> 1||1
+ans =
+1
+比较语句
+>> 2 > 3
+ans =
+0
+输出字符串
+>> a =pi
+a =
+3.1416
+>> disp(a)
+3.1416
+>> disp(sprintf('2 decimals: %0.2f',a))
+2 decimals: 3.14
+>> sprintf('hi')
+ans =
+hi
+矩阵表示：
+>> A = [1 2;3 4]
+A =
+1     2
+3     4
+向量表示
+>> V = [1;2;3]
+V =
+1
+2
+3
+从 1 开始 到2 终止步长为0.1的行向量
+>> V = 1:0.1:2
+V =
+1.0000    1.1000    1.2000    1.3000    1.4000    1.5000    1.6000    1.7000    1.8000    1.9000    2.0000
+1X2 全为1 矩阵
+>> ones(1,2)
+ans =
+1     1
+2X2全为0矩阵
+>> zeros(2,2)
+ans =
+0     0
+0     0
+随机1X3 的矩阵
+>> rand(1,3)
+ans =
+0.8147    0.9058    0.1270
+对角线为全为1 的单位矩阵
+>> eye(4)
+ans =
+1     0     0     0
+0     1     0     0
+0     0     1     0
+0     0     0     1
+help 查看内置函数的用法
+>> help eye
+eye Identity matrix.
+eye(N) is the N-by-N identity matrix.
+eye(M,N) or eye([M,N]) is an M-by-N matrix with 1's on
+the diagonal and zeros elsewhere.
+eye(SIZE(A)) is the same size as A.
+eye with no arguments is the scalar 1.
+eye(..., CLASSNAME) is a matrix with ones of class specified by
+CLASSNAME on the diagonal and zeros elsewhere.
+eye(..., 'like', Y) is an identity matrix with the same data type, sparsity,
+and complexity (real or complex) as the numeric variable Y.
+Note: The size inputs M and N should be nonnegative integers.
+Negative integers are treated as 0.
+Example:
+x = eye(2,3,'int8');
+See also speye, ones, zeros, rand, randn.
+eye 的参考页
+名为 eye 的其他函数
+判断矩阵的形状
+>> size(a)
+ans =
+1     1
+>> size(A,1)
+ans =
+2
+>> v = [1 2 3 4]
+v =
+1     2     3     4
+>> size(v)
+ans =
+1     4
+>> length(v)
+ans =
+4
+显示当前工作目录（与Linux较为相似）
+>> pwd
+ans =
+C:\Program Files\MATLAB\R2016a
+进入某一目录
+>> cd 'C:\Users\scz\Desktop'
+>> pwd
+ans =
+C:\Users\scz\Desktop
+显示当前目录下所有文件
+>> ls
+.
+..
+1.docx
+123
+读入文件，并保存到变量中
+>> load('loldata.csv')
+>> loldata
+loldata =
+7.0000    5.0000    2.0000    0.9329   28.7941    5.9861    4.5984
+2.0000    1.0000    3.0000    0.4512    2.5701    0.9661    1.2014
+7.0000    5.0000    3.0000    0.8364   21.6821    6.0617    3.8332
+19.0000    2.0000    1.0000    1.0947   36.3245   12.7096    3.7969
+4.0000    2.0000    4.0000    0.8193   19.6814    2.3778    1.3344
+2.0000    9.0000    2.0000    0.7157   14.4339    3.3351    6.3405
+0   10.0000    6.0000    0.7573   12.3280    2.1769    5.3543
+8.0000    5.0000    1.0000    0.9012   20.2787    5.1798    3.9495
+3.0000    7.0000    1.0000    0.7876   10.5917    2.2607    6.4620
+1.0000    8.0000    4.0000    0.6336    5.9939    1.8080    5.9950
+>> size(loldata)
+ans =
+10     7
+显示当前所有变量
+>> who
+您的变量为:
+A        V        a        ans      b        c        loldata  q        v
+所有变量具体信息
+>> whos
+Name          Size            Bytes  Class     Attributes
+A             2x2                32  double
+V             1x11               88  double
+a             1x1                 8  double
+ans           1x2                16  double
+b             1x2                 4  char
+c             1x1                 8  double
+loldata      10x7               560  double
+q             1x1                 8  double
+v             1x4                32  double
+保存变量到文件中
+>> save hello.mat v;
+矩阵运算
+>> A = [1 2; 3 4 ; 5 6]
+A =
+1     2
+3     4
+5     6
+>> C = [1 1 ; 2 2]
+C =
+1     1
+2     2
+>> A  *  C
+ans =
+5     5
+11    11
+17    17
+注意A 后面有空格，.是对矩阵中所有元素进行位运算
+>> A .^ 2
+ans =
+1     4
+9    16
+25    36
+>> A + 1
+ans =
+2     3
+4     5
+6     7
+>> A
+A =
+1     2
+3     4
+5     6
+矩阵的转置
+>> A'
+ans =
+1     3     5
+2     4     6
+没一列中所有最大元素
+>> max(A)
+ans =
+5     6
+>> [VAL,IND] = max(A)
+VAL =
+5     6
+IND =
+3     3
+矩阵的比较运算
+>> A < 3
+ans =
+1     1
+0     0
+0     0
+所有元素中符合条件位置
+>> find(A < 3)
+ans =
+1
+4
+>> a = magic(4)
+a =
+16     2     3    13
+5    11    10     8
+9     7     6    12
+4    14    15     1
+>> [r,c] = find(A < 3)
+r =
+1
+1
+c =
+1
+2
+>> a = [1 2 3 4]
+a =
+1     2     3     4
+>> sum(a)
+ans =
+10
+>> prod(a)
+ans =
+24
+>> a = [1 2 3 4;1 3 4 5]
+a =
+1     2     3     4
+1     3     4     5
+求和默认是列
+>> sum(a)
+ans =
+2     5     7     9
+>> sum(a,1)
+ans =
+2     5     7     9
+求积
+>> prod(a)
+ans =
+1     6    12    20
+>> floor(a) %向下四舍五入
+ans =
+1     2     3     4
+1     3     4     5
+>> ceil(a) %向上四舍五入
+ans =
+1     2     3     4
+1     3     4     5
+>> max(rand(3),rand(3))
+ans =
+0.9572    0.2785    0.9649
+0.6324    0.5469    0.9595
+0.8003    0.9575    0.9706
+>> A(:)
+ans =
+1
+3
+5
+2
+4
+6
+调换方向
+>> flipud(eye(9))
+ans =
+0     0     0     0     0     0     0     0     1
+0     0     0     0     0     0     0     1     0
+0     0     0     0     0     0     1     0     0
+0     0     0     0     0     1     0     0     0
+0     0     0     0     1     0     0     0     0
+0     0     0     1     0     0     0     0     0
+0     0     1     0     0     0     0     0     0
+0     1     0     0     0     0     0     0     0
+1     0     0     0     0     0     0     0     0
+求矩阵的拟
+>> pinv(a)
+ans =
+1.3333   -1.0000
+-1.6667    1.3333
+-0.3333    0.3333
+1.0000   -0.6667
+>> D = [0:0.01:0.98]
+>> y1 = sin(2*pi*4*D)
+>> plot(D,y2,'r')
+>> xlabel('time')
+>> ylabel('value')
+>> legend('sin','cos')
+>> title('my plot')
+>> print -dpng 'myplot.png'
+>> subplot(1,2,1)
+>> plot(D,y1)
+>> subplot(1,2,2)
+>> plot(D,y2)
+>> clf
+>> A = magic(5)
+A =
+17    24     1     8    15
+23     5     7    14    16
+4     6    13    20    22
+10    12    19    21     3
+11    18    25     2     9
+>> imagesc(A)
+>> imagesc(A)
+>> imagesc(A),colorbar,colormap gray
+循环语句 判断语句
+>> for i=1:10,
+v(i)=2^(i);
+end;
+>> v
+v =
+2
+4
+8
+16
+32
+64
+128
+256
+512
+1024
+>> while true,
+i =1;
+v(i) = 100;
+if i <=6,
+break;
+end;
+end;
+>> v
+v =
+100
+4
+8
+16
+32
+64
+128
+256
+512
+1024

@@ -1,0 +1,17 @@
+理解矩阵（一）
+（真是大学时候不好好学习给自己挖的坑，现在只能一点一点的补回来，这个介绍的矩阵简单易懂，非常牛）
+链接如下：
+http://blog.csdn.net/myan/article/details/647511
+（偶然在矩阵文章中发现算法的世外桃源－－《算法》，非常好的一个网站）
+链接如下：
+http://lib.csdn.net/base/datastructure
+零基础入门深度学习
+链接如下：
+（这个从模式识别感知器算法，梯度下降讲起，很神奇，深度好文～）
+http://blog.csdn.net/TS1130/article/details/53244576
+真正的干货集合（简直神了）
+图像处理、机器视觉、人工智能、机器学习：http://blog.csdn.net/zouxy09/article/details/14222605
+http://blog.csdn.net/carson2005/article/details/6601109
+http://www.cnblogs.com/tornadomeet/archive/2012/06/24/2560261.html
+神经网络入门：http://blog.csdn.net/zzwu/article/details/574931
+游戏开发：http://blog.csdn.net/leonwei?viewmode=contents

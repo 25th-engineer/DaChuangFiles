@@ -1,0 +1,90 @@
+*排名不分先后。收集不全，欢迎留言完善。
+清华大学自然语言处理与社会人文计算实验室
+http://nlp.csai.tsinghua.edu.cn/site2/
+清华大学智能技术与系统国家重点实验室信息检索组
+http://www.thuir.cn/cms/
+北京大学计算语言学教育部重点实验室
+http://www.klcl.pku.edu.cn/
+北京大学计算机科学技术研究所语言计算与互联网挖掘研究室
+http://www.icst.pku.edu.cn/lcwm/index.PHP?title=%E9%A6%96%E9%A1%B5
+哈工大社会计算与信息检索研究中心
+http://ir.hit.edu.cn/
+哈工大机器智能与翻译研究室
+http://www.contem.org/
+哈尔滨工业大学智能技术与自然语言处理实验室
+http://www.insun.hit.edu.cn/home/
+中科院计算所自然语言处理研究组
+http://nlp.ict.ac.cn/index_zh.php
+中科院自动化研究所语音语言技术研究组
+http://nlpr-web.ia.ac.cn/cip/introduction.htm
+南京大学自然语言处理研究组
+http://nlp.nju.edu.cn/homepage/
+复旦大学自然语言处理研究组
+http://nlp.fudan.edu.cn/
+东北大学自然语言处理实验室
+http://www.nlplab.com/
+厦门大学智能科学与技术系自然语言处理实验室
+http://nlp.xmu.edu.cn/
+苏州大学自然语言处理实验室
+http://nlp.suda.edu.cn/
+苏州大学人类语言技术研究所
+http://hlt.suda.edu.cn/
+郑州大学自然语言处理实验室
+http://nlp.zzu.edu.cn/
+Huawei Noah’s Ark Lab
+http://www.noahlab.com.hk
+Human Language Technology Center  at Hong Kong University of Science & Technology
+http://www.cse.ust.hk/~hltc/
+NUS Natural Language Processing Group
+http://www.comp.nus.edu.sg/~nlp/index.html
+The Stanford Natural Language Processing Group
+http://nlp.stanford.edu/
+The Berkeley NLP Group
+http://nlp.cs.berkeley.edu/index.shtml
+Natural Language Processing research at Columbia University
+http://www1.cs.columbia.edu/nlp/index.cgi
+Natural Language and Information Processing Research Group at University of Cambridge
+http://www.cl.cam.ac.uk/research/nl/
+Speech Research Group at University of Cambridge
+http://mi.eng.cam.ac.uk/Main/Speech/
+The Language Technologies Institute (LTI) at Carnegie Mellon University
+http://www.lti.cs.cmu.edu/
+The Computational Linguistics Group at Oxford University
+http://www.clg.ox.ac.uk/
+Human Language Technology and Pattern Recognition Group at the RWTH Aachen
+https://www-i6.informatik.rwth-aachen.de/
+Algorithms for Computational Linguistics at City University of New York
+http://acl.cs.qc.edu/
+Algorithms for Computational Linguistics at Oregon State University
+http://web.engr.oregonstate.edu/~huanlian/
+RPI Blender Lab
+http://nlp.cs.rpi.edu/
+The Natural Language Group at USC/ISI
+http://nlg.isi.edu/
+Natural Language Processing Group at University of Notre Dame
+http://nlp.nd.edu/
+Artificial Intelligence Research Group at Harvard
+http://www.eecs.harvard.edu/ai/
+Natural Language Processing - Research at Google
+https://research.google.com/pubs/NaturalLanguageProcessing.html
+The Redmond-based Natural Language Processing group
+http://research.microsoft.com/en-us/groups/nlp/
+Computational Linguistics and Information Processing at Maryland
+https://wiki.umiacs.umd.edu/clip/index.php/Main_Page
+Language and Speech Processing at Johns Hopkins University
+http://www.clsp.jhu.edu/about-clsp/
+Human Language Technology Center of Excellence at Johns Hopkins University
+http://hltcoe.jhu.edu/
+Statistical Machine Translation Group at the University of Edinburgh
+http://www.statmt.org/ued/?n=Public.HomePage
+University of Sheffield NLP Group
+http://nlp.shef.ac.uk/index.html
+The CNGL Centre for Global Intelligent Content
+https://www.cngl.ie/
+Cornell NLP group
+https://confluence.cornell.edu/display/NLP/Home/
+Natural Language Processing (NLP) group at University Of Washington
+https://www.cs.washington.edu/research/nlp
+NLP @ Illinois
+http://nlp.cs.illinois.edu/
+原文连接：http://blog.csdn.net/wangxinginnlp/article/details/44890553

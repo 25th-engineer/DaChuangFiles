@@ -1,0 +1,89 @@
+NLP领域
+自然语言处理　　计算语言学　　自然语言理解　　自然语言生成　　机器翻译　　文本分类　　语音识别　　语音合成
+中文分词　　信息检索　　信息抽取　　句法分析　　问答系统　　自动摘要　　拼写检查　　统计机器翻译
+NLP专题
+隐马尔科夫模型　　最大熵模型　　条件随机场　　数学之美　　支持向量机　　机器学习　　SRILM　　Moses　　知网
+IRSTLM　　NLTK
+NLP人物
+冯志伟　　俞士汶　　董振东　　黄昌宁　　黄曾阳　　周明　　姚天顺　　刘群　　宗成庆　　赵铁军　　詹卫东　　常宝宝
+刘挺　　王海峰
+哈工大中文信息处理人物谱　　中文信息学会人物谱
+Franz Josef Och
+NLP会议
+ACL　　COLING　　TREC　　EMNLP　　其他会议　　NLP会议档次
+NLP书籍
+自然语言处理相关书籍
+取自"http://wiki.52nlp.cn/首页"
+特别推荐：
+1、HMM学习最佳范例全文文档
+2、无约束最优化全文文档
+一、书籍：
+1、《自然语言处理综论》英文版第二版
+2、《统计自然语言处理基础》英文版
+3、《用Python进行自然语言处理》，NLTK配套书
+4、《Learning Python第三版》，Python入门经典书籍，详细而不厌其烦
+5、《自然语言处理中的模式识别》
+6、《EM算法及其扩展》
+7、《统计学习基础》
+8、《自然语言理解》英文版（似乎只有前9章）
+9、《Fundamentals of Speech Recognition》，质量不太好，不过第6章关于HMM的部分比较详细，作者之一便是Lawrence Rabiner；
+10、概率统计经典入门书：《概率论及其应用》（英文版，威廉*费勒著）
+第一卷　　第二卷　　DjVuLibre阅读器（阅读前两卷书需要）
+11、一本利用Perl和Prolog进行自然语言处理的介绍书籍：《An Introduction to Language Processing with Perl and Prolog》
+12、国外机器学习书籍之：
+1) “Programming Collective Intelligence“，中文译名《集体智慧编程》，机器学习&数据挖掘领域”近年出的入门好书，培养兴趣是最重要的一环，一上来看大部头很容易被吓走的”
+2) “Machine Learning“,机器学习领域无可争议的经典书籍，下载完毕将后缀改为pdf即可。豆瓣评论 by 王宁）：老书，牛人。现在看来内容并不算深，很多章节有点到为止的感觉，但是很适合新手（当然，不能”新”到连算法和概率都不知道）入门。比如决策树部分就很精彩，并且这几年没有特别大的进展，所以并不过时。另外，这本书算是对97年前数十年机器学习工作的大综述，参考文献列表极有价值。国内有翻译和影印版，不知道绝版否。
+3) “Introduction to Machine Learning”
+13、国外数据挖掘书籍之：
+1) “Data.Mining.Concepts.and.Techniques.2nd“，数据挖掘经典书籍作者 : Jiawei Han/Micheline Kamber 出版社 : Morgan Kaufmann 评语 : 华裔科学家写的书，相当深入浅出。
+2) Data Mining:Practical Machine Learning Tools and Techniques
+3) Beautiful Data: The Stories Behind Elegant Data Solutions（ Toby Segaran, Jeff Hammerbacher）
+14、国外模式识别书籍之：
+1）“Pattern Recognition”
+2）“Pattern Recongnition Technologies and Applications”
+3）“An Introduction to Pattern Recognition”
+4）“Introduction to Statistical Pattern Recognition”
+5）“Statistical Pattern Recognition 2nd Edition”
+6）“Supervised and Unsupervised Pattern Recognition”
+7）“Support Vector Machines for Pattern Classification”
+15、国外人工智能书籍之：
+1）Artificial Intelligence: A Modern Approach (2nd Edition) 人工智能领域无争议的经典。
+2）“Paradigms of Artificial Intelligence Programming: Case Studies in Common LISP”
+16、其他相关书籍：
+1）Programming the Semantic Web，Toby Segaran , Colin Evans, Jamie Taylor
+2）Learning.Python第四版，英文
+二、课件：
+1、哈工大刘挺老师的“统计自然语言处理”课件；
+2、哈工大刘秉权老师的“自然语言处理”课件；
+3、中科院计算所刘群老师的“计算语言学讲义“课件；
+4、中科院自动化所宗成庆老师的“自然语言理解”课件；
+5、北大常宝宝老师的“计算语言学”课件；
+6、北大詹卫东老师的“中文信息处理基础”的课件及相关代码；
+7、MIT Regina Barzilay教授的“自然语言处理”课件，52nlp上翻译了前5章；
+8、MIT大牛Michael Collins的“Machine Learning Approaches for Natural Language Processing(面向自然语言处理的机器学习方法)”课件；
+9、Michael Collins的“Machine Learning （机器学习）”课件；
+10、SMT牛人Philipp Koehn “Advanced Natural Language Processing（高级自然语言处理）”课件；
+11、Philipp Koehn “Empirical Methods in Natural Language Processing”课件；
+12、Philipp Koehn“Machine Translation（机器翻译）”课件；
+三、语言资源和开源工具：
+1、Brown语料库：
+a) XML格式的brown语料库，带词性标注；
+b) 普通文本格式的brown语料库，带词性标注；
+c) 合并并去除空行、行首空格，用于词性标注训练：browntest.zip
+2、NLTK官方提供的语料库资源列表
+3、OpenNLP上的开源自然语言处理工具列表
+4、斯坦福大学自然语言处理组维护的“统计自然语言处理及基于语料库的计算语言学资源列表”
+5、LDC上免费的中文信息处理资源
+6、中文分词相关工具：
+1）Java版本的MMSEG：mmseg-v0.3.zip，作者为solol，详情可参见：《中文分词入门之篇外》
+2）张华平老师的ICTCLAS2010，该版本非商用免费一年，下载地址：
+http://cid-51de2738d3ea0fdd.skydrive.live.com/self.aspx/.Public/ICTCLAS2010-packet-release.rar
+7、热心读者“finallyliuyu”提供的一批新闻语料库，包括腾讯，新浪，网易，凤凰等，目前放在CSDN上：http://finallyliuyu.download.csdn.net/
+另外finalllyliuyu在2010年9月又提供了一批文本文类语料，详情见：献给热衷于自然语言处理的业余爱好者的中文新闻分类语料库之二
+四、文献：
+1、ACL-IJCNLP 2009论文全集：
+a) 大会论文Full Paper第一卷
+b) 大会论文Full Paper第二卷
+c) 大会论文Short Paper合集
+d) ACL09之EMNLP-2009合集
+e) ACL09 所有workshop论文合

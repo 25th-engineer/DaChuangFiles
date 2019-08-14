@@ -1,0 +1,268 @@
+基于 GPU 的 图像 处理 平台 1 .   309 
+英伟达 推 Jetson TX1 GPU 模块 力推 人工智能 1.1 产品 
+概述 Jetson TX1 GPU 模块 主要 针对 近年来 蓬勃 发展 
+的 人工智能 市场 包括 无人机 机器人 等 设备 1.2 处理 
+板 技术指标 1 ． Jetson TX1 GPU 模块 包括 一颗 
+浮点运算 达到 teraflop 级 的 2 .   基于 Maxwell 
+架构 的 256 核心 GPU 64位 ARM A57 芯片组 3 
+.   4GB LPDDR4 RAM 内存 每秒 带宽 速度 达 
+25 . 6GB 4 .   5GB 本地 存储模块 802.11 
+2 × 2 ac Wi fi 解决 方案 以及 1Gb 
+以太网 端口 同时 还 配备 Jetson Linux 软件开发 工具包 5 
+.   Jetson TX1 GPU 模块 的 面积 只有 50 
+* 87 毫米 仅 一张 信用卡 大小 虽然 外形 很 
+迷你 Jetson TX1 GPU 性能 却 不容小视 英伟达 Jetson TX1 
+GPU 模块 的 首批 客户 包括 微软 亚马逊 谷歌 以及 
+IBM 等 科技 巨头 它们 将 会在 各自 的 无人机 
+或者 机器人 设备 搭载 该 模块 从而 流畅 运行 人工智能 
+应用 Jetson TX1 GPU 模块 应该是 英伟达 之前 Jetson TK1 
+嵌入式 开发 组件 的 升级 版本 而且 英伟达 还于 今年年初 
+发布 过 一款 DRIVE PX 自动 驾驶 系统 可以 说 
+在 人工智能 领域 英伟达 已非 新手 2 . 基于 NVIDIA 
+GPU Jetson TX1 和 Altera FPGA XC7K160T 2FFG676I 的 Camera 
+Link 图像处理 平台 2.1 板卡 概述 该 系统 是由 两块 
+核心 模块 组成 分别 是 基于 NVIDIA GPU Jetson TX1 
+的 模块 以下 称 GPU 卡 和 Altera FPGA XC7K160T 
+2FFG676I 的 模块 以下 称 FPGA 卡 GPU 卡 是以 
+NVIDIA 的 Jetson TX1 模块 为 核心 可 用于 嵌入式 
+深度 学习 计算机 视觉 图形 和 /nr GPU 计算 FPGA 卡 
+以 XC7K160T 2FFG676I 为主 芯片 支持 Camera Link 的 数据 
+输入输出 主要 用于 处理 高清 图像 输入 信号 进行 智能 
+分析 两块 卡 既 可通过 SAMTEC 的 SEAM 标准 的 
+连接器 相连 相互配合 形成 GPU + FPGA 的 工作 模式 
+也可 各自 单独 工作 或 连接 在 NVIDIA 开发板 上 
+应用 非常 灵活 2.2 GPU 卡 性能 介绍 a   
+        Jetson TX1 以 革命性 的 NVIDIA 
+Maxwell ™ 架构 为 基础 构建 含有 256 个 CUDA 
+核心 提供 每秒 超过 一万亿次 浮点运算 的 性能 b   
+    Jetson TX1 采用 64 位 ARM ® A57 
+CPU c           显存 4 GB 
+LPDDR4 | 25.6 GB / s d       
+    支持 千兆 网络接口 2.3 FPGA 卡 性能 介绍 
+a           具备 162240个 逻辑 单元 
+最大 可 使用 I / O 口 资源 为 400 
+b           板载 1组 64位 2GByte 
+DDR3 SDRAM 内存 可实现 800MHz 时钟 速率 的 高速 数据缓存 
+理论 带宽 高达 6 . 4GByte / s DDR3 SDRAM 
+读写 效率 高达 90% c           
+板载 1片 64MByte SPI Flash 用于 FPGA 的 加载 2.4 
+供电 要求 板卡 采用 + 12V 供电 3 . 基于 
+Jetson TX1 的 HDMI 图像 分析 平台 3.1 系统 概述 
+Jetson TX1 是 一台 模块式 计算机 具有 完备 的 软件 
+开发 工具包 支持 针对 深度 学习 的 CUDA 加速 函数库 
+cuDNN 对应 训练 和 推理 它 与 许多 行业 标准 
+框架 兼容 包括 Caffe Theano 和 Torch 支持 针对 计算机 
+视觉 的 CUDA 加速 函数库 和 框架 VisionWorks 其 可以 
+实现 OpenVX 1.1 规范 与 其他 的 NVIDIA 扩展 相接 
+支持 图像 传输 和 API 包括 OpenGL 4.5 OpenGL E 
+3.1 和 Vulkan 3.2 功能 指标 a 支持 1路 HDMI 
+接口 的 信息 输入 经由 本 接口板 转换 为 CSI 
+2 形式 进入 核心 板 完成 音视频 数字 信号 的 
+采集 b 硬件 支持 1路 HDMI 数字 视频输出 c 具有 
+本地 存储 功能 并 通过 丰富 的 外围 接口 支持 
+数据 的 读取 3.3 技术指标 a 采集 视频 图像 分辨率 
+HDMI 视频 支持 480i 至 1080pb 输出 视频 图像 分辨率 
+HDMI 视频 支持 1080pc 输出 音频 支持 8 通道 192kHz 
+24 bit 电源   19V 电源适配器 3.4 接口 1 开关 
+一大 两 小 Power On / Off Reset Force Recovery 
+2 DC 电源接口 3 CAN 通信接口 4 SATA 接口 的 
+存储 扩展 5 Micro SD 读卡器 6 HDMI 视频 输入 
+转 CSI 2 7 HDMI 视频输出 8 支持 风扇 PWM 
+控制 9 一个 千兆 以太 网络接口 10 一个 USB 3.0 
+一个 Micro B USB OTG 接口 11 RS232 串行 端口 
+通信 12 JTAG 调试 3.5 系统 性能 a Jetson TX1 
+以 革命性 的 NVIDIA Maxwell ™ 架构 为 基础 构建 
+含有 256 个 CUDA 核心 提供 每秒 超过 一万亿次 浮点运算 
+的 性能 b Jetson TX1 采用 64 位 ARM ® 
+A57 CPU c 显存 4 GB LPDDR4 | 25.6 GB 
+/ s d 视频 解码 4K 60Hz e 视频编码 4K 
+30Hz f 摄像头 接口 1400MPix / s g 具备 16 
+GB eMMC 存储 并 支持 SDIO 及 SATA 存储 扩展 
+h PCIe 支持 Gen 2 1x1 + 1 x 43.6 
+工作 条件 a 工作 环境温度 25℃ ~ 80℃ b 存储 
+温度 范围 25℃ ~ 80℃ 3.7 主要 器件 列表 序号 
+功能 型号 1HDMI 转 CSI 2ADV7480219V 降压 LTC3878312V BOOSTLM348145V 与 
+3 . 3VTPS5622151 . 8VTPS543276POWER MONITORSINA32217 配电 开关 APL35118USB 配电 
+开关 RT97159SPI 接口 的 CANMCP251510 电平 转换 SN74LVC2T45 北京 太 
+速 科技 有限公司 在线客服 QQ 448468544 公司 网站 www . 
+orihard . com 联系电话 15084122580 欢迎 关注 微信 公众 号 
+啊 智能 时代 http / / www . pvc123 . 
+com / b kq803570 / sell980013 / 基于 GPU 的 图像 处理 平台 1 .   309 
+英伟达 推 Jetson TX1 GPU 模块 力推 人工智能 1.1 产品 
+概述 Jetson TX1 GPU 模块 主要 针对 近年来 蓬勃 发展 
+的 人工智能 市场 包括 无人机 机器人 等 设备 1.2 处理 
+板 技术指标 1 ． Jetson TX1 GPU 模块 包括 一颗 
+浮点运算 达到 teraflop 级 的 2 .   基于 Maxwell 
+架构 的 256 核心 GPU 64位 ARM A57 芯片组 3 
+.   4GB LPDDR4 RAM 内存 每秒 带宽 速度 达 
+25 . 6GB 4 .   5GB 本地 存储模块 802.11 
+2 × 2 ac Wi fi 解决 方案 以及 1Gb 
+以太网 端口 同时 还 配备 Jetson Linux 软件开发 工具包 5 
+.   Jetson TX1 GPU 模块 的 面积 只有 50 
+* 87 毫米 仅 一张 信用卡 大小 虽然 外形 很 
+迷你 Jetson TX1 GPU 性能 却 不容小视 英伟达 Jetson TX1 
+GPU 模块 的 首批 客户 包括 微软 亚马逊 谷歌 以及 
+IBM 等 科技 巨头 它们 将 会在 各自 的 无人机 
+或者 机器人 设备 搭载 该 模块 从而 流畅 运行 人工智能 
+应用 Jetson TX1 GPU 模块 应该是 英伟达 之前 Jetson TK1 
+嵌入式 开发 组件 的 升级 版本 而且 英伟达 还于 今年年初 
+发布 过 一款 DRIVE PX 自动 驾驶 系统 可以 说 
+在 人工智能 领域 英伟达 已非 新手 2 . 基于 NVIDIA 
+GPU Jetson TX1 和 Altera FPGA XC7K160T 2FFG676I 的 Camera 
+Link 图像处理 平台 2.1 板卡 概述 该 系统 是由 两块 
+核心 模块 组成 分别 是 基于 NVIDIA GPU Jetson TX1 
+的 模块 以下 称 GPU 卡 和 Altera FPGA XC7K160T 
+2FFG676I 的 模块 以下 称 FPGA 卡 GPU 卡 是以 
+NVIDIA 的 Jetson TX1 模块 为 核心 可 用于 嵌入式 
+深度 学习 计算机 视觉 图形 和 /nr GPU 计算 FPGA 卡 
+以 XC7K160T 2FFG676I 为主 芯片 支持 Camera Link 的 数据 
+输入输出 主要 用于 处理 高清 图像 输入 信号 进行 智能 
+分析 两块 卡 既 可通过 SAMTEC 的 SEAM 标准 的 
+连接器 相连 相互配合 形成 GPU + FPGA 的 工作 模式 
+也可 各自 单独 工作 或 连接 在 NVIDIA 开发板 上 
+应用 非常 灵活 2.2 GPU 卡 性能 介绍 a   
+        Jetson TX1 以 革命性 的 NVIDIA 
+Maxwell ™ 架构 为 基础 构建 含有 256 个 CUDA 
+核心 提供 每秒 超过 一万亿次 浮点运算 的 性能 b   
+    Jetson TX1 采用 64 位 ARM ® A57 
+CPU c           显存 4 GB 
+LPDDR4 | 25.6 GB / s d       
+    支持 千兆 网络接口 2.3 FPGA 卡 性能 介绍 
+a           具备 162240个 逻辑 单元 
+最大 可 使用 I / O 口 资源 为 400 
+b           板载 1组 64位 2GByte 
+DDR3 SDRAM 内存 可实现 800MHz 时钟 速率 的 高速 数据缓存 
+理论 带宽 高达 6 . 4GByte / s DDR3 SDRAM 
+读写 效率 高达 90% c           
+板载 1片 64MByte SPI Flash 用于 FPGA 的 加载 2.4 
+供电 要求 板卡 采用 + 12V 供电 3 . 基于 
+Jetson TX1 的 HDMI 图像 分析 平台 3.1 系统 概述 
+Jetson TX1 是 一台 模块式 计算机 具有 完备 的 软件 
+开发 工具包 支持 针对 深度 学习 的 CUDA 加速 函数库 
+cuDNN 对应 训练 和 推理 它 与 许多 行业 标准 
+框架 兼容 包括 Caffe Theano 和 Torch 支持 针对 计算机 
+视觉 的 CUDA 加速 函数库 和 框架 VisionWorks 其 可以 
+实现 OpenVX 1.1 规范 与 其他 的 NVIDIA 扩展 相接 
+支持 图像 传输 和 API 包括 OpenGL 4.5 OpenGL E 
+3.1 和 Vulkan 3.2 功能 指标 a 支持 1路 HDMI 
+接口 的 信息 输入 经由 本 接口板 转换 为 CSI 
+2 形式 进入 核心 板 完成 音视频 数字 信号 的 
+采集 b 硬件 支持 1路 HDMI 数字 视频输出 c 具有 
+本地 存储 功能 并 通过 丰富 的 外围 接口 支持 
+数据 的 读取 3.3 技术指标 a 采集 视频 图像 分辨率 
+HDMI 视频 支持 480i 至 1080pb 输出 视频 图像 分辨率 
+HDMI 视频 支持 1080pc 输出 音频 支持 8 通道 192kHz 
+24 bit 电源   19V 电源适配器 3.4 接口 1 开关 
+一大 两 小 Power On / Off Reset Force Recovery 
+2 DC 电源接口 3 CAN 通信接口 4 SATA 接口 的 
+存储 扩展 5 Micro SD 读卡器 6 HDMI 视频 输入 
+转 CSI 2 7 HDMI 视频输出 8 支持 风扇 PWM 
+控制 9 一个 千兆 以太 网络接口 10 一个 USB 3.0 
+一个 Micro B USB OTG 接口 11 RS232 串行 端口 
+通信 12 JTAG 调试 3.5 系统 性能 a Jetson TX1 
+以 革命性 的 NVIDIA Maxwell ™ 架构 为 基础 构建 
+含有 256 个 CUDA 核心 提供 每秒 超过 一万亿次 浮点运算 
+的 性能 b Jetson TX1 采用 64 位 ARM ® 
+A57 CPU c 显存 4 GB LPDDR4 | 25.6 GB 
+/ s d 视频 解码 4K 60Hz e 视频编码 4K 
+30Hz f 摄像头 接口 1400MPix / s g 具备 16 
+GB eMMC 存储 并 支持 SDIO 及 SATA 存储 扩展 
+h PCIe 支持 Gen 2 1x1 + 1 x 43.6 
+工作 条件 a 工作 环境温度 25℃ ~ 80℃ b 存储 
+温度 范围 25℃ ~ 80℃ 3.7 主要 器件 列表 序号 
+功能 型号 1HDMI 转 CSI 2ADV7480219V 降压 LTC3878312V BOOSTLM348145V 与 
+3 . 3VTPS5622151 . 8VTPS543276POWER MONITORSINA32217 配电 开关 APL35118USB 配电 
+开关 RT97159SPI 接口 的 CANMCP251510 电平 转换 SN74LVC2T45 北京 太 
+速 科技 有限公司 在线客服 QQ 448468544 公司 网站 www . 
+orihard . com 联系电话 15084122580 欢迎 关注 微信 公众 号 
+啊 智能 时代 http / / www . pvc123 . 
+com / b kq803570 / sell980013 / 基于 GPU 的 图像 处理 平台 1 .   309 
+英伟达 推 Jetson TX1 GPU 模块 力推 人工智能 1.1 产品 
+概述 Jetson TX1 GPU 模块 主要 针对 近年来 蓬勃 发展 
+的 人工智能 市场 包括 无人机 机器人 等 设备 1.2 处理 
+板 技术指标 1 ． Jetson TX1 GPU 模块 包括 一颗 
+浮点运算 达到 teraflop 级 的 2 .   基于 Maxwell 
+架构 的 256 核心 GPU 64位 ARM A57 芯片组 3 
+.   4GB LPDDR4 RAM 内存 每秒 带宽 速度 达 
+25 . 6GB 4 .   5GB 本地 存储模块 802.11 
+2 × 2 ac Wi fi 解决 方案 以及 1Gb 
+以太网 端口 同时 还 配备 Jetson Linux 软件开发 工具包 5 
+.   Jetson TX1 GPU 模块 的 面积 只有 50 
+* 87 毫米 仅 一张 信用卡 大小 虽然 外形 很 
+迷你 Jetson TX1 GPU 性能 却 不容小视 英伟达 Jetson TX1 
+GPU 模块 的 首批 客户 包括 微软 亚马逊 谷歌 以及 
+IBM 等 科技 巨头 它们 将 会在 各自 的 无人机 
+或者 机器人 设备 搭载 该 模块 从而 流畅 运行 人工智能 
+应用 Jetson TX1 GPU 模块 应该是 英伟达 之前 Jetson TK1 
+嵌入式 开发 组件 的 升级 版本 而且 英伟达 还于 今年年初 
+发布 过 一款 DRIVE PX 自动 驾驶 系统 可以 说 
+在 人工智能 领域 英伟达 已非 新手 2 . 基于 NVIDIA 
+GPU Jetson TX1 和 Altera FPGA XC7K160T 2FFG676I 的 Camera 
+Link 图像处理 平台 2.1 板卡 概述 该 系统 是由 两块 
+核心 模块 组成 分别 是 基于 NVIDIA GPU Jetson TX1 
+的 模块 以下 称 GPU 卡 和 Altera FPGA XC7K160T 
+2FFG676I 的 模块 以下 称 FPGA 卡 GPU 卡 是以 
+NVIDIA 的 Jetson TX1 模块 为 核心 可 用于 嵌入式 
+深度 学习 计算机 视觉 图形 和 /nr GPU 计算 FPGA 卡 
+以 XC7K160T 2FFG676I 为主 芯片 支持 Camera Link 的 数据 
+输入输出 主要 用于 处理 高清 图像 输入 信号 进行 智能 
+分析 两块 卡 既 可通过 SAMTEC 的 SEAM 标准 的 
+连接器 相连 相互配合 形成 GPU + FPGA 的 工作 模式 
+也可 各自 单独 工作 或 连接 在 NVIDIA 开发板 上 
+应用 非常 灵活 2.2 GPU 卡 性能 介绍 a   
+        Jetson TX1 以 革命性 的 NVIDIA 
+Maxwell ™ 架构 为 基础 构建 含有 256 个 CUDA 
+核心 提供 每秒 超过 一万亿次 浮点运算 的 性能 b   
+    Jetson TX1 采用 64 位 ARM ® A57 
+CPU c           显存 4 GB 
+LPDDR4 | 25.6 GB / s d       
+    支持 千兆 网络接口 2.3 FPGA 卡 性能 介绍 
+a           具备 162240个 逻辑 单元 
+最大 可 使用 I / O 口 资源 为 400 
+b           板载 1组 64位 2GByte 
+DDR3 SDRAM 内存 可实现 800MHz 时钟 速率 的 高速 数据缓存 
+理论 带宽 高达 6 . 4GByte / s DDR3 SDRAM 
+读写 效率 高达 90% c           
+板载 1片 64MByte SPI Flash 用于 FPGA 的 加载 2.4 
+供电 要求 板卡 采用 + 12V 供电 3 . 基于 
+Jetson TX1 的 HDMI 图像 分析 平台 3.1 系统 概述 
+Jetson TX1 是 一台 模块式 计算机 具有 完备 的 软件 
+开发 工具包 支持 针对 深度 学习 的 CUDA 加速 函数库 
+cuDNN 对应 训练 和 推理 它 与 许多 行业 标准 
+框架 兼容 包括 Caffe Theano 和 Torch 支持 针对 计算机 
+视觉 的 CUDA 加速 函数库 和 框架 VisionWorks 其 可以 
+实现 OpenVX 1.1 规范 与 其他 的 NVIDIA 扩展 相接 
+支持 图像 传输 和 API 包括 OpenGL 4.5 OpenGL E 
+3.1 和 Vulkan 3.2 功能 指标 a 支持 1路 HDMI 
+接口 的 信息 输入 经由 本 接口板 转换 为 CSI 
+2 形式 进入 核心 板 完成 音视频 数字 信号 的 
+采集 b 硬件 支持 1路 HDMI 数字 视频输出 c 具有 
+本地 存储 功能 并 通过 丰富 的 外围 接口 支持 
+数据 的 读取 3.3 技术指标 a 采集 视频 图像 分辨率 
+HDMI 视频 支持 480i 至 1080pb 输出 视频 图像 分辨率 
+HDMI 视频 支持 1080pc 输出 音频 支持 8 通道 192kHz 
+24 bit 电源   19V 电源适配器 3.4 接口 1 开关 
+一大 两 小 Power On / Off Reset Force Recovery 
+2 DC 电源接口 3 CAN 通信接口 4 SATA 接口 的 
+存储 扩展 5 Micro SD 读卡器 6 HDMI 视频 输入 
+转 CSI 2 7 HDMI 视频输出 8 支持 风扇 PWM 
+控制 9 一个 千兆 以太 网络接口 10 一个 USB 3.0 
+一个 Micro B USB OTG 接口 11 RS232 串行 端口 
+通信 12 JTAG 调试 3.5 系统 性能 a Jetson TX1 
+以 革命性 的 NVIDIA Maxwell ™ 架构 为 基础 构建 
+含有 256 个 CUDA 核心 提供 每秒 超过 一万亿次 浮点运算 
+的 性能 b Jetson TX1 采用 64 位 ARM ® 
+A57 CPU c 显存 4 GB LPDDR4 | 25.6 GB 
+/ s d 视频 解码 4K 60Hz e 视频编码 4K 
+30Hz f 摄像头 接口 1400MPix / s g 具备 16 
+GB eMMC 存储 并 支持 SDIO 及 SATA 存储 扩展 
+h PCIe 支持 Gen 2 1x1 + 1 x 43.6 
+工作 条件 a 工作 环境温度 25℃ ~ 80℃ b 存储 
+温度 范围 25℃ ~ 80℃ 3.7 主要 器件 列表 序号 
+功能 型号 1HDMI 转 CSI 2ADV7480219V 降压 LTC3878312V BOOSTLM348145V 与 
+3 . 3VTPS5622151 . 8VTPS543276POWER MONITORSINA32217 配电 开关 APL35118USB 配电 
+开关 RT97159SPI 接口 的 CANMCP251510 电平 转换 SN74LVC2T45 北京 太 
+速 科技 有限公司 在线客服 QQ 448468544 公司 网站 www . 
+orihard . com 联系电话 15084122580 欢迎 关注 微信 公众 号 
+啊 智能 时代 http / / www . pvc123 . 
+com / b kq803570 / sell980013 / 

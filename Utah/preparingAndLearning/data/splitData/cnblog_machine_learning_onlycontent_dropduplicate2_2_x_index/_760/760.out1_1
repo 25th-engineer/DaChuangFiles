@@ -1,0 +1,84 @@
+第一天 先在 整体 上 对 Orange 有个 大概 的 了解 
+目前 我 的 看法 是 Orange 是 做 数据挖掘 和 
+机器学习 开发 的 框架 平台 它 本身 应该 已经 包含 
+了 好多 数据挖掘 和 分析 的 算法 本文 暂时 用来 
+保存 学习 资料 源代码 已经 下载 到 本地 明天 开始 
+安装 学习 Orange 是 一个 基于 组件 的 数据 挖掘 
+和 机器 学习 软件 套装 它 的 功能 即 友好 
+又 很 强大 快速 而又 多功能 的 可视化 编程 前端 
+以便 浏览 数据分析 和 可视化 基 绑定 了 Python 以 
+进行 脚本 开发 它 包含 了 完整 的 一系列 的 
+组件 以 进行 数据 预处理 并 提供 了 数据 帐目 
+过渡 建模 模式 评估 和 勘探 的 功能 以下内容 摘自 
+博客   https / / my . oschina . net 
+/ u / 2306127 / blog / 548833   摘要 
+Orange 是 一个 基于 组件 的 数据 挖掘 和 机器 
+学习 软件 可以 基于 Qt 的 图形界面 进行 可视化 流程 
+设计 Orange 基于 Python 进行 操作 外围 资源 应该 是 
+相当 丰富 的 安装 使用 很 简单 功能 相当 的 
+强大 强烈推荐 这里 介绍 其 安装 和 源代码 的 使用 
+方法 Orange http / / orange . biolab . si 
+/ 是 一个 基于 组件 的 数据 挖掘 和 机器 
+学习 软件 套装 支持 Python 进行 脚本 开发 Orange 由 
+斯洛文尼亚 大学 计算 与 信息 学系 的 生物 信息 实验室 
+BioLab 进行 开发 https / / github . com / 
+biolab   是 一个 实际 应用 的 项目 而 不仅仅 
+是 技术 工程 包含 了 该 组织 托管 的 相关 
+开源 工程 这里/r 有/v 不少/d 关于/p 数据挖掘/n 和/c 分析/vn 的/uj 
+文章/n 英文 的 有 时间 了 慢慢 翻译 一些 http 
+/ / blog . biolab . si / Orange 操作 
+简单 但 功能 很 强大 可以 使用 Python 强大 的 
+扩展 库 资源 具有 快速 而又 多功能 的 可视化 编程 
+前端 以便 浏览 数据分析 和 可视化 Orange 包含 了 完整 
+的 一系列 的 组件 以 进行 数据 预处理 并 提供 
+了 数据 帐目 过渡 建模 模式 评估 和 勘探 的 
+功能 其 由 C + + 和 Python 开发 它 
+的 图形库 是由 跨平台 的 Qt 框架 构建 的 可以 
+可视化 地 进行 操作 安装 完毕 启动 source   orange3env 
+/ bin / activate python   m   Orange . 
+canvas 源代码 托管 在 https / / github . com 
+/ biolab / orange3https / / github . com / 
+biolab / orange bio 在 Ubuntu 上 使用 这个 脚本 
+进行 安装 http / / biolab . github . io 
+/ install orange / setup ubuntu . sh 原始 文件 
+需要 更新 这个 是 更新 后的/nr # / bin / 
+bash p = $ PWD sudo   apt get   
+update sudo   apt get   y   install   
+git   python pip   python virtualenv   python3 dev 
+  python3 numpy   python3 scipy   python3 pyqt4   
+python qt4 dev   python3 sip dev   libqt4 dev 
+virtualenv   p   python3   system site packages   
+orange3env source   orange3env / bin / activate echo   
+/ usr / lib / python3 / dist packages / 
+    orange3env / lib / python3 . 4 / 
+site packages / 0 . pth pip   install   
+upgrade   numpy git   clone   https / / 
+github . com / biolab / orange3 cd   orange3 
+pip   install   r   requirements core . txt 
+pip   install   r   requirements dev . txt 
+pip   install   r   requirements doc . txt 
+pip   install   r   requirements gui . txt 
+pip   install   r   requirements sql . txt 
+python   setup . py   develop cd   . 
+. git   clone   https / / github . 
+com / biolab / orange bio cd   orange bio 
+python   setup . py   develop 下载 其它 的 
+相关 工程 源代码 # / bin / bash source   
+orange3env / bin / activate git   clone   https 
+/ / github . com / biolab / orange3 text 
+. git git   clone   https / / github 
+. com / biolab / orange3 associate . git git 
+  clone   https / / github . com / 
+biolab / orange3 network . git git   clone   
+https / / github . com / biolab / orange 
+web . git git   clone   https / / 
+github . com / biolab / ipynb . git git 
+  clone   https / / github . com / 
+biolab / orange3 datafusion . git git   clone   
+https / / github . com / biolab / orange3 
+example addon . git git   clone   https / 
+/ github . com / biolab / datafusion installation guide 
+. git git   clone   https / / github 
+. com / biolab / data mining course unipv . 
+git git   clone   https / / github . 
+com / biolab / qt graph helpers . git 

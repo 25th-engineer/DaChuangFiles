@@ -1,0 +1,9 @@
+机器学习的常见算法示意
+决策树、聚类、时间序列、朴素贝叶斯、SVM、关联规则、神经网络、HMM、回归、遗传算法、K-NN、文本挖掘
+机器学习的工具
+lSPSS Clementine（modeler）
+lSAS Enterprise Miner
+lMatlab
+lPython、R语言
+lHadoop mahout
+lSparkR、Spark MLlib

@@ -1,0 +1,16 @@
+最近开始研究自然语言处理了，所以准备好好学习一下，就跟着《Python自然语言处理》这本书，边学边整理吧
+安装
+Mac里面自带了python2.7，所以直接安装nltk就可以了。
+默认执行sudo pip install -U nltk会报错：
+Collecting nltk Downloading nltk-3.2.4.tar.gz (1.2MB) 100% |████████████████████████████████| 1.2MB 555kB/s Collecting six (from nltk) Downloading six-1.11.0-py2.py3-none-any.whl Installing collected packages: six, nltk Found existing installation: six 1.4.1 DEPRECATION: Uninstalling a distutils installed project (six) has been deprecated and will be removed in a future version. This is due to the fact that uninstalling a distutils project will only partially uninstall the project. Uninstalling six-1.4.1:
+这是因为系统内部已经有six包了，不能被修改。所以可以跳过six，直接安装nltk
+sudo pip install -U nltk --ignore-installed six
+这样可以看到输出：
+Collecting nltk Downloading nltk-3.2.4.tar.gz (1.2MB) 100% |████████████████████████████████| 1.2MB 552kB/s Collecting six Downloading six-1.11.0-py2.py3-none-any.whl Installing collected packages: six, nltk Running setup.py install for nltk ... done
+测试一下：
+xingoodeMacBook-Pro:~ xingoo$ python Python 2.7.10 (default, Feb 7 2017, 00:08:15) [GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin Type "help", "copyright", "credits" or "license" for more information. >>> import nltk
+没有错误，说明安装成功了。
+下载数据集
+然后就可以下载数据集了，执行命令nltk.download()弹出下载对话框。点击下载就可以用nltk为我们提供的语料库了。
+参考
+《python自然语言处理》

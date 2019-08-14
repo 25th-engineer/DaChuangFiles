@@ -1,0 +1,72 @@
+一,引言：
+上一章我们讲的kNN算法，虽然可以完成很多分类任务，但它最大的缺点是无法给出数据的内在含义，而决策树的主要优势就在于数据形式非常容易理解。决策树算法能够读取数据集合，决策树的一个重要任务是为了数据所蕴含的知识信息，因此，决策树可以使用不熟悉的数据集合，并从中提取一系列规则，在这些机器根据数据集创建规则是，就是机器学习的过程。
+二，相关知识
+1 决策树算法
+在构造决策树时，第一个需要解决的问题就是，如何确定出哪个特征在划分数据分类是起决定性作用，或者说使用哪个特征分类能实现最好的分类效果。这样，为了找到决定性的特征，划分川最好的结果，我们就需要评估每个特征。当找到最优特征后，依此特征，数据集就被划分为几个数据子集，这些数据自己会分布在该决策点的所有分支中。此时，如果某个分支下的数据属于同一类型，则该分支下的数据分类已经完成，无需进行下一步的数据集分类；如果分支下的数据子集内数据不属于同一类型，那么就要重复划分该数据集的过程，按照划分原始数据集相同的原则，确定出该数据子集中的最优特征，继续对数据子集进行分类，直到所有的特征已经遍历完成，或者所有叶结点分支下的数据具有相同的分类。
+创建分支的伪代码函数createBranch（）如下：
+检测数据集中的每一个子项是否属于同一分类：
+if so return 类标签; else 寻找划分数据集的最好特征 划分数据集 创建分支结点 for 每个分支结点 调用函数createBranch并增加返回结点到分支结点中//递归调用createBranch（） return 分支结点
+了解了如何划分数据集后，我们可以总结出决策树的一般流程：
+（1）收集数据
+（2）准备数据：构造树算法只适用于标称型数据，因此数值型数据必须离散化
+（3）分析数据
+（4）训练数据：上述的构造树过程构造决策树的数据结构
+（5）测试算法：使用经验树计算错误率
+（6）使用算法：在实际中更好地理解数据内在含义
+2 最好特征选取的规则：信息增益
+划分数据集的大原则是：将无序的数据变得更加有序。在划分数据集前后信息发生的变化称为信息增益，如果我们知道如何计算信息增益，就可以计算每个特征值划分数据集获得的信息增益，而获取信息增益最高的特征就是最好的特征。
+接下来，我们讲学习如何计算信息增益，而提到信息增益我们又不得不提到一个概念"香农熵"，或者简称熵。熵定义为信息的期望值。
+如果待分类的事物可能会出现多个结果x，则第i个结果xi发生的概率为p(xi),那么我们可以由此计算出xi的信息熵为l(xi)=p(xi)log(1/p(xi))=-p(xi)log(p(xi))
+那么，对于所有可能出现的结果，事物所包含的信息希望值（信息熵）就为：H=-Σp(xi)log(p(xi))，i属于所有可能的结果
+这样，假设利用数据集中某一特征A对数据集D（D的分类类别有n种）进行分类，而特征A取值有k种，那么此时，利用特征A对数据集进行分类的信息增益为：
+信息增益H(D,A)=原始数据集的信息熵H(D)-特征A对数据集进行划分后信息熵H(D/A)
+其中H(D/A)=∑|Aj|/|D|*H(Aj)，j属于A的k种取值，|Aj|和|D|分别表示，特征A第j种取值的样本数占所有取值样本总数的比例，以及数据集的样本总数
+三，构造决策树
+在知道了如何选取划分数据的最优特征后，我们就可以依据此来构建决策树了。
+1 由于要多次使用香农熵的公式，所以我们写出计算给定数据集的熵的公式：
+#计算给定数据集的熵 #导入log运算符 from math import log def calEnt(dataSet): #获取数据集的行数 numEntries=len(dataSet) #设置字典的数据结构 labelCounts={} #提取数据集的每一行的特征向量 for featVec in dataSet: #获取特征向量的最后一列的标签 currentLabel=featVec[-1] #检测字典的关键字key中是否存在该标签 #如果不存在keys()关键字 if currentLabel not in labelCounts.keys(): #将当前标签/0键值对存入字典中 labelCounts[currentLabel]=0 #否则将当前标签对应的键值加1 labelCounts[currentLabel]+=1 #初始化熵为0 Ent=0.0 #对于数据集中所有的分类类别 for key in labelCounts: #计算各个类别出现的频率 prob=float(labelCounts[key])/numEntries #计算各个类别信息期望值 Ent-=prob*log(prob,2) #返回熵 return Ent
+2 我们当然需要构建决策树的数据集：
+#创建一个简单的数据集 #数据集中包含两个特征'no surfacing','flippers'; #数据的类标签有两个'yes','no' def creatDataSet(): dataSet=[[1,1,'yes'], [1,1,'yes'], [1,0,'no'], [0,1,'no'], [0,1,'no']] labels=['no surfacing','flippers'] #返回数据集和类标签 return dataSet,labels
+需要说明的是，熵越高，那么混合的数据就越多，如果我们在数据集中添加更多的分类，会导致熵结果增大
+3 接下来我们就要通过上面讲到的信息增益公式得到划分数据集的最有特征，从而划分数据集
+首先划分数据集的代码：
+#划分数据集：按照最优特征划分数据集 #@dataSet:待划分的数据集 #@axis:划分数据集的特征 #@value:特征的取值 def splitDataSet(dataSet,axis,value): #需要说明的是,python语言传递参数列表时，传递的是列表的引用 #如果在函数内部对列表对象进行修改，将会导致列表发生变化，为了 #不修改原始数据集，创建一个新的列表对象进行操作 retDataSet=[] #提取数据集的每一行的特征向量 for featVec in dataSet: #针对axis特征不同的取值，将数据集划分为不同的分支 #如果该特征的取值为value if featVec[axis]==value: #将特征向量的0~axis-1列存入列表reducedFeatVec reducedFeatVec=featVec[:axis] #将特征向量的axis+1~最后一列存入列表reducedFeatVec #extend()是将另外一个列表中的元素（以列表中元素为对象）一一添加到当前列表中，构成一个列表 #比如a=[1,2,3],b=[4,5,6],则a.extend(b)=[1,2,3,4,5,6] reducedFeatVec.extend(featVec[axis+1:]) #简言之，就是将原始数据集去掉当前划分数据的特征列 #append()是将另外一个列表（以列表为对象）添加到当前列表中 ##比如a=[1,2,3],b=[4,5,6],则a.extend(b)=[1,2,3,[4,5,6]] retDataSet.append(reducedFeatVec) return retDataSet
+需要说明的是：
+（1）在划分数据集函数中，传递的参数dataSet列表的引用，在函数内部对该列表对象进行修改，会导致列表内容发生改变，于是，为了消除该影响，我们应该在函数中创建一个新的列表对象，将对列表对象操作后的数据集存入新的列表对象中
+（2）需要区分一下append()函数和extend()函数
+这两种方法的功能类似，都是在列表末尾添加新元素，但是在处理多个列表时，处理结果有所不同：
+比如：a=[1,2,3],b=[4,5,6]
+那么a.append(b)的结果为：[1,2,3,[4,5,6]],即使用append()函数会在列表末尾添加人新的列表对象b
+而a.extend(b)的结果为：[1,2,3,4,5,6]，即使用extend()函数
+接下来，我们再看选取最优特征的代码：
+#如何选择最好的划分数据集的特征 #使用某一特征划分数据集，信息增益最大，则选择该特征作为最优特征 def chooseBestFeatureToSplit(dataSet): #获取数据集特征的数目(不包含最后一列的类标签) numFeatures=len(dataSet[0])-1 #计算未进行划分的信息熵 baseEntropy=calEnt(dataSet) #最优信息增益 最优特征 bestInfoGain=0.0;bestFeature=-1 #利用每一个特征分别对数据集进行划分，计算信息增益 for i in range(numFeatures): #得到特征i的特征值列表 featList=[example[i] for example in dataSet] #利用set集合的性质--元素的唯一性，得到特征i的取值 uniqueVals=set(featList) #信息增益0.0 newEntropy=0.0 #对特征的每一个取值，分别构建相应的分支 for value in uniqueVals: #根据特征i的取值将数据集进行划分为不同的子集 #利用splitDataSet()获取特征取值Value分支包含的数据集 subDataSet=splitDataSet(dataSet,i,value) #计算特征取值value对应子集占数据集的比例 prob=len(subDataSet)/float(len(dataSet)) #计算占比*当前子集的信息熵,并进行累加得到总的信息熵 newEntropy+=prob*calEnt(subDataSet) #计算按此特征划分数据集的信息增益 #公式特征A,数据集D #则H(D,A)=H(D)-H(D/A) infoGain=baseEntropy-newEntropy #比较此增益与当前保存的最大的信息增益 if (infoGain>bestInfoGain): #保存信息增益的最大值 bestInfoGain=infoGain #相应地保存得到此最大增益的特征i bestFeature=i #返回最优特征 return bestFeature
+在函数调用中，数据必须满足一定的要求，首先，数据必须是由列表元素组成的列表，而且所有的列表元素具有相同的数据长度；其次，数据的最后一列或者每个实例的最后一个元素是当前实例的类别标签。这样，我们才能通过程序统一完成数据集的划分
+4，在通过以上的各个模块学习之后，我们接下来就要真正构建决策树，构建决策树的工作原理为：首先得到原始数据集，然后基于最好的属性划分数据集，由于特征值可能多于两个，因此可能存在大于两个分支的数据集划分。第一次划分之后，数据将向下传递到树分支的下一个结点，在该结点上，我们可以再次划分数据。因此，我们可以采用递归的方法处理数据集，完成决策树构造。
+递归的条件是：程序遍历完所有划分数据集的属性，或者每个分之下的所有实例都具有相同的分类。如果所有的实例具有相同的分类，则得到一个叶子结点或者终止块。
+当然，我们可能会遇到，当遍历完所有的特征属性，但是某个或多个分支下实例类标签仍然不唯一，此时，我们需要确定出如何定义该叶子结点，在这种情况下，通过会采取多数表决的原则选取分支下实例中类标签种类最多的分类作为该叶子结点的分类
+这样，我们就需要先定义一个多数表决函数majorityCnt()
+#当遍历完所有的特征属性后，类标签仍然不唯一(分支下仍有不同分类的实例) #采用多数表决的方法完成分类 def majorityCnt(classList): #创建一个类标签的字典 classCount={} #遍历类标签列表中每一个元素 for vote in classList: #如果元素不在字典中 if vote not in classCount.keys(): #在字典中添加新的键值对 classCount[vote]=0 #否则，当前键对于的值加1 classCount[vote]+=1 #对字典中的键对应的值所在的列，按照又大到小进行排序 #@classCount.items 列表对象 #@key=operator.itemgetter(1) 获取列表对象的第一个域的值 #@reverse=true 降序排序，默认是升序排序 sortedClassCount=sorted(classCount.items,\ key=operator.itemgetter(1),reverse=true) #返回出现次数最多的类标签 return sortedClassCount[0][0]
+好了，考虑了这种情况后，我们就可以通过递归的方式写出决策树的构建代码了
+#创建树 def createTree(dataSet,labels): #获取数据集中的最后一列的类标签，存入classList列表 classList=[example[-1] for example in dataSet] #通过count()函数获取类标签列表中第一个类标签的数目 #判断数目是否等于列表长度，相同表面所有类标签相同，属于同一类 if classList.count(classList[0])==len(classList): return classList[0] #遍历完所有的特征属性，此时数据集的列为1，即只有类标签列 if len(dataSet[0])==1: #多数表决原则，确定类标签 return majorityCnt(classList) #确定出当前最优的分类特征 bestFeat=chooseBestFeatureToSplit(dataSet) #在特征标签列表中获取该特征对应的值 bestFeatLabel=labels[bestFeat] #采用字典嵌套字典的方式，存储分类树信息 myTree={bestFeatLabel:{}} ##此位置书上写的有误，书上为del(labels[bestFeat]) ##相当于操作原始列表内容，导致原始列表内容发生改变 ##按此运行程序，报错'no surfacing'is not in list ##以下代码已改正 #复制当前特征标签列表，防止改变原始列表的内容 subLabels=labels[:] #删除属性列表中当前分类数据集特征 del(subLabels[bestFeat]) #获取数据集中最优特征所在列 featValues=[example[bestFeat] for example in dataSet] #采用set集合性质，获取特征的所有的唯一取值 uniqueVals=set(featValues) #遍历每一个特征取值 for value in uniqueVals: #采用递归的方法利用该特征对数据集进行分类 #@bestFeatLabel 分类特征的特征标签值 #@dataSet 要分类的数据集 #@bestFeat 分类特征的标称值 #@value 标称型特征的取值 #@subLabels 去除分类特征后的子特征标签列表 myTree[bestFeatLabel][value]=createTree(splitDataSet\ (dataSet,bestFeat,value),subLabels) return myTree
+需要说明的是，此时参数dataSet为列表的引用，我们不能在函数中直接对列表进行修改，但是在书中代码中有del(labels[bestFeat])的删除列表某一列的操作，显然不可取，应该创建新的列表对象subLabels=labels[:]，再调用函数 del(subLabels[bestFeat])
+好了，接下来运行代码：
+5 接下来，我们可以通过决策树进行实际的分类了，利用构建好的决策树，输入符合要求的测试数据，比较测试数据与决策树上的数值，递归执行该过程直到叶子结点，最后将测试数据定义为叶子结点所有的分类，输出分类结果
+决策树分类函数代码为：
+#------------------------测试算法------------------------------ #完成决策树的构造后，采用决策树实现具体应用 #@intputTree 构建好的决策树 #@featLabels 特征标签列表 #@testVec 测试实例 def classify(inputTree,featLabels,testVec): #找到树的第一个分类特征，或者说根节点'no surfacing' #注意python2.x和3.x区别，2.x可写成firstStr=inputTree.keys()[0] #而不支持3.x firstStr=list(inputTree.keys())[0] #从树中得到该分类特征的分支，有0和1 secondDict=inputTree[firstStr] #根据分类特征的索引找到对应的标称型数据值 #'no surfacing'对应的索引为0 featIndex=featLabels.index(firstStr) #遍历分类特征所有的取值 for key in secondDict.keys(): #测试实例的第0个特征取值等于第key个子节点 if testVec[featIndex]==key: #type()函数判断该子节点是否为字典类型 if type(secondDict[key]).__name__=='dict': #子节点为字典类型，则从该分支树开始继续遍历分类 classLabel=classify(secondDict[key],featLabels,testVec) #如果是叶子节点，则返回节点取值 else: classLabel=secondDict[key] return classLabel
+输入实例，通过分类函数得到预测结果，可以与实际结果比对，计算错误率
+6  我们说一个好的分类算法要能够完成实际应用的需要，决策树算法也不例外，一个算法好不好，还是需要实际应用的检验才行，接下来我们会通过一个实例来使用决策树预测隐形眼镜的类型
+首先，我们知道构建决策树是非常耗时的任务，即使很小的数据集，也要花费几秒的时间来构建决策树，这样显然耗费计算时间。所以，我们可以将构建好的决策树保存在磁盘中，这样当我们需要的时候，再从磁盘中读取出来使用即可。
+如何进行对象的序列化操作，python的pickle模块足以胜任该任务，任何对象都可以通过pickle模块执行序列化操作，字典也不例外，使用pickle模块存储和读取决策树文件的代码如下：
+#决策树的存储：python的pickle模块序列化决策树对象，使决策树保存在磁盘中 #在需要时读取即可，数据集很大时，可以节省构造树的时间 #pickle模块存储决策树 def storeTree(inputTree,filename): #导入pickle模块 import pickle #创建一个可以'写'的文本文件 #这里，如果按树中写的'w',将会报错write() argument must be str,not bytes #所以这里改为二进制写入'wb' fw=open(filename,'wb') #pickle的dump函数将决策树写入文件中 pickle.dump(inputTree,fw) #写完成后关闭文件 fw.close() #取决策树操作 def grabTree(filename): import pickle #对应于二进制方式写入数据，'rb'采用二进制形式读出数据 fr=open(filename,'rb') return pickle.load(fr)
+这里，文件的写入操作为'wb'或'wb+',表示以byte的形式写入数据，相应'rb'以byte形式读入数据
+接下来，我们将通过隐形眼镜数据集构建决策树，从而预测患者需要佩戴的隐形眼镜的类型，步骤如下：
+（1）收集数据：文本数据集'lenses.txt'
+（2）准备数据：解析tab键分隔开的数据行
+（3）分析数据：快速检查数据，确保正确地解析数据内容
+（4）训练算法：构建决策树
+（5）测试算法：通过构建的决策树比较准确预测出分类结果
+（6）算法的分类准确类满足要求，将决策树存储下来，下次需要时读取使用
+其中，解析文本数据集和构建隐形眼镜类型决策树的函数代码如下：
+#------------------------示例：使用决策树预测隐形眼镜类型---------------- def predictLensesType(filename): #打开文本数据 fr=open(filename) #将文本数据的每一个数据行按照tab键分割，并依次存入lenses lenses=[inst.strip().split('\t') for inst in fr.readlines()] #创建并存入特征标签列表 lensesLabels=['age','prescript','astigmatic','tearRate'] #根据继续文件得到的数据集和特征标签列表创建决策树 lensesTree=createTree(lenses,lensesLabels) return lensesTree
+当然，我们还可以通过python的matplotlib工具绘制出决策树的树形图，由于内容太多，就不一一讲解啦
+接下来，补充一下决策树算法可能或出现的过度匹配（过拟合）的问题，当决策树的复杂度较大时，很可能会造成过拟合问题。此时，我们可以通过裁剪决策树的办法，降低决策树的复杂度，提高决策树的泛化能力。比如，如果决策树的某一叶子结点只能增加很少的信息，那么我们就可将该节点删掉，将其并入到相邻的结点中去，这样，降低了决策树的复杂度，消除过拟合问题。

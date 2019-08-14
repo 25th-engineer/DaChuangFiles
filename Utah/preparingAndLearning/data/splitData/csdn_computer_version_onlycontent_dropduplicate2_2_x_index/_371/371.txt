@@ -1,0 +1,35 @@
+计算机视觉会议
+A类
+ICCV: International Conference on Computer Vision，两年一届
+CVPR: International Conference on Computer Vision and Pattern Recognition， 一年一届
+B类
+ECCV: European Conference on Computer Vision，两年一届
+C类
+ACCV: Asian Conference on Computer Vision
+ICPR: International Conference on Pattern Recognition
+BMVC: British Machine Vision Conference
+其他
+SSVM,NIPS等
+计算机视觉刊物
+A类
+TPAMI: IEEE Trans on Pattern Analysis and Machine Intelligence
+IJCV: International Journal of Computer Vision
+SIAM Journal image sciences
+B类
+CVIU: Computer Vision and Image UnderstandingPattern Recognition
+C类
+IET-CVI: IET Computer Vision
+IVC: Image and Vision Computing
+IJPRAI: International Journal of Pattern Recognition and Artificial Intelligence
+Machine Vision and Applications
+PRL: Pattern Recognition Letters
+其他
+TIP，Civil等
+作者：sjming
+链接：https://www.zhihu.com/question/37687006/answer/188681083
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+作者：sjming
+链接：https://www.zhihu.com/question/37687006/answer/188681083
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

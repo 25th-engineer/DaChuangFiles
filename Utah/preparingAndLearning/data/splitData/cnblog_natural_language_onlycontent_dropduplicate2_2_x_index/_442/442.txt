@@ -1,0 +1,23 @@
+参数：
+public class APIConstants { //设置APPID/AK/SK public static final String APP_ID = "108***"; public static final String API_KEY = "fWC*****"; public static final String SECRET_KEY = "CP3***"; public static final String TOKEN = "24.7f7d825858b9f66819e48f6ab212a8a7.2592000.1522835019.*********"; }
+HttpUtil:
+import java.util.List; import java.io.BufferedReader; import java.io.DataOutputStream; import java.io.InputStreamReader; import java.net.HttpURLConnection; import java.net.URL; import java.util.Map; public class HttpUtil { public static String post(String requestUrl, String accessToken, String params) throws Exception { String contentType = "application/x-www-form-urlencoded"; System.err.println("post(String requestUrl, String accessToken, String params)"); return HttpUtil.post(requestUrl, accessToken, contentType, params); } public static String post(String requestUrl, String accessToken, String contentType, String params) throws Exception { String encoding = "UTF-8"; if (requestUrl.contains("nlp")) { encoding = "GBK"; } System.err.println("post(String requestUrl, String accessToken, String contentType, String params)"); return HttpUtil.post(requestUrl, accessToken, contentType, params, encoding); } public static String post(String requestUrl, String accessToken, String contentType, String params, String encoding) throws Exception { String url = requestUrl + "?access_token=" + accessToken; System.err.println("post(String requestUrl, String accessToken, String contentType, String params, String encoding)"); return HttpUtil.postGeneralUrl(url, contentType, params, encoding); } public static String postGeneralUrl(String generalUrl, String contentType, String params, String encoding) throws Exception { System.err.println("postGeneralUrl(String generalUrl, String contentType, String params, String encoding)"); URL url = new URL(generalUrl); // 打开和URL之间的连接 HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setRequestMethod("POST"); // 设置通用的请求属性 connection.setRequestProperty("Content-Type", contentType); connection.setRequestProperty("Connection", "Keep-Alive"); connection.setUseCaches(false); connection.setDoOutput(true); connection.setDoInput(true); // 得到请求的输出流对象 DataOutputStream out = new DataOutputStream(connection.getOutputStream()); out.write(params.getBytes(encoding)); out.flush(); out.close(); // 建立实际的连接 connection.connect(); // 获取所有响应头字段 Map<String, List<String>> headers = connection.getHeaderFields(); // 遍历所有的响应头字段 for (String key : headers.keySet()) { System.err.println(key + "--->" + headers.get(key)); } // 定义 BufferedReader输入流来读取URL的响应 BufferedReader in = null; in = new BufferedReader( new InputStreamReader(connection.getInputStream(), encoding)); String result = ""; String getLine; while ((getLine = in.readLine()) != null) { result += getLine; } in.close(); System.err.println("result:" + result); return result; } }
+测试：
+public class Test { public static void main(String[] args) throws Exception { String url = "https://aip.baidubce.com/rpc/2.0/nlp/v1/sentiment_classify"; String params = "{\n" +
+" \"text\": \"苹果是一家伟大的公司\" \n" +
+"}";
+try {
+HttpUtil httpUtil = new HttpUtil();
+String result = httpUtil.post(url, APIConstants.TOKEN, params); System.out.println(result);
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+}
+获取token:
+import com.huawei.hst.nps.bdAI.APIConstants;; public class AccessToken { public static void main(String[] args) throws Exception {; String access_token_url = "https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials" + "&client_id="+APIConstants.API_KEY +"&client_secret="+ APIConstants.SECRET_KEY; //HttpResponse response = HttpUtil.post(access_token_url,new HashMap<String, String>(),new HashMap<String, String>()); //System.out.println(EntityUtils.toString(response.getEntity())); } }
+资料：
+连接1：http://blog.csdn.net/u010651369/article/details/64439090
+连接2：http://blog.csdn.net/zmx729618/article/details/78132942
+链接3：http://aixiaoshuai.mydoc.io/?t=234826
+链接4：http://ai.baidu.com/tech/nlp/sentiment_classify

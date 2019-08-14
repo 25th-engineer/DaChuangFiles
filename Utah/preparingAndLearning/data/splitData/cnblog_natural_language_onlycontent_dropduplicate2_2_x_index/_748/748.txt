@@ -1,0 +1,45 @@
+课程：
+6.891 (Fall 2003): Machine Learning Approaches for Natural Language Processing
+http://www.ai.mit.edu/courses/6.891-nlp/
+CS 276 / LING 286 Information Retrieval and Web Search Spring 2012
+http://www.stanford.edu/class/cs276/index.html
+CS 224d DL for NLP
+https://cs224d.stanford.edu/
+https://mp.weixin.qq.com/s/ywGWUvLyjDFyyg6wPlzZjw
+阅读列表：
+清华nlp小组整理的一个机器翻译的阅读列表，分类整理了机器翻译（尤其是神经机器翻译）
+<!-- p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #00a2ff} -->
+https://github.com/THUNLP-MT/MT-Reading-List
+资源：
+Information Retrieval Resources
+http://nlp.stanford.edu/IR-book/information-retrieval.html
+Statistical natural language processing and corpus-based computational linguistics: An annotated list of resources
+http://www-nlp.stanford.edu/links/statnlp.html
+Speech and Language Processing
+https://web.stanford.edu/~jurafsky/slp3/
+Machine Learning for Natural Language Processing (ML-for-NLP)
+https://wiki.inf.ed.ac.uk/MLforNLP
+NLTK 2.0 documentation
+http://nltk.org/
+Natural Language Processing with Python
+--- Analyzing Text with the Natural Language Toolkit
+http://nltk.org/book/
+PYTHON自然语言处理中文翻译 NLTK Natural Language Processing with Python 中文版.pdf
+http://vdisk.weibo.com/s/4ffue/1334656530
+Project Gutenberg - free ebooks
+http://www.gutenberg.org/
+医学搜索引擎
+<!-- p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #00a2ff} -->
+www.pubmed.com
+博客文章：
+百度朱凯华：智能搜索和对话式OS最新技术全面解读（65PPT）
+https://wx.abbao.cn/a/11210-7bb27d2a59c0f19c.html
+https://mp.weixin.qq.com/s/oMoPk8FoVm9xMQpQISgq6A
+“搜你所想”之用户搜索意图识别
+http://www.infoq.com/cn/articles/user-search-intention-recognition
+百度副总裁王海峰：百度在NLP领域都做了什么？
+https://mp.weixin.qq.com/s/vjYv6zWn4OIQo18HA2vHqw
+《搜索与推荐中的深度学习匹配》之搜索篇
+https://zhuanlan.zhihu.com/p/38296950
+<!-- p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px '.PingFang SC Light'} -->
+<!-- p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px '.PingFang SC Light'} -->

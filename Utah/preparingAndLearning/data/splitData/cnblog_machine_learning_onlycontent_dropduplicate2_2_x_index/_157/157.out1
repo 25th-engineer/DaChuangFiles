@@ -1,0 +1,64 @@
+机器学习 实战 终于 到手 了 开始 学习 了 由于 本人 
+python 学 的 比较 挫 所以 学习 笔记 里 会 
+有 许多 python 的 内容 1 python 及其 各种 插件 
+的 安装 由于 我 使用 了 win8 . 1 64位 
+系统 正版 的 哦 所以 像 numpy 和 matploblib 这种 
+常用 的 插件 不太好 装 解决 方案 就是 Anaconda 2 
+. 0.1 Windows x86 _ 64 . exe 一次性 搞定 
+2 kNN 代码 1 # * coding utf 8 * 
+2 from numpy import * 3 import operator 4 5 
+def createDataSet 6 group = array 1.0 1.1 1.0 1.0 
+0 0 0 0.1 7 labels = A A B 
+B 8 return group labels 9 10 def classify0 inX 
+dataSet labels k 11 dataSetSize = dataSet . shape 0 
+12 diffMat = tile inX dataSetSize 1 dataSet 13 sqDiffMat 
+= diffMat * * 2 14 sqDistances = sqDiffMat . 
+sum axis = 1 15 distances = sqDistances * * 
+0.5 16 s o r t e d D i 
+s t I n d i c i e s 
+= distances . argsort # indices 17 classCount = { 
+} 18 for i in range k 19 voteIlabel = 
+labels s o r t e d D i s 
+t I n d i c i e s i 
+20 classCount voteIlabel = classCount . get voteIlabel 0 + 
+1 21 # 找出 最大 的 那个 22 sortedClassCount = 
+sorted classCount . iteritems 23 key = operator . itemgetter 
+1 reverse = True 24 return sortedClassCount 0 0 这里 
+的 疑惑 主要 出现 在 1 array 与 list 有 
+什么 区别 array 是 numpy 里面 定义 的 为了 方便 
+计算 比如 1 array 1 2 + array 3 4 
+2 1 2 + 3 4 执行 以下 就 可以 
+知道 他们 的 差别 了 2 shape 0 返回 的 
+是 哪一 维度 的 大小 不要 嘲笑 我 小白 我 
+真的 不 知道 找到 文档 看 了 一下 就 开朗 
+了 ndarray . shape     the dimensions of the 
+array . This is a tuple of integers indicating the 
+size of the array in each dimension . For a 
+matrix with   n   rows and   m   
+columns   shape   will be   n m . 
+The length of the   shape   tuple is therefore 
+the rank or number of dimensions   ndim . 3 
+tile 函数 tile 函数 是 经常 使用 的 函数 用于 
+扩充 array 举例 1 b = np . array 1 
+2 3 4 2 np . tile b 2 3 
+array 1 2 1 2 4 3 4 3 4 
+5 np . tile b 2 1 6 array 1 
+2 7 3 4 8 1 2 9 3 4 
+这下 就 懂 了吧 为什么 要 用 这个 函数 呢 
+因为 后面 两个 array 要做 差 这样 做 就 可以 
+不用 使用 循环 了 典型 的 空间 换 时间 那么 
+为什么 要做 差 呢 好吧 因为 这是 knn 算法 4 
+array 的 sum 函数 写到 这里 我 决定 要 好好 
+读读 numpy 文档 了 numpy . sum a axis = 
+None dtype = None out = None keepdims = False 
+一个 sum 函数 还是 挺 麻烦 的 呢 np . 
+sum 0 1 0 5 axis = 0 array 0 
+6 np . sum 0 1 0 5 axis = 
+1 array 1 5 这样 大家 都 清楚 了 5 
+最后 一行 return 了 什么 表面 看起来 像是 二维 数组 
+的 第一 个 元素 但是 sortedClassCount 是 二维 数组 吗 
+写 了 一个 小 的 验证 程序 发现 sortedClassCount 是 
+一个 list 元素 是 tuple L = { 1 12 
+3 4 } sortedL = sorted L . iteritems key 
+= operator . itemgetter 1 print sortedL # 结果 3 
+4 1 12 

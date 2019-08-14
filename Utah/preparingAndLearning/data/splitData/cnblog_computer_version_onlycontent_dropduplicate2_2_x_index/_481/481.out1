@@ -1,0 +1,91 @@
+微软 新一代 体感 游戏机 Kinect 的 出现 直接 导致 了 
+我 对这 一 领域 的 强烈 兴趣 虽然 在 之前 
+的 神经 网络 学习 过程 中 对 计算机 视觉 的 
+一些 分支 领域 有所 涉及 例如 人脸识别 签名 识别 图像 
+处理 等 但 并 没有 系统 地 了解 过 这一 
+领域 我 希望 通过 这 一系列 博文 可以 记录 下 
+这个 学习 的 过程 和 自己 的 一些 心得 感悟 
+既然 是 入门 选择 参考书 就 非常 重要 这里 我 
+选择 了 英文 和 中文 参考书 各 一本 Computer Vision 
+Algorithms and Applications 作者 Richard Szeliski 和 计算机 视觉 中的 
+数学方法 吴福 朝 科学出版社 . 2008 此外 还有 一些 有用 
+的 链接 1 . http / / research . microsoft 
+. com / en us / um / people / 
+szeliski /   上述 作者 Richard Szeliski 个人主页 这里 可以 
+下 载到 Computer Vision Algorithms and Applications 的 pdf 版本 
+2 . http / / research . microsoft . com 
+/ en us / default . aspx   微软 研究院 
+主页 3 . http / / c o m p 
+u t e r v i s i o n 
+c e n t r a l . com / 
+cvcnews   Computer Vision Central 主页 提供 关于 计算机 视觉 
+的 最新 产品 研究 动态 和 业界 资讯 4 . 
+http / / www . cvchina . info /   
+CVChina 主页 以 译介 的 方式 报道 计算机 视觉 增强 
+现实 机器学习 图像处理 机器 视觉 等 学术界 工业界 的 最新 
+进展 计算机 视觉 领域 顶级 的 国际 会议 International Conference 
+on Computer Vision ICCV 奇数 年 举办 IEEE Conference on 
+Computer Vision and Pattern Recognition CVPR 每年 举办 IEEE International 
+Conference on Image Processing ICIP 每年 举办 European Conference on 
+Computer Vision ECCV 偶数 年 举办 下 一篇 正式 开始 
+学习 计算机 视觉 to be continued . . . 微软 新一代 体感 游戏机 Kinect 的 出现 直接 导致 了 
+我 对这 一 领域 的 强烈 兴趣 虽然 在 之前 
+的 神经 网络 学习 过程 中 对 计算机 视觉 的 
+一些 分支 领域 有所 涉及 例如 人脸识别 签名 识别 图像 
+处理 等 但 并 没有 系统 地 了解 过 这一 
+领域 我 希望 通过 这 一系列 博文 可以 记录 下 
+这个 学习 的 过程 和 自己 的 一些 心得 感悟 
+既然 是 入门 选择 参考书 就 非常 重要 这里 我 
+选择 了 英文 和 中文 参考书 各 一本 Computer Vision 
+Algorithms and Applications 作者 Richard Szeliski 和 计算机 视觉 中的 
+数学方法 吴福 朝 科学出版社 . 2008 此外 还有 一些 有用 
+的 链接 1 . http / / research . microsoft 
+. com / en us / um / people / 
+szeliski /   上述 作者 Richard Szeliski 个人主页 这里 可以 
+下 载到 Computer Vision Algorithms and Applications 的 pdf 版本 
+2 . http / / research . microsoft . com 
+/ en us / default . aspx   微软 研究院 
+主页 3 . http / / c o m p 
+u t e r v i s i o n 
+c e n t r a l . com / 
+cvcnews   Computer Vision Central 主页 提供 关于 计算机 视觉 
+的 最新 产品 研究 动态 和 业界 资讯 4 . 
+http / / www . cvchina . info /   
+CVChina 主页 以 译介 的 方式 报道 计算机 视觉 增强 
+现实 机器学习 图像处理 机器 视觉 等 学术界 工业界 的 最新 
+进展 计算机 视觉 领域 顶级 的 国际 会议 International Conference 
+on Computer Vision ICCV 奇数 年 举办 IEEE Conference on 
+Computer Vision and Pattern Recognition CVPR 每年 举办 IEEE International 
+Conference on Image Processing ICIP 每年 举办 European Conference on 
+Computer Vision ECCV 偶数 年 举办 下 一篇 正式 开始 
+学习 计算机 视觉 to be continued . . . 微软 新一代 体感 游戏机 Kinect 的 出现 直接 导致 了 
+我 对这 一 领域 的 强烈 兴趣 虽然 在 之前 
+的 神经 网络 学习 过程 中 对 计算机 视觉 的 
+一些 分支 领域 有所 涉及 例如 人脸识别 签名 识别 图像 
+处理 等 但 并 没有 系统 地 了解 过 这一 
+领域 我 希望 通过 这 一系列 博文 可以 记录 下 
+这个 学习 的 过程 和 自己 的 一些 心得 感悟 
+既然 是 入门 选择 参考书 就 非常 重要 这里 我 
+选择 了 英文 和 中文 参考书 各 一本 Computer Vision 
+Algorithms and Applications 作者 Richard Szeliski 和 计算机 视觉 中的 
+数学方法 吴福 朝 科学出版社 . 2008 此外 还有 一些 有用 
+的 链接 1 . http / / research . microsoft 
+. com / en us / um / people / 
+szeliski /   上述 作者 Richard Szeliski 个人主页 这里 可以 
+下 载到 Computer Vision Algorithms and Applications 的 pdf 版本 
+2 . http / / research . microsoft . com 
+/ en us / default . aspx   微软 研究院 
+主页 3 . http / / c o m p 
+u t e r v i s i o n 
+c e n t r a l . com / 
+cvcnews   Computer Vision Central 主页 提供 关于 计算机 视觉 
+的 最新 产品 研究 动态 和 业界 资讯 4 . 
+http / / www . cvchina . info /   
+CVChina 主页 以 译介 的 方式 报道 计算机 视觉 增强 
+现实 机器学习 图像处理 机器 视觉 等 学术界 工业界 的 最新 
+进展 计算机 视觉 领域 顶级 的 国际 会议 International Conference 
+on Computer Vision ICCV 奇数 年 举办 IEEE Conference on 
+Computer Vision and Pattern Recognition CVPR 每年 举办 IEEE International 
+Conference on Image Processing ICIP 每年 举办 European Conference on 
+Computer Vision ECCV 偶数 年 举办 下 一篇 正式 开始 
+学习 计算机 视觉 to be continued . . . 

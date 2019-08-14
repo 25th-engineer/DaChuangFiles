@@ -1,0 +1,159 @@
+一：python基础，自然语言概念
+from nltk.book import *
+1，text1.concordance("monstrous")      用语索引
+2，text1.similar("best")
+3，text2.common_contexts(["monstrous", "very"])
+4，text4.dispersion_plot(["citizens", "democracy", "freedom", "duties", "America"])
+5，text3.generate()
+6，sorted(set(text3))
+7，text3.count("smote")
+8，100 * text4.count('a') / len(text4)
+ex1 = ['Monty', 'Python', 'and', 'the', 'Holy', 'Grail']。链表list
+sorted(ex1)，len(set(ex1))，  ex1.count('the')。
+['Monty', 'Python'] + ['and', 'the', 'Holy', 'Grail']
+sent1.append("Some")
+text4[173]，text4.index('awaken')，text5[16715:16735]，index从0开始，不包含右边的index
+FreqDist(text1)  频率分布
+高频词和低频词，停用词    hapaxes() 低频词
+long_words = [w for w in V if len(w) > 15]
+fdist5 = FreqDist(text5)
+sorted([w for w in set(text5) if len(w) > 7 and fdist5[w] > 7])
+bigrams
+>>> bigrams(['more', 'is', 'said', 'than', 'done'])
+[('more', 'is'), ('is', 'said'), ('said', 'than'), ('than', 'done')]
+text4.collocations()
+词长，词频
+用途：
+1，词意消歧
+2，指代消解
+3，机器翻译
+4，人机对话系统
+5，文本的含义
+一个标识符token是表示一个我们想要放在一组对待的字符序列——如：hairy、his 或者:)——的术语
+一个词类型是指一个词在一个文本中独一无二的出现形式或拼写
+将文本当做词链表，文本不外乎是词和标点符号的序列
+1，变量
+2，字符串    name * 2
+3，链表 list  ：saying = ['After', 'all', 'is', 'said', 'and', 'done']；saying[-2:]？saying[-2:0]
+4，条件：[w for w in text if condition]   and   or
+5，嵌套代码块，控制结构  冒号表示当前语句与后面的缩进块有关联
+if len(word) >= 5:
+print 'word length is greater than or equal to 5'
+for word in ['Call', 'me', 'Ishmael', '.']:
+print word
+6，函数  ：def mult(x, y)，局部变量，全局变量global
+7，模块module：textproc.py； from textproc import plural；plural('wish')
+8，包package
+函数含义
+s.startswith(t) 测试s 是否以t 开头
+s.endswith(t) 测试s 是否以t 结尾
+t in s 测试s 是否包含t
+s.islower() 测试s 中所有字符是否都是小写字母
+s.isupper() 测试s 中所有字符是否都是大写字母
+s.isalpha() 测试s 中所有字符是否都是字母
+s.isalnum() 测试s 中所有字符是否都是字母或数字
+s.isdigit() 测试s 中所有字符是否都是数字
+s.istitle() 测试s 是否首字母大写（s 中所有的词都首字母大写）
+二：语料库
+1，古腾堡语料库
+古腾堡项目，gutenberg
+文本特征：平均词长、平均句子长度，词频
+2，网络和聊天文本
+3，布朗语料库
+from nltk.corpus import brown
+brown.categories()
+4，路透社语料库
+5，就职演说语料库
+6，标注文本语料库
+文本语料库的结构：
+载入你自己的语料库
+条件频率分布：
+条件和事件：
+pairs = [('news', 'The'), ('news', 'Fulton'), ('news', 'County'), ...]
+绘制分布图和分布表
+词汇工具：Toolbox和 Shoebox
+WordNet
+WordNet 是一个面向语义的英语词典，由同义词的集合—或称为同义词集（synsets）—
+组成，并且组织成一个网络
+意义与同义词：wn.synsets('motorcar')；wn.synset('car.n.01').lemma_names；
+['car', 'auto', 'automobile', 'machine', 'motorcar']
+WordNet的层次结构
+WordNet 概念层次片段：每个节点对应一个同义词集;边表示上位词/下位词关系，即
+上级概念与从属概念的关系；
+词汇关系：上/下位，整体/部分,蕴涵,反义词
+语义相似度：
+path_similarityassigns是基于上位词层次结构中相互连接的概念之间的最短路径在0-1 范围的打分（两者之间没有路径就返回-1）。同义词集与自身比较将返回1；Path方法是两个概念之间最短路径长度的倒数
+is－a关系是纵向的，has－part关系是横向
+齐夫定律：f(w)是一个自由文本中的词w 的频率。假设一个文本中的所有词都按照它
+们的频率排名，频率最高的在最前面。齐夫定律指出一个词类型的频率与它的排名成反
+比（即f×r=k，k 是某个常数）。例如：最常见的第50 个词类型出现的频率应该是最常
+见的第150 个词型出现频率的3 倍
+三：加工原料文本
+分词和词干提取
+1，分词
+tokens = nltk.word_tokenize(raw)
+2，处理HTML
+raw = nltk.clean_html(html)
+3，读取本地文件
+f = open('document.txt')； raw = f.read()
+4，NLP 的流程
+5，字符串：最底层的文本处理
+字符串运算：+，* 【b = [' ' * 2 * (7 - i) + 'very' * i for i in a]】
+输出字符串：print monty
+访问单个字符：monty[0]
+访问子字符串：monty[6:10]；monty[-12:-7]
+更多的字符串操作：
+链表与字符串的差异
+query = 'Who knows?'
+beatles = ['John', 'Paul', 'George', 'Ringo']
+字符串是不可变的，链表是可变的
+6，Unicode编码，解码
+在 Python中使用本地编码
+#!/bin/env python
+# -*- coding: UTF-8 -*-
+#Filename:build_SmartNavigation.py
+7，正则表达式re
+[w for w in wordlist if re.search('ed$', w)]
+[w for w in wordlist if re.search('^..j..t..$', w)]          [^aeiouAEIOU]
+sum(1 for w in text if re.search('^e-? mail$', w))
+[w for w in wordlist if re.search('^[ghi][mno][jlk][def]$', w)]
+[w for w in chat_words if re.search('^m+i+n+e+$', w)]
+[w for w in chat_words if re.search('^[ha]+$', w)]              +*
+【转义】，{}【出现次数】，()【范围】和|【取或】
+[w for w in wsj if re.search('^[0-9]+-[a-z]{3,5}$', w)]
+[w for w in wsj if re.search('(ed|ing)$', w)]
+re的用处：查找词干；搜索已分词文本；
+8，规范化文本【 词干提取器 ：词形归并】
+lower（）；
+词干提取：
+porter = nltk.PorterStemmer();
+[porter.stem(t) for t in tokens];
+词形归并：
+词形归并是一个过程，将一个词的各种形式（如：appeared，appears）映射到这个词标
+准的或引用的形式，也称为词位或词元（如：appear）
+wnl = nltk.WordNetLemmatizer()
+[wnl.lemmatize(t) for t in tokens]
+9，用正则表达式为文本分词
+re.split(r' ', raw)
+re.split(r'[ tn]+', raw)
+re.split(r'W+', raw)
+10，NLTK 的正则表达式分词器
+nltk.regexp_tokenize()
+11，断句，分词：分词是将文本分割成基本单位或标记，例如词和标点符号
+现在分词的任务变成了一个搜索问题：找到将文本字符串正确分割成词汇的字位串
+text = "doyouseethekittyseethedoggydoyoulikethekittylikethedoggy"
+>>> seg1 = "0000000000000001000000000010000000000000000100000000000"
+>>> seg2 = "0100100100100001001001000010100100010010000100010010000"
+>>> seg3 = "0000100100000011001000000110000100010000001100010000001"
+>>> evaluate(text, seg3)
+46
+>>> evaluate(text, seg2)
+47
+>>> evaluate(text, seg1)
+63
+利用模拟退火算法
+12，从链表到字符串
+silly = ['We', 'called', 'him', 'Tortoise', 'because', 'he', 'taught', 'us', '.']
+' '.join(silly)
+'We called him Tortoise because he taught us .'
+"%s wants a %s %s" % ("Lee", "sandwich", "for lunch")

@@ -1,0 +1,20 @@
+笔记总结，各章节主要内容已总结在标题之中
+Andrew Ng机器学习课程笔记–week1(机器学习简介&线性回归模型)
+Andrew Ng机器学习课程笔记--week2(多元线性回归&正规公式）
+Andrew Ng机器学习课程笔记--week3(逻辑回归&正则化参数)
+Andrew Ng机器学习课程笔记--week4(神经网络)
+Andrew Ng机器学习课程笔记--week5(上)(神经网络损失函数&反向传播算法）
+Andrew Ng机器学习课程笔记--week5(下)(梯度检测&BP随机初始化)
+Andrew Ng机器学习课程笔记--week6(算法评估&bias&variance&精度&召回率)
+Andrew Ng机器学习课程笔记--week7(SVM)
+Andrew Ng机器学习课程笔记--week8(非监督学习&聚类&PCA)
+Andrew Ng机器学习课程笔记--week9(上)(异常检测&多元高斯分布)
+Andrew Ng机器学习课程笔记–week9(下)(推荐系统&协同过滤)
+Andrew Ng机器学习课程笔记--week10(优化梯度下降)
+Andrew Ng机器学习课程笔记--week11(图像识别&总结划重点 )
+敲黑板划重点！！！！
+下面是本系列课程笔记的总结。
+
+MARSGGBO♥原创
+
+2017-8-16

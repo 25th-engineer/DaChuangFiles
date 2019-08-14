@@ -1,0 +1,736 @@
+Atitit 图像 处理 和 计算机 视觉 的 分类   三 
+部分   图像处理   图像 分析   计算机 视觉 1.1 
+. 按照 当前 流行 的 分类 方法 可以 分为 以下 
+三 部分 三 部分   图像处理   图像 分析   
+计算机 视觉 11.2 . 图像处理 需要 的 理论 基础 数学 
+信号处理 3 . 模式识别   图像 处理 与 计算机 视觉 
+21 . 2.1 . 1 . 数学 21 . 2.2 
+. 2 . 信号处理 31.3 . 四 图像 处理 与 
+分析 31 . 3.1 . 1 . Bilateral Filter31 . 
+3.2 . 2 . Color41 . 3.3 . 3 . 
+Compression and Encoding41 . 3.4 . 4 . Contrast Enhancement41 
+. 3.5 . 5 . Deblur Restoration 41 . 3.6 
+. 6 . Dehazing and Defog51 . 3.7 . 7 
+. Denoising51 . 3.8 . 8 . Edge Detection51 . 
+3.9 . 9 . Graph Cut61 . 3.10 . 10 
+. Hough Transform61 . 3.11 . 11 . Image Interpolation61 
+. 3.12 . 12 . Image Matting61 . 3.13 . 
+13 . Image Modeling61 . 3.14 . 14 . Image 
+Quality Assessment61 . 3.15 . 15 . Image Registration71 . 
+3.16 . 16 . Image Retrieval71 . 3.17 . 17 
+. Image Segmentation71 . 3.18 . 18 . Level Set71 
+. 3.19 . 19 . Pyramid71 . 3.20 . 20 
+. Radon Transform81 . 3.21 . 21 . Scale Space81 
+. 3.22 . 22 . Snake81 . 3.23 . 23 
+. Super Resolution81 . 3.24 . 24 . Thresholding81 . 
+3.25 . 25 . Watershed81 . 1 .   按照 
+当前 流行 的 分类 方法 可以 分为 以下 三 部分 
+三 部分   图像处理   图像 分析   计算机 视觉 
+A . 图像处理 对 输入 的 图像 做 某种 变换 
+输出 仍然 是 图像 基本 不 涉及 或者 很少 涉及 
+图像 内容 的 分析 比较 典型 的 有 图像 变换 
+图像增强 图像去噪 图像 压       缩 图像 恢复 
+二 值 图像 处理 等等 基于 阈值 的 图像 分割 
+也 属于 图像 处理 的 范畴 一般 处理 的 是 
+单幅 图像 B . 图像 分析 对 图像 的 内容 
+进行 分析 提取 有 意义 的 特征 以 便于 后续 
+的 处理 处理 的 仍然 是 单幅 图像 C . 
+计算机 视觉 对 图像 分析 得到 的 特征 进行 分析 
+提取 场景 的 语义 表示 让 计算机 具有 人眼 和 
+人脑 的 能力 这时 处理 的 是 多幅 图像 或者 
+序列 图像 当然 也 包括 部分 单幅 图像 1.2 . 
+  图像处理 需要 的 理论 基础 数学 信号处理 3 . 
+模式识别   图像 处理 与 计算机 视觉 二 图像 处理 
+与 计算机 视觉 相关 的 书籍 1 . 2.1 . 
+  1 . 数学 我们 所说 的 图像 处理 实际上 
+就是 数字 图像 处理 是 把 真实世界 中 的 连续 
+三维 随机 信号 投影 到 传感器 的 二维 平面 上 
+采样 并 量化 后 得到 二维 矩阵 数字图像处理 就是 二维 
+矩阵 的 处理 而从 二维 图像 中 恢复 出 三维 
+场景 就是 计算机 视觉 的 主要 任务 之一 这 里面 
+就 涉及 到 了 图像 处理 所 涉及 到 的 
+三个 重要 属性 连续性 二维 矩阵 随机性 所 对应 的 
+数学 知识 是 高等 数学 微积分 线性代数 矩阵 论 概率论 
+和 随机 过程 这 三门 课 也是 考研 数学 的 
+三个 组成部分 构成 了 图像 处理 和 计算机 视觉 最 
+基础 的 数学 基础 如果 想要 更进一步 就要 到 网上 
+搜搜 林达 华 推荐 的 数学 书目 了 1 . 
+2.2 .   2 . 信号处理 图像处理 其实 就是 二 
+维和 三维 信号处理 而 处理 的 信号 又 有 一定 
+的 随机性 因此/c 经典/n 信号/n 处理/v 和/c 随机/d 信号/n 处理/v 
+都是/nr 图像/n 处理/v 和/c 计算机/n 视觉/n 中/f 必备/v 的/uj 理论/n 
+基础/n 1.2 . 2.1 .   2.1 经典 信号处理 1.2 
+. 2.2 .     2.2 随机 信号处理 1.2 . 
+2.3 .     2.3 小波 变换 1.2 . 2.4 
+.     2.4 信息论 1.3 .   四 图像 
+处理 与 分析 本章 主要 讨论 图像 处理 与 分析 
+虽然 后面 计算机 视觉 部分 的 有些 内容 比如 特征提取 
+等 也 可以 归结 到 图像 分析 中 来 但 
+鉴于 它们 与 计算机 视觉 的 紧密 联系 以及 它们 
+的 出处 没有 把 它们 纳入 到 图像 处理 与 
+分析 中 来 同样 这 里面 也 有 一些 也 
+可以 划归 到 计算机 视觉 中去 这都 不重要 只要 知道 
+有 这么 个 方法 能为/nr 自己 所用 或者 从中 得到 
+灵感 这就 够了 1 . 3.1 .   1 . 
+Bilateral FilterBilateral Filter 俗称 双边 滤波器 是 一种 简单 实用 
+的 具有 保持 边缘 作用 的 平缓 滤波器 由 Tomasi 
+等在 1998年 提出 它 现在 已经 发挥 着 重大 作用 
+尤其 是 在 HDR 领域 1998 ICCV Bilateral Filtering for 
+Gray and Color Images 2008 TIP Adaptive Bilateral Filter for 
+Sharpness Enhancement and Noise Removal1 . 3.2 .   2 
+. Color 如果 对 颜色 的 形成 有 一定 的 
+了解 能 比较 深刻 的 理解 一些 算法 这 方面 
+推荐 冈萨雷斯 的 数字 图像 处理 中 的 相关 章节 
+以及 Sharma 在 Digital Color Imaging Handbook 中 的 第一 
+章 Color fundamentals for digital imaging 跟 颜色 相关 的 
+知识 包括 Gamma 颜色 空间 转换 颜色 索引 以及 肤色 
+模型 等 这 其中 也 包括 著名 的 EMD 1 
+. 3.3 .     3 . Compression and Encoding 
+个人 以为 图像压缩 编码 并 不是 当前 很热 的 一个 
+话题 原因 前面 已经 提到 过 这里 可以 看看 一篇 
+对 编码 方面 的 展望 文章 2005 IEEE Trends and 
+perspectives in image and video coding1 . 3.4 .   
+4 . Contrast Enhancement 对比度 增强 一直 是 图像 处理 
+中 的 一个 恒久 话题 一般来说 都是/nr 基于 直方图 的 
+比如 直方图 均衡化 冈萨雷斯 的 书 里面 对 这个 话题 
+讲 的 比较 透彻 这里 推荐 几篇 个人 认为 不错 
+的 文章 1 . 3.5 .     5 . 
+Deblur Restoration 图像 恢复 或者 图像 去模糊 一直 是 一个 
+非常 难 的 问题 尤其 是 盲 图像 恢复 港 
+中文 的 jiaya jia 老师 在 这 方面 做 的 
+不错 他 在 主页 也给 出了 可执行文件 这 方面 的 
+内容 也 建议 看 冈萨雷斯 的 书 这里 列出 了 
+几篇 口碑 比较好 的 文献 包括 古老 的 Richardson Lucy 
+方法 几篇 盲 图像 恢复 的 综述 以及 最近 的 
+几 篇文章 尤以 Fergus 和 Jiaya Jia 的 为 经典 
+1 . 3.6 .     6 . Dehazing and 
+Defog 严格 来说 去 雾化 也 算是 图像 对比度 增强 
+的 一种 这 方面 最近 比较 好 的 工作 就是 
+He kaiming 等 提出 的 Dark Channel 方法 这篇 论文 
+也 获得 了 2009 的 CVPR 最佳 论文 奖 2/m 
+这位/rz 003年/tdq 的/uj 广东/ns 高考状元/n 已经/d 于/p 2011年/tdq 从港/nr 中文/nz 
+博士/n 毕业/n 加入/v MSRA/w 估计 当时 也就 二十五六岁 吧 相当 
+了不起 1 . 3.7 .     7 . Denoising 
+图像去噪 也是 图像 处理 中 的 一个 经典 问题 在 
+数码摄影 中 尤其 重要 主要/b 的/uj 方法/n 有/v 基/a 于小波/nr 
+的/uj 方法/n 和/c 基于/p 偏/a 微分方程/l 的/uj 方法/n 1 . 
+3.8 .     8 . Edge Detection 边缘 检测 
+也是 图像 处理 中 的 一个 基本 任务 传统 的 
+边缘 检测 方法 有 基于 梯度 算子 尤其 是 Sobel 
+算子 以及 经典 的 Canny 边缘 检测 到 现在 Canny 
+边缘 检测 及 其 思想 仍在 广泛 使用 关于 Canny 
+算法 的 具体 细节 可以 在 Sonka 的 书 以及 
+canny 自己 的 论文 中 找到 网上 也 可以 搜到 
+最快 最 直接 的 方法 就是 看 OpenCV 的 源代码 
+非常 好 懂 在 边缘 检测 方面 Berkeley 的 大牛 
+J Malik 和他的/nr 学生 在 2004年 的 PAMI 提出 的 
+方法 效果 非常 好 当然 也 比较 复杂 在 复杂度 
+要求 不高 的 情况 下 还是 值得 一试 的 MIT 
+的 Bill Freeman 早期 的 代表 作 Steerable Filter 在 
+边缘 检测 方面 效果 也 非常 好 并且 便于 实现 
+这里 给 出了 几篇 比较好 的 文献 包括 一篇 最新 
+的 综述 边缘/n 检测/vn 是/v 图像/n 处理/v 和/c 计算机/n 视觉/n 
+中/f 任何/r 方向/n 都/d 无法/n 逃避/v 的/uj 一个/m 问题/n 这 
+方面 研究 多 深 都 不为过 1 . 3.9 . 
+    9 . Graph Cut 基于 图 割 的 
+图像 分割 算法 在 这 方面 没有 研究 仅仅 列出 
+几篇 引用 比 较高 的 文献 这里 又见 J Malik 
+当然 还有 华人 杰出 学者 Jianbo Shi 他 的 主页 
+非常 搞笑 在 醒目 的 位置 标注 Do not fly 
+China Eastern Airlines . . . 看来 是 被 坑 
+过 而且 坑 的 比较 厉害 这个 领域 俄罗斯 人 
+比较 厉害 1 . 3.10 .     10 . 
+Hough Transform 虽然 霍夫 变换 可以 扩展到 广义 霍夫 变换 
+但 最 常用 的 还是 检测 圆 和 直线 这 
+方面 同样 推荐 看 OpenCV 的 源代码 一目了然 Matas 在 
+2000年 提出 的 PPHT 已经 集成 到 OpenCV 中 去了 
+1 . 3.11 .     11 . Image Interpolation 
+图像 插值 偶尔 也 用得上 一般来说 双 三次 也就 够了 
+2000 TMI Interpolation revisited1 . 3.12 .   12 . 
+Image Matting 也 就是 最近 我 才 知道 这个 词 
+翻译 成 中文 是 抠图 比较 难听 不 知道 是 
+谁 开始 这么 翻译 的 没有研究 请看 文章 以及 Richard 
+Szeliski 的 相关 章节 以色列 美女 Levin 在 这方 面有 
+两篇 PAMI 1 . 3.13 .     13 . 
+Image Modeling 图像 的 统计模型 这 方面 有 一本 专门 
+的 著作 Natural Image Statistics1 . 3.14 .     
+14 . Image Quality Assessment 在 图像 质量 评价 方面 
+Bovik 是 首屈一指 的 这位 老师 也 很 有意思 作为 
+编辑 出版 了 很多 书 他 也是 IEEE 的 Fellowy1 
+. 3.15 .   15 . Image Registration 图像 配 
+准 最早 的 应用 在 医学 图像 上 在 图像 
+融合 之前 需要 对 图像 进行 配 准 在 现在 
+的 计算机 视觉 中 配 准 也 是 一个 需要 
+理解 的 概念 比如 跟踪 拼接 等 在 KLT 中 
+也会 涉及 到 配 准 这里 主要 是 综述 文献 
+1 . 3.16 .     16 . Image Retrieval 
+图像 检索 曾经 很热 在 2000年 之后 似乎 消停 了 
+一段 时间 最近 各种 图像 的 不变 性 特征 提 
+出来 之后 再加 上 互联网 搜索 的 商业 需求 这个 
+方向 似乎 又要 火 起来 了 尤其 是 在 商业界 
+比如 淘淘 搜 这 仍然 是 一个 非常 值得 关注 
+的 方面 而且 图像 检索 与 目标 识别 具有 相通 
+之处 比如 特征提取 和 特征 降 维 这 方面 的 
+文章 值得 一读 在 最后 给 出了 两篇 Book chapter 
+其中 一篇 还是 中文 的 1 . 3.17 .   
+  17 . Image Segmentation 图像 分割 非常 基本 但又 
+非常 难 的 一个 问题 建议 看 Sonka 和 冈萨雷斯 
+的 书 这里 给出 几篇 比较好 的 文章 再次 看到 
+了 J Malik 他们 给 出了 源代码 和 测试 集 
+有 兴趣 的话 可以 试试 1 . 3.18 .   
+  18 . Level Set 大名鼎鼎 的 水平 集 解决 
+了 Snake 固有 的 缺点 Level set 的 两位 提出者 
+Sethian 和 Osher 最后 反目 实在 让 人 遗憾 个人 
+以为 这种方法 除了 迭代 比较 费时 在 真实 场景 中 
+的 表现 让 人生 疑 不过 2008年 ECCV 上 的 
+PWP 方法 在 结果 上 很 吸引 人 在 重 
+初始化 方面 Chunming Li 给出 了 比较 好 的 解决方案 
+1 . 3.19 .     19 . Pyramid 其实 
+小波 变换 就是 一种 金字塔 分解 算法 而且 具有 无 
+失 真重 构和 非 冗余 的 优点 Adelson 在 1983年 
+提出 的 Pyramid 优点 是 比较 简单 实现 起来 比较 
+方便 1 . 3.20 .     20 . Radon 
+TransformRadon 变换 也 是 一种 很 重要 的 变换 它 
+构成 了 图像 重建 的 基础 关于 图像 重建 和 
+radon 变换 可以/c 参考/v 章毓晋/nr 老师/n 的/uj 书/n 讲 的 
+比较 清楚 1 . 3.21 .     21 . 
+Scale Space 尺度空间 滤波 在 现代 不变 特征 中 是 
+一个 非常 重要 的 概念 有人 说 SIFT 的 提出者 
+Lowe 是 不变 特征 之父 而 Linderburg 是 不变 特征 
+之母 虽然 尺度空间 滤波 是 Witkin 最早 提出 的 但 
+其 理论 体系 的 完善 和 应用 还是 Linderburg 的 
+功劳 其 在 1998年 IJCV 上 的 两 篇文章 值得 
+一读 不管 是 特征提取 方面 还是 边缘 检测 方面 1 
+. 3.22 .     22 . Snake 活动 轮廓 
+模型 改变 了 传统 的 图像 分割 的 方法 用 
+能量 收缩 的 方法 得到 一个 统计 意义上 的 能量 
+最小 最大 的 边缘 1 . 3.23 .     
+23 . Super Resolution 超 分辨率 分析 对 这个 方向 
+没有研究 简 单列 几 篇文章 其中 Yang Jianchao 的 那篇 
+在 IEEE 上 的 下载 率 一直 居高不下 1 . 
+3.24 .     24 . Thresholding 阈值 分割 是 
+一种 简单 有效 的 图像 分割 算法 这个 topic 在 
+冈萨雷斯 的 书 里面 讲 的 比较 多 这里 列出 
+OTSU 的 原始 文章 以及 一篇 不错 的 综述 1 
+. 3.25 .     25 . Watershed 分水岭 算法 
+是 一种 非常 有效 的 图像 分割 算法 它 克服 
+了 传统 的 阈值 分割 方法 的 缺点 尤其 是 
+Marker Controlled Watershed 值得 关注 Watershed 在 冈萨雷斯 的 书 
+里面 讲 的 比较 详细 1.4 .   参考资料 图像 
+处理 与 计算机 视觉 的 经典 书籍 JUST DO IT 
+博客 频道 CSDN . NET . html 作者   绰号 
+老 哇 的 爪子 claw of Eagle   偶像 破坏者 
+Iconoclast image smasher 捕鸟 王 Bird   Catcher 王中 之王 
+King of Kings 虔诚 者 Pious 宗教信仰 捍卫者 Defender   
+Of   the   Faith . 卡 拉卡拉 红 斗篷 
+Caracalla red cloak 简称 Emir Attilax   Akbar 埃米尔 阿提 
+拉克斯 阿克巴 全名 Emir Attilax Akbar   bin Mahmud bin 
+  attila bin Solomon bin adam Al   Rapanui   
+埃米尔 阿提 拉克斯 阿克巴 本 马哈茂德   本 阿提拉 本 
+所罗门 本 亚当     阿尔   拉 帕努伊 常用 
+名 艾 提拉 艾龙   EMAIL 1466519819 @ qq . 
+com 头衔 uke 总部 o2o 负责人 全球 网格化 项目 创始人 
+uke 宗教 与 文化 融合 事务部 部长 uke 宗教改革 委员会 
+副主席 Uke 部落 首席 大 酋长 uke 制度 与 重大 
+会议 委员会 委员长 uke 保安 部 首席 大队长 uke 制度 
+检查 委员会 副会长 奶牛 科技 cto uke 首席 cto   
+技术 总监 研发 总监 研发 主管 部门 总监 uke 波利尼 
+西亚区 大区 连锁 负责人   汤加王国 区域 负责人 uke 克 
+尔格 伦群 岛区 连锁 负责人 莱恩群岛 区 连锁 负责人 uke 
+布维岛 和南 乔治亚 和南 桑 威奇 群岛 大区 连锁 负责人 
+Uke 软件 标准化 协会 理事长 理事长 Uke 数据库 与 存储 
+标准化 协会 副会长 uke 出版社 编辑 总编 uke 终身 教育 
+学校 副校长   Uke 医院   与 医学 院 方面 
+的 创始人   度假村 首席 大 村长 转载 请 注明 
+来源 attilax 的 专栏   http / / www . 
+cnblogs . com / attilax / Atiend Atitit 图像 处理 和 计算机 视觉 的 分类   三 
+部分   图像处理   图像 分析   计算机 视觉 1.1 
+. 按照 当前 流行 的 分类 方法 可以 分为 以下 
+三 部分 三 部分   图像处理   图像 分析   
+计算机 视觉 11.2 . 图像处理 需要 的 理论 基础 数学 
+信号处理 3 . 模式识别   图像 处理 与 计算机 视觉 
+21 . 2.1 . 1 . 数学 21 . 2.2 
+. 2 . 信号处理 31.3 . 四 图像 处理 与 
+分析 31 . 3.1 . 1 . Bilateral Filter31 . 
+3.2 . 2 . Color41 . 3.3 . 3 . 
+Compression and Encoding41 . 3.4 . 4 . Contrast Enhancement41 
+. 3.5 . 5 . Deblur Restoration 41 . 3.6 
+. 6 . Dehazing and Defog51 . 3.7 . 7 
+. Denoising51 . 3.8 . 8 . Edge Detection51 . 
+3.9 . 9 . Graph Cut61 . 3.10 . 10 
+. Hough Transform61 . 3.11 . 11 . Image Interpolation61 
+. 3.12 . 12 . Image Matting61 . 3.13 . 
+13 . Image Modeling61 . 3.14 . 14 . Image 
+Quality Assessment61 . 3.15 . 15 . Image Registration71 . 
+3.16 . 16 . Image Retrieval71 . 3.17 . 17 
+. Image Segmentation71 . 3.18 . 18 . Level Set71 
+. 3.19 . 19 . Pyramid71 . 3.20 . 20 
+. Radon Transform81 . 3.21 . 21 . Scale Space81 
+. 3.22 . 22 . Snake81 . 3.23 . 23 
+. Super Resolution81 . 3.24 . 24 . Thresholding81 . 
+3.25 . 25 . Watershed81 . 1 .   按照 
+当前 流行 的 分类 方法 可以 分为 以下 三 部分 
+三 部分   图像处理   图像 分析   计算机 视觉 
+A . 图像处理 对 输入 的 图像 做 某种 变换 
+输出 仍然 是 图像 基本 不 涉及 或者 很少 涉及 
+图像 内容 的 分析 比较 典型 的 有 图像 变换 
+图像增强 图像去噪 图像 压       缩 图像 恢复 
+二 值 图像 处理 等等 基于 阈值 的 图像 分割 
+也 属于 图像 处理 的 范畴 一般 处理 的 是 
+单幅 图像 B . 图像 分析 对 图像 的 内容 
+进行 分析 提取 有 意义 的 特征 以 便于 后续 
+的 处理 处理 的 仍然 是 单幅 图像 C . 
+计算机 视觉 对 图像 分析 得到 的 特征 进行 分析 
+提取 场景 的 语义 表示 让 计算机 具有 人眼 和 
+人脑 的 能力 这时 处理 的 是 多幅 图像 或者 
+序列 图像 当然 也 包括 部分 单幅 图像 1.2 . 
+  图像处理 需要 的 理论 基础 数学 信号处理 3 . 
+模式识别   图像 处理 与 计算机 视觉 二 图像 处理 
+与 计算机 视觉 相关 的 书籍 1 . 2.1 . 
+  1 . 数学 我们 所说 的 图像 处理 实际上 
+就是 数字 图像 处理 是 把 真实世界 中 的 连续 
+三维 随机 信号 投影 到 传感器 的 二维 平面 上 
+采样 并 量化 后 得到 二维 矩阵 数字图像处理 就是 二维 
+矩阵 的 处理 而从 二维 图像 中 恢复 出 三维 
+场景 就是 计算机 视觉 的 主要 任务 之一 这 里面 
+就 涉及 到 了 图像 处理 所 涉及 到 的 
+三个 重要 属性 连续性 二维 矩阵 随机性 所 对应 的 
+数学 知识 是 高等 数学 微积分 线性代数 矩阵 论 概率论 
+和 随机 过程 这 三门 课 也是 考研 数学 的 
+三个 组成部分 构成 了 图像 处理 和 计算机 视觉 最 
+基础 的 数学 基础 如果 想要 更进一步 就要 到 网上 
+搜搜 林达 华 推荐 的 数学 书目 了 1 . 
+2.2 .   2 . 信号处理 图像处理 其实 就是 二 
+维和 三维 信号处理 而 处理 的 信号 又 有 一定 
+的 随机性 因此/c 经典/n 信号/n 处理/v 和/c 随机/d 信号/n 处理/v 
+都是/nr 图像/n 处理/v 和/c 计算机/n 视觉/n 中/f 必备/v 的/uj 理论/n 
+基础/n 1.2 . 2.1 .   2.1 经典 信号处理 1.2 
+. 2.2 .     2.2 随机 信号处理 1.2 . 
+2.3 .     2.3 小波 变换 1.2 . 2.4 
+.     2.4 信息论 1.3 .   四 图像 
+处理 与 分析 本章 主要 讨论 图像 处理 与 分析 
+虽然 后面 计算机 视觉 部分 的 有些 内容 比如 特征提取 
+等 也 可以 归结 到 图像 分析 中 来 但 
+鉴于 它们 与 计算机 视觉 的 紧密 联系 以及 它们 
+的 出处 没有 把 它们 纳入 到 图像 处理 与 
+分析 中 来 同样 这 里面 也 有 一些 也 
+可以 划归 到 计算机 视觉 中去 这都 不重要 只要 知道 
+有 这么 个 方法 能为/nr 自己 所用 或者 从中 得到 
+灵感 这就 够了 1 . 3.1 .   1 . 
+Bilateral FilterBilateral Filter 俗称 双边 滤波器 是 一种 简单 实用 
+的 具有 保持 边缘 作用 的 平缓 滤波器 由 Tomasi 
+等在 1998年 提出 它 现在 已经 发挥 着 重大 作用 
+尤其 是 在 HDR 领域 1998 ICCV Bilateral Filtering for 
+Gray and Color Images 2008 TIP Adaptive Bilateral Filter for 
+Sharpness Enhancement and Noise Removal1 . 3.2 .   2 
+. Color 如果 对 颜色 的 形成 有 一定 的 
+了解 能 比较 深刻 的 理解 一些 算法 这 方面 
+推荐 冈萨雷斯 的 数字 图像 处理 中 的 相关 章节 
+以及 Sharma 在 Digital Color Imaging Handbook 中 的 第一 
+章 Color fundamentals for digital imaging 跟 颜色 相关 的 
+知识 包括 Gamma 颜色 空间 转换 颜色 索引 以及 肤色 
+模型 等 这 其中 也 包括 著名 的 EMD 1 
+. 3.3 .     3 . Compression and Encoding 
+个人 以为 图像压缩 编码 并 不是 当前 很热 的 一个 
+话题 原因 前面 已经 提到 过 这里 可以 看看 一篇 
+对 编码 方面 的 展望 文章 2005 IEEE Trends and 
+perspectives in image and video coding1 . 3.4 .   
+4 . Contrast Enhancement 对比度 增强 一直 是 图像 处理 
+中 的 一个 恒久 话题 一般来说 都是/nr 基于 直方图 的 
+比如 直方图 均衡化 冈萨雷斯 的 书 里面 对 这个 话题 
+讲 的 比较 透彻 这里 推荐 几篇 个人 认为 不错 
+的 文章 1 . 3.5 .     5 . 
+Deblur Restoration 图像 恢复 或者 图像 去模糊 一直 是 一个 
+非常 难 的 问题 尤其 是 盲 图像 恢复 港 
+中文 的 jiaya jia 老师 在 这 方面 做 的 
+不错 他 在 主页 也给 出了 可执行文件 这 方面 的 
+内容 也 建议 看 冈萨雷斯 的 书 这里 列出 了 
+几篇 口碑 比较好 的 文献 包括 古老 的 Richardson Lucy 
+方法 几篇 盲 图像 恢复 的 综述 以及 最近 的 
+几 篇文章 尤以 Fergus 和 Jiaya Jia 的 为 经典 
+1 . 3.6 .     6 . Dehazing and 
+Defog 严格 来说 去 雾化 也 算是 图像 对比度 增强 
+的 一种 这 方面 最近 比较 好 的 工作 就是 
+He kaiming 等 提出 的 Dark Channel 方法 这篇 论文 
+也 获得 了 2009 的 CVPR 最佳 论文 奖 2/m 
+这位/rz 003年/tdq 的/uj 广东/ns 高考状元/n 已经/d 于/p 2011年/tdq 从港/nr 中文/nz 
+博士/n 毕业/n 加入/v MSRA/w 估计 当时 也就 二十五六岁 吧 相当 
+了不起 1 . 3.7 .     7 . Denoising 
+图像去噪 也是 图像 处理 中 的 一个 经典 问题 在 
+数码摄影 中 尤其 重要 主要/b 的/uj 方法/n 有/v 基/a 于小波/nr 
+的/uj 方法/n 和/c 基于/p 偏/a 微分方程/l 的/uj 方法/n 1 . 
+3.8 .     8 . Edge Detection 边缘 检测 
+也是 图像 处理 中 的 一个 基本 任务 传统 的 
+边缘 检测 方法 有 基于 梯度 算子 尤其 是 Sobel 
+算子 以及 经典 的 Canny 边缘 检测 到 现在 Canny 
+边缘 检测 及 其 思想 仍在 广泛 使用 关于 Canny 
+算法 的 具体 细节 可以 在 Sonka 的 书 以及 
+canny 自己 的 论文 中 找到 网上 也 可以 搜到 
+最快 最 直接 的 方法 就是 看 OpenCV 的 源代码 
+非常 好 懂 在 边缘 检测 方面 Berkeley 的 大牛 
+J Malik 和他的/nr 学生 在 2004年 的 PAMI 提出 的 
+方法 效果 非常 好 当然 也 比较 复杂 在 复杂度 
+要求 不高 的 情况 下 还是 值得 一试 的 MIT 
+的 Bill Freeman 早期 的 代表 作 Steerable Filter 在 
+边缘 检测 方面 效果 也 非常 好 并且 便于 实现 
+这里 给 出了 几篇 比较好 的 文献 包括 一篇 最新 
+的 综述 边缘/n 检测/vn 是/v 图像/n 处理/v 和/c 计算机/n 视觉/n 
+中/f 任何/r 方向/n 都/d 无法/n 逃避/v 的/uj 一个/m 问题/n 这 
+方面 研究 多 深 都 不为过 1 . 3.9 . 
+    9 . Graph Cut 基于 图 割 的 
+图像 分割 算法 在 这 方面 没有 研究 仅仅 列出 
+几篇 引用 比 较高 的 文献 这里 又见 J Malik 
+当然 还有 华人 杰出 学者 Jianbo Shi 他 的 主页 
+非常 搞笑 在 醒目 的 位置 标注 Do not fly 
+China Eastern Airlines . . . 看来 是 被 坑 
+过 而且 坑 的 比较 厉害 这个 领域 俄罗斯 人 
+比较 厉害 1 . 3.10 .     10 . 
+Hough Transform 虽然 霍夫 变换 可以 扩展到 广义 霍夫 变换 
+但 最 常用 的 还是 检测 圆 和 直线 这 
+方面 同样 推荐 看 OpenCV 的 源代码 一目了然 Matas 在 
+2000年 提出 的 PPHT 已经 集成 到 OpenCV 中 去了 
+1 . 3.11 .     11 . Image Interpolation 
+图像 插值 偶尔 也 用得上 一般来说 双 三次 也就 够了 
+2000 TMI Interpolation revisited1 . 3.12 .   12 . 
+Image Matting 也 就是 最近 我 才 知道 这个 词 
+翻译 成 中文 是 抠图 比较 难听 不 知道 是 
+谁 开始 这么 翻译 的 没有研究 请看 文章 以及 Richard 
+Szeliski 的 相关 章节 以色列 美女 Levin 在 这方 面有 
+两篇 PAMI 1 . 3.13 .     13 . 
+Image Modeling 图像 的 统计模型 这 方面 有 一本 专门 
+的 著作 Natural Image Statistics1 . 3.14 .     
+14 . Image Quality Assessment 在 图像 质量 评价 方面 
+Bovik 是 首屈一指 的 这位 老师 也 很 有意思 作为 
+编辑 出版 了 很多 书 他 也是 IEEE 的 Fellowy1 
+. 3.15 .   15 . Image Registration 图像 配 
+准 最早 的 应用 在 医学 图像 上 在 图像 
+融合 之前 需要 对 图像 进行 配 准 在 现在 
+的 计算机 视觉 中 配 准 也 是 一个 需要 
+理解 的 概念 比如 跟踪 拼接 等 在 KLT 中 
+也会 涉及 到 配 准 这里 主要 是 综述 文献 
+1 . 3.16 .     16 . Image Retrieval 
+图像 检索 曾经 很热 在 2000年 之后 似乎 消停 了 
+一段 时间 最近 各种 图像 的 不变 性 特征 提 
+出来 之后 再加 上 互联网 搜索 的 商业 需求 这个 
+方向 似乎 又要 火 起来 了 尤其 是 在 商业界 
+比如 淘淘 搜 这 仍然 是 一个 非常 值得 关注 
+的 方面 而且 图像 检索 与 目标 识别 具有 相通 
+之处 比如 特征提取 和 特征 降 维 这 方面 的 
+文章 值得 一读 在 最后 给 出了 两篇 Book chapter 
+其中 一篇 还是 中文 的 1 . 3.17 .   
+  17 . Image Segmentation 图像 分割 非常 基本 但又 
+非常 难 的 一个 问题 建议 看 Sonka 和 冈萨雷斯 
+的 书 这里 给出 几篇 比较好 的 文章 再次 看到 
+了 J Malik 他们 给 出了 源代码 和 测试 集 
+有 兴趣 的话 可以 试试 1 . 3.18 .   
+  18 . Level Set 大名鼎鼎 的 水平 集 解决 
+了 Snake 固有 的 缺点 Level set 的 两位 提出者 
+Sethian 和 Osher 最后 反目 实在 让 人 遗憾 个人 
+以为 这种方法 除了 迭代 比较 费时 在 真实 场景 中 
+的 表现 让 人生 疑 不过 2008年 ECCV 上 的 
+PWP 方法 在 结果 上 很 吸引 人 在 重 
+初始化 方面 Chunming Li 给出 了 比较 好 的 解决方案 
+1 . 3.19 .     19 . Pyramid 其实 
+小波 变换 就是 一种 金字塔 分解 算法 而且 具有 无 
+失 真重 构和 非 冗余 的 优点 Adelson 在 1983年 
+提出 的 Pyramid 优点 是 比较 简单 实现 起来 比较 
+方便 1 . 3.20 .     20 . Radon 
+TransformRadon 变换 也 是 一种 很 重要 的 变换 它 
+构成 了 图像 重建 的 基础 关于 图像 重建 和 
+radon 变换 可以/c 参考/v 章毓晋/nr 老师/n 的/uj 书/n 讲 的 
+比较 清楚 1 . 3.21 .     21 . 
+Scale Space 尺度空间 滤波 在 现代 不变 特征 中 是 
+一个 非常 重要 的 概念 有人 说 SIFT 的 提出者 
+Lowe 是 不变 特征 之父 而 Linderburg 是 不变 特征 
+之母 虽然 尺度空间 滤波 是 Witkin 最早 提出 的 但 
+其 理论 体系 的 完善 和 应用 还是 Linderburg 的 
+功劳 其 在 1998年 IJCV 上 的 两 篇文章 值得 
+一读 不管 是 特征提取 方面 还是 边缘 检测 方面 1 
+. 3.22 .     22 . Snake 活动 轮廓 
+模型 改变 了 传统 的 图像 分割 的 方法 用 
+能量 收缩 的 方法 得到 一个 统计 意义上 的 能量 
+最小 最大 的 边缘 1 . 3.23 .     
+23 . Super Resolution 超 分辨率 分析 对 这个 方向 
+没有研究 简 单列 几 篇文章 其中 Yang Jianchao 的 那篇 
+在 IEEE 上 的 下载 率 一直 居高不下 1 . 
+3.24 .     24 . Thresholding 阈值 分割 是 
+一种 简单 有效 的 图像 分割 算法 这个 topic 在 
+冈萨雷斯 的 书 里面 讲 的 比较 多 这里 列出 
+OTSU 的 原始 文章 以及 一篇 不错 的 综述 1 
+. 3.25 .     25 . Watershed 分水岭 算法 
+是 一种 非常 有效 的 图像 分割 算法 它 克服 
+了 传统 的 阈值 分割 方法 的 缺点 尤其 是 
+Marker Controlled Watershed 值得 关注 Watershed 在 冈萨雷斯 的 书 
+里面 讲 的 比较 详细 1.4 .   参考资料 图像 
+处理 与 计算机 视觉 的 经典 书籍 JUST DO IT 
+博客 频道 CSDN . NET . html 作者   绰号 
+老 哇 的 爪子 claw of Eagle   偶像 破坏者 
+Iconoclast image smasher 捕鸟 王 Bird   Catcher 王中 之王 
+King of Kings 虔诚 者 Pious 宗教信仰 捍卫者 Defender   
+Of   the   Faith . 卡 拉卡拉 红 斗篷 
+Caracalla red cloak 简称 Emir Attilax   Akbar 埃米尔 阿提 
+拉克斯 阿克巴 全名 Emir Attilax Akbar   bin Mahmud bin 
+  attila bin Solomon bin adam Al   Rapanui   
+埃米尔 阿提 拉克斯 阿克巴 本 马哈茂德   本 阿提拉 本 
+所罗门 本 亚当     阿尔   拉 帕努伊 常用 
+名 艾 提拉 艾龙   EMAIL 1466519819 @ qq . 
+com 头衔 uke 总部 o2o 负责人 全球 网格化 项目 创始人 
+uke 宗教 与 文化 融合 事务部 部长 uke 宗教改革 委员会 
+副主席 Uke 部落 首席 大 酋长 uke 制度 与 重大 
+会议 委员会 委员长 uke 保安 部 首席 大队长 uke 制度 
+检查 委员会 副会长 奶牛 科技 cto uke 首席 cto   
+技术 总监 研发 总监 研发 主管 部门 总监 uke 波利尼 
+西亚区 大区 连锁 负责人   汤加王国 区域 负责人 uke 克 
+尔格 伦群 岛区 连锁 负责人 莱恩群岛 区 连锁 负责人 uke 
+布维岛 和南 乔治亚 和南 桑 威奇 群岛 大区 连锁 负责人 
+Uke 软件 标准化 协会 理事长 理事长 Uke 数据库 与 存储 
+标准化 协会 副会长 uke 出版社 编辑 总编 uke 终身 教育 
+学校 副校长   Uke 医院   与 医学 院 方面 
+的 创始人   度假村 首席 大 村长 转载 请 注明 
+来源 attilax 的 专栏   http / / www . 
+cnblogs . com / attilax / Atiend Atitit 图像 处理 和 计算机 视觉 的 分类   三 
+部分   图像处理   图像 分析   计算机 视觉 1.1 
+. 按照 当前 流行 的 分类 方法 可以 分为 以下 
+三 部分 三 部分   图像处理   图像 分析   
+计算机 视觉 11.2 . 图像处理 需要 的 理论 基础 数学 
+信号处理 3 . 模式识别   图像 处理 与 计算机 视觉 
+21 . 2.1 . 1 . 数学 21 . 2.2 
+. 2 . 信号处理 31.3 . 四 图像 处理 与 
+分析 31 . 3.1 . 1 . Bilateral Filter31 . 
+3.2 . 2 . Color41 . 3.3 . 3 . 
+Compression and Encoding41 . 3.4 . 4 . Contrast Enhancement41 
+. 3.5 . 5 . Deblur Restoration 41 . 3.6 
+. 6 . Dehazing and Defog51 . 3.7 . 7 
+. Denoising51 . 3.8 . 8 . Edge Detection51 . 
+3.9 . 9 . Graph Cut61 . 3.10 . 10 
+. Hough Transform61 . 3.11 . 11 . Image Interpolation61 
+. 3.12 . 12 . Image Matting61 . 3.13 . 
+13 . Image Modeling61 . 3.14 . 14 . Image 
+Quality Assessment61 . 3.15 . 15 . Image Registration71 . 
+3.16 . 16 . Image Retrieval71 . 3.17 . 17 
+. Image Segmentation71 . 3.18 . 18 . Level Set71 
+. 3.19 . 19 . Pyramid71 . 3.20 . 20 
+. Radon Transform81 . 3.21 . 21 . Scale Space81 
+. 3.22 . 22 . Snake81 . 3.23 . 23 
+. Super Resolution81 . 3.24 . 24 . Thresholding81 . 
+3.25 . 25 . Watershed81 . 1 .   按照 
+当前 流行 的 分类 方法 可以 分为 以下 三 部分 
+三 部分   图像处理   图像 分析   计算机 视觉 
+A . 图像处理 对 输入 的 图像 做 某种 变换 
+输出 仍然 是 图像 基本 不 涉及 或者 很少 涉及 
+图像 内容 的 分析 比较 典型 的 有 图像 变换 
+图像增强 图像去噪 图像 压       缩 图像 恢复 
+二 值 图像 处理 等等 基于 阈值 的 图像 分割 
+也 属于 图像 处理 的 范畴 一般 处理 的 是 
+单幅 图像 B . 图像 分析 对 图像 的 内容 
+进行 分析 提取 有 意义 的 特征 以 便于 后续 
+的 处理 处理 的 仍然 是 单幅 图像 C . 
+计算机 视觉 对 图像 分析 得到 的 特征 进行 分析 
+提取 场景 的 语义 表示 让 计算机 具有 人眼 和 
+人脑 的 能力 这时 处理 的 是 多幅 图像 或者 
+序列 图像 当然 也 包括 部分 单幅 图像 1.2 . 
+  图像处理 需要 的 理论 基础 数学 信号处理 3 . 
+模式识别   图像 处理 与 计算机 视觉 二 图像 处理 
+与 计算机 视觉 相关 的 书籍 1 . 2.1 . 
+  1 . 数学 我们 所说 的 图像 处理 实际上 
+就是 数字 图像 处理 是 把 真实世界 中 的 连续 
+三维 随机 信号 投影 到 传感器 的 二维 平面 上 
+采样 并 量化 后 得到 二维 矩阵 数字图像处理 就是 二维 
+矩阵 的 处理 而从 二维 图像 中 恢复 出 三维 
+场景 就是 计算机 视觉 的 主要 任务 之一 这 里面 
+就 涉及 到 了 图像 处理 所 涉及 到 的 
+三个 重要 属性 连续性 二维 矩阵 随机性 所 对应 的 
+数学 知识 是 高等 数学 微积分 线性代数 矩阵 论 概率论 
+和 随机 过程 这 三门 课 也是 考研 数学 的 
+三个 组成部分 构成 了 图像 处理 和 计算机 视觉 最 
+基础 的 数学 基础 如果 想要 更进一步 就要 到 网上 
+搜搜 林达 华 推荐 的 数学 书目 了 1 . 
+2.2 .   2 . 信号处理 图像处理 其实 就是 二 
+维和 三维 信号处理 而 处理 的 信号 又 有 一定 
+的 随机性 因此/c 经典/n 信号/n 处理/v 和/c 随机/d 信号/n 处理/v 
+都是/nr 图像/n 处理/v 和/c 计算机/n 视觉/n 中/f 必备/v 的/uj 理论/n 
+基础/n 1.2 . 2.1 .   2.1 经典 信号处理 1.2 
+. 2.2 .     2.2 随机 信号处理 1.2 . 
+2.3 .     2.3 小波 变换 1.2 . 2.4 
+.     2.4 信息论 1.3 .   四 图像 
+处理 与 分析 本章 主要 讨论 图像 处理 与 分析 
+虽然 后面 计算机 视觉 部分 的 有些 内容 比如 特征提取 
+等 也 可以 归结 到 图像 分析 中 来 但 
+鉴于 它们 与 计算机 视觉 的 紧密 联系 以及 它们 
+的 出处 没有 把 它们 纳入 到 图像 处理 与 
+分析 中 来 同样 这 里面 也 有 一些 也 
+可以 划归 到 计算机 视觉 中去 这都 不重要 只要 知道 
+有 这么 个 方法 能为/nr 自己 所用 或者 从中 得到 
+灵感 这就 够了 1 . 3.1 .   1 . 
+Bilateral FilterBilateral Filter 俗称 双边 滤波器 是 一种 简单 实用 
+的 具有 保持 边缘 作用 的 平缓 滤波器 由 Tomasi 
+等在 1998年 提出 它 现在 已经 发挥 着 重大 作用 
+尤其 是 在 HDR 领域 1998 ICCV Bilateral Filtering for 
+Gray and Color Images 2008 TIP Adaptive Bilateral Filter for 
+Sharpness Enhancement and Noise Removal1 . 3.2 .   2 
+. Color 如果 对 颜色 的 形成 有 一定 的 
+了解 能 比较 深刻 的 理解 一些 算法 这 方面 
+推荐 冈萨雷斯 的 数字 图像 处理 中 的 相关 章节 
+以及 Sharma 在 Digital Color Imaging Handbook 中 的 第一 
+章 Color fundamentals for digital imaging 跟 颜色 相关 的 
+知识 包括 Gamma 颜色 空间 转换 颜色 索引 以及 肤色 
+模型 等 这 其中 也 包括 著名 的 EMD 1 
+. 3.3 .     3 . Compression and Encoding 
+个人 以为 图像压缩 编码 并 不是 当前 很热 的 一个 
+话题 原因 前面 已经 提到 过 这里 可以 看看 一篇 
+对 编码 方面 的 展望 文章 2005 IEEE Trends and 
+perspectives in image and video coding1 . 3.4 .   
+4 . Contrast Enhancement 对比度 增强 一直 是 图像 处理 
+中 的 一个 恒久 话题 一般来说 都是/nr 基于 直方图 的 
+比如 直方图 均衡化 冈萨雷斯 的 书 里面 对 这个 话题 
+讲 的 比较 透彻 这里 推荐 几篇 个人 认为 不错 
+的 文章 1 . 3.5 .     5 . 
+Deblur Restoration 图像 恢复 或者 图像 去模糊 一直 是 一个 
+非常 难 的 问题 尤其 是 盲 图像 恢复 港 
+中文 的 jiaya jia 老师 在 这 方面 做 的 
+不错 他 在 主页 也给 出了 可执行文件 这 方面 的 
+内容 也 建议 看 冈萨雷斯 的 书 这里 列出 了 
+几篇 口碑 比较好 的 文献 包括 古老 的 Richardson Lucy 
+方法 几篇 盲 图像 恢复 的 综述 以及 最近 的 
+几 篇文章 尤以 Fergus 和 Jiaya Jia 的 为 经典 
+1 . 3.6 .     6 . Dehazing and 
+Defog 严格 来说 去 雾化 也 算是 图像 对比度 增强 
+的 一种 这 方面 最近 比较 好 的 工作 就是 
+He kaiming 等 提出 的 Dark Channel 方法 这篇 论文 
+也 获得 了 2009 的 CVPR 最佳 论文 奖 2/m 
+这位/rz 003年/tdq 的/uj 广东/ns 高考状元/n 已经/d 于/p 2011年/tdq 从港/nr 中文/nz 
+博士/n 毕业/n 加入/v MSRA/w 估计 当时 也就 二十五六岁 吧 相当 
+了不起 1 . 3.7 .     7 . Denoising 
+图像去噪 也是 图像 处理 中 的 一个 经典 问题 在 
+数码摄影 中 尤其 重要 主要/b 的/uj 方法/n 有/v 基/a 于小波/nr 
+的/uj 方法/n 和/c 基于/p 偏/a 微分方程/l 的/uj 方法/n 1 . 
+3.8 .     8 . Edge Detection 边缘 检测 
+也是 图像 处理 中 的 一个 基本 任务 传统 的 
+边缘 检测 方法 有 基于 梯度 算子 尤其 是 Sobel 
+算子 以及 经典 的 Canny 边缘 检测 到 现在 Canny 
+边缘 检测 及 其 思想 仍在 广泛 使用 关于 Canny 
+算法 的 具体 细节 可以 在 Sonka 的 书 以及 
+canny 自己 的 论文 中 找到 网上 也 可以 搜到 
+最快 最 直接 的 方法 就是 看 OpenCV 的 源代码 
+非常 好 懂 在 边缘 检测 方面 Berkeley 的 大牛 
+J Malik 和他的/nr 学生 在 2004年 的 PAMI 提出 的 
+方法 效果 非常 好 当然 也 比较 复杂 在 复杂度 
+要求 不高 的 情况 下 还是 值得 一试 的 MIT 
+的 Bill Freeman 早期 的 代表 作 Steerable Filter 在 
+边缘 检测 方面 效果 也 非常 好 并且 便于 实现 
+这里 给 出了 几篇 比较好 的 文献 包括 一篇 最新 
+的 综述 边缘/n 检测/vn 是/v 图像/n 处理/v 和/c 计算机/n 视觉/n 
+中/f 任何/r 方向/n 都/d 无法/n 逃避/v 的/uj 一个/m 问题/n 这 
+方面 研究 多 深 都 不为过 1 . 3.9 . 
+    9 . Graph Cut 基于 图 割 的 
+图像 分割 算法 在 这 方面 没有 研究 仅仅 列出 
+几篇 引用 比 较高 的 文献 这里 又见 J Malik 
+当然 还有 华人 杰出 学者 Jianbo Shi 他 的 主页 
+非常 搞笑 在 醒目 的 位置 标注 Do not fly 
+China Eastern Airlines . . . 看来 是 被 坑 
+过 而且 坑 的 比较 厉害 这个 领域 俄罗斯 人 
+比较 厉害 1 . 3.10 .     10 . 
+Hough Transform 虽然 霍夫 变换 可以 扩展到 广义 霍夫 变换 
+但 最 常用 的 还是 检测 圆 和 直线 这 
+方面 同样 推荐 看 OpenCV 的 源代码 一目了然 Matas 在 
+2000年 提出 的 PPHT 已经 集成 到 OpenCV 中 去了 
+1 . 3.11 .     11 . Image Interpolation 
+图像 插值 偶尔 也 用得上 一般来说 双 三次 也就 够了 
+2000 TMI Interpolation revisited1 . 3.12 .   12 . 
+Image Matting 也 就是 最近 我 才 知道 这个 词 
+翻译 成 中文 是 抠图 比较 难听 不 知道 是 
+谁 开始 这么 翻译 的 没有研究 请看 文章 以及 Richard 
+Szeliski 的 相关 章节 以色列 美女 Levin 在 这方 面有 
+两篇 PAMI 1 . 3.13 .     13 . 
+Image Modeling 图像 的 统计模型 这 方面 有 一本 专门 
+的 著作 Natural Image Statistics1 . 3.14 .     
+14 . Image Quality Assessment 在 图像 质量 评价 方面 
+Bovik 是 首屈一指 的 这位 老师 也 很 有意思 作为 
+编辑 出版 了 很多 书 他 也是 IEEE 的 Fellowy1 
+. 3.15 .   15 . Image Registration 图像 配 
+准 最早 的 应用 在 医学 图像 上 在 图像 
+融合 之前 需要 对 图像 进行 配 准 在 现在 
+的 计算机 视觉 中 配 准 也 是 一个 需要 
+理解 的 概念 比如 跟踪 拼接 等 在 KLT 中 
+也会 涉及 到 配 准 这里 主要 是 综述 文献 
+1 . 3.16 .     16 . Image Retrieval 
+图像 检索 曾经 很热 在 2000年 之后 似乎 消停 了 
+一段 时间 最近 各种 图像 的 不变 性 特征 提 
+出来 之后 再加 上 互联网 搜索 的 商业 需求 这个 
+方向 似乎 又要 火 起来 了 尤其 是 在 商业界 
+比如 淘淘 搜 这 仍然 是 一个 非常 值得 关注 
+的 方面 而且 图像 检索 与 目标 识别 具有 相通 
+之处 比如 特征提取 和 特征 降 维 这 方面 的 
+文章 值得 一读 在 最后 给 出了 两篇 Book chapter 
+其中 一篇 还是 中文 的 1 . 3.17 .   
+  17 . Image Segmentation 图像 分割 非常 基本 但又 
+非常 难 的 一个 问题 建议 看 Sonka 和 冈萨雷斯 
+的 书 这里 给出 几篇 比较好 的 文章 再次 看到 
+了 J Malik 他们 给 出了 源代码 和 测试 集 
+有 兴趣 的话 可以 试试 1 . 3.18 .   
+  18 . Level Set 大名鼎鼎 的 水平 集 解决 
+了 Snake 固有 的 缺点 Level set 的 两位 提出者 
+Sethian 和 Osher 最后 反目 实在 让 人 遗憾 个人 
+以为 这种方法 除了 迭代 比较 费时 在 真实 场景 中 
+的 表现 让 人生 疑 不过 2008年 ECCV 上 的 
+PWP 方法 在 结果 上 很 吸引 人 在 重 
+初始化 方面 Chunming Li 给出 了 比较 好 的 解决方案 
+1 . 3.19 .     19 . Pyramid 其实 
+小波 变换 就是 一种 金字塔 分解 算法 而且 具有 无 
+失 真重 构和 非 冗余 的 优点 Adelson 在 1983年 
+提出 的 Pyramid 优点 是 比较 简单 实现 起来 比较 
+方便 1 . 3.20 .     20 . Radon 
+TransformRadon 变换 也 是 一种 很 重要 的 变换 它 
+构成 了 图像 重建 的 基础 关于 图像 重建 和 
+radon 变换 可以/c 参考/v 章毓晋/nr 老师/n 的/uj 书/n 讲 的 
+比较 清楚 1 . 3.21 .     21 . 
+Scale Space 尺度空间 滤波 在 现代 不变 特征 中 是 
+一个 非常 重要 的 概念 有人 说 SIFT 的 提出者 
+Lowe 是 不变 特征 之父 而 Linderburg 是 不变 特征 
+之母 虽然 尺度空间 滤波 是 Witkin 最早 提出 的 但 
+其 理论 体系 的 完善 和 应用 还是 Linderburg 的 
+功劳 其 在 1998年 IJCV 上 的 两 篇文章 值得 
+一读 不管 是 特征提取 方面 还是 边缘 检测 方面 1 
+. 3.22 .     22 . Snake 活动 轮廓 
+模型 改变 了 传统 的 图像 分割 的 方法 用 
+能量 收缩 的 方法 得到 一个 统计 意义上 的 能量 
+最小 最大 的 边缘 1 . 3.23 .     
+23 . Super Resolution 超 分辨率 分析 对 这个 方向 
+没有研究 简 单列 几 篇文章 其中 Yang Jianchao 的 那篇 
+在 IEEE 上 的 下载 率 一直 居高不下 1 . 
+3.24 .     24 . Thresholding 阈值 分割 是 
+一种 简单 有效 的 图像 分割 算法 这个 topic 在 
+冈萨雷斯 的 书 里面 讲 的 比较 多 这里 列出 
+OTSU 的 原始 文章 以及 一篇 不错 的 综述 1 
+. 3.25 .     25 . Watershed 分水岭 算法 
+是 一种 非常 有效 的 图像 分割 算法 它 克服 
+了 传统 的 阈值 分割 方法 的 缺点 尤其 是 
+Marker Controlled Watershed 值得 关注 Watershed 在 冈萨雷斯 的 书 
+里面 讲 的 比较 详细 1.4 .   参考资料 图像 
+处理 与 计算机 视觉 的 经典 书籍 JUST DO IT 
+博客 频道 CSDN . NET . html 作者   绰号 
+老 哇 的 爪子 claw of Eagle   偶像 破坏者 
+Iconoclast image smasher 捕鸟 王 Bird   Catcher 王中 之王 
+King of Kings 虔诚 者 Pious 宗教信仰 捍卫者 Defender   
+Of   the   Faith . 卡 拉卡拉 红 斗篷 
+Caracalla red cloak 简称 Emir Attilax   Akbar 埃米尔 阿提 
+拉克斯 阿克巴 全名 Emir Attilax Akbar   bin Mahmud bin 
+  attila bin Solomon bin adam Al   Rapanui   
+埃米尔 阿提 拉克斯 阿克巴 本 马哈茂德   本 阿提拉 本 
+所罗门 本 亚当     阿尔   拉 帕努伊 常用 
+名 艾 提拉 艾龙   EMAIL 1466519819 @ qq . 
+com 头衔 uke 总部 o2o 负责人 全球 网格化 项目 创始人 
+uke 宗教 与 文化 融合 事务部 部长 uke 宗教改革 委员会 
+副主席 Uke 部落 首席 大 酋长 uke 制度 与 重大 
+会议 委员会 委员长 uke 保安 部 首席 大队长 uke 制度 
+检查 委员会 副会长 奶牛 科技 cto uke 首席 cto   
+技术 总监 研发 总监 研发 主管 部门 总监 uke 波利尼 
+西亚区 大区 连锁 负责人   汤加王国 区域 负责人 uke 克 
+尔格 伦群 岛区 连锁 负责人 莱恩群岛 区 连锁 负责人 uke 
+布维岛 和南 乔治亚 和南 桑 威奇 群岛 大区 连锁 负责人 
+Uke 软件 标准化 协会 理事长 理事长 Uke 数据库 与 存储 
+标准化 协会 副会长 uke 出版社 编辑 总编 uke 终身 教育 
+学校 副校长   Uke 医院   与 医学 院 方面 
+的 创始人   度假村 首席 大 村长 转载 请 注明 
+来源 attilax 的 专栏   http / / www . 
+cnblogs . com / attilax / Atiend 

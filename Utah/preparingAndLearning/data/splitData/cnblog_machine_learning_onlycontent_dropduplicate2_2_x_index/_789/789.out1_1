@@ -1,0 +1,72 @@
+背景 本文 只是 对 机器 学习 相关 知识 的 梳理 
+和 复习 用 因此 顺序 上 可能 有些 随意 摘要 
+1 . 各种 算法 的 推导 2 . 各种 算法 
+的 比较 或 优缺点 3 . 学习理论 4 . 特征选择 
+方法 5 . 模型 选择 方法 6 . 特征 工程 
+7 . 数据 预处理 8 . 应用 例子 内容 1 
+. 各种 算法 的 推导 线性 回归 Liner Regression 9个 
+基本 概念 和 10个 基本 算法 总结 的 岭 ridge 
+回归 部分   最 简单 的 线性 分类器 机器学习 感知机 
+  线性 分类器 SVM 和 神经 网络 的 基石 LR 
+我 的 LR 复习 总结   线性 分类器 预测 概率 
+支持 向量 机 SVM 我 的 SVM 复习 总结 线性 
+/ 非线性 分类器 核 方法 映 射到 高维 线性 可分 
+DT RF GBDT XGBT 决策树 和 基于 决策树 的 集成 
+方法 DT RF GBDT XGBT 复习 总结   非线性 分类器 
+决策树 规则学习 / 条件概率 关联 规则 FPGrowth 算法 总结 复习 
+  FP 树 规则学习 KNN k 近邻 KNN 复习 总结 
+  非线性 模型 KD 树 和 ball tree 基于 距离 
+的 模型 k means K Means 聚 类 和 EM 
+算法 复习 总结   基于 距离 的 的 模型 KD 
+树 和 ball treeNB   朴素 贝叶斯 NB 复习 总结 
+  线性 分类器 判别 模型 与 生成 模型 LDA 主题 
+模型 隐式 狄利克雷 分布 总结 概率 图 模型 PGM NLPHMM 
+隐 马尔可夫 模型 HMM 总结 概率 图 模型 PGM NLPCRF 
+条件 随 机场 CRF 神经网络 我 的 机器学习 / 数据挖掘 
+的 书单 机器学习 中的 图 模型 仿生学 TextRank 与 TF 
+IDF 关键词 提取 对比 LDA 语义 模型 的 词义 模型 
+wordEmbedding 与 Word2Vec / Doc2Vec deep learning nlp best practicesCNN 
+待 总结 RNN / LSTM 雪 伦 RNN 的 文章 
+    雪 伦 LSTM 的 文章 WDL 待 总结 
+2 . 各种 算法 的 比较 或 优缺点 生成 模型 
+和 判别 模型 是否 需要 学习 联合 分布 生成 模型 
+与 判别 模型 线性 模型 和 非线性 模型 机器学习 常见 
+面试题 整理 LR 和 决策树 类 算法 的 比较 逻辑 
+回归 与 决策树 在 分类上 的 一些 区别 Bryan _ 
+_ 的 整理 机器学习 算法 比较 机器学习 面试 知识点 总结 
+不断 补充 中 3 . 学习理论 理论 部分 偏差 方差 
+平衡 正则化 数据 预处理 中 归一化 Normalization 与 损失 函数 
+中 正则化 Regularization 解惑 经验 风险 最小化 与 结构 风险 
+最小化 Andrew Ng 机器学习 公开课 笔记 学习理论 损失 函数 和 
+分类 模型 的 评价 指标 损失 函数 和 分类器 评估 
+方法 二 分类 如何 转换 为多 分类 机器学习 面试 知识点 
+总结 不断 补充 中 熵 在 机器 学习 中 的 
+身影 信息论 中的 熵 信息熵 联合 熵 交叉 熵 互信息 
+和 最大熵 模型 VC 维 Andrew Ng 机器学习 公开课 笔记 
+学习理论 常见 的 距离 算法 和 相似 度 相关系数 计算方法 
+UCB 与 Hoeffing Bound 待 总结 4 . 特征选择 方法 
+使用 sklearn 做 单机 特征 工程     附 自己 
+实现 的 代码 特征选择 与 特征 学习 方法 jason 1遍 
+skelearn 中 特征选择 的 一些 方法 了解 5 . 模型 
+选择 方法 SVM 参数 详解 SVM 参数 详解 RF 和 
+GBDT 参数 详解 使用 sklearn 进行 集成 学习 实践 还在 
+研究 XGBoost 参数 调 优 XGBoost Python 完全 调 参 
+指南 参数 解释 篇   第二遍 考虑 使用 排序 任务 
+LightGBM 参数 调 优 待 总结 模型 融合 blending 和 
+stacking http / / m . blog . csdn . 
+net / article / details id = 53054686   多数 
+投票 / 加权平均 自 融合 blending stacking     github 
+贝叶斯 信息 准则 BIC 你 有 哪些 deep learning rnn 
+cnn 调 参 的 经验 6 . 特征 工程 7种 
+常用 的 特征 工程   清晰 易懂 特征 工程 理论 
+部分 美 团 的 数据 清洗 和 特征 处理 byran 
+_ 的 总结 帖子 sklearn 中 使用 GBDT 生成 组合 
+特征 的 例子 特征 的 生命 周期 我 的 比赛 
+经验 总结 7 . 数据 预处理 weka 进行 预处理 数据 
+清洗 和 数据 预处理 pandas 和 sklearn 数据挖掘 笔记 三 
+数据 预处理 降 维 用于 降 维 可视化 的 t 
+SNE 聚 类 kmeans k shit 谱 聚 类 密度 
+聚 类 8 . 应用 例子 深入浅出 谈 数据挖掘 数据挖掘 
+主要 解决 的 四类 问题 数 赛 刷 题 的 
+冠军 链接 使用 SVD 对 图片 进行 降 维 的 
+例子 github 代码 利用 机器学习 模型 去做 排序 任务 

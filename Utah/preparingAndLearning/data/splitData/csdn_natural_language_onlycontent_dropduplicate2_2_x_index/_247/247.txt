@@ -1,0 +1,8 @@
+斯坦福自然语言处理工具python环境配置
+1. 简介
+Stanford nlp group 是世界知名的自然语言处理研究组，该组的研究内容涵盖了从基本的计算语言原理研究到NLP的关键应用技术。其中，该组所开发的coreNLP工具被广泛应用，该工具提供了分词、词性标注、语法分析、共指消解、命名实体识别等操作。
+Stanford coreNLP源码使用Java编写而成，但一些程序员将coreNLP进行了封装，从而可以便于在其他语言环境下使用该工具。本文对自己配置coreNLP的python环境的过程进行总结。
+2.过程
+首先，需要下载Stanford coreNLP的Java源码，该代码可以在斯坦福NLP组的下载页面进行下载（见此处）。标准的coreNLP为jar格式，可以通过Java程序引入、命令行等方式进行调用。若是需要处理中文，则还需在该页面上下载对应的中文处理jar文件。
+之后由于我们要使用python调用coreNLP，该主页上还提供了其他语言使用Stanford coreNLP的库（见此处）。 如我们在python环境下使用coreNLP，则需要安装一个可以调用coreNLP源码的库，可选的库有很多，包括pycorenlp、stanfordcorenlp、corenlp-pywrap等等。 每个库在GitHub上都有相应的说明，参考其介绍即可。 我本次使用的是stanfordcorenlp库（见此处）。使用pip安装好后，按照参考文档测试运行即完成了配置。
+# Simple usage from stanfordcorenlp import StanfordCoreNLP nlp = StanfordCoreNLP(r'G:/JavaLibraries/stanford-corenlp-full-2016-10-31/') sentence = 'Guangdong University of Foreign Studies is located in Guangzhou.' print 'Tokenize:', nlp.word_tokenize(sentence) print 'Part of Speech:', nlp.pos_tag(sentence) print 'Named Entities:', nlp.ner(sentence) print 'Constituency Parsing:', nlp.parse(sentence) print 'Dependency Parsing:', nlp.dependency_parse(sentence)`

@@ -1,0 +1,197 @@
+7.3   Developing and Evaluating Chunkers   开发和评价分块器
+Now you have a taste of what chunking does, but we haven't explained how to evaluate chunkers. As usual, this requires a suitably annotated corpus. We begin by looking at the mechanics of converting IOB format into an NLTK tree, then at how this is done on a larger scale using a chunked corpus. We will see how to score the accuracy of a chunker relative to a corpus, then look some more data-driven（数据驱动的） ways to search for NP chunks. Our focus throughout will be on expanding the coverage of a chunker.
+Reading IOB Format and the CoNLL 2000 Corpus
+读取IOB格式和CoNLL2000语料库
+Using the corpora module we can load Wall Street Journal text that has been tagged then chunked using the IOB notation. The chunk categories provided in this corpus are NP, VP and PP. As we have seen, each sentence is represented using multiple lines, as shown below:
+he PRP B-NP
+accepted VBD B-VP
+the DT B-NP
+position NN I-NP
+...
+A conversion function chunk.conllstr2tree() builds a tree representation from one of these multi-line strings. Moreover, it permits us to choose any subset of the three chunk types to use, here just for NP chunks:
+>>> text = '''
+... he PRP B-NP
+... accepted VBD B-VP
+... the DT B-NP
+... position NN I-NP
+... of IN B-PP
+... vice NN B-NP
+... chairman NN I-NP
+... of IN B-PP
+... Carlyle NNP B-NP
+... Group NNP I-NP
+... , , O
+... a DT B-NP
+... merchant NN I-NP
+... banking NN I-NP
+... concern NN I-NP
+... . . O
+... '''
+>>> nltk.chunk.conllstr2tree(text, chunk_types=['NP']).draw()
+We can use the NLTK corpus module to access a larger amount of chunked text. The CoNLL 2000 corpus contains 270k words of Wall Street Journal text, divided into "train" and "test" portions, annotated with part-of-speech tags and chunk tags in the IOB format. We can access the data using nltk.corpus.conll2000. Here is an example that reads the 100th sentence of the "train" portion of the corpus:
+>>> from nltk.corpus import conll2000
+>>> print conll2000.chunked_sents('train.txt')[99]
+(S
+(PP Over/IN)
+(NP a/DT cup/NN)
+(PP of/IN)
+(NP coffee/NN)
+,/,
+(NP Mr./NNP Stone/NNP)
+(VP told/VBD)
+(NP his/PRP$ story/NN)
+./.)
+As you can see, the CoNLL 2000 corpus contains three chunk types: NP chunks, which we have already seen; VP chunks such as has already delivered; and PP chunks such as because of. Since we are only interested in the NP chunks right now, we can use the chunk_types argument to select them:
+>>> print conll2000.chunked_sents('train.txt', chunk_types=['NP'])[99]
+(S
+Over/IN
+(NP a/DT cup/NN)
+of/IN
+(NP coffee/NN)
+,/,
+(NP Mr./NNP Stone/NNP)
+told/VBD
+(NP his/PRP$ story/NN)
+./.)
+Simple Evaluation and Baselines 简单的评价和基准
+Now that we can access a chunked corpus, we can evaluate chunkers. We start off（开始） by establishing a baseline for the trivial（不重要的） chunk parser cp that creates no chunks:
+>>> from nltk.corpus import conll2000
+>>> cp = nltk.RegexpParser("")
+>>> test_sents = conll2000.chunked_sents('test.txt', chunk_types=['NP'])
+>>> print cp.evaluate(test_sents)
+ChunkParse score:
+IOB Accuracy: 43.4%
+Precision:      0.0%
+Recall:         0.0%
+F-Measure:     0.0%
+The IOB tag accuracy indicates that more than a third of the words are tagged with O, i.e. not in an NP chunk. However, since our tagger did not find any chunks, its precision, recall, and f-measure are all zero. Now let's try a naive regular expression chunker that looks for tags beginning with letters that are characteristic of noun phrase tags (e.g. CD, DT, and JJ).
+>>> grammar = r"NP: {<[CDJNP].*>+}"
+>>> cp = nltk.RegexpParser(grammar)
+>>> print cp.evaluate(test_sents)
+ChunkParse score:
+IOB Accuracy: 87.7%
+Precision:     70.6%
+Recall:        67.8%
+F-Measure:     69.2%
+As you can see, this approach achieves decent（相当好的） results. However, we can improve on it by adopting a more data-driven approach, where we use the training corpus to find the chunk tag (I, O, or B) that is most likely for each part-of-speech tag. In other words, we can build a chunker using a unigram tagger (Section 5.4). But rather than trying to determine the correct part-of-speech tag for each word, we are trying to determine the correct chunk tag, given each word's part-of-speech tag.
+In Example 7.8, we define the UnigramChunker class, which uses a unigram tagger to label sentences with chunk tags. Most of the code in this class is simply used to convert back and forth（反复地） between the chunk tree representation used by NLTK's ChunkParserI interface, and the IOB representation used by the embedded tagger. The class defines two methods: a constructor which is called when we build a new UnigramChunker; and the parse method which is used to chunk new sentences.
+class UnigramChunker(nltk.ChunkParserI):
+def __init__(self, train_sents):
+train_data = [[(t,c) for w,t,c in nltk.chunk.tree2conlltags(sent)]
+for sent in train_sents]
+self.tagger = nltk.UnigramTagger(train_data)
+def parse(self, sentence):
+pos_tags = [pos for (word,pos) in sentence]
+tagged_pos_tags = self.tagger.tag(pos_tags)
+chunktags = [chunktag for (pos, chunktag) in tagged_pos_tags]
+conlltags = [(word, pos, chunktag) for ((word,pos),chunktag)
+in zip(sentence, chunktags)]
+return nltk.chunk.conlltags2tree(conlltags)
+Example 7.8 (code_unigram_chunker.py)
+The constructor expects a list of training sentences, which will be in the form of chunk trees. It first converts training data to a form that suitable for training the tagger, using tree2conlltags to map each chunk tree to a list of word,tag,chunk triples. It then uses that converted training data to train a unigram tagger, and stores it in self.tagger for later use.
+The parse method takes a tagged sentence as its input, and begins by extracting the part-of-speech tags from that sentence. It then tags the part-of-speech tags with IOB chunk tags, using the tagger self.tagger that was trained in the constructor. Next, it extracts the chunk tags, and combines them with the original sentence, to yield conlltags. Finally, it uses conlltags2tree to convert the result back into a chunk tree.
+Now that we have UnigramChunker, we can train it using the CoNLL 2000 corpus, and test its resulting performance:
+>>> test_sents = conll2000.chunked_sents('test.txt', chunk_types=['NP'])
+>>> train_sents = conll2000.chunked_sents('train.txt', chunk_types=['NP'])
+>>> unigram_chunker = UnigramChunker(train_sents)
+>>> print unigram_chunker.evaluate(test_sents)
+ChunkParse score:
+IOB Accuracy: 92.9%
+Precision:     79.9%
+Recall:        86.8%
+F-Measure:     83.2%
+This chunker does reasonably well, achieving an overall f-measure score of 83%. Let's take a look at what it's learned, by using its unigram tagger to assign a tag to each of the part-of-speech tags that appear in the corpus:
+>>> postags = sorted(set(pos for sent in train_sents
+...                      for (word,pos) in sent.leaves()))
+>>> print unigram_chunker.tagger.tag(postags)
+[('#', 'B-NP'), ('$', 'B-NP'), ("''", 'O'), ('(', 'O'), (')', 'O'),
+(',', 'O'), ('.', 'O'), (':', 'O'), ('CC', 'O'), ('CD', 'I-NP'),
+('DT', 'B-NP'), ('EX', 'B-NP'), ('FW', 'I-NP'), ('IN', 'O'),
+('JJ', 'I-NP'), ('JJR', 'B-NP'), ('JJS', 'I-NP'), ('MD', 'O'),
+('NN', 'I-NP'), ('NNP', 'I-NP'), ('NNPS', 'I-NP'), ('NNS', 'I-NP'),
+('PDT', 'B-NP'), ('POS', 'B-NP'), ('PRP', 'B-NP'), ('PRP$', 'B-NP'),
+('RB', 'O'), ('RBR', 'O'), ('RBS', 'B-NP'), ('RP', 'O'), ('SYM', 'O'),
+('TO', 'O'), ('UH', 'O'), ('VB', 'O'), ('VBD', 'O'), ('VBG', 'O'),
+('VBN', 'O'), ('VBP', 'O'), ('VBZ', 'O'), ('WDT', 'B-NP'),
+('WP', 'B-NP'), ('WP$', 'B-NP'), ('WRB', 'O'), ('``', 'O')]
+It has discovered that most punctuation marks occur outside of NP chunks, with the exception of # and $, both of which are used as currency markers（货币标志.）. It has also found that determiners (DT) and possessives (PRP$ and WP$) occur at the beginnings of NP chunks, while noun types (NN, NNP, NNPS, NNS) mostly occur inside of NP chunks.
+Having built a unigram chunker, it is quite easy to build a bigram chunker: we simply change the class name to BigramChunker, and modify line in Example 7.8 to construct a BigramTagger rather than a UnigramTagger. The resulting chunker has slightly higher performance than the unigram chunker:
+>>> bigram_chunker = BigramChunker(train_sents)
+>>> print bigram_chunker.evaluate(test_sents)
+ChunkParse score:
+IOB Accuracy: 93.3%
+Precision:     82.3%
+Recall:        86.8%
+F-Measure:     84.5%
+Training Classifier-Based Chunkers 训练基于分类器的分块器
+Both the regular-expression based chunkers and the n-gram chunkers decide what chunks to create entirely based on part-of-speech tags. However, sometimes part-of-speech tags are insufficient to determine how a sentence should be chunked. For example, consider the following two statements:
+(3)
+a.
+Joey/NN sold/VBD the/DT farmer/NN rice/NN ./.
+b.
+Nick/NN broke/VBD my/DT computer/NN monitor/NN ./.
+These two sentences have the same part-of-speech tags, yet they are chunked differently. In the first sentence, the farmer and rice are separate chunks, while the corresponding material in the second sentence, the computer monitor, is a single chunk. Clearly, we need to make use of information about the content of the words, in addition to just their part-of-speech tags, if we wish to maximize chunking performance.
+One way that we can incorporate（合并） information about the content of words is to use a classifier-based tagger to chunk the sentence. Like the n-gram chunker considered in the previous section, this classifier-based chunker will work by assigning IOB tags to the words in a sentence, and then converting those tags to chunks. For the classifier-based tagger itself, we will use the same approach that we used in Section 6.1 to build a part-of-speech tagger.
+The basic code for the classifier-based NP chunker is shown in Example 7.9. It consists of two classes. The first class is almost identical（同样的）to the ConsecutivePosTagger class from Example 6.5. The only two differences are that it calls a different feature extractor and that it uses a MaxentClassifier rather than a NaiveBayesClassifier. The second class is basically a wrapper（包装器） around the tagger class that turns it into a chunker. During training, this second class maps the chunk trees in the training corpus into tag sequences; in the parse() method, it converts the tag sequence provided by the tagger back into a chunk tree.
+class ConsecutiveNPChunkTagger(nltk.TaggerI):
+def __init__(self, train_sents):
+train_set = []
+for tagged_sent in train_sents:
+untagged_sent = nltk.tag.untag(tagged_sent)
+history = []
+for i, (word, tag) in enumerate(tagged_sent):
+featureset = npchunk_features(untagged_sent, i, history)
+train_set.append( (featureset, tag) )
+history.append(tag)
+self.classifier = nltk.MaxentClassifier.train(
+train_set, algorithm='megam', trace=0)
+def tag(self, sentence):
+history = []
+for i, word in enumerate(sentence):
+featureset = npchunk_features(sentence, i, history)
+tag = self.classifier.classify(featureset)
+history.append(tag)
+return zip(sentence, history)
+class ConsecutiveNPChunker(nltk.ChunkParserI):
+def __init__(self, train_sents):
+tagged_sents = [[((w,t),c) for (w,t,c) in
+nltk.chunk.tree2conlltags(sent)]
+for sent in train_sents]
+self.tagger = ConsecutiveNPChunkTagger(tagged_sents)
+def parse(self, sentence):
+tagged_sents = self.tagger.tag(sentence)
+conlltags = [(w,t,c) for ((w,t),c) in tagged_sents]
+return nltk.chunk.conlltags2tree(conlltags)
+Example 7.9 (code_classifier_chunker.py):
+The only piece left to fill in is the feature extractor. We begin by defining a simple feature extractor which just provides the part-of-speech tag of the current token. Using this feature extractor, our classifier-based chunker is very similar to the unigram chunker, as is reflected in its performance:
+>>> def npchunk_features(sentence, i, history):
+...     word, pos = sentence[i]
+...     return {"pos": pos}
+>>> chunker = ConsecutiveNPChunker(train_sents)
+>>> print chunker.evaluate(test_sents)
+ChunkParse score:
+IOB Accuracy: 92.9%
+Precision:     79.9%
+Recall:        86.7%
+F-Measure:     83.2%
+We can also add a feature for the previous part-of-speech tag. Adding this feature allows the classifier to model interactions between adjacent（邻近的） tags, and results in a chunker that is closely related to the bigram chunker.
+>>> def npchunk_features(sentence, i, history):
+...     word, pos = sentence[i]
+...     if i == 0:
+...         prevword, prevpos = "<START>", "<START>"
+...     else:
+...         prevword, prevpos = sentence[i-1]
+...     return {"pos": pos, "prevpos": prevpos}
+>>> chunker = ConsecutiveNPChunker(train_sents)
+>>> print chunker.evaluate(test_sents)
+ChunkParse score:
+IOB Accuracy: 93.6%
+Precision:     81.9%
+Recall:        87.1%
+F-Measure:     84.4%
+Next, we'll try adding a feature for the current word, since we hypothesized that word content should be useful for chunking. We find that this feature does indeed improve the chunker's performance, by about 1.5 percentage points (which corresponds to about a 10% reduction in the error rate).
+>>> def npchunk_features(sentence, i, history):
+...     word, pos = sentence[i]
+...     if i == 0:
+...         prevword, prevpos = "<START>", "<START>"
+...

@@ -1,0 +1,35 @@
+TensorFlow - 机器学习算法的三大分类（笔记）
+flyfish 笔记
+Three types of learning
+three different types of machine learning
+机器学习的三种不同类型
+supervised learning 监督学习
+reinforcement learning 强化学习
+unsupervised learning 无监督学习
+Broadly speaking 泛泛地说
+Learning can be divided into three broad groups of algorithms
+机器学习可以分为三大类算法
+Supervised learning
+-Learn to predict an ouput when give an input vector
+Reinforcement learning
+-Learn to select an action to maximize pay off
+Unsupervised learing
+-Discover a good internal representation of the input
+In supervised learing you are trying to predict an output when given an input vector 。
+在监督学习的过程中，当给出一个输入向量时模型会试图给出一个对应的预测值。
+In reinforcement learning you are trying to select actions or sequences of actions to maximize the rewards you get，
+and the rewards may only occur occasionally
+在强化学习的过程中，通过尝试选择动作或者序列动作来使奖赏到达最大，奖励可能只是偶尔发生.
+In unsupervised learning you are trying to discover a good internal representation of the input and
+在无监督学习中，你需要尝试挖掘一种对于输入数据内部规律的表征方法
+payoff
+英 [‘peɪɔːf] 美 [‘pe,ɔf]
+n. 报酬；结果；发工资；结算
+adj. 支付的；决定性的；产生结果的
+occasionally
+英 [əˈkeɪʒnəli] 美 [o’keʒənəli]
+adv. 偶尔；间或
+divide into
+把……分成
+you get放在后面的例句
+The more you eat，the fatter you get.你吃得越多，长得越胖。

@@ -1,0 +1,30 @@
+更多实时更新的个人学习笔记分享，请关注：
+知乎：https://www.zhihu.com/people/yuquanle/columns
+微信订阅号：人工智能小白入门学习
+ID: StudyForAI
+Stanfordcorenlp简介
+Stanford CoreNLP提供了一套人类语言技术工具。 支持多种自然语言处理基本功能，Stanfordcorenlp是它的一个python接口。
+官网地址：https://stanfordnlp.github.io/CoreNLP/
+Github地址：https://github.com/stanfordnlp/CoreNLP
+Stanfordcorenlp主要功能包括分词、词性标注、命名实体识别、句法结构分析和依存分析等等。
+Stanfordcorenlp工具Demo
+安装：pip install stanfordcorenlp
+先下载模型，下载地址：https://nlp.stanford.edu/software/corenlp-backup-download.html
+支持多种语言，这里记录一下中英文使用方法
+from stanfordcorenlp import StanfordCoreNLP zh_model = StanfordCoreNLP(r'stanford-corenlp-full-2018-02-27', lang='zh') en_model = StanfordCoreNLP(r'stanford-corenlp-full-2018-02-27', lang='en')
+zh_sentence = '我爱自然语言处理技术！' en_sentence = 'I love natural language processing technology!'
+1.分词(Tokenize)
+print ('Tokenize:', zh_model.word_tokenize(zh_sentence)) print ('Tokenize:', en_model.word_tokenize(en_sentence))
+Tokenize: ['我爱', '自然', '语言', '处理', '技术', '！'] Tokenize: ['I', 'love', 'natural', 'language', 'processing', 'technology', '!']
+2.词性标注(Part of Speech)
+print ('Part of Speech:', zh_model.pos_tag(zh_sentence)) print ('Part of Speech:', en_model.pos_tag(en_sentence))
+Part of Speech: [('我爱', 'NN'), ('自然', 'AD'), ('语言', 'NN'), ('处理', 'VV'), ('技术', 'NN'), ('！', 'PU')] Part of Speech: [('I', 'PRP'), ('love', 'VBP'), ('natural', 'JJ'), ('language', 'NN'), ('processing', 'NN'), ('technology', 'NN'), ('!', '.')]
+3.命名实体识别(Named Entity)
+print ('Named Entities:', zh_model.ner(zh_sentence)) print ('Named Entities:', en_model.ner(en_sentence))
+Named Entities: [('我爱', 'O'), ('自然', 'O'), ('语言', 'O'), ('处理', 'O'), ('技术', 'O'), ('！', 'O')] Named Entities: [('I', 'O'), ('love', 'O'), ('natural', 'O'), ('language', 'O'), ('processing', 'O'), ('technology', 'O'), ('!', 'O')]
+4.句法成分分析(Constituency Parse)
+print ('Constituency Parsing:', zh_model.parse(zh_sentence) + "\n") print ('Constituency Parsing:', en_model.parse(en_sentence))
+Constituency Parsing: (ROOT (IP (IP (NP (NN 我爱)) (ADVP (AD 自然)) (NP (NN 语言)) (VP (VV 处理) (NP (NN 技术)))) (PU ！))) Constituency Parsing: (ROOT (S (NP (PRP I)) (VP (VBP love) (NP (JJ natural) (NN language) (NN processing) (NN technology))) (. !)))
+5.依存句法分析(Dependency Parse)
+print ('Dependency:', zh_model.dependency_parse(zh_sentence)) print ('Dependency:', en_model.dependency_parse(en_sentence))
+Dependency: [('ROOT', 0, 4), ('nsubj', 4, 1), ('advmod', 4, 2), ('nsubj', 4, 3), ('dobj', 4, 5), ('punct', 4, 6)] Dependency: [('ROOT', 0, 2), ('nsubj', 2, 1), ('amod', 6, 3), ('compound', 6, 4), ('compound', 6, 5), ('dobj', 2, 6), ('punct', 2, 7)]

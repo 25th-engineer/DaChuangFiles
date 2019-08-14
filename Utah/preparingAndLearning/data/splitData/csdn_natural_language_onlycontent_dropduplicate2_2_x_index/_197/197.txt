@@ -1,0 +1,59 @@
+声明：本文转载自此链接。
+维护者：Dibya Chakravorty
+Contributions
+Feel free to send pull requests, or email me (dibyachakravorty@gmail.com)
+How this list got started
+On November 10, 2016, a Hacker News (HN) user aarohamankad asked the HN community for suggestions on beginner NLP resources. This Ask HN thread became popular and stayed in the front page for some time. In this time, it gathered plenty of community generated suggestions about beginner NLP resources. This list is an attempt to summarize this discussion into a coherent list of resources. I also wrote a blog post on this.
+Table of Contents
+Books
+MOOCs
+YouTube Videos
+Online University Courses
+Packages to Play With
+Academic Papers
+Learning by Doing
+Open Source Projects
+Fun Ideas
+APIs
+User Groups
+Other Guides
+Books
+Speech and Language Processing : Classic and Standard textbook in NLP. Pre publication draft of 3rd edition available here.
+Natural Language Processing with Python : Application oriented book. Examples are in Python (NLTK). Free online version here.
+Taming Text : Application oriented book. Examples are in JAVA.
+Foundations of Statistical Natural Language Processing : Classic text on Statistical NLP. Goes deep into the implementation of parsers, taggers etc.
+Handbook of Natural Language Processing : A complete treatment of NLP that starts from the historical roots and ends with the modern methods of NLP.
+Statistical Machine Translation : Learn how to make a service like Google Translate
+Introduction to Information Retrieval : Learn the nuts and bolts of services like Google Search and Google News (search, text classification, clustering etc.)
+Prolog and Natural Language Analysis : Implement NLP algortihms in Prolog.
+MOOCs
+Coursera course offered by University of Michigan : Introductory course that covers all prerequisite materials. Favored programming language is Python.
+Dicontinued Coursera course offered by Comlumbia University, available on Academic torrents : Theory and concept oriented course. Only the course materials are available at this point.
+YouTube Videos
+Video series by Jurafsky and Martin : Jurafsky and Martin are both professors at Stanford, and they have written multiple classic textbooks on NLP.
+Stanford CS224D : Deep Learning in NLP : Applicatin of Deep Learning in NLP
+NLP with Python and NLTK : Application oriented video series using Python and NLTK.
+Online University Courses
+Machine Translation course at the University of Pennsylvania
+Packages to Play With
+NLTK : Most popular NLP library in Python. Excellent documentation in the form of a book/free online version. Powerful and extensible.
+Stanford CoreNLP : Fast and feature rich NLP library, written in JAVA. An online demo is available here.
+Spacy : Another emerging NLP library in Python. Fast and state of the art. Tries to maintain an uniform API while implementing state of the art algorithms. They have a blog and an online demo.
+Apache Tika : Offers an unified interface for extracting text data and meta data from many different file formats (PPT, PDF etc.) and analysis.
+Academic Papers
+Deep Learning in NLP : A GitHub repo that collects papers on Deep Learning in NLP.
+Learning by Doing
+Often the best way to learn is to contribute to an existing open source NLP project or implementing a fun idea.
+Open Source Projects
+Betty : Betty is a open source project with both real-life use and practical NLP considerations, and is looking for new maintainers.
+Fun Ideas
+Interactive Fiction/Parser Based Fiction : A video game where the player's interactions primarily involve text. Listen to this illuminating FLOSS podcast on the topic.
+APIs
+IBM Watson Cloud : From the makers of IBM Watson. It lets you integrate NLP functionality in your app via an API. There's a free tier/free trial.
+User Groups
+ACM Special Interest Group in AI : If you are craving for some face to face human contact.
+Other Guides
+Quora question on how to get into NLP
+awesome-nlp on GitHub : A GitHub repo containing a curated list of NLP resources.
+声明：本文转载自此链接。
+转载请注明：《 自然语言处理 资源合集 | 我爱计算机 》

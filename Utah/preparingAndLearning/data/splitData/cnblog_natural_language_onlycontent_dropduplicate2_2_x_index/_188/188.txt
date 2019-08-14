@@ -1,0 +1,245 @@
+Update日志
+创建日期：2011.6.27
+翻译修正：2011.7.20
+修改了已知的翻译错误
+更新1st:  2011.8.5
+为目录添加了相关笔记链接
+更新2rd:2011.8.28
+修改了部分翻译错误
+目前施工进度：Chapter5
+巨坑缓慢填充ing
+Table of Contents     目录
+Preface
+前言
+1. Language Processing and Python
+Python和语言处理
+1.1 Computing with Language: Texts and Words
+语言计算：文本和单词
+1.2 A
+Closer Look at Python: Texts as Lists of Words
+进一步学习Python：将文本视作单词列表
+1.3 Computing with Language: Simple Statistics
+语言计算：简单的统计
+1.4 Back to Python: Making Decisions and Taking Control
+回到Python:决策和控制
+1.5 Automatic Natural Language Understanding
+自动理解自然语言
+1.6 Summary
+小结
+1.7 Further Reading
+深入阅读
+1.8 Exercises
+练习
+2. Accessing Text Corpora and Lexical Resources
+访问文本语料库和词汇资源
+2.1 Accessing Text Corpora
+访问文本语料库
+2.2 Conditional Frequency Distributions
+条件频率分布
+2.3 More Python: Reusing Code
+More Python:代码重用
+2.4 Lexical Resources
+词汇资源
+2.5 WordNet
+WordNet词典
+2.6 Summary
+小结
+2.7 Further Reading
+深入阅读
+2.8 Exercises
+练习
+3. Processing Raw Text
+处理原始文本
+3.1 Accessing Text from the Web and from Disk
+从Web和磁盘获得文本
+3.2 Strings: Text Processing at the Lowest Level
+字符串：最底层的文本处理
+3.3 Text Processing with Unicode
+使用Unicode处理文本
+3.4 Regular Expressions for Detecting Word Patterns
+使用正则表达式检测词组
+3.5 Useful Applications of Regular Expressions
+正则表示式的有益应用
+3.6 Normalizing Text
+规格化文本
+3.7 Regular Expressions for Tokenizing Text
+正则表达式用于本文分词
+3.8 Segmentation
+分割
+3.9 Formatting: From Lists to Strings
+格式设定：从列表到字符串
+3.10 Summary
+小结
+3.11 Further Reading
+深入阅读
+3.12 Exercises
+练习
+4. Writing Structured Programs
+编写结构化程序
+4.1 Back to the Basics
+回到基础
+4.2 Sequences
+序列
+4.3 Questions of Style
+关于风格
+4.4 Functions: The Foundation of Structured Programming
+函数：结构化编程的基础
+4.5 Doing More with Functions
+关于函数的更多使用
+4.6 Program Development
+程序开发
+4.7 Algorithm Design
+算法设计
+4.8 A
+Sample of Python Libraries
+Python库的样本
+4.9 Summary
+小结
+4.10 Further Reading
+深入阅读
+4.11 Exercises
+练习
+5. Categorizing and Tagging Words
+分类和标注单词
+5.1 Using a Tagger
+使用标注器
+5.2 Tagged Corpora
+标记语料库
+5.3 Mapping Words to Properties Using Python Dictionaries
+使用Python字典把单词映射到属性
+5.4 Automatic Tagging
+自动标注
+5.5 N-Gram Tagging
+N-Gram标注
+5.6 Transformation-Based Tagging
+基于转换的标注
+5.7 How to Determine the Category of a Word
+如何决定一个词的类别
+5.8 Summary
+小结
+5.9 Further Reading
+深入阅读
+5.10 Exercises
+练习
+6. Learning to Classify Text
+学习本文分类
+6.1 Supervised Classification
+监督分类法
+6.2 Further Examples of Supervised Classification
+监督分类法的更多例子
+6.3 Evaluation
+求值
+6.4 Decision Trees
+决策树
+6.5 Naive Bayes Classifiers
+朴素贝叶斯分类器
+6.6 Maximum Entropy Classifiers
+最大熵分类器
+6.7 Modeling Linguistic Patterns
+建模语言样式
+6.8 Summary
+总结
+6.9 Further Reading
+深入阅读
+6.10 Exercises
+练习
+7. Extracting Information from Text
+从文本提取信息
+7.1 Information Extraction
+信息提取
+7.2 Chunking
+分块
+7.3 Developing and Evaluating Chunkers
+分块器开发和求值
+7.4 Recursion in Linguistic Structure
+语言结构中的递归
+7.5 Named Entity Recognition
+命名实体识别
+7.6 Relation Extraction
+关系提取
+7.7 Summary
+小结
+7.8 Further Reading
+深入阅读
+7.9 Exercises
+练习
+8. Analyzing Sentence Structure
+句子结构分析
+8.1 Some Grammatical Dilemmas
+一些语法困惑
+8.2 What’s the Use of Syntax?
+语法有什么用处？
+8.3 Context-Free Grammar
+上下文无关语法
+8.4 Parsing with Context-Free Grammar
+使用上下文无关语法进行解析
+8.5 Dependencies and Dependency Grammar
+相关性和相关性语法
+8.6 Grammar Development
+语法的发展
+8.7 Summary
+小结
+8.8 Further Reading
+深入阅读
+8.9 Exercises
+练习
+9. Building Feature-Based Grammars
+构建基于特征的语法
+9.1 Grammatical Features
+语法特征
+9.2 Processing Feature Structures
+处理特征结构
+9.3 Extending a Feature-Based Grammar
+扩展基于特征的语法
+9.4 Summary
+小结
+9.5 Further Reading
+深入扩展
+9.6 Exercises
+练习
+10. Analyzing the Meaning of Sentences
+分析句子的意义
+10.1 Natural Language Understanding
+自然语言的理解
+10.2 Propositional Logic
+命题逻辑
+10.3 First-Order Logic
+一阶逻辑
+10.4 The Semantics of English Sentences
+英文句子的语义
+10.5 Discourse Semantics
+语段语义
+10.6 Summary
+小结
+10.7 Further Reading
+深入阅读
+10.8 Exercises
+练习
+11. Managing Linguistic Data
+语料管理
+11.1 Corpus Structure: A Case Study
+语料库结构：案例研究
+11.2 The Life Cycle of a Corpus
+语料库的生命周期
+11.3 Acquiring Data
+获取数据
+11.4 Working with XML
+处理XML
+11.5 Working with Toolbox Data
+处理Toolbox Data
+11.6 Describing Language Resources Using OLAC Metadata
+使用OLAC元数据描述语言资源
+11.7 Summary
+小结
+11.8 Further Reading
+深入阅读
+11.9 Exercises
+练习
+Afterword: The Language Challenge
+后记：语言的挑战
+Bibliography
+参考文献
+NLTK Index
+NLTK索引
+General Index
+一般索引

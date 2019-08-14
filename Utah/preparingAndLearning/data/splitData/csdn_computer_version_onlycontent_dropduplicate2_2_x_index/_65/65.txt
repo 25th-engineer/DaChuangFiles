@@ -1,0 +1,32 @@
+VLFeat
+MexOpenCV
+facedetect
+Machine Vision Toolbox
+Piotrs Image Video Matlab Toolbox
+MATLAB Functions for Multiple View Geometry
+1. VLFeat
+项目网站：http://www.vlfeat.org
+许可证：BSD
+著名的计算机视觉/图像处理开源项目，知名度应该不必OpenCV低太多，曾获ACM Open Source Software Competition 2010一等奖。使用C语言编写，提供C语言和Matlab两种接口。
+VLFeat完整的功能列表：http://www.vlfeat.org/matlab/matlab.html
+2. MexOpenCV
+让Matlab支持调用的OpenCV
+项目网站：http://www.cs.sunysb.edu/~kyamagu/mexopencv/
+3. facedetect
+Peter Kovesi的工具箱：轻量好用，侧重图像处理
+项目网站：http://www.csse.uwa.edu.au/~pk/research/matlabfns/
+4.Machine Vision Toolbox
+侧重机器视觉、三维视觉
+项目网站：http://www.petercorke.com/Machine_Vision_Toolbox.html
+许可证：LGPL
+侧重机器视觉，作者是另一个Peter，Peter Corke在机器人界很有名，他在2011年写了一本书《Robotics, Vision & Control》介绍了机器视觉相关的颜色、相机模型、三维视觉、控制等研究，并配套这个工具箱。算法包括了大量常用的视觉和图像处理小函数，，这些就不提了，提几个别的工具箱一般没有的功能
+5. Piotr’s Image & Video Matlab Toolbox
+侧重物体识别
+项目网站：http://vision.ucsd.edu/~pdollar/toolbox/doc/index.html
+许可证：Simple BSD
+6. MATLAB Functions for Multiple View Geometry
+《计算机视觉中的多图几何》（Multiple View Geometry in Computer Vision），中算法的Matlab实现
+项目网站：http://www.robots.ox.ac.uk/~vgg/hzbook/code/
+许可证：MIT
+reference
+[1] http://blog.csdn.net/huilingwu/article/details/51352055

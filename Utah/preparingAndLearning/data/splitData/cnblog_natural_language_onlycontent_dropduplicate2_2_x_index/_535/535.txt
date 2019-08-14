@@ -1,0 +1,94 @@
+摘要： 本文讲的是用深度学习解决自然语言处理中的7大问题，文本分类、语言建模、机器翻译等，自然语言处理领域正在从统计学方法转向神经网络方法。在自然语言中，仍然存在许多具有挑战性的问题。但是，深度学习方法在某些特定的语言问题上取得了state-of-the-art的结果。
+本文讲的是用深度学习解决自然语言处理中的7大问题，文本分类、语言建模、机器翻译等，自然语言处理领域正在从统计学方法转向神经网络方法。在自然语言中，仍然存在许多具有挑战性的问题。但是，深度学习方法在某些特定的语言问题上取得了state-of-the-art的结果。不仅仅是在一些benchmark问题上深度学习模型取得的表现，这是最有趣的；事实上，单个模型可以学习单词的含义和执行语言任务，从而避免需要一套专门的、人工的方法。
+这篇文章将介绍深度学习方法正在取得进展的7类有趣的自然语言处理任务。
+文本分类
+语言建模
+语音识别
+字幕生成
+机器翻译
+文档摘要
+问题回答
+每个任务都提供了对问题的描述，一个例子，以及有关演示方法和结果的论文的引用。大多数参考资料来自Goldberg的A Primer on Neural Network Models for Natural Language Processing（https://arxiv.org/abs/1510.00726）。
+1. 文本分类
+给定一个文本的例子，预测一个预定义的类标签。
+文本分类的目的是对文档的话题或主题进行分类。 ——统计自然语言处理基础（Foundations of Statistical Natural Language Processing，1999）
+流行的分类示例是情绪分析，其中类标签表示源文本的情绪基调，例如“积极”或“消极”。
+以下是另外3个例子：
+垃圾邮件过滤，将电子邮件文本分类为垃圾邮件。
+语言识别，对源文本的语言进行分类。
+流派分类，对虚构故事的流派进行分类。
+此外，这个问题也可能是一个文本被分为多个类的方式，即所谓的多标签分类。例如，预测源推文的多个标签。
+更多阅读：
+文本分类-学术百科 www.scholarpedia.org/article/Text_categorization
+文档分类-维基百科 https://en.wikipedia.org/wiki/Document_classification
+下面是有关文本分类的一些深度学习论文：
+对烂番茄影评的情感分析
+Deep Unordered Composition Rivals Syntactic Methods for Text Classification, 2015. https://cs.umd.edu/~miyyer/pubs/2015_acl_dan.pdf
+对amazon产品评论、IMDB电影评论和分类主题新闻文章情绪分析
+Effective Use of Word Order for Text Categorization with Convolutional Neural Networks, 2015. https://arxiv.org/abs/1412.1058
+对电影评论的情绪分析，将句子归类为主观或客观，对问题类型进行分类，对产品评论的情感进行分类，等等。
+Convolutional Neural Networks for Sentence Classification, 2014. https://arxiv.org/abs/1408.5882
+2. 语言建模
+语言建模实际上是一个更有趣的自然语言问题的子任务，特别是那些在其他输入条件下调节语言模型的问题。
+这个问题是根据前面的单词预测下一个单词。该任务是语音识别或光学字符识别（OCR）的基础，也用于拼写校正、手写识别和统计机器翻译。 ——Foundations of Statistical Natural Language Processing (page 191), by Christopher D. Manning & Hinrich Schütze
+除了语言建模的学术兴趣，它是许多深度学习自然语言处理架构的关键组成部分。语言模型学习词汇之间的概率关系，生成在统计上与源文本一致的新的词汇序列。
+单独来说，语言模型可以用于文本或语音生成；例如:
+生成新的文章标题
+生成新的句子、段落或文档
+生成一个句子的后续句子
+有关语言建模的更多内容，参阅:
+语言建模-维基百科 https://en.wikipedia.org/wiki/Language_model
+循环神经网络的不合理有效性（The Unreasonable Effectiveness of Recurrent Neural Networks）2015
+基于生成模型的文本到语音合成 https://github.com/oxford-cs-deepnlp-2017/lectures/blob/master/Lecture 10 - Text to Speech.pdf
+下面是一个关于语言建模深度学习例子:
+英语文本、书籍和新闻文章的语言模型
+一种神经概率语言模型（A Neural Probabilistic Language Model）www.jmlr.org/papers/v3/bengio03a.html
+3.语音识别
+语音识别是指理解所说的问题。语音识别的任务是将一个包含自然语言话语的声音信号映射到说话者预期的相应序列。 ——深度学习（page 458）
+给定话语的音频数据，语音识别模型需要生成人类可读的文本。考虑到这个过程的自动性质，这个问题也可以被称为自动语音识别(ASR)。使用语言模型来创建文本输出，该输出基于音频数据。
+一些例子包括：
+转录讲话
+为电影或电视节目制作文字说明
+开车时用语音发出指令
+有关语音识别的更多信息，请参阅：
+语音识别-维基百科 https://en.wikipedia.org/wiki/Speech_recognition
+下面是三个用于语音识别的深度学习方法的例子：
+英语语音转文本 Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent Neural Networks，2006 www.cs.toronto.edu/~graves/icml_2006.pdf Speech Recognition with Deep Recurrent Neural Networks, 2013. https://arxiv.org/abs/1303.5778 Exploring convolutional neural network structures and optimization techniques for speech recognition, 2014. https://www.microsoft.com/en-us/research/publication/exploring-convolutional-neural-network-structures-and-optimization-techniques-for-speech-recognition/
+4. 字幕生成
+字幕生成是有关描述图像内容的问题。给定例如照片等数字图像，生成图像内容的文本描述。语言模型用于创建以图像为条件的描述。
+一些例子包括：
+描述场景内容
+创建照片标题
+描述视频
+这不仅仅是为听力障碍者的应用，而且还可以生成可用于搜索图像和视频的具有可读性的文本，例如在网络上。
+以下是3个字幕生成深入学习方法的例子： 生成照片标题 Show, Attend and Tell: Neural Image Caption Generation with Visual Attention, 2016. https://arxiv.org/abs/1502.03044 Show and tell: A neural image caption generator, 2015. https://arxiv.org/abs/1411.4555 生成视频字幕 Sequence to Sequence – Video to Text, 2015. https://arxiv.org/abs/1505.00487
+5. 机器翻译
+机器翻译是将一种语言的源文本转换为另一种语言的问题。
+机器翻译，将文本或语音从一种语言自动翻译成另一种语言，是NLP最重要的应用之一。 ——统计自然语言处理基础，463页，1999。
+考虑到神经网络的使用，这一领域也被称为神经机器翻译。
+在机器翻译任务中，输入已经由某种语言的符号序列组成，并且计算机程序必须将其转换成其他语言的符号序列。这通常适用于自然语言，例如从英语翻译成法语。深度学习最近开始在这类任务上有重要影响。 ——深度学习，98页，2016
+语言模型用于以另一种语言输出目标文本，以源文本为条件。
+一些例子包括：
+将文本文件从法语翻译成英语
+将西班牙语音频转换为德语文本
+将英语文本翻译成意大利语音频
+有关神经机器翻译的更多信息，参阅： 神经机器翻译-维基百科 https://en.wikipedia.org/wiki/Neural_machine_translation
+以下是机器翻译深度学习方法的3个例子：
+将英语翻译成法语 Sequence to Sequence Learning with Neural Networks, 2014. https://arxiv.org/abs/1409.3215 Neural Machine Translation by Jointly Learning to Align and Translate, 2014. https://arxiv.org/abs/1409.0473 Joint Language and Translation Modeling with Recurrent Neural Networks, 2013. https://www.microsoft.com/en-us/research/publication/joint-language-and-translation-modeling-with-recurrent-neural-networks/
+6. 文档摘要
+文档摘要是创建文本文档的简短描述的任务。即，使用语言模型来输出基于完整文档的总结性摘要。
+文件摘要的一些例子包括：
+创建文档的标题
+创建文档的概要
+有关该主题的更多信息，请参阅：
+Automatic summarization-维基百科 https://en.wikipedia.org/wiki/
+深度学习是否（成功地）被应用于自动文本摘要？https://www.quora.com/Has-Deep-Learning-been-applied-to-automatic-text-summarization-successfully
+以下是关于文档摘要深度学习方法的3个例子：
+新闻文章中的句子概要： A Neural Attention Model for Abstractive Summarization, 2015. https://arxiv.org/abs/1509.00685 Abstractive Text Summarization Using Sequence-to-Sequence RNNs and Beyond, 2016. https://arxiv.org/abs/1602.06023 Neural Summarization by Extracting Sentences and Word, 2016. https://arxiv.org/abs/1603.07252
+7. 问题回答
+问题回答是给出一个主题（例如文本文档）回答有关该主题的具体问题的任务。
+一些例子：
+回答有关维基百科页面的问题
+回答有关新闻文章的问题
+回答有关病例的问题
+参阅： Question answering - 维基百科 https://en.wikipedia.org/wiki/Question_answering 回答有关新闻文章的问题 Teaching Machines to Read and Comprehend, 2015. papers.nips.cc/paper/5945-teaching-machines-to-read-and-comprehend 回答一般知识问题 Question Answering over Freebase with Multi-Column Convolutional Neural Networks, 2015. www.aclweb.org/anthology/P15-1026 回答基于特定文件的实质性问题 Deep Learning for Answer Sentence Selection, 2015. https://arxiv.org/abs/1412.1632

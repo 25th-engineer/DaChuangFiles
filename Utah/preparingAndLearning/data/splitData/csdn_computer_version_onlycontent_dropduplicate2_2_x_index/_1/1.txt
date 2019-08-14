@@ -1,0 +1,6 @@
+#CNN与计算机视觉
+SENet
+DenseNet
+ResNet
+opencv 深度学习图像处理库 http://www.opencv.org.cn/opencvdoc/2.3.2/html/doc/tutorials/tutorials.html
+PIL python图像处理库

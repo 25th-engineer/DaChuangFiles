@@ -1,0 +1,4 @@
+Python Windows10
+汉语自然语言处理基本组件:
+20170703
+2018/01/16:Github长期更新,Windows,Linux通用

@@ -1,0 +1,26 @@
+接着自然语言处理与分析（one）
+笔者现在推荐一款在线编辑器。
+我就是用来写代码的。
+data:text/html, <style type="text/css">#e{position:absolute;top:0;right:0;bottom:0;left:0;}</style><div id=%22e%22></div><script src=%22http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js%22 type=%22text/javascript%22 charset=%22utf-8%22></script><script>var e=ace.edit(%22e%22);e.setTheme(%22ace/theme/monokai%22);e.getSession().setMode(%22ace/mode/java%22);</script>
+这个粘帖到浏览器地址。
+public void train() throws IOException { for (int i = 0; i < categories.length; ++i) { String category = categories[i]; Classification classification = new Classification(category); //新建类别 File dir = new File(pDir, categories[i]); File[] trainFiles = dir.listFiles(); for (int j = 0; j < trainFiles.length; ++j) { File trainFile = trainFiles[j]; if (isTrainingFile(trainFile)) { //判断一下是为了让一部分数据作为训练集、一部分作为测试集 String review = Files.readFromFile(trainFile, "ISO-8859-1"); Classified classified = new Classified( review, classification); //指定内容和类别 classifer.handle(classified); //训练 } } } }
+
+这里说明一下isTrainingFile方法。我们需要一份测试集和一个训练集，但是我们只有一个语料库，只有人为分割。我原本是每次随机数一下来干的，但是有点影响速度，这里直接用文件名作为判断依据了。
+boolean isTrainingFile(File file) { return file.getName().charAt(2) != '1'; //如果第2位为1就是测试集 }
+训练完成后使用classifer就可以进行极性分析了。
+public void evaluate() throws IOException { int numTests = 0; int numCorrect = 0; for (int i = 0; i < categories.length; ++i) { String category = categories[i]; File file = new File(pDir, categories[i]); File[] testFiles = file.listFiles(); for (int j = 0; j < testFiles.length; ++j) { File testFile = testFiles[j]; if (!isTrainingFile(testFile)) { String review = Files.readFromFile(testFile, "ISO-8859-1"); ++numTests; Classification classification = classifer.classify(review); String resultCategory = classification.bestCategory(); if (resultCategory.equals(category)) ++numCorrect; } } } System.out.println("测试总数：" + numTests); System.out.println("正确数：" + numCorrect); System.out.println("正确率" + ((double) numCorrect) / (double) numTests); }
+效果：
+lingpipe1
+将isTrainingFile修改一下
+boolean isTrainingFile(File file) { return file.getName().charAt(2) != '2'; //如果第2位为2就是测试集 }
+lingpipi2
+就正确率而言怎么划分训练集和测试集影响不大。
+还可以这样划分
+boolean isTrainingFile(File file) { return (file.getName().charAt(2) != '2')&&(file.getName().charAt(2) != '1'); }
+扩展
+基本极性分析只是文本倾向性分析一个很简单的部分，如果需要深入的话，LingPipe还可以实现主观性分析、层次极性分析等。
+如果需要支持中文的话，请下载words-zh-as.CompiledSpellChecker。
+最后附上三篇参考文献：
+Bo Pang, Lillian Lee, and Shivakumar Vaithyanathan. 2002. Thumbs up? Sentiment Classification using Machine Learning Techniques. EMNLP Proceedings.
+Bo Pang and Lillian Lee. 2004. A Sentimental Education: Sentiment Analysis Using Subjectivity Summarization Based on Minimum Cuts. ACL Proceedings.
+Bo Pang and Lillian Lee. 2005. Seeing stars: Exploiting class relationships for sentiment categorization with respect to rating scales. ACL Proceedings.

@@ -1,0 +1,66 @@
+扎克伯格本周二在facebook发布了一篇文章，介绍自己利用个人时间开发的一套在自己家里使用的AI系统，并将它命名为Jarvis，对！就是电影钢铁侠里的AI助手Jarvis。
+文章并没有讲细节的技术coding，更像一篇人工智能技术在工程应用上的科普。
+实现了哪些功能
+能够通过手机或者电脑向Jarvis发出文本或者语音命令，来控制家里的灯光，温度，电器，音乐播放和安全防卫; 能够学习了解Mark的某些兴趣(比如听歌)，能够学习新的词语和概念。
+使用了哪些人工智能技术
+自然语言处理，语音识别，人脸识别，增强学习
+使用了哪些开发语言
+PHP，Python，Objective C
+系统架构
+Home Systems包括各种家庭设施，比如电灯，温度调节器，门，音响设备，摄像头，烤面包机等，由Crestron(世界领先的控制和自动化系统的制造商)系统在硬件层面和这些设施进行连接。
+User Interface包括一个聊天机器人，一个iOS语音App和摄像头；
+AI Systems提供人工智能的相关技术，都是用的facebook的已有系统；
+Jarvis Server作为中枢系统，逻辑步骤：
+1. 从User Interfaces接收文本，语音，图像输入
+2. 调用AI Systems接口对输入进行命令识别
+3. 根据识别的命令向Home Systems里的设备发送控制命令
+根据原文的描述，大致可以推断出：
+Messenger Bot是基于facebook Messenger提供的Framework做开发;
+iOS Voice App使用Objective C开发;
+Jarvis Server 使用PHP/Python开发；
+连接家居
+首先使用了Crestron系统来连接控制家居设备，包括：电灯，温度调节器和门，使用Spotify(全球最大的正版流媒体音乐服务平台)音乐服务的Sonos(世界领先的家庭智能无线音响制造商)音响设备，三星电视，Nest牌的摄像头。
+为了连接某些设备，Mark还逆向研究了这些设备的API，最终实现类似于通过电脑发送命令的方式来打开电灯或者播放某一首歌的功能。
+而有的设备的连接则需要对设备本身硬件进行修改，比如他特别提到了连接烤面包机，为了能够自动烤面包，他最终找到了一台1950年代的面包机，并给它装配了一个智能开关。
+最后得出结论，如果想让更多的人使用类似于Jarvis这样的智能助理来控制家里的一切，那么更多的设备需要被连接，而且整个智能家居行业也需要开发制定出通用的API和标准，使得各种设备能够很方便的进行通信。
+自然语言处理
+Mark提到实现语音控制分为两个步骤：1. 能够通过文本信息来控制家居硬件。2. 将语音识别成文本信息。
+他从最简单的关键词开始入手，比如当Jarvis接收到"bedroom", "lights"和"on"的词语时，就将卧室的灯打开。
+但很快发现Jarvis要有识别近义词的能力，比如"family room", "living room"在Mark家里都是一个意思。这意味着需要有某种方式来教会Jarvis识别近义词。
+对于AI来说，能够理解上下文语境也至关重要，如果Mark或者他的妻子Priscilla在不同的房间对Jarvis说相同的话，比如"把灯光调暗一些"，那么Jarvis要能够识别出到底是把哪个房间的灯光调暗一些。
+而控制音乐播放的语义理解则更加复杂，比如对于灯的控制，只有"turned up or down"两个选择，而对于音乐播放的控制，"play x"则会有多种意思。
+想一下关于Adele的三个语句："play someone like you", "play someone like adele", and "play some adele".
+"play someone like you"的意思是是播放一首歌，"play someone like adele"的意思是推荐一位和adele类似的歌手并播放他的歌曲，"play some adele”是推荐一些adele的歌曲并播放。
+通过一个正负反馈系统，能够训练Jarvis理解这些语句的不同。
+AI拥有的上下文信息越多，处理开放请求(而不是某种特定的命令)的能力就越强大。
+Mark经常向Jarvis说"play me some music”，Jarvis通过查询Mark以往的听歌历史就能够大概率给推荐出他喜欢听的歌曲。
+如果不喜欢它推荐出的某首歌曲，那么就可以告诉Jarvis: "that's not light, play something light”，从这句话里Jarvis不但能够学习到这首歌的分类还能够立刻对Mark的推荐进行调整。
+视觉和人脸识别
+对于AI来说，要能够理解图像和视频中正在发生什么，比如追踪(比如Max醒了，在她的婴儿床里来回动)，对象识别(房间里有一个动物或者一个毛毯)，人脸识别(是谁在门口)，Facebook在这方面已经做得很好。
+Mark在自家门口安装了一些摄像头，能够从各个角度拍摄图像，之后他构建了一个监控摄像头图像的服务器：1. 运行人脸探测技术来发现是否有人进入摄像头视野。 2. 发现了一张人脸后，运行人脸识别技术来确认此人是谁。一旦确认出此人身份，server将从白名单对比是否允许此人进门。
+聊天机器人
+为了能够使用手机和Jarvis通信，Mark基于Messenger开发了一个Messenger bot，也称为Jarvis bot。Messenger提供了一个开发bot的框架，这个框架可以在ios和android上运行。
+向Jarvis bot输入text后, 它将text转发到Jarvis sever。
+语音识别
+Mark开发了一个ios app用于接收语音输入，并使用了facebook的语音识别系统进行语音识别。他将这个app安装在多台手机上，每个房间里放一个手机来随时接收语音输入。
+在原文里，Mark用了更多的篇幅讲述语音识别并分享了自己一些有趣的发现。比如他会教Jarvis在和女儿Max交流时多一些幽默感。
+Facebook的工程开发环境
+在这个部分，Mark首先以自己的这段亲身coding体验表达了在facebook做开发工程师的感受："it's impressive" --- 令人印象深刻的。
+之后他称赞了自家的开发环境和开源项目：
+"一直令我印象深刻的是facebook的代码库组织的如何的好，从中找到想要找的东西是如何的简单，比如人脸识别，语音识别，聊天机器人框架或者IOS开发的相关知识"
+"由facebook开源的Nuclide(用于GitHub's Atom)大大提高了开发效率；用于大型项目的构建系统Bulk为我节省了更多时间；由我们开源的AI文本分词工具FastText也是值得checkout下来的；并且如果你对AI开发感兴趣，那么整个的Facebook Research的github仓库也是值得一看的"
+最后他提到了facebook的价值观之一"move fast", "在facebook你将比在任何其他地方更快的开发一个应用，在facebook的基础设施和AI工具的支撑下，你将有更高的开发效率"
+---------------
+原英文地址：Jarvis
+在文章末尾Mark提到目前代码里涉及到很多他家里的信息，所以还不能开源，但他计划在代码层面再加一个抽象层屏蔽敏感信息后便可以开源。
+以下是文中提到的各种开发工具和项目：
+Facebook Messenger Platform: 开发者能够快速的构建一个聊天机器人
+https://developers.facebook.com/docs/messenger-platform
+nuclide: Facebook开源的一个基于Atom的IDE，用于网络和手机开发
+https://github.com/facebook/nuclide
+Buck: Facebook开发的高性能构建工具
+https://buckbuild.com/
+fastText: Facebook开源的文本分类器
+https://github.com/facebookresearch/fastText
+Facebook Research: Facebook开源的各种AI工具
+https://github.com/facebookresearch

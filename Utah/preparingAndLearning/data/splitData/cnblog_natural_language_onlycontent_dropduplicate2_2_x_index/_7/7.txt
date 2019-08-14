@@ -1,0 +1,136 @@
+----------------------课程目录------------------------------
+│  ├<1>
+│  │  ├NLP01.pdf
+│  │  ├NLP0视频部分
+│  │  ├统计自然语言处理基础.pdf
+│  │  ├形式语言与自动机理论.pdf
+│  │  ├自然语言处理综论.pdf
+│  │  └宗成庆统计自然语言处理 .pdf
+│  ├<2>
+│  │  ├Error-tolerant Finite State Recognition.pdf
+│  │  ├NLP02.pdf
+│  │  ├NLP02视频部分
+│  │  └Tagging with Finite-State Transducers.pdf
+│  ├<3>
+│  │  ├icslp2002-srilm.pdf
+│  │  ├NLP03.pdf
+│  │  └NLP03视频部分
+│  ├<4>
+│  │  ├crf-tutorial.pdf
+│  │  ├nips01-discriminativegenerative.pdf
+│  │  ├NLP04.pdf
+│  │  ├NLP04视频部分
+│  │  ├概率论与数理统计 第四版.pdf
+│  │  └概率图模型原理与技术.pdf
+│  ├<5>
+│  │  ├EM算法详细例子及推导.pdf
+│  │  ├hhmm.pdf
+│  │  ├htk.rar
+│  │  ├HTK.zip
+│  │  ├NLP05.pdf
+│  │  ├NLP05视频部分
+│  │  └The-EM-algorithm.pdf
+│  ├<6>
+│  │  ├Conditional Random Fields An Introduction.pdf
+│  │  ├crf.pdf
+│  │  ├maxent.pdf
+│  │  ├maxent_adwait97.pdf
+│  │  ├Maximum Entropy Markov Models for Information Extraction and Segmentation.pdf
+│  │  ├NLP06.pdf
+│  │  ├NLP06视频部分
+│  │  ├条件随机场综述.pdf
+│  │  └统计学习方法.pdf
+│  ├<7>
+│  │  ├ActivePerl-5.22.1.2201-MSWin32-x86-64int-299574.msi
+│  │  ├conlleval.pl
+│  │  ├CRF++-0.58.zip
+│  │  ├CRF++工具包使用介绍.ppt
+│  │  ├CRF++使用指南.docx
+│  │  ├NLP07.pdf
+│  │  ├NLP07视频部分
+│  │  └基于条件随机场的中文人名性别识别研究.doc
+│  ├<8>
+│  │  ├A Character-Based Joint Model for Chinese Word Segmentation.pdf
+│  │  ├A Fast Decoder for Joint Word Segmentation and POS-Tagging Using a Single Discriminative Model.pdf
+│  │  ├Chinese Segmentation with aWord-Based Perceptron Algorithm.pdf
+│  │  ├Discriminative Training Methods for Hidden Markov Models Theory and Experiments with Perceptron Algorithms.pdf
+│  │  ├Integrating Generative and Discriminative Character-Based Models for Chinese Word Segmentation.pdf
+│  │  ├NLP08.pdf
+│  │  ├NLP08视频部分
+│  │  ├Syntactic Processing Using the GeneralizedPerceptron and Beam Search.pdf
+│  │  ├Which is More Suitable for Chinese Word Segmentation the Generative Model or the Discriminative One.pdf
+│  │  ├对自动分词的反思.pdf
+│  │  ├基于N-最短路径方法的中文词语粗分模型.pdf
+│  │  ├由字构词——中文分词新方法.pdf
+│  │  ├中文分词十年回顾.pdf
+│  │  └中文文本自动分词和标注_刘开瑛.pdf
+│  ├<9>
+│  │  ├NLP09.pdf
+│  │  ├NLP09视频部分
+│  │  └汉语问答系统关键技术研究_吴友政.pdf
+│  ├<分词算法>
+│  │  ├语料库.mp4
+│  │  ├语料库建设.pdf
+│  │  └<icwb2-data>
+│  ├<10>
+│  │  ├LDA及Gibbs-Sampling-yangliuy.pdf
+│  │  ├LDA数学八卦.pdf
+│  │  ├NLP10.pdf
+│  │  ├NLP10视频部分
+│  │  ├Parameter estimation for text analysis.pdf
+│  │  ├PLSA及EM算法-yangliuy.pdf
+│  │  ├Unsupervised Learning by Probabilistic Latent Semantic Analysis.pdf
+│  │  └一种自适应词性标注方法.pdf
+│  ├<11>
+│  │  ├A Sentimental Education Sentiment Analysis Using Subjectivity Summarization Based on Minimum Cuts.pdf
+│  │  ├Joint Sentiment Topic Model for Sentiment Analysis.pdf
+│  │  ├NLP11.pdf
+│  │  ├NLP11视频部分
+│  │  ├pcfgs.pdf
+│  │  ├Thumbs up Sentiment Classification using Machine Learning Techniques.pdf
+│  │  ├Using_appraisal_groups_for_sentiment_analysis.pdf
+│  │  └第11课作业素材.zip
+│  ├<12>
+│  │  ├A Hybrid Approach to Chinese Base Noun Phrase Chunking.pdf
+│  │  ├Catching the Drift Probabilistic Content Models.pdf
+│  │  ├Centroid-based summarization of multiple documents.pdf
+│  │  ├Coreference Resolution Current Trends and Future Directions.pdf
+│  │  ├Fast Methods for Kernel-based Text Analysis.pdf
+│  │  ├First-Order Probabilistic Models for Coreference Resolution.pdf
+│  │  ├LATENT DIRICHLET LEARNING FOR DOCUMENT SUMMARIZATION.pdf
+│  │  ├Layer-Based Dependency Parsing.pdf
+│  │  ├NLP12.pdf
+│  │  ├NLP12视频部分
+│  │  ├Non-projective Dependency Parsing using Spanning Tree Algorithms.pdf
+│  │  ├Online Large-Margin Training of Dependency Parsers.pdf
+│  │  ├Sentence Fusion for Multidocument News Summarization.pdf
+│  │  ├Shallow Parsing with Conditional Random Fields.pdf
+│  │  ├Use of  Support Vector Learning for Chunk Identification.pdf
+│  │  ├基于潜在语义分析的单文本自动摘要方法研究.pdf
+│  │  ├基于潜在语义索引的文本摘要方法.PDF
+│  │  ├文档摘要作业素材.zip
+│  │  └指代消解综述.pdf
+│  ├<13>
+│  │  ├A STATISTICAL APPROACH TO MACHINE TRANSLATION.pdf
+│  │  ├A Statistical MT Tutorial Workbook.pdf
+│  │  ├A Survey on Question and Answering Systems.pdf
+│  │  ├Building Watson.pdf
+│  │  ├Discriminative Training and Maximum Entropy Models for Statistical Machine Translation.pdf
+│  │  ├Erratum to A Statistical Approach to Machine Translation.pdf
+│  │  ├HMM-Based Word Alignment in Statistical Translation.pdf
+│  │  ├NLP13.pdf
+│  │  ├NLP13a.mp4
+│  │  ├NLP13b.mp4
+│  │  ├NLP13c.mp4
+│  │  ├NLP13d.mp4
+│  │  ├NLP13e.mkv
+│  │  ├NLP13f.mp4
+│  │  ├NLP13g.mp4
+│  │  ├NLP13h.mp4
+│  │  ├Statistical Machine Translation -Koehn.pdf
+│  │  ├The Mathematics of Statistical Machine Translation Parameter Estimation.pdf
+│  │  ├谷歌翻译.pdf
+│  │  ├基于FAQ的OTC问答系统的设计与实现.pdf
+│  │  ├刘群-机器翻译原理与方法讲义(03)基于词的统计机器翻译方法.pdf
+└  └  └微信聊天机器配置流程.pdf
+下载地址：百度网盘下载

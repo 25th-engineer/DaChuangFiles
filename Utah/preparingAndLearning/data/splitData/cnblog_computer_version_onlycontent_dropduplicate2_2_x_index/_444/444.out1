@@ -1,0 +1,106 @@
+基于 Aforge 的 物体 运动 识别 入门篇 chatbot 人工智能 机器 
+人 开发 提供 教学 视频 0 收藏 2 本文 来自 
+http / / blog . csdn . net / hellogv 
+/ 引用 必须 注明 出处 最近 看到 越来越 多 人 
+在做 物体 运动 识别 例如 第六感 中的 指套 而且 我 
+最近 也 有点 闲空 所以 也来 玩玩 大多数 人 都是 
+用 Opencv 来做 那我就/nr 不做 重复 的 工作 了 换 
+个别 的 开源 类库 ~ ~ ~ Aforge 来自 百度知道 
+的 Aforge 介绍 AForge . NET 是 一个 专门 为 
+开发者 和 研究 者 基于 C # 框架 设计 的 
+他 包括 计算机 视觉 与 人工智能 图像处理 神经网络 遗传算法 机器学习 
+机器人 等 领域 这个 框架 由 一系列 的 类库 和 
+例子 组成 其中 包括 的 特征 有 AForge . Imaging 
+一些 日常 的 图像 处理 和 过滤器 AForge . Vision 
+计算机 视觉 应用 类库 AForge . Neuro 神经 网络 计算 
+库 AForge . Genetic 进化 算法 编程 库 AForge . 
+MachineLearning 机器学习 类库 AForge . Robotics 提供 一些 机器 学习 
+的 工具 类库 AForge . Video 一 系列 的 视频处理 
+类库 很 方便 PS AForge 里面 的 算法 够 我 
+玩 一段 很 长时间 了 本文 做 的 例子 代码 
+改自 http / / www . aforgenet . com / 
+articles / step _ to _ stereo _ vision / 
+  删减 了 部分 官方 代码 加入 了 更 简洁 
+的 物体 识别 功能 如 下图 一 开始 还 没有 
+告诉 程序 哪个 是 需要 识别 的 物体 鼠标 在 
+绿色 的 瓶盖 上点 一下 之后 程序 就 知道 绿色 
+瓶盖 就是 那个 需要 识别 的 物体 为什么 要 用 
+绿色 因为 绿色 的 指套 最 容易 做 找 两片 
+叶子 粘 在 一起 就 OK 了 不 建议 用 
+红色 因为 人体 偏 红色 不好 识别 本例 的 代码 
+可以 在 http / / download . csdn . net 
+/ source / 2281943   这里 下载 AForge 类库 请到 
+http / / code . google . com / p 
+/ aforge / downloads / list   这里 下载 原文 
+链接 http / / blog . csdn . net / 
+hellogv / article / details / 5526284 基于 Aforge 的 物体 运动 识别 入门篇 chatbot 人工智能 机器 
+人 开发 提供 教学 视频 0 收藏 2 本文 来自 
+http / / blog . csdn . net / hellogv 
+/ 引用 必须 注明 出处 最近 看到 越来越 多 人 
+在做 物体 运动 识别 例如 第六感 中的 指套 而且 我 
+最近 也 有点 闲空 所以 也来 玩玩 大多数 人 都是 
+用 Opencv 来做 那我就/nr 不做 重复 的 工作 了 换 
+个别 的 开源 类库 ~ ~ ~ Aforge 来自 百度知道 
+的 Aforge 介绍 AForge . NET 是 一个 专门 为 
+开发者 和 研究 者 基于 C # 框架 设计 的 
+他 包括 计算机 视觉 与 人工智能 图像处理 神经网络 遗传算法 机器学习 
+机器人 等 领域 这个 框架 由 一系列 的 类库 和 
+例子 组成 其中 包括 的 特征 有 AForge . Imaging 
+一些 日常 的 图像 处理 和 过滤器 AForge . Vision 
+计算机 视觉 应用 类库 AForge . Neuro 神经 网络 计算 
+库 AForge . Genetic 进化 算法 编程 库 AForge . 
+MachineLearning 机器学习 类库 AForge . Robotics 提供 一些 机器 学习 
+的 工具 类库 AForge . Video 一 系列 的 视频处理 
+类库 很 方便 PS AForge 里面 的 算法 够 我 
+玩 一段 很 长时间 了 本文 做 的 例子 代码 
+改自 http / / www . aforgenet . com / 
+articles / step _ to _ stereo _ vision / 
+  删减 了 部分 官方 代码 加入 了 更 简洁 
+的 物体 识别 功能 如 下图 一 开始 还 没有 
+告诉 程序 哪个 是 需要 识别 的 物体 鼠标 在 
+绿色 的 瓶盖 上点 一下 之后 程序 就 知道 绿色 
+瓶盖 就是 那个 需要 识别 的 物体 为什么 要 用 
+绿色 因为 绿色 的 指套 最 容易 做 找 两片 
+叶子 粘 在 一起 就 OK 了 不 建议 用 
+红色 因为 人体 偏 红色 不好 识别 本例 的 代码 
+可以 在 http / / download . csdn . net 
+/ source / 2281943   这里 下载 AForge 类库 请到 
+http / / code . google . com / p 
+/ aforge / downloads / list   这里 下载 原文 
+链接 http / / blog . csdn . net / 
+hellogv / article / details / 5526284 基于 Aforge 的 物体 运动 识别 入门篇 chatbot 人工智能 机器 
+人 开发 提供 教学 视频 0 收藏 2 本文 来自 
+http / / blog . csdn . net / hellogv 
+/ 引用 必须 注明 出处 最近 看到 越来越 多 人 
+在做 物体 运动 识别 例如 第六感 中的 指套 而且 我 
+最近 也 有点 闲空 所以 也来 玩玩 大多数 人 都是 
+用 Opencv 来做 那我就/nr 不做 重复 的 工作 了 换 
+个别 的 开源 类库 ~ ~ ~ Aforge 来自 百度知道 
+的 Aforge 介绍 AForge . NET 是 一个 专门 为 
+开发者 和 研究 者 基于 C # 框架 设计 的 
+他 包括 计算机 视觉 与 人工智能 图像处理 神经网络 遗传算法 机器学习 
+机器人 等 领域 这个 框架 由 一系列 的 类库 和 
+例子 组成 其中 包括 的 特征 有 AForge . Imaging 
+一些 日常 的 图像 处理 和 过滤器 AForge . Vision 
+计算机 视觉 应用 类库 AForge . Neuro 神经 网络 计算 
+库 AForge . Genetic 进化 算法 编程 库 AForge . 
+MachineLearning 机器学习 类库 AForge . Robotics 提供 一些 机器 学习 
+的 工具 类库 AForge . Video 一 系列 的 视频处理 
+类库 很 方便 PS AForge 里面 的 算法 够 我 
+玩 一段 很 长时间 了 本文 做 的 例子 代码 
+改自 http / / www . aforgenet . com / 
+articles / step _ to _ stereo _ vision / 
+  删减 了 部分 官方 代码 加入 了 更 简洁 
+的 物体 识别 功能 如 下图 一 开始 还 没有 
+告诉 程序 哪个 是 需要 识别 的 物体 鼠标 在 
+绿色 的 瓶盖 上点 一下 之后 程序 就 知道 绿色 
+瓶盖 就是 那个 需要 识别 的 物体 为什么 要 用 
+绿色 因为 绿色 的 指套 最 容易 做 找 两片 
+叶子 粘 在 一起 就 OK 了 不 建议 用 
+红色 因为 人体 偏 红色 不好 识别 本例 的 代码 
+可以 在 http / / download . csdn . net 
+/ source / 2281943   这里 下载 AForge 类库 请到 
+http / / code . google . com / p 
+/ aforge / downloads / list   这里 下载 原文 
+链接 http / / blog . csdn . net / 
+hellogv / article / details / 5526284 

@@ -1,0 +1,35 @@
+在入门的阶段最适合做的事情：
+（1）阅读和学习自然语言处理（natural language processing，nlp）综述类文章和图书，对nlp有一个基本的认识，梳理nlp研究内容的演变，包括nlp从诞生到多次繁荣发展和多次停滞不前的原因，正确认识nlp与人工智能、机器学习、自然语言理解、计算语言学、文本挖掘等概念之间的区别与联系（除了我下面推荐的图书、文章和代码，一定要多百度和google寻找学习资料）；
+（2）做一些非常简单的nlp入门小任务，通过小任务理解自然语言处理的流程（包括中英文nlp处理流程的差别）；
+（3）快速学习一门开发nlp技术的编程语言（基本就是python了，不需要学习网络编程等部分，重点掌握python基本语法、文件读写与编码、正则表达式、gensim、numpy、pandas、matplotlib等的使用）；
+（4）学习机器学习的相关概念，如：模型评估与选择、有监督学习、半监督学习、无监督学习、强化学习、迁移学习（只需要学习和认识其原理，做到心中有数即可）；
+（5）关注各大内容大V，如：微信公众号（paperweekly、新智元、AI科技大本营、机器之心、人工智能头条等），知乎（一搜自然语言处理或者nlp就能看到好多大V），博主（我爱自然语言处理等），因为每天各大V都会发布很多的新闻和内容，初入门的小白不建议全篇深入阅读，感兴趣的可以收藏起来以后看，大部分就了解一下（1）“谁”（2）“干了啥，咋干的”（3）“啥效果”，然后读了这个文章的报道（4）“自己有啥想法”，就可以了（注：有一个小细节上的建议，就是在平日里有任何idea最好都要在手机或者任何地方的备忘录里记一下，也要尽快多实践以验证idea是否有效）；
+（6）了解国内外nlp的协会组织（如：中文信息学会、中文信息学会青年工作委员会、ACL等，主要查找和阅读协会开辟的专栏、组织撰写的综述、看看最近都组织了什么会议和比赛等）、主要的大型nlp科研团队（斯坦福、多伦多、清华、北大、哈工大、复旦、中科、deepmind、google brain、openAI等高校、院所和科研机构的自然语言处理小组，看看他们都在研究什么）；
+（7）关注“中国中文信息学会”的微信公众号，时刻关注ACL、IJCAI、ACML、SIGIR等顶会论文报告会（由中文信息学会组织，报告的人都是当年被顶会录取的论文的国内作者和大佬，来自各大高校和院所，整个报告会和国际会议的日程都是一样的，都有coffee break可以在茶歇的时候近距离与大佬交流，是一个近距离与国内各大NLP大组老师、同学交流的机会，看看大厂们都在干什么，推荐有机会的话一定要去听一下报告，但一定要保证已经看过很多论文、并且有一定基础再去听，完全零基础不建议去，会议比较火爆和受欢迎，建议时刻关注尽快报名）。
+nlp非常容易入门的原因是这是一门非常开放的学科，各大高校、学者都有一颗开放的心，源码经常开源、而且有很多优秀的老师有写博客、博文的习惯，大家都喜欢一有研究成果就立马放到arxiv或者researchgate上，nlp的研究日新月异、变化的非常快的原因就是“开放”，所以有什么问题尽量面向百度、google查询，注意关键词（毕竟是搞nlp的，可以先学习一下检索的原理，然后就知道怎么检索能尽快找到你想要的的东西），检索的结果重点关注reddit、medium、csdn、arxiv、researchgate、知乎、stackoverflow、github等上面的内容。
+可参考学习和实践的链接如下：
+复旦大学邱锡鹏组实验室新生一般完成的五个NLP练习上手实验（NLP四大类任务：分类、序列标注、文本匹配、文本生成，都需要完整实现一遍）。
+https://www.zhihu.com/question/324189960/answer/682130580?utm_source=wechat_session&utm_medium=social&utm_oi=952466020582064128
+自动化所宗成庆研究员：读懂NLP的过去与现在（梳理的非常好，把各个概念之间的关系和NLP的发展都梳理清楚了）
+https://mp.weixin.qq.com/s/xgySwq2m-mHT7XG1zZGpzw
+中文自然语言处理入门实战
+https://mp.weixin.qq.com/s/5z7Xy4NL-buUkpBmv4iIpw
+自然语言处理全家福：纵览当前NLP中的任务、数据、模型与论文
+https://mp.weixin.qq.com/s/sQ903WNSR4v367t78_VG1Q
+中文信息处理发展报告（综述由中文信息学会统筹，国内各大NLP专家撰写，非常适合入门了解NLP）
+http://cips-upload.bj.bcebos.com/cips2016.pdf
+Jumping NLP Curves: A Review of Natural Language Processing Research [Review Article]
+https://ieeexplore.ieee.org/document/6786458
+Natural Language Processing: A Review
+https://www.researchgate.net/publication/309210149_Natural_Language_Processing_A_Review
+A Review of the Neural History of Natural Language Processing
+http://ruder.io/a-review-of-the-recent-history-of-nlp/
+邓力和刘洋大神合著的图书《Deep Learning in Natural Language Processing》
+（就不给链接了，百度或google搜索，有中文连载、英文原版的原版图书购买、pdf分享或者课程）
+宗成庆研究员所著《统计自然语言处理》（经典之作）
+Steven Bird所著《Python自然语言处理》（快速掌握python开发nlp技术的各种能力）
+机器学习 → 推荐周志华教授所著的《机器学习》
+深度学习 → 推荐Ian Goodfellow等人合著的《Deep Learning》
+开发框架 → 首推Pytorch，推荐陈云的《深度学习框架Pytorch入门与实践》或者廖星宇的《深度学习入门之Pytorch》
+Tensorflow学习 → 推荐黄文坚、唐源的《Tensorflow实战》
+（注意有些情况需要“科学上网”，一定要掌握google和google scholar的使用）

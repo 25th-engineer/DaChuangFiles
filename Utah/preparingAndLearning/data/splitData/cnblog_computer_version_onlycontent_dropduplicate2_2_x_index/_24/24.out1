@@ -1,0 +1,910 @@
+1 . cv 圈 的 格局 按 师承 关系 总结 
+a tree stucture of cv guys . David Marr Shimon 
+Ullman Weizmann Eric Grimson MIT Daniel Huttenlocher Cornell Pedro Felzenszwalb 
+Chicago Thomas Binford Stanford David Lowe UBC Jitendra Malik UC 
+Berkeley Pietro Perona Caltech Stefano Soatto UCLA Fei Fei Li 
+Princeton Jianbo Shi UPenn Yizhou Yu UIUC Christoph Bregler NYU 
+Serge Belongie UCSD Alyosha Efros CMU Andrew Blake Microsoft Research 
+Cambridge Andrew Zisserman Oxford Andrew Fitzgibbon Microsoft Research Cambridge Roberto 
+Cipolla Cambridge Alan Yuille UCLA UK 这个 学派 的 师承 
+关系 不 太 清楚 这是 我 听说 加上 自己 猜测 
+的 . 事实上 几个 非常 优秀 的 researcher 如 Vladimir 
+Kolmogorov 虽然 不是 Andrew Blake 的 学生 但是 也 属于 
+这个 学派 . Thomas Huang UIUC Yong Rui Microsoft Research 
+Redmond Nebojsa Jojic Microsoft Research Redmond Ying Wu Northwestern University 
+Hai Tao UCSC Yuncai Liu SJTU Huang 这个 系 的 
+人 太多 而且 很 怪 的 是 UIUC 的 web 
+上 信息 不全 在此 仅 列出 我 知道 的 . 
+此外 还有 Takeo Kanade 等 非常 有名 的 大牛 囿于 
+篇幅 不 一一列举 . 从上 得知 加州 派 基本 占了 
+cv 的 半壁江山 . Olivier Faugeras Ponce     UIUC 
+lazebnik Zhengyou Zhang         MSR Martial Hebert 
+    CMUMit AI labpoggio Oliva serreFreeman 80 年代 还来 
+太原理工 扶贫 了 Y . Weiss Levin Antonio Torralba research 
+scientist Trevor Darrell Grauman 补充 一下 Zisserman 还有 一个 不错 
+的 学生 lifeifei 的 合作者 Rob FergusMIT 的 Brain & 
+Cognitive Science Dept 和 CSAIL 里面 聚集 了 一帮 人 
+有的 作 low level 有的 作 mid level to high 
+level 的 他们 的 工作 是 值得 关注 的 当然 
+说 视觉 还是 要从 伟大 的 David Marr 开始 Tomaso 
+Poggio Richard Whitman 是 Marr 的 同事 传承 了 其 
+理念 一直 往下走 Poggio 最 近几年 比较 重点 的 工作 
+放在 他 那个 hierarchical model 上 T . Poggio 的 
+第一 个 PhD 学生 是 Christof Koch kLab at Caltech 
+哦 顺便 说 一下 Koch 的 另外 一个 导师 是 
+Valentino Breitenberg 同样 是 影响 了 一个 时代 的 大人物 
+Koch 研究 重点 兴趣 在 consciousness 上 在 Nature 上 
+的 很多 文章 体现 了 他 的 研究 思想 不过 
+他们 也 做 不少 初级 的 视觉 问题 诸如 attention 
+Koch 比较 知名 的 弟子 比如 Laurent Itti 和 Li 
+Feifei Richard Whitman 年纪 比较 大 了 个人 不是 很 
+关注 他 现在 做 的 东西 不过 他 所在 的 
+Perceptual Science Group 是 一个 非常 有 影响力 的 地方 
+这个 组 其他 大家 比较 熟悉 的 老师 有 Aude 
+Oliva 和 EH Adelson Adelson 最 著名 的 一个 事儿 
+是 色彩 恒常 相关 的 视错觉 93年 发在 Science 上 
+的 那篇 关于 Oliva 前面 的 帖子 错了 她 不是 
+Poggio 的 学生 这家伙 和 Torralba 是 老乡 同 在 
+法国 念书 主要 从 心理学 那条 路子 开始 做 成名 
+之 役 是 hybrid image 和 Antonio Torrralba 一起 搞 
+的 这个 Hybrid Image 其实 80 年代 就 有了 但是 
+最 开始 从 心理学 方向 上 探讨 没有 非常 有 
+影响力 的 文章 后来 开始 靠谱 作 自然 图像 统计 
+得到 Gist theory 当然 这个 illusion 本身 后来 转 投 
+SIGGRAPH 其 影响 是 深远 的 嗯 这个 和 CV 
+关系不大 Perceptual Science Group 出 了 不少 牛人 他们 的 
+alumni list 可谓 超 豪华 阵容 Yair Weiss Josh Tenenbaum 
+Pawan Sinha Bill Freeman 2 . 最 近几年 特别 活跃 
+的 cv guysUSAJitendra Malik UC BerkeleyPietro Perona CaltechSerge Belongie UCSD 
+加利福尼亚大学 圣迭戈 分校 Jianbo Shi UPennStefano Soatto UCLAFei Fei Li 
+PrincetonWilliam Freeman MITTrevor Darrell MITSimon Baker CMUYanxi Liu CMUSongchun Zhu 
+UCLAAlan Yuille UCLAYi Ma UIUCMichael Black BrownCarlo Tomasi DukeRamin Zabih 
+CornellShree Nayar ColumbiaRama Chellappa MarylandSteve Seitz University of Washington UC 
+Berkeley Caltech UCSD UPenn MIT CMU UCLA UIUC Brown Duke 
+Cornell Coiumbia Marryland Washington 朱松 纯 Song Chun Zhu http 
+/ / www . stat . ucla . edu / 
+~ sczhu / EuropeAndrew Zisserman Oxford UKAndrew Fitzgibbon Microsoft Research 
+Cambridge UKRoberto Cipolla Cambridge UKJean Ponce INRIA FranceCordelia Schmid INRIA 
+FranceBill Triggs LEAR FranceYair Weiss Hebrew University IsraelAnat Levin Hebrew 
+University IsraelMichal Irani Weizmann IsraelLuc van Gool University of Leuven 
+/ ETH Zurich C z e c h i c 
+C h i n a H a r r y 
+Shum MSRAXiaoou Tang MSRA / CUHKJian Sun MSRASteve Lin MSRAYasuyuki 
+Matsushita MSRAZhouchen Lin MSRALong Quan HKUSTChi Keung Tang HKUST3 . 
+按 研究 方向 划分 按 研究 方向 划分 应该 更 
+合理 一些 现在 计算机 视觉 计算机 图形图像 机器学习 开始 融合 
+到 一起 了吧 J . Malik Zhu Songchu 偏 segmentation 
+D . Lowe . Ullman Poggio 偏于 从 生物 视觉 
+的 启发 来 研究 视觉 Zisserman Schmid Lowe 研究 局部 
+特征 Luc Van Goo Long Quanl 三维重建 Perona Li Feife 
+Freeman 视觉 i 学习 物体 分类 还有 运动 分析 视觉 
+跟踪 纹理 分析 . . . . . . . 
+. . . . . . 美国 计算机领域 大牛 教授 
+排行 点击 可以 看到 他们 的 个人 网页 介绍 以及 
+联系 方式 等 方便 大家 搜索 申请 美国 计算机 专业 
+的 申请人 很多 希望 以下 文章 能 方便 大家 搜索 
+给 大家 提供 帮助 一大堆 fellow 和 拿了 图灵奖 的 
+但 做 网络 方向 不多 只知道   David Culler   
+和 /nr Leslie Lamport   这 里面 华人 还是 很多 的 
+In   this paper   J . E . Hirsch 
+Dept of Physics UCSD proposes the index h defined as 
+the number of papers with citation number higher or equal 
+to h as a useful index to characterize the scientific 
+output of a   researcher . Here is a partial 
+list of computer science researchers who each has an h 
+index of 40 or higher according to   Google Scholar 
+. Several websites provide easy to use interfaces for computing 
+an h index including   scHolar index   and   
+Harzing s publish and perish . Send comments corrections and 
+new entries to   Jens Palsberg UCLA . I do 
+maintain the list mostly I add people and update numbers 
+upon request and when I happen to notice a high 
+h index . Most of the numbers on this page 
+are the results of counting efforts by the listed people 
+themselves . I have computed some of the numbers myself 
+by comparing output from   Google Scholar   with other 
+listings of research papers such as from personal webpages or 
+  DBLP . 92   Terrence Sejnowski   UCSD IEEE 
+Fellow Member of the Institute of Medicine89   Hector Garcia 
+Molina   Stanford ACM Fellow Member of the National Academy 
+of Engineering87   Jeffrey D . Ullman   Stanford ACM 
+Fellow Member of the National Academy of Engineering82   Robert 
+Tarjan   Princeton Turing Award ACM Fellow Member of the 
+National Academy of Engineering80   Deborah Estrin   UCLA ACM 
+Fellow IEEE Fellow Member of the National Academy of Engineering79 
+  Christos H . Papadimitriou   Berkeley ACM Fellow Member 
+of the National Academy of Engineering77   Don Towsley   
+U Mass Amherst ACM Fellow IEEE Fellow73   Ian Foster 
+  Argonne National Laboratory & U Chicago 71   Scott 
+Shenker   Berkeley ACM Fellow IEEE Fellow70   David Culler 
+  Berkeley ACM Fellow Member of the National Academy of 
+Engineering70   David Haussler   UC Santa Cruz 69   
+Nick Jennings   U Southampton Fellow of the Royal Academy 
+of Engineering68   Michael I . Jordan   Berkeley AAAS 
+Fellow IEEE Fellow AAAI Fellow68   Takeo Kanade   CMU 
+ACM Fellow IEEE Fellow Member of the National Academy of 
+Engineering64   Demetri Terzopoulos   UCLA ACM Fellow IEEE Fellow 
+Member of the European Academy of Sciences64   Martin Vetterli 
+  EPFL IEEE Fellow63   Marco Dorigo   U Libre 
+de Bruxelles 62   Alon Halevy Alon Levy   Google 
+ACM Fellow61   Mario Gerla   UCLA IEEE Fellow58   
+Luca Cardelli   Microsoft ACM Fellow58   Ronald Fagin   
+IBM Almaden ACM Fellow IEEE Fellow AAAS Fellow ACM SIGMOD 
+Edgar F . Codd Innovations Award58   Anil K . 
+Jain   Michigan State U ACM Fellow IEEE Fellow58   
+Amit Sheth   Wright State U IEEE Fellow57   Martin 
+Abadi   UC Santa Cruz and Microsoft ACM Fellow57   
+Mihir Bellare   UCSD 57   Sushil Jajodia   George 
+Mason U 57   Leslie Lamport   Microsoft Member of 
+the National Academy of Engineering56   David Dill   Stanford 
+ACM Fellow IEEE Fellow56   Randy H . Katz   
+Berkeley ACM Fellow IEEE Fellow Member of the National Academy 
+of Engineering56   Steven Salzberg   U Maryland 56   
+HongJiang Zhang   Microsoft ACM Fellow IEEE Fellow55   Jennifer 
+Widom   Stanford ACM Fellow Member of the National Academy 
+of Engineering54   Jack Dongarra   U Tennessee ACM Fellow 
+IEEE Fellow Member of the National Academy of Engineering54   
+David E . Goldberg   UIUC 54   Ken Kennedy 
+  Rice ACM Fellow IEEE Fellow Member of the National 
+Academy of Engineering54   Amir Pnueli   Weizmann and New 
+York   University Turing Award ACM Fellow Member of the 
+National Academy of Engineering54   Herbert A . Simon   
+CMU Turing Award ACM Fellow Nobel Laureate54   Jeffrey Vitter 
+  Texas A & M ACM Fellow IEEE Fellow54   
+Philip . Yu   UIC ACM Fellow IEEE Fellow53   
+Tim Finin   UMBC 53   Sally Floyd   ICSI 
+ACM Fellow53   Tomaso Poggio   MIT 53   Eduardo 
+Sontag   Rutgers IEEE Fellow52   Rakesh Agrawal   Microsoft 
+ACM Fellow IEEE Fellow Member of the National Academy of 
+Engineering52   Stanley Osher   UCLA Member of the National 
+Academy of Sciences51   Jiawei Han   UIUC ACM Fellow51 
+  Richard Karp   Berkeley Turing Award ACM Fellow Member 
+of the National Academy of Engineering51   Alex Pentland   
+MIT 50   Andrew B . Kahng   UCSD 50 
+  Alberto Sangiovanni Vincentelli   Berkeley Member of the National 
+Academy of Engineering50   Lixia Zhang   UCLA ACM Fellow49 
+  Serge Abiteboul   INRIA 49   Rajeev Alur   
+U Penn ACM Fellow IEEE Fellow49   Rama Chellappa   
+U Maryland 49   W . Bruce Croft   U 
+Mass Amherst ACM Fellow49   Jon Crowcroft   U Cambridge 
+ACM Fellow IEEE Fellow49   David J . DeWitt   
+Wisconsin ACM Fellow Member of the National Academy of Engineering49 
+  Mark Handley   U College London 49   Daphne 
+Koller   Stanford ACM Infosys Foundation Award49   Maurizio Lenzerini 
+  Sapienza Universita di Roma 49   John McCarthy   
+Stanford Turing Award Member of the National Academy of Engineering49 
+  Michael Stonebraker   MIT ACM Fellow Member of the 
+National Academy of Engineering49   Sebastian Thrun   Stanford 48 
+  Michael J . Carey   UC Irvine ACM Fellow 
+Member of the National Academy of Engineering48   Kai Li 
+  Princeton ACM Fellow48   Pavel Pevzner   UCSD 48 
+  Mihalis Yannakakis   Columbia ACM Fellow47   Wil van 
+der Aalst   TU Eindhoven 47   Leonard Kleinrock   
+UCLA ACM Fellow IEEE Fellow Member of the National Academy 
+of Engineering47   Jim Kurose   U Mass Amherst ACM 
+Fellow IEEE Fellow47   Richard Lipton   Georgia Tech ACM 
+Fellow Member of the National Academy of Engineering47   Judea 
+Pearl   UCLA IEEE Fellow Member of the National Academy 
+of Engineering47   Ben Shneiderman   U Maryland ACM Fellow46 
+  Norman I . Badler   U Penn 46   
+Hari Balakrishnan   MIT ACM Fellow46   David Harel   
+The Weizmann Institute of Science ACM Fellow IEEE Fellow46   
+Geoffrey E . Hinton   Toronto 46   Thomas . 
+Huang   UIUC IEEE Fellow Member of the National Academy 
+of Engineering46   Gordon Plotkin   U Edinburgh 46   
+Tuomas Sandholm   CMU ACM Fellow46   Douglas C . 
+Schmidt   Vanderbilt University 46   John A . Stankovic 
+  U Virginia ACM Fellow45   Olivier Faugeras   INRIA 
+Member of the French Academy of Sciences45   Jose Joaquin 
+Garcia Luna Aceves   UC Santa Cruz ACM Fellow IEEE 
+Fellow45   Jim Gray   Microsoft Turing Award ACM Fellow45 
+  M . Frans Kaashoek   MIT ACM Fellow45   
+Carl Kesselman   USC / ISI 45   Vipin Kumar 
+  U Minnesota ACM Fellow IEEE Fellow45   Victor Lesser 
+  U Mass Amherst AAAI Fellow45   Heikki Mannila   
+U Helsinki 45   Rajeev Motwani   Stanford ACM Fellow45 
+  Badri Nath B R Badrinath   Rutgers 45   
+Prabhakar Raghavan   Yahoo Research ACM Fellow IEEE Fellow45   
+Eero P . Simoncelli   NYU IEEE Fellow45   Moshe 
+Y . Vardi   Rice ACM Fellow Member of the 
+National Academy of Engineering44   Victor Basili   U Maryland 
+ACM Fellow44   Christos Faloutsos   CMU 44   Oded 
+Goldreich   Weizmann 44   H . V . Jagadish 
+  U Michigan ACM Fellow44   Amin Vahdat   UCSD 
+43   Michael Franklin   Berkeley ACM Fellow43   Joseph 
+Goguen   UCSD 43   Ramesh Govindan   USC 43 
+  Simon Peyton Jones   Microsoft ACM Fellow43 Won Kim 
+Sung Kyun Kwan University ACM Fellow43   Barbara Liskov   
+MIT Turing Award ACM Fellow Member of the National Academy 
+of Engineering43   David Maier   Portland State U ACM 
+Fellow43   Robin Milner   U Cambridge UK Turing Award 
+ACM Fellow43   Vern Paxson   ICSI ACM Fellow43   
+Krithi Ramamritham   IIT Bombay ACM Fellow IEEE Fellow43   
+Ronald L . Rivest   MIT Turing Award ACM Fellow 
+Member of the National Academy of Engineering42   Michael Arbib 
+  USC 42   Barry Boehm   USC ACM Fellow42 
+  Pat Hanrahan   Stanford ACM Fellow Member of the 
+National Academy of Engineering42   Thomas A . Henzinger   
+EPFL ACM Fellow42   Donald E . Knuth   Stanford 
+Turing Award ACM Fellow Member of the National Academy of 
+Engineering42   Teuvo Kohonen   Academy of Finland 42   
+Miron Livny   Wisconsin 42   Jose Meseguer   UIUC 
+42   Erkki Oja   Helsinki U of Technology 42 
+  David A . Patterson   Berkeley ACM Fellow IEEE 
+Fellow Member of the National Academy of Engineering42   Micha 
+Sharir   Tel Aviv University ACM Fellow42   Andrew . 
+Tanenbaum   Vrije U The Netherlands ACM Fellow IEEE Fellow42 
+  Willy Zwaenepoel   EPFL ACM Fellow IEEE Fellow41   
+Alex Aiken   Stanford ACM Fellow41   Stefano Ceri   
+Politecnico di Milano 41   Didier Dubois   CNRS Toulouse 
+41   Michael Kearns   U Penn 41   Jon 
+Kleinberg   Cornell ACM Infosys Foundation Award41   Monica . 
+Lam   Stanford ACM Fellow41   Kim G . Larsen 
+  Aalborg U 41   Jitendra Malik   Berkeley ACM 
+Fellow41   Deborah L . McGuinness   RPI 41   
+Raymond Mooney   UT Austin 41   Alex Nicolau   
+UC Irvine 41   Miodrag Potkonjak   UCLA 41   
+Thomas W . Reps   U Wisconsin ACM Fellow41   
+Milind Tambe   USC AAAI Fellow41   Gene Tsudik   
+UC Irvine 41   Philip Wadler   U Edinburgh ACM 
+Fellow40   Andrew Appel   Princeton ACM Fellow40   Richard 
+Baraniuk   Rice University IEEE Fellow40   Craig Chambers   
+U Washington 40   Edmund M . Clarke   CMU 
+Turing Award ACM Fellow IEEE Fellow Member of the National 
+Academy of Engineering40   Jason Cong   UCLA ACM Fellow40 
+  Ingemar J . Cox   U College London IEEE 
+Fellow40   Herbert Edelsbrunner   Duke U 40   Saul 
+Greenberg   University of Calgary Member of the ACM CHI 
+Academy40   Rajiv Gupta   UC Riverside IEEE Fellow40   
+Christian . Jensen   Aalborg U IEEE Fellow40   David 
+. Johnson   AT & T Labs ACM Fellow40   
+George Karypis   U Minnesota 40   Henry Levy url 
+=   U Washington ACM Fellow IEEE Fellow40   / 
+url Nancy Lynch   MIT ACM Fellow Member of the 
+National Academy of Engineering40   Maja Mataric   USC 40 
+  John Mitchell   Stanford ACM Fellow40   Charles E 
+. Perkins   Nokia Siemens Networks 40   Benjamin Pierce 
+  U Penn 40   Raghu Ramakrishnan   Wisconsin ACM 
+Fellow40   George Varghese   UCSD ACM Fellow40   Ian 
+Witten   U Waikato ACM Fellow40   Andrew Zisserman   
+University of Oxford http / / www . cs . 
+ucla . edu / ~ palsberg / h number . 
+html 以上 美国 计算机领域 大牛 教授 排行 以及 联系 方式 
+希望 能够 方便 申请 美国 计算机 专业 的 申请人 搜索 
+查找 相关 信息 感谢 本文 收集者 超 牛的/nr Smart Vehicle 
+研究 中心 与 牛人 Prof . Dr . Dariu M 
+. Gavrila 2010 12 12 09 54 19 转载 标签 
+杂谈 http / / www . gavrila . net / 
+index . html 最近 一直 在看 Gavrila 及其 他们 团队 
+的 论文 感觉 很 牛 十几 年前 人家 就 在 
+奔驰 的 资助 下 从事 智能 车辆 方面 的 研究 
+而且 早就 开 发出 了 行人 检测 与 防 碰撞 
+系统 PROTECTOR 已经 将 计算机 视觉 图像 处理 与 模式识别 
+方面 的 理论 应用 于 道路 行车 的 安全 监控 
+中 去了 真的 很 牛 他们 的 测试 实验 也 
+都是 用 奔驰 的 汽车 他们 在 智能 车辆 行人 
+检测 三维重建 方面 有着 深厚 的 理论 积累 与 实际 
+开发 经验 Gavrila 的 论文 感觉 很 经典 特别 是 
+前沿 介绍 方面 感觉 真是 大家 呀 最近 几年 他 
+的 德国 学生 Enzweiler 与 Munder 在 CVPR 与 IEEE 
+Transaction on PAMI 上 发表 了 一系列 的 识别 分类 
+的 文章 个人 感觉 已经 很 成 一个 理论 体系 
+了 很 值得 学习 由 此 也 想到 了 关于 
+科研 人员 研究 内容 与 方向 的 问题 我们 的 
+研究 究竟 需要 一个 怎么样 的 定位 究竟 是 要 
+解决 理论 问题 还是 解决 与 生产 工业 以及 人们 
+生活 相关 的 问题 究竟 是 为了 研究 而 研究 
+还 是 确实 为了 解决 实际 问题 而 研究 是 
+为了 发表 几篇 论文 或者 为了 评 评职称 而 研究 
+个人认为 一定 要 有一个 好 的 方向 定位 与 认真 
+的 态度 如 果有 研究 兴趣 与 研究 热情 我们 
+的 研究 确实 又是 前瞻性 的 确实 能 解决 一些 
+实际 问题 这 应当 是 一件 非常 开心 的 事情 
+按照 一个 自己 感兴趣 的 方向 延续下去 顺 便将 研究 
+成果 整理 一下 就 有了 论文 专利 等 成果 1 . cv 圈 的 格局 按 师承 关系 总结 
+a tree stucture of cv guys . David Marr Shimon 
+Ullman Weizmann Eric Grimson MIT Daniel Huttenlocher Cornell Pedro Felzenszwalb 
+Chicago Thomas Binford Stanford David Lowe UBC Jitendra Malik UC 
+Berkeley Pietro Perona Caltech Stefano Soatto UCLA Fei Fei Li 
+Princeton Jianbo Shi UPenn Yizhou Yu UIUC Christoph Bregler NYU 
+Serge Belongie UCSD Alyosha Efros CMU Andrew Blake Microsoft Research 
+Cambridge Andrew Zisserman Oxford Andrew Fitzgibbon Microsoft Research Cambridge Roberto 
+Cipolla Cambridge Alan Yuille UCLA UK 这个 学派 的 师承 
+关系 不 太 清楚 这是 我 听说 加上 自己 猜测 
+的 . 事实上 几个 非常 优秀 的 researcher 如 Vladimir 
+Kolmogorov 虽然 不是 Andrew Blake 的 学生 但是 也 属于 
+这个 学派 . Thomas Huang UIUC Yong Rui Microsoft Research 
+Redmond Nebojsa Jojic Microsoft Research Redmond Ying Wu Northwestern University 
+Hai Tao UCSC Yuncai Liu SJTU Huang 这个 系 的 
+人 太多 而且 很 怪 的 是 UIUC 的 web 
+上 信息 不全 在此 仅 列出 我 知道 的 . 
+此外 还有 Takeo Kanade 等 非常 有名 的 大牛 囿于 
+篇幅 不 一一列举 . 从上 得知 加州 派 基本 占了 
+cv 的 半壁江山 . Olivier Faugeras Ponce     UIUC 
+lazebnik Zhengyou Zhang         MSR Martial Hebert 
+    CMUMit AI labpoggio Oliva serreFreeman 80 年代 还来 
+太原理工 扶贫 了 Y . Weiss Levin Antonio Torralba research 
+scientist Trevor Darrell Grauman 补充 一下 Zisserman 还有 一个 不错 
+的 学生 lifeifei 的 合作者 Rob FergusMIT 的 Brain & 
+Cognitive Science Dept 和 CSAIL 里面 聚集 了 一帮 人 
+有的 作 low level 有的 作 mid level to high 
+level 的 他们 的 工作 是 值得 关注 的 当然 
+说 视觉 还是 要从 伟大 的 David Marr 开始 Tomaso 
+Poggio Richard Whitman 是 Marr 的 同事 传承 了 其 
+理念 一直 往下走 Poggio 最 近几年 比较 重点 的 工作 
+放在 他 那个 hierarchical model 上 T . Poggio 的 
+第一 个 PhD 学生 是 Christof Koch kLab at Caltech 
+哦 顺便 说 一下 Koch 的 另外 一个 导师 是 
+Valentino Breitenberg 同样 是 影响 了 一个 时代 的 大人物 
+Koch 研究 重点 兴趣 在 consciousness 上 在 Nature 上 
+的 很多 文章 体现 了 他 的 研究 思想 不过 
+他们 也 做 不少 初级 的 视觉 问题 诸如 attention 
+Koch 比较 知名 的 弟子 比如 Laurent Itti 和 Li 
+Feifei Richard Whitman 年纪 比较 大 了 个人 不是 很 
+关注 他 现在 做 的 东西 不过 他 所在 的 
+Perceptual Science Group 是 一个 非常 有 影响力 的 地方 
+这个 组 其他 大家 比较 熟悉 的 老师 有 Aude 
+Oliva 和 EH Adelson Adelson 最 著名 的 一个 事儿 
+是 色彩 恒常 相关 的 视错觉 93年 发在 Science 上 
+的 那篇 关于 Oliva 前面 的 帖子 错了 她 不是 
+Poggio 的 学生 这家伙 和 Torralba 是 老乡 同 在 
+法国 念书 主要 从 心理学 那条 路子 开始 做 成名 
+之 役 是 hybrid image 和 Antonio Torrralba 一起 搞 
+的 这个 Hybrid Image 其实 80 年代 就 有了 但是 
+最 开始 从 心理学 方向 上 探讨 没有 非常 有 
+影响力 的 文章 后来 开始 靠谱 作 自然 图像 统计 
+得到 Gist theory 当然 这个 illusion 本身 后来 转 投 
+SIGGRAPH 其 影响 是 深远 的 嗯 这个 和 CV 
+关系不大 Perceptual Science Group 出 了 不少 牛人 他们 的 
+alumni list 可谓 超 豪华 阵容 Yair Weiss Josh Tenenbaum 
+Pawan Sinha Bill Freeman 2 . 最 近几年 特别 活跃 
+的 cv guysUSAJitendra Malik UC BerkeleyPietro Perona CaltechSerge Belongie UCSD 
+加利福尼亚大学 圣迭戈 分校 Jianbo Shi UPennStefano Soatto UCLAFei Fei Li 
+PrincetonWilliam Freeman MITTrevor Darrell MITSimon Baker CMUYanxi Liu CMUSongchun Zhu 
+UCLAAlan Yuille UCLAYi Ma UIUCMichael Black BrownCarlo Tomasi DukeRamin Zabih 
+CornellShree Nayar ColumbiaRama Chellappa MarylandSteve Seitz University of Washington UC 
+Berkeley Caltech UCSD UPenn MIT CMU UCLA UIUC Brown Duke 
+Cornell Coiumbia Marryland Washington 朱松 纯 Song Chun Zhu http 
+/ / www . stat . ucla . edu / 
+~ sczhu / EuropeAndrew Zisserman Oxford UKAndrew Fitzgibbon Microsoft Research 
+Cambridge UKRoberto Cipolla Cambridge UKJean Ponce INRIA FranceCordelia Schmid INRIA 
+FranceBill Triggs LEAR FranceYair Weiss Hebrew University IsraelAnat Levin Hebrew 
+University IsraelMichal Irani Weizmann IsraelLuc van Gool University of Leuven 
+/ ETH Zurich C z e c h i c 
+C h i n a H a r r y 
+Shum MSRAXiaoou Tang MSRA / CUHKJian Sun MSRASteve Lin MSRAYasuyuki 
+Matsushita MSRAZhouchen Lin MSRALong Quan HKUSTChi Keung Tang HKUST3 . 
+按 研究 方向 划分 按 研究 方向 划分 应该 更 
+合理 一些 现在 计算机 视觉 计算机 图形图像 机器学习 开始 融合 
+到 一起 了吧 J . Malik Zhu Songchu 偏 segmentation 
+D . Lowe . Ullman Poggio 偏于 从 生物 视觉 
+的 启发 来 研究 视觉 Zisserman Schmid Lowe 研究 局部 
+特征 Luc Van Goo Long Quanl 三维重建 Perona Li Feife 
+Freeman 视觉 i 学习 物体 分类 还有 运动 分析 视觉 
+跟踪 纹理 分析 . . . . . . . 
+. . . . . . 美国 计算机领域 大牛 教授 
+排行 点击 可以 看到 他们 的 个人 网页 介绍 以及 
+联系 方式 等 方便 大家 搜索 申请 美国 计算机 专业 
+的 申请人 很多 希望 以下 文章 能 方便 大家 搜索 
+给 大家 提供 帮助 一大堆 fellow 和 拿了 图灵奖 的 
+但 做 网络 方向 不多 只知道   David Culler   
+和 /nr Leslie Lamport   这 里面 华人 还是 很多 的 
+In   this paper   J . E . Hirsch 
+Dept of Physics UCSD proposes the index h defined as 
+the number of papers with citation number higher or equal 
+to h as a useful index to characterize the scientific 
+output of a   researcher . Here is a partial 
+list of computer science researchers who each has an h 
+index of 40 or higher according to   Google Scholar 
+. Several websites provide easy to use interfaces for computing 
+an h index including   scHolar index   and   
+Harzing s publish and perish . Send comments corrections and 
+new entries to   Jens Palsberg UCLA . I do 
+maintain the list mostly I add people and update numbers 
+upon request and when I happen to notice a high 
+h index . Most of the numbers on this page 
+are the results of counting efforts by the listed people 
+themselves . I have computed some of the numbers myself 
+by comparing output from   Google Scholar   with other 
+listings of research papers such as from personal webpages or 
+  DBLP . 92   Terrence Sejnowski   UCSD IEEE 
+Fellow Member of the Institute of Medicine89   Hector Garcia 
+Molina   Stanford ACM Fellow Member of the National Academy 
+of Engineering87   Jeffrey D . Ullman   Stanford ACM 
+Fellow Member of the National Academy of Engineering82   Robert 
+Tarjan   Princeton Turing Award ACM Fellow Member of the 
+National Academy of Engineering80   Deborah Estrin   UCLA ACM 
+Fellow IEEE Fellow Member of the National Academy of Engineering79 
+  Christos H . Papadimitriou   Berkeley ACM Fellow Member 
+of the National Academy of Engineering77   Don Towsley   
+U Mass Amherst ACM Fellow IEEE Fellow73   Ian Foster 
+  Argonne National Laboratory & U Chicago 71   Scott 
+Shenker   Berkeley ACM Fellow IEEE Fellow70   David Culler 
+  Berkeley ACM Fellow Member of the National Academy of 
+Engineering70   David Haussler   UC Santa Cruz 69   
+Nick Jennings   U Southampton Fellow of the Royal Academy 
+of Engineering68   Michael I . Jordan   Berkeley AAAS 
+Fellow IEEE Fellow AAAI Fellow68   Takeo Kanade   CMU 
+ACM Fellow IEEE Fellow Member of the National Academy of 
+Engineering64   Demetri Terzopoulos   UCLA ACM Fellow IEEE Fellow 
+Member of the European Academy of Sciences64   Martin Vetterli 
+  EPFL IEEE Fellow63   Marco Dorigo   U Libre 
+de Bruxelles 62   Alon Halevy Alon Levy   Google 
+ACM Fellow61   Mario Gerla   UCLA IEEE Fellow58   
+Luca Cardelli   Microsoft ACM Fellow58   Ronald Fagin   
+IBM Almaden ACM Fellow IEEE Fellow AAAS Fellow ACM SIGMOD 
+Edgar F . Codd Innovations Award58   Anil K . 
+Jain   Michigan State U ACM Fellow IEEE Fellow58   
+Amit Sheth   Wright State U IEEE Fellow57   Martin 
+Abadi   UC Santa Cruz and Microsoft ACM Fellow57   
+Mihir Bellare   UCSD 57   Sushil Jajodia   George 
+Mason U 57   Leslie Lamport   Microsoft Member of 
+the National Academy of Engineering56   David Dill   Stanford 
+ACM Fellow IEEE Fellow56   Randy H . Katz   
+Berkeley ACM Fellow IEEE Fellow Member of the National Academy 
+of Engineering56   Steven Salzberg   U Maryland 56   
+HongJiang Zhang   Microsoft ACM Fellow IEEE Fellow55   Jennifer 
+Widom   Stanford ACM Fellow Member of the National Academy 
+of Engineering54   Jack Dongarra   U Tennessee ACM Fellow 
+IEEE Fellow Member of the National Academy of Engineering54   
+David E . Goldberg   UIUC 54   Ken Kennedy 
+  Rice ACM Fellow IEEE Fellow Member of the National 
+Academy of Engineering54   Amir Pnueli   Weizmann and New 
+York   University Turing Award ACM Fellow Member of the 
+National Academy of Engineering54   Herbert A . Simon   
+CMU Turing Award ACM Fellow Nobel Laureate54   Jeffrey Vitter 
+  Texas A & M ACM Fellow IEEE Fellow54   
+Philip . Yu   UIC ACM Fellow IEEE Fellow53   
+Tim Finin   UMBC 53   Sally Floyd   ICSI 
+ACM Fellow53   Tomaso Poggio   MIT 53   Eduardo 
+Sontag   Rutgers IEEE Fellow52   Rakesh Agrawal   Microsoft 
+ACM Fellow IEEE Fellow Member of the National Academy of 
+Engineering52   Stanley Osher   UCLA Member of the National 
+Academy of Sciences51   Jiawei Han   UIUC ACM Fellow51 
+  Richard Karp   Berkeley Turing Award ACM Fellow Member 
+of the National Academy of Engineering51   Alex Pentland   
+MIT 50   Andrew B . Kahng   UCSD 50 
+  Alberto Sangiovanni Vincentelli   Berkeley Member of the National 
+Academy of Engineering50   Lixia Zhang   UCLA ACM Fellow49 
+  Serge Abiteboul   INRIA 49   Rajeev Alur   
+U Penn ACM Fellow IEEE Fellow49   Rama Chellappa   
+U Maryland 49   W . Bruce Croft   U 
+Mass Amherst ACM Fellow49   Jon Crowcroft   U Cambridge 
+ACM Fellow IEEE Fellow49   David J . DeWitt   
+Wisconsin ACM Fellow Member of the National Academy of Engineering49 
+  Mark Handley   U College London 49   Daphne 
+Koller   Stanford ACM Infosys Foundation Award49   Maurizio Lenzerini 
+  Sapienza Universita di Roma 49   John McCarthy   
+Stanford Turing Award Member of the National Academy of Engineering49 
+  Michael Stonebraker   MIT ACM Fellow Member of the 
+National Academy of Engineering49   Sebastian Thrun   Stanford 48 
+  Michael J . Carey   UC Irvine ACM Fellow 
+Member of the National Academy of Engineering48   Kai Li 
+  Princeton ACM Fellow48   Pavel Pevzner   UCSD 48 
+  Mihalis Yannakakis   Columbia ACM Fellow47   Wil van 
+der Aalst   TU Eindhoven 47   Leonard Kleinrock   
+UCLA ACM Fellow IEEE Fellow Member of the National Academy 
+of Engineering47   Jim Kurose   U Mass Amherst ACM 
+Fellow IEEE Fellow47   Richard Lipton   Georgia Tech ACM 
+Fellow Member of the National Academy of Engineering47   Judea 
+Pearl   UCLA IEEE Fellow Member of the National Academy 
+of Engineering47   Ben Shneiderman   U Maryland ACM Fellow46 
+  Norman I . Badler   U Penn 46   
+Hari Balakrishnan   MIT ACM Fellow46   David Harel   
+The Weizmann Institute of Science ACM Fellow IEEE Fellow46   
+Geoffrey E . Hinton   Toronto 46   Thomas . 
+Huang   UIUC IEEE Fellow Member of the National Academy 
+of Engineering46   Gordon Plotkin   U Edinburgh 46   
+Tuomas Sandholm   CMU ACM Fellow46   Douglas C . 
+Schmidt   Vanderbilt University 46   John A . Stankovic 
+  U Virginia ACM Fellow45   Olivier Faugeras   INRIA 
+Member of the French Academy of Sciences45   Jose Joaquin 
+Garcia Luna Aceves   UC Santa Cruz ACM Fellow IEEE 
+Fellow45   Jim Gray   Microsoft Turing Award ACM Fellow45 
+  M . Frans Kaashoek   MIT ACM Fellow45   
+Carl Kesselman   USC / ISI 45   Vipin Kumar 
+  U Minnesota ACM Fellow IEEE Fellow45   Victor Lesser 
+  U Mass Amherst AAAI Fellow45   Heikki Mannila   
+U Helsinki 45   Rajeev Motwani   Stanford ACM Fellow45 
+  Badri Nath B R Badrinath   Rutgers 45   
+Prabhakar Raghavan   Yahoo Research ACM Fellow IEEE Fellow45   
+Eero P . Simoncelli   NYU IEEE Fellow45   Moshe 
+Y . Vardi   Rice ACM Fellow Member of the 
+National Academy of Engineering44   Victor Basili   U Maryland 
+ACM Fellow44   Christos Faloutsos   CMU 44   Oded 
+Goldreich   Weizmann 44   H . V . Jagadish 
+  U Michigan ACM Fellow44   Amin Vahdat   UCSD 
+43   Michael Franklin   Berkeley ACM Fellow43   Joseph 
+Goguen   UCSD 43   Ramesh Govindan   USC 43 
+  Simon Peyton Jones   Microsoft ACM Fellow43 Won Kim 
+Sung Kyun Kwan University ACM Fellow43   Barbara Liskov   
+MIT Turing Award ACM Fellow Member of the National Academy 
+of Engineering43   David Maier   Portland State U ACM 
+Fellow43   Robin Milner   U Cambridge UK Turing Award 
+ACM Fellow43   Vern Paxson   ICSI ACM Fellow43   
+Krithi Ramamritham   IIT Bombay ACM Fellow IEEE Fellow43   
+Ronald L . Rivest   MIT Turing Award ACM Fellow 
+Member of the National Academy of Engineering42   Michael Arbib 
+  USC 42   Barry Boehm   USC ACM Fellow42 
+  Pat Hanrahan   Stanford ACM Fellow Member of the 
+National Academy of Engineering42   Thomas A . Henzinger   
+EPFL ACM Fellow42   Donald E . Knuth   Stanford 
+Turing Award ACM Fellow Member of the National Academy of 
+Engineering42   Teuvo Kohonen   Academy of Finland 42   
+Miron Livny   Wisconsin 42   Jose Meseguer   UIUC 
+42   Erkki Oja   Helsinki U of Technology 42 
+  David A . Patterson   Berkeley ACM Fellow IEEE 
+Fellow Member of the National Academy of Engineering42   Micha 
+Sharir   Tel Aviv University ACM Fellow42   Andrew . 
+Tanenbaum   Vrije U The Netherlands ACM Fellow IEEE Fellow42 
+  Willy Zwaenepoel   EPFL ACM Fellow IEEE Fellow41   
+Alex Aiken   Stanford ACM Fellow41   Stefano Ceri   
+Politecnico di Milano 41   Didier Dubois   CNRS Toulouse 
+41   Michael Kearns   U Penn 41   Jon 
+Kleinberg   Cornell ACM Infosys Foundation Award41   Monica . 
+Lam   Stanford ACM Fellow41   Kim G . Larsen 
+  Aalborg U 41   Jitendra Malik   Berkeley ACM 
+Fellow41   Deborah L . McGuinness   RPI 41   
+Raymond Mooney   UT Austin 41   Alex Nicolau   
+UC Irvine 41   Miodrag Potkonjak   UCLA 41   
+Thomas W . Reps   U Wisconsin ACM Fellow41   
+Milind Tambe   USC AAAI Fellow41   Gene Tsudik   
+UC Irvine 41   Philip Wadler   U Edinburgh ACM 
+Fellow40   Andrew Appel   Princeton ACM Fellow40   Richard 
+Baraniuk   Rice University IEEE Fellow40   Craig Chambers   
+U Washington 40   Edmund M . Clarke   CMU 
+Turing Award ACM Fellow IEEE Fellow Member of the National 
+Academy of Engineering40   Jason Cong   UCLA ACM Fellow40 
+  Ingemar J . Cox   U College London IEEE 
+Fellow40   Herbert Edelsbrunner   Duke U 40   Saul 
+Greenberg   University of Calgary Member of the ACM CHI 
+Academy40   Rajiv Gupta   UC Riverside IEEE Fellow40   
+Christian . Jensen   Aalborg U IEEE Fellow40   David 
+. Johnson   AT & T Labs ACM Fellow40   
+George Karypis   U Minnesota 40   Henry Levy url 
+=   U Washington ACM Fellow IEEE Fellow40   / 
+url Nancy Lynch   MIT ACM Fellow Member of the 
+National Academy of Engineering40   Maja Mataric   USC 40 
+  John Mitchell   Stanford ACM Fellow40   Charles E 
+. Perkins   Nokia Siemens Networks 40   Benjamin Pierce 
+  U Penn 40   Raghu Ramakrishnan   Wisconsin ACM 
+Fellow40   George Varghese   UCSD ACM Fellow40   Ian 
+Witten   U Waikato ACM Fellow40   Andrew Zisserman   
+University of Oxford http / / www . cs . 
+ucla . edu / ~ palsberg / h number . 
+html 以上 美国 计算机领域 大牛 教授 排行 以及 联系 方式 
+希望 能够 方便 申请 美国 计算机 专业 的 申请人 搜索 
+查找 相关 信息 感谢 本文 收集者 超 牛的/nr Smart Vehicle 
+研究 中心 与 牛人 Prof . Dr . Dariu M 
+. Gavrila 2010 12 12 09 54 19 转载 标签 
+杂谈 http / / www . gavrila . net / 
+index . html 最近 一直 在看 Gavrila 及其 他们 团队 
+的 论文 感觉 很 牛 十几 年前 人家 就 在 
+奔驰 的 资助 下 从事 智能 车辆 方面 的 研究 
+而且 早就 开 发出 了 行人 检测 与 防 碰撞 
+系统 PROTECTOR 已经 将 计算机 视觉 图像 处理 与 模式识别 
+方面 的 理论 应用 于 道路 行车 的 安全 监控 
+中 去了 真的 很 牛 他们 的 测试 实验 也 
+都是 用 奔驰 的 汽车 他们 在 智能 车辆 行人 
+检测 三维重建 方面 有着 深厚 的 理论 积累 与 实际 
+开发 经验 Gavrila 的 论文 感觉 很 经典 特别 是 
+前沿 介绍 方面 感觉 真是 大家 呀 最近 几年 他 
+的 德国 学生 Enzweiler 与 Munder 在 CVPR 与 IEEE 
+Transaction on PAMI 上 发表 了 一系列 的 识别 分类 
+的 文章 个人 感觉 已经 很 成 一个 理论 体系 
+了 很 值得 学习 由 此 也 想到 了 关于 
+科研 人员 研究 内容 与 方向 的 问题 我们 的 
+研究 究竟 需要 一个 怎么样 的 定位 究竟 是 要 
+解决 理论 问题 还是 解决 与 生产 工业 以及 人们 
+生活 相关 的 问题 究竟 是 为了 研究 而 研究 
+还 是 确实 为了 解决 实际 问题 而 研究 是 
+为了 发表 几篇 论文 或者 为了 评 评职称 而 研究 
+个人认为 一定 要 有一个 好 的 方向 定位 与 认真 
+的 态度 如 果有 研究 兴趣 与 研究 热情 我们 
+的 研究 确实 又是 前瞻性 的 确实 能 解决 一些 
+实际 问题 这 应当 是 一件 非常 开心 的 事情 
+按照 一个 自己 感兴趣 的 方向 延续下去 顺 便将 研究 
+成果 整理 一下 就 有了 论文 专利 等 成果 1 . cv 圈 的 格局 按 师承 关系 总结 
+a tree stucture of cv guys . David Marr Shimon 
+Ullman Weizmann Eric Grimson MIT Daniel Huttenlocher Cornell Pedro Felzenszwalb 
+Chicago Thomas Binford Stanford David Lowe UBC Jitendra Malik UC 
+Berkeley Pietro Perona Caltech Stefano Soatto UCLA Fei Fei Li 
+Princeton Jianbo Shi UPenn Yizhou Yu UIUC Christoph Bregler NYU 
+Serge Belongie UCSD Alyosha Efros CMU Andrew Blake Microsoft Research 
+Cambridge Andrew Zisserman Oxford Andrew Fitzgibbon Microsoft Research Cambridge Roberto 
+Cipolla Cambridge Alan Yuille UCLA UK 这个 学派 的 师承 
+关系 不 太 清楚 这是 我 听说 加上 自己 猜测 
+的 . 事实上 几个 非常 优秀 的 researcher 如 Vladimir 
+Kolmogorov 虽然 不是 Andrew Blake 的 学生 但是 也 属于 
+这个 学派 . Thomas Huang UIUC Yong Rui Microsoft Research 
+Redmond Nebojsa Jojic Microsoft Research Redmond Ying Wu Northwestern University 
+Hai Tao UCSC Yuncai Liu SJTU Huang 这个 系 的 
+人 太多 而且 很 怪 的 是 UIUC 的 web 
+上 信息 不全 在此 仅 列出 我 知道 的 . 
+此外 还有 Takeo Kanade 等 非常 有名 的 大牛 囿于 
+篇幅 不 一一列举 . 从上 得知 加州 派 基本 占了 
+cv 的 半壁江山 . Olivier Faugeras Ponce     UIUC 
+lazebnik Zhengyou Zhang         MSR Martial Hebert 
+    CMUMit AI labpoggio Oliva serreFreeman 80 年代 还来 
+太原理工 扶贫 了 Y . Weiss Levin Antonio Torralba research 
+scientist Trevor Darrell Grauman 补充 一下 Zisserman 还有 一个 不错 
+的 学生 lifeifei 的 合作者 Rob FergusMIT 的 Brain & 
+Cognitive Science Dept 和 CSAIL 里面 聚集 了 一帮 人 
+有的 作 low level 有的 作 mid level to high 
+level 的 他们 的 工作 是 值得 关注 的 当然 
+说 视觉 还是 要从 伟大 的 David Marr 开始 Tomaso 
+Poggio Richard Whitman 是 Marr 的 同事 传承 了 其 
+理念 一直 往下走 Poggio 最 近几年 比较 重点 的 工作 
+放在 他 那个 hierarchical model 上 T . Poggio 的 
+第一 个 PhD 学生 是 Christof Koch kLab at Caltech 
+哦 顺便 说 一下 Koch 的 另外 一个 导师 是 
+Valentino Breitenberg 同样 是 影响 了 一个 时代 的 大人物 
+Koch 研究 重点 兴趣 在 consciousness 上 在 Nature 上 
+的 很多 文章 体现 了 他 的 研究 思想 不过 
+他们 也 做 不少 初级 的 视觉 问题 诸如 attention 
+Koch 比较 知名 的 弟子 比如 Laurent Itti 和 Li 
+Feifei Richard Whitman 年纪 比较 大 了 个人 不是 很 
+关注 他 现在 做 的 东西 不过 他 所在 的 
+Perceptual Science Group 是 一个 非常 有 影响力 的 地方 
+这个 组 其他 大家 比较 熟悉 的 老师 有 Aude 
+Oliva 和 EH Adelson Adelson 最 著名 的 一个 事儿 
+是 色彩 恒常 相关 的 视错觉 93年 发在 Science 上 
+的 那篇 关于 Oliva 前面 的 帖子 错了 她 不是 
+Poggio 的 学生 这家伙 和 Torralba 是 老乡 同 在 
+法国 念书 主要 从 心理学 那条 路子 开始 做 成名 
+之 役 是 hybrid image 和 Antonio Torrralba 一起 搞 
+的 这个 Hybrid Image 其实 80 年代 就 有了 但是 
+最 开始 从 心理学 方向 上 探讨 没有 非常 有 
+影响力 的 文章 后来 开始 靠谱 作 自然 图像 统计 
+得到 Gist theory 当然 这个 illusion 本身 后来 转 投 
+SIGGRAPH 其 影响 是 深远 的 嗯 这个 和 CV 
+关系不大 Perceptual Science Group 出 了 不少 牛人 他们 的 
+alumni list 可谓 超 豪华 阵容 Yair Weiss Josh Tenenbaum 
+Pawan Sinha Bill Freeman 2 . 最 近几年 特别 活跃 
+的 cv guysUSAJitendra Malik UC BerkeleyPietro Perona CaltechSerge Belongie UCSD 
+加利福尼亚大学 圣迭戈 分校 Jianbo Shi UPennStefano Soatto UCLAFei Fei Li 
+PrincetonWilliam Freeman MITTrevor Darrell MITSimon Baker CMUYanxi Liu CMUSongchun Zhu 
+UCLAAlan Yuille UCLAYi Ma UIUCMichael Black BrownCarlo Tomasi DukeRamin Zabih 
+CornellShree Nayar ColumbiaRama Chellappa MarylandSteve Seitz University of Washington UC 
+Berkeley Caltech UCSD UPenn MIT CMU UCLA UIUC Brown Duke 
+Cornell Coiumbia Marryland Washington 朱松 纯 Song Chun Zhu http 
+/ / www . stat . ucla . edu / 
+~ sczhu / EuropeAndrew Zisserman Oxford UKAndrew Fitzgibbon Microsoft Research 
+Cambridge UKRoberto Cipolla Cambridge UKJean Ponce INRIA FranceCordelia Schmid INRIA 
+FranceBill Triggs LEAR FranceYair Weiss Hebrew University IsraelAnat Levin Hebrew 
+University IsraelMichal Irani Weizmann IsraelLuc van Gool University of Leuven 
+/ ETH Zurich C z e c h i c 
+C h i n a H a r r y 
+Shum MSRAXiaoou Tang MSRA / CUHKJian Sun MSRASteve Lin MSRAYasuyuki 
+Matsushita MSRAZhouchen Lin MSRALong Quan HKUSTChi Keung Tang HKUST3 . 
+按 研究 方向 划分 按 研究 方向 划分 应该 更 
+合理 一些 现在 计算机 视觉 计算机 图形图像 机器学习 开始 融合 
+到 一起 了吧 J . Malik Zhu Songchu 偏 segmentation 
+D . Lowe . Ullman Poggio 偏于 从 生物 视觉 
+的 启发 来 研究 视觉 Zisserman Schmid Lowe 研究 局部 
+特征 Luc Van Goo Long Quanl 三维重建 Perona Li Feife 
+Freeman 视觉 i 学习 物体 分类 还有 运动 分析 视觉 
+跟踪 纹理 分析 . . . . . . . 
+. . . . . . 美国 计算机领域 大牛 教授 
+排行 点击 可以 看到 他们 的 个人 网页 介绍 以及 
+联系 方式 等 方便 大家 搜索 申请 美国 计算机 专业 
+的 申请人 很多 希望 以下 文章 能 方便 大家 搜索 
+给 大家 提供 帮助 一大堆 fellow 和 拿了 图灵奖 的 
+但 做 网络 方向 不多 只知道   David Culler   
+和 /nr Leslie Lamport   这 里面 华人 还是 很多 的 
+In   this paper   J . E . Hirsch 
+Dept of Physics UCSD proposes the index h defined as 
+the number of papers with citation number higher or equal 
+to h as a useful index to characterize the scientific 
+output of a   researcher . Here is a partial 
+list of computer science researchers who each has an h 
+index of 40 or higher according to   Google Scholar 
+. Several websites provide easy to use interfaces for computing 
+an h index including   scHolar index   and   
+Harzing s publish and perish . Send comments corrections and 
+new entries to   Jens Palsberg UCLA . I do 
+maintain the list mostly I add people and update numbers 
+upon request and when I happen to notice a high 
+h index . Most of the numbers on this page 
+are the results of counting efforts by the listed people 
+themselves . I have computed some of the numbers myself 
+by comparing output from   Google Scholar   with other 
+listings of research papers such as from personal webpages or 
+  DBLP . 92   Terrence Sejnowski   UCSD IEEE 
+Fellow Member of the Institute of Medicine89   Hector Garcia 
+Molina   Stanford ACM Fellow Member of the National Academy 
+of Engineering87   Jeffrey D . Ullman   Stanford ACM 
+Fellow Member of the National Academy of Engineering82   Robert 
+Tarjan   Princeton Turing Award ACM Fellow Member of the 
+National Academy of Engineering80   Deborah Estrin   UCLA ACM 
+Fellow IEEE Fellow Member of the National Academy of Engineering79 
+  Christos H . Papadimitriou   Berkeley ACM Fellow Member 
+of the National Academy of Engineering77   Don Towsley   
+U Mass Amherst ACM Fellow IEEE Fellow73   Ian Foster 
+  Argonne National Laboratory & U Chicago 71   Scott 
+Shenker   Berkeley ACM Fellow IEEE Fellow70   David Culler 
+  Berkeley ACM Fellow Member of the National Academy of 
+Engineering70   David Haussler   UC Santa Cruz 69   
+Nick Jennings   U Southampton Fellow of the Royal Academy 
+of Engineering68   Michael I . Jordan   Berkeley AAAS 
+Fellow IEEE Fellow AAAI Fellow68   Takeo Kanade   CMU 
+ACM Fellow IEEE Fellow Member of the National Academy of 
+Engineering64   Demetri Terzopoulos   UCLA ACM Fellow IEEE Fellow 
+Member of the European Academy of Sciences64   Martin Vetterli 
+  EPFL IEEE Fellow63   Marco Dorigo   U Libre 
+de Bruxelles 62   Alon Halevy Alon Levy   Google 
+ACM Fellow61   Mario Gerla   UCLA IEEE Fellow58   
+Luca Cardelli   Microsoft ACM Fellow58   Ronald Fagin   
+IBM Almaden ACM Fellow IEEE Fellow AAAS Fellow ACM SIGMOD 
+Edgar F . Codd Innovations Award58   Anil K . 
+Jain   Michigan State U ACM Fellow IEEE Fellow58   
+Amit Sheth   Wright State U IEEE Fellow57   Martin 
+Abadi   UC Santa Cruz and Microsoft ACM Fellow57   
+Mihir Bellare   UCSD 57   Sushil Jajodia   George 
+Mason U 57   Leslie Lamport   Microsoft Member of 
+the National Academy of Engineering56   David Dill   Stanford 
+ACM Fellow IEEE Fellow56   Randy H . Katz   
+Berkeley ACM Fellow IEEE Fellow Member of the National Academy 
+of Engineering56   Steven Salzberg   U Maryland 56   
+HongJiang Zhang   Microsoft ACM Fellow IEEE Fellow55   Jennifer 
+Widom   Stanford ACM Fellow Member of the National Academy 
+of Engineering54   Jack Dongarra   U Tennessee ACM Fellow 
+IEEE Fellow Member of the National Academy of Engineering54   
+David E . Goldberg   UIUC 54   Ken Kennedy 
+  Rice ACM Fellow IEEE Fellow Member of the National 
+Academy of Engineering54   Amir Pnueli   Weizmann and New 
+York   University Turing Award ACM Fellow Member of the 
+National Academy of Engineering54   Herbert A . Simon   
+CMU Turing Award ACM Fellow Nobel Laureate54   Jeffrey Vitter 
+  Texas A & M ACM Fellow IEEE Fellow54   
+Philip . Yu   UIC ACM Fellow IEEE Fellow53   
+Tim Finin   UMBC 53   Sally Floyd   ICSI 
+ACM Fellow53   Tomaso Poggio   MIT 53   Eduardo 
+Sontag   Rutgers IEEE Fellow52   Rakesh Agrawal   Microsoft 
+ACM Fellow IEEE Fellow Member of the National Academy of 
+Engineering52   Stanley Osher   UCLA Member of the National 
+Academy of Sciences51   Jiawei Han   UIUC ACM Fellow51 
+  Richard Karp   Berkeley Turing Award ACM Fellow Member 
+of the National Academy of Engineering51   Alex Pentland   
+MIT 50   Andrew B . Kahng   UCSD 50 
+  Alberto Sangiovanni Vincentelli   Berkeley Member of the National 
+Academy of Engineering50   Lixia Zhang   UCLA ACM Fellow49 
+  Serge Abiteboul   INRIA 49   Rajeev Alur   
+U Penn ACM Fellow IEEE Fellow49   Rama Chellappa   
+U Maryland 49   W . Bruce Croft   U 
+Mass Amherst ACM Fellow49   Jon Crowcroft   U Cambridge 
+ACM Fellow IEEE Fellow49   David J . DeWitt   
+Wisconsin ACM Fellow Member of the National Academy of Engineering49 
+  Mark Handley   U College London 49   Daphne 
+Koller   Stanford ACM Infosys Foundation Award49   Maurizio Lenzerini 
+  Sapienza Universita di Roma 49   John McCarthy   
+Stanford Turing Award Member of the National Academy of Engineering49 
+  Michael Stonebraker   MIT ACM Fellow Member of the 
+National Academy of Engineering49   Sebastian Thrun   Stanford 48 
+  Michael J . Carey   UC Irvine ACM Fellow 
+Member of the National Academy of Engineering48   Kai Li 
+  Princeton ACM Fellow48   Pavel Pevzner   UCSD 48 
+  Mihalis Yannakakis   Columbia ACM Fellow47   Wil van 
+der Aalst   TU Eindhoven 47   Leonard Kleinrock   
+UCLA ACM Fellow IEEE Fellow Member of the National Academy 
+of Engineering47   Jim Kurose   U Mass Amherst ACM 
+Fellow IEEE Fellow47   Richard Lipton   Georgia Tech ACM 
+Fellow Member of the National Academy of Engineering47   Judea 
+Pearl   UCLA IEEE Fellow Member of the National Academy 
+of Engineering47   Ben Shneiderman   U Maryland ACM Fellow46 
+  Norman I . Badler   U Penn 46   
+Hari Balakrishnan   MIT ACM Fellow46   David Harel   
+The Weizmann Institute of Science ACM Fellow IEEE Fellow46   
+Geoffrey E . Hinton   Toronto 46   Thomas . 
+Huang   UIUC IEEE Fellow Member of the National Academy 
+of Engineering46   Gordon Plotkin   U Edinburgh 46   
+Tuomas Sandholm   CMU ACM Fellow46   Douglas C . 
+Schmidt   Vanderbilt University 46   John A . Stankovic 
+  U Virginia ACM Fellow45   Olivier Faugeras   INRIA 
+Member of the French Academy of Sciences45   Jose Joaquin 
+Garcia Luna Aceves   UC Santa Cruz ACM Fellow IEEE 
+Fellow45   Jim Gray   Microsoft Turing Award ACM Fellow45 
+  M . Frans Kaashoek   MIT ACM Fellow45   
+Carl Kesselman   USC / ISI 45   Vipin Kumar 
+  U Minnesota ACM Fellow IEEE Fellow45   Victor Lesser 
+  U Mass Amherst AAAI Fellow45   Heikki Mannila   
+U Helsinki 45   Rajeev Motwani   Stanford ACM Fellow45 
+  Badri Nath B R Badrinath   Rutgers 45   
+Prabhakar Raghavan   Yahoo Research ACM Fellow IEEE Fellow45   
+Eero P . Simoncelli   NYU IEEE Fellow45   Moshe 
+Y . Vardi   Rice ACM Fellow Member of the 
+National Academy of Engineering44   Victor Basili   U Maryland 
+ACM Fellow44   Christos Faloutsos   CMU 44   Oded 
+Goldreich   Weizmann 44   H . V . Jagadish 
+  U Michigan ACM Fellow44   Amin Vahdat   UCSD 
+43   Michael Franklin   Berkeley ACM Fellow43   Joseph 
+Goguen   UCSD 43   Ramesh Govindan   USC 43 
+  Simon Peyton Jones   Microsoft ACM Fellow43 Won Kim 
+Sung Kyun Kwan University ACM Fellow43   Barbara Liskov   
+MIT Turing Award ACM Fellow Member of the National Academy 
+of Engineering43   David Maier   Portland State U ACM 
+Fellow43   Robin Milner   U Cambridge UK Turing Award 
+ACM Fellow43   Vern Paxson   ICSI ACM Fellow43   
+Krithi Ramamritham   IIT Bombay ACM Fellow IEEE Fellow43   
+Ronald L . Rivest   MIT Turing Award ACM Fellow 
+Member of the National Academy of Engineering42   Michael Arbib 
+  USC 42   Barry Boehm   USC ACM Fellow42 
+  Pat Hanrahan   Stanford ACM Fellow Member of the 
+National Academy of Engineering42   Thomas A . Henzinger   
+EPFL ACM Fellow42   Donald E . Knuth   Stanford 
+Turing Award ACM Fellow Member of the National Academy of 
+Engineering42   Teuvo Kohonen   Academy of Finland 42   
+Miron Livny   Wisconsin 42   Jose Meseguer   UIUC 
+42   Erkki Oja   Helsinki U of Technology 42 
+  David A . Patterson   Berkeley ACM Fellow IEEE 
+Fellow Member of the National Academy of Engineering42   Micha 
+Sharir   Tel Aviv University ACM Fellow42   Andrew . 
+Tanenbaum   Vrije U The Netherlands ACM Fellow IEEE Fellow42 
+  Willy Zwaenepoel   EPFL ACM Fellow IEEE Fellow41   
+Alex Aiken   Stanford ACM Fellow41   Stefano Ceri   
+Politecnico di Milano 41   Didier Dubois   CNRS Toulouse 
+41   Michael Kearns   U Penn 41   Jon 
+Kleinberg   Cornell ACM Infosys Foundation Award41   Monica . 
+Lam   Stanford ACM Fellow41   Kim G . Larsen 
+  Aalborg U 41   Jitendra Malik   Berkeley ACM 
+Fellow41   Deborah L . McGuinness   RPI 41   
+Raymond Mooney   UT Austin 41   Alex Nicolau   
+UC Irvine 41   Miodrag Potkonjak   UCLA 41   
+Thomas W . Reps   U Wisconsin ACM Fellow41   
+Milind Tambe   USC AAAI Fellow41   Gene Tsudik   
+UC Irvine 41   Philip Wadler   U Edinburgh ACM 
+Fellow40   Andrew Appel   Princeton ACM Fellow40   Richard 
+Baraniuk   Rice University IEEE Fellow40   Craig Chambers   
+U Washington 40   Edmund M . Clarke   CMU 
+Turing Award ACM Fellow IEEE Fellow Member of the National 
+Academy of Engineering40   Jason Cong   UCLA ACM Fellow40 
+  Ingemar J . Cox   U College London IEEE 
+Fellow40   Herbert Edelsbrunner   Duke U 40   Saul 
+Greenberg   University of Calgary Member of the ACM CHI 
+Academy40   Rajiv Gupta   UC Riverside IEEE Fellow40   
+Christian . Jensen   Aalborg U IEEE Fellow40   David 
+. Johnson   AT & T Labs ACM Fellow40   
+George Karypis   U Minnesota 40   Henry Levy url 
+=   U Washington ACM Fellow IEEE Fellow40   / 
+url Nancy Lynch   MIT ACM Fellow Member of the 
+National Academy of Engineering40   Maja Mataric   USC 40 
+  John Mitchell   Stanford ACM Fellow40   Charles E 
+. Perkins   Nokia Siemens Networks 40   Benjamin Pierce 
+  U Penn 40   Raghu Ramakrishnan   Wisconsin ACM 
+Fellow40   George Varghese   UCSD ACM Fellow40   Ian 
+Witten   U Waikato ACM Fellow40   Andrew Zisserman   
+University of Oxford http / / www . cs . 
+ucla . edu / ~ palsberg / h number . 
+html 以上 美国 计算机领域 大牛 教授 排行 以及 联系 方式 
+希望 能够 方便 申请 美国 计算机 专业 的 申请人 搜索 
+查找 相关 信息 感谢 本文 收集者 超 牛的/nr Smart Vehicle 
+研究 中心 与 牛人 Prof . Dr . Dariu M 
+. Gavrila 2010 12 12 09 54 19 转载 标签 
+杂谈 http / / www . gavrila . net / 
+index . html 最近 一直 在看 Gavrila 及其 他们 团队 
+的 论文 感觉 很 牛 十几 年前 人家 就 在 
+奔驰 的 资助 下 从事 智能 车辆 方面 的 研究 
+而且 早就 开 发出 了 行人 检测 与 防 碰撞 
+系统 PROTECTOR 已经 将 计算机 视觉 图像 处理 与 模式识别 
+方面 的 理论 应用 于 道路 行车 的 安全 监控 
+中 去了 真的 很 牛 他们 的 测试 实验 也 
+都是 用 奔驰 的 汽车 他们 在 智能 车辆 行人 
+检测 三维重建 方面 有着 深厚 的 理论 积累 与 实际 
+开发 经验 Gavrila 的 论文 感觉 很 经典 特别 是 
+前沿 介绍 方面 感觉 真是 大家 呀 最近 几年 他 
+的 德国 学生 Enzweiler 与 Munder 在 CVPR 与 IEEE 
+Transaction on PAMI 上 发表 了 一系列 的 识别 分类 
+的 文章 个人 感觉 已经 很 成 一个 理论 体系 
+了 很 值得 学习 由 此 也 想到 了 关于 
+科研 人员 研究 内容 与 方向 的 问题 我们 的 
+研究 究竟 需要 一个 怎么样 的 定位 究竟 是 要 
+解决 理论 问题 还是 解决 与 生产 工业 以及 人们 
+生活 相关 的 问题 究竟 是 为了 研究 而 研究 
+还 是 确实 为了 解决 实际 问题 而 研究 是 
+为了 发表 几篇 论文 或者 为了 评 评职称 而 研究 
+个人认为 一定 要 有一个 好 的 方向 定位 与 认真 
+的 态度 如 果有 研究 兴趣 与 研究 热情 我们 
+的 研究 确实 又是 前瞻性 的 确实 能 解决 一些 
+实际 问题 这 应当 是 一件 非常 开心 的 事情 
+按照 一个 自己 感兴趣 的 方向 延续下去 顺 便将 研究 
+成果 整理 一下 就 有了 论文 专利 等 成果 

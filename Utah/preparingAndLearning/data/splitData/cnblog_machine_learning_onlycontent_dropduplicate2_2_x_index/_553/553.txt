@@ -1,0 +1,51 @@
+摘要：本文首先浅谈了自己对决策树的理解，进而通过Python一步步构造决策树，并通过Matplotlib更直观的绘制树形图，最后，选取相应的数据集对算法进行测试。
+最近在看《机器学习实战》这本书，因为一直想好好了解机器学习方面的算法，加之想学Python，就在朋友的推荐之下选择了这本同等定位的书。今天就来学习一下决策树，所有的代码均python3.4实现，确实与2.7有很多不同。
+决策树和KNN一样，都是处理分类问题的算法。对于决策树的定义不计其数，就我个人而言，首先单看名字，就想到了最小生成树，猜想图解的话这个算法会是一棵树，在机器学习这个层面，将所要处理的数据看做是树的根，相应的选取数据的特征作为一个个节点（决策点），每次选取一个节点将数据集分为不同的数据子集，可以看成对树进行分支，这里体现出了决策，直到最后无法可分停止，也就是分支上的数据为同一类型，可以想象一次次划分之后由根延伸出了许多分支，形象的说就是一棵树。
+在机器学习中，决策树是一个预测模型，它代表的是对象属性与对象值之间的一种映射关系，我们可以利用决策树发现数据内部所蕴含的知识，比如在本文的最后我们选取隐形眼镜数据集根据决策树学习到眼科医生是如何判断患者佩戴眼镜片的过程，而K近邻算法虽与决策树同属分类，却无从得知数据的内在形式。下面我们就一步步的学习决策树：
+1. 构造决策树
+基于之前的了解，在构造决策树首先需要选取特征将原始数据划分为几个数据集，那么第一个问题就是当前数据的哪个特征在划分数据分类时起决定性作用，所以必须评估每个特征。进而通过特征将原始数据就被划分为几个数据子集，这些数据子集分布在第一个决策点的所有分支上，如果分支上的所有数据为同一类型，则划分停止，若分支上的所有数据不是同一类型，则还需要继续划分，直到所有具有相同类型的数据均在一个数据子集中。在用决策树进行划分时，关键是每次划分时选取哪个特征进行划分，在划分数据时，我们必须采用量化的方法判断如何划分数据。
+（1）信息增益
+划分数据时是根据某一原则进行划分，使得划分在同一集合中的数据具有共同的特征，据此，我们可以理解为划分数据的原则就是是无序的数据变得有序。当然划分数据有很多种方法，在此选用信息论度量信息，划分组织杂乱无章的数据。
+信息论是量化处理信息的分支科学，可以在数据划分之前或之后使用信息论量化度量信息的内容。其中在划分数据集之前之后信息发生的变化称为信息增益，计算每个特征值划分数据集获得的信息增益，获得信息增益最高的特征就是最好的选择。
+首先我们需要知道怎么计算信息增益，集合信息的度量方式称为香农熵或者简称为熵，熵定义为信息的期望值，那么信息是什么？xi的信息可定义为：L(xi) = -log(p(xi)),其中p(xi)是选择该分类的概率。
+熵指的是所有类别所有可能值包含的信息期望值，可表示为：
+熵越高，表明混合的数据越多，则可以在数据集中添加更多的分类。基于上述的分析，编程计算给定数据集的香农熵，代码如下：
+from math import log ###计算香农熵(为float类型） def calShang(dataSet): numEntries = len(dataSet) labelCounts = {}##创建字典 for featVec in dataSet: currentLabel = featVec[-1] if currentLabel not in labelCounts.keys(): labelCounts[currentLabel] = 0 labelCounts[currentLabel] += 1 shannonEnt = 0.0 for key in labelCounts: prob = float(labelCounts[key]) / numEntries shannonEnt -= prob * log(prob,2) return shannonEnt
+对此我们可以输入数据集测试：
+def creatDataSet(): dataSet = [[1,1,'yes'], [1,1,'yes'], [1,0,'no'], [0,1,'no'], [0,1,'no']] labels = ['no surfacing','flippers'] return dataSet,labels ''' #测试 myData,labels = creatDataSet() print("原数据为：",myData) print("标签为：",labels) shang = calShang(myData) print("香农熵为：",shang) '''
+得到熵之后，我们就可以按照获取最大增益的办法划分数据集。
+（2）划分数据集
+基于之前的分析，信息增益表示的是信息的变化，而信息可以用熵来度量，所以我们可以用熵的变化来表示信息增益。而获得最高信息增益的特征就是最好的选择，故此，我们可以对所有特征遍历，得到最高信息增益的特征加以选择。
+首先，我们按照给定特征划分数据集并进行简单的测试：
+###划分数据集（以指定特征将数据进行划分） def splitDataSet(dataSet,feature,value):##传入待划分的数据集、划分数据集的特征以及需要返回的特征的值 newDataSet = [] for featVec in dataSet: if featVec[feature] == value: reducedFeatVec = featVec[:feature] reducedFeatVec.extend(featVec[feature + 1:]) newDataSet.append(reducedFeatVec) return newDataSet ''' #测试 myData,labels = creatDataSet() print("原数据为：",myData) print("标签为：",labels) split = splitDataSet(myData,0,1) print("划分后的结果为:",split) '''
+接下来我们遍历整个数据集，循环计算香农熵和splitDataSet()函数，找到最好的划分方式并简单测试：
+##选择最好的划分方式(选取每个特征划分数据集，从中选取信息增益最大的作为最优划分)在这里体现了信息增益的概念 def chooseBest(dataSet): featNum = len(dataSet[0]) - 1 baseEntropy = calShang(dataSet) bestInforGain = 0.0 bestFeat = -1##表示最好划分特征的下标 for i in range(featNum): featList = [example[i] for example in dataSet] #列表 uniqueFeat = set(featList)##得到每个特征中所含的不同元素 newEntropy = 0.0 for value in uniqueFeat: subDataSet = splitDataSet(dataSet,i,value) prob = len(subDataSet) / len(dataSet) newEntropy += prob * calShang(subDataSet) inforGain = baseEntropy - newEntropy if (inforGain > bestInforGain): bestInforGain = inforGain bestFeature = i#第i个特征是最有利于划分的特征 return bestFeature ''' ##测试 myData,labels = creatDataSet() best = chooseBest(myData) print(best) '''
+（3）递归构建决策树
+基于之前的分析，我们选取划分结果最好的特征划分数据集，由于特征很可能多与两个，因此可能存在大于两个分支的数据集划分，第一次划分之后，可以将划分的数据继续向下传递，如果将每一个划分的数据看成是原数据集，那么之后的每一次划分都可以看成是和第一次划分相同的过程，据此我们可以采用递归的原则处理数据集。递归结束的条件是：程序遍历完所有划分数据集的属性，或者每个分支下的所有实例都有相同的分类。编程实现：
+##递归构建决策树 import operator #返回出现次数最多的分类名称 def majorClass(classList): classCount = {} for vote in classList: if vote not in classCount.keys(): classCount[vote] = 0 classCount[vote] += 1 #降序排序，可以指定reverse = true sortedClassCount = sorted(classcount.iteritems(),key = operator.itemgetter(1),reverse = true) return sortedClassCount[0][0] #创建树 def creatTree(dataSet,labels): classList = [example[-1] for example in dataSet] if classList.count(classList[0]) == len(classList): return classList[0] if len(dataSet[0]) == 1: return majorClass(classList) bestFeat = chooseBest(dataSet) bestFeatLabel = labels[bestFeat] myTree = {bestFeatLabel:{}} del(labels[bestFeat]) featValues = [example[bestFeat] for example in dataSet] uniqueVals = set(featValues) for value in uniqueVals: subLabels = labels[:] myTree[bestFeatLabel][value] = creatTree(splitDataSet(dataSet,bestFeat,value),subLabels) return myTree ''' #测试 myData,labels = creatDataSet() mytree = creatTree(myData,labels) print(mytree) '''
+2.使用matplotlib注解绘制树形图
+之前我们已经从数据集中成功的创建了决策树，但是字典的形式非常的不易于理解，因此本节采用Matplotlib库创建树形图。
+首先，使用文本注解绘制树节点：
+##采用matplotlib绘制树形图 import matplotlib.pyplot as plt decisionNode = dict(boxstyle="sawtooth", fc="0.8") leafNode = dict(boxstyle="round4", fc="0.8") arrow_args = dict(arrowstyle="<-") #绘制树节点 def plotNode(nodeTxt, centerPt, parentPt, nodeType): createPlot.ax1.annotate(nodeTxt, xy=parentPt, xycoords='axes fraction', xytext=centerPt, textcoords='axes fraction', va="center", ha="center", bbox=nodeType, arrowprops=arrow_args )
+获得叶节点的数目和树的层数，并进行测试：
+##获取节点的数目和树的层数 def getNumLeafs(myTree): numLeafs = 0 #firstStr = myTree.keys()[0] firstSides = list(myTree.keys()) firstStr = firstSides[0]#找到输入的第一个元素 secondDict = myTree[firstStr] for key in secondDict.keys(): if type(secondDict[key]) == dict: numLeafs += getNumLeafs(secondDict[key]) else: numLeafs += 1 return numLeafs def getTreeDepth(myTree): maxDepth = 1 firstSides = list(myTree.keys()) firstStr = firstSides[0]#找到输入的第一个元素 #firstStr = myTree.keys()[0] secondDict = myTree[firstStr] for key in secondDict.keys(): if type(secondDict[key]) == dict: thisDepth = 1 + getTreeDepth(secondDict[key]) else: thisDepth = 1 if thisDepth > maxDepth: maxDepth = thisDepth return maxDepth def retrieveTree(i): listOfTrees =[{'no surfacing': {0: 'no', 1: {'flippers': {0: 'no', 1: 'yes'}}}}, {'no surfacing': {0: 'no', 1: {'flippers': {0: {'head': {0: 'no', 1: 'yes'}}, 1: 'no'}}}} ] return listOfTrees[i] #测试 mytree = retrieveTree(0) print(getNumLeafs(mytree)) print(getTreeDepth(mytree))
+在此，我们说明一下Python2.7和3.4在实现本段代码的区别：
+在2.7中，找到key所对应的第一个元素为：firstStr = myTree.keys()[0]，这在3.4中运行会报错：'dict_keys' object does not support indexing，这是因为python3改变了dict.keys,返回的是dict_keys对象,支持iterable 但不支持indexable，我们可以将其明确的转化成list，则此项功能在3中应这样实现：
+firstSides = list(myTree.keys()) firstStr = firstSides[0]#找到输入的第一个元素
+绘制树：
+def plotNode(nodeTxt, centerPt, parentPt, nodeType): createPlot.ax1.annotate(nodeTxt, xy=parentPt, xycoords='axes fraction', xytext=centerPt, textcoords='axes fraction', va="center", ha="center", bbox=nodeType, arrowprops=arrow_args ) def plotMidText(cntrPt, parentPt, txtString): xMid = (parentPt[0]-cntrPt[0])/2.0 + cntrPt[0] yMid = (parentPt[1]-cntrPt[1])/2.0 + cntrPt[1] createPlot.ax1.text(xMid, yMid, txtString, va="center", ha="center", rotation=30) def plotTree(myTree, parentPt, nodeTxt): numLeafs = getNumLeafs(myTree) depth = getTreeDepth(myTree) firstSides = list(myTree.keys()) firstStr = firstSides[0]#找到输入的第一个元素 cntrPt = (plotTree.xOff + (1.0 + float(numLeafs))/2.0/plotTree.totalW, plotTree.yOff) plotMidText(cntrPt, parentPt, nodeTxt) plotNode(firstStr, cntrPt, parentPt, decisionNode) secondDict = myTree[firstStr] plotTree.yOff = plotTree.yOff - 1.0/plotTree.totalD for key in secondDict.keys(): if type(secondDict[key]).__name__=='dict': plotTree(secondDict[key],cntrPt,str(key)) else: plotTree.xOff = plotTree.xOff + 1.0/plotTree.totalW plotNode(secondDict[key], (plotTree.xOff, plotTree.yOff), cntrPt, leafNode) plotMidText((plotTree.xOff, plotTree.yOff), cntrPt, str(key)) plotTree.yOff = plotTree.yOff + 1.0/plotTree.totalD def createPlot(inTree): fig = plt.figure(1, facecolor='white') fig.clf() axprops = dict(xticks=[], yticks=[]) createPlot.ax1 = plt.subplot(111, frameon=False, **axprops) plotTree.totalW = float(getNumLeafs(inTree)) plotTree.totalD = float(getTreeDepth(inTree)) plotTree.xOff = -0.5/plotTree.totalW; plotTree.yOff = 1.0; plotTree(inTree, (0.5,1.0), '') plt.show() #测试 mytree = retrieveTree(0) print(mytree) createPlot(mytree)
+测试之后结果如下：
+这样相比于字典形式确实清晰了很多。
+3.测试算法
+在本章中，我们首先使用决策树对实际数据进行分类，然后使用决策树预测隐形眼镜类型对算法进行验证。
+（1）使用决策树执行分类
+在使用了训练数据构造了决策树之后，我们便可以将它用于实际数据的分类：
+###决策树的分类函数，返回当前节点的分类标签 def classify(inputTree,featLabels,testVec):##传入的数据为dict类型 firstSides = list(inputTree.keys()) firstStr = firstSides[0]#找到输入的第一个元素 ##这里表明了python3和python2版本的差别，上述两行代码在2.7中为：firstStr = inputTree.key()[0] secondDict = inputTree[firstStr]##建一个dict #print(secondDict) featIndex = featLabels.index(firstStr)#找到在label中firstStr的下标 for i in secondDict.keys(): print(i) for key in secondDict.keys(): if testVec[featIndex] == key: if type(secondDict[key]) == dict:###判断一个变量是否为dict，直接type就好 classLabel = classify(secondDict[key],featLabels,testVec) else: classLabel = secondDict[key] return classLabel ##比较测试数据中的值和树上的值，最后得到节点 #测试 myData,labels = creatDataSet() print(labels) mytree = retrieveTree(0) print(mytree) classify = classify(mytree,labels,[1,0]) print(classify)
+（2）使用决策树预测隐形眼镜类型
+基于之前的分析，我们知道可以根据决策树学习到眼科医生是如何判断患者需要佩戴的眼镜片，据此我们可以帮助人们判断需要佩戴的镜片类型。
+在此从UCI数据库中选取隐形眼镜数据集lenses.txt，它包含了很多患者眼部状况的观察条件以及医生推荐的隐形眼镜类型。我们选取此数据集，结合Matplotlib绘制树形图，进一步观察决策树是如何工作的，具体的代码如下：
+fr = open('lenses.txt') lenses = [inst.strip().split('\t') for inst in fr.readlines()] lensesLabels = ['ages','prescript','astigmatic','tearRate'] lensesTree = creatTree(lenses,lensesLabels) print(lensesTree) createPlot(lensesTree)
+得到的树形图：
+沿着决策树的不同分支，我们可以得到不同患者需要佩戴的隐形眼镜类型，从该图中我们可以得到，只需要问四个问题就可以确定出患者需要佩戴何种隐形眼镜。
+本章主要使用的是ID3算法，自身也存在着很多不足。当然还有其它的决策树构造算法，比如C4.5和CART，以后有机会了再好好看看。
+以上是我自己的一些理解与总结，难免有错，望大家不吝指教~

@@ -1,0 +1,22 @@
+自然语言处理的库非常多，下面列举一些对Python友好，简单易用，轻量，功能又全的库。
+1 中文
+中文自然语言处理工具评测：https://github.com/mylovelybaby/chinese-nlp-toolkit-test
+awesome: https://github.com/crownpku/Awesome-Chinese-NLP
+Hanlp
+地址：https://github.com/hankcs/HanLP
+Jieba
+地址：https://github.com/fxsjy/jieba
+snownlp
+https://github.com/isnowfy/snownlp
+2 英文
+NLTK
+地址：https://www.nltk.org/
+Textblob
+地址：https://github.com/sloria/TextBlob
+3 实例
+3.1 中文自然语言处理Pipeline实例
+实例：https://github.com/JiaLiangShen/Chinese-Article-Classification-based-on-own-corpus-via-TextCNN-and-GBDT
+3.2 英文Pipeline实例
+实例：https://github.com/TiesdeKok/Python_NLP_Tutorial/blob/master/NLP_Notebook.ipynb
+友情推荐：ABC技术研习社
+为技术人打造的专属A(AI),B(Big Data),C(Cloud)技术公众号和技术交流社群。

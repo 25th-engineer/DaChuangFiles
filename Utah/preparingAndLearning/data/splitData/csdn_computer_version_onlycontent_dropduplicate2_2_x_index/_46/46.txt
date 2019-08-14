@@ -1,0 +1,54 @@
+Dr. Scott Ross
+有计算机专业，信息科学技术学院的，艺术学院的，数字艺术方向、电影方向
+陈宝权老师主持，Scott成立了两家电影公司，是BFA的高精尖的国际顾问
+“懂技术的艺术家”
+很fancy的视频，介绍电影的发展史
+特效技术：太空，骷髅头，拍一帧，停一下
+camera motion control， robotic cameras
+no computer， no digital，靠相机移动拍出特效，1977
+animation，全是hand draw，没有计算机特效，1986
+toy story，pixar
+always，fire plane，burning houses，effect by camera motion，real fire，1989
+water creature，by computer graphics， creativity or technology，water simulation，visual effects，1989
+terminate two， judgement day (电脑生成人及运动)，track，特效都是电脑形成
+motion tracking (外科医生)
+侏罗纪公园，真实的creature？都是计算机生成的，自动运动的恐龙
+计算机生成的恐龙
+卡通动画是handcraft，要演员模拟和不存在的任务对话很难
+CG模拟爆炸，烟雾，1992
+手动去掉人的腿脚
+第一个全电脑生成的动画，Hollywood，1984
+animation -> Disney，有一个人预言到animation的未来将会是全电脑生成
+玩具总动员，character animation
+creature development，传感器+生成mesh
+星球大战，异种生物的形成
+feature变得更加真实
+星球大战，在blue screen里拍摄，然后将背景再修改
+Wali，complex全电脑生成，virtual reality，living in the virtual world，motion blur，camera motion，computer animation
+VR
+VR in Entertainment，Still Virtual
+VR is like sex in High School… everybody is doing it. But no one is doing it well. -Chris Little/Strivr
+特效将去做VR，导演去讲故事
+全球做VR的企业越来越多
+VR眼镜，设备太笨重了，用户体验并不好，无法成为生活的一部分
+产品：Financing Budgets，Camera technical limitations，Post
+VR技术产品投产收入并不高
+VR环境生成成本太高
+360度影院？我只是个相机，没法交互，很无聊，没有回放，错过精彩
+STORY TELLING TRANSFORMED
+用户在故事世界的体验没有现实世界中的好
+AI
+非常严肃的科技，中国如果AI发展太快，很多人会失业，他们又没有其他技能，很容易出问题
+提问环节：
+创造性可以被机器取代吗？
+人可以讲故事，人机结合，人的思想是无法取代的
+中美的影视特效质量为什么会有较大差距？
+美国有较长的历史，时间影响最大
+budget，中国的成本太高
+陈：有gap，新的电影制作方式，本身是一种机会
+Scott：China，领导形式，中国要成为影视行业的参与者，因为没有基础和各种条条框框，所以构建新的体系会容易得多
+AR技术
+希望successful，但是，现在技术还很不成熟
+但虚拟世界和现实世界是不一样的，虚拟世界依然难以脱离显示存在
+虚拟人物，虚拟明星，虚拟中的真实人物
+人还是喜欢真实的？学习一个真实人物的说话方式，思考方式，“复活”人

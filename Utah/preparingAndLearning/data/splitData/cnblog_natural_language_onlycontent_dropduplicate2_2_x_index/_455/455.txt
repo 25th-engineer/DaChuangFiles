@@ -1,0 +1,130 @@
+回家前，把python自然语言处理的nltk_data打包到360云盘，然后共享给朋友们，省的大家像我一样浪费时间。
+一次性下载解压后即可使用。官方的nltk.download()老是下载失败。无数遍了。浪费了我很多很多时间。
+打包下载（推荐）：
+http://yunpan.cn/cgGUPFzF3spir （提取码：504e）
+下载后放在python/nltk_data目录下即可.
+记录下错误提示，以便于朋友们搜索找到。
+当时遇到的错误是：
+nltk.download()
+could not find maxent_treebank_pos_tagger / english .XXX
+searched index:
+C:\\Python27\\nltk_data\
+C:\\nltk_data
+D:\\nltk_data
+E:\\nltk_data
+然后我通过，nltk.download()下载，一直出现错误，只好到
+官方下载http://nltk.org/nltk_data/
+另外，也可以到nltk.code.google.com 下载，
+但是又遇到了下载后，直接放在nltk_data目录，却发现还是不行，程序找不到数据集。
+因此我就用nltk.download()试着下载了一个，观察他的文件位置，这才发现原来有好几个文档目录。
+用tree命令的到其目录结构如下：
+文件夹 PATH 列表
+卷序列号为 00000200 B2F8:ED9D
+├─chunkers #这一级为nltk_data下的文件夹
+│ └─maxent_ne_chunker #这一级为相对应文件夹下的数据文件
+├─corpora      #这一级为nltk_data下的文件夹
+│ ├─abc        #这一级为相对应文件夹下的数据文件
+│ ├─alpino
+│ ├─basque_grammars
+│ ├─biocreative_ppi
+│ ├─book_grammars
+│ ├─brown
+│ ├─brown_tei
+│ ├─cess_cat
+│ ├─cess_esp
+│ ├─chat80
+│ ├─city_database
+│ ├─cmudict
+│ ├─comtrans
+│ ├─conll2000
+│ ├─conll2002
+│ ├─conll2007
+│ ├─dependency_treebank
+│ ├─europarl_raw
+│ │
+│ ├─floresta
+│ ├─gazetteers
+│ ├─genesis
+│ ├─gutenberg
+│ ├─hmm_treebank_pos_tagger
+│ ├─ieer
+│ ├─inaugural
+│ ├─indian
+│ ├─jeita
+│ ├─kimmo
+│ ├─knbc
+│ │
+│ ├─langid
+│ ├─large_grammars
+│ ├─machado
+│ │
+│ ├─mac_morpho
+│ ├─maxent_ne_chunker
+│ ├─maxent_treebank_pos_tagger
+│ ├─movie_reviews
+│ │
+│ ├─names
+│ ├─nombank.1.0
+│ │
+│ ├─nps_chat
+│ ├─oanc_masc
+│ │
+│ ├─paradigms
+│ ├─pe08
+│ ├─pil
+│ ├─pl196x
+│ ├─ppattach
+│ ├─problem_reports
+│ ├─propbank
+│ │
+│ ├─ptb
+│ ├─punkt
+│ ├─qc
+│ ├─reuters
+│ │
+│ ├─rslp
+│ ├─rte
+│ ├─sample_grammars
+│ ├─semcor
+│ │
+│ ├─senseval
+│ ├─shakespeare
+│ ├─sinica_treebank
+│ ├─smultron
+│ ├─spanish_grammars
+│ ├─state_union
+│ ├─stopwords
+│ ├─swadesh
+│ ├─switchboard
+│ ├─tagsets
+│ ├─timit
+│ │
+│ ├─toolbox
+│ │
+│ ├─treebank
+│ │
+│ ├─udhr
+│ ├─udhr2
+│ ├─unicode_samples
+│ ├─verbnet
+│ ├─webtext
+│ ├─wordnet
+│ ├─wordnet_ic
+│ ├─words
+│ └─ycoe
+├─grammars
+│ ├─basque_grammars
+│ ├─book_grammars
+│ ├─large_grammars
+│ ├─sample_grammars
+│ └─spanish_grammars
+├─help
+│ └─tagsets
+├─stemmers
+│ └─rslp
+├─taggers
+│ ├─hmm_treebank_pos_tagger
+│ ├─maxent_ne_chunker
+│ └─maxent_treebank_pos_tagger
+└─tokenizers
+└─punkt

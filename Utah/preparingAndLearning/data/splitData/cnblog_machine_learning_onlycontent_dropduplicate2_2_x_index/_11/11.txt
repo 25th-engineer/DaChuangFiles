@@ -1,0 +1,14 @@
+...................................................
+（13）按格式输出
+for i in range(0,len(List_row)):
+if (i%2==0):
+st=List_row[i].strip().split(' ')
+print(int(len(st)/2),file=dt)
+for j in range(0,len(st)):
+print(st[j],file=dt,end=' ')
+if (j%2==1):
+print('',file=dt)
+print('',file=dt)
+dt.close()
+...............................................................
+到此就把所有数据按特定的格式处理完了。

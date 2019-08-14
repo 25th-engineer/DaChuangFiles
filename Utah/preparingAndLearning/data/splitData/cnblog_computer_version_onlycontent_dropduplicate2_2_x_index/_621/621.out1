@@ -1,0 +1,1270 @@
+第三章 Opencv3 处理 图像 1 不同 色彩 空间 的 转换 
+计算机 视觉 中三 种 常见 的 色彩 空间 灰度 BGRHSV 
+hue 色调 saturation 饱 合度 value 黑暗 程度 2 傅里叶 
+变换 快速 傅里叶 变换 fft 离散 傅里叶 变换 dft 高通 
+滤波器 heigh passfilter 检测 图像 的 某个 区域 根据 像素 
+和 周围 像素 的 亮度 差值 来 提升 该 像素 
+亮度 的 滤波器 示例代码 如下 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 23 
+# @ Author   Retacn # @ Site     
+  高通 滤波器 # @ File       heighPassFilter 
+. py # @ Software PyCharm import cv2 import numpy 
+as np from scipy import ndimage # 自定义 核 kernel 
+_ 3x3 = np . array 1 1 1   
+                    
+                    
+  1 8 1             
+                    
+            1 1 1 kernel 
+_ 5x5 = np . array 1 1 1 1 
+1                   
+                    
+      1 1 2 1 1     
+                    
+                    
+1 2 4 2 1           
+                    
+              1 1 2 
+1 1                 
+                    
+        1 1 1 1 1 # 
+读入 图像 转换 为 灰度 格式 img = cv2 . 
+imread . . / test . jpg cv2 . IMREAD 
+_ GRAYSCALE # 卷积 k3 = ndimage . convolve img 
+kernel _ 3x3 k5 = ndimage . convolve img kernel 
+_ 5x5 # 高通 过滤 blurred = cv2 . GaussianBlur 
+img 11 11 0 g _ hpf = img blurred 
+# 显示 图像 cv2 . imshow 3x3 k3 cv2 . 
+imshow 5x5 k5 cv2 . imshow g _ hpf g 
+_ hpf cv2 . waitKey cv2 . d e s 
+t r o y A l l W i n 
+d o w s 低通滤波器 low pass filter 在 像素 
+与 周围 像素 的 亮度 差值 小于 一个 特定 值 
+时 平滑 该 像素 的 亮度 3 创建 模块 Filters 
+. py 文件 示例代码 如下 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 58 
+# @ Author   Retacn # @ Site     
+  滤波器 # @ File       filters . 
+py . py # @ Software PyCharm import cv2 import 
+numpy as np import Three . utils # 自定义 工具 
+类 Utils . py 文件 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 59 
+# @ Author   Retacn # @ Site     
+  工具 类 # @ File       utils 
+. py . py # @ Software PyCharm import cv2 
+import numpy as np from scipy import interpolate4 边缘 检测 
+常用 函数 def Laplacian src ddepth dst = None ksize 
+= None scale = None delta = None borderType = 
+None def Sobel src ddepth dx dy dst = None 
+ksize = None scale = None delta = None borderType 
+= None def Scharr src ddepth dx dy dst = 
+None scale = None delta = None borderType = None 
+模糊 滤 波函数 1 平均 函数 原型 def blur src 
+# 源 图像 ksize # 内核 大小 dst = None 
+# 输出 图像 anchor = None # 中心 锚 点 
+borderType = None # 边界 模式 2 高斯 模糊 函数 
+原型 def GaussianBlur src # 输入 图像 ksize # 高斯滤波 
+模版 大小 sigmaX # 横向 滤波 系数 dst = None 
+# 输出 图像 sigmaY = None # 纵向 滤波 系数 
+borderType = None 3 中值 模糊 def medianBlur src # 
+源 图像 ksize # 中值 滤波器 的 模版 的 大小 
+dst = None # 输出 图像 4 双边 滤波 def 
+bilateralFilter src # 输入 图像 d # 每个 像素 邻域 
+的 直径 sigmaColor # 颜色 空间 的 标准偏差 sigmaSpace # 
+坐标空间 的 标准偏差 dst = None # 输出 图像 borderType 
+= None # 边缘 点 插 值类型 示例代码 如下 # 
+/ usr / bin / env python # * coding 
+utf 8 * # @ Time       2016 
+/ 11/29 12 58 # @ Author   Retacn # 
+@ Site       滤波器 # @ File   
+    filters . py . py # @ Software 
+PyCharm import cv2 import numpy as np import Three . 
+utils # 自定义 工具 类 def strokeEdges src     
+                    
+      dst             
+                  blurKsize 
+= 7 # 中值 滤波 ksize         
+                    
+  edgeKsize = 5 # Laplacian 算子 ksize     
+  if blurKsize = 3           
+    # 中值 滤波           
+    blurredSrc = cv2 . medianBlur src blurKsize   
+            # 修改 为 灰度 
+颜色 空间               graySrc 
+= cv2 . cvtColor blurredSrc cv2 . COLOR _ BGR2GRAY 
+      else             
+  graySrc = cv2 . cvtColor src cv2 . COLOR 
+_ BGR2GRAY       cv2 . Laplacian graySrc cv2 
+. CV _ 8U graySrc ksize = edgeKsize     
+  n o r m a l i z e 
+d I n v e r s e A l 
+p h a = 1 . 0/255 * 255 graySrc 
+      channels = cv2 . split src   
+    for channel in channels         
+      channel = channel * n o r 
+m a l i z e d I n v 
+e r s e A l p h a   
+    cv2 . merge channels dst 5 用 定制 
+内核 作 卷积 def filter2D src # 输入 图像 ddepth 
+# 图像 深度 kernel # 卷积 核 单通道 浮点 矩阵 
+dst = None # 输出 图像 anchor = None # 
+一个 被 滤波 的 点在 核 内 的 位置 中心 
+delta = None borderType = None # 边界 类型 如果 
+要 对 每个 通道 使用 不同 的 核 必须 用 
+split 和 merge 示例代码 如下 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 58 
+# @ Author   Retacn # @ Site     
+  滤波器 # @ File       filters . 
+py . py # @ Software PyCharm import cv2 import 
+numpy as np import Three . utils   # 自定义 
+工具 类 # 一般 的 卷积 滤波器 class V C 
+o n v o l u t i o n 
+F i l t e r object       
+def _ _ init _ _ self kernel     
+          self . _ kernel = 
+kernel       def apply self src dst   
+            cv2 . filter2D src 
+1 self . _ kernel dst # 特定 的 锐化 
+滤波器 class SharpenFilter V C o n v o l 
+u t i o n F i l t e 
+r       def _ _ init _ _ 
+self               kernel = 
+np . array 1 1 1         
+                    
+                    
+    1 9 1           
+                    
+                    
+  1 1 1             
+  V C o n v o l u t 
+i o n F i l t e r . 
+_ _ init _ _ self kernel # 边缘 检测 
+滤波器 class FindEdgesFilter V C o n v o l 
+u t i o n F i l t e 
+r       def _ _ init _ _ 
+self               kernel = 
+np . array 1 1 1         
+                    
+                    
+    1 8 1           
+                    
+                    
+  1 1 1             
+  V C o n v o l u t 
+i o n F i l t e r . 
+_ _ init _ _ self kernel # 模糊 滤波器 
+class BlurFilter V C o n v o l u 
+t i o n F i l t e r 
+      def _ _ init _ _ self 
+              kernel = np 
+. array 0.04 0.04 0.04 0.04 0.04       
+                    
+                    
+      0.04 0.04 0.04 0.04 0.04     
+                    
+                    
+        0.04 0.04 0.04 0.04 0.04   
+                    
+                    
+          0.04 0.04 0.04 0.04 0.04 
+                    
+                    
+            0.04 0.04 0.04 0.04 
+0.04               V C 
+o n v o l u t i o n 
+F i l t e r . _ _ init 
+_ _ self kernel # 脊 状 和 浮雕 效果 
+class EmbossFilter V C o n v o l u 
+t i o n F i l t e r 
+      def _ _ init _ _ self 
+              kernel = np 
+. array 2 1 0           
+                    
+                    
+  1 1 1             
+                    
+                    
+0 1 2               
+V C o n v o l u t i 
+o n F i l t e r . _ 
+_ init _ _ self kernel def strokeEdges src   
+                    
+        dst           
+                    
+blurKsize = 7   # 中值 滤波 ksize     
+                    
+      edgeKsize = 5   # Laplacian 算子 
+ksize       if blurKsize = 3     
+          # 中值 滤波     
+          blurredSrc = cv2 . medianBlur 
+src blurKsize               # 
+修改 为 灰度 颜色 空间           
+    graySrc = cv2 . cvtColor blurredSrc cv2 . 
+COLOR _ BGR2GRAY       else       
+        graySrc = cv2 . cvtColor src 
+cv2 . COLOR _ BGR2GRAY       cv2 . 
+Laplacian graySrc cv2 . CV _ 8U graySrc ksize = 
+edgeKsize       n o r m a l 
+i z e d I n v e r s 
+e A l p h a = 1.0 / 255 
+* 255 graySrc       channels = cv2 . 
+split src       for channel in channels   
+            channel = channel * 
+n o r m a l i z e d 
+I n v e r s e A l p 
+h a       cv2 . merge channels dst 
+6 修改 应用 # / usr / bin / env 
+python # * coding utf 8 * # @ Time 
+      2016 / 11/28 14 45 # @ 
+Author   Retacn # @ Site       cameo 
+实现 有 两种 启动 方法 run 和 onkeypress # @ 
+File       cameo . py # @ Software 
+PyCharmimport cv2from Three import filtersfrom Two . cameo . managers 
+i m p o r t W i n d 
+o w M a n a g e r C 
+a p t u r e M a n a 
+g e r c l a s s Cameo object 
+def _ _ init _ _ self self . _ 
+windowManager = WindowManager Cameo self . onkeypress self . _ 
+captureManager = CaptureManager cv2 . VideoCapture 0 self . _ 
+windowManager True # self . _ curveFilter = filters . 
+B G R P o r t r a C 
+u r v e F i l t e r 
+def run self self . _ windowManager . createWindow while 
+self . _ windowManager . isWindowCreated self . _ captureManager 
+. enterFrame frame = self . _ captureManager . frame 
+# filters . strokeEdges frame frame # self . _ 
+curveFilter . apply frame frame self . _ captureManager . 
+exitFrame self . _ windowManager . processEvents def onkeypress self 
+keycode space 载 图 tab 启动 和 停止 视频 录制 
+esc 退出 应用 param keycode return if keycode = = 
+32 # spaceself . _ captureManager . writeImage screenshot . 
+png elif keycode = = 9 # tabif not self 
+. _ captureManager . isWritingVideo self . _ captureManager . 
+s t a r t W r i t i 
+n g V i d e o screencast . avi 
+else self . _ captureManager . stopWritingVideo elif keycode = 
+= 27 # escself . _ windowManager . destroyWindow if 
+_ _ name _ _ = = _ _ main 
+_ _ Cameo . run 7 canny 边缘 检测 示例代码 
+如下 import cv2 import numpy as np # 读入 灰度 
+图像 img = cv2 . imread . . / test 
+. jpg cv2 . IMREAD _ GRAYSCALE # 边缘 检测 
+cv2 . imwrite . . / canny . jpg cv2 
+. Canny img 200 300 # 显示 图像 cv2 . 
+imshow canny cv2 . imread . . / canny . 
+jpg cv2 . waitKey cv2 . d e s t 
+r o y A l l W i n d 
+o w s 8 轮廓 检测 import cv2 import numpy 
+as np img = np . zeros 200 200 dtype 
+= np . uint8 # 将 指定 的 区域 设 
+为 白色 img 50 150 50 150 = 255 # 
+设定 阈值 ret thresh = cv2 . threshold img 127 
+255 0 # 查找 轮廓 image contours hierarchy = cv2 
+. findContours thresh cv2 . RETR _ TREE cv2 . 
+CHAIN _ APPROX _ SIMPLE # 更换 颜色 空间 color 
+= cv2 . cvtColor img cv2 . COLOR _ GRAY2BGR 
+img = cv2 . drawContours color contours 1 0 255 
+0 2 cv2 . imshow contours color cv2 . waitKey 
+cv2 . d e s t r o y A 
+l l W i n d o w s 9 
+边界 框 最小 矩形 和 最小 闭 圆 的 轮廓 
+import cv2 import numpy as np img = cv2 . 
+pyrDown cv2 . imread . . / contours . jpg 
+cv2 . IMREAD _ UNCHANGED ret thresh = cv2 . 
+threshold cv2 . cvtColor img . copy       
+                    
+                    
+                    
+              cv2 . COLOR 
+_ BGR2GRAY                 
+                    
+                    
+                    
+    127               
+                    
+                    
+                    
+      255             
+                    
+                    
+                    
+        cv2 . THRESH _ BINARY image 
+contours hier = cv2 . findContours thresh       
+                    
+                    
+                    
+              cv2 . RETR 
+_ EXTERNAL                 
+                    
+                    
+                    
+    cv2 . CHAIN _ APPROX _ SIMPLE for 
+c in contours       # 绘制 矩形 边界 
+框       x y w h = cv2 
+. boundingRect c       cv2 . rectangle img 
+x y x + w x + y 0 255 
+0 2       # 绘制 最小 矩形 红色 
+      rect = cv2 . minAreaRect c   
+    box = cv2 . boxPoints rect     
+  box = np . int0 box       
+cv2 . drawContours img box 0 0 0 255 3 
+      # 绘制 小 最 闭 圆   
+    x y radius = cv2 . m i 
+n E n c l o s i n g 
+C i r c l e c       
+center = int x int y       radius 
+= int radius       img = cv2 . 
+circle img center radius 0 255 0 2 cv2 . 
+drawContours img contours 1 255 0 0 1 cv2 . 
+imshow contours img cv2 . waitKey cv2 . d e 
+s t r o y A l l W i 
+n d o w s 10 凸 轮廓 与 douglas 
+peucker 示例代码 如下 import cv2 import numpy as np # 
+读入 图像 img = cv2 . pyrDown cv2 . imread 
+. . / contours . jpg cv2 . IMREAD _ 
+UNCHANGED # 修改 颜色 空间 设置 阈值 ret thresh = 
+cv2 . threshold cv2 . cvtColor img . copy cv2 
+. COLOR _ BGR2GRAY             
+                    
+                127   
+                    
+                    
+      255             
+                    
+                cv2 . 
+THRESH _ BINARY # 更换 颜色 空间 black = cv2 
+. cvtColor np . zeros img . shape 0 img 
+. shape 1               
+                    
+    dtype = np . uint8       
+                    
+          cv2 . COLOR _ GRAY2BGR 
+# 检测 轮廓 image contours hier = cv2 . findContours 
+thresh cv2 . RETR _ EXTERNAL cv2 . CHAIN _ 
+APPROX _ SIMPLE for cnt in contours       
+# 轮廓 的 周长       epsilon = 0.01 
+* cv2 . arcLength cnt True       approx 
+= cv2 . approxPolyDP cnt epsilon True       
+hull = cv2 . convexHull cnt       cv2 
+. drawContours black cnt 1 0 255 0 2 # 
+绿 精确 的 轮廓       cv2 . drawContours 
+black approx 1 255 255 0 2 # 蓝色 近似 
+多边形       cv2 . drawContours black hull 1 
+0 0 255 2 # 红 cv2 . imshow hull 
+black cv2 . waitKey cv2 . d e s t 
+r o y A l l W i n d 
+o w s 11 直线 和圆/nr 检测 函数 原型 def 
+HoughLinesP image # 源 图像 rho # 线段 的 几何 
+表示 1theta # np . pi / 180threshold # 阈值 
+lines = None minLineLength = None # 最小 直线 长度 
+maxLineGap = None # 最大 线段 间隙 直线 检测 示例代码 
+如下 import cv2 import numpy as np # 读入 图像 
+img = cv2 . imread . . / contours . 
+jpg # 转换 颜色 空间 gray = cv2 . cvtColor 
+img cv2 . COLOR _ BGR2GRAY # 边缘 检测 edges 
+= cv2 . Canny gray 50 120 # 最小 直线 
+长度 minLineLength = 100 # 最大 线段 间隙 maxLineGap = 
+5 # 直线 检测 lines = cv2 . HoughLinesP edges 
+# 需要 处理 的 图像           
+                    
+          1         
+                    
+            np . pi / 
+180                   
+                    
+  100                 
+                    
+    minLineLength               
+                    
+      maxLineGap for x1 y1 x2 y2 in 
+lines 1       cv2 . line img x1 
+y1 x2 y2 0 255 0 2 # 显示 图像 
+cv2 . imshow edges edges cv2 . imshow lines img 
+cv2 . waitKey cv2 . d e s t r 
+o y A l l W i n d o 
+w s 圆 检测 示例代码 如下 import cv2 import numpy 
+as np # 读入 图像 img = cv2 . imread 
+. . / circles . jpg # 更换 颜色 空间 
+gray = cv2 . cvtColor img cv2 . COLOR _ 
+BGR2GRAY # 中值 边滤/nr imgMb = cv2 . medianBlur gray 
+5 # 圆 检测 circles = cv2 . HoughCircles imgMb 
+                    
+                    
+        cv2 . HOUGH _ GRADIENT   
+                    
+                    
+      1             
+                    
+                120   
+                    
+                    
+      param1 = 100         
+                    
+                    
+param2 = 30               
+                    
+              minRadius = 0 
+                    
+                    
+        maxRadius = 0 circles = np 
+. uint16 np . around circles for i in circles 
+0       cv2 . circle img i 0 
+i 1 i 2 0 255 0 2     
+  cv2 . circle img i 0 i 1 2 
+0 0 255 3 cv2 . imwrite . . / 
+houghCircles . jpg img cv2 . imshow . . / 
+houghCircles . jpg img cv2 . waitKey cv2 . d 
+e s t r o y A l l W 
+i n d o w s 12 检测 其他 形状 
+可以 使用 approxPloyDPCv2 . findContours 和 cv2 . approxyDP 第三章 Opencv3 处理 图像 1 不同 色彩 空间 的 转换 
+计算机 视觉 中三 种 常见 的 色彩 空间 灰度 BGRHSV 
+hue 色调 saturation 饱 合度 value 黑暗 程度 2 傅里叶 
+变换 快速 傅里叶 变换 fft 离散 傅里叶 变换 dft 高通 
+滤波器 heigh passfilter 检测 图像 的 某个 区域 根据 像素 
+和 周围 像素 的 亮度 差值 来 提升 该 像素 
+亮度 的 滤波器 示例代码 如下 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 23 
+# @ Author   Retacn # @ Site     
+  高通 滤波器 # @ File       heighPassFilter 
+. py # @ Software PyCharm import cv2 import numpy 
+as np from scipy import ndimage # 自定义 核 kernel 
+_ 3x3 = np . array 1 1 1   
+                    
+                    
+  1 8 1             
+                    
+            1 1 1 kernel 
+_ 5x5 = np . array 1 1 1 1 
+1                   
+                    
+      1 1 2 1 1     
+                    
+                    
+1 2 4 2 1           
+                    
+              1 1 2 
+1 1                 
+                    
+        1 1 1 1 1 # 
+读入 图像 转换 为 灰度 格式 img = cv2 . 
+imread . . / test . jpg cv2 . IMREAD 
+_ GRAYSCALE # 卷积 k3 = ndimage . convolve img 
+kernel _ 3x3 k5 = ndimage . convolve img kernel 
+_ 5x5 # 高通 过滤 blurred = cv2 . GaussianBlur 
+img 11 11 0 g _ hpf = img blurred 
+# 显示 图像 cv2 . imshow 3x3 k3 cv2 . 
+imshow 5x5 k5 cv2 . imshow g _ hpf g 
+_ hpf cv2 . waitKey cv2 . d e s 
+t r o y A l l W i n 
+d o w s 低通滤波器 low pass filter 在 像素 
+与 周围 像素 的 亮度 差值 小于 一个 特定 值 
+时 平滑 该 像素 的 亮度 3 创建 模块 Filters 
+. py 文件 示例代码 如下 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 58 
+# @ Author   Retacn # @ Site     
+  滤波器 # @ File       filters . 
+py . py # @ Software PyCharm import cv2 import 
+numpy as np import Three . utils # 自定义 工具 
+类 Utils . py 文件 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 59 
+# @ Author   Retacn # @ Site     
+  工具 类 # @ File       utils 
+. py . py # @ Software PyCharm import cv2 
+import numpy as np from scipy import interpolate4 边缘 检测 
+常用 函数 def Laplacian src ddepth dst = None ksize 
+= None scale = None delta = None borderType = 
+None def Sobel src ddepth dx dy dst = None 
+ksize = None scale = None delta = None borderType 
+= None def Scharr src ddepth dx dy dst = 
+None scale = None delta = None borderType = None 
+模糊 滤 波函数 1 平均 函数 原型 def blur src 
+# 源 图像 ksize # 内核 大小 dst = None 
+# 输出 图像 anchor = None # 中心 锚 点 
+borderType = None # 边界 模式 2 高斯 模糊 函数 
+原型 def GaussianBlur src # 输入 图像 ksize # 高斯滤波 
+模版 大小 sigmaX # 横向 滤波 系数 dst = None 
+# 输出 图像 sigmaY = None # 纵向 滤波 系数 
+borderType = None 3 中值 模糊 def medianBlur src # 
+源 图像 ksize # 中值 滤波器 的 模版 的 大小 
+dst = None # 输出 图像 4 双边 滤波 def 
+bilateralFilter src # 输入 图像 d # 每个 像素 邻域 
+的 直径 sigmaColor # 颜色 空间 的 标准偏差 sigmaSpace # 
+坐标空间 的 标准偏差 dst = None # 输出 图像 borderType 
+= None # 边缘 点 插 值类型 示例代码 如下 # 
+/ usr / bin / env python # * coding 
+utf 8 * # @ Time       2016 
+/ 11/29 12 58 # @ Author   Retacn # 
+@ Site       滤波器 # @ File   
+    filters . py . py # @ Software 
+PyCharm import cv2 import numpy as np import Three . 
+utils # 自定义 工具 类 def strokeEdges src     
+                    
+      dst             
+                  blurKsize 
+= 7 # 中值 滤波 ksize         
+                    
+  edgeKsize = 5 # Laplacian 算子 ksize     
+  if blurKsize = 3           
+    # 中值 滤波           
+    blurredSrc = cv2 . medianBlur src blurKsize   
+            # 修改 为 灰度 
+颜色 空间               graySrc 
+= cv2 . cvtColor blurredSrc cv2 . COLOR _ BGR2GRAY 
+      else             
+  graySrc = cv2 . cvtColor src cv2 . COLOR 
+_ BGR2GRAY       cv2 . Laplacian graySrc cv2 
+. CV _ 8U graySrc ksize = edgeKsize     
+  n o r m a l i z e 
+d I n v e r s e A l 
+p h a = 1 . 0/255 * 255 graySrc 
+      channels = cv2 . split src   
+    for channel in channels         
+      channel = channel * n o r 
+m a l i z e d I n v 
+e r s e A l p h a   
+    cv2 . merge channels dst 5 用 定制 
+内核 作 卷积 def filter2D src # 输入 图像 ddepth 
+# 图像 深度 kernel # 卷积 核 单通道 浮点 矩阵 
+dst = None # 输出 图像 anchor = None # 
+一个 被 滤波 的 点在 核 内 的 位置 中心 
+delta = None borderType = None # 边界 类型 如果 
+要 对 每个 通道 使用 不同 的 核 必须 用 
+split 和 merge 示例代码 如下 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 58 
+# @ Author   Retacn # @ Site     
+  滤波器 # @ File       filters . 
+py . py # @ Software PyCharm import cv2 import 
+numpy as np import Three . utils   # 自定义 
+工具 类 # 一般 的 卷积 滤波器 class V C 
+o n v o l u t i o n 
+F i l t e r object       
+def _ _ init _ _ self kernel     
+          self . _ kernel = 
+kernel       def apply self src dst   
+            cv2 . filter2D src 
+1 self . _ kernel dst # 特定 的 锐化 
+滤波器 class SharpenFilter V C o n v o l 
+u t i o n F i l t e 
+r       def _ _ init _ _ 
+self               kernel = 
+np . array 1 1 1         
+                    
+                    
+    1 9 1           
+                    
+                    
+  1 1 1             
+  V C o n v o l u t 
+i o n F i l t e r . 
+_ _ init _ _ self kernel # 边缘 检测 
+滤波器 class FindEdgesFilter V C o n v o l 
+u t i o n F i l t e 
+r       def _ _ init _ _ 
+self               kernel = 
+np . array 1 1 1         
+                    
+                    
+    1 8 1           
+                    
+                    
+  1 1 1             
+  V C o n v o l u t 
+i o n F i l t e r . 
+_ _ init _ _ self kernel # 模糊 滤波器 
+class BlurFilter V C o n v o l u 
+t i o n F i l t e r 
+      def _ _ init _ _ self 
+              kernel = np 
+. array 0.04 0.04 0.04 0.04 0.04       
+                    
+                    
+      0.04 0.04 0.04 0.04 0.04     
+                    
+                    
+        0.04 0.04 0.04 0.04 0.04   
+                    
+                    
+          0.04 0.04 0.04 0.04 0.04 
+                    
+                    
+            0.04 0.04 0.04 0.04 
+0.04               V C 
+o n v o l u t i o n 
+F i l t e r . _ _ init 
+_ _ self kernel # 脊 状 和 浮雕 效果 
+class EmbossFilter V C o n v o l u 
+t i o n F i l t e r 
+      def _ _ init _ _ self 
+              kernel = np 
+. array 2 1 0           
+                    
+                    
+  1 1 1             
+                    
+                    
+0 1 2               
+V C o n v o l u t i 
+o n F i l t e r . _ 
+_ init _ _ self kernel def strokeEdges src   
+                    
+        dst           
+                    
+blurKsize = 7   # 中值 滤波 ksize     
+                    
+      edgeKsize = 5   # Laplacian 算子 
+ksize       if blurKsize = 3     
+          # 中值 滤波     
+          blurredSrc = cv2 . medianBlur 
+src blurKsize               # 
+修改 为 灰度 颜色 空间           
+    graySrc = cv2 . cvtColor blurredSrc cv2 . 
+COLOR _ BGR2GRAY       else       
+        graySrc = cv2 . cvtColor src 
+cv2 . COLOR _ BGR2GRAY       cv2 . 
+Laplacian graySrc cv2 . CV _ 8U graySrc ksize = 
+edgeKsize       n o r m a l 
+i z e d I n v e r s 
+e A l p h a = 1.0 / 255 
+* 255 graySrc       channels = cv2 . 
+split src       for channel in channels   
+            channel = channel * 
+n o r m a l i z e d 
+I n v e r s e A l p 
+h a       cv2 . merge channels dst 
+6 修改 应用 # / usr / bin / env 
+python # * coding utf 8 * # @ Time 
+      2016 / 11/28 14 45 # @ 
+Author   Retacn # @ Site       cameo 
+实现 有 两种 启动 方法 run 和 onkeypress # @ 
+File       cameo . py # @ Software 
+PyCharmimport cv2from Three import filtersfrom Two . cameo . managers 
+i m p o r t W i n d 
+o w M a n a g e r C 
+a p t u r e M a n a 
+g e r c l a s s Cameo object 
+def _ _ init _ _ self self . _ 
+windowManager = WindowManager Cameo self . onkeypress self . _ 
+captureManager = CaptureManager cv2 . VideoCapture 0 self . _ 
+windowManager True # self . _ curveFilter = filters . 
+B G R P o r t r a C 
+u r v e F i l t e r 
+def run self self . _ windowManager . createWindow while 
+self . _ windowManager . isWindowCreated self . _ captureManager 
+. enterFrame frame = self . _ captureManager . frame 
+# filters . strokeEdges frame frame # self . _ 
+curveFilter . apply frame frame self . _ captureManager . 
+exitFrame self . _ windowManager . processEvents def onkeypress self 
+keycode space 载 图 tab 启动 和 停止 视频 录制 
+esc 退出 应用 param keycode return if keycode = = 
+32 # spaceself . _ captureManager . writeImage screenshot . 
+png elif keycode = = 9 # tabif not self 
+. _ captureManager . isWritingVideo self . _ captureManager . 
+s t a r t W r i t i 
+n g V i d e o screencast . avi 
+else self . _ captureManager . stopWritingVideo elif keycode = 
+= 27 # escself . _ windowManager . destroyWindow if 
+_ _ name _ _ = = _ _ main 
+_ _ Cameo . run 7 canny 边缘 检测 示例代码 
+如下 import cv2 import numpy as np # 读入 灰度 
+图像 img = cv2 . imread . . / test 
+. jpg cv2 . IMREAD _ GRAYSCALE # 边缘 检测 
+cv2 . imwrite . . / canny . jpg cv2 
+. Canny img 200 300 # 显示 图像 cv2 . 
+imshow canny cv2 . imread . . / canny . 
+jpg cv2 . waitKey cv2 . d e s t 
+r o y A l l W i n d 
+o w s 8 轮廓 检测 import cv2 import numpy 
+as np img = np . zeros 200 200 dtype 
+= np . uint8 # 将 指定 的 区域 设 
+为 白色 img 50 150 50 150 = 255 # 
+设定 阈值 ret thresh = cv2 . threshold img 127 
+255 0 # 查找 轮廓 image contours hierarchy = cv2 
+. findContours thresh cv2 . RETR _ TREE cv2 . 
+CHAIN _ APPROX _ SIMPLE # 更换 颜色 空间 color 
+= cv2 . cvtColor img cv2 . COLOR _ GRAY2BGR 
+img = cv2 . drawContours color contours 1 0 255 
+0 2 cv2 . imshow contours color cv2 . waitKey 
+cv2 . d e s t r o y A 
+l l W i n d o w s 9 
+边界 框 最小 矩形 和 最小 闭 圆 的 轮廓 
+import cv2 import numpy as np img = cv2 . 
+pyrDown cv2 . imread . . / contours . jpg 
+cv2 . IMREAD _ UNCHANGED ret thresh = cv2 . 
+threshold cv2 . cvtColor img . copy       
+                    
+                    
+                    
+              cv2 . COLOR 
+_ BGR2GRAY                 
+                    
+                    
+                    
+    127               
+                    
+                    
+                    
+      255             
+                    
+                    
+                    
+        cv2 . THRESH _ BINARY image 
+contours hier = cv2 . findContours thresh       
+                    
+                    
+                    
+              cv2 . RETR 
+_ EXTERNAL                 
+                    
+                    
+                    
+    cv2 . CHAIN _ APPROX _ SIMPLE for 
+c in contours       # 绘制 矩形 边界 
+框       x y w h = cv2 
+. boundingRect c       cv2 . rectangle img 
+x y x + w x + y 0 255 
+0 2       # 绘制 最小 矩形 红色 
+      rect = cv2 . minAreaRect c   
+    box = cv2 . boxPoints rect     
+  box = np . int0 box       
+cv2 . drawContours img box 0 0 0 255 3 
+      # 绘制 小 最 闭 圆   
+    x y radius = cv2 . m i 
+n E n c l o s i n g 
+C i r c l e c       
+center = int x int y       radius 
+= int radius       img = cv2 . 
+circle img center radius 0 255 0 2 cv2 . 
+drawContours img contours 1 255 0 0 1 cv2 . 
+imshow contours img cv2 . waitKey cv2 . d e 
+s t r o y A l l W i 
+n d o w s 10 凸 轮廓 与 douglas 
+peucker 示例代码 如下 import cv2 import numpy as np # 
+读入 图像 img = cv2 . pyrDown cv2 . imread 
+. . / contours . jpg cv2 . IMREAD _ 
+UNCHANGED # 修改 颜色 空间 设置 阈值 ret thresh = 
+cv2 . threshold cv2 . cvtColor img . copy cv2 
+. COLOR _ BGR2GRAY             
+                    
+                127   
+                    
+                    
+      255             
+                    
+                cv2 . 
+THRESH _ BINARY # 更换 颜色 空间 black = cv2 
+. cvtColor np . zeros img . shape 0 img 
+. shape 1               
+                    
+    dtype = np . uint8       
+                    
+          cv2 . COLOR _ GRAY2BGR 
+# 检测 轮廓 image contours hier = cv2 . findContours 
+thresh cv2 . RETR _ EXTERNAL cv2 . CHAIN _ 
+APPROX _ SIMPLE for cnt in contours       
+# 轮廓 的 周长       epsilon = 0.01 
+* cv2 . arcLength cnt True       approx 
+= cv2 . approxPolyDP cnt epsilon True       
+hull = cv2 . convexHull cnt       cv2 
+. drawContours black cnt 1 0 255 0 2 # 
+绿 精确 的 轮廓       cv2 . drawContours 
+black approx 1 255 255 0 2 # 蓝色 近似 
+多边形       cv2 . drawContours black hull 1 
+0 0 255 2 # 红 cv2 . imshow hull 
+black cv2 . waitKey cv2 . d e s t 
+r o y A l l W i n d 
+o w s 11 直线 和圆/nr 检测 函数 原型 def 
+HoughLinesP image # 源 图像 rho # 线段 的 几何 
+表示 1theta # np . pi / 180threshold # 阈值 
+lines = None minLineLength = None # 最小 直线 长度 
+maxLineGap = None # 最大 线段 间隙 直线 检测 示例代码 
+如下 import cv2 import numpy as np # 读入 图像 
+img = cv2 . imread . . / contours . 
+jpg # 转换 颜色 空间 gray = cv2 . cvtColor 
+img cv2 . COLOR _ BGR2GRAY # 边缘 检测 edges 
+= cv2 . Canny gray 50 120 # 最小 直线 
+长度 minLineLength = 100 # 最大 线段 间隙 maxLineGap = 
+5 # 直线 检测 lines = cv2 . HoughLinesP edges 
+# 需要 处理 的 图像           
+                    
+          1         
+                    
+            np . pi / 
+180                   
+                    
+  100                 
+                    
+    minLineLength               
+                    
+      maxLineGap for x1 y1 x2 y2 in 
+lines 1       cv2 . line img x1 
+y1 x2 y2 0 255 0 2 # 显示 图像 
+cv2 . imshow edges edges cv2 . imshow lines img 
+cv2 . waitKey cv2 . d e s t r 
+o y A l l W i n d o 
+w s 圆 检测 示例代码 如下 import cv2 import numpy 
+as np # 读入 图像 img = cv2 . imread 
+. . / circles . jpg # 更换 颜色 空间 
+gray = cv2 . cvtColor img cv2 . COLOR _ 
+BGR2GRAY # 中值 边滤/nr imgMb = cv2 . medianBlur gray 
+5 # 圆 检测 circles = cv2 . HoughCircles imgMb 
+                    
+                    
+        cv2 . HOUGH _ GRADIENT   
+                    
+                    
+      1             
+                    
+                120   
+                    
+                    
+      param1 = 100         
+                    
+                    
+param2 = 30               
+                    
+              minRadius = 0 
+                    
+                    
+        maxRadius = 0 circles = np 
+. uint16 np . around circles for i in circles 
+0       cv2 . circle img i 0 
+i 1 i 2 0 255 0 2     
+  cv2 . circle img i 0 i 1 2 
+0 0 255 3 cv2 . imwrite . . / 
+houghCircles . jpg img cv2 . imshow . . / 
+houghCircles . jpg img cv2 . waitKey cv2 . d 
+e s t r o y A l l W 
+i n d o w s 12 检测 其他 形状 
+可以 使用 approxPloyDPCv2 . findContours 和 cv2 . approxyDP 第三章 Opencv3 处理 图像 1 不同 色彩 空间 的 转换 
+计算机 视觉 中三 种 常见 的 色彩 空间 灰度 BGRHSV 
+hue 色调 saturation 饱 合度 value 黑暗 程度 2 傅里叶 
+变换 快速 傅里叶 变换 fft 离散 傅里叶 变换 dft 高通 
+滤波器 heigh passfilter 检测 图像 的 某个 区域 根据 像素 
+和 周围 像素 的 亮度 差值 来 提升 该 像素 
+亮度 的 滤波器 示例代码 如下 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 23 
+# @ Author   Retacn # @ Site     
+  高通 滤波器 # @ File       heighPassFilter 
+. py # @ Software PyCharm import cv2 import numpy 
+as np from scipy import ndimage # 自定义 核 kernel 
+_ 3x3 = np . array 1 1 1   
+                    
+                    
+  1 8 1             
+                    
+            1 1 1 kernel 
+_ 5x5 = np . array 1 1 1 1 
+1                   
+                    
+      1 1 2 1 1     
+                    
+                    
+1 2 4 2 1           
+                    
+              1 1 2 
+1 1                 
+                    
+        1 1 1 1 1 # 
+读入 图像 转换 为 灰度 格式 img = cv2 . 
+imread . . / test . jpg cv2 . IMREAD 
+_ GRAYSCALE # 卷积 k3 = ndimage . convolve img 
+kernel _ 3x3 k5 = ndimage . convolve img kernel 
+_ 5x5 # 高通 过滤 blurred = cv2 . GaussianBlur 
+img 11 11 0 g _ hpf = img blurred 
+# 显示 图像 cv2 . imshow 3x3 k3 cv2 . 
+imshow 5x5 k5 cv2 . imshow g _ hpf g 
+_ hpf cv2 . waitKey cv2 . d e s 
+t r o y A l l W i n 
+d o w s 低通滤波器 low pass filter 在 像素 
+与 周围 像素 的 亮度 差值 小于 一个 特定 值 
+时 平滑 该 像素 的 亮度 3 创建 模块 Filters 
+. py 文件 示例代码 如下 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 58 
+# @ Author   Retacn # @ Site     
+  滤波器 # @ File       filters . 
+py . py # @ Software PyCharm import cv2 import 
+numpy as np import Three . utils # 自定义 工具 
+类 Utils . py 文件 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 59 
+# @ Author   Retacn # @ Site     
+  工具 类 # @ File       utils 
+. py . py # @ Software PyCharm import cv2 
+import numpy as np from scipy import interpolate4 边缘 检测 
+常用 函数 def Laplacian src ddepth dst = None ksize 
+= None scale = None delta = None borderType = 
+None def Sobel src ddepth dx dy dst = None 
+ksize = None scale = None delta = None borderType 
+= None def Scharr src ddepth dx dy dst = 
+None scale = None delta = None borderType = None 
+模糊 滤 波函数 1 平均 函数 原型 def blur src 
+# 源 图像 ksize # 内核 大小 dst = None 
+# 输出 图像 anchor = None # 中心 锚 点 
+borderType = None # 边界 模式 2 高斯 模糊 函数 
+原型 def GaussianBlur src # 输入 图像 ksize # 高斯滤波 
+模版 大小 sigmaX # 横向 滤波 系数 dst = None 
+# 输出 图像 sigmaY = None # 纵向 滤波 系数 
+borderType = None 3 中值 模糊 def medianBlur src # 
+源 图像 ksize # 中值 滤波器 的 模版 的 大小 
+dst = None # 输出 图像 4 双边 滤波 def 
+bilateralFilter src # 输入 图像 d # 每个 像素 邻域 
+的 直径 sigmaColor # 颜色 空间 的 标准偏差 sigmaSpace # 
+坐标空间 的 标准偏差 dst = None # 输出 图像 borderType 
+= None # 边缘 点 插 值类型 示例代码 如下 # 
+/ usr / bin / env python # * coding 
+utf 8 * # @ Time       2016 
+/ 11/29 12 58 # @ Author   Retacn # 
+@ Site       滤波器 # @ File   
+    filters . py . py # @ Software 
+PyCharm import cv2 import numpy as np import Three . 
+utils # 自定义 工具 类 def strokeEdges src     
+                    
+      dst             
+                  blurKsize 
+= 7 # 中值 滤波 ksize         
+                    
+  edgeKsize = 5 # Laplacian 算子 ksize     
+  if blurKsize = 3           
+    # 中值 滤波           
+    blurredSrc = cv2 . medianBlur src blurKsize   
+            # 修改 为 灰度 
+颜色 空间               graySrc 
+= cv2 . cvtColor blurredSrc cv2 . COLOR _ BGR2GRAY 
+      else             
+  graySrc = cv2 . cvtColor src cv2 . COLOR 
+_ BGR2GRAY       cv2 . Laplacian graySrc cv2 
+. CV _ 8U graySrc ksize = edgeKsize     
+  n o r m a l i z e 
+d I n v e r s e A l 
+p h a = 1 . 0/255 * 255 graySrc 
+      channels = cv2 . split src   
+    for channel in channels         
+      channel = channel * n o r 
+m a l i z e d I n v 
+e r s e A l p h a   
+    cv2 . merge channels dst 5 用 定制 
+内核 作 卷积 def filter2D src # 输入 图像 ddepth 
+# 图像 深度 kernel # 卷积 核 单通道 浮点 矩阵 
+dst = None # 输出 图像 anchor = None # 
+一个 被 滤波 的 点在 核 内 的 位置 中心 
+delta = None borderType = None # 边界 类型 如果 
+要 对 每个 通道 使用 不同 的 核 必须 用 
+split 和 merge 示例代码 如下 # / usr / bin 
+/ env python # * coding utf 8 * # 
+@ Time       2016 / 11/29 12 58 
+# @ Author   Retacn # @ Site     
+  滤波器 # @ File       filters . 
+py . py # @ Software PyCharm import cv2 import 
+numpy as np import Three . utils   # 自定义 
+工具 类 # 一般 的 卷积 滤波器 class V C 
+o n v o l u t i o n 
+F i l t e r object       
+def _ _ init _ _ self kernel     
+          self . _ kernel = 
+kernel       def apply self src dst   
+            cv2 . filter2D src 
+1 self . _ kernel dst # 特定 的 锐化 
+滤波器 class SharpenFilter V C o n v o l 
+u t i o n F i l t e 
+r       def _ _ init _ _ 
+self               kernel = 
+np . array 1 1 1         
+                    
+                    
+    1 9 1           
+                    
+                    
+  1 1 1             
+  V C o n v o l u t 
+i o n F i l t e r . 
+_ _ init _ _ self kernel # 边缘 检测 
+滤波器 class FindEdgesFilter V C o n v o l 
+u t i o n F i l t e 
+r       def _ _ init _ _ 
+self               kernel = 
+np . array 1 1 1         
+                    
+                    
+    1 8 1           
+                    
+                    
+  1 1 1             
+  V C o n v o l u t 
+i o n F i l t e r . 
+_ _ init _ _ self kernel # 模糊 滤波器 
+class BlurFilter V C o n v o l u 
+t i o n F i l t e r 
+      def _ _ init _ _ self 
+              kernel = np 
+. array 0.04 0.04 0.04 0.04 0.04       
+                    
+                    
+      0.04 0.04 0.04 0.04 0.04     
+                    
+                    
+        0.04 0.04 0.04 0.04 0.04   
+                    
+                    
+          0.04 0.04 0.04 0.04 0.04 
+                    
+                    
+            0.04 0.04 0.04 0.04 
+0.04               V C 
+o n v o l u t i o n 
+F i l t e r . _ _ init 
+_ _ self kernel # 脊 状 和 浮雕 效果 
+class EmbossFilter V C o n v o l u 
+t i o n F i l t e r 
+      def _ _ init _ _ self 
+              kernel = np 
+. array 2 1 0           
+                    
+                    
+  1 1 1             
+                    
+                    
+0 1 2               
+V C o n v o l u t i 
+o n F i l t e r . _ 
+_ init _ _ self kernel def strokeEdges src   
+                    
+        dst           
+                    
+blurKsize = 7   # 中值 滤波 ksize     
+                    
+      edgeKsize = 5   # Laplacian 算子 
+ksize       if blurKsize = 3     
+          # 中值 滤波     
+          blurredSrc = cv2 . medianBlur 
+src blurKsize               # 
+修改 为 灰度 颜色 空间           
+    graySrc = cv2 . cvtColor blurredSrc cv2 . 
+COLOR _ BGR2GRAY       else       
+        graySrc = cv2 . cvtColor src 
+cv2 . COLOR _ BGR2GRAY       cv2 . 
+Laplacian graySrc cv2 . CV _ 8U graySrc ksize = 
+edgeKsize       n o r m a l 
+i z e d I n v e r s 
+e A l p h a = 1.0 / 255 
+* 255 graySrc       channels = cv2 . 
+split src       for channel in channels   
+            channel = channel * 
+n o r m a l i z e d 
+I n v e r s e A l p 
+h a       cv2 . merge channels dst 
+6 修改 应用 # / usr / bin / env 
+python # * coding utf 8 * # @ Time 
+      2016 / 11/28 14 45 # @ 
+Author   Retacn # @ Site       cameo 
+实现 有 两种 启动 方法 run 和 onkeypress # @ 
+File       cameo . py # @ Software 
+PyCharmimport cv2from Three import filtersfrom Two . cameo . managers 
+i m p o r t W i n d 
+o w M a n a g e r C 
+a p t u r e M a n a 
+g e r c l a s s Cameo object 
+def _ _ init _ _ self self . _ 
+windowManager = WindowManager Cameo self . onkeypress self . _ 
+captureManager = CaptureManager cv2 . VideoCapture 0 self . _ 
+windowManager True # self . _ curveFilter = filters . 
+B G R P o r t r a C 
+u r v e F i l t e r 
+def run self self . _ windowManager . createWindow while 
+self . _ windowManager . isWindowCreated self . _ captureManager 
+. enterFrame frame = self . _ captureManager . frame 
+# filters . strokeEdges frame frame # self . _ 
+curveFilter . apply frame frame self . _ captureManager . 
+exitFrame self . _ windowManager . processEvents def onkeypress self 
+keycode space 载 图 tab 启动 和 停止 视频 录制 
+esc 退出 应用 param keycode return if keycode = = 
+32 # spaceself . _ captureManager . writeImage screenshot . 
+png elif keycode = = 9 # tabif not self 
+. _ captureManager . isWritingVideo self . _ captureManager . 
+s t a r t W r i t i 
+n g V i d e o screencast . avi 
+else self . _ captureManager . stopWritingVideo elif keycode = 
+= 27 # escself . _ windowManager . destroyWindow if 
+_ _ name _ _ = = _ _ main 
+_ _ Cameo . run 7 canny 边缘 检测 示例代码 
+如下 import cv2 import numpy as np # 读入 灰度 
+图像 img = cv2 . imread . . / test 
+. jpg cv2 . IMREAD _ GRAYSCALE # 边缘 检测 
+cv2 . imwrite . . / canny . jpg cv2 
+. Canny img 200 300 # 显示 图像 cv2 . 
+imshow canny cv2 . imread . . / canny . 
+jpg cv2 . waitKey cv2 . d e s t 
+r o y A l l W i n d 
+o w s 8 轮廓 检测 import cv2 import numpy 
+as np img = np . zeros 200 200 dtype 
+= np . uint8 # 将 指定 的 区域 设 
+为 白色 img 50 150 50 150 = 255 # 
+设定 阈值 ret thresh = cv2 . threshold img 127 
+255 0 # 查找 轮廓 image contours hierarchy = cv2 
+. findContours thresh cv2 . RETR _ TREE cv2 . 
+CHAIN _ APPROX _ SIMPLE # 更换 颜色 空间 color 
+= cv2 . cvtColor img cv2 . COLOR _ GRAY2BGR 
+img = cv2 . drawContours color contours 1 0 255 
+0 2 cv2 . imshow contours color cv2 . waitKey 
+cv2 . d e s t r o y A 
+l l W i n d o w s 9 
+边界 框 最小 矩形 和 最小 闭 圆 的 轮廓 
+import cv2 import numpy as np img = cv2 . 
+pyrDown cv2 . imread . . / contours . jpg 
+cv2 . IMREAD _ UNCHANGED ret thresh = cv2 . 
+threshold cv2 . cvtColor img . copy       
+                    
+                    
+                    
+              cv2 . COLOR 
+_ BGR2GRAY                 
+                    
+                    
+                    
+    127               
+                    
+                    
+                    
+      255             
+                    
+                    
+                    
+        cv2 . THRESH _ BINARY image 
+contours hier = cv2 . findContours thresh       
+                    
+                    
+                    
+              cv2 . RETR 
+_ EXTERNAL                 
+                    
+                    
+                    
+    cv2 . CHAIN _ APPROX _ SIMPLE for 
+c in contours       # 绘制 矩形 边界 
+框       x y w h = cv2 
+. boundingRect c       cv2 . rectangle img 
+x y x + w x + y 0 255 
+0 2       # 绘制 最小 矩形 红色 
+      rect = cv2 . minAreaRect c   
+    box = cv2 . boxPoints rect     
+  box = np . int0 box       
+cv2 . drawContours img box 0 0 0 255 3 
+      # 绘制 小 最 闭 圆   
+    x y radius = cv2 . m i 
+n E n c l o s i n g 
+C i r c l e c       
+center = int x int y       radius 
+= int radius       img = cv2 . 
+circle img center radius 0 255 0 2 cv2 . 
+drawContours img contours 1 255 0 0 1 cv2 . 
+imshow contours img cv2 . waitKey cv2 . d e 
+s t r o y A l l W i 
+n d o w s 10 凸 轮廓 与 douglas 
+peucker 示例代码 如下 import cv2 import numpy as np # 
+读入 图像 img = cv2 . pyrDown cv2 . imread 
+. . / contours . jpg cv2 . IMREAD _ 
+UNCHANGED # 修改 颜色 空间 设置 阈值 ret thresh = 
+cv2 . threshold cv2 . cvtColor img . copy cv2 
+. COLOR _ BGR2GRAY             
+                    
+                127   
+                    
+                    
+      255             
+                    
+                cv2 . 
+THRESH _ BINARY # 更换 颜色 空间 black = cv2 
+. cvtColor np . zeros img . shape 0 img 
+. shape 1               
+                    
+    dtype = np . uint8       
+                    
+          cv2 . COLOR _ GRAY2BGR 
+# 检测 轮廓 image contours hier = cv2 . findContours 
+thresh cv2 . RETR _ EXTERNAL cv2 . CHAIN _ 
+APPROX _ SIMPLE for cnt in contours       
+# 轮廓 的 周长       epsilon = 0.01 
+* cv2 . arcLength cnt True       approx 
+= cv2 . approxPolyDP cnt epsilon True       
+hull = cv2 . convexHull cnt       cv2 
+. drawContours black cnt 1 0 255 0 2 # 
+绿 精确 的 轮廓       cv2 . drawContours 
+black approx 1 255 255 0 2 # 蓝色 近似 
+多边形       cv2 . drawContours black hull 1 
+0 0 255 2 # 红 cv2 . imshow hull 
+black cv2 . waitKey cv2 . d e s t 
+r o y A l l W i n d 
+o w s 11 直线 和圆/nr 检测 函数 原型 def 
+HoughLinesP image # 源 图像 rho # 线段 的 几何 
+表示 1theta # np . pi / 180threshold # 阈值 
+lines = None minLineLength = None # 最小 直线 长度 
+maxLineGap = None # 最大 线段 间隙 直线 检测 示例代码 
+如下 import cv2 import numpy as np # 读入 图像 
+img = cv2 . imread . . / contours . 
+jpg # 转换 颜色 空间 gray = cv2 . cvtColor 
+img cv2 . COLOR _ BGR2GRAY # 边缘 检测 edges 
+= cv2 . Canny gray 50 120 # 最小 直线 
+长度 minLineLength = 100 # 最大 线段 间隙 maxLineGap = 
+5 # 直线 检测 lines = cv2 . HoughLinesP edges 
+# 需要 处理 的 图像           
+                    
+          1         
+                    
+            np . pi / 
+180                   
+                    
+  100                 
+                    
+    minLineLength               
+                    
+      maxLineGap for x1 y1 x2 y2 in 
+lines 1       cv2 . line img x1 
+y1 x2 y2 0 255 0 2 # 显示 图像 
+cv2 . imshow edges edges cv2 . imshow lines img 
+cv2 . waitKey cv2 . d e s t r 
+o y A l l W i n d o 
+w s 圆 检测 示例代码 如下 import cv2 import numpy 
+as np # 读入 图像 img = cv2 . imread 
+. . / circles . jpg # 更换 颜色 空间 
+gray = cv2 . cvtColor img cv2 . COLOR _ 
+BGR2GRAY # 中值 边滤/nr imgMb = cv2 . medianBlur gray 
+5 # 圆 检测 circles = cv2 . HoughCircles imgMb 
+                    
+                    
+        cv2 . HOUGH _ GRADIENT   
+                    
+                    
+      1             
+                    
+                120   
+                    
+                    
+      param1 = 100         
+                    
+                    
+param2 = 30               
+                    
+              minRadius = 0 
+                    
+                    
+        maxRadius = 0 circles = np 
+. uint16 np . around circles for i in circles 
+0       cv2 . circle img i 0 
+i 1 i 2 0 255 0 2     
+  cv2 . circle img i 0 i 1 2 
+0 0 255 3 cv2 . imwrite . . / 
+houghCircles . jpg img cv2 . imshow . . / 
+houghCircles . jpg img cv2 . waitKey cv2 . d 
+e s t r o y A l l W 
+i n d o w s 12 检测 其他 形状 
+可以 使用 approxPloyDPCv2 . findContours 和 cv2 . approxyDP 

@@ -1,0 +1,255 @@
+*************************
+精华总结，时间不够只看这个部分就行了
+1.书和课
+Michael Collins：COMS W4705: Natural Language Processing (Spring 2015)（重要）
+Jason Eisner的Lecture Notes：600.465 - Natural Language Processing
+dan jurasfsky：Speech and Language Processing (3rd ed. draft)  https://web.stanford.edu/~jurafsky/slp3/ 中文名译为《自然语言处理综论》(重要)
+Wardhaugh, Ronald: An introduction to sociolinguistics
+宗成庆: 《统计自然语言处理》
+Yoav Goldberg: Neural Network Methods for Natural Language Processing
+《数学之美》--吴军，科普且生动形象，入门必备；
+《统计学习方法》--李航
+Stanford nlp公开课-cs224n
+Jacob Eisenstein:Natural Language Processing
+《中文信息处理报告2016》
+Chris Manning和Dan jurafsky两尊大神的至尊课程：introduction to natural language processing
+zhengxiang zhai：Text Mining and Analytics https://zh.coursera.org/learn/text-mining
+2. 代码
+哈工大开源的那个工具包 LTP (Language Technology Platform)
+pattern - simpler to get started than NLTK
+chardet - character encoding detection
+pyenchant - easy access to dictionaries
+scikit-learn - has support for text classification
+unidecode - because ascii is much easier to deal with
+Word2Vec
+CRF++
+GluonNLP
+Tensorflow.Tensor2Tensor
+gensim
+PyTorch
+Fasttext
+MMXnet
+nltk
+TextBlob
+spaCy
+Gensim
+jieba
+keras: sequence to sequence learning
+3.学术会议
+***ACL年会
+**EMNLP（Conference on Empirical Methods on Natural Language Processing）
+**CoNLL（Conference on Natural Language Learning）
+**COLING (International Conference on Computational Linguistics)
+**ACL Anthology ACL学会网站建立了称作ACL Anthology的页面（URL：ACL Anthology），支持该领域绝大部分国际学术会议论文的免费下载
+4.期刊
+***Computational Linguistics
+**Transactions of ACL
+**ACM Transactions on Speech and Language Processing
+**ACM Transactions on Asian Language Information Processing
+**Journal of Quantitative Linguistics
+ACL、EMNLP、NAACL、COLING、LREC、Computational Linguistics位于前5位。
+当需要了解某个领域，如果能找到一篇该领域的最新研究综述。最方便的方法还是在Google Scholar中搜索“领域名称 + survey / review / tutorial / 综述”来查找
+6.网站
+Kaggle 情感分析题
+*************************
+所有资料都来自知乎，序号加了方括号重点关注。
+1.https://www.zhihu.com/question/19895141/answer/149475410
+自然语言处理（简称NLP），是研究计算机处理人类语言的一门技术，包括：
+1.句法语义分析：对于给定的句子，进行分词、词性标记、命名实体识别和链接、句法分析、语义角色识别和多义词消歧。
+2.信息抽取：从给定文本中抽取重要的信息，比如，时间、地点、人物、事件、原因、结果、数字、日期、货币、专有名词等等。通俗说来，就是要了解谁在什么时候、什么原因、对谁、做了什么事、有什么结果。涉及到实体识别、时间抽取、因果关系抽取等关键技术。
+3.文本挖掘（或者文本数据挖掘）：包括文本聚类、分类、信息抽取、摘要、情感分析以及对挖掘的信息和知识的可视化、交互式的表达界面。目前主流的技术都是基于统计机器学习的。
+4.机器翻译：把输入的源语言文本通过自动翻译获得另外一种语言的文本。根据输入媒介不同，可以细分为文本翻译、语音翻译、手语翻译、图形翻译等。机器翻译从最早的基于规则的方法到二十年前的基于统计的方法，再到今天的基于神经网络（编码-解码）的方法，逐渐形成了一套比较严谨的方法体系。
+5.信息检索：对大规模的文档进行索引。可简单对文档中的词汇，赋之以不同的权重来建立索引，也可利用1，2，3的技术来建立更加深层的索引。在查询的时候，对输入的查询表达式比如一个检索词或者一个句子进行分析，然后在索引里面查找匹配的候选文档，再根据一个排序机制把候选文档排序，最后输出排序得分最高的文档。
+6.问答系统： 对一个自然语言表达的问题，由问答系统给出一个精准的答案。需要对自然语言查询语句进行某种程度的语义分析，包括实体链接、关系识别，形成逻辑表达式，然后到知识库中查找可能的候选答案并通过一个排序机制找出最佳的答案。
+7.对话系统：系统通过一系列的对话，跟用户进行聊天、回答、完成某一项任务。涉及到用户意图理解、通用聊天引擎、问答引擎、对话管理等技术。此外，为了体现上下文相关，要具备多轮对话能力。同时，为了体现个性化，要开发用户画像以及基于用户画像的个性化回复。随着深度学习在图像识别、语音识别领域的大放异彩，人们对深度学习在NLP的价值也寄予厚望。再加上AlphaGo的成功，人工智能的研究和应用变得炙手可热。自然语言处理作为人工智能领域的认知智能，成为目前大家关注的焦点。很多研究生都在进入自然语言领域，寄望未来在人工智能方向大展身手。但是，大家常常遇到一些问题。俗话说，万事开头难。如果第一件事情成功了，学生就能建立信心，找到窍门，今后越做越好。否则，也可能就灰心丧气，甚至离开这个领域。这里针对给出我个人的建议，希望我的这些粗浅观点能够引起大家更深层次的讨论。
+建议1：如何在NLP领域快速学会第一个技能？我的建议是：找到一个开源项目，比如机器翻译或者深度学习的项目。理解开源项目的任务，编译通过该项目发布的示范程序，得到与项目示范程序一致的结果。然后再深入理解开源项目示范程序的算法。自己编程实现一下这个示范程序的算法。再按照项目提供的标准测试集测试自己实现的程序。如果输出的结果与项目中出现的结果不一致，就要仔细查验自己的程序，反复修改，直到结果与示范程序基本一致。如果还是不行，就大胆给项目的作者写信请教。在此基础上，再看看自己能否进一步完善算法或者实现，取得比示范程序更好的结果。
+--
+1. 国际学术组织、学术会议与学术论文自然语言处理（natural language processing，NLP）在很大程度上与计算语言学（computational linguistics，CL）重合。与其他计算机学科类似，NLP/CL有一个属于自己的最权威的国际专业学会，叫做The Association for Computational Linguistics（ACL，URL：ACL Home Page），这个协会主办了NLP/CL领域最权威的国际会议，即ACL年会，
+ACL学会还会在北美和欧洲召开分年会，分别称为NAACL和EACL。除此之外，ACL学会下设多个特殊兴趣小组（special interest groups，SIGs），聚集了NLP/CL不同子领域的学者，性质类似一个大学校园的兴趣社团。其中比较有名的诸如SIGDAT（Linguistic data and corpus-based approaches to NLP）、SIGNLL（Natural Language Learning）等。这些SIGs也会召开一些国际学术会议，
+其中比较有名的就是SIGDAT组织的EMNLP（Conference on Empirical Methods on Natural Language Processing）和
+SIGNLL组织的CoNLL（Conference on Natural Language Learning）。此外还有一个International Committee on Computational Linguistics的老牌NLP/CL学术组织，它每两年组织一个称为International Conference on Computational Linguistics (COLING)的国际会议，也是NLP/CL的重要学术会议。NLP/CL的主要学术论文就分布在这些会议上。作为NLP/CL领域的学者最大的幸福在于，ACL学会网站建立了称作ACL Anthology的页面（URL：ACL Anthology），支持该领域绝大部分国际学术会议论文的免费下载，甚至包含了其他组织主办的学术会议，例如COLING、IJCNLP等，并支持基于Google的全文检索功能，可谓一站在手，NLP论文我有。由于这个论文集合非常庞大，并且可以开放获取，很多学者也基于它开展研究，提供了更丰富的检索支持，具体入口可以参考ACL Anthology页面上方搜索框右侧的不同检索按钮。与大部分计算机学科类似，由于技术发展迅速，NLP/CL领域更重视发表学术会议论文，原因是发表周期短，并可以通过会议进行交流。
+当然NLP/CL也有自己的旗舰学术期刊，发表过很多经典学术论文，那就是Computational Linguistics（URL：MIT Press Journals）。该期刊每期只有几篇文章，平均质量高于会议论文，时间允许的话值得及时追踪。
+此外，ACL学会为了提高学术影响力，也刚刚创办了Transactions of ACL（TACL，URL：Transactions of the Association for Computational Linguistics (ISSN: 2307-387X)），值得关注。值得一提的是这两份期刊也都是开放获取的。
+此外也有一些与NLP/CL有关的期刊，如ACM Transactions on Speech and Language Processing，ACM Transactions on Asian Language Information Processing，Journal of Quantitative Linguistics等等。
+根据Google Scholar Metrics 2013年对NLP/CL学术期刊和会议的评价，ACL、EMNLP、NAACL、COLING、LREC、Computational Linguistics位于前5位，基本反映了本领域学者的关注程度。
+NLP/CL作为交叉学科，其相关领域也值得关注。主要包括以下几个方面：（1）信息检索和数据挖掘领域。相关学术会议主要由美国计算机学会（ACM）主办，包括SIGIR、WWW、WSDM等；（2）人工智能领域。相关学术会议主要包括AAAI和IJCAI等，相关学术期刊主要包括Artificial Intelligence和Journal of AI Research；（3）机器学习领域，相关学术会议主要包括ICML，NIPS，AISTATS，UAI等，相关学术期刊主要包括Journal of Machine Learning Research（JMLR）和Machine Learning（ML）等。例如最近兴起的knowledge graph研究论文，就有相当一部分发表在人工智能和信息检索领域的会议和期刊上。实际上国内计算机学会（CCF）制定了“中国计算机学会推荐国际学术会议和期刊目录”（CCF推荐排名），通过这个列表，可以迅速了解每个领域的主要期刊与学术会议。最后，值得一提的是，美国Hal Daumé III维护了一个natural language processing的博客（natural language processing blog），经常评论最新学术动态，值得关注。我经常看他关于ACL、NAACL等学术会议的参会感想和对论文的点评，很有启发。另外，ACL学会维护了一个Wiki页面（ACL Wiki），包含了大量NLP/CL的相关信息，如著名研究机构、历届会议录用率，等等，都是居家必备之良品，值得深挖。
+2. 国内学术组织、学术会议与学术论文与国际上相似，国内也有一个与NLP/CL相关的学会，叫做中国中文信息学会（URL：中国中文信息学会）。通过学会的理事名单（中国中文信息学会）基本可以了解国内从事NLP/CL的主要单位和学者。学会每年组织很多学术会议，例如全国计算语言学学术会议（CCL）、全国青年计算语言学研讨会（YCCL）、全国信息检索学术会议（CCIR）、全国机器翻译研讨会（CWMT），等等，是国内NLP/CL学者进行学术交流的重要平台。尤其值得一提的是，全国青年计算语言学研讨会是专门面向国内NLP/CL研究生的学术会议，从组织到审稿都由该领域研究生担任，非常有特色，也是NLP/CL同学们学术交流、快速成长的好去处。值得一提的是，2010年在北京召开的COLING以及2015年即将在北京召开的ACL，学会都是主要承办者，这也一定程度上反映了学会在国内NLP/CL领域的重要地位。此外，计算机学会中文信息技术专委会组织的自然语言处理与中文计算会议（NLP&CC）也是最近崛起的重要学术会议。中文信息学会主编了一份历史悠久的《中文信息学报》，是国内该领域的重要学术期刊，发表过很多篇重量级论文。此外，国内著名的《计算机学报》、《软件学报》等期刊上也经常有NLP/CL论文发表，值得关注。过去几年，在水木社区BBS上开设的AI、NLP版面曾经是国内NLP/CL领域在线交流讨论的重要平台。这几年随着社会媒体的发展，越来越多学者转战新浪微博，有浓厚的交流氛围。如何找到这些学者呢，一个简单的方法就是在新浪微博搜索的“找人”功能中检索“自然语言处理”、 “计算语言学”、“信息检索”、“机器学习”等字样，马上就能跟过去只在论文中看到名字的老师同学们近距离交流了。还有一种办法，清华大学梁斌开发的“微博寻人”系统（清华大学信息检索组）可以检索每个领域的有影响力人士，因此也可以用来寻找NLP/CL领域的重要学者。值得一提的是，很多在国外任教的老师和求学的同学也活跃在新浪微博上，例如王威廉（Sina Visitor System）、李沐（Sina Visitor System）等，经常爆料业内新闻，值得关注。还有，国内NLP/CL的著名博客是52nlp（我爱自然语言处理），影响力比较大。总之，学术研究既需要苦练内功，也需要与人交流。所谓言者无意、听者有心，也许其他人的一句话就能点醒你苦思良久的问题。无疑，博客微博等提供了很好的交流平台，当然也注意不要沉迷哦。3. 如何快速了解某个领域研究进展最后简单说一下快速了解某领域研究进展的经验。你会发现，搜索引擎是查阅文献的重要工具，尤其是谷歌提供的Google Scholar，由于其庞大的索引量，将是我们披荆斩棘的利器。当需要了解某个领域，如果能找到一篇该领域的最新研究综述，就省劲多了。最方便的方法还是在Google Scholar中搜索“领域名称 + survey / review / tutorial / 综述”来查找。也有一些出版社专门出版各领域的综述文章，例如NOW Publisher出版的Foundations and Trends系列，Morgan & Claypool Publisher出版的Synthesis Lectures on Human Language Technologies系列等。它们发表了很多热门方向的综述，如文档摘要、情感分析和意见挖掘、学习排序、语言模型等。如果方向太新还没有相关综述，一般还可以查找该方向发表的最新论文，阅读它们的“相关工作”章节，顺着列出的参考文献，就基本能够了解相关研究脉络了。当然，还有很多其他办法，例如去http://videolectures.net上看著名学者在各大学术会议或暑期学校上做的tutorial报告，去直接咨询这个领域的研究者，等等。
+--
+开始推荐工具包：中文的显然是哈工大开源的那个工具包 LTP (Language Technology Platform) developed by HIT-SCIR(哈尔滨工业大学社会计算与信息检索研究中心).英文的(python)：pattern - simpler to get started than NLTKchardet - character encoding detectionpyenchant - easy access to dictionariesscikit-learn - has support for text classificationunidecode - because ascii is much easier to deal with希望可以掌握以下的几个tool：CRF++GIZAWord2Vec
+还记得小时候看过的数码宝贝，每个萌萌哒的数码宝贝都会因为主人身上发生的一些事情而获得进化能力，其实在自然语言处理领域我觉得一切也是这样~ 我简单的按照自己的见解总结了每个阶段的特征，以及提高的解决方案1.幼年体——自然语言处理好屌，我什么都不会但是好想提高建议。。。去看公开课~去做Kaggle的那个情感分析题。2.成长期——觉得简单模型太Naive，高大上的才是最好的这个阶段需要自己动手实现一些高级算法，或者说常用算法，比如LDA，比如SVM，比如逻辑斯蒂回归。并且拥抱Kaggle，知道trick在这个领域的重要性。3.成熟期——高大上的都不work，通过特征工程加规则才work大部分人应该都在这个级别吧，包括我自己，我总是想进化，但积累还是不够。觉得高大上的模型都是一些人为了paper写的，真正的土方法才是重剑无锋，大巧不工。在这个阶段，应该就是不断读论文，不断看各种模型变种吧，什么句子相似度计算word2vec cosine已经不再适合你了。4.完全体——在公开数据集上，把某个高大上的模型做work了~这类应该只有少数博士可以做到吧，我已经不知道到了这个水平再怎么提高了~是不是只能说不忘初心，方得始终。5.究极体——参见Micheal Jordan Andrew Ng.
+希望可以理解自然语言处理的基本架构~：分词=>词性标注=>ParserQuora上推荐的NLP的论文（摘自Quora 我过一阵会翻译括号里面的解释）：Parsing（句法结构分析~语言学知识多，会比较枯燥）
+Klein & Manning: "Accurate Unlexicalized Parsing" ( )
+Klein & Manning: "Corpus-Based Induction of Syntactic Structure: Models of Dependency and Constituency" (革命性的用非监督学习的方法做了parser)
+Nivre "Deterministic Dependency Parsing of English Text" (shows that deterministic parsing actually works quite well)
+McDonald et al. "Non-Projective Dependency Parsing using Spanning-Tree Algorithms" (the other main method of dependency parsing, MST parsing)
+Machine Translation（机器翻译，如果不做机器翻译就可以跳过了，不过翻译模型在其他领域也有应用）
+Knight "A statistical MT tutorial workbook" (easy to understand, use instead of the original Brown paper)
+Och "The Alignment-Template Approach to Statistical Machine Translation" (foundations of phrase based systems)
+Wu "Inversion Transduction Grammars and the Bilingual Parsing of Parallel Corpora" (arguably the first realistic method for biparsing, which is used in many systems)
+Chiang "Hierarchical Phrase-Based Translation" (significantly improves accuracy by allowing for gappy phrases)Language Modeling (语言模型)
+Goodman "A bit of progress in language modeling" (describes just about everything related to n-gram language models 这是一个survey，这个survey写了几乎所有和n-gram有关的东西，包括平滑 聚类)
+Teh "A Bayesian interpretation of Interpolated Kneser-Ney" (shows how to get state-of-the art accuracy in a Bayesian framework, opening the path for other applications)
+Machine Learning for NLPSutton & McCallum "An introduction to conditional random fields for relational learning" (CRF实在是在NLP中太好用了！！！！！而且我们大家都知道有很多现成的tool实现这个，而这个就是一个很简单的论文讲述CRF的，不过其实还是蛮数学= =。。。)
+Knight "Bayesian Inference with Tears" (explains the general idea of bayesian techniques quite well)
+Berg-Kirkpatrick et al. "Painless Unsupervised Learning with Features" (this is from this year and thus a bit of a gamble, but this has the potential to bring the power of discriminative methods to unsupervised learning
+)Information ExtractionHearst. Automatic Acquisition of Hyponyms from Large Text Corpora. COLING 1992. (The very first paper for all the bootstrapping methods for NLP. It is a hypothetical work in a sense that it doesn't give experimental results, but it influenced it's followers a lot.)Collins and Singer. Unsupervised Models for Named Entity Classification. EMNLP 1999. (It applies several variants of co-training like IE methods to NER task and gives the motivation why they did so. Students can learn the logic from this work for writing a good research paper in NLP.)Computational SemanticsGildea and Jurafsky. Automatic Labeling of Semantic Roles. Computational Linguistics 2002. (It opened up the trends in NLP for semantic role labeling, followed by several CoNLL shared tasks dedicated for SRL. It shows how linguistics and engineering can collaborate with each other. It has a shorter version in ACL 2000.)Pantel and Lin. Discovering Word Senses from Text. KDD 2002. (Supervised WSD has been explored a lot in the early 00's thanks to the senseval workshop, but a few system actually benefits from WSD because manually crafted sense mappings are hard to obtain. These days we see a lot of evidence that unsupervised clustering improves NLP tasks such as NER, parsing, SRL, etc,其实我相信，大家更感兴趣的是上层的一些应用~而不是如何实现分词，如何实现命名实体识别等等。而且应该大家更对信息检索感兴趣。不过自然语言处理和信息检索还是有所区别的，So~~~我就不在这边写啦
+2.https://www.zhihu.com/question/52164329/answer/129930771
+本科大三，学过机器学习算法。假设你学过的算法都熟练的话，你已经有了不错的基础了。那么问题分解为：1.如何入门NLP；2.如何开始做NLP的研究。这两个我分别回答，但是你可以同时行动。入门NLP。就像你自学机器学习一样，你最好系统的看一本书，或者上一门公开课，来系统的梳理一遍NLP的基本知识，了解NLP的基本问题。这里我推荐Michael Collins的公开课：COMS W4705: Natural Language Processing (Spring 2015)，以及Jason Eisner的Lecture Notes：600.465 - Natural Language Processing。如果学有余力的话，可以看一下参考书：https://web.stanford.edu/~jurafsky/slp3/。 时间有限的情况下，公开课和Notes就够了。系统学习知识的同时（或之后），你可以开始着手复现一些经典的项目。这个过程非常重要：1.你可以巩固自己的知识（确定你真的正确理解了）；2.你可以进一步提高自己的科研和工程能力；3.你很可能在实现的过场中发现问题，产生灵感，做出自己的工作（发一篇paper）。那么复现什么项目呢？如果你的导师没有给你指定的话，不妨从历年NLP顶会（ACL，EMNLP，NAACL）的获奖论文中筛选你感兴趣又有能力完成的。由于full paper的工程量通常较大，你可以先从short paper中进行选择。下面是最近的ACL，EMNLP和NAACL的录取论文列表：ACL | Association for Computational LinguisticsEMNLP 2016Accepted Papers同时，再附上一些Jason Eisner为帮助本科生做研究而写的一些建议：Advice for Research Students (and others)希望你能enjoy NLP！
+3.https://zhuanlan.zhihu.com/p/34524452
+从目前的发展情况来看，NLP更多的是统计学（shallow NLP），机器学习(deep NLP)，深度学习(deep NLP)的field。甚至有NLP方面的学者认为自己每开除一个语言学家，NLP的准确率就会提升一个百分点。
+NLP的几个核心问题。第一个为什么基于语法的分析是不可行的（目前）。第二个是NLP，从浅（shallow）到深（deep）的四个维度：lexical analysis，syntactic analysis，pragmatic analysis以及semantic analysis的问题。当然。这也就牵扯出了第三个问题：NLP的两大方法：基于统计学（处理shallow NLP问题，一般准确率比较高，目前也相对通用）和基于机器学习，深度学习的deep NLP问题。
+3.https://www.zhihu.com/question/35381685/answer/342705218
+Reference:（大方向书籍，我要是能全部买下来就好了...并没有全部看完，有的只是看过某一章节。Grammar和syntax知乎里面有很多问答跟这方面有关，在此不重复了。）
+Cruse, Alan. "Meaning in language: An introduction to semantics and pragmatics." (2011).
+Karttunen, Lauri (1974) [1]. Theoretical Linguistics 1 181-94. Also in Pragmatics: A Reader, Steven Davis (ed.), pages 406-415, Oxford University Press, 1991.
+Kadmon, Nirit. "Formal pragmatics semantics, pragmatics, presupposition, and focus." (2001).
+Levinson, Stephen C. Pragmatics.Cambridge: Cambridge University Press, 1983, pp. 181-184.
+Wardhaugh, Ronald. An introduction to sociolinguistics. John Wiley & Sons, 2010. (这本书的影响力很大，有很多跟social science的讨论)(具体其他上面提到的，每一篇我都仔细读过的)Grice's MaximsMonroe, Will, and Christopher Potts. "Learning in the rational speech acts model." arXiv preprint arXiv:1510.06807 (2015).(这篇是关于rsa如何被用于具体task上的)Farkas, Richárd, et al. "The CoNLL-2010 shared task: learning to detect hedges and their scope in natural language text." Proceedings of the Fourteenth Conference on Computational Natural Language Learning---Shared Task. Association for Computational Linguistics, 2010. (上文提到的hedge and cues shared task,关于linguistics里的现象是如何被formulate成nlp问题的)Morante, Roser, and Eduardo Blanco. "* SEM 2012 shared task: Resolving the scope and focus of negation." Proceedings of the First Joint Conference on Lexical and Computational Semantics-Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation. Association for Computational Linguistics, 2012. (negation 的shared task)最后附上两篇老爷爷对我影响最大的：Zadeh, Lotfi Asker. "The concept of a linguistic variable and its application to approximate reasoning—I." Information sciences 8.3 (1975): 199-249.Zadeh, Lotfi A. "The concept of a linguistic variable and its application to approximate reasoning—II." Information sciences 8.4 (1975): 301-357.（ 这系列work分两部。）Zadeh, Lotfi A. "Toward a theory of fuzzy information granulation and its centrality in human reasoning and fuzzy logic." Fuzzy sets and systems 90.2 (1997): 111-127.
+按照题主的描述，Dan jurasfsky的Speech and Language Processing 应该是最好的选择了。Manning的Foundations of Statistical Natural Language Processing感觉相对比较旧了，中文的话可以考虑宗成庆的《统计自然语言处理》。很多人对宗老师这本书有负面评价，我觉得倒还好。我们实验室里做NLP的几个人，有忘记一些知识的时候都会把他作为工具书来翻翻。可能的确不适合于入门和精读。最后想强烈安利Yoav Goldberg的这本：Neural Network Methods for Natural Language Processing
+我最偏爱的还是大神dan jurasfsky的Speech and Language Processing，中文名译为《自然语言处理综论》。大神讲什么都很清楚，一点就通，而且还很贝叶斯。逻辑斯特回归我是先看的吴恩达和林轩田的课，统计学派是从优化角度用拉格朗日乘数法引入正则化L2,L1。要理解L1为何会导致参数稀疏化，还得去看sub-gradient。jurafksy从贝叶斯的角度讲正则化，其实只是贝叶斯公式里的先验概率，你用高斯分布就是L2正则，拉普拉斯分布就是L1正则。 要是看过深度学习训练后的参数分布，你会发现更直观，训练出来的参数部分就是高斯分布的样子~该书第三版正在撰写中，作者已经完成了不少章节的撰写，所完成的章节均可下载：Speech and Language Processing
+4. https://zhuanlan.zhihu.com/p/35423943
+自然语言数据集
+[5].https://www.zhihu.com/question/53959076/answer/262419812
+看到实验室有同学关注了这个问题，还挺有趣的，让我来开一下脑洞。现在网站应该是用关键字匹配，或者正则表达式来过滤恶意弹幕。这种很容易被破解的，改成拼音，谐音，或者加几个标点就没办法了。如果要用上nlp手段，可以先人工标注恶意弹幕，再用深度学习的方法，比如用LSTM学习句子语义，最后给出它属于恶意弹幕的score，其实就是sentence classification，二分类问题。还可以做成个性化弹幕屏蔽，转化成n分类问题，对弹幕进行多分类，可以让用户来设置屏蔽哪种弹幕，或者根据用户的历史信息来自动设置。比如你是个单纯的孩子，那你可以设置屏蔽掉污污的弹幕。但是啊我觉得中文是博大精深的，内涵段子也是博大精深的，机器是很难读懂的(像我们这些单纯的小朋友也是读不懂的对不对)。现阶段做问答多是标注答案，做文本生成也是根据所给文本生成语义匹配的另一段文本，还有根据查询语句生成SQL命令，都是有套路有模板的，推理领域我不太了解，目前还有很大的发展空间(也就是做得还不够好)。就算机器训练再多次，看遍各种段子，遇到真正的老司机还是要翻车的，因为老司机的套路深不可测。自古深情留不住，总是套路得人心啊。
+中文博大精深，简单的用词库或者正则，是肯定不够的。而有监督的深度学习方法一般需要大量的标注语料，会标到让你怀疑人生。这里安利一下实验室一个师兄的工作：Reading the Videos: Temporal Labeling for Crowdsourced Time-Sync Videos based on Semantic Embedding。文章可以利用无监督方法获得弹幕文本的embedding。idea是假设经常在相近时间一起出现的弹幕有着相似的语义和向量空间，然后将问题转换成监督问题，让相近时间经常一起出现的弹幕在向量空间尽可能相近，让不同时间的弹幕在向量空间尽可能远离，这样可以得到包含弹幕语义信息的embedding向量。后面只需要提供少量你要屏蔽的弹幕屏蔽列表，然后计算目标弹幕和弹幕屏蔽列表中弹幕的余弦相似度，根据阈值过滤即可。
+6.https://zhuanlan.zhihu.com/p/33366448
+自然语言处理主要技术
+自然语言处理大概有五类技术，分别是：
+分类：文字的序列，我们要打印标签，这是我们常做的最基本的自然语言处理。
+匹配：两个文字序列都匹配，看它们匹配的程度，最后输出一个非负的实数值，判断这两个文字序列它们的匹配程度。
+翻译：把一个文字序列，转换成另外一个文字序列。
+结构预测：你给我一个文字序列，让它形成内部结构的一个信息。
+序列决策过程：在一个复杂的动态变化环境里面，我们怎么样不断去决策。比如描述序列决策过程的马尔可夫随机过程，这是一个有效的、非常常用的数学工具。
+我们看自然语言处理的大部分问题，基本上做得比较成功、实用的都是基于这样的技术做出来的。比如：分类，有文本分类、情感分析；匹配，有搜索、问答、单轮对话、基于检索的单轮对话；翻译，有机器翻译、语音识别、手写体识别、基于生成方法的单轮对话；结构预测，有专名识别、词性标注、语意分析；序列决策过程，有多轮对话。
+资料推荐--开始旅程！
+关于书籍：《数学之美》--吴军，科普且生动形象，入门必备；《统计学习方法》--李航，这个讲述基础机器学习算法，这是值得看的；《统计自然语言处理》--宗成庆，经典好书，可以详细看。
+关于综述：深度学习NLP，这个综述主要是深度学习在NLP的应用和发展，值得一看的；自然语言生成综述，讲述自然语言生层的各种方式和应用。。
+关于教程：Stanford nlp公开课-cs224n，需要中文笔记的可以看下博文，比如word2vec，斯坦福CS224N深度学习自然语言处理（一）---note等等，
+关于其他资料：Recent Advances and New Frontiers，对话的综述（因为我是做对话的哈哈，其他方向不了解了）
+多看论文，做实验，多看论文，做实验.....
+7.https://zhuanlan.zhihu.com/p/36708892
+GluonNLP — 自然语言处理的深度学习工具包
+这天他看到时下最热门的一篇谷歌论文 “Attention Is All You Need” 介绍基于注意力机制的 Transformer 模型。小A上网搜了搜发现， Tensorflow 的 Tensor2Tensor 包里已经有了这篇论文的实现。 身 (she) 经 (shi) 百 (wei) 战 (shen) 的小 A，于是决定立刻就拿这个包跑一下，想在当天下午重现一下这个最新的黑科技。
+自然语言处理的模型重现之所以难，与数据处理和模型搭建中需要解决的茫茫多技术点有很大关系：从各种语言的文本文件编码解码 （encoding/decoding)，读取，分词 （tokenization)，词向量转化 （embedding)，到输入给神经网络前的填充位 （padding)，截长 （clipping)，再到神经网络模型里处理变长输入数据和状态，一直到模型预测解码后的输出的 BLEU score 等等表现评估方法，每处都会有坑。如果工具不到位，每次做新模型开发都要经历各种大坑小坑的洗礼。
+最近做新项目，发现一个新趋势是好的资源不集中。大家都知道预训练的词向量和语言模型对很多应用有帮助，而哪个预训练模型更有用则是需要实验来验证的。在做这些验证时，开发者常常需要装许多不同的工具。比如 Google 的 Word2vec 需要装 gensim ，而 Salesforce 做的 AWD 语言模型是用 PyTorch 实现的，且暂不提供预训练模型， Facebook 的 Fasttext 则是自己开发的一个独立的包。为了能把这些资源凑齐在自己心爱的框架里使用，用户往往需要花费大量的精力在安装上。
+[8].https://zhuanlan.zhihu.com/p/33797826
+手把手教您解决90%的自然语言处理问题
+NLP是一个非常大的领域，NLP有几个最常使用的关键应用：
+识别不同的用户/客户群。
+准确的检测和提取不同类别的反馈。
+根据意图对文本进行分类。
+本文将讲解如何从头开始有效地处理这些问题的指南和技巧：首先解释如何构建机器学习解决方案来解决上面提到的问题。然后转向更细致的解决方案，比如特性工程、单词向量和深度学习。
+第一步：收集你的数据
+每个机器学习问题都始于数据。本文中，我们将使用一个名为“社交媒体上的灾难”的数据集：投稿人查看了超过一万条的推文，然后指出每条推文是否提到了灾难事件。
+我们的任务是检测哪些推文是关于灾难事件的，因为有潜在的应用专门收集紧急事件并通知执法部门。这个任务的特殊挑战是两个类都包含用于查找推文的相同搜索条件，所以我们不得不用更微妙的差异来区分它们。
+在本文中，我们将有关灾难的推文称为“灾难”，其他推文称为“无关紧要的”。正如Richard Socher所描述的那样，查找和标记足够的数据来训练模型比试图优化复杂的无监督方法通常更快、更简单、更便宜。
+第二步：清理你的数据
+“你的模型只能和你的数据一样好”。一个干净的数据集能够使模型学习有意义的特征，所以应当是先查看数据然后再清理数据。
+以下是用来清理你的数据的清单(详见代码):
+1、删除所有不相关的字符，例如任何非字母数字字符。
+2、把你的文章分成一个个单独的单词。
+3、删除不相关的单词。
+4、将所有字符转换为小写。
+5、考虑将拼错的单词或拼写单词组合成一个单独的表示。
+6、考虑词形化。
+在遵循这些步骤并检查额外的错误之后，我们可以开始使用干净的、标记的数据来训练模型！
+第三步：找到一个好的数据表示
+机器学习模型以数值作为输入。我们的数据集是一个句子的列表，所以为了能够提取数据。我们首先要找到一种方法使我们的算法能理解它：也就是数字列表。
+一组以数据矩阵表示的笑脸
+独热编码（Bag of Words）
+计算机文本表示的一种方法是将每个字符单独编码为一个数字（例如ASCII）。这对于大多数数据集来说是不可能的，所以我们需要更高层次的方法。
+例如，我们可以在我们的数据集中建立一个所有的单词的词汇表，并将一个唯一的索引与词汇表中的每个单词联系起来。每个句子被表示为一个列表，只要我们的词汇表中有不同单词的数量。在这个列表中的每个索引中，我们标记出在我们的句子中出现了多少次给定的单词。这被称为Bag of Words模型，因为它是一种完全无视我们句子中词语顺序的表现形式。
+可视化嵌入
+为了查看嵌入是否捕获了与我们的问题相关的信息（例如，tweet是否与灾难有关），我们选择可视化并查看这些类这个方法，但是由于词汇表通常非常大，并且在20000个维度中可视化数据是不可能的，像PCA这样的技术将有助于将数据压缩到两个维度。如下图。
+嵌入后这两个类依旧不太好分开，仅仅是降低了维度。为了看Bag of Words特征是否有用，我们根据它们来训练一个分类器。
+第四步：分类
+当涉及到对数据进行分类时，逻辑回归是最简单可用的工具，训练简单，结果可解释，可以很容易的从模型中提取最重要的系数。将数据分成一个适用于我们的模型和测试集的训练集，以了解它如何推广到不可见的数据。训练结束后得到了75.4%的准确度，虽然这个精度足够满足我们的需求，但是我们还是应该试图去理解它是如何工作的。
+第五步：检查
+混淆矩阵
+第一步是了解我们模型的错误类型，以及哪种类型的错误是最不可取。在我们的例子中，误报是将不相关的tweet归为灾难，而漏报是将灾难归类为不相关的tweet。如果要优先处理每个潜在的事件，就要降低漏报率，如果受到资源的限制，那么会游戏那考虑降低误报率。将这些信息可视化的一个好方法是使用混淆矩阵，将我们的模型与真实标签的预测相比较。理想情况下，矩阵将是从左上角到右下角的对角线。
+混淆矩阵
+结果显示该分类器漏报率更高。换句话说，我们的模型最常见的错误是将灾难分类为不相关的。
+解释我们的模型
+验证我们的模型并解释它的预测结果，重要的是看它使用哪些词作出预测。在数据有偏差时，分类器能在样本数据中做出准确预测，但是这个模型在现实世界中不能很好地推广。在这里，我们为灾难和不相关的推文绘制了最关键的单词表。
+我们分类器的词汇库能够处理大量的词汇。然而，有些词是非常频繁的，而且只会对我们的预测造成干扰。所以接下来，我们将尝试用一种方法来表示能够解释单词频率的句子，看看我们是否能从我们的数据中获得更多的信息。
+第六步：掌握词汇结构
+TF-IDF
+为了帮助我们的模型更多地关注有意义的单词，我们可以在我们的单词模型包上使用TF-IDF评分，下图为新嵌入的PCA投影。
+可视化TF-IDF嵌入
+我们可以看到这两个颜色之间的区别更明显了，这使我们的分类器更容易区分。我们在新的嵌入式系统上培训另一个逻辑回归，并最终达到了76.2%的精确度。一个轻微的改善，提高了模型的性能，所以我们可以考虑升级这个模型了。
+TF-IDF：文字的重要性
+第七步：Leveraging semantics
+Word2Vec
+即使是最新的模型也没法将训练中没有遇到的单词进行分类，哪怕是非常相似的单词。为了解决这个问题，我们所用的工具叫做Word2Vec。
+Word2Vec是一种查找单词连续嵌入的技术。它可以从阅读大量的文本中学习，并记住在类似的语境中出现的单词。论文的作者开放了一个在非常大的语料库中预先训练的模型，预先训练的向量可以在与这个帖子相关的存储库中找到。
+语句级别的表示
+为我们的分类器获得一个句子嵌入的一个快速方法是平均Word2Vec得分。这跟以前一样是Bag of Words的方法，但是这次我们只丢掉句子的语法，同时保留一些语义信息。
+Word2Vec句子嵌入
+下图是我们使用以前的技术实现的新嵌入的可视化：
+可视化Word2Vec嵌入
+在训练了相同的模型三次（逻辑回归）后，我们得到了77.7%的精度分数，这是现阶段得到的最好的结果！
+复杂性/ Explainability trade-oG
+由于我们的嵌入没有像以前的模型那样被表示为每个单词一维的矢量，所以很难看出哪些单词与我们的分类最相关。虽然我们仍然可以访问我们的逻辑回归的系数，但它们与我们嵌入的300个维度相关，而不是词的索引。然而，对于更复杂的模型，我们可以利用LIME等黑盒解释器来了解我们的分类器如何工作。
+LIME
+在GitHub上可以获得开源的LIME。它是一种允许用户解释任何分类器决定的黑盒解释器。
+正确的灾难词语被识别为“相关的”
+在这里，词语对分类的贡献似乎不那么明显
+我们需要在一个有代表性的测试用例上运行LIME，看看那些词最关键，用这种方法可以得到像以前模型一样重要的分数，并验证我们模型的预测结果。
+Word2Vec：文字的重要性
+由上图可得，这个模型收集了相关性非常高的词，暗示它做出了可以解释的预测结果，所以可以放心的部署到生成中。
+第八步：使用端到端的方法来利用语法
+由于以上方法省略了单词的顺序，丢弃了句子的句法信息，所以这些方法不能提供足够准确的结果。为此您可以使用更复杂的模型，一种常见的方法是将一个句子作为单个单词向量的序列，使用Word2Vec或者如GloVe、CoVe这样的方法。
+一个高度eGective端到端架构（源）
+卷积神经网络用于句子分类的训练非常迅速，并且是入门级的深度学习体系结构。卷积神经网络在文本相关的任务中表现非常出色，而且通常比大多数复杂的NLP方法(例如LSTMs和编码器/解码架构)要快得多。这个模型保存了单词的顺序，并学习了有价值的信息，其中的单词序列可以预测我们的目标类。训练这个模型不会比之前的方法麻烦，并且能获得79.5%的准确性。所以下一步应该是使用我们描述的方法来探索和解释预测，以验证它确实是部署到用户的最佳模型。
+本文由阿里云云栖社区组织翻译。
+文章原标题《How to solve 90% of NLP problems: a step-by-step guide》
+9.https://zhuanlan.zhihu.com/p/32829048
+自然语言处理中N-Gram模型介绍
+10.https://zhuanlan.zhihu.com/p/37646689
+自然语言处理最新教材开放下载，乔治亚理工大学官方推荐
+机器之心昨日，乔治亚理工大学 Jacob Eisenstein 教授开放了自然语言处理领域的最新教材《Natural Language Processing》，该教材 2018 年 6 月第一版的 PDF 已经在 GitHub 上开放下载。这本书的内容主要分为四大章节，即 NLP 中监督与无监等学习问题、序列与解析树等自然语言的建模方式、语篇语义的理解，以及后这些技术最在信息抽取、机器翻译和文本生成等具体任务中的应用。
+[10] https://www.zhihu.com/question/266856019/answer/319002132
+建议先从传统方法学起，真没必要上来就学224n。这里我强烈推荐哥伦比亚大学 Michael Collins 的自然语言处理课程，以前coursera有这门课程视频的，但是自从改版后好像找不到了，可以网上百度云盘搜一搜。你可以去他的个人主页看他的讲义，看后会有一种如沐春风的感觉，写的真是太好了，我研一的寒假把他的讲义全部打印出来，看了好几遍，自此算是入了NLP的大门。学习NLP，我建议第一步学language model， 然后依次学POS tagging， 语法分析PCFG，接着接触NLP的第一个实际应用，学习机器翻译（机器翻译真是融合了各种NLP知识到里面），先从基于统计的机器翻译开始学，IBM model1， IBM model 2，再到phrase based machine translation，然后再学log linear model。 再往后就可以学习各种应用啦，情感分析，文本分类等，这个可以上斯坦福的那门NLP课程，也是非常棒的课程。
+对于入门而言 上来就看CS224并不好 现在这门课已经变成完全的讲授深度学习的方法了 固然深度学习在NLP领域取得了重大的发展 但一上来就看深度学习 难免忽视了NLP的一些基础问题我在此首先推荐Chris Manning和Dan jurafsky两尊大神的至尊课程：introduction to natural language processing还有宅成翔教授的经典课程：Text Mining and Analyticshttps://zh.coursera.org/learn/text-mining这两门课程都会让你有一种如沐春风的感觉 然后彻底的疯狂的爱上NLP
+[11] https://www.zhihu.com/question/26391679/answer/34169968
+题主的问题太多了，每个展开都可以讲很多~作为自然语言处理（NLP）方向的研究生，我来回答一下题主关于自然语言处理如何入门的问题吧，最后再YY一下自然语言处理的前途~有点话我想说在前头：不管学什么东西，都要跟大牛去学，真正的大牛可以把一件事解释的清清楚楚。If you can't explain it simply, you don't understand it well enough.跟大牛学东西，你不会觉得难，一切都觉得很自然，顺利成章的就掌握了整套的知识。不过很遗憾，大牛毕竟是少数，愿意教别人的大牛更少，所以如果遇到，就不要强求语言了吧~开始进入正题，我将介绍如何从零基础入门到基本达到NLP前沿：----------NLP零基础入门----------首推资料以及唯一的资料：Columbia University, Micheal Collins教授的自然语言课程链接>> Michael CollinsMichael Collins，绝对的大牛，我心目中的偶像，这门课是我见过讲NLP最最最清楚的！尤其是他的讲义！Collins的讲义，没有跳步，每一步逻辑都无比自然，所有的缩写在第一次出现时都有全拼，公式角标是我见过的最顺眼的（不像有的论文公式角标反人类啊），而且公式角标完全正确（太多论文的公式角标有这样那样的错标，这种时候真是坑死人了，读个论文跟破译密码似的），而且几乎不涉及矩阵表示……（初学者可能不习惯矩阵表示吧）。最关键的是，Collins的语言措辞真是超级顺畅，没有长难句，没有装逼句，没有语法错误以及偏难怪的表示（学术圈大都是死理工科宅，语文能这么好真实太难得了）。《数学之美》的作者吴军博士在书中评价Collins的博士论文语言如小说般流畅，其写作功底可见一般。举两个例子，如果有时间，不妨亲自体验下，静下心来读一读，我相信即使是零基础的人也是能感受到大师的魅力的。1.语言模型（Language Model）http://www.cs.columbia.edu/~mcollins/lm-spring2013.pdf2.隐马尔可夫模型与序列标注问题(Tagging Problems and Hidden Markov Models)http://www.cs.columbia.edu/~mcollins/hmms-spring2013.pdf现在Michael Collins在coursera上也开了公开课，视频免费看链接>> Coursera比看讲义更清晰，虽然没有字幕，但是不妨一试，因为讲的真的好清楚。其在句法分析与机器翻译部分的讲解是绝对的经典。如果能把Collins的课跟下来，讲义看下来，那么你已经掌握了NLP的主要技术与现状了。应该可以看懂部分论文了，你已经入门了。----------NLP进阶----------Collins的NLP课程虽然讲的清晰，不过有些比较重要的前沿的内容没有涉及（应该是为了突出重点做了取舍），比如语言模型的KN平滑算法等。此外，Collins的课程更注重于NLP所依赖的基础算法，而对于这些算法的某些重要应用并没涉及，比如虽然讲了序列标注的算法隐马尔可夫模型，条件随机场模型，最大熵模型，但是并没有讲如何用这些算法来做命名实体识别、语义标注等。Stanford NLP组在coursera的这个课程很好的对Collins的课进行了补充。链接>> Coursera本课程偏算法的应用，算法的实现过的很快，不过上完Collins的课后再上感觉刚刚好~（这两门课是Coursera上仅有的两门NLP课，不得不佩服Coursera上的课都是精品啊！）----------进阶前沿----------上完以上两个课后，NLP的主要技术与实现细节就应该都清楚了， 离前沿已经很近了，读论文已经没问题了。想要继续进阶前沿，就要读论文了。NLP比起其它领域的一个最大的好处，此时就显现出来了，NLP领域的所有国际会议期刊论文都是可以免费下载的！而且有专人整理维护，每篇论文的bibtex也是相当清晰详细。链接>> ACL Anthology关于NLP都有哪些研究方向，哪些比较热门，可以参考：当前国内外在自然语言处理领域的研究热点&难点？ - White Pillow 的回答NLP是会议主导，最前沿的工作都会优先发表在会议上。关于哪个会议档次比较高，可以参考谷歌给出的会议排名：Top conference页面也可以参考各个会议的录稿率（一般来说越低表示会议档次越高）：Conference acceptance rates基本上大家公认的NLP最顶级的会议为ACL，可以优先看ACL的论文。-------------------------最后简单谈一下这三者哪个更有发展潜力……作为一个NLP领域的研究生，当然要说NLP领域有潜力啦！这里YY几个未来可能会热门的NLP的应用：语法纠错目前文档编辑器（比如Word）只能做单词拼写错误识别，语法级别的错误还无能为力。现在学术领域最好的语法纠错系统的正确率已经可以接近50%了，部分细分错误可以做到80%以上，转化成产品的话很有吸引力吧~无论是增强文档编辑器的功能还是作为教学软件更正英语学习者的写作错误。结构化信息抽取输入一篇文章，输出的是产品名、售价，或者活动名、时间、地点等结构化的信息。NLP相关的研究很多，不过产品目前看并不多，我也不是研究这个的，不知瓶颈在哪儿。不过想象未来互联网信息大量的结构化、语义化，那时的搜索效率绝对比现在翻番啊~语义理解这个目前做的并不好，但已经有siri等一票语音助手了，也有watson这种逆天的专家系统了。继续研究下去，虽然离人工智能还相去甚远，但是离真正好用的智能助手估计也不远了。那时生活方式会再次改变。即使做不到这么玄乎，大大改进搜索体验是肯定能做到的~搜索引擎公司在这方面的投入肯定会是巨大的。机器翻译这个不多说了，目前一直在缓慢进步中~我们已经能从中获益，看越南网页，看阿拉伯网页，猜个大概意思没问题了。此外，口语级别的简单句的翻译目前的效果已经很好了，潜在的商业价值也是巨大的。不过……在可预见的近几年，对于各大公司发展更有帮助的估计还是机器学习与数据挖掘，以上我YY的那些目前大都还在实验室里……目前能给公司带来实际价值的更多还是推荐系统、顾客喜好分析、股票走势预测等机器学习与数据挖掘应用~
+[12] https://zhuanlan.zhihu.com/p/25004227
+【译文】基于Python的自然语言处理指南
+sudo easy_install pip
+安装NLTK: 在终端中运行:
+sudo pip install -U nltk
+Scikit-learn: 机器学习库
+Natural Language Toolkit (NLTK): 为各种NLP技术提供轮子
+Pattern – 网页挖掘模块，和NLTK搭配使用
+TextBlob – 方便的NLP工具的API，基于NLTK和Pattern架构
+spaCy – 工业级的NLP库
+Gensim – 可构建主题模型
+Stanford Core NLP – 斯坦福NLP小组提供的各类服务
+14.https://zhuanlan.zhihu.com/p/34520785
+13个自然语言处理的深度学习框架
+15.https://zhuanlan.zhihu.com/p/26249110
+基于 Python 的简单自然语言处理实践
+16.https://www.zhihu.com/question/59282225/answer/168654529
+谢邀。从符号主义和连接主义的对立走向合作，从静态分析走向交互，从语法和浅层语义走向深层语义，从功能主义走向认知和情感体验。2016年是深度学习的大潮冲击NLP的一年，果实丰硕。从底层的pos tagging, word segmentation, NER，到高级的任务比如semantic analysis, machine translation, machine reading comprehension, QA system, natural language generation。。都是全面开花，Deep learning for NLP的架构越来越成熟。经典的Speech and Language Processing也出了第三版的draft（ http://web.stanford.edu/~jurafsky/slp3/ ）。那么在2017年，我们又有什么样的期待呢？我想对于这个问题最有发言权的应该是Christopher Manning——他在Computational Linguistics and Deep Learning （http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00239） 中的一些论点到了2017年依然成立。NLP无疑依然是机器学习有待攻克的下一个重大领域。但是由于语言本身已经是一种高层次的表达，深度学习在NLP中取得的成绩并不如在视觉领域那样突出。尤其是在NLP的底层任务中，基于深度学习的算法在正确率上的提升并没有非常巨大，但是速度却要慢许多，这对于很多对NLP来说堪称基础的任务来说，是不太能够被接受的，比如说分词。在一些高级任务中，基于端到端学习的神经网络确实取得了令人瞩目的成就，尤其是机器翻译方面。由于复杂性太高，这样的高级任务在此前是非常难以攻克的，无论是基于常规的统计学习方法，还是基于规则的方法。深度神经网络强悍的“记忆”能力和复杂特征提取能力非常适合于这类问题。在完形填空类型的阅读理解（cloze-style machine reading comprehension）上，基于attention的模型也取得了非常巨大的突破（在SQuAD数据集上，2016年8月的Exact Match最好成绩只有60%，今年3月已经接近77%，半年时间提升了接近20个点，这是极其罕见的）。但同时，深度学习的不可解释的特性和对于数据的需求，也使得它尚未在要求更高的任务上取得突破，比如对话系统（虽然对话在2016年随着Echo的成功已经被炒得火热）。相比于机器翻译，对话系统并不是一个简单的“sequence-to-sequence”的问题（虽然很多paper尝试这样去做）。对话系统必须要能够准确地理解问题，并且基于自身的知识系统和对于对话目标的理解，去生成一个回复。这并不是简单地去寻找“word alignment”就可以做到的。当然更不必说对于上下文和情感的理解。而相比于完形填空类型的机器阅读理解，对话系统可能的回复是完全开放的，并不是仅限于“答案包含在文本中”这样的情形。而开放式的阅读理解，同样是一个AI-complete的难题。这就要求我们对于交互的过程有更深刻的理解，对于人类在交流的过程中的认知过程和情感变化有更好的模型。而这个方向上，深度学习暂时还没有更好的办法。在这个过程中，就像Chris Manning说的一样，我们需要更好的理解模型的组合（ compositionally in models）。很显然，从传统的语言学到我们现在的端到端的靠大量数据的训练结果，其间还有很大一块认知过程的坑没有被填上。有一个有意思的事情是，在大多数端到端的NLP应用中，在输入中包括一些语言学的特征（例如pos tag或dependency tree）并不会对结果有重大影响。我们的一些粗浅的猜测，是因为目前的NLP做的这些特征，其实对于语义的表示都还比较差，某种程度来说所含信息还不如word embedding来的多。对于极其复杂、需要非常深的语义理解的任务来说，这些语言学特征并没有太多作用。这并不一定是对的——在结合语言学的规则与深度学习方面，太多实验等着我们去做了。所以，我们需要解决的不仅仅是Semantic Role Labelling，甚至Semantic Parsing或是Abstract Meaning Representation（ http://amr.isi.edu/）;我们需要知道的是从符号到人类体验的一种映射——不仅仅是“红色”可以被翻译为“Red”——我们想知道人类在看到红色时的感受，以及红色所代表的情绪。我们想要复原的是文字完全无法记录下来的现场的气氛，情绪和心跳的感觉（embodied experience）。同样的文字，在不同的场景，应该有完全不同的表达力。我们相信，仅仅依赖word2vec（或其它distributed representation）或是先进的memory-augmented networks，或是传统的NLP方法，都还无法解决这些问题。在情感和体验的另一个极端，我们又希望语言能够展示它“如雕塑一样的美感”（罗素形容数学用语），可以精准地描述概念和逻辑。这要求我们在语言的模糊性上建立出来健壮的知识和推理体系——同样，现在的深度学习也还不能做到这一点。只有结合了符号逻辑，神经网络以及认知科学，才有可能让我们在对语言的理解和处理上更上一层楼。（硬广Bayersian Cognitive Science/PPL https://www.zhihu.com/question/59442141/answer/166358150）现在结合一些热门的领域（任务）来谈一谈具体的方向。 Dialogue是的，自然语言对话将会开创一个新的人机交互时代。但是2016年流行的seq2seq对话框架不会给我们太大的惊喜。虽然理论上，如果能够给足训练数据，它是可以表现得很好的。原因在于，对话不同于翻译，翻译的input和output肯定是一个domain的东西，这大大限制了可能的解的空间。更重要的是，对话中有大量的省略和指代，我们必须通过大量的上下文信息才能够理解对话。这样的后果就是训练对话系统对于训练数据有指数级别上升的要求。就算我们已经记录了这个世界上所有人类的对话，明天依然会有人在不同的场景下说出的话，根本没有在训练集中出现。所以，2017年的对话系统，一定是在限定的场景下发挥作用的。即便是限定场景下的对话，也存在以下的几个难点需要攻克。后面例举的文章只是抛砖引玉。1.    怎样评估对话的质量？必须要和标准答案回答得一模一样才算好吗？（Towards an automatic Turing test: Learning to evaluate dialogue responses https://openreview.net/pdf?id=HJ5PIaseg）2.    怎么利用对话中人类的反馈来帮助学习？（Dialogue Learning With Human-in-the-Loop: https://arxiv.org/pdf/1611.09823.pdf）3.    怎样keep track of dialogue state？怎么定义目标？怎么记住多个对话片段？（Frames: A Corpus for Adding Memory to Goal-Oriented Dialogue Systems：https://arxiv.org/abs/1704.00057）4.    如何去做对话的policy？（Towards Information-Seeking Agents：https://arxiv.org/abs/1612.02605）5.    如何结合记忆以及情感？（Emotional Chatting Machine: Emotional Conversation Generation with Internal and External Memory：https://arxiv.org/abs/1704.01074）6.    上下文如何建模？（Improving Frame Semantic Parsing with Hierarchical Dialogue Encoders：https://arxiv.org/abs/1705.03455）7.    对话回复的生成如何变得可控？（Data Distillation for Controlling Specificity in Dialogue Generation https://arxiv.org/pdf/1702.06703.pdf）阅读理解（Open-domain QA）去年到今年初MRC取得的进展大家已经有目共睹了，最高表现的架构基本趋同。估计再刷下去就要达到super-human performance了（人类的 baseline是82 EM, 91 F1）。比较有意思的是大家基本上都放弃了multi-hop reasoning的结构，原因非常简单：Stanford的SQuAD跟FB的bAbI不一样，没有专门设立这种需要推理的项目（诸如John went to the hall; John putdown the ball; Where is the ball?这类问题），大部分的问题主要依赖Attention机制就可以抓得很好了。bAbI这样的伪推理看来大家也是受够了。但是SQuAD本身也存在很多问题，抛开细的面不说，cloze-style本来就有很大的问题。而且最近出现了海量的刷SQuAD的文章，品质老实说并不敢恭维。幸好Stanford的Chen Danqi大神的Reading Wikipedia to Answer Open-Domain Questions （http://cs.stanford.edu/people/danqi/papers/acl2017.pdf ）打开了很多的方向。通过海量阅读（“machine reading at scale”），这篇文章试图回答所有在wikipedia上出现的factoid问题。其中有大量的工程细节，在此不表，仅致敬意。Unsupervised Learning在分布式语义表示这个“传统”深度学习领域（2013年算是很“传统”了吧），主要的工作还是向下，向上和向周边扩展（不小心说了句废话）。向下是指sub-word level。(Enriching Word Vectors with Subword Information：https://arxiv.org/abs/1607.04606）向上当然就是句子／篇章级别了。（A Simple but Tough-to-Beat Baseline for Sentence Embeddings：https://openreview.net/pdf?id=SyK00v5xx）向周边呢？就是面向任务，譬如知识库里的entity-embedding，或者面向sentiment analysis的情感-embedding。。好吧，我承认这类的文章真的已经看得太多了，并没有太大新意（no offense:我知道无论如何“boring”的文章，背后都是大家不眠不休的心血）。NLG 通过RNN-language model来做语言生成已经很成熟了，这都已经出survey paper了——Survey of the State of the Art in Natural Language Generation: Core tasks, applications and evaluation：https://arxiv.org/pdf/1703.09902.pdf但是通过GAN／VAE来生成呢？当然，做这个方向的人也很多，比如MSRA的Adversarial Neural Machine Translation（https://arxiv.org/abs/1704.06933）和Li Jiwei的Adversarial Learning for Neural Dialogue Generation：https://arxiv.org/pdf/1701.06547.pdf不过认真地说，我同意Ian Goodfellow在Reddit里说的：“GANs have not been applied to NLP because GANs are only defined for real-valued data.” （https://www.reddit.com/r/MachineLearning/comments/40ldq6/generative_adversarial_networks_for_text/）当然，做一些twist当然是可以强行让它work的，或者用VAE——但是目前看来，这些生成模型在自然语言方面并没有在图像方面的显著疗效。更重要的是，目前NLG的重要课题不是生成的质量，而是要搞清楚想说什么——类比一下，就如同就算人脑的Broca区域没有问题，可是Wernicke区域出现了问题，那么病人会说一口流利的语言，可是每一句话都毫无意义——这样的生成当然也是毫无意义的了。所以这个领域，其实还是任重道远啊。目前的很多“自然语言生成”或“写稿机器人”，还是carefully-crafted的模版来的多。总结通过2016年的努力，deep learning在NLP领域已经站稳了脚跟。我们期待2017年语言学和机器学习的进一步结合，让机器更加聪明，更懂你。欢迎大家补充、讨论：）本回答来自竹间智能Emotibot机器学习科学家赵宁远。  编辑于 2017-08-23 赞同 331 44 条评论 分享 收藏 感谢收起更多回答知乎用户深度学习（Deep Learning） 话题的优秀回答者收录于知乎圆桌 · 68 人赞同了该回答深度学习目前已经在NLP领域站稳脚跟 ，但是还没有成熟到像语音和图像那样可以和人类PK的程度，所以目前还是上升期，有三个点非常值得关注：1. 深度学习最初进入NLP走的是端到端的路线，靠无需人工特征知识即可达到state-of-art的卖点在NLP站稳脚跟。但是后面的发展过程中大家逐渐发现，只靠端到端是不行的。这个不仅仅是因为很多NLP任务监督数据匮乏的问题，因为在机器翻译这种语料充足的任务中，纯端到端的方法有很快遇到了瓶颈。所以大家把目光重新投向传统方法，和传统方法结合，借助外部知识来提高端到端模型的表现逐渐成为主流。机器翻译作为NLP领域中深度学习应用最成熟的方向，这一点尤为明显。2017年，这种结合的思路应该会进一步发展并向对话、摘要等其他NLP任务扩展，同时也会有更多通用的结合方法出现。2. 强化学习开始在NLP发力。AlphaGo的成功带来了强化学习的一轮热潮，大家很自然的会考虑用强化学习解决NLP中的一些问题。多轮对话是强化学习非常自然的应用场景，而chatbot的火热又在里面添了一把柴。另外强化学习在信息检索这种传统场景中的应用也值得关注，如多轮搜索。还有一点就是文本生成，目前文本生成还是很初级的阶段，而文本生成是可以看做一个马尔可夫决策过程，用强化学习解决的，因此很期待后续强化学习在这方面的应用。3. GAN在NLP开始发力。GAN在图像领域取得巨大成功，大家很自然的会想到把对抗的思路引入到NLP领域。目前除了在文本生成任务中结合GAN和强化学习的应用之外，多任务学习中也有对抗思想的引入。目前GAN在NLP中的效果还很一般，这个主要受制于NLP离散特性带来的梯度学习困难，因此GAN算法针对离散场景的改进是一个很有价值的研究方向，而由此带来的NLP任务突破则很值得期待。另一方面，GAN由于刚刚进入NLP领域，它的生成模型部分一般直接套用现有的复杂模型，而判别模型则比较简单，因此有很大改进空间，例如从matching方向借鉴一些更复杂的匹配模型。先写到这里，后续想到了再补充。编辑于 2017-05-15 赞同 68 6 条评论 分享 收藏 感谢刘知远用户标识自然语言处理、深度学习（Deep Learning）、机器学习 话题的优秀回答者63 人赞同了该回答2016年回答过这个题目，现在看来似乎并没有完全答对。也许这就是科研创新的魅力所在，就像一盒巧克力，打开前永远不知道它的口味是什么。2017年已经将近过半，其实有一些迹象已经可以从ACL 2017等会议论文窥豹一斑。我觉得2017年的发展将体现在以下几个方面：先验语言知识与深度学习模型的有机融合。从ACL 2017上NMT的相关论文可以看到，学者们纷纷将各种语言知识（如句法等）应用到NMT模型中，进一步提升机器翻译效果。该思路应该具有一定普适性。对抗训练思想的应用。虽然GAN本身尚未在NLP各领域得到广泛验证，但对抗训练思想已经在NMT等模型中开始发挥重要作用，值得关注。其他稍后想到了继续补充。
+17. https://zhuanlan.zhihu.com/p/35041012
+注意力机制
+Attention 机制最早是在视觉图像领域提出来的，应该是在九几年思想就提出来了，但是真正火起来应该算是 2014 年 Google Mind 团队的这篇论文 Recurrent Models of Visual Attention，他们在 RNN 模型上使用了 Attention机制来进行图像分类。
+随后，Bahdanau 等人在论文 Neural Machine Translation by Jointly Learning to Align and Translate 中，使用类似 Attention 的机制在机器翻译任务上将翻译和对齐同时进行，他们的工作算是第一个将 Attention 机制应用到 NLP 领域中。
+接着 Attention 机制被广泛应用在基于 RNN/CNN 等神经网络模型的各种 NLP 任务中。2017 年，Google 机器翻译团队发表的 Attention is All You Need 中大量使用了自注意力（self-attention）机制来学习文本表示。自注意力机制也成为了大家近期的研究热点，并在各种 NLP 任务上进行探索。
+18.https://www.zhihu.com/question/24417961/answer/66872781
+自然语言处理有一套严整的理论体系，如果希望系统学习可以参考Stanford NLP Group几位教授的三本教科书，基本都有中文翻译版本。以下按照我心目中的浅易程度排序：Christopher D. Manning, Prabhakar Raghavan, and Hinrich Schütze. 2008.Introduction to Information Retrieval. Cambridge University Press.Christopher D. Manning and Hinrich Schütze. 1999. Foundations of Statistical Natural Language Processing. Cambridge, MA: MIT Press.Daniel Jurafsky and James H. Martin. 2008. Speech and Language Processing: An Introduction to Natural Language Processing, Speech Recognition, and Computational Linguistics. 2nd edition. Prentice-Hall.
+19. https://www.zhihu.com/question/57057613/answer/151471222
+Natural Language Toolkit
+和中文分词
+fxsjy/jieba
+gensim: word2vec
+nltk: tokenization, segmentation
+keras: sequence to sequence learning
+20.https://zhuanlan.zhihu.com/p/25889937
+自然语言处理系列篇——关键词智能提取
+[21] https://zhuanlan.zhihu.com/p/30138012
+自然语言处理领域重要论文&资源全索引
+22.https://zhuanlan.zhihu.com/p/25612011
+机器学习、深度学习与自然语言处理领域推荐的书籍列表
+23.https://zhuanlan.zhihu.com/p/28616862
+自然语言处理从入门到进阶资代码资源库汇总（随时更新）

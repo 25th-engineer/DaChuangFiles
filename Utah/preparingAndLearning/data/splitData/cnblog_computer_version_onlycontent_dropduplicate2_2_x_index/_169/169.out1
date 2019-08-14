@@ -1,0 +1,3250 @@
+一 传统 图像 算法 工程师 主要 涉及 图形处理 包括 形态学 
+图像质量 相机 成像 之 3A 算法 去 雾 处理 颜色 
+空间 转换 滤镜 等 主要 在 安防 公司 或者 机器 
+视觉 领域 包括 缺陷 检测 二 现代 图像 算法 工程师 
+涉及 模式识别 主要 表现 的 经验 为 Adaboost SVM 的 
+研究 与 应用 特征 选取 与 提取 包括 智能 驾驶 
+的 研究 与 应用 行人 检测 人脸识别 三 人工智能 时代 
+图像 算法 工程师 深度 学习 主要 在 大型 互联网 公司 
+或者 研究所 机构 具体 体现 在 TensorFlow 等 开源 库 
+的 研究 与 应用 包括 机器人 的 研 基于 深度 
+学习 的 人脸 识别 CSDN 上 也 总结 了 很多 
+补充 2016 12 21   23 49 53 Deep Learning 
+源代码 收集 持续 更新 Deep Learning 深度 学习 计算机 视觉 
+机器学习 相关 领域 论文 和 源代码 大集合 持续 更新 图像 
+处理 与 计算机 视觉 基础 经典 以及 最近 发展   
+经典 论文 集合 计算机 视觉 领域 的 一些 牛人 博客 
+超 有 实力 的 研究 机构 web 主页 转 来自 
+西弗 吉利亚 大学 li xin 整理 的 CV 代码 合集 
+转 图像 处理 与 机器 视觉 行业 分析 计算机 视觉 
+整理 库 https / / github . com / ty4z2008 
+/ Qix 通用 库 / General LibraryOpenCV     无需 
+多言 RAVL   Recognition And Vision Library . 线程 安全 
+强大 的 IO 机制 包含 AAM CImg   很酷 的 
+一个 图像处理 包 整个 库 只有 一个 头文件 包含 一个 
+基于 PDE 的 光 流 算法 图像 视频 IO / 
+Image Video I O F r e e I m 
+a g e D e v I L I m 
+a g e M a g i c k F 
+F M P E G V i d e o 
+I n p u t p o r t V 
+i d e o A R 相关 / Augmented RealityARToolKit 
+    基于 Marker 的 AR 库 ARToolKitPlus     
+ARToolKit 的 增强 版 实现 了 更好 的 姿态 估 
+计算法 PTAM     实时 的 跟踪 SLAM AR 库 
+无需 Marker 模板 内置 传感器 等 BazAR     基于 
+特征点 检测 和 识别 的 AR 库 局部 不变 特征 
+/ Local Invariant FeatureVLFeat     目前 最好 的 Sift 
+开源 实现 同时 包含 了 KD tree KD Forest BoW 
+实现 VLFeat 著名 而 常用 项目 网站 http / / 
+www . vlfeat . org 著名 的 计算机 视觉 / 
+图像处理 开源 项目 知名度 应该 不必 OpenCV 低 太多 曾获/nr 
+ACM Open Source Software Competition 2010 一等奖 使用 C 语言 
+编写 提供 C 语言 和 Matlab 两种 接口 实现 了 
+大量 计算机 视觉 算法 包括 常用 图像 处理 功能 包括 
+颜色 空间 变换 几何变换 作为 Matlab 的 补充 常用 机器学习 
+算法 包括 GMM SVM KMeans 等 常用 的 图像 处理 
+的 plot 工具 特征提取 包括   Covariant detectors   HOG 
+  SIFT MSER 等 VLFeat 提供 了 一个 vl _ 
+covdet   函数 作为 框架 可以 方便 的 统一 所谓 
+co variant feature detectors 包括了 DoG Harris Affine Harris Laplace 
+并且 可以 提取 SIFT 或 raw patches 描述 子 超 
+像素 Superpixel 分割 包括 常用 的 Quick shift   SLIC 
+算法 等 高级 聚 类 算法 比如 整数 KMeans Integer 
+k means IKM hierarchical version of integer k means HIKM 
+基于 互信息 自动 判 定聚 类 类 数 的 算法 
+Agglomerative Information Bottleneck AIB algorithm 等高 维特 特征 匹配 算法 
+随机 KD 树 Randomized kd trees 可以 在 这里 查看 
+VLFeat 完整 的 功能 列表   http / / www 
+. vlfeat . org / matlab / matlab . htmlFerns 
+    基于 Naive Bayesian   Bundle 的 特征点 识别 
+高速 但 占用 内存 高 SIFT By Rob Hess   
+  基于 OpenCV 的 Sift 实现 目标 检测 / Object 
+D e t e c t i o n A 
+d a B o o s t By JianXin . 
+Wu     又一个 AdaBoost 实现 训练 速度快 行人 检测 
+By JianXin . Wu     基于 Centrist 和 Linear 
+SVM 的 快速 行人 检测 近似 最 近邻 / ANNFLANN 
+    目前 最 完整 的 近似 最 近邻 开源 
+库 不但 实现 了 一系列 查找 算法 还 包含 了 
+一种 自动 选取 最快 算法 的 机制 ANN     
+另外 一个 近似 最 近邻 库 SLAM & SFMSceneLib   
+    LGPL     monoSLAM 库 由 Androw Davison 
+开发 图像 分割 / SegmentationSLIC Super Pixel     使用 
+Simple Linear Iterative Clustering 产生 指定 数目 近似 均匀分布 的 
+Super Pixel 目标 跟踪 / TrackingTLD     基于 Online 
+Random Forest 的 目标 跟踪 算法 KLT   Kanade Lucas 
+TrackerOnline boosting trackers     Online Boosting Trackers 直线 检测 
+/ Line DetectionDSCC     基于 联通 域 连接 的 
+直线 检测 算法 LSD   GPL     基于 梯度 
+的 局部 直 线段 检测 算子 指纹 / Finger PrintpHash 
+  GPL     基于 感知 的 多媒体 文件 Hash 
+算法 提取 对比 图像 视频 音频 的 指纹 视觉 显著性 
+/ Visual SalienceGlobal Contrast Based Salient Region Detection     
+Ming Ming Cheng 的 视觉 显著性 算法 FFT / DWTFFTW 
+  GPL     最快 最好 的 开源 FFT FFTReal 
+  WTFPL     轻量级 的 FFT 实现 许可证 是 
+亮点 音频 处理 / Audio processingSTK   Free     
+音频 处理 音频 合成 libsndfile   LGPL   音频文件 IO 
+libsamplerate   GPL   音频 重 采样 小波 变换   
+  快速 小波 变换 FWT FWTBRIEF Binary Robust Independent Elementary 
+Feature 一个 很好 的 局部 特征描述 子 里面 有 FAST 
+corner + BRIEF 实现 特征点 匹配 的 DEMO http / 
+/ cvlab . epfl . ch / software / brief 
+/ http / / code . google . com / 
+p / javacvJava 打包 的 OpenCV FFmpeg libdc1394 PGR FlyCapture 
+OpenKinect videoInput and ARToolKitPlus 库 可以 放在 Android 上用 ~ 
+libHIK HIK SVM 计算 HIK SVM 跟 Centrist 的 Lib 
+http / / c2inet . sce . ntu . edu 
+. sg / Jianxin / projects / libHIK / libHIK 
+. htm 一组 视觉 显著性 检测 代码 的 链接 http 
+/ / cg . cs . tsinghua . edu . 
+cn / people / ~ cmm / saliency / Peter 
+Kovesi 的 工具箱 轻量 好用 侧重 图像处理   http / 
+/ www . peterkovesi . com / matlabfns / 项目 
+网站 http / / www . csse . uwa . 
+edu . au / ~ pk / research / matlabfns 
+/ 这位 Peter 大哥 目前 在 The University of Western 
+Australia 工作 他 自己 写 了 一套 Matlab 计算机 视觉 
+算法 所谓 工具箱 其实 就是 许多 m 文件 的 集合 
+全部 Matlab 实现 无需 编译 安装 支持 Octave 如果 没有 
+Matlab 的话 有了/nr 这个 工具箱 也 可以 在 Octave 下 
+进行 图像 处理 了 别看 这位 大哥 单枪匹马 人家 的 
+工具 箱 可是 相当 有名 研究 时候 需要 哪个 Matlab 
+的 计算机 视觉 小 功能 直接 到 他家 主页 上 
+下 几个 m 文件 放在 自己 文件夹 就 好了 这个 
+工具箱 主要 以 图像处理 算法 为主 附带 一些 三维 视觉 
+的 基本 算法 列 一些 包括 的 功能 Feature Detection 
+via Phase Congruency 通过 相位 一致性 检测 图像 特征 Spatial 
+Feature Detection Harris Canny 之类 的 特征 算法 Edge Linking 
+and Line Segment Fitting 边缘 特征 和线/nr 特征 的 各种 
+操作 Image Denoising 图像 降噪 Surface Normals to Surfaces 从法/nr 
+向量积/i 分出/v 表面/n Scalogram/w Calculation 量 图 计算 Anisotropic diffusion 
+著名 的 保 边缘 平滑 算法 Frequency Domain Transformations 傅立叶 
+变换 Functions Supporting Projective Geometry 透视 几何 三维 视觉 的 
+一些 算法 Feature Matching 特征 匹配 Model Fitting and Robust 
+Estimation R A N A C F i n g 
+e r p r i n t Enhancement 指纹 图像增强 
+Interesting Synthetic Images 一些 好 玩儿 的 图像 生成 算法 
+Image Blending 图像 融合 Colourmaps and colour conversions 颜色 空间 
+算法 MexOpenCV 让 Matlab 支持 调用 的 OpenCV 项目 网站 
+http / / www . cs . sunysb . edu 
+/ ~ kyamagu / mexopencv / 作者 Kota Yamaguchi 桑是/nr 
+石溪 大学 Stony Brook University 的 PhD 早些 时候 自己 
+搞 了 一套 东西 把 OpenCV 的 代码 编译成 Matlab 
+可用 的 mex 接口 然后 这个 东西 迅速 火了 今年夏天 
+这个 项目 被 OpenCV 吸收 为 一个 模块 貌似 是 
+搞 了 一个 Google Summer of Code GSoC 的 项目 
+最近 大概 是 9 10月 已经 merge 到了 OpenCV 主 
+包 有兴趣 的 可以 到 Github 的 OpenCV 库 下 
+的 module / matlab 去玩 一下 应该 会在 10 月份 
+的 OpenCV 3 alpha 里 正式 发布 现在 OpenCV 就 
+同时 有了 Python 和 Maltab 的 binding 好 强大 具体 
+的 功能 就不 细说 了 既然 是 OpenCV 的 binding 
+当然 是 可以 使用 OpenCV 的 绝大多数 算法 了 介绍 
+n 款 计算机 视觉 库 / 人脸识别 开源 库 / 
+软件 计算机 视觉 库   OpenCVOpenCV 是 Intel ® 开源 
+计算机 视觉 库 它 由 一系列 C 函数 和 少量 
+C + + 类 构成 实现 了 图像 处理 和 
+计算机 视觉 方面 的 很多 通用 算法 OpenCV 拥有 包括 
+300 多个 C 函数 的 跨平台 的 中 高层 API 
+它 不 依赖 于 其它 的 外部 库 尽管 也 
+可以 使用 某些 外部 库 OpenCV 对 非商业 . . 
+. 人脸识别   faceservice . cgifaceservice . cgi 是 一个 
+用来 进行 人脸 识别 的 CGI   程序 你 可以 
+通过 上传 图像 然后 该 程序 即 告诉 你 人脸 
+的 大概 坐标 位置 faceservice 是 采用 OpenCV 库 进行 
+开发 的 OpenCV 的 . NET 版   O p 
+e n C V D o t N e t 
+O p e n C V D o t N 
+e t 是 一个 . NET 对 OpenCV 包的/nr 封装 
+人脸 检测 算法   j V i o l a 
+j o n e s j V i o l 
+a j o n e s 是 人脸 检测 算法 
+Viola Jones 的 一个 Java 实现 并能够 加载 OpenCV XML 
+文件 示例代码 http / / www . oschina . net 
+/ code / snippet _ 12 _ 2033Java 视觉 处理 
+库   JavaCVJavaCV 提供 了 在 计算机 视觉 领域 的 
+封装 库 包括 OpenCV ARToolKitPlus libdc1394 2 . x PGR 
+FlyCapture 和 FFmpeg 此外 该 工具 可以 很容易 地 使用 
+Java 平台 的 功能 JavaCV 还 带有 硬件加速 的 全屏幕 
+图像 显示 CanvasFrame 易于 在 多个 内核 中 执行 并行 
+代码 并 . . . 运动 检测 程序   QMotionQMotion 
+是 一个 采用 OpenCV 开发 的 运动 检测 程序 基于 
+QT 视频 监控 系统   OpenVSSOpenVSS 开放 平台 的 视频 
+监控 系统 是 一个 系统 级别 的 视频 监控 软件 
+视频 分析 框架 VAF 的 视频 分析 与 检索 和 
+播放 服务 记录 和 索引 技术 它 被 设计 成 
+插件 式 的 支持 多 摄像头 平台 多 分析仪 模块 
+OpenCV 的 集成 以及 多 核心 架构 手势 识别   
+hand gesture detection 手势 识别 用 OpenCV 实现 人脸 检测 
+识别   mcvai tracking 提供 人脸 检测 识别 与 检测 
+特定 人脸 的 功能 示例代码 cvReleaseImage & gray c v 
+R e l e a s e M e m 
+t o r a g e & storage c v 
+R e l e a s e H a a 
+r C l a s s i f i e 
+r C a s c a d e & cascade 
+. . . 人脸 检测 与 跟踪 库   asmlibraryActive 
+Shape Model Library ASMLibrary © SDK 用 OpenCV 开发 用于 
+人脸 检测 与 跟踪 Lua 视觉 开发 库   libecvECV 
+是 lua 的 计算机 视觉 开发 库 目前 只 提供 
+linux 支持 OpenCV 的 . Net 封装   O p 
+e n C V h a r p O p 
+e n C V h a r p 是 一个 
+OpenCV 的 . Net wrapper 应用 最新 的 OpenCV 库 
+开发 使用 习惯 比 EmguCV 更 接近 原始 的 OpenCV 
+有 详细 的 使用 样例 供参考 3D 视觉 库   
+fvision2010 基于 OpenCV 构建 的 图像 处理 和 3D 视觉 
+库 示例代码 I m a g e e q u 
+e n c e R e a d e r 
+F a c t o r y factory I m 
+a g e e q u e n c e 
+R e a d e r * reader = factory 
+. pathRegex c / a / im _ % 03d 
+. jpg 0 20 / / I m a g 
+e e q u e n c e R e 
+a d e r * reader = factory . avi 
+a . avi if reader = = NULL { . 
+. . 基于 QT 的 计算机 视觉 库   QVision 
+基于 QT 的 面向 对象 的 多平台 计算机 视觉 库 
+可以 方便 的 创建 图形化 应用程序 算法 库主 要从 OpenCV 
+GSL CGAL IPP Octave 等 高性能 库 借鉴 而来 图像 
+特征提取   cvBlobcvBlob 是 计算机 视觉 应用 中 在 二 
+值 图像 里 寻找 连通 域 的 库 . 能够 
+执行 连通 域 分析 与 特征提取 . 实时 图像 / 
+视频处理 滤波 开发包   GShowGShow is a real time image 
+/ video processing filter development kit . It successfully integrates 
+DirectX11 with DirectShow framework . So it has the f 
+o l l o w i n g f e 
+a t u r e s GShow 是 实时 图像 
+/ 视频 处理 滤波 开发包 集成 DiretX11 . . . 
+视频 捕获 API   VideoManVideoMan 提供 一组 视频 捕获 API 
+支持 多种 视频流 同时 输入 视频 传输线 USB 摄像头 和 
+视频 文件 等 能 利用 OpenGL 对 输入 进行 处理 
+方便 的 与 OpenCV CUDA 等 集成 开发 计算机 视觉 
+系统 开放 模式识别 项目   OpenPRPattern Recognition project 开放 模式识别 
+项目 致力 于 开发 出 一套 包含 图像处理 计算机 视觉 
+自然语言 处理 模式识别 机器 学习 和 相关 领域 算法 的 
+函数库 OpenCV 的 Python 封装   pyopencvOpenCV 的 Python 封装 
+主要 特性 包括 提供 与 OpenCV 2 . x 中 
+最新 的 C + + 接口 极为 相似 的 Python 
+接口 并且 包括 C + + 中 不 包括 的 
+C 接口 提供 对 OpenCV 2 . x 中 所有 
+主要 部件 的 绑定 CxCORE almost complete CxFLANN complete Cv 
+complete CvAux C + + part almost . . . 
+视觉 快速 开发平台   qcv 计算机 视觉 快速 开发平台 提供 
+测试 框架 使 开发 者 可以 专注 于 算法 研究 
+图像 捕获   libv4l2cam 对 函数库 v412 的 封装 从 
+网络 摄像头 等 硬件 获得 图像 数据 支持 YUYV 裸 
+数据 输出 和 BGR24 的 OpenCV     IplImage 输出 
+计算机 视觉 算法   O p e n V I 
+D I A O p e n V I D 
+I A projects implement computer vision algorithms running on on 
+graphics hardware such as single or multiple graphics processing units 
+GPUs usingOpenGL Cg and CUDA C . Some samples will 
+soon support OpenCL and Direct Compute API & apos . 
+. . 高斯 模型 点 集 配 准 算法   
+gmmreg 实现 了 基于 混合 高斯 模型 的 点 集 
+配 准 算法 该 算法 描述 在 论文 A Robust 
+Algorithm for Point Set Registration Using Mixture of Gaussians Bing 
+Jian and Baba C . Vemuri . 实现 了 C 
++ + / Matlab / Python 接口 . . . 
+模式识别 和 视觉 库   RAVLRecognition And Vision Library RAVL 
+是 一个 通用 C + + 库 包含 计算机 视觉 
+模式识别 等 模块 图像 处理 和 计算机 视觉 常用 算 
+法库   LTI LibLTI Lib 是/v 一个/m 包含/v 图像/n 处理/v 
+和/c 计算机/n 视觉/n 常用/b 算法/n 和/c 数据/n 结构/n 的/uj 面向对象/n 
+库/n 提供 Windows 下 的 VC 版本 和 Linux 下 
+的 gcc 版本 主要 包含 以下 几 方面 内容 1 
+线性代数 2 聚类分析 3 图像处理 4 可视化 和 绘图 工具 
+OpenCV 优化   opencv dsp acceleration 优化 了 OpenCV 库 
+在 DSP 上 的 速度 C + + 计算机 视觉 
+库   Integrating Vision T o o l k i 
+t I n t e g r a t i 
+n g Vision Toolkit IVT 是 一个 强大 而 迅速 
+的 C + + 计算机 视觉 库 拥有 易用 的 
+接口 和 面向 对象 的 架构 并且 含 有 自己 
+的 一套 跨平台 GUI 组件 另外 可以 选择 集成 OpenCV 
+计算机 视觉 和 机器人 技术 的 工具包   EGTThe Epipolar 
+Geometry Toolbox EGT is a toolbox designed for Matlab by 
+Mathworks Inc . . EGT provides a wide set of 
+functions to approach computer visionand robotics problems with single and 
+multiple views and with different vision se . . . 
+OpenCV 的 扩展 库   I m a g e 
+N e t s I m a g e N 
+e t s 是 对 OpenCV 的 扩展 提供 对 
+机器人 视觉 算法 方面 友好 的 支持 使用 Nokia 的 
+QT 编写 界面 libvideogfx 视频处理 计算机 视觉 和 计算机 图形学 
+的 快速 开发 库 Matlab 计算机 视觉 包 /nr mVisionMatlab 的 
+计算机 视觉 包 包含 用于 观察 结果 的 GUI 组件 
+貌似 也 停止 开发 了 拿来 做 学习 用 挺 
+不错 的 Scilab 的 计算机 视觉 库   SIPSIP 是 
+Scilab 一种 免费 的 类 Matlab 编程 环境 的 图像 
+处理 和 计算机 视觉 库 SIP 可以 读写 JPEG / 
+PNG / BMP 格式 的 图片 具备 图像 滤波 分割 
+边缘 检测 形态学 处理 和 形状 分析 等 功能 STAIR 
+Vision LibrarySTAIR Vision Library SVL 最初 是 为 支持 斯坦福 
+智能 机器人 设计 的 提供 对 计算机 视觉 机器 学习 
+和 概率 统计 模 视觉 相关 网站 今天 的 主要 
+任务 就是 和 大家 分享 一些 鄙人 收藏 的 认为 
+相当 研究 价值 的 网页 Oxford 大牛 Andrew Zisserman http 
+/ / www . robots . ox . ac . 
+uk / ~ vgg / hzbook / code / 此人 
+主要 研究 多 幅 图像 的 几何学 该 网站 提供 
+了 部分 工具 相当 实用 还有 例子 西澳大利亚 大学 的 
+Peter Kovesi http / / www . csse . uwa 
+. edu . au / ~ pk / research / 
+matlabfns / 提供 了 一些 基本 的 matlab 工具 主要 
+内容 涉及 Computer Vision Image ProcessingCMU http / / www 
+. cs . cmu . edu / afs / cs 
+/ project / cil / ftp / html / vision 
+. html 该 网站 是 我 的 最爱 尤其 后面 
+这个 地址 http / / www . cs . cmu 
+. edu / afs / cs / project / cil 
+/ ftp / html / v groups . html 在 
+这里 提供 了 世界 各地 机构 大学 在 Computer Vision 
+所 涉及 各 领域 的 研究 情况 包括 Image Processing 
+Machine Vision 我 后来 也 是 通过 它 连接 到 
+了 很多 国外 的 网站 Cambridge http / / mi 
+. eng . cam . ac . uk / milab 
+. html 这是 剑桥 大学 的 机器 智能 实验室 里面 
+有 三个 小组 Computer Vision & Robotics Machine Intelligence Speech 
+目前 为止 Computer Vision & Robotics 的 一些 研究 成果 
+对 我 日后 的 帮助 可能会 比较 大 所以 在此 
+提及 大量 计算机 视觉 方面 的 原版 电子书 http / 
+/ homepages . inf . ed . ac . uk 
+/ rbf / CVonline / books . htm 我 今天 
+先 下了 本 Zisserman 的 书 呵呵 国外 的 原版书 
+虽然 都是/nr 比较 老 的 但是 对于 基础 的 理解 
+学习 还是 很 有 帮助 的 至于 目前 的 研究 
+现状 只能 通过 论文 或者 一些 研究 小组 的 网站 
+stanford http / / ai . stanford . edu / 
+~ asaxena / reconstruction3d / 这个 网站 是 Andrew N 
+. G 老师 和 一个 印度阿三 的 博士 一起 维护 
+的 主要 对 于单 张 照片 的 三维重建 尤 其他 
+有个 网页 make3d . stanford . edu 可以 让 你 
+自己 上传 你 的 照片 通过 网站 来 重建 三维 
+模型 这个 网站 对于 刚 开始 接触 Computer Vision 的 
+我 来说 如获至宝 但有 个 致命 问题 就是 make3d 已经 
+无法 注册 我 也 多次 给 Andrew 和 印度阿三 email 
+至今 未 回 郁闷 要是 有 这个 网站 的 帐号 
+那 还是 相当 爽 的 不 知道 是不是 由于 他们 
+的 邮箱 把 我 的 email 当成 垃圾邮件 过滤 哎 
+但 这个 stanford 网站 的 贡献 主要 是 代码 有 
+很多 computer vision 的 基础 工具 貌似 40M 左右 全都 
+是 基于 matlab 的 caltech http / / www . 
+vision . caltech . edu / bouguetj / calib _ 
+doc / 这 是 我们 Computer Vision 老师 课件 上 
+的 连接 主要 是 用于 摄像机 标定 的 工具集 当然 
+也 有 涉及 对 标定 图像 三维重建 的 前期 处理过程 
+JP Tarel http / / perso . lcpc . fr 
+/ tarel . jean philippe / 这是 他 的 个人 
+主页 也 是 目前 为止 我 发 的 email 中 
+唯一 一个 给 我 回信 的 老外 因为 我 需要 
+重建 练习 的 正是 他 的 图片集 我 读过 他 
+的 论文 但 没有 涉及 代码 的 内容 再加 上 
+又是 94年 以前 的 论文 很多 相关 的 引文 我 
+都 无法 下载 在 我 的 再三 追问 下 Tarel 
+教授 只 告诉 我 你 可以 按照 我 的 那篇 
+论文 对 足球 进行 重建 可是 . . . 你 
+知道 吗 你/r 有/v 很多/m 图像/n 处理/v 的/uj 引文/v 都/d 
+下不/i 了了/v 我 只 知道 你 通过 那 篇文章 做了 
+图像 的 预处理 根本 不 知道 具体 过程 当然 我 
+有幸 找到 过 一篇 90 左右 的 论文 讲 的 
+是 region based segmentation 可是 这 文章 里 所有 引文 
+又是 找 不到 的 . . . . 悲剧 的 
+人生 开源 软件 网站 www . sourceforge . net 机器 
+视觉 开 源代码 集 合一 特征提取 Feature Extraction SIFT 1 
+Demo program SIFT Library VLFeat PCA SIFT 2 Project Affine 
+SIFT 3 Project SURF 4 OpenSURF Matlab Wrapper Affine Covariant 
+Features 5 Oxford project MSER 6 Oxford project VLFeat Geometric 
+Blur 7 Code Local Self Similarity Descriptor 8 Oxford implementation 
+Global and Efficient Self Similarity 9 Code Histogram of Oriented 
+Graidents 10 INRIA Object Localization Toolkit OLT toolkit for Windows 
+GIST 11 Project Shape Context 12 Project Color Descriptor 13 
+Project Pyramids of Histograms of Oriented Gradients Code Space Time 
+Interest Points STIP 14 Project Code Boundary Preserving Dense Local 
+Regions 15 Project Weighted Histogram Code Histogram based Interest Points 
+Detectors Paper Code An OpenCV C + + implementation of 
+Local Self Similarity Descriptors Project Fast Sparse Representation with Prototypes 
+Project Corner Detection Project AGAST Corner Detector faster than FAST 
+and even FAST ER Project Real time Facial Feature Detection 
+using Conditional Regression Forests Project Global and Efficient Self Similarity 
+for Object Classification and Detection code W α SH Weighted 
+α Shapes for Local Feature Detection Project HOG Project Online 
+Selection of Discriminative Tracking Features Project 二 图像 分割 Image 
+Segmentation Normalized Cut 1 Matlab code Gerg Mori Superpixel code 
+2 Matlab code Efficient Graph based Image Segmentation 3 C 
++ + code Matlab wrapper Mean Shift Image Segmentation 4 
+EDISON C + + code Matlab wrapper OWT UCM Hierarchical 
+Segmentation 5 Resources Turbepixels 6 Matlab code 32bit Matlab code 
+64bit Updated code Quick Shift 7 VLFeat SLIC Superpixels 8 
+Project Segmentation by Minimum Code Length 9 Project Biased Normalized 
+Cut 10 Project Segmentation Tree 11 12 Project Entropy Rate 
+Superpixel Segmentation 13 Code Fast Approximate Energy Minimization via Graph 
+Cuts Paper Code Ef ﬁ cient Planar Graph Cuts with 
+Applications in Computer Vision Paper Code Isoperimetric Graph Partitioning for 
+Image Segmentation Paper Code Random Walks for Image Segmentation Paper 
+Code Blossom V A new implementation of a minimum cost 
+perfect matching algorithm Code An Experimental Comparison of Min Cut 
+/ Max Flow Algorithms for Energy Minimization in Computer Vision 
+Paper Code Geodesic Star Convexity for Interactive Image Segmentation Project 
+Contour Detection and Image Segmentation Resources Project Code Biased Normalized 
+Cuts Project Max flow / min cut Project Chan Vese 
+Segmentation using Level Set Project A Toolbox of Level Set 
+Methods Project Re initialization Free Level Set Evolution via Reaction 
+Diffusion Project Improved C V active contour model Paper Code 
+A Variational Multiphase Level Set Approach to Simultaneous Segmentation and 
+Bias Correction Paper Code Level Set Method Research by Chunming 
+Li Project ClassCut for Unsupervised Class Segmentation code SEEDS Superpixels 
+Extracted via Energy Driven Sampling   Project other 三 目标 
+检测 Object Detection A simple object detector with boosting Project 
+INRIA Object Detection and Localization Toolkit 1 Project Discriminatively Trained 
+Deformable Part Models 2 Project Cascade Object Detection with Deformable 
+Part Models 3 Project Poselet 4 Project Implicit Shape Model 
+5 Project Viola and Jones s Face Detection 6 Project 
+Bayesian Modelling of Dyanmic Scenes for Object Detection Paper Code 
+Hand detection using multiple proposals Project Color Constancy Intrinsic Images 
+and Shape Estimation Paper Code Discriminatively trained deformable part models 
+Project Gradient Response Maps for Real Time Detection of Texture 
+Less Objects LineMOD Project Image Processing On Line Project Robust 
+Optical Flow Estimation Project Where s Waldo Matching People in 
+Images of Crowds Project Scalable Multi class Object Detection Project 
+Class Specific Hough Forests for Object Detection Project Deformed Lattice 
+Detection In Real World Images Project Discriminatively trained deformable part 
+models Project 四 显著性 检测 Saliency Detection Itti Koch and 
+Niebur saliency detection 1 Matlab code Frequency tuned salient region 
+detection 2 Project Saliency detection using maximum symmetric surround 3 
+Project Attention via Information Maximization 4 Matlab code Context aware 
+saliency detection 5 Matlab code Graph based visual saliency 6 
+Matlab code Saliency detection A spectral residual approach . 7 
+Matlab code Segmenting salient objects from images and videos . 
+8 Matlab code Saliency Using Natural statistics . 9 Matlab 
+code Discriminant Saliency for Visual Recognition from Cluttered Scenes . 
+10 Code Learning to Predict Where Humans Look 11 Project 
+Global Contrast based Salient Region Detection 12 Project Bayesian Saliency 
+via Low and Mid Level Cues Project Top Down Visual 
+Saliency via Joint CRF and Dictionary Learning Paper Code Saliency 
+Detection A Spectral Residual Approach Code 五 图像 分类 聚 
+类 Image Classification C l u s t e r 
+i n g P y r a m i d 
+Match 1 Project Spatial Pyramid Matching 2 Code Locality constrained 
+Linear Coding 3 Project Matlab code Sparse Coding 4 Project 
+Matlab code Texture Classification 5 Project Multiple Kernels for Image 
+Classification 6 Project Feature Combination 7 Project SuperParsing Code Large 
+Scale Correlation Clustering Optimization Matlab code Detecting and Sketching the 
+Common Project Self Tuning Spectral Clustering Project Code User Assisted 
+Separation of Reflections from a Single Image Using a Sparsity 
+Prior Paper Code Filters for Texture Classification Project Multiple Kernel 
+Learning for Image Classification Project SLIC Superpixels Project 六 抠图 
+Image MattingA Closed Form Solution to Natural Image Matting Code 
+Spectral Matting Project Learning based Matting Code 七 目标 跟踪 
+Object Tracking A Forest of Sensors Tracking Adaptive Background Mixture 
+Models Project Object Tracking via Partial Least Squares Analysis Paper 
+Code Robust Object Tracking with Online Multiple Instance Learning Paper 
+Code Online Visual Tracking with Histograms and Articulating Blocks Project 
+Incremental Learning for Robust Visual Tracking Project Real time Compressive 
+Tracking Project Robust Object Tracking via Sparsity based Collaborative Model 
+Project Visual Tracking via Adaptive Structural Local Sparse Appearance Model 
+Project Online Discriminative Object Tracking with Local Sparse Representation Paper 
+Code Superpixel Tracking Project Learning Hierarchical Image Representation with Sparsity 
+Saliency and Locality Paper Code Online Multiple Support Instance Tracking 
+Paper Code Visual Tracking with Online Multiple Instance Learning Project 
+Object detection and recognition Project Compressive Sensing Resources Project Robust 
+Real Time Visual Tracking using Pixel Wise Posteriors Project Tracking 
+Learning Detection Project OpenTLD / C + + Code the 
+HandVu vision based hand gesture interface Project Learning Probabilistic Non 
+Linear Latent Variable Models for Tracking Complex Activities Project 八 
+Kinect Kinect toolbox Project OpenNI Project zouxy09 CSDN Blog Resource 
+FingerTracker 手指 跟踪 code 九 3D 相关 3D Reconstruction of 
+a Moving Object Paper Code Shape From Shading Using Linear 
+Approximation Code Combining Shape from Shading and Stereo Depth Maps 
+Project Code Shape from Shading A Survey Paper Code A 
+Spatio Temporal Descriptor based on 3D Gradients HOG3D Project Code 
+Multi camera Scene Reconstruction via Graph Cuts Paper Code A 
+Fast Marching Formulation of Perspective Shape from Shading under Frontal 
+Illumination Paper Code Reconstruction 3D Shape Illumination Shading Reflectance Texture 
+Project Monocular Tracking of 3D Human Motion with a Coordinated 
+Mixture of Factor Analyzers Code Learning 3 D Scene Structure 
+from a Single Still Image Project 十 机器学习 算法 Matlab 
+class for computing Approximate Nearest Nieghbor ANN Matlab class   
+providing interface toANN library Random Sampling code Probabilistic Latent Semantic 
+Analysis pLSA Code FASTANN and FASTCLUSTER for approximate k means 
+AKM Project Fast Intersection / Additive Kernel SVMs Project SVM 
+Code Ensemble learning Project Deep Learning Net Deep Learning Methods 
+for Vision Project Neural Network for Recognition of Handwritten Digits 
+Project Training a deep autoencoder or a classifier on MNIST 
+digits Project THE MNIST DATABASE of handwritten digits Project Ersatz 
+deep neural networks in the cloud Project Deep Learning Project 
+sparseLM Sparse Levenberg Marquardt nonlinear least squares in C / 
+C + + Project Weka 3 Data Mining Software in 
+Java Project Invited talk A Tutorial on Deep Learning by 
+Dr . Kai Yu 余凯 Video CNN Convolutional neural network 
+class Matlab Tool Yann LeCun s Publications Wedsite LeNet 5 
+convolutional neural networks Project Training a deep autoencoder or a 
+classifier on MNIST digits Project Deep Learning 大牛 Geoffrey E 
+. Hinton s HomePage Website Multiple Instance Logistic Discriminant based 
+Metric Learning MildML and Logistic Discriminant based Metric Learning LDML 
+Code Sparse coding simulation software Project Visual Recognition and Machine 
+Learning Summer School Software 十一 目标 行为 识别 Object Action 
+Recognition Action Recognition by Dense Trajectories Project Code Action Recognition 
+Using a Distributed Representation of Pose and Appearance Project Recognition 
+Using Regions Paper Code 2D Articulated Human Pose Estimation Project 
+Fast Human Pose Estimation Using Appearance and Motion via Multi 
+Dimensional Boosting Regression Paper Code Estimating Human Pose from Occluded 
+Images Paper Code Quasi dense wide baseline matching Project ChaLearn 
+Gesture Challenge   Principal motion PCA based reconstruction of motion 
+histograms Project Real Time Head Pose Estimation with Random Regression 
+Forests Project 2D Action Recognition Serves 3D Human Pose Estimation 
+Project A Hough Transform Based Voting Framework for Action Recognition 
+Project Motion Interchange Patterns for Action Recognition in Unconstrained Videos 
+Project 2D articulated human pose estimation software Project Learning and 
+detecting shape models code Progressive Search Space Reduction for Human 
+Pose Estimation Project Learning Non Rigid 3D Shape from 2D 
+Motion Project 十二 图像处理 Distance Transforms of Sampled Functions Project 
+The Computer Vision Homepage Project Efficient appearance distances between windows 
+code Image Exploration algorithm code Motion Magnification 运动 放大 Project 
+Bilateral Filtering for Gray and Color Images 双边 滤波器 Project 
+A Fast Approximation of the Bilateral Filter using a Signal 
+Processing Approach Project 十三 一些 实用工具 EGT a Toolbox for 
+Multiple View Geometry and Visual Servoing Project Code a development 
+kit of matlab mex functions for OpenCV library Project Fast 
+Artificial Neural Network Library Project 十四 人手 及 指尖 检测 
+与 识别 finger detection and gesture recognition   Code Hand 
+and Finger Detection using JavaCV Project Hand and fingers detection 
+Code 十五 场景 解释 Nonparametric Scene Parsing via Label Transfer 
+  Project 十六 光 流 Optical flow High accuracy optical 
+flow using a theory for warping   Project Dense Trajectories 
+Video Description   Project SIFT Flow Dense Correspondence across Scenes 
+and its Applications Project KLT An Implementation of the Kanade 
+Lucas Tomasi Feature Tracker Project Tracking Cars Using Optical Flow 
+Project Secrets of optical flow estimation and their principles Project 
+implmentation of the Black and Anandan dense optical flow method 
+Project Optical Flow Computation Project Beyond Pixels Exploring New Representations 
+and Applications for Motion Analysis Project A Database and Evaluation 
+Methodology for Optical Flow Project optical flow relative Project Robust 
+Optical Flow Estimation Project optical flow Project 十七 图像 检索 
+Image Retrieval Semi Supervised Distance Metric Learning for Collaborative Image 
+Retrieval   Paper code 十八 马尔科夫 随 机场 Markov Random 
+Fields Markov Random Fields for Super Resolution   Project A 
+Comparative Study of Energy Minimization Methods for Markov Random Fields 
+with Smoothness Based Priors Project 十九 运动 检测 Motion detection 
+Moving Object Extraction Using Models or Analysis of Regions   
+Project Background Subtraction Experiments and Improvements for ViBe Project A 
+Self Organizing Approach to Background Subtraction for Visual Surveillance Applications 
+Project changedetection . net A new change detection benchmark dataset 
+Project ViBe a powerful technique for background detection and subtraction 
+in video sequences Project Background Subtraction Program Project Motion Detection 
+Algorithms Project Stuttgart Artificial Background Subtraction Dataset Project Object Detection 
+Motion Estimation and Tracking Project Feature Detection and D e 
+s c r i p t i o n G 
+e n e r a l Libraries VLFeat   – 
+Implementation of various feature descriptors including SIFT HOG and LBP 
+and covariant feature detectors including DoG Hessian Harris Laplace Hessian 
+Laplace Multiscale Hessian Multiscale Harris . Easy to use Matlab 
+interface . See   Modern features Software   – Slides 
+providing a demonstration of VLFeat and also links to other 
+software . Check also   VLFeat hands on session trainingOpenCV 
+  – Various implementations of modern feature detectors and descriptors 
+SIFT SURF FAST BRIEF ORB FREAK etc . Fast Keypoint 
+Detectors for Real time Applications FAST   – High speed 
+corner detector implementation for a wide variety of platformsAGAST   
+– Even faster than the FAST corner detector . A 
+multi scale version of this method is used for the 
+BRISK descriptor ECCV 2010 . Binary Descriptors for Real Time 
+Applications BRIEF   – C + + code for a 
+fast and accurate interest point descriptor not invariant to rotations 
+and scale ECCV 2010 ORB   – OpenCV implementation of 
+the Oriented Brief ORB descriptor invariant to rotations but not 
+scale BRISK   – Efficient Binary descriptor invariant to rotations 
+and scale . It includes a Matlab mex interface . 
+ICCV 2011 FREAK   – Faster than BRISK invariant to 
+rotations and scale CVPR 2012 SIFT and SURF Implementations SIFT 
+  VLFeat   OpenCV   Original code   by David 
+Lowe   GPU implementation   OpenSIFTSURF   Herbert Bay s 
+code   OpenCV   GPU SURFOther Local Feature Detectors and 
+Descriptors VGG Affine Covariant features   – Oxford code for 
+various affine covariant feature detectors and descriptors . LIOP descriptor 
+  – Source code for the Local Intensity order Pattern 
+LIOP descriptor ICCV 2011 . Local Symmetry Features   – 
+Source code for matching of local symmetry features under large 
+variations in lighting age and rendering style CVPR 2012 . 
+Global Image Descriptors GIST   – Matlab code for the 
+GIST d e s c r i p t o 
+r C E N T R I T   – 
+Global visual descriptor for scene categorization and object detection PAMI 
+2011 Feature Coding and PoolingVGG Feature Encoding Toolkit   – 
+Source code for various state of the art feature encoding 
+methods – including Standard hard encoding Kernel codebook encoding Locality 
+constrained linear encoding and Fisher kernel encoding . Spatial Pyramid 
+Matching   – Source code for feature pooling based on 
+spatial pyramid matching widely used for image classification Convolutional Nets 
+and Deep LearningEBLearn   – C + + Library for 
+Energy Based Learning . It includes several demos and step 
+by step instructions to train classifiers based on convolutional neural 
+networks . Torch7   – Provides a matlab like environment 
+for state of the art machine learning algorithms including a 
+fast implementation of convolutional neural networks . Deep Learning   
+Various links for deep learning software . Part Based ModelsDeformable 
+Part based Detector   – Library provided by the authors 
+of the original paper state of the art in PASCAL 
+VOC detection task Efficient Deformable Part Based Detector   – 
+Branch and Bound implementation for a deformable part based detector 
+. Accelerated Deformable Part Model   – Efficient implementation of 
+a method that achieves the exact same performance of deformable 
+part based detectors but with significant acceleration ECCV 2012 . 
+Coarse to Fine Deformable Part Model   – Fast approach 
+for deformable object detection CVPR 2011 . Poselets   – 
+C + + and Matlab versions for object detection based 
+on poselets . Part based Face Detector and Pose Estimation 
+  – Implementation of a unified approach for face detection 
+pose estimation and landmark localization CVPR 2012 . Attributes and 
+Semantic FeaturesRelative Attributes   – Modified implementation of RankSVM to 
+train Relative Attributes ICCV 2011 . Object Bank   – 
+Implementation of object bank semantic features NIPS 2010 . See 
+also   A c t i o n B a 
+n k C l a s s e m e 
+s Picodes and Meta class features   – Software for 
+extracting high level image descriptors ECCV 2010 NIPS 2011 CVPR 
+2012 . Large Scale LearningAdditive Kernels   – Source code 
+for fast additive kernel SVM classifiers PAMI 2013 . LIBLINEAR 
+  – Library for large scale linear SVM classification . 
+VLFeat   – Implementation for Pegasos SVM and Homogeneous Kernel 
+map . Fast Indexing and Image RetrievalFLANN   – Library 
+for performing fast approximate nearest neighbor . Kernelized LSH   
+– Source code for Kernelized Locality Sensitive Hashing ICCV 2009 
+. ITQ Binary codes   – Code for generation of 
+small binary codes using Iterative Quantization and other baselines such 
+as Locality Sensitive Hashing CVPR 2011 . INRIA Image Retrieval 
+  – Efficient code for state of the art large 
+scale image retrieval CVPR 2011 . Object DetectionSee   Part 
+based Models   and   Convolutional Nets   above . 
+Pedestrian Detection at 100fps   – Very fast and accurate 
+pedestrian detector CVPR 2012 . Caltech Pedestrian Detection Benchmark   
+– Excellent resource for pedestrian detection with various links for 
+state of the art implementations . OpenCV   – Enhanced 
+implementation of Viola & Jones real time object detector with 
+trained models for face detection . Efficient Subwindow Search   
+– Source code for branch and bound optimization for efficient 
+object localization CVPR 2008 . 3D RecognitionPoint Cloud Library   
+– Library for 3D image and point cloud processing . 
+Action R e c o g n i t i 
+o n A c t i o n B a 
+n k   – Source code for action recognition based 
+on the ActionBank representation CVPR 2012 . STIP Features   
+– software for computing space time interest point d e 
+s c r i p t o r s I 
+n d e p e n d e n t 
+Subspace Analysis   – Look for Stacked ISA for Videos 
+CVPR 2011 Velocity Histories of Tracked Keypoints   C + 
++ code for activity recognition using the velocity histories of 
+tracked keypoints ICCV 2009 D a t a s e 
+t s A t t r i b u t 
+e s A n i m a l s with 
+Attributes   – 30 475 images of 50 animals classes 
+with 6 pre extracted feature representations for each image . 
+aYahoo and aPascal   – Attribute annotations for images collected 
+from Yahoo and Pascal VOC 2008 . FaceTracer   – 
+15 000 faces annotated with 10 attributes and fiducial points 
+. PubFig   – 58 797 face images of 200 
+people with 73 attribute classifier outputs . LFW   – 
+13 233 face images of 5 749 people with 73 
+attribute classifier outputs . Human Attributes   – 8 000 
+people with annotated attributes . Check also this   link 
+  for another dataset of human attributes . SUN Attribute 
+Database   – Large scale scene attribute database with a 
+taxonomy of 102 attributes . ImageNet Attributes   – Variety 
+of attribute labels for the ImageNet dataset . Relative attributes 
+  – Data for OSR and a subset of PubFig 
+datasets . Check also this   link   for the 
+WhittleSearch data . Attribute Discovery Dataset   – Images of 
+shopping categories associated with textual descriptions . Fine grained Visual 
+C a t e g o r i z a 
+t i o n C a l t e c 
+h UCSD Birds Dataset   – Hundreds of bird categories 
+with annotated parts and attributes . Stanford Dogs Dataset   
+– 20 000 images of 120 breeds of dogs from 
+around the world . Oxford IIIT Pet Dataset   – 
+37 category pet dataset with roughly 200 images for each 
+class . Pixel level trimap segmentation is included . Leeds 
+Butterfly Dataset   – 832 images of 10 species of 
+butterflies . Oxford Flower Dataset   – Hundreds of flower 
+categories . Face DetectionFDDB   – UMass face detection dataset 
+and benchmark 5 000 + faces CMU / MIT   
+– Classical face detection dataset . Face RecognitionFace Recognition Homepage 
+  – Large collection of face recognition datasets . LFW 
+  – UMass unconstrained face recognition dataset 13 000 + 
+face images . NIST Face Homepage   – includes face 
+recognition grand challenge FRGC vendor tests FRVT and others . 
+CMU Multi PIE   – contains more than 750 000 
+images of 337 people with 15 different views and 19 
+lighting conditions . FERET   – Classical face recognition dataset 
+. Deng Cai s face dataset in Matlab Format   
+– Easy to use if you want play with simple 
+face datasets including Yale ORL PIE and Extended Yale B 
+. SCFace   – Low resolution face dataset captured from 
+surveillance cameras . Handwritten DigitsMNIST   – large dataset containing 
+a training set of 60 000 examples and a test 
+set of 10 000 examples . Pedestrian DetectionCaltech Pedestrian Detection 
+Benchmark   – 10 hours of video taken from a 
+vehicle 350K bounding boxes for about 2.3 K unique pedestrians 
+. INRIA Person Dataset   – Currently one of the 
+most popular pedestrian detection datasets . ETH Pedestrian Dataset   
+– Urban dataset captured from a stereo rig mounted on 
+a stroller . TUD Brussels Pedestrian Dataset   – Dataset 
+with image pairs recorded in an crowded urban setting with 
+an onboard camera . PASCAL Human Detection   – One 
+of 20 categories in PASCAL VOC detection challenges . USC 
+Pedestrian Dataset   – Small dataset captured from surveillance cameras 
+. Generic Object R e c o g n i 
+t i o n I m a g e N 
+e t   – Currently the largest visual recognition dataset 
+in terms of number of categories and images . Tiny 
+Images   – 80 million 32x32 low resolution images . 
+Pascal VOC   – One of the most influential visual 
+recognition datasets . Caltech 101   /   Caltech 256 
+  – Popular image datasets containing 101 and 256 object 
+categories respectively . MIT LabelMe   – Online annotation tool 
+for building computer vision databases . Scene RecognitionMIT SUN Dataset 
+  – MIT scene understanding dataset . UIUC Fifteen Scene 
+Categories   – Dataset of 15 natural scene categories . 
+Feature Detection and DescriptionVGG Affine Dataset   – Widely used 
+dataset for measuring performance of feature detection and description . 
+C h e c k V L B e n 
+c h m a r k s   for an 
+evaluation framework . Action R e c o g n 
+i t i o n B e n c h 
+m a r k i n g Activity Recognition   
+– CVPR 2012 tutorial covering various datasets for action recognition 
+. RGBD RecognitionRGB D Object Dataset   – Dataset containing 
+300 common household objects 一 特征提取 Feature Extraction SIFT 1 
+Demo program SIFT Library VLFeat PCA SIFT 2 Project Affine 
+SIFT 3 Project SURF 4 OpenSURF Matlab Wrapper Affine Covariant 
+Features 5 Oxford project MSER 6 Oxford project VLFeat Geometric 
+Blur 7 Code Local Self Similarity Descriptor 8 Oxford implementation 
+Global and Efficient Self Similarity 9 Code Histogram of Oriented 
+Graidents 10 INRIA Object Localization Toolkit OLT toolkit for Windows 
+GIST 11 Project Shape Context 12 Project Color Descriptor 13 
+Project Pyramids of Histograms of Oriented Gradients Code Space Time 
+Interest Points STIP 14 Project Code Boundary Preserving Dense Local 
+Regions 15 Project Weighted Histogram Code Histogram based Interest Points 
+Detectors Paper Code An OpenCV C + + implementation of 
+Local Self Similarity Descriptors Project Fast Sparse Representation with Prototypes 
+Project Corner Detection Project AGAST Corner Detector faster than FAST 
+and even FAST ER Project Real time Facial Feature Detection 
+using Conditional Regression Forests Project Global and Efficient Self Similarity 
+for Object Classification and Detection code W α SH Weighted 
+α Shapes for Local Feature Detection Project HOG Project Online 
+Selection of Discriminative Tracking Features Project 二 图像 分割 Image 
+Segmentation Normalized Cut 1 Matlab code Gerg Mori Superpixel code 
+2 Matlab code Efficient Graph based Image Segmentation 3 C 
++ + code Matlab wrapper Mean Shift Image Segmentation 4 
+EDISON C + + code Matlab wrapper OWT UCM Hierarchical 
+Segmentation 5 Resources Turbepixels 6 Matlab code 32bit Matlab code 
+64bit Updated code Quick Shift 7 VLFeat SLIC Superpixels 8 
+Project Segmentation by Minimum Code Length 9 Project Biased Normalized 
+Cut 10 Project Segmentation Tree 11 12 Project Entropy Rate 
+Superpixel Segmentation 13 Code Fast Approximate Energy Minimization via Graph 
+Cuts Paper Code Ef ﬁ cient Planar Graph Cuts with 
+Applications in Computer Vision Paper Code Isoperimetric Graph Partitioning for 
+Image Segmentation Paper Code Random Walks for Image Segmentation Paper 
+Code Blossom V A new implementation of a minimum cost 
+perfect matching algorithm Code An Experimental Comparison of Min Cut 
+/ Max Flow Algorithms for Energy Minimization in Computer Vision 
+Paper Code Geodesic Star Convexity for Interactive Image Segmentation Project 
+Contour Detection and Image Segmentation Resources Project Code Biased Normalized 
+Cuts Project Max flow / min cut Project Chan Vese 
+Segmentation using Level Set Project A Toolbox of Level Set 
+Methods Project Re initialization Free Level Set Evolution via Reaction 
+Diffusion Project Improved C V active contour model Paper Code 
+A Variational Multiphase Level Set Approach to Simultaneous Segmentation and 
+Bias Correction Paper Code Level Set Method Research by Chunming 
+Li Project ClassCut for Unsupervised Class Segmentation code SEEDS Superpixels 
+Extracted via Energy Driven Sampling   Project other 三 目标 
+检测 Object Detection A simple object detector with boosting Project 
+INRIA Object Detection and Localization Toolkit 1 Project Discriminatively Trained 
+Deformable Part Models 2 Project Cascade Object Detection with Deformable 
+Part Models 3 Project Poselet 4 Project Implicit Shape Model 
+5 Project Viola and Jones s Face Detection 6 Project 
+Bayesian Modelling of Dyanmic Scenes for Object Detection Paper Code 
+Hand detection using multiple proposals Project Color Constancy Intrinsic Images 
+and Shape Estimation Paper Code Discriminatively trained deformable part models 
+Project Gradient Response Maps for Real Time Detection of Texture 
+Less Objects LineMOD Project Image Processing On Line Project Robust 
+Optical Flow Estimation Project Where s Waldo Matching People in 
+Images of Crowds Project Scalable Multi class Object Detection Project 
+Class Specific Hough Forests for Object Detection Project Deformed Lattice 
+Detection In Real World Images Project Discriminatively trained deformable part 
+models Project 四 显著性 检测 Saliency Detection Itti Koch and 
+Niebur saliency detection 1 Matlab code Frequency tuned salient region 
+detection 2 Project Saliency detection using maximum symmetric surround 3 
+Project Attention via Information Maximization 4 Matlab code Context aware 
+saliency detection 5 Matlab code Graph based visual saliency 6 
+Matlab code Saliency detection A spectral residual approach . 7 
+Matlab code Segmenting salient objects from images and videos . 
+8 Matlab code Saliency Using Natural statistics . 9 Matlab 
+code Discriminant Saliency for Visual Recognition from Cluttered Scenes . 
+10 Code Learning to Predict Where Humans Look 11 Project 
+Global Contrast based Salient Region Detection 12 Project Bayesian Saliency 
+via Low and Mid Level Cues Project Top Down Visual 
+Saliency via Joint CRF and Dictionary Learning Paper Code Saliency 
+Detection A Spectral Residual Approach Code 五 图像 分类 聚 
+类 Image Classification C l u s t e r 
+i n g P y r a m i d 
+Match 1 Project Spatial Pyramid Matching 2 Code Locality constrained 
+Linear Coding 3 Project Matlab code Sparse Coding 4 Project 
+Matlab code Texture Classification 5 Project Multiple Kernels for Image 
+Classification 6 Project Feature Combination 7 Project SuperParsing Code Large 
+Scale Correlation Clustering Optimization Matlab code Detecting and Sketching the 
+Common Project Self Tuning Spectral Clustering Project Code User Assisted 
+Separation of Reflections from a Single Image Using a Sparsity 
+Prior Paper Code Filters for Texture Classification Project Multiple Kernel 
+Learning for Image Classification Project SLIC Superpixels Project 六 抠图 
+Image MattingA Closed Form Solution to Natural Image Matting Code 
+Spectral Matting Project Learning based Matting Code 七 目标 跟踪 
+Object Tracking A Forest of Sensors Tracking Adaptive Background Mixture 
+Models Project Object Tracking via Partial Least Squares Analysis Paper 
+Code Robust Object Tracking with Online Multiple Instance Learning Paper 
+Code Online Visual Tracking with Histograms and Articulating Blocks Project 
+Incremental Learning for Robust Visual Tracking Project Real time Compressive 
+Tracking Project Robust Object Tracking via Sparsity based Collaborative Model 
+Project Visual Tracking via Adaptive Structural Local Sparse Appearance Model 
+Project Online Discriminative Object Tracking with Local Sparse Representation Paper 
+Code Superpixel Tracking Project Learning Hierarchical Image Representation with Sparsity 
+Saliency and Locality Paper Code Online Multiple Support Instance Tracking 
+Paper Code Visual Tracking with Online Multiple Instance Learning Project 
+Object detection and recognition Project Compressive Sensing Resources Project Robust 
+Real Time Visual Tracking using Pixel Wise Posteriors Project Tracking 
+Learning Detection Project OpenTLD / C + + Code the 
+HandVu vision based hand gesture interface Project Learning Probabilistic Non 
+Linear Latent Variable Models for Tracking Complex Activities Project 八 
+Kinect Kinect toolbox Project OpenNI Project zouxy09 CSDN Blog Resource 
+FingerTracker 手指 跟踪 code 九 3D 相关 3D Reconstruction of 
+a Moving Object Paper Code Shape From Shading Using Linear 
+Approximation Code Combining Shape from Shading and Stereo Depth Maps 
+Project Code Shape from Shading A Survey Paper Code A 
+Spatio Temporal Descriptor based on 3D Gradients HOG3D Project Code 
+Multi camera Scene Reconstruction via Graph Cuts Paper Code A 
+Fast Marching Formulation of Perspective Shape from Shading under Frontal 
+Illumination Paper Code Reconstruction 3D Shape Illumination Shading Reflectance Texture 
+Project Monocular Tracking of 3D Human Motion with a Coordinated 
+Mixture of Factor Analyzers Code Learning 3 D Scene Structure 
+from a Single Still Image Project 十 机器学习 算法 Matlab 
+class for computing Approximate Nearest Nieghbor ANN Matlab class   
+providing interface toANN library Random Sampling code Probabilistic Latent Semantic 
+Analysis pLSA Code FASTANN and FASTCLUSTER for approximate k means 
+AKM Project Fast Intersection / Additive Kernel SVMs Project SVM 
+Code Ensemble learning Project Deep Learning Net Deep Learning Methods 
+for Vision Project Neural Network for Recognition of Handwritten Digits 
+Project Training a deep autoencoder or a classifier on MNIST 
+digits Project THE MNIST DATABASE of handwritten digits Project Ersatz 
+deep neural networks in the cloud Project Deep Learning Project 
+sparseLM Sparse Levenberg Marquardt nonlinear least squares in C / 
+C + + Project Weka 3 Data Mining Software in 
+Java Project Invited talk A Tutorial on Deep Learning by 
+Dr . Kai Yu 余凯 Video CNN Convolutional neural network 
+class Matlab Tool Yann LeCun s Publications Wedsite LeNet 5 
+convolutional neural networks Project Training a deep autoencoder or a 
+classifier on MNIST digits Project Deep Learning 大牛 Geoffrey E 
+. Hinton s HomePage Website Multiple Instance Logistic Discriminant based 
+Metric Learning MildML and Logistic Discriminant based Metric Learning LDML 
+Code Sparse coding simulation software Project Visual Recognition and Machine 
+Learning Summer School Software 十一 目标 行为 识别 Object Action 
+Recognition Action Recognition by Dense Trajectories Project Code Action Recognition 
+Using a Distributed Representation of Pose and Appearance Project Recognition 
+Using Regions Paper Code 2D Articulated Human Pose Estimation Project 
+Fast Human Pose Estimation Using Appearance and Motion via Multi 
+Dimensional Boosting Regression Paper Code Estimating Human Pose from Occluded 
+Images Paper Code Quasi dense wide baseline matching Project ChaLearn 
+Gesture Challenge   Principal motion PCA based reconstruction of motion 
+histograms Project Real Time Head Pose Estimation with Random Regression 
+Forests Project 2D Action Recognition Serves 3D Human Pose Estimation 
+Project A Hough Transform Based Voting Framework for Action Recognition 
+Project Motion Interchange Patterns for Action Recognition in Unconstrained Videos 
+Project 2D articulated human pose estimation software Project Learning and 
+detecting shape models code Progressive Search Space Reduction for Human 
+Pose Estimation Project Learning Non Rigid 3D Shape from 2D 
+Motion Project 十二 图像处理 Distance Transforms of Sampled Functions Project 
+The Computer Vision Homepage Project Efficient appearance distances between windows 
+code Image Exploration algorithm code Motion Magnification 运动 放大 Project 
+Bilateral Filtering for Gray and Color Images 双边 滤波器 Project 
+A Fast Approximation of the Bilateral Filter using a Signal 
+Processing Approach Project 十三 一些 实用工具 EGT a Toolbox for 
+Multiple View Geometry and Visual Servoing Project Code a development 
+kit of matlab mex functions for OpenCV library Project Fast 
+Artificial Neural Network Library Project 十四 人手 及 指尖 检测 
+与 识别 finger detection and gesture recognition   Code Hand 
+and Finger Detection using JavaCV Project Hand and fingers detection 
+Code 十五 场景 解释 Nonparametric Scene Parsing via Label Transfer 
+  Project 十六 光 流 Optical flow High accuracy optical 
+flow using a theory for warping   Project Dense Trajectories 
+Video Description   Project SIFT Flow Dense Correspondence across Scenes 
+and its Applications Project KLT An Implementation of the Kanade 
+Lucas Tomasi Feature Tracker Project Tracking Cars Using Optical Flow 
+Project Secrets of optical flow estimation and their principles Project 
+implmentation of the Black and Anandan dense optical flow method 
+Project Optical Flow Computation Project Beyond Pixels Exploring New Representations 
+and Applications for Motion Analysis Project A Database and Evaluation 
+Methodology for Optical Flow Project optical flow relative Project Robust 
+Optical Flow Estimation Project optical flow Project 十七 图像 检索 
+Image Retrieval Semi Supervised Distance Metric Learning for Collaborative Image 
+Retrieval   Paper code 十八 马尔科夫 随 机场 Markov Random 
+Fields Markov Random Fields for Super Resolution   Project A 
+Comparative Study of Energy Minimization Methods for Markov Random Fields 
+with Smoothness Based Priors Project 十九 运动 检测 Motion detection 
+Moving Object Extraction Using Models or Analysis of Regions   
+Project Background Subtraction Experiments and Improvements for ViBe Project A 
+Self Organizing Approach to Background Subtraction for Visual Surveillance Applications 
+Project changedetection . net A new change detection benchmark dataset 
+Project ViBe a powerful technique for background detection and subtraction 
+in video sequences Project Background Subtraction Program Project Motion Detection 
+Algorithms Project Stuttgart Artificial Background Subtraction Dataset Project Object Detection 
+Motion Estimation and Tracking Project Feature Detection and D e 
+s c r i p t i o n G 
+e n e r a l Libraries VLFeat   – 
+Implementation of various feature descriptors including SIFT HOG and LBP 
+and covariant feature detectors including DoG Hessian Harris Laplace Hessian 
+Laplace Multiscale Hessian Multiscale Harris . Easy to use Matlab 
+interface . See   Modern features Software   – Slides 
+providing a demonstration of VLFeat and also links to other 
+software . Check also   VLFeat hands on session trainingOpenCV 
+  – Various implementations of modern feature detectors and descriptors 
+SIFT SURF FAST BRIEF ORB FREAK etc . Fast Keypoint 
+Detectors for Real time Applications FAST   – High speed 
+corner detector implementation for a wide variety of platformsAGAST   
+– Even faster than the FAST corner detector . A 
+multi scale version of this method is used for the 
+BRISK descriptor ECCV 2010 . Binary Descriptors for Real Time 
+Applications BRIEF   – C + + code for a 
+fast and accurate interest point descriptor not invariant to rotations 
+and scale ECCV 2010 ORB   – OpenCV implementation of 
+the Oriented Brief ORB descriptor invariant to rotations but not 
+scale BRISK   – Efficient Binary descriptor invariant to rotations 
+and scale . It includes a Matlab mex interface . 
+ICCV 2011 FREAK   – Faster than BRISK invariant to 
+rotations and scale CVPR 2012 SIFT and SURF Implementations SIFT 
+  VLFeat   OpenCV   Original code   by David 
+Lowe   GPU implementation   OpenSIFTSURF   Herbert Bay s 
+code   OpenCV   GPU SURFOther Local Feature Detectors and 
+Descriptors VGG Affine Covariant features   – Oxford code for 
+various affine covariant feature detectors and descriptors . LIOP descriptor 
+  – Source code for the Local Intensity order Pattern 
+LIOP descriptor ICCV 2011 . Local Symmetry Features   – 
+Source code for matching of local symmetry features under large 
+variations in lighting age and rendering style CVPR 2012 . 
+Global Image Descriptors GIST   – Matlab code for the 
+GIST d e s c r i p t o 
+r C E N T R I T   – 
+Global visual descriptor for scene categorization and object detection PAMI 
+2011 Feature Coding and PoolingVGG Feature Encoding Toolkit   – 
+Source code for various state of the art feature encoding 
+methods – including Standard hard encoding Kernel codebook encoding Locality 
+constrained linear encoding and Fisher kernel encoding . Spatial Pyramid 
+Matching   – Source code for feature pooling based on 
+spatial pyramid matching widely used for image classification Convolutional Nets 
+and Deep LearningEBLearn   – C + + Library for 
+Energy Based Learning . It includes several demos and step 
+by step instructions to train classifiers based on convolutional neural 
+networks . Torch7   – Provides a matlab like environment 
+for state of the art machine learning algorithms including a 
+fast implementation of convolutional neural networks . Deep Learning   
+Various links for deep learning software . Part Based ModelsDeformable 
+Part based Detector   – Library provided by the authors 
+of the original paper state of the art in PASCAL 
+VOC detection task Efficient Deformable Part Based Detector   – 
+Branch and Bound implementation for a deformable part based detector 
+. Accelerated Deformable Part Model   – Efficient implementation of 
+a method that achieves the exact same performance of deformable 
+part based detectors but with significant acceleration ECCV 2012 . 
+Coarse to Fine Deformable Part Model   – Fast approach 
+for deformable object detection CVPR 2011 . Poselets   – 
+C + + and Matlab versions for object detection based 
+on poselets . Part based Face Detector and Pose Estimation 
+  – Implementation of a unified approach for face detection 
+pose estimation and landmark localization CVPR 2012 . Attributes and 
+Semantic FeaturesRelative Attributes   – Modified implementation of RankSVM to 
+train Relative Attributes ICCV 2011 . Object Bank   – 
+Implementation of object bank semantic features NIPS 2010 . See 
+also   A c t i o n B a 
+n k C l a s s e m e 
+s Picodes and Meta class features   – Software for 
+extracting high level image descriptors ECCV 2010 NIPS 2011 CVPR 
+2012 . Large Scale LearningAdditive Kernels   – Source code 
+for fast additive kernel SVM classifiers PAMI 2013 . LIBLINEAR 
+  – Library for large scale linear SVM classification . 
+VLFeat   – Implementation for Pegasos SVM and Homogeneous Kernel 
+map . Fast Indexing and Image RetrievalFLANN   – Library 
+for performing fast approximate nearest neighbor . Kernelized LSH   
+– Source code for Kernelized Locality Sensitive Hashing ICCV 2009 
+. ITQ Binary codes   – Code for generation of 
+small binary codes using Iterative Quantization and other baselines such 
+as Locality Sensitive Hashing CVPR 2011 . INRIA Image Retrieval 
+  – Efficient code for state of the art large 
+scale image retrieval CVPR 2011 . Object DetectionSee   Part 
+based Models   and   Convolutional Nets   above . 
+Pedestrian Detection at 100fps   – Very fast and accurate 
+pedestrian detector CVPR 2012 . Caltech Pedestrian Detection Benchmark   
+– Excellent resource for pedestrian detection with various links for 
+state of the art implementations . OpenCV   – Enhanced 
+implementation of Viola & Jones real time object detector with 
+trained models for face detection . Efficient Subwindow Search   
+– Source code for branch and bound optimization for efficient 
+object localization CVPR 2008 . 3D RecognitionPoint Cloud Library   
+– Library for 3D image and point cloud processing . 
+Action R e c o g n i t i 
+o n A c t i o n B a 
+n k   – Source code for action recognition based 
+on the ActionBank representation CVPR 2012 . STIP Features   
+– software for computing space time interest point d e 
+s c r i p t o r s I 
+n d e p e n d e n t 
+Subspace Analysis   – Look for Stacked ISA for Videos 
+CVPR 2011 Velocity Histories of Tracked Keypoints   C + 
++ code for activity recognition using the velocity histories of 
+tracked keypoints ICCV 2009 D a t a s e 
+t s A t t r i b u t 
+e s A n i m a l s with 
+Attributes   – 30 475 images of 50 animals classes 
+with 6 pre extracted feature representations for each image . 
+aYahoo and aPascal   – Attribute annotations for images collected 
+from Yahoo and Pascal VOC 2008 . FaceTracer   – 
+15 000 faces annotated with 10 attributes and fiducial points 
+. PubFig   – 58 797 face images of 200 
+people with 73 attribute classifier outputs . LFW   – 
+13 233 face images of 5 749 people with 73 
+attribute classifier outputs . Human Attributes   – 8 000 
+people with annotated attributes . Check also this   link 
+  for another dataset of human attributes . SUN Attribute 
+Database   – Large scale scene attribute database with a 
+taxonomy of 102 attributes . ImageNet Attributes   – Variety 
+of attribute labels for the ImageNet dataset . Relative attributes 
+  – Data for OSR and a subset of PubFig 
+datasets . Check also this   link   for the 
+WhittleSearch data . Attribute Discovery Dataset   – Images of 
+shopping categories associated with textual descriptions . Fine grained Visual 
+C a t e g o r i z a 
+t i o n C a l t e c 
+h UCSD Birds Dataset   – Hundreds of bird categories 
+with annotated parts and attributes . Stanford Dogs Dataset   
+– 20 000 images of 120 breeds of dogs from 
+around the world . Oxford IIIT Pet Dataset   – 
+37 category pet dataset with roughly 200 images for each 
+class . Pixel level trimap segmentation is included . Leeds 
+Butterfly Dataset   – 832 images of 10 species of 
+butterflies . Oxford Flower Dataset   – Hundreds of flower 
+categories . Face DetectionFDDB   – UMass face detection dataset 
+and benchmark 5 000 + faces CMU / MIT   
+– Classical face detection dataset . Face RecognitionFace Recognition Homepage 
+  – Large collection of face recognition datasets . LFW 
+  – UMass unconstrained face recognition dataset 13 000 + 
+face images . NIST Face Homepage   – includes face 
+recognition grand challenge FRGC vendor tests FRVT and others . 
+CMU Multi PIE   – contains more than 750 000 
+images of 337 people with 15 different views and 19 
+lighting conditions . FERET   – Classical face recognition dataset 
+. Deng Cai s face dataset in Matlab Format   
+– Easy to use if you want play with simple 
+face datasets including Yale ORL PIE and Extended Yale B 
+. SCFace   – Low resolution face dataset captured from 
+surveillance cameras . Handwritten DigitsMNIST   – large dataset containing 
+a training set of 60 000 examples and a test 
+set of 10 000 examples . Pedestrian DetectionCaltech Pedestrian Detection 
+Benchmark   – 10 hours of video taken from a 
+vehicle 350K bounding boxes for about 2.3 K unique pedestrians 
+. INRIA Person Dataset   – Currently one of the 
+most popular pedestrian detection datasets . ETH Pedestrian Dataset   
+– Urban dataset captured from a stereo rig mounted on 
+a stroller . TUD Brussels Pedestrian Dataset   – Dataset 
+with image pairs recorded in an crowded urban setting with 
+an onboard camera . PASCAL Human Detection   – One 
+of 20 categories in PASCAL VOC detection challenges . USC 
+Pedestrian Dataset   – Small dataset captured from surveillance cameras 
+. Generic Object R e c o g n i 
+t i o n I m a g e N 
+e t   – Currently the largest visual recognition dataset 
+in terms of number of categories and images . Tiny 
+Images   – 80 million 32x32 low resolution images . 
+Pascal VOC   – One of the most influential visual 
+recognition datasets . Caltech 101   /   Caltech 256 
+  – Popular image datasets containing 101 and 256 object 
+categories respectively . MIT LabelMe   – Online annotation tool 
+for building computer vision databases . Scene RecognitionMIT SUN Dataset 
+  – MIT scene understanding dataset . UIUC Fifteen Scene 
+Categories   – Dataset of 15 natural scene categories . 
+Feature Detection and DescriptionVGG Affine Dataset   – Widely used 
+dataset for measuring performance of feature detection and description . 
+C h e c k V L B e n 
+c h m a r k s   for an 
+evaluation framework . Action R e c o g n 
+i t i o n B e n c h 
+m a r k i n g Activity Recognition   
+– CVPR 2012 tutorial covering various datasets for action recognition 
+. RGBD RecognitionRGB D Object Dataset   – Dataset containing 
+300 common household objects 一 传统 图像 算法 工程师 主要 涉及 图形处理 包括 形态学 
+图像质量 相机 成像 之 3A 算法 去 雾 处理 颜色 
+空间 转换 滤镜 等 主要 在 安防 公司 或者 机器 
+视觉 领域 包括 缺陷 检测 二 现代 图像 算法 工程师 
+涉及 模式识别 主要 表现 的 经验 为 Adaboost SVM 的 
+研究 与 应用 特征 选取 与 提取 包括 智能 驾驶 
+的 研究 与 应用 行人 检测 人脸识别 三 人工智能 时代 
+图像 算法 工程师 深度 学习 主要 在 大型 互联网 公司 
+或者 研究所 机构 具体 体现 在 TensorFlow 等 开源 库 
+的 研究 与 应用 包括 机器人 的 研 基于 深度 
+学习 的 人脸 识别 CSDN 上 也 总结 了 很多 
+补充 2016 12 21   23 49 53 Deep Learning 
+源代码 收集 持续 更新 Deep Learning 深度 学习 计算机 视觉 
+机器学习 相关 领域 论文 和 源代码 大集合 持续 更新 图像 
+处理 与 计算机 视觉 基础 经典 以及 最近 发展   
+经典 论文 集合 计算机 视觉 领域 的 一些 牛人 博客 
+超 有 实力 的 研究 机构 web 主页 转 来自 
+西弗 吉利亚 大学 li xin 整理 的 CV 代码 合集 
+转 图像 处理 与 机器 视觉 行业 分析 计算机 视觉 
+整理 库 https / / github . com / ty4z2008 
+/ Qix 通用 库 / General LibraryOpenCV     无需 
+多言 RAVL   Recognition And Vision Library . 线程 安全 
+强大 的 IO 机制 包含 AAM CImg   很酷 的 
+一个 图像处理 包 整个 库 只有 一个 头文件 包含 一个 
+基于 PDE 的 光 流 算法 图像 视频 IO / 
+Image Video I O F r e e I m 
+a g e D e v I L I m 
+a g e M a g i c k F 
+F M P E G V i d e o 
+I n p u t p o r t V 
+i d e o A R 相关 / Augmented RealityARToolKit 
+    基于 Marker 的 AR 库 ARToolKitPlus     
+ARToolKit 的 增强 版 实现 了 更好 的 姿态 估 
+计算法 PTAM     实时 的 跟踪 SLAM AR 库 
+无需 Marker 模板 内置 传感器 等 BazAR     基于 
+特征点 检测 和 识别 的 AR 库 局部 不变 特征 
+/ Local Invariant FeatureVLFeat     目前 最好 的 Sift 
+开源 实现 同时 包含 了 KD tree KD Forest BoW 
+实现 VLFeat 著名 而 常用 项目 网站 http / / 
+www . vlfeat . org 著名 的 计算机 视觉 / 
+图像处理 开源 项目 知名度 应该 不必 OpenCV 低 太多 曾获/nr 
+ACM Open Source Software Competition 2010 一等奖 使用 C 语言 
+编写 提供 C 语言 和 Matlab 两种 接口 实现 了 
+大量 计算机 视觉 算法 包括 常用 图像 处理 功能 包括 
+颜色 空间 变换 几何变换 作为 Matlab 的 补充 常用 机器学习 
+算法 包括 GMM SVM KMeans 等 常用 的 图像 处理 
+的 plot 工具 特征提取 包括   Covariant detectors   HOG 
+  SIFT MSER 等 VLFeat 提供 了 一个 vl _ 
+covdet   函数 作为 框架 可以 方便 的 统一 所谓 
+co variant feature detectors 包括了 DoG Harris Affine Harris Laplace 
+并且 可以 提取 SIFT 或 raw patches 描述 子 超 
+像素 Superpixel 分割 包括 常用 的 Quick shift   SLIC 
+算法 等 高级 聚 类 算法 比如 整数 KMeans Integer 
+k means IKM hierarchical version of integer k means HIKM 
+基于 互信息 自动 判 定聚 类 类 数 的 算法 
+Agglomerative Information Bottleneck AIB algorithm 等高 维特 特征 匹配 算法 
+随机 KD 树 Randomized kd trees 可以 在 这里 查看 
+VLFeat 完整 的 功能 列表   http / / www 
+. vlfeat . org / matlab / matlab . htmlFerns 
+    基于 Naive Bayesian   Bundle 的 特征点 识别 
+高速 但 占用 内存 高 SIFT By Rob Hess   
+  基于 OpenCV 的 Sift 实现 目标 检测 / Object 
+D e t e c t i o n A 
+d a B o o s t By JianXin . 
+Wu     又一个 AdaBoost 实现 训练 速度快 行人 检测 
+By JianXin . Wu     基于 Centrist 和 Linear 
+SVM 的 快速 行人 检测 近似 最 近邻 / ANNFLANN 
+    目前 最 完整 的 近似 最 近邻 开源 
+库 不但 实现 了 一系列 查找 算法 还 包含 了 
+一种 自动 选取 最快 算法 的 机制 ANN     
+另外 一个 近似 最 近邻 库 SLAM & SFMSceneLib   
+    LGPL     monoSLAM 库 由 Androw Davison 
+开发 图像 分割 / SegmentationSLIC Super Pixel     使用 
+Simple Linear Iterative Clustering 产生 指定 数目 近似 均匀分布 的 
+Super Pixel 目标 跟踪 / TrackingTLD     基于 Online 
+Random Forest 的 目标 跟踪 算法 KLT   Kanade Lucas 
+TrackerOnline boosting trackers     Online Boosting Trackers 直线 检测 
+/ Line DetectionDSCC     基于 联通 域 连接 的 
+直线 检测 算法 LSD   GPL     基于 梯度 
+的 局部 直 线段 检测 算子 指纹 / Finger PrintpHash 
+  GPL     基于 感知 的 多媒体 文件 Hash 
+算法 提取 对比 图像 视频 音频 的 指纹 视觉 显著性 
+/ Visual SalienceGlobal Contrast Based Salient Region Detection     
+Ming Ming Cheng 的 视觉 显著性 算法 FFT / DWTFFTW 
+  GPL     最快 最好 的 开源 FFT FFTReal 
+  WTFPL     轻量级 的 FFT 实现 许可证 是 
+亮点 音频 处理 / Audio processingSTK   Free     
+音频 处理 音频 合成 libsndfile   LGPL   音频文件 IO 
+libsamplerate   GPL   音频 重 采样 小波 变换   
+  快速 小波 变换 FWT FWTBRIEF Binary Robust Independent Elementary 
+Feature 一个 很好 的 局部 特征描述 子 里面 有 FAST 
+corner + BRIEF 实现 特征点 匹配 的 DEMO http / 
+/ cvlab . epfl . ch / software / brief 
+/ http / / code . google . com / 
+p / javacvJava 打包 的 OpenCV FFmpeg libdc1394 PGR FlyCapture 
+OpenKinect videoInput and ARToolKitPlus 库 可以 放在 Android 上用 ~ 
+libHIK HIK SVM 计算 HIK SVM 跟 Centrist 的 Lib 
+http / / c2inet . sce . ntu . edu 
+. sg / Jianxin / projects / libHIK / libHIK 
+. htm 一组 视觉 显著性 检测 代码 的 链接 http 
+/ / cg . cs . tsinghua . edu . 
+cn / people / ~ cmm / saliency / Peter 
+Kovesi 的 工具箱 轻量 好用 侧重 图像处理   http / 
+/ www . peterkovesi . com / matlabfns / 项目 
+网站 http / / www . csse . uwa . 
+edu . au / ~ pk / research / matlabfns 
+/ 这位 Peter 大哥 目前 在 The University of Western 
+Australia 工作 他 自己 写 了 一套 Matlab 计算机 视觉 
+算法 所谓 工具箱 其实 就是 许多 m 文件 的 集合 
+全部 Matlab 实现 无需 编译 安装 支持 Octave 如果 没有 
+Matlab 的话 有了/nr 这个 工具箱 也 可以 在 Octave 下 
+进行 图像 处理 了 别看 这位 大哥 单枪匹马 人家 的 
+工具 箱 可是 相当 有名 研究 时候 需要 哪个 Matlab 
+的 计算机 视觉 小 功能 直接 到 他家 主页 上 
+下 几个 m 文件 放在 自己 文件夹 就 好了 这个 
+工具箱 主要 以 图像处理 算法 为主 附带 一些 三维 视觉 
+的 基本 算法 列 一些 包括 的 功能 Feature Detection 
+via Phase Congruency 通过 相位 一致性 检测 图像 特征 Spatial 
+Feature Detection Harris Canny 之类 的 特征 算法 Edge Linking 
+and Line Segment Fitting 边缘 特征 和线/nr 特征 的 各种 
+操作 Image Denoising 图像 降噪 Surface Normals to Surfaces 从法/nr 
+向量积/i 分出/v 表面/n Scalogram/w Calculation 量 图 计算 Anisotropic diffusion 
+著名 的 保 边缘 平滑 算法 Frequency Domain Transformations 傅立叶 
+变换 Functions Supporting Projective Geometry 透视 几何 三维 视觉 的 
+一些 算法 Feature Matching 特征 匹配 Model Fitting and Robust 
+Estimation R A N A C F i n g 
+e r p r i n t Enhancement 指纹 图像增强 
+Interesting Synthetic Images 一些 好 玩儿 的 图像 生成 算法 
+Image Blending 图像 融合 Colourmaps and colour conversions 颜色 空间 
+算法 MexOpenCV 让 Matlab 支持 调用 的 OpenCV 项目 网站 
+http / / www . cs . sunysb . edu 
+/ ~ kyamagu / mexopencv / 作者 Kota Yamaguchi 桑是/nr 
+石溪 大学 Stony Brook University 的 PhD 早些 时候 自己 
+搞 了 一套 东西 把 OpenCV 的 代码 编译成 Matlab 
+可用 的 mex 接口 然后 这个 东西 迅速 火了 今年夏天 
+这个 项目 被 OpenCV 吸收 为 一个 模块 貌似 是 
+搞 了 一个 Google Summer of Code GSoC 的 项目 
+最近 大概 是 9 10月 已经 merge 到了 OpenCV 主 
+包 有兴趣 的 可以 到 Github 的 OpenCV 库 下 
+的 module / matlab 去玩 一下 应该 会在 10 月份 
+的 OpenCV 3 alpha 里 正式 发布 现在 OpenCV 就 
+同时 有了 Python 和 Maltab 的 binding 好 强大 具体 
+的 功能 就不 细说 了 既然 是 OpenCV 的 binding 
+当然 是 可以 使用 OpenCV 的 绝大多数 算法 了 介绍 
+n 款 计算机 视觉 库 / 人脸识别 开源 库 / 
+软件 计算机 视觉 库   OpenCVOpenCV 是 Intel ® 开源 
+计算机 视觉 库 它 由 一系列 C 函数 和 少量 
+C + + 类 构成 实现 了 图像 处理 和 
+计算机 视觉 方面 的 很多 通用 算法 OpenCV 拥有 包括 
+300 多个 C 函数 的 跨平台 的 中 高层 API 
+它 不 依赖 于 其它 的 外部 库 尽管 也 
+可以 使用 某些 外部 库 OpenCV 对 非商业 . . 
+. 人脸识别   faceservice . cgifaceservice . cgi 是 一个 
+用来 进行 人脸 识别 的 CGI   程序 你 可以 
+通过 上传 图像 然后 该 程序 即 告诉 你 人脸 
+的 大概 坐标 位置 faceservice 是 采用 OpenCV 库 进行 
+开发 的 OpenCV 的 . NET 版   O p 
+e n C V D o t N e t 
+O p e n C V D o t N 
+e t 是 一个 . NET 对 OpenCV 包的/nr 封装 
+人脸 检测 算法   j V i o l a 
+j o n e s j V i o l 
+a j o n e s 是 人脸 检测 算法 
+Viola Jones 的 一个 Java 实现 并能够 加载 OpenCV XML 
+文件 示例代码 http / / www . oschina . net 
+/ code / snippet _ 12 _ 2033Java 视觉 处理 
+库   JavaCVJavaCV 提供 了 在 计算机 视觉 领域 的 
+封装 库 包括 OpenCV ARToolKitPlus libdc1394 2 . x PGR 
+FlyCapture 和 FFmpeg 此外 该 工具 可以 很容易 地 使用 
+Java 平台 的 功能 JavaCV 还 带有 硬件加速 的 全屏幕 
+图像 显示 CanvasFrame 易于 在 多个 内核 中 执行 并行 
+代码 并 . . . 运动 检测 程序   QMotionQMotion 
+是 一个 采用 OpenCV 开发 的 运动 检测 程序 基于 
+QT 视频 监控 系统   OpenVSSOpenVSS 开放 平台 的 视频 
+监控 系统 是 一个 系统 级别 的 视频 监控 软件 
+视频 分析 框架 VAF 的 视频 分析 与 检索 和 
+播放 服务 记录 和 索引 技术 它 被 设计 成 
+插件 式 的 支持 多 摄像头 平台 多 分析仪 模块 
+OpenCV 的 集成 以及 多 核心 架构 手势 识别   
+hand gesture detection 手势 识别 用 OpenCV 实现 人脸 检测 
+识别   mcvai tracking 提供 人脸 检测 识别 与 检测 
+特定 人脸 的 功能 示例代码 cvReleaseImage & gray c v 
+R e l e a s e M e m 
+t o r a g e & storage c v 
+R e l e a s e H a a 
+r C l a s s i f i e 
+r C a s c a d e & cascade 
+. . . 人脸 检测 与 跟踪 库   asmlibraryActive 
+Shape Model Library ASMLibrary © SDK 用 OpenCV 开发 用于 
+人脸 检测 与 跟踪 Lua 视觉 开发 库   libecvECV 
+是 lua 的 计算机 视觉 开发 库 目前 只 提供 
+linux 支持 OpenCV 的 . Net 封装   O p 
+e n C V h a r p O p 
+e n C V h a r p 是 一个 
+OpenCV 的 . Net wrapper 应用 最新 的 OpenCV 库 
+开发 使用 习惯 比 EmguCV 更 接近 原始 的 OpenCV 
+有 详细 的 使用 样例 供参考 3D 视觉 库   
+fvision2010 基于 OpenCV 构建 的 图像 处理 和 3D 视觉 
+库 示例代码 I m a g e e q u 
+e n c e R e a d e r 
+F a c t o r y factory I m 
+a g e e q u e n c e 
+R e a d e r * reader = factory 
+. pathRegex c / a / im _ % 03d 
+. jpg 0 20 / / I m a g 
+e e q u e n c e R e 
+a d e r * reader = factory . avi 
+a . avi if reader = = NULL { . 
+. . 基于 QT 的 计算机 视觉 库   QVision 
+基于 QT 的 面向 对象 的 多平台 计算机 视觉 库 
+可以 方便 的 创建 图形化 应用程序 算法 库主 要从 OpenCV 
+GSL CGAL IPP Octave 等 高性能 库 借鉴 而来 图像 
+特征提取   cvBlobcvBlob 是 计算机 视觉 应用 中 在 二 
+值 图像 里 寻找 连通 域 的 库 . 能够 
+执行 连通 域 分析 与 特征提取 . 实时 图像 / 
+视频处理 滤波 开发包   GShowGShow is a real time image 
+/ video processing filter development kit . It successfully integrates 
+DirectX11 with DirectShow framework . So it has the f 
+o l l o w i n g f e 
+a t u r e s GShow 是 实时 图像 
+/ 视频 处理 滤波 开发包 集成 DiretX11 . . . 
+视频 捕获 API   VideoManVideoMan 提供 一组 视频 捕获 API 
+支持 多种 视频流 同时 输入 视频 传输线 USB 摄像头 和 
+视频 文件 等 能 利用 OpenGL 对 输入 进行 处理 
+方便 的 与 OpenCV CUDA 等 集成 开发 计算机 视觉 
+系统 开放 模式识别 项目   OpenPRPattern Recognition project 开放 模式识别 
+项目 致力 于 开发 出 一套 包含 图像处理 计算机 视觉 
+自然语言 处理 模式识别 机器 学习 和 相关 领域 算法 的 
+函数库 OpenCV 的 Python 封装   pyopencvOpenCV 的 Python 封装 
+主要 特性 包括 提供 与 OpenCV 2 . x 中 
+最新 的 C + + 接口 极为 相似 的 Python 
+接口 并且 包括 C + + 中 不 包括 的 
+C 接口 提供 对 OpenCV 2 . x 中 所有 
+主要 部件 的 绑定 CxCORE almost complete CxFLANN complete Cv 
+complete CvAux C + + part almost . . . 
+视觉 快速 开发平台   qcv 计算机 视觉 快速 开发平台 提供 
+测试 框架 使 开发 者 可以 专注 于 算法 研究 
+图像 捕获   libv4l2cam 对 函数库 v412 的 封装 从 
+网络 摄像头 等 硬件 获得 图像 数据 支持 YUYV 裸 
+数据 输出 和 BGR24 的 OpenCV     IplImage 输出 
+计算机 视觉 算法   O p e n V I 
+D I A O p e n V I D 
+I A projects implement computer vision algorithms running on on 
+graphics hardware such as single or multiple graphics processing units 
+GPUs usingOpenGL Cg and CUDA C . Some samples will 
+soon support OpenCL and Direct Compute API & apos . 
+. . 高斯 模型 点 集 配 准 算法   
+gmmreg 实现 了 基于 混合 高斯 模型 的 点 集 
+配 准 算法 该 算法 描述 在 论文 A Robust 
+Algorithm for Point Set Registration Using Mixture of Gaussians Bing 
+Jian and Baba C . Vemuri . 实现 了 C 
++ + / Matlab / Python 接口 . . . 
+模式识别 和 视觉 库   RAVLRecognition And Vision Library RAVL 
+是 一个 通用 C + + 库 包含 计算机 视觉 
+模式识别 等 模块 图像 处理 和 计算机 视觉 常用 算 
+法库   LTI LibLTI Lib 是/v 一个/m 包含/v 图像/n 处理/v 
+和/c 计算机/n 视觉/n 常用/b 算法/n 和/c 数据/n 结构/n 的/uj 面向对象/n 
+库/n 提供 Windows 下 的 VC 版本 和 Linux 下 
+的 gcc 版本 主要 包含 以下 几 方面 内容 1 
+线性代数 2 聚类分析 3 图像处理 4 可视化 和 绘图 工具 
+OpenCV 优化   opencv dsp acceleration 优化 了 OpenCV 库 
+在 DSP 上 的 速度 C + + 计算机 视觉 
+库   Integrating Vision T o o l k i 
+t I n t e g r a t i 
+n g Vision Toolkit IVT 是 一个 强大 而 迅速 
+的 C + + 计算机 视觉 库 拥有 易用 的 
+接口 和 面向 对象 的 架构 并且 含 有 自己 
+的 一套 跨平台 GUI 组件 另外 可以 选择 集成 OpenCV 
+计算机 视觉 和 机器人 技术 的 工具包   EGTThe Epipolar 
+Geometry Toolbox EGT is a toolbox designed for Matlab by 
+Mathworks Inc . . EGT provides a wide set of 
+functions to approach computer visionand robotics problems with single and 
+multiple views and with different vision se . . . 
+OpenCV 的 扩展 库   I m a g e 
+N e t s I m a g e N 
+e t s 是 对 OpenCV 的 扩展 提供 对 
+机器人 视觉 算法 方面 友好 的 支持 使用 Nokia 的 
+QT 编写 界面 libvideogfx 视频处理 计算机 视觉 和 计算机 图形学 
+的 快速 开发 库 Matlab 计算机 视觉 包 /nr mVisionMatlab 的 
+计算机 视觉 包 包含 用于 观察 结果 的 GUI 组件 
+貌似 也 停止 开发 了 拿来 做 学习 用 挺 
+不错 的 Scilab 的 计算机 视觉 库   SIPSIP 是 
+Scilab 一种 免费 的 类 Matlab 编程 环境 的 图像 
+处理 和 计算机 视觉 库 SIP 可以 读写 JPEG / 
+PNG / BMP 格式 的 图片 具备 图像 滤波 分割 
+边缘 检测 形态学 处理 和 形状 分析 等 功能 STAIR 
+Vision LibrarySTAIR Vision Library SVL 最初 是 为 支持 斯坦福 
+智能 机器人 设计 的 提供 对 计算机 视觉 机器 学习 
+和 概率 统计 模 视觉 相关 网站 今天 的 主要 
+任务 就是 和 大家 分享 一些 鄙人 收藏 的 认为 
+相当 研究 价值 的 网页 Oxford 大牛 Andrew Zisserman http 
+/ / www . robots . ox . ac . 
+uk / ~ vgg / hzbook / code / 此人 
+主要 研究 多 幅 图像 的 几何学 该 网站 提供 
+了 部分 工具 相当 实用 还有 例子 西澳大利亚 大学 的 
+Peter Kovesi http / / www . csse . uwa 
+. edu . au / ~ pk / research / 
+matlabfns / 提供 了 一些 基本 的 matlab 工具 主要 
+内容 涉及 Computer Vision Image ProcessingCMU http / / www 
+. cs . cmu . edu / afs / cs 
+/ project / cil / ftp / html / vision 
+. html 该 网站 是 我 的 最爱 尤其 后面 
+这个 地址 http / / www . cs . cmu 
+. edu / afs / cs / project / cil 
+/ ftp / html / v groups . html 在 
+这里 提供 了 世界 各地 机构 大学 在 Computer Vision 
+所 涉及 各 领域 的 研究 情况 包括 Image Processing 
+Machine Vision 我 后来 也 是 通过 它 连接 到 
+了 很多 国外 的 网站 Cambridge http / / mi 
+. eng . cam . ac . uk / milab 
+. html 这是 剑桥 大学 的 机器 智能 实验室 里面 
+有 三个 小组 Computer Vision & Robotics Machine Intelligence Speech 
+目前 为止 Computer Vision & Robotics 的 一些 研究 成果 
+对 我 日后 的 帮助 可能会 比较 大 所以 在此 
+提及 大量 计算机 视觉 方面 的 原版 电子书 http / 
+/ homepages . inf . ed . ac . uk 
+/ rbf / CVonline / books . htm 我 今天 
+先 下了 本 Zisserman 的 书 呵呵 国外 的 原版书 
+虽然 都是/nr 比较 老 的 但是 对于 基础 的 理解 
+学习 还是 很 有 帮助 的 至于 目前 的 研究 
+现状 只能 通过 论文 或者 一些 研究 小组 的 网站 
+stanford http / / ai . stanford . edu / 
+~ asaxena / reconstruction3d / 这个 网站 是 Andrew N 
+. G 老师 和 一个 印度阿三 的 博士 一起 维护 
+的 主要 对 于单 张 照片 的 三维重建 尤 其他 
+有个 网页 make3d . stanford . edu 可以 让 你 
+自己 上传 你 的 照片 通过 网站 来 重建 三维 
+模型 这个 网站 对于 刚 开始 接触 Computer Vision 的 
+我 来说 如获至宝 但有 个 致命 问题 就是 make3d 已经 
+无法 注册 我 也 多次 给 Andrew 和 印度阿三 email 
+至今 未 回 郁闷 要是 有 这个 网站 的 帐号 
+那 还是 相当 爽 的 不 知道 是不是 由于 他们 
+的 邮箱 把 我 的 email 当成 垃圾邮件 过滤 哎 
+但 这个 stanford 网站 的 贡献 主要 是 代码 有 
+很多 computer vision 的 基础 工具 貌似 40M 左右 全都 
+是 基于 matlab 的 caltech http / / www . 
+vision . caltech . edu / bouguetj / calib _ 
+doc / 这 是 我们 Computer Vision 老师 课件 上 
+的 连接 主要 是 用于 摄像机 标定 的 工具集 当然 
+也 有 涉及 对 标定 图像 三维重建 的 前期 处理过程 
+JP Tarel http / / perso . lcpc . fr 
+/ tarel . jean philippe / 这是 他 的 个人 
+主页 也 是 目前 为止 我 发 的 email 中 
+唯一 一个 给 我 回信 的 老外 因为 我 需要 
+重建 练习 的 正是 他 的 图片集 我 读过 他 
+的 论文 但 没有 涉及 代码 的 内容 再加 上 
+又是 94年 以前 的 论文 很多 相关 的 引文 我 
+都 无法 下载 在 我 的 再三 追问 下 Tarel 
+教授 只 告诉 我 你 可以 按照 我 的 那篇 
+论文 对 足球 进行 重建 可是 . . . 你 
+知道 吗 你/r 有/v 很多/m 图像/n 处理/v 的/uj 引文/v 都/d 
+下不/i 了了/v 我 只 知道 你 通过 那 篇文章 做了 
+图像 的 预处理 根本 不 知道 具体 过程 当然 我 
+有幸 找到 过 一篇 90 左右 的 论文 讲 的 
+是 region based segmentation 可是 这 文章 里 所有 引文 
+又是 找 不到 的 . . . . 悲剧 的 
+人生 开源 软件 网站 www . sourceforge . net 机器 
+视觉 开 源代码 集 合一 特征提取 Feature Extraction SIFT 1 
+Demo program SIFT Library VLFeat PCA SIFT 2 Project Affine 
+SIFT 3 Project SURF 4 OpenSURF Matlab Wrapper Affine Covariant 
+Features 5 Oxford project MSER 6 Oxford project VLFeat Geometric 
+Blur 7 Code Local Self Similarity Descriptor 8 Oxford implementation 
+Global and Efficient Self Similarity 9 Code Histogram of Oriented 
+Graidents 10 INRIA Object Localization Toolkit OLT toolkit for Windows 
+GIST 11 Project Shape Context 12 Project Color Descriptor 13 
+Project Pyramids of Histograms of Oriented Gradients Code Space Time 
+Interest Points STIP 14 Project Code Boundary Preserving Dense Local 
+Regions 15 Project Weighted Histogram Code Histogram based Interest Points 
+Detectors Paper Code An OpenCV C + + implementation of 
+Local Self Similarity Descriptors Project Fast Sparse Representation with Prototypes 
+Project Corner Detection Project AGAST Corner Detector faster than FAST 
+and even FAST ER Project Real time Facial Feature Detection 
+using Conditional Regression Forests Project Global and Efficient Self Similarity 
+for Object Classification and Detection code W α SH Weighted 
+α Shapes for Local Feature Detection Project HOG Project Online 
+Selection of Discriminative Tracking Features Project 二 图像 分割 Image 
+Segmentation Normalized Cut 1 Matlab code Gerg Mori Superpixel code 
+2 Matlab code Efficient Graph based Image Segmentation 3 C 
++ + code Matlab wrapper Mean Shift Image Segmentation 4 
+EDISON C + + code Matlab wrapper OWT UCM Hierarchical 
+Segmentation 5 Resources Turbepixels 6 Matlab code 32bit Matlab code 
+64bit Updated code Quick Shift 7 VLFeat SLIC Superpixels 8 
+Project Segmentation by Minimum Code Length 9 Project Biased Normalized 
+Cut 10 Project Segmentation Tree 11 12 Project Entropy Rate 
+Superpixel Segmentation 13 Code Fast Approximate Energy Minimization via Graph 
+Cuts Paper Code Ef ﬁ cient Planar Graph Cuts with 
+Applications in Computer Vision Paper Code Isoperimetric Graph Partitioning for 
+Image Segmentation Paper Code Random Walks for Image Segmentation Paper 
+Code Blossom V A new implementation of a minimum cost 
+perfect matching algorithm Code An Experimental Comparison of Min Cut 
+/ Max Flow Algorithms for Energy Minimization in Computer Vision 
+Paper Code Geodesic Star Convexity for Interactive Image Segmentation Project 
+Contour Detection and Image Segmentation Resources Project Code Biased Normalized 
+Cuts Project Max flow / min cut Project Chan Vese 
+Segmentation using Level Set Project A Toolbox of Level Set 
+Methods Project Re initialization Free Level Set Evolution via Reaction 
+Diffusion Project Improved C V active contour model Paper Code 
+A Variational Multiphase Level Set Approach to Simultaneous Segmentation and 
+Bias Correction Paper Code Level Set Method Research by Chunming 
+Li Project ClassCut for Unsupervised Class Segmentation code SEEDS Superpixels 
+Extracted via Energy Driven Sampling   Project other 三 目标 
+检测 Object Detection A simple object detector with boosting Project 
+INRIA Object Detection and Localization Toolkit 1 Project Discriminatively Trained 
+Deformable Part Models 2 Project Cascade Object Detection with Deformable 
+Part Models 3 Project Poselet 4 Project Implicit Shape Model 
+5 Project Viola and Jones s Face Detection 6 Project 
+Bayesian Modelling of Dyanmic Scenes for Object Detection Paper Code 
+Hand detection using multiple proposals Project Color Constancy Intrinsic Images 
+and Shape Estimation Paper Code Discriminatively trained deformable part models 
+Project Gradient Response Maps for Real Time Detection of Texture 
+Less Objects LineMOD Project Image Processing On Line Project Robust 
+Optical Flow Estimation Project Where s Waldo Matching People in 
+Images of Crowds Project Scalable Multi class Object Detection Project 
+Class Specific Hough Forests for Object Detection Project Deformed Lattice 
+Detection In Real World Images Project Discriminatively trained deformable part 
+models Project 四 显著性 检测 Saliency Detection Itti Koch and 
+Niebur saliency detection 1 Matlab code Frequency tuned salient region 
+detection 2 Project Saliency detection using maximum symmetric surround 3 
+Project Attention via Information Maximization 4 Matlab code Context aware 
+saliency detection 5 Matlab code Graph based visual saliency 6 
+Matlab code Saliency detection A spectral residual approach . 7 
+Matlab code Segmenting salient objects from images and videos . 
+8 Matlab code Saliency Using Natural statistics . 9 Matlab 
+code Discriminant Saliency for Visual Recognition from Cluttered Scenes . 
+10 Code Learning to Predict Where Humans Look 11 Project 
+Global Contrast based Salient Region Detection 12 Project Bayesian Saliency 
+via Low and Mid Level Cues Project Top Down Visual 
+Saliency via Joint CRF and Dictionary Learning Paper Code Saliency 
+Detection A Spectral Residual Approach Code 五 图像 分类 聚 
+类 Image Classification C l u s t e r 
+i n g P y r a m i d 
+Match 1 Project Spatial Pyramid Matching 2 Code Locality constrained 
+Linear Coding 3 Project Matlab code Sparse Coding 4 Project 
+Matlab code Texture Classification 5 Project Multiple Kernels for Image 
+Classification 6 Project Feature Combination 7 Project SuperParsing Code Large 
+Scale Correlation Clustering Optimization Matlab code Detecting and Sketching the 
+Common Project Self Tuning Spectral Clustering Project Code User Assisted 
+Separation of Reflections from a Single Image Using a Sparsity 
+Prior Paper Code Filters for Texture Classification Project Multiple Kernel 
+Learning for Image Classification Project SLIC Superpixels Project 六 抠图 
+Image MattingA Closed Form Solution to Natural Image Matting Code 
+Spectral Matting Project Learning based Matting Code 七 目标 跟踪 
+Object Tracking A Forest of Sensors Tracking Adaptive Background Mixture 
+Models Project Object Tracking via Partial Least Squares Analysis Paper 
+Code Robust Object Tracking with Online Multiple Instance Learning Paper 
+Code Online Visual Tracking with Histograms and Articulating Blocks Project 
+Incremental Learning for Robust Visual Tracking Project Real time Compressive 
+Tracking Project Robust Object Tracking via Sparsity based Collaborative Model 
+Project Visual Tracking via Adaptive Structural Local Sparse Appearance Model 
+Project Online Discriminative Object Tracking with Local Sparse Representation Paper 
+Code Superpixel Tracking Project Learning Hierarchical Image Representation with Sparsity 
+Saliency and Locality Paper Code Online Multiple Support Instance Tracking 
+Paper Code Visual Tracking with Online Multiple Instance Learning Project 
+Object detection and recognition Project Compressive Sensing Resources Project Robust 
+Real Time Visual Tracking using Pixel Wise Posteriors Project Tracking 
+Learning Detection Project OpenTLD / C + + Code the 
+HandVu vision based hand gesture interface Project Learning Probabilistic Non 
+Linear Latent Variable Models for Tracking Complex Activities Project 八 
+Kinect Kinect toolbox Project OpenNI Project zouxy09 CSDN Blog Resource 
+FingerTracker 手指 跟踪 code 九 3D 相关 3D Reconstruction of 
+a Moving Object Paper Code Shape From Shading Using Linear 
+Approximation Code Combining Shape from Shading and Stereo Depth Maps 
+Project Code Shape from Shading A Survey Paper Code A 
+Spatio Temporal Descriptor based on 3D Gradients HOG3D Project Code 
+Multi camera Scene Reconstruction via Graph Cuts Paper Code A 
+Fast Marching Formulation of Perspective Shape from Shading under Frontal 
+Illumination Paper Code Reconstruction 3D Shape Illumination Shading Reflectance Texture 
+Project Monocular Tracking of 3D Human Motion with a Coordinated 
+Mixture of Factor Analyzers Code Learning 3 D Scene Structure 
+from a Single Still Image Project 十 机器学习 算法 Matlab 
+class for computing Approximate Nearest Nieghbor ANN Matlab class   
+providing interface toANN library Random Sampling code Probabilistic Latent Semantic 
+Analysis pLSA Code FASTANN and FASTCLUSTER for approximate k means 
+AKM Project Fast Intersection / Additive Kernel SVMs Project SVM 
+Code Ensemble learning Project Deep Learning Net Deep Learning Methods 
+for Vision Project Neural Network for Recognition of Handwritten Digits 
+Project Training a deep autoencoder or a classifier on MNIST 
+digits Project THE MNIST DATABASE of handwritten digits Project Ersatz 
+deep neural networks in the cloud Project Deep Learning Project 
+sparseLM Sparse Levenberg Marquardt nonlinear least squares in C / 
+C + + Project Weka 3 Data Mining Software in 
+Java Project Invited talk A Tutorial on Deep Learning by 
+Dr . Kai Yu 余凯 Video CNN Convolutional neural network 
+class Matlab Tool Yann LeCun s Publications Wedsite LeNet 5 
+convolutional neural networks Project Training a deep autoencoder or a 
+classifier on MNIST digits Project Deep Learning 大牛 Geoffrey E 
+. Hinton s HomePage Website Multiple Instance Logistic Discriminant based 
+Metric Learning MildML and Logistic Discriminant based Metric Learning LDML 
+Code Sparse coding simulation software Project Visual Recognition and Machine 
+Learning Summer School Software 十一 目标 行为 识别 Object Action 
+Recognition Action Recognition by Dense Trajectories Project Code Action Recognition 
+Using a Distributed Representation of Pose and Appearance Project Recognition 
+Using Regions Paper Code 2D Articulated Human Pose Estimation Project 
+Fast Human Pose Estimation Using Appearance and Motion via Multi 
+Dimensional Boosting Regression Paper Code Estimating Human Pose from Occluded 
+Images Paper Code Quasi dense wide baseline matching Project ChaLearn 
+Gesture Challenge   Principal motion PCA based reconstruction of motion 
+histograms Project Real Time Head Pose Estimation with Random Regression 
+Forests Project 2D Action Recognition Serves 3D Human Pose Estimation 
+Project A Hough Transform Based Voting Framework for Action Recognition 
+Project Motion Interchange Patterns for Action Recognition in Unconstrained Videos 
+Project 2D articulated human pose estimation software Project Learning and 
+detecting shape models code Progressive Search Space Reduction for Human 
+Pose Estimation Project Learning Non Rigid 3D Shape from 2D 
+Motion Project 十二 图像处理 Distance Transforms of Sampled Functions Project 
+The Computer Vision Homepage Project Efficient appearance distances between windows 
+code Image Exploration algorithm code Motion Magnification 运动 放大 Project 
+Bilateral Filtering for Gray and Color Images 双边 滤波器 Project 
+A Fast Approximation of the Bilateral Filter using a Signal 
+Processing Approach Project 十三 一些 实用工具 EGT a Toolbox for 
+Multiple View Geometry and Visual Servoing Project Code a development 
+kit of matlab mex functions for OpenCV library Project Fast 
+Artificial Neural Network Library Project 十四 人手 及 指尖 检测 
+与 识别 finger detection and gesture recognition   Code Hand 
+and Finger Detection using JavaCV Project Hand and fingers detection 
+Code 十五 场景 解释 Nonparametric Scene Parsing via Label Transfer 
+  Project 十六 光 流 Optical flow High accuracy optical 
+flow using a theory for warping   Project Dense Trajectories 
+Video Description   Project SIFT Flow Dense Correspondence across Scenes 
+and its Applications Project KLT An Implementation of the Kanade 
+Lucas Tomasi Feature Tracker Project Tracking Cars Using Optical Flow 
+Project Secrets of optical flow estimation and their principles Project 
+implmentation of the Black and Anandan dense optical flow method 
+Project Optical Flow Computation Project Beyond Pixels Exploring New Representations 
+and Applications for Motion Analysis Project A Database and Evaluation 
+Methodology for Optical Flow Project optical flow relative Project Robust 
+Optical Flow Estimation Project optical flow Project 十七 图像 检索 
+Image Retrieval Semi Supervised Distance Metric Learning for Collaborative Image 
+Retrieval   Paper code 十八 马尔科夫 随 机场 Markov Random 
+Fields Markov Random Fields for Super Resolution   Project A 
+Comparative Study of Energy Minimization Methods for Markov Random Fields 
+with Smoothness Based Priors Project 十九 运动 检测 Motion detection 
+Moving Object Extraction Using Models or Analysis of Regions   
+Project Background Subtraction Experiments and Improvements for ViBe Project A 
+Self Organizing Approach to Background Subtraction for Visual Surveillance Applications 
+Project changedetection . net A new change detection benchmark dataset 
+Project ViBe a powerful technique for background detection and subtraction 
+in video sequences Project Background Subtraction Program Project Motion Detection 
+Algorithms Project Stuttgart Artificial Background Subtraction Dataset Project Object Detection 
+Motion Estimation and Tracking Project Feature Detection and D e 
+s c r i p t i o n G 
+e n e r a l Libraries VLFeat   – 
+Implementation of various feature descriptors including SIFT HOG and LBP 
+and covariant feature detectors including DoG Hessian Harris Laplace Hessian 
+Laplace Multiscale Hessian Multiscale Harris . Easy to use Matlab 
+interface . See   Modern features Software   – Slides 
+providing a demonstration of VLFeat and also links to other 
+software . Check also   VLFeat hands on session trainingOpenCV 
+  – Various implementations of modern feature detectors and descriptors 
+SIFT SURF FAST BRIEF ORB FREAK etc . Fast Keypoint 
+Detectors for Real time Applications FAST   – High speed 
+corner detector implementation for a wide variety of platformsAGAST   
+– Even faster than the FAST corner detector . A 
+multi scale version of this method is used for the 
+BRISK descriptor ECCV 2010 . Binary Descriptors for Real Time 
+Applications BRIEF   – C + + code for a 
+fast and accurate interest point descriptor not invariant to rotations 
+and scale ECCV 2010 ORB   – OpenCV implementation of 
+the Oriented Brief ORB descriptor invariant to rotations but not 
+scale BRISK   – Efficient Binary descriptor invariant to rotations 
+and scale . It includes a Matlab mex interface . 
+ICCV 2011 FREAK   – Faster than BRISK invariant to 
+rotations and scale CVPR 2012 SIFT and SURF Implementations SIFT 
+  VLFeat   OpenCV   Original code   by David 
+Lowe   GPU implementation   OpenSIFTSURF   Herbert Bay s 
+code   OpenCV   GPU SURFOther Local Feature Detectors and 
+Descriptors VGG Affine Covariant features   – Oxford code for 
+various affine covariant feature detectors and descriptors . LIOP descriptor 
+  – Source code for the Local Intensity order Pattern 
+LIOP descriptor ICCV 2011 . Local Symmetry Features   – 
+Source code for matching of local symmetry features under large 
+variations in lighting age and rendering style CVPR 2012 . 
+Global Image Descriptors GIST   – Matlab code for the 
+GIST d e s c r i p t o 
+r C E N T R I T   – 
+Global visual descriptor for scene categorization and object detection PAMI 
+2011 Feature Coding and PoolingVGG Feature Encoding Toolkit   – 
+Source code for various state of the art feature encoding 
+methods – including Standard hard encoding Kernel codebook encoding Locality 
+constrained linear encoding and Fisher kernel encoding . Spatial Pyramid 
+Matching   – Source code for feature pooling based on 
+spatial pyramid matching widely used for image classification Convolutional Nets 
+and Deep LearningEBLearn   – C + + Library for 
+Energy Based Learning . It includes several demos and step 
+by step instructions to train classifiers based on convolutional neural 
+networks . Torch7   – Provides a matlab like environment 
+for state of the art machine learning algorithms including a 
+fast implementation of convolutional neural networks . Deep Learning   
+Various links for deep learning software . Part Based ModelsDeformable 
+Part based Detector   – Library provided by the authors 
+of the original paper state of the art in PASCAL 
+VOC detection task Efficient Deformable Part Based Detector   – 
+Branch and Bound implementation for a deformable part based detector 
+. Accelerated Deformable Part Model   – Efficient implementation of 
+a method that achieves the exact same performance of deformable 
+part based detectors but with significant acceleration ECCV 2012 . 
+Coarse to Fine Deformable Part Model   – Fast approach 
+for deformable object detection CVPR 2011 . Poselets   – 
+C + + and Matlab versions for object detection based 
+on poselets . Part based Face Detector and Pose Estimation 
+  – Implementation of a unified approach for face detection 
+pose estimation and landmark localization CVPR 2012 . Attributes and 
+Semantic FeaturesRelative Attributes   – Modified implementation of RankSVM to 
+train Relative Attributes ICCV 2011 . Object Bank   – 
+Implementation of object bank semantic features NIPS 2010 . See 
+also   A c t i o n B a 
+n k C l a s s e m e 
+s Picodes and Meta class features   – Software for 
+extracting high level image descriptors ECCV 2010 NIPS 2011 CVPR 
+2012 . Large Scale LearningAdditive Kernels   – Source code 
+for fast additive kernel SVM classifiers PAMI 2013 . LIBLINEAR 
+  – Library for large scale linear SVM classification . 
+VLFeat   – Implementation for Pegasos SVM and Homogeneous Kernel 
+map . Fast Indexing and Image RetrievalFLANN   – Library 
+for performing fast approximate nearest neighbor . Kernelized LSH   
+– Source code for Kernelized Locality Sensitive Hashing ICCV 2009 
+. ITQ Binary codes   – Code for generation of 
+small binary codes using Iterative Quantization and other baselines such 
+as Locality Sensitive Hashing CVPR 2011 . INRIA Image Retrieval 
+  – Efficient code for state of the art large 
+scale image retrieval CVPR 2011 . Object DetectionSee   Part 
+based Models   and   Convolutional Nets   above . 
+Pedestrian Detection at 100fps   – Very fast and accurate 
+pedestrian detector CVPR 2012 . Caltech Pedestrian Detection Benchmark   
+– Excellent resource for pedestrian detection with various links for 
+state of the art implementations . OpenCV   – Enhanced 
+implementation of Viola & Jones real time object detector with 
+trained models for face detection . Efficient Subwindow Search   
+– Source code for branch and bound optimization for efficient 
+object localization CVPR 2008 . 3D RecognitionPoint Cloud Library   
+– Library for 3D image and point cloud processing . 
+Action R e c o g n i t i 
+o n A c t i o n B a 
+n k   – Source code for action recognition based 
+on the ActionBank representation CVPR 2012 . STIP Features   
+– software for computing space time interest point d e 
+s c r i p t o r s I 
+n d e p e n d e n t 
+Subspace Analysis   – Look for Stacked ISA for Videos 
+CVPR 2011 Velocity Histories of Tracked Keypoints   C + 
++ code for activity recognition using the velocity histories of 
+tracked keypoints ICCV 2009 D a t a s e 
+t s A t t r i b u t 
+e s A n i m a l s with 
+Attributes   – 30 475 images of 50 animals classes 
+with 6 pre extracted feature representations for each image . 
+aYahoo and aPascal   – Attribute annotations for images collected 
+from Yahoo and Pascal VOC 2008 . FaceTracer   – 
+15 000 faces annotated with 10 attributes and fiducial points 
+. PubFig   – 58 797 face images of 200 
+people with 73 attribute classifier outputs . LFW   – 
+13 233 face images of 5 749 people with 73 
+attribute classifier outputs . Human Attributes   – 8 000 
+people with annotated attributes . Check also this   link 
+  for another dataset of human attributes . SUN Attribute 
+Database   – Large scale scene attribute database with a 
+taxonomy of 102 attributes . ImageNet Attributes   – Variety 
+of attribute labels for the ImageNet dataset . Relative attributes 
+  – Data for OSR and a subset of PubFig 
+datasets . Check also this   link   for the 
+WhittleSearch data . Attribute Discovery Dataset   – Images of 
+shopping categories associated with textual descriptions . Fine grained Visual 
+C a t e g o r i z a 
+t i o n C a l t e c 
+h UCSD Birds Dataset   – Hundreds of bird categories 
+with annotated parts and attributes . Stanford Dogs Dataset   
+– 20 000 images of 120 breeds of dogs from 
+around the world . Oxford IIIT Pet Dataset   – 
+37 category pet dataset with roughly 200 images for each 
+class . Pixel level trimap segmentation is included . Leeds 
+Butterfly Dataset   – 832 images of 10 species of 
+butterflies . Oxford Flower Dataset   – Hundreds of flower 
+categories . Face DetectionFDDB   – UMass face detection dataset 
+and benchmark 5 000 + faces CMU / MIT   
+– Classical face detection dataset . Face RecognitionFace Recognition Homepage 
+  – Large collection of face recognition datasets . LFW 
+  – UMass unconstrained face recognition dataset 13 000 + 
+face images . NIST Face Homepage   – includes face 
+recognition grand challenge FRGC vendor tests FRVT and others . 
+CMU Multi PIE   – contains more than 750 000 
+images of 337 people with 15 different views and 19 
+lighting conditions . FERET   – Classical face recognition dataset 
+. Deng Cai s face dataset in Matlab Format   
+– Easy to use if you want play with simple 
+face datasets including Yale ORL PIE and Extended Yale B 
+. SCFace   – Low resolution face dataset captured from 
+surveillance cameras . Handwritten DigitsMNIST   – large dataset containing 
+a training set of 60 000 examples and a test 
+set of 10 000 examples . Pedestrian DetectionCaltech Pedestrian Detection 
+Benchmark   – 10 hours of video taken from a 
+vehicle 350K bounding boxes for about 2.3 K unique pedestrians 
+. INRIA Person Dataset   – Currently one of the 
+most popular pedestrian detection datasets . ETH Pedestrian Dataset   
+– Urban dataset captured from a stereo rig mounted on 
+a stroller . TUD Brussels Pedestrian Dataset   – Dataset 
+with image pairs recorded in an crowded urban setting with 
+an onboard camera . PASCAL Human Detection   – One 
+of 20 categories in PASCAL VOC detection challenges . USC 
+Pedestrian Dataset   – Small dataset captured from surveillance cameras 
+. Generic Object R e c o g n i 
+t i o n I m a g e N 
+e t   – Currently the largest visual recognition dataset 
+in terms of number of categories and images . Tiny 
+Images   – 80 million 32x32 low resolution images . 
+Pascal VOC   – One of the most influential visual 
+recognition datasets . Caltech 101   /   Caltech 256 
+  – Popular image datasets containing 101 and 256 object 
+categories respectively . MIT LabelMe   – Online annotation tool 
+for building computer vision databases . Scene RecognitionMIT SUN Dataset 
+  – MIT scene understanding dataset . UIUC Fifteen Scene 
+Categories   – Dataset of 15 natural scene categories . 
+Feature Detection and DescriptionVGG Affine Dataset   – Widely used 
+dataset for measuring performance of feature detection and description . 
+C h e c k V L B e n 
+c h m a r k s   for an 
+evaluation framework . Action R e c o g n 
+i t i o n B e n c h 
+m a r k i n g Activity Recognition   
+– CVPR 2012 tutorial covering various datasets for action recognition 
+. RGBD RecognitionRGB D Object Dataset   – Dataset containing 
+300 common household objects 一 特征提取 Feature Extraction SIFT 1 
+Demo program SIFT Library VLFeat PCA SIFT 2 Project Affine 
+SIFT 3 Project SURF 4 OpenSURF Matlab Wrapper Affine Covariant 
+Features 5 Oxford project MSER 6 Oxford project VLFeat Geometric 
+Blur 7 Code Local Self Similarity Descriptor 8 Oxford implementation 
+Global and Efficient Self Similarity 9 Code Histogram of Oriented 
+Graidents 10 INRIA Object Localization Toolkit OLT toolkit for Windows 
+GIST 11 Project Shape Context 12 Project Color Descriptor 13 
+Project Pyramids of Histograms of Oriented Gradients Code Space Time 
+Interest Points STIP 14 Project Code Boundary Preserving Dense Local 
+Regions 15 Project Weighted Histogram Code Histogram based Interest Points 
+Detectors Paper Code An OpenCV C + + implementation of 
+Local Self Similarity Descriptors Project Fast Sparse Representation with Prototypes 
+Project Corner Detection Project AGAST Corner Detector faster than FAST 
+and even FAST ER Project Real time Facial Feature Detection 
+using Conditional Regression Forests Project Global and Efficient Self Similarity 
+for Object Classification and Detection code W α SH Weighted 
+α Shapes for Local Feature Detection Project HOG Project Online 
+Selection of Discriminative Tracking Features Project 二 图像 分割 Image 
+Segmentation Normalized Cut 1 Matlab code Gerg Mori Superpixel code 
+2 Matlab code Efficient Graph based Image Segmentation 3 C 
++ + code Matlab wrapper Mean Shift Image Segmentation 4 
+EDISON C + + code Matlab wrapper OWT UCM Hierarchical 
+Segmentation 5 Resources Turbepixels 6 Matlab code 32bit Matlab code 
+64bit Updated code Quick Shift 7 VLFeat SLIC Superpixels 8 
+Project Segmentation by Minimum Code Length 9 Project Biased Normalized 
+Cut 10 Project Segmentation Tree 11 12 Project Entropy Rate 
+Superpixel Segmentation 13 Code Fast Approximate Energy Minimization via Graph 
+Cuts Paper Code Ef ﬁ cient Planar Graph Cuts with 
+Applications in Computer Vision Paper Code Isoperimetric Graph Partitioning for 
+Image Segmentation Paper Code Random Walks for Image Segmentation Paper 
+Code Blossom V A new implementation of a minimum cost 
+perfect matching algorithm Code An Experimental Comparison of Min Cut 
+/ Max Flow Algorithms for Energy Minimization in Computer Vision 
+Paper Code Geodesic Star Convexity for Interactive Image Segmentation Project 
+Contour Detection and Image Segmentation Resources Project Code Biased Normalized 
+Cuts Project Max flow / min cut Project Chan Vese 
+Segmentation using Level Set Project A Toolbox of Level Set 
+Methods Project Re initialization Free Level Set Evolution via Reaction 
+Diffusion Project Improved C V active contour model Paper Code 
+A Variational Multiphase Level Set Approach to Simultaneous Segmentation and 
+Bias Correction Paper Code Level Set Method Research by Chunming 
+Li Project ClassCut for Unsupervised Class Segmentation code SEEDS Superpixels 
+Extracted via Energy Driven Sampling   Project other 三 目标 
+检测 Object Detection A simple object detector with boosting Project 
+INRIA Object Detection and Localization Toolkit 1 Project Discriminatively Trained 
+Deformable Part Models 2 Project Cascade Object Detection with Deformable 
+Part Models 3 Project Poselet 4 Project Implicit Shape Model 
+5 Project Viola and Jones s Face Detection 6 Project 
+Bayesian Modelling of Dyanmic Scenes for Object Detection Paper Code 
+Hand detection using multiple proposals Project Color Constancy Intrinsic Images 
+and Shape Estimation Paper Code Discriminatively trained deformable part models 
+Project Gradient Response Maps for Real Time Detection of Texture 
+Less Objects LineMOD Project Image Processing On Line Project Robust 
+Optical Flow Estimation Project Where s Waldo Matching People in 
+Images of Crowds Project Scalable Multi class Object Detection Project 
+Class Specific Hough Forests for Object Detection Project Deformed Lattice 
+Detection In Real World Images Project Discriminatively trained deformable part 
+models Project 四 显著性 检测 Saliency Detection Itti Koch and 
+Niebur saliency detection 1 Matlab code Frequency tuned salient region 
+detection 2 Project Saliency detection using maximum symmetric surround 3 
+Project Attention via Information Maximization 4 Matlab code Context aware 
+saliency detection 5 Matlab code Graph based visual saliency 6 
+Matlab code Saliency detection A spectral residual approach . 7 
+Matlab code Segmenting salient objects from images and videos . 
+8 Matlab code Saliency Using Natural statistics . 9 Matlab 
+code Discriminant Saliency for Visual Recognition from Cluttered Scenes . 
+10 Code Learning to Predict Where Humans Look 11 Project 
+Global Contrast based Salient Region Detection 12 Project Bayesian Saliency 
+via Low and Mid Level Cues Project Top Down Visual 
+Saliency via Joint CRF and Dictionary Learning Paper Code Saliency 
+Detection A Spectral Residual Approach Code 五 图像 分类 聚 
+类 Image Classification C l u s t e r 
+i n g P y r a m i d 
+Match 1 Project Spatial Pyramid Matching 2 Code Locality constrained 
+Linear Coding 3 Project Matlab code Sparse Coding 4 Project 
+Matlab code Texture Classification 5 Project Multiple Kernels for Image 
+Classification 6 Project Feature Combination 7 Project SuperParsing Code Large 
+Scale Correlation Clustering Optimization Matlab code Detecting and Sketching the 
+Common Project Self Tuning Spectral Clustering Project Code User Assisted 
+Separation of Reflections from a Single Image Using a Sparsity 
+Prior Paper Code Filters for Texture Classification Project Multiple Kernel 
+Learning for Image Classification Project SLIC Superpixels Project 六 抠图 
+Image MattingA Closed Form Solution to Natural Image Matting Code 
+Spectral Matting Project Learning based Matting Code 七 目标 跟踪 
+Object Tracking A Forest of Sensors Tracking Adaptive Background Mixture 
+Models Project Object Tracking via Partial Least Squares Analysis Paper 
+Code Robust Object Tracking with Online Multiple Instance Learning Paper 
+Code Online Visual Tracking with Histograms and Articulating Blocks Project 
+Incremental Learning for Robust Visual Tracking Project Real time Compressive 
+Tracking Project Robust Object Tracking via Sparsity based Collaborative Model 
+Project Visual Tracking via Adaptive Structural Local Sparse Appearance Model 
+Project Online Discriminative Object Tracking with Local Sparse Representation Paper 
+Code Superpixel Tracking Project Learning Hierarchical Image Representation with Sparsity 
+Saliency and Locality Paper Code Online Multiple Support Instance Tracking 
+Paper Code Visual Tracking with Online Multiple Instance Learning Project 
+Object detection and recognition Project Compressive Sensing Resources Project Robust 
+Real Time Visual Tracking using Pixel Wise Posteriors Project Tracking 
+Learning Detection Project OpenTLD / C + + Code the 
+HandVu vision based hand gesture interface Project Learning Probabilistic Non 
+Linear Latent Variable Models for Tracking Complex Activities Project 八 
+Kinect Kinect toolbox Project OpenNI Project zouxy09 CSDN Blog Resource 
+FingerTracker 手指 跟踪 code 九 3D 相关 3D Reconstruction of 
+a Moving Object Paper Code Shape From Shading Using Linear 
+Approximation Code Combining Shape from Shading and Stereo Depth Maps 
+Project Code Shape from Shading A Survey Paper Code A 
+Spatio Temporal Descriptor based on 3D Gradients HOG3D Project Code 
+Multi camera Scene Reconstruction via Graph Cuts Paper Code A 
+Fast Marching Formulation of Perspective Shape from Shading under Frontal 
+Illumination Paper Code Reconstruction 3D Shape Illumination Shading Reflectance Texture 
+Project Monocular Tracking of 3D Human Motion with a Coordinated 
+Mixture of Factor Analyzers Code Learning 3 D Scene Structure 
+from a Single Still Image Project 十 机器学习 算法 Matlab 
+class for computing Approximate Nearest Nieghbor ANN Matlab class   
+providing interface toANN library Random Sampling code Probabilistic Latent Semantic 
+Analysis pLSA Code FASTANN and FASTCLUSTER for approximate k means 
+AKM Project Fast Intersection / Additive Kernel SVMs Project SVM 
+Code Ensemble learning Project Deep Learning Net Deep Learning Methods 
+for Vision Project Neural Network for Recognition of Handwritten Digits 
+Project Training a deep autoencoder or a classifier on MNIST 
+digits Project THE MNIST DATABASE of handwritten digits Project Ersatz 
+deep neural networks in the cloud Project Deep Learning Project 
+sparseLM Sparse Levenberg Marquardt nonlinear least squares in C / 
+C + + Project Weka 3 Data Mining Software in 
+Java Project Invited talk A Tutorial on Deep Learning by 
+Dr . Kai Yu 余凯 Video CNN Convolutional neural network 
+class Matlab Tool Yann LeCun s Publications Wedsite LeNet 5 
+convolutional neural networks Project Training a deep autoencoder or a 
+classifier on MNIST digits Project Deep Learning 大牛 Geoffrey E 
+. Hinton s HomePage Website Multiple Instance Logistic Discriminant based 
+Metric Learning MildML and Logistic Discriminant based Metric Learning LDML 
+Code Sparse coding simulation software Project Visual Recognition and Machine 
+Learning Summer School Software 十一 目标 行为 识别 Object Action 
+Recognition Action Recognition by Dense Trajectories Project Code Action Recognition 
+Using a Distributed Representation of Pose and Appearance Project Recognition 
+Using Regions Paper Code 2D Articulated Human Pose Estimation Project 
+Fast Human Pose Estimation Using Appearance and Motion via Multi 
+Dimensional Boosting Regression Paper Code Estimating Human Pose from Occluded 
+Images Paper Code Quasi dense wide baseline matching Project ChaLearn 
+Gesture Challenge   Principal motion PCA based reconstruction of motion 
+histograms Project Real Time Head Pose Estimation with Random Regression 
+Forests Project 2D Action Recognition Serves 3D Human Pose Estimation 
+Project A Hough Transform Based Voting Framework for Action Recognition 
+Project Motion Interchange Patterns for Action Recognition in Unconstrained Videos 
+Project 2D articulated human pose estimation software Project Learning and 
+detecting shape models code Progressive Search Space Reduction for Human 
+Pose Estimation Project Learning Non Rigid 3D Shape from 2D 
+Motion Project 十二 图像处理 Distance Transforms of Sampled Functions Project 
+The Computer Vision Homepage Project Efficient appearance distances between windows 
+code Image Exploration algorithm code Motion Magnification 运动 放大 Project 
+Bilateral Filtering for Gray and Color Images 双边 滤波器 Project 
+A Fast Approximation of the Bilateral Filter using a Signal 
+Processing Approach Project 十三 一些 实用工具 EGT a Toolbox for 
+Multiple View Geometry and Visual Servoing Project Code a development 
+kit of matlab mex functions for OpenCV library Project Fast 
+Artificial Neural Network Library Project 十四 人手 及 指尖 检测 
+与 识别 finger detection and gesture recognition   Code Hand 
+and Finger Detection using JavaCV Project Hand and fingers detection 
+Code 十五 场景 解释 Nonparametric Scene Parsing via Label Transfer 
+  Project 十六 光 流 Optical flow High accuracy optical 
+flow using a theory for warping   Project Dense Trajectories 
+Video Description   Project SIFT Flow Dense Correspondence across Scenes 
+and its Applications Project KLT An Implementation of the Kanade 
+Lucas Tomasi Feature Tracker Project Tracking Cars Using Optical Flow 
+Project Secrets of optical flow estimation and their principles Project 
+implmentation of the Black and Anandan dense optical flow method 
+Project Optical Flow Computation Project Beyond Pixels Exploring New Representations 
+and Applications for Motion Analysis Project A Database and Evaluation 
+Methodology for Optical Flow Project optical flow relative Project Robust 
+Optical Flow Estimation Project optical flow Project 十七 图像 检索 
+Image Retrieval Semi Supervised Distance Metric Learning for Collaborative Image 
+Retrieval   Paper code 十八 马尔科夫 随 机场 Markov Random 
+Fields Markov Random Fields for Super Resolution   Project A 
+Comparative Study of Energy Minimization Methods for Markov Random Fields 
+with Smoothness Based Priors Project 十九 运动 检测 Motion detection 
+Moving Object Extraction Using Models or Analysis of Regions   
+Project Background Subtraction Experiments and Improvements for ViBe Project A 
+Self Organizing Approach to Background Subtraction for Visual Surveillance Applications 
+Project changedetection . net A new change detection benchmark dataset 
+Project ViBe a powerful technique for background detection and subtraction 
+in video sequences Project Background Subtraction Program Project Motion Detection 
+Algorithms Project Stuttgart Artificial Background Subtraction Dataset Project Object Detection 
+Motion Estimation and Tracking Project Feature Detection and D e 
+s c r i p t i o n G 
+e n e r a l Libraries VLFeat   – 
+Implementation of various feature descriptors including SIFT HOG and LBP 
+and covariant feature detectors including DoG Hessian Harris Laplace Hessian 
+Laplace Multiscale Hessian Multiscale Harris . Easy to use Matlab 
+interface . See   Modern features Software   – Slides 
+providing a demonstration of VLFeat and also links to other 
+software . Check also   VLFeat hands on session trainingOpenCV 
+  – Various implementations of modern feature detectors and descriptors 
+SIFT SURF FAST BRIEF ORB FREAK etc . Fast Keypoint 
+Detectors for Real time Applications FAST   – High speed 
+corner detector implementation for a wide variety of platformsAGAST   
+– Even faster than the FAST corner detector . A 
+multi scale version of this method is used for the 
+BRISK descriptor ECCV 2010 . Binary Descriptors for Real Time 
+Applications BRIEF   – C + + code for a 
+fast and accurate interest point descriptor not invariant to rotations 
+and scale ECCV 2010 ORB   – OpenCV implementation of 
+the Oriented Brief ORB descriptor invariant to rotations but not 
+scale BRISK   – Efficient Binary descriptor invariant to rotations 
+and scale . It includes a Matlab mex interface . 
+ICCV 2011 FREAK   – Faster than BRISK invariant to 
+rotations and scale CVPR 2012 SIFT and SURF Implementations SIFT 
+  VLFeat   OpenCV   Original code   by David 
+Lowe   GPU implementation   OpenSIFTSURF   Herbert Bay s 
+code   OpenCV   GPU SURFOther Local Feature Detectors and 
+Descriptors VGG Affine Covariant features   – Oxford code for 
+various affine covariant feature detectors and descriptors . LIOP descriptor 
+  – Source code for the Local Intensity order Pattern 
+LIOP descriptor ICCV 2011 . Local Symmetry Features   – 
+Source code for matching of local symmetry features under large 
+variations in lighting age and rendering style CVPR 2012 . 
+Global Image Descriptors GIST   – Matlab code for the 
+GIST d e s c r i p t o 
+r C E N T R I T   – 
+Global visual descriptor for scene categorization and object detection PAMI 
+2011 Feature Coding and PoolingVGG Feature Encoding Toolkit   – 
+Source code for various state of the art feature encoding 
+methods – including Standard hard encoding Kernel codebook encoding Locality 
+constrained linear encoding and Fisher kernel encoding . Spatial Pyramid 
+Matching   – Source code for feature pooling based on 
+spatial pyramid matching widely used for image classification Convolutional Nets 
+and Deep LearningEBLearn   – C + + Library for 
+Energy Based Learning . It includes several demos and step 
+by step instructions to train classifiers based on convolutional neural 
+networks . Torch7   – Provides a matlab like environment 
+for state of the art machine learning algorithms including a 
+fast implementation of convolutional neural networks . Deep Learning   
+Various links for deep learning software . Part Based ModelsDeformable 
+Part based Detector   – Library provided by the authors 
+of the original paper state of the art in PASCAL 
+VOC detection task Efficient Deformable Part Based Detector   – 
+Branch and Bound implementation for a deformable part based detector 
+. Accelerated Deformable Part Model   – Efficient implementation of 
+a method that achieves the exact same performance of deformable 
+part based detectors but with significant acceleration ECCV 2012 . 
+Coarse to Fine Deformable Part Model   – Fast approach 
+for deformable object detection CVPR 2011 . Poselets   – 
+C + + and Matlab versions for object detection based 
+on poselets . Part based Face Detector and Pose Estimation 
+  – Implementation of a unified approach for face detection 
+pose estimation and landmark localization CVPR 2012 . Attributes and 
+Semantic FeaturesRelative Attributes   – Modified implementation of RankSVM to 
+train Relative Attributes ICCV 2011 . Object Bank   – 
+Implementation of object bank semantic features NIPS 2010 . See 
+also   A c t i o n B a 
+n k C l a s s e m e 
+s Picodes and Meta class features   – Software for 
+extracting high level image descriptors ECCV 2010 NIPS 2011 CVPR 
+2012 . Large Scale LearningAdditive Kernels   – Source code 
+for fast additive kernel SVM classifiers PAMI 2013 . LIBLINEAR 
+  – Library for large scale linear SVM classification . 
+VLFeat   – Implementation for Pegasos SVM and Homogeneous Kernel 
+map . Fast Indexing and Image RetrievalFLANN   – Library 
+for performing fast approximate nearest neighbor . Kernelized LSH   
+– Source code for Kernelized Locality Sensitive Hashing ICCV 2009 
+. ITQ Binary codes   – Code for generation of 
+small binary codes using Iterative Quantization and other baselines such 
+as Locality Sensitive Hashing CVPR 2011 . INRIA Image Retrieval 
+  – Efficient code for state of the art large 
+scale image retrieval CVPR 2011 . Object DetectionSee   Part 
+based Models   and   Convolutional Nets   above . 
+Pedestrian Detection at 100fps   – Very fast and accurate 
+pedestrian detector CVPR 2012 . Caltech Pedestrian Detection Benchmark   
+– Excellent resource for pedestrian detection with various links for 
+state of the art implementations . OpenCV   – Enhanced 
+implementation of Viola & Jones real time object detector with 
+trained models for face detection . Efficient Subwindow Search   
+– Source code for branch and bound optimization for efficient 
+object localization CVPR 2008 . 3D RecognitionPoint Cloud Library   
+– Library for 3D image and point cloud processing . 
+Action R e c o g n i t i 
+o n A c t i o n B a 
+n k   – Source code for action recognition based 
+on the ActionBank representation CVPR 2012 . STIP Features   
+– software for computing space time interest point d e 
+s c r i p t o r s I 
+n d e p e n d e n t 
+Subspace Analysis   – Look for Stacked ISA for Videos 
+CVPR 2011 Velocity Histories of Tracked Keypoints   C + 
++ code for activity recognition using the velocity histories of 
+tracked keypoints ICCV 2009 D a t a s e 
+t s A t t r i b u t 
+e s A n i m a l s with 
+Attributes   – 30 475 images of 50 animals classes 
+with 6 pre extracted feature representations for each image . 
+aYahoo and aPascal   – Attribute annotations for images collected 
+from Yahoo and Pascal VOC 2008 . FaceTracer   – 
+15 000 faces annotated with 10 attributes and fiducial points 
+. PubFig   – 58 797 face images of 200 
+people with 73 attribute classifier outputs . LFW   – 
+13 233 face images of 5 749 people with 73 
+attribute classifier outputs . Human Attributes   – 8 000 
+people with annotated attributes . Check also this   link 
+  for another dataset of human attributes . SUN Attribute 
+Database   – Large scale scene attribute database with a 
+taxonomy of 102 attributes . ImageNet Attributes   – Variety 
+of attribute labels for the ImageNet dataset . Relative attributes 
+  – Data for OSR and a subset of PubFig 
+datasets . Check also this   link   for the 
+WhittleSearch data . Attribute Discovery Dataset   – Images of 
+shopping categories associated with textual descriptions . Fine grained Visual 
+C a t e g o r i z a 
+t i o n C a l t e c 
+h UCSD Birds Dataset   – Hundreds of bird categories 
+with annotated parts and attributes . Stanford Dogs Dataset   
+– 20 000 images of 120 breeds of dogs from 
+around the world . Oxford IIIT Pet Dataset   – 
+37 category pet dataset with roughly 200 images for each 
+class . Pixel level trimap segmentation is included . Leeds 
+Butterfly Dataset   – 832 images of 10 species of 
+butterflies . Oxford Flower Dataset   – Hundreds of flower 
+categories . Face DetectionFDDB   – UMass face detection dataset 
+and benchmark 5 000 + faces CMU / MIT   
+– Classical face detection dataset . Face RecognitionFace Recognition Homepage 
+  – Large collection of face recognition datasets . LFW 
+  – UMass unconstrained face recognition dataset 13 000 + 
+face images . NIST Face Homepage   – includes face 
+recognition grand challenge FRGC vendor tests FRVT and others . 
+CMU Multi PIE   – contains more than 750 000 
+images of 337 people with 15 different views and 19 
+lighting conditions . FERET   – Classical face recognition dataset 
+. Deng Cai s face dataset in Matlab Format   
+– Easy to use if you want play with simple 
+face datasets including Yale ORL PIE and Extended Yale B 
+. SCFace   – Low resolution face dataset captured from 
+surveillance cameras . Handwritten DigitsMNIST   – large dataset containing 
+a training set of 60 000 examples and a test 
+set of 10 000 examples . Pedestrian DetectionCaltech Pedestrian Detection 
+Benchmark   – 10 hours of video taken from a 
+vehicle 350K bounding boxes for about 2.3 K unique pedestrians 
+. INRIA Person Dataset   – Currently one of the 
+most popular pedestrian detection datasets . ETH Pedestrian Dataset   
+– Urban dataset captured from a stereo rig mounted on 
+a stroller . TUD Brussels Pedestrian Dataset   – Dataset 
+with image pairs recorded in an crowded urban setting with 
+an onboard camera . PASCAL Human Detection   – One 
+of 20 categories in PASCAL VOC detection challenges . USC 
+Pedestrian Dataset   – Small dataset captured from surveillance cameras 
+. Generic Object R e c o g n i 
+t i o n I m a g e N 
+e t   – Currently the largest visual recognition dataset 
+in terms of number of categories and images . Tiny 
+Images   – 80 million 32x32 low resolution images . 
+Pascal VOC   – One of the most influential visual 
+recognition datasets . Caltech 101   /   Caltech 256 
+  – Popular image datasets containing 101 and 256 object 
+categories respectively . MIT LabelMe   – Online annotation tool 
+for building computer vision databases . Scene RecognitionMIT SUN Dataset 
+  – MIT scene understanding dataset . UIUC Fifteen Scene 
+Categories   – Dataset of 15 natural scene categories . 
+Feature Detection and DescriptionVGG Affine Dataset   – Widely used 
+dataset for measuring performance of feature detection and description . 
+C h e c k V L B e n 
+c h m a r k s   for an 
+evaluation framework . Action R e c o g n 
+i t i o n B e n c h 
+m a r k i n g Activity Recognition   
+– CVPR 2012 tutorial covering various datasets for action recognition 
+. RGBD RecognitionRGB D Object Dataset   – Dataset containing 
+300 common household objects 一 传统 图像 算法 工程师 主要 涉及 图形处理 包括 形态学 
+图像质量 相机 成像 之 3A 算法 去 雾 处理 颜色 
+空间 转换 滤镜 等 主要 在 安防 公司 或者 机器 
+视觉 领域 包括 缺陷 检测 二 现代 图像 算法 工程师 
+涉及 模式识别 主要 表现 的 经验 为 Adaboost SVM 的 
+研究 与 应用 特征 选取 与 提取 包括 智能 驾驶 
+的 研究 与 应用 行人 检测 人脸识别 三 人工智能 时代 
+图像 算法 工程师 深度 学习 主要 在 大型 互联网 公司 
+或者 研究所 机构 具体 体现 在 TensorFlow 等 开源 库 
+的 研究 与 应用 包括 机器人 的 研 基于 深度 
+学习 的 人脸 识别 CSDN 上 也 总结 了 很多 
+补充 2016 12 21   23 49 53 Deep Learning 
+源代码 收集 持续 更新 Deep Learning 深度 学习 计算机 视觉 
+机器学习 相关 领域 论文 和 源代码 大集合 持续 更新 图像 
+处理 与 计算机 视觉 基础 经典 以及 最近 发展   
+经典 论文 集合 计算机 视觉 领域 的 一些 牛人 博客 
+超 有 实力 的 研究 机构 web 主页 转 来自 
+西弗 吉利亚 大学 li xin 整理 的 CV 代码 合集 
+转 图像 处理 与 机器 视觉 行业 分析 计算机 视觉 
+整理 库 https / / github . com / ty4z2008 
+/ Qix 通用 库 / General LibraryOpenCV     无需 
+多言 RAVL   Recognition And Vision Library . 线程 安全 
+强大 的 IO 机制 包含 AAM CImg   很酷 的 
+一个 图像处理 包 整个 库 只有 一个 头文件 包含 一个 
+基于 PDE 的 光 流 算法 图像 视频 IO / 
+Image Video I O F r e e I m 
+a g e D e v I L I m 
+a g e M a g i c k F 
+F M P E G V i d e o 
+I n p u t p o r t V 
+i d e o A R 相关 / Augmented RealityARToolKit 
+    基于 Marker 的 AR 库 ARToolKitPlus     
+ARToolKit 的 增强 版 实现 了 更好 的 姿态 估 
+计算法 PTAM     实时 的 跟踪 SLAM AR 库 
+无需 Marker 模板 内置 传感器 等 BazAR     基于 
+特征点 检测 和 识别 的 AR 库 局部 不变 特征 
+/ Local Invariant FeatureVLFeat     目前 最好 的 Sift 
+开源 实现 同时 包含 了 KD tree KD Forest BoW 
+实现 VLFeat 著名 而 常用 项目 网站 http / / 
+www . vlfeat . org 著名 的 计算机 视觉 / 
+图像处理 开源 项目 知名度 应该 不必 OpenCV 低 太多 曾获/nr 
+ACM Open Source Software Competition 2010 一等奖 使用 C 语言 
+编写 提供 C 语言 和 Matlab 两种 接口 实现 了 
+大量 计算机 视觉 算法 包括 常用 图像 处理 功能 包括 
+颜色 空间 变换 几何变换 作为 Matlab 的 补充 常用 机器学习 
+算法 包括 GMM SVM KMeans 等 常用 的 图像 处理 
+的 plot 工具 特征提取 包括   Covariant detectors   HOG 
+  SIFT MSER 等 VLFeat 提供 了 一个 vl _ 
+covdet   函数 作为 框架 可以 方便 的 统一 所谓 
+co variant feature detectors 包括了 DoG Harris Affine Harris Laplace 
+并且 可以 提取 SIFT 或 raw patches 描述 子 超 
+像素 Superpixel 分割 包括 常用 的 Quick shift   SLIC 
+算法 等 高级 聚 类 算法 比如 整数 KMeans Integer 
+k means IKM hierarchical version of integer k means HIKM 
+基于 互信息 自动 判 定聚 类 类 数 的 算法 
+Agglomerative Information Bottleneck AIB algorithm 等高 维特 特征 匹配 算法 
+随机 KD 树 Randomized kd trees 可以 在 这里 查看 
+VLFeat 完整 的 功能 列表   http / / www 
+. vlfeat . org / matlab / matlab . htmlFerns 
+    基于 Naive Bayesian   Bundle 的 特征点 识别 
+高速 但 占用 内存 高 SIFT By Rob Hess   
+  基于 OpenCV 的 Sift 实现 目标 检测 / Object 
+D e t e c t i o n A 
+d a B o o s t By JianXin . 
+Wu     又一个 AdaBoost 实现 训练 速度快 行人 检测 
+By JianXin . Wu     基于 Centrist 和 Linear 
+SVM 的 快速 行人 检测 近似 最 近邻 / ANNFLANN 
+    目前 最 完整 的 近似 最 近邻 开源 
+库 不但 实现 了 一系列 查找 算法 还 包含 了 
+一种 自动 选取 最快 算法 的 机制 ANN     
+另外 一个 近似 最 近邻 库 SLAM & SFMSceneLib   
+    LGPL     monoSLAM 库 由 Androw Davison 
+开发 图像 分割 / SegmentationSLIC Super Pixel     使用 
+Simple Linear Iterative Clustering 产生 指定 数目 近似 均匀分布 的 
+Super Pixel 目标 跟踪 / TrackingTLD     基于 Online 
+Random Forest 的 目标 跟踪 算法 KLT   Kanade Lucas 
+TrackerOnline boosting trackers     Online Boosting Trackers 直线 检测 
+/ Line DetectionDSCC     基于 联通 域 连接 的 
+直线 检测 算法 LSD   GPL     基于 梯度 
+的 局部 直 线段 检测 算子 指纹 / Finger PrintpHash 
+  GPL     基于 感知 的 多媒体 文件 Hash 
+算法 提取 对比 图像 视频 音频 的 指纹 视觉 显著性 
+/ Visual SalienceGlobal Contrast Based Salient Region Detection     
+Ming Ming Cheng 的 视觉 显著性 算法 FFT / DWTFFTW 
+  GPL     最快 最好 的 开源 FFT FFTReal 
+  WTFPL     轻量级 的 FFT 实现 许可证 是 
+亮点 音频 处理 / Audio processingSTK   Free     
+音频 处理 音频 合成 libsndfile   LGPL   音频文件 IO 
+libsamplerate   GPL   音频 重 采样 小波 变换   
+  快速 小波 变换 FWT FWTBRIEF Binary Robust Independent Elementary 
+Feature 一个 很好 的 局部 特征描述 子 里面 有 FAST 
+corner + BRIEF 实现 特征点 匹配 的 DEMO http / 
+/ cvlab . epfl . ch / software / brief 
+/ http / / code . google . com / 
+p / javacvJava 打包 的 OpenCV FFmpeg libdc1394 PGR FlyCapture 
+OpenKinect videoInput and ARToolKitPlus 库 可以 放在 Android 上用 ~ 
+libHIK HIK SVM 计算 HIK SVM 跟 Centrist 的 Lib 
+http / / c2inet . sce . ntu . edu 
+. sg / Jianxin / projects / libHIK / libHIK 
+. htm 一组 视觉 显著性 检测 代码 的 链接 http 
+/ / cg . cs . tsinghua . edu . 
+cn / people / ~ cmm / saliency / Peter 
+Kovesi 的 工具箱 轻量 好用 侧重 图像处理   http / 
+/ www . peterkovesi . com / matlabfns / 项目 
+网站 http / / www . csse . uwa . 
+edu . au / ~ pk / research / matlabfns 
+/ 这位 Peter 大哥 目前 在 The University of Western 
+Australia 工作 他 自己 写 了 一套 Matlab 计算机 视觉 
+算法 所谓 工具箱 其实 就是 许多 m 文件 的 集合 
+全部 Matlab 实现 无需 编译 安装 支持 Octave 如果 没有 
+Matlab 的话 有了/nr 这个 工具箱 也 可以 在 Octave 下 
+进行 图像 处理 了 别看 这位 大哥 单枪匹马 人家 的 
+工具 箱 可是 相当 有名 研究 时候 需要 哪个 Matlab 
+的 计算机 视觉 小 功能 直接 到 他家 主页 上 
+下 几个 m 文件 放在 自己 文件夹 就 好了 这个 
+工具箱 主要 以 图像处理 算法 为主 附带 一些 三维 视觉 
+的 基本 算法 列 一些 包括 的 功能 Feature Detection 
+via Phase Congruency 通过 相位 一致性 检测 图像 特征 Spatial 
+Feature Detection Harris Canny 之类 的 特征 算法 Edge Linking 
+and Line Segment Fitting 边缘 特征 和线/nr 特征 的 各种 
+操作 Image Denoising 图像 降噪 Surface Normals to Surfaces 从法/nr 
+向量积/i 分出/v 表面/n Scalogram/w Calculation 量 图 计算 Anisotropic diffusion 
+著名 的 保 边缘 平滑 算法 Frequency Domain Transformations 傅立叶 
+变换 Functions Supporting Projective Geometry 透视 几何 三维 视觉 的 
+一些 算法 Feature Matching 特征 匹配 Model Fitting and Robust 
+Estimation R A N A C F i n g 
+e r p r i n t Enhancement 指纹 图像增强 
+Interesting Synthetic Images 一些 好 玩儿 的 图像 生成 算法 
+Image Blending 图像 融合 Colourmaps and colour conversions 颜色 空间 
+算法 MexOpenCV 让 Matlab 支持 调用 的 OpenCV 项目 网站 
+http / / www . cs . sunysb . edu 
+/ ~ kyamagu / mexopencv / 作者 Kota Yamaguchi 桑是/nr 
+石溪 大学 Stony Brook University 的 PhD 早些 时候 自己 
+搞 了 一套 东西 把 OpenCV 的 代码 编译成 Matlab 
+可用 的 mex 接口 然后 这个 东西 迅速 火了 今年夏天 
+这个 项目 被 OpenCV 吸收 为 一个 模块 貌似 是 
+搞 了 一个 Google Summer of Code GSoC 的 项目 
+最近 大概 是 9 10月 已经 merge 到了 OpenCV 主 
+包 有兴趣 的 可以 到 Github 的 OpenCV 库 下 
+的 module / matlab 去玩 一下 应该 会在 10 月份 
+的 OpenCV 3 alpha 里 正式 发布 现在 OpenCV 就 
+同时 有了 Python 和 Maltab 的 binding 好 强大 具体 
+的 功能 就不 细说 了 既然 是 OpenCV 的 binding 
+当然 是 可以 使用 OpenCV 的 绝大多数 算法 了 介绍 
+n 款 计算机 视觉 库 / 人脸识别 开源 库 / 
+软件 计算机 视觉 库   OpenCVOpenCV 是 Intel ® 开源 
+计算机 视觉 库 它 由 一系列 C 函数 和 少量 
+C + + 类 构成 实现 了 图像 处理 和 
+计算机 视觉 方面 的 很多 通用 算法 OpenCV 拥有 包括 
+300 多个 C 函数 的 跨平台 的 中 高层 API 
+它 不 依赖 于 其它 的 外部 库 尽管 也 
+可以 使用 某些 外部 库 OpenCV 对 非商业 . . 
+. 人脸识别   faceservice . cgifaceservice . cgi 是 一个 
+用来 进行 人脸 识别 的 CGI   程序 你 可以 
+通过 上传 图像 然后 该 程序 即 告诉 你 人脸 
+的 大概 坐标 位置 faceservice 是 采用 OpenCV 库 进行 
+开发 的 OpenCV 的 . NET 版   O p 
+e n C V D o t N e t 
+O p e n C V D o t N 
+e t 是 一个 . NET 对 OpenCV 包的/nr 封装 
+人脸 检测 算法   j V i o l a 
+j o n e s j V i o l 
+a j o n e s 是 人脸 检测 算法 
+Viola Jones 的 一个 Java 实现 并能够 加载 OpenCV XML 
+文件 示例代码 http / / www . oschina . net 
+/ code / snippet _ 12 _ 2033Java 视觉 处理 
+库   JavaCVJavaCV 提供 了 在 计算机 视觉 领域 的 
+封装 库 包括 OpenCV ARToolKitPlus libdc1394 2 . x PGR 
+FlyCapture 和 FFmpeg 此外 该 工具 可以 很容易 地 使用 
+Java 平台 的 功能 JavaCV 还 带有 硬件加速 的 全屏幕 
+图像 显示 CanvasFrame 易于 在 多个 内核 中 执行 并行 
+代码 并 . . . 运动 检测 程序   QMotionQMotion 
+是 一个 采用 OpenCV 开发 的 运动 检测 程序 基于 
+QT 视频 监控 系统   OpenVSSOpenVSS 开放 平台 的 视频 
+监控 系统 是 一个 系统 级别 的 视频 监控 软件 
+视频 分析 框架 VAF 的 视频 分析 与 检索 和 
+播放 服务 记录 和 索引 技术 它 被 设计 成 
+插件 式 的 支持 多 摄像头 平台 多 分析仪 模块 
+OpenCV 的 集成 以及 多 核心 架构 手势 识别   
+hand gesture detection 手势 识别 用 OpenCV 实现 人脸 检测 
+识别   mcvai tracking 提供 人脸 检测 识别 与 检测 
+特定 人脸 的 功能 示例代码 cvReleaseImage & gray c v 
+R e l e a s e M e m 
+t o r a g e & storage c v 
+R e l e a s e H a a 
+r C l a s s i f i e 
+r C a s c a d e & cascade 
+. . . 人脸 检测 与 跟踪 库   asmlibraryActive 
+Shape Model Library ASMLibrary © SDK 用 OpenCV 开发 用于 
+人脸 检测 与 跟踪 Lua 视觉 开发 库   libecvECV 
+是 lua 的 计算机 视觉 开发 库 目前 只 提供 
+linux 支持 OpenCV 的 . Net 封装   O p 
+e n C V h a r p O p 
+e n C V h a r p 是 一个 
+OpenCV 的 . Net wrapper 应用 最新 的 OpenCV 库 
+开发 使用 习惯 比 EmguCV 更 接近 原始 的 OpenCV 
+有 详细 的 使用 样例 供参考 3D 视觉 库   
+fvision2010 基于 OpenCV 构建 的 图像 处理 和 3D 视觉 
+库 示例代码 I m a g e e q u 
+e n c e R e a d e r 
+F a c t o r y factory I m 
+a g e e q u e n c e 
+R e a d e r * reader = factory 
+. pathRegex c / a / im _ % 03d 
+. jpg 0 20 / / I m a g 
+e e q u e n c e R e 
+a d e r * reader = factory . avi 
+a . avi if reader = = NULL { . 
+. . 基于 QT 的 计算机 视觉 库   QVision 
+基于 QT 的 面向 对象 的 多平台 计算机 视觉 库 
+可以 方便 的 创建 图形化 应用程序 算法 库主 要从 OpenCV 
+GSL CGAL IPP Octave 等 高性能 库 借鉴 而来 图像 
+特征提取   cvBlobcvBlob 是 计算机 视觉 应用 中 在 二 
+值 图像 里 寻找 连通 域 的 库 . 能够 
+执行 连通 域 分析 与 特征提取 . 实时 图像 / 
+视频处理 滤波 开发包   GShowGShow is a real time image 
+/ video processing filter development kit . It successfully integrates 
+DirectX11 with DirectShow framework . So it has the f 
+o l l o w i n g f e 
+a t u r e s GShow 是 实时 图像 
+/ 视频 处理 滤波 开发包 集成 DiretX11 . . . 
+视频 捕获 API   VideoManVideoMan 提供 一组 视频 捕获 API 
+支持 多种 视频流 同时 输入 视频 传输线 USB 摄像头 和 
+视频 文件 等 能 利用 OpenGL 对 输入 进行 处理 
+方便 的 与 OpenCV CUDA 等 集成 开发 计算机 视觉 
+系统 开放 模式识别 项目   OpenPRPattern Recognition project 开放 模式识别 
+项目 致力 于 开发 出 一套 包含 图像处理 计算机 视觉 
+自然语言 处理 模式识别 机器 学习 和 相关 领域 算法 的 
+函数库 OpenCV 的 Python 封装   pyopencvOpenCV 的 Python 封装 
+主要 特性 包括 提供 与 OpenCV 2 . x 中 
+最新 的 C + + 接口 极为 相似 的 Python 
+接口 并且 包括 C + + 中 不 包括 的 
+C 接口 提供 对 OpenCV 2 . x 中 所有 
+主要 部件 的 绑定 CxCORE almost complete CxFLANN complete Cv 
+complete CvAux C + + part almost . . . 
+视觉 快速 开发平台   qcv 计算机 视觉 快速 开发平台 提供 
+测试 框架 使 开发 者 可以 专注 于 算法 研究 
+图像 捕获   libv4l2cam 对 函数库 v412 的 封装 从 
+网络 摄像头 等 硬件 获得 图像 数据 支持 YUYV 裸 
+数据 输出 和 BGR24 的 OpenCV     IplImage 输出 
+计算机 视觉 算法   O p e n V I 
+D I A O p e n V I D 
+I A projects implement computer vision algorithms running on on 
+graphics hardware such as single or multiple graphics processing units 
+GPUs usingOpenGL Cg and CUDA C . Some samples will 
+soon support OpenCL and Direct Compute API & apos . 
+. . 高斯 模型 点 集 配 准 算法   
+gmmreg 实现 了 基于 混合 高斯 模型 的 点 集 
+配 准 算法 该 算法 描述 在 论文 A Robust 
+Algorithm for Point Set Registration Using Mixture of Gaussians Bing 
+Jian and Baba C . Vemuri . 实现 了 C 
++ + / Matlab / Python 接口 . . . 
+模式识别 和 视觉 库   RAVLRecognition And Vision Library RAVL 
+是 一个 通用 C + + 库 包含 计算机 视觉 
+模式识别 等 模块 图像 处理 和 计算机 视觉 常用 算 
+法库   LTI LibLTI Lib 是/v 一个/m 包含/v 图像/n 处理/v 
+和/c 计算机/n 视觉/n 常用/b 算法/n 和/c 数据/n 结构/n 的/uj 面向对象/n 
+库/n 提供 Windows 下 的 VC 版本 和 Linux 下 
+的 gcc 版本 主要 包含 以下 几 方面 内容 1 
+线性代数 2 聚类分析 3 图像处理 4 可视化 和 绘图 工具 
+OpenCV 优化   opencv dsp acceleration 优化 了 OpenCV 库 
+在 DSP 上 的 速度 C + + 计算机 视觉 
+库   Integrating Vision T o o l k i 
+t I n t e g r a t i 
+n g Vision Toolkit IVT 是 一个 强大 而 迅速 
+的 C + + 计算机 视觉 库 拥有 易用 的 
+接口 和 面向 对象 的 架构 并且 含 有 自己 
+的 一套 跨平台 GUI 组件 另外 可以 选择 集成 OpenCV 
+计算机 视觉 和 机器人 技术 的 工具包   EGTThe Epipolar 
+Geometry Toolbox EGT is a toolbox designed for Matlab by 
+Mathworks Inc . . EGT provides a wide set of 
+functions to approach computer visionand robotics problems with single and 
+multiple views and with different vision se . . . 
+OpenCV 的 扩展 库   I m a g e 
+N e t s I m a g e N 
+e t s 是 对 OpenCV 的 扩展 提供 对 
+机器人 视觉 算法 方面 友好 的 支持 使用 Nokia 的 
+QT 编写 界面 libvideogfx 视频处理 计算机 视觉 和 计算机 图形学 
+的 快速 开发 库 Matlab 计算机 视觉 包 /nr mVisionMatlab 的 
+计算机 视觉 包 包含 用于 观察 结果 的 GUI 组件 
+貌似 也 停止 开发 了 拿来 做 学习 用 挺 
+不错 的 Scilab 的 计算机 视觉 库   SIPSIP 是 
+Scilab 一种 免费 的 类 Matlab 编程 环境 的 图像 
+处理 和 计算机 视觉 库 SIP 可以 读写 JPEG / 
+PNG / BMP 格式 的 图片 具备 图像 滤波 分割 
+边缘 检测 形态学 处理 和 形状 分析 等 功能 STAIR 
+Vision LibrarySTAIR Vision Library SVL 最初 是 为 支持 斯坦福 
+智能 机器人 设计 的 提供 对 计算机 视觉 机器 学习 
+和 概率 统计 模 视觉 相关 网站 今天 的 主要 
+任务 就是 和 大家 分享 一些 鄙人 收藏 的 认为 
+相当 研究 价值 的 网页 Oxford 大牛 Andrew Zisserman http 
+/ / www . robots . ox . ac . 
+uk / ~ vgg / hzbook / code / 此人 
+主要 研究 多 幅 图像 的 几何学 该 网站 提供 
+了 部分 工具 相当 实用 还有 例子 西澳大利亚 大学 的 
+Peter Kovesi http / / www . csse . uwa 
+. edu . au / ~ pk / research / 
+matlabfns / 提供 了 一些 基本 的 matlab 工具 主要 
+内容 涉及 Computer Vision Image ProcessingCMU http / / www 
+. cs . cmu . edu / afs / cs 
+/ project / cil / ftp / html / vision 
+. html 该 网站 是 我 的 最爱 尤其 后面 
+这个 地址 http / / www . cs . cmu 
+. edu / afs / cs / project / cil 
+/ ftp / html / v groups . html 在 
+这里 提供 了 世界 各地 机构 大学 在 Computer Vision 
+所 涉及 各 领域 的 研究 情况 包括 Image Processing 
+Machine Vision 我 后来 也 是 通过 它 连接 到 
+了 很多 国外 的 网站 Cambridge http / / mi 
+. eng . cam . ac . uk / milab 
+. html 这是 剑桥 大学 的 机器 智能 实验室 里面 
+有 三个 小组 Computer Vision & Robotics Machine Intelligence Speech 
+目前 为止 Computer Vision & Robotics 的 一些 研究 成果 
+对 我 日后 的 帮助 可能会 比较 大 所以 在此 
+提及 大量 计算机 视觉 方面 的 原版 电子书 http / 
+/ homepages . inf . ed . ac . uk 
+/ rbf / CVonline / books . htm 我 今天 
+先 下了 本 Zisserman 的 书 呵呵 国外 的 原版书 
+虽然 都是/nr 比较 老 的 但是 对于 基础 的 理解 
+学习 还是 很 有 帮助 的 至于 目前 的 研究 
+现状 只能 通过 论文 或者 一些 研究 小组 的 网站 
+stanford http / / ai . stanford . edu / 
+~ asaxena / reconstruction3d / 这个 网站 是 Andrew N 
+. G 老师 和 一个 印度阿三 的 博士 一起 维护 
+的 主要 对 于单 张 照片 的 三维重建 尤 其他 
+有个 网页 make3d . stanford . edu 可以 让 你 
+自己 上传 你 的 照片 通过 网站 来 重建 三维 
+模型 这个 网站 对于 刚 开始 接触 Computer Vision 的 
+我 来说 如获至宝 但有 个 致命 问题 就是 make3d 已经 
+无法 注册 我 也 多次 给 Andrew 和 印度阿三 email 
+至今 未 回 郁闷 要是 有 这个 网站 的 帐号 
+那 还是 相当 爽 的 不 知道 是不是 由于 他们 
+的 邮箱 把 我 的 email 当成 垃圾邮件 过滤 哎 
+但 这个 stanford 网站 的 贡献 主要 是 代码 有 
+很多 computer vision 的 基础 工具 貌似 40M 左右 全都 
+是 基于 matlab 的 caltech http / / www . 
+vision . caltech . edu / bouguetj / calib _ 
+doc / 这 是 我们 Computer Vision 老师 课件 上 
+的 连接 主要 是 用于 摄像机 标定 的 工具集 当然 
+也 有 涉及 对 标定 图像 三维重建 的 前期 处理过程 
+JP Tarel http / / perso . lcpc . fr 
+/ tarel . jean philippe / 这是 他 的 个人 
+主页 也 是 目前 为止 我 发 的 email 中 
+唯一 一个 给 我 回信 的 老外 因为 我 需要 
+重建 练习 的 正是 他 的 图片集 我 读过 他 
+的 论文 但 没有 涉及 代码 的 内容 再加 上 
+又是 94年 以前 的 论文 很多 相关 的 引文 我 
+都 无法 下载 在 我 的 再三 追问 下 Tarel 
+教授 只 告诉 我 你 可以 按照 我 的 那篇 
+论文 对 足球 进行 重建 可是 . . . 你 
+知道 吗 你/r 有/v 很多/m 图像/n 处理/v 的/uj 引文/v 都/d 
+下不/i 了了/v 我 只 知道 你 通过 那 篇文章 做了 
+图像 的 预处理 根本 不 知道 具体 过程 当然 我 
+有幸 找到 过 一篇 90 左右 的 论文 讲 的 
+是 region based segmentation 可是 这 文章 里 所有 引文 
+又是 找 不到 的 . . . . 悲剧 的 
+人生 开源 软件 网站 www . sourceforge . net 机器 
+视觉 开 源代码 集 合一 特征提取 Feature Extraction SIFT 1 
+Demo program SIFT Library VLFeat PCA SIFT 2 Project Affine 
+SIFT 3 Project SURF 4 OpenSURF Matlab Wrapper Affine Covariant 
+Features 5 Oxford project MSER 6 Oxford project VLFeat Geometric 
+Blur 7 Code Local Self Similarity Descriptor 8 Oxford implementation 
+Global and Efficient Self Similarity 9 Code Histogram of Oriented 
+Graidents 10 INRIA Object Localization Toolkit OLT toolkit for Windows 
+GIST 11 Project Shape Context 12 Project Color Descriptor 13 
+Project Pyramids of Histograms of Oriented Gradients Code Space Time 
+Interest Points STIP 14 Project Code Boundary Preserving Dense Local 
+Regions 15 Project Weighted Histogram Code Histogram based Interest Points 
+Detectors Paper Code An OpenCV C + + implementation of 
+Local Self Similarity Descriptors Project Fast Sparse Representation with Prototypes 
+Project Corner Detection Project AGAST Corner Detector faster than FAST 
+and even FAST ER Project Real time Facial Feature Detection 
+using Conditional Regression Forests Project Global and Efficient Self Similarity 
+for Object Classification and Detection code W α SH Weighted 
+α Shapes for Local Feature Detection Project HOG Project Online 
+Selection of Discriminative Tracking Features Project 二 图像 分割 Image 
+Segmentation Normalized Cut 1 Matlab code Gerg Mori Superpixel code 
+2 Matlab code Efficient Graph based Image Segmentation 3 C 
++ + code Matlab wrapper Mean Shift Image Segmentation 4 
+EDISON C + + code Matlab wrapper OWT UCM Hierarchical 
+Segmentation 5 Resources Turbepixels 6 Matlab code 32bit Matlab code 
+64bit Updated code Quick Shift 7 VLFeat SLIC Superpixels 8 
+Project Segmentation by Minimum Code Length 9 Project Biased Normalized 
+Cut 10 Project Segmentation Tree 11 12 Project Entropy Rate 
+Superpixel Segmentation 13 Code Fast Approximate Energy Minimization via Graph 
+Cuts Paper Code Ef ﬁ cient Planar Graph Cuts with 
+Applications in Computer Vision Paper Code Isoperimetric Graph Partitioning for 
+Image Segmentation Paper Code Random Walks for Image Segmentation Paper 
+Code Blossom V A new implementation of a minimum cost 
+perfect matching algorithm Code An Experimental Comparison of Min Cut 
+/ Max Flow Algorithms for Energy Minimization in Computer Vision 
+Paper Code Geodesic Star Convexity for Interactive Image Segmentation Project 
+Contour Detection and Image Segmentation Resources Project Code Biased Normalized 
+Cuts Project Max flow / min cut Project Chan Vese 
+Segmentation using Level Set Project A Toolbox of Level Set 
+Methods Project Re initialization Free Level Set Evolution via Reaction 
+Diffusion Project Improved C V active contour model Paper Code 
+A Variational Multiphase Level Set Approach to Simultaneous Segmentation and 
+Bias Correction Paper Code Level Set Method Research by Chunming 
+Li Project ClassCut for Unsupervised Class Segmentation code SEEDS Superpixels 
+Extracted via Energy Driven Sampling   Project other 三 目标 
+检测 Object Detection A simple object detector with boosting Project 
+INRIA Object Detection and Localization Toolkit 1 Project Discriminatively Trained 
+Deformable Part Models 2 Project Cascade Object Detection with Deformable 
+Part Models 3 Project Poselet 4 Project Implicit Shape Model 
+5 Project Viola and Jones s Face Detection 6 Project 
+Bayesian Modelling of Dyanmic Scenes for Object Detection Paper Code 
+Hand detection using multiple proposals Project Color Constancy Intrinsic Images 
+and Shape Estimation Paper Code Discriminatively trained deformable part models 
+Project Gradient Response Maps for Real Time Detection of Texture 
+Less Objects LineMOD Project Image Processing On Line Project Robust 
+Optical Flow Estimation Project Where s Waldo Matching People in 
+Images of Crowds Project Scalable Multi class Object Detection Project 
+Class Specific Hough Forests for Object Detection Project Deformed Lattice 
+Detection In Real World Images Project Discriminatively trained deformable part 
+models Project 四 显著性 检测 Saliency Detection Itti Koch and 
+Niebur saliency detection 1 Matlab code Frequency tuned salient region 
+detection 2 Project Saliency detection using maximum symmetric surround 3 
+Project Attention via Information Maximization 4 Matlab code Context aware 
+saliency detection 5 Matlab code Graph based visual saliency 6 
+Matlab code Saliency detection A spectral residual approach . 7 
+Matlab code Segmenting salient objects from images and videos . 
+8 Matlab code Saliency Using Natural statistics . 9 Matlab 
+code Discriminant Saliency for Visual Recognition from Cluttered Scenes . 
+10 Code Learning to Predict Where Humans Look 11 Project 
+Global Contrast based Salient Region Detection 12 Project Bayesian Saliency 
+via Low and Mid Level Cues Project Top Down Visual 
+Saliency via Joint CRF and Dictionary Learning Paper Code Saliency 
+Detection A Spectral Residual Approach Code 五 图像 分类 聚 
+类 Image Classification C l u s t e r 
+i n g P y r a m i d 
+Match 1 Project Spatial Pyramid Matching 2 Code Locality constrained 
+Linear Coding 3 Project Matlab code Sparse Coding 4 Project 
+Matlab code Texture Classification 5 Project Multiple Kernels for Image 
+Classification 6 Project Feature Combination 7 Project SuperParsing Code Large 
+Scale Correlation Clustering Optimization Matlab code Detecting and Sketching the 
+Common Project Self Tuning Spectral Clustering Project Code User Assisted 
+Separation of Reflections from a Single Image Using a Sparsity 
+Prior Paper Code Filters for Texture Classification Project Multiple Kernel 
+Learning for Image Classification Project SLIC Superpixels Project 六 抠图 
+Image MattingA Closed Form Solution to Natural Image Matting Code 
+Spectral Matting Project Learning based Matting Code 七 目标 跟踪 
+Object Tracking A Forest of Sensors Tracking Adaptive Background Mixture 
+Models Project Object Tracking via Partial Least Squares Analysis Paper 
+Code Robust Object Tracking with Online Multiple Instance Learning Paper 
+Code Online Visual Tracking with Histograms and Articulating Blocks Project 
+Incremental Learning for Robust Visual Tracking Project Real time Compressive 
+Tracking Project Robust Object Tracking via Sparsity based Collaborative Model 
+Project Visual Tracking via Adaptive Structural Local Sparse Appearance Model 
+Project Online Discriminative Object Tracking with Local Sparse Representation Paper 
+Code Superpixel Tracking Project Learning Hierarchical Image Representation with Sparsity 
+Saliency and Locality Paper Code Online Multiple Support Instance Tracking 
+Paper Code Visual Tracking with Online Multiple Instance Learning Project 
+Object detection and recognition Project Compressive Sensing Resources Project Robust 
+Real Time Visual Tracking using Pixel Wise Posteriors Project Tracking 
+Learning Detection Project OpenTLD / C + + Code the 
+HandVu vision based hand gesture interface Project Learning Probabilistic Non 
+Linear Latent Variable Models for Tracking Complex Activities Project 八 
+Kinect Kinect toolbox Project OpenNI Project zouxy09 CSDN Blog Resource 
+FingerTracker 手指 跟踪 code 九 3D 相关 3D Reconstruction of 
+a Moving Object Paper Code Shape From Shading Using Linear 
+Approximation Code Combining Shape from Shading and Stereo Depth Maps 
+Project Code Shape from Shading A Survey Paper Code A 
+Spatio Temporal Descriptor based on 3D Gradients HOG3D Project Code 
+Multi camera Scene Reconstruction via Graph Cuts Paper Code A 
+Fast Marching Formulation of Perspective Shape from Shading under Frontal 
+Illumination Paper Code Reconstruction 3D Shape Illumination Shading Reflectance Texture 
+Project Monocular Tracking of 3D Human Motion with a Coordinated 
+Mixture of Factor Analyzers Code Learning 3 D Scene Structure 
+from a Single Still Image Project 十 机器学习 算法 Matlab 
+class for computing Approximate Nearest Nieghbor ANN Matlab class   
+providing interface toANN library Random Sampling code Probabilistic Latent Semantic 
+Analysis pLSA Code FASTANN and FASTCLUSTER for approximate k means 
+AKM Project Fast Intersection / Additive Kernel SVMs Project SVM 
+Code Ensemble learning Project Deep Learning Net Deep Learning Methods 
+for Vision Project Neural Network for Recognition of Handwritten Digits 
+Project Training a deep autoencoder or a classifier on MNIST 
+digits Project THE MNIST DATABASE of handwritten digits Project Ersatz 
+deep neural networks in the cloud Project Deep Learning Project 
+sparseLM Sparse Levenberg Marquardt nonlinear least squares in C / 
+C + + Project Weka 3 Data Mining Software in 
+Java Project Invited talk A Tutorial on Deep Learning by 
+Dr . Kai Yu 余凯 Video CNN Convolutional neural network 
+class Matlab Tool Yann LeCun s Publications Wedsite LeNet 5 
+convolutional neural networks Project Training a deep autoencoder or a 
+classifier on MNIST digits Project Deep Learning 大牛 Geoffrey E 
+. Hinton s HomePage Website Multiple Instance Logistic Discriminant based 
+Metric Learning MildML and Logistic Discriminant based Metric Learning LDML 
+Code Sparse coding simulation software Project Visual Recognition and Machine 
+Learning Summer School Software 十一 目标 行为 识别 Object Action 
+Recognition Action Recognition by Dense Trajectories Project Code Action Recognition 
+Using a Distributed Representation of Pose and Appearance Project Recognition 
+Using Regions Paper Code 2D Articulated Human Pose Estimation Project 
+Fast Human Pose Estimation Using Appearance and Motion via Multi 
+Dimensional Boosting Regression Paper Code Estimating Human Pose from Occluded 
+Images Paper Code Quasi dense wide baseline matching Project ChaLearn 
+Gesture Challenge   Principal motion PCA based reconstruction of motion 
+histograms Project Real Time Head Pose Estimation with Random Regression 
+Forests Project 2D Action Recognition Serves 3D Human Pose Estimation 
+Project A Hough Transform Based Voting Framework for Action Recognition 
+Project Motion Interchange Patterns for Action Recognition in Unconstrained Videos 
+Project 2D articulated human pose estimation software Project Learning and 
+detecting shape models code Progressive Search Space Reduction for Human 
+Pose Estimation Project Learning Non Rigid 3D Shape from 2D 
+Motion Project 十二 图像处理 Distance Transforms of Sampled Functions Project 
+The Computer Vision Homepage Project Efficient appearance distances between windows 
+code Image Exploration algorithm code Motion Magnification 运动 放大 Project 
+Bilateral Filtering for Gray and Color Images 双边 滤波器 Project 
+A Fast Approximation of the Bilateral Filter using a Signal 
+Processing Approach Project 十三 一些 实用工具 EGT a Toolbox for 
+Multiple View Geometry and Visual Servoing Project Code a development 
+kit of matlab mex functions for OpenCV library Project Fast 
+Artificial Neural Network Library Project 十四 人手 及 指尖 检测 
+与 识别 finger detection and gesture recognition   Code Hand 
+and Finger Detection using JavaCV Project Hand and fingers detection 
+Code 十五 场景 解释 Nonparametric Scene Parsing via Label Transfer 
+  Project 十六 光 流 Optical flow High accuracy optical 
+flow using a theory for warping   Project Dense Trajectories 
+Video Description   Project SIFT Flow Dense Correspondence across Scenes 
+and its Applications Project KLT An Implementation of the Kanade 
+Lucas Tomasi Feature Tracker Project Tracking Cars Using Optical Flow 
+Project Secrets of optical flow estimation and their principles Project 
+implmentation of the Black and Anandan dense optical flow method 
+Project Optical Flow Computation Project Beyond Pixels Exploring New Representations 
+and Applications for Motion Analysis Project A Database and Evaluation 
+Methodology for Optical Flow Project optical flow relative Project Robust 
+Optical Flow Estimation Project optical flow Project 十七 图像 检索 
+Image Retrieval Semi Supervised Distance Metric Learning for Collaborative Image 
+Retrieval   Paper code 十八 马尔科夫 随 机场 Markov Random 
+Fields Markov Random Fields for Super Resolution   Project A 
+Comparative Study of Energy Minimization Methods for Markov Random Fields 
+with Smoothness Based Priors Project 十九 运动 检测 Motion detection 
+Moving Object Extraction Using Models or Analysis of Regions   
+Project Background Subtraction Experiments and Improvements for ViBe Project A 
+Self Organizing Approach to Background Subtraction for Visual Surveillance Applications 
+Project changedetection . net A new change detection benchmark dataset 
+Project ViBe a powerful technique for background detection and subtraction 
+in video sequences Project Background Subtraction Program Project Motion Detection 
+Algorithms Project Stuttgart Artificial Background Subtraction Dataset Project Object Detection 
+Motion Estimation and Tracking Project Feature Detection and D e 
+s c r i p t i o n G 
+e n e r a l Libraries VLFeat   – 
+Implementation of various feature descriptors including SIFT HOG and LBP 
+and covariant feature detectors including DoG Hessian Harris Laplace Hessian 
+Laplace Multiscale Hessian Multiscale Harris . Easy to use Matlab 
+interface . See   Modern features Software   – Slides 
+providing a demonstration of VLFeat and also links to other 
+software . Check also   VLFeat hands on session trainingOpenCV 
+  – Various implementations of modern feature detectors and descriptors 
+SIFT SURF FAST BRIEF ORB FREAK etc . Fast Keypoint 
+Detectors for Real time Applications FAST   – High speed 
+corner detector implementation for a wide variety of platformsAGAST   
+– Even faster than the FAST corner detector . A 
+multi scale version of this method is used for the 
+BRISK descriptor ECCV 2010 . Binary Descriptors for Real Time 
+Applications BRIEF   – C + + code for a 
+fast and accurate interest point descriptor not invariant to rotations 
+and scale ECCV 2010 ORB   – OpenCV implementation of 
+the Oriented Brief ORB descriptor invariant to rotations but not 
+scale BRISK   – Efficient Binary descriptor invariant to rotations 
+and scale . It includes a Matlab mex interface . 
+ICCV 2011 FREAK   – Faster than BRISK invariant to 
+rotations and scale CVPR 2012 SIFT and SURF Implementations SIFT 
+  VLFeat   OpenCV   Original code   by David 
+Lowe   GPU implementation   OpenSIFTSURF   Herbert Bay s 
+code   OpenCV   GPU SURFOther Local Feature Detectors and 
+Descriptors VGG Affine Covariant features   – Oxford code for 
+various affine covariant feature detectors and descriptors . LIOP descriptor 
+  – Source code for the Local Intensity order Pattern 
+LIOP descriptor ICCV 2011 . Local Symmetry Features   – 
+Source code for matching of local symmetry features under large 
+variations in lighting age and rendering style CVPR 2012 . 
+Global Image Descriptors GIST   – Matlab code for the 
+GIST d e s c r i p t o 
+r C E N T R I T   – 
+Global visual descriptor for scene categorization and object detection PAMI 
+2011 Feature Coding and PoolingVGG Feature Encoding Toolkit   – 
+Source code for various state of the art feature encoding 
+methods – including Standard hard encoding Kernel codebook encoding Locality 
+constrained linear encoding and Fisher kernel encoding . Spatial Pyramid 
+Matching   – Source code for feature pooling based on 
+spatial pyramid matching widely used for image classification Convolutional Nets 
+and Deep LearningEBLearn   – C + + Library for 
+Energy Based Learning . It includes several demos and step 
+by step instructions to train classifiers based on convolutional neural 
+networks . Torch7   – Provides a matlab like environment 
+for state of the art machine learning algorithms including a 
+fast implementation of convolutional neural networks . Deep Learning   
+Various links for deep learning software . Part Based ModelsDeformable 
+Part based Detector   – Library provided by the authors 
+of the original paper state of the art in PASCAL 
+VOC detection task Efficient Deformable Part Based Detector   – 
+Branch and Bound implementation for a deformable part based detector 
+. Accelerated Deformable Part Model   – Efficient implementation of 
+a method that achieves the exact same performance of deformable 
+part based detectors but with significant acceleration ECCV 2012 . 
+Coarse to Fine Deformable Part Model   – Fast approach 
+for deformable object detection CVPR 2011 . Poselets   – 
+C + + and Matlab versions for object detection based 
+on poselets . Part based Face Detector and Pose Estimation 
+  – Implementation of a unified approach for face detection 
+pose estimation and landmark localization CVPR 2012 . Attributes and 
+Semantic FeaturesRelative Attributes   – Modified implementation of RankSVM to 
+train Relative Attributes ICCV 2011 . Object Bank   – 
+Implementation of object bank semantic features NIPS 2010 . See 
+also   A c t i o n B a 
+n k C l a s s e m e 
+s Picodes and Meta class features   – Software for 
+extracting high level image descriptors ECCV 2010 NIPS 2011 CVPR 
+2012 . Large Scale LearningAdditive Kernels   – Source code 
+for fast additive kernel SVM classifiers PAMI 2013 . LIBLINEAR 
+  – Library for large scale linear SVM classification . 
+VLFeat   – Implementation for Pegasos SVM and Homogeneous Kernel 
+map . Fast Indexing and Image RetrievalFLANN   – Library 
+for performing fast approximate nearest neighbor . Kernelized LSH   
+– Source code for Kernelized Locality Sensitive Hashing ICCV 2009 
+. ITQ Binary codes   – Code for generation of 
+small binary codes using Iterative Quantization and other baselines such 
+as Locality Sensitive Hashing CVPR 2011 . INRIA Image Retrieval 
+  – Efficient code for state of the art large 
+scale image retrieval CVPR 2011 . Object DetectionSee   Part 
+based Models   and   Convolutional Nets   above . 
+Pedestrian Detection at 100fps   – Very fast and accurate 
+pedestrian detector CVPR 2012 . Caltech Pedestrian Detection Benchmark   
+– Excellent resource for pedestrian detection with various links for 
+state of the art implementations . OpenCV   – Enhanced 
+implementation of Viola & Jones real time object detector with 
+trained models for face detection . Efficient Subwindow Search   
+– Source code for branch and bound optimization for efficient 
+object localization CVPR 2008 . 3D RecognitionPoint Cloud Library   
+– Library for 3D image and point cloud processing . 
+Action R e c o g n i t i 
+o n A c t i o n B a 
+n k   – Source code for action recognition based 
+on the ActionBank representation CVPR 2012 . STIP Features   
+– software for computing space time interest point d e 
+s c r i p t o r s I 
+n d e p e n d e n t 
+Subspace Analysis   – Look for Stacked ISA for Videos 
+CVPR 2011 Velocity Histories of Tracked Keypoints   C + 
++ code for activity recognition using the velocity histories of 
+tracked keypoints ICCV 2009 D a t a s e 
+t s A t t r i b u t 
+e s A n i m a l s with 
+Attributes   – 30 475 images of 50 animals classes 
+with 6 pre extracted feature representations for each image . 
+aYahoo and aPascal   – Attribute annotations for images collected 
+from Yahoo and Pascal VOC 2008 . FaceTracer   – 
+15 000 faces annotated with 10 attributes and fiducial points 
+. PubFig   – 58 797 face images of 200 
+people with 73 attribute classifier outputs . LFW   – 
+13 233 face images of 5 749 people with 73 
+attribute classifier outputs . Human Attributes   – 8 000 
+people with annotated attributes . Check also this   link 
+  for another dataset of human attributes . SUN Attribute 
+Database   – Large scale scene attribute database with a 
+taxonomy of 102 attributes . ImageNet Attributes   – Variety 
+of attribute labels for the ImageNet dataset . Relative attributes 
+  – Data for OSR and a subset of PubFig 
+datasets . Check also this   link   for the 
+WhittleSearch data . Attribute Discovery Dataset   – Images of 
+shopping categories associated with textual descriptions . Fine grained Visual 
+C a t e g o r i z a 
+t i o n C a l t e c 
+h UCSD Birds Dataset   – Hundreds of bird categories 
+with annotated parts and attributes . Stanford Dogs Dataset   
+– 20 000 images of 120 breeds of dogs from 
+around the world . Oxford IIIT Pet Dataset   – 
+37 category pet dataset with roughly 200 images for each 
+class . Pixel level trimap segmentation is included . Leeds 
+Butterfly Dataset   – 832 images of 10 species of 
+butterflies . Oxford Flower Dataset   – Hundreds of flower 
+categories . Face DetectionFDDB   – UMass face detection dataset 
+and benchmark 5 000 + faces CMU / MIT   
+– Classical face detection dataset . Face RecognitionFace Recognition Homepage 
+  – Large collection of face recognition datasets . LFW 
+  – UMass unconstrained face recognition dataset 13 000 + 
+face images . NIST Face Homepage   – includes face 
+recognition grand challenge FRGC vendor tests FRVT and others . 
+CMU Multi PIE   – contains more than 750 000 
+images of 337 people with 15 different views and 19 
+lighting conditions . FERET   – Classical face recognition dataset 
+. Deng Cai s face dataset in Matlab Format   
+– Easy to use if you want play with simple 
+face datasets including Yale ORL PIE and Extended Yale B 
+. SCFace   – Low resolution face dataset captured from 
+surveillance cameras . Handwritten DigitsMNIST   – large dataset containing 
+a training set of 60 000 examples and a test 
+set of 10 000 examples . Pedestrian DetectionCaltech Pedestrian Detection 
+Benchmark   – 10 hours of video taken from a 
+vehicle 350K bounding boxes for about 2.3 K unique pedestrians 
+. INRIA Person Dataset   – Currently one of the 
+most popular pedestrian detection datasets . ETH Pedestrian Dataset   
+– Urban dataset captured from a stereo rig mounted on 
+a stroller . TUD Brussels Pedestrian Dataset   – Dataset 
+with image pairs recorded in an crowded urban setting with 
+an onboard camera . PASCAL Human Detection   – One 
+of 20 categories in PASCAL VOC detection challenges . USC 
+Pedestrian Dataset   – Small dataset captured from surveillance cameras 
+. Generic Object R e c o g n i 
+t i o n I m a g e N 
+e t   – Currently the largest visual recognition dataset 
+in terms of number of categories and images . Tiny 
+Images   – 80 million 32x32 low resolution images . 
+Pascal VOC   – One of the most influential visual 
+recognition datasets . Caltech 101   /   Caltech 256 
+  – Popular image datasets containing 101 and 256 object 
+categories respectively . MIT LabelMe   – Online annotation tool 
+for building computer vision databases . Scene RecognitionMIT SUN Dataset 
+  – MIT scene understanding dataset . UIUC Fifteen Scene 
+Categories   – Dataset of 15 natural scene categories . 
+Feature Detection and DescriptionVGG Affine Dataset   – Widely used 
+dataset for measuring performance of feature detection and description . 
+C h e c k V L B e n 
+c h m a r k s   for an 
+evaluation framework . Action R e c o g n 
+i t i o n B e n c h 
+m a r k i n g Activity Recognition   
+– CVPR 2012 tutorial covering various datasets for action recognition 
+. RGBD RecognitionRGB D Object Dataset   – Dataset containing 
+300 common household objects 一 特征提取 Feature Extraction SIFT 1 
+Demo program SIFT Library VLFeat PCA SIFT 2 Project Affine 
+SIFT 3 Project SURF 4 OpenSURF Matlab Wrapper Affine Covariant 
+Features 5 Oxford project MSER 6 Oxford project VLFeat Geometric 
+Blur 7 Code Local Self Similarity Descriptor 8 Oxford implementation 
+Global and Efficient Self Similarity 9 Code Histogram of Oriented 
+Graidents 10 INRIA Object Localization Toolkit OLT toolkit for Windows 
+GIST 11 Project Shape Context 12 Project Color Descriptor 13 
+Project Pyramids of Histograms of Oriented Gradients Code Space Time 
+Interest Points STIP 14 Project Code Boundary Preserving Dense Local 
+Regions 15 Project Weighted Histogram Code Histogram based Interest Points 
+Detectors Paper Code An OpenCV C + + implementation of 
+Local Self Similarity Descriptors Project Fast Sparse Representation with Prototypes 
+Project Corner Detection Project AGAST Corner Detector faster than FAST 
+and even FAST ER Project Real time Facial Feature Detection 
+using Conditional Regression Forests Project Global and Efficient Self Similarity 
+for Object Classification and Detection code W α SH Weighted 
+α Shapes for Local Feature Detection Project HOG Project Online 
+Selection of Discriminative Tracking Features Project 二 图像 分割 Image 
+Segmentation Normalized Cut 1 Matlab code Gerg Mori Superpixel code 
+2 Matlab code Efficient Graph based Image Segmentation 3 C 
++ + code Matlab wrapper Mean Shift Image Segmentation 4 
+EDISON C + + code Matlab wrapper OWT UCM Hierarchical 
+Segmentation 5 Resources Turbepixels 6 Matlab code 32bit Matlab code 
+64bit Updated code Quick Shift 7 VLFeat SLIC Superpixels 8 
+Project Segmentation by Minimum Code Length 9 Project Biased Normalized 
+Cut 10 Project Segmentation Tree 11 12 Project Entropy Rate 
+Superpixel Segmentation 13 Code Fast Approximate Energy Minimization via Graph 
+Cuts Paper Code Ef ﬁ cient Planar Graph Cuts with 
+Applications in Computer Vision Paper Code Isoperimetric Graph Partitioning for 
+Image Segmentation Paper Code Random Walks for Image Segmentation Paper 
+Code Blossom V A new implementation of a minimum cost 
+perfect matching algorithm Code An Experimental Comparison of Min Cut 
+/ Max Flow Algorithms for Energy Minimization in Computer Vision 
+Paper Code Geodesic Star Convexity for Interactive Image Segmentation Project 
+Contour Detection and Image Segmentation Resources Project Code Biased Normalized 
+Cuts Project Max flow / min cut Project Chan Vese 
+Segmentation using Level Set Project A Toolbox of Level Set 
+Methods Project Re initialization Free Level Set Evolution via Reaction 
+Diffusion Project Improved C V active contour model Paper Code 
+A Variational Multiphase Level Set Approach to Simultaneous Segmentation and 
+Bias Correction Paper Code Level Set Method Research by Chunming 
+Li Project ClassCut for Unsupervised Class Segmentation code SEEDS Superpixels 
+Extracted via Energy Driven Sampling   Project other 三 目标 
+检测 Object Detection A simple object detector with boosting Project 
+INRIA Object Detection and Localization Toolkit 1 Project Discriminatively Trained 
+Deformable Part Models 2 Project Cascade Object Detection with Deformable 
+Part Models 3 Project Poselet 4 Project Implicit Shape Model 
+5 Project Viola and Jones s Face Detection 6 Project 
+Bayesian Modelling of Dyanmic Scenes for Object Detection Paper Code 
+Hand detection using multiple proposals Project Color Constancy Intrinsic Images 
+and Shape Estimation Paper Code Discriminatively trained deformable part models 
+Project Gradient Response Maps for Real Time Detection of Texture 
+Less Objects LineMOD Project Image Processing On Line Project Robust 
+Optical Flow Estimation Project Where s Waldo Matching People in 
+Images of Crowds Project Scalable Multi class Object Detection Project 
+Class Specific Hough Forests for Object Detection Project Deformed Lattice 
+Detection In Real World Images Project Discriminatively trained deformable part 
+models Project 四 显著性 检测 Saliency Detection Itti Koch and 
+Niebur saliency detection 1 Matlab code Frequency tuned salient region 
+detection 2 Project Saliency detection using maximum symmetric surround 3 
+Project Attention via Information Maximization 4 Matlab code Context aware 
+saliency detection 5 Matlab code Graph based visual saliency 6 
+Matlab code Saliency detection A spectral residual approach . 7 
+Matlab code Segmenting salient objects from images and videos . 
+8 Matlab code Saliency Using Natural statistics . 9 Matlab 
+code Discriminant Saliency for Visual Recognition from Cluttered Scenes . 
+10 Code Learning to Predict Where Humans Look 11 Project 
+Global Contrast based Salient Region Detection 12 Project Bayesian Saliency 
+via Low and Mid Level Cues Project Top Down Visual 
+Saliency via Joint CRF and Dictionary Learning Paper Code Saliency 
+Detection A Spectral Residual Approach Code 五 图像 分类 聚 
+类 Image Classification C l u s t e r 
+i n g P y r a m i d 
+Match 1 Project Spatial Pyramid Matching 2 Code Locality constrained 
+Linear Coding 3 Project Matlab code Sparse Coding 4 Project 
+Matlab code Texture Classification 5 Project Multiple Kernels for Image 
+Classification 6 Project Feature Combination 7 Project SuperParsing Code Large 
+Scale Correlation Clustering Optimization Matlab code Detecting and Sketching the 
+Common Project Self Tuning Spectral Clustering Project Code User Assisted 
+Separation of Reflections from a Single Image Using a Sparsity 
+Prior Paper Code Filters for Texture Classification Project Multiple Kernel 
+Learning for Image Classification Project SLIC Superpixels Project 六 抠图 
+Image MattingA Closed Form Solution to Natural Image Matting Code 
+Spectral Matting Project Learning based Matting Code 七 目标 跟踪 
+Object Tracking A Forest of Sensors Tracking Adaptive Background Mixture 
+Models Project Object Tracking via Partial Least Squares Analysis Paper 
+Code Robust Object Tracking with Online Multiple Instance Learning Paper 
+Code Online Visual Tracking with Histograms and Articulating Blocks Project 
+Incremental Learning for Robust Visual Tracking Project Real time Compressive 
+Tracking Project Robust Object Tracking via Sparsity based Collaborative Model 
+Project Visual Tracking via Adaptive Structural Local Sparse Appearance Model 
+Project Online Discriminative Object Tracking with Local Sparse Representation Paper 
+Code Superpixel Tracking Project Learning Hierarchical Image Representation with Sparsity 
+Saliency and Locality Paper Code Online Multiple Support Instance Tracking 
+Paper Code Visual Tracking with Online Multiple Instance Learning Project 
+Object detection and recognition Project Compressive Sensing Resources Project Robust 
+Real Time Visual Tracking using Pixel Wise Posteriors Project Tracking 
+Learning Detection Project OpenTLD / C + + Code the 
+HandVu vision based hand gesture interface Project Learning Probabilistic Non 
+Linear Latent Variable Models for Tracking Complex Activities Project 八 
+Kinect Kinect toolbox Project OpenNI Project zouxy09 CSDN Blog Resource 
+FingerTracker 手指 跟踪 code 九 3D 相关 3D Reconstruction of 
+a Moving Object Paper Code Shape From Shading Using Linear 
+Approximation Code Combining Shape from Shading and Stereo Depth Maps 
+Project Code Shape from Shading A Survey Paper Code A 
+Spatio Temporal Descriptor based on 3D Gradients HOG3D Project Code 
+Multi camera Scene Reconstruction via Graph Cuts Paper Code A 
+Fast Marching Formulation of Perspective Shape from Shading under Frontal 
+Illumination Paper Code Reconstruction 3D Shape Illumination Shading Reflectance Texture 
+Project Monocular Tracking of 3D Human Motion with a Coordinated 
+Mixture of Factor Analyzers Code Learning 3 D Scene Structure 
+from a Single Still Image Project 十 机器学习 算法 Matlab 
+class for computing Approximate Nearest Nieghbor ANN Matlab class   
+providing interface toANN library Random Sampling code Probabilistic Latent Semantic 
+Analysis pLSA Code FASTANN and FASTCLUSTER for approximate k means 
+AKM Project Fast Intersection / Additive Kernel SVMs Project SVM 
+Code Ensemble learning Project Deep Learning Net Deep Learning Methods 
+for Vision Project Neural Network for Recognition of Handwritten Digits 
+Project Training a deep autoencoder or a classifier on MNIST 
+digits Project THE MNIST DATABASE of handwritten digits Project Ersatz 
+deep neural networks in the cloud Project Deep Learning Project 
+sparseLM Sparse Levenberg Marquardt nonlinear least squares in C / 
+C + + Project Weka 3 Data Mining Software in 
+Java Project Invited talk A Tutorial on Deep Learning by 
+Dr . Kai Yu 余凯 Video CNN Convolutional neural network 
+class Matlab Tool Yann LeCun s Publications Wedsite LeNet 5 
+convolutional neural networks Project Training a deep autoencoder or a 
+classifier on MNIST digits Project Deep Learning 大牛 Geoffrey E 
+. Hinton s HomePage Website Multiple Instance Logistic Discriminant based 
+Metric Learning MildML and Logistic Discriminant based Metric Learning LDML 
+Code Sparse coding simulation software Project Visual Recognition and Machine 
+Learning Summer School Software 十一 目标 行为 识别 Object Action 
+Recognition Action Recognition by Dense Trajectories Project Code Action Recognition 
+Using a Distributed Representation of Pose and Appearance Project Recognition 
+Using Regions Paper Code 2D Articulated Human Pose Estimation Project 
+Fast Human Pose Estimation Using Appearance and Motion via Multi 
+Dimensional Boosting Regression Paper Code Estimating Human Pose from Occluded 
+Images Paper Code Quasi dense wide baseline matching Project ChaLearn 
+Gesture Challenge   Principal motion PCA based reconstruction of motion 
+histograms Project Real Time Head Pose Estimation with Random Regression 
+Forests Project 2D Action Recognition Serves 3D Human Pose Estimation 
+Project A Hough Transform Based Voting Framework for Action Recognition 
+Project Motion Interchange Patterns for Action Recognition in Unconstrained Videos 
+Project 2D articulated human pose estimation software Project Learning and 
+detecting shape models code Progressive Search Space Reduction for Human 
+Pose Estimation Project Learning Non Rigid 3D Shape from 2D 
+Motion Project 十二 图像处理 Distance Transforms of Sampled Functions Project 
+The Computer Vision Homepage Project Efficient appearance distances between windows 
+code Image Exploration algorithm code Motion Magnification 运动 放大 Project 
+Bilateral Filtering for Gray and Color Images 双边 滤波器 Project 
+A Fast Approximation of the Bilateral Filter using a Signal 
+Processing Approach Project 十三 一些 实用工具 EGT a Toolbox for 
+Multiple View Geometry and Visual Servoing Project Code a development 
+kit of matlab mex functions for OpenCV library Project Fast 
+Artificial Neural Network Library Project 十四 人手 及 指尖 检测 
+与 识别 finger detection and gesture recognition   Code Hand 
+and Finger Detection using JavaCV Project Hand and fingers detection 
+Code 十五 场景 解释 Nonparametric Scene Parsing via Label Transfer 
+  Project 十六 光 流 Optical flow High accuracy optical 
+flow using a theory for warping   Project Dense Trajectories 
+Video Description   Project SIFT Flow Dense Correspondence across Scenes 
+and its Applications Project KLT An Implementation of the Kanade 
+Lucas Tomasi Feature Tracker Project Tracking Cars Using Optical Flow 
+Project Secrets of optical flow estimation and their principles Project 
+implmentation of the Black and Anandan dense optical flow method 
+Project Optical Flow Computation Project Beyond Pixels Exploring New Representations 
+and Applications for Motion Analysis Project A Database and Evaluation 
+Methodology for Optical Flow Project optical flow relative Project Robust 
+Optical Flow Estimation Project optical flow Project 十七 图像 检索 
+Image Retrieval Semi Supervised Distance Metric Learning for Collaborative Image 
+Retrieval   Paper code 十八 马尔科夫 随 机场 Markov Random 
+Fields Markov Random Fields for Super Resolution   Project A 
+Comparative Study of Energy Minimization Methods for Markov Random Fields 
+with Smoothness Based Priors Project 十九 运动 检测 Motion detection 
+Moving Object Extraction Using Models or Analysis of Regions   
+Project Background Subtraction Experiments and Improvements for ViBe Project A 
+Self Organizing Approach to Background Subtraction for Visual Surveillance Applications 
+Project changedetection . net A new change detection benchmark dataset 
+Project ViBe a powerful technique for background detection and subtraction 
+in video sequences Project Background Subtraction Program Project Motion Detection 
+Algorithms Project Stuttgart Artificial Background Subtraction Dataset Project Object Detection 
+Motion Estimation and Tracking Project Feature Detection and D e 
+s c r i p t i o n G 
+e n e r a l Libraries VLFeat   – 
+Implementation of various feature descriptors including SIFT HOG and LBP 
+and covariant feature detectors including DoG Hessian Harris Laplace Hessian 
+Laplace Multiscale Hessian Multiscale Harris . Easy to use Matlab 
+interface . See   Modern features Software   – Slides 
+providing a demonstration of VLFeat and also links to other 
+software . Check also   VLFeat hands on session trainingOpenCV 
+  – Various implementations of modern feature detectors and descriptors 
+SIFT SURF FAST BRIEF ORB FREAK etc . Fast Keypoint 
+Detectors for Real time Applications FAST   – High speed 
+corner detector implementation for a wide variety of platformsAGAST   
+– Even faster than the FAST corner detector . A 
+multi scale version of this method is used for the 
+BRISK descriptor ECCV 2010 . Binary Descriptors for Real Time 
+Applications BRIEF   – C + + code for a 
+fast and accurate interest point descriptor not invariant to rotations 
+and scale ECCV 2010 ORB   – OpenCV implementation of 
+the Oriented Brief ORB descriptor invariant to rotations but not 
+scale BRISK   – Efficient Binary descriptor invariant to rotations 
+and scale . It includes a Matlab mex interface . 
+ICCV 2011 FREAK   – Faster than BRISK invariant to 
+rotations and scale CVPR 2012 SIFT and SURF Implementations SIFT 
+  VLFeat   OpenCV   Original code   by David 
+Lowe   GPU implementation   OpenSIFTSURF   Herbert Bay s 
+code   OpenCV   GPU SURFOther Local Feature Detectors and 
+Descriptors VGG Affine Covariant features   – Oxford code for 
+various affine covariant feature detectors and descriptors . LIOP descriptor 
+  – Source code for the Local Intensity order Pattern 
+LIOP descriptor ICCV 2011 . Local Symmetry Features   – 
+Source code for matching of local symmetry features under large 
+variations in lighting age and rendering style CVPR 2012 . 
+Global Image Descriptors GIST   – Matlab code for the 
+GIST d e s c r i p t o 
+r C E N T R I T   – 
+Global visual descriptor for scene categorization and object detection PAMI 
+2011 Feature Coding and PoolingVGG Feature Encoding Toolkit   – 
+Source code for various state of the art feature encoding 
+methods – including Standard hard encoding Kernel codebook encoding Locality 
+constrained linear encoding and Fisher kernel encoding . Spatial Pyramid 
+Matching   – Source code for feature pooling based on 
+spatial pyramid matching widely used for image classification Convolutional Nets 
+and Deep LearningEBLearn   – C + + Library for 
+Energy Based Learning . It includes several demos and step 
+by step instructions to train classifiers based on convolutional neural 
+networks . Torch7   – Provides a matlab like environment 
+for state of the art machine learning algorithms including a 
+fast implementation of convolutional neural networks . Deep Learning   
+Various links for deep learning software . Part Based ModelsDeformable 
+Part based Detector   – Library provided by the authors 
+of the original paper state of the art in PASCAL 
+VOC detection task Efficient Deformable Part Based Detector   – 
+Branch and Bound implementation for a deformable part based detector 
+. Accelerated Deformable Part Model   – Efficient implementation of 
+a method that achieves the exact same performance of deformable 
+part based detectors but with significant acceleration ECCV 2012 . 
+Coarse to Fine Deformable Part Model   – Fast approach 
+for deformable object detection CVPR 2011 . Poselets   – 
+C + + and Matlab versions for object detection based 
+on poselets . Part based Face Detector and Pose Estimation 
+  – Implementation of a unified approach for face detection 
+pose estimation and landmark localization CVPR 2012 . Attributes and 
+Semantic FeaturesRelative Attributes   – Modified implementation of RankSVM to 
+train Relative Attributes ICCV 2011 . Object Bank   – 
+Implementation of object bank semantic features NIPS 2010 . See 
+also   A c t i o n B a 
+n k C l a s s e m e 
+s Picodes and Meta class features   – Software for 
+extracting high level image descriptors ECCV 2010 NIPS 2011 CVPR 
+2012 . Large Scale LearningAdditive Kernels   – Source code 
+for fast additive kernel SVM classifiers PAMI 2013 . LIBLINEAR 
+  – Library for large scale linear SVM classification . 
+VLFeat   – Implementation for Pegasos SVM and Homogeneous Kernel 
+map . Fast Indexing and Image RetrievalFLANN   – Library 
+for performing fast approximate nearest neighbor . Kernelized LSH   
+– Source code for Kernelized Locality Sensitive Hashing ICCV 2009 
+. ITQ Binary codes   – Code for generation of 
+small binary codes using Iterative Quantization and other baselines such 
+as Locality Sensitive Hashing CVPR 2011 . INRIA Image Retrieval 
+  – Efficient code for state of the art large 
+scale image retrieval CVPR 2011 . Object DetectionSee   Part 
+based Models   and   Convolutional Nets   above . 
+Pedestrian Detection at 100fps   – Very fast and accurate 
+pedestrian detector CVPR 2012 . Caltech Pedestrian Detection Benchmark   
+– Excellent resource for pedestrian detection with various links for 
+state of the art implementations . OpenCV   – Enhanced 
+implementation of Viola & Jones real time object detector with 
+trained models for face detection . Efficient Subwindow Search   
+– Source code for branch and bound optimization for efficient 
+object localization CVPR 2008 . 3D RecognitionPoint Cloud Library   
+– Library for 3D image and point cloud processing . 
+Action R e c o g n i t i 
+o n A c t i o n B a 
+n k   – Source code for action recognition based 
+on the ActionBank representation CVPR 2012 . STIP Features   
+– software for computing space time interest point d e 
+s c r i p t o r s I 
+n d e p e n d e n t 
+Subspace Analysis   – Look for Stacked ISA for Videos 
+CVPR 2011 Velocity Histories of Tracked Keypoints   C + 
++ code for activity recognition using the velocity histories of 
+tracked keypoints ICCV 2009 D a t a s e 
+t s A t t r i b u t 
+e s A n i m a l s with 
+Attributes   – 30 475 images of 50 animals classes 
+with 6 pre extracted feature representations for each image . 
+aYahoo and aPascal   – Attribute annotations for images collected 
+from Yahoo and Pascal VOC 2008 . FaceTracer   – 
+15 000 faces annotated with 10 attributes and fiducial points 
+. PubFig   – 58 797 face images of 200 
+people with 73 attribute classifier outputs . LFW   – 
+13 233 face images of 5 749 people with 73 
+attribute classifier outputs . Human Attributes   – 8 000 
+people with annotated attributes . Check also this   link 
+  for another dataset of human attributes . SUN Attribute 
+Database   – Large scale scene attribute database with a 
+taxonomy of 102 attributes . ImageNet Attributes   – Variety 
+of attribute labels for the ImageNet dataset . Relative attributes 
+  – Data for OSR and a subset of PubFig 
+datasets . Check also this   link   for the 
+WhittleSearch data . Attribute Discovery Dataset   – Images of 
+shopping categories associated with textual descriptions . Fine grained Visual 
+C a t e g o r i z a 
+t i o n C a l t e c 
+h UCSD Birds Dataset   – Hundreds of bird categories 
+with annotated parts and attributes . Stanford Dogs Dataset   
+– 20 000 images of 120 breeds of dogs from 
+around the world . Oxford IIIT Pet Dataset   – 
+37 category pet dataset with roughly 200 images for each 
+class . Pixel level trimap segmentation is included . Leeds 
+Butterfly Dataset   – 832 images of 10 species of 
+butterflies . Oxford Flower Dataset   – Hundreds of flower 
+categories . Face DetectionFDDB   – UMass face detection dataset 
+and benchmark 5 000 + faces CMU / MIT   
+– Classical face detection dataset . Face RecognitionFace Recognition Homepage 
+  – Large collection of face recognition datasets . LFW 
+  – UMass unconstrained face recognition dataset 13 000 + 
+face images . NIST Face Homepage   – includes face 
+recognition grand challenge FRGC vendor tests FRVT and others . 
+CMU Multi PIE   – contains more than 750 000 
+images of 337 people with 15 different views and 19 
+lighting conditions . FERET   – Classical face recognition dataset 
+. Deng Cai s face dataset in Matlab Format   
+– Easy to use if you want play with simple 
+face datasets including Yale ORL PIE and Extended Yale B 
+. SCFace   – Low resolution face dataset captured from 
+surveillance cameras . Handwritten DigitsMNIST   – large dataset containing 
+a training set of 60 000 examples and a test 
+set of 10 000 examples . Pedestrian DetectionCaltech Pedestrian Detection 
+Benchmark   – 10 hours of video taken from a 
+vehicle 350K bounding boxes for about 2.3 K unique pedestrians 
+. INRIA Person Dataset   – Currently one of the 
+most popular pedestrian detection datasets . ETH Pedestrian Dataset   
+– Urban dataset captured from a stereo rig mounted on 
+a stroller . TUD Brussels Pedestrian Dataset   – Dataset 
+with image pairs recorded in an crowded urban setting with 
+an onboard camera . PASCAL Human Detection   – One 
+of 20 categories in PASCAL VOC detection challenges . USC 
+Pedestrian Dataset   – Small dataset captured from surveillance cameras 
+. Generic Object R e c o g n i 
+t i o n I m a g e N 
+e t   – Currently the largest visual recognition dataset 
+in terms of number of categories and images . Tiny 
+Images   – 80 million 32x32 low resolution images . 
+Pascal VOC   – One of the most influential visual 
+recognition datasets . Caltech 101   /   Caltech 256 
+  – Popular image datasets containing 101 and 256 object 
+categories respectively . MIT LabelMe   – Online annotation tool 
+for building computer vision databases . Scene RecognitionMIT SUN Dataset 
+  – MIT scene understanding dataset . UIUC Fifteen Scene 
+Categories   – Dataset of 15 natural scene categories . 
+Feature Detection and DescriptionVGG Affine Dataset   – Widely used 
+dataset for measuring performance of feature detection and description . 
+C h e c k V L B e n 
+c h m a r k s   for an 
+evaluation framework . Action R e c o g n 
+i t i o n B e n c h 
+m a r k i n g Activity Recognition   
+– CVPR 2012 tutorial covering various datasets for action recognition 
+. RGBD RecognitionRGB D Object Dataset   – Dataset containing 
+300 common household objects 

@@ -1,0 +1,61 @@
+不多 说 直接 上 干货 Windows Server 2003 2008 2012 
+系统 的 安装 推荐 网址 打开 MSDN 网站 http / 
+/ msdn . itellyou . cn   关于 给 电脑 
+换 系统 很多 人 会 花钱 去 电脑 店里 换 
+或者 是 下载 Ghost 系统 但 这些 系统 都 不是 
+微软 原版 的 制作 者 已经 集成 了 很多 常用软件 
+或 垃圾 软件 进去 我 在 这 给 大家 介绍 
+的 是 如何 下载 正版 的 Windows 系统 这个 利用 
+的 是 MSDN 的 VOL 版本 MSDN 是 微软 面向 
+软件 开发 者 所建 的 一个 网站 它 里面 的 
+资源 很多 当然 也 包括 操作系统 和 Office 软件 VOL 
+版 是 面向 企业 或 政府 批量 使用 的 一个 
+版本 它 的 优点 是 在于 它 在 安装 过程 
+中 不 需要 输入 激活码 只许 在 安装 好 后 
+用 激活 软件 激活 即可 VOL 版 和 其他 版本 
+在 使用 上 是 没有 任何 区别 的 1 打开 
+MSDN 网站 http / / msdn . itellyou . cn 
+2 点开 左边 的 操作系统 我 在 这里 以 下载 
+win8 系统 为例 在 操作 系统 下 找到 Windows 8.1 
+点击 在中间 偏左 的 位置 找到 中文 简体 点击 如果 
+你 想用 其他 语言 版本 的 也 可以 然后就 要找 
+Windows 8.1 multiple editions x64 DVD Chinese Simplified 然后 就 
+可以 下载 了 把 红框 里 的 内容 复制 cn 
+_ windows _ 8 _ 1 _ x64 _ dvd 
+_ 2707237 . iso 然后 打开 迅雷 一般 的话 会 
+自动 跳出 下载 页面 如果 没有 跳出 就 点击 迅雷 
+的 新建 然后 把 刚才 复制 的 链接 粘 贴进去 
+创建 新的 虚拟机 点击 自定义 高级 默认 的 下 一步 
+点击 稍后 安装 操作系统 客户机 操作系统 Microsoft Windows W 版本 
+Windows 8 x64 虚拟机 名称 Windows 8 x64 位置 D 
+\ SoftWare \ Virtual Machines \ Windows \ Win8 . 
+1 默认 默认 默认 NAT 模式 默认 默认 创建 新 
+虚拟 磁盘 安装 Win8 系统 默认 60GB 方便管理 将 虚拟 
+磁盘 存储 为 单个 文件 默认 自定义 硬件 准备好 Win8 
+. 1 系统 的 镜像文件 浏览 找到 完成 开启 Win8 
+. 1 的 安装 界面 开始 了 下 一步 现在 
+安装 输入 Win8 的 序列号 XHQ8N C3MCJ RQXB6 WCHYG C9WKB 
+点击 接受 许可 条款 如图 一般 是 为了 重新 安装系统 
+所以 是 自定义 高级 而 升级 是 如 win8 升 
+win10 新建 分 30G 点击 应用 确定 新建 应用 下一步 
+个性化 电脑 名称 zhouls pc 使用 快速 设置 成功 欢迎 
+大家 加入 我 的 微信 公众 号 大 数据 躺过 
+的 坑         人工智能 躺过 的 坑 
+同时 大家 可以 关注 我 的 个人 博客 http / 
+/ www . cnblogs . com / zlslch /   
+    和 /nr       http / / www 
+. cnblogs . com / lchzls /       
+    http / / www . cnblogs . com 
+/ sunnyDream / 详情 请见 http / / www . 
+cnblogs . com / zlslch / p / 7473861 . 
+html 人生 苦短 我 愿 分享 本 公众 号 将 
+秉持 活到老 学到老 学习 无休止 的 交流 分享 开源 精神 
+汇聚/v 于/p 互联网/n 和/c 个人/n 学习/v 工作/vn 的/uj 精华/nz 干货/n 
+知识/v 一切 来 于 互联网 反馈 回 互联网 目前 研究 
+领域 大 数据 机器学习 深度 学习 人工智能 数据挖掘 数据分析 语言 
+涉及 Java Scala Python Shell Linux 等 同时 还 涉及 
+平常 所 使用 的 手机 电脑 和 互联 网上 的 
+使用 技巧 问题 和 实用软件 只要 你 一直 关注 和 
+呆在 群 里 每天/r 必须/d 有/v 收获/v 对应/vn 本/r 平台/n 
+的/uj 讨论/v 和/c 答疑/v QQ/w 群/n 大 数据 和 人工智能 
+躺过 的 坑 总 群 161156071 

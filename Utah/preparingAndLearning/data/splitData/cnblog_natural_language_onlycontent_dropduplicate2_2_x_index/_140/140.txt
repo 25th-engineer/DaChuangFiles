@@ -1,0 +1,32 @@
+MIT自然语言处理第三讲：概率语言模型（第三部分）
+发表于 2009年01月18号 由 52nlp
+自然语言处理：概率语言模型
+Natural Language Processing: Probabilistic Language Modeling
+作者：Regina Barzilay（MIT,EECS Department, November 15, 2004)
+译者：我爱自然语言处理（www.52nlp.cn ，2009年1月18日）
+三、 语言模型的评估
+a) 评估一个语言模型（Evaluating a Language Model）
+i. 我们有n个测试单词串（We have n test string）:
+S_{1},S_{2},…,S_{n}
+ii. 考虑在我们模型之下这段单词串的概率（Consider the probability under our model）：
+prod{i=1}{n}{P(S_{i})}
+或对数概率(or log probability):
+log{prod{i=1}{n}{P(S_{i})}}=sum{i=1}{n}{logP(S_{i})}
+iii. 困惑度（Perplexity）:
+Perplexity = 2^{-x}
+这里x = {1/W}sum{i=1}{n}{logP(S_{i})}
+W是测试数据里总的单词数（W is the total number of words in the test data.）
+iv. 困惑度是一种有效的“分支因子”评测方法（Perplexity is a measure of effective “branching factor”）
+1. 我们有一个规模为N的词汇集v，模型预测（We have a vocabulary v of size N, and model predicts）：
+P(w) = 1/N 对于v中所有的单词（for all the words in v.）
+v. 困惑度是什么（What about Perplexity）?
+Perplexity = 2^{-x}
+这里 x = log{1/N}
+于是 Perplexity = N
+vi. 人类行为的评估（estimate of human performance (Shannon, 1951)
+1. 香农游戏（Shannon game）— 人们在一段文本中猜测下一个字母（humans guess next letter in text）
+2. PP=142(1.3 bits/letter), uncased, open vocabulary
+vii. 三元语言模型的评估（estimate of trigram language model (Brown et al. 1992)）
+PP=790(1.75 bits/letter), cased, open vocabulary
+附：课程及课件pdf下载MIT英文网页地址：
+http://people.csail.mit.edu/regina/6881/

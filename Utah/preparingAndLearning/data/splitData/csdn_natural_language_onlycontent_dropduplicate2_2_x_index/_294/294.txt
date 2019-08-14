@@ -1,0 +1,962 @@
+理解和使用
+自然语言处理
+之终极指南（
+Python
+编码）（
+经典收藏
+版
+12k
+字
+，
+附数据简化
+筹员
+2
+月
+17
+日
+Fri
+新闻
+）
+秦陇纪
+10
+译
+编
+12k字
+：
+理解和使用
+自然语言处理
+之终极指南（
+Python编码）7k字；附数据简化DataSimp筹收
+技术
+简历
+414
+字、
+2月17日Fri新闻
+四则
+4k字
+。
+欢迎加入共建
+“数据简化DataSimp”
+学会及
+社区
+，
+关注、收藏、转发新媒
+体
+“
+数据简化
+DataSimp
+、科学
+Sciences”微信号、头条号
+，
+转载请
+写
+出处：
+秦陇纪
+10“数据简化DataSimp/科学Sciences”公众号、头条号
+译编
+，
+投稿
+QinDragon2010@qq.com。
+目录
+理解和使用自然语言处理之终极指南（
+Python
+编码）（
+7.4k
+字）
+附
+A.
+数据简化
+DataSimp
+筹备收简历
+(414
+字
+)
+附
+B. 2017年2月17
+日周
+五
+（农历丁酉鸡年正月
+廿一
+）新闻四则
+汇编
+(4.8k
+字
+)
+理解和使用自然语言处理之终极指南（
+Python
+编码）
+秦陇纪
+10
+译
+编
+；
+来源：
+仕瓦姆
+·邦萨尔（Shivam Bansal
+）
+,2017年1月12
+日，威提亚分析学
+目录表
+Table of Contents
+1.
+Introduction to NLP
+自然语言处理介绍
+2.
+Text Preprocessing
+文本预处理
+o
+Noise Removal
+噪声去除
+o
+Lexicon Normalization
+词汇规范化
+§
+Lemmatization
+词变体归类
+§
+Stemming
+词干提取
+o
+Object Standardization
+对象规范化
+3.
+Text to Features (Feature Engineering on text data)
+文本到特征（文本数据之特征工程）
+o
+Syntactical Parsing
+句法
+解析
+§
+Dependency Grammar
+依存语法
+§
+Part of Speech Tagging
+词性标注
+o
+Entity Parsing
+实体解析
+§
+Phrase Detection
+短语检测
+§
+Named Entity Recognition
+命名实体识别
+§
+Topic Modelling
+主题造型
+§
+N-Grams
+N
+元连续模型
+o
+Statistical features
+统计特征
+§
+TF – IDF
+词频
+-
+逆文档词频
+§
+Frequency / Density Features
+频率
+/
+密度特征
+§
+Readability Features
+可读性特征
+o
+Word Embeddings
+字嵌入
+4.
+Important tasks of NLP
+自然语言处理
+NLP
+的重要任务
+o
+Text Classification
+文本分类
+o
+Text Matching
+文本匹配
+§
+Levenshtein Distance
+莱文斯坦距离
+§
+Phonetic Matching
+语音匹配
+§
+Flexible String Matching
+柔性字符串匹配
+o
+Coreference Resolution
+共指消解
+o
+Other Problems
+其他问题
+5.
+Important NLP libraries
+重要
+NLP
+库
+据业内人士估计，只有
+21%
+可用数据以结构化形式
+存在。数据产生，正如我们所说的，来自于我们的推特、
+WhatsApp
+和其他各种交流活动中发送的信息。大多数这些数据存在于文本的形式，是高度非结构化的性质。一些臭名昭著的例子包括——在社交媒体上的推特
+/
+帖子、用户到用户的聊天对话、新闻、博客和文章、产品或服务审查和医疗部门里的病人记录。最近的一些例子包括聊天机器人和其他声音驱动的机器人程序。
+尽管具有高维数据，但其呈现的信息是
+不可以直接访问
+的，除非它被
+手动处理（读取和理解）
+或由
+自动化系统分析
+。为了从文本数据中产生明显的和可操作的洞察
+/
+见解，熟悉
+自然语言处理（
+NLP
+）的技术和原则
+显得非常重要。那么，如果你打算今年创建聊天机器人，或者你想使用非结构化文本的力量，本指南是正确的起点。本指南挖掘自然语言处理的概念、技术与实现。文章的目的是教会自然语言处理的概念，并将其应用于实际数据集。
+1. Introduction to Natural Language Processing 自然语言处理介绍
+NLP
+是数据科学
+的一个分支，包括智能和高效地从文本数据中分析、理解和导出信息的系统流程。通过
+NLP
+及其组成部分，企业可以组织海量
+文本数据块、执行许多自动化任务、并解决广泛问题，如自动摘要、机器翻译、命名实体识别、关系抽取、情感分析、语音识别、主题分割
+等。
+在进一步研究之前，我想解释一下文章中使用的一些术语：
+·
+标记化
+——
+转换文本到标记体的过程；
+·
+标记体
+——文本中存在的单词或实体；
+·
+文本对象
+——一个句子或一个短语或一个词或一篇文章
+安装
+NLTK
+及其数据的步骤（使用
+Python
+语言及环境）：
+安装
+Pip
+：在终端中运行：
+sudo easy_install pip
+安装
+NLTK
+：在终端中运行：
+sudo pip install -U nltk
+下载
+NLTK数据
+：运行
+Python shell
+（在终端）和写下面的代码：
+``` import nltk nltk.download()```
+按照屏幕上的指令下载所需的包或集合。其他库可以直接使用
+Pip
+安装。
+2. Text Preprocessing文本预处理
+因此，文本是所有可用数据的最具非结构化的形式，存在于其中的各种类型的噪声，并且没有预处理的数据是不容易分析的。文本清理和标准化的全过程，是一个去除其噪声和称为文本预处理的分析准备工作。
+它主要由三个步骤组成：
+·
+Noise Removal
+噪声去除
+·
+Lexicon Normalization
+词汇规范化
+·
+Object Standardization
+对象标准化
+下图显示了文本预处理（清洁）流水线的体系结构。
+2.1 Noise Removal 噪声去除
+任何与数据上下文和最终输出无关的文本片段，都可以指定为
+噪声
+。例如
+——语言停用词（语言常用词
+is/am/the/of/in
+等），
+URL
+或链接，社会媒体实体（提示、哈希标签），标点符号和特定行业用词。此步骤处理移除文本中存在的所有类型噪声实体。
+去除噪声的一般方法是准备一个
+噪声实体字典
+，并通过
+标记符号（或文字）
+来迭代文本对象，消除这些噪声字典呈现出的标记符号。
+以下是
+实现
+相同目的
+Python
+代码。
+```
+# Sample code to remove noisy words from a text
+noise_list = ["is", "a", "this", "..."]
+def _remove_noise(input_text):
+words = input_text.split()
+noise_free_words = [word for word in words if word not in noise_list]
+noise_free_text = " ".join(noise_free_words)
+return noise_free_text
+_remove_noise("this is a sample text")
+>>> "sample text"
+```
+另一种方法是在处理特殊噪声模式时使用
+正则表达式
+。
+之前的
+一篇文章中
+，我们
+详细解释了正则表达式。以下的
+Python
+代码从输入文本
+中移除了
+一个正则表达式模式：
+```
+# Sample code to remove a regex pattern
+import re
+def _remove_regex(input_text, regex_pattern):
+urls = re.finditer(regex_pattern, input_text)
+for i in urls:
+input_text = re.sub(i.group().strip(), '', input_text)
+return input_text
+regex_pattern = "#[A-Za-z0-9\w]*"
+_remove_regex("remove this #hashtag from analytics vidhya", regex_pattern)
+>>> "remove this
+from analytics vidhya"
+```
+2.2 Lexicon Normalization
+词汇规范化
+另一种文本
+式
+噪声是关于单个词所表现的
+多重表征
+。
+例如
+：
+“玩”、“玩家”，“玩
+过
+”，
+第三人称的
+“玩”和“
+正在
+玩
+”
+（
+play, player, played, plays and playing
+）
+这
+些
+词
+是单词
+“玩”的不同变化，尽管他们
+的意思是
+不同的
+，但
+内容都是相似的。
+这个
+步骤
+是把
+一个词的所有差异转换
+成
+它们的标准化形式（也称为
+lemma
+引理）。规范化是文本特征工程
+的
+关键步骤，因为它转换的高维特征（
+N
+维度
+不同
+特征
+）到低维空间（
+1
+个特征），是任何
+ML
+模型
+的
+一种理想
+解
+。
+最常见的词汇规范化做法是：
+·
+词干提取
+（
+Stemming
+）
+：
+词干提取
+是一种基本的
+基于规则的从一个词剥离后缀的过程（后缀
+ing, ly, es, s
+等）。
+·
+词变体归类
+（
+Lemmatization
+）
+：
+词变体归类
+，从另一方面，是一个有组织且有步骤获得这个词的词根形式的过程，即词汇用法（单词的词典重要性）和形态逻辑分析（词汇结构和语法关系）。
+下面
+的
+示例代码
+是
+用
+Python
+主流库
+NLTK
+执行
+的
+词变体归类
+（
+Lemmatization
+）和
+词干提取
+（
+Stemming
+）
+。
+```
+from nltk.stem.wordnet import WordNetLemmatizer
+lem = WordNetLemmatizer()
+from nltk.stem.porter import PorterStemmer
+stem = PorterStemmer()
+word = "multiplying"
+lem.lemmatize(word, "v")
+>> "multiply"
+stem.stem(word)
+>> "multipli"
+```
+2.3 Object Standardization
+对象标准化
+文本数据通常包含
+一些
+任何标准
+语义
+字典中不存在的单词或短语。这些
+碎片
+是
+搜索引擎和模型不
+能
+识别
+的
+。
+这方面的
+一些例子是
+——首字母缩略词
+语
+、单词附属哈希
+标签和口语俚语。借助正则表达式和手工编写的数据字典，可以
+找到
+这种类型的噪声，下面的代码使用一个字典查找法从文本
+中
+代替
+社交
+媒体的俚语。
+```
+lookup_dict = {'rt':'Retweet', 'dm':'direct message', "awsm" : "awesome", "luv" :"love", "..."}
+def _lookup_words(input_text):
+words = input_text.split()
+new_words = []
+for word in words:
+if word.lower() in lookup_dict:
+word = lookup_dict[word.lower()]
+new_words.append(word) new_text = " ".join(new_words)
+return new_text
+_lookup_words("RT this is a retweeted tweet by Shivam Bansal")
+>> "Retweet this is a retweeted tweet by Shivam Bansal"
+```
+除了讨论到目前为止
+的
+三个步骤，其他类型的
+文本预处理
+包括编码解码噪声
+、
+语法检查器
+、
+拼写校正等
+。
+详细的
+文本
+预处理
+及其
+方法在
+秦陇纪专著
+文章
+有
+。
+3.Text to Features (Feature Engineering on text data)
+文本到特征（文本数据之特征工程）
+对
+预处理数据
+做
+分析，需要将其转换成
+特征
+。根据使用情况，文本特征可用配套技术
+来
+构建
+——语义分析、实体
+/
+克
+/
+基于词的特征、统计特征、字的嵌入。
+实体
+/N
+元连续模型
+/
+基于词的特征、统计特征，和
+单词
+嵌入。
+下面来继续
+阅读
+，以
+详细了解这些技术。
+3.1 Syntactic Parsing
+句法解析
+句法解析
+涉及句中单词的
+语法
+和显示这些单词间关系的
+排列方式
+的分析。依存语法和部分语音标签是文本句法的重要属性。
+依存树
+–句子是由一些单词缝和在一起组成的。句子中词语间的关系由基本依存语法决定。
+依存语法
+是处理两个语义项之间的（标记的）非对称二元关系（单词）的一类语义文本分析法。每一种关系都可以用
+三元组（关系、监督、依存）
+来表示。例如：考虑句子
+“
+Bills on ports and immigration were submitted by Senator Brownback, Republican of Kansas.
+”这些单词间的关系，可以用下图所示的
+树形表示
+形式观察到：
+这个
+树
+显示
+“submitted”
+是
+这
+个句子
+的根词，是由两个
+子树
+（主体与客体的子树）相连。每个
+子树
+本身
+一个诸如
+(“Bills” <-> “ports” “proposition” relation)
+、
+(“ports” <-> “immigration” “conjugation” relation)
+关系的
+依存关系树
+。
+这种类型的树，采用自上而下的方法递归解析时，给出了
+的
+语法关系
+三元组作为输出
+——可用于许多
+NLP
+问题的特征，像
+实体情感分析、
+演员和实体识别和文本分类
+。
+Python
+包
+组
+斯坦福
+CoreNLP
+（
+来自
+Stanford NLP
+项目
+组，只有商业许可证
+版
+）和
+NLTK
+依存
+语法
+可以用来产生
+依存关系树
+.
+词性标注
+（
+Part of Speech tagging
+）
+–除了语法关系，在一个句子里每个词也
+和
+词性标签（
+POS
+）
+（名词、动词、形容词、副词等）
+相关联
+。
+POS
+标签
+定义一个词在句子中的用法和
+功能
+。这是宾夕法尼亚大学定义
+的
+一个所有可能
+POS
+标签列表。下面的代码使用
+NLTK
+对
+输入文本进行
+词性标注
+注释。（它提供了多种实现方案，默认是
+感知
+标记
+器
+）
+```
+from nltk import word_tokenize, pos_tag
+text = "I am learning Natural Language Processing on Analytics Vidhya"
+tokens = word_tokenize(text)
+print pos_tag(tokens)
+>>> [('I', 'PRP'), ('am', 'VBP'), ('learning', 'VBG'), ('Natural', 'NNP'),('Language', 'NNP'),
+('Processing', 'NNP'), ('on', 'IN'), ('Analytics', 'NNP'),('Vidhya', 'NNP')]
+```
+词性标注
+用于
+NLP
+自然语言处理中的许多重要用途：
+A.
+词义消歧：
+一些语言词汇根据其用法有多种含义。例如，在以下两个句子中：
+I. “Please book my flight for Delhi”
+II. “I am going to read this book in the flight”
+“
+Book
+”
+在
+不同语境使用，
+这
+两种情况下的
+词性标注词
+不同。句
+I
+中，
+“
+Book
+”作为动词，而
+II
+句中
+它
+被用作名词
+。（
+Lesk
+算法也用于类似
+目的
+）
+B.提高基于词的
+特征值
+：
+学习模型
+在以
+一个词为特征时，学习词的不同情境，如果词性标注词与他们
+有
+联系，
+则
+上下文被保存，从而
+做出强壮的特征值
+。例如
+:
+句子
+Sentence
+-“book my flight, I will read this book”
+标记词
+Tokens
+– (“book”, 2), (“my”, 1), (“flight”, 1), (“I”, 1), (“will”, 1), (“read”, 1), (“this”, 1)
+词性标注
+标记
+词
+Tokens with POS – (“book_VB”, 1), (“my_PRP$”, 1), (“flight_NN”, 1), (“I_PRP”, 1), (“will_MD”, 1), (“read_VB”, 1), (“this_DT”, 1), (“book_NN”, 1)
+C.
+标准
+化和词变体归类：
+POS
+标签是词变体归类
+过程的
+基础
+，用于将一个词转换成它的基形式（
+lemma
+引理）
+。
+D.
+有效的停用词去除：
+POS
+标签在高效去除
+停用词
+也有用。
+例如，有一些标签总是定义一个语言的低频
+/
+不重要的单词。例如：
+(
+IN
+– “
+within
+”
+,
+“
+upon
+”
+,
+“
+except
+”
+), (
+CD
+– “
+one
+”
+,
+”
+two
+”
+,
+“
+hundred
+”
+), (
+MD
+– “
+may
+”
+,
+“
+mu st
+”
+etc)
+。
+3.2 Entity Extraction (Entities as features)
+实体提取（实体为特征值）
+实体
+被定义为句子中最重要的句块
+--
+名词短语、动词短语或两者。
+实体检测算法
+通常是基于规则解析
+、
+字典查找
+、
+POS
+标签、依存句法分析的集成模型。
+实体检测的适用性
+可以在自动聊天机器人
+、
+内容分析
+器
+和消费者洞察
+中看见
+。
+主题
+模型
+和
+命名实体识别
+是
+NLP
+自然语言处理
+里
+两个
+主要的
+实体检测方法。
+A. Named Entity Recognition
+命名实体识别（
+NER）
+检测如人名、地名
+、公司名等
+命名实体的过程称为
+NER
+。例如
+:
+句子
+Sentence
+– Sergey Brin, the manager of Google Inc. is walking in the streets of New York.
+命名实体
+Named Entities
+– ( “person” : “Sergey Brin” ), (“org” : “Google Inc.”), (“location” : “New York”)
+一个典型
+NER
+模型由三块
+组成
+：
+名词短语识别：
+这一步涉及使用依存
+解析
+和词性标注从文本中提取所有名词短语。
+短语分类：
+这是
+将所有被提取名词短语划分为
+所属
+相应类别（位置、名称等）的分类步骤。谷歌地图
+API
+提供了消除歧义位置
+的一个
+好路径，然后，从
+DBpedia, wikipedia
+开放数据库可以用来识别个人姓名或公司名称。除此之外，结合来自不同信息源的
+查找表和词典
+可以精确查找。
+实体消歧：
+有时这是可能的，实体的误判分类的，因此
+随之
+创建
+分类
+结果
+之上的
+验证层是有用的。
+出于此目的可以运用
+知识图。流行的知识图
+有
+–
+谷歌知识图，
+IBM
+沃森和维基百科
+。
+B. Topic Modeling
+主题
+模型
+主题建模
+是一个存在
+于
+文本语料库中主题的自动识别过程，它以无监督方式推导出语料库中
+的
+隐含模式。主题被定义为
+“a repeating pattern of co-occurring terms in a corpus”
+。医疗保健
+为主题的
+一个好的
+主题模型结果
+有
+–“health”, “doctor”, “patient”, “hospital”
+（
+“健康”、“医生”、“病人”、“医院”
+）
+，农事
+为主体则有
+–“farm”, “crops”, “wheat”
+（
+“农场”、“庄稼”、“小麦”为话题“农业”
+）
+。
+隐含狄利克雷分配（
+LDA
+）
+是最受欢迎的主题建模技术，以下是
+使用
+LDA
+实现主题建模
+的
+Python
+代码
+。有关其工作和执行的详细说明，请检查这里
+的
+完整文章。
+```
+doc1 = "Sugar is bad to consume. My sister likes to have sugar, but not my father."
+doc2 = "My father spends a lot of time driving my sister around to dance practice."
+doc3 = "Doctors suggest that driving may cause increased stress and blood pressure."
+doc_complete = [doc1, doc2, doc3]
+doc_clean = [doc.split() for doc in doc_complete]
+import gensim from gensim
+import corpora
+# Creating the term dictionary of our corpus, where every unique term is assigned an index.
+dictionary = corpora.Dictionary(doc_clean)
+# Converting list of documents (corpus) into Document Term Matrix using dictionary prepared above.
+doc_term_matrix = [dictionary.doc2bow(doc) for doc in doc_clean]
+# Creating the object for LDA model using gensim library
+Lda = gensim.models.ldamodel.LdaModel
+# Running and Training LDA model on the document term matrix
+ldamodel = Lda(doc_term_matrix, num_topics=3, id2word = dictionary, passes=50)
+# Results
+print(ldamodel.print_topics())
+```
+C.
+N-Grams as Features
+N元连续模型N grams作为特征值
+N
+个单词在
+一起
+的组合
+被称为
+N
+元连续模型（
+N grams
+）
+。
+作为特征值，
+相比
+单词
+（一元
+1gram
+）
+，
+N
+元连续模型
+（
+n
+＞
+1
+）通常包含更多信息。另外，双
+单词元
+组（
+n=2
+）被认为是所有其他
+元模型更
+重要的特征。下面的代码生成一个文本二元
+模型实例
+。
+```
+def generate_ngrams(text, n):
+words = text.split()
+output = []
+for i in range(len(words)-n+1):
+output.append(words[i:i+n])
+return output
+>>> generate_ngrams('this is a sample text', 2)
+# [['this', 'is'], ['is', 'a'], ['a', 'sample'], , ['sample', 'text']]
+```
+3.3 Statistical Features
+统计特征
+文本数据也可以使用本节中描述的几种技术直接量化成数字：
+（欢迎转发声明：秦陇纪
+10
+公众号、头条号“数据简化
+DataSimp
+”科普文章。）
+附
+数据简化
+DataSimp
+筹备收简历
+(414
+字
+)
+北京数据简化有限责任公司（筹）愿景：
+①行业大数据采集处理分析管理系统，②企事业单位行政人事财物联网智能OA系统，③数据简化DataSimp
+学术组及
+开源社区（中英双语），
+④物联网大数据底层操作系统（整合Linux开源软件
+和通信模块
+）。
+现重点收集数据分析程序
+算法模型研发简历
+，成立前
+/每季度实习生
+在中关村集中面试。有意实习半年、工作一年以上的开发人员，请注明学历和工作简历、职务和职业规划、吃住薪酬预期、个人爱好等事项，投递邮箱
+QinDragon2010@qq.com主题注明：应聘
+数据简化
+DataSimp合伙人或XX岗位
+（研发岗参考本
+蚊及
+文本分析一文的二级标题）。
+1）技术研发部（重点收简历）：核心的数据分析DA、NLP、DL编程
+技能，
+Windows/Linux/Android/iOS平台、OA、App软件
+开发基础；
+2）市场客服部（研发部兼职）：搜集客户资料、面见客户、形成客户需求分析文档，跟踪反馈，面谈、电邮、电话、邮寄沟通服务；
+3）行政后勤部（合伙人兼职）：高级的全系列文档搜集编辑整理技能，OA软件界面和操作体验实验，公司法律财会物业文书基础
+。
+详情落地前发文宣传。
+（西安秦陇纪
+10数据简化DataSimp综合汇编，欢迎有志于数据简化之传媒、技术的实力伙伴加入全球“数据简化DataSimp”团队！）

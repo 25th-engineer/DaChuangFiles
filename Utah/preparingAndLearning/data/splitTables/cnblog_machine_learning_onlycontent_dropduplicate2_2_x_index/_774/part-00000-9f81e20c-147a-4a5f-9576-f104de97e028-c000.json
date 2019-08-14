@@ -1,1 +1,0 @@
-{"content2":"箱型图对数据的展示也是非常清晰的，这是箱型图的一些代码\n#导报 机器学习三剑客\nimport numpy as np\nimport pandas as pd\nfrom matplotlib import pyplot as plt\nif __name__ == \"__main__\":\n#读取数据 第一个参数是文件名 ， 第二个是文件页面\ndf = pd.read_excel('tips.xlsx','sheet1')\n# print(df)\n#调查小费比例与用时段关系\ndf[['pct','time']].boxplot(by='time')\nplt.show()"}

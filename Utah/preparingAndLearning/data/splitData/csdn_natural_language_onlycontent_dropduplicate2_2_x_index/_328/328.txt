@@ -1,0 +1,53 @@
+简单共有词判断模型
+TFIDF向量表示
+TFIDFWord2vec
+LMSentence Embedding表示
+简单共有词判断模型
+假设现在有文本A和B，
+Num(A∩B)
+Num(A\cap B) 表示A和B中相同词的数量，
+Num(A∪B)
+Num(A\cup B)表示A和B中所有词的数量。那么定义A和B的相似程度为：
+Similarity(A,B)=Num(A∩B)Num(A∪B)
+\begin{equation} Similarity(A,B) = \frac{Num(A\cap B)}{Num(A\cup B)} \end{equation}
+TFIDF向量表示
+上述共有词方式，只利用了词语的信息，却忽略了词频信息，引入TFIDF将词语向量化，既考虑了Term Frequency词频，又考虑了词语在整个文档中的分布情况。文本A和文本B可以分别表示为：
+A=[a1,a2,...,aN]B=[b1,b2,...,bN]
+\begin{equation} A = [a_1,a_2,...,a_N] \\ B = [b_1,b_2,...,b_N] \end{equation}
+其中N表示词语的总数（或词典大小），
+ai=TF(i)∗IDF(i)
+a_i=TF(i)*IDF(i) ，
+TF(i)
+TF(i)表示词语i在文档（
+ai
+a_i表示为A文档）中出现的频率，
+IDF(i)
+IDF(i)表示在所有文档中出现的频率。同理可以得到
+bi
+b_i。得到A,B 文档的TFIDF向量表示后，可以根据相似度函数
+f(a,b)
+f(a,b)来计算A和B文档的相似度。
+f(a,b)
+f(a,b)可以选用一阶范数
+|a−b|
+|a-b|，也可以选用余弦相似度
+cosine(a,b)
+cosine(a,b)来表示。
+TFIDF+Word2vec
+TFIDF未给出词语与词语之间的关系，认为每个词语都是相互独立的个体，但有些词语是同义词，有些词语是反义词。需要表征词语之间意思相距程度。此处选用word2vec，利用额外的大预料为每个词语训练一个word2vec向量表示。该向量可以表示矩阵为
+Mword2vec
+M_{word2vec}，维度为N*K，其中N表示词典大小，K表示向量维度：
+Mword2vec=[mij]N∗K
+\begin{equation} M_{word2vec}=[m_{ij}]_{N*K} \end{equation}
+由上一段知道，TFIDF是一个M*N的向量，其中M表示文档的总数，N表示词典的大小。因此可以使用向量M表示文档（A或B）,如下所示：
+M=MTFIDF∗Mword2vec
+\begin{equation} M=M_{TFIDF}*M_{word2vec} \end{equation}
+M是一个M*K的矩阵，即每个文档可以表示为M的一个行向量（K维）。再使用该向量用于计算文本之间的相似度。
+LM+Sentence Embedding表示
+使用Deep Learning（LSTM）的方法对一个大语料训练一个Language Model，然后使用BiRNN模型训练得到句子的表达
+[ff;fb]
+[f_f;f_b],
+ff
+f_f表示前向RNN的的表达，
+fb
+f_b表示反向RNN的表达。模型的输出，得到句子表达，然后再利用余弦相似度进行文本相似度比较。

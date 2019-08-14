@@ -1,0 +1,76 @@
+转：http://isilic.iteye.com/blog/1851048
+决策树的重要性和入门可以参考前面两篇文章：
+在清华水木上有个Machine Learning的书单: http://www.newsmth.net/nForum/#!article/AI/34859
+其中作为入门的几本书也不简单，都是经典的作品PRML或者是最新的著作(ML-APP)，这些书在网上都能找到，不过找到不过不看放在硬盘里的话，其实这些书对你的用处并不大。
+这些书都能在网上找到，我就不贴下载了，大家可以自行查找。
+入门：
+Pattern Recognition And Machine Learning
+Author：hristopher M. Bishop
+Machine Learning : A Probabilistic Perspective
+Kevin P. Murphy
+The Elements of Statistical Learning : Data Mining, Inference, and Prediction
+Trevor Hastie, Robert Tibshirani, Jerome Friedman
+Information Theory, Inference and Learning Algorithms
+David J. C. MacKay
+All of Statistics : A Concise Course in Statistical Inference
+Larry Wasserman
+优化：
+Convex Optimization
+Stephen Boyd, Lieven Vandenberghe
+Numerical Optimization
+Jorge Nocedal, Stephen Wright
+Optimization for Machine Learning
+Suvrit Sra, Sebastian Nowozin, Stephen J. Wright
+核方法：
+Kernel Methods for Pattern Analysis
+John Shawe-Taylor, Nello Cristianini
+Learning with Kernels : Support Vector Machines, Regularization, Optimization, and Beyond
+Bernhard Schlkopf, Alexander J. Smola
+半监督：
+Semi-Supervised Learning
+Olivier Chapelle
+高斯过程：
+Gaussian Processes for Machine Learning (Adaptive Computation and Machine Learning)
+Carl Edward Rasmussen, Christopher K. I. Williams
+概率图模型：
+Graphical Models, Exponential Families, and Variational Inference
+Martin J Wainwright, Michael I Jordan
+Boosting:
+Boosting : Foundations and Algorithms
+Schapire, Robert E.; Freund, Yoav
+贝叶斯:
+Statistical Decision Theory and Bayesian Analysis
+James O. Berger
+The Bayesian Choice : From Decision-Theoretic Foundations to Computational Implementation
+Christian P. Robert
+Bayesian Nonparametrics
+Nils Lid Hjort, Chris Holmes, Peter Müller, Stephen G. Walker
+Principles of Uncertainty
+Joseph B. Kadane
+Decision Theory : Principles and Approaches
+Giovanni Parmigiani, Lurdes Inoue
+蒙特卡洛：
+Monte Carlo Strategies in Scientific Computing
+Jun S. Liu
+Monte Carlo Statistical Methods
+Christian P.Robert, George Casella
+信息几何：
+Methods of Information Geometry
+Shun-Ichi Amari, Hiroshi Nagaoka
+Algebraic Geometry and Statistical Learning Theory
+Watanabe, Sumio
+Differential Geometry and Statistics
+M.K. Murray, J.W. Rice
+渐进收敛：
+Asymptotic Statistics
+A. W. van der Vaart
+Empirical Processes in M-estimation
+Geer, Sara A. van de
+不推荐：
+Statistical Learning Theory
+Vladimir N. Vapnik
+Bayesian Data Analysis, Second Edition
+Andrew Gelman, John B. Carlin, Hal S. Stern, Donald B. Rubin
+Probabilistic Graphical Models : Principles and Techniques
+Daphne Koller, Nir Friedman
+另外在微博上也有北美比较常用的机器学习/自然语言处理/语音处理经典书籍的推荐，其中的推荐面比较广，可以看下，和水木上的推荐有重叠。

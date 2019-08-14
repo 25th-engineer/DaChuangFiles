@@ -1,0 +1,178 @@
+预备知识 1 . 图像 准备 2 . 程序 模板 3 
+. Mat 类 3.1 Mat 类 的 创建 4 . 
+Mat 类 常用 参数 1 . 图像 准备 1 图像 
+常用 的 类型 有 二 值 图像 图像 像素 取值 
+为 0 或 255 灰度 图像 图像 像素 取值 为 
+0 255 彩色 RGB 图像 每个 像素 值 包含 三个 
+变量 分别为 B G R 取值 均为 0 255 2 
+图像 常用 参数 为 维度 dims img . dims 行数 
+rows img . rows 列数 cols     img . 
+cols 通 道数 channels     img . channels 类型 
+type     img . type 深度 depth     
+img . depth 元素 大小 elemSize     img . 
+elemSize   通道 大小 elemSize1     img . elemSize1 
+2 . 程序 模板 1 # include iostream 2 # 
+include opencv2 / opencv . hpp 3 4 using namespace 
+std 5 using namespace cv 6 7 int main int 
+agrc char * * agrv { 8 . . . 
+. 9 . . . . 10 waitKey 0 11 
+return 0 12 } 3 . Mat 类 3 . 
+1Mat 类 的 创建 方法 1 Mat / / 定义 
+矩阵 大小 和 类型 2 Mat int rows int cols 
+int type 3 Mat Size int cols int rows int 
+type / / 定义 矩阵 大小 类型 和 初始化 值 
+4 Mat int rows int cols int type const Scalar 
+& s 5 Mat Size int cols int rows int 
+type const Scalar & s / / 复制 一个 已经 
+存在 的 矩阵 并 截取 一 部分 6 Mat const 
+Mat & m 7 Mat const Mat & m const 
+Range & rowRange const Range & colRange 8 Mat const 
+Mat & m const Rect & roi 1 # include 
+iostream 2 # include opencv2 / opencv . hpp 3 
+4 using namespace std 5 using namespace cv 6 7 
+int main { 8 Mat im = imread lena . 
+jpg 1 9 if im . empty { 10 cout 
+no image loaded . endl 11 return 1 12 } 
+13 Rect rect 180 200 200 200 14 Mat roi 
+= Mat im rect 15 Mat im _ Rect = 
+im . clone 16 rectangle im _ Rect rect Scalar 
+0 255 0 2 17 imshow roi image roi 18 
+imshow original image with rectangle im _ Rect 19 waitKey 
+20 return 0 21 } Mat 类 4 . Mat 
+常用 参数 维度 dims img . dims 行数 rows img 
+. rows 列数 cols     img . cols 通 
+道数 channels     img . channels 类型 type   
+  img . type 深度 depth     img . 
+depth 元素 大小 elemSize     img . elemSize   
+通道 大小 elemSize1     img . elemSize1 1 # 
+include iostream 2 # include opencv2 / opencv . hpp 
+3 4 using namespace std 5 using namespace cv 6 
+int main int argc char * * argv { 7 
+Mat Im = imread lena . jpg 3 8 if 
+Im . empty { 9 cout no image load endl 
+10 return 1 11 } 12 cout dims Im . 
+dims endl 13 cout rows Im . rows endl 14 
+cout cols Im . cols endl 15 cout channels Im 
+. channels endl 16 cout type Im . type endl 
+17 cout depth Im . depth endl 18 cout elemSize 
+Im . elemSize endl 19 cout elemSize1 Im . elemSize1 
+endl 20 waitKey 0 21 return 0 22 } Mat 
+参数 预备知识 1 . 图像 准备 2 . 程序 模板 3 
+. Mat 类 3.1 Mat 类 的 创建 4 . 
+Mat 类 常用 参数 1 . 图像 准备 1 图像 
+常用 的 类型 有 二 值 图像 图像 像素 取值 
+为 0 或 255 灰度 图像 图像 像素 取值 为 
+0 255 彩色 RGB 图像 每个 像素 值 包含 三个 
+变量 分别为 B G R 取值 均为 0 255 2 
+图像 常用 参数 为 维度 dims img . dims 行数 
+rows img . rows 列数 cols     img . 
+cols 通 道数 channels     img . channels 类型 
+type     img . type 深度 depth     
+img . depth 元素 大小 elemSize     img . 
+elemSize   通道 大小 elemSize1     img . elemSize1 
+2 . 程序 模板 1 # include iostream 2 # 
+include opencv2 / opencv . hpp 3 4 using namespace 
+std 5 using namespace cv 6 7 int main int 
+agrc char * * agrv { 8 . . . 
+. 9 . . . . 10 waitKey 0 11 
+return 0 12 } 3 . Mat 类 3 . 
+1Mat 类 的 创建 方法 1 Mat / / 定义 
+矩阵 大小 和 类型 2 Mat int rows int cols 
+int type 3 Mat Size int cols int rows int 
+type / / 定义 矩阵 大小 类型 和 初始化 值 
+4 Mat int rows int cols int type const Scalar 
+& s 5 Mat Size int cols int rows int 
+type const Scalar & s / / 复制 一个 已经 
+存在 的 矩阵 并 截取 一 部分 6 Mat const 
+Mat & m 7 Mat const Mat & m const 
+Range & rowRange const Range & colRange 8 Mat const 
+Mat & m const Rect & roi 1 # include 
+iostream 2 # include opencv2 / opencv . hpp 3 
+4 using namespace std 5 using namespace cv 6 7 
+int main { 8 Mat im = imread lena . 
+jpg 1 9 if im . empty { 10 cout 
+no image loaded . endl 11 return 1 12 } 
+13 Rect rect 180 200 200 200 14 Mat roi 
+= Mat im rect 15 Mat im _ Rect = 
+im . clone 16 rectangle im _ Rect rect Scalar 
+0 255 0 2 17 imshow roi image roi 18 
+imshow original image with rectangle im _ Rect 19 waitKey 
+20 return 0 21 } Mat 类 4 . Mat 
+常用 参数 维度 dims img . dims 行数 rows img 
+. rows 列数 cols     img . cols 通 
+道数 channels     img . channels 类型 type   
+  img . type 深度 depth     img . 
+depth 元素 大小 elemSize     img . elemSize   
+通道 大小 elemSize1     img . elemSize1 1 # 
+include iostream 2 # include opencv2 / opencv . hpp 
+3 4 using namespace std 5 using namespace cv 6 
+int main int argc char * * argv { 7 
+Mat Im = imread lena . jpg 3 8 if 
+Im . empty { 9 cout no image load endl 
+10 return 1 11 } 12 cout dims Im . 
+dims endl 13 cout rows Im . rows endl 14 
+cout cols Im . cols endl 15 cout channels Im 
+. channels endl 16 cout type Im . type endl 
+17 cout depth Im . depth endl 18 cout elemSize 
+Im . elemSize endl 19 cout elemSize1 Im . elemSize1 
+endl 20 waitKey 0 21 return 0 22 } Mat 
+参数 预备知识 1 . 图像 准备 2 . 程序 模板 3 
+. Mat 类 3.1 Mat 类 的 创建 4 . 
+Mat 类 常用 参数 1 . 图像 准备 1 图像 
+常用 的 类型 有 二 值 图像 图像 像素 取值 
+为 0 或 255 灰度 图像 图像 像素 取值 为 
+0 255 彩色 RGB 图像 每个 像素 值 包含 三个 
+变量 分别为 B G R 取值 均为 0 255 2 
+图像 常用 参数 为 维度 dims img . dims 行数 
+rows img . rows 列数 cols     img . 
+cols 通 道数 channels     img . channels 类型 
+type     img . type 深度 depth     
+img . depth 元素 大小 elemSize     img . 
+elemSize   通道 大小 elemSize1     img . elemSize1 
+2 . 程序 模板 1 # include iostream 2 # 
+include opencv2 / opencv . hpp 3 4 using namespace 
+std 5 using namespace cv 6 7 int main int 
+agrc char * * agrv { 8 . . . 
+. 9 . . . . 10 waitKey 0 11 
+return 0 12 } 3 . Mat 类 3 . 
+1Mat 类 的 创建 方法 1 Mat / / 定义 
+矩阵 大小 和 类型 2 Mat int rows int cols 
+int type 3 Mat Size int cols int rows int 
+type / / 定义 矩阵 大小 类型 和 初始化 值 
+4 Mat int rows int cols int type const Scalar 
+& s 5 Mat Size int cols int rows int 
+type const Scalar & s / / 复制 一个 已经 
+存在 的 矩阵 并 截取 一 部分 6 Mat const 
+Mat & m 7 Mat const Mat & m const 
+Range & rowRange const Range & colRange 8 Mat const 
+Mat & m const Rect & roi 1 # include 
+iostream 2 # include opencv2 / opencv . hpp 3 
+4 using namespace std 5 using namespace cv 6 7 
+int main { 8 Mat im = imread lena . 
+jpg 1 9 if im . empty { 10 cout 
+no image loaded . endl 11 return 1 12 } 
+13 Rect rect 180 200 200 200 14 Mat roi 
+= Mat im rect 15 Mat im _ Rect = 
+im . clone 16 rectangle im _ Rect rect Scalar 
+0 255 0 2 17 imshow roi image roi 18 
+imshow original image with rectangle im _ Rect 19 waitKey 
+20 return 0 21 } Mat 类 4 . Mat 
+常用 参数 维度 dims img . dims 行数 rows img 
+. rows 列数 cols     img . cols 通 
+道数 channels     img . channels 类型 type   
+  img . type 深度 depth     img . 
+depth 元素 大小 elemSize     img . elemSize   
+通道 大小 elemSize1     img . elemSize1 1 # 
+include iostream 2 # include opencv2 / opencv . hpp 
+3 4 using namespace std 5 using namespace cv 6 
+int main int argc char * * argv { 7 
+Mat Im = imread lena . jpg 3 8 if 
+Im . empty { 9 cout no image load endl 
+10 return 1 11 } 12 cout dims Im . 
+dims endl 13 cout rows Im . rows endl 14 
+cout cols Im . cols endl 15 cout channels Im 
+. channels endl 16 cout type Im . type endl 
+17 cout depth Im . depth endl 18 cout elemSize 
+Im . elemSize endl 19 cout elemSize1 Im . elemSize1 
+endl 20 waitKey 0 21 return 0 22 } Mat 
+参数 

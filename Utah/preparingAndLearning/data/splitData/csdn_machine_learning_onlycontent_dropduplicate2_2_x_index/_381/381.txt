@@ -1,0 +1,152 @@
+机器学习概述
+一、机器学习的定义
+机器学习是一门从数据中研究算法的多领域交叉学科，研究计算机如何模拟或实现人类的学习行为，根据已有的数据或以往的经验进行算法选择、构建模型，预测新数据，并重新组织已有的知识结构使之不断改进自身的性能。
+Machine Learning (ML) is a scientific discipline that deals with the construction and study of algorithms that can learn from data.It is the field of study that gives computers the ability to learn without being explicitly programmed.
+A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measure by P, improves with experience E.
+机器学习、人工智能和深度学习的关系
+机器学习是一种实现人工智能的方法，深度学习是一种实现机器学习的技术（特征提取）。
+二、机器学习的分类
+1、有监督学习SL（Supervised Learning）
+用已知某种特性的样本(x,y)做为训练集，建立一个数学模型，求解f:x->y，预测未知样本。
+1）判别式模型（Discriminative Model）
+对条件概率p(y|x)进行建模，如线性回归、决策树、SVM、KNN、神经网络等。
+2）生成式模型（Generative Model）
+对联合概率p(x,y)进行建模，如HMM、Naive Bayes、GMM、LDA等。
+二者比较：
+http://www.360doc.com/content/16/0914/14/478627_590751678.shtml
+生成式模型更普适；判别式模型更直接、目标性强。
+生成式模型关注数据是如何产生的，寻找的是数据分布模型；判别式模型关注数据的差异性，寻找的是分类面。
+由生成式模型可以产生判别式模型，但是由判别式模型无法生成生成式模型。
+2、无监督学习UL（Unsupervised Leaning）
+训练集数据只有x没有标签y，目的是试图提取数据中隐含的结构和规律，常见的算法有K-means、降维、文本处理（特征抽取）等。
+无监督学习一般作为有监督学习的前期数据处理，功能是从原始数据集中抽取出必要的标签信息。
+3、半监督学习SSL（Semi-Supervised Learning）
+前两者的结合，利用少量标注了的样本和大量未标注的样本进行训练和测试。SSL的三种基本假设：
+1）平滑假设（Smoothness Assumption）：位于稠密数据区域的两个距离很近的样例的类标签类似。
+2）聚类假设（Cluster Assumption）：当两个样例位于同一聚类簇时，它们在很大概率下有相同的类标签。
+3）流形假设（Manifold Assumption）：将高维数据嵌入到低维流形中，当两个样例位于低维流形中的一个小局部邻域内时，它们具有相似的类标签。
+4、强化学习RL（Reinforcement Learning）
+系统（autonomous agent）通过从环境States到行为Actions映射的学习，以使强化信号Rewards函数值达到最大，即改进行动方案Policy以适应环境。
+RL 与SL、UL的一个重要区别是：后两者需要满足数据是服从独立同分布的，而RL则不满足这个条件，因为Agent和环境交互过程中状态是不断变化的，RL本质是对连续序列做决策的过程。
+机器学习常用方法分类
+1、分类
+通过分类模型，将数据集中的样本映射到给定的类别中。
+2、聚类
+通过聚类模型，将数据集中的样本分为几个类别，属于同一类别的样本相似性较大。
+3、回归
+反映了数据集中样本的属性值的特征，通过函数表达样本映射关系。
+4、关联规则（Apriori、FP-Growth）
+获取隐藏在数据项之间的关联或相互关系，即可根据一个数据项的出现推导出其他数据项的出现频率。
+三、基本概念
+1、输入x：一般以m表示输入样本数量，n表示每个样本具有的属性个数。
+：表示第i个样本的x向量
+：表示i个样本的第j个维度的值
+2、输出y：目标值/标签值。
+3、假设函数（Hypothesis）：
+4、需要求解的参数（Parameters）：
+5、损失函数（Loss/Error function）：单个样本的误差。
+6、代价函数（Cost function）：训练集所有样本损失函数之和的平均值。
+为的预测值； Goal：
+7、目标函数（Objective function）：代价函数加上正则项
+8、鲁棒性（Robustness）：表示系统对特性或参数扰动的不敏感性，即系统的健壮性、稳定性，当存在部分异常数据时算法也会很好的拟合数据集。
+9、拟合：构建的算法符合给定的数据集的特征程度。
+欠拟合（Underfitting）：high bias 算法不太符合给定数据集的特征。
+过拟合（Overfitting）：high variance 算法太符合给定数据集的特征，但对新数据集特征的拟合程度差。
+四、常用框架
+scikit-learn、Mahout、Spark MLlib、……
+使用scikit-learn框架解决一般机器学习问题时的算法选择思路：
+http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+Python常用软件可以从这个网站下载
+https://www.lfd.uci.edu/~gohlke/pythonlibs/
+例如要安装对应版本xgboost：
+打开Anaconda Prompt进入放置whl下载包的目录 （切换磁盘时输入F: 而不是cd F:）；
+pip install xgboost… Tab键补全包名。
+安装成功后conda list或者pip list可查看已安装的所有类库。
+五、机器学习开发流程
+1、数据收集
+业务数据、爬虫
+公开的数据源
+http://archive.ics.uci.edu/ml/datasets.html
+https://www.kaggle.com/competitions
+https://tianchi.aliyun.com/datalab/index.htm
+https://aws.amazon.com/cn/public-datasets/
+http://www.kdnuggets.com/datasets/index.heml
+http://www.sogou.com/labs/resources/list_pingce.php
+http://www.pkbigdata.com/common/cmptIndex.html
+2、数据预处理
+基于所有的特征进行预处理
+数据清洗和转换：数据过滤、缺失/异常值处理、数据源合并数据汇总等。
+数据转换：确保数据格式符合要求、类别哑编码、特征归一化、文本类数据使用词袋法或TF-IDF、图像或音频数据使用傅里叶变换等。
+1）哑编码（One-hot Encoding）
+又称一位有效编码，将非数值型类别类型转换为数值型数据，方法是使用m位状态寄存器来对m个状态进行编码，每个状态都有独立的寄存器位，并且在任意时刻，只有一位有效（用1表示，其他位均为0）
+例如有m种类别标签，可以表示为m维或m-1维（避免多重共线性问题）哑编码：
+2）词袋法
+将文本作为一个无序的数据集合，文本特征可以采用文本中的词条进行体现，那么文本中出现的所有词条及其出现的次数就可以体现文本的特征。
+3）TF-IDF（TF * IDF）
+词条的重要性与它在文本中出现的次数成正比，但同时随着它在语料库中出现的频率成反比。词频TF指某个词条在文本中出现的次数，一般将其进行归一化处理（该词条数量/该文档中所有词条数量）；逆向文件频率IDF指一个词条重要性的度量，为总文件数目除以包含该词语的文件数目后取对数得到。
+3、数据分析
+特征工程包含了建立新特征、数据分箱/分区、交叉特征、特征选择/降维/提取等方面，是在数据预处理之后的步骤。
+1）归一化
+在处理不同取值范围的特征时，通常将数据归一化，即将数据取值范围缩放到[0, 1]或[-1, 1]之间（或其他合理值，根据需求而定），使各特征对目标函数的影响权重是一致的（扁平的分布变圆），不必对x0归一化，因为它总是1。
+归一化可以提高迭代的收敛速度，并提高求解精度。
+Rescaling=
+Mean normalization=
+2）区间化
+将数据按比例缩放，使其映射到某一个区间范围内，方法是先归一化，再乘以某一比例，最后加减某一个值。
+4、训练算法
+模型构建：应尽可能多的选择算法并比较执行结果，选择最优建模方案、超参调节，使R2值接近1。
+5、测试算法
+模型评估：准确率、召回率、精准率、F1指标、MSE、R2值等。
+
+
+
+
+预测值
+正例
+负例
+真实值
+正例
+真正例（TP）
+假负例（FN）
+负例
+假正例（FP）
+真负例（TN）
+1）准确率：预测正确的样本数/总样本数
+Accuracy=
+2）召回率(覆盖率)：预测正确的正例样本数/样本中总的正例样本数
+Recall=
+3）精准率：预测正确的正例样本数/预测为正例的样本数
+Precision=
+4）F1指标：精准率和召回率的调和平均值，兼顾了召回率与精准率
+F1 measure=
+混淆矩阵
+5）ROC（Receiver Operating Characteristic）：描述的是分类混淆矩阵中FPR-TPR两个量之间的相对变化情况，TPR增长越快、曲线越往上曲，则模型的分类性能就越好。
+ROC几个特殊的点说明：
+（0，0） TP=FP=0，全预测为负
+（1，1） TN=FN=0，全预测为正
+（0，1） FN=FP=0，全部预测正确，完美分类器
+（1，0） TN=TP=0，全部预测错误，最差分类器
+6）AUC（Area Under Curve）：ROC曲线下的面积，取值范围在0.5~1之间。
+AUC=1，完美分类器
+0.5 < AUC<1，优于随机猜测，具有预测价值
+AUC=0.5，与随机猜测结果一样，没有预测价值
+AUC<0.5，比随机猜测还差，但只要反预测而行就优于随机猜测
+7）均方误差 MSE/RMSE（Mean Squared Error）
+MSE指的是参数估计值与实际值之差的平方的期望值，这个值越小说明预测模型具有越好的精确度。RMSE是MSE的算术平方根。
+In statistics, the mean squared error of an estimator measures the average of the squares of the “errors”, that is, the difference between the estimator and what is estimated. MSE is a risk function on, corresponding to the expected value of the squared error loss or quadratic loss.
+使用方法：from sklearn.metrics import mean_squared_error
+8）平均绝对误差 MAE/RAE （Mean Absolute Error）
+使用方法：from sklearn.metrics import mean_absolute_error, median_absolute_error__
+9）回归平方和SSR（Sum of Squares for Regression）：
+10）总离差平方和SST/TSS（Total Sum of Squares）：
+表示样本之间的差异情况，是伪方差的m倍。
+11）残差平方和RSS（Residual Sum of Squares）、和方差SSE（Sum of Squares for Error）：
+表示预测值和样本值之间的差异情况，是MSE的m倍。
+12）R2值（R-Squared/Coefficient of determination）
+拟合优度/决定系数R2值指回归直线对观测值的拟合程度，即将预测值与只使用均值的情况相比，，值越接近于1说明回归直线对观测值的拟合程度越好。
+R2值的另一种表示方式：
+使用方法：from sklearn.metrics import r2_score
+6、使用算法
+模型部署与整合：构建好模型后，存储到数据库中，方便其他使用模型的应用加载。
+模型监控与反馈：在实际生产环境中，如果遇到新的问题需要修改模型，重复执行以上的步骤。
+迭代优化：一周、一个月。

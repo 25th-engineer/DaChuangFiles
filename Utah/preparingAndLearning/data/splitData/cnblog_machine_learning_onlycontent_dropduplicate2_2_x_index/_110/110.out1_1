@@ -1,0 +1,81 @@
+SVM 是 机器 学习 中 神 一般 的 存在 虽然 
+自 深度 学习 以来 有被 拉下 神坛 的 趋势 但 
+不得 不说 SVM 在 这个 领域 有着 举足轻重 的 地位 
+本文 从 Hard SVM 到 Dual Hard SVM 再 引进 
+Kernel Trick 然后 推广 到 常用 的 Soft Kernel SVM 
+一 Hard SVMSVM 本身 是从 感知机 算法 演变 而来 感知机 
+算法 是 在 一个 线性 可分 的 数据 集中 找到 
+一个 分类 超平面 尽可能 的 将 数据集 划 分开 理论 
+上 这样 的 超平面 有 无数 多个 但是 从 直觉 
+上 我们 知道 离 两侧 数据 都 比较 远 的 
+超平面 更 适合 用于 分类 于是 我们 选择 了 一个 
+比较 胖 的 边界 的 超平面 作为 分类 界 这 
+就是 SVM 我们 知道 一个 超平面 wx + b = 
+0 w 是 这个 超平面 的 法向量 则 平面 外 
+一点 到 这个 平面 的 距离 为 d = 1 
+/ | | W | | * | WTx + 
+b | 解析几何 的 知识 绝对值 符号 会 导致 函数 
+不 平滑 又 因为 数据集 是 线性 可分 的 所以 
+我们 可以 把 距离 公式 改写 为 d = 1 
+/ | | W | | * yi WTxi + 
+b 具体 可以 参考 感知机 那么 我们 就 有了 最 
+基本 的 优化 对象 maxw b   margin b w 
+subject to for every n yi WTxi + b 0margin 
+b w = minw b d 我们 知道 同时 放缩 
+一个 超 平面 的 系数 并 不会 改变 这个 超平面 
+such as 3wx + 3b = 0 = wx + 
+b 所以 我们 可以 假设 离 我们 超平面 最近 的 
+那个 向 量到 平面 的 距离 为 1 即 让 
+yi WTxi + b = 1 那么 原来 的 优化 
+问题 就 变为 了 maxw b   1 / | 
+| W | | subject to for every n yi 
+WTxi + b 0 已经 满足 mini yi WTxi + 
+b ≥ 1 最大化 问题 不是 很好 解决 我们 可以 
+转换 为 我们 熟悉 最小化 问题 minw b   0.5 
+* WT * Wsubject to mini   yi WTxi + 
+b ≥ 1 很明显 这 是 一个 二 次 规划 
+问题 我们 有 成熟 的 算法 如 SMO 来 解决 
+这样 的 问题 二 Dual SVM 对于 一个 已经 解决 
+的 问题 为什么 我们 还要 考虑 它 的 对偶 问题 
+这 是因为 化作 对偶 问题 后会/nr 更容易 求解 同样 也 
+方便 引入 Kernel Trick 考虑 原始 SVM 问题 minw b 
+  0.5 * WT * Wsubject to all i   
+  yi WTxi + b ≥ 1 我们 改变 其 
+形式 转化 为 minw b maxall α 0   0.5 
+* WT * W + ∑ α 1 yi WTxi 
++ b 我们 发现 如果 满足 了 条件 α 的 
+值 会 变成 0 如果 不 满足 就会 变成 + 
+∞ 以此 来 约束 我们 的 条件 然后 我们 从 
+极小 极大 的 问题 转换 为 极大 极小 的 问题 
+minw b maxall α 0   0.5 * WT * 
+W + ∑ α 1 yi WTxi + b   
+≥ minw b 0.5 * WT * W + ∑ 
+α 1 yi WTxi + b minw b 0.5 * 
+WT * W + ∑ α 1 yi WTxi + 
+b ≥ maxall α 0 minw b   0.5 * 
+WT * W + ∑ α 1 yi WTxi + 
+b 而 maxall α 0 minw b   0.5 * 
+WT * W + ∑ α 1 yi WTxi + 
+b 就是 我们 的 Lagrange Dual Problem 这 是 我们 
+原 问题 的 一个 下界 那么 什么 时候 能够 取得 
+等号 呢 根据 拉格朗日 对偶 问题 当 优化 函数 和 
+条件 是 凸函数 时 对偶 问题 是 原 问题 的 
+解的/nr 充要条件 即为 KKT 条件 然后 我们 求解 对偶 问题 
+的 极小 问题 对 w b 求 偏 导 令其 
+等于 0 得到 结果 为 L w b α = 
+0.5 * | | ∑ α yx | | 2 
++ ∑ α 我们 就 可以 来 解决 极大 问题 
+了 原始 优化 问题 就 可以 转化 为 maxall α 
+0 ∑ y α = 0 w = ∑ α 
+yx     0.5 * | | ∑ α yx 
+| | 2 + ∑ α 这 显然 又 是 
+一个 二 次 规划 问题 所以 就 可以 求 解了 
+然后 用 KKT 条件 来 求解 w b 这 就是 
+对偶 问题 的 求解 方案 三 Kernel Trick 当 数据 
+不是 线性 可分 的 那么 SVM 就 失去 了 作用 
+但是 我们 可以 寻找 一种 函数 将 数据 映射 到 
+更高 维 的 空间 中 以此 把 问题 变成 一个 
+线性 可分 的 问题 但是 这 会 带来 维度 的 
+急剧 上升 使得 模型 求解 效率 大大 下降 而 Kernel 
+Trick 就是 为了 解决 这样 的 问题 而 出现 的 
+下回 补完 四 Soft SVM 

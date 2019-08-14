@@ -1,0 +1,62 @@
+我们将开始深入了解如何使用Azure机器学习的基本功能，帮助您开始迈向Azure机器学习的数据科学家之路。
+Azure ML Studio （Azure Machine Learning Studio / Azure ML Studio）是使用Azure机器学习云实现预测分析解决方案的主要工具。Azure机器学习是基于云计算和自容式的强大预测分析解决方案，具有完整的开发、测试和生产环节快速创建的独立闭环。
+Azure ML Studio提供交互式和可视化的工具轻松构建、测试和迭代预测分析模型。您可在Azure ML Studio中以拖拽的方式将数据集和分析模型在交互式画布相连接创建实验，然后编辑实验并迭代计算预测分析模型，如果需要还可保存计算的副本并重复迭代计算。最终您可将实验作为web服务发布于Azure，于是您的预测分析模型就可在web被访问。
+基于云计算的Azure机器学习的另一个核心优点就是几乎没有任何的时间和基础设施的启动成本。尤其是Azure机器学习相关的任务都可在现代web浏览器中完成。
+Azure机器学习基本术语
+为了帮助您快速开始，让我们定义描述各种功能、组件和工具的常见术语。
+Azure机器学习（Azure Machine Learning）包含所有必要的工具，可用来在微软Azure云平台设计、开发、分享、测试和部署预测分析模型解决方案。
+Azure机器学习工作区（Azure Machine Learning workspaces）表示离散的"切片"式的Azure机器学习工具集，它可以按照以下的标准进行分区：
+工作区名称（Workspace name）必须是唯一的，并且是确定机器学习工作区的主要方法。
+工作区所有者（Workspace owner）是有效的微软账户，用于管理对此Azure机器学习工作的访问。
+数据中心地理位置（Data center location）定义Azure机器学习工作区所在的Azure数据中心物理位置。
+存储账户（storage account）定义唯一的Azure存储账户，用于存储所有与此Azure机器学习工作区的相关的数据和工件。
+Azure机器学习实验（Azure Machine Learning experiments），实验是在Azure机器学习工作区中创建，可通过迭代计算实现快速开发机器学习解决方案的主要方法。在每一个Azure机器学习实验中，Azure ML Studio提供交互式、可视化的工作区，可轻松创建、测试和迭代计算预测分析实验。这些实验可在Azure ML Studio中提交执行。Azure ML Studio实验是高度重复的，很容易创建、编辑、测试、保存和重新运行试验。Azure机器学习实验实验是为现代数据科学家专门设计，使其能够在评估新的预测模型时以"快速失败"的方式不断改进细化模型。简单来说，Azure机器学习提供迭代的方式快速失败或者最终取得成功。
+Azure ML Studio是主要的交互式预测分析工作台，在Azure机器学习工作区为数据科学家提供可视化的设计工具以拖放的方式创建Azure机器学习实验，在Azure机器学习工作区提供访问Azure ML Studio唯一的运行环境。除了可以创建新的实验，Azure ML Studio还包括Azure机器学习实验的示例链接。这些功能能使您很容易的与更有经验的人学习，在数据科学的旅程中利用最好的技术和工具帮助您完成基于领域的预测分析的目标。
+Azure机器学习web服务（Azure Machine Learning web services）Azure机器学习实验以REST API的方式在网络中提供API访问服务，这些服务可以是简单的web服务或者OData端点。API以两种类型的rest风格的web接口：
+请求响应服务（Request Response Service - RRS） 适用于独立的、低延迟，需要同步使用的预测模型。
+批处理执行服务（Batch Execution Service - BES）适用于异步处理的批量数据记录。BES支持多种格式的数据源，比如blob、表、SQL Azure，以及HDInsight(作为Hive查询的结果)和HTTP源。
+数据集（Datasets）是指上载至Azure ML Studio被用于预测模型的数据。Azure ML Studio提供大量的示例数据集可进行实验，您也可上传更多的数据集满足您的计算需求。
+模型（Modules）是应用于数据计算的算法。Azure ML Studio包含大量的模型，即从数据训练、评价到验证过程的函数。下面是包含的模型示例：
+转换为ARFF（Convert to ARFF）将.NET序列化数据集转换为ARFF格式。在机器学习领域，ARFF是常见的表示属性-关系的文件结构。它通常被定义为ASCII文本文件，描述实例列表共享的一系列属性。
+基本统计（Elementary Statistics）是计算基本的统计数据，如均值、标准差等。
+线性回归（Linear Regression）创建在线梯度下降的线性回归模型。
+评估模型（Score Model）评价训练的分类或者回归模型。
+模型可能包含一组参数用于配置模型的内部算法。当您在画布（canvas）上选择一个模型，画布右侧的窗格中显示模型的参数。您可以在该窗格中修改参数优化模型。
+快速开始
+Azure机器学习之旅的第一步是获得微软Azure环境，这里有几种方法您可以选择：
+选择1，使用在 http://azure.microsoft.com/en-us/pricing/free-trial 提供的免费Azure试用账号。
+选择2，在 https://studio.azureml.net/Home 使用Azure机器学习的试用
+这是Azure提供的免费特别功能，因此只允许您访问Azure机器学习环境。
+这对于新的采纳者而言是一个极其低摩擦的选择：开始的唯一必须条件就是有效的微软账号。
+如果您需要注册微软账号，请访问 http://windows.microsoft.com/en-US/windows-live/sign-up-create-account-how 。
+您使用有效的微软账号登陆后，跃入眼帘的是如-1所示的帮助您入门的介绍视频。您也可在此链接 https://go.microsoft.com/fwlink/?LinkID=518038 回顾介绍视频。
+图Azure机器学习介绍视频
+请注意如果您选择的是使用免费的Azure机器学习试用，那么您将只有Azure机器学习功能的访问权限，没有权限使用全部的Azure环境。为真正最大化您的体验，强烈建议您获取全部微软Azure环境。
+创建第一个Azure机器学习工作区
+让我们创建第一个Azure机器学习工作区，在这一点上Azure免费账户与付费的Azure订阅是相同的。让我们从 https://manage.windowsazure.com 导航至Azure管理门户。在那里，在左侧的导航栏点击机器学习，如下图所示。
+Azure机器学习工作区包含全部您需要在云端创建、管理和发布机器学习实验的工具。若要创建一个新的Azure机器学习工作区，请单击页面左下角的新建图标，在如下图的页面中补充必填项。
+创建一个新的Azure机器学习工作区：
+工作区的名称（WORKSPACE NAME）在您的Azure机器学习工作区中是唯一的。请您知悉如果您将光标从工作区名称区域移开时，会检查您提供的工作区名称是否唯一，如果唯一的话会在文本框的右侧显示绿的复选标记。
+工作区所有者（WORSPACE OWNER）提供有效的微软账号（以前的Windows Live ID）。注意，它不能是非微软账户，比如您的公司电子邮件。创建免费微软账户请登录 www.live.com 。
+Azure Machine Learning的位置（LOCATION）仅在美国南中部地区可用。
+存储账户（STORAGE ACCOUNT）选项可以选择创建一个新的存储账户或者使用现有的存储账户。
+新的存储账户名称（NEW STORAGE ACCOUNT NAME）：如果您选择为您的Azure机器学习的工作区创建新的存储账户，请确认存储账户的名称只能是小写字母数据字符。如果名称是唯一的，您会在文本框的右侧看到绿色的复选标记。
+一旦您创建机器学习工作区，Azure将提供全新的Azure机器学习工作区供您创建和承载您的额Azure机器学习实践。
+在创建您的Azure机器学习之后，单击您的新的Azure机器学习工作区的图标您将看到如下图所示的界面。
+请注意，这是由Azure管理门户的登陆Azure机器学习工作区。在此，您可以直接访问Azure机器学习Studio的工具管理用户访问工作区的权限，管理在此工作区中承载机器学习实验的Web服务。在顶部的导航菜单提供了Azure机器学习工作区功能的导航。
+仪表板（DASHBOARD）可以监控您的工作区的在一段时间内的相对和绝对计算的使用量。
+配置（CONFIGURE）功能用来允许或者拒绝用户对于您的工作的访问。
+Web服务（WEB SERVICES）选项允许您管理web服务和配置端口，且包含为数据科学家和分析师通过请求/响应的API访问或者批处理的代码示例，代码示例由流行的编程语言C#、Python和R语言组成。
+在我们重温这些特性的细节之后将开始探索Azure 机器学习的环境。
+若要访问您的工作区，点击ML Studio的登陆链接进入您的新的 Azure 机器学习工作区。下图就是Azure ML Studio工作区的截图。
+当您首次进入Azure ML Studio的工作区，您会看到如下的导航选项在顶部和左侧的导航栏上：
+顶部导航栏：
+Home 文档和其他资源的链接；
+Studio Azure ML Studio实验的登录页；
+Gallery (Preview) 是趋势实验和样本的集合。
+左侧导航栏：
+EXPERIMENTS 实验的创建、运行和保存草稿；
+WEB SERVICES已发布的实验列表；
+DATASETS上载的数据集，可用于实验的计算；
+TRAINED MODELS 使用Azure ML Studio内置的机器学习算法"训练"的新预测模型；
+SETTINGS 设置的账户和资源的设置集合。

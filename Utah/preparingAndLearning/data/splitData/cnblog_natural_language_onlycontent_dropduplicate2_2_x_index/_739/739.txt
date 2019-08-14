@@ -1,0 +1,10 @@
+记 李航 在自动化所60周年人工智能学术论坛 上关于 拥抱自然语言处理 的报告 摘录
+自然语言处理目前面临的一些主要困难：
+1. language is regular and idiosyncrasy；
+2.language is recursive;
+3.language is metaphorical；
+4.language is associate and world knowledge；
+5.language is interactive；
+两个主流方法：
+1.Task - driven strategy;
+2.Hybrid Strategy;

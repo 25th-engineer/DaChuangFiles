@@ -1,0 +1,222 @@
+原文 http / / qxde01 . blog . 163 . 
+com / blog / static / 6 7 3 3 
+5 7 4 4 2 0 1 3 6 8 
+1 0 1 9 2 2 9 9 1 / 
+Python 在 科学 计算 领域 有 两个 重要 的 扩展 
+模块 Numpy 和 Scipy 其中 Numpy 是 一个 用 python 
+实现 的 科学计算 包 包括 一个 强大 的 N 维 
+数组 对象 Array 比较 成熟 的 广播 函数库 用于 整合 
+C / C + + 和 Fortran 代码 的 工具包 
+实用 的 线性代数 傅里叶 变换 和 随机数 生成 函数 SciPy 
+是 一个 开源 的 Python 算 法库 和 数学 工具包 
+SciPy 包含 的 模块 有 最优化 线性代数 积分 插值 特殊函数 
+快速 傅里叶 变换 信号 处理 和 图像 处理 常/d 微分方程/l 
+求解/v 和/c 其他/r 科学/n 与/p 工程/n 中/f 常用/b 的/uj 计算/v 
+其 功能 与 软件 MATLAB Scilab 和 GNU Octave 类似 
+Numpy 和 Scipy 常常 结合 着 使用 Python/w 大多数/m 机器学习/i 
+库/n 都/d 依赖/v 于这/nr 两个/m 模块/n 绘图 和 可视化 依赖于 
+matplotlib 模块 matplotlib 的 风格 与 matlab 类似 Python 机器学习 
+库 非常多 而且 大多数 开源 主要 有 1 .   
+            scikit learnscikit learn   
+是 一个 基于 SciPy 和 Numpy 的 开源 机器学习 模块 
+包括 分类 回归 聚 类 系列 算法 主要 算法 有 
+SVM 逻辑 回归 朴素 贝叶斯 Kmeans DBSCAN 等 目前 由 
+INRI   资助 偶尔 Google 也 资助 一点 项目 主页 
+https / / pypi . python . org / pypi 
+/ scikit learn / http / / scikit learn . 
+org / https / / github . com / scikit 
+learn / scikit learn2 .           
+    NLTKNLTK Natural Language Toolkit 是 Python 的 自然 
+语言 处理 模块 包括 一 系列 的 字符 处理 和 
+语言 统计模型 NLTK/w  /i 常/d 用于/v 学术/n 研究/vn 和/c 教学/n 
+应用 的 领域 有 语言学 认知科学 人工智能 信息检索 机器学习 等 
+  NLTK 提供 超过 50个 语料库 和 词典 资源 文本处理 
+库 包括 分类 分词 词干 提取 解析 语义 推理 可 
+稳定 运行 在 Windows Mac OS X 和 Linux 平台 
+上 . 项目 主页 http / / sourceforge . net 
+/ projects / nltk / https / / pypi . 
+python . org / pypi / nltk / http / 
+/ nltk . org / 3 .       
+        MlpyMlpy 是 基于 NumPy / SciPy 
+的 Python 机器学习 模块 它 是 Cython 的 扩展 应用 
+包含 的 机器学习 算法 有 l     回归 least 
+squares   ridge regression least angle regression   elastic net 
+kernel ridge regression   support vector machines   SVM   
+partial least squares   PLS l     分类 linear 
+discriminant analysis   LDA Basic   perceptron Elastic Net   
+logistic regression Kernel Support Vector Machines SVM Diagonal Linear Discriminant 
+Analysis DLDA Golub Classifier Parzen based kernel Fisher Discriminant Classifier 
+k nearest neighbor Iterative RELIEF Classification Tree Maximum Likelihood Classifierl 
+    聚 类 hierarchical clustering Memory saving Hierarchical Clustering 
+  k meansl     维度 约 减 Kernel   
+Fisher discriminant analysis   FDA Spectral Regression Discriminant Analysis SRDA 
+kernel   Principal component analysis   PCA 项目 主页 http 
+/ / sourceforge . net / projects / mlpyhttps / 
+/ mlpy . fbk . eu / 4 .   
+            ShogunShogun 是 一个 开源 
+的 大规模 机器学习 工具箱 目前 Shogun 的 机器学习 功能 分 
+为 几个 部分 feature 表示 feature 预处理 核 函数 表示 
+核 函数 标准化 距离 表示 分类器 表示 聚 类 方法 
+分布 性能评价 方法 回归 方法 结构化 输出 学习 器 SHOGUN 
+  的 核心 由 C + + 实现 提供   
+Matlab   R   Octave   Python 接口 主要 应用在 
+linux 平台 上 项目 主页 http / / www . 
+shogun toolbox . org / 5 .       
+        MDPThe Modular toolkit for Data Processing 
+MDP   用于 数据 处理 的 模块化 工具包 一个 Python 
+数据处理 框架 从 用户 的 观点 MDP/w 是/v 能够/v 被/p 
+整合/v 到/v 数据处理/n 序列/n 和更/nr 复杂/a 的/uj 前馈/v 网络结构/n 的/uj 
+一批/m 监督/vn 学习/v 和非/nr 监督/vn 学习/v 算法/n 和/c 其他/r 数据/n 
+处理单元/n 计算 依照 速度 和 内存 需求 而 高效 的 
+执行 从 科学 开发者 的 观点 MDP 是 一个 模块 
+框架 它 能够 被 容易 地 扩展 新 算法 的 
+实现 是 容易 且 直观 的 新 实现 的 单元 
+然后 被 自动 地 与 程序库 的 其余 部件 进行 
+整合 MDP 在 神经 科学 的 理论 研究 背景 下 
+被 编写 但是 它 已经 被 设计 为 在 使用 
+可 训练 数据处理 算法 的 任何 情况 中 都是 有用 
+的 其 站在 用户 一边 的 简单 性 各种 不同 
+的 随时 可用 的 算法 及 应用 单元 的 可 
+重 用性 使得 它 也 是 一个 有用 的 教学 
+工具 项目 主页 http / / mdp toolkit . sourceforge 
+. net / https / / pypi . python . 
+org / pypi / MDP / 6 .     
+          PyBrainPyBrain Python Based Reinforcement Learning 
+Artificial Intelligence and Neural Network 是 Python 的 一个 机器学习 
+模块 它 的 目标 是 为 机器学习 任务 提供 灵活 
+易应/nr 强大 的 机器学习 算法 这 名字 很 霸气 PyBrain 
+正如 其名 包括 神经网络 强化 学习 及 二者 结合 无 
+监督 学习 进化 算法 因为 目前 的 许多 问题 需要 
+处理 连续 态 和 行为 空间 必须 使用 函数 逼近 
+如 神经网络 以 应对 高维 数据 PyBrain 以 神经 网络 
+为 核心 所有 的 训练 方法 都以 神经 网络 为 
+一个 实例 项目 主页 http / / www . pybrain 
+. org / https / / github . com / 
+pybrain / pybrain / 7 .         
+      BigMLBigML   使得 机器学习 为 数据 驱动 
+决策 和 预测 变得 容易 BigML 使用 容易 理解 的 
+交互式 操作 创建 优雅 的 预测模型 BigML 使用 BigML . 
+io 捆绑 Python 项目 主页 https / / bigml . 
+com / https / / pypi . python . org 
+/ pypi / bigmlhttp / / bigml . readthedocs . 
+org / 8 .             
+  PyMLPyML 是 一个 Python 机器学习 工具包   为 各 
+分类 和 回归 方法 提供 灵活 的 架构 它 主要 
+提供 特征选择 模型 选择 组合 分类器 分类 评估 等 功能 
+项目 主页 http / / cmgm . stanford . edu 
+/ ~ asab / pyml / tutorial / http / 
+/ pyml . sourceforge . net / 9 .   
+            MilkMilk 是 Python 的 
+一个 机器学习 工具箱 其 重点 是 提供 监督 分类法 与 
+几种 有效 的 分类 分析 SVMs 基于 libsvm K NN 
+随机 森林 经济 和 决策树 它 还 可以 进行 特征选择 
+这些 分类 可以 在 许多 方面 相结合 形成 不同 的 
+分类 系统 对于 无 监督 学习 它 提供 K means 
+和 affinity propagation 聚 类 算法 项目 主页 https / 
+/ pypi . python . org / pypi / milk 
+/ http / / luispedro . org / software / 
+milk10 .     PyMVPAPyMVPA Multivariate Pattern Analysis in Python 
+是 为大 数据集 提供 统计 学习 分析 的 Python 工具包 
+它 提供 了 一个 灵活 可扩展 的 框架 它 提供 
+的 功能 有 分类 回归 特征选择 数据 导入 导出 可视化 
+等 项目 主页 http / / www . pymvpa . 
+org / https / / github . com / PyMVPA 
+/ PyMVPA11 .     PatternPattern 是 Python 的 web 
+挖掘 模块 它 绑定 了     Google Twitter   
+Wikipedia API 提供 网络爬虫 HTML 解析 功能 文本 分析 包括 
+浅层 规则 解析 WordNet 接口 句法 与 语义分析 TF IDF 
+LSA 等 还 提供 聚 类 分类 和图/nr 网络 可视化 
+的 功能 项目 主页 http / / www . clips 
+. ua . ac . be / pages / patternhttps 
+/ / pypi . python . org / pypi / 
+Pattern12 .     pyrallelPyrallel Parallel Data Analytics in Python 
+基于 分布式计算 模式 的 机器 学习 和半/nr 交互式 的 试验 
+项目 可在 小型 集群 上 运行 适用范围 l     
+focus on small to medium dataset that fits in memory 
+on a small 10 + nodes to medium cluster 100 
++ nodes . l     focus on small to 
+medium data with data locality when possible . l   
+  focus on CPU bound tasks e . g . 
+training Random Forests while trying to limit disk / network 
+access to a minimum . l     do not 
+focus on HA / Fault Tolerance yet . l   
+  do not try to invent new set of high 
+level programming abstractions yet use a low level programming model 
+IPython . parallel to finely control the cluster elements and 
+messages transfered and help identify what are the practical underlying 
+constraints in distributed machine learning setting . 项目 主页 https 
+/ / pypi . python . org / pypi / 
+pyrallelhttp / / github . com / pydata / pyrallel13 
+.     MonteMonte machine learning in pure Python 是 
+一个 纯 Python 机器学习 库 它 可以 迅速 构建 神经网络 
+条件 随 机场 逻辑 回归 等 模型 使用 inline C 
+优化 极易 使用 和 扩展 项目 主页 https / / 
+pypi . python . org / pypi / Montehttp / 
+/ montepython . sourceforge . net14 .     OrangeOrange 
+  是 一个 基于 组件 的 数据 挖掘 和 机器 
+学习 软件 套装 它 的 功能 即 友好 又 很 
+强大 快速 而又 多功能 的 可视化 编程 前端 以便 浏览 
+数据分析 和 可视化 基 绑定 了   Python 以 进行 
+脚本 开发 它 包含 了 完整 的 一系列 的 组件 
+以 进行 数据 预处理 并 提供 了 数据 帐目 过渡 
+建模 模式 评估 和 勘探 的 功能 其 由 C 
++ +   和 /nr Python 开发 它 的 图形库 是由 
+跨平台 的 Qt 框架 开发 项目 主页 https / / 
+pypi . python . org / pypi / Orange / 
+http / / orange . biolab . si / 15 
+.     TheanoTheano   是 一个   Python   
+库 用来 定义 优化 和 模拟 数学 表达式 计算 用于 
+高效 的 解决 多维 数组 的 计算 问题 Theano 的 
+特点 l/w  /i  /i 紧密/a 集成/v Numpyl/w  /i  /i 高效/a 
+的/uj 数据/n 密集型/n GPU/w 计算/v l/w  /i  /i 高效/a 的/uj 
+符号/n 微分/n 运算/vn l/w  /i  /i 高速/d 和/c 稳定/a 的/uj 
+优化/vn l/w  /i  /i 动态/n 生成/v c/w 代码/n l/w  /i 
+ /i 广泛/a 的/uj 单元/n 测试/vn 和/c 自我/r 验证/v 自/p 2007/m 
+年以来/i Theano 已被 广泛 应用 于 科学 运算 theano 使得 
+构建 深度 学习 模型 更加 容易 可以 快速 实现 下列 
+模型 l     Logistic Regressionl     Multilayer perceptronl 
+    Deep Convolutional Networkl     Auto Encoders Denoising 
+Autoencodersl     Stacked Denoising Auto Encodersl     Restricted 
+Boltzmann Machinesl     Deep Belief Networksl     HMC 
+Samplingl     Contractive auto encodersTheano 一位 希腊 美女 Croton 
+最有 权势 的 Milo 的 女儿 后来 成为 了 毕达哥拉斯 
+的 老婆 项目 主页 http / / deeplearning . net 
+/ tutorial / https / / pypi . python . 
+org / pypi / Theano16 .         
+    Pylearn2Pylearn2 建立在 theano 上 部分 依赖 scikit learn 
+上 目前 Pylearn2 正处于 开发 中 将 可以 处理 向量 
+图像 视频 等 数据 提供 MLP RBM SDA 等 深度 
+学习 模型 Pylearn2 的 目标 是 Researchers add features as 
+they need them . We avoid getting bogged down by 
+too much top down planning in advance . A machine 
+learning toolbox for easy scientific experimentation . All models / 
+algorithms published by the LISA lab should have reference implementations 
+in Pylearn2 . Pylearn2 may wrap other libraries such as 
+scikits . learn when this is p r a c 
+t i c a l P y l e a 
+r n 2 differs from scikits . learn in that 
+Pylearn2 aims to provide great flexibility and make it possible 
+for a researcher to do almost anything while scikits . 
+learn aims to work as a black box that can 
+produce good results even if the user does not understand 
+the i m p l e m e n t 
+a t i o n D a t a s 
+e t interface for vector images video . . . 
+Small framework for all what is needed for one normal 
+MLP / RBM / SDA / Convolution experiments . Easy 
+reuse of sub component of Pylearn2 . Using one sub 
+component of the library does not force you to use 
+/ learn to use all of the other sub components 
+if you choose not to . Support cross platform serialization 
+of learned models . Remain approachable enough to be used 
+in the classroom IFT6266 at the University of Montreal . 
+项目 主页 http / / deeplearning . net / software 
+/ pylearn2 / https / / github . com / 
+lisa lab / pylearn2 还有 其他 的 一些 Python 的 
+机器学习 库 如 pmll https / / github . com 
+/ pavlov99 / pmll pymining https / / github . 
+com / bartdag / pymining ease https / / github 
+. com / edx / ease textmining http / / 
+www . christianpeccei . com / textmining / 更多 的 
+机器学习 库 可通过 https / / pypi . python . 
+org / pypi 查找 

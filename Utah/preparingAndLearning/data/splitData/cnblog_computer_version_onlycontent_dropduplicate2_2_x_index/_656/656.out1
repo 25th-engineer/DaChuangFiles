@@ -1,0 +1,637 @@
+计算机 视觉 与 模式识别 代码 合集 第二 版 t h 
+r e e T o p i c N a 
+m e R e f e r e n c 
+e c o d e O p t i c 
+a l FlowHorn and Schunck s Optical FlowcodeOptical FlowBlack and 
+Anandan s Optical FlowcodePose E s t i m a 
+t i o n T r a i n i 
+n g Deformable Models for L o c a l 
+i z a t i o n R a m 
+a n a n D . Learning to Parse Images 
+of Articulated Bodies . NIPS 2006codePose EstimationCalvin Upper Body DetectorE 
+. Marcin F . Vittorio Better Appearance Models for Pictorial 
+Structures BMVC 2009codePose E s t i m a t 
+i o n A r t i c u l 
+a t e d Pose Estimation using Flexible Mixtures of 
+PartsY . Yang D . Ramanan Articulated Pose Estimation using 
+Flexible Mixtures of Parts CVPR 2011codePose E s t i 
+m a t i o n E s t i 
+m a t i n g Human Pose from Occluded 
+ImagesJ . B .   Huang and M . H 
+.   Yang Estimating Human Pose from Occluded Images ACCV 
+2009codeSaliency D e t e c t i o n 
+a l i e n c y detection A spectral 
+residual approachX . Hou and L . Zhang .   
+Saliency detection A spectral residual approach .   CVPR 2007codeSaliency 
+D e t e c t i o n a 
+l i e n c y Using Natural statisticsL . 
+Zhang M . Tong T . Marks H . Shan 
+and G . Cottrell .   Sun A bayesian framework 
+for saliency using natural statistics .   Journal of Vision 
+2008codeSaliency D e t e c t i o n 
+A t t e n t i o n via 
+Information MaximizationN . Bruce and J . Tsotsos .   
+Saliency based on information maximization .   In NIPS 2005codeSaliency 
+DetectionItti Koch and Niebur saliency detectionL . Itti C . 
+Koch and E . Niebur .   A model of 
+saliency based visual attention for rapid scene analysis .   
+PAMI 1998codeSaliency D e t e c t i o 
+n F r e q u e n c y 
+tuned salient region detectionR . Achanta . Hemami F . 
+Estrada and . Susstrunk . Frequency tuned salient region detection 
+.   In CVPR 2009codeSaliency D e t e c 
+t i o n a l i e n c 
+y based video segmentationK . Fukuchi K . Miyazato A 
+. Kimura . Takagi and J . Yamato Saliency based 
+video segmentation with graph cuts and sequentially updated priors ICME 
+2009codeSaliency D e t e c t i o n 
+e g m e n t i n g salient 
+objects from images and videosE . Rahtu J . Kannala 
+M . Salo and J . Heikkila .   Segmenting 
+salient objects from images and videos .   CVPR 2010codeSaliency 
+DetectionGraph based visual saliencyJ . Harel C . Koch and 
+P . Perona .   Graph based visual saliency . 
+NIPS 2007codeSaliency D e t e c t i o 
+n L e a r n i n g to 
+Predict Where Humans LookT . Judd and K . Ehinger 
+and F . Durand and A . Torralba Learning to 
+Predict Where Humans Look ICCV 2009codeSaliency D e t e 
+c t i o n p e c t r 
+u m Scale Space based Visual SaliencyJ Li M D 
+. Levine X An and H . He Saliency Detection 
+Based on Frequency and Spatial Domain Analyses BMVC 2011codeSaliency D 
+e t e c t i o n D i 
+s c r i m i n a n t 
+Saliency for Visual Recognition from Cluttered ScenesD . Gao and 
+N . Vasconcelos Discriminant Saliency for Visual Recognition from Cluttered 
+Scenes NIPS 2004codeSaliency DetectionContext aware saliency detectionS . Goferman L 
+. Zelnik Manor and A . Tal .   Context 
+aware saliency detection .   In CVPR 2010 . codeSaliency 
+D e t e c t i o n a 
+l i e n c y detection using maximum symmetric 
+surroundR . Achanta and . Susstrunk .   Saliency detection 
+using maximum symmetric surround .   In ICIP 2010codeSaliency DetectionGlobal 
+Contrast based Salient Region DetectionM . M .   Cheng 
+G . X .   Zhang NJ Mitra X . 
+Huang . M .   Hu .   Global Contrast 
+based Salient Region Detection .   CVPR 2011codeSaliency D e 
+t e c t i o n L e a 
+r n i n g Hierarchical Image Representation with Sparsity 
+Saliency and LocalityJ . Yang and M . H . 
+  Yang Learning Hierarchical Image Representation with Sparsity Saliency and 
+Locality BMVC 2011Sparse R e p r e s e 
+n t a t i o n C e n 
+t r a l i z e d Sparse Representation 
+for Image RestorationW . Dong L . Zhang and G 
+. Shi Centralized Sparse Representation for Image Restoration ICCV 2011codeSparse 
+R e p r e s e n t a 
+t i o n E f f i c i 
+e n t sparse coding algorithmsH . Lee A . 
+Battle R . Rajat and AY Ng Efficient sparse coding 
+algorithms NIPS 2007codeSparse R e p r e s e 
+n t a t i o n F i s 
+h e r Discrimination Dictionary Learning for Sparse RepresentationM . 
+Yang L . Zhang X . Feng and D . 
+Zhang Fisher Discrimination Dictionary Learning for Sparse Representation ICCV 2011codeSparse 
+R e p r e s e n t a 
+t i o n R o b u s t 
+Sparse Coding for Face RecognitionM . Yang L . Zhang 
+J . Yang and D . Zhang Robust Sparse Coding 
+for Face Recognition CVPR 2011codeSparse R e p r e 
+s e n t a t i o n p 
+a r s e and Redundant Representations From Theory to 
+Applications in Signal and Image ProcessingM . Elad Sparse and 
+Redundant Representations From Theory to Applications in Signal and Image 
+P r o c e s s i n g 
+c o d e p a r s e R 
+e p r e s e n t a t 
+i o n P A r s e Modeling SoftwareJ 
+. Mairal F . Bach J . Ponce and G 
+. Sapiro .   Online Learning for Matrix Factorization and 
+Sparse Coding JMLR 2010codeSparse R e p r e s 
+e n t a t i o n p a 
+r s e coding simulation s o f t w 
+a r e O l s h a u s 
+e n BA Field DJ Emergence of Simple Cell Receptive 
+Field Properties by Learning a Sparse Code for Natural Images 
+Nature 1996codeSparse RepresentationA Linear Subspace Learning Approach via Sparse CodingL 
+. Zhang P . Zhu Q . Hu and D 
+. Zhang A Linear Subspace Learning Approach via Sparse Coding 
+ICCV 2 0 1 1 c o d e t 
+e r e o C o n s t a 
+n t Space Belief PropagationQ . Yang L . Wang 
+and N . Ahuja A Constant Space Belief Propagation Algorithm 
+for Stereo Matching CVPR 2 0 1 0 c o 
+d e t e r e o t e r 
+e o EvaluationD . Scharstein and R . Szeliski . 
+  A taxonomy and evaluation of dense two frame stereo 
+correspondence algorithms IJCV 2001codeImage Denoising andStereo M a t c 
+h i n g E f f i c i 
+e n t Belief Propagation for Early VisionPF Felzenszwalb and 
+DP Huttenlocher Efficient Belief Propagation for Early Vision IJCV 2 
+0 0 6 c o d e t r u 
+c t u r e from motionNonrigid Structure From Motion 
+in Trajectory p a c e c o d e 
+t r u c t u r e from m 
+o t i o n l i b m v 
+c o d e t r u c t u 
+r e from motionBundlerN . Snavely S M . Seitz 
+R Szeliski .   Photo Tourism Exploring image collections in 
+3D .   SIGGRAPH 2 0 0 6 c o 
+d e t r u c t u r e 
+from m o t i o n F I T 
+3 D c o d e t r u c 
+t u r e from motionVisualSFM A Visual Structure from 
+Motion y s t e m c o d e 
+t r u c t u r e from m 
+o t i o n O p e n o 
+u r c e P h o t o g 
+r a m m e t r y c o 
+d e t r u c t u r e 
+from motionStructure and Motion Toolkit in M a t l 
+a b c o d e t r u c 
+t u r e from motionStructure from Motion toolbox for 
+Matlab by Vincent R a b a u d c 
+o d e u b s p a c e 
+L e a r n i n g G e 
+n e r a l i z e d Principal 
+Component AnalysisR . Vidal Y . Ma and . Sastry 
+.   Generalized Principal Component Analysis GPCA CVPR 2003codeText RecognitionText 
+recognition in the wildK . Wang B . Babenko and 
+. Belongie End to end Scene Text Recognition ICCV 2011codeText 
+R e c o g n i t i o 
+n N e o c o g n i t 
+r o n for handwritten digit recognitionK . Fukushima Neocognitron 
+for handwritten digit recognition Neurocomputing 2003codeTexture SynthesisImage Quilting for Texture 
+Synthesis and TransferAA Efros and WT Freeman Image Quilting for 
+Texture Synthesis and Transfer SIGGRAPH 2 0 0 1 c 
+o d e T o p i c N a 
+m e R e f e r e n c 
+e c o d e V i s u a 
+l TrackingGPU Implementation of Kanade Lucas Tomasi Feature TrackerS . 
+N Sinha J . M .   Frahm M . 
+Pollefeys and Y . Genc Feature Tracking and Matching in 
+Video Using Programmable Graphics Hardware MVA 2007codeVisual T r a 
+c k i n g u p e r p 
+i x e l TrackingS . Wang H . Lu 
+F . Yang and M . H .   Yang 
+Superpixel Tracking ICCV 2011codeVisual TrackingTracking with Online Multiple Instance LearningB 
+. Babenko M . H .   Yang . Belongie 
+Visual Tracking with Online Multiple Instance Learning PAMI 2011codeVisual TrackingMotion 
+Tracking in Image SequencesC . Stauffer and WEL Grimson . 
+  Learning patterns of activity using real time tracking PAMI 
+2000codeVisual TrackingL1 TrackingX . Mei and H . Ling Robust 
+Visual Tracking using L1 Minimization ICCV 2009codeVisual TrackingOnline Discriminative Object 
+Tracking with Local Sparse RepresentationQ . Wang F . Chen 
+W . Xu and M . H .   Yang 
+Online Discriminative Object Tracking with Local Sparse Representation WACV 2012codeVisual 
+TrackingKLT An Implementation of the Kanade Lucas Tomasi Feature TrackerBD 
+Lucas and T . Kanade .   An Iterative Image 
+Registration Technique with an Application to Stereo Vision .   
+IJCAI 1981codeVisual TrackingOnline boosting trackersH . Grabner and H . 
+Bischof On line Boosting and Vision CVPR 2006codeVisual TrackingVisual Tracking 
+DecompositionJ Kwon and KM Lee Visual Tracking Decomposition CVPR 2010codeVisual 
+TrackingGlobally Optimal Greedy Algorithms for Tracking a Variable Number of 
+ObjectsH . Pirsiavash D . Ramanan C . Fowlkes . 
+  Globally Optimal Greedy Algorithms for Tracking a Variable Number 
+of Objects CVPR 2011codeVisual TrackingLucas Kanade affine template trackingS . 
+Baker and I . Matthews Lucas Kanade 20 Years On 
+A Unifying Framework IJCV 2002codeVisual TrackingObject TrackingA . Yilmaz O 
+. Javed and M . Shah Object Tracking A Survey 
+ACM Journal of Computing Surveys Vol .   38 No 
+. 4 2006codeVisual TrackingVisual Tracking with Histograms and Articulating BlocksSM 
+Shshed Nejhum J . Ho and M . H . 
+Yang Visual Tracking with Histograms and Articulating Blocks CVPR 2008codeVisual 
+TrackingTracking using Pixel Wise PosteriorsC . Bibby and I . 
+Reid Tracking using Pixel Wise Posteriors ECCV 2008codeVisual T r 
+a c k i n g I n c r 
+e m e n t a l Learning for Robust 
+Visual TrackingD . Ross J . Lim R . . 
+  Lin M . H .   Yang Incremental Learning 
+for Robust Visual Tracking IJCV 2007codeVisual TrackingParticle Filter Object Trackingcode 
+一共 248篇 one 47 two 45 three 49 four 47 
+five 44 six 16 计算机 视觉 与 模式识别 代码 合集 第二 版 t h 
+r e e T o p i c N a 
+m e R e f e r e n c 
+e c o d e O p t i c 
+a l FlowHorn and Schunck s Optical FlowcodeOptical FlowBlack and 
+Anandan s Optical FlowcodePose E s t i m a 
+t i o n T r a i n i 
+n g Deformable Models for L o c a l 
+i z a t i o n R a m 
+a n a n D . Learning to Parse Images 
+of Articulated Bodies . NIPS 2006codePose EstimationCalvin Upper Body DetectorE 
+. Marcin F . Vittorio Better Appearance Models for Pictorial 
+Structures BMVC 2009codePose E s t i m a t 
+i o n A r t i c u l 
+a t e d Pose Estimation using Flexible Mixtures of 
+PartsY . Yang D . Ramanan Articulated Pose Estimation using 
+Flexible Mixtures of Parts CVPR 2011codePose E s t i 
+m a t i o n E s t i 
+m a t i n g Human Pose from Occluded 
+ImagesJ . B .   Huang and M . H 
+.   Yang Estimating Human Pose from Occluded Images ACCV 
+2009codeSaliency D e t e c t i o n 
+a l i e n c y detection A spectral 
+residual approachX . Hou and L . Zhang .   
+Saliency detection A spectral residual approach .   CVPR 2007codeSaliency 
+D e t e c t i o n a 
+l i e n c y Using Natural statisticsL . 
+Zhang M . Tong T . Marks H . Shan 
+and G . Cottrell .   Sun A bayesian framework 
+for saliency using natural statistics .   Journal of Vision 
+2008codeSaliency D e t e c t i o n 
+A t t e n t i o n via 
+Information MaximizationN . Bruce and J . Tsotsos .   
+Saliency based on information maximization .   In NIPS 2005codeSaliency 
+DetectionItti Koch and Niebur saliency detectionL . Itti C . 
+Koch and E . Niebur .   A model of 
+saliency based visual attention for rapid scene analysis .   
+PAMI 1998codeSaliency D e t e c t i o 
+n F r e q u e n c y 
+tuned salient region detectionR . Achanta . Hemami F . 
+Estrada and . Susstrunk . Frequency tuned salient region detection 
+.   In CVPR 2009codeSaliency D e t e c 
+t i o n a l i e n c 
+y based video segmentationK . Fukuchi K . Miyazato A 
+. Kimura . Takagi and J . Yamato Saliency based 
+video segmentation with graph cuts and sequentially updated priors ICME 
+2009codeSaliency D e t e c t i o n 
+e g m e n t i n g salient 
+objects from images and videosE . Rahtu J . Kannala 
+M . Salo and J . Heikkila .   Segmenting 
+salient objects from images and videos .   CVPR 2010codeSaliency 
+DetectionGraph based visual saliencyJ . Harel C . Koch and 
+P . Perona .   Graph based visual saliency . 
+NIPS 2007codeSaliency D e t e c t i o 
+n L e a r n i n g to 
+Predict Where Humans LookT . Judd and K . Ehinger 
+and F . Durand and A . Torralba Learning to 
+Predict Where Humans Look ICCV 2009codeSaliency D e t e 
+c t i o n p e c t r 
+u m Scale Space based Visual SaliencyJ Li M D 
+. Levine X An and H . He Saliency Detection 
+Based on Frequency and Spatial Domain Analyses BMVC 2011codeSaliency D 
+e t e c t i o n D i 
+s c r i m i n a n t 
+Saliency for Visual Recognition from Cluttered ScenesD . Gao and 
+N . Vasconcelos Discriminant Saliency for Visual Recognition from Cluttered 
+Scenes NIPS 2004codeSaliency DetectionContext aware saliency detectionS . Goferman L 
+. Zelnik Manor and A . Tal .   Context 
+aware saliency detection .   In CVPR 2010 . codeSaliency 
+D e t e c t i o n a 
+l i e n c y detection using maximum symmetric 
+surroundR . Achanta and . Susstrunk .   Saliency detection 
+using maximum symmetric surround .   In ICIP 2010codeSaliency DetectionGlobal 
+Contrast based Salient Region DetectionM . M .   Cheng 
+G . X .   Zhang NJ Mitra X . 
+Huang . M .   Hu .   Global Contrast 
+based Salient Region Detection .   CVPR 2011codeSaliency D e 
+t e c t i o n L e a 
+r n i n g Hierarchical Image Representation with Sparsity 
+Saliency and LocalityJ . Yang and M . H . 
+  Yang Learning Hierarchical Image Representation with Sparsity Saliency and 
+Locality BMVC 2011Sparse R e p r e s e 
+n t a t i o n C e n 
+t r a l i z e d Sparse Representation 
+for Image RestorationW . Dong L . Zhang and G 
+. Shi Centralized Sparse Representation for Image Restoration ICCV 2011codeSparse 
+R e p r e s e n t a 
+t i o n E f f i c i 
+e n t sparse coding algorithmsH . Lee A . 
+Battle R . Rajat and AY Ng Efficient sparse coding 
+algorithms NIPS 2007codeSparse R e p r e s e 
+n t a t i o n F i s 
+h e r Discrimination Dictionary Learning for Sparse RepresentationM . 
+Yang L . Zhang X . Feng and D . 
+Zhang Fisher Discrimination Dictionary Learning for Sparse Representation ICCV 2011codeSparse 
+R e p r e s e n t a 
+t i o n R o b u s t 
+Sparse Coding for Face RecognitionM . Yang L . Zhang 
+J . Yang and D . Zhang Robust Sparse Coding 
+for Face Recognition CVPR 2011codeSparse R e p r e 
+s e n t a t i o n p 
+a r s e and Redundant Representations From Theory to 
+Applications in Signal and Image ProcessingM . Elad Sparse and 
+Redundant Representations From Theory to Applications in Signal and Image 
+P r o c e s s i n g 
+c o d e p a r s e R 
+e p r e s e n t a t 
+i o n P A r s e Modeling SoftwareJ 
+. Mairal F . Bach J . Ponce and G 
+. Sapiro .   Online Learning for Matrix Factorization and 
+Sparse Coding JMLR 2010codeSparse R e p r e s 
+e n t a t i o n p a 
+r s e coding simulation s o f t w 
+a r e O l s h a u s 
+e n BA Field DJ Emergence of Simple Cell Receptive 
+Field Properties by Learning a Sparse Code for Natural Images 
+Nature 1996codeSparse RepresentationA Linear Subspace Learning Approach via Sparse CodingL 
+. Zhang P . Zhu Q . Hu and D 
+. Zhang A Linear Subspace Learning Approach via Sparse Coding 
+ICCV 2 0 1 1 c o d e t 
+e r e o C o n s t a 
+n t Space Belief PropagationQ . Yang L . Wang 
+and N . Ahuja A Constant Space Belief Propagation Algorithm 
+for Stereo Matching CVPR 2 0 1 0 c o 
+d e t e r e o t e r 
+e o EvaluationD . Scharstein and R . Szeliski . 
+  A taxonomy and evaluation of dense two frame stereo 
+correspondence algorithms IJCV 2001codeImage Denoising andStereo M a t c 
+h i n g E f f i c i 
+e n t Belief Propagation for Early VisionPF Felzenszwalb and 
+DP Huttenlocher Efficient Belief Propagation for Early Vision IJCV 2 
+0 0 6 c o d e t r u 
+c t u r e from motionNonrigid Structure From Motion 
+in Trajectory p a c e c o d e 
+t r u c t u r e from m 
+o t i o n l i b m v 
+c o d e t r u c t u 
+r e from motionBundlerN . Snavely S M . Seitz 
+R Szeliski .   Photo Tourism Exploring image collections in 
+3D .   SIGGRAPH 2 0 0 6 c o 
+d e t r u c t u r e 
+from m o t i o n F I T 
+3 D c o d e t r u c 
+t u r e from motionVisualSFM A Visual Structure from 
+Motion y s t e m c o d e 
+t r u c t u r e from m 
+o t i o n O p e n o 
+u r c e P h o t o g 
+r a m m e t r y c o 
+d e t r u c t u r e 
+from motionStructure and Motion Toolkit in M a t l 
+a b c o d e t r u c 
+t u r e from motionStructure from Motion toolbox for 
+Matlab by Vincent R a b a u d c 
+o d e u b s p a c e 
+L e a r n i n g G e 
+n e r a l i z e d Principal 
+Component AnalysisR . Vidal Y . Ma and . Sastry 
+.   Generalized Principal Component Analysis GPCA CVPR 2003codeText RecognitionText 
+recognition in the wildK . Wang B . Babenko and 
+. Belongie End to end Scene Text Recognition ICCV 2011codeText 
+R e c o g n i t i o 
+n N e o c o g n i t 
+r o n for handwritten digit recognitionK . Fukushima Neocognitron 
+for handwritten digit recognition Neurocomputing 2003codeTexture SynthesisImage Quilting for Texture 
+Synthesis and TransferAA Efros and WT Freeman Image Quilting for 
+Texture Synthesis and Transfer SIGGRAPH 2 0 0 1 c 
+o d e T o p i c N a 
+m e R e f e r e n c 
+e c o d e V i s u a 
+l TrackingGPU Implementation of Kanade Lucas Tomasi Feature TrackerS . 
+N Sinha J . M .   Frahm M . 
+Pollefeys and Y . Genc Feature Tracking and Matching in 
+Video Using Programmable Graphics Hardware MVA 2007codeVisual T r a 
+c k i n g u p e r p 
+i x e l TrackingS . Wang H . Lu 
+F . Yang and M . H .   Yang 
+Superpixel Tracking ICCV 2011codeVisual TrackingTracking with Online Multiple Instance LearningB 
+. Babenko M . H .   Yang . Belongie 
+Visual Tracking with Online Multiple Instance Learning PAMI 2011codeVisual TrackingMotion 
+Tracking in Image SequencesC . Stauffer and WEL Grimson . 
+  Learning patterns of activity using real time tracking PAMI 
+2000codeVisual TrackingL1 TrackingX . Mei and H . Ling Robust 
+Visual Tracking using L1 Minimization ICCV 2009codeVisual TrackingOnline Discriminative Object 
+Tracking with Local Sparse RepresentationQ . Wang F . Chen 
+W . Xu and M . H .   Yang 
+Online Discriminative Object Tracking with Local Sparse Representation WACV 2012codeVisual 
+TrackingKLT An Implementation of the Kanade Lucas Tomasi Feature TrackerBD 
+Lucas and T . Kanade .   An Iterative Image 
+Registration Technique with an Application to Stereo Vision .   
+IJCAI 1981codeVisual TrackingOnline boosting trackersH . Grabner and H . 
+Bischof On line Boosting and Vision CVPR 2006codeVisual TrackingVisual Tracking 
+DecompositionJ Kwon and KM Lee Visual Tracking Decomposition CVPR 2010codeVisual 
+TrackingGlobally Optimal Greedy Algorithms for Tracking a Variable Number of 
+ObjectsH . Pirsiavash D . Ramanan C . Fowlkes . 
+  Globally Optimal Greedy Algorithms for Tracking a Variable Number 
+of Objects CVPR 2011codeVisual TrackingLucas Kanade affine template trackingS . 
+Baker and I . Matthews Lucas Kanade 20 Years On 
+A Unifying Framework IJCV 2002codeVisual TrackingObject TrackingA . Yilmaz O 
+. Javed and M . Shah Object Tracking A Survey 
+ACM Journal of Computing Surveys Vol .   38 No 
+. 4 2006codeVisual TrackingVisual Tracking with Histograms and Articulating BlocksSM 
+Shshed Nejhum J . Ho and M . H . 
+Yang Visual Tracking with Histograms and Articulating Blocks CVPR 2008codeVisual 
+TrackingTracking using Pixel Wise PosteriorsC . Bibby and I . 
+Reid Tracking using Pixel Wise Posteriors ECCV 2008codeVisual T r 
+a c k i n g I n c r 
+e m e n t a l Learning for Robust 
+Visual TrackingD . Ross J . Lim R . . 
+  Lin M . H .   Yang Incremental Learning 
+for Robust Visual Tracking IJCV 2007codeVisual TrackingParticle Filter Object Trackingcode 
+一共 248篇 one 47 two 45 three 49 four 47 
+five 44 six 16 计算机 视觉 与 模式识别 代码 合集 第二 版 t h 
+r e e T o p i c N a 
+m e R e f e r e n c 
+e c o d e O p t i c 
+a l FlowHorn and Schunck s Optical FlowcodeOptical FlowBlack and 
+Anandan s Optical FlowcodePose E s t i m a 
+t i o n T r a i n i 
+n g Deformable Models for L o c a l 
+i z a t i o n R a m 
+a n a n D . Learning to Parse Images 
+of Articulated Bodies . NIPS 2006codePose EstimationCalvin Upper Body DetectorE 
+. Marcin F . Vittorio Better Appearance Models for Pictorial 
+Structures BMVC 2009codePose E s t i m a t 
+i o n A r t i c u l 
+a t e d Pose Estimation using Flexible Mixtures of 
+PartsY . Yang D . Ramanan Articulated Pose Estimation using 
+Flexible Mixtures of Parts CVPR 2011codePose E s t i 
+m a t i o n E s t i 
+m a t i n g Human Pose from Occluded 
+ImagesJ . B .   Huang and M . H 
+.   Yang Estimating Human Pose from Occluded Images ACCV 
+2009codeSaliency D e t e c t i o n 
+a l i e n c y detection A spectral 
+residual approachX . Hou and L . Zhang .   
+Saliency detection A spectral residual approach .   CVPR 2007codeSaliency 
+D e t e c t i o n a 
+l i e n c y Using Natural statisticsL . 
+Zhang M . Tong T . Marks H . Shan 
+and G . Cottrell .   Sun A bayesian framework 
+for saliency using natural statistics .   Journal of Vision 
+2008codeSaliency D e t e c t i o n 
+A t t e n t i o n via 
+Information MaximizationN . Bruce and J . Tsotsos .   
+Saliency based on information maximization .   In NIPS 2005codeSaliency 
+DetectionItti Koch and Niebur saliency detectionL . Itti C . 
+Koch and E . Niebur .   A model of 
+saliency based visual attention for rapid scene analysis .   
+PAMI 1998codeSaliency D e t e c t i o 
+n F r e q u e n c y 
+tuned salient region detectionR . Achanta . Hemami F . 
+Estrada and . Susstrunk . Frequency tuned salient region detection 
+.   In CVPR 2009codeSaliency D e t e c 
+t i o n a l i e n c 
+y based video segmentationK . Fukuchi K . Miyazato A 
+. Kimura . Takagi and J . Yamato Saliency based 
+video segmentation with graph cuts and sequentially updated priors ICME 
+2009codeSaliency D e t e c t i o n 
+e g m e n t i n g salient 
+objects from images and videosE . Rahtu J . Kannala 
+M . Salo and J . Heikkila .   Segmenting 
+salient objects from images and videos .   CVPR 2010codeSaliency 
+DetectionGraph based visual saliencyJ . Harel C . Koch and 
+P . Perona .   Graph based visual saliency . 
+NIPS 2007codeSaliency D e t e c t i o 
+n L e a r n i n g to 
+Predict Where Humans LookT . Judd and K . Ehinger 
+and F . Durand and A . Torralba Learning to 
+Predict Where Humans Look ICCV 2009codeSaliency D e t e 
+c t i o n p e c t r 
+u m Scale Space based Visual SaliencyJ Li M D 
+. Levine X An and H . He Saliency Detection 
+Based on Frequency and Spatial Domain Analyses BMVC 2011codeSaliency D 
+e t e c t i o n D i 
+s c r i m i n a n t 
+Saliency for Visual Recognition from Cluttered ScenesD . Gao and 
+N . Vasconcelos Discriminant Saliency for Visual Recognition from Cluttered 
+Scenes NIPS 2004codeSaliency DetectionContext aware saliency detectionS . Goferman L 
+. Zelnik Manor and A . Tal .   Context 
+aware saliency detection .   In CVPR 2010 . codeSaliency 
+D e t e c t i o n a 
+l i e n c y detection using maximum symmetric 
+surroundR . Achanta and . Susstrunk .   Saliency detection 
+using maximum symmetric surround .   In ICIP 2010codeSaliency DetectionGlobal 
+Contrast based Salient Region DetectionM . M .   Cheng 
+G . X .   Zhang NJ Mitra X . 
+Huang . M .   Hu .   Global Contrast 
+based Salient Region Detection .   CVPR 2011codeSaliency D e 
+t e c t i o n L e a 
+r n i n g Hierarchical Image Representation with Sparsity 
+Saliency and LocalityJ . Yang and M . H . 
+  Yang Learning Hierarchical Image Representation with Sparsity Saliency and 
+Locality BMVC 2011Sparse R e p r e s e 
+n t a t i o n C e n 
+t r a l i z e d Sparse Representation 
+for Image RestorationW . Dong L . Zhang and G 
+. Shi Centralized Sparse Representation for Image Restoration ICCV 2011codeSparse 
+R e p r e s e n t a 
+t i o n E f f i c i 
+e n t sparse coding algorithmsH . Lee A . 
+Battle R . Rajat and AY Ng Efficient sparse coding 
+algorithms NIPS 2007codeSparse R e p r e s e 
+n t a t i o n F i s 
+h e r Discrimination Dictionary Learning for Sparse RepresentationM . 
+Yang L . Zhang X . Feng and D . 
+Zhang Fisher Discrimination Dictionary Learning for Sparse Representation ICCV 2011codeSparse 
+R e p r e s e n t a 
+t i o n R o b u s t 
+Sparse Coding for Face RecognitionM . Yang L . Zhang 
+J . Yang and D . Zhang Robust Sparse Coding 
+for Face Recognition CVPR 2011codeSparse R e p r e 
+s e n t a t i o n p 
+a r s e and Redundant Representations From Theory to 
+Applications in Signal and Image ProcessingM . Elad Sparse and 
+Redundant Representations From Theory to Applications in Signal and Image 
+P r o c e s s i n g 
+c o d e p a r s e R 
+e p r e s e n t a t 
+i o n P A r s e Modeling SoftwareJ 
+. Mairal F . Bach J . Ponce and G 
+. Sapiro .   Online Learning for Matrix Factorization and 
+Sparse Coding JMLR 2010codeSparse R e p r e s 
+e n t a t i o n p a 
+r s e coding simulation s o f t w 
+a r e O l s h a u s 
+e n BA Field DJ Emergence of Simple Cell Receptive 
+Field Properties by Learning a Sparse Code for Natural Images 
+Nature 1996codeSparse RepresentationA Linear Subspace Learning Approach via Sparse CodingL 
+. Zhang P . Zhu Q . Hu and D 
+. Zhang A Linear Subspace Learning Approach via Sparse Coding 
+ICCV 2 0 1 1 c o d e t 
+e r e o C o n s t a 
+n t Space Belief PropagationQ . Yang L . Wang 
+and N . Ahuja A Constant Space Belief Propagation Algorithm 
+for Stereo Matching CVPR 2 0 1 0 c o 
+d e t e r e o t e r 
+e o EvaluationD . Scharstein and R . Szeliski . 
+  A taxonomy and evaluation of dense two frame stereo 
+correspondence algorithms IJCV 2001codeImage Denoising andStereo M a t c 
+h i n g E f f i c i 
+e n t Belief Propagation for Early VisionPF Felzenszwalb and 
+DP Huttenlocher Efficient Belief Propagation for Early Vision IJCV 2 
+0 0 6 c o d e t r u 
+c t u r e from motionNonrigid Structure From Motion 
+in Trajectory p a c e c o d e 
+t r u c t u r e from m 
+o t i o n l i b m v 
+c o d e t r u c t u 
+r e from motionBundlerN . Snavely S M . Seitz 
+R Szeliski .   Photo Tourism Exploring image collections in 
+3D .   SIGGRAPH 2 0 0 6 c o 
+d e t r u c t u r e 
+from m o t i o n F I T 
+3 D c o d e t r u c 
+t u r e from motionVisualSFM A Visual Structure from 
+Motion y s t e m c o d e 
+t r u c t u r e from m 
+o t i o n O p e n o 
+u r c e P h o t o g 
+r a m m e t r y c o 
+d e t r u c t u r e 
+from motionStructure and Motion Toolkit in M a t l 
+a b c o d e t r u c 
+t u r e from motionStructure from Motion toolbox for 
+Matlab by Vincent R a b a u d c 
+o d e u b s p a c e 
+L e a r n i n g G e 
+n e r a l i z e d Principal 
+Component AnalysisR . Vidal Y . Ma and . Sastry 
+.   Generalized Principal Component Analysis GPCA CVPR 2003codeText RecognitionText 
+recognition in the wildK . Wang B . Babenko and 
+. Belongie End to end Scene Text Recognition ICCV 2011codeText 
+R e c o g n i t i o 
+n N e o c o g n i t 
+r o n for handwritten digit recognitionK . Fukushima Neocognitron 
+for handwritten digit recognition Neurocomputing 2003codeTexture SynthesisImage Quilting for Texture 
+Synthesis and TransferAA Efros and WT Freeman Image Quilting for 
+Texture Synthesis and Transfer SIGGRAPH 2 0 0 1 c 
+o d e T o p i c N a 
+m e R e f e r e n c 
+e c o d e V i s u a 
+l TrackingGPU Implementation of Kanade Lucas Tomasi Feature TrackerS . 
+N Sinha J . M .   Frahm M . 
+Pollefeys and Y . Genc Feature Tracking and Matching in 
+Video Using Programmable Graphics Hardware MVA 2007codeVisual T r a 
+c k i n g u p e r p 
+i x e l TrackingS . Wang H . Lu 
+F . Yang and M . H .   Yang 
+Superpixel Tracking ICCV 2011codeVisual TrackingTracking with Online Multiple Instance LearningB 
+. Babenko M . H .   Yang . Belongie 
+Visual Tracking with Online Multiple Instance Learning PAMI 2011codeVisual TrackingMotion 
+Tracking in Image SequencesC . Stauffer and WEL Grimson . 
+  Learning patterns of activity using real time tracking PAMI 
+2000codeVisual TrackingL1 TrackingX . Mei and H . Ling Robust 
+Visual Tracking using L1 Minimization ICCV 2009codeVisual TrackingOnline Discriminative Object 
+Tracking with Local Sparse RepresentationQ . Wang F . Chen 
+W . Xu and M . H .   Yang 
+Online Discriminative Object Tracking with Local Sparse Representation WACV 2012codeVisual 
+TrackingKLT An Implementation of the Kanade Lucas Tomasi Feature TrackerBD 
+Lucas and T . Kanade .   An Iterative Image 
+Registration Technique with an Application to Stereo Vision .   
+IJCAI 1981codeVisual TrackingOnline boosting trackersH . Grabner and H . 
+Bischof On line Boosting and Vision CVPR 2006codeVisual TrackingVisual Tracking 
+DecompositionJ Kwon and KM Lee Visual Tracking Decomposition CVPR 2010codeVisual 
+TrackingGlobally Optimal Greedy Algorithms for Tracking a Variable Number of 
+ObjectsH . Pirsiavash D . Ramanan C . Fowlkes . 
+  Globally Optimal Greedy Algorithms for Tracking a Variable Number 
+of Objects CVPR 2011codeVisual TrackingLucas Kanade affine template trackingS . 
+Baker and I . Matthews Lucas Kanade 20 Years On 
+A Unifying Framework IJCV 2002codeVisual TrackingObject TrackingA . Yilmaz O 
+. Javed and M . Shah Object Tracking A Survey 
+ACM Journal of Computing Surveys Vol .   38 No 
+. 4 2006codeVisual TrackingVisual Tracking with Histograms and Articulating BlocksSM 
+Shshed Nejhum J . Ho and M . H . 
+Yang Visual Tracking with Histograms and Articulating Blocks CVPR 2008codeVisual 
+TrackingTracking using Pixel Wise PosteriorsC . Bibby and I . 
+Reid Tracking using Pixel Wise Posteriors ECCV 2008codeVisual T r 
+a c k i n g I n c r 
+e m e n t a l Learning for Robust 
+Visual TrackingD . Ross J . Lim R . . 
+  Lin M . H .   Yang Incremental Learning 
+for Robust Visual Tracking IJCV 2007codeVisual TrackingParticle Filter Object Trackingcode 
+一共 248篇 one 47 two 45 three 49 four 47 
+five 44 six 16 

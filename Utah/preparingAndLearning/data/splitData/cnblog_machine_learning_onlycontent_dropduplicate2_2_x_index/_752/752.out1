@@ -1,0 +1,59 @@
+福利 = 每天 都 推送 欢迎 大家 关注 微信 扫 
+码 并 加入 我 的 4个 微信 公众 号   
+    大 数据 躺过 的 坑       
+    Java 从 入门 到 架构师       
+    人工智能 躺过 的 坑        /i 
+ /i  /i Java/w 全栈/nr 大联盟/i 每天/r 都有/nr 大量/n 的/uj 学习/v 
+视频/n 资料/n 和/c 精彩/n 技术文章/i 推送/v ./i ./i ./i 人生 
+不易 唯有 努力 百家 号 九月 哥 快讯     
+            快手 号   j 
+i u y u e g e E l a 
+s t i c e a r c h vs 
+Solr 优缺点 查看 版本 进 http / / archive . 
+apache . org / dist / ElasticSearch 默认 是 将 
+索引 放到 内存 中 其中 一个 节点 挂掉 了 并不 
+影响 整个 ES 集群 的 正常 运行 ElasticSearch vs Solr 
+检索 速度 当 单纯 的 对 已有 数据 进行 搜索 
+时 Solr 更快 当 实时 建立 索引 时 Solr 会 
+产生 io 阻塞 查询 性能 较差 Elasticsearch 具有 明显 的 
+优势 随着 数据 量 的 增加 Solr 的 搜索 效率 
+会 变得 更低 而 Elasticsearch 却 没有 明显 的 变化 
+大型 互联网 公司 实际 生产 环境 测试 将 搜索引擎 从 
+Solr 转到 Elasticsearch 以后 的 平均 查询 速度 有了 50倍 
+的 提升 ElasticSearch vs Solr 热度 进入 百度 指数 得到 
+网址 https / / index . baidu . com / 
+tpl = trend & word = ElasticSearch + 如 下图 
+ElasticSearch vs Solr 总结 1 二者 安装 都 很简单 2 
+Solr 利用 Zookeeper 进行 分布式 管理 而 Elasticsearch 自身 带有 
+分布式 协调 管理 功能 3 Solr 支持 更多 格式 的 
+数据 比如 JSON XML CSV 而 Elasticsearch 仅 支持 json 
+文件格式 4 Solr 官方 提供 的 功能 更多 而 Elasticsearch 
+本身 更 注重 于 核心 功能 高级/b 功能/n 多/m 有/v 
+第三/m 方/n 插件/n 提供/v 5 Solr 在 传统 的 搜索 
+应用 中 表现 好于 Elasticsearch 但在 处理 实时 搜索 应用 
+时 效率 明显 低于 Elasticsearch 6 Solr 是 传统 搜索 
+应用 的 有力 解决方案 但 Elasticsearch 更 适用 于 新兴 
+的 实时 搜索 应用 欢迎 大家 加入 我 的 4个 
+微信 公众 号       大 数据 躺过 的 
+坑         Java 从 入门 到 架构师 
+      人工智能 躺过 的 坑       
+  Java 全栈/nr 大联盟 同时 大家 可以 关注 我 的 
+个人 博客 http / / www . cnblogs . com 
+/ zlslch /       和 /nr       
+http / / www . cnblogs . com / lchzls 
+/           http / / www 
+. cnblogs . com / sunnyDream / 详情 请见 http 
+/ / www . cnblogs . com / zlslch / 
+p / 7473861 . html 人生 苦短 我 愿 分享 
+本 公众 号 将 秉持 活到老 学到老 学习 无休止 的 
+交流 分享 开源 精神 汇聚/v 于/p 互联网/n 和/c 个人/n 学习/v 
+工作/vn 的/uj 精华/nz 干货/n 知识/v 一切 来 于 互联网 反馈 
+回 互联网 目前 研究 领域 大 数据 机器学习 深度 学习 
+人工智能 数据挖掘 数据分析 语言 涉及 Java Scala Python Shell Linux 
+等 同时 还 涉及 平常 所 使用 的 手机 电脑 
+和 互联 网上 的 使用 技巧 问题 和 实用软件 只要 
+你 一直 关注 和 呆在 群 里 每天/r 必须/d 有/v 
+收获/v 对应/vn 本/r 平台/n 的/uj 讨论/v 和/c 答疑/v QQ/w 群/n 
+大 数据 和 人工智能 躺过 的 坑 总 群 161156071 
+打开 百度 App 扫 码 精彩文章 每天 更新 欢迎 关注 
+我 的 百家 号   九月 哥 快讯 

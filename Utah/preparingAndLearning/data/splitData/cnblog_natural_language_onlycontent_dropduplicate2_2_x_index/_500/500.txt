@@ -1,0 +1,693 @@
+序号
+注：黑体字为与我学习研究相关会议
+会议名称
+会议介绍
+代表领域
+1
+ACMSIGCOMM: ACM Conf on Communication Architectures, Protocols& Apps
+ACM的旗舰会议之一，也是网络领域顶级学术会议，内容侧重于有线网络，每年举办一次，录用率约为10%左右。
+网络通信领域
+2
+IEEEINFOCOM: The Conference on ComputerCommunications
+IEEE计算机和通信分会联合年会，由IEEE计算机通信技术委员会和IEEE通信协会联合举办，是信息通信领域规模最大的顶尖国际学术会议，录用率约为16%左右。这个每年一度的会议的主要议题是计算机通信，重点是流量管理和协议。
+网络通信领域
+3
+IEEEInternational conference on communications
+IEEE国际通信大会，是IEEE通信学会的两大旗舰会议之一。每年举办一次，录用率约为30%左右。
+网络通信领域
+4
+IEEEGlobecom: Global Telecommunications Conference
+IEEE全球电信会议，IEEE通信学会的两大旗舰会议之一。覆盖包括语音、数据、图像和多媒体通信等热点问题的技术和其它活动。GLOBECOM每年一次，一般都在十一月举行，录用率约为30%-40%。
+网络通信领域
+5
+IEEE ITC:International Test Conference
+创始于1970年，是测试领域顶级学术会议，对工业界影响巨大。每年举办一次，近年参会人员规模达到数千人。
+网络通信领域
+6
+IEEE TheInternational Conference on Dependable Systems andNetworks
+IEEE可靠系统和网络会议，是IEEE容错计算技术委员会主办的最重要的国际会议，也是可靠系统和网络领域历史最悠久，地位非常高的学术会议。
+网络通信领域
+7
+ACMMobiCom: International Conference on Mobile Computing andNetworking
+无线网络领域顶级会议，录用率约为10%，每年举行一次。
+无线网络领域
+8
+ACM SIGMETRICS:Conference on Measurement and Modeling of ComputerSystems
+偏重于建模和测量的重要国际会议，内容覆盖系统和网络，录用率为10%左右。
+网络通信领域
+9
+MOBIHOC:ACM
+International
+Symposium
+onMobile
+Ad
+Hoc
+Networking
+and
+Computing
+无线网络领域新兴的重要国际会议，内容侧重于adhoc网络。
+无线网络领域
+10
+IEEE InternationalConference on Distributed Computing Systems
+由IEEE主办，开始于1979年，从84年起每年举办一次。这是分布式计算系统领域中历史最悠久的会议。录用率约为18%左右。
+分布式计算系统领域
+11
+IMC: InternetMeasurement Conference
+网络测量领域顶级的专业会议
+网络测量
+12
+ICCV: IEEEInternational Conference on Computer Vision
+领域顶级国际会议，录取率20%左右，2年一次，中国大陆每年论文数不超过10篇
+计算机视觉，模式识别，多媒体计算
+13
+CVPR: IEEE Confon Comp Vision and Pattern Recognition
+领域顶级国际会议，录取率25%左右，每年一次，中国大陆每年论文数不超过20篇
+模式识别，计算机视觉，多媒体计算
+14
+ECCV: EuropeanConference on Computer Vision
+领域顶级国际会议，录取率25%左右，2年一次，中国大陆每年论文数不超过20篇
+模式识别，计算机视觉，多媒体计算
+15
+DCC: DataCompression Conference
+领域顶级国际会议，录取率很低，每年一次，目前完全国内论文极少
+数据压缩
+16
+ICML:International Conference on Machine Learning
+领域顶级国际会议，录取率25%左右，2年一次，目前完全国内论文很少
+机器学习，模式识别
+17
+NIPS: NeuralInformation Processing Systems
+领域顶级国际会议，录取率20%左右，每年一次，目前完全国内论文极少（不超过5篇）
+神经计算，机器学习
+18
+ACM MM: ACMMultimedia Conference
+领域顶级国际会议，全文的录取率极低，但Poster比较容易
+多媒体技术，数据压缩
+19
+IEEE ICIP:International conference on Image Processing
+图像处理领域最具影响力国际会议，一年一次
+图像处理
+20
+IEEE ICME:International Conference on Multimedia and Expo
+多媒体领域重要国际会议，一年一次
+多媒体技术
+21
+IEEE VR:IEEEVirtual Reality
+IEEE虚拟现实会议，每年一次
+虚拟现实领域
+22
+ACM VRST:ACMVirtual Reality Software and Technology
+虚拟现实软件与技术ACM年会，一年一次
+虚拟现实领域
+23
+CGI:ComputerGraphics International
+国际图形学会议，一年一次
+图形学领域
+24
+ACL: TheAssociation for Computational Linguistics
+国际计算语言学会年会，是本领域最权威的国际学术会议之一，每年举办一次
+计算语言学，自然语言处理
+25
+COLING:International Conference on Computational Linguistics
+计算语言学会议，也是本领域最权威的国际学术会议之一，两年一次
+计算语言学，自然语言处理
+26
+IEEE ICASSP:International Conference on Acoustics, Speech and SignalProcessing
+是语音和声学信号处理领域最权威的国际学术会议之一，也是图像、视频信号处理领域的权威会议之一，每年举办一次
+信号处理
+27
+IJCNLP:International Joint Conference on Natural LanguageProcessing
+自然语言处理亚洲联盟主办的国际会议，是自然语言处理领域亚洲区域最有影响的学术会议，基本是每年举办一次
+自然语言处理
+28
+IEEE/ACM DesignAutomation Conference
+顶级会议，在美国召开
+IC设计领域
+29
+IEEE VLSI TestSymposium
+一级会议，在美国召开
+测试领域
+30
+IEEE/ACM Design,Automation and Test in Europe
+一级会议，在欧洲召开
+设计和测试领域
+31
+IEEE Asian TestSymposium
+一级会议，在亚洲召开
+测试领域
+32
+Ubicomp:International Conference on UbiquitousComputing
+国际普适计算年会，本领域最权威的学术会议之一，每年一次
+普适计算
+33
+PerCom:IEEE International Conference on Pervasive Computing andCommunications
+本领域最权威的学术会议之一，每年一次
+普适计算
+34
+EUC: TheIFIP International Conference on Embedded And UbiquitousComputing
+普适计算与嵌入式系统峰会，一年一次，不仅仅是学术讨论，也有工业界和政府代表参加
+普适计算与嵌入式系统
+35
+ICPS:IEEE International Conference on PervasiveServices
+普适计算与服务会议，一年一次
+普适计算
+36
+SenSys，ACM Conference on EmbeddedNEtworked Sensor Systems
+ACM主办传感器网络最有影响力的会议，由SIGCOMM, SIGMOBILE,SIGARCH, SIGOPS, SIGMETRICS, SIGBED等ACM的Special Interest Groups提供学术资助。从2003年开始，已经连续举办4届：03年收录24篇；04年收录21篇；05收录21篇文章；06年24篇收录文章。目前只能查到2004年的录用率，为14.5％。
+传感器网络
+37
+SECON,IEEE Communication Society Conference on Sensor and Ad HocCOmmunications and Networks,
+由IEEE发起的会议，基本每年举行一次。近三年的录取率（04，05，06）分别为18.1%27.2%和25.9％
+传感器网络
+38
+MASS,IEEE International Conference on Mobile Ad hoc and SensorSystems
+由IEEE、DARPA、 NSF和Army ResearchOffice 发起的国际会议，基本每年举行一次。2006年录用率24%
+传感器网络
+39
+TheInternational Conference for High Performance Computing andCommunication
+每年11月举行（始于1989年），Conference on High Performance Networking and Computing ,puter.org/comp/proceedings/ase/2002/1736/00/1736toc.htm">ASE - IEEE International Conference on Automated SoftwareEngineering
+关注软件开发自动化的顶级会议。前身为KBSE(Knowledge-BasedSoftware Engineering)，始于1997年。
+编译技术
+103
+CGO - International Symposium on Code Generation andOptimization
+CGO是由IEEE CS和ACM
+SIGMICRO主办的国际会议，每年一次。主要关注代码生成和优化等方面的研究，在国内外学术界很高的影响。接收率30％左右。
+编译技术
+104
+CLUSTER - IEEE International Conference on ClusterComputing
+CLUSTER是由IEEE主办的国际会议，每年一次。主要关注群集计算方面的研究，在国内外学术界很高的影响。
+编译技术
+105
+DATE - Design, Automation, and Test inEurope
+关注Design methodologies, CAD languages,
+algorithms and tools, Testing of electronic circuits and systems,and Designer experiences的国际会议
+编译技术
+106
+EURO-PDP - Euromicro Conference on Parallel, Distributedand Network-Based Processing
+EUROMICRO的一个workshop，关注并行和分布式计算。
+编译技术
+107
+HPCA - International Symposium on High-PerformanceComputer Architecture
+HPCA是由IEEE主办的国际会议，每年一次。主要关注高性能计算方面的研究，在国内外学术界较高的影响。
+编译技术
+108
+HPCS - Annual International Symposium on High PerformanceComputing Systems and Applications
+IEEE主办，每年在加拿大的大学召开。但参会者不局限于加拿大的研究人员。其内容涵盖了HPC的各个领域
+编译技术
+109
+ICDCS - International Conference on Distributed ComputingSystems
+IEEE主办，涉及分布式计算方面各个领域的权威会议。起始于1979年。
+编译技术
+110
+ICPADS - International Conference on Parallel andDistributed Systems
+IEEE主办，关注并行和分布式系统的国际会议
+编译技术
+111
+IISWC - IEEEInternational Symposium on Workload Characterization
+关注characterization of computingsystem workload的国际会议。涵盖applications, middleware,system的behavior。Benchmark的构造和分析，以及程序行为的modeling等领域。
+编译技术
+112
+IPDPS - International Parallel and Distributed ProcessingSymposium
+IEEE主办，并行和分布式处理相关的国际会议。包括并行处理的算法，应用，体系结构，以及和并行处理相关的软件如语言，编译器，运行时系统等。
+编译技术
+113
+ISPASS - IEEEInternational Symposium on Performance Analysis of Systems andSoftware
+IEEE主办，关注计算机软硬件设计中的性能分析。
+编译技术
+114
+PACT - International Conference on Parallel Architecturesand Compilation Techniques
+PACT是由IEEE CS、ACMSIGARCH和IFIP主办的国际会议，每年一次。主要关注并行体系结构、针对并行计算机系统的编译等方面的研究，在国内外学术界很高的影响。
+编译技术
+115
+RTSS - IEEE Real-Time SystemsSymposium
+实时系统研究的顶级会议，IEEE主办，已经举行了27届。
+编译技术
+116
+RTAS - IEEE Real-Time and Embedded Technology andApplications Symposium
+关注实时和嵌入式计算的基础结构，理论，systemsupport的国际会议。
+编译技术
+117
+SC - IEEE/ACM SC Conference
+SuperComputing的简称。关注的领域为HPC，networking，storage and analysis。ACM和IEEE合办。
+编译技术
+118
+LCPC -International Workshop on Languages and Compilers for ParallelComputing
+始于1988年，涉及编程语言的各个方面，包括compilertechniques, run-time environments, and compiler-related performanceevaluation for parallel and high-performancecomputing。
+编译技术
+119
+CC: InternationalConference on Compiler Construction
+关注的领域涉及程序的各个方面，包括编译器构造，run-time技术，prgrammingtools, 新编程语言。也包括一些特别的领域如parallel,ditributed, embedded, mobile, low power code,hardware等。是ETAPS的member conference。影响因子0.83
+编译技术
+120
+HiPEAC -International Conference on High Performance Embedded Architectures& Compilers
+关注嵌入式系统的发展，包括处理器设计，编译优化等。
+编译技术
+121
+ECOOP - EuropeanConference on Object-Oriented Programming
+关注object technology的各个领域。其中也包括一些虽然不直接和ObjectOriented相关，但同样具有启发性的工作。
+编译技术
+122
+ESOP - EuropeanSymposium on Programming
+ETAPS的member conference，是欧洲Software Science方向的重要会议。涵盖了程序语言的设计和实现，编程模型的研究，程序的自动生成和分析等方向。
+编译技术
+123
+Euro-Par -European Conference on Parallel Computing
+关注并行计算的诸多方面的国际会议。粗略可分为hardware,software,algorithms and application for parallelcomputing几个部分。
+124
+SAS -International Static Analysis Symposium
+关注程序的静态分析的权威会议。
+编译技术
+125
+CAV - ComputerAided Verification
+Rank1的国际会议，关注计算机辅助形式验证，涵盖从theoreticalresults到concrete applications的诸多方面，尤其是practial verification tools and the algorithmsand techniques that needed for theirimplementation。影响因子1.88。
+编译技术
+126
+FASE -Fundamental Approaches to Software Engineering
+ETAPS的member conference，主要关注Software Science，影响因子0.91。
+编译技术
+127
+TACAS - Tools andAlgorithms for the Construction and Analysis of Systems
+ETAPS的member conference，关注的领域包括formal methods, software and hardwareverification, static analysis, programming languages, softwareengineering, real-time systems, and communicationsprotocols。影响因子1.24
+编译技术
+128
+VMCAI -Verification, Model Checking and Abstract Interpretation
+Rank2的国际会议。关注的领域包括Verification, Model Checking, and AbstractInterpretation, facilitating interaction, cross-fertilization, andadvancement of hybrid methods that combine the threeareas。
+编译技术
+129
+ACL: TheAssociation for Computational Linguistics
+计算语言学/自然语言处理方面最好的会议, ACL (Association of ComputationalLinguistics) 主办, 每年开。
+人工智能计算语言学
+130
+ACM SIGIR: The ACM Conference on Research and Development inInformation Retrieval
+信息检索方面最好的会议, ACM 主办, 每年开。19％左右
+信息检索技术
+131
+ACM SIGKDD: The ACM Conference on Knowledge Discovery inDatabases and Data Mining
+数据挖掘方面最好的会议, ACM 主办, 每年开。18％左右
+132
+WWW: The ACM International World Wide Web Conference
+应用和媒体领域顶级国际会议
+万维网
+133
+ACM SIGMOD: ACM SIGMOD Conf on Management of Data
+数据库领域顶级国际
+数据管理
+134
+CIKM: The ACM Conference on Information and KnowledgeManagement
+数据库领域知名国际会议
+数据管理
+135
+COLING: International Conference on ComputationalLinguistics
+计算语言学知名国际会议
+计算语言学
+136
+ICML: International Conference on Machine Learning
+领域顶级国际会议，录取率25%左右，2年一次，目前完全国内论文很少
+机器学习，模式识别
+137
+IEEE ICDM: International Conference on Data Mining
+数据挖掘领域顶级国际会议
+138
+IJCAI: International Joint Conference on ArtificialIntelligence
+人工智能领域顶级国际会议，论文接受率18％左右
+人工智能
+139
+VLDB: The ACM International Conference on Very Large DataBases
+数据库领域顶级国际
+数据库
+140
+SIGGRAPH: ACM SIGGRAPH Conference
+计算机图形学顶级国际会议，ACM主办，每年一次，几万人参加会议，论文录用率小于20％
+计算机图形学
+141
+EUROGRAPHICS： The AnnualConference of the European Association for Computer Graphics
+欧洲举办的国际图形学会议，面向世界。接受率现在也有差不多20%
+计算机图形学
+142
+AAAI: AmericanAssociation for Artificial Intelligence
+美国人工智能学会AAAI的年会，使该领域的顶级会议
+人工智能
+143
+ACM Conference　on　Computer and　Communications Security
+ACM通信和计算健全领域顶级学术会议
+信息安全
+144
+ACM SIGCOMM: SpecialInterest Group on Data Communications
+数据通信
+145
+ACM SIGIR: The ACM Conference on Research and Development inInformation Retrieval
+信息检索领域的重要会议
+信息检索
+146
+ACM SIGKDD: The ACM Conference on Knowledge Discovery inDatabases and Data Mining
+ACM旗舰会议之一，是数据库与知识管理的顶级学术会议。每年举办一次。
+通信与网络
+147
+ACM SIGMETRICS: Conference on Measurement and Modeling ofComputer Systems
+ACM性能建模与评价领域顶级学术会议
+通信与网络
+148
+ACM SIGMOD: ACM SIGMOD Conf on Management of Data
+数据库与数据管理最顶级的学术会议，数据管理的主要发展都在这个会上有描述。
+数据管理
+149
+ASPLOS: Architectural Support for Programming Languages andOperating Systems
+编程语言和操作系统国际会议，涉及硬件体系结构、编译、操作系统、网格、应用的领域。
+体系结构
+150
+CCGrid : IEEE/ACM International Symposium on Cluster Computingand the Grid
+网格计算国际会议，网格平台、中间件
+151
+CIKM: The ACM Conference on Information and KnowledgeManagement
+信息检索领域的会议，录用率为15%
+信息检索
+152
+CLUSTER - IEEE International Conference on Cluster Computing
+集群计算国际会议，涉及中间件、网格算法及应用、资源管理、集成等。
+集群计算
+153
+CPM: Combinatorial Pattern Matching Symposium
+组合模式匹配年会，是字符串匹配、模式匹配较好的会议。
+模式匹配
+154
+FAST4: Third USENIX Conference on File and StorageTechnologies,
+USENIX旗下关于文件和存储系统的顶级会议，会议于2002年召开第一届，召开地点都在美国加州。只有最好的工作能发表在FAST上。目前尚无大陆研究机构命中。
+文件与存储
+155
+Grid : IEEE/ACM International Workshop on Grid Computing
+网格计算国际会议，涉及计算模型、大规模数据访问和管理、资源管理和调度等。
+网格计算
+156
+HPC: IEEE International Conference for High PerformanceComputing
+157
+HPDC: International Symposium on High Performance DistributedComputing
+高性能分布计算国际会议，涉及告诉网格、分布计算、并行处理、大规模存储通信等领域。
+高性能计算
+158
+ICDCS: IEEE International Conference on Distributed ComputingSystems
+IEEETCDP发起的关于分布式处理领域的会议，最为老牌强会，ICDLS举办了26届，录用率为15%。
+分布式计算
+159
+ICML: International Conference on Machine Learning
+机器学习领域中的顶级会议
+机器学习
+160
+ICWS: IEEE International Conference on Web Services
+Web服务国际会议，面向服务标准及规范、服务应用、语义服务等方面。
+Web服务
+161
+IEEE CSB: Computer Society Bioinformatics
+162
+IEEE ICDM: International Conference on Data Mining
+数据挖掘领域的著名会议，率用率为14%。
+数据挖掘
+163
+IEEE ICNP: International Conference on NetworkProtocols
+IEEE 网络通信领域顶级学术会议，录用率在10%左右。
+网络
+164
+IEEE ICON: IEEE International Conference onNetworks
+165
+IEEE INFOCOM: conference on computercommunications
+IEEE网络通信领域著名会议，领域广泛。
+网络
+166
+IEEE IPCCC: International Performance Computing andCommunications Conference
+IEEE性能领域著名学术会议，主要关注性能评价。
+网络性能
+167
+IEEE SPIRE: The IEEE International Symposium on StringProcessing and Information Retrieval
+字符串处理与信息检索的年会，字符串匹配的主要进展都可以在这个会议上找到。
+字符串处理信息检索
+168
+IJCAI: International Joint Conference on AI
+人工智能领域的顶级会议。
+人工智能
+169
+IMC:ACM-SIGCOMM/USENIX Internet MeasurementConference
+IMC: ACM-SIGCOMM/USENIX Internet MeasurementConference
+ACMSIGCOMM网络特征领域重要会议，主要涉及网络流特征。
+170
+International Symposium on High Performance ComputerArchitecture(HPCA)
+服务计算
+171
+IPDPS: IEEE International Parallel and Distributed ProcessingSymposium
+IEEETCPD牵头，IEEETCCA、TCDP与ACMSIGARH合办的关于并行处理与分布式处理会。录用率30%，会议的优秀论文可能发表于JDPC杂志上。
+并行计算分布式计算
+172
+ISMB: International conference on Intelligent Systemsfor Molecular Biology
+无线
+173
+MobiCom: ACM/IEEE Conference on Mobile Computing andNetworking
+始于1995，无线、移动计算方面比较有历史和重要的会议。
+无线
+174
+MobiSys: The International Conference on Mobile Systems,Applications, and Services
+无线方面，2006年第4名。
+无线
+175
+OSDI: USENIX Symposium on Operating Systems Design andImplementation
+USENIX操作系统领域重要会议，侧重操作系统各方面的新型技术。
+操作系统
+176
+PAKDD: Pacific-Asia Conference on Knowledge Discovery and DataMining
+177
+PDCAT: International Conference on Parallel and DistributedComputing, Applications and Technologies
+关注并行于分布式计算领域众多问题的国际性会议，主要是亚太地区。
+并行计算分布式计算
+178
+PKDD: Conference on Principles and Practice of KnowledgeDiscovery in Databases
+数据挖掘领域的重要会议，录用率为14%。
+数据挖掘
+179
+SCC: IEEE International Conference on Services Computing
+服务计算国际会议，侧重服务模型、发现体系结构、服务安全、服务质量、服务语义方面的研究。
+服务计算
+180
+SDM: SIAM International Conference on Data Mining
+数据挖掘领域的重要会议，录用率为14%
+数据挖据
+181
+SOSE: IEEE International Workshop on Service-Oriented SystemEngineering
+182
+USENIX Sec: USENIX Security Symposium
+USENIX安全领域重要会议，侧重安全技术。
+安全
+183
+USENIX/ACM Symposium on Networked Systems Design andImplementation (NSDI)
+USENIX网络领域重要会议，设计网络涉及各方面内容。
+网络
+184
+VLDB: The ACMInternational Conference on Very Large Data Bases
+数据管理
+185
+WWW: The ACMInternational World Wide Web Conference
+ACM旗下关于互联网方面的重要会议，从Web服务器到互联网语义等研究问题一一包含其中。15%录用率。
+Internet
+186
+RAID InternationalSymposium on Recent Advances in Intrusion Detection
+数据库顶级国际会议
+187
+IJCAI: InternationalJoint Conference on Artificial Intelligence
+人工智能顶级国际会议
+人工智能
+188
+VLDB: The ACMInternational Conference on Very Large Data Bases
+数据库顶级国际会议
+数据库
+189
+ICML: InternationalConference on Machine Learning
+机器学习顶级国际会议
+机器学习
+190
+PRICAI: Pacific RimInternational Conference on Artificial Intelligence
+亚太人工智能国际会议
+人工智能
+191
+IFIP ICIIP: IFIPInternational Conference on Intelligent InformationProcessing
+IFIP智能信息处理国际会议
+智能信息处理
+192
+NIPS: NeuralInformation Processing Systems
+神经信息处理领域顶级国际会议
+神经计算，机器学习
+193
+ISCA: InternationalSymposium on Computer Architecture
+体系结构领域的顶级会议
+微处理器设计
+194
+InternationalSymposium on Microarchitecture
+体系结构领域的顶级会议
+微处理器设计
+195
+HPCA：InternationalSymposium on High Performance Computer Architecture
+体系结构领域的顶级会议
+微处理器设计
+196
+APCSAC: Asia-PacificComputer Systems ArchitectureConference
+体系结构方面的重要会议
+微处理器设计
+197
+ISLPED:International Symposium on Low Power Electronics andDesign
+低功耗设计的重要会议
+微处理器设计
+198
+OSDI: OperationSystem Design &Implementation
+操作系统方面的重要会议
+微处理器设计
+199
+ASPLOS: ArchitectureSupport for Programming Languages andOperation
+体系结构方面的顶尖会议
+微处理器设计
+200
+ICCD: IEEEInternational Conference on Computer Design
+体系结构方面的顶尖会议
+微处理器设计
+201
+DAC: DesignAutomation Conference
+设计自动化领域的顶级会议
+微处理器设计
+202
+IEEE/ACMInternational Conference on Computer Aided Design(ICCAD)
+集成电路设计自动化方面的顶尖会议
+微处理器设计
+203
+ASP-DAC: Asia andSouth Pacific Design AutomationConference
+设计自动化领域的重要会议
+微处理器设计
+204
+ISSCC: IEEEInternational Solid-State Circuits Conference
+设计自动化领域的重要会议
+微处理器设计
+205
+CICC: CustomIntegrated Circuits Conference
+集成电路设计方面的顶尖会议（公认排名第二）
+微处理器设计
+206
+ESSCIRC: EuropeanConference on Solid-State Circuits
+集成电路设计方面的顶尖会议
+微处理器设计
+207
+Symposium on VLSICircuits
+集成电路设计方面的顶尖会议
+微处理器设计
+208
+IEEE InternationalASIC/SOC Conference
+集成电路设计方面的重要会议
+微处理器设计
+209
+Symposium on VLSITechnology
+集成电路设计方面的重要会议
+微处理器设计
+210
+ASSCC: AsianConference on Solid-State Circuits
+集成电路领域重要会议
+微处理器设计
+211
+MWSCAS: MidwestSymposium on Circuits and Systems
+集成电路领域重要会议
+微处理器设计
+212
+ICECS: IEEEInternational Conference on Electronics, Circuits andSystems：
+集成电路领域重要会议
+微处理器设计
+213
+ISCAS: InternationalSymposium Circuit and System
+电路与系统方面的重要会议
+微处理器设计
+214
+RFIC: IEEE Symposiumon Radio Frequency Integrated Circuits
+射频集成电路领域顶尖会议
+微处理器设计
+215
+ACM RECOMB: Int.Conference on Research in Computational MolecularBiology
+RECOMB创办于1997年，每年举办一次，由ACM和/或国际计算生物学协会(ISCB)主办，强调计算生物学的数学和计算方面，近年录取率在20%左右。
+计算生物学
+216
+IEEE CSB: ComputerSociety Bioinformatics
+CSB创办于2002年，每年举办一次，2005年以前由IEEE协会主办，2006年开始改由生命科学协会(LSS)主办。
+计算生物学
+217
+InternationalConference of the IEEE Engineering in Medicine and BiologySociety （EMBC）
+生物信息学与计算生物学国际研讨会
+计算生物学
+218
+PSB: PacificSymposium on Biocomputing
+PSB创办于1996年，每年举办一次，从属于国际计算生物学协会(ISCB)，由美国的研究机构组织举办。
+计算生物学
+219
+WABI:Workshop onAlgorithms in Bioinformatics
+WABI创办于2000年，每年举办一次，由欧洲理论计算机协会(EATCS)和国际计算生物学协会(ISCB)主办，强调生物信息学的算法方面。
+计算生物学
+220
+CSB: IEEEComputational Systems Bioinformatics Conference
+CSB创办于2002年，每年举办一次，2005年以前由IEEE协会主办，2006年开始改由生命科学协会(LSS)主办
+计算生物学
+221
+ISMB：Annual International Conferenceon Intelligent Systems for Molecular Biology
+ISMB创办于1993年，每年举办一次，由国际计算生物学协会(ISCB)主办，在生物信息学领域影响最大，论文集通常作为Bioinformatics杂志的专刊发表，近年来录取率为15%左右。
+生物信息
+222
+ECCB：European Conference onComputational Biology
+ECCB创办于2002年，每年举办一次，由国际计算生物学协会(ISCB)主办，有时与ISMB联合举办，论文集通常作为Bioinformatics杂志的专刊发表，近年录取率在20%左右。
+生物信息
+223
+APBC：Asia Pacific BioinformaticsConference
+APBC创办于2003年，每年举办一次，由亚太国家的研究机构组织举办，近年录取率在35%左右。
+生物信息
+224
+COCOON：Annual International Computingand Combinatorics Conference
+COCOON创办于1995年，每年举办一次，会议范畴为计算理论、算法、组合优化等，包括生物信息学方向，近年录取率在40%左右。
+生物信息
+225
+CPM：Annual Symposium onCombinatorial Pattern Matching
+CPM创办于1990年，每年举办一次，会议以串、树和图等复杂模式的搜索和匹配问题为主题，包括生物信息学方向，近年录取率在45%左右。
+生物信息
+226
+EMBC：IEEE International Conferenceof the Engineering in Medicine and Biology Society
+EMBC创办于1979年，每年举办一次，从属于IEEE医学与生物工程协会，会议内容覆盖范围很广，每年接收的论文数以千计。
+生物信息
+227
+GeospatialInformation and Technology Association（GITA）AnnualConference
+地球空间信息与技术协会年会
+遥感与空间信息处理
+228
+InternationalGeoscience and Remote Sensing Symposium （IGRSS）
+地球科学与遥感国际会议
+遥感与空间信息处理
+229
+InternationalSociety for Photogrammetry and Remote Sensing （ISPRS）TechnicalCommission Symposium
+国际摄影测量与遥感学会专业委员会会议
+遥感与空间信息处理
+230
+InternationalConference on Geoinformatics
+地球信息国际会议
+遥感与空间信息处理
+231
+IEEE SKG(Semantics, Knowledge and Grid)
+由计算所发起的IEEE国际会议，每年有100人参加。
+知识网格
+232
+WWW: The ACMInternational World Wide Web Conference
+Internet领域顶级国际会议
+Internet
+233
+InternationalSemantic Web Conference
+SemanticWeb领域顶级会议，录用率17%
+SemanticWeb
+234
+ACM SIGMOD: ACMSIGMOD Conf on Management of Data
+ACM的旗舰会议之一，也是数据库领域顶级学术会议，内容侧重于数据管理。
+数据管理
+235
+ACM PODSConference
+ACM的旗舰会议之一，也是数据库领域顶级学术会议，内容侧重于数据管理基本理论。
+数据管理
+236
+VLDB: The ACMInternational Conference on Very Large Data Bases
+数据库顶级国际会议
+数据管理
+237
+IEEE ICDE -International Conference on Data Engineering
+数据库顶级国际会议
+数据管理

@@ -1,0 +1,26 @@
+环境：python2.7.10
+首先安装pip
+在https://pip.pypa.io/en/stable/installing/ 下载get-pip.py
+然后执行 python get-pip.py 将自动安装pip
+nltk是python的一个扩展包，提供自然语言处理工具集
+安装nltk
+sudo pip install -U nltk
+import nltk
+然后下载语料库
+nltk.download()
+弹出窗口如下，按需下载，我选择的是book
+、
+下载完成查看目录：
+其中corpora为语料库，也可以下载自己需要的语料库：http://www.nltk.org/nltk_data/
+corpora中有好多文章和字典，如古腾堡，路透社等文章，wordnet是面向语义的词典，names里包含了好多名字，stopwords包含了可忽略的语法上的高频词汇，words包含平时常用的单词可用来做拼写检查，
+还有city_database，webtext，unicode_samples等语料。
+使用时需要import，如：
+from nltk.corpus import gutenberg
+from nltk.corpus import stopwords
+wordnet语料库：
+wordnet是普林斯顿大学创建的语义词典，特点是其中包含了大量的单词间的联系，可以看作是一个巨大的词汇网络。
+词与词之间的关系可以为同义，反义，上下位（水果－苹果），整体部分（汽车－轮胎）。建立关系是大脑学习的首要过程，知识的脉络必定可达，孤立点会被遗忘。
+引入wordnet
+from nltk.corpus import wordnet as wn
+wordnet API：http://www.nltk.org/howto/wordnet.html
+synsets()用来查询一个单词，返回结果是Synset数组，一个Synset由 单词－词性－序号 组成：

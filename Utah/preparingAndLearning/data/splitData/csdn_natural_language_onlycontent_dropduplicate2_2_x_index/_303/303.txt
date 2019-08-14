@@ -1,0 +1,25 @@
+目录
+Google BERT自然语言处理框架
+Google BERT都能解决哪些问题
+Google BERT自然语言处理框架
+2018之秋，一篇《谷歌新发布的BERT模型突破11项纪录》的文章一出来，重燃大家对人工智能自然语言处理领域的热情。借此热点，在这里整理一下自然语言处理最新发展状况。首先需要注明的一点的是，严格意义上来说，BERT模型更加针对的是自然语言处理（NLP）中的自然语言理解（NLU）分支的问题，而自然语言处理（NLP）是一个更加宽泛的研究领域，包含更多的算法，模型和应用场景。
+Google BERT都能解决哪些问题
+此次所谓Google的BERT(Bidirectional Encoder Representations from Transformers)模型号称打破11项纪录，那么我们就顺藤摸瓜，看看能引起Google注意的这11项挑战，由此找到NLU研究领域大家所关注的重点。
+在《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》【原文地址】中，作者将BERT模型应用于以下实验中：
+GLUE (General Language Understanding Evaluation) 数据集【数据集地址】。如同GLUE的创建者在论文【论文地址】中介绍到的，GLUE实际上是为了能够标准化的和综合性的评估NLU（自然语言理解）算法和模型而构造出来的一套包含数据集，在线评估平台的工具，其中包含了以下九个数据集：
+单句分析类
+CoLA （Corpus of Linguistic Acceptability）【链接地址】 从23本语言学发表物中抽取的10657句话并就每句话是否从语法角度成立进行了标注。整个数据集提供了9594条句子作为训练集，以及1063条句子作为测试集。以下是该数据集中的一些样本条目。
+SST-2（Stanford Sentiment Treebank）【链接地址】摘取了电影评论并标注了是正面还是负面评论以用于情感分析。
+相似度分析和转述类
+MRPC（Microsoft Research Paraphrase Corpus）【链接地址】收录了5800对句子并标注每对句子是否在语义上等价。
+QQP（Quora Question Pairs）【链接地址】收集了Quora网站上的问题和答案，并就两个问题是否在语义上等价进行了标注。
+STS-B（Semantic Textual Similarity Benchmark）【链接地址】收集了来自于图片注释，新闻头条，社区论坛等不同来源的8628对句子，并就每对句子的相似度给与1分到5分的相似度评分标注。
+推断类
+MNLI（Multi-Genre Natural Language Inference Corpus）【链接地址】包含了433k对句子，每对句子分别包含premise和hypothesis，并标注了两者间是entail（正向关联），controdict（相互矛盾），或是neutral（中立）的关系标签。
+QNLI（Question-answering NLI）是基于SQuAD（Stanford Question Answering Dataset）【链接地址】构建的数据集。此数据集中收集了问题和文字，并标注了文字中是否包含与问题匹配的答案。
+RTE（Recognizing Textual Entailment）来源于年度的RTE竞赛，RTE-1，RTE-2，RTE-3，RTE-5【链接地址】。数据集收集了句子对，每对句子分为premise和hypothesis并标注两者间是否为entailment关系。
+WNLI （Winograd NLI）是基于WSC（Winograd Schema Challenge）【链接地址】中的数据构建的数据集。原始数据是用来训练和测试阅读理解模型、算法的，每个句子中包含有一个代词，算法、模型需要根据上下文获知此代词指代的事句子中的哪个名词。GLUE的作者基于原数据集将数据改造成句子对的形式，一是保留原始句子，二是将原始句子中的代词用其具体指代的名词替换，并且针对每对句子标注出两者间是否为entailment关系。
+SQuAD（Standford Question Answering Dataset）【链接地址】为斯坦福大学构建的阅读理解数据集。数据集的第一个版本SQuAD1.1中【文章地址】提供了100k问题和回答配对。每个问题的答案包含于一段维基百科的文字。
+为了进一步接近现实的阅读理解场景，2018年发布的QUaAD 2.0【文章地址】中额外增加了50k条新增的问题，并且问题不一定有答案。这要求模型和算法不但能找出答案，并且在没有答案的时候能给出正确的判断，而非“凑”答案。而在Google公布其BERT算法性能的论文中，作者采用的仍然是SQuAD1.1版本的数据集。
+NER（Named Entity Recognition）【链接地址】包含200k单词并且每个被标注为：Person, Organization, Location, Miscellaneous, 或Other。
+SWAG（Situations With Adversarial Generations）【链接地址】包含113k完形填空的句子。

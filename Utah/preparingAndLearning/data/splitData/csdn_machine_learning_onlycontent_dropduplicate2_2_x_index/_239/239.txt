@@ -1,0 +1,16 @@
+周志华老师推荐机器学习书单
+前言
+前段时间周老师在我们的Advanced Machine Learning课程上，推荐了一些机器学习的书籍，这里大概整理一下。
+第一阶段
+入门级的书有两本。
+一本是CMU，ML系的Tom Mitchell所著的《Machine Learning》，这也是第一本机器学习的专门性教材。
+另一本就是周老师的《机器学习》
+这两本书任选一本即可。
+第二阶段
+进阶篇的两本
+ESL《(The Element of Statistical Learning)》
+PRML《(Patttern Recognition and Machine Learning)》，这本书对各学派融会贯通。
+第三阶段
+《Understanding Machine Learning》，这本书比较偏理论，难度也较大。喜欢理论性多一点的可以读读这本
+后记
+周老师课上说，把他的书看完，然后把书上的参考文献都读完，把他列的书单也都读了，再出去说上过他的课……0.0

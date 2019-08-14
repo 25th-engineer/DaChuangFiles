@@ -1,0 +1,97 @@
+自然语言处理中主题模型的发展
+强烈建议直接看论文，看一些博客对于入门并没有什么太大帮助。
+[1]徐戈,王厚峰. 自然语言处理中主题模型的发展[J]. 计算机学报,2011,08:1423-1436.
+摘要：
+主题——词项的概率分布
+主题模型——文档从词项空间转换到主题空间，降维表达
+主要内容：
+1.对LSI PLSI LDA等主题模型进行介绍比较
+2.LDA派生模型介绍
+3.对EM算法生成主题的词项概率分布和文档的主题概率分布进行分析
+1.引言
+主题可以看作是词项的概率分布，一篇文章使用bag of words进行表示，长度较长，映射到主题空间之后，由于通常主题数K远远小于词项的数目，因此可以通过主题模型进行降维。
+隐性语义索引LSI (latent semantic indexing)不是一个概率模型
+Deerwester, Scott, et al. "Indexing by latent semantic analysis." Journal of the American society for information science 41.6 (1990): 391.
+概率隐性语义索引pLSI真正意义上的主题模型
+Hofmann, Thomas. "Probabilistic latent semantic indexing." Proceedings of the 22nd annual international ACM SIGIR conference on Research and development in information retrieval. ACM, 1999.
+LDA(latent Dirichlet Allocation)Blei
+Blei, David M., Andrew Y. Ng, and Michael I. Jordan. "Latent dirichlet allocation." Journal of machine Learning research 3.Jan (2003): 993-1022.
+LSI - PLSI - LDA - 各种LDA
+2.主题模型的主要内容
+五大组成部分：输入、模型假设、表示、参数估计、新样本推测
+2.1主题模型的输入
+主题模型的输入是文档集合，由于交换性的假设，所以等价于term-document矩阵。
+term \ document
+document 1
+document 2
+document 3
+term 1
+1
+0
+2
+term 2
+0
+3
+1
+另一个输入是主题数目K,通常K是经验决定，最简单的方法是使用不同的K重复实验。
+评价指标：困惑度、语料似然值、分类正确率等估计K
+Blei, David M., Andrew Y. Ng, and Michael I. Jordan. "Latent dirichlet allocation." Journal of machine Learning research 3.Jan (2003): 993-1022. Griffiths, Thomas L., and Mark Steyvers. "Finding scientific topics." Proceedings of the National academy of Sciences 101.suppl 1 (2004): 5228-5235. Blei, David M. "Probabilistic topic models." Communications of the ACM 55.4 (2012): 77-84. CAO, Juan, et al. "A method of adaptively selecting best LDA model based on density." Chinese Journal of Computer 31 (2008): 1780-1787.
+非参数贝叶斯估计K
+Teh, Yee Whye, et al. "Hierarchical dirichlet processes." Journal of the american statistical association (2012). Shi, Jin, et al. "Text segmentation based on model LDA." Chinese Journal of Computers 31.10 (2008): 1865-1873.
+2.2主题模型中的基本假设
+bag of words假设，即文档内词的顺序与模型结果无关。
+但是在LDA的派生模型中，有的交换性会被打破
+2.3主题模型的表示
+分别是图模型和生成模型，注意其中有两个超参数
+α
+\alpha 和
+β
+\beta。
+2.4参数估计过程
+参数估计的结果是训练的最终结果。
+首先要选择优化的目标函数，通常就是整个语料的概率值。
+以LDA模型为例，根据图模型可以比较容易得到概率值的大小。（参看我的EM算法的文章）
+其实计算语料的概率就是计算整体的可能期望
+2.5新样本的推断
+其实新样本的推断就是将其映射到低维度的主题空间即可。可以用于信息检索中。
+3.期望最大化算法和参数估计
+（参看我的EM算法文章）
+期望最大化算法，对于隐变量通过概率模型寻找极大似然估计的一般方法。能够不断迭代，从而修改现有模型的参数。使用现有模型推断隐变量的后验概率分布，然后对于参数重新估计。
+不能保证全剧最优解，不过可以通过多次试验取得最好的结果。
+概率模型包括：1.隐变量集合Z 2.观测集合X 3.参数集合
+θ
+\theta
+目标：得到P(X|
+θ
+\theta)最大化时候的
+θ
+\theta
+EM算法过程：
+初始化
+θ
+\theta
+E步骤：使用当前
+θ
+\theta对于P(Z|X,
+θ
+\theta)进行估计
+M步骤：利用前一步的结果，最大化期望
+4.隐性语义索引
+隐性语义索引主要包含奇异值分解（SVD）和主成分分析（PCA）。
+4.1主成分分析
+4.2隐性语义索引
+隐性语义索引是通过奇异值分解构造新的隐性语义空间，即SVD分解。
+对于过于大的矩阵来说，可以通过EM算法来求得SVD分解的结果，其实SVD的U和V矩阵都可以看作是对于两个矩阵做了主成分分析，这两个矩阵的特征值和特征向量都可以通过EM算法计算出来。
+对于EM计算PCA,参见PRML。
+缺项矩阵：
+Roweis, Sam. "EM Algorithms for PCA and SPCA."
+5.概率隐性语义索引
+概率隐性语义索引也是从词项空间到主题空间的变换。
+但是pLSI是一个概率生成模型。而且选择了不同的优化目标函数。
+就是两张二维参数表，分别是p(w|z)和p(z|d)，可以理解为和LSI中的类似。U对应p(w|z) V对应p(d|z) ，而中间矩阵对应着z的概率分布。
+对应于EM算法，可以对应于本模型，即w，d为观测值，z是隐变量，p(w|z) p(z|d)为待估计的参数。
+pLSI模型和LSI的效果比较：
+Hofmann, Thomas. "Probabilistic latent semantic indexing." Proceedings of the 22nd annual international ACM SIGIR conference on Research and development in information retrieval. ACM, 1999. Hofmann, Thomas. "Unsupervised learning by probabilistic latent semantic analysis." Machine learning 42.1-2 (2001): 177-196.
+和pLSI等价的NMF（非负矩阵分解）
+Lee, Daniel D., and H. Sebastian Seung. "Learning the parts of objects by non-negative matrix factorization." Nature 401.6755 (1999): 788-791. Lee, Daniel D., and H. Sebastian Seung. "Algorithms for Non-negative Matrix Factorization."
+6.。。。从这里开始看不懂了，待我补完prml的概率部分再来看看

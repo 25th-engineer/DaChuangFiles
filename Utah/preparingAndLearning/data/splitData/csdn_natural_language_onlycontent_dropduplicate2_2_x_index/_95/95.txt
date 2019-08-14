@@ -1,0 +1,22 @@
+一想到每次被同学问到“你在做什么？”，我回答“自然语言处理。”，同学就会说“这么难的东西你也做？”，我就觉得，很多人觉得自然语言处理很难，其实是对自然语言处理的误解，至少入门没大家想象的那么难，其实自然语言处理不是难在算法复杂，而是语句的结构。因为不管是在商品评论或是社交平台上，人的发言。最近闲来无事，正好自己也在做一个微博话题情感分析的工具。所以准备将整个过程记录下来，以供想入门的同学参考。
+所有的处理都要在词性标注的文件上进行，所以要进行文本分析，首先要进行分词，现有的分词工具有不少。我自己用的是中科院开发的ICTCLAS，目前更新到2016版，可以在http://ictclas.nlpir.org/下载。下面讲一下如何来应用这个工具来进行分词。
+我平时写程序是用C/C++，所以在这里以C/C++为例。下载好解压之后如，下边的Data文件夹复制到自己工程下，该Data文件夹下存放了词典、配置文件和许可证信息。同时，在lib文件夹下选择与自己系统相关的NLPIR.dll文件和NLPIR.lib文件复制到自己工程下，然后将include文件夹下的NLPIR.h复制到工程下，现在就可以开始在自己的工程中编码进行分词了。
+
+开发环境我选择的是VS2012，如何建工程这里就不说了，如何建工程这里就不说了。要想使用NLPIR动态链接库，还有引入头文件，也就是刚才我们复制到工程下边的NLPIR.h，此外，用#pargma comment指定要连接的库。
+#include"NLPIR.h" #pragma comment(lib,"NLPIR.lib");
+现在我们可以调用它的分词函数进行分词。我们写一个函数来调用该库中的函数。
+int participle(char* src_file,char* result_file,char* userdict){ if(!NLPIR_Init()) return -1; NLPIR_SetPOSmap(ICT_POS_MAP_FIRST); NLPIR_ImportUserDict(userdict); NLPIR_FileProcess(src_file,result_file,1); NLPIR_Exit(); return 0; }
+其中NLPIR_Init()为初始化函数，NLPIR_SetPOSmap()设置标注集：
+ICT_POS_MAP_FIRST 计算所一级标注集
+ICT_POS_MAP_SECOND 计算所二级标注集
+PKU_POS_MAP_SECOND 北大二级标注集
+PKU_POS_MAP_FIRST 北大一级标注集
+NLPIR_ImportUserDict()导入用户词典来提高分词精度，NLPIR_FileProcess(src_file,result_file,1)进行分词，其中src_file为需要分词的文件，result_file为分词结果文件。
+现在文本经过分词已经是标注好的文本，如所示。
+
+可以看到在分词结果中每个词后面都是跟/在跟词性，为了方便后面处理，我们将/过滤掉，具体程序如下
+int resultFilter(char* src_file,char* result_file){ int i=0; ifstream ifs_tfilter_file; ofstream ofs_tfilter_result_file; char cixing; ifs_tfilter_file.open(src_file,ios::in); ofs_tfilter_result_file.open(result_file,ios::ate); while (!ifs_tfilter_file.eof()) { ifs_tfilter_file>>cixing; if(cixing=='\/') { ofs_tfilter_result_file<<" "; i=1; } else { ofs_tfilter_result_file<<cixing; if(i==1) { ofs_tfilter_result_file<<" "; i=0; } } } return 0; }
+过滤之后的结果如所示
+
+过滤/后的文本就比较方便我们后续的其他处理了。
+至此，自然语言处理的第一步分词就结束了，尽管ICTCLAS分词系统精度已经很高，但在某一领域中，其分词也有不准确的时候。所以，在分词完成后，应该人工检验一下是否有和自己比较相关的词被切分错误的情况，然后筛选出来作为添加词典，这样便可以保证其准确了。

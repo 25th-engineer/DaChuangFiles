@@ -1,0 +1,49 @@
+数据挖掘(data mining)，机器学习(machine learning)，和人工智能(AI)的区别是什么？ 数据科学(data science)和商业分析(business analytics)之间有什么关系？
+本来我以为不需要解释这个问题的，到底数据挖掘(data mining)，机器学习(machine learning)，和人工智能(AI)有什么区别，但是前几天因为有个学弟问我，我想了想发现我竟然也回答不出来，我在知乎和博客上查了查这个问题，发现还没有人写过比较详细和有说服力的对比和解释。那我根据以前读的书和论文，还有和与导师之间的交流，尝试着说一说这几者的区别吧，毕竟一个好的定义在未来的学习和交流中能够发挥很大的作用。同时补上数据科学和商业分析之间的关系。能力有限，如有疏漏，请包涵和指正。
+转载自：https://www.cnblogs.com/DonJiang/p/5744535.html
+导论
+本文主要分为两部分，第一部分阐述数据挖掘(data mining)，机器学习(machine learning)，和人工智能(AI)之间的区别。这三者的区别主要是目的不同，其手段(算法，模型)有很大的重叠，所以容易混淆。第二部分主要阐述以上的技能与数据科学(data science)的关系，以及数据科学(data science)和商业分析(business analytics)之间的关系。其实，数据科学家本身就是商业分析师在大数据时代的延伸。
+数据挖掘VS. 机器学习VS. 人工智能
+数据挖掘 (data mining): 有目的地从现有大数据中提取数据的模式(pattern)和模型(model)
+关键字：模式提取，大数据
+数据挖掘是从现有的信息(existing information)中提取数据的模式(pattern)和模型(model)，即精选出最重要的信息，以用于未来机器学习和AI的数据使用。其核心目的是找到数据变量之间的关系。其发展出来的主要原因是大数据的发展，用传统的数据分析的方式已经无能处理那么多大量的看似不相关的数据的处理，因此需要数据挖掘技术去提取各种数据和变量之间的相互关系，从而精炼数据。
+数据挖掘本质上像是机器学习和人工智能的基础，他的主要目的是从各种各样的数据来源中，提取出超集(superset)的信息，然后将这些信息合并让你发现你从来没有想到过的模式和内在关系。这就意味着，数据挖掘不是一种用来证明假说的方法，而是用来构建各种各样的假说的方法。数据挖掘不能告诉你这些问题的答案，他只能告诉你，A和B可能存在相关关系，但是它无法告诉你A和B存在什么相关关系。
+当然，数据挖掘会使用大量机器学习的算法，但是其特定的环境和目的和机器学习不太一样。
+机器学习(machine learning): 自动地从过往的经验中学习新的知识。
+关键字: 自动化，自我优化，预测，需要training data，推荐系统
+机器学习其实是人工智能很重要的一部分，因为目前，在实践过程中，大多数的人工智能处理的任务，其实是用机器学习的方式完成的。机器学习可以用程序和算法自动地学习，只要被设计好了，这个程序可以进行自我优化。同时，机器学习需要一定数量的训练数据集(training data set)，用于构建来自过往经验的“知识” 。
+且机器学习目前在实践中最重要的功能便是预测结果。比如机器学习已经学习结束了，现在有一个新的数据集x，需要预测其分类，机器学习算法会根据这个新数据与学习后的“知识”相匹配(实际上，知识指的是学习后的数学模型)，然后将这个数据集x分类某类C去。再比较常见的机器学习，比如amazon的推荐系统。
+人工智能(AI): 一个广泛的概念，本质是用数据和模型去为现有的问题(existing problems)提供解决方法(solutions).
+关键字：和人一样处理问题，技术的合集
+人工智能是一个与机器学习和数据挖掘相对不同的概念，人工智能的目的是为了去创造有智力的电脑(不知道怎么翻译好，可以假设其为机器人)。在实践中，我们希望这个电脑可以像有智力的人一样处理一个任务。因此，理论上人工智能几乎包括了所有和机器能做的内容，当然也包括了数据挖掘和机器学习的内容，同时还会有监视(monitor)和控制进程(process control)的内容。
+数据科学(data science)和商业分析(business analytics)的关系？
+其实以前，我们是没有数据科学家(data scientist)，和数据科学(data science)这个概念的。我们称呼做相关内容的方式更多叫商业分析(business analytics)。
+在2011年的时候，麦肯锡发表了《Big Data: the next frontier for innovation, competition, and productivity》提出了现在很多的公司已经开始往分析才能(analytical talent)中获得竞争优势。虽然这不是第一篇提出这个概念的公司，但是是第一次提出，数据分析能力也有助于商业公司去发现潜在的机会，而不仅仅只对技术公司有效。接着麦肯锡认为到了2018年，美国大约会有190,000的项目缺少“深度分析能力(Deep Analytical Talent)”，而这些深度分析能力，是由大数据(big data)驱动的。至此，麦肯锡将”商业分析”进一步形容为”深度分析能力”。
+接着DJ Patil和Jeff Hammerbacher在其写的《Building Data Science Teams》,将麦肯锡的“深度分析能力”称为了“数据科学家(data scientists)”。他们在文中提到：
+商业分析师(business analyst)看起来太局限了，数据分析师(data anlyst)是他们的竞争者，但是我们还是觉得这个称呼太局限了。....我们认为最好的称呼应该是”数据科学家(data scientist)”，因为这些人需要同时使用数据(data)和科学(science)去创造一些新的东西。
+紧接着，DJ Patil加了一些关键特点用于去寻找一个数据科学家(data scientist):
+专业技术(Technical expertise): 最好的数据科学家需要有关于某些科学学科的深度专业知识(deep expertise)。
+好奇心(Curiosity): 一个优秀的数据科学家需要有挖掘潜在关系，解决问题和证明假说的强烈好奇心和渴望。
+讲故事的能力(Storytelling): 能用数据讲一个生动的故事的能力，它能使交流更加有效。
+聪明(Cleverness): 能够创造性地解决问题的能力。
+随后，数据科学家这个概念才开始被广为流传。那么数据科学家需要具备哪些专业能力？不同的公司有不同的看法和意见(反正大家好像都喜欢把所有一切的期许都放在一个新兴的行业中)，这里列举一个比较流行的看法：
+1.Drew Conway’s Data Scientist Venn Diagram
+2.Drew Tierney’s Multi-disciplinary Diagram
+3.Gartner
+最后附赠一张“作弊纸”，列出几乎所有的商业问题(Business Problems)，想要入门成为一个优秀的商业分析师，或者是数据科学家，强烈推荐保存！！！！！！！！！！！！以后有时间，我会尝试着逐一翻译和解说一下。
+拓展阅读（英文）：
+什么是独角兽型的数据科学家？：不知道为什么现在什么“独角兽”型的这种理念会那么流行，企业也爱叫独角兽，行业内也爱叫独角兽。。但为什么一提到独角兽，我先想到的是巫师系列游戏。（捂脸~）
+Top 10 Data Analysis Tools for Business：用于商业分析的十大工具，强烈推荐阅读！！！
+Data Science: Bridging the Business & IT Gap：第二部分内容主要来源的原文。
+参考文献：
+http://stats.stackexchange.com/questions/5026/what-is-the-difference-between-data-mining-statistics-machine-learning-and-ai
+http://upfrontanalytics.com/data-mining-vs-artificial-intelligence-vs-machine-learning/
+https://www.researchgate.net/post/What_is_the_difference_between_machine_learning_and_data_mining
+https://www.r-bloggers.com/whats-the-difference-between-machine-learning-statistics-and-data-mining/
+https://discuss.analyticsvidhya.com/t/what-is-the-difference-between-machine-learning-data-analysis-data-mining-data-science-and-ai/572
+http://www.kdnuggets.com/2014/06/data-science-skills-business-problems.html
+各种乱七八糟的书和课件的笔记。
+《Building Data Science Teams》
+《Big Data: the next frontier for innovation, competition, and productivity》
+Drew Conway’s Data Scientist Venn Diagram
+Drew Tierney’s Multi-disciplinary Diagram

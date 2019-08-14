@@ -1,0 +1,47 @@
+遇到 这个 其实 不难 解决 福利 = 每天 都 推送 
+欢迎 大家 关注 微信 扫 码 并 加入 我 的 
+4个 微信 公众 号       大 数据 躺过 
+的 坑           Java 从 入门 
+到 架构师           人工智能 躺过 的 
+坑        /i  /i  /i Java/w 全栈/nr 大联盟/i 
+每天/r 都有/nr 大量/n 的/uj 学习/v 视频/n 资料/n 和/c 精彩/n 技术文章/i 
+推送/v ./i ./i ./i 人生 不易 唯有 努力 百家 号 
+九月 哥 快讯               
+  快手 号   jiuyuege 解决办法 1 root @ djt002 
+hadoop # vi / etc / selinux / config 改为 
+SELINUX = disabled 解决办法 2 查看 你 的 $ HADOOP 
+_ HOME / etc / hadoop 下 的 core site 
+. xml 和 hdfs site . xml 是否 配置 好 
+解决 办法 3 必须 在 hadoop env . sh 文件 
+中 设置 Java 的 绝对路径 解决办法 4 是否 关闭 linux 
+系统 的 防火墙 复制 代码 root @ djt002 ~ # 
+service iptables status root @ djt002 ~ # chkconfig iptables 
+off / / 永久 关闭 防火墙 root @ djt002 ~ 
+# service iptables stop / / 临时 关闭 防火墙 root 
+@ djt002 ~ # service iptables status iptables Firewall is 
+not running . / / 查看 防火墙 状态 解决办法 5 
+查看 你 windows 里 本地 的 配置 文件 的 IP 
+和 主机名 映射 关系 欢迎 大家 加入 我 的 4个 
+微信 公众 号       大 数据 躺过 的 
+坑         Java 从 入门 到 架构师 
+      人工智能 躺过 的 坑       
+  Java 全栈/nr 大联盟 同时 大家 可以 关注 我 的 
+个人 博客 http / / www . cnblogs . com 
+/ zlslch /       和 /nr       
+http / / www . cnblogs . com / lchzls 
+/           http / / www 
+. cnblogs . com / sunnyDream / 详情 请见 http 
+/ / www . cnblogs . com / zlslch / 
+p / 7473861 . html 人生 苦短 我 愿 分享 
+本 公众 号 将 秉持 活到老 学到老 学习 无休止 的 
+交流 分享 开源 精神 汇聚/v 于/p 互联网/n 和/c 个人/n 学习/v 
+工作/vn 的/uj 精华/nz 干货/n 知识/v 一切 来 于 互联网 反馈 
+回 互联网 目前 研究 领域 大 数据 机器学习 深度 学习 
+人工智能 数据挖掘 数据分析 语言 涉及 Java Scala Python Shell Linux 
+等 同时 还 涉及 平常 所 使用 的 手机 电脑 
+和 互联 网上 的 使用 技巧 问题 和 实用软件 只要 
+你 一直 关注 和 呆在 群 里 每天/r 必须/d 有/v 
+收获/v 对应/vn 本/r 平台/n 的/uj 讨论/v 和/c 答疑/v QQ/w 群/n 
+大 数据 和 人工智能 躺过 的 坑 总 群 161156071 
+打开 百度 App 扫 码 精彩文章 每天 更新 欢迎 关注 
+我 的 百家 号   九月 哥 快讯 

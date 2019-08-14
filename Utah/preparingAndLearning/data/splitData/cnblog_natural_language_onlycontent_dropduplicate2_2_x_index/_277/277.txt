@@ -1,0 +1,44 @@
+一方面学习基础理论，一方面进行实际操作，可以快速掌握Tensorflow。
+推荐阅读《TensorFlow深度学习算法原理与编程实战》，并根据实际代码进行测试。
+《TensorFlow深度学习算法原理与编程实战》以基础理论讲解和实践操作相结合的形式，详细介绍了深度学习的相关知识，能对使用TensorFlow进行深度学习算法设计的过程有更深入的理解。
+学习参考：
+《TensorFlow深度学习算法原理与编程实战》PDF，564页，带书签目录，文字可以复制。
+配套源代码。作者：蒋子阳
+下载: https://pan.baidu.com/s/1dAPvGY6jYOYSKrlfahwVNg
+提取码: djrj
+《TensorFlow深度学习算法原理与编程实战》共14章，主要内容有：人工智能、大数据、机器学习和深度学习概述；深度学习及TensorFlow框架的相关背景；
+TensorFlow的安装；TensorFlow编程策略；深度前馈神经网络；优化网络的方法；全连神经网络的经典实践；卷积神经网络的基础知识；
+经典卷积神经网络的TensorFlow实现；循环神经网络及其应用；
+深度强化学习概述；TensorFlow读取数据的API；
+TensorFlow持久化模型的API；可视化工具TensorBoard的使用；
+TensorFlow使用多GPU或并行的方式加速计算等。
+另推荐学习：《深入理解TensorFlow架构设计与实现原理》
+《深入理解TensorFlow架构设计与实现原理》PDF，375页，带书签目录，文字可以复制。
+作者：彭靖田,林健,白小龙
+下载: https://pan.baidu.com/s/1ZjznggugS3S_ivrLqeydMg
+提取码: wp4w
+《深入理解TensorFlow架构设计与实现原理》分为五大部分。
+第一部分为基础篇（第1～3章），简单介绍了TensorFlow设计目标、基本架构、环境准备和基础概念，包括数据流图的设计与使用，以及TensorFlow运行环境和训练机制，帮助读者快速入门TensorFlow，迅速上手使用。
+第二部分为关键模块篇（第4～7章），着重讲解了使用TensorFlow端到端解决人工智能问题涉及的关键模块，包括数据处理、编程框架、可视化工具和模型托管工具，帮助读者进一步提升开发效率，快速落地模型应用。
+第三部分为算法模型篇（第8～11章），在读者熟练掌握TensorFlow后，该部分将深度学习与TensorFlow有机结合，系统介绍了深度学习的发展历史与应用场景，并结合理论与代码实现深入讲解了CNN、GAN和RNN等经典模型。
+第四部分为核心揭秘篇（第12～14章），深入剖析了TensorFlow运行时核心、通信原理和数据流图计算的原理与实现，聚焦C++ 核心层的揭秘，帮助读者进一步理解TensorFlow底层的设计思想与实现细节，TensorFlow二次开发人员需重点关注这部分内容。
+第五部分为生态发展篇（第15章），全面介绍了TensorFlow生态系统发展，并重点介绍了Keras深度学习算法库，以及TensorFlow与云原生社区Kubernetes生态的结合、与大数据社区Spark生态的结合，并介绍了TensorFlow通信优化技术、TPU及NNVM模块化深度学习技术，帮助读者进一步全面了解深度学习生态发展的现状。
+另推荐：林大贵编写的《Tensorflow+Keras深度学习人工智能实践应用》
+《Tensorflow+Keras-深度学习人工智能实践应用》PDF，329页，带书签目录，文字可以复制。
+配套源代码。作者: 林大贵
+下载：https://pan.baidu.com/s/1NwhEBvB7gwvO81e8PhH75g
+《Tensorflow+Keras-深度学习人工智能实践应用》提供安装、上机操作指南，同时辅以大量范例程序介绍TensorFlow + Keras深度学习方面的知识。
+《Tensorflow+Keras-深度学习人工智能实践应用》分9部分，共21章，内容主要包括基本概念介绍、TensorFlow 与 Keras 的安装、Keras MNIST手写数字识别、Keras CIFAR-10照片图像物体识别、Keras多层感知器预测泰坦尼克号上旅客的生存概率、使用Keras MLP、RNN、LSTM进行IMDb自然语言处理与情感分析、以TensorFlow张量运算仿真神经网络的运行、TensorFlow MNIST手写数字识别、使用GPU大幅加快深度学习训练。
+另推荐: 顾思宇等所写的《TensorFlow实战Google深度学习框架(第2版)》
+《TensorFlow实战Google深度学习框架(第2版)》PDF，363页，带书签目录，文字可以复制。
+配套源代码。
+作者: 顾思宇 / 梁博文 / 郑泽宇
+下载：https://pan.baidu.com/s/1hltIZdjkET3CNxKWSixtZA
+《TensorFlow：实战Google深度学习框架（第2版）》为TensorFlow入门参考书，快速、有效的方式上手TensorFlow和深度学习。省略了烦琐的数学模型推导，从实际应用问题出发，通过具体的TensorFlow示例 介绍如何使用深度学习解决实际问题。包含深度学习的入门知识和大量实践经验。
+第2版将书中所有示例代码基于TensorFlow 1.4.0，新增两章分别介绍TensorFlow高层封装和深度学习在自 然语言领域应用的内容。
+很好入门，方便快速理解深度学习的整体流程架构，理论与tensorflow实践兼并，还能作为实践代码的参 照。
+我想作者的目的已经达到，强调整体的架构流程，忽略掉部分非常细函数的具体细节，不过作为阅读且止止步于一本书，细节入门方面推荐《深度学习入门：基于Python的理论与实现》 确实全程无理解难点。
+《深度学习入门：基于Python的理论与实现》中文PDF+代码
+下载：https://pan.baidu.com/s/1TaTZzete0hY8mK_jSqFsww
+《21个项目玩转深度学习》PDF+源代码
+下载：https://pan.baidu.com/s/1NYYpsxbWBvMn9U7jvj6XSw

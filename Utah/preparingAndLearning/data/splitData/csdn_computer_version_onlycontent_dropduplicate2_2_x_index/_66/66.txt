@@ -1,0 +1,1043 @@
+[1] 《基于均值移动的人脸跟踪简介》 未公开
+[2] http://kb.cnblogs.com/a/1742263/
+[3] AIDIA – Adaptive Interface for Display Interaction
+[4] http://baike.baidu.com/view/2810997.htm
+分类: 目标跟踪
+posted @ 2012-04-18 16:05 Hanson-jun 阅读(68) 评论(0) 编辑
+机器视觉开源处理库汇总
+从cvchina搞到的很给力，还在不断更新。。。
+通用库/General Library
+OpenCV
+无需多言。
+RAVL
+Recognition And Vision Library. 线程安全。强大的IO机制。包含AAM。
+CImg
+很酷的一个图像处理包。整个库只有一个头文件。包含一个基于PDE的光流算法。
+图像，视频IO/Image, Video IO
+FreeImage
+DevIL
+ImageMagick
+FFMPEG
+VideoInput
+portVideo
+AR相关/Augmented Reality
+ARToolKit
+基于Marker的AR库
+ARToolKitPlus
+ARToolKit的增强版。实现了更好的姿态估计算法。
+PTAM
+实时的跟踪、SLAM、AR库。无需Marker，模板，内置传感器等。
+BazAR
+基于特征点检测和识别的AR库。
+局部不变特征/Local Invariant Feature
+VLFeat
+目前最好的Sift开源实现。同时包含了KD-tree，KD-Forest，BoW实现。
+Ferns
+基于Naive Bayesian Bundle的特征点识别。高速，但占用内存高。
+SIFT By Rob Hess
+基于OpenCV的Sift实现。
+目标检测/Object Detection
+AdaBoost By JianXin.Wu
+又一个AdaBoost实现。训练速度快。
+行人检测 By JianXin.Wu
+基于Centrist和Linear SVM的快速行人检测。
+（近似）最近邻/ANN
+FLANN
+目前最完整的（近似）最近邻开源库。不但实现了一系列查找算法，还包含了一种自动选取最快算法的机制。
+ANN
+另外一个近似最近邻库。
+SLAM & SFM
+SceneLib [LGPL]
+monoSLAM库。由Androw Davison开发。
+图像分割/Segmentation
+SLIC Super Pixel
+使用Simple Linear Iterative Clustering产生指定数目，近似均匀分布的Super Pixel。
+目标跟踪/Tracking
+TLD
+基于Online Random Forest的目标跟踪算法。
+KLT
+Kanade-Lucas-Tracker
+Online boosting trackers
+Online Boosting Trackers
+直线检测/Line Detection
+DSCC
+基于联通域连接的直线检测算法。
+LSD [GPL]
+基于梯度的，局部直线段检测算子。
+指纹/Finger Print
+pHash [GPL]
+基于感知的多媒体文件Hash算法。（提取，对比图像、视频、音频的指纹）
+视觉显著性/Visual Salience
+Global Contrast Based Salient Region Detection
+Ming-Ming Cheng的视觉显著性算法。
+FFT/DWT
+FFTW [GPL]
+最快，最好的开源FFT。
+FFTReal [WTFPL]
+轻量级的FFT实现。许可证是亮点。
+音频处理/Audio processing
+STK [Free]
+音频处理，音频合成。
+libsndfile [LGPL]
+音频文件IO。
+libsamplerate [GPL ]
+音频重采样。
+小波变换
+快速小波变换（FWT）
+FWT
+BRIEF: Binary Robust Independent Elementary Feature 一个很好的局部特征描述子，里面有FAST corner + BRIEF实现特征点匹配的DEMO：http://cvlab.epfl.ch/software/brief/
+http://code.google.com/p/javacv
+Java打包的OpenCV, FFmpeg, libdc1394, PGR FlyCapture, OpenKinect, videoInput, and ARToolKitPlus库。可以放在Android上用~
+libHIK,HIK SVM，计算HIK SVM跟Centrist的Lib。http://c2inet.sce.ntu.edu.sg/Jianxin/projects/libHIK/libHIK.htm
+一组视觉显著性检测代码的链接：http://cg.cs.tsinghua.edu.cn/people/~cmm/saliency/
+介绍n款计算机视觉库/人脸识别开源库/软件
+计算机视觉库 OpenCV
+OpenCV是Intel®开源计算机视觉库。它由一系列 C 函数和少量 C++ 类构成，实现了图像处理和计算机视觉方面的很多通用算法。 OpenCV 拥有包括 300 多个C函数的跨平台的中、高层 API。它不依赖于其它的外部库——尽管也可以使用某些外部库。 OpenCV 对非商业...
+人脸识别 faceservice.cgi
+faceservice.cgi 是一个用来进行人脸识别的 CGI 程序， 你可以通过上传图像，然后该程序即告诉你人脸的大概坐标位置。faceservice是采用 OpenCV 库进行开发的。
+OpenCV的.NET版 OpenCVDotNet
+OpenCVDotNet 是一个 .NET 对 OpenCV 包的封装。
+人脸检测算法 jViolajones
+jViolajones是人脸检测算法Viola-Jones的一个Java实现，并能够加载OpenCV XML文件。 示例代码：http://www.oschina.net/code/snippet_12_2033
+Java视觉处理库 JavaCV
+JavaCV 提供了在计算机视觉领域的封装库，包括：OpenCV、ARToolKitPlus、libdc1394 2.x 、PGR FlyCapture和FFmpeg。此外，该工具可以很容易地使用Java平台的功能。 JavaCV还带有硬件加速的全屏幕图像显示（CanvasFrame），易于在多个内核中执行并行代码（并...
+运动检测程序 QMotion
+QMotion 是一个采用 OpenCV 开发的运动检测程序，基于 QT。
+视频监控系统 OpenVSS
+OpenVSS - 开放平台的视频监控系统 - 是一个系统级别的视频监控软件视频分析框架（VAF）的视频分析与检索和播放服务，记录和索引技术。它被设计成插件式的支持多摄像头平台，多分析仪模块（OpenCV的集成），以及多核心架构。
+手势识别 hand-gesture-detection
+手势识别，用OpenCV实现
+人脸检测识别 mcvai-tracking
+提供人脸检测、识别与检测特定人脸的功能，示例代码 cvReleaseImage( &gray ); cvReleaseMemStorage(&storage); cvReleaseHaarClassifierCascade(&cascade);...
+人脸检测与跟踪库 asmlibrary
+Active Shape Model Library (ASMLibrary©) SDK, 用OpenCV开发，用于人脸检测与跟踪。
+Lua视觉开发库 libecv
+ECV 是 lua 的计算机视觉开发库(目前只提供linux支持)
+OpenCV的.Net封装 OpenCVSharp
+OpenCVSharp 是一个OpenCV的.Net wrapper，应用最新的OpenCV库开发，使用习惯比EmguCV更接近原始的OpenCV，有详细的使用样例供参考。
+3D视觉库 fvision2010
+基于OpenCV构建的图像处理和3D视觉库。 示例代码： ImageSequenceReaderFactory factory; ImageSequenceReader* reader = factory.pathRegex("c:/a/im_%03d.jpg", 0, 20); //ImageSequenceReader* reader = factory.avi("a.avi"); if (reader == NULL) { ...
+基于QT的计算机视觉库 QVision
+基于 QT 的面向对象的多平台计算机视觉库。可以方便的创建图形化应用程序，算法库主要从 OpenCV，GSL，CGAL，IPP，Octave 等高性能库借鉴而来。
+图像特征提取 cvBlob
+cvBlob 是计算机视觉应用中在二值图像里寻找连通域的库.能够执行连通域分析与特征提取.
+实时图像/视频处理滤波开发包 GShow
+GShow is a real-time image/video processing filter development kit. It successfully integrates DirectX11 with DirectShow framework. So it has the following features: GShow 是实时 图像/视频 处理滤波开发包，集成DiretX11。...
+视频捕获 API VideoMan
+VideoMan 提供一组视频捕获 API 。支持多种视频流同时输入（视频传输线、USB摄像头和视频文件等）。能利用 OpenGL 对输入进行处理，方便的与 OpenCV，CUDA 等集成开发计算机视觉系统。
+开放模式识别项目 OpenPR
+Pattern Recognition project（开放模式识别项目），致力于开发出一套包含图像处理、计算机视觉、自然语言处理、模式识别、机器学习和相关领域算法的函数库。
+OpenCV的Python封装 pyopencv
+OpenCV的Python封装，主要特性包括： 提供与OpenCV 2.x中最新的C++接口极为相似的Python接口，并且包括C++中不包括的C接口 提供对OpenCV 2.x中所有主要部件的绑定：CxCORE (almost complete), CxFLANN (complete), Cv (complete), CvAux (C++ part almost...
+视觉快速开发平台 qcv
+计算机视觉快速开发平台，提供测试框架，使开发者可以专注于算法研究。
+图像捕获 libv4l2cam
+对函数库v412的封装，从网络摄像头等硬件获得图像数据，支持YUYV裸数据输出和BGR24的OpenCV  IplImage输出
+计算机视觉算法 OpenVIDIA
+OpenVIDIA projects implement computer vision algorithms running on on graphics hardware such as single or multiple graphics processing units(GPUs) using OpenGL, Cg and CUDA-C. Some samples will soon support OpenCL and Direct Compute API&apos;...
+高斯模型点集配准算法 gmmreg
+实现了基于混合高斯模型的点集配准算法，该算法描述在论文： A Robust Algorithm for Point Set Registration Using Mixture of Gaussians, Bing Jian and Baba C. Vemuri. ，实现了C++/Matlab/Python接口...
+模式识别和视觉库 RAVL
+Recognition And Vision Library (RAVL) 是一个通用 C++ 库，包含计算机视觉、模式识别等模块。
+图像处理和计算机视觉常用算法库 LTI-Lib
+LTI-Lib 是一个包含图像处理和计算机视觉常用算法和数据结构的面向对象库，提供 Windows 下的 VC 版本和 Linux 下的 gcc 版本，主要包含以下几方面内容： 1、线性代数 2、聚类分析 3、图像处理 4、可视化和绘图工具
+OpenCV优化 opencv-dsp-acceleration
+优化了OpenCV库在DSP上的速度。
+C++计算机视觉库 Integrating Vision Toolkit
+Integrating Vision Toolkit (IVT) 是一个强大而迅速的C++计算机视觉库，拥有易用的接口和面向对象的架构，并且含有自己的一套跨平台GUI组件，另外可以选择集成OpenCV
+计算机视觉和机器人技术的工具包 EGT
+The Epipolar Geometry Toolbox (EGT) is a toolbox designed for Matlab (by Mathworks Inc.). EGT provides a wide set of functions to approach computer vision and robotics problems with single and multiple views, and with different vision se...
+OpenCV的扩展库 ImageNets
+ImageNets 是对OpenCV 的扩展，提供对机器人视觉算法方面友好的支持，使用Nokia的QT编写界面。
+libvideogfx
+视频处理、计算机视觉和计算机图形学的快速开发库。
+Matlab计算机视觉包 mVision
+Matlab 的计算机视觉包，包含用于观察结果的 GUI 组件，貌似也停止开发了，拿来做学习用挺不错的。
+Scilab的计算机视觉库 SIP
+SIP 是 Scilab（一种免费的类Matlab编程环境）的图像处理和计算机视觉库。SIP 可以读写 JPEG/PNG/BMP 格式的图片。具备图像滤波、分割、边缘检测、形态学处理和形状分析等功能。
+STAIR Vision Library
+STAIR Vision Library (SVL) 最初是为支持斯坦福智能机器人设计的，提供对计算机视觉、机器学习和概率统计模型的支持。
+UIUC某童鞋收集的代码合集
+Jia-Bin Huang童鞋收集，此童鞋毕业于国立交通大学，之前拍过很多CVPR举办地科罗拉多州的照片，这里大多为matlab code,
+link: https://netfiles.uiuc.edu/jbhuang1/www/resources/vision/index.html
+包括：
+Feature Extraction：
+SIFT [1] [Demo program][SIFT Library] [VLFeat]
+PCA-SIFT [2] [Project]
+Affine-SIFT [3] [Project]
+SURF [4] [OpenSURF] [Matlab Wrapper]
+Affine Covariant Features [5] [Oxford project]
+MSER [6] [Oxford project] [VLFeat]
+Geometric Blur [7] [Code]
+Local Self-Similarity Descriptor [8] [Oxford implementation]
+Global and Efficient Self-Similarity [9] [Code]
+Histogram of Oriented Graidents [10] [INRIA Object Localization Toolkit] [OLT toolkit for Windows]
+GIST [11] [Project]
+Shape Context [12] [Project]
+Color Descriptor [13] [Project]
+Pyramids of Histograms of Oriented Gradients [Code]
+Space-Time Interest Points (STIP) [14] [Code]
+Boundary Preserving Dense Local Regions [15][Project]
+Image Segmentation：
+Normalized Cut [1] [Matlab code]
+Gerg Mori’ Superpixel code [2] [Matlab code]
+Efficient Graph-based Image Segmentation [3] [C++ code] [Matlab wrapper]
+Mean-Shift Image Segmentation [4] [EDISON C++ code] [Matlab wrapper]
+OWT-UCM Hierarchical Segmentation [5] [Resources]
+Turbepixels [6] [Matlab code 32bit] [Matlab code 64bit] [Updated code]
+Quick-Shift [7] [VLFeat]
+SLIC Superpixels [8] [Project]
+Segmentation by Minimum Code Length [9] [Project]
+Biased Normalized Cut [10] [Project]
+Segmentation Tree [11-12] [Project]
+Entropy Rate Superpixel Segmentation [13] [Code]
+Object Detection：
+A simple object detector with boosting [Project]
+INRIA Object Detection and Localization Toolkit [1] [Project]
+Discriminatively Trained Deformable Part Models [2] [Project]
+Cascade Object Detection with Deformable Part Models [3] [Project]
+Poselet [4] [Project]
+Implicit Shape Model [5] [Project]
+Viola and Jones’s Face Detection [6] [Project]
+Saliency Detection
+Itti, Koch, and Niebur’ saliency detection [1] [Matlab code]
+Frequency-tuned salient region detection [2] [Project]
+Saliency detection using maximum symmetric surround [3] [Project]
+Attention via Information Maximization [4] [Matlab code]
+Context-aware saliency detection [5] [Matlab code]
+Graph-based visual saliency [6] [Matlab code]
+Saliency detection: A spectral residual approach. [7] [Matlab code]
+Segmenting salient objects from images and videos. [8] [Matlab code]
+Saliency Using Natural statistics. [9] [Matlab code]
+Discriminant Saliency for Visual Recognition from Cluttered Scenes. [10] [Code]
+Learning to Predict Where Humans Look [11] [Project]
+Global Contrast based Salient Region Detection [12] [Project]
+Image Classification
+Pyramid Match [1] [Project]
+Spatial Pyramid Matching [2] [Code]
+Locality-constrained Linear Coding [3] [Project] [Matlab code]
+Sparse Coding [4] [Project] [Matlab code]
+Texture Classification [5] [Project]
+Multiple Kernels for Image Classification [6] [Project]
+Feature Combination [7] [Project]
+SuperParsing [Code]
+Image Matting
+Closed Form Matting [Code]
+Spectral Matting [Project]
+Learning-based Matting [Code]
+等等等等。。。。
+大家可以去那个网址自己看。。。。
+posted @ 2012-04-18 15:53 Hanson-jun 阅读(49) 评论(0) 编辑
+图像处理方面的网站
+http://blog.damiles.com
+www.bernardotti.it
+http://www.ohloh.net/tags/recognition
+http://www.diphernet.com/
+http://www.mat.ucsb.edu/projects/tater/
+http://enblend.sourceforge.net/
+http://www.infra.kth.se/courses/1N1652/
+http://www.csie.ntu.edu.tw/~b93082/VFX/hw2/vfx02.htm#t3
+http://graphics.cs.msu.ru/en/research/calibration/
+http://www.vlfeat.org/~vedaldi/
+http://svn.openframeworks.cc/browser/listing.php?repname=addons&path=%2FofxOpenCv%2Ftrunk%2FofxOpenCv%2F&rev=29&sc=1
+http://cvlab.epfl.ch/software/ferns/index.php
+http://staff.science.uva.nl/~rvalenti/index.php?content=projects
+http://mpac.ee.ntu.edu.tw/~ck/project_panorama/#Downloads
+http://www.sharewareconnection.com/titles/cross-stitch.htm
+http://mpac.ee.ntu.edu.tw/~sutony/vfx_stitching/pano.htm
+http://mpac.ee.ntu.edu.tw/people.php
+http://mpac.ee.ntu.edu.tw/index.php
+http://www.cse.cuhk.edu.hk/~csc5280/project3/RoyChan/index.htm
+http://personal.ie.cuhk.edu.hk/~gbq008/csc_project_3.htm
+http://graphics.cs.cmu.edu/courses/15-463/2008_fall/463.html
+http://www-2.cs.cmu.edu/%7ecdtwigg/
+http://cs-people.bu.edu/edwardaa/cs580/p1/p1.html#goals
+http://www.cs.toronto.edu/~smalik/2530/mosaic/results.html
+http://www.cs.princeton.edu/gfx/
+http://idea.hosting.lv/a/gfx/
+http://www.cs.toronto.edu/~esteger/mosaic/index.html
+http://home.so-net.net.tw/lioucy
+http://web.ics.purdue.edu/~kim497/
+CUDA:
+http://gforge.man.poznan.pl/gf/project/cudaopencv/scmsvn/
+http://wiki.livedoor.jp/mikk_ni3_92/d/CUDA::2%C3%CD%B2%BD::%CA%A3%BF%F4%CB%E7
+http://cudasample.net/
+一、研究群体
+http://www-2.cs.cmu.edu/~cil/vision.html
+这是卡奈基梅隆大学的计算机视觉研究组的主页，上面提供很全的资料，从发表文章的下载到演示程序、测试图像、常用链接、相关软硬件，甚至还有一个搜索引擎。
+http://www.cmis.csiro.au/IAP/zimage.htm
+这是一个侧重图像分析的站点，一般。但是提供一个Image Analysis环境---ZIMAGE and SZIMAGE。
+http://www.via.cornell.edu/
+康奈尔大学的计算机视觉和图像分析研究组，好像是电子和计算机工程系的。侧重医学方面的研究，但是在上面有相当不错资源，关键是它正在建设中，能够跟踪一些信息。
+http://www2.parc.com/istl/groups/did/didoverview.shtml
+有一个很有意思的项目：DID(文档图像解码)。
+http://www-cs-students.stanford.edu/
+斯坦福大学计算机系主页，自己找吧:(
+http://www.fmrib.ox.ac.uk/analysis/
+主要研究：Brain Extraction Tool,Nonlinear noise reduction,Linear Image Registration,
+Automated Segmentation,Structural brain change analysis,motion correction,etc.
+http://www.cse.msu.edu/prip/
+这是密歇根州立大学计算机和电子工程系的模式识别--图像处理研究组，它的FTP上有许多的文章(NEW)。
+http://pandora.inf.uni-jena.de/p/e/index.html
+德国的一个数字图像处理研究小组，在其上面能找到一些不错的链接资源。
+http://www-staff.it.uts.edu.au/~sean/CVCC.dir/home.html
+CVIP(used to be CVCC for Computer Vision and Cluster Computing) is a research group focusing on cluster-based computer vision within the Spiral Architecture.
+http://cfia.gmu.edu/
+The mission of the Center for Image Analysis is to foster multi-disciplinary research in image, multimedia and related technologies by establishing links
+between academic institutes, industry and government agencies, and to transfer key technologies to
+help industry build next
+generation commercial and military imaging and multimedia systems.
+http://peipa.essex.ac.uk/info/groups.html
+可以通过它来搜索全世界各地的知名的计算机视觉研究组(CV Groups)，极力推荐。
+二、图像处理GPL库
+http://www.ph.tn.tudelft.nl/~klamer/cppima.html
+Cppima 是一个图像处理的C++函数库。这里有一个较全面介绍它的库函数的文档，当然你也可以下载压缩的GZIP包，里面包含TexInfo格式的文档。
+http://iraf.noao.edu/
+Welcome to the IRAF Homepage! IRAF is the Image Reduction and Analysis Facility, a general purpose software
+system for the reduction and analysis of astronomical data.
+http://entropy.brni-jhu.org/tnimage.html
+一个非常不错的Unix系统的图像处理工具，看看它的截图。你可以在此基础上构建自己的专用图像处理工具包。
+http://sourceforge.net/projects/
+这是GPL软件集散地，到这里找你想要得到的IP库吧。
+三、搜索资源
+当然这里基本的搜索引擎还是必须要依靠的，比如Google等，可以到我常用的链接看看。下面的链接可能会节省你一些时间：
+http://sal.kachinatech.com/
+http://cheminfo.pku.edu.cn/mirrors/SAL/index.shtml
+四、大拿网页
+http://www.ai.mit.edu/people/wtf/
+这位可是MIT人工智能实验室的BILL FREEMAN。大名鼎鼎！专长是：理解--贝叶斯模型。
+http://www.merl.com/people/brand/
+MERL(Mitsubishi Electric Research Laboratory)中的擅长“Style Machine”高手。
+http://research.microsoft.com/~ablake/
+CV界极有声望的A.Blake 1977年毕业于剑桥大学三一学院并或数学与电子科学学士学位。之后在MIT，Edinburgh，Oxford先后组建过研究小组并成为Oxford的教授，直到1999年进入微软剑桥研究中心。主要工作领域是计算机视觉。
+http://www-2.cs.cmu.edu/afs/cs.cmu.edu/user/har/Web/home.html
+这位牛人好像正在学习汉语，并且搜集了诸如“两只老虎(Two Tigers)”的歌曲，嘿嘿:)
+他的主页上面还有几个牛：Shumeet Baluja, Takeo Kanade。他们的Face Detection作的绝对是世界一流。他毕业于卡奈基梅隆大学的计算机科学系，兴趣是计算机视觉。
+http://www.ifp.uiuc.edu/yrui_ifp_home/html/huang_frame.html
+这位老牛在1963年就获得了MIT的博士学位！他领导的Image Lab比较出名的是指纹识别。
+--------------------------------------------------------------------------------
+下面这些是我搜集的牛群(大部分是如日中天的Ph.D们)，可以学习的是他们的Study Ways!
+Finn Lindgren(Sweden):Statistical image analysis http://www.maths.lth.se/matstat/staff/finn/
+Pavel Paclik(Prague):statistical pattern recognition http://www.ph.tn.tudelft.nl/~pavel/
+Dr. Mark Burge:machine learning and graph theory http://cs.armstrong.edu/burge/
+yalin Wang:Document Image Analysis http://students.washington.edu/~ylwang/
+Geir Storvik: Image analysis http://www.math.uio.no/~geirs/
+Heidorn http://alexia.lis.uiuc.edu/~heidorn/
+Joakim Lindblad:Digital Image Cytometry http://www.cb.uu.se/~joakim/index_eng.html
+S.Lavirotte: http://www-sop.inria.fr/cafe/Stephane.Lavirotte/
+Sporring:scale-space techniques http://www.lab3d.odont.ku.dk/~sporring/
+Mark Jenkinson:Reduction of MR Artefacts http://www.fmrib.ox.ac.uk/~mark/
+Justin K. Romberg:digital signal processing http://www-dsp.rice.edu/~jrom/
+Fauqueur:Image retrieval by regions of interest http://www-rocq.inria.fr/~fauqueur/
+James J. Nolan:Computer Vision http://cs.gmu.edu/~jnolan/
+Daniel X. Pape:Information http://www.bucho.org/~dpape/
+Drew Pilant:remote sensing technology http://www.geo.mtu.edu/~anpilant/index.html
+五、前沿期刊(TOP10)
+这里的期刊大部分都可以通过上面的大拿们的主页间接找到，在这列出主要是为了节省直接想找期刊投稿的兄弟的时间:)
+IEEE Trans. On PAMI http://www.computer.org/tpami/index.htm
+IEEE Transactionson Image Processing http://www.ieee.org/organizations/pubs/transactions/tip.htm
+Pattern Recognition http://www.elsevier.com/locate/issn/00313203
+Pattern Recognition Letters http://www.elsevier.com/locate/issn/01678655
+神经网络
+Neural Networks Tutorial Review
+http://hem.hj.se/~de96klda/NeuralNetworks.htm
+ftp://ftp.sas.com/pub/neural/FAQ.html
+Image Compression with Neural Networks
+http://www.comp.glam.ac.uk/digimaging/neural.htm
+Backpropagator's Review
+http://www.dontveter.com/bpr/bpr.html
+Bibliographies on Neural Networks
+http://liinwww.ira.uka.de/bibliography/Neural/
+Intelligent Motion Control with an Artificial Cerebellum
+http://www.q12.org/phd.html
+Kernel Machines
+http://www.kernel-machines.org/
+Some Neural Networks Research Organizations
+http://www.ieee.org/nnc/
+http://www.inns.org/
+Neural Network Modeling in Vision Research
+http://www.rybak-et-al.net/nisms.html
+Neural Networks and Machine Learning
+http://learning.cs.toronto.edu/
+Neural Application Software
+http://attrasoft.com
+Neural Network Toolbox for MATLAB
+http://www.mathworks.com/products/neuralnet/
+Netlab Software
+http://www.ncrg.aston.ac.uk/netlab/
+Kunama Systems Limited
+http://www.kunama.co.uk/
+Computer Vision
+Computer Vision Homepage, Carnegie Mellon University
+www.cs.cmu.edu/~cil/vision.html
+Annotated Computer Vision Bibliography
+http://iris.usc.edu/Vision-Notes/bibliography/contents.html
+http://iris.usc.edu/Vision-Notes/rosenfeld/contents.html
+Lawrence Berkeley National Lab Computer Vision and Robotics Applications
+http://www-itg.lbl.gov/ITG.hm.pg.docs/VISIon/vision.html
+CVonline by University of Edinburgh
+The Evolving, Distributed, Non-Proprietary, On-Line Compendium of Computer Vision, www.dai.ed.ac.uk/CVonline
+Computer Vision Handbook, www.cs.hmc.edu/~fleck/computer-vision-handbook
+Vision Systems Courseware
+www.cs.cf.ac.uk/Dave/Vision_lecture/Vision_lecture_caller.html
+Research Activities in Computer Vision
+http://www-syntim.inria.fr/syntim/analyse/index-eng.html
+Vision Systems Acronyms
+www.vision-systems-design.com/vsd/archive/acronyms.html
+Dictionary of Terms in Human and Animal Vision
+http://cns-web.bu.edu/pub/laliden/WWW/Visionary/Visionary.html
+Metrology based on Computer Vision
+www.cranfield.ac.uk/sme/amac/research/metrology/metrology.html
+Digital Photography
+Digital Photography, Scanning, and Image Processing
+www.dbusch.com/scanners/scanners.html
+Educational Resources, Universities
+Center for Image Processing in Education
+www.cipe.com
+Library of Congress Call Numbers Related to Imaging Science by Rochester Institute of Technology
+http://wally2.rit.edu/pubs/guides/imagingcall.html
+Mathematical Experiences through Image Processing, University of Washington
+www.cs.washington.edu/research/metip/metip.html
+Vismod Tech Reports and Publications, MIT
+http://vismod.www.media.mit.edu/cgi-bin/tr_pagemaker
+Vision Lab PhD dissertation list, University of Antwerp
+http://wcc.ruca.ua.ac.be/~visielab/theses.html
+INRIA (France) Research Projects: Human-Computer Interaction, Image Processing, Data Management, Knowledge Systems
+www.inria.fr/Themes/Theme3-eng.html
+Image Processing Resources
+http://eleceng.ukc.ac.uk/~rls3/Contents.htm
+Publications of Carsten Steger
+http://www9.informatik.tu-muenchen.de/people/steger/publications.html
+FAQs
+comp.dsp FAQ
+www.bdti.com/faq/dsp_faq.htm
+Robotics FAQ
+www.frc.ri.cmu.edu/robotics-faq
+Where's the sci.image.processing FAQ?
+www.cc.iastate.edu/olc_answers/packages/graphics/sci.image.processing.faq.html
+comp.graphics.algorithms FAQ, Section 3, 2D Image/Pixel Computations
+www.exaflop.org/docs/cgafaq
+Astronomical Image Processing System FAQ
+www.cv.nrao.edu/aips/aips_faq.html
+来自: http://hi.baidu.com/jiamn/blog/item/aaa063f9ae34141d6c22ebce.html
+posted @ 2012-04-18 15:48 Hanson-jun 阅读(45) 评论(0) 编辑
+计算机视觉文献与代码资源及资料
+下面是前端时间搜集整理的一些和计算机视觉、模式识别的资源，拿出来与大家分享下。以后，我将把图像处理真正的作为我的兴趣来玩玩了，也许不把研究作为谋生的手段，会更好些。
+标题
+作者
+主题
+关键字
+类别
+来源
+备注
+nipsfast.ppt
+Nando de Freitas
+N-Body problems in learning
+Fast N-Body Learning
+Ppt
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+nipsfgtf.ppt
+Ramani Duraiswami
+Fast Multipole Methods Fast Gaussian Transform
+FM and FGT
+ppt
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+Gray.pdf/ppt
+Alex Gray
+Statistical N-Body/Proximity Data Structures
+N-Body and Data Structures
+Ppt/pdf
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+dt-nips04.pdf/ppt
+Dan Huttenlocher
+Fast Distance Transforms
+FDT
+Ppt/pdf
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+High.pdf/ppt
+Alexander Gray
+Fast high-dimensional function integration
+Fast integration
+Ppt/pdf
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+Fast04.pdf/ppt
+David Lowe
+Fast high-dimensional feature indexing for object recognition
+Feature indexing
+Ppt/pdf
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+ihler-fast.pdf/ppt
+Alexander lhler
+Fast methods and non-parametric BP
+Non-parametric BP
+Ppt/pdf
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+fastview.pdf
+Dustin Lang
+Comparing fast methods
+Overview fast methods
+pdf
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+nbody_methods.tar.gz
+code
+http://www.cs.ubc.ca/~awll/nbody_methods.html
+demo_rbpf_gauss.tar
+Rao Blackwellised particle filtering for conditionally Gaussian Models
+particle filtering for conditionally
+code
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+demorbpfdbn.tar.gz
+Rao Blackwellised Particle Filtering
+code
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+http://www.cs.ubc.ca/~nando/software.html
+upf_demos.tar.gz
+Unscented Particle Filter
+Particle Filter
+code
+http://www.cs.ubc.ca/~nando/nipsfast/schedule.html
+BPF_1_3.zip
+Boosted Particle Filter
+Tracking
+code
+http://www.cs.ubc.ca/~okumak/research.html
+1
+flyer_14_800.mpg
+Source image
+Database
+Image
+http://www.cs.ubc.ca/~okumak/research.html
+1
+trans_flyer_14_800.mpg
+image transformed
+Database
+Image
+http://www.cs.ubc.ca/~okumak/research.html
+1
+LBP.c/h
+Topi Mäenpää
+LBP operator
+Texture
+code
+http://www.ee.oulu.fi/~topiolli/cpplibs/files/
+calibr_v30.zip
+Camera Calibration
+Computer vision
+code
+http://www.ee.oulu.fi/mvg/page/camera_calibration
+_toolbox_for_matlab
+2
+LEAR(Learning and Recognition in Vision
+Common dataset
+Human/car horse soccer human actions
+dataset
+http://lear.inrialpes.fr/data
+3
+Lic.zip/highlight.zip
+Robby T. Tan
+Color Constancy Through Inverse Intensity Chromaticity Space
+Highlight Removal from single image
+code
+http://www.commsp.ee.ic.ac.uk/~rtan/
+2008_oxford_fog.pdf
+Robby T. Tan
+Defog
+Defog from single
+pdf
+http://www.commsp.ee.ic.ac.uk/~rtan/
+08_cvpr.pdf
+Robby T. Tan
+Defog
+Defog from single
+pdf
+http://www.commsp.ee.ic.ac.uk/~rtan/
+Retinex_frankle_mccann
+Retinex
+Code
+http://www.cs.sfu.ca/~colour/publications/IST-2000/
+Some
+Retinex_maccann99
+Retinex
+code
+http://www.cs.sfu.ca/~colour/publications/IST-2000/
+pictures
+Gamut.tar.bz2
+Retinex
+code
+http://kobus.ca/research/programs/colour_constancy/index.html
+Video.avi/dehaze.m
+dehazing
+Raanan Fattal
+code
+http://www.cs.huji.ac.il/~raananf/projects/defog/index.html
+MPTK-Windows-bin-0-5-6-beta.zip
+Matching pursuit(MP)
+Alogrithm
+CNRS
+Code
+http://mptk.irisa.fr/downloads
+generateDictionaries.txt
+GenerateGabor
+Alogrithm
+code
+http://www.scholarpedia.org/article/Matching_pursuit
+Notes:
+1.      视频和源码都是对应的文章的：
+Kenji Okuma, Ali Taleghani, Nando De Freitas, Jim Little, David G. Lowe. Boosted Particle Filter: Multitarget Detection and Tracking. the European Conference on Computer Vision(ECCV), May 2004.
+2.      该网站下面还有其他一些资源可以下载：
+http://www.ee.oulu.fi/mvg/page/downloads
+是个研究组织：http://lear.inrialpes.fr/ ， 除此之外，还有一些源码。
+计算机视觉文献与代码资源
+CVonline
+http://homepages.inf.ed.ac.uk/rbf/CVonline
+http://homepages.inf.ed.ac.uk/rbf/CVonline/unfolded.htm
+http://homepages.inf.ed.ac.uk/rbf/CVonline/CVentry.htm
+李子青的大作：
+Markov Random Field Modeling in Computer Vision
+http://www.cbsr.ia.ac.cn/users/szli/mrf_book/book.html
+Handbook of Face Recognition (PDF)
+http://www.umiacs.umd.edu/~shaohua/papers/zhou04hfr.pdf
+张正友的有关参数鲁棒估计著作：
+Parameter Estimation Techniques:A Tutorial with Application to Conic Fitting
+http://research.microsoft.com/~zhang/INRIA/Publis/Tutorial-Estim/Main.html
+Andrea Fusiello“计算机视觉中的几何”教程：Elements of Geometric Computer Vision
+http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/FUSIELLO4/tutorial.html#x1-520007
+有关马尔可夫蒙特卡罗方法的资料：
+An introduction to Markov chain Monte Carlo
+http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/SENEGAS/mcmc.html
+Markov Chain Monte Carlo for Computer Vision--- A tutorial at ICCV05
+http://civs.stat.ucla.edu/MCMC/MCMC_tutorial.htm
+有关独立成分分析（Independent Component Analysis , ICA）的资料：
+An ICA-Page
+http://www.cnl.salk.edu/~tony/ica.html
+Fast ICA
+http://www.cis.hut.fi/projects/ica/fastica/
+The Kalman Filter (介绍卡尔曼滤波器的终极网页)
+http://www.cs.unc.edu/~welch/kalman/index.html
+Cached k-d tree search for ICP algorithms
+http://kos.informatik.uni-osnabrueck.de/download/3dim2007/paper.html
+几个计算机视觉研究工具
+Machine Vision Toolbox for Matlab
+http://www.petercorke.com/Machine%20Vision%20Toolbox.html
+Matlab and Octave Function for Computer Vision and Image Processing
+http://www.csse.uwa.edu.au/~pk/research/matlabfns/
+Bayes Net Toolbox for Matlab
+http://www.cs.ubc.ca/~murphyk/Software/BNT/bnt.html
+OpenCV (Chinese)
+http://www.opencv.org.cn/index.php/%E9%A6%96%E9%A1%B5
+Gandalf (A Computer Vision and Numerical Algorithm Labrary)
+http://gandalf-library.sourceforge.net/
+CMU Computer Vision Home Page
+http://www.cs.cmu.edu/afs/cs/project/cil/ftp/html/vision.html
+Machine Learning Resource Links
+http://www.cse.ust.hk/~ivor/resource.htm
+The Bayesian Filtering Library
+http://www.orocos.org/bfl
+Optical Flow Algorithm Evaluation (提供了一个动态贝叶斯网络框架，例如递归信息处理与分析、卡尔曼滤波、粒子滤波、序列蒙特卡罗方法等，C++写的)
+http://of-eval.sourceforge.net/
+MATLAB code for ICP algorithm
+http://www.usenet.com/newsgroups/comp.graphics.visualization/msg00102.html
+牛人主页：
+朱松纯（Song-Chun Zhu）
+http://www.stat.ucla.edu/~sczhu/
+David Lowe (SIFT) (很帅的一个老头哦 ^ ^)
+http://www.cs.ubc.ca/~lowe/
+Andrea Vedaldi (SIFT)
+http://vision.ucla.edu/~vedaldi/index.html
+Pedro F. Felzenszwalb
+http://people.cs.uchicago.edu/~pff/
+Dougla Dlanman (Brown的一个研究生，在其主页上搜集了大量算法教程和源码)
+http://mesh.brown.edu/dlanman/courses.html
+Jianbo Shi (Ncuts 的始作俑者)
+http://www.cis.upenn.edu/~jshi/
+Active Vision Group (Oxford的一个机器视觉研究团队，特色是SLAM，监视，导航)
+http://www.robots.ox.ac.uk/ActiveVision/index.html
+Juyang Weng（机器学习的专家，Autonomous Mental Development 是其特色）
+http://www.cse.msu.edu/~weng/
+测试图片或视频：
+Middlebury College‘s Stereo Vision Data Set
+http://cat.middlebury.edu/stereo/data.html
+Intelligent Vehicle:
+IVSource
+www.ivsoruce.net
+Robot Car
+http://www.plyojump.com/robot_cars.html
+How to Build a Robot: The Computer Vision Part
+http://www.societyofrobots.com/programming_computer_vision_tutorial.shtml
+计算机视觉应关注的资源
+来自美国帝腾大学的链接。
+Camera Calibration Links to toolboxes (mostly MATLAB) for camera calibration.
+Paul Debevec. Modeling and Rendering Architecture from Photographs.
+Marc Pollefeys, Tutorial on 3D Modeling from Images,, ECCV 2000,
+Available here: notes (12.1MB pdf)
+Richard Szeliski NIPS 2004 Tutorial on Acquiring Detailed 3D Models From Images and Video,
+Available here: slides (37.6 MB, ppt)
+Peter Corke did his thesis work on visual servoing for robot applications and has authored a robotics toolkit and vision toolkit for MATLAB.
+local copy of thesis: Corke thesis (4.36 MB, pdf)
+robot toolkit: robot.zip (568 KB, zip)
+vision toolkit: mv.zip (1.08 MB, zip)
+P. D. Kovesi., MATLAB Functions for Computer Vision and Image Analysis.
+School of Computer Science & Software Engineering, The University of Western Australia.
+Available locally as a zip archive MatlabFns.zip (4.8 MB, updated 21 May 2005)
+Philip Torr, among many other contributions, submitted a Structure and motion toolkit in Matlab to the MathSoft File Exhange.
+Local copy here: torrsam.zip (2.4 MB, zip).
+涉足计算机视觉领域要知道的
+做机器视觉和图像处理方面的研究工作，最重要的两个问题：其一是要把握住国际上最前沿的内容；其二是所作工作要具备很高的实用背景。解决第一个问题的办法就是找出这个方向公认最高成就的几个超级专家(看看他们都在作什么)和最权威的出版物(阅读上面最新的文献)，解决第二个问题的办法是你最好能够找到一个实际应用的项目，边做边写文章。 做好这几点的途径之一就是利用网络资源，利用权威网站和专家们的个人主页。
+依照下面目录整理：
+[1]研究群体(国际国内)[2]专家主页[3]前沿国际国内期刊与会议[4]搜索资源[5]GPL软件资源
+一、研究群体
+用来搜索国际知名计算机视觉研究组(CV Groups)：
+国际计算机视觉研究组清单http://peipa.essex.ac.uk/info/groups.html
+美国计算机视觉研究组清单 http://peipa.essex.ac.uk/info/groups.html#USA
+http://www-2.cs.cmu.edu/~cil/vision.html或 http://www.cs.cmu.edu/~cil/vision.html
+这是卡奈基梅隆大学的计算机视觉研究组的主页，上面提供很全的资料，从发表文章的下载到演示程序、测试图像、常用链接、相关软硬件，甚至还有一个搜索引擎。著名的有人物Tomasi， Kanade等。
+卡内基梅隆大学双目实验室http://vision.middlebury.edu/stereo/
+卡内基梅隆研究组http://www.cs.cmu.edu/~cil/v-groups.html
+还有几个实验室：
+Calibrated Imaging Laboratory 图像
+Digital Mapping Laboratory 映射
+Interactive Systems Laboratory 互动
+Vision and Autonomous Systems Center视觉自适应
+http://www.via.cornell.edu/
+康奈尔大学的计算机视觉和图像分析研究组，好像是电子和计算机工程系的。侧重医学方面的研究，但是在上面有相当不错资源，关键是它正在建设中，能够跟踪一些信息。
+Cornell University——Robotics and Vision group
+http://www-cs-students.stanford.edu/ 斯坦福大学计算机系主页
+1. http://white.stanford.edu/
+2. http://vision.stanford.edu/
+3. http://ai.stanford.edu/美国斯坦福大学人工智能机器人实验室
+The Stanford AI Lab (SAIL) is the intellectual home for researchers in the Stanford Computer Science Department whose primary research focus is Artificial Intelligence. The lab is located in the Gates...
+Vision and Imaging Science and Technology
+http://www.fmrib.ox.ac.uk/analysis/
+主要研究：Brain Extraction Tool， Nonlinear noise reduction， Linear Image Registration， Automated Segmentation， Structural brain change analysis， motion correction， etc.
+http://www.cse.msu.edu/prip/—密歇根州立大学计算机和电子工程系的模式识别--图像处理研究组，它的FTP上有许多的文章(NEW)。
+美国密歇根州大学认知模型和图像处理实验室
+The Pattern Recognition and Image Processing (PRIP) Lab faculty and students investigate the use of machines to recognize patterns or objects. Methods are developed to sense objects， to discover which...http://www.cse.msu.edu/rgroups/prip/
+http://pandora.inf.uni-jena.de/p/e/index.html
+德国的一个数字图像处理研究小组，在其上面能找到一些不错的链接资源。
+柏林大学 http://www.cv.tu-berlin.de/
+德国波恩大学视觉和认识模型小组
+Computer Vision Group located within the Division III of the Computer Science Department in the University of Bonn in Germany. This server offers information on topics concerning our computer vision http://www-dbv.informatik.uni-bonn.de/
+http://www-staff.it.uts.edu.au/~sean/CVCC.dir/home.html
+CVIP(used to be CVCC for Computer Vision and Cluster Computing) is a research group focusing on cluster-based computer vision within the Spiral Architecture.
+http://cfia.gmu.edu/
+The mission of the Center for Image Analysis is to foster multi-disciplinary research in image， multimedia and related technologies by establishing links between academic institutes， industry and government agencies， and to transfer key technologies to help industry build next generation commercial and military imaging and multimedia systems.
+英国的Bristol大学的Digital Media Group在高级图形图像方面不错。主要就是涉及到场景中光线计算的问题，比如用全局光照或是各种局部光照对高动态图的处理，还有近似真实的模拟现实环境 (照片级别的)，还有用几张照片来建立3D模型(人头之类的)。另外也有对古代建筑模型复原。http://www.cs.bristol.ac.uk/Research/Digitalmedia/
+而且根据Times全英计算机排名在第3， 也算比较顶尖的研究了
+http://www.cmis.csiro.au/IAP/zimage.htm
+这是一个侧重图像分析的站点，一般。但是提供一个Image Analysis环境---ZIMAGE and SZIMAGE。
+麻省理工视觉实验室MIT http://groups.csail.mit.edu/vision/welcome/
+AI Laboratory Computer Vision group
+Center for Biological and Computational Learning
+Media Laboratory， Vision and Modeling Group
+Perceptual Science group
+UC Berkeley http://0-vision.berkeley.edu.ilstest.lib.neu.edu/vsp/index.html
+http://www.cs.berkeley.edu.ilste ... n/vision_group.html
+加州大学伯克利分校视觉实验室David A. Forsyth：http://www.cs.berkeley.edu/~daf/
+UCLA(加州大学洛杉矶分校) http://vision.ucla.edu/视觉实验室
+英国牛津的A.Zisserman：http://www.robots.ox.ac.uk/~az/ 机器人实验室
+美国南加州大学智能机器人和智能系统研究所University of Southern California， Los Angeles
+IRIS is an interdepartmental unit of USC's School of Engineering with ties to USC's Information Sciences Institute (ISI). Members include faculty， graduate students， and research staff associated with... http://iris.usc.edu/ Computer Vision 实验室
+美国南加州大学计算机视觉实验室介绍：
+Computer Vision Laboratory at the University of Southern California is one of the major centers of computer vision research for thirty years. they conduct research in a number of basic and applied are...http://iris.usc.edu/USC-Computer-Vision.html
+英国约克大学高级计算机结构神经网络小组
+The Advanced Computer Architecture Group has had a thriving research programme in neural networks for over 10 years. The 15 researchers， led by Jim Austin， focus their work in the theory and applicati...http://www.cs.york.ac.uk/arch/neural/
+瑞士戴尔莫尔感知人工智能研究所
+IDIAP is a research institute established in Martigny in the Swiss Alps since 1991. Active in the areas of multimodal interaction and multimedia information management， the institute is also the leade...http://www.idiap.ch/
+英国萨里大学视觉，语言和信号处理中心
+The Centre for Vision， Speech and Signal Processing (CVSSP) is more than 60 members strong， comprising 12 academic staff， 18 research fellows and more than 44 research students. The activities of the ...http://www.ee.surrey.ac.uk/Research/VSSP/
+美国阿默斯特马萨诸塞州立大学计算机视觉实验室
+The Computer Vision Laboratory was established in the Computer Science Department at the University of Massachusetts in 1974 with the goal of investigating the scientific principles underlying the con...http://vis-www.cs.umass.edu
+University of Massachusetts——Computer Vision Laboratory for Perceptual Robotics
+美国芝加哥伊利诺伊斯大学贝克曼研究中心智能机器人和计算机视觉实验室
+Includes the following groups: Professor Seth Hutchinson's Research Group Professor David Kriegman's Research Group Professor Jean Ponce's Research Group Professor Narendra Ahuja's Research Gro...http://www-cvr.ai.uiuc.edu/
+Computer Vision and Robotics Laboratory
+Vision Interfaces and Systems Laboratory (VISLab)
+英国伯明翰大学计算机科学学校视觉研究小组
+The vision group at the School of Computer Science (a RAE 5 rated department) performs research into a wide variety of computer vision and image understanding areas. Much of this work is performed in ...http://www.cs.bham.ac.uk/research/vision/
+微软研究院机器学习与理解研究小组 / 计算机视觉小组
+The research group focuses on the development of more advanced and intelligent computer systems through the exploitation of statistical methods in machine learning and computer vision. The site lists ...http://research.microsoft.com/mlp/
+http://research.microsoft.com/en-us/groups/vision/
+微软公司的文献：http://research.microsoft.com/research/pubs
+微软亚洲研究院：http://research.microsoft.com/asia/，值得关注Harry Shum， Jian Sun， Steven Lin， Long Quan(兼职HKUST)etc.
+瑞典隆德大学数学系视觉组：http://www.maths.lth.se/matematiklth/personal/andersp/
+感觉国外搞视觉的好多是数学系出身，大约做计算机视觉对数学要求很高吧。
+澳大利亚国立大学：http://users.rsise.anu.edu.au/~hartley/
+美国北卡大学：http://www.cs.unc.edu/~marc/
+法国INRIA：http://www-sop.inria.fr/odyssee/team/ 由Olivier.Faugeras领衔的牛人众多。
+比利时鲁汶大学的L.Van Gool： www.esat.kuleuven.ac.be/psi/visics/
+据说在这个只有中国一个小镇大小的地方的鲁汶大学在欧洲排行top10，名列世界top100，还出了几个诺贝尔奖，视觉研究也很强.
+美国明德http://vision.middlebury.edu/stereo/
+以下含有非顶尖美国学校研究组，没有链接(个别的上面已经提到)，供参考。
+Amerinex Applied Imaging， Inc.
+Boston University
+Image and Video Computing Research group
+University of California at Santa Barbara加州大学芭芭拉分校
+Vision Research Lab
+University of California at San Diego加州大学圣迭戈分校
+Computer Vision & Robotics Research Laboratory
+Visual Computing laboratory
+University of California at Irvine加州大学欧文分校，加州南部一城，在圣安娜东南，
+Computer Vision laboratory
+University of California， Riverside加州大学河滨分校
+Visualization and Intelligent Systems Laboratory (VISLab)
+University of California at Santa Cruz
+Perceptual Science Laboratory
+Caltech (加州理工)
+Vision group
+University of Central Florida
+Computer Vision laboratory
+University of Florida
+Center for Computer Vision and Visualization
+Colorado State University
+Computer Vision group
+Columbia University
+Automated Vision Environment (CAVE)
+Robotics group
+University of Georgia， Athens
+Visual and Parallel Computing Laboratory
+Harvard University（哈佛）
+Robotics Laboratory
+University of Illinois at Urbana-Champaign
+Robotics and Computer Vision
+University of Iowa
+Division of Physiologic Imaging
+Jet Propulsion Laboratory
+Machine Vision and Tracking Sensors group
+Khoral Research， Inc
+Lawrence Berkeley Laboratories
+Imaging and Collaborative Computing Group
+Imaging and Distributed Computing
+Lehigh University
+Image Processing and Pattern Analysis Lab
+Vision And Software Technology Laboratory
+University of Louisville
+Computer Vision and Image Processing Lab
+University of Maryland
+Computer Vision Laboratory
+University of Miami
+Underwater Vision and Imaging Laboratory
+University of Michigan密歇根
+AI Laboratory
+Michigan State University 密歇根州立
+Pattern Recognition and Image Processing laboratory
+Environmental Research Institute of Michigan (ERIM) 密歇根大学有汽车车身检测研究
+University of Missouri-Columbia
+Computational Intelligence Research Laboratory
+NEC
+Computer Vision and Image Processing
+University of Nevada
+Computer Vision Laboratory
+Notre-Dame University
+Vision-Based Robotics using Estimation
+Ohio State University
+Signal Analysis and Machine Perception Laboratory
+University of Pennsylvania
+GRASP laboratory
+Medical Image Processing group
+Vision Analysis and Simulation Technologies (VAST) Laboratory
+Penn State University 宾夕法尼亚大学
+Computer Vision
+Precision Digital Images
+Purdue University普渡大学
+Robot Vision laboratory
+Video and Image Processing Laboratory (VIPER)
+Rensselaer Polytechnic Institute (RPI)
+Computer Science Vision
+University of Rochester
+Center for Electronic Imaging Systems
+Vision and Robotics laboratory
+Rutgers University (The State University of New Jersey)
+Image Understanding Lab
+University of Southern California
+Computer Vision
+University of South Florida
+Image Analysis Research group
+Stanford Research Institute International (SRI)
+RADIUS -- Research and Development for Image Understanding Systems
+The Perception program at SRI's AI Center
+SUNY at Stony Brook
+Computer Vision Lab
+University of Tennessee
+Imaging， Robotics and Intelligent Systems laboratory
+University of Texas， Austin
+Laboratory for Vision Systems
+University of Utah
+Center for Scientific Computing and Imaging
+Robotics and Computer Vision
+University of Virginia
+Computer Vision Research (CS)
+University of Washington
+Image Computing Systems Laboratory
+Information Processing Laboratory
+CVIA Laboratory
+University of West Florida
+Image Analysis/Robotics Research Laboratory
+University of Wisconsin
+Computer Vision group
+Vanderbilt University
+Center for Intelligent Systems
+Washington State University
+Imaging Research laboratory
+Wright-Patterson
+Model-Based Vision laboratory
+Wright State University
+Intelligent Systems Laboratory
+University of Wyoming
+Wyoming Image and Signal Processing Research (WISPR)
+Yale University
+Computational Vision Group http://www.cs.yale.edu/
+School of Medicine， Image Processing and Analysis group
+国内：
+中科院模式识别国家重点实验室 http://www.nlpr.ia.ac.cn/English/rv/mainpage.html
+虹膜识别、掌纹识别、人脸识别、
+莲花山http://www.stat.ucla.edu/~sczhu/Lotus/
+天津大学精密测试技术及仪器国家重点实验室
+研究方向包括：激光及光电测试技术、传感及测量信息技术、微纳测试与制造技术、制造质量控制技术。该实验室是国内精密测试领域惟一的国家重点实验室。
+“智能微系统及其集成应用技术”、“微结构光学测试技术”、“油气储运安全检测技术”、“先进制造中的视觉测量及其关键技术”、“正交偏振激光器原理、特性及其在精密计量中的应用研究”等5项代表性成果（07.3）。
+中科院长春光机所 http://www.ciomp.ac.cn/ny/keyan.asp
+中科院沈阳自动化所http://www.sia.ac.cn/index.php
+中科院西安光机所http://www.opt.ac.cn/yanjiushi/gpcxjs1.htm
+北京大学智能科学系http://www.cis.pku.edu.cn/vision/vision.htm
+三维视觉计算与机器人，生物特征识别与图像识别
+二、专家网页
+http://www.ai.mit.edu/people/wtf/
+这位可是MIT人工智能实验室的BILL FREEMAN。专长是：理解--贝叶斯模型。
+http://www.merl.com/people/brand/
+MERL(Mitsubishi Electric Research Laboratory)中的擅长“Style Machine”。
+http://research.microsoft.com/~ablake/
+CV界极有声望的A.Blake 1977年毕业于剑桥大学三一学院并或数学与电子科学学士学位。之后在MIT，Edinburgh，Oxford先后组建过研究小组并成为Oxford的教授，直到1999年进入微软剑桥研究中心。主要工作领域是计算机视觉。
+http://www-2.cs.cmu.edu/afs/cs.cmu.edu/user/har/Web/home.html
+这位专家好像正在学习汉语，主页并且搜集了诸如“两只老虎(Two Tigers)”的歌曲。
+他的主页上面还有几个专家：Shumeet Baluja， Takeo Kanade。他们的Face Detection作的绝对是世界一流。毕业于卡奈基梅隆大学的计算机科学系，兴趣是计算机视觉。
+三、前沿国际国内期刊与会议
+这里的期刊大部分都可以通过上面的专家们的主页间接找到
+1.国际会议 2.国际期刊 3.国内期刊 4.神经网络 5.CV 6.数字图象 7.教育资源，大学 8.常见问题
+1. 国际会议
+现在，国际上计算机视觉方面的三大国际会议是ICCV， CVPR和ECCV，统称之为ICE。
+ICCV的全称是International Comference on Computer Vision。ICCV两年一次，与ECCV正好错开，是公认的三个会议中级别最高的。
+ECCV的全称是Europeon Conference on Computer Vision，是一个欧洲的会议。
+CVPR的全称是Internaltional Conference on Computer Vision and Pattern Recogintion国际计算机视觉与模式识别会议。这是一个一年一次的会议，举办地在美国。
+ICIP—
+BMVC—
+MVA—
+国际模式识别会议(ICPR )：
+亚洲计算机视觉会议(ACCV)：
+2.国际期刊
+以计算机视觉为主要内容之一的国际刊物也有很多，如:
+International Journal of Computer Vision
+IEEE Trans. On PAMI http://www.computer.org/tpami/index.htm
+IEEE Transactionson Image Processing http://www.ieee.org/organizations/pubs/transactions/tip.htm
+Pattern Recognition http://www.elsevier.com/locate/issn/00313203
+Pattern Recognition Letters http://www.elsevier.com/locate/issn/01678655
+IEEE Trans. on Robotics and Automation，
+IEEE TPAMI
+IEEE TIP
+CVGIP Computer Vision. Graphics and Image Processing，
+Visual Image Computing，
+IJPRAI(Internatiorial Journat of Pattern Recognition and Artificial Intelligence)
+众所周知， computer vision(cv) 存在ICCV/CVPR/ECCV三个顶级会议，它们档次差不多，都应该在一流会议行列， 没有必要给个高下。有些us的人认为ICCV/CVPR略好于ECCV，而欧洲人大都认为ICCV/ECCV略好于CVPR，某些英国的人甚至认为BMVC好于CVPR。简言之， 三个会议差不多， 各有侧重和偏好。
+笔者就个人经验浅谈三会异同， 以供大家参考和讨论。 三者乃cv领域的旗舰和风向标，其oral paper (包括best paper) 代表当年度cv的最高水准， 在此引用Harry Shum的一句话， 想知道某个领域在做些什么，找最近几年此领域的proceeding看看就知道了。 ICCV/CVPR由IEEE Computer Society牵头组织， ECCV好像没有专门负责的组织。 CVPR每年(除2002年)都在美国开， ECCV每两年开一次，仅限欧洲， ICCV也是每两年一次，各洲轮值。 基本可以保证每年有两个会议开， 这样研究者就有两次跻身牛会的机会。
+就录取率而言， 三会都有波动。 如ICCV2001录取率>30%，且出现两个人(华人)各有三篇第一作者的paper的情况， 这在顶级牛会是不常见的 (灌水嫌疑)。 但是， ICCV2003， 2005两次录取率都很低， 大约20%左右。 ECCV也是类似规律， 在2004年以前都是>30%， 2006年降低到20%左右。 CVPR的录取率近年来一直偏高，从2004年开始一直都在[25%，30%]。最近一次CVPR2006是28.1%， CVPR2007还不知道统计数据。笔者猜测为了维持录取paper的绝对数量， 当submission少的时候录取率偏高， 反之偏低，近几年三大会议的投稿数量全部超过1000， 相对2000年前， 三会录取率均大幅度降低，最大幅度50%->20%。 对录取率走势感兴趣的朋友， 可参考 http://vrlab.epfl.ch/~ulicny/statistics/(CVPR2004的数据是错的)，http://www.adaptivebox.net/research/bookmark/CICON_stat.html.
+显然， 投入cv的人越来越多，这个领域也是越来越大， 这点颇不似machine learning一直奉行愚蠢的小圈子主义。另外一点值得注意， ICCV/ECCV只收vision相关的topic，而cvpr会收少量的pattern recognition paper， 如finger print等，但是不收和image/video完全不占边的pr paper，如speech recognition等。我一个朋友曾经review过一篇投往CVPR的speech的paper， 三个reviewer一致拒绝，其中一个reviewer搞笑的指出， 你这篇paper应该是投ICASSP被据而转投CVPR的。 就topic而言， CVPR涵盖最广。 还有一个没有验证过的原因导致CVPR录取率高: 很多us的researcher不愿意或没有足够的经费到us以外的地方开会， 故CVPR会优先接收很多来自us的paper (让大家都happy)。
+以上对三会的分析对我们投paper是很有指导作用的。 目前的research我想绝大部分还是纸上谈兵， 必经 read paper -> write paper -> publish paper -> publish paper on top conferences and journals流程。故了解投paper的一些基本技巧， 掌握领域的走向和热点， 是非常必要的。 避免做无用功，选择切合的topic，改善presentation， 注意格式 (遵守规定的模板)， 我想这是很多新手需要注意的问题。如ICCV2007明文规定不写summary page直接reject， 但是仍然有人忽视， 这是相当不值得的。
+3.国内期刊
+自动化学报、计算机学报、软件学报、电子学报，中国图象图形学报，模式识别与人工智能，光电子激光，精密光学工程等。
+4.神经网络
+神经网络-Neural Networks Tutorial Review
+http://hem.hj.se/~de96klda/NeuralNetworks.htm
+ftp://ftp.sas.com/pub/neural/FAQ.html
+Image Compression with Neural Networks
+http://www.comp.glam.ac.uk/digimaging/neural.htm
+Backpropagator's Review
+http://www.dontveter.com/bpr/bpr.html
+Bibliographies on Neural Networks
+http://liinwww.ira.uka.de/bibliography/Neural/
+Intelligent Motion Control with an Artificial Cerebellum
+http://www.q12.org/phd.html
+Kernel Machines
+http://www.kernel-machines.org/
+Some Neural Networks Research Organizations
+http://www.ieee.org/nnc/
+http://www.inns.org/
+Neural Network Modeling in Vision Research
+http://www.rybak-et-al.net/nisms.html
+Neural Networks and Machine Learning
+http://learning.cs.toronto.edu/
+Neural Application Software
+http://attrasoft.com
+Neural Network Toolbox for MATLAB
+http://www.mathworks.com/products/neuralnet/
+Netlab Software
+http://www.ncrg.aston.ac.uk/netlab/
+Kunama Systems Limited http://www.kunama.co.uk/
+5.Computer Vision(计算机视觉)
+Annotated Computer Vision Bibliography
+http://iris.usc.edu/Vision-Notes/bibliography/contents.html
+http://iris.usc.edu/Vision-Notes/rosenfeld/contents.html
+Lawrence Berkeley National Lab Computer Vision and Robotics Applications
+http://www-itg.lbl.gov/ITG.hm.pg.docs/VISIon/vision.html
+CVonline by University of Edinburgh
+The Evolving， Distributed， Non-Proprietary， On-Line Compendium of Computer Vision， www.dai.ed.ac.uk/CVonline
+Computer Vision Handbook，
+www.cs.hmc.edu/~fleck/computer-vision-handbook
+Vision Systems Courseware
+www.cs.cf.ac.uk/Dave/Vision_lecture/Vision_lecture_caller.html
+Research Activities in Computer Vision
+http://www-syntim.inria.fr/syntim/analyse/index-eng.html
+Vision Systems Acronyms
+www.vision-systems-design.com/vsd/archive/acronyms.html
+Dictionary of Terms in Human and Animal Vision
+http://cns-web.bu.edu/pub/laliden/WWW/Visionary/Visionary.html
+Metrology based on Computer Vision
+www.cranfield.ac.uk/sme/amac/research/metrology/metrology.html
+6.Digital Photography 数字图像
+Digital Photography， Scanning， and Image Processing
+www.dbusch.com/scanners/scanners.htm l
+7.Educational Resources， Universities 教育资源，大学
+Center for Image Processing in Education
+www.cipe.com
+Library of Congress Call Numbers Related to Imaging Science by Rochester Institute of Technology
+http://wally2.rit.edu/pubs/guides/imagingcall.html
+Mathematical Experiences through Image Processing， University of Washington
+www.cs.washington.edu/research/metip/metip.html
+Vismod Tech Reports and Publications， MIT
+http://vismod.www.media.mit.edu/cgi-bin/tr_pagemaker
+Vision Lab PhD dissertation list， University of Antwerp
+http://wcc.ruca.ua.ac.be/~visielab/theses.html
+INRIA (France) Research Projects: Human-Computer Interaction， Image Processing， Data Management， Knowledge Systems
+www.inria.fr/Themes/Theme3-eng.html
+Image Processing Resources
+http://eleceng.ukc.ac.uk/~rls3/Contents.htm
+Publications of Carsten Steger
+http://www9.informatik.tu-muench ... r/publications.html
+8.FAQs（常见问题）
+comp.dsp FAQ
+www.bdti.com/faq/dsp_faq.htm
+Robotics FAQ
+www.frc.ri.cmu.edu/robotics-faq
+Where's the sci.image.processing FAQ?
+www.cc.iastate.edu/olc_answers/p ... processing.faq.html
+comp.graphics.algorithms FAQ， Section 3， 2D Image/Pixel Computations
+www.exaflop.org/docs/cgafaq
+Astronomical Image Processing System FAQ
+www.cv.nrao.edu/aips/aips_faq.html
+四、搜索资源
+http://sal.kachinatech.com/
+http://cheminfo.pku.edu.cn/mirrors/SAL/index.shtml 北京大学
+Google输入：computer vision 或computer vision groups可以获得很多结果
+网络资源：
+CVonline http://homepages.inf.ed.ac.uk/rbf/CVonline/视觉研究组列表
+Computer vision test Image http://www.cs.cmu.edu/~cil/v-images.html卡内基梅隆标准图片库
+视觉论文搜索：Paper search
+http://www.researchindex.com
+五、图像处理GPL库（代码库图像库等）
+http://www.ph.tn.tudelft.nl/~klamer/cppima.html
+Cppima 是一个图像处理的C++函数库。这里有一个较全面介绍它的库函数的文档，当然你也可以下载压缩的GZIP包，里面包含TexInfo格式的文档。
+http://iraf.noao.edu/
+Welcome to the IRAF Homepage! IRAF is the Image Reduction and Analysis Facility， a general purpose software system for the reduction and analysis of astronomical data
+http://entropy.brni-jhu.org/tnimage.html
+一个非常不错的Unix系统的图像处理工具，看看它的截图。你可以在此基础上构建自己的专用图像处理工具包。
+http://sourceforge.net/projects/
+这是GPL软件集散地，可以搜索IP库。
+国内的CSDN http://www.csdn.net/
+转载：http://blog.sciencenet.cn/home.php?mod=space&uid=509980&do=blog&id=436782

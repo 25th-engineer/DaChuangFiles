@@ -1,0 +1,26 @@
+前言：
+由于工作上的需要开始进入NLP领域。关于什么是NLP童鞋们可以自己百度学习这里不做解释。我的学习开发环境是Mac，但团队小伙伴有很多Windows的操作系统，所以使用虚拟机方式统一开放环境。我们将使用VMware＋CentOS7做为我们的我们的学习开发环境。使用Python语言。因为笔者也是边学边做会有一些踩坑的情况还望共同学习的童鞋们多多谅解。更希望大家可以共同探讨交流给出建议意见。
+工具准备:
+1.VMware 虚拟机工具
+官网 http://www.vmware.com/cn.html 现在对应自己系统的版本安装。
+CentOS7 操作系统 64位
+2.官网 https://www.centos.org
+注意：CentOS7 因为后面需要用到集成开发环境，所以CentOS 下载DVD ISO有桌面环境的。
+开放环境安装：
+1.VMware的安装。 安装说明
+注意：VMware的版本大同小异不要太纠结。
+2.在虚拟机中安装CentOS7。安装说明
+环境确认：
+1.启动CentOS7虚拟机环境
+2.进入CentOS7 控制台
+* 在桌面空白处单击鼠标右键->在终端中打开
+为了我们开放学习开发的方便我们。（主要是在CentOS下安装各种SDK，第三方包等）我们在控制台将统一使用root权限账户。
+* 在控制台窗口输入如下命令->su root 然后输入对应的密码
+3.检测语言环境
+* 在控制台输入->Python
+查看Python版本信息如上。默认情况CentOS7集成了Python环境，版本是2.7.x。试试打印一下hello word。如果执行无误说明基础环境已经具备。
+备注：
+CentOS虚机最好做一下系统升级。以保证软件的版本。笔者会保持最新升级。
+参考资料：
+Python自然语言处理 O'REILLY 人民邮电出版社 [美]Steven Bird Ewan Klein Edward Loper
+Python基础教程(第2版·修订版) 人民邮电出版社 [挪]Magnus Lie Hetland

@@ -1,0 +1,103 @@
+原文地址:http://www.cnblogs.com/cyruszhu/p/5496913.html
+未经允许，请勿用于商业用途！相关请求，请联系作者:yunruizhu@126.com
+转载请附上原文链接，谢谢。
+机器学习/深度学习/自然语言处理学习路线
+1 基础
+l  Andrew NG 的 Machine Learning视频。
+连接：主页，资料。
+l  2.2008年Andrew Ng CS229 机器学习
+当然基本方法没有太大变化，所以课件PDF可下载是优点。
+中文字幕视频@网易公开课，英文版视频@youtube，课件PDF@Stanford
+l  3.Tom Mitchell 的机器学习视频
+他的《机器学习》在很多课程上被选做教材，有中文版。
+2 进阶
+l  3. 林軒田 (HT Lin) 老师的两门课。
+机器学习基石(Machine Learning Foundations)：
+MOOC，all handout slides ，free youtube videos
+机器学习技法(Machine Learning Techniques)：
+MOOC，all handout slides，free youtube videos
+l  4.2013年Yaser Abu-Mostafa (Caltech) Learning from Data
+内容更适合进阶，课程视频,课件PDF@Caltech
+Yaser Abu-Mostafa是林軒田 (HT Lin)的老师，林的课内容安排和这个课相似。
+l  5. 2012年余凯(百度)张潼(Rutgers) 机器学习公开课
+内容更适合进阶，课程主页@百度文库，课件PDF@龙星计划
+l  PRML/机器学习导论/矩阵分析(计算)/神经网络与机器学习
+3 方向
+3.1 深度神经网络
+l  大致了解：
+A Deep Learning Tutorial: From Perceptrons to Algorithms
+Introduction to Deep Learning Algorithms
+Deep learning from the bottom up
+Yann LeCun, Yoshua Bengio & Geoffrey Hinton，Deep learning[J],Nature.
+l  UFLDL：Deep Learning Tutorial from Stanford，中文版。
+Stanford计算机系的官方tutorial，Andrew Ng执笔。要想了解DL的原理，这个最好用了。
+l  Deep Learning，Ian Goodfellow，Yoshua Bengio，Aaron Courville。目前最权威的DL教材了。
+l  Neural Networks for Machine Learning。
+Geoffrey Hinton，Department of Computer Science，辛顿是反向传播算法和对比散度算法的发明人之一，也是深度学习的积极推动者。有视频和材料。
+l  Oxford Deep Learning
+Nando de Freitas 在 Oxford 开设的深度学习课程，有全套视频。
+l  吴立德，复旦大学教授。优酷视频：《深度学习课程》，讲的很有大师风范。
+其他参考：
+l  Neural networks class，Hugo Larochelle from Université de Sherbrooke
+l  Deep Learning Course， CILVR lab @ NYU
+3.2机器视觉
+l  Fei-Fei Li ：CS231n: Convolutional Neural Networks for Visual Recognition。
+http://cs231n.stanford.edu/，英文字幕
+CS231n课程笔记翻译：Python Numpy教程 ，@杜客组织知乎的几个牛人翻译的，表示感谢。
+l  William Hoff,  Computer vision, 视频和课件都有，无字幕
+l  CAP 5415 - Computer Vision, 无字幕
+3.3自然语言处理
+l  Richard Socher：CS224d: Deep Learning for Natural Language Processing
+http://cs224d.stanford.edu/syllabus.html，video.
+l  Dan Jurafsky和Christopher Manning，在coursera上的NLP课程链接。自然语言处理。
+l  Michael Collins，哥伦比亚大学，Natural Language Processing ，Coursera课程。
+l  High quality video of the 2013 NAACL tutorial version are up here: video
+课程对应的主页。ACL 2012 + NAACL 2013 Tutorial: Deep Learning for NLP (without Magic)，链接。
+l  统计学习方法，李航。很出名，擅长自然语言处理，该本书也是按照自然语言处理来写的。
+3.4杂货
+作者：郭小贤
+链接：https://www.zhihu.com/question/26006703/answer/63572833
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+另外建议看看大神Yoshua Bengio的推荐（左边的链接是论文，右边的是代码），有理论有应用（主要应用于CV和NLP）
+Page on Toronto, Home Page of Geoffrey Hinton
+Page on Toronto, Home Page of Ruslan R Salakhutdinov
+Page on Wustl, ynd/cae.py · GitHub
+Page on Icml, https://github.com/lisa-lab/pyle...
+Page on Jmlr, pylearn2)
+On the difficulty of training recurrent neural networks, trainingRNNs
+ImageNet Classification with Deep Convolutional Neural Networks, cuda-convnet - High-performance C++/CUDA implementation of convolutional neural networks - Google Project Hosting
+Linguistic Regularities in Continuous Space Word Representations, word2vec - Tool for computing continuous distributed representations of words. - Google Project Hosting
+作者：专业主义
+链接：https://www.zhihu.com/question/26006703/answer/90969591
+来源：知乎
+《Deep Learning for Natural Language Processing and Related Applications》
+介绍:这份文档来自微软研究院,精髓很多。如果需要完全理解，需要一定的机器学习基础。不过有些地方会让人眼前一亮,毛塞顿开。
+Understanding Convolutions
+介绍:这是一篇介绍图像卷积运算的文章，讲的已经算比较详细的了
+《Deep Learning and Shallow Learning》
+介绍:对比 Deep Learning 和 Shallow Learning 的好文，来着浙大毕业、MIT 读博的 Chiyuan Zhang 的博客。
+《Java Machine Learning》
+介绍：Java机器学习相关平台和开源的机器学习库，按照大数据、NLP、计算机视觉和Deep Learning分类进行了整理。看起来挺全的，Java爱好者值得收藏。
+《机器学习经典论文/survey合集》
+介绍：看题目你已经知道了是什么内容,没错。里面有很多经典的机器学习论文值得仔细与反复的阅读。
+《机器学习经典书籍》
+介绍：总结了机器学习的经典书籍，包括数学基础和算法理论的书籍，可做为入门参考书单。
+《Deep Learning 101》
+介绍:因为近两年来，深度学习在媒体界被炒作很厉害（就像大数据）。其实很多人都还不知道什么是深度学习。这篇文章由浅入深。告诉你深度学究竟是什么！
+《Underactuated Robotics》
+介绍:MIT的Underactuated Robotics于 2014年10月1日开课，该课属于MIT研究生级别的课程，对机器人和非线性动力系统感兴趣的朋友不妨可以挑战一下这门课程！
+作者：肖凯
+链接：https://www.zhihu.com/question/31785984/answer/72180444
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+Video and Lectures
+How To Create A Mind By Ray Kurzweil - Is a inspiring talk
+Deep Learning, Self-Taught Learning and Unsupervised Feature Learning By Andrew Ng
+Recent Developments in Deep Learning By Geoff Hinton
+The Unreasonable Effectiveness of Deep Learning by Yann LeCun
+Deep Learning of Representations by Yoshua bengio
+Principles of Hierarchical Temporal Memory by Jeff Hawkins
+Machine Learning Discussion Group - Deep Learning w/ Stanford AI Lab by Adam Coates
+Making Sense of the World with Deep Learning By Adam Coates
+Demystifying Unsupervised Feature Learning By Adam Coates
+Visual Perception with Deep Learning By Yann LeCun

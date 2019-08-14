@@ -1,0 +1,32 @@
+发表这篇文章只是记录自己的机器学习的历程,以及自己理解的一些学习方法及步骤,希望可以帮助一些想要学习机器学习的朋友
+1.首先我们先来有个概念,大致的了解自己想要学些什么,那么就看看机器学习的理论框架吧
+2.理解了要学什么东西,是不是迫不及待想要实际上手了,不急不急,还要搭建一下环境
+系统环境:win10,python3.7
+代码编辑:Jupyter Notebook,这是一款非常好用的代码编辑器,像个记事本一样(我发觉每个用python的人都会用Jupyter Notebook,那咱也学学)
+下载Jupyter Notebook很好下,直接用pip下载安装
+pip install jupyter
+出现Successfully installed jupyter-*****等表示安装好啦
+接下来运行一下吧!
+在命令提示符中输入jupyter notebook,回车就可以了
+这时就可以用jupyter notebook进行代码编辑了
+接下来在我们创建好的页面中完成一个"Hello World"吧
+print("Hello world")
+给你的这个页面重命名
+那么进行到这里了,还要再努力一下,我们还要装一些python的第三方库
+这里会遇到两个问题,由于是windows系统,所以Numpy + MKL和Scipy这两个安装文件无法通过pip直接安装
+我给个百度云下载链接吧
+链接：https://pan.baidu.com/s/1mCQ8D-rpJImlL_ufCY9YIQ 提取码：bwwd
+为了防止被屏蔽,图片也贴出来了
+ok,接下来下载好我们会看到这两个文件
+为了方便,在D盘创建个文件夹,叫package吧,那么把这两个文件复制到这个文件夹下,打开命令提示图输入以下命令
+D: cd package pip install numpy-1.15.4+mkl-cp37-cp37m-win_amd64.whl pip install scipy-1.2.1-cp37-cp37m-win_amd64.whl
+安装好这两个库,接下来的库就好安装了,直接在命令提示符中输入
+pip install matplotlib ipython pandas scikit-learn
+注意:win10的话记得用管理员身份运行命令提示符呦,否则可能会出现拒绝访问的提示
+到这里,基本的环境就搭建好了,如果有疑问,估计就是这些第三方库的作用了吧,那咱们来一起看看
+Numpy : 它是python中基础的用于科学计算的库,功能很强大,包括高维数组的计算,线性代数的计算,傅里叶变换以及产生一些伪随机数等
+Scipy : 它时python中用于科学计算的工具集,比如计算统计学分布,信号处理,计算线性代数方程等
+pandas : 它是python中用于数据分析的库,可以生成类似Excel表格式的数据表,而且可以对数据表操作,也可以在数据库中提取数据.
+matplotlib : 它是python的绘图库,可以描绘出折线图,散点图,直方图等
+scikit-learn : 它非常非常重要,接下来的算法完全是在它的基础上运行的,是建立在Scipy基础上的用于机器学习的python模块.
+ok,接下来,让我们一起进入机器学习的世界的世界吧!!

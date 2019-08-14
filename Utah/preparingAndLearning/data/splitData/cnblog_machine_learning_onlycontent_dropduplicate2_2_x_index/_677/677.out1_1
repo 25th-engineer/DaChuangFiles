@@ -1,0 +1,103 @@
+核心 提示 微软 在 Office365 Azure 云 Dynamics365 上 进行 
+人工智能 技术 的 部署 野心 不小 微软 在 2016年 9月 
+宣布 组建 自己 的 AI 研究小组 该 小组 汇集 了 
+超过 5000 名 计算机 科学家 和 工程师 加上 微软 内部 
+研究 部门 将 共同 挖掘 AI 技术 与此同时 亚马逊 Facebook 
+Google IBM 还有 微软 联合 宣而/nr 巨头 们 也 纷纷 
+拿出 了 自己 的 看家本领 Apple 的 Siri 利用 自然 
+语言 处理 来 识别 语音 命令 Facebook 的 深度 学习 
+面部 识别 算法 能够 快速 准确 地 识别 出 人脸 
+Google 的 「 大脑 」 可能 更为 聪明 而且 能够 
+安装 在 数百万 安卓 系统 的 设备 上 而 隐藏 
+在 CRM 领域 的 对手 之一 Salesforce 也 声称 推出 
+了 一款 全新 的 人工智能 平台 还有 Amazon Netflix 和 
+Spotify 都在 强调 使用 机器学习 了解 如何 与 客户 建立 
+联系 最近 的 人工智能 领域 如此 炙手可热 就连 微软 的 
+首席 执行官 纳德拉 也 提到 「 将 AI 覆盖 到 
+所有 领域 是 因为 微软 想要 实现 「 AI 技术 
+民主化 」 从而 解决 全球 最 紧迫 的 挑战 」 
+据悉 微软 将 从 以下 四个 细分 方向 实现 「 
+AI 技术 民主化 」 Agents . Harness AI to fundamentally 
+change human and computer interaction through agents such as Microsoft 
+s digital personal assistant Cortana1 助手 利用 AI 从 根本 
+上 改变 人机交互 过程 如 微软 的 数字 个人 助理 
+Cortana Applications . Infuse every application from the photo app 
+on people s phones to Skype and Office 365 with 
+intelligence2 应用平台 从 移动 端 的 照片 app 到 Skype 
+再到 Office365 每一个 应用平台 融入 了 AI 技术 Services . 
+Make these same intelligent capabilities that are infused in Microsoft 
+s apps cognitive capabilities such as vision and speech and 
+machine analytics available to every application developer in the world3 
+服务 让 全球 每位 应用 开发 者 都能 获取 同样 
+的 AI 技术支持 如 微软 app 中 视觉 与 语音 
+识别 能力 机器 分析 能力 Infrastructure . Build the world 
+s most powerful AI supercomputer with Azure and make it 
+available to anyone to enable people and organizations to harness 
+its power4 基础架构 以 Azure 云为/nr 平台 构建 强大 的 
+AI 超级计算机 为 企业 和 个人 提供 该项 服务 那么 
+微软 近期 推出 的 几款 人工智能 产品 看似 「 姗姗来迟 
+」 但在 AI 领域 的 重量 可 不能 小视 那么 
+微软 在 如何 布局 AI 呢 其 旗下 几大 产品 
+又 都与 AI 有着 怎样 的 关系 推出 人工智能 版 
+Dynamics365 提升 销售 转化率 更好 地 理解 客户 行为 是 
+如今 移动 社交 云 三者 融合 时代 的 大 背景 
+下 企业 需要 具备 的 重要 能力 过去 几周 CRM 
+领域 频频 传来 人工智能 利好 的 消息 如今 微软 也向 
+世人 透露 在 下月 1 日 将 推出 人工智能 版 
+Dynamics365 为 销售 人员 提供 云端 商务 应用 解决方案 该款 
+产品 将 ERP 与 CRM 进行 整合 打造 成为 一个 
+单一 的 云端 解决方案 此次 产品 的 推出 主要 针对 
+的 就是 CRM 领域 占 主导 地位 的 Salesforce 而 
+此前 不久 Salesforce 刚刚 推出 了 一款 名为 「 爱因斯坦 
+」 的 人工智能 云 平台 能够 为 企业 客户 提供 
+相应 服务 Microsoft has built in a couple of intelligence 
+features into the release designed specifically for sales and service 
+personnel .   First there is Customer Insights a stand 
+alone cloud service which enables   users to bring in 
+a variety of internal and external data sources . Companies 
+  can   integrate all of this data with internal 
+metrics KPIs to drive automated actions based on the data 
+. The solution   includes partner data from the likes 
+of Facebook and Trip Advisor proving you don t need 
+to own an external data source to take advantage of 
+it . 微软 推出 的 Dynamics365 能够 为 销售 人员 
+提供 以下 几 类 服务 一是 客户 洞察 Customer Insights 
+一款 单机 云 服务 帮助 用户 收集 各类 内外部 数据 
+信息 企业 能够 将 所有 数据 与 内部 指标 KPIs 
+进行 集成 基于 数据 进行 自动化 行为 的 驱动 这套 
+解决 方案 还 包括 了 合作 伙伴 如 Facebook 和 
+Trip Advisor 上 产生 的 大量 数据 不过 这也 说明 
+了 用户 无需 借 外部 获取数据 It s been   
+designed as a stand alone service that can work with 
+any of the Dynamics 365 CRM components sales customer service 
+or field service and can also work with any external 
+CRM tool with open APIs . This last point is 
+particularly telling because it s giving customers who might not 
+be using Dynamics 365 but are using other Microsoft tools 
+like Outlook   access to this feature . 一方面 单机 
+服务 能够 与 Dynamics365 CRM 的 组成 部 件 进行 
+很好 地 兼容 包括 销售 客服 或者 现场 服务 另一方面 
+还能 与 任何 一个 带有 开放 API 接口 的 外部 
+CRM 工具 进行 兼容 此外 单机 服务 还 能为 并未 
+使用 Dynamics365 而是 微软 其他 工具 如 Outlook 的 客户 
+提供 该项 服务 的 渠道 The second piece is called 
+Relationship Insights which as the name suggests gives sales people 
+information about the status of their customer relationships at any 
+given moment . It s built on the   on 
+  the Cortana Intelligence Suite which Microsoft introduced in 2015 
+  and uses tools like   sentiment analysis to check 
+on the likelihood of the deal closing and the next 
+best action to take . 二 是 关系 洞察 Relationship 
+Insights 为 销售 人员 即 时 提供 客户 关系 信息 
+该 服务 基于 人工智能 助手 小娜 的 平台 进行 提供 
+这个 智能 助手 于 去年 在 全球 推出 通过 情感 
+分析 检测 交易 结束 的 可能性 并 判断 下一步 最佳 
+实践 方案 For now know that Microsoft   has consolidated 
+its artificial intelligence tools   into a single coherent division 
+and just about every vendor not just those selling CRM 
+is   trying to build some level of intelligence into 
+its products . Dynamics 365 is just the latest manifestation 
+. 总的来说 微软 已将 人工 智能工具 嵌入 一个 单独 连贯 
+的 区域 而且 不 只是 CRM 领域 的 供应商 基本上 
+每个 供应商 都在 试图 将 某种 程度 的 智能 技术 
+嵌入 到 其 产品 中 

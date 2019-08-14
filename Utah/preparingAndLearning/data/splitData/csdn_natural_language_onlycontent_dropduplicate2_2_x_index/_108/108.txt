@@ -1,0 +1,12 @@
+主题提取
+参考知乎的回答： 《“关键词”提取都有哪些方案？》
+《word2vec词向量训练及中文文本相似度计算》
+简单的LDA实现： 《NLP 主题抽取 Topic LDA代码实践 gensim包 代码》
+命名实体识别
+参考：http://spaces.ac.cn/archives/3942/
+IIS 推导：
+http://blog.csdn.net/xueyingxue001/article/details/50773917
+Bi-LSTM + CRF 进行NER：
+https://www.cnblogs.com/Determined22/p/7238342.html
+使用CRF++进行命名实体识别
+https://zhuanlan.zhihu.com/p/27597790

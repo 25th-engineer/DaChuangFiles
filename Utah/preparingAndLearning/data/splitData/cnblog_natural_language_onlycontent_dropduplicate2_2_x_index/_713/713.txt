@@ -1,0 +1,37 @@
+自然语言处理的CNN模型中几种常见的池化方法
+本文是在[1]的基础上进行的二次归纳。
+0x00 池化(pooling)的作用
+首先，回顾一下NLP中基本的CNN模型的卷积和池化的大致原理[2]。filter(特征抽取器，卷积核，CV上称之为滤波器）在一个窗口（text region）上可以抽取出一个特征值，filter在整个text上滑动，将抽取出一系列特征值组成一个特征向量。这就是卷积层抽取文本特征的过程。模型中的每一个filter都如此操作，形成了不同的特征向量。
+pooling层则对filters的抽取结果进行降维操作，获得样本的重要特征，为下一次的卷积增加感受野的大小，逐渐减小＂分辨率＂, 为最后的全连接做准备。pooling层是CNN中用来减小尺寸，提高运算速度的，同样能减小噪声的影响，让各特征更具有健壮性。降维操作方式的不同产生不同的池化方法。
+一般在pooling层之后连接全连接神经网络，形成最后的分类结果。
+下面列举几种常见的pooling方法。
+0x01 Max Pooling
+做法
+对于某个filter抽取到若干特征值，只取其中得分最大的那个值作为pooling层保留值，其它特征值全部抛弃，值最大代表只保留这些特征中最强的，而抛弃其它弱的此类特征。
+优点
+只保留区域内的最大值（特征），忽略其它值，降低噪声的影响，提高模型健壮性;
+Max Pooling能减少模型参数数量，有利于减少模型过拟合问题。因为经过pooling操作后，在NLP任务中往往把一维的数组转换为单一数值，这样对于后续的卷积层或者全联接隐层来说无疑单个filter的参数或者隐层神经元个数就减少了。
+Max Pooling可以把变长的输入X整理成固定长度的输入。因为CNN最后往往会接全联接层，而其神经元个数是需要事先定好的，如果输入是不定长的那么很难设计网络结构。在NLP任务中，文本的长度往往是不确定的，而通过pooling 操作，每个filter固定取1个值，那么有多少个filter，pooling层就有多少个神经元(pooling层神经元个数等于filters个数)，这样就可以把全联接层神经元个数固定住。
+缺点
+Max-Pooling丢失特征项位置信息。在很多NLP的应用场合，特征的出现位置信息是很重要的，比如主语出现位置一般在句子头，宾语一般出现在句子尾等等，这些位置信息其实有时候对于主题分类分类任务也许不是很重要([3]保留词的顺序特征提高了文本分类性能)，但是对于情感分类任务可能很重要；
+Max-Pooling丢失特征频次信息。有时候有些强特征会出现多次，比如我们常见的特征权重算法TF-IDF中的TF就是指某个特征在某一个文本中出现的次数。但是因为Max Pooling只保留一个最大值，所以即使某个特征出现多次，经过max-Pooling也只能看到一次。
+0x02 K-Max Pooling
+做法
+K-Max Pooling可以取每一个filter抽取的一些列特征值中得分在前K大的值，并保留他们的相对的先后顺序。把所有filters的前k大的特征值拼接成一个特征向量。pooling层的神经元个数等于k倍的filter个数。就是说通过多保留一些特征信息供后续阶段使用。
+优点
+K-Max Pooling可以表达同一类特征出现多次的情形，即可以表达某类特征的强度；
+因为这些Top-K特征值的相对顺序得以保留，所以应该说其保留了部分位置信息。
+缺点
+这种位置信息只是特征间的相对顺序，而非绝对位置信息。
+0x03 Chunk-Max Pooling
+做法
+把某个filter抽取到的特征向量进行分段，切割成若干段后，在每个分段里面各自取得一个最大特征值，比如将某个filter的特征向量切成3个chunk，那么就在每个chunk里面取一个最大值，于是获得3个特征值。
+优点
+Chunk-Max Pooling可以保留了多个局部最大特征值的相对顺序信息；
+如果多次出现强特征，Chunk-Max Pooling可以捕获特征强度。
+缺点
+并没有保留绝对位置信息，仅保留了比较粗粒度的模糊的位置信息。
+0x04 REFERENCE
+[1] 张俊林. 自然语言处理中CNN模型几种常见的Max Pooling操作[EB/OL]. http://blog.csdn.net/malefactor/article/details/51078135, 2016-04-07
+[2] Kim, Y. (2014). Convolutional neural networks for sentence classification. Eprint Arxiv.
+[3] Johnson, R., & Zhang, T. (2014). Effective use of word order for text categorization with convolutional neural networks. Eprint Arxiv.

@@ -1,0 +1,58 @@
+最近 掉进 了 Machine Learning 的 坑里 暑期 听完 了 
+龙星 计划 的 机器学习 课程 走马观花 看 了 一些 书 
+最近 找了 Stanford 的 Machine Learning 的 公开课 http / 
+/ v . 163 . com / special / opencourse 
+/ machinelearning . html 想 系统 地 学习 一遍 而且 
+pennyliang 博士 在 他 的 博客 里 http / / 
+blog . csdn . net / pennyliang 公开 了 他 
+学习 这个 课 时候 写 的 一些 代码 对 我 
+这样 的 入门 级 菜鸟 很有帮助 在此 对 梁 博士 
+表示 诚挚 感谢 今天 看 完了 CS229 又 下了 Pennyliang 
+写 的 Batch   Gradient Descent 算法 发现 它 的 
+实现 跟 Batch   Gradient Descent 算法 不 太 一样 
+传统 Batch   Gradient Descent 算法 要求 得到 所有 的 
+样本 点后 根据 所有 样本点 计算出 表示 函数 h 并 
+更新 theta 而 后者 的 代码 则是 来 一个 样本 
+就 更新 theta 这 其实 是 Stochastic Gradient Descent 算法 
+我 对 pennyliang 的 代码 进行 了 简单 的 修改 
+实现 了 Batch   Gradient Descent 算法 # include stdio 
+. h int main void { float matrix 4 2 
+= { { 1 4 } { 2 5 } 
+{ 5 1 } { 4 2 } } float 
+result 4 = { 19 26 19 20 } float 
+theta 2 = { 2 5 } / / initialized 
+theta { 2 5 } we use the algorithm to 
+get { 3 4 } to fit the model float 
+learning _ rate = 0.001 / / leaning _ rate 
+cann t be too big float loss = 1000.0 / 
+/ set a loss big enough float error _ sum 
+2 = { 0 0 } for int i = 
+0 i 1000 & & loss 0.0001 + + i 
+{ for int j = 0 j 4 + + 
+j { float h = 0 for int k = 
+0 k 2 + + k { h + = 
+matrix j k * theta k } for int k 
+= 0 k 2 + + k { error _ 
+sum k + = result j h * matrix j 
+k } if j = = 3 { for int 
+k = 0 k 2 + + k { theta 
+k + = learning _ rate * error _ sum 
+k } } } printf * * * * * 
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * \ n printf theta now % f % 
+f \ n theta 0 theta 1 printf i % 
+d \ n i loss = 0.0 for int j 
+= 0 j 4 + + j { float sum 
+= 0.0 for int k = 0 k 2 + 
++ k { sum + = matrix j k * 
+theta k } loss + = sum result j * 
+sum result j } printf loss now % f \ 
+n loss } return 0 } 修改后 的 代码 必须 
+将 学习 速度 改小 否则 容易 跨过 最优 值 由于 
+学习 速度 改小 迭代 次数 也 将 增加 参考 链接 
+http / / blog . csdn . net / pennyliang 
+/ article / details / 6998517http / / v . 
+163 . com / movie / 2008/1 / B / 
+O / M6SGF6VB4 _ M6SGHJ9BO . html 

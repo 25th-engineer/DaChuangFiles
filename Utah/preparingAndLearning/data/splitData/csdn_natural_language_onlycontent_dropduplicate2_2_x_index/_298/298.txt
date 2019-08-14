@@ -1,0 +1,31 @@
+百度智能云文档链接 : https://cloud.baidu.com/doc/SPEECH/index.html
+1.百度语音合成
+概念: 顾名思义,就是将你输入的文字合成语音,例如:
+from aip import AipSpeech """ 你的 APPID AK SK """ APP_ID = '16027154' API_KEY = '5a8u0aLf2SxRGRMX3jbZ2VH0' SECRET_KEY = 'UAaqS13z6DjD9Qbjd065dAh0HjbqPrzV' #上面这些东西,都在我们的百度语音的应用列表中 client=AipSpeech(APP_ID,API_KEY,SECRET_KEY) result=client.synthesis('大噶好,吾系渣渣辉,系兄弟就来砍我','zh',1,{ 'spd' :4, 'vol' :5, 'pit' :8, 'per' :4 }) #识别征求返回语音二进制,错误则返回dict if not isinstance(result,dict): with open('audio.mp3','wb') as f: f.write(result)
+百度语音生成
+参数:
+tex : 合成的文本,使用UTF-8编码,注意文本长度必须小于1024字节   　　　　　　　　　   必须有
+culid :用户唯一标识,用来区分用户,填写机器的MAC地址或IMEI码, 长度60以内    　　　　不必须有
+spd :  语速 ,取值0-15,默认为5(中语速)                                           　　　　　　 　 不必须有
+pit :   音调,取值0-15,默认为5(中语调)　　　　　　　　　　　　 　　　　　　  　　　　 不必须有
+vol : 音量,取值0-15,默认为5(中音量)　　　　　　　　　　　　　　　　  　　　　　　　不必须有
+per:发音人选择,0为女声,1位男声,3为情感合成-度逍遥,4为感情合成-度丫丫,默认为0  　　 不必须有
+2.百度语音识别
+概念: 同上,就是将你的音频文件的内容读出来,相当于电子书
+import os from aip import AipSpeech """ 你的 APPID AK SK """ APP_ID = '16027160' API_KEY = 'uzx4SWZuimPqbE4LvxYScEhi' SECRET_KEY = '3HBy8yi11ID9T4yyxkADuGYOGyavxPdG' client = AipSpeech(APP_ID, API_KEY, SECRET_KEY) #语音合成,通过语音生成文字 def get_file_content(filePath): os.system(f'ffmpeg -y -i {filePath} -acodec pcm_s16le -f s16le -ac 1 -ar 16000 {filePath}.pcm') with open(f'{filePath}.pcm', 'rb') as fp: return fp.read() # 识别本地文件 ret = client.asr(get_file_content('nszm.m4a'), 'pcm', 16000, { 'dev_pid': 1536, })
+#得出音频文件中的内容,打印出来 print(ret.get('result')[0])
+3.百度NLP自然语言处理 -- simnet短文本相似度
+from aip import AipNlp
+""" 你的 APPID AK SK """
+APP_ID = '16027160'
+API_KEY = 'uzx4SWZuimPqbE4LvxYScEhi'
+SECRET_KEY = '3HBy8yi11ID9T4yyxkADuGYOGyavxPdG'
+client_nlp = AipNlp(APP_ID, API_KEY, SECRET_KEY)
+text='大噶好,吾系渣渣辉,是兄弟就来砍我'
+#这里算出来的是相似度(score)
+score=client_nlp.simnet('你叫什么名字呀',text) if score >=0.58: filename=执行某个函数 os.system(filename)
+4.对接图灵机器人 实现智能问答
+这里我说一下我的逻辑:
+我先通过语音合成弄了一个音频,然后通过语音识别读取出我音频的内容,最后通过连接图灵机器人,进行智能问答
+import os from aip import AipSpeech, AipNlp """ 你的 APPID AK SK """ APP_ID = '16027160' API_KEY = 'uzx4SWZuimPqbE4LvxYScEhi' SECRET_KEY = '3HBy8yi11ID9T4yyxkADuGYOGyavxPdG' client = AipSpeech(APP_ID, API_KEY, SECRET_KEY) client_nlp = AipNlp(APP_ID, API_KEY, SECRET_KEY) # 语音识别,将你输入的文字转化为语音 def AI_voice(file): result = client.synthesis(file, 'zh', 1, { 'spd': 5, 'vol': 5, 'pit': 5, 'per': 2 }) if not isinstance(result, dict): with open('audio.mp3', 'wb') as f: f.write(result) return 'audio.mp3' # 语音合成,通过语音生成文字,在这里只是读出文字,并没有写出来,下面这一步才是将语音中的文字return出来 def get_file_content(file): os.system(f"ffmpeg -y -i {file} -acodec pcm_s16le -f s16le -ac 1 -ar 16000 {file}.pcm") with open(f'{file}.pcm', 'rb') as fp: return fp.read() # 返回的是你语音中的消息 def voice_content(file): result = client.asr(get_file_content(file), 'pcm', 16000, { 'dev_pid': 1536, }) # print(result.get('result')[0]) return result.get('result')[0] def goto_tl(text, uid): URL = "http://openapi.tuling123.com/openapi/api/v2" import requests data = { "perception": { "inputText": { "text": "你叫什么名字" } }, "userInfo": { "apiKey": "be41cf8596a24aec95b0e86be895cfa9", "userId": "123" } } data["perception"]["inputText"]["text"] = text data["userInfo"]["userId"] = uid res = requests.post(URL, json=data) print(res.content) # print(res.text) # print(res.json()) return res.json().get("results")[0].get("values").get("text") text = voice_content("nszm.m4a") # 自然语言的处理,比较low版 # 获取相似度 score = client_nlp.simnet('你叫什么名字', text).get('score') print(score) if score >= 0.58: filename = AI_voice('我是你爸爸,我喜欢你妈妈') os.system(filename) # 将我语音中的内容识别出来,并进行返回, answer = goto_tl(text, 'XiaoQiang') name = AI_voice(answer) os.system(name)
+转载于:https://www.cnblogs.com/zty1304368100/p/10719949.html

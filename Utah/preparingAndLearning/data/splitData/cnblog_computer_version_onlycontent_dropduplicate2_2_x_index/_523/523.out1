@@ -1,0 +1,166 @@
+最近 打算 学习 一下 AForge . NET AForge . NET 
+是 一个 专门 为 开发者 和 研究 者 基于 C 
+# 框架 设计 的 这个 框架 提供 了 不同 的 
+类库 和 关于 类库 的 资源 还有 很多 应用程序 例子 
+包括 计算机 视觉 与 人工智能 图像处理 神经网络 遗传算法 机器学习 机器人 
+等 领域 这个 框架 由 一系列 的 类库 组成 主要 
+包括 有 AForge . Imaging 一些 日常 的 图像 处理 
+和 过滤器 AForge . Vision 计算机 视觉 应用 类库 AForge 
+. Neuro 神经 网络 计算 库 AForge . Genetic 进化 
+算法 编程 库 AForge . MachineLearning 机器学习 类库 AForge . 
+Robotics 提供 一些 机器 学习 的 工具 类库 AForge . 
+Video 一 系列 的 视频处理 类库 AForge . Fuzzy 模糊推理 
+系统 类库 AForge . Controls 图像 三维 图表 显示 控件 
+我 这里 打算 就 1 基于 模糊 系统 的 自动 
+导航 2 . 运动 检测 3 C # 网络 视频 
+传输 这三个 方面 进行 学习 会 尽快 把 学习 心得 
+与 大家 分享 基于 网络 视频 传输 的 部分 我 
+参考 别人 的 代码 已经 写 出了 示例 程序 如图 
+因为 下位 机 平台 目前 还 没有 搭建 所以 无法 
+进行 传输 视频 的 测试 等 以后 测试 了 再 
+上传 测试 结果 因为 我 这里 用 的 程序 来自 
+网络 所以 也就 不把 程序 贴上 来了 我 把 我 
+学习 中 遇到 的 问题 和 解决 方法 给 大家 
+说说 问题 1 安装 AForge . net 之后 无法 找到 
+V i d e o o u r c e 
+P l a y e r 控件 方法 在 VS2008 
+  的 工具 中   右键 选择项 . NET Framerwork 
+    点击 命名 空间 进行 排序 名称 一列 选择 
+  V i d e o o u r c 
+e P l a y e r 确定 即可 问题 
+2 定时器 设定 的 时间 为 多少 答   为 
+1000ms1 private void timer1 _ Tick object sender EventArgs e 
+2 { 3 / / Interface 4 IVideoSource videoSource = 
+v i d e o o u r c e 
+P l a y e r . VideoSource 5 if 
+videoSource = null 6 { 7 statCount statIndex = videoSource 
+. FramesReceived 8 if + + statIndex = statLength 9 
+statIndex = 0 10 if statReady statLength 11 statReady + 
++ 12 float fps = 0 13 for int i 
+= 0 i statReady i + + 14 { 15 
+fps + = statCount i 16 } 17 fps / 
+= statReady 18 statCount statIndex = 0 19 fpsLabel . 
+Text = fps . ToString F2 + fps 20 } 
+21 } 这段 代码 是 用来 计算 刷新 的 帧数 
+首先 private int statCount = new int statLength   statLength 
+= 15 用来 储存 已经 刷新 的 次数 fps / 
+= statReady 这个 用来 求 刷新 的 平均值 因为 时间 
+为 一秒 所以 得到 的 结果 也 就是 标准 的 
+刷新 频率 问题 3 action = snapshot action = stream 
+表示 什么 答 action = snapshot 返回 的 是 一幅 
+静态 图片 action = stream 返回 的 才是 连续 的 
+mjpeg 流 完整 的 代码 大家 可以 从 这个 博客 
+里 阅读 http / / hi . baidu . com 
+/ lansessl / item / 1 e 8 9 0 
+d f 3 e 1 d c c f 1 
+2 d 7 f f 8 c a b 最近 打算 学习 一下 AForge . NET AForge . NET 
+是 一个 专门 为 开发者 和 研究 者 基于 C 
+# 框架 设计 的 这个 框架 提供 了 不同 的 
+类库 和 关于 类库 的 资源 还有 很多 应用程序 例子 
+包括 计算机 视觉 与 人工智能 图像处理 神经网络 遗传算法 机器学习 机器人 
+等 领域 这个 框架 由 一系列 的 类库 组成 主要 
+包括 有 AForge . Imaging 一些 日常 的 图像 处理 
+和 过滤器 AForge . Vision 计算机 视觉 应用 类库 AForge 
+. Neuro 神经 网络 计算 库 AForge . Genetic 进化 
+算法 编程 库 AForge . MachineLearning 机器学习 类库 AForge . 
+Robotics 提供 一些 机器 学习 的 工具 类库 AForge . 
+Video 一 系列 的 视频处理 类库 AForge . Fuzzy 模糊推理 
+系统 类库 AForge . Controls 图像 三维 图表 显示 控件 
+我 这里 打算 就 1 基于 模糊 系统 的 自动 
+导航 2 . 运动 检测 3 C # 网络 视频 
+传输 这三个 方面 进行 学习 会 尽快 把 学习 心得 
+与 大家 分享 基于 网络 视频 传输 的 部分 我 
+参考 别人 的 代码 已经 写 出了 示例 程序 如图 
+因为 下位 机 平台 目前 还 没有 搭建 所以 无法 
+进行 传输 视频 的 测试 等 以后 测试 了 再 
+上传 测试 结果 因为 我 这里 用 的 程序 来自 
+网络 所以 也就 不把 程序 贴上 来了 我 把 我 
+学习 中 遇到 的 问题 和 解决 方法 给 大家 
+说说 问题 1 安装 AForge . net 之后 无法 找到 
+V i d e o o u r c e 
+P l a y e r 控件 方法 在 VS2008 
+  的 工具 中   右键 选择项 . NET Framerwork 
+    点击 命名 空间 进行 排序 名称 一列 选择 
+  V i d e o o u r c 
+e P l a y e r 确定 即可 问题 
+2 定时器 设定 的 时间 为 多少 答   为 
+1000ms1 private void timer1 _ Tick object sender EventArgs e 
+2 { 3 / / Interface 4 IVideoSource videoSource = 
+v i d e o o u r c e 
+P l a y e r . VideoSource 5 if 
+videoSource = null 6 { 7 statCount statIndex = videoSource 
+. FramesReceived 8 if + + statIndex = statLength 9 
+statIndex = 0 10 if statReady statLength 11 statReady + 
++ 12 float fps = 0 13 for int i 
+= 0 i statReady i + + 14 { 15 
+fps + = statCount i 16 } 17 fps / 
+= statReady 18 statCount statIndex = 0 19 fpsLabel . 
+Text = fps . ToString F2 + fps 20 } 
+21 } 这段 代码 是 用来 计算 刷新 的 帧数 
+首先 private int statCount = new int statLength   statLength 
+= 15 用来 储存 已经 刷新 的 次数 fps / 
+= statReady 这个 用来 求 刷新 的 平均值 因为 时间 
+为 一秒 所以 得到 的 结果 也 就是 标准 的 
+刷新 频率 问题 3 action = snapshot action = stream 
+表示 什么 答 action = snapshot 返回 的 是 一幅 
+静态 图片 action = stream 返回 的 才是 连续 的 
+mjpeg 流 完整 的 代码 大家 可以 从 这个 博客 
+里 阅读 http / / hi . baidu . com 
+/ lansessl / item / 1 e 8 9 0 
+d f 3 e 1 d c c f 1 
+2 d 7 f f 8 c a b 最近 打算 学习 一下 AForge . NET AForge . NET 
+是 一个 专门 为 开发者 和 研究 者 基于 C 
+# 框架 设计 的 这个 框架 提供 了 不同 的 
+类库 和 关于 类库 的 资源 还有 很多 应用程序 例子 
+包括 计算机 视觉 与 人工智能 图像处理 神经网络 遗传算法 机器学习 机器人 
+等 领域 这个 框架 由 一系列 的 类库 组成 主要 
+包括 有 AForge . Imaging 一些 日常 的 图像 处理 
+和 过滤器 AForge . Vision 计算机 视觉 应用 类库 AForge 
+. Neuro 神经 网络 计算 库 AForge . Genetic 进化 
+算法 编程 库 AForge . MachineLearning 机器学习 类库 AForge . 
+Robotics 提供 一些 机器 学习 的 工具 类库 AForge . 
+Video 一 系列 的 视频处理 类库 AForge . Fuzzy 模糊推理 
+系统 类库 AForge . Controls 图像 三维 图表 显示 控件 
+我 这里 打算 就 1 基于 模糊 系统 的 自动 
+导航 2 . 运动 检测 3 C # 网络 视频 
+传输 这三个 方面 进行 学习 会 尽快 把 学习 心得 
+与 大家 分享 基于 网络 视频 传输 的 部分 我 
+参考 别人 的 代码 已经 写 出了 示例 程序 如图 
+因为 下位 机 平台 目前 还 没有 搭建 所以 无法 
+进行 传输 视频 的 测试 等 以后 测试 了 再 
+上传 测试 结果 因为 我 这里 用 的 程序 来自 
+网络 所以 也就 不把 程序 贴上 来了 我 把 我 
+学习 中 遇到 的 问题 和 解决 方法 给 大家 
+说说 问题 1 安装 AForge . net 之后 无法 找到 
+V i d e o o u r c e 
+P l a y e r 控件 方法 在 VS2008 
+  的 工具 中   右键 选择项 . NET Framerwork 
+    点击 命名 空间 进行 排序 名称 一列 选择 
+  V i d e o o u r c 
+e P l a y e r 确定 即可 问题 
+2 定时器 设定 的 时间 为 多少 答   为 
+1000ms1 private void timer1 _ Tick object sender EventArgs e 
+2 { 3 / / Interface 4 IVideoSource videoSource = 
+v i d e o o u r c e 
+P l a y e r . VideoSource 5 if 
+videoSource = null 6 { 7 statCount statIndex = videoSource 
+. FramesReceived 8 if + + statIndex = statLength 9 
+statIndex = 0 10 if statReady statLength 11 statReady + 
++ 12 float fps = 0 13 for int i 
+= 0 i statReady i + + 14 { 15 
+fps + = statCount i 16 } 17 fps / 
+= statReady 18 statCount statIndex = 0 19 fpsLabel . 
+Text = fps . ToString F2 + fps 20 } 
+21 } 这段 代码 是 用来 计算 刷新 的 帧数 
+首先 private int statCount = new int statLength   statLength 
+= 15 用来 储存 已经 刷新 的 次数 fps / 
+= statReady 这个 用来 求 刷新 的 平均值 因为 时间 
+为 一秒 所以 得到 的 结果 也 就是 标准 的 
+刷新 频率 问题 3 action = snapshot action = stream 
+表示 什么 答 action = snapshot 返回 的 是 一幅 
+静态 图片 action = stream 返回 的 才是 连续 的 
+mjpeg 流 完整 的 代码 大家 可以 从 这个 博客 
+里 阅读 http / / hi . baidu . com 
+/ lansessl / item / 1 e 8 9 0 
+d f 3 e 1 d c c f 1 
+2 d 7 f f 8 c a b 

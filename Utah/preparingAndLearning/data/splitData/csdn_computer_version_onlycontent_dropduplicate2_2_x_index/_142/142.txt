@@ -1,0 +1,49 @@
+今日CS.CV计算机视觉论文速览
+Fri, 22 Feb 2019
+Totally 20 papers
+Daily Computer Vision Papers
+[1] **Title: Deep CNN-based Speech Balloon Detection and Segmentation for Comic Books
+Authors:David Dubray, Jochen Laubrock
+[2] Title: Boundary-weighted Domain Adaptive Neural Network for Prostate MR Image Segmentation
+Authors:Qikui Zhu, Bo Du, Pingkun Yan
+[3] *Title: Cross-Sensor Periocular Biometrics: A Comparative Benchmark including Smartphone Authentication
+Authors:Fernando Alonso-Fernandez, Kiran B. Raja, R. Raghavendra, Cristoph Busch, Josef Bigun, Ruben Vera-Rodriguez, Julian Fierrez
+[4] **Title: GSLAM: A General SLAM Framework and Benchmark
+Authors:Yong Zhao, Shibiao Xu, Shuhui Bu, Hongkai Jiang, Pengcheng Han
+[5] *Title: A Parallel Optical Image Security System with Cascaded Phase-only Masks
+Authors:Shuming Jiao, Yang Gao, Ting Lei, Zhenwei Xie, Xiaocong Yuan
+[6] **Title: A Joint Deep Learning Approach for Automated Liver and Tumor Segmentation
+Authors:Nadja Gruber, Stephan Antholzer, Werner Jaschke, Christian Kremser, Markus Haltmeier
+[7] Title: Deep Discriminative Representation Learning with Attention Map for Scene Classification
+Authors:Jun Li, Daoyu Lin, Yang Wang, Guangluan Xu, Chibiao Ding
+[8] Title: ComplexFace: a Multi-Representation Approach for Image Classification with Small Dataset
+Authors:Guiying Zhang, Yuxin Cui, Yong Zhao, Jianjun Hu
+[9] **Title: Long-Bone Fracture Detection using Artificial Neural Networks based on Contour Features of X-ray Images
+Authors:Alice Yi Yang, Ling Cheng
+[10] **Title: Towards Real-time Eyeblink Detection in The Wild:Dataset,Theory and Practices
+Authors:Guilei Hu, Yang Xiao, Zhiguo Cao, Lubin Meng, Zhiwen Fang, Joey Tianyi Zhou
+[11] *Title: Evaluation of Algorithms for Multi-Modality Whole Heart Segmentation: An Open-Access Grand Challenge
+Authors:Xiahai Zhuang, Lei Li, Christian Payer, Darko Stern, Martin Urschler, Mattias P. Heinrich, Julien Oster, Chunliang Wang, Orjan Smedby, Cheng Bian, Xin Yang, Pheng-Ann Heng, Aliasghar Mortazi, Ulas Bagci, Guanyu Yang, Chenchen Sun, Gaetan Galisot, Jean-Yves Ramel, Thierry Brouard, Qianqian Tong, Weixin Si, Xiangyun Liao, Guodong Zeng, Zenglin Shi, Guoyan Zheng, Chengjia Wang, Tom MacGillivray, David Newby, Kawal Rhode, Sebastien Ourselin, Raad Mohiaddin, Jennifer Keegan, David Firmin, Guang Yang
+[12] Title: Atrial Scar Quantification via Multi-scale CNN in the Graph-cuts Framework
+Authors:Lei Li, Fuping Wu, Guang Yang, Lingchao Xu, Tom Wong, Raad Mohiaddin, David Firmin, Jennifer Keegan, Xiahai Zhuang
+[13] Title: Improvement Multi-Stage Model for Human Pose Estimation
+Authors:Zhihui Su, Ming Ye, Guohui Zhang, Lei Dai, Jianda Sheng
+[14] Title: Class-independent sequential full image segmentation, using a convolutional net that finds a segment within an attention region, given a pointer pixel within this segment
+Authors:Sagi Eppel
+[15] Title: Perceptual Quality-preserving Black-Box Attack against Deep Learning Image Classifiers
+Authors:Diego Gragnaniello, Francesco Marra, Giovanni Poggi, Luisa Verdoliva
+[16] *Title: Self-supervised Learning for Dense Depth Estimation in Monocular Endoscopy
+Authors:Xingtong Liu, Ayushi Sinha, Masaru Ishii, Gregory D. Hager, Austin Reiter, Russell H. Taylor, Mathias Unberath
+[17] Title: Adversarial Augmentation for Enhancing Classification of Mammography Images
+Authors:Lukas Jendele, Ondrej Skopek, Anton S. Becker, Ender Konukoglu
+[18] Title: Domain Partitioning Network
+Authors:Botos Csaba, Adnane Boukhayma, Viveka Kulharia, András Horváth, Philip H. S. Torr
+[19] *Title: Cloud-Based Autonomous Indoor Navigation: A Case Study
+Authors:Uthman Baroudi, M. Alharbi, K. Alhouty, H. Baafeef, K. Alofi
+[20] Title: Probabilistic Neural-symbolic Models for Interpretable Visual Question Answering
+Authors:Ramakrishna Vedantam, Karan Desai, Stefan Lee, Marcus Rohrbach, Dhruv Batra, Devi Parikh
+Papers from arxiv.org
+更多精彩请移步主页
+Interesting:
+📚
+pic from pixels.com

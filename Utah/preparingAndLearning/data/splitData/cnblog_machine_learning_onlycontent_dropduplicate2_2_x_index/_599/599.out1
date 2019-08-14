@@ -1,0 +1,353 @@
+本文 汇编 了 一些 机器学习 领域 的 框架 库 以及 
+软件 按 编程语言 排序 1 . C + + 1.1 
+计算机 视觉 CCV   基于 C 语言 / 提供 缓存 
+/ 核心 的 机器 视觉 库 新颖 的 机器 视觉 
+库 OpenCV 它 提供 C + + C Python Java 
+以及 MATLAB 接口 并 支持 Windows Linux Android and Mac 
+OS 操作系统 1.2 机器学习 M L P a c k 
+D L i b e c o g g s 
+h a r k 2 . ClosureClosure Toolbox Clojure 语言 
+库 与 工具 的 分类 目录 3 . G o 
+3.1 自然语言 处理 go porterstemmer 一个 Porter 词干 提取 算法 
+的 原生 Go 语言 净室 实现 paicehusk Paice / Husk 
+词干 提取 算法 的 Go 语言 实现 snowball Go 语言版 
+的 Snowball 词干 提取 器 3.2 机器学习 Go Learn Go 
+语言 机器学习 库 go pr   Go 语言 机器学习 包./nr 
+bayesian Go 语言 朴素 贝叶斯 分 类库 go galib Go 
+语言 遗传算法 库 3.3 数据分析 / 数据 可视化 go graph 
+Go 语言 图形库 SVGo Go 语言 的 SVG 生成 库 
+4 . Java4 . 1 自然语言 处理 CoreNLP 斯坦福 大学 
+的 CoreNLP 提供 一 系列 的 自然 语言 处理 工具 
+输入 原始 英语 文本 可以 给出 单词 的 基本 形式 
+下面 Stanford 开头 的 几个 工具 都 包含 其中 Stanford 
+Parser 一个 自然 语言 解析器 Stanford POS Tagger   一个 
+词性 分类器 Stanford Name Entity Recognizer Java 实现 的 名称 
+识别器 Stanford Word Segmenter 分词器 很多 NLP 工作 中 都要 
+用到 的 标准 预处理 步骤 Tregex Tsurgeon and Semgrex   
+用来 在 树状 数据结构 中 进行 模式匹配 基于 树 关系 
+以及 节点 匹配 的 正则表达式 名字 是 tree regular expressions 
+的 缩写 Stanford Phrasal 最新 的 基于 统计 短语 的 
+机器 翻译 系统 java 编写 Stanford Tokens Regex 用以 定义 
+文本 模式 的 框架 Stanford Temporal Tagger SUTime 是 一个 
+识别 并 标准化 时间 表达式 的 库 Stanford SPIED 在 
+种子 集上 使用 模式 以 迭代 方式 从无/nr 标签 文本 
+中 学习 字符 实体 Stanford Topic Modeling Toolbox   为 
+社会科学家 及 其他 希望 分析 数据集 的 人员 提供 的 
+主题 建模 工具 Twitter Text Java Java 实现 的 推特 
+文本处理 库 MALLET   基于 Java 的 统计 自然语言 处理 
+文档 分类 聚 类 主题 建模 信息提取 以及 其他 机器学习 
+文本 应用 包 OpenNLP 处理 自然语言 文本 的 机器学习 工具包 
+LingPipe   使用 计算机 语言学 处理 文本 的 工具包 4.2 
+机器学习 MLlib in Apache Spark Spark 中的 分布式 机器学习 程序库 
+Mahout   分布式 的 机器学习 库 Stanford Classifier   斯坦福 
+大学 的 分类器 Weka Weka 是 数据挖掘 方面 的 机器学习 
+算法 集 ORYX 提供 一个 简单 的 大规模 实时 机器学习 
+/ 预测 分析 基础架构 4.3 数据分析 / 数据 可视化 Hadoop 
+大 数据分析 平台 Spark 快速 通用 的 大规模 数据 处理 
+引擎 Impala   为 Hadoop 实现 实时 查询 5 . 
+Javascript5 . 1 自然语言 处理 Twitter text js   JavaScript 
+实现 的 推特 文本处理 库 NLP . js   javascript 
+及 coffeescript 编写 的 NLP 工具 natural Node 下 的 
+通用 NLP 工具 Knwl . js JS 编写 的 自然 
+语言 处理器 5.2 数据分析 / 数据 可视化 D3 . jsHigh 
+ChartsNVD3 . jsdc . j s c h a r 
+t j s d i m p l e a 
+m C h a r t s 5.3 机器学习 Convnet 
+. js 训练 深度 学习 模型 的 JavaScript 库 Clustering 
+. js 用 JavaScript 实现 的 聚 类 算法 供 
+Node . js 及 浏览器 使用 Decision Trees Node . 
+js 实现 的 决策树 使用 ID3 算法 Node fann   
+Node . js 下 的 快速 人工神经网络 库 Kmeans . 
+js k means 算法 的 简单 Javascript 实现 供 Node 
+. js 及 浏览器 使用 LDA . js   供 
+Node . js 用 的 LDA 主题 建模 工具 Learning 
+. js 逻辑 回归 / c 4.5 决策树 的 JavaScript 
+实现 Machine Learning Node . js 的 机器学习 库 Node 
+SVM Node . js 的 支持 向量 机 Brain   
+JavaScript 实现 的 神经 网络 Bayesian Bandit   贝叶斯 强盗 
+算法 的 实现 供 Node . js 及 浏览器 使用 
+6 . Julia6 . 1 机器学习 PGM Julia 实现 的 
+概率 图 模型 框架 DA Julia 实现 的 正则化 判别分析 
+包 Regression 回归分析 算法 包 如 线性 回归 和 逻辑 
+回归 Local Regression   局部 回归 非常 平滑 Naive Bayes 
+  朴素 贝叶斯 的 简单 Julia 实现 Mixed Models   
+统计 混合 效应 模型 的 Julia 包 Simple MCMC   
+Julia 实现 的 基本 mcmc 采样器 Distance Julia 实现 的 
+距离 评估 模块 Decision Tree   决策树 分类器 及 回归 
+分析器 Neural   Julia 实现 的 神经 网络 MCMC   
+Julia 下 的 MCMC 工具 GLM   Julia 写 的 
+广义 线性 模型 包 Online LearningGLMNet   GMLNet 的 Julia 
+包 装版 适合 套索 / 弹性 网 模型 Clustering 数据 
+聚 类 的 基本 函数 k means dp means 等 
+SVM Julia 下 的 支持 向量 机 Kernal Density Julia 
+下 的 核 密度估计 器 Dimensionality Reduction 降 维 算法 
+NMF   Julia 下 的 非 负 矩阵 分 解包 
+ANN Julia 实现 的 神经 网络 6.2 自然语言 处理 Topic 
+Models   Julia 下 的 主题 建模 Text Analysis Julia 
+下 的 文本 分析 包 6.3 数据分析 / 数据 可视化 
+Graph Layout   纯 Julia 实现 的 图 布局 算法 
+Data Frames Meta   DataFrames 的 元 编程 工具 Julia 
+Data 处理 表格 数据 的 Julia 库 Data Read 从 
+Stata SAS SPSS 读取 文件 Hypothesis Tests Julia 中的 假设检验 
+包 Gladfly   Julia 编写 的 灵巧 的 统计 绘图 
+系统 Stats Julia 编写 的 统计 测试函数 包 RDataSets   
+读取 R 语言 中 众多 可用 的 数据集 的 Julia 
+函数 包 DataFrames   处理 表格 数据 的 Julia 库 
+Distributions 概率分布 及 相关 函数 的 Julia 包 Data Arrays 
+  元素 值 可以为 空的/nr 数据结构 Time Series Julia 的 
+时间 序列 数据 工具包 Sampling Julia 的 基本 采样 算法 
+包 6.4 杂项 / 演示 文稿 DSP   数字 信号 
+处理 JuliaCon Presentations Julia 大会 上 的 演示 文稿 SignalProcessing 
+Julia 的 信号 处理 工具 Images Julia 的 图片库 7 
+. Lua7 . 1 机器学习 Torch7cephes   Cephes 数学 函数库 
+包装 成 Torch 可用 形式 提供 并 包装 了 超过 
+180个 特殊 的 数学 函数 由 Stephen L . Moshier 
+开发 是 SciPy 的 核心 应用 于 很多 场合 graph 
+  供 Torch 使用 的 图形 包 randomkit 从/p Numpy/w 
+提取/v 的/uj 随机数/l 生/vn 成包/i 包装 成 Torch 可用 形式 
+signal   Torch 7 可用 的 信号 处理 工具包 可 
+进行 FFT DCT Hilbert cepstrums stft 等 变换 nn   
+Torch 可用 的 神经 网络 包 nngraph   为 nn 
+库 提供 图形 计算能力 nnx 一个 不 稳定 实验性 的 
+包 扩展 Torch 内置 的 nn 库 optim Torch 可用 
+的 优化 算 法库 包括 SGD Adagrad 共轭 梯度 算法 
+LBFGS RProp 等 算法 unsup Torch 下 的 非 监督 
+学习 包 提供 的 模块 与 nn LinearPsd ConvPsd AutoEncoder 
+及 独立 算法 k means PCA 等 兼容 manifold 操作 
+流形 的 包 svm Torch 的 支持 向量 机库 lbfgs 
+将 liblbfgs 包装 为 FFI 接口 vowpalwabbit   老版 的 
+vowpalwabbit 对 torch 的 接口 OpenGM OpenGM 是 C + 
++ 编写 的 图形 建模 及 推断 库 该 binding 
+可以用 Lua 以 简单 的 方式 描述 图形 然后 用 
+OpenGM 优化 sphagetti   MichaelMathieu 为 torch7 编写 的 稀疏 
+线性 模块 LuaSHKit   将 局部 敏感 哈希 库 SHKit 
+包装 成 lua 可用 形式 kernel smoothing   KNN 核 
+权 平均 以及 局部 线性 回归 平滑 器 cutorch torch 
+的 CUDA 后端 实现 cunn   torch 的 CUDA 神经 
+网络 实现 imgraph torch 的 图像 / 图形库 提供 从 
+图像 创建 图形 分割 建立 树 又 转化 回 图像 
+的 例程 videograph torch 的 视频 / 图形库 提供 从 
+视频 创建 图形 分割 建立 树 又 转化 回 视频 
+的 例程 saliency   积分 图像 的 代码 和 工具 
+用来 从 快速 积分 直方图 中 寻找 兴趣 点 stitch 
+  使用 hugin 拼合 图像 并将 其 生成 视频 序列 
+sfm 运动/vn 场景/n 束/nr 调整/vn //i 结构/n 包/v fex/w  /i 
+torch 的 特征提取 包 提供 SIFT 和 dSIFT 模块 OverFeat 
+当前 最高 水准 的 通用 密度 特征提取 器 Numeric LuaLunatic 
+PythonSciLuaLua – Numerical AlgorithmsLunum7 . 2 演示 及 脚本 Core 
+torch7 demos repository . 核心 torch7 演示 程序库 线性 回归 
+逻辑 回归 人脸 检测 训练 和 检测 是 独立 的 
+演示 基于 mst 的 断 词 器 train a digit 
+classifiertrain a u t o e n c o d 
+e r o p t i c a l flow 
+demotrain on h o u s e n u m 
+b e r s t r a i n on 
+cifartracking with deep netskinect demo 滤波 可视化 saliency networksTraining a 
+Convnet for the Galaxy Zoo Kaggle challenge CUDA demo Music 
+Tagging torch7 下 的 音乐 标签 脚本 torch datasets   
+读取 几个 流行 的 数据集 的 脚本 包括 BSR 500CIFAR 
+10COILStreet View House N u m b e r s 
+M N I T N O R B A t 
+a r i 2 6 0 0   在 Arcade 
+Learning Environment 模拟器 中用 静态 帧 生成 数据集 的 脚本 
+8 . Matlab8 . 1 计算机 视觉 Contourlets   实现 
+轮廓 波 变换 及其 使用 函数 的 MATLAB 源代码 Shearlets 
+剪切 波 变换 的 MATLAB 源码 Curvelets Curvelet 变换 的 
+MATLAB 源码 Curvelet 变换 是 对 小波 变换 向 更高 
+维 的 推广 用来 在 不同 尺度 角度 表示 图像 
+Bandlets Bandlets 变换 的 MATLAB 源码 8.2 自然语言 处理 NLP 
+  一个 Matlab 的 NLP 库 8.3 机器学习 Training a 
+deep autoencoder or a classifier on MNIST digits 在 MNIST 
+字符 数据集 上 训练 一个 深度 的 autoencoder 或 分类器 
+深度 学习 t Distributed Stochastic Neighbor Embedding   获奖 的 
+降 维 技术 特别 适合 于 高维 数据集 的 可视化 
+Spider Matlab 机器 学习 的 完整 面向对象 环境 LibSVM   
+支持 向量 机 程序库 LibLinear   大型 线性 分类 程序库 
+Machine Learning Module   M . A . Girolami 教授 
+的 机器学习 课程 包括 PDF 讲义 及 代码 Caffe 考虑 
+了 代码 清洁 可读性 及 速度 的 深度 学习 框架 
+Pattern Recognition Toolbox   Matlab 中的 模式识别 工具包 完全 面向对象 
+8.4 数据分析 / 数据 可视化 matlab _ gbl 处理 图像 
+的 Matlab 包 gamic 图像 算法 纯 Matlab 高效 实现 
+对 MatlabBGL 的 mex 函数 是个 补充 9 . . 
+NET9 . 1 计算机 视觉 OpenCVDotNet   包装 器 使 
+. NET 程序 能 使用 OpenCV 代码 Emgu CV 跨 
+平台 的 包装 器 能在 Windows Linus Mac OS X 
+iOS 和 Android 上 编译 9.2 自然语言 处理 Stanford . 
+NLP for . NET   斯坦福大学 NLP 包在 . NET 
+上 的 完全 移植 还可 作为 NuGet 包 进行 预 
+编译 9.3 通用 机器学习 Accord . MachineLearning   支持 向量 
+机 决策树 朴素 贝叶斯 模型 K means 高斯 混合模型 和 
+机器学习 应用 的 通用 算法 例如 随机抽样 一致性 算法 交叉 
+验证 网格 搜索 这个 包是/nr Accord . NET 框架 的 
+一部分 Vulpes F # 语言 实现 的 Deep belief 和 
+深度 学习 包 它 在 Alea . cuBase 下 利用 
+CUDA GPU 来 执行 Encog   先进 的 神经 网络 
+和 机器学习 框架 包括 用来 创建 多种 网络 的 类 
+也 支持 神经网络 需要 的 数据 规则化 及 处理 的 
+类 它 的 训练 采用 多线 程弹 性传播 它 也能 
+使用 GPU 加快 处理 时间 提供 了 图形化 界面 来 
+帮助 建模 和 训练 神经网络 Neural Network Designer   这 
+是 一个 数据 库 管理 系统 和 神经 网络设计 器 
+设计 器用 WPF 开发 也 是 一个 UI 你 可以 
+设计 你 的 神经 网络 查询 网络 创建 并 配置 
+聊天 机器人 它 能 问问题 并从 你 的 反馈 中 
+学习 这些 机器 人 甚至 可以 从 网络 搜集 信息 
+用来 输出 或是 用来 学习 9.4 数据分析 / 数据 可视化 
+numl   numl 这个 机器学习 库 目标 就是 简化 预测 
+和聚类/nr 的 标准 建模 技术 Math . NET Numerics Math 
+. NET 项目 的 数值 计算 基础 着眼 提供 科学 
+工程 以及 日常 数值 计算 的 方法 和 算法 支持 
+Windows Linux 和 Mac 上 的 . Net 4.0 . 
+Net 3.5 和 Mono Silverlight 5 WindowsPhone / SL 8 
+WindowsPhone 8.1 以及 装有 PCL Portable Profiles 47 及 344 
+的 Windows 8 装有 Xamarin 的 Android / iOS Sho 
+  Sho 是 数据 分析 和 科学 计算 的 交互式 
+环境 可以 让 你 将 脚本 IronPython 语言 和 编译 
+的 代码 . NET 无缝连接 以 快速 灵活 的 建立 
+原型 这个 环境 包括 强大 高效 的 库 如 线性代数 
+数据 可视化 可供 任何 . NET 语言 使用 还为 快速 
+开发 提供 了 功能 丰富 的 交互式 shell 10 . 
+Python10 . 1 计算机 视觉 SimpleCV 开源 的 计算机 视觉 
+框架 可以 访问 如 OpenCV 等高 性能 计算机 视觉 库 
+使用 Python 编写 可以 在 Mac Windows 以及 Ubuntu 上 
+运行 10.2 自然语言 处理 NLTK   一个 领先 的 平台 
+用来 编写 处理 人类 语言 数据 的 Python 程序 Pattern 
+Python 可用 的 web 挖掘 模块 包括 自然 语言 处理 
+机器学习 等 工具 TextBlob 为 普通 自然语言 处理 任务 提供 
+一致 的 API 以 NLTK 和 Pattern 为基础 并和 两者都 
+能 很好 兼容 jieba 中文 断 词 工具 SnowNLP   
+中文 文本处理 库 loso 另 一个 中文 断 词库 genius 
+  基于 条件 随机 域 的 中文 断 词库 nut 
+  自然语言 理解 工具包 10.3 机器学习 Bayesian Methods for Hackers 
+  Python 语言 概率 规划 的 电子书 MLlib in Apache 
+Spark Spark 下 的 分布式 机器学习 库 scikit learn 基于 
+SciPy 的 机器学习 模块 graphlab create   包含 多种 机器学习 
+模块 的 库 回归 聚 类 推荐 系统 图 分析 
+等 基于 可以 磁盘 存储 的 DataFrame BigML 连接 外部 
+服务器 的 库 pattern Python 的 web 挖掘 模块 NuPIC 
+Numenta 公司 的 智能 计算 平台 Pylearn2 基于 Theano 的 
+机器学习 库 hebel   Python 编写 的 使用 GPU 加速 
+的 深度 学习 库 gensim 主题 建模 工具 PyBrain 另一个 
+机器学习 库 Crab   可扩展 的 快速 推荐 引擎 python 
+recsys   Python 实现 的 推荐 系统 thinking bayes 关于 
+贝叶斯 分析 的 书籍 Restricted Boltzmann Machines   Python 实现 
+的 受限 波尔兹曼 机 深度 学习 Bolt   在线 学习 
+工具箱 CoverTree   cover tree 的 Python 实现 scipy . 
+spatial . kdtree 便捷 的 替代 nilearn Python 实现 的 
+神经 影像学 机器学习 库 Shogun 机器学习 工具箱 Pyevolve   遗传算法 
+框架 Caffe   考虑 了 代码 清洁 可读性 及 速度 
+的 深度 学习 框架 breze 深度 及 递归 神经 网络 
+的 程序库 基于 Theano 10.4 数据分析 / 数据 可视化 SciPy 
+  基于 Python 的 数学 科学 工程 开源 软件 生态系统 
+NumPy Python 科学计算 基础 包 Numba   Python 的 低级 
+虚拟机 JIT 编译器 Cython and NumPy 的 开发 者 编写 
+供 科学计算 使用 NetworkX   为 复杂 网络 使用 的 
+高效 软件 Pandas 这个 库 提供 了 高性能 易用 的 
+数据 结构 及 数据 分析 工具 Open Mining Python 中的 
+商业 智能工具 Pandas web 接口 PyMC   MCMC 采样 工具包 
+zipline Python 的 算法 交易 库 PyDy 全名 Python Dynamics 
+协助 基于 NumPy SciPy IPython 以及 matplotlib 的 动态 建模 
+工作流 SymPy   符号 数学 Python 库 statsmodels Python 的 
+统计 建模 及 计量经济学 库 astropy   Python 天文学 程序库 
+社区 协作 编写 matplotlib   Python 的 2D 绘 图库 
+bokeh Python 的 交互式 Web 绘 图库 plotly   Python 
+and matplotlib 的 协作 web 绘 图库 vincent 将 Python 
+数据结构 转换 为 Vega 可视化 语法 d3py Python 的 绘 
+图库 基于 D3 . js ggplot   和R/nr 语言 里 
+的 ggplot2 提供 同样 的 API Kartograph . py Python 
+中 渲染 SVG 图 的 库 效果 漂亮 pygal Python 
+下 的 SVG 图表 生成器 pycascading10 . 5 杂项 脚本 
+/ iPython 笔记 / 代码 库 pattern _ c l 
+a s s i f i c a t i 
+o n t h i n k i n g 
+stats 2 h y p e r o p t 
+n u m p i c 2 0 1 2 
+paper diginormipython n o t e b o o k 
+s d e c i s i o n weightsSarah 
+Palin LDA   Sarah Palin 关于 主题 建模 的 电邮 
+Diffusion Segmentation   基于 扩散 方法 的 图像 分割 算法 
+集合 Scipy Tutorials   SciPy 教程 已 过时 请 查看 
+scipy lecture notesCrab Python 的 推荐 引擎 库 BayesPy Python 
+中的 贝叶斯 推断 工具 scikit learn tutorials scikit learn 学习 
+笔记 系列 sentiment analyzer   推特 情绪 分析器 group lasso 
+坐标 下降 算法 实验 应用于 稀疏 群 套索 模型 mne 
+python notebooks 使用 mne python 进行 EEG / MEG 数据 
+处理 的 IPython 笔记 pandas cookbook 使用 Python pandas 库 
+的 方法 书 climin 机器 学习 的 优化 程序库 用 
+Python 实现 了 梯度 下降 LBFGS rmsprop adadelta 等 算法 
+10.6 Kaggle 竞赛 源代码 wiki challange   Kaggle 上 一个 
+维基 预测 挑战赛 Dell Zhang 解法 的 实现 kaggle insults 
+Kaggle 上 从 社交 媒体 评论 中 检测 辱骂 竞赛 
+提交 的 代码 kaggle _ acquire valued shoppers challenge Kaggle 
+预测 回头客 挑战赛 的 代码 kaggle cifar   Kaggle 上 
+CIFAR 10 竞赛 的 代码 使用 cuda convnetkaggle blackbox   
+Kaggle 上 blackbox 赛 代码 关于 深度 学习 kaggle accelerometer 
+  Kaggle 上 加速度计 数据 识别 用户 竞赛 的 代码 
+kaggle advertised salaries   Kaggle 上用 广告 预测 工资 竞赛 
+的 代码 kaggle amazon   Kaggle 上 给定 员工 角色 
+预测 其 访问 需求 竞赛 的 代码 kaggle bestbuy _ 
+big Kaggle 上 根据 bestbuy 用户 查询 预测 点击 商品 
+竞赛 的 代码 大 数据 版 kaggle bestbuy _ small 
+Kaggle 上 根据 bestbuy 用户 查询 预测 点击 商品 竞赛 
+的 代码 小 数据 版 Kaggle Dogs vs . Cats 
+  Kaggle/w 上/f 从/p 图片/n 中/f 识别/v 猫/n 和狗/nr 竞赛/vn 
+的/uj 代码/n Kaggle/w Galaxy Challenge   Kaggle 上 遥远 星系 
+形态 分类 竞赛 的 优胜 代码 Kaggle Gender   Kaggle 
+竞赛 从 笔迹 区分 性别 Kaggle Merck Kaggle 上 预测 
+药物 分子 活性 竞赛 的 代码 默克 制药 赞助 Kaggle 
+Stackoverflow Kaggle 上 预测 Stack Overflow 网站 问题 是否 会 
+被 关闭 竞赛 的 代码 wine quality   预测 红酒 
+质量 11 . Ruby11 . 1 自然语言 处理 Treat 文本检索 
+与 注释 工具包 Ruby 上 我 见过 的 最 全面 
+的 工具包 Ruby Linguistics 这个 框架 可以 用 任何 语言 
+为 Ruby 对象 构建 语言学 工具 包括 一个 语言 无关 
+的 通用 前端 一个 将 语言 代码 映射 到 语言 
+名 的 模块 和 一个 含有 很有 英文 语言 工具 
+的 模块 Stemmer 使得 Ruby 可用 libstemmer _ c 中的 
+接口 Ruby Wordnet   WordNet 的 Ruby 接口 库 Raspel 
+  aspell 绑定 到 Ruby 的 接口 UEA Stemmer UEALite 
+Stemmer 的 Ruby 移植版 供 搜索 和 检索 用 的 
+保守 的 词干 分析器 Twitter text rb 该 程序库 可以 
+将 推特 中 的 用户名 列表 和 话题 标签 自动 
+连接 并 提取 出来 11.2 机器学习 Ruby Machine Learning   
+Ruby 实现 的 一些 机器学习 算法 Machine Learning RubyjRuby Mahout 
+  精华 在 JRuby 世界 中 释放 了 Apache Mahout 
+的 威力 CardMagic Classifier 可用 贝叶斯 及 其他 分类法 的 
+通用 分类器 模块 Neural Networks and Deep Learning 神经 网络 
+和 深度 学习 一 书 的 示例代码 11.3 数据分析 / 
+数据 可视化 rsruby   – Ruby – R bridgedata visualization 
+ruby 关于 数据 可视化 的 Ruby Manor 演示 的 源代码 
+和 支持 内容 ruby plot   将 gnuplot 包装 为 
+Ruby 形式 特别 适合 将 ROC 曲线 转化 为 svg 
+文件 plot rb 基于 Vega 和 D3 的 ruby 绘 
+图库 scruffy   Ruby 下 出色 的 图形 工具包 SciRubyGlean 
+数据 管理 工具 BiorubyArel12 . R 12.1 通用 机器学习 Clever 
+Algorithms For Machine LearningMachine Learning For HackersMachine Learning Task View 
+on CRAN R 语言 机器学习 包 列表 按 算法 类型 
+分组 caret R 语言 150个 机器学习 算法 的 统一 接口 
+SuperLearner   and   subsemble 该 包 集合 了 多种 
+机器学习 算法 Introduction to Statistical Learning12 . 2 数据分析 / 
+数据 可视化 Learning Statistics Using Rggplot2 基于 图形 语法 的 
+数据 可视化 包 13 . Scala13 . 1 自然语言 处理 
+ScalaNLP 机器 学习 和 数值 计算 库 的 套装 Breeze 
+  Scala 用 的 数值 处理 库 Chalk 自然语言 处理 
+库 FACTORIE 可 部署 的 概率 建模 工具包 用 Scala 
+实现 的 软件库 为 用户 提供 简洁 的 语言 来 
+创建 关系 因素 图 评估 参数 并 进行 推断 13.2 
+数据分析 / 数据 可视化 MLlib in Apache Spark Spark 下 
+的 分布式 机器学习 库 Scalding   CAscading 的 Scala 接口 
+Summing Bird 用 Scalding 和 Storm 进行 Streaming M a 
+p R e d u c e A l g 
+e b i r d   Scala 的 抽象代数 工具 
+xerial   Scala 的 数据 管理 工具 simmer   化简 
+你 的 数据 进行 代数 聚合 的 unix 过滤器 PredictionIO 
+  供 软件 开发者 和 数据 工程师 用 的 机器学习 
+服务器 BIDMat 支持 大 规模 探索性 数据分析 的 CPU 和 
+GPU 加速 矩阵 库 13.3 机器学习 Conjecture Scalding 下 可扩展 
+的 机器学习 框架 brushfire scalding 下 的 决策树 工具 ganitha 
+  基于 scalding 的 机器学习 程序库 adam 使用 Apache Avro 
+Apache Spark 和 Parquet 的 基因组 处理 引擎 有 专用 
+的 文件 格式 Apache 2 软件 许可 bioscala   Scala 
+语言 可用 的 生物 信息学 程序库 BIDMach 机器学习 CPU 和 
+GPU 加速 库 

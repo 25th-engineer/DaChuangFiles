@@ -1,0 +1,90 @@
+一 引言
+本程序是一个完整的机器学习过程，先编写基于python的爬虫脚本，爬取目标论坛网站的评论到本地存储，然后使用贝叶斯分类模型对评论进行分类，预测新 的评论是否为垃圾评论。如果遇到大数据量的问题，可以把贝叶斯算法写成mapreduce模式，map负责把数据集划分成键值对格式，类序号为key，属 性向量为value，reduce进行汇总每类的先验概率和条件概率，主server汇总所有类的统计量。
+二 爬虫脚本
+1 编写爬虫脚本，爬取目标论坛的评论。其中，headers是必须的，因为我们需要伪装成浏览器在访问论坛的服务器。使用requests包获取指定url的数据流。
+mport requests from bs4 import BeautifulSoup import re import json import time headers = { 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive', 'Cookie': '__cfduid=d653bf931cbde10f9243b63e991f70dc41466778585; loid=a5WUnHRHlleKL9OSSR; loidcreated=2016-06-24T14%3A29%3A45.413Z; _recent_srs=t5_2qu49; _ga=GA1.2.54465388.1466778724; pc=ne; __utma=55650728.54465388.1466778724.1466778728.1466843492.2; __utmz=55650728.1466778728.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmb=55650728.0.10.1466843492; __utmc=55650728', 'Host': 'www.reddit.com', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0', } url = 'https://www.reddit.com/r/AskReddit/comments/4qfh01/what_are_some_classes_you_must_take_in/' r = requests.get(url,headers=headers) r.encoding = r.apparent_encoding
+2 使用BeautifulSoup解析爬去的html文件，css定位我们需要的字段，输出到本地文件comments.txt保存即可。
+soup = BeautifulSoup(r.text) res = soup.select("div.md") comments = [] for item1 in res[1:]: comments.append(item1.contents) print comments fd = open('comments.txt','w+') p_soup = BeautifulSoup(str(comments)) res2 = p_soup.findAll('p') for item2 in res2: ct = str(item2.contents).encode('utf-8') print ct[3:-2] fd.write(ct[3:-2] + '\n') fd.close()
+三 实战1 -文本分类（应用过滤恶意留言等）
+下面是二分类问题，文档只能属于0和1两个类别，
+1 载入数据集：本地读取文件comments.txt中爬虫爬取的评论。
+from numpy import *
+def loadDataSet():
+fd = open('comments.txt')
+postingList = []
+classVec = []
+for line in fd.readlines():
+tmp = line.split()
+postingList.append(tmp[1:])
+classVec.append(int(tmp[0]))
+return postingList,classVec
+2 创建词汇表：利用集合结构内元素的唯一性，创建一个包含所有词汇的词表。
+def createVocabList(dataSet):
+vocabSet = set([])  #create empty set
+for document in dataSet:
+vocabSet = vocabSet | set(document) #union of the two sets
+return list(vocabSet)
+3 把输入文本根据词表转化为计算机可处理的01向量形式：
+eq，测试文本1： ['love', 'my', 'dalmation']
+词汇表：['cute', 'love', 'help', 'garbage', 'quit', 'I', 'problems', 'is', 'park', 'stop', 'flea', 'dalmation', 'licks', 'food', 'not', 'him', 'buying', 'posting', 'has', 'worthless', 'ate', 'to', 'maybe', 'please', 'dog', 'how', 'stupid', 'so', 'take', 'mr', 'steak', 'my']
+向量化结果：[0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]
+def setOfWords2Vec(vocabList, inputSet):
+returnVec = [0]*len(vocabList)
+for word in inputSet:
+if word in vocabList:
+returnVec[vocabList.index(word)] = 1
+else: print "the word: %s is not in my Vocabulary!" % word
+return returnVec
+4训练模型：在训练样本中计算先验概率 p(Ci) 和 条件概率 p(x,y | Ci)，本实例有0和1两个类别，所以返回p(x,y | 0)，p(x,y | 1)和p(Ci)。
+此处有两个改进的地方：
+（1）若有的类别没有出现，其概率就是0，会十分影响分类器的性能。所以采取各类别默认1次累加，总类别（两类）次数2，这样不影响相对大小。
+（2）若很小是数字相乘，则结果会更小，再四舍五入存在误差，而且会造成下溢出。采取取log，乘法变为加法，并且相对大小趋势不变。
+def trainNB0(trainMatrix,trainCategory):
+numTrainDocs = len(trainMatrix)
+numWords = len(trainMatrix[0])
+pAbusive = sum(trainCategory)/float(numTrainDocs)
+p0Num = ones(numWords); p1Num = ones(numWords)      #change to ones()
+p0Denom = 2.0; p1Denom = 2.0                        #change to 2.0
+for i in range(numTrainDocs):
+if trainCategory[i] == 1:
+p1Num += trainMatrix[i]
+p1Denom += sum(trainMatrix[i])
+else:
+p0Num += trainMatrix[i]
+p0Denom += sum(trainMatrix[i])
+p1Vect = log(p1Num/p1Denom)          #change to log()
+p0Vect = log(p0Num/p0Denom)          #change to log()
+return p0Vect,p1Vect,pAbusive
+5 分类：根据计算后，哪个类别的概率大，则属于哪个类别。
+def classifyNB(vec2Classify, p0Vec, p1Vec, pClass1): p1 = sum(vec2Classify * p1Vec) + log(pClass1) #element-wise mult p0 = sum(vec2Classify * p0Vec) + log(1.0 - pClass1) if p1 > p0: return 1 else: return 0
+6 测试函数：
+加载数据集+提炼词表；
+训练模型：根据六条训练集计算先验概率和条件概率；
+测试模型：对训练两条测试文本进行分类。
+def testingNB():
+listOPosts,listClasses = loadDataSet()
+myVocabList = createVocabList(listOPosts)
+trainMat=[]
+for postinDoc in listOPosts:
+trainMat.append(setOfWords2Vec(myVocabList, postinDoc))
+p0V,p1V,pAb = trainNB0(array(trainMat),array(listClasses))
+testEntry = ['friends', 'my', 'take']
+thisDoc = array(setOfWords2Vec(myVocabList, testEntry))
+print testEntry,'classified as: ',classifyNB(thisDoc,p0V,p1V,pAb)
+testEntry = ['stupid', 'garbage']
+thisDoc = array(setOfWords2Vec(myVocabList, testEntry))
+print testEntry,'classified as: ',classifyNB(thisDoc,p0V,p1V,pAb)
+缺点：词表只能记录词汇是否出现，不能体现这个词汇出现的次数。改进方法：采用词袋模型，见下面垃圾邮件分类实战。
+结果图：['friends', 'wish', 'classes'] 被分到 正常评论类；
+['stupid', 'garbage'] 被分到垃圾评论类；分类结果正确。
+四 算法的MapReduce形式
+本人正在把这个贝叶斯分类算法转换成分布式算法，初步思想是，可以把贝叶斯算法写成mapreduce模式，map负责把数据集划分成键值对格式，类序号为key，属 性向量为value，reduce进行汇总每类的先验概率和条件概率，主server汇总所有类的统计量。
+1 mapper程序
+if __name__ == '__main__': for line in sys.stdin: line = line.strip() word = line.split() key = word[0] value = '' for item in word[1:]: value += item+ ' ' print "%s\t%s"%(key,value)
+2 本次mapper测试结果,键值对成功分离：  执行命令$ cat data.txt | python bayes_mapper.py
+1 0.270252528981 0.102916847315 0 0.772917922479 0.182969066019 1 0.817848764874 0.743666751784 0 0.197846533796 0.835258987261 1 0.174895157684 0.31219280438 1 0.16756664003 0.529593388634 1 0.56918073026 0.0624409762296 1 0.292857532814 0.152683257148 0 0.971077138206 0.712432682621 0 0.775544377315 0.163165909954
+3 reducer程序，正在编写，下次更新
+备注：数据集生成脚本
+#!/usr/bin/python import sys import random if __name__ == '__main__': if len(sys.argv) < 3: row = 5 col = 5 else: row = int(sys.argv[1]) col = int(sys.argv[2]) for r in range(0,row): tmp = str(random.randint(0,1)) for c in range(0,col): num = random.uniform(0,1) tmp += ' ' + str(num) print tmp
+生成数据集如下：
+1 0.270252528981 0.102916847315 0 0.772917922479 0.182969066019 1 0.817848764874 0.743666751784 0 0.197846533796 0.835258987261 1 0.174895157684 0.31219280438 1 0.16756664003 0.529593388634 1 0.56918073026 0.0624409762296 1 0.292857532814 0.152683257148 0 0.971077138206 0.712432682621 0 0.775544377315 0.163165909954
