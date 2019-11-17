@@ -1,0 +1,609 @@
+Python基本语法元素
+	-缩进，注释，命名，变量，保留字
+	-数据类型，字符串，整数，浮点数，列表
+	-赋值语句，分支语句，函数
+	-input(),print(),eval(),print()格式化
+	
+Python基本图形绘制
+	-从计算机技术演进角度看待Python语言
+	-海龟绘图体系以及import保留字用法
+	-penup(),pendown(),pensize(),pencolor()
+	-fd(),circle(),seth()
+	
+Python基本数据类型
+	-数据类型:整数，浮点数，复数
+	-数据类型运算操作符，运算函数
+	-字符串类型:表示，索引，切片
+	-字符串操作符，处理函数，处理方法，.format()格式化
+	-time库:time(),strftime(),strptime(),sleep()等
+
+Python数字类型及操作
+	-整数类型的无限范围及4种进制表示
+	-浮点数类型的近似无限范围，小尾数及科学计数法
+	-+，-，*，/，//，**，二元增强赋值操作符
+	-abs(),divmod(),pow(),round(),max(),min()
+	-int(),float(),complex()
+	
+Python字符串类型及操作
+	-正向递增序号，反向递减序号，<字符串>[M:N:K]
+	-+,*,len(),str(),hex(),oct(),ord(),chr()
+	-.lower() .upper() .split() .count() .replace() .isalpha(字符串只包含字母，并且非空) .isalnum(字符串只包含字母和数字，并且非空) .isdecimal(字符串值包含数字字符，并且非空) .isspace(字符串只包含空格，制表符和换行，并且非空) .istitle(字符串仅包含以大写字母开头，后面都是小写字母的单词)
+	 .startswith() .endswith() .rjust( , ) .ljust( , ) .center( , )
+	-.center(),.strip(),.join(),.format()格式化
+	
+Python程序的分支结构
+	-单分支if二分支if-else及紧凑形式
+	-多分支 if-elif-else及条件之间的关系
+	-not and or > >= == <= < !=
+	
+Pyhton程序的循环结构
+	-for...in 遍历循环:计数，字符串，列表，文件
+	-while无限循环
+	-continue和break保留字:退出当前循环层次
+	-循环else的高级用法:与break有关
+
+Python函数的定义与使用
+	-使用保留字def定义函数，lambda定义匿名函数
+	-可选参数(赋初值)，可变参数(*b),名称传递
+	-保留字return可以返回任意多个结果
+	-保留字global声明使用全局变量，一些隐式规则
+	
+Python代码复用与函数递归
+	-模块化设计:松耦合，紧耦合
+	-函数递归的2个特征:基例和链条
+	-函数递归的实现:函数+分支结构
+	
+Python集合类型及操作
+	-集合使用{}和set()函数创建
+	-集合间操作:交(&)，并(|)，差(-)，补(^)，比较(>=<)
+	-集合类型方法:.add(),.discard(),.pop()等
+	-集合类型主要应用于:包含关系比较，数据去重
+	
+Python序列类型及操作
+	-序列是基类类型，扩展类型包括:字符串，元组和列表
+	-元组用()和tuple()创建，列表用[]和list()创建
+	-元组操作和序列操作基本相同
+	-列表操作在序列操作基础上，增加了更多的灵活性
+	
+Python字典类型及操作
+	-映射关系采用键值对表达
+	-字典类型使用{}和dict()创建，键值对之间用:分隔
+	=d[key]方式既可以索引，也可以赋值
+	-字典类型有一批操作方法和函数，最重要的是.get()
+	
+Python文件的使用
+	-文件的使用方式 :打开-操作-关闭
+	-文本文件&二进制文件，open( , )和.close()
+	-文件内容的读取 : .read() .readline() .readlines()
+	-数据的文件写入 : .write() .writelines() .seek()
+	
+Python一维数据的格式化和处理
+	-数据的维度:一维，二维，多维，高维
+	-一维数据的表示:列表类型(有序)和集合类型(无序)
+	-一维数据的存储:空格分隔，逗号分隔，特殊符号分隔
+	-一维数据的处理:字符串方法，.split()和.join()
+	
+Python二维数据的格式化和处理
+	-二维数据的表示:列表类型，其中每个元素也是一个列表
+	-CSV格式:逗号分隔表示一维，按行分隔表示二维
+	-二维数据的处理:for循环+.split()和.join()
+	
+Python模式匹配与正则表达式
+	-用正则表达式查找文本模式
+		--创建正则表达式对象
+		--匹配Regex对象
+		--正则表达式匹配复习
+	
+浮点数存在不确定尾数，可能出现 0.1+0.2 == 0.3返回false的情况
+	--利用round()函数判断小数保留位数
+		round(x,d):对x四舍五入，d是小数截取位数
+	
+foramt()方法的格式控制
+	: <填充> <对齐> <宽度>
+	--	< : 左对齐
+		> : 右对齐
+		^ : 居中对齐
+		
+		eg1.>>> "{:=^20}".format("python")
+			   '=======python======='
+	
+		eg2.>>>"{:*>20}".format("python")
+			'**************python'
+			
+		eg3.>>>"{:10}".format("python")
+			'python    '
+			
+time 库
+	--	>>>time.time()
+		1565237196.1635892
+
+		>>>time.ctime()
+		'Thu Aug  8 12:06:45 2019'
+	
+	--时间的格式化
+		>>>t=time.gmtime()
+		>>>time.strftime("%Y-%M-%D %H;%M:%S",t)
+		'2019-42-08/08/19 06;42:17'
+		
+		
+格式问题
+			 哪个选项是下面代码的执行结果？‪‬‪‬‪‬‪‬‪‬‮‬‭‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‮‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‫‬
+			s='PYTHON'
+			print("{0:3}".format(s))
+			A、PYT
+			B、PYTH
+			C、PYTHON
+			D、      PYTHON
+			 正确答案： C 
+			{0:3}表示输出的宽度是3，但如果字符串超过长度3，则以字符串长度显示。
+			
+二分支结构
+	-紧凑形式:适用于简单表达式的二分支结构
+		<表达式1> if <条件> else <表达式2>
+	eg1.	guess = eval(input())
+
+		print("猜{}了".format("对" if guess == 99 else "错"))
+		
+eval()函数
+	-去掉字符串两端的引号
+	
+异常处理的高级使用
+	-   try :
+			<语句块1>
+		except :
+			<语句块2>
+		else :
+			<语句块3>
+		finally :
+			<语句块4>
+			
+	-finally对应的语句块4一定执行
+	-else 对应的语句块3在不发生异常时执行
+	
+字符串遍历循环:
+	for c in s :
+		<语句块>
+	-s是字符串，遍历字符串每个字符，产生循环
+	
+列表遍历循环
+	for item in ls :
+		<语句块>
+	-ls是一个列表，遍历其每个元素，产生循环
+	
+文件遍历循环
+	for line in fi :
+		<语句块>
+	-fi是一个文件标识符，遍历其每行，产生循环
+	
+循环与else
+	-	for <循环变量> in <遍历结构> :		-	while <条件>：
+			<语句块1>								<语句块1>
+		else ：									else:
+			<语句块2>								<语句块2>
+			
+	-当循环没有被break语句退出时，执行else语句块
+	-else语句块作为"正常"完成循环的奖励
+	
+random库概述
+	-基本随机数函数 : seed(),random()
+	-扩展随机数函数 : randint(),getrandbits(),uniform()
+					  randrange(),choice(),shuffle()
+	-randint(a,b) :生成一个[a,b]之间的整数
+	-randrange(m,n[,k]) :生成一个[m,n)之间以k为步长的随机整数
+	-uniform(a,b) ：生成一个[a.b]之间的随机小数
+	-choice(seq) : 从序列seq中随机选择一个元素
+	-shuffle(seq) :将序列seq中元素随机排列，返回打乱后的序列
+	
+可变参数传递
+	-函数定义时可以设计可变数量参数，既不确定参数总数量
+		def<函数名>(<参数>,*b) :
+			<函数体>
+			return <返回值>
+	
+函数可以返回0个或多个结果
+	def fact(n,m=1) :               
+		s = 1
+		for i in range(1,n+1)
+			s *= i
+		return s//m,n,m --->返回元组类型()
+		
+	a,b,v = fact(10,5)
+	
+集合
+	-集合用大括号{}表示，元素间用逗号分隔
+	-集合中每个元素唯一，不存在相同元素
+	-集合元素之间无序
+
+集合类型应用场景
+	-数据去重:集合类型所有元素无重复(转换成集合类型)
+		eg. >>>ls= ['p','p','y','y','123']
+			>>>s=set(ls)
+			>>>lt=list(ls)
+			>>>lt
+			['p', 'p', 'y', 'y', '123']
+			
+序列类型定义
+	-序列是一个基类类型
+	-序列类型包含字符串类型，元组类型，列表类型
+	
+元组类型定义
+	-元组是序列类型的一种扩展
+	-元组是一种序列类型，一旦创建就不能被修改
+	-使用小括号()或tuple()创建，元素间用逗号,分隔
+	-可以使用或不使用小括号
+		
+元组类型操作
+	-元组继承序列类型的全部通用操作
+	-元组继承了序列类型的全部通用操作
+	-元组因为创建后不能修改，因此没有特殊操作
+	-使用或不使用小括号
+	
+列表类型定义
+	-列表是序列类型的一种扩展，十分常用
+	-列表是一种序列类型，创建后可以随意被修改
+	-使用方括号[]或list()创建，元素间用逗号，分隔
+	-列表中各元素类型可以不同，无长度限制
+	-max(lt),lt.index('A')，del lt[2],lt.insert(1,'A'),lt.remove('cat')
+	
+序列类型应用场景
+	-序列类型应用场景
+	-元组用于元素不改变的应用场景，更多用于固定搭配场景
+	-列表更加灵活，它是最常用的序列类型
+	-最主要作用:表示一组有序数据，进而操作它们
+	
+字典类型定义
+	-字典类型是"映射"的体现
+	-键值对:键是数据索引的扩展
+	-字典是键值对的集合，键值对之间无序
+	-采用大括号{}和dict()创建，键值对用冒号:表示
+
+字典类型操作函数和方法
+	-d.get(k,<default>) :键k存在，则返回相应值，不在则返回<default>的值
+	-d.pop(k,<default>) :键k存在，则取出相应值，不在则返回<default>的值
+	-d.popitem() :随机从字典d中取出一个键值对，以元组形式返回
+	-d.clear():删除所有的键值对
+	-d.keys(),d.values(),d.items()分别对应于字典的键，值和键值对
+	-d.setdefault('color': 'white')方法 : 为字典中某个键设置一个默认值，当该键没有任何值时使用它
+
+字典功能
+	-向字典d新增2个键值对元素
+		>>>d["a"]=1; d["b"]=2
+		
+jieba分词的三种模式
+	精确模式，全模式，搜素引擎模式
+	-精确模式:把文本精确二点切分开，不存在冗余单词
+	-全模式:把文本中所有可能的词语都扫描出来，有冗余
+	-搜索引擎模式:在精确模式基础上，对长词再次切分
+
+jieba库常用函数
+	-jieba.lcut(s) :精确模式，返回一个列表类型的分词结果
+	-jieba.lcut(s,cut_all=True):全模式，返回一个列表类型的分词结果，存在冗余
+	-jieba.lcut_for_search(s):搜索引擎模式，返回一个列表类型的分词结果，存在冗余
+	-jieba.add_word(w):向分词词典增加新词w
+	
+lambda函数
+	lambda函数返回函数名作为结果
+	-lambda函数是一种匿名函数，即没有名字的函数
+	-使用lambda保留字定义，函数名是返回结果
+	-lambda函数用于定义简单的，能够在一行内表示的函数
+	<函数名> = lambda <参数>:<表达式>
+				||
+	def<函数名>(<参数>) :
+		<函数体>
+		return<返回值>
+	eg. >>>f = lambda x,y : x + y
+		>>>f(10,15)
+		>>>	25
+		
+lambda函数的应用
+	谨慎使用lambda函数
+	-lambda函数主要用作一些特定函数或方法的参数
+	-lambda函数有一些固定使用方式，建议逐步掌握
+	-一般情况，建议使用def定义的普通函数
+	
+PyInstaller库的使用
+	-简单的使用:(cmd命令行) pyinstaller -F <文件名.py>
+	-常用参数
+			-h : 查看帮助
+			--clean : 清理打包过程中的临时文件
+			-D，--onedir : 默认值，生成dist文件夹
+			-F，--onefile : 在dist文件夹中只生成独立的打包文件
+			-i <图标文件名.ico> : 指定打包程序使用的图标(icon)文件
+			
+文件的理解
+	文件是数据的抽象和集合
+	-文件时存储在辅助存储器上的数据序列
+	-文件时数据存储的一种形式
+	-文件展现形态:文本文件和二进制文件
+	
+文本文件
+	文件是数据的抽象和集合
+	-由单一特定编码组成的文件，如UTF-8编码
+	-由于存在编码，也被看成是存储着的长字符串
+	-是用于例如:.txt文件，.py文件
+	
+二进制文件
+	文件是数据的抽象和集合
+	-直接有比特0和1组成，没有统一字符编码
+	-一般存在二进制0和1的组织结构，即文件格式
+	-是用于例如:.png文件，.avi文件
+
+文件的打开
+	<变量名> = open(<文件名>,<打开模式>)
+	-文件名:文件路径和名称，源文件同目录可省路径
+	-打开模式:文本or二进制，读or写
+	
+文件的打开模式
+	'r' : 只读模式，默认值，如果文件不存在，返回FileNotFoundError
+	'w' : 覆盖写模式，文件不存在则创建，存在则完全覆盖
+	'x' : 创建写模式，文件不存在则创建，存在则返回FileExistsError
+	'a' : 追加写模式，文件不存在则创建，存在则在文件最后追加内容
+	'b' : 二进制文件模式
+	't' : 文本文件模式，默认值
+	'+' : 与r/w/x/a一同使用，在原功能基础上增加同时读写功能
+	
+文件的关闭
+	<变量名>.close()
+	
+文件的读取
+	<f>.read(size=-1) : 读入全部内容，如果给出参数，读入前size长度
+	<f>.readline(size=-1) : 读入一行内容，如果给出参数，读入该行前size长度
+	<f>.readlines(hint=-1) : 读入文件所有行，以每行为元素形成列表，如果给出参数，读入前hint行
+	
+文件的逐行操作
+	-逐行遍历文件: 方法一(一次读入，分行处理)
+		fname = input("请输入要打开的文件名称")
+		fo = open(fname,'r')
+		for line in fo.readlines():
+			print(line)
+		fo.close()
+	-逐行遍历文件:方法二(分行读入，逐行处理)
+		fname = input("请输入要打开的文件名称")
+		fo = open(fname,'r')
+		for line in fo :
+			print(line)
+		fo.close()
+		
+一维数据
+	由对等关系的有序或无序数据构成，采用线性方式组织
+	-对应列表，数组和集合等概念
+	
+二维数据
+	由多个一维数据构成，是一维数据的组合形式
+	-表格是典型的二维数据
+		
+数据的文件写入
+	<f>.write(s) : 向文件写入一个字符串或字节流
+	<f>.writelines(lines) : 将一个元素全为字符串的列表写入文件
+	<f>.seek(offset) : 改变当前文件操作指针的位置，offset含义如下:0-文件开头；1-当前位置；2-文件结尾
+	
+一维数据的表示
+	如果数据间有序:使用列表类型
+	-列表类型可以表达一维有序数据
+	-for 循环可以遍历数据，进而对每个数据进行处理
+	
+	如果数据间无序:使用集合类型
+	-集合类型可以表达一维无序数据
+	-for循环可以遍历数据，进而对每个数据进行处理
+	
+一维数据的读入处理
+	从空格分隔的文件中读入数据
+	中国 美国 日本 德国 法国 英国 意大利
+	txt = open(fname).read()
+	ls = txt.split()
+	f.close()
+
+一维数据的写入处理
+	采用空格分隔方式将数据写入文件
+	ls = ['中国','美国','日本']
+	f = open(fname,'w')
+	f.write(' ' .join(ls))
+	f.close()
+	
+CSV数据存储格式
+	CSV:Comma-Separated Values
+	-国际通用的一二维数据存储格式，一般.csv扩展名
+	-每行一个一维数据，采用逗号分隔，无空行
+	-Excel和一般编辑软件都可以读入或另存为csv文件
+	-如果某个元素缺失，逗号仍要保留
+	-二维数据的表头可以作为数据存储，也可以另行存储
+	-逗号为英文半角逗号，逗号与数据之间无额外空格
+	
+二维数据的读入处理
+	从CSV格式的文件中读入数据
+	fo = open(fname)
+	ls =[]
+	for line in fo :
+		line = line.replace('\n','')
+		ls.append(line.split(','))
+	fo.close()
+	
+	将数据写入CSV格式的文件
+	ls = [[],[],[]] #二维列表
+	f = open(fname,'w')
+	for item in ls :
+		f.write(','.join(item) + '\n')
+	f.close()
+	
+二维数据的逐一处理
+	采用二层循环
+	ls = [[1,2],[3,4],[5,6]] #二维列表
+	for row in ls :
+		for column in row :
+			print(column)
+			
+wordcloud库基本使用
+	wordcloud库把词云当作一个WordCloud对象
+	-wordcloud.WordCloud()代表一个文本对应的词云
+	-可以根据文本中词语出现的频率等参数绘制词云
+	-绘制词云的形状，尺寸和颜色都可以设定
+	
+wordcloud库常规方法
+	w = wordcloud.WordCloud()
+	-以WordCloud对象为基础
+	-配置参数，加载文本，输出文件
+	 
+	 w.generate(txt) : 向WordCloud对象w中加载文本txt
+	 w.to_file(filename) : 将词云输出为图像文件,.png或.jpg格式
+	 
+	 步骤一 : 配置对象参数
+	 步骤二 : 加载词云文本
+	 步骤三 : 输出词云文件
+	 
+	 内部操作
+	 -1:分隔-以空格分隔单词
+	 -2:统计-单词出现次数并过滤
+	 -3:字体-根据统计配置字号
+	 -4:布局-颜色环境尺寸
+	 
+wordcloud配置对象参数
+	w = wordcloud.WordCloud(<参数>)
+	-width : 指定词云对象生成图片的宽度，默认400像素 eg.w = wordcloud.WordCloud(width=600)
+	-height : 指定词云对象生成图片的高度，默认200像素eg.w = wordcloud.WordCloud(height=400)
+	-min_font_size : 指定词云中字体的最小字号，默认4号eg.w = wordcloud.WordCloud(min_font_size=10)
+	-max_font_size : 指定词云中字体的最大字号，根据高度自动调节eg.w = wordcloud.WordCloud(max_font_size=20)
+	-font_step : 指定词云中字体字号的步行间距，默认为1 eg.w = wordcloud.WordCloud(font_step=2)
+	-font_path : 指定字体文件的路径，默认None eg.w = wordcloud.WordCloud(font_path='msyh.ttc')
+	-max_words : 指定词云显示的最大单词数量，默认200 eg.w = wordcloud.WordCloud(max_words=20)
+	-stop_words : 指定词云的排除词列表，即不显示的单词列表eg.w = wordcloud.WordCloud(stop_words={"Python"})
+	-mask : 指定词云形状，默认为长方形，需要引入imread()函数
+			eg.>>>from scipy.misc.import imread
+			   >>>mk = imread("pic.png")
+			   >>>w = wordcloud.WordCloud(mask=mk)
+	-background_color : 指定词云图片的背景颜色，默认为黑色. eg.w = wordcloud.WordCloud(background_color="white")
+print()函数	
+	-可传入sep关键字参数，替换掉默认的分隔字符串
+	eg.>>>print('A','B','C')
+		A B C
+	   >>>print('A','B','C',sep=',')
+	    A,B,C
+		
+copy模块的copy()和deepcopy()函数
+	主要用于如果函数修改了传入的列表或字典，而本人不希望这些变动影响原来的列表或字典
+	-spam = copy.copy(chesse)
+	如果要复制的列表中包含了列表，那就使用copy.deepcopy()函数来代替，deepcopy()函数将同时复制它们内部的列表
+	
+pyperclip模块拷贝粘贴字符串
+	pyperclip模块有copy()和paste()函数，可以向计算机的剪贴板发送文本，或从它接收文本.
+	>>>import pyperclip
+	>>>pyperclip.copy('Hello,world!')
+	>>>pyperclip.paste()
+	'Hello,world!'
+	如果在程序之外的某个程序改变了剪贴板的内容，paste()函数就会返回它，例如鼠标的复制
+	
+计算思维
+	第三种人类思维特征
+	-逻辑思维:推理和演绎，数学为代表，A->B,B->C,A->C
+	-实证思维:实验和验证，物理为代表，引力波<-实验
+	-计算思维:设计和构造，计算机为代表，汉诺塔递归
+	
+	抽象和自动化
+	-计算思维:Computational Thinking
+	-抽象问题的计算过程，利用计算机自动化求解
+	-计算思维时基于计算机的思维方式
+	
+	抽象问题的计算过程，利用计算机自动化求解
+	-计算思维基于计算机强大的算力及海量数据
+	-抽象计算过程，关注设计和构造，而非因果
+	-以计算机程序设计为实现的主要手段
+	
+	编程是将计算思维变成现实的手段
+
+计算生态
+	没有顶层设计，以功能为单位，具备三个特点
+		-竞争发展
+		-相互依存
+		-迅速更迭
+		
+计算生态的价值
+	创新:跟随创新，集成创新，原始创新
+	-加速科技类应用创新的重要支撑
+	-发展科技产品商业价值的重要模式
+	-国家科技体系安全和稳固的基础
+	
+提高用户体验的方法
+	方法1.进度展示
+	-如果程序需要计算时间，可能产生等待，请增加进度展示
+	-如果程序有若干步骤，需要提示用户，请增加进度展示
+	-如果程序可能存在大量次数的循环，请增加进度显示
+	
+	方法2.异常处理
+	-当获得用户输入，对合规性需要检查，需要异常处理
+	-当读写文件时，对结果进行判断，需要异常处理
+	-当进行输入输出时，对运算结果进行判断，需要异常处理
+	
+	其他类方法
+	-打印输出:特定位置，输出程序运行的过程信息
+	-日志文件:对程序异常及用户使用进行定期记录
+	-帮助信息:给用户多种方式提供帮助信息
+	
+应用开发的四个步骤
+	从应用需求到软件产品
+	-1.产品定义:对应用需求充分理解和明确定义
+			产品定义，而不仅是功能定义，要考虑商业模式
+	-2.系统架构:以系统方式思考产品的技术实现
+			系统架构，关注数据流，模块化，体系架构
+	-3.设计与实现:结合架构完成关键设计及系统实现
+			结合可扩展性，灵活性等进行设计优化
+	-4.用户体验:从用户角度思考应用效果
+			用户至上，以体验优先，以用户为中心
+			
+pip安装方法
+	常用的pip命令
+		pip install <第三方库名> -安装指定的第三方库
+		pip install -U <第三方库名> -使用-U标签更新已安装的指定第三方库
+		pip uninstall <第三方库名> -卸载指定的第三方库
+		pip download <第三方库名> -下载但不安装指定的第三方库
+		pip show <第三方库名> -列出某个指定第三方库的详细信息
+		pip search <关键词> -根据关键词在名称和介绍中搜索第三方库
+		pip list -列出当前系统已经安装的第三方库
+
+文件安装第三方库方法
+	实例:安装wordcloud库
+		-步骤1:在UCI页面上搜索wordcloud
+		-步骤2:下载对应版本的文件
+		-步骤3:使用pip install<文件名>安装
+		
+os库基本介绍
+	os库提供通用的，基本的操作系统交互功能
+	-os库是Python标准库，包含几百个函数
+	-常用路径操作，进程管理，环境参数等几类
+	
+路径操作
+	os.path子库以path为入口，用于操作和处理文件路径
+	import os.path as op
+	-os.path.abspath(path) : 返回path在当前系统中的绝对路径
+	-os.path.normpath(path) : 归一化path的表示形式，统一用\\分隔
+	-os.path.relpath(path) : 返回房前程序与文件之间的相对路径
+	-os.path.dirname(path) : 返回path中的目录名称
+	-os.path.basename(path) : 返回path中最后的文件名称
+	-os.path.join(path,*paths) : 组合path与paths，返回一个路径字符串
+	-os.path.exists(path) : 判断path对应文件或目录是否存在，返回True或False
+	-os.path.isfile(path) : 判断path对应的是否为已存在的文件，返回True或False
+	-os.path.isdir(path) : 判断path对应的是否为已存在的目录，返回True或False
+	-os.path.getatime(path) : 返回path对应文件或目录上一次的访问时间
+	-os.path.getmtime(path) : 返回path对应文件或目录最近一次的修改时间
+	-os.path.getctime(path) : 返回path对应文件或目录的创建时间
+	-os.path.getsize(path) : 返回path对应文件的大小，以字节为单位
+	
+进程管理
+	os.system(command)
+	-执行程序或命令command
+	-在Windows系统中，返回值为cmd的调用返回信息
+	
+环境参数
+	获取或改变系统环境信息
+	-os.chdir(path) : 修改当前程序操作的路径
+	-os.getcwd() : 返回程序的当前路径	
+	-os.getlogin() : 获得当前系统登陆用户名称
+	-os.cpu_count() : 获得当前系统的CPU数量
+	-os.urandom(n) : 获得n个字节长度的随机字符串，通常用于加解密运算
+	
+isinstance(num,float)/isinstance(num,type)
+	判断num是否为浮点数/判断num是否为type
+创建正则表达式对象	
+	向re.compile()传入一个字符串值，表示正则表达式，它将返回一个Regex模式对象
+		eg. phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+		
+匹配Regex对象
+	
