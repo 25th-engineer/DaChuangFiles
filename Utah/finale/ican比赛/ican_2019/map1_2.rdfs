@@ -1,0 +1,16 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://www.kg.com/ontology/> .
+ 
+
+:Item rdf:type rdfs:Class.
+:Link rdf:type rdfs:Class.
+ 
+### rdfs当中不区分数据属性和对象属性，词汇rdf:Property定义了属性，即RDF的“边”。
+:link1 rdf:type rdf:Property;
+        rdfs:domain :Item;
+        rdfs:range xsd:Link .
+ 
+:link2 rdf:type rdf:Property;
+        rdfs:domain :Item;
+        rdfs:range xsd:Link .

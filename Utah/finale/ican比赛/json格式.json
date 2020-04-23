@@ -1,0 +1,37 @@
+[{
+  "name": "机器学习",
+  "children": [{
+    "name": "决策树", "value": 30
+  }, {
+    "name": "神经网络", "value": 30,
+    "children":[{
+      "name": "感知机", "value": 10
+    }, {
+      "name": "多层网络", "value": 10
+    }, {
+      "name": "误差逆传播", "value": 10
+    }]
+  }, {
+    "name": "集成学习", "value": 30
+  }]
+}, {
+  "name": "自然语言处理",
+  "children": [{
+    "name": "B1", "value": 30
+  }, {
+    "name": "B2", "value": 30
+  }, {
+    "name": "B3", "value": 30
+  }]
+}, {
+  "name": "深度学习",
+  "children": [{
+    "name": "C1", "value": 30
+  }, {
+    "name": "C2", "value": 30
+  }, {
+    "name": "C3", "value": 30
+  }, {
+    "name": "C4", "value": 30
+  }]
+}]
