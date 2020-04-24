@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+#<<<<<<< HEAD
 import jieba.analyse
 
 f = open("F:\Data\\toZhouyu\\toZhouyu\csdn_computer_version_onlycontent_dropduplicate2_2_x\\abc.txt","r",encoding='utf-8')   #打开文件
@@ -14,7 +14,7 @@ file = open("csdn_cv.txt", "w",encoding='utf-8')
 file.write(content)
 file.close()
 print(content)
-=======
+#=======
 import jieba.analyse
 
 for i in range(1,438) :
@@ -43,4 +43,4 @@ for i in range(1,438) :
     file.close()
 
 #print(content)
->>>>>>> 74ca953c28dca42746f878d6e7379fbeda4d12d9
+#>>>>>>> 74ca953c28dca42746f878d6e7379fbeda4d12d9
