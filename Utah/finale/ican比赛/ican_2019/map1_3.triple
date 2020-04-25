@@ -1,0 +1,6 @@
+<./map1_3> <./map1_3/link> "图像处理"^^Link.
+<./map1_3> <./map1_3/link> "模式识别"^^Link.
+<./map1_3> <./map1_3/link> "计算理论"^^Link.
+<./map1_3> <./map1_3/link> "实现算法"^^Link.
+<./map1_3> <./map1_3/link> "表达"^^Link.
+<./map1_3> <./map1_3/link> "硬件细节"^^Link.

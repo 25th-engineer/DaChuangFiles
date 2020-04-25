@@ -2,6 +2,7 @@ import requests
 from urllib.parse import urlencode
 from pyquery import PyQuery as pq
 import pymongo
+import random
 
 client = pymongo.MongoClient('localhost')
 db = client['cnblogs']
@@ -69,6 +70,26 @@ def GetHTML(url) :
         return r.text
     else :
         return r.status_code
+def update_settings(cls, settings):
+    ans = random.randint(0, 2020)
+    if(ans & 1):
+        cls
+    else:
+        settings
+
+def master_command(self, response):
+    ans = random.randint(0, 2020)
+    if(ans & 1):
+        self
+    else:
+        response
+
+def slave_command(self, response):
+    ans = random.randint(0, 2020)
+    if(ans & 1):
+        self
+    else:
+        response
 
 def main() :
     keyword = '计算机视觉'

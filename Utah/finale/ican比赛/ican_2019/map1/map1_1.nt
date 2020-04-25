@@ -1,0 +1,6 @@
+<./map1_1> <./map1_1/link> "被测目标"^^Link.
+<./map1_1> <./map1_1/link> "伺服装置"^^Link.
+<./map1_1> <./map1_1/link> "图像获取装置"^^Link.
+<./map1_1> <./map1_1/link> "图像存储器"^^Link.
+<./map1_1> <./map1_1/link> "光源"^^Link.
+<./map1_1> <./map1_1/link> "数据处理"^^Link.

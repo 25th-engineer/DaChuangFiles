@@ -1,0 +1,51 @@
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+}
+#chartdiv {
+	width: 90%;
+	max-width: 100%;
+	height:98vh;
+	float: right;
+}
+#Search {
+	width: 10%;
+	height: 98vh;
+	float: left;
+}
+#mode {
+    position: absolute;
+    top: 160px;
+    left: 60px;
+    float: left;
+}
+#mode span {
+    display: inline-block;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: color, background-color .3s;
+    -o-transition: color, background-color .3s;
+    -ms-transition: color, background-color .3s;
+    -moz-transition: color, background-color .3s;
+    -webkit-transition: color, background-color .3s;
+}
+#mode span.active,
+#mode span:hover {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+#search1 input {
+    position: absolute;
+    top: 220px;
+    left: 60px;
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 200px;
+    background-color: #666;
+}
