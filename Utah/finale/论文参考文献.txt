@@ -1,0 +1,30 @@
+[1]邹蕾,张先锋.人工智能及其发展应用
+[2-4]政府工作报告
+[5]陈劲,吕文晶.人工智能与新工科人才培养：重大转向
+[6]金婧,万怀宇,林友芳.融合实体类别信息的知识图谱表示学习方法
+[7] XIE Ruobing, LIU Zhiyuan, SUN Maosong. Representation learning of knowledge graphs with hierarchical
+types[C]// International Joint Conference on Artificial Intelligence. New York, NY, USA: AAAI Press, 2016:
+2965-2971.
+[8]杨玉基,许斌,胡家威,仝美涵,张鹏,郑莉.一种准确而高效的领域知识图谱构建方法.软件学报,2018,29(10):
+29312947. http://www.jos.org.cn/1000-9825/5552.htm
+[9]孙昊天,杨良斌.基于带权三元闭包的知识图谱的构建方法研究
+[10]董永强,王鑫,刘永博,杨望.异构 ＹＡＮＧ模型驱动的网络领域知识图谱构建
+[11]［１］ Ｂｊｏｒｋｌｕｎｄ Ｍ．ＲＦＣ７９５０：Ｔｈｅ ＹＡＮＧ １．１ Ｄａｔａ Ｍｏｄｅｌｉｎｇ
+Ｌａｎｇｕａｇｅ［ＯＬ］．ＩＥＴＦ，２０１６ ［２０１９－１２－０１］．ｈｔｔｐｓ：??ｔｏｏｌｓ．
+ｉｅｔｆ．ｏｒｇ?ｈｔｍｌ?ｒｆｃ７９５０
+[12]熊晶,焦清局,刘运通.基于多源异构数据的甲骨学知识图谱构建方法研究
+[13]刘燕,傅智杰,李姣,侯丽.医学百科知识图谱构建
+[14]白如江,周彦廷,王效岳,王志民.科学事件知识图谱构建研究
+[15]https://www.ltp-cloud.com/
+[16]陈成,陈跃国,刘宸,吕晓彤,杜小勇.意图知识图谱的构建与应用
+[17]刘泽华,赵文琦,张楠.基于 Scrapy 技术的分布式爬虫的设计与优化
+[18]赛金辰.基于 Spark 的 SVM 算法优化及其应用[D].北京邮电大学,2017
+[19]李爽.基于Spark的数据处理分析系统的设计与实现
+[20]https://github.com/fighting41love/funNLP
+[21]https://github.com/ownthink/Jiagu
+[22]徐增林,盛泳潘,贺丽荣,王雅芳.知识图谱技术综述
+[23]刘哲宁,朱聪慧,郑德权,赵铁军.面向特定标注数据稀缺领域的命名实体识别
+[24]Mintz M, Bills S, Snow R, et al. Distant supervision for relation extraction without labeled data. In: Proc. of the Joint Conf. of the
+47th Annual Meeting of the ACL and the 4th Int’l Joint Conf. on Natural Language Processing of the AFNLP, Vol.2. Association
+for Computational Linguistics, 2009. 10031011.
+[25]孙启民,胡莉丽,黄威.基于SNMP_Amcharts的性能监测技术在动环监控系统的应用
