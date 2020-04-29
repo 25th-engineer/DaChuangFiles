@@ -5,7 +5,7 @@ plot(x, y, 'or', x, y, '--');
 %hold on;
 
 %legend('Variation tendency');
-legend('Measure Data', 'Fitting Curve');
+legend('Measure Data', 'Fitting Curve', 'FontSize',16);
 
 %axes('linewidth',1, 'box', 'on', 'FontSize',16);
 title("Aggregated precision/recall curve of Jiagu", 'FontSize', 16);
